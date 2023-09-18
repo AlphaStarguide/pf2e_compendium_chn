@@ -1,0 +1,563 @@
+{
+    "label": "kingmaker-features",
+    "entries": {
+        "Ruin Resistance": {
+            "description": "<p>At 5th level and every 3 levels thereafter, your kingdom becomes more resistant to Ruin. Choose one of the four Ruin categories and increase its threshold by 2. When you do so, reset that Ruin’s penalty to 0. See <br />page 533 for more information about Ruin.</p>",
+            "name": "Ruin Resistance"
+        },
+        "Defensive Stance": {
+            "description": "<p>Requirement Defensive Tactics Your army hunkers down behind its shields, presents pole arms in a wall of blades, or moves into position to protect a target allied army that is outflanked. Attempt a Maneuver check against an enemy army. Critical Success The target allied army is no longer outflanked by any army. Success The target allied army is no longer outflanked by the target army. Critical Failure Your defensive stance fails, and your army is now outflanked by the target enemy army.</p>",
+            "name": "Defensive Stance"
+        },
+        "Recover Army": {
+            "description": "<p>When an army endures ill fortune, it can become afflicted by negative conditions. You can use the Recover Army activity to work at removing an affliction with a basic skill check (this DC increases by 5 if you are attempting to Recover from the defeated condition); the skill required for the check depends on the affliction (see the table on page 569).</p>\n<hr />\n<p><strong>Critical Success</strong> You reduce the affliction's value by 2 (or in the case of a damaged army, increase its HP by 2 up to its maximum). If the affliction does not have a value, it is removed.</p>\n<p><strong>Success</strong> As critical success but you reduce the affliction's value by 1 (or in the case of a damaged army, increase its HP by 1 up to its maximum).</p>\n<p><strong>Failure</strong> You fail to remove the affliction.</p>\n<p><strong>Critical Failure</strong> You fail to remove the affliction and your soldier's lowered morale spreads discontent; increase Unrest by 1. If you were attempting to recover a defeated army, the army is destroyed.</p>",
+            "name": "Recover Army"
+        },
+        "Engaged": {
+            "description": "<p>An army that is in close combat with one or more enemy armies becomes engaged. An army must be engaged in order to attempt melee Strikes. If an army is engaged and attempts a maneuver war action that would cause it to disengage, it provokes reactions from any enemy armies they were engaged with.</p>",
+            "name": "Engaged"
+        },
+        "Clandestine Business": {
+            "description": "<p>You know there are criminals in your kingdom, and they know you know. You encourage them to send kickbacks in the form of resources and Commodities to the government, but the common citizens will be more than upset if they find out! This starts as a basic @Check[intrigue|dc:resolve(@kingdom.control.dc)] check against your Control DC, but every subsequent Kingdom turn you pursue Clandestine Business, the DC increases by 2. Every Kingdom turn that passes without Clandestine Business reduces the DC by 1 (until you reach your Control DC).</p>\n<hr />\n<p><strong>Critical Success</strong> Immediately roll 2 Resource Dice. Gain RP equal to the result. In addition, you gain 1d4 Luxury Commodities. The public is none the wiser.</p>\n<p><strong>Success</strong> Either immediately roll 2 Resource Dice and gain RP equal to the result, or gain 1d4 Luxury Commodities. Regardless of your choice, rumors spread about where the government is getting these \"gifts.\" Increase Unrest by 1.</p>\n<p><strong>Failure</strong> Immediately roll 1 Resource Die and gain RP equal to the result. Rumors are backed up with eyewitness accounts. Increase Unrest by 1 and Corruption by 1.</p>\n<p><strong>Critical Failure</strong> You gain nothing from the Clandestine Business but angry citizens. Increase Unrest by 1d6, Corruption by 2, and one other Ruin of your choice by 1.</p>",
+            "name": "Clandestine Business"
+        },
+        "Quick Recovery": {
+            "description": "<p>Your kingdom recovers more quickly from danger and disaster. Whenever you attempt a skill check to end an ongoing harmful kingdom event, you gain a +4 status bonus to the check.</p>",
+            "prerequisites": [
+                {
+                    "value": "Stability 14"
+                }
+            ],
+            "name": "Quick Recovery"
+        },
+        "Cavalry Experts": {
+            "description": "<p>The army's expert training with mounts increases its status bonus from its Overrun ability to +2. At 12th level, the army ignores the status penalty to Maneuver and Morale saves from its Overrun ability.</p>",
+            "name": "Cavalry Experts"
+        },
+        "Celebrate Holiday": {
+            "description": "<p>You declare a day of celebration. Holidays may be religious, historical, martial, or simply festive, but all relieve your citizens from their labors and give them a chance to make merry at the kingdom's expense. Attempt a basic @Check[folklore|dc:resolve(@kingdom.control.dc)] check, but if your kingdom Celebrated a Holiday the previous turn, the DC increases by 4, as your kingdom hasn't had a chance to recover from the previous gala.</p>\n<hr />\n<p><strong>Critical Success</strong> Your holidays are a delight to your people. The event is expensive, but incidental income from the celebrants covers the cost. You gain a +2 circumstance bonus to Loyalty-based checks until the end of your next Kingdom turn.</p>\n<p><strong>Success</strong> Your holidays are a success, but they're also expensive. You gain a +1 circumstance bonus to Loyalty-based checks until the end of your next Kingdom turn. Immediately roll 1 Resource Die and spend RP equal to the result. If you can't afford this cost, treat this result as a Critical Failure instead.</p>\n<p><strong>Failure</strong> The holiday passes with little enthusiasm, but is still expensive. Immediately roll 1 Resource Die and spend RP equal to the result. If you can't afford this cost, treat this result as a Critical Failure instead.</p>\n<p><strong>Critical Failure</strong> Your festival days are poorly organized, and the citizens actively mock your failed attempt to celebrate. During the next turn, reduce your Resource Dice total by 4. The failure also causes you to take a –1 circumstance penalty to Loyalty-based checks until the end of the next Kingdom turn.</p>",
+            "name": "Celebrate Holiday"
+        },
+        "Fame and Fortune": {
+            "description": "<p>Your kingdom’s reputation has spread far and wide, bringing in visitors to behold the spectacle of your greatness and pay their respects. Whenever you achieve a critical success on any Kingdom skill check during the Activity phase of a Kingdom turn, gain 1 bonus Resource Die at the start of your next Kingdom turn.</p>",
+            "name": "Fame and Fortune"
+        },
+        "Establish Trade Agreement": {
+            "description": "<p><strong>Requirements</strong> You have diplomatic relations with the group you wish to establish an agreement with. You send a band of merchants out to establish a trade agreement between your kingdom and a group with whom you've established diplomatic relations. If a navigable river connects your kingdom with the other group's territory, you can attempt a Boating check to Establish the Trade Agreement. If your kingdom's proficiency rank in Magic is Master or higher, you can attempt a Magic check. Otherwise, attempt a Trade check. The check's DC is either the group's Negotiation DC (see sidebar) or your kingdom's Control DC, whichever is higher.</p>\n<hr />\n<p><strong>Critical Success</strong> You successfully establish a trade agreement with your target, and your merchants return with gifts! Immediately roll 2 Resource Dice, then gain RP equal to the result of roll.</p>\n<p><strong>Success</strong> You successfully establish a trade agreement.</p>\n<p><strong>Failure</strong> Your traders reach their destination but need to sweeten the deal to secure the trade agreement. Immediately roll 2 Resource Dice, and then spend RP equal to the result of this roll. If you do so, you successfully establish a trade agreement, otherwise the attempt fails.</p>\n<p><strong>Critical Failure</strong> Your trade agreement is a total loss and your traders do not return. Gain 1 Unrest, and until the end of the next Kingdom turn, take a –1 circumstance penalty to all Economy-related checks.</p>",
+            "name": "Establish Trade Agreement"
+        },
+        "Skill Training": {
+            "description": "<p>Your kingdom receives the trained proficiency rank in a Kingdom skill of your choice. You can select this feat multiple times, choosing a new skill each time.</p>",
+            "name": "Skill Training"
+        },
+        "Ambush": {
+            "description": "<p>Your skirmishers are experts at ambushing. On the first round of a war encounter, if your turn occurs before any enemy army turns, you can choose to start the encounter with your army already engaged with an enemy army whose initiative result is lower than yours. If you do so, your army gains a +2 status bonus on the first Attack war action they make against that army on the first round of the encounter.</p>",
+            "name": "Ambush"
+        },
+        "Offensive Gambit": {
+            "description": "<p><strong>Requirements</strong> You have at least one army in the same hex as an enemy army.</p>\n<hr />\n<p>You order an attack against an enemy army, causing a war encounter to begin after this Kingdom turn ends. No check is necessary if you wish to engage the enemy without attempting to gain an advantage in initiative. If you want to gain an advantage by surprising the enemy, attempt an Intrigue check. If you want to gain an advantage by intimidating the enemy, attempt a Warfare check. In either case, the DC is equal to the enemy army's Scouting DC.</p>\n<hr />\n<p><strong>Critical Success</strong> Your approach surprises or intimidates the enemy. Your armies in this hex gain a +2 circumstance bonus on their initiative checks, and one enemy army of the party's choice in this hex becomes shaken 1.</p>\n<p><strong>Success</strong> Your approach gives you an advantage. Your armies in this hex gain a +2 circumstance bonus on their initiative checks.</p>\n<p><strong>Failure</strong> You gain no advantage in the battle.</p>\n<p><strong>Critical Failure</strong> Not only do you fail to gain advantage, but the enemy forces have anticipated the attack. Enemy armies in this hex at the time of the Offensive Gambit gain a +4 circumstance bonus on their initiative checks in any resulting war encounters.</p>",
+            "name": "Offensive Gambit"
+        },
+        "Collect Taxes": {
+            "description": "<p>Tax collectors travel through the lands to collect funds for the betterment of the kingdom. Attempt a basic @Check[trade|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> Your tax collectors are wildly successful! For the remainder of the Kingdom turn, gain a +2 circumstance bonus to Economy-based checks.</p>\n<p><strong>Success</strong> Your tax collectors gather enough to grant you a +1 circumstance bonus to Economy-based checks for the remainder of the Kingdom turn. If you attempted to Collect Taxes during the previous turn, increase Unrest by 1.</p>\n<p><strong>Failure</strong> As success, but the people are unhappy about taxes—increase Unrest by 1 (or by 2 if you attempted to Collect Taxes the previous turn).</p>\n<p><strong>Critical Failure</strong> Your tax collectors encounter resistance from the citizens and their attempts to gather taxes are rebuffed. While the tax collectors still manage to gather enough taxes to support essential government needs, they have angered the kingdom's citizens and encouraged rebellious acts. Increase Unrest by 2, and choose one Ruin to increase by 1.</p>",
+            "name": "Collect Taxes"
+        },
+        "Shaken": {
+            "description": "<p>The army’s morale has begun to falter, be it fear in the face of a powerful enemy, a supernatural effect such as a dragon’s frightful presence, or simply the result of ill fortune in the tide of battle. Shaken always has a numerical value. The army’s Morale checks take a circumstance penalty equal to its shaken value, and whenever the army takes damage, it must succeed on a DC 11 flat check or its shaken value increases by 1. An army that becomes shaken 4 is automatically routed. An army reduces the value of this condition by 1 each Kingdom turn that passes during which it does not attempt an Army activity or engage in a war encounter.</p>",
+            "name": "Shaken"
+        },
+        "Hold the Line": {
+            "description": "<p>The army has trained to maintain position even in the face of overwhelming opponents. The army gains a +1 status bonus on Morale checks made to resist rout, and its Rout Threshold is equal to 1/4 it's total Hit Points (rounded up).</p>",
+            "name": "Hold the Line"
+        },
+        "Establish Work Site": {
+            "description": "<p>Your hire a crew of workers to travel to a hex that contains Lumber, Ore, or Stone to be harvested. Spend RP as determined by the hex's most inhospitable terrain (see the Building on Rough Terrain sidebar on page 519). Then attempt a basic @Check[engineering|dc:resolve(@kingdom.control.dc)] check. Lumber camps can be established in any hex that contains a significant amount of forest terrain. Mines and quarries can be established in any hex that contains a significant amount of hill or mountain terrain.</p>\n<hr />\n<p><strong>Critical Success</strong> You establish a Work Site in the hex and proceed to discover an unexpectedly rich supply of high quality Commodities. All Commodity yields granted by this site are doubled until the end of the next Kingdom turn.</p>\n<p><strong>Success</strong> You establish a Work Site in the hex.</p>\n<p><strong>Failure</strong> You fail to establish a Work Site in the hex.</p>\n<p><strong>Critical Failure</strong> Not only do you fail to establish a Work Site, but you lose several workers to an accident, banditry, a vicious monster, or some other unforeseen occurrence. Gain 1 Unrest.</p>",
+            "name": "Establish Work Site"
+        },
+        "Distant": {
+            "description": "<p>An army that has the distant condition has managed to retreat a fair range away from enemy armies, and is potentially poised to make an escape from the field of battle. Armies can attempt ranged Strikes against distant armies, but they take a –5 penalty on that Strike.</p>",
+            "name": "Distant"
+        },
+        "Counterattack": {
+            "description": "<p>Requirement Flexible Tactics Trigger An army you are engaged with attempts a maneuver war action. Your army lashes out at the foe as they attempt to perform a maneuver. Attempt a melee Strike against the triggering army’s AC. Counterattack doesn’t count toward your multiple attack penalty, and your multiple attack penalty doesn’t apply to this Strike. Critical Success You inflict 1 point of damage on the army and increase its shaken condition value by 1. Success You inflict 1 point of damage on the army.</p>",
+            "name": "Counterattack"
+        },
+        "Rally": {
+            "description": "<p>Your army’s leaders attempt to bolster the soldiers’ morale and fight back the effects of fear and panic. Attempt a Morale check against a target enemy army of your choice. Critical Success If your army is routed, it loses the routed condition. Reduce your army’s shaken condition by 2. Success Reduce your army’s shaken condition by 1. Critical Failure Your attempt to rally backfires—increase your army’s shaken condition by 1.</p>",
+            "name": "Rally"
+        },
+        "Insider Trading": {
+            "description": "<p>Your leading citizens share valuable business information with one another and with associates in other lands, and they hire one another’s workers to supply the labor they need to fuel their production. You gain a +1 status bonus to Establish Work Site, Establish Trade Agreement, and Trade Commodities activities. In addition, gain 1 bonus Resource Die at the start of each Kingdom turn.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Industry"
+                }
+            ],
+            "name": "Insider Trading"
+        },
+        "Field Triage": {
+            "description": "<p>The army's soldiers are adept at using emergency methods to treat wounds. The army gains the Battlefield Medicine tactical war action.</p>",
+            "name": "Field Triage"
+        },
+        "Battlefield Medicine": {
+            "description": "<p>Requirement Field Triage Your army attempts to patch up an allied army’s wounds during battle. Once you attempt this war action on an army, that army is temporarily immune to Battlefield Medicine for the remainder of the war encounter. Attempt a DC 25 Scouting check to successfully sort the army’s wounded and provide swift aid. Critical Success You restore 2 HP to the target army. Success You restore 1 HP to the target army Critical Failure Your attempt to heal the army fails, and that army’s weary condition value increases by 1.</p>",
+            "name": "Battlefield Medicine"
+        },
+        "Civic Planning": {
+            "description": "<p>During the Civic Activities step of the Activities phase of a Kingdom turn, one settlement of the party’s choice can attempt two Civic activities rather than one. The second Civic activity occurs after all other settlements have taken their individual Civic activities.</p>",
+            "name": "Civic Planning"
+        },
+        "False Retreat": {
+            "description": "<p>Requirement Flexible Tactics Trigger Your army succeeds at a morale check. Your army feigns defeat to trick an enemy army. Attempt a Morale check against a target army. Critical Success The target army is caught off guard by your army’s deception. It becomes outflanked and is unable to take reactions until the start of your next turn. Success The target army is caught off guard by your army’s deception and is outflanked until the start of its next turn. Critical Failure The enemy anticipated your tactic and moves to take advantage of the situation. Your army becomes outflanked until the start of your next turn.</p>",
+            "name": "False Retreat"
+        },
+        "Destroyed": {
+            "description": "<p>The army has been completely devastated, and it cannot be restored—it can only be replaced by a new army. Any gear the army had is ruined.</p>",
+            "name": "Destroyed"
+        },
+        "Routed": {
+            "description": "<p>The army retreats, whether due to magical compulsion or simply broken morale. On its turn, a routed army must use the Retreat war action. While routed, the army takes a –2 circumstance penalty to Morale checks. This condition ends automatically once a war encounter is resolved, but the routed army increases its shaken value by 1 in this case. If all armies on one side of a battle are routed simultaneously, the battle ends and the other army is victorious.</p>",
+            "name": "Routed"
+        },
+        "Craft Luxuries": {
+            "description": "<p>You encourage your artisans to craft luxury goods and may even aid them in this pursuit. Roll 1 Resource Die and spend RP equal to the result. Then attempt a basic @Check[arts|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> Your artisans exceed expectations and craft extravagant goods. Gain 1d4 Luxury Commodities.</p>\n<p><strong>Success</strong> Your artisans produce some delightful goods. Gain 1 Luxury Commodity.</p>\n<p><strong>Failure</strong> Your artisans fail to produce anything noteworthy.</p>\n<p><strong>Critical Failure</strong> Your artisans not only fail to produce anything noteworthy, but some took advantage of the opportunity to push their own agendas or earn more for themselves by selling to underground markets. Increase one of your Ruins by 1.</p>",
+            "name": "Craft Luxuries"
+        },
+        "Hire Adventurers": {
+            "description": "<p>While the PCs can strike out themselves to deal with ongoing events, it's often more efficient to Hire Adventurers. When you Hire Adventurers to help end an ongoing event, the DC is equal to your Control DC adjusted by the event's level modifier. Roll 1 Resource Die and spend RP equal to the result each time you attempt this activity.</p>\n<hr />\n<p><strong>Critical Success</strong> You end the continuous event.</p>\n<p><strong>Success</strong> The continuous event doesn't end, but you gain a +2 circumstance bonus to resolve the event during the next Event phase.</p>\n<p><strong>Failure</strong> You fail to end the continuous event. If you try to end the continuous event again, the cost in RP increases to 2 Resource Dice.</p>\n<p><strong>Critical Failure</strong> As failure, but word spreads quickly through the region—you can no longer attempt to end this continuous event by Hiring Adventurers.</p>",
+            "name": "Hire Adventurers"
+        },
+        "Train Army": {
+            "description": "<p>You train an army in the use of a tactic. Choose one of the tactics from those listed starting on page 575, then attempt a Scholarship or Warfare check against the tactic's Training DC. If your army has already learned its maximum number of tactics, the newly learned tactic replaces a previously learned tactic of your choice.</p>\n<hr />\n<p><strong>Critical Success</strong> The army learns the tactic and then becomes efficient.</p>\n<p><strong>Success</strong> The army learns the tactic.</p>\n<p><strong>Failure</strong> The army fails to learn the tactic.</p>\n<p><strong>Critical Failure</strong> The army not only fails to learn the tactic but becomes frustrated and exhausted from the training; increase the army's weary condition by 1.</p>",
+            "name": "Train Army"
+        },
+        "Pull Together": {
+            "description": "<p>Your people are very reliable, and their swift decision-making keeps most projects from getting too far off track. Once per Kingdom turn when you roll a critical failure on a Kingdom skill check, attempt a DC 11 flat check. If this succeeds, your citizens heed the call to put in extra work to mitigate the disaster; treat the Kingdom skill check result as failure instead. The DC of this flat check increases by 5 each time you subsequently use it, but it decreases by 1 (to a minimum of 11) for each Kingdom turn that passes when you do not use it.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Politics"
+                }
+            ],
+            "name": "Pull Together"
+        },
+        "Kingdom Assurance": {
+            "description": "<p>Even when things go poorly in other areas, you can count on consistency in carrying out kingdom activities with a chosen skill. Choose one Kingdom skill in which your kingdom is trained. Once per Kingdom turn, when you would attempt a skill check for that skill, you can forgo rolling and instead take a result equal to 10 + your proficiency bonus; do not apply any other bonuses, penalties, or modifiers to this result.</p>\n<p><strong>Special</strong> You can select this feat multiple times. Each time, choose a different skill and gain the benefits of this feat for that skill.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in at least three skills"
+                }
+            ],
+            "name": "Kingdom Assurance"
+        },
+        "Fortified": {
+            "description": "<p>The army is in a defensive position as the result of a Garrison Army activity. While fortified, enemy armies cannot engage the army and the army cannot engage enemy armies. A fortified army gains a +4 item bonus to its AC and to Morale checks made to rally. A fortified army that uses a maneuver war action immediately loses its fortified condition.</p>",
+            "name": "Fortified"
+        },
+        "Fine Living": {
+            "description": "<p>Your people celebrate your leadership by indulging you with feasts and finery. All PCs associated with the kingdom enjoy a Fine standard of living (Pathfinder Core Rulebook 294) at no cost whenever they’re in the kingdom. Any PCs in hostile wilderness, a monster‑filled dungeon, or otherwise cut off from their citizens must provide their own sustenance as usual even if they are within the boundaries of their kingdom.</p>\n<p>You gain a +1 circumstance bonus to all checks made to Craft or Earn Income while in your kingdom.</p>",
+            "name": "Fine Living"
+        },
+        "Claim Hex": {
+            "description": "<p><strong>Requirements</strong> You have Reconnoitered the hex to be claimed during hexploration. This hex must be adjacent to at least one hex that's already part of your kingdom. If the hex to be claimed contains dangerous hazards or monsters, they must first be cleared out—either via standard adventuring or the Clear Hex activity.</p>\n<hr />\n<p>Your surveyors fully explore the hex and attempt to add it into your kingdom's domain. Spend 1 RP and then attempt a @Check[exploration|dc:resolve(@kingdom.control.dc)], @Check[intrigue|dc:resolve(@kingdom.control.dc)], @Check[magic|dc:resolve(@kingdom.control.dc)], or @Check[wilderness|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> You claim the hex and immediately add it to your territory, increasing your kingdom's Size by 1 (this affects all statistics determined by Size; see page 532). Your occupation of the hex goes so smoothly that you can immediately attempt another Region activity.</p>\n<p><strong>Success</strong> You claim the hex and add it to your territory, increasing your kingdom's Size by 1 (this affects all statistics determined by Size; see page 532).</p>\n<p><strong>Failure</strong> You fail to claim the hex.</p>\n<p><strong>Critical Failure</strong> You fail to claim the hex, and a number of early settlers and explorers are lost, causing you to take a –1 circumstance penalty to Stability-based checks until the end of your next Kingdom turn.</p>\n<p><strong>Special</strong> At 1st level, when selecting the three activities you take during the Region Activities step of the Activity phase of the Kingdom turn, you may select this activity no more than once. Once your kingdom reaches 4th level, you may select it up to twice per turn, and after reaching 9th level you may select it up to three times per turn. When you successfully claim a hex, gain 10 kingdom XP (see page 540). Many hexes have terrain features that grant benefits to your kingdom when claimed; see Terrain Features on page 535.</p>",
+            "name": "Claim Hex"
+        },
+        "Pinned": {
+            "description": "<p>The army and cannot move freely. It has the outflanked condition and cannot use any maneuver war actions. A pinned army cannot be deployed.</p>",
+            "name": "Pinned"
+        },
+        "Outflank": {
+            "description": "<p>Requirement Reckless Flankers, you aren’t engaged You send your army around an enemy’s flank to get a better attacking position and to push your enemy into disorder. Attempt a Maneuver check against the target army. Critical Success The target army becomes outflanked until the start of your next turn. You can choose to become engaged with that army or not. Success The target army is outflanked until the start of your next turn. You are now engaged with that army. Critical Failure You underestimate the target army’s position, and the blunder causes your army to become outflanked until the start of your next turn.</p>",
+            "name": "Outflank"
+        },
+        "Weary": {
+            "description": "<p>The army is exhausted. Weary always has a numerical value. A weary army takes a circumstance penalty equal to its weary value to its AC, to its Maneuver checks, and to its Army activity checks; it takes double this circumstance penalty on Deploy Army checks. An army reduces the value of this condition by 1 each Kingdom turn that passes during which it does not attempt an Army activity or engage in a war encounter.</p>",
+            "name": "Weary"
+        },
+        "Increased Ammunition": {
+            "description": "<p>You increase the number of times your army can use ranged Strikes in each war encounter by 2. This tactic can be taken multiple times; each time you do so, increase the army's maximum number of ranged Strikes by 2.</p>",
+            "name": "Increased Ammunition"
+        },
+        "Efficient": {
+            "description": "<p>The army has performed an Army activity with such speed that it can be used to attempt a second Army activity immediately, but doing so causes it to lose the efficient condition. The second Army activity suffers a –5 penalty on its check, and the result of this second Army activity check cannot grant the efficient condition. If the army doesn’t attempt a second Army activity, it instead loses the efficient condition and reduces the value of one condition of its choice by 1.</p>",
+            "name": "Efficient"
+        },
+        "Focused Devotion": {
+            "description": "<p>The army is particularly loyal to your cause. The army gains a +1 status bonus on Morale checks made to Rally. This bonus increases to +2 at 9th level, and +3 at 17th level.</p>\n<p>The army can use the @UUID[Compendium.pf2e.kingmaker-features.Item.ggVahjiAlVICpiPA]{Taunt} tactical war action.</p>",
+            "name": "Focused Devotion"
+        },
+        "Experienced Leadership": {
+            "description": "<p>Invested leadership roles in your kingdom now grant a +2 status bonus to kingdom checks associated with their leadership role’s key ability.</p>\n<p>At 16th level, this increases to a +3 status bonus.</p>",
+            "name": "Experienced Leadership"
+        },
+        "Build Roads": {
+            "description": "<p><strong>Requirements</strong> The hex in which you seek to build roads must be claimed by your kingdom.</p>\n<hr />\n<p>You order your kingdom's engineers to construct a network of robust roads through the hex. Travel along roads uses a terrain type one step better than the surrounding terrain; for example, roads through forest hexes—normally difficult terrain—allow travel as if it were open terrain. Spend RP as determined by the hex's most inhospitable terrain (see Building on Rough Terrain on page 519; if the hex includes any rivers that cross the hex from one hex side to any other, you must spend double the normal RP cost to also build bridges; this adds the Bridge structure to that hex). Then attempt a basic @Check[engineering|dc:resolve(@kingdom.control.dc)] check. Work with the GM to determine where your roads appear on the map.</p>\n<hr />\n<p><strong>Critical Success</strong> You build roads into the target hex and one adjacent claimed hex that doesn't yet have roads and whose terrain features are at least as hospitable as those of the target hex. If no adjacent hex is appropriate, treat this result as a Success instead.</p>\n<p><strong>Success</strong> You build roads in the hex.</p>\n<p><strong>Failure</strong> You fail to build roads in the hex.</p>\n<p><strong>Critical Failure</strong> Your attempt to build roads ends in disaster. Not only do you fail to build roads, but you lose several workers to an accident, banditry, a vicious monster, or some other unforeseen occurrence. Gain 1 Unrest</p>",
+            "name": "Build Roads"
+        },
+        "Lost": {
+            "description": "<p>When an army’s attempt to deploy to a new location fails, it can become lost. A lost army can take no Army activity other than Recover, and that only in an attempt to remove the lost condition. When an army recovers from the lost condition, the GM decides what the army’s new location is (typically this is at an approximate midpoint between the army’s starting point and its intended destination).</p>",
+            "name": "Lost"
+        },
+        "Defeated": {
+            "description": "<p>When an army has zero Hit Points, it becomes defeated. A defeated army cannot take war actions. A defeated army can be restored to 1 Hit Point with the Recover Army activity (although the basic DC is increased by 5 for this check). Any effect that restores a defeated army to at least 1 Hit Point removes the defeated condition. A defeated army can only be moved one hex at a time with the Deploy Army activity. A defeated army can be Disbanded normally. It can’t be used for any other Army activity as long as it remains defeated. If a defeated army takes damage, it must succeed at a DC 16 flat check or be destroyed. If all armies on a side are defeated, those armies are destroyed.</p>",
+            "name": "Defeated"
+        },
+        "Keen Eyed": {
+            "description": "<p>The army includes several spotters and scouts who are particularly keen-eyed. The army gains a +2 status bonus on initiative checks.</p>",
+            "name": "Keen Eyed"
+        },
+        "Send Diplomatic Envoy": {
+            "description": "<p>You send emissaries to another group to foster positive relations and communication. The DC of this check is the group's Negotiation DC (see the sidebar on page 519). Attempts to Send a Diplomatic Envoy to a nation with which your kingdom is at war take a –4 circumstance penalty to the check and have the result worsened one degree. At the GM's option, some wars might be so heated that this activity has no chance of success.</p>\n<hr />\n<p><strong>Critical Success</strong> Your envoys are received quite warmly and make a good first impression. You establish diplomatic relations with the group (see page 534 for more information) and gain a +2 circumstance bonus to all checks made with that group until the next Kingdom turn.</p>\n<p><strong>Success</strong> You establish diplomatic relations.</p>\n<p><strong>Failure</strong> Your envoys are received, but the target organization isn't ready to engage in diplomatic relations. If you attempt to Send a Diplomatic Envoy to the group next Kingdom turn, you gain a +2 circumstance bonus to that check.</p>\n<p><strong>Critical Failure</strong> Disaster! Your envoy fails to reach their destination, is turned back at the border, or is taken prisoner or executed, at the GM's discretion. The repercussions on your kingdom's morale and reputation are significant. Choose one of the following results: gain [[/r 1d4 #Unrest]]{1d4 Unrest}, add 1 to a Ruin of your choice, or immediately roll 2 Resource Dice and spend RP equal to the result. In any event, you cannot attempt to Send a Diplomatic Envoy to this same target for the next 3 Kingdom turns. The first time your kingdom succeeds at establishing diplomatic relations in the campaign, gain 60 kingdom XP as a milestone award.</p>",
+            "name": "Send Diplomatic Envoy"
+        },
+        "Recruit Army": {
+            "description": "<p>Note that you pursue this activity during the Leadership step of the Activity phase. Either you recruit an army from your kingdom's citizens, or you secure the allegiance of a specialized army you encountered in the Stolen Lands. If you're recruiting an army from your kingdom's citizens, choose one of the basic armies listed at the start of page 570 and attempt a Warfare check against the army's Recruitment DC. If you're securing a specialized army, you must attempt a Statecraft check against the Recruitment DC; statistics for these armies appear starting on page 571.</p>\n<hr />\n<p><strong>Critical Success</strong> You recruit the army; it becomes efficient.</p>\n<p><strong>Success</strong> You recruit the army.</p>\n<p><strong>Failure</strong> You fail to recruit the army.</p>\n<p><strong>Critical Failure</strong> Many of the individuals in the army you attempted to recruit took offense at the attempt. Gain 1 Unrest, and you cannot attempt to recruit an army again until the next Kingdom turn.</p>",
+            "name": "Recruit Army"
+        },
+        "Envy of the World": {
+            "description": "<p>Your kingdom is one of the world's prominent nations. The first time in a Kingdom turn when your kingdom would gain Unrest or Ruin, ignore that increase. You can ignore additional increases to Unrest or Ruin later in the same turn as well, but you must spend a Fame or Infamy point each time you do so. Your maximum Fame or Infamy point total increases by 1.</p>",
+            "name": "Envy of the World"
+        },
+        "Dirty Fighting": {
+            "description": "<p>Requirement Flexible Tactics Your army uses trickery, deception, and unfair tactics to attempt a devastating attack against an outflanked army. Attempt a melee Strike or a ranged Strike against the AC of a target outflanked army that is not distant. Critical Success The target army becomes weary 2 until the start of your next turn. Success The target army becomes weary 1 until the start of your next turn. Critical Failure Your attack deals no damage to the target army, which is emboldened by your failed attempt at dirty fighting. This reduces the target army’s weary value by 1.</p>",
+            "name": "Dirty Fighting"
+        },
+        "Opening Salvo": {
+            "description": "<p>Your army has trained to take the first shot at distant foes. On the first round of a war encounter, if your turn occurs before any enemy army turns, you can choose to start the encounter with your army distant from all enemy armies.</p>",
+            "name": "Opening Salvo"
+        },
+        "Rest and Relax": {
+            "description": "<p>Working non-stop can burn out even the most devoted and dedicated individual. As such, it's important to take time for yourself, and thus set a good example for the nation. You take time to relax, and you extend the chance to unwind to your citizens as well. The Kingdom skill you use to determine the effectiveness of your time off depends on how you want to spend it: Use a basic @Check[arts|dc:resolve(@kingdom.control.dc)] check to spend the time engaged in entertainment or the pursuit of a hobby. Use a basic @Check[boating|dc:resolve(@kingdom.control.dc)] check to enjoy trips on the lakes and rivers of your kingdom. Use a basic @Check[scholarship|dc:resolve(@kingdom.control.dc)] check to spend the time reading or studying a topic of personal interest beyond your daily duties. Use a basic @Check[trade|dc:resolve(@kingdom.control.dc)] check to spend your time shopping or feasting. Use a basic Wilderness check to get away from the bustle and relax in the countryside. If your kingdom Rested and Relaxed the previous Kingdom turn, the DC increases by 4, as your kingdom's production and output hasn't had a chance to catch up to all those vacation days.</p>\n<hr />\n<p><strong>Critical Success</strong> The citizens enjoy the time off and are ready to get back to work. Reduce Unrest by 1, and the next Leadership activity you take gains a +2 circumstance bonus.</p>\n<p><strong>Success</strong> The time spent relaxing has calmed nerves; reduce Unrest by 1.</p>\n<p><strong>Failure</strong> The rest is welcome, but not particularly beneficial in the long term.</p>\n<p><strong>Critical Failure</strong> The time is wasted, and when you get back to work, you have to spend extra time catching up. Take a –2 circumstance penalty to your next skill check made as a Leadership activity.</p>",
+            "name": "Rest and Relax"
+        },
+        "Cooperative Leadership": {
+            "description": "<p>Your leaders are skilled at working with one another. When a leader uses the Focused Attention kingdom activity to aid another leader’s kingdom check, the circumstance bonus granted by a success is increased to +3.</p>\n<p>At 11th level, your leaders’ collaborative style leads them to ever greater successes when they work together. When a leader uses the Focused Attention kingdom activity to aid another leader’s check, treat a critical failure on the aided check as a failure. If your kingdom has at least the expert rank in the skill used in the aided check, treat a failure on the check as a success. (This does not allow you to ever improve a critical failure to a success.)</p>",
+            "name": "Cooperative Leadership"
+        },
+        "Taunt": {
+            "description": "<p><strong>Requirement</strong>@UUID[Compendium.pf2e.kingmaker-features.Item.DxZRVOsPVnQvI0fe]{Focused Devotion}</p>\n<hr />\n<p>Your army attempts to frighten and cow an enemy army. Attempt a Morale check against the target army.</p>\n<p><strong>Critical Success</strong> The target army becomes shaken 2 until the start of your next turn.</p>\n<p><strong>Success</strong> The target army becomes shaken 1 until the start of your next turn.</p>\n<p><strong>Critical Failure</strong> Your failed attempt bolsters the enemy’s spirits. This reduces the target army’s shaken value by 1.</p>",
+            "name": "Taunt"
+        },
+        "Bloodied but Unbroken": {
+            "description": "<p>The army is at its greatest during the most desperate times. When the army's hit points are at or below its Rout Threshold, it gains a +1 status bonus to its AC, Mobility, Morale, and attack rolls. At 10th level or higher, this bonus increases to +2.</p>",
+            "name": "Bloodied but Unbroken"
+        },
+        "Covering Fire": {
+            "description": "<p>Requirement Sharpshooter Your army’s ranged fire provides cover and protection for an allied army to maneuver. Attempt a ranged Strike against a target army’s AC. Critical Success You inflict 2 points of damage to the target army, and it cannot take reactions triggered by maneuver war actions from any army until the start of your next turn. Success You inflict 1 point of damage to the target army, and it can’t take reactions triggered by maneuver war actions from any army until the start of your next turn. Failure Your attack fails to provide covering fire, but you inflict 1 point of damage to the target army. Critical Failure Your attempt fails.</p>",
+            "name": "Covering Fire"
+        },
+        "Inspiring Entertainment": {
+            "description": "<p>Your kingdom’s artists and entertainers are talented and prolific, and there’s never a shortage of new plays, operas, novels, music, sculptures, paintings, or other forms of distraction to entertain the citizens, even during times of upheaval. When you check for Unrest during the Upkeep phase of a Kingdom turn, you may roll a Culture-based check rather than a Loyalty-based check to determine the outcome. Your kingdom also gains a +2 status bonus to all Culture-based skill checks whenever your kingdom has at least 1 Unrest.</p>",
+            "name": "Inspiring Entertainment"
+        },
+        "Feint": {
+            "description": "<p>Requirement Flexible Tactics Your army launches a probing attack meant to trick the enemy into thinking you are attacking from one quarter while your real thrust comes elsewhere. Critical Success The target army’s defenses are thrown off; it is outflanked until the end of your turn. Success The target army is fooled, but only momentarily. It is outflanked against the next melee Strike your army attempts against it before the end of your current turn. Critical Failure The enemy anticipates your feint and presses the advantage. You are outflanked by the target army until the end of your next turn.</p>",
+            "name": "Feint"
+        },
+        "Overwhelming Bombardment": {
+            "description": "<p>Requirement Explosive Shot Your siege engines focus all their fire on a fortification. This war action counts as using two ranged Strikes for the purposes of depleting an army’s shots. Attempt a ranged Strike against the target fortification’s AC. Critical Success You deal 2 points of damage to the fortification. You also deal 1 point of damage to up to two armies of your choice that are within the fortification. Success You deal 1 point of damage to the fortification, and an additional 1 point of damage either to the fortification or to an army within the fortification (your choice of which). Failure You deal 1 damage to the fortification. Critical Failure You deal no damage, and your army becomes outflanked until the start of its next turn.</p>",
+            "name": "Overwhelming Bombardment"
+        },
+        "Flaming Shot": {
+            "description": "<p>The army attacks with projectiles treated with alchemical or magical oils that ignite as they are fired. When your army succeeds at a ranged Strike, the target army must attempt a Maneuver check against your army's attack DC; if it fails, the Strike inflicts 1 additional point of damage.</p>",
+            "name": "Flaming Shot"
+        },
+        "Create a Masterpiece": {
+            "description": "<p>You encourage your kingdom's artists to create and display a masterful work of art to bolster your kingdom's reputation. Attempt a basic @Check[arts|dc:resolve(@kingdom.control.dc)] check; the result affects either Fame or Infamy (depending on the type of kingdom you're running). Create a Masterpiece may be attempted only once per Kingdom turn regardless of the number of leaders pursuing activities.</p>\n<hr />\n<p><strong>Critical Success</strong> Gain 1 Fame or Infamy point immediately, and at the start of your next Kingdom turn, gain 1 additional Fame or Infamy point. Immediately roll 2 Resource Dice. Gain RP equal to the result.</p>\n<p><strong>Success</strong> Gain 1 Fame or Infamy point immediately.</p>\n<p><strong>Failure</strong> Your attempt to create a masterpiece fails.</p>\n<p><strong>Critical Failure</strong> Not only does your attempt to create a masterpiece fail, it does so in a dramatic and humiliating way. Lose 1 Fame or Infamy point; if you have no Fame or Infamy points to lose, instead gain [[/r 1d4 #Unrest]]{1d4 Unrest}.</p>",
+            "name": "Create a Masterpiece"
+        },
+        "Outflanked": {
+            "description": "<p>The army has enemies coming at it from many directions and must split its forces to deal with threats on every side. The army takes a –2 circumstance penalty to its AC.</p>",
+            "name": "Outflanked"
+        },
+        "Fortify Hex": {
+            "description": "<p>Your command your engineers to construct a protected encampment, such as a fort or barbican, to serve as a defensive post in the hex. Spend RP as determined by the hex's most inhospitable terrain (see the Building on Rough Terrain sidebar on page 519). Then attempt a basic @Check[defense|dc:resolve(@kingdom.control.dc)] check. A fortified hex grants an additional bonus in warfare (see Appendix 3), but also gives traveling PCs a place to rest that prevents wandering monsters from interrupting their rest.</p>\n<hr />\n<p><strong>Critical Success</strong> You find a defensible position for your fortification and finish construction efficiently. Gain a refund of half the RP you spent to build in the hex, then reduce Unrest by 1.</p>\n<p><strong>Success</strong> You establish your fortification in the hex. Reduce Unrest by 1.</p>\n<p><strong>Failure</strong> You fail to fortify the hex.</p>\n<p><strong>Critical Failure</strong> Your attempt ends in disaster. Not only do you fail to build a structure, but you lose several workers to an accident, banditry, a vicious monster, or some other unforeseen occurrence. Gain 1 Unrest.</p>",
+            "name": "Fortify Hex"
+        },
+        "Retreat": {
+            "description": "<p>Prerequisite Your army is not engaged. Your army tries to escape from the battlefield. If your army is already distant, it flees the battlefield, is no longer part of the war encounter, and becomes routed. Otherwise, your army gains the distant condition.</p>",
+            "name": "Retreat"
+        },
+        "Toughened Soldiers": {
+            "description": "<p>The army is particularly hardy. Increase its maximum Hit Points by 1. You can take this tactic multiple times; each time you do, increase the army's maximum Hit Points by 1.</p>",
+            "name": "Toughened Soldiers"
+        },
+        "Disband Army": {
+            "description": "<p>You can choose to disband an army with no check needed. If the army consisted of conscripts from your kingdom, the soldiers revert to being citizens. If the army was recruited from creatures encountered in the wilds, they return to their homes. A disbanded army no longer contributes to your kingdom's Consumption.</p>",
+            "name": "Disband Army"
+        },
+        "Garrison Army": {
+            "description": "<p>You move an army into a fortification and assign them to guard it. In order to garrison, the army must be located in a hex that contains a Refuge, Settlement, or Work Site. If you're garrisoning the army in a Refuge hex, attempt a basic @Check[defense|dc:resolve(@kingdom.control.dc)] check. If you're garrisoning the army in a settlement, attempt a basic @Check[politics|dc:resolve(@kingdom.control.dc)] check. If you're garrisoning the army in a Work Site hex, attempt a basic @Check[engineering|dc:resolve(@kingdom.control.dc)] check. This check's DC increases by 5 if the hex is not part of your kingdom, or by 10 if the location is part of an enemy kingdom.</p>\n<hr />\n<p><strong>Critical Success</strong> The army becomes fortified until it is deployed. Additionally, the efficiency of the garrisoning reduces this army's Consumption by 2 (to a minimum of 1) until it is deployed.</p>\n<p><strong>Success</strong> The army becomes fortified until it is deployed.</p>\n<p><strong>Failure</strong> The army becomes fortified until the next Kingdom turn begins, at which point you must use this activity again to maintain the fortified condition.</p>\n<p><strong>Critical Failure</strong> Your army clashes with local citizens, abuses their authority, lets their watchful readiness slack, and/or provokes confrontations where they are not needed. It does not become fortified, and you cannot attempt to garrison that army at this location again for 4 Kingdom turns. Increase Unrest by 1.</p>",
+            "name": "Garrison Army"
+        },
+        "Irrigation": {
+            "description": "<p><strong>Requirements</strong> You control a hex adjacent to a river or lake that itself does not contain a river or lake.</p>\n<hr />\n<p>You send excavators to build waterways, canals, or drainage systems to convey water from areas that have natural access to a river or lake. Spend RP as determined by the hex's most inhospitable terrain feature (see the Building on Rough Terrain sidebar on page 519). Then attempt a basic @Check[engineering|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> The hex gains a river or lake terrain feature (or you change the effects of a previous critical failure at Irrigation in this hex into a failure); work with your GM to determine where these features appear in the hex. In addition, your workers were efficient and quick, and you regain half the RP you spent building the waterways.</p>\n<p><strong>Success</strong> As success, but without regaining any RP.</p>\n<p><strong>Failure</strong> You fail to build workable systems or to restore a previous critical failure, and the hex does not gain the river or lake terrain feature.</p>\n<p><strong>Critical Failure</strong> As failure, but your attempts at Irrigation are so completely useless that they become breeding grounds for disease. Gain 1 Unrest. From this point onward, at the start of your Kingdom turn's Event phase, attempt a @Check[type:flat|dc:4]. This flat check's DC increases by 1 for each hex in your kingdom that contains a critically failed attempt at Irrigation. If you fail this flat check, your kingdom suffers a Plague event in addition to any other event it might have. You can attempt this activity again in a later Kingdom turn to undo a critically failed Irrigation attempt.</p>",
+            "name": "Irrigation"
+        },
+        "Abandon Hex": {
+            "description": "<p><strong>Requirements</strong> The hex to be abandoned must be controlled.</p>\n<hr />\n<p>After careful consideration, you decide that you would rather not hold onto a particular hex as part of your claimed territory. You renounce your claim to it and pull back any settlers or explorers. Attempt a basic @Check[exploration|dc:resolve(@kingdom.control.dc)] or @Check[wilderness|dc:resolve(@kingdom.control.dc)] check. You can abandon more than one hex at a time, but each additional hex you abandon increases the DC of this check by 1.</p>\n<hr />\n<p><strong>Critical Success</strong> You abandon the hex or hexes, decreasing your kingdom's Size by 1 per hex abandoned (this affects all statistics determined by Size; see page 532). Settlers and explorers return and resettle elsewhere in your kingdom, bringing with them bits of salvage from the abandoned hexes. Gain 1 RP per abandoned hex.</p>\n<p><strong>Success</strong> As critical success, but you gain no RP and increase Unrest by 1.</p>\n<p><strong>Failure</strong> You abandon the hex or hexes, decreasing your kingdom's Size by 1 per hex abandoned (this affects all statistics determined by Size; see page 532). Some citizens become disgruntled refugees who refuse to leave the hex. Increase Unrest by 2 and then attempt a @Check[type:flat|dc:6]. If you fail, the refugees become bandits, and during your next Event phase, your kingdom experiences a Squatters kingdom event automatically in addition to any other event that might occur.</p>\n<p><strong>Critical Failure</strong> As failure, but increase Unrest by 3 and automatically experience a Bandit Activity kingdom event instead of a Squatters event.</p>\n<p><strong>Special</strong> The Unrest gained from abandoning a hex doubles if it includes a settlement. A settlement in an abandoned hex becomes a Freehold.</p>",
+            "name": "Abandon Hex"
+        },
+        "Clear Hex": {
+            "description": "<p>Engineers and mercenaries attempt to prepare a hex to serve as the site for a settlement, or they work to remove an existing improvement, a dangerous hazard, or an encounter. If you're trying to prepare a hex for a settlement or demolish an improvement you previously built (or that was already present in the hex), spend RP as determined by the hex's most inhospitable terrain feature (see the Building on Rough Terrain sidebar nearby). Then attempt a basic @Check[engineering|dc:resolve(@kingdom.control.dc)] check. If you're trying to remove a hazard or encounter, instead attempt an @Check[exploration|dc:resolve(@kingdom.control.dc)] check. The DC of this check is set by the highest level creature or hazard in the hex (as set by Table 10–5: DCs by Level, on page 503 of the Pathfinder Core Rulebook). If the hex you're attempting to Clear has existing Ruins or an existing Structure, your action doesn't physically remove the buildings from the area and you can later incorporate these buildings (or repair ruined ones) into a Settlement you build here later (see page 542). Regardless of the skill used, increase the basic DC by 2 if the hex to be cleared is not yet part of your kingdom.</p>\n<hr />\n<p><strong>Critical Success</strong> You successfully clear the hex. If you spent RP to attempt this activity, you're refunded half of the RP cost. If you were removing dangerous creatures (but not hazards) from the hex, your explorers and mercenaries recover 2 Luxury Commodities as treasure.</p>\n<p><strong>Success</strong> You successfully clear the hex.</p>\n<p><strong>Failure</strong> You fail to clear the hex.</p>\n<p><strong>Critical Failure</strong> You catastrophically fail to clear the hex and several workers lose their lives. Gain 1 Unrest.</p>",
+            "name": "Clear Hex"
+        },
+        "Fortified Fiefs": {
+            "description": "<p>Your vassals take their duty to protect those under their stewardship seriously, and your engineers emphasize the value of a strong defense when it comes to building settlements and fortifications. You gain a +2 circumstance bonus to checks attempted as part of the Fortify Hex activity and on activities to build or repair a Barracks, Castle, Garrison, Keep, Stone Wall, or Wooden Wall. In addition, you gain a +1 status bonus to all kingdom checks attempted during dangerous events that directly impact your settlements’ defenses.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Defense"
+                }
+            ],
+            "name": "Fortified Fiefs"
+        },
+        "Expansion Expert": {
+            "description": "<p>Your kingdom is better at expanding its territory. You gain a +2 circumstance bonus to skill checks made to Claim Hex and can attempt to Claim Hex up to twice during a Kingdom turn.</p>\n<p>At 9th level, you can attempt to Claim Hex up to three times during a Kingdom turn.</p>",
+            "name": "Expansion Expert"
+        },
+        "Civil Service": {
+            "description": "<p>Everyone has a place and a role, and as long as those roles are filled, the government functions. When you select this feat, choose one leadership role; that role is now supported by your efficient civil servants, so its vacancy penalty is no longer applicable. If you wish to change the leadership role to which Civil Service applies, you can do so using the New Leadership activity at the start of a Kingdom turn.</p>\n<p>You gain a +2 status bonus to New Leadership checks.</p>",
+            "name": "Civil Service"
+        },
+        "Gather Livestock": {
+            "description": "<p>Attempt a basic @Check[wilderness|dc:resolve(@kingdom.control.dc)] check to gather excess livestock from local wildlife, ranches, and farms. This generates a number of Food commodities.</p>\n<hr />\n<p><strong>Critical Success</strong> Gain 1d4 Food commodities.</p>\n<p><strong>Success</strong> Gain 1 Food commodity.</p>\n<p><strong>Failure</strong> Gain no Food commodities.</p>\n<p><strong>Critical Failure</strong> Lose 1d4 Food commodities to spoilage. If you have no Food to lose, you instead gain 1 Unrest.</p>",
+            "name": "Gather Livestock"
+        },
+        "Sharpshooter": {
+            "description": "<p>The commander drills the army in precision ranged attacks. You gain a +1 status bonus on attacks with ranged Strikes, but suffer a –2 status bonus on attacks with melee Strikes. At 9th level, the penalty to melee Strikes is reduced to –1, and at 15th level the penalty to melee Strikes is removed. The army can use the Covering Fire tactical war action.</p>",
+            "name": "Sharpshooter"
+        },
+        "Manage Trade Agreements": {
+            "description": "<p>You send agents out to attend to established trade agreements. Spend 2 RP per Trade Agreement you wish to manage. Then attempt a basic @Check[trade|dc:resolve(@kingdom.control.dc)] check. If you Managed Trade Agreements on the previous turn, increase this DC by 5.</p>\n<hr />\n<p><strong>Critical Success</strong> At the start of your next Kingdom turn, you gain 1 bonus Resource Die per trade agreement, and 1 Commodity of your choice per trade agreement (no more than half of these Commodities may be Luxuries).</p>\n<p><strong>Success</strong> As critical success, but you must choose between gaining Resource Dice or Commodities.</p>\n<p><strong>Failure</strong> You gain 1 RP per trade agreement at the start of your next turn.</p>\n<p><strong>Critical Failure</strong> You gain no benefit, as your traders and merchants met with bad luck on the road. You can't Manage Trade Agreements for 1 Kingdom turn.</p>",
+            "name": "Manage Trade Agreements"
+        },
+        "Repair Reputation (Trained)": {
+            "description": "<p>When things have gotten out of hand in the kingdom and the nation's reputation has become damaged, you can focus efforts on a campaign to reassure the citizens and bring them closer together, stamp down crime, organize repairs and maintenance of public structures, or strive to adjust poor public opinions. The skill used to Repair Reputation depends on which Ruin total you wish to reduce. If you wish to reduce your Corruption, you attempt an Arts check. If you wish to reduce your Crime, you attempt a Trade check. If you wish to reduce your Decay, you attempt an Engineering check. If you wish to reduce your Strife, you attempt an Intrigue check. In all cases, the DC is your Control DC + 2.</p>\n<hr />\n<p><strong>Critical Success</strong> You reduce the targeted Ruin by 2 and reduce its current ruin penalty by 1 to a minimum of 0.</p>\n<p><strong>Success</strong> You reduce the targeted Ruin by 1.</p>\n<p><strong>Failure</strong> You fail to reduce the targeted Ruin. You cannot attempt to Repair Reputation on this Ruin for 1 Kingdom turn.</p>\n<p><strong>Critical Failure</strong> You fail to reduce the targeted Ruin in a particularly public and embarrassing way. Increase Unrest by 1d4, and you cannot attempt to Repair Reputation for 3 Kingdom turns.</p>",
+            "name": "Repair Reputation (Trained)"
+        },
+        "Settlement Construction": {
+            "description": "<p>You can establish villages in your kingdom immediately (page 542). At 3rd level, you can expand villages into towns. At 9th level, you can expand towns into cities. And at 15th level, you can expand cities into metropolises.</p>\n<p>As villages grow into larger settlements, you not only gain more room to build, but the maximum item bonus you can gain from that settlement’s structures increases as well (see table on page 541).</p>",
+            "name": "Settlement Construction"
+        },
+        "Flexible Tactics": {
+            "description": "<p>The army uses unconventional tactics. You can use the @UUID[Compendium.pf2e.kingmaker-features.Item.G2eBcOnUHb3yT7JL]{Dirty Fighting}, @UUID[Compendium.pf2e.kingmaker-features.Item.AOFU8pOTMjVdiyNd]{False Retreat}, and @UUID[Compendium.pf2e.kingmaker-features.Item.Hi4LKGOKe6yMDOH5]{Feint} tactical war actions, and the @UUID[Compendium.pf2e.kingmaker-features.Item.8wjiF3ctXUjP9oyX]{Counterattack} tactical reaction with the army.</p>",
+            "name": "Flexible Tactics"
+        },
+        "Pledge of Fealty (Trained)": {
+            "description": "<p>When your representatives encounter freeholders, refugees, independent groups, or other bands of individuals gathered in the wilderness who aren't already part of a nation, you can offer them a place in your kingdom, granting them the benefits of protection, security, and prosperity in exchange for their fealty. The benefits granted to your kingdom can vary wildly, but often manifest as one-time boons to your commodities or unique bonuses against certain types of events. The adventure text in this campaign offers numerous examples of groups who could accept a Pledge of Fealty. You can attempt this skill check with Intrigue, Statecraft, or Warfare; however, certain groups will respond better (or worse) to specific skills. The DC is the group's Negotiation DC (see the sidebar on page 519).</p>\n<hr />\n<p><strong>Critical Success</strong> The group becomes part of your kingdom, granting the specific boon or advantage listed in that group's entry. If you haven't already claimed the hex in which the group dwells, you immediately do so, gaining 10 kingdom XP and increasing your kingdom's Size by 1 (this affects all statistics determined by Size; see page 532). If the hex doesn't share a border with your kingdom, it becomes a secondary territory and checks involving this location take a Control penalty.</p>\n<p><strong>Success</strong> As success, but you don't claim the hex the group is in. Immediately roll 1 Resource Die. You must spend RP equal to the result to integrate the group into your kingdom.</p>\n<p><strong>Failure</strong> The group refuses to pledge to you at this time. You can attempt to get them to Pledge Fealty next turn. Increase Unrest by 1.</p>\n<p><strong>Critical Failure</strong> The group refuses to pledge to you— furthermore, it will never Pledge Fealty to your kingdom, barring significant in-play changes or actions by the PCs (subject to the GM's approval). The group's potentially violent rebuff of your offer increases Unrest by 2 and increases a Ruin of your choice by 1</p>",
+            "name": "Pledge of Fealty (Trained)"
+        },
+        "Practical Magic": {
+            "description": "<p>Magic has an honored place in your society, and your people incorporate it into their everyday work to make life easier. You gain a +1 status bonus to Magic checks, and you can use Magic checks in place of Engineering checks. In addition, as magic-wielding NPCs find your nation a comfortable place to live and work, you reduce the cost of using the Hire Adventurers activity to 1 RP.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Magic"
+                }
+            ],
+            "name": "Practical Magic"
+        },
+        "Supernatural Solution": {
+            "description": "<p>Your spellcasters try to resolve issues when mundane solutions just aren't enough. Attempt a basic @Check[magic|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> You can call upon your spellcasters' supernatural solution to aid in resolving any Kingdom skill check made during the remainder of this Kingdom turn. Do so just before a Kingdom skill check is rolled (by yourself or any other PC). Attempt a Magic check against the same DC in addition to the Kingdom skill check, and take whichever of the two results you prefer. If you don't use your Supernatural Solution by the end of this Kingdom turn, this benefit ends and you gain 10 kingdom XP instead.</p>\n<p><strong>Success</strong> As critical success, but the solution costs the kingdom 1d4 RP to research. This cost is paid now, whether or not you use your supernatural solution.</p>\n<p><strong>Failure</strong> Your attempt at researching a supernatural solution costs the kingdom [[/r 2d6 #RP]]{2d6 RP}, but is ultimately a failure, providing no advantage.</p>\n<p><strong>Critical Failure</strong> As failure, but your spellcasters' resources and morale are impacted such that you cannot attempt a Supernatural Solution again for 2 Kingdom turns.</p>\n<p><strong>Special</strong> You cannot influence a check with Supernatural Solution and Creative Solution simultaneously</p>",
+            "name": "Supernatural Solution"
+        },
+        "Infiltration": {
+            "description": "<p>You send spies out to gather intelligence on a neighboring nation, a cult or thieves' guild within your borders, an unclaimed Freehold, or even an unexplored adventure site. Alternately, you can simply send your spies out to investigate the current health of your kingdom. Attempt a basic @Check[intrigue|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> You learn something valuable or helpful. If you were infiltrating a specific target, the GM decides what is learned, but the information is exact and precise. For example, if you were infiltrating an unexplored ruin, you might learn that the site is infested with web lurkers and spider swarms. If you were investigating your kingdom's health, your spies reveal easy methods to address citizen dissatisfaction, allowing you to choose one of the following: reduce Unrest by 1d4 or reduce a Ruin of your choice by 1.</p>\n<p><strong>Success</strong> You learn something helpful about the target, but the information is vague and imprecise. For example, if you were infiltrating the same ruin mentioned in the critical success above, you might learn that some sort of aberration uses the ruins as its lair. If you were investigating your kingdom's health, your spies learn enough that you can take action. Reduce your kingdom's Unrest by 1.</p>\n<p><strong>Failure</strong> Your spies fail to learn anything of import, but they are not themselves compromised.</p>\n<p><strong>Critical Failure</strong> You never hear from your spies again, but someone certainly does! You take a –2 circumstance penalty on all kingdom checks until the end of the next Kingdom turn as counter-infiltration from an unknown enemy tampers with your kingdom's inner workings.</p>",
+            "name": "Infiltration"
+        },
+        "Build Structure": {
+            "description": "<p>You attempt to build a structure in the settlement that's granting the Civic activity. You may choose any structure for which you meet the requirements. Select the appropriate number of contiguous buildable lots in a single block as specified by the structure's entry and spend the specified RP and Commodity cost. Then attempt the structure's skill check. You can also use this activity to attempt to repair a structure that was damaged as the result of an event but hasn't been replaced by Rubble. To do this, first spend half the structure's listed RP and Commodity cost, and then attempt the specified check. The existing structure gives you a +2 item bonus to the check. On a success, record the new construction on the Urban Grid. Unless the structure's entry states otherwise, its effects are immediate; if the structure adjusts a Ruin's point total, adjust it upon construction.</p>",
+            "name": "Build Structure"
+        },
+        "Liquidate Resources": {
+            "description": "<p>Your kingdom’s economy can liquidate resources in an emergency when funding runs out. The first time during a Kingdom turn in which you are forced to spend RP as the result of a failed skill check or a dangerous event, and that expense reduces you to 0 RP, you may instead reduce your RP to 1 and treat the expense as if it were paid in full. At the start of your next Kingdom turn, roll 4 fewer Resource Dice than normal.</p>",
+            "prerequisites": [
+                {
+                    "value": "Economy 14"
+                }
+            ],
+            "name": "Liquidate Resources"
+        },
+        "Improve Lifestyle": {
+            "description": "<p>Attempt a basic @Check[politics|dc:resolve(@kingdom.control.dc)] check to draw upon your kingdom's treasury to enhance the quality of life for your citizens. This activity can be taken only during the Commerce phase of a Kingdom turn.</p>\n<hr />\n<p><strong>Critical Success</strong> Your push to Improve Lifestyles affords your citizens significant free time to pursue recreational activities. For the remainder of the Kingdom turn, you gain a +2 circumstance bonus to Culture-based checks.</p>\n<p><strong>Success</strong> Your push to Improve Lifestyles helps your citizens enjoy life. For the remainder of the Kingdom turn, you gain a +1 circumstance bonus to Culture-based checks.</p>\n<p><strong>Failure</strong> As success, but you've strained your treasury. Take a –1 circumstance penalty to Economy-based checks for the remainder of this Kingdom turn.</p>\n<p><strong>Critical Failure</strong> Your attempt to Improve Lifestyles backfires horribly as criminal elements in your kingdom abuse your generosity. You take a –1 circumstance penalty to Economy-based checks for the remainder of the Kingdom turn, gain 1 Unrest, and add 1 to a Ruin of your choice.</p>",
+            "name": "Improve Lifestyle"
+        },
+        "Low-Light Vision": {
+            "description": "<p>The army includes several spotters and scouts who have low-light vision, and the rest of the soldiers have been trained to follow their lead so that the army itself functions as if it had low-light vision.</p>",
+            "name": "Low-Light Vision"
+        },
+        "Free and Fair": {
+            "description": "<p>Your reputation for transparency and fairness in conducting elections, appointments, and other changes in government inspires tremendous public trust. You gain a +2 circumstance bonus to Loyalty-based checks attempted as part of the New Leadership and Pledge of Fealty activities. If you fail or critically fail such a check, you can spend 2 RP to reroll the check (but without the +2 circumstance bonus); attempting this adds the Fortune trait. You must take the result of the second roll, even if it is worse than the original roll.</p>",
+            "name": "Free and Fair"
+        },
+        "Harvest Crops": {
+            "description": "<p>Attempt a basic @Check[agriculture|dc:resolve(@kingdom.control.dc)] check to forage for wild edibles or gather excess crops from farms.</p>\n<hr />\n<p><strong>Critical Success</strong> Gain 1d4 Food commodities.</p>\n<p><strong>Success</strong> Gain 1 Food commodity.</p>\n<p><strong>Failure</strong> Gain no Food commodities.</p>\n<p><strong>Critical Failure</strong> Lose 1d4 Food commodities to spoilage; if you have no Food to lose, you instead gain 1 Unrest.</p>",
+            "name": "Harvest Crops"
+        },
+        "Provide Care": {
+            "description": "<p>Attempt a basic @Check[defense|dc:resolve(@kingdom.control.dc)] check to organize and encourage your settlements' healers, apothecaries, medics, and other caregivers to provide care and support for citizens in need.</p>\n<hr />\n<p><strong>Critical Success</strong> You provide unexpectedly compassionate support for the people. Reduce Unrest by 1 and reduce one Ruin of your choice by 1.</p>\n<p><strong>Success</strong> Your care soothes the worries and fears of the populace; reduce Unrest by 1.</p>\n<p><strong>Failure</strong> You don't provide any notable care for the citizens, but at least you don't make things worse.</p>\n<p><strong>Critical Failure</strong> Your attempt to provide care backfires. Increase your Unrest or a Ruin of your choice by 1.</p>",
+            "name": "Provide Care"
+        },
+        "Quality of Life": {
+            "description": "<p>Your kingdom’s robust economy makes the creature comforts of civilization more readily available to all, and even finer luxuries are more easily had. The first time you gain Luxury Commodities in a Kingdom turn, increase the total gained by 1. All of your settlements are treated as 1 level higher than their actual level for the purposes of determining what sorts of magic items might be offered for sale at their markets and shops.</p>",
+            "name": "Quality of Life"
+        },
+        "Mired": {
+            "description": "<p>The army’s movement is severely impaired. It may be bogged down in mud, snow, underbrush, rubble, or similar terrain, encumbered by carrying heavy burdens, or any other reason. Mired always has a value. A mired army takes a circumstance penalty on all maneuvers equal to its mired value and to Deploy Army checks. If an army ever becomes mired 4, it becomes pinned.</p>",
+            "name": "Mired"
+        },
+        "Guard": {
+            "description": "<p>Your army spends a war action to adopt a defensive pose—raising shields, focusing on parrying attacks, or seeking cover. Attempt a Maneuver check against a target army. Critical Success Your army gains a +2 item bonus to its AC until the start of your next turn; this bonus applies to all attacks against this army, not just from the targeted army. Success Your army gains a +2 item bonus to its AC until the start of your next turn against attacks from the target army. Failure Your army fails to guard against the target army. Critical Failure Your army fails spectacularly to guard against the target army and becomes mired 1.</p>",
+            "name": "Guard"
+        },
+        "Disengage": {
+            "description": "<p>Your army attempts to disengage from enemy armies to put some distance between itself and the enemy.</p>\n<p>Attempt a Maneuver check against each army your army is engaged with.</p>\n<p><strong>Critical Success</strong> Your army is no longer engaged with the target army. In addition, your army is automatically no longer engaged with any armies you haven’t yet rolled a Maneuver check against during this war action.</p>\n<p><strong>Success</strong> Your army breaks free and is no longer engaged with the target army.</p>\n<p><strong>Failure</strong> Your army remains engaged with the target army.</p>\n<p><strong>Critical Failure</strong> Your army remains engaged with the target army and, for the remainder of this turn, your army cannot attempt to disengage from any army with which it is still engaged.</p>",
+            "name": "Disengage"
+        },
+        "Focused Attention": {
+            "description": "<p>You set aside time to focus attention on aiding another leader in an activity. Choose another leader and a Kingdom skill, then attempt a DC 20 check using the chosen skill. On a success, you grant that leader a +2 circumstance bonus to one kingdom check using that skill, provided that leader attempts the skill check during the same Kingdom turn. The Cooperative Leadership Kingdom feat increases the efficiency of this activity.</p>",
+            "name": "Focused Attention"
+        },
+        "Battle": {
+            "description": "<p>Your army attacks an enemy army with a Strike against the enemy army’s AC. You can do so with a melee Strike only if you are engaged with the target army. Otherwise, you must use a ranged Strike.</p>\n<p>An army can attempt a maximum of 5 ranged Strikes per war encounter (unless it has the @UUID[Compendium.pf2e.kingmaker-features.Item.DrUT5sE0EuU5dtPa]{Increased Ammunition} tactic). As with any attack, multiple Strikes in a single round suffer a multiple attack penalty.</p>\n<p>A siege engine can use the Battle action to attack and damage a fortification.</p>\n<p><strong>Critical Success</strong> You deal 2 points of damage to the army.</p>\n<p><strong>Success</strong> You deal 1 point of damage to the army.</p>",
+            "name": "Battle"
+        },
+        "Request Foreign Aid": {
+            "description": "<p><strong>Requirements</strong> You have diplomatic relations with the group you are requesting aid from.</p>\n<hr />\n<p>When disaster strikes, you send out a call for help to another nation with whom you have diplomatic relations. The DC of this check is equal to the other group's Negotiation DC +2 (see the sidebar on page 519).</p>\n<hr />\n<p><strong>Critical Success</strong> Your ally's aid grants a +4 circumstance bonus to any one Kingdom skill check attempted during the remainder of this Kingdom turn. You can choose to apply this bonus to any Kingdom skill check after the die is rolled, but must do so before the result is known. In addition, immediately roll 2 Resource Dice and gain RP equal to the result; this RP does not accrue into XP at the end of the turn if you don't spend it.</p>\n<p><strong>Success</strong> As success, but choose the benefit given by the aid: either roll 1 Resource Die and gain RP equal to the result or gain a +2 circumstance bonus to a check.</p>\n<p><strong>Failure</strong> Your ally marshals its resources but cannot get aid to you in time to deal with your current situation. At the start of your next Kingdom turn, gain [[/r 1d4 #RP]]{1d4 RP}.</p>\n<p><strong>Critical Failure</strong> Your ally is tangled up in its own problems and is unable to assist you, is insulted by your request for aid, or might even have an interest in seeing your kingdom struggle against one of your ongoing events. Whatever the case, your pleas for aid make your kingdom look desperate. You gain no aid, but you do increase Unrest by [[/r 1d4]].</p>",
+            "name": "Request Foreign Aid"
+        },
+        "Merciless": {
+            "description": "<p>This army is difficult to escape from. The army's Mobility DC gains a +2 status bonus when other armies attempt Mobility checks against it while attempting to Disengage. This army can use the All-Out Assault tactical war action.</p>",
+            "name": "Merciless"
+        },
+        "Tap Treasury": {
+            "description": "<p>You tap into the cash reserves of your kingdom for the PCs' personal use or to provide emergency funding for an event. This is a basic @Check[statecraft|dc:resolve(@kingdom.control.dc)] check, but after you succeed or critically succeed at this activity, all future attempts to Tap Treasury have their results worsened two degrees. This penalty persists until funds equal to those taken from the treasury are repaid via Capital Investment.</p>\n<hr />\n<p><strong>Critical Success</strong> You withdraw funds equal to the Currency per Additional PC column on Table 10–9: Party Treasure By Level on page 509 of the Pathfinder Core Rulebook (using your kingdom's level to set the amount), or you successfully fund the unexpected event that required you to Tap your Treasury.</p>\n<p><strong>Success</strong> As critical success, but you overdraw your treasury in the attempt. You take a –1 circumstance penalty to all Economy-based checks until the end of your next Kingdom turn.</p>\n<p><strong>Failure</strong> You fail to secure the funds you need, and rumors about the kingdom's potential shortfall of cash cause you to take a –1 circumstance penalty to all Loyalty\u0002and Economy-based checks until the end of your next Kingdom turn.</p>\n<p><strong>Critical Failure</strong> As failure, but the rumors spiral out of control. Increase Unrest by 1 and add 1 to a Ruin of your choice.</p>",
+            "name": "Tap Treasury"
+        },
+        "Favored Land": {
+            "description": "<p>Your heartland's terrain becomes your kingdom's favored land — the wilderness terrain that your people feel the strongest emotional ties to and to which your resource gatherers tend to flock. Once per Kingdom turn, during the Region Activities step of the Activity phase, you can attempt two Region activities simultaneously as long as both activities take place in the same hex and that hex contains the same terrain as your heartland. You take a –2 penalty to Kingdom skill checks made during these two activities.</p>",
+            "name": "Favored Land"
+        },
+        "Establish Settlement": {
+            "description": "<p><strong>Requirements</strong> The hex in which you're establishing the settlement has been Cleared and doesn't currently have a settlement (including a Freehold) in it.</p>\n<hr />\n<p>You draw up plans, gather resources, entice citizens, and establish boundaries to found a brand new settlement in the hex. Attempt a basic @Check[engineering|dc:resolve(@kingdom.control.dc)], Industry, Politics, or Scholarship check. If you cannot pay the RP required by the result of this check, treat your result as a critical failure. A settlement always starts as a village. See page 540 for further details about building settlements.</p>\n<hr />\n<p><strong>Critical Success</strong> You establish the settlement largely with the aid of enthusiastic volunteers. Spend [[/r 1d6 #RP]]{1d6 RP}.</p>\n<p><strong>Success</strong> You establish the settlement. Spend [[/r 3d6 #RP]]{3d6 RP}.</p>\n<p><strong>Failure</strong> You establish the settlement, but inefficiently and at great expense. Spend [[/r 6d6 #RP]]{6d6 RP}.</p>\n<p><strong>Critical Failure</strong> You fail to establish the settlement</p>",
+            "name": "Establish Settlement"
+        },
+        "Demolish": {
+            "description": "<p>Choose a single occupied lot in one of your settlements and attempt a basic @Check[engineering|dc:resolve(@kingdom.control.dc)] check to reduce it to Rubble and then clear the Rubble away to make ready for a new structure. For multiple-lot structures, you'll need to perform multiple Demolish activities (or critically succeed at the activity) to fully clear all of the lots. As soon as you begin Demolishing a multiple-lot structure, all of the lots occupied by that structure no longer function.</p>\n<hr />\n<p><strong>Critical Success</strong> Choose one of the following effects: you demolish an entire multiple-lot structure all at once and clear all of the lots it occupied, or you recover 1d6 Commodities (chosen from lumber, stone, and ore) from the Rubble of a single-lot demolition.</p>\n<p><strong>Success</strong> You demolish the lot successfully.</p>\n<p><strong>Failure</strong> You fail to demolish the lot. It remains in Rubble and cannot be used for further construction until you successfully Demolish it.</p>\n<p><strong>Critical Failure</strong> As failure, but accidents during the demolition cost you the lives of some of your workers. Gain 1 Unrest.</p>",
+            "name": "Demolish"
+        },
+        "Go Fishing": {
+            "description": "<p><strong>Requirements</strong> Must have at least one claimed hex that includes river or lake terrain.</p>\n<hr />\n<p>Attempt a basic @Check[boating|dc:resolve(@kingdom.control.dc)] check to fish for food from the rivers and lakes in your kingdom.</p>\n<hr />\n<p><strong>Critical Success</strong> Gain 1d4 Food commodities.</p>\n<p><strong>Success</strong> Gain 1 Food commodity.</p>\n<p><strong>Failure</strong> Gain no Food commodities.</p>\n<p><strong>Critical Failure</strong> You lose some fishers to tragic accidents; gain 1 Unrest.</p>",
+            "name": "Go Fishing"
+        },
+        "Quell Unrest": {
+            "description": "<p>You send your agents among the citizenry with the charge of suppressing dissent and calming unrest. You can attempt a basic @Check[arts|dc:resolve(@kingdom.control.dc)], @Check[folklore|dc:resolve(@kingdom.control.dc)], @Check[intrigue|dc:resolve(@kingdom.control.dc)], @Check[magic|dc:resolve(@kingdom.control.dc)], @Check[politics|dc:resolve(@kingdom.control.dc)], or @Check[warfare|dc:resolve(@kingdom.control.dc)] check to Quell Unrest, but you can never use the same skill for this activity in consecutive Kingdom turns. This activity cannot be attempted more than once per Kingdom turn.</p>\n<hr />\n<p><strong>Critical Success</strong> Reduce Unrest by [[/r 1d6]].</p>\n<p><strong>Success</strong> Reduce Unrest by 1.</p>\n<p><strong>Failure</strong> You fail to reduce Unrest.</p>\n<p><strong>Critical Failure</strong> You not only fail to reduce Unrest, but actually incite further anger among the citizenry. Choose one of the following: increase Unrest by 1d4 or increase two Ruins of your choice by 1.</p>",
+            "name": "Quell Unrest"
+        },
+        "Creative Solution": {
+            "description": "<p>You work with your kingdom's scholars, thinkers, and practitioners of magical and mundane experimentation to come up with new ways to resolve issues when business as usual is just not working. Attempt a basic @Check[scholarship|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> You can call upon the solution to aid in resolving any Kingdom skill check made during the remainder of this Kingdom turn. Do so when a Kingdom skill check is rolled, but before you learn the result. Immediately reroll that check with a +2 circumstance bonus; you must take the new result. If you don't use your Creative Solution by the end of this turn, you lose this benefit and gain 10 kingdom XP instead.</p>\n<p><strong>Success</strong> As critical success, but the Creative Solution costs the kingdom 1d4 RP to research. This cost is paid now, whether or not you use your Creative Solution.</p>\n<p><strong>Failure</strong> Your attempt at researching a Creative Solution costs the kingdom 2d6 RP but is ultimately a failure. It provides no advantage.</p>\n<p><strong>Critical Failure</strong> As failure, but your scholars and thinkers are so frustrated that you take a –1 circumstance penalty to Culture-based checks until the end of the next Kingdom turn.</p>\n<p><strong>Special</strong> You cannot influence a check with Supernatural Solution and Creative Solution simultaneously.</p>",
+            "name": "Creative Solution"
+        },
+        "Live off the Land": {
+            "description": "<p>The army is trained to be self-sufficient and sustains itself via hunting and gathering when they're in the wild. If during a Kingdom turn's Upkeep phase this army is located in a hex that doesn't include a settlement, and if the army is not garrisoned, it reduces its Consumption by 1.</p>",
+            "name": "Live off the Land"
+        },
+        "Life Of Luxury": {
+            "description": "<p>Your people lavish you with every creature comfort. This is identical to Fine Living, but all PC leaders enjoy an Extravagant standard of living (Core Rulebook294) at no cost whenever they’re in the kingdom.</p>\n<p>You gain a +2 circumstance bonus to all checks made to Craft or Earn Income while in your kingdom.</p>",
+            "name": "Life Of Luxury"
+        },
+        "Trade Commodities": {
+            "description": "<p>There are five different categories of Commodities: Food, Lumber, Luxuries, Ore, and Stone. When you Trade Commodities, select one Commodity that your kingdom currently stockpiles and reduce that Commodity's stockpile by up to 4. Then attempt a basic @Check[industry|dc:resolve(@kingdom.control.dc)] check. If you trade with a group that you've established diplomatic relations with, you gain a +1 circumstance bonus to the check.</p>\n<hr />\n<p><strong>Critical Success</strong> At the beginning of the next Kingdom turn, you gain 2 bonus Resource Dice per point of stockpile expended from your Commodity now.</p>\n<p><strong>Success</strong> At the beginning of your next Kingdom turn, you gain 1 bonus Resource Die per point of stockpile expended from your Commodity now.</p>\n<p><strong>Failure</strong> You gain 1 bonus Resource Die at the beginning of your next Kingdom turn.</p>\n<p><strong>Critical Failure</strong> You gain no bonus Resource Dice (though the Commodity remains depleted). If you Traded Commodities the previous turn, gain 1 Unrest.</p>",
+            "name": "Trade Commodities"
+        },
+        "Concealed": {
+            "description": "<p>A concealed army is tougher to target, and gains a +2 circumstance bonus on its Maneuver checks. Attacks against it take a –2 circumstance penalty. This condition lasts as long as the event granting the concealment persists.</p>",
+            "name": "Concealed"
+        },
+        "Endure Anarchy": {
+            "description": "<p>Your kingdom holds together even in the midst of extreme peril. If your kingdom’s Unrest is 6 or higher and you use a kingdom activity that decreases Unrest, decrease the Unrest by an additional 1. You do not fall into anarchy unless your kingdom’s Unrest reaches 24 (see last paragraph of Step 2: Adjust Unrest on page 538).</p>",
+            "prerequisites": [
+                {
+                    "value": "Loyalty 14"
+                }
+            ],
+            "name": "Endure Anarchy"
+        },
+        "Prognostication": {
+            "description": "<p>Your kingdom's spellcasters read the omens and provide advice on how best to prepare for near-future events. Attempt a basic @Check[magic|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> If you have a random kingdom event this turn, roll twice to determine the event that takes place. The players choose which of the two results occurs, and the kingdom gains a +2 circumstance bonus to the check to resolve the event.</p>\n<p><strong>Success</strong> Gain a +1 circumstance bonus to checks made to resolve random kingdom events this turn.</p>\n<p><strong>Failure</strong> Your spellcasters divine no aid.</p>\n<p><strong>Critical Failure</strong> Your spellcasters provide inaccurate readings of the future. You automatically have a random kingdom event this turn. Roll twice to determine the event that takes place; the GM decides which of the two results occurs.</p>",
+            "name": "Prognostication"
+        },
+        "Keep up the Pressure": {
+            "description": "<p>The commander's swift, decisive directions help the army attack more accurately. If an army attacks the same target a second time in a round, its multiple attack penalty is –4 rather than –5, and if they attack that same army a third time in a round, its multiple attack penalty is –8 rather than –10.</p>",
+            "name": "Keep up the Pressure"
+        },
+        "Purchase Commodities": {
+            "description": "<p>You can spend RP to Purchase Commodities, but doing so is more expensive than gathering them or relying upon trade agreements. When you Purchase Commodities, select the Commodity you wish to purchase (Food, Lumber, Luxuries, Ore, or Stone). Expend 8 RP if you're purchasing Luxuries or 4 RP if you're purchasing any other Commodity. Then attempt a basic @Check[trade|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> You immediately gain 4 Commodities of the chosen type and 2 Commodities of any other type (except Luxuries).</p>\n<p><strong>Success</strong> You gain 2 Commodities of the chosen type.</p>\n<p><strong>Failure</strong> You gain 1 Commodity of the chosen type.</p>\n<p><strong>Critical Failure</strong> You gain no Commodities.</p>",
+            "name": "Purchase Commodities"
+        },
+        "New Leadership": {
+            "description": "<p>You announce the promotion of a character into a leadership role, whether they're a newly appointed leader or just shifting from one leadership role to another. You normally perform this activity at the start of a Kingdom turn, but if unexpected events (such as the death of the character) remove a leader from a leadership role, you may immediately use the New Leadership activity to attempt to assign a new leader to that role, even outside of a Kingdom turn (applying the vacancy penalty for that role as appropriate). Attempt a basic @Check[intrigue|dc:resolve(@kingdom.control.dc)], @Check[politics|dc:resolve(@kingdom.control.dc)], @Check[statecraft|dc:resolve(@kingdom.control.dc)], or @Check[warfare|dc:resolve(@kingdom.control.dc)] skill check—while any of these skills can be used, each skill is particularly suited to assigning two specific leadership roles.</p>\n<ul>\n<li>Intrigue: Grants a +2 circumstance bonus to checks to assign Emissaries and Treasurers.</li>\n<li>Politics: Grants a +2 circumstance bonus to checks to assign Counselors and Rulers.</li>\n<li>Statecraft: Grants a +2 circumstance bonus to checks to assign Magisters and Viceroys.</li>\n<li>Warfare: Grants a +2 circumstance bonus to checks to assign Generals and Wardens.</li>\n</ul>\n<p>Rulers are particularly difficult to assign; when you take this activity to assign a new Ruler, you take a –4 circumstance penalty to the skill check, and unless you achieve a critical success, you gain 1 additional Unrest. Whether or not you are simultaneously assigning a leader, you may also use this activity to attempt to reselect the four leadership roles that you have invested. Any result other than a critical failure allows this.</p>\n<hr />\n<p><strong>Critical Success</strong> The people love the new leader. The leader immediately provides the benefits tied to occupying the new role and gains a +1 circumstance bonus to all Kingdom skill checks they attempt before the end of the next Kingdom turn.</p>\n<p><strong>Success</strong> The people accept the new leader. The leader immediately provides the benefits tied to occupying the new role.</p>\n<p><strong>Failure</strong> The people are unsure about the new leader. The leader takes a –1 circumstance penalty to all checks they attempt as part of their activities during the Activity phase of each Kingdom turn. At the end of the next Kingdom turn, the leader can attempt any Loyalty-based basic skill check to ingratiate themselves with the populace. The leader may attempt this check at the end of each Kingdom turn until they succeed. Success removes this penalty, but a critical failure results in the development detailed in Critical Failure below.</p>\n<p><strong>Critical Failure</strong> The people reject the new leader. The leadership role is treated as vacant and you must attempt to reassign it using the New Leadership activity at the start of the next Kingdom turn. Unrest increases by 1.</p>",
+            "name": "New Leadership"
+        },
+        "Defensive Tactics": {
+            "description": "<p>The army is especially good at enacting defensive tactics. The army gains a +1 status bonus on Maneuver checks made to Guard. This bonus increases to +2 at 9th level, and +3 at 17th level. The army can use the Defensive Stance tactical war action.</p>",
+            "name": "Defensive Tactics"
+        },
+        "Muddle Through": {
+            "description": "<p>Your people are independent-minded and take care of the small things around the kingdom, not letting them pile up into bigger problems. Increase two of your Ruin thresholds by 1 and one of them by 2.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Wilderness"
+                }
+            ],
+            "name": "Muddle Through"
+        },
+        "Crush Dissent": {
+            "description": "<p>Your rule brooks no dissent and stamps out traitors, making harsh examples of them. Once per Kingdom turn when you gain Unrest, you can attempt to crush the dissent by attempting a basic @Check[warfare|dc:resolve(@kingdom.control.dc)] check. On a success, the Unrest increase is canceled, but on a critical failure, the Unrest increase is doubled. In addition, you gain a +1 status bonus to checks to resolve dangerous kingdom events that involve internal bickering, such as Feud.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Warfare"
+                }
+            ],
+            "name": "Crush Dissent"
+        },
+        "Advance": {
+            "description": "<p>Your army attempts to close the distance with a target enemy army it is not engaged with by attempting a Maneuver check.</p>\n<p><strong>Critical Success</strong> The enemy army becomes engaged with your army, even if it previously had the distant condition (in which case it loses that condition and becomes engaged).</p>\n<p><strong>Success</strong> If the target army is distant, it loses that condition; otherwise, it becomes engaged.</p>\n<p><strong>Failure</strong> Your army’s attempt to advance fails.</p>\n<p><strong>Critical</strong> Failure Your army’s attempt to advance fails, and it becomes disorganized, becoming @UUID[Compendium.pf2e.kingmaker-features.Item.oVhkdym3D6TiTbrN]{Mired 1} until the start of its next turn.</p>",
+            "name": "Advance"
+        },
+        "Outfit Army": {
+            "description": "<p>You provide your army with better gear. Choose what sort of gear you wish to provide your army with from the list beginning on page 574. The level of the gear chosen must be equal to or less than the army's level. If you're crafting or purchasing gear, the level of the gear chosen must be equal to or less than your kingdom level. If you're distributing resources gained from battle, the level of the gear chosen must be equal to or less than the highest level of an enemy army defeated in that battle. If you're purchasing the gear, this activity requires a basic @Check[trade|dc:resolve(@kingdom.control.dc)] check and costs the standard amount of RP for the gear; you cannot purchase magic gear unless your kingdom is at least expert rank in Magic. If you're distributing gear gained from battle, this activity requires a basic @Check[warfare|dc:resolve(@kingdom.control.dc)] check and does not cost RP.</p>\n<hr />\n<p><strong>Critical Success</strong> The gear proved particularly easy to outfit, and the army becomes efficient.</p>\n<p><strong>Success</strong> The gear is sufficient, and your army becomes outfitted with it immediately.</p>\n<p><strong>Failure</strong> The gear proves to be unusable and the attempt to outfit the army fails. If you spent RP on the check, it is refunded.</p>\n<p><strong>Critical Failure</strong> As failure, but spent RP is not refunded.</p>",
+            "name": "Outfit Army"
+        },
+        "Capital Investment": {
+            "description": "<p><strong>Requirements</strong> You must be within the influence of a settlement that contains at least one Bank.</p>\n<hr />\n<p>You contribute funds from your personal wealth for the good of the kingdom, including coinage, gems, jewelry, weapons and armor salvaged from enemies, magical or alchemical items, and so on. Your contribution generates economic activity in the form of RP that can be used during your current Kingdom turn or on the next Kingdom turn (your choice). You can use Capital Investment to repay funds from Tap Treasury. In this case, no roll is needed and you simply deduct the appropriate amount of funds from your personal wealth to pay back that which was borrowed. When you use Capital Investment to generate RP, the amount of gp required to make an investment is set by your kingdom's level. Investments below this amount cause your attempt at Capital Investment to suffer an automatic critical failure, while investments above this amount are lost. The investment required is equal to the value listed on Table 10–9: Party Treasure by Level in the Pathfinder Core Rulebook; use the value for your kingdom's level under the \"Currency per Additional PC\" as the required investment value. This is a basic @Check[trade|dc:resolve(@kingdom.control.dc)] check.</p>\n<hr />\n<p><strong>Critical Success</strong> Your kingdom reaps the benefits of your investment. Immediately roll 4 Resource Dice. Gain RP equal to the result.</p>\n<p><strong>Success</strong> Your investment helps the economy. Immediately roll 2 Resource Dice. Gain RP equal to the result.</p>\n<p><strong>Failure</strong> Your investment ends up being used to shore up shortfalls elsewhere. Gain [[/r 1d4 #RP]]{1d4 RP}.</p>\n<p><strong>Critical Failure</strong> Your investment is embezzled, lost, or otherwise misappropriated. Choose one of the following: either roll 1 Resource Die and gain RP equal to the result and also increase your Crime by an equal amount, or gain 0 RP and increase Crime by 1.</p>",
+            "name": "Capital Investment"
+        },
+        "Relocate Capital": {
+            "description": "<p><strong>Requirements</strong> One of your settlements that is not your current capital must contain a Castle, Palace, or Town Hall. All leaders must spend all of their leadership activities during the Activity phase of a Kingdom turn on this activity.</p>\n<hr />\n<p>The kingdom leaders announce that they are uprooting the seat of government from its current home and reestablishing it in another settlement. Attempt a @Check[industry|dc:resolve(@kingdom.control.dc + 5)] check with a DC equal to the kingdom's Control DC + 5. You cannot Relocate your Capital again for at least 3 Kingdom turns.</p>\n<hr />\n<p><strong>Critical Success</strong> The move goes off splendidly, with people excited about the new capital and celebrating the leadership's wisdom.</p>\n<p><strong>Success</strong> The move goes smoothly and with minimal disruption, but some folks are upset or homesick. Increase Unrest by 1.</p>\n<p><strong>Failure</strong> The move causes unhappiness. Gain 1 Unrest and increase two Ruins of your choice by 1.</p>\n<p><strong>Critical Failure</strong> The people reject the idea of the new capital and demand you move it back. The move is unsuccessful, and your capital remains unchanged. Gain [[/r 1d4 #Unrest]]{1d4 Unrest}. Increase three Ruins of your choice by 1 and the fourth Ruin by 3.</p>",
+            "name": "Relocate Capital"
+        },
+        "Darkvision": {
+            "description": "<p>The army includes several spotters and scouts who have darkvision, and the rest of the soldiers have been trained to follow their lead so that the army itself functions as if it had darkvision.</p>",
+            "name": "Darkvision"
+        },
+        "Reckless Flankers": {
+            "description": "<p>Your army is skilled at surrounding their foes and distracting them, at the cost of spreading out too much and being more vulnerable. When you use the Advance war action to successfully engage an army, you can choose to take a –2 circumstance penalty to your AC in order to gain a +1 circumstance bonus on attack rolls. If you do so, these modifiers remain in effect until you are no longer engaged. You can use the Outflank tactical war action.</p>",
+            "name": "Reckless Flankers"
+        },
+        "Establish Farmland": {
+            "description": "<p><strong>Requirements</strong> Plains or hills are the predominant terrain feature in the hex; the hex is in the influence of one of your settlements.</p>\n<hr />\n<p>You plant crops and establish livestock in permanent farms, ranches, and other growing operations to create Farmland. If you're attempting to Establish Farmland in a hex that is predominantly plains, you must spend 1 RP and the check is against your Control DC. If you're targeting a hex that is predominantly hills, you must spend 2 RP and the check is against your Control DC + 5.</p>\n<hr />\n<p><strong>Critical Success</strong> You establish two adjacent Farmland hexes instead of one. If your target hex was a hills hex, the additional hex may be a hills hex or a plains hex; otherwise, the additional hex must be a plains hex. If no appropriate hex is available, treat this result as a regular success instead.</p>\n<p><strong>Success</strong> You establish one Farmland hex.</p>\n<p><strong>Failure</strong> You fail to establish a Farmland hex.</p>\n<p><strong>Critical Failure</strong> You fail to establish a Farmland hex, and your attempt potentially causes the spread of a blight. At the start of each of the next two Event phases, attempt a @Check[type:flat|dc:6]; on a failure, your kingdom experiences a Crop Failure event in this and all adjacent hexes</p>",
+            "name": "Establish Farmland"
+        },
+        "Deploy Army": {
+            "description": "<p>The army moves through your kingdom or beyond. Since this travel occurs over the course of the entire month that preceded the Kingdom turn, the ground an army covers when it deploys can be quite extensive. You can Deploy an Army with an Exploration, Boating, or Magic check.</p>\n<p>When you use an Exploration check, choose a location within 20 hexes of the army's current hex. If the army's starting point and ending point are connected by a road, increase the result one degree of success. Count roadless hexes that contain swamps or mountains, or each hex where you must cross a river or lake without the aid of a bridge, as two hexes. You can issue orders to force march. Doing so grants a +4 circumstance bonus on the check, but causes the army to increase its weary condition by 1 (or by 2, if you fail the check).</p>\n<p>When you use a Boating check, the army's starting point and ending point must be connected by a body of water; choose any location within 20 hexes along this route.</p>\n<p>You must be at least master in Magic to attempt a Magic check. When you do so, choose any location within 30 hexes of the army's current hex, then roll your check.</p>\n<p>If the army's deployment causes it to cross your kingdom's border, the DC increases by 5. If the army's deployment causes it to cross an enemy kingdom's border, the DC instead increases by 10.</p>\n<hr />\n<p><strong>Critical Success</strong> The army arrives much more quickly than you anticipated; it arrives at its destination and then becomes efficient.</p>\n<p><strong>Success</strong> The army arrives at its destination.</p>\n<p><strong>Failure</strong> The army arrives at its destination, but ran into some sort of trouble along the way. Increase the army's weary condition by 1 and attempt a @Check[type:flat|dc:6]; on a failure, reduce the army's HP by 1.</p>\n<p><strong>Critical Failure</strong> Rather than arriving at its destination, the army becomes lost until it recovers from this condition. Increase Unrest by 1d4, and attempt a DC 11 flat check; on a failure, reduce the army's HP by 1.</p>",
+            "name": "Deploy Army"
+        },
+        "All-Out Assault": {
+            "description": "<p>Requirement Merciless Your army attacks with frightening vigor. Attempt a melee Strike against an enemy army’s AC. Critical Success Your army inflicts 3 points of damage to the target army. If your army’s next war action this turn is an attack war action against a different target army, you gain a +1 circumstance bonus to the Strike as your fury continues to the new target. Success Your army deals 2 points of damage to the target army. Failure Your army falters, but still deals 1 point of damage to the target army. Critical Failure Your army deals no damage to the target army and becomes outflanked until the start of its next turn.</p>",
+            "name": "All-Out Assault"
+        },
+        "Explosive Shot": {
+            "description": "<p>The army's ranged attacks explode and spray fire, shrapnel, or other damaging material in every direction. Whenever the army critically hits a non-distant army with a ranged Strike, inflict 1 point of additional damage to another non-distant enemy army of your choice. You can use the Overwhelming Bombardment tactical war action with the army</p>",
+            "name": "Explosive Shot"
+        }
+    }
+}
