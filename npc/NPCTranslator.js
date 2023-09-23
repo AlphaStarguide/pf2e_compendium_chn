@@ -638,11 +638,11 @@ class Dictionary {
                 : "";
 
             // Get material
-            const materialOrder = item.system.preciousMaterial.value
-                ? this.translations.MagicWeapons.Materials[item.system.preciousMaterial.value].order
+            const materialOrder = item.system.material.type
+                ? this.translations.MagicWeapons.Materials[item.system.material.type].order
                 : "";
-            const material = item.system.preciousMaterial.value
-                ? this.translations.MagicWeapons.Materials[item.system.preciousMaterial.value][baseItemGender]
+            const material = item.system.material.type
+                ? this.translations.MagicWeapons.Materials[item.system.material.type][baseItemGender]
                 : "";
 
             // Get property runes
