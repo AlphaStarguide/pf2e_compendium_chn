@@ -619,8 +619,8 @@ class Dictionary {
             translatedItem.system.description.value = translation.description
                 ? translation.description
                 : translatedItem.system.description.value;
-            translatedItem.system.source.value = this.translateSimpleList(
-                item.system.source.value,
+            translatedItem.system.publication.title = this.translateSimpleList(
+                item.system.publication.title,
                 this.translations.Source
             );
 
