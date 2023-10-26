@@ -429,7 +429,7 @@
         },
         "Tap Treasury": {
             "name": "挪用国库 Tap Treasury",
-            "description": "<p>\n你可以动用王国的现金储备，用于为个人或某个事件提供紧急资金。这是一个基础检定，但如果得到成功或大成功的结果后，未来再次尝试此行动的结果将下降 2 个成功度级别。这种惩罚一直会持续到你通过投入资本（Capital Investment）行动偿还相当于从国库挪走的资金为止。</p>\n<hr />\n<p><strong>大成功</strong>  你提取资金，数额相当于《核心规则手册》509 页表格 10-9：队伍等级财富表中“每个额外 PC 货币”一栏中的数额，等级使用你的王国等级；或者你从国库中提取除了需要应对某个突发事件所需的金额。</p>\n<p><strong>成功</strong>同大成功，但是你也掏空了你的国库。在下个王国回合结束前，所有基于经济的检定有-1环境减值。</p>\n<p><strong>失败</strong> 你无法凑齐你需要的资金，关于王国可能财政赤字的谣言导致你在下个王国回合结束前，所有基于忠诚和经济的检定都有-1 环境减值。</p>\n<p><strong>大失败</strong> 同失败，但谣言四起，局势失控。增加 1点动荡，并且由你选择一种毁灭，增加 1 点。</p>"
+            "description": "<p>\n你可以动用王国的现金储备，用于为个人或某个事件提供紧急资金。这是一个基础@Check[statecraft|dc:resolve(@kingdom.control.dc)]检定，但如果得到成功或大成功的结果后，未来再次尝试此行动的结果将下降 2 个成功度级别。这种惩罚一直会持续到你通过投入资本（Capital Investment）行动偿还相当于从国库挪走的资金为止。</p>\n<hr />\n<p><strong>大成功</strong>  你提取资金，数额相当于《核心规则手册》509 页表格 10-9：队伍等级财富表中“每个额外 PC 货币”一栏中的数额，等级使用你的王国等级；或者你从国库中提取除了需要应对某个突发事件所需的金额。</p>\n<p><strong>成功</strong>同大成功，但是你也掏空了你的国库。在下个王国回合结束前，所有基于经济的检定有-1环境减值。</p>\n<p><strong>失败</strong> 你无法凑齐你需要的资金，关于王国可能财政赤字的谣言导致你在下个王国回合结束前，所有基于忠诚和经济的检定都有-1 环境减值。</p>\n<p><strong>大失败</strong> 同失败，但谣言四起，局势失控。增加 1点动荡，并且由你选择一种毁灭，增加 1 点。</p>"
         },
         "Favored Land": {
             "description": "<p>Your heartland's terrain becomes your kingdom's favored land—the wilderness terrain that your people feel the strongest emotional ties to and to which your resource gatherers tend to flock. Once per Kingdom turn, during the Region Activities step of the Activity phase, you can attempt two Region activities simultaneously as long as both activities take place in the same hex and that hex contains the same terrain as your heartland. You take a –2 penalty to Kingdom skill checks made during these two activities.</p>",
@@ -532,7 +532,7 @@
         },
         "Relocate Capital": {
             "name": "迁都 Relocate Capital",
-            "description": "<p><strong>需求</strong> 一个不是你当前首都的定居点，必须包含城堡、宫殿或市政厅。在王国回合 的行动阶段（Activity phase），所有的领导都必须花费全部的领导行动来执行它。</p>\n<hr />\n<p>王国领导宣布将他们的政府从当前位置连根拔起，然后在另一个定居点重建。尝试一次@Check[industry|dc:resolve(@kingdom.control.dc + 5)]检定，DC等于王国的控制 DC+5。你在接下来的 3 个王国回合之内不能再尝试迁都。</p>\n<hr />\n<p><strong>大成功</strong> 这一举措进行得非常顺利，人们对新首都感到兴奋，并庆祝领导们的智慧。</p>\n<p><strong>成功</strong> 搬迁进展顺利，没有造成很大干扰，但有些人感到心烦意乱或想家。增加 1 点动荡。</p>\n<p><strong>失败</strong>这一举动引起不快。增加 1 点动荡，并且你选择 2 种毁灭，各增加 1 点。</p>\n<p><strong>大失败</strong> 人民拒绝承认新首都，并要求你搬回去。迁都失败，你的首都保持不变。获得 1d4 点动荡，并且你选择 3 种毁灭，各加 1 点，第四种毁灭增加 3 点。</p>"
+            "description": "<p><strong>需求</strong> 一个不是你当前首都的定居点，必须包含城堡、宫殿或市政厅。在王国回合 的行动阶段（Activity phase），所有的领导都必须花费全部的领导行动来执行它。</p>\n<hr />\n<p>王国领导宣布将他们的政府从当前位置连根拔起，然后在另一个定居点重建。尝试一次@Check[industry|dc:resolve(@kingdom.control.dc + 5)]检定，DC等于王国的控制 DC+5。你在接下来的 3 个王国回合之内不能再尝试迁都。</p>\n<hr />\n<p><strong>大成功</strong> 这一举措进行得非常顺利，人们对新首都感到兴奋，并庆祝领导们的智慧。</p>\n<p><strong>成功</strong> 搬迁进展顺利，没有造成很大干扰，但有些人感到心烦意乱或想家。增加 1 点动荡。</p>\n<p><strong>失败</strong>这一举动引起不快。增加 1 点动荡，并且你选择 2 种毁灭，各增加 1 点。</p>\n<p><strong>大失败</strong> 人民拒绝承认新首都，并要求你搬回去。迁都失败，你的首都保持不变。获得[[/r 1d4 #Unrest]]{1d4 点动荡}，并且你选择 3 种毁灭，各加 1 点，第四种毁灭增加 3 点。</p>"
         },
         "Darkvision": {
             "description": "<p>军队包括一些拥有黑暗视觉的斥候和尖兵，并且其余士兵已经受训能跟随这些斥候的引导行动，因此军队被视为全体拥有黑暗视觉。</p>",
