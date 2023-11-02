@@ -11374,7 +11374,7 @@
         },
         "Desiccating Inhalation": {
             "name": "干燥之吸 Desiccating Inhalation",
-            "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p>你从附近的生物身上攫取水分以治愈伤口，你对@Template[type:cone|distance:30]区域内生物造成@Damage[6d8[void]]伤害，生物可进行一次@Check[type:reflex|dc:resolve(@actor.attributes.classDC.value)|basic:true]豁免对抗你的职业DC。大失败时，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。若至少有一个生物受到了伤害，你回复等同你等级的生命值。</p>\n<p>在第14级和之后每2级，伤害增加1d8。[[/r floor(@actor.level/2)d8[void]]]{按等级计算的伤害}</p>",
+            "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p>你从附近的生物身上攫取水分以治愈伤口，你对@Template[type:cone|distance:30]区域内生物造成@Damage[floor(@actor.level/2)d8[void]]伤害，生物可进行一次@Check[type:reflex|dc:resolve(@actor.attributes.classDC.value)|basic:true]豁免对抗你的职业DC。大失败时，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。若至少有一个生物受到了伤害，你回复[[/r @actor.level[healing]]]{等同你等级的生命值}。</p>\n<p>在第14级和之后每2级，伤害增加1d8。</p>",
             "prerequisites": [
                 {
                     "value": "木乃伊入门"
@@ -18845,7 +18845,7 @@
         },
         "Lavasoul": {
             "name": "熔岩之魂 Lavasoul",
-            "description": "<p>你的元素血统表现为岩浆和熔岩，你可以将岩浆集中到手上攻击你的敌人。你获得一个熔岩尖刺无武装攻击，你需要一个空闲的手来使用该武器。该武器属于搏击武器组，拥有灵巧、娴熟、无武装特性，并额外造成@Damage[1d4[piercing]]和@Damage[1[fire]]伤害。该武器将替换普通的重击专精效果而使用以下效果，目标遭受@Damage[1d6[persistent,fire]]害；你获得等同于你无武装攻击时的物品加值到该持续伤害加值当中。</p>"
+            "description": "<p>你的元素血统表现为岩浆和熔岩，你可以将岩浆集中到手上攻击你的敌人。你获得一个熔岩尖刺无武装攻击，你需要一个空闲的手来使用该武器。该武器属于搏击武器组，拥有灵巧、娴熟、无武装特性，并额外造成1d4穿刺和1火焰伤害。该武器将替换普通的重击专精效果而使用以下效果，目标遭受1d6持续火焰伤害；你获得等同于你无武装攻击时的物品加值到该持续伤害加值当中。</p>"
         },
         "Deft Cooperation": {
             "name": "熟练协动 Deft Cooperation",
@@ -31187,7 +31187,7 @@
         },
         "Retch Rust": {
             "name": "恶心锈物 Retch Rust",
-            "description": "<p>你喷出锈铁塑成的金属丝。@Template[type:cone|distance:30]的所有生物受到@Damage[(floor((@actor.level -8)/2)+4)d10[slashing]]伤害，@Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)|basic:true]豁免对抗你的职业DC。金特征的生物豁免失败后还会受到@Damage[(floor((@actor.level -8)/2)+2)d4[persistent,slashing]]持续伤害。</p>\n<hr />\n<p><strong>等级 (+2)</strong> 金属丝的挥砍伤害增加1d10，持续伤害增加1d4。</p>"
+            "description": "<p>你喷出锈铁塑成的金属丝。@Template[type:cone|distance:30]的所有生物受到@Damage[(floor((@actor.level -8)/2)+4)d10[slashing]]伤害，@Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)|basic:true]豁免对抗你的职业DC。金特征的生物豁免失败后还会受到@Damage[(floor((@actor.level -8)/2)+2)d4[persistent,slashing]]伤害。</p>\n<hr />\n<p><strong>等级 (+2)</strong> 金属丝的挥砍伤害增加1d10，持续伤害增加1d4。</p>"
         },
         "Ravel Of Thorns": {
             "name": "缠结荆棘 Ravel Of Thorns",
