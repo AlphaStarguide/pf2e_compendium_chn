@@ -125,7 +125,7 @@
         "Cloak of Light": {
             "name": "圣光披风 Cloak of Light",
             "duration": "维持,至多5轮",
-            "description": "<p>你将自己笼盖于神圣光芒之中，治愈生者，驱逐不死。你在半径30尺范围内散发明亮光照，在接下来的30尺范围内散发昏暗光照。</p>\n<p>与你邻接的活体生物在开始其回合时将回复 2d4 生命值。与你邻接的不死生物在开始其回合时将受到@Damage[4d4[vitality]]伤害。</p>\n<hr />\n<p><strong>升阶 (+2)</strong> 该治疗量增加1d4，对不死生物的伤害增加@Damage[2d4[vitality]]。</p>"
+            "description": "<p>你将自己笼盖于神圣光芒之中，治愈生者，驱逐不死。你在半径30尺范围内散发明亮光照，在接下来的30尺范围内散发昏暗光照。</p>\n<p>与你邻接的活体生物在开始其回合时将回复 2d4 生命值。与你邻接的不死生物在开始其回合时将受到@Damage[(floor(@item.level/2)*2)d4[vitality]]伤害。</p>\n<hr />\n<p><strong>升阶 (+2)</strong> 该治疗量增加1d4，对不死生物的伤害增加2d4。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.eRRiss7y7TsneiEu]{法术效果：圣光披风}</p>"
         },
         "Construct Mindscape": {
             "name": "构建思维空间 Construct Mindscape",
@@ -2175,7 +2175,7 @@
         },
         "Lay on Hands": {
             "name": "圣疗 Lay on Hands",
-            "description": "<p>你是手上蓄满正能量，通过接触治疗活物或不死生物。</p>\n<p>若用圣疗治疗自愿活物，恢复其6点HP；若目标是你的盟友，他的AC获得+2状态加值，持续1轮。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.lyLMiauxIVUM3oF1]{法术效果：圣疗}</p>\n<p>若伤害不死生物，你造成1d6点伤害，且其必须进行基础强韧豁免检定；失败会使其AC获得-2状态减值，持续1轮。</p>\n<p><em>@UUID[Compendium.pf2e.spells-srd.Item.IxyD7YdRbSSucxZp]{圣疗 Lay on Hands (Vs. 不死生物)}</em></p>\n<hr />\n<p><strong>升阶 (+1)</strong> 治疗量增加6，对不死生物伤害量增加1d6。</p>",
+            "description": "<p>你是手上蓄满正能量，通过接触治疗活物或不死生物。</p>\n<p>若用圣疗治疗自愿活物，恢复其6点HP；若目标是你的盟友，他的AC获得+2状态加值，持续1轮。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.lyLMiauxIVUM3oF1]{法术效果：圣疗}</p>\n<p>若伤害不死生物，你造成1d6点伤害，且其必须进行基础强韧豁免检定；失败会使其AC获得-2状态减值，持续1轮。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.JhihziXQuoteftdd]{法术效果：圣疗 Lay on Hands (Vs. 不死生物)}</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 治疗量增加6，对不死生物伤害量增加1d6。</p>",
             "target": "一个自愿活物或一个不死生物",
             "range": "接触"
         },
@@ -5759,7 +5759,7 @@
         },
         "Positive Luminance": {
             "name": "神圣光辉 Positive Luminance",
-            "description": "<p>你从自身引出生命力量，化为辐射正能量的信标。你在10尺弥漫范围中发出明亮光照，并且你获得称为光辉池的能量池，它的初始值为4。在你的每个回合开始，你可以使用一个自由动作增加光辉池4点。如果你如此做，你的光照半径增加10尺。</p>\n<p>当一个处于光照区域中的不死生物通过攻击或者法术伤害你时，该生物承受等于你的光辉池数值一半的正能量伤害。在一轮中，它仅在第一次伤害你时承受该伤害。</p>\n<p>你可以解消该法术。当你如此做时，你可以指定光照区域中的一个生物为目标，将正能量导向它。该目标必须是自愿活物或者不死生物。这会治疗活物目标，或者伤害不死生物目标，数值等于你的光辉池的数值。</p>\n<p>当你施放 <em>神圣光辉 Positive Luminance</em>，任何正在生效的你的其他 <em>神圣光辉 Positive Luminance</em> 结束。</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 你的光辉池的初始值和每回合增加的值增加1。</p>",
+            "description": "<p>你从自身引出生命力量，化为辐射正能量的信标。你在10尺弥漫范围中发出明亮光照，并且你获得称为光辉池的能量池，它的初始值为4。在你的每个回合开始，你可以使用一个自由动作增加光辉池4点。如果你如此做，你的光照半径增加10尺。</p>\n<p>当一个处于光照区域中的不死生物通过攻击或者法术伤害你时，该生物承受等于你的光辉池数值一半的正能量伤害。在一轮中，它仅在第一次伤害你时承受该伤害。</p>\n<p>你可以解消该法术。当你如此做时，你可以指定光照区域中的一个生物为目标，将正能量导向它。该目标必须是自愿活物或者不死生物。这会治疗活物目标，或者伤害不死生物目标，数值等于你的光辉池的数值。</p>\n<p>当你施放 <em>神圣光辉 Positive Luminance</em>，任何正在生效的你的其他 <em>神圣光辉 Positive Luminance</em> 结束。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.6ArAZeZyYSNLI0X5]{法术效果：神圣光辉}</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 你的光辉池的初始值和每回合增加的值增加1。</p>",
             "duration": "1分钟"
         },
         "Divine Vessel": {
@@ -8462,7 +8462,7 @@
             "range": "60尺"
         },
         "Shock to the System": {
-            "description": "<p>一团厚重的闪电云团降临并填满目标所处的空间，之后向着目标发射1道能够让人恢复生机的闪电。若目标是1具尸体，且在上轮内刚刚死亡，该生物就能够以0点生命值复活，具有其死亡时的任何效果以及状态，濒死除外，然后其受伤状态增加1点。该生物的先攻移至仅在你之前的位置。</p>\n<p>无论该生物是被复活还是本来就活着，它都会恢复8d8点生命值，如果它@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}了，闪电还能唤醒它。在法术的持续时间内，目标会格外具有活力。它会获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened}，而且可以使用这个额外动作站立、行走、打击、或飞行（如果它具有飞行速度的话）。此外，它还能将5环的<em>雷击术（Thunderstrike）</em>作为内在法术来随意施放，使用你的法术DC。</p>\n<p>覆盖生物的云团会存续至目标的下个回合结束为止。位于云团内的任何生物都会获得@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}，且对于云团内的任何生物来说，云团之外的存在也都会获得藏匿。</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 治疗量增加2d8点，雷击术的环级增加1级。</p>",
+            "description": "<p>一团厚重的闪电云团降临并填满目标所处的空间，之后向着目标发射1道能够让人恢复生机的闪电。若目标是1具尸体，且在上轮内刚刚死亡，该生物就能够以0点生命值复活，具有其死亡时的任何效果以及状态，濒死除外，然后其受伤状态增加1点。该生物的先攻移至仅在你之前的位置。</p>\n<p>无论该生物是被复活还是本来就活着，它都会恢复8d8点生命值，如果它@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}了，闪电还能唤醒它。在法术的持续时间内，目标会格外具有活力。它会获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened}，而且可以使用这个额外动作站立、行走、打击、或飞行（如果它具有飞行速度的话）。此外，它还能将5环的@UUID[Compendium.pf2e.spells-srd.Item.zDJS8E66UI0himqV]{雷击术 Thunderstrike}作为内在法术来随意施放，使用你的法术DC。</p>\n<p>覆盖生物的云团会存续至目标的下个回合结束为止。位于云团内的任何生物都会获得@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}，且对于云团内的任何生物来说，云团之外的存在也都会获得藏匿。</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 治疗量增加2d8点，雷击术的环级增加1级。</p>",
             "name": "雷震虎躯 Shock to the System",
             "target": "一个活物或者一具在上轮内死亡的尸体",
             "range": "30尺",
@@ -8644,7 +8644,7 @@
             "duration": "维持,至多1分钟"
         },
         "Vitrifying Blast": {
-            "description": "<p>你向着锥形区域发射玻璃破片，并使得扎入生物体内的破片将其局部身体也转化为玻璃。碎片对区域内的生物造成@Damage[8d6[piercing]]伤害，其效果基于每个生物的豁免检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标承受一半伤害，并且获得对音波和钝击伤害的3点弱点，持续1分钟。</p>\n<p><strong>失败</strong> 目标承受全额伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并且获得对音波和钝击伤害的弱点。弱点的数值等同于3 x 从该法术中获得的缓慢值。目标必须在自身回合结束时尝试一次强韧豁免；这种持续性豁免具有失能特征。豁免失败时，生物的缓慢值增加1点（大失败增加2点），最高达到@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 3}。豁免成功能让生物的缓慢值降低1点（大成功降低2点）。若目标在结束自身回合时缓慢值为0点，该效果就会结束。</p>\n<p><strong>大失败</strong> 同失败，但是目标起始为@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}。</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 伤害增加[[/r 1d6]]。</p>",
+            "description": "<p>你向着锥形区域发射玻璃破片，并使得扎入生物体内的破片将其局部身体也转化为玻璃。碎片对区域内的生物造成8d6穿刺伤害，其效果基于每个生物的豁免检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标承受一半伤害，并且获得对音波和钝击伤害的3点弱点，持续1分钟。</p>\n<p><strong>失败</strong> 目标承受全额伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并且获得对音波和钝击伤害的弱点。弱点的数值等同于3 x 从该法术中获得的缓慢值。目标必须在自身回合结束时尝试一次强韧豁免；这种持续性豁免具有失能特征。豁免失败时，生物的缓慢值增加1点（大失败增加2点），最高达到@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 3}。豁免成功能让生物的缓慢值降低1点（大成功降低2点）。若目标在结束自身回合时缓慢值为0点，该效果就会结束。</p>\n<p><strong>大失败</strong> 同失败，但是目标起始为@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}。</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 伤害增加1d6。</p>",
             "name": "玻化冲击 Vitrifying Blast",
             "range": "60尺",
             "duration": "可变"
@@ -8735,7 +8735,7 @@
         },
         "Rainbow Fumarole": {
             "name": "虹焰迸发 Rainbow Fumarole",
-            "description": "<p><strong>区域</strong> 20尺半径、60尺高的圆柱体</p>\n<hr />\n<p>五颜六色的火焰从地面的裂缝中喷出，直冲云霄，与此同时还放出危险的烟气。当你施放该法术时，投掷1d8并按照表格判断虹焰迸发的效果。</p>\n<p>当你施法时，被捕捉到<em>虹焰迸发</em>区域内的任何生物都会承受伤害一栏所指示的伤害，并进行基础反射豁免，如果豁免失败，则会承受添加效果一栏所列出的效果。生物在穿过法术区域或者在法术区域内结束自身回合时，都必须再尝试一次豁免检定。<em>虹焰迸发</em>区域内的方格均为困难地形。</p>\n<table class=\"pf2-table\">\n<thead>\n<tr>\n<th>1d8</th>\n<th>颜色</th>\n<th>伤害</th>\n<th>添加效果</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>红色</td>\n<td>@Damage[50[fire]]加@Damage[2d6[persistent,fire]]</td>\n<td>--</td>\n</tr>\n<tr>\n<td>2</td>\n<td>橙色</td>\n<td>@Damage[50[fire]]</td>\n<td>击倒</td>\n</tr>\n<tr>\n<td>3</td>\n<td>黄色</td>\n<td>@Damage[20[fire]]加@Damage[20[bludgeoning]]</td>\n<td>推离10尺</td>\n</tr>\n<tr>\n<td>4</td>\n<td>绿色</td>\n<td>@Damage[20[fire]]加@Damage[20[acid]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}</td>\n</tr>\n<tr>\n<td>5</td>\n<td>蓝色</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}1轮</td>\n</tr>\n<tr>\n<td>6</td>\n<td>靛蓝</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1分钟</td>\n</tr>\n<tr>\n<td>7</td>\n<td>紫色</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}1分钟</td>\n</tr>\n<tr>\n<td>8</td>\n<td>全部</td>\n<td>为每个受影响的生物选择颜色，使用选择颜色的伤害和添加效果；若有生物再次受影响，你能够选择不同的颜色。</td>\n</tr>\n</tbody>\n</table>",
+            "description": "<p><strong>区域</strong> 20尺半径、60尺高的圆柱体</p>\n<hr />\n<p>五颜六色的火焰从地面的裂缝中喷出，直冲云霄，与此同时还放出危险的烟气。当你施放该法术时，投掷1d8并按照表格判断虹焰迸发的效果。</p>\n<p>当你施法时，被捕捉到<em>虹焰迸发</em>区域内的任何生物都会承受伤害一栏所指示的伤害，并进行基础反射豁免，如果豁免失败，则会承受添加效果一栏所列出的效果。生物在穿过法术区域或者在法术区域内结束自身回合时，都必须再尝试一次豁免检定。<em>虹焰迸发</em>区域内的方格均为困难地形。</p>\n<table class=\"pf2-table\">\n<thead>\n<tr>\n<th>[[/r 1d8]]{d8}</th>\n<th>颜色</th>\n<th>伤害</th>\n<th>添加效果</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>红色</td>\n<td>@Damage[50[fire]]加@Damage[2d6[persistent,fire]]</td>\n<td>--</td>\n</tr>\n<tr>\n<td>2</td>\n<td>橙色</td>\n<td>@Damage[50[fire]]</td>\n<td>击倒</td>\n</tr>\n<tr>\n<td>3</td>\n<td>黄色</td>\n<td>@Damage[20[fire]]加@Damage[20[bludgeoning]]</td>\n<td>推离10尺</td>\n</tr>\n<tr>\n<td>4</td>\n<td>绿色</td>\n<td>@Damage[20[fire]]加@Damage[20[acid]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}</td>\n</tr>\n<tr>\n<td>5</td>\n<td>蓝色</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}1轮</td>\n</tr>\n<tr>\n<td>6</td>\n<td>靛蓝</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1分钟</td>\n</tr>\n<tr>\n<td>7</td>\n<td>紫色</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}1分钟</td>\n</tr>\n<tr>\n<td>8</td>\n<td>全部</td>\n<td>为每个受影响的生物选择颜色，使用选择颜色的伤害和添加效果；若有生物再次受影响，你能够选择不同的颜色。</td>\n</tr>\n</tbody>\n</table>",
             "range": "500尺",
             "duration": "1分钟"
         },
