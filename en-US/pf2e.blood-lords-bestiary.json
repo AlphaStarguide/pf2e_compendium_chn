@@ -1,5 +1,33 @@
 {
     "label": "blood-lords-bestiary",
+    "mapping": {
+        "name": "name",
+        "portrait": {
+            "path": "img",
+            "converter": "npc-portrait-path"
+        },
+        "token": {
+            "path": "prototypeToken",
+            "converter": "npc-token-translation"
+        },
+        "data": {
+            "path": "system",
+            "converter": "npc-data-translation"
+        },
+        "items": {
+            "path": "items",
+            "converter": "npc-item-translation"
+        },
+        "publicNotes": "system.details.publicNotes",
+        "allSaves": "system.attributes.allSaves.value",
+        "senses": "system.traits.senses.value",
+        "hp": "system.attributes.hp.details",
+        "blurb": "system.details.blurb",
+        "speed": "system.attributes.speed.details",
+        "languages": "system.traits.languages.custom",
+        "ac": "system.attributes.ac.details",
+        "di": "system.traits.di.custom"
+    },
     "entries": {
         "Mental Assault": {
             "data": {
@@ -25,14 +53,6 @@
             "publicNotes": "<p>Ghoul assassins who survive dipping their claws in molten adamantine transform into razorclaws.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Deny Advantage": {
                     "name": "Deny Advantage",
                     "description": "<p>The razorclaw isn't @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to creatures of 13th level or lower that are @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden}, @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected}, flanking, or using @UUID[Compendium.pf2e.classfeatures.Item.w6rMqmGzhUahdnA7]{Surprise Attack}.</p>"
@@ -75,20 +95,12 @@
             "publicNotes": "<p>Born from the deaths of arsonists who died in the fires they started, pyrogeists are roiling infernos whose spectral fire emits no actual heat and harms only living creatures. Obsessed with sharing their torment with the living, pyrogeists haunt the area of their demise until whatever wrong they refuse to forgive has been righted, and they are finally put to rest. While pyrogeists can't set their own fires, they often use their terrifying illusory capabilities and telekinetic powers to lure their victims into setting themselves ablaze.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "At-Will Spells": {
                     "name": "At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
                 },
                 "+1 Status to All Saves vs. Positive": {
                     "name": "+1 Status to All Saves vs. Positive"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Rejuvenation": {
                     "name": "Rejuvenation",
@@ -133,21 +145,9 @@
             "hp": "negative healing",
             "ac": "31 with shield raised",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Destructive Vengeance": {
                     "name": "Destructive Vengeance",
                     "description": "<p><strong>Trigger</strong> The ghoul antipaladin takes damage from an enemy within 15 feet</p>\n<hr />\n<p><strong>Effect</strong> The ghoul antipaladin increases the amount of damage they take by [[/r 3d6]], and they deal 3d6 damage to the triggering enemy, choosing @Damage[3d6[evil]] or @Damage[3d6[void]] damage to deal to the enemy each time the antipaladin uses this reaction. In addition, the antipaladin deals 4 extra damage of the chosen type with their Strikes against the triggering creature until the end of the antipaladin's turn. An enemy damaged from the ghoul antipaladin's Destructive Vengeance also takes @Damage[4[persistent,evil]] damage; this applies only to the damage the reaction itself deals to the triggering creature, not the damage the antipaladin deals with subsequent Strikes.</p>"
-                },
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
                 },
                 "Consume Flesh": {
                     "name": "Consume Flesh",
@@ -175,17 +175,9 @@
             "publicNotes": "<p>Arboreals can be victims of undeath like any other living creature, but without bones or flesh, their undead take a different form. When an arboreal shivers to life as undead, it often animates as a snag-a leafless, skeletal dead tree that haunts its forest, attacking any living creature it can catch. An arboreal snag is mindless and difficult to control, but some necromancers use them as forest guardians.</p>\n<p>While many arboreals are comfortable remaining still for prolonged periods of time, arboreal snags tend to be restless, meandering in a region they consider their domain. This territory is sometimes evident from battered forest animals or trampled undergrowth that litters the ground, but forest creatures soon learn to avoid the area entirely. It doesn't take long for regions haunted by arboreal snags to grow desolate and unhealthy, and locals often dub such regions as haunted or cursed.</p>",
             "hp": "negative healing, blood roots",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Blood Roots": {
                     "name": "Blood Roots",
                     "description": "<p>The snag's roots go deep into corpses buried beneath and around it. It has regeneration 5 (deactivated by positive) as long as it remains in an area where corpses are buried.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -194,18 +186,6 @@
                 "Axe Vulnerability": {
                     "name": "Axe Vulnerability",
                     "description": "<p>An arboreal snag takes [[/r 5]]{5 additional Damage} from axes.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
-                },
-                "Knockdown": {
-                    "name": "Knockdown",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Knockdown]</p>"
                 }
             }
         },
@@ -217,17 +197,9 @@
             "publicNotes": "<p>Disgusting and dangerous, rotbombers bound around on all four limbs, ripping off the pressurized and explosive necrotic pustules that grow out of their backs to lob them toward their enemies. When they explode, the pustules emit concussive blasts of force and deadly pestilence that can infect a victim. Though slow and overburdened by the intense weight of the pustules, rotbombers can move with a surprising speed when they need to hunt down their quarry.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Slow": {
                     "name": "Slow",
                     "description": "<p>A rotbomber is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Pressurized Pustules": {
                     "name": "Pressurized Pustules",
@@ -254,10 +226,6 @@
             "name": "Rival Corpsekiller",
             "hp": "negative healing",
             "items": {
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -268,7 +236,7 @@
                 },
                 "Corpsekiller": {
                     "name": "Corpsekiller",
-                    "description": "<p>A corpsekiller's Strikes affect incorporeal creatures as though etched with a ghost touch property rune and deal an additional @Damage[2d8[slashing]] damage to undead creatures.</p>"
+                    "description": "<p>A corpsekiller's Strikes affect incorporeal creatures as though etched with a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal an additional @Damage[2d8[slashing]] damage to undead creatures.</p>"
                 }
             }
         },
@@ -281,14 +249,6 @@
             "blurb": "Female shoki psychopomp",
             "languages": "Tongues",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense 60 feet": {
-                    "name": "Lifesense 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
                 "Constant Spells": {
                     "name": "Constant Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
@@ -311,7 +271,7 @@
                 },
                 "Spirit Touch": {
                     "name": "Spirit Touch",
-                    "description": "<p>Matron Uldrula's Strikes affect incorporeal creatures with the effects of a ghost touch property rune and deal @Damage[4d6[void]] damage to living creatures and @Damage[4d6[vitality]] damage to undead.</p>"
+                    "description": "<p>Matron Uldrula's Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal @Damage[4d6[void]] damage to living creatures and @Damage[4d6[vitality]] damage to undead.</p>"
                 }
             }
         },
@@ -323,18 +283,6 @@
             "publicNotes": "<p>When skirmishes break out between tunneling ghouls and creatures that dwell beneath the surface of Golarion, there's a chance that ghoul fever could infect such animals, producing strange new variants of ghoul beasts. However, letting the natural corruption run its course sometimes results in unsatisfying monsters, so some necromancers speed the process. This is the situation that led to the creation of the first straugh. A priest of Kabriri made the monstrosity to defend a claimed cemetery from another sect of ghouls who were preying upon the interred bodies. In some places, ghouls use straughs to tunnel into rival warrens or highly fortified mausoleums.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Scent (Imprecise) 30 feet": {
-                    "name": "Scent (Imprecise) 30 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Consume Flesh": {
                     "name": "Consume Flesh",
                     "description": "<p><strong>Requirements</strong> The ghoul is adjacent to the corpse of a creature that died within the last hour.</p>\n<hr />\n<p><strong>Effect</strong> The ghoul devours a chunk of the corpse and regains [[/r 7d6[healing]]] Hit Points.</p>\n<p>It can regain Hit Points from any given corpse only once.</p>"
@@ -358,10 +306,6 @@
                 "Tunneling Strike": {
                     "name": "Tunneling Strike",
                     "description": "<p><strong>Requirements</strong> The straugh has Burrowed underground and remains undetected by the creature it plans to attack</p>\n<hr />\n<p><strong>Effect</strong> The straugh Burrows twice to emerge from the ground adjacent to at least one enemy and immediately makes a Strike against that foe.</p>"
-                },
-                "Improved Grab": {
-                    "name": "Improved Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ImprovedGrab]</p>"
                 }
             }
         },
@@ -372,10 +316,6 @@
             "name": "Rival Necromancer",
             "hp": "negative healing",
             "items": {
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Bolster Dead": {
                     "name": "Bolster Dead",
                     "description": "<p><strong>Frequency</strong> once per turn</p>\n<p><strong>Requirements</strong> Your most recent action was to cast a non-cantrip necromancy spell</p>\n<hr />\n<p><strong>Effect</strong> You harness the residual energy from the spell you last cast into the body of an undead creature within 30 feet. That creature's resistances increase by an amount equal to the level of the spell cast until the beginning of the next turn.</p>"
@@ -396,10 +336,6 @@
             "items": {
                 "equipment-Soul Focus Gem": {
                     "name": "Soul Focus Gem"
-                },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
                 },
                 "Personality Fragments": {
                     "name": "Personality Fragments",
@@ -437,10 +373,6 @@
             "name": "Terrorguard",
             "publicNotes": "<p>Spellcasters who harness the power of the Dimension of Dreams may use it to fuel vicious servitors known as terrorguards-hulking terrors adorned with frames made of an Abysium alloy. Terrorguards come in many forms; creators often design the constructs' frames to mimic grotesque aberrations by mixing-and-matching parts.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Breath of Phantasms": {
                     "name": "Breath of Phantasms",
                     "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The terrorguard's ram-skull head opens at the jaw, allowing a horde of swirling phantasms to escape from its maw in a @Template[type:cone|distance:30]. Each creature in the area is subjected to a 5th-level <em>@UUID[Compendium.pf2e.spells-srd.Item.tlcrVRqW1MSKJ5IC]{Phantasmal Killer}</em> spell (@Check[type:will|dc:31], @Check[type:fortitude|dc:31|traits:incapacitation]).</p>"
@@ -467,17 +399,9 @@
             "hp": "negative healing",
             "blurb": "Variant ettin mohrg",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Independent Brains": {
                     "name": "Independent Brains",
                     "description": "<p>Each of Sulvik's heads rolls its own initiative and has its own turn. Neither head can @UUID[Compendium.pf2e.actionspf2e.Item.A72nHGUtNXgY5Ey9]{Delay}. At the start of a head's turn, that head gets 2 actions and 1 reaction. Each brain controls its own tongue and one of Sulvik's arms, but both can move the legs. Any ability that would sever Sulvik's head (such as the <em>@UUID[Compendium.pf2e.equipment-srd.Item.6xaxxKfvXED6LfIY]{Vorpal}</em> weapon property) doesn't cause him to die if he has his other head, but does cause him to lose the turns, actions, and reactions of the severed head. Mental effects that target a single creature affect only one of Sulvik's heads.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -490,10 +414,6 @@
                 "Paralysis": {
                     "name": "Paralysis",
                     "description": "<p>A living creature hit by Sulvik's tongue Strike must succeed at a @Check[type:fortitude|dc:28] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. The creature can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each attempt.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -536,17 +456,9 @@
             "blurb": "Elite mummy guardian",
             "languages": "Any One Ancient Language",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Subtle Presence": {
                     "name": "Subtle Presence",
                     "description": "<p>The mummy valet activates or deactivates its despair aura.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Despair": {
                     "name": "Despair",
@@ -566,10 +478,6 @@
             "hp": "coffin restoration, fast healing 15, negative healing",
             "blurb": "Male half-elf vampire witch",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Children of the Deep": {
                     "name": "Children of the Deep",
                     "description": "<p>Hyrune's presence brings forth creatures of the deep to do his bidding. These typically include bat swarms, giant spiders, and giant centipedes, but can include other Darklands creatures. Hyrune can give telepathic orders to these creatures as long as they are within 100 feet, but they can't communicate back.</p>"
@@ -581,10 +489,6 @@
                 "Fast Healing 15": {
                     "name": "Fast Healing 15",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Coffin Restoration": {
                     "name": "Coffin Restoration",
@@ -633,10 +537,6 @@
                 "Witch Patron": {
                     "name": "Witch Patron",
                     "description": "<p>night (Orgesh)</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -648,10 +548,6 @@
             "publicNotes": "<p>Intellect assemblages are artificial constructs created from the memories of others. These memories are solidified into jagged shards similar in appearance to shattered glass and fused together in vaguely humanoid-shaped clusters to create the assemblage's body. The resulting construct is incredibly intelligent but completely devoid of emotion, possessing the thoughts and memories of a multitude but no personal connection to any of them. Analytical and meticulous, intellect assemblages view the world and everything in it as parts of a complex equation or system. They place no value on life or morality and consider emotions an illogical weakness.</p>",
             "languages": "Telepathy 100 feet; Tongues",
             "items": {
-                "Telepathy 100 feet": {
-                    "name": "Telepathy 100 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Telepathy]</p>"
-                },
                 "Bardic Lore": {
                     "name": "Bardic Lore",
                     "description": "<p>Intellect assemblages are created from the thoughts and memories of hundreds of individuals, providing them a near limitless collection of data to pull from. Intellect assemblages have access to Bardic Lore, a special Lore skill allowing them to Recall Knowledge on any topic.</p>"
@@ -691,17 +587,9 @@
             "hp": "negative healing",
             "languages": "Telepathy 30 feet",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Aquatic Echolocation (Precise) 120 feet": {
                     "name": "Aquatic Echolocation (Precise) 120 feet",
                     "description": "<p>A drowned mummy can use its hearing as a precise sense at the listed range but only underwater.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -725,7 +613,7 @@
                 },
                 "Whirlpool": {
                     "name": "Whirlpool",
-                    "description": "<p><strong>Requirements</strong> The drowned mummy is underwater</p>\n<hr />\n<p><strong>Effect</strong> The drowned mummy commands the water to churn, creating a powerful whirlpool centered on itself. Each creature within a @Template[type:emanation|distance:30] centered on the drowned mummy takes @Damage[14d8[bludgeoning]] damage (@Check[type:reflex|dc:38|basic:true]) as the powerful current batters them around. A creature that fails this save is pushed 20 feet away from the mummy and also falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} on a critical failure. The drowned mummy can't use Whirlpool again for [[/r 1d4 #Recharge Whirlpool]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Requirements</strong> The drowned mummy is underwater</p>\n<hr />\n<p><strong>Effect</strong> The drowned mummy commands the water to churn, creating a powerful whirlpool centered on itself. Each creature within a @Template[type:emanation|distance:30] centered on the drowned mummy takes @Damage[14d8[bludgeoning]] damage (@Check[type:reflex|dc:38|basic:true]) as the powerful current batters them around. A creature that fails this save is pushed 20 feet away from the mummy and also falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} on a critical failure. The drowned mummy can't use Whirlpool again for [[/br 1d4 #Recharge Whirlpool]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -737,21 +625,9 @@
             "publicNotes": "<p>When a horrific tragedy results in mass death, the restless spirits of the numerous dead might arise as a ghostly mob. Like other ghosts, ghostly mobs are often unaware they're dead. The spirits trapped within the mob may try to carry out a semblance of their former lives, even though their memories are fragmentary and their forms are insubstantial. When forced to confront their true state, the spirits lash out in pain and violence.</p>",
             "hp": "16 squares, negative healing, rejuvenation",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Form Up": {
-                    "name": "Form Up",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FormUp]</p>"
-                },
                 "Site Bound": {
                     "name": "Site Bound",
                     "description": "<p>A ghostly mob can stray only a moderate distance from where its members were killed or the place it haunts. A typical limit is 240 feet.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Rejuvenation": {
                     "name": "Rejuvenation",
@@ -783,14 +659,6 @@
             "publicNotes": "<p>Hags are neither immortal nor unageing; if not slain by an enemy, a hag eventually succumbs to old age. A hag who dies in agony or rage can rise again as a witchfire, while those who die of old age might rise again as an undead creature known as a creeping crone. A creeping crone has lost far more than her life; they can't form or join covens, denying them one of a living hag's most distinguishing abilities. This inability, more than their rotting bodies or hunger for flesh, makes creeping crones exiled among their former kin.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Stick Support": {
                     "name": "Stick Support",
                     "description": "<p>If a creeping crone is deprived of her walking stick, her Speed is reduced to 5 feet (though she can use some other Speed she gains, such as from her <em>@UUID[Compendium.pf2e.spells-srd.Item.A2JfEKe6BZcTG1S8]{Fly}</em> spell) until she recovers her walking stick or fashions another.</p>"
@@ -858,10 +726,6 @@
                 "equipment-Keys to Area E13 and the Crooked Coffin Grates": {
                     "name": "Keys to Area E13 and the Crooked Coffin Grates"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Called": {
                     "name": "Called",
                     "description": "<p>In constantly resisting her desire to return to her mother, Kepgeda has developed a mental bulwark. If she rolls a success on a saving throw against a mental effect that would make her controlled, she gets a critical success instead.</p>"
@@ -925,10 +789,6 @@
                 "equipment-Soul Focus Gem": {
                     "name": "Soul Focus Gem"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Personality Fragments": {
                     "name": "Personality Fragments",
                     "description": "<p>A soulbound doll shares fragments of the donor's soul personality, though none of that creature's memories. The Prachalla doll is animated by the soul of a spy who worked for an organized crime ring in Kaer Maga; she was working undercover as a maid when she died.</p>"
@@ -962,10 +822,6 @@
             "name": "Floating Femur",
             "publicNotes": "<p>Floating femurs can deliver a powerful blow. They make handy weapons for those who manage to grab hold of them.</p>\n<hr />\n<p>Commonly mistaken for undead, animated bones are mindless constructs with no connection to necromancy. The following are examples of typical animated bones.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Gotcha!": {
                     "name": "Gotcha!",
                     "description": "<p>A floating femur freezes up if @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}. For 1 minute after the femur becomes grabbed or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by a creature, the femur can't act, and the creature holding it can use it as a <em>+1 club</em> with the fatal d10 trait. After that time, the floating femur can act and is generally quite aggressive toward whomever used it as a weapon.</p>"
@@ -980,10 +836,6 @@
             "allSaves": "+1 status to all saves vs. divination",
             "blurb": "Female shae shadow double",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Shadow Shift": {
                     "name": "Shadow Shift",
                     "description": "<p>Being made partially of shadow, shae are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} in dim light or darkness even to creatures that can see clearly in those light levels.</p>"
@@ -1029,10 +881,6 @@
             "hp": "coffin restoration, fast healing 10, negative healing",
             "blurb": "Female human vampire bard",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Children of the Night": {
                     "name": "Children of the Night",
                     "description": "<p>The vampire's presence brings forth creatures of the night to do the master's bidding. These typically include @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.sPClc6y3dT3XZupv]{Rat Swarms}, @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VAWmwDA08ZLQd8lW]{Bat Swarms}, and @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.Oilfs8Atv2LjAsUS]{Wolves}, but can include other creatures.</p>\n<p>The vampire can give telepathic orders to these creatures as long as they are within 100 feet, but they can't communicate back.</p>"
@@ -1048,10 +896,6 @@
                 "Fast Healing 10": {
                     "name": "Fast Healing 10",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Coffin Restoration": {
                     "name": "Coffin Restoration",
@@ -1084,10 +928,6 @@
                 "Turn to Mist": {
                     "name": "Turn to Mist",
                     "description": "<p>The vampire turns into a cloud of vapor, as the <em>@UUID[Compendium.pf2e.spells-srd.Item.V8wXOsoejQhe6CyG]{Vapor Form}</em> spell, or back to its normal form. The vampire loses fast healing while in gaseous form.</p>\n<p>The vampire can remain in this form indefinitely.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -1100,14 +940,6 @@
             "allSaves": "+1 status to all saves vs. magic",
             "languages": "Tongues",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense 60 feet": {
-                    "name": "Lifesense 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
                 "Constant Spells": {
                     "name": "Constant Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
@@ -1125,7 +957,7 @@
                 },
                 "Spirit Touch": {
                     "name": "Spirit Touch",
-                    "description": "<p>A shoki's Strikes affect incorporeal creatures with the effects of a ghost touch property rune and deal @Damage[2d6[void]] damage to living creatures and @Damage[2d6[vitality]] damage to undead.</p>"
+                    "description": "<p>A shoki's Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal @Damage[2d6[void]] damage to living creatures and @Damage[2d6[vitality]] damage to undead.</p>"
                 }
             }
         },
@@ -1136,14 +968,6 @@
             "name": "Eseneth",
             "publicNotes": "<p>Eseneths, commonly known as soul-stitchers, are dispassionate surgeons who repair damaged souls.</p>\n<hr />\n<p>Psychopomps preside over death and the cycle of souls.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense 120 feet": {
-                    "name": "Lifesense 120 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
                 "At-Will Spells": {
                     "name": "At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
@@ -1174,11 +998,7 @@
                 },
                 "Spirit Touch": {
                     "name": "Spirit Touch",
-                    "description": "<p>A eseneth's Strikes affect incorporeal creatures with the effects of a ghost touch property rune and deal @Damage[2d6[void]] damage to living creatures and @Damage[2d6[vitality]] damage to undead.</p>"
-                },
-                "Improved Grab": {
-                    "name": "Improved Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ImprovedGrab]</p>"
+                    "description": "<p>A eseneth's Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal @Damage[2d6[void]] damage to living creatures and @Damage[2d6[vitality]] damage to undead.</p>"
                 }
             }
         },
@@ -1191,10 +1011,6 @@
             "blurb": "Variant augnagar",
             "languages": "Telepathy 100 feet",
             "items": {
-                "Greater Darkvision": {
-                    "name": "Greater Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterDarkvision]</p>"
-                },
                 "Scent (Imprecise 30) feet": {
                     "name": "Scent (Imprecise 30) feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
@@ -1262,10 +1078,6 @@
             "publicNotes": "<p>Hideous necromantic rituals give rise to skavelings, or ghoul bats, monstrosities that are not true ghouls but instead are specifically crafted undead creatures. Their creators are the bloodsucking urdefhans of the Darklands, who create skavelings from giant bats specially raised on diets of toxic fungus and the flesh of ghouls-especially brains harvested from these undead. Upon reaching maturity, these giant bats are ritually slain via the use of cytillesh oil. While this poison simply rots away the flesh of most creatures, one of these specially prepared bats will immediately rise from death as a skaveling after succumbing to its effects.</p>\n<p>Despite its tattered wings and sagging skin, a skaveling is more than capable of flight, even when carrying a creature mounted on its back-urdefhans often use skavelings as mounts in this way. Their intelligence is more advanced than that of the typical giant bat, and in combat they function more as allies than as mere mounts, capable of making their own tactical decisions. Yet even though they can reason and think, skavelings remain loyal to the urdefhans who created them, and they never take actions in a fight that would knowingly put their masters in harm's way.</p>",
             "blurb": "Variant skaveling",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Echolocation 60 feet": {
                     "name": "Echolocation 60 feet",
                     "description": "<p>The ancient skaveling can use its hearing as a precise sense at the listed range</p>"
@@ -1293,20 +1105,12 @@
             "allSaves": "+2 status to all saves vs. magic",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Implanted Stone": {
                     "name": "Implanted Stone",
                     "description": "<p>A nullifier's <em>aeon stone</em> can't be Disarmed or removed until the nullifier is destroyed.</p>"
                 },
                 "+2 Status to All Saves vs. Magic": {
                     "name": "+2 Status to All Saves vs. Magic"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Always Ready": {
                     "name": "Always Ready",
@@ -1376,10 +1180,6 @@
             "allSaves": "+2 status to all saves vs. magic",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Implanted Stone": {
                     "name": "Implanted Stone",
                     "description": "<p>A cascader's <em>aeon stone</em> can't be Disarmed or removed until the cascader is destroyed.</p>"
@@ -1387,13 +1187,9 @@
                 "+2 Status to All Saves vs. Magic": {
                     "name": "+2 Status to All Saves vs. Magic"
                 },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Energy Ward": {
                     "name": "Energy Ward",
-                    "description": "<p><strong>Trigger</strong> The facetbound cascader would take acid, cold, electricity, fire, or poison damage</p>\n<hr />\n<p><strong>Effect</strong> The cascader gains resistance 15 to the triggering damage, replacing any other resistance gained from this ability. Most facetbound cascaders begin combat with resistance 15 to cold.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.No817gKxdliCVQ9K]{Effect: Energy Ward}</p>"
+                    "description": "<p><strong>Trigger</strong> The facetbound cascader would take acid, cold, electricity, fire, or poison damage</p>\n<hr />\n<p><strong>Effect</strong> The cascader gains resistance 15 to the triggering damage, replacing any other resistance gained from this ability. Most facetbound cascaders begin combat with resistance 15 to cold.</p>"
                 },
                 "Energy Charge": {
                     "name": "Energy Charge",
@@ -1429,14 +1225,6 @@
             "blurb": "LE variant guardian beast",
             "languages": "Telepathy 60 feet",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Scent (Imprecise) 30 feet": {
-                    "name": "Scent (Imprecise) 30 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
                 "Anchored Soul": {
                     "name": "Anchored Soul",
                     "description": "<p>A granite vulture is mystically bonded to a vulture-shaped stone vessel. It must remain within 60 feet of it.</p>"
@@ -1474,10 +1262,6 @@
             "publicNotes": "<p>Aeolaekas, also known as stone azatas, embody the slow but inevitable chaos of rock itself. Stone is often thought to be steadfast and unchanging, but, when viewed on a grander scale over vast periods of time, stone can transform into things as diverse as intricate crystals and fine powder. To the aeolaeka, anything that could become either sand or diamond is the very incarnation of the chaos of reality-just on a slower scale. As a result of their stone affinity, aeolaekas are less capricious than other azatas, and some have willingly forged lasting accords or agreements with mortals. Stone-skinned aeolaekas are sometimes mistaken for statues and use this fact to hide in plain sight when they don't want their presence known.</p>",
             "languages": "Tongues",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Tremorsense (Precise) 60 feet": {
                     "name": "Tremorsense (Precise) 60 feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
@@ -1514,10 +1298,6 @@
             },
             "name": "Ghiono",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Shadow Shift": {
                     "name": "Shadow Shift",
                     "description": "<p>Being made partially of shadow themselves, shae are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} in dim light or darkness even to creatures that can see clearly in those light levels.</p>"
@@ -1573,17 +1353,9 @@
             "publicNotes": "<p>Additional limbs, failing tentacles, and rubbery bodies are common among Mana Wastes mutants, and aspiring necrohulk creators like to combine flesh from more than one of these kinds of mutants to create gangly but powerful warriors.</p>\n<hr />\n<p>The strange, terrible energies swirling about on the winds and embedded in the earth of the Mana Wastes have led to unexpected changes and mutations in the bodies of those who dwell there. These mutants usually have little chance to escape their hardscrabble existence, as they're ostracized by other societies. People in the kingdom of Nex to the north look on such folk with suspicion, as do the dwarves of Alkenstar to the west. Surprisingly, the undead nation of Geb to the south is often the best hope for a future among people with unusual appearances.</p>\n<p>Those who flee to Geb or are convinced to make it their home frequently find their welcome to be a false promise, however. Necromancers who long ago tired of animating the same humanoids find new potential in mutated flesh, and mutants who aren't careful might find themselves led into laboratories or crypts for experimentation.</p>\n<p>Enterprising twilight sages of Yled's Mortuarium have innovated bizarre combinations of alchemy and necromancy that boost their victims' mutations to persist even after reanimation. Although these necrohulks are virtually mindless and require a constant influx of chemicals to retain their might, they're more than powerful enough to make the extremely difficult process worth the effort. The cartridge containing the alchemical formulation that sustains them is perhaps the trickiest part of necrohulk animation, and it's easiest to simply stitch the cartridge right into the necrohulk's flesh.</p>\n<p>Yled's armies contain a growing number of necrohulks. This isn't solely because these juggernauts are frightening effective combatants on the field of battle; leveraging the instinctive revulsion that mutants create carries some strategic advantage. Although the occasional necrohulks do run amok in Yled, addled on the chemical cocktails that sustain them, military necromancers generally keep them under control.</p>",
             "hp": "negative healing, regeneration 15 (deactivated by acid)",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Alchemical Cartridge": {
                     "name": "Alchemical Cartridge",
                     "description": "<p>Critical hits rupture the necrohulk's alchemical cartridge. The first time the necrohulk takes a critical hit, it loses its regeneration. The second time it takes a critical hit, it takes @Damage[15[persistent,acid]]{15} damage that it can't heal unless the cartridge is stitched back into place.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Regeneration 15 (Deactivated by Acid)": {
                     "name": "Regeneration 15 (Deactivated by Acid)",
@@ -1600,10 +1372,6 @@
                 "Tentacle Storm": {
                     "name": "Tentacle Storm",
                     "description": "<p>The necrohulk flailer makes up to four tentacle Strikes, each against a different target. These attacks count toward its multiple attack penalty, but the penalty doesn't increase until after the necrohulk makes all of these attacks.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -1637,14 +1405,6 @@
                     "name": "Tremorsense (Imprecise) 30 feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
                 },
-                "Lifesense 30 feet": {
-                    "name": "Lifesense 30 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Grip Throat": {
                     "name": "Grip Throat",
                     "description": "<p>A Medium or smaller creature that is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the crawling hand has difficulty speaking and must spend an extra action to perform any action with the verbal trait.</p>"
@@ -1652,10 +1412,6 @@
                 "Mark Quarry": {
                     "name": "Mark Quarry",
                     "description": "<p>A crawling hand can be assigned a quarry by anointing the hand with a drop of the intended quarry's blood. If the hand ever has no quarry, it automatically gains the next creature it damages as its quarry. The hand gains a +1 circumstance bonus to Perception checks when it @UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{Seek} its quarry, to Survival checks when it @UUID[Compendium.pf2e.actionspf2e.Item.EA5vuSgJfiHH7plD]{Tracks} its quarry, and damage rolls when it Strikes its quarry.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -1666,10 +1422,6 @@
             "name": "Lasheeli",
             "blurb": "Female aasimar human storyteller",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Bardic Lore": {
                     "name": "Bardic Lore",
                     "description": "<p>Lasheeli can use Bardic Lore to Recall Knowledge on any topic.</p>"
@@ -1697,17 +1449,9 @@
             "blurb": "Variant animated statue",
             "ac": "(18 when broken); construct armor",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Construct Armor (Hardness 8)": {
                     "name": "Construct Armor (Hardness 8)",
                     "description": "<p>Like normal objects, a mechanical laborer has Hardness. This Hardness reduces any damage it takes by 8. Once a mechanical laborer is reduced to less than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks. It loses its Hardness, and its Armor Class is reduced to 18.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -1718,14 +1462,6 @@
             "name": "Ghoul Gnawer",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Consume Flesh": {
                     "name": "Consume Flesh",
                     "description": "<p><strong>Requirements</strong> The ghoul gnawer is adjacent to the corpse of a creature that died within the last hour</p>\n<hr />\n<p><strong>Effect</strong> The ghoul gnawer devours a chunk of the corpse and regains [[/r 5d6[healing]]] Hit Points. It can regain Hit Points from any given corpse only once.</p>"
@@ -1760,18 +1496,6 @@
                 "equipment-Black Onyx Gems": {
                     "name": "Black Onyx Gems"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense (Imprecise) 60 feet": {
-                    "name": "Lifesense (Imprecise) 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Catch Rock": {
                     "name": "Catch Rock",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.CatchRock]</p>"
@@ -1791,10 +1515,6 @@
                 "Sneak Attack": {
                     "name": "Sneak Attack",
                     "description": "<p>Graelar's Strikes deal an extra 4d6 precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
                 }
             }
         },
@@ -1805,10 +1525,6 @@
             "name": "Kerinza",
             "blurb": "Female medusa exile",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Biting Snakes": {
                     "name": "Biting Snakes",
                     "description": "<p><strong>Trigger</strong> A creature ends its turn adjacent to Kerinza</p>\n<hr />\n<p><strong>Effect</strong> Kerinza makes a snake fangs Strike against the creature.</p>"
@@ -1838,10 +1554,6 @@
             "name": "Scrabbling Ribcage",
             "publicNotes": "<p>The ribs of a scrabbling ribcage are connected to either a sternum or vertebral column, but not both, allowing the ribs to function as legs.</p>\n<hr />\n<p>Commonly mistaken for undead, animated bones are mindless constructs with no connection to necromancy. The following are examples of typical animated bones.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Scrabble": {
                     "name": "Scrabble",
                     "description": "<p><strong>Trigger</strong> A creature moves away from the scrabbling ribcage, or a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by the scrabbling ribcage @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} from it</p>\n<hr />\n<p><strong>Effect</strong> The ribcage Strides or Climbs. This movement doesn't trigger reactions.</p>"
@@ -1853,10 +1565,6 @@
                 "Skittering Rush": {
                     "name": "Skittering Rush",
                     "description": "<p>The scrabbling ribcage Strides or Climbs twice, with its Speeds increased by 10 feet for this movement.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -1868,10 +1576,6 @@
             "hp": "coffin restoration, fast healing 10, negative healing",
             "blurb": "Male halfling vampire rogue",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Children of the Night": {
                     "name": "Children of the Night",
                     "description": "<p>The vampire's presence brings forth creatures of the night to do the master's bidding. These typically include @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.sPClc6y3dT3XZupv]{Rat Swarms}, @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VAWmwDA08ZLQd8lW]{Bat Swarms}, and @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.Oilfs8Atv2LjAsUS]{Wolves}, but can include other creatures.</p>\n<p>The vampire can give telepathic orders to these creatures as long as they are within 100 feet, but they can't communicate back.</p>"
@@ -1883,10 +1587,6 @@
                 "Fast Healing 10": {
                     "name": "Fast Healing 10",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Coffin Restoration": {
                     "name": "Coffin Restoration",
@@ -1923,10 +1623,6 @@
                 "Turn to Mist": {
                     "name": "Turn to Mist",
                     "description": "<p>The vampire turns into a cloud of vapor, as the <em>@UUID[Compendium.pf2e.spells-srd.Item.V8wXOsoejQhe6CyG]{Vapor Form}</em> spell, or back to its normal form. The vampire loses fast healing while in gaseous form.</p>\n<p>The vampire can remain in this form indefinitely.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -1938,10 +1634,6 @@
             "publicNotes": "<p>Crafted of hardened glass and held together by magically treated lead, glass golems are both deadly guardians and works of exquisite art. Glass golems most often protect grand cathedrals or opulent palaces-testaments to the wealth and power of those they serve, or once served. Once spurred into action by the commands of their creators, glass golems are quicker and more agile than most other golems. Their sharp, blade-like limbs can easily sever veins and arteries, creating wounds that bleed profusely.</p>\n<p>Of all the various types of golems, the glass golem is the one most akin to a work of art. Just as powerful aristocrats might use an ice golem for temperature regulation or a wood golem as an ego-boosting statue, a glass golem's colorful glass construction can elevate the beauty of any chamber by its mere presence.</p>",
             "blurb": "Variant glass golem",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Golem Antimagic": {
                     "name": "Golem Antimagic",
                     "description": "<p>Harmed by sonic ([[/r 8d6]], [[/r 2d6]] from areas or persistent damage); healed by fire (area [[/r 2d6]] HP); slowed by cold</p>\n<hr />\n<p>A golem is immune to spells and magical abilities other than its own, but each type of golem is affected by a few types of magic in special ways. If an entry lists multiple types (such as “cold and water”), either type of spell can affect the golem.</p>\n<p><strong>Harmed By</strong> Any magic of this type that targets the golem causes it to take the listed amount of damage (this damage has no type) instead of the usual effect. If the golem starts its turn in an area of magic of this type or is affected by a persistent effect of the appropriate type, it takes the damage listed in the parenthetical.</p>\n<p><strong>Healed By</strong> Any magic of this type that targets the golem makes the golem lose the slowed condition and gain HP equal to half the damage the spell would have dealt. If the golem starts its turn in an area of this type of magic, it gains the HP listed in the parenthetical.</p>\n<p><strong>Slowed By</strong> Any magic of this type that targets the golem causes it to be @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for [[/r 2d6]] rounds instead of the usual effect. If the golem starts its turn in an area of this type of magic, it's slowed 1 for that round.</p>\n<p><strong>Vulnerable To</strong> Each golem is vulnerable to one or more specific spells, with the effects described in its stat block.</p>"
@@ -1969,10 +1661,6 @@
             "blurb": "Variant animated furnace",
             "ac": "(20 when broken); construct armor",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Construct Armor (Hardness 7)": {
                     "name": "Construct Armor (Hardness 7)",
                     "description": "<p>Like normal objects, the animated fireplace has Hardness. This Hardness reduces any damage the fireplace takes by 7. Once the animated fireplace is reduced to fewer than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks, removing the Hardness and reducing its Armor Class to 20.</p>"
@@ -1988,10 +1676,6 @@
                 "Swallow Whole": {
                     "name": "Swallow Whole",
                     "description": "<p>Medium, @Damage[(2d6+5)[fire]], Rupture 5</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -2002,17 +1686,13 @@
             "name": "Shabti Slayer",
             "publicNotes": "<p>Shabtis raised among the secret Pharasmin sect of the Carters Consortium are trained to destroy undead and the necromancers who create them.</p>\n<hr />\n<p>Shabtis are facsimiles of the rich and powerful, patched together from shards of other souls and offered as a sacrifice to the Boneyard to suffer for the sins of their creator. Shabtis are unaware they aren't the person they emulate, and most spend an eternity enduring the punishments owed to another while the soul they emulate escapes judgement. Some shabtis discover their nature and often become adrift, drowning in the feelings and memories of their foul creator, with no true purpose and identities of their own.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
                 "Final Rest": {
                     "name": "Final Rest",
-                    "description": "<p>A shabti slayer's Strikes affect incorporeal creatures with the effects of a ghost touch property rune and deal @Damage[2d10[vitality]] damage to undead creatures.</p>"
+                    "description": "<p>A shabti slayer's Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal @Damage[2d10[vitality]] damage to undead creatures.</p>"
                 },
                 "Immortal": {
                     "name": "Immortal",
@@ -2039,10 +1719,6 @@
             "name": "Firebrand Bastion",
             "ac": "43 if shield raised",
             "items": {
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
-                },
                 "Shield Warden": {
                     "name": "Shield Warden",
                     "description": "<p>When a Firebrand bastion has a shield raised, they can use their Shield Block reaction when an attack is made against an adjacent ally. If they do, the shield prevents that ally from taking damage instead of preventing the bastion from taking damage, following the normal rules for Shield block.</p>"
@@ -2057,7 +1733,7 @@
                 },
                 "Blessed Armaments": {
                     "name": "Blessed Armaments",
-                    "description": "<p>Weapons and shields wielded by the Firebrand bastion affect incorporeal creatures with the effects of a <em>ghost touch</em> property rune and deal an additional 3d6 positive damage.</p>"
+                    "description": "<p>Weapons and shields wielded by the Firebrand bastion affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal an additional 3d6 positive damage.</p>"
                 },
                 "Quick Shield Block": {
                     "name": "Quick Shield Block",
@@ -2104,10 +1780,6 @@
                 "equipment-Assorted Jewlery": {
                     "name": "Assorted Jewlery"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Coven": {
                     "name": "Coven",
                     "description": "<p>A rust hag adds <em>@UUID[Compendium.pf2e.spells-srd.Item.B3eLlbaPxOYHcs1o]{Curse Of Lost Time}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.0fYE64odlKqISzft]{Rusting Grasp}</em>, and <em>@UUID[Compendium.pf2e.spells-srd.Item.lKcsmeOrgHtK4xQa]{Summon Construct}</em> to her coven's spells.</p>"
@@ -2121,7 +1793,7 @@
                 },
                 "Hagshot": {
                     "name": "Hagshot",
-                    "description": "<p>Any firearm wielded by a rust hag gains the benefits of +1 striking and ghost touch runes, and it functions properly no matter how rusty it gets. In addition, when a rust hag critically hits a target with a firearm, the target must succeed at a @Check[type:fortitude|dc:26] save or be @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
+                    "description": "<p>Any firearm wielded by a rust hag gains the benefits of <em>+1 striking</em> and <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> runes, and it functions properly no matter how rusty it gets. In addition, when a rust hag critically hits a target with a firearm, the target must succeed at a @Check[type:fortitude|dc:26] save or be @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
                 },
                 "Rusting Touch": {
                     "name": "Rusting Touch",
@@ -2136,25 +1808,13 @@
             "name": "Hollow Husk",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Slow": {
                     "name": "Slow",
                     "description": "<p>A hollow husk is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
                 },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Memory Drain": {
                     "name": "Memory Drain",
                     "description": "<p><strong>Requirements</strong> The hollow husk has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}</p>\n<hr />\n<p><strong>Effect</strong> Memories flow from the grabbed creature into the empty void that is the hollow husk's mind. The hollow husk deals the creature @Damage[3d6[mental]] damage, and the creature must attempt a @Check[type:will|dc:16|traits:damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 minute.</p>\n<p><strong>Critical Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 minute.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -2166,14 +1826,6 @@
             "hp": "negative healing",
             "blurb": "Male ghast wizard",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Consume Arcana": {
                     "name": "Consume Arcana",
                     "description": "<p><strong>Trigger</strong> Yulthruk succeeds at a saving throw against an arcane spell cast by another creature</p>\n<hr />\n<p><strong>Effect</strong> Yulthruk inhales some of the averted energy and becomes @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} until the start of his next turn. He can use this extra action to Cast a Spell or Sustain a Spell</p>"
@@ -2229,14 +1881,6 @@
             "publicNotes": "<p>Virulak necromancers are often intrigued by the interplay between poison and undeath, testing toxins on their dead flesh or, more commonly, on hapless living victims. This virulak necromancer was once a sorcerer but now considers their bloodline irrelevant.</p>\n<hr />\n<p>When a creature dies from poison, it sometimes rises as a virulak: an undead being infused with lethal venom. Most virulaks are solitary creatures with memories of an excruciating death. Occasionally, a mass poisoning produces numerous simultaneous fatalities, increasing the chance of many virulaks arising at once and working together in a dangerous mob. Entire villages might rise as virulaks when forced to subsist on food so spoiled it has become toxic or from an intentional scheme to poison the settlement.</p>\n<p>Virulaks retain the intelligence and memory they had in life, but their agonizing death by poison transforms them into bitter mockeries of their former selves. Poison seeps from their fingertips and solidifies into hard claws. Virulaks are known for a cynical and ironic sense of humor. They delight in poisoning the good spirits and reputations of those around them, dealing psychological blows that mirror the venom in their bodies.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Uncanny Necromancy": {
                     "name": "Uncanny Necromancy",
                     "description": "<p>The virulak necromancer can freely heighten <em>@UUID[Compendium.pf2e.spells-srd.Item.8ViwItUgwT4lOvvb]{False Life}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.k34hDOfIIMAxNL4a]{Grim Tendrils}</em>, and <em>@UUID[Compendium.pf2e.spells-srd.Item.N1Z1oLPdBxaSgrEE]{Vampiric Touch}</em> to any level they can cast without knowing them at higher levels.</p>"
@@ -2267,10 +1911,6 @@
                 "Bonded Theater": {
                     "name": "Bonded Theater",
                     "description": "<p>A theater phantasm can't travel more than 50 feet from the theater (or similar location) where it was created.</p>"
-                },
-                "Lifesense 100 feet": {
-                    "name": "Lifesense 100 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
                 },
                 "All-Around Vision": {
                     "name": "All-Around Vision",
@@ -2332,10 +1972,6 @@
             "publicNotes": "<p>Shadow worms are monstrous cave worms that dwell on the Shadow Plane. Larger and more cunning than most cave worms, shadow worms are fearsome predators that leave swaths of devastation in their wake. Most have glossy, black-armored hide, but those that burrow near velstrac lands are streaked with dark red, for the blood the velstracs spill has soaked into the very stones these shadow worms consume.</p>",
             "hp": "shadow healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Tremorsense (Imprecise) 100 feet": {
                     "name": "Tremorsense (Imprecise) 100 feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
@@ -2354,7 +1990,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The shadow worm exhales a blast of clinging shadow, dealing @Damage[11d6[cold],10d6[void]]{11d6 cold damage and 10d6 negative damage} to creatures in a @Template[type:cone|distance:60] (@Check[type:reflex|dc:42|basic:true]). If the cone passes through an area of magical light or targets a creature affected by magical light, Breath Weapon attempts to counteract the light ([[/br 1d20+34 #Counteract]]{+34} counteract modifier). The shadow worm can't use Breath Weapon again for [[/r 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The shadow worm exhales a blast of clinging shadow, dealing @Damage[11d6[cold],10d6[void]]{11d6 cold damage and 10d6 negative damage} to creatures in a @Template[type:cone|distance:60] (@Check[type:reflex|dc:42|basic:true]). If the cone passes through an area of magical light or targets a creature affected by magical light, Breath Weapon attempts to counteract the light ([[/br 1d20+34 #Counteract]]{+34} counteract modifier). The shadow worm can't use Breath Weapon again for [[/br 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Fast Swallow": {
                     "name": "Fast Swallow",
@@ -2371,10 +2007,6 @@
                 "Thrash": {
                     "name": "Thrash",
                     "description": "<p>The worm makes a Strike once against each creature in its reach. It can Strike up to once with its jaws and any number of times with its body. Each attack counts toward the worm's multiple attack penalty, but the multiple attack penalty doesn't increase until after it makes all the attacks.</p>"
-                },
-                "Improved Grab": {
-                    "name": "Improved Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ImprovedGrab]</p>"
                 }
             }
         },
@@ -2387,17 +2019,9 @@
             "hp": "negative healing",
             "languages": "Telepathy (With its Creator Only) 100 feet",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Lifesense 80 feet": {
                     "name": "Lifesense 80 feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -2414,10 +2038,6 @@
                 "Tenebric Stride": {
                     "name": "Tenebric Stride",
                     "description": "<p>The tenebric giant can move quickly in shadowy conditions. The tenebric giant Strides twice and makes a scythe Strike at any point during this movement against a target that is in darkness or dim light. This movement doesn't provoke reactions.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
                 }
             }
         },
@@ -2464,10 +2084,6 @@
                 "Paralysis": {
                     "name": "Paralysis",
                     "description": "<p>A creature hit by the ooze's pseudopod is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} unless it succeeds at a @Check[type:fortitude|dc:19] save. A victim can attempt a new save to recover at the end of each of its turns.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -2479,14 +2095,6 @@
             "publicNotes": "<p>Bulettes are fearsome predators that roam just beneath the surface of desolate wilderness areas. When they burrow through the ground, only the fin of their thickly armored backs protrudes above-at least until they are ready to leap out and strike their prey. Their appearance, appetite, and iconic dorsal fin have earned the nickname \"landshark.\"</p>\n<p>A typical bulette claims a territory of approximately 500 square miles. When it finds an area rich in food, such as a farming village, it adds that area to its regular patrol route. Over the course of a few months, it can wipe entire settlements off the map. Bulettes are fiercely competitive creatures that battle relentlessly with other predators in their territory. They actively avoid contact or conflict with other members of their kind unless seeking a mate. Bulette pairs share territory and mate for life-a mated pair of bulettes being the only known exception to the creature's penchant for solitude. They rear their young for a short period of time. The mated pair instruct the young bulette how to hunt, teaching their spawn which creatures are easiest to kill and which creatures to avoid. The mated pair drive off their young after its first successful hunt.</p>\n<p>The first bulettes were magically created guardians, intended to serve as frightening pets for a power-hungry and sadistic wizard. The technique for their creation, as well as their original purpose, has since been lost to history, and multiple conflicting accounts of ancient texts exist with dozens of wizards claiming to have been the first inventor of the notorious beast. Some sages postulate that the original inventor may have been an elf-a theory born out of little more than the curious fact that bulettes, for all their ravenous nature, seem to find elf flesh unpalatable. Unfortunately for elves who stumble into a bulette's path, bulettes are no less likely to kill them than any other intruder, simply leaving the bodies unconsumed where they fall.</p>",
             "blurb": "Variant Bulette",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Scent (Imprecise) 30 feet": {
-                    "name": "Scent (Imprecise) 30 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
                 "Corpse Eater": {
                     "name": "Corpse Eater",
                     "description": "<p>These bulettes prefer the taste of necrotic flesh and bone; their favorite prey is undead.</p>"
@@ -2516,10 +2124,6 @@
                 "equipment-Soul Focus Gem": {
                     "name": "Soul Focus Gem"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Personality Fragments": {
                     "name": "Personality Fragments",
                     "description": "<p>A soulbound doll shares fragments of the donor's soul personality, though none of that creature's memories. The Doriel doll is animated by Kerinza's idealized version of her childhood friend. He can telepathically communicate with the Kerinza doll as long as they're within 60 feet of each other.</p>"
@@ -2543,10 +2147,6 @@
             "allSaves": "+1 status to all saves vs. magic",
             "languages": "Tongues",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Constant Spells": {
                     "name": "Constant Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
@@ -2596,10 +2196,6 @@
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
-                },
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
                 }
             }
         },
@@ -2664,17 +2260,9 @@
             "name": "Zombie Rival Necromancer",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Slow": {
                     "name": "Slow",
-                    "description": "<p>丧尸永久陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}且无法使用反应动作。</p>"
+                    "description": "<p>A zombie is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
                 },
                 "Bolster Dead": {
                     "name": "Bolster Dead",
@@ -2694,10 +2282,6 @@
             "allSaves": "+1 status to all saves vs. divination",
             "blurb": "Female shae spy",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Shadow Shift": {
                     "name": "Shadow Shift",
                     "description": "<p>Being made partially of shadow, shae are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} in dim light or darkness even to creatures that can see clearly in those light levels.</p>"
@@ -2743,10 +2327,6 @@
             "allSaves": "+1 status to all saves vs. magic",
             "blurb": "Female variant sea hag lawyer",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Coven": {
                     "name": "Coven",
                     "description": "<p>Sahni adds <em>@UUID[Compendium.pf2e.spells-srd.Item.f8hRqLJaxBVhF1u0]{Acid Arrow}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.z2mfh3oPnfYqXflY]{Mariner's Curse}</em>, and <em>@UUID[Compendium.pf2e.spells-srd.Item.Seaah9amXg70RKw2]{Water Walk}</em> to her coven's spells.</p>"
@@ -2825,10 +2405,6 @@
             "name": "Skull Fairy",
             "publicNotes": "<p>Skull fairies are malicious beings spawned from the heads of those who die after exposure to the malignant energies of the Shadow Plane. They aren't fey, but their petite, winged forms and tendency for malevolent mischief has caused the appellation \"skull fairy\" to stick.</p>\n<p>After bursting from the skull of the deceased, a skull fairy seeks out victims to behead. Skull fairies enjoy nothing more than the horrific sound of wrenching a head free from a body. They often wear the skulls of their most recent victim like caps atop their bulbous, oversized heads. Skull fairies take heads they've acquired to isolated caves, where they carefully strip off the flesh and put the skulls on display. If the skull fairy feels the need for new headgear, they hollow out a fresh skull to wear and retire the old one to a place of prominence.</p>\n<p>A group of exactly three skull fairies who have each been alive for at least 13 years become much more powerful than their solitary or younger kin. Members of such a coven become stronger and more intelligent, and they set their minds to evil and chaos on a much wider scale-although anything more complicated than wandering about to twist off heads might seem aspirational to a skull fairy. Skull fairies that join a coven gain the elite adjustments and often acquire more powerful innate spells. Nondetection and stinking cloud are the most common spells a skull fairy coven can access, but others exist. A skull fairy can only join a coven consisting exclusively of other skull fairies.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Coven": {
                     "name": "Coven",
                     "description": "<p>A skull fairy adds <em>@UUID[Compendium.pf2e.spells-srd.Item.EoKBlgf6Smt8opaU]{Veil of Privacy}</em> and <em>@UUID[Compendium.pf2e.spells-srd.Item.GKpEcy9WId6NJvtx]{Stinking Cloud}</em> to their coven's spells.</p>"
@@ -2872,10 +2448,6 @@
             "allSaves": "+1 status bonus to all saves vs. magic",
             "languages": "Speak with Animals",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Constant Spells": {
                     "name": "Constant Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
@@ -2911,10 +2483,6 @@
                 "equipment-Dishes": {
                     "name": "Dishes"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Construct Armor (Hardness 8)": {
                     "name": "Construct Armor (Hardness 8)",
                     "description": "<p>Like normal objects, an animated tea cart has Hardness. This Hardness reduces any damage the tea cart takes by an amount equal to the Hardness. Once an animated tea cart is reduced to fewer than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks, removing the Hardness and reducing its Armor Class to 24.</p>"
@@ -2933,18 +2501,6 @@
             "publicNotes": "<p>During the war between Geb and Nex, necromancers conducted dangerous magical experiments to gain every possible advantage over their enemies. One such endeavor attempted to distill the essence of vampiric mists to create a protective shroud for an army of undead maguses.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense 60 feet": {
-                    "name": "Lifesense 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Bloodshift": {
                     "name": "Bloodshift",
                     "description": "<p><strong>Trigger</strong> A creature within 30 feet of the bloodshroud takes damage</p>\n<hr />\n<p><strong>Effect</strong> The bloodshroud transports itself and any items it's carrying to any unoccupied space adjacent to the triggering creature.</p>"
@@ -2967,17 +2523,9 @@
             "publicNotes": "<p>Mutants with incredible strength make the most powerful necrohulks. These necrohulk smashers are so swollen with biological and alchemical muscle enhancements that they can simply pound their way through enemies.</p>\n<hr />\n<p>The strange, terrible energies swirling about on the winds and embedded in the earth of the Mana Wastes have led to unexpected changes and mutations in the bodies of those who dwell there. These mutants usually have little chance to escape their hardscrabble existence, as they're ostracized by other societies. People in the kingdom of Nex to the north look on such folk with suspicion, as do the dwarves of Alkenstar to the west. Surprisingly, the undead nation of Geb to the south is often the best hope for a future among people with unusual appearances.</p>\n<p>Those who flee to Geb or are convinced to make it their home frequently find their welcome to be a false promise, however. Necromancers who long ago tired of animating the same humanoids find new potential in mutated flesh, and mutants who aren't careful might find themselves led into laboratories or crypts for experimentation.</p>\n<p>Enterprising twilight sages of Yled's Mortuarium have innovated bizarre combinations of alchemy and necromancy that boost their victims' mutations to persist even after reanimation. Although these necrohulks are virtually mindless and require a constant influx of chemicals to retain their might, they're more than powerful enough to make the extremely difficult process worth the effort. The cartridge containing the alchemical formulation that sustains them is perhaps the trickiest part of necrohulk animation, and it's easiest to simply stitch the cartridge right into the necrohulk's flesh.</p>\n<p>Yled's armies contain a growing number of necrohulks. This isn't solely because these juggernauts are frightening effective combatants on the field of battle; leveraging the instinctive revulsion that mutants create carries some strategic advantage. Although the occasional necrohulks do run amok in Yled, addled on the chemical cocktails that sustain them, military necromancers generally keep them under control.</p>",
             "hp": "negative healing, regeneration 15 (deactivated by acid)",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Alchemical Cartridge": {
                     "name": "Alchemical Cartridge",
                     "description": "<p>Critical hits rupture the necrohulk's alchemical cartridge. The first time the necrohulk takes a critical hit, it loses its regeneration. The second time it takes a critical hit, it takes @Damage[15[persistent,acid]]{15} damage that it can't heal unless the cartridge is stitched back into place.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Regeneration 15 (Deactivated by Acid)": {
                     "name": "Regeneration 15 (Deactivated by Acid)",
@@ -2998,10 +2546,6 @@
                 "Smashing Blow": {
                     "name": "Smashing Blow",
                     "description": "<p>The necrohulk smasher makes a fist Strike. If it hits, the necrohulk smashes the target into the floor or nearby wall. The target takes an additional @Damage[6d10[bludgeoning]] damage, depending on its @Check[type:fortitude|dc:33] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target takes half of the additional damage.</p>\n<p><strong>Success</strong> The target takes half the additional damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<p><strong>Failure</strong> The target takes full additional damage, is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3}, and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<p><strong>Critical Failure</strong> The target takes double the additional damage, is stunned 3, and knocked prone.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
                 },
                 "Improved Push": {
                     "name": "Improved Push",
@@ -3053,10 +2597,6 @@
                     "name": "Lifesense 40 Feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
                 },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Phantasmal Pummeling": {
                     "name": "Phantasmal Pummeling",
                     "description": "<p>Each foe in the cobblebone swarm's space takes @Damage[1d6[bludgeoning],1d6[void]]{1d6 bludgeoning damage and 1d6 negative damage} (@Check[type:reflex|dc:17|basic:true]).</p>"
@@ -3090,14 +2630,6 @@
             "name": "Vice-Chancellor Vikroti Stroh",
             "hp": "negative healing, rejuvenation",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Rejuvenation": {
                     "name": "Rejuvenation",
                     "description": "<p>When Vikroti is destroyed, her soul immediately transfers to her @UUID[Compendium.pf2e.equipment-srd.Item.NEbr7nKuiluJgBHT]{Soul Cage}. She can be permanently destroyed only if her soul cage is found and destroyed.</p>"
@@ -3131,10 +2663,6 @@
             "name": "Meat Guardian",
             "blurb": "Divine warden carrion golem",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Divine Destruction": {
                     "name": "Divine Destruction",
                     "description": "<p>When the divine warden is reduced to 0 HP, it erupts with divine energy in a @Template[type:emanation|distance:30], dealing @Damage[5d6[void]] damage. Each creature in the area must attempt a @Check[type:will|dc:20|traits:damaging-effect] save with the following outcomes.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes half damage.</p>\n<p><strong>Success</strong> The creature takes full damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes temporarily cursed by the patron deity. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 day; this is a curse effect that uses the Will save DC as the counteract DC.</p>\n<p><strong>Critical Failure</strong> As failure, except the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}.</p>"
@@ -3177,10 +2705,6 @@
             "publicNotes": "<p>A necromunculus is a tiny undead servant that can only be created by an undead creature. These servitors are common creations in Geb, where undead crafters and masterminds have countless years to dabble in necromantic crafts and a great need for unquestioning loyalty from servitors more cunning than other simple undead minions.</p>\n<p>Necromunculi are similar to homunculi, but there are a few notable differences between these undead creatures and the constructs they are named after. A necromunculus may be loyal to its master, but it also seethes with hatred for all undead, including itself. If left to its own devices, a necromunculus immediately begins plotting to kill and gnaw upon any undead with whom it must regularly interact, even its master, even though it has no need to eat. A necromunculus cannot willingly act on this urge so long as it has some other command to obey, so their creators work hard to ensure that they are constantly supplied with tasks to keep them occupied.</p>\n<p>Despite their cannibalistic urges, necromunculi are gaining increased in popularity among Geb's undead necromancers. Each creator wishes to see if they can imbue even more of their powers or personality in the delightfully treacherous servants. Besides, they make excellent practice in espionage and logical thinking for would-be Blood Lords.</p>\n<p>Necromunculi resemble skeletal, impish humanoids with leathery wings. They are created from a mixture of mud, bonemeal, juniper oil, a few drops of blood from a still-living mammal, and a pound of the creator's own flesh, blood, or bone. Undead creatures lacking a corporeal body can use a pound of flesh, blood, or bone from another willing, intelligent undead subject, but the process generally destroys the volunteer.</p>",
             "languages": "(Can't Speak Any Language); undead master link",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Undead Master Link": {
                     "name": "Undead Master Link",
                     "description": "<p>A necromunculus can't speak, but it is telepathically linked to its undead creator. It can share information back and forth, including its master's knowledge and everything the necromunculus hears. The range of this link is 1,500 feet. If the necromunculus is destroyed, the master takes @Damage[2d10[mental]] damage. If the master is slain, the necromunculus becomes mindless and wanders aimlessly in search of undead to attack and try to eat.</p>"
@@ -3215,10 +2739,6 @@
             "name": "Shimmernewt",
             "publicNotes": "<p>Native to the coastal provinces of eastern Holomog, these strange amphibians have frilled, iridescent gills that appear asymmetrically on either side of their bodies. Random arrays of spots, stripes, and other patterns decorate their flanks, and it's said no two shimmernewts have the same coloration. Originally, shimmernewts were ordinary (if oversized) amphibians, living their lives between brackish coastal lakes or tidal pools and the steamy jungles nearby. Over time, the ambient chaotic energies flowing through Holomog magically altered their evolution. The shimmernewts of today barely resemble their ancestors.</p>\n<p>Their inherent chaotic nature has resulted in shimmernewts operating on different cycles from one another. Some are diurnal, some are nocturnal, but most are crepuscular. Shimmernewts that live close to peaceful humanoid settlements are often docile, but wild populations, whether deep in the jungle or in proximity to more violent settlements, can be quite aggressive. When provoked, all shimmernewts can inflate their gills in impressive displays to appear more attractive to mates or more intimidating to rivals. The capricious amphibians lack any natural predators, and conservation- minded locals are trying to prevent them from migrating further inland.</p>\n<p>Some underground rings host shimmernewt fights, an unsavory form of entertainment made alluring by lucrative betting. Strolling down the docks of any port town in Holomog for a few minutes provokes whispered invitations to these fights. Though many locals decry these fights as inhumane, each time a ring is shut down, another group pops up sooner or later.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Gaping Chomp": {
                     "name": "Gaping Chomp",
                     "description": "<p>The shimmernewt chews on a creature that it has @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}. The target creature must attempt a @Check[type:fortitude|dc:24] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes @Damage[1d10[piercing]] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[2d10[piercing]] damage and @Damage[1d6[bleed]] damage.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[4d10[piercing]] damage, @Damage[1d6[bleed]] damage, and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} by the pain of the chomp.</p>"
@@ -3230,10 +2750,6 @@
                 "Trip": {
                     "name": "Trip",
                     "description": "<p><strong>Requirements</strong> You have at least one hand free. Your target can't be more than one size larger than you</p>\n<hr />\n<p>You try to knock a creature to the ground. Attempt an <span data-pf2-action=\"trip\" data-pf2-glyph=\"A\">Athletics</span> check against the target's Reflex DC.</p>\n<hr />\n<p><strong>Critical Success</strong> The target falls and lands @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} and takes @Damage[1d6[bludgeoning]] damage.</p>\n<p><strong>Success</strong> The target falls and lands prone.</p>\n<p><strong>Critical Failure</strong> You lose your balance and fall and land prone.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -3244,21 +2760,9 @@
             "name": "Skeletal Knight",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
-                },
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
                 },
                 "Lancer": {
                     "name": "Lancer",
@@ -3273,25 +2777,13 @@
             "name": "Zombie Hound",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Slow": {
                     "name": "Slow",
-                    "description": "<p>丧尸永久陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}且无法使用反应动作。</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                    "description": "<p>A zombie is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
                 },
                 "Flesh Tearer": {
                     "name": "Flesh Tearer",
                     "description": "<p>The zombie hound's Strikes deal 1d4 extra damage to @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} creatures.</p>"
-                },
-                "Knockdown": {
-                    "name": "Knockdown",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Knockdown]</p>"
                 }
             }
         },
@@ -3370,17 +2862,9 @@
             "hp": "negative healing",
             "languages": "(Can't Speak Any Language)",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Slow": {
                     "name": "Slow",
-                    "description": "<p>丧尸永久陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}且无法使用反应动作。</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                    "description": "<p>A zombie is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
                 },
                 "Piping Dirge": {
                     "name": "Piping Dirge",
@@ -3393,10 +2877,6 @@
                 "Shambler's Lament": {
                     "name": "Shambler's Lament",
                     "description": "<p>The dirge piper lets out an eerie keening through its rotting orifices that drives nearby zombies to feast more vigorously. Each other zombie within 10 feet of the dirge piper is @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 1 round and can use the extra action to Grab, Stride, or Strike.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -3426,14 +2906,6 @@
             "hp": "regeneration 10 (deactivated by acid or fire)",
             "blurb": "Female variant huldra",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Scent (Imprecise) 60 feet": {
-                    "name": "Scent (Imprecise) 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
                 "At-Will Spells": {
                     "name": "At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
@@ -3466,10 +2938,6 @@
             "items": {
                 "equipment-Soul Focus Gem": {
                     "name": "Soul Focus Gem"
-                },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
                 },
                 "Personality Fragments": {
                     "name": "Personality Fragments",
@@ -3540,10 +3008,6 @@
             "publicNotes": "<p>Rust hags have a knack for technology. They make their homes in hollowed-out factories, abandoned tenements, and other sites of urban decay.</p>\n<hr />\n<p>Hags are surprisingly diverse, both in abilities and in their terrain.</p>",
             "allSaves": "+1 status to all saves vs. magic",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Coven": {
                     "name": "Coven",
                     "description": "<p>A rust hag adds <em>@UUID[Compendium.pf2e.spells-srd.Item.B3eLlbaPxOYHcs1o]{Curse Of Lost Time}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.0fYE64odlKqISzft]{Rusting Grasp}</em>, and <em>@UUID[Compendium.pf2e.spells-srd.Item.lKcsmeOrgHtK4xQa]{Summon Construct}</em> to her coven's spells.</p>"
@@ -3557,7 +3021,7 @@
                 },
                 "Hagshot": {
                     "name": "Hagshot",
-                    "description": "<p>Any firearm wielded by a rust hag gains the benefits of +1 striking and ghost touch runes, and it functions properly no matter how rusty it gets. In addition, when a rust hag critically hits a target with a firearm, the target must succeed at a @Check[type:fortitude|dc:26] save or be @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
+                    "description": "<p>Any firearm wielded by a rust hag gains the benefits of <em>+1 striking</em> and <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> runes, and it functions properly no matter how rusty it gets. In addition, when a rust hag critically hits a target with a firearm, the target must succeed at a @Check[type:fortitude|dc:26] save or be @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
                 },
                 "Rusting Touch": {
                     "name": "Rusting Touch",
@@ -3587,10 +3051,6 @@
             "name": "Necromancer Troop",
             "hp": "troop defenses",
             "items": {
-                "Form Up": {
-                    "name": "Form Up",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FormUp]</p>"
-                },
                 "Troop Defenses": {
                     "name": "Troop Defenses",
                     "description": "<p><strong>Thresholds</strong> 180 (12 squares), 90 (8 squares)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
@@ -3622,10 +3082,6 @@
                 "Gang Up": {
                     "name": "Gang Up",
                     "description": "<p>Kemnebi's puppets work together to take down more powerful foes. A puppet's Strikes deal an additional 4d6 damage against a creature that's @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by at least one of the puppet's allies.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -3636,25 +3092,13 @@
             "name": "Mosghuta, Boss Cow",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Slow": {
                     "name": "Slow",
-                    "description": "<p>丧尸永久陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}且无法使用反应动作。</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                    "description": "<p>A zombie is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
                 },
                 "Trundling Gore": {
                     "name": "Trundling Gore",
                     "description": "<p>Mosghuta surges forward at her foe, horn lowered. She Strides once. If she ends her movement within melee range of an enemy, she makes a horn Strike against that enemy. If that Strike succeeds, Mosghuta uses Knockdown as a free action.</p>"
-                },
-                "Knockdown": {
-                    "name": "Knockdown",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Knockdown]</p>"
                 }
             }
         },
@@ -3666,14 +3110,6 @@
             "hp": "negative healing",
             "blurb": "Female ghoul cleric of Kabriri",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Consume Flesh": {
                     "name": "Consume Flesh",
                     "description": "<p><strong>Requirements</strong> The ghoul is adjacent to the corpse of a creature that died within the last hour.</p>\n<hr />\n<p><strong>Effect</strong> The ghoul devours a chunk of the corpse and regains [[/r 7d6[healing]]] Hit Points. It can regain Hit Points from any given corpse only once.</p>\n<p>She also absorbs a portion of the memories once possessed by the creature she fed upon, potentially revealing secrets held by the flesh at the GM's discretion, and also gains a +1 status bonus to all skill checks for 1 minute.</p>"
@@ -3736,7 +3172,7 @@
                 },
                 "Siphon Soul": {
                     "name": "Siphon Soul",
-                    "description": "<p>A soul slime's touch siphons away portions of a creature's soul. Its Strikes affect incorporeal creatures with the effects of a ghost touch property rune and deal @Damage[3d6[void]] damage to living creatures and @Damage[3d6[vitality]] damage to undead and other creatures with negative healing.</p>"
+                    "description": "<p>A soul slime's touch siphons away portions of a creature's soul. Its Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal @Damage[3d6[void]] damage to living creatures and @Damage[3d6[vitality]] damage to undead and other creatures with negative healing.</p>"
                 },
                 "Soul Facsimile": {
                     "name": "Soul Facsimile",
@@ -3768,10 +3204,6 @@
             "name": "Phalanx of Phalanges",
             "publicNotes": "<p>Made up of hundreds of finger and toe bones, a phalanx of phalanges clatters along the ground in an eerily uniform manner.</p>\n<hr />\n<p>Commonly mistaken for undead, animated bones are mindless constructs with no connection to necromancy. The following are examples of typical animated bones.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Predetermined Path": {
                     "name": "Predetermined Path",
                     "description": "<p>A phalanx of phalanges knows a single path on even ground no longer than 100 feet, as determined by its creator. The phalanx of phalanges makes no actions other than moving along this path or making Countless Digits attacks against creatures in its way. If impeded on this path or if it takes damage, the phalanx of phalanges is unbound from its path and is permanently berserk, attacking nearby creatures to the best of its ability.</p>"
@@ -3793,10 +3225,6 @@
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
-                },
                 "Battering Defense": {
                     "name": "Battering Defense",
                     "description": "<p>The Bellator Mortus uses their shield as both a weapon and a defensive measure. Attempt a shield Strike. If the Strike hits, Raise a Shield.</p>"
@@ -3815,10 +3243,6 @@
             "publicNotes": "<p>Rot-skinned grave hags usually lair in cemeteries, mausoleums, and other burial sites; unlike most hags, they can't alter their appearance into a comely shape, so they hide from most observers. Grave hags consider such a predatory life hiding out in graveyards to be pitiful and squalid-they prefer to dwell in lands where necromancy is common and undeath isn't unusual. These grave hags become adept at necromantic magic and love posing as scholars. Schemers and plotters, they surround themselves with minions whom they send on missions to collect corpses for ghastly rituals.</p>\n<hr />\n<p>Hags are surprisingly diverse, both in abilities and in their terrain.</p>",
             "allSaves": "+1 status to all saves vs. magic",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Coven": {
                     "name": "Coven",
                     "description": "<p>A grave hag adds <em>@UUID[Compendium.pf2e.spells-srd.Item.wdA52JJnsuQWeyqz]{Harm}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.xlRv8vCTHh1NeMpw]{Mimic Undead}</em>, and the <em>@UUID[Compendium.pf2e.spells-srd.Item.gsYEuWv04XTDxe91]{Call Spirit}</em> ritual to her coven's spells.</p>"
@@ -3849,10 +3273,6 @@
                 "Undead Mien": {
                     "name": "Undead Mien",
                     "description": "<p>A grave hag appears as an undead creature to magical effects.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -3880,14 +3300,6 @@
             "name": "Afziaka Stalker",
             "publicNotes": "<p>Big predatory animals like dire wolves or hyaenodons might survive as an afziaka stalker, magically able to stalk their quarry.</p>\n<hr />\n<p>Vrykolakas vampires use animals as tools to carry their spirits when they would otherwise be slain. The animal usually dies as the vampire is reborn, but some live on in painful starvation.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Scent (Imprecise) 30 feet": {
-                    "name": "Scent (Imprecise) 30 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
                 "Grave-Bound Guts": {
                     "name": "Grave-Bound Guts",
                     "description": "<p>While within 100 feet of its vrykolakas's burial ground, an afziaka appears in the natural shape it had when it was a regular animal and can eat normally. When farther away, it doesn't gain sustenance from eating food and eventually starves to death.</p>"
@@ -3910,7 +3322,8 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Sahreg the Dirge Screamer"
+            "name": "Sahreg the Dirge Screamer",
+            "items": {}
         },
         "Vanth Warrior": {
             "data": {
@@ -3921,14 +3334,6 @@
             "allSaves": "+1 status to all saves vs. magic",
             "blurb": "Variant vanth",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense 60 feet": {
-                    "name": "Lifesense 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
                 "At-Will Spells": {
                     "name": "At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
@@ -3954,7 +3359,7 @@
                 },
                 "Spirit Touch": {
                     "name": "Spirit Touch",
-                    "description": "<p>A vanth's Strikes affect incorporeal creatures with the effects of a ghost touch property rune and deal @Damage[3d6[void]] damage to living creatures and @Damage[3d6[vitality]] damage to undead.</p>"
+                    "description": "<p>A vanth's Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal @Damage[3d6[void]] damage to living creatures and @Damage[3d6[vitality]] damage to undead.</p>"
                 },
                 "Vanth's Curse": {
                     "name": "Vanth's Curse",
@@ -3969,10 +3374,6 @@
             "name": "Azmakian Effigy",
             "publicNotes": "<p>Xar-Azmak, the demonic Lord of Rust, was destroyed long ago by Dispater. Some weapons of his infernal legions remain and among the most infamous are Azmakian effigies: fearsome infernal constructs shaped in his image.</p>\n<p>Although made of iron, an Azmakian effigy's exterior is thick with rust that flakes off as the construct moves and fights. Effigies charge into battle on massive hooves, impaling enemies on long, curving horns. The effigy's most well-known attack-and the ability that makes even the bravest warrior tremble-is their terrible rusting breath, which can reduce even legendary magical weapons to useless scrap. Wise adventurers attempt to fight an effigy at a distance, but these constructs are surprisingly swift and able to outrun many foes.</p>\n<p>The secret to creating Azmakian effigies is thought to be lost, but infernal libraries might still contain the necessary rituals and list of ingredients. Xar-Azmak once commanded ranks of effigies that numbered in the thousands, but most of those who survived his destruction were trapped in Hell, where they were pursued by Dispater's forces and eventually destroyed. Those few who offered their services to Xar-Azmak's devoted worshippers on Golarion survived this purge. With the death of Xar-Azmak, much of the lore to repair the effigies was lost. When one of these constructs is found, they're often suffering some form of long-term damage.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
                     "description": "<p>The Azmakian effigy exhales rusting gas in a @Template[type:cone|distance:15]. The gas deals [[/r 2d6]]{2d6 damage} to the highest-level metal item carried by every creature in the area, ignoring these items' Hardness (@Check[type:fortitude|dc:22|basic:true]); unattended metal items in the area take this damage automatically. The Azmakian effigy can't use its Breath Weapon again for [[/br 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
@@ -3993,20 +3394,8 @@
             "hp": "negative healing, rejuvenation",
             "blurb": "Male tomb giant lich",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense (Imprecise) 60 feet": {
-                    "name": "Lifesense (Imprecise) 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
                 "+1 Status to All Saves vs. Positive": {
                     "name": "+1 Status to All Saves vs. Positive"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Catch Rock": {
                     "name": "Catch Rock",
@@ -4043,10 +3432,6 @@
                 "Steady Spellcasting": {
                     "name": "Steady Spellcasting",
                     "description": "<p>If a reaction would disrupt Kelganth's spellcasting action, he attempts a @Check[type:flat|dc:15]. On a success, the action isn't disrupted.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
                 }
             }
         },
@@ -4058,14 +3443,6 @@
             "hp": "negative healing",
             "blurb": "Ghast criminal",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -4103,10 +3480,6 @@
             "name": "Chattering Jaws",
             "publicNotes": "<p>Chattering jaws usually serve no purpose other unnerving people by clicking their teeth together. Some chattering jaws only chatter at regular intervals to help tell the time.</p>\n<hr />\n<p>Commonly mistaken for undead, animated bones are mindless constructs with no connection to necromancy. The following are examples of typical animated bones.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Incessant Chattering": {
                     "name": "Incessant Chattering",
                     "description": "<p>Jaws always chatter at a predetermined time, such as during specific times of day or in response to a trigger, such as noticing a creature within 30 feet. During these times, the chattering jaws can be automatically heard by all creatures within 60 feet.</p>"
@@ -4125,10 +3498,6 @@
             "publicNotes": "<p>These diligent machines guard their assigned posts tirelessly. A typical clockwork soldier stands 6 feet tall and consists of 500 pounds of metal and magic.</p>\n<hr />\n<p>Intricate, complex machines, clockworks are built with care by highly skilled engineers. Though their creation involves some amount of magic, they're primarily mechanical, packed with precision-tuned gears and springs working in concert.</p>\n<p>The sturdy mainspring within a clockwork must be wound to provide the energy needed to power the device. Some larger clockworks contain a series of springs for different limbs that each need to be wound. A clockwork's crafter creates a unique metal key while building the clockwork; winding the clockwork usually involves inserting the key into the machine's back and turning clockwise. Larger clockworks require greater strength to turn the key, and typically have larger keys to allow for more torque-some even accommodating a team of winders rather than an individual. Programming a clockwork requires both the key and the knowledge to set the program correctly, information usually reserved for the clockwork's creator or owner.</p>",
             "blurb": "Variant clockwork soldier",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Wind-Up": {
                     "name": "Wind-Up",
                     "description": "<p>24 hours, @Check[type:thievery|traits:action:disable-a-device|dc:22], standby</p>\n<hr />\n<p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable Device} to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>"
@@ -4178,10 +3547,6 @@
             "items": {
                 "equipment-Bone Key": {
                     "name": "Bone Key"
-                },
-                "Greater Darkvision": {
-                    "name": "Greater Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterDarkvision]</p>"
                 },
                 "At-Will Spells": {
                     "name": "At-Will Spells",
@@ -4233,14 +3598,6 @@
             "publicNotes": "<p>A village of commoners raised to undeath by a mass poisoning might continue to go about the settled routines of life, posing an eerie scene for living creatures who enter their village. Virulak villagers prefer to attack with an advantage of numbers, but even a lone villager can pose a problem for unaware or inexperienced travelers.</p>\n<hr />\n<p>When a creature dies from poison, it sometimes rises as a virulak: an undead being infused with lethal venom. Most virulaks are solitary creatures with memories of an excruciating death. Occasionally, a mass poisoning produces numerous simultaneous fatalities, increasing the chance of many virulaks arising at once and working together in a dangerous mob. Entire villages might rise as virulaks when forced to subsist on food so spoiled it has become toxic or from an intentional scheme to poison the settlement.</p>\n<p>Virulaks retain the intelligence and memory they had in life, but their agonizing death by poison transforms them into bitter mockeries of their former selves. Poison seeps from their fingertips and solidifies into hard claws. Virulaks are known for a cynical and ironic sense of humor. They delight in poisoning the good spirits and reputations of those around them, dealing psychological blows that mirror the venom in their bodies.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Mob Mentality": {
                     "name": "Mob Mentality",
                     "description": "<p>As long as the virulak villager and their allies aren't outnumbered by enemies, the virulak villager is immune to fear.</p>"
@@ -4252,10 +3609,6 @@
                 "Undead Virulence": {
                     "name": "Undead Virulence",
                     "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:19]</p>\n<hr />\n<p><strong>Maximum Duration</strong> 4 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d10[poison]] damage (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[1d12[poison]] damage (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d10[poison]] damage (1 round)</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -4288,10 +3641,6 @@
             "hp": "Negative Healing",
             "ac": "or 36 vs. non-magical",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Magic Sense": {
                     "name": "Magic Sense",
                     "description": "<p>The leydroth detects the source and school of each source of magic within 60 feet as an imprecise sense.</p>"
@@ -4306,10 +3655,6 @@
                 },
                 "+2 Status to All Saves vs. Magic": {
                     "name": "+2 Status to All Saves vs. Magic"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "36 AC vs. Non-Magical": {
                     "name": "36 AC vs. Non-Magical"
@@ -4353,14 +3698,6 @@
             "hp": "Soul Ward",
             "blurb": "Female adult umbral dragon ravener",
             "items": {
-                "Greater Darkvision": {
-                    "name": "Greater Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterDarkvision]</p>"
-                },
-                "Scent (Imprecise) 60 feet": {
-                    "name": "Scent (Imprecise) 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
                 "Soulsense 60 feet": {
                     "name": "Soulsense 60 feet",
                     "description": "<p>A ravener senses the spiritual essence of living and undead creatures within the listed range. Creatures whose material bodies are one unit with their souls, like celestials and fiends, appear brighter to this sense.</p>"
@@ -4368,10 +3705,6 @@
                 "At-Will Spells": {
                     "name": "At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Attack of Opportunity (Jaws Only)": {
                     "name": "Attack of Opportunity (Jaws Only)",
@@ -4403,7 +3736,7 @@
                 },
                 "Ghost Bane": {
                     "name": "Ghost Bane",
-                    "description": "<p>The ravener's Strikes affect incorporeal creatures with the effects of a ghost touch property rune, and the ravener's jaws deal an additional @Damage[6d6[force]] damage to undead.</p>"
+                    "description": "<p>The ravener's Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune, and the ravener's jaws deal an additional @Damage[6d6[force]] damage to undead.</p>"
                 },
                 "Ravenous Breath Weapon": {
                     "name": "Ravenous Breath Weapon",
@@ -4422,10 +3755,6 @@
             "name": "Mithral Golem",
             "publicNotes": "<p>Mithral golems are gorgeously crafted, silvery humanoids made from colossal amounts of the purest mithral. While massive in construction, they possess amazing speed and grace through literal fluidity. Unpredictable and flexible, they can melt into liquid form and reform into a solid shape in mere seconds, allowing them to shape their limbs into sharp spikes or heavy fists as needed.</p>\n<hr />\n<p>Powerful constructs that blend magic and raw material, golems make ideal guardians and bodyguards, with forms and functions as varied as the needs of those who employ them. As their crafters experiment with more exotic components and create new formulas, golems with surprising abilities emerge.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Evasion": {
                     "name": "Evasion",
                     "description": "<p>When the mithral golem rolls a success on a Reflex save, it gets a critical success instead.</p>"
@@ -4506,10 +3835,6 @@
             },
             "name": "Hungering Growth",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Part of the Attic": {
                     "name": "Part of the Attic",
                     "description": "<p>The hungering growth's hostile actions don't cause creatures @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the tempting aroma in the attic to recover from being fascinated.</p>"
@@ -4517,10 +3842,6 @@
                 "Constrict": {
                     "name": "Constrict",
                     "description": "<p>@Damage[(1d10+5)[bludgeoning]], @Check[type:fortitude|dc:25|basic:true]</p>\n<hr />\n<p>On a failed save, the target is also @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure).</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -4587,10 +3908,6 @@
             "name": "Basiri, Wellspring Keeper",
             "languages": "Telepathy 100 feet, Tongues",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Bardic Lore": {
                     "name": "Bardic Lore",
                     "description": "<p>Sphinxes are naturally curious, and their love of puzzles and mysteries leads them to gather information on a broad range of topics. Sphinxes have the @UUID[Compendium.pf2e.feats-srd.Item.uVXEZblPRuCyPRua]{Bardic Lore} bard feat, allowing them to Recall Knowledge on any topic.</p>"
@@ -4602,10 +3919,6 @@
                 "Constant Spells": {
                     "name": "Constant Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Aquatic Assault": {
                     "name": "Aquatic Assault",
@@ -4662,10 +3975,6 @@
             "blurb": "Female vetalarana vampire annis hag",
             "languages": "Tongues",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Thoughtsense 100 feet": {
                     "name": "Thoughtsense 100 feet",
                     "description": "<p>Taviah senses non-mindless creatures within 100 feet as a precise sense.</p>"
@@ -4677,10 +3986,6 @@
                 "Fast Healing 10": {
                     "name": "Fast Healing 10",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Magaambya Scar": {
                     "name": "Magaambya Scar",
@@ -4709,10 +4014,6 @@
                 "Rend (Claw)": {
                     "name": "Rend (Claw)",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -4756,14 +4057,6 @@
             "name": "Vampire Rival Necromancer",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Bolster Dead": {
                     "name": "Bolster Dead",
                     "description": "<p><strong>Frequency</strong> once per turn</p>\n<p><strong>Requirements</strong> Your most recent action was to cast a non-cantrip necromancy spell</p>\n<hr />\n<p><strong>Effect</strong> You harness the residual energy from the spell you last cast into the body of an undead creature within 30 feet. That creature's resistances increase by an amount equal to the level of the spell cast until the beginning of the next turn.</p>"
@@ -4805,14 +4098,6 @@
             "name": "Skeleton Rival Corpsekiller",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -4823,7 +4108,7 @@
                 },
                 "Corpsekiller": {
                     "name": "Corpsekiller",
-                    "description": "<p>A corpsekiller's Strikes affect incorporeal creatures as though etched with a ghost touch property rune and deal an additional @Damage[2d8[slashing]] damage to undead creatures.</p>"
+                    "description": "<p>A corpsekiller's Strikes affect incorporeal creatures as though etched with a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune and deal an additional @Damage[2d8[slashing]] damage to undead creatures.</p>"
                 },
                 "Flamboyant Reposition": {
                     "name": "Flamboyant Reposition",
@@ -4843,18 +4128,6 @@
                 "equipment-Small Bag of Ash Containing a Black Onyx Gem": {
                     "name": "Small Bag of Ash Containing a Black Onyx Gem"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense (Imprecise) 60 feet": {
-                    "name": "Lifesense (Imprecise) 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Catch Rock": {
                     "name": "Catch Rock",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.CatchRock]</p>"
@@ -4866,10 +4139,6 @@
                 "Impart Doom": {
                     "name": "Impart Doom",
                     "description": "<p>A creature hit by Sorvinaesen's claw Strike, or one who critically fails a save from one of Sorvinaesen's spells, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
                 },
                 "Visions of Death": {
                     "name": "Visions of Death",
@@ -4886,21 +4155,9 @@
             "hp": "negative healing",
             "blurb": "Variant bodak bank guard",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense 30 feet": {
-                    "name": "Lifesense 30 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Draining Peek": {
                     "name": "Draining Peek",
-                    "description": "<p><strong>Trigger</strong> A living creature within 30 feet that Opkherab can perceive with his lifesense starts its turn</p>\n<hr />\n<p><strong>Effect</strong> The target must attempt a @Check[type:fortitude|dc:17] save. If it fails, Opkherab regains [[/r 3[healing]]]{3 Hit Points}, and the target becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Opkherab can't use Draining Peek for [[/r 1d4 #Recharge Draining Peek]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Trigger</strong> A living creature within 30 feet that Opkherab can perceive with his lifesense starts its turn</p>\n<hr />\n<p><strong>Effect</strong> The target must attempt a @Check[type:fortitude|dc:17] save. If it fails, Opkherab regains [[/r 3[healing]]]{3 Hit Points}, and the target becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Opkherab can't use Draining Peek for [[/br 1d4 #Recharge Draining Peek]]{1d4 rounds}.</p>"
                 },
                 "Key Conditioning": {
                     "name": "Key Conditioning",
@@ -4927,10 +4184,6 @@
             "name": "Zombie Chuul",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Tremorsense (Imprecise) 30 feet": {
                     "name": "Tremorsense (Imprecise) 30 feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
@@ -4938,10 +4191,6 @@
                 "Slow": {
                     "name": "Slow",
                     "description": "<p>The zombie chuul is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -4958,10 +4207,6 @@
                 "Tentacle Transfer": {
                     "name": "Tentacle Transfer",
                     "description": "<p><strong>Requirements</strong> The zombie chuul has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> The zombie chuul transfers the grabbed creature from its claws to its tentacles, or vice versa. The creature is exposed to the zombie chuul's paralytic venom when transferred into the tentacles and at the start of each of the zombie chuul's turns if it remains grabbed by the tentacles.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -4973,10 +4218,6 @@
             "hp": "coffin restoration, fast healing 10, negative healing",
             "blurb": "Human vampire guard",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Children of the Night": {
                     "name": "Children of the Night",
                     "description": "<p>The vampire's presence brings forth creatures of the night to do the master's bidding. These typically include @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.sPClc6y3dT3XZupv]{Rat Swarms}, @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VAWmwDA08ZLQd8lW]{Bat Swarms}, and @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.Oilfs8Atv2LjAsUS]{Wolves}, but can include other creatures.</p>\n<p>The vampire can give telepathic orders to these creatures as long as they are within 100 feet, but they can't communicate back.</p>"
@@ -4988,10 +4229,6 @@
                 "Fast Healing 10": {
                     "name": "Fast Healing 10",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Coffin Restoration": {
                     "name": "Coffin Restoration",
@@ -5028,10 +4265,6 @@
                 "Turn to Mist": {
                     "name": "Turn to Mist",
                     "description": "<p>The vampire turns into a cloud of vapor, as the <em>@UUID[Compendium.pf2e.spells-srd.Item.V8wXOsoejQhe6CyG]{Vapor Form}</em> spell, or back to its normal form. The vampire loses fast healing while in gaseous form.</p>\n<p>The vampire can remain in this form indefinitely.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -5060,17 +4293,9 @@
             "hp": "negative healing",
             "blurb": "Male ghoul poisoner",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Infused Items": {
                     "name": "Infused Items",
                     "description": "<p>Pesgahi carries the following infused items, which last for 24 hours or until the next time he makes his daily preparations: @UUID[Compendium.pf2e.equipment-srd.Item.ktjFOp3U0wQD9t0Z]{Antidote (Lesser)} (2), @UUID[Compendium.pf2e.equipment-srd.Item.MoBlVd36uD9xVvZC]{Smokestick (Lesser)} (2), @UUID[Compendium.pf2e.equipment-srd.Item.SgtqZxt26BdjUmEB]{Acid Flask (Moderate)} (6), @UUID[Compendium.pf2e.equipment-srd.Item.nVvH1ZcM7OwIVIs8]{Frost Vial (Moderate)} (4)</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Consume Flesh": {
                     "name": "Consume Flesh",
@@ -5102,14 +4327,6 @@
             "hp": "negative healing, rejuvenation",
             "ac": "43 with shield raised",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -5126,13 +4343,9 @@
                     "name": "Sacrilegious Aura",
                     "description": "<p>@Template[type:emanation|distance:30]{30 feet} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<hr />\n<p>When a creature in the aura uses a positive spell or ability, the graveknight automatically attempts to counteract it, with a counteract modifier of [[/r 1d20+27 #Counteract]]{+27}.</p>"
                 },
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
-                },
                 "Devastating Blast": {
                     "name": "Devastating Blast",
-                    "description": "<p>Seldeg unleashes a @Template[type:cone|distance:30] of fire. Creatures in the area take @Damage[9d12[fire]] damage (@Check[type:reflex|dc:35|basic:true]). Seldeg can use this ability once every [[/r 1d4 #Recharge Devastating Blast]]{1d4 rounds}.</p>"
+                    "description": "<p>Seldeg unleashes a @Template[type:cone|distance:30] of fire. Creatures in the area take @Damage[9d12[fire]] damage (@Check[type:reflex|dc:35|basic:true]). Seldeg can use this ability once every [[/br 1d4 #Recharge Devastating Blast]]{1d4 rounds}.</p>"
                 },
                 "Graveknight's Curse": {
                     "name": "Graveknight's Curse",
@@ -5165,10 +4378,6 @@
             "allSaves": "+1 status to all saves vs. magic",
             "languages": "Telepathy 100 feet",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Tremorsense (Imprecise) 60 feet": {
                     "name": "Tremorsense (Imprecise) 60 feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
@@ -5224,10 +4433,6 @@
             "name": "Shadowforged Guardian",
             "publicNotes": "<p>Shadowforged guardians are created through the intricate and dangerous process of siphoning penumbral energies and matter from the Shadow Plane and then binding them to a physical skeleton of wood and metal.</p>\n<p>The first shadowforged guardians were created thousands of years ago in Nidal and were usually crafted in the likeness of that nation's patron deity, Zon-Kuthon. Shadowforged guardians are understandably in high demand; unfortunately, only the person who speaks a special word or phrase at the moment of the construct's creation can command it. Those who know the hidden formula to craft these constructs guard the secret well and only a few shadowcasters deign to create these guardians on another person's behalf-for a hefty price.</p>",
             "items": {
-                "Greater Darkvision": {
-                    "name": "Greater Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterDarkvision]</p>"
-                },
                 "Eager Shadows": {
                     "name": "Eager Shadows",
                     "description": "<p>The shadowforged guardian increases all of its Speeds by 30 feet during the first round of combat after rolling initiative.</p>"
@@ -5289,17 +4494,9 @@
             "publicNotes": "<p>Common urban legends in Geb warn of the vengeful spirits of those who've been cooked alive, collectively called charghars. While many Gebbites eat people in ways that don't involve cooking, there are some undead who've grown bored after centuries of the same diet. There are also some living people in the nation who've resorted to cannibalism: either downtrodden folks who cook and eat their neighbors and kin out of necessity, or socialites who dine on such fare because it's fashionable. Regardless of the reason for cooking people, these efforts can create vengeful undead creatures who lurk wherever meals are being prepared, luring cooks into making careless or deadly mistakes.</p>\n<p>Charghars have spectral humanoid forms, while their physical manifestations appear much as they did after they were cooked-as charred remains, gory corpses bearing disembodied butchered chunks that float nearby, or loose assemblages of boiled bones.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Lifesense 60 Feet": {
                     "name": "Lifesense 60 Feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Malevolent Mishaps": {
                     "name": "Malevolent Mishaps",
@@ -5340,10 +4537,6 @@
             "name": "Kapoacinth",
             "blurb": "Variant gargoyle",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -5366,10 +4559,6 @@
             "publicNotes": "<p>Sometimes, when a troll is regenerating from life-threatening wounds inflicted by necromancy or negative energy, the vile energy takes hold in the troll's supernaturally resilient regeneration. The force that should have killed the troll instead becomes a part of the troll's strange physiology. These trolls are not undead, but the force inside them eats at their bodies and souls, turning them into shrunken mockeries of their former selves. These so-called \\\"tombstone trolls\\\" resemble withered, diminutive trolls, bloated with starvation and obviously sickly. Their teeth, hair, and fingernails rot, fall out, and regenerate every few days in an endless cycle that is both painful to experience and sickening to see.</p>\n<p>Other trolls shun and despise tombstone trolls, who earn their name from their habit of digging up graves in their search for an easy meal that can't fight back. Tombstone trolls shun confrontation of any kind, especially in areas where their grave-robbing might put them at odds with powerful undead. They often lair underground, safe in their graveyard burrows for days at a time, gradually tunneling through the earth to devour nearby corpses. If the tombstone troll is clever, the surface might not bear any evidence of their presence except for a few divots or soft spots in the soil. Once a tombstone troll has run out of easy pickings in a cemetery, it moves on in the dead of night to find a new hunting ground. If their travel is lengthy or difficult, their hunger might drive them to attack the living.</p>",
             "hp": "regeneration 5 (deactivated by acid, fire, or positive)",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Regeneration 5 (Deactivated by Acid, Fire, or Positive)": {
                     "name": "Regeneration 5 (Deactivated by Acid, Fire, or Positive)",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
@@ -5399,17 +4588,9 @@
             "name": "Zombie Horse",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Slow": {
                     "name": "Slow",
-                    "description": "<p>丧尸永久陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}且无法使用反应动作。</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                    "description": "<p>A zombie is permanently @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} and can't use reactions.</p>"
                 },
                 "Chomp at the Bone": {
                     "name": "Chomp at the Bone",
@@ -5433,18 +4614,6 @@
                 "equipment-Rock": {
                     "name": "Rock"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Lifesense (Imprecise) 60 feet": {
-                    "name": "Lifesense (Imprecise) 60 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -5461,10 +4630,6 @@
                     "name": "Font of Death",
                     "description": "<p>The tomb giant turns the spiritual tide on a creature that has just died, temporarily transforming it into a volatile vessel of negative energy. The tomb giant touches a creature that died in the past 24 hours, infusing its flesh and bone with negative energy. Once during the next hour, the tomb giant can spend a single action (from any distance) to release this negative energy from the corpse in an explosion that deals @Damage[10d10[void]] damage energy in a @Template[type:burst|distance:15] (@Check[type:fortitude|dc:36|basic:true] save); if not released before the end of the hour, the energy dissipates harmlessly. The tomb giant can't use Font of Death while a previous corpse remains infused.</p>"
                 },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
-                },
                 "Wicked Blow": {
                     "name": "Wicked Blow",
                     "description": "<p>The Agorron guard makes a Strike with their scythe. A creature damaged by this attack takes @Damage[3d6[bleed]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>"
@@ -5478,14 +4643,6 @@
             "name": "Skeleton Rival Necromancer",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Bolster Dead": {
                     "name": "Bolster Dead",
                     "description": "<p><strong>Frequency</strong> once per turn</p>\n<p><strong>Requirements</strong> Your most recent action was to cast a non-cantrip necromancy spell</p>\n<hr />\n<p><strong>Effect</strong> You harness the residual energy from the spell you last cast into the body of an undead creature within 30 feet. That creature's resistances increase by an amount equal to the level of the spell cast until the beginning of the next turn.</p>"
@@ -5505,10 +4662,6 @@
             "blurb": "Male vetalarana vampire",
             "languages": "Tongues",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Thoughtsense (Precise) 100 feet": {
                     "name": "Thoughtsense (Precise) 100 feet",
                     "description": "<p>Kemnebi senses all non-mindless creatures within 100 feet as a precise sense.</p>"
@@ -5552,10 +4705,6 @@
                 "Paralyzing Claws": {
                     "name": "Paralyzing Claws",
                     "description": "<p>Any living, non-mindless creature hit by Kemnebi's claw Strike must succeed at a @Check[type:fortitude|dc:36] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>"
-                },
-                "Improved Grab": {
-                    "name": "Improved Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ImprovedGrab]</p>"
                 }
             }
         },
@@ -5568,10 +4717,6 @@
             "items": {
                 "equipment-Key to all locks in Cerulean Glade": {
                     "name": "Key to all locks in Cerulean Glade"
-                },
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
                 },
                 "Evasion": {
                     "name": "Evasion",
@@ -5597,10 +4742,6 @@
                 "equipment-Sack of 5 Rocks": {
                     "name": "Sack of 5 Rocks"
                 },
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Catch Rock": {
                     "name": "Catch Rock",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.CatchRock]</p>"
@@ -5608,10 +4749,6 @@
                 "Hook Shake": {
                     "name": "Hook Shake",
                     "description": "<p><strong>Requirements</strong> A creature adjacent to the marsh giant is @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} in water at least 1 foot deep</p>\n<hr />\n<p><strong>Effect</strong> The marsh giant uses its gaff to shake the creature back and forth and hold it underwater. The giant attempts an @Check[type:athletics|defense:fortitude] check against the target's Fortitude DC.</p>\n<hr />\n<p><strong>Critical Success</strong> The target takes @Damage[(6d6+14)[piercing]] damage and loses 5 rounds' worth of air if they were holding their breath.</p>\n<p><strong>Success</strong> The target takes @Damage[(3d6+14)[piercing]] damage and loses 3 rounds' worth of air if they were holding their breath.</p>\n<p><strong>Failure</strong> The target is unaffected.</p>\n<p><strong>Critical Failure</strong> As failure, but the giant drops its gaff as well.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
                 },
                 "Twist the Hook": {
                     "name": "Twist the Hook",
@@ -5628,10 +4765,6 @@
             "blurb": "Variant elite giant animated statue",
             "ac": "(24 when broken); construct armor",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Construct Armor (Hardness 10)": {
                     "name": "Construct Armor (Hardness 10)",
                     "description": "<p>Like normal objects, the statue has Hardness. This Hardness reduces any damage it takes by an amount equal to the Hardness. Once the statue is reduced to less than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks and its Armor Class is reduced to 24.</p>"
@@ -5643,10 +4776,6 @@
                 "Cowl of Shadow": {
                     "name": "Cowl of Shadow",
                     "description": "<p>Shifting shadows cover the statue. If the statue is dealt at least @Damage[15[vitality]] damage or brought within an area of magical light, the shadows recede, and the statue can't make darkness mote attacks or use Clinging Gloom.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -5675,21 +4804,9 @@
             "hp": "ashen rise, negative healing, regeneration 20 (deactivated by fire or good)",
             "languages": "(Can't Speak Any Language); Telepathy 100 feet",
             "items": {
-                "Greater Darkvision": {
-                    "name": "Greater Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterDarkvision]</p>"
-                },
-                "Lifesense 100 feet": {
-                    "name": "Lifesense 100 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
                 "At-Will Spells": {
                     "name": "At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Regeneration 20 (Deactivated by Fire or Good)": {
                     "name": "Regeneration 20 (Deactivated by Fire or Good)",
@@ -5720,14 +4837,6 @@
             "name": "Pokmit Bloody-Pike",
             "blurb": "Male graveknight military captain",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -5758,7 +4867,7 @@
                 },
                 "Ruinous Weapons": {
                     "name": "Ruinous Weapons",
-                    "description": "<p>Any weapon or unarmed attack Pokmit uses gains the effects of the +1 greater striking and greater frost weapons runes. (These bonuses are included in his statistics above.)</p>"
+                    "description": "<p>Any weapon or unarmed attack Pokmit uses gains the effects of the <em>+1 greater striking</em> and <em>@UUID[Compendium.pf2e.equipment-srd.Item.Sexud7FdxIrg50vU]{Greater Frost}</em> weapons runes. (These bonuses are included in his statistics above.)</p>"
                 },
                 "Weapon Master": {
                     "name": "Weapon Master",
@@ -5774,14 +4883,6 @@
             "publicNotes": "<p>Arboreals can be victims of undeath like any other living creature, but without bones or flesh, their undead take a different form. When an arboreal shivers to life as undead, it often animates as a snag-a leafless, skeletal dead tree that haunts its forest, attacking any living creature it can catch. An arboreal snag is mindless and difficult to control, but some necromancers use them as forest guardians.</p>\n<p>While many arboreals are comfortable remaining still for prolonged periods of time, arboreal snags tend to be restless, meandering in a region they consider their domain. This territory is sometimes evident from battered forest animals or trampled undergrowth that litters the ground, but forest creatures soon learn to avoid the area entirely. It doesn't take long for regions haunted by arboreal snags to grow desolate and unhealthy, and locals often dub such regions as haunted or cursed.</p>",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
@@ -5793,18 +4894,6 @@
                 "Putrid Sap": {
                     "name": "Putrid Sap",
                     "description": "<p>If the arboreal snag takes damage from a piercing attack, nauseating green pus spurts from the wound. Creatures within 10 feet of the snag must succeed at a @Check[type:fortitude|dc:20] save or be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical failure). Creatures that attempt this save are then temporarily immune for 1 hour.</p>"
-                },
-                "Throw Rock": {
-                    "name": "Throw Rock",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
-                },
-                "Knockdown": {
-                    "name": "Knockdown",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Knockdown]</p>"
                 }
             }
         },
@@ -5816,10 +4905,6 @@
             "publicNotes": "<p>Shabti votaries are devout clerics of Pharasma who heal and protect their allies while destroying enemies of their faith. Although shabti votaries focus primarily on destroying undead, they remain a potent enemy against living foes.</p>\n<hr />\n<p>Shabtis are facsimiles of the rich and powerful, patched together from shards of other souls and offered as a sacrifice to the Boneyard to suffer for the sins of their creator. Shabtis are unaware they aren't the person they emulate, and most spend an eternity enduring the punishments owed to another while the soul they emulate escapes judgement. Some shabtis discover their nature and often become adrift, drowning in the feelings and memories of their foul creator, with no true purpose and identities of their own.</p>",
             "allSaves": "+2 status to all saves vs. mental and possession",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "+2 Status to All Saves vs. Mental and Possession": {
                     "name": "+2 Status to All Saves vs. Mental and Possession"
                 },
@@ -5852,14 +4937,6 @@
             "name": "Afziaka Brute",
             "publicNotes": "<p>An afziaka brute arises from a horse, bull, or other large animal.</p>\n<hr />\n<p>Vrykolakas vampires use animals as tools to carry their spirits when they would otherwise be slain. The animal usually dies as the vampire is reborn, but some live on in painful starvation.</p>",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Scent (Imprecise) 30 feet": {
-                    "name": "Scent (Imprecise) 30 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
                 "Grave-Bound Guts": {
                     "name": "Grave-Bound Guts",
                     "description": "<p>While within 100 feet of its vrykolakas's burial ground, an afziaka appears in the natural shape it had when it was a regular animal and can eat normally. When farther away, it doesn't gain sustenance from eating food and eventually starves to death.</p>"
@@ -5901,10 +4978,6 @@
                 "equipment-Leather Bag Containing Finger Bones": {
                     "name": "Leather Bag Containing Finger Bones"
                 },
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Coven": {
                     "name": "Coven",
                     "description": "<p>Iron Taviah adds <em>@UUID[Compendium.pf2e.spells-srd.Item.gPvtmKMRpg9I9D7H]{Earthbind}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.115Xp9E38CJENhNS]{Passwall}</em>, and <em>@UUID[Compendium.pf2e.spells-srd.Item.8Umt1AzYfFbC4fui]{Spellwrack}</em> to her coven's spells.</p>"
@@ -5935,10 +5008,6 @@
                 "Scattered Coven": {
                     "name": "Scattered Coven",
                     "description": "<p>When the characters meet Iron Taviah, the Graveclaw is at the height of its power. As a scattered coven, the Graveclaw grants Taviah the ability to cast the following spells as 3rd-level occult spells, once per day each, without requiring help from her fellow coven members:<em>@UUID[Compendium.pf2e.spells-srd.Item.f8hRqLJaxBVhF1u0]{Acid Arrow}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.B3eLlbaPxOYHcs1o]{Curse Of Lost Time}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.gPvtmKMRpg9I9D7H]{Earthbind}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.wdA52JJnsuQWeyqz]{Harm}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.xlRv8vCTHh1NeMpw]{Mimic Undead}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.lKcsmeOrgHtK4xQa]{Summon Construct}</em>, and <em>@UUID[Compendium.pf2e.spells-srd.Item.Seaah9amXg70RKw2]{Water Walk}</em>.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
@@ -5966,17 +5035,9 @@
             "hp": "negative healing",
             "languages": "(Can't Speak Any Language)",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
-                },
                 "Overwhelming Ectoplasm": {
                     "name": "Overwhelming Ectoplasm",
-                    "description": "<p>An ectoplasmic amalgam's Strikes affect incorporeal creatures with the effects of a ghost touch property rune. A creature damaged by an ectoplasmic amalgam's Strikes is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} unless they succeed at a @Check[type:fortitude|dc:36] save, as the thoughts and emotions of the amalgam's constituent souls invade their mind.</p>"
+                    "description": "<p>An ectoplasmic amalgam's Strikes affect incorporeal creatures with the effects of a <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune. A creature damaged by an ectoplasmic amalgam's Strikes is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} unless they succeed at a @Check[type:fortitude|dc:36] save, as the thoughts and emotions of the amalgam's constituent souls invade their mind.</p>"
                 },
                 "Pummeling Barrage": {
                     "name": "Pummeling Barrage",
@@ -5984,7 +5045,7 @@
                 },
                 "Spew Ectoplasm": {
                     "name": "Spew Ectoplasm",
-                    "description": "<p>The ectoplasmic amalgam releases a burst of ectoplasm that deals @Damage[16d6[bludgeoning]] damage in a @Template[type:cone|distance:60] (@Check[type:reflex|dc:36|basic:true]). On a failed save, a creature is additionally @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} (or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} on a critical failure). Spew Ectoplasm functions as a force effect for the purposes of affecting incorporeal creatures. The ectoplasmic amalgam can't use Spew Ectoplasm again for [[/r 1d4 #Recharge Spew Ectoplasm]]{1d4 rounds}.</p>"
+                    "description": "<p>The ectoplasmic amalgam releases a burst of ectoplasm that deals @Damage[16d6[bludgeoning]] damage in a @Template[type:cone|distance:60] (@Check[type:reflex|dc:36|basic:true]). On a failed save, a creature is additionally @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} (or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} on a critical failure). Spew Ectoplasm functions as a force effect for the purposes of affecting incorporeal creatures. The ectoplasmic amalgam can't use Spew Ectoplasm again for [[/br 1d4 #Recharge Spew Ectoplasm]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -5995,17 +5056,9 @@
             "name": "Ghoul Crocodile",
             "hp": "negative healing",
             "items": {
-                "Darkvision": {
-                    "name": "Darkvision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]</p>"
-                },
                 "Corpse Scent (Imprecise)": {
                     "name": "Corpse Scent (Imprecise)",
                     "description": "<p>The ghoul crocodile can smell humanoid corpses in the water up to 1 mile away.</p>"
-                },
-                "Negative Healing": {
-                    "name": "Negative Healing",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Aquatic Ambush": {
                     "name": "Aquatic Ambush",
@@ -6026,10 +5079,6 @@
                 "Paralysis": {
                     "name": "Paralysis",
                     "description": "<p>Any living non-elf creature hit by a ghoul crocodile's tail must succeed at a @Check[type:fortitude|dc:20] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>"
-                },
-                "Grab": {
-                    "name": "Grab",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Grab]</p>"
                 }
             }
         },
