@@ -64,6 +64,10 @@
             "description": "<p>For 3 rounds, your Strikes and spells deal additional damage against undead, creatures in possession of an imprisoned soul, or creatures you have witnessed create or command undead. You gain a status bonus to damage with your Strikes against these creatures equal to the number of weapon damage dice. Spells you cast from spell slots gain a status bonus to damage against these creatures equal to the level of the spell; this bonus applies only to spells that deal damage and don't have a duration.</p>",
             "name": "Effect: Spiral Sworn"
         },
+        "Effect: Fresh Produce": {
+            "description": "<p>You gain resistance to void damage.</p>",
+            "name": "Effect: Fresh Produce"
+        },
         "Effect: Smite Good": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.T5xFirAE8VLL5Lbu]{Smite Good}.</p>\n<p>Until the start of your next turn, your Strikes against that foe using the weapon your blade ally inhabits deal an extra 4 evil damage, increasing to 6 if you have master proficiency with this weapon.</p>\n<p>If the chosen enemy attacks you before the start of your next turn, the duration extends to the end of that enemy's next turn. If the enemy continues to attack you each turn, the duration continues to extend.</p>",
             "name": "Effect: Smite Good"
@@ -207,6 +211,10 @@
         "Effect: Energize Wings": {
             "description": "<p>You gain a fly Speed of 30 feet.</p>",
             "name": "Effect: Energize Wings"
+        },
+        "Stance: Drifting Pollen": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.7W5oubPLcxHJdcHX]{Drifting Pollen}</p>\n<p>A haze of pollen floats around you. A creature in your kinetic aura when you enter the stance, or who later enters the aura or ends its turn in the aura, attempts at a @Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)] save against your class DC. On a failure, it's @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical failure) and @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until it's no longer sickened. A creature attempts this save no more than once per round and doesn't attempt a new save if already affected.</p>",
+            "name": "Stance: Drifting Pollen"
         },
         "Effect: Azarketi Purification": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.u94fcPT5Oukqzql5]{Azarketi Purification}</p>",
@@ -359,6 +367,10 @@
         "Effect: Radiant Infusion": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.JcXzKwrdMkNszrJQ]{Radiant Infusion}.</p>\n<p>If the next action you use is to cast <em>@UUID[Compendium.pf2e.spells-srd.Item.rfZpqmj0AIIdkVIs]{Heal}</em> to restore Hit Points to a single living creature, the target deals an additional 1d6 positive damage with its melee weapons and unarmed attacks until the end of its next turn. If the <em>heal</em> spell is at least 5th level, this damage increases to 2d6, or 3d6 if the spell is at least 8th level.</p>",
             "name": "Effect: Radiant Infusion"
+        },
+        "Stance: Steam Knight": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.7PjBANpMMoBxTYq3]{Steam Knight}</p>\n<p>You shape your kinetic aura into swirling armor of steam that scalds your enemies and propels you on super-heated jet streams. A creature can take damage from Steam Knight only once per round. Your steam armor has the following effects.</p>\n<ul>\n<li>You gain a +10-foot status bonus to your Speed.</li>\n<li>When you @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leap}, you can jump up to your Speed. You don't immediately fall at the end of a jump, provided you Leap again with your next action. If you Leap over a creature and come within 10 feet, that creature takes @Damage[(floor((@actor.level -6)/5)+2)d6[fire]] damage with a @Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)|basic:true] save against your class DC.</li>\n<li>At the start of each of your turns, you can emit steam as a free action. It deals @Damage[(floor((@actor.level -6)/5)+2)d6[fire]] damage to each creature in your kinetic aura with a @Check[type:reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic:true] save against your class DC. A creature that fails is also pushed 5 feet.<hr />\n<p><strong>Level (+5)</strong> The fire damage from a jump or blast of steam increases by 1d6.</p>\n</li>\n</ul>",
+            "name": "Stance: Steam Knight"
         },
         "Effect: Lost in the Crowd (100 Creatures)": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.d8RfatiK9UOQANLz]{Lost in the Crowd}</p>\n<p>You've learned how to move as one with crowds and hide among them, vanishing into a busy street in the blink of an eye. You move at full Speed in crowds and can use cover from crowds to Hide and Sneak, gaining a +4 circumstance bonus on your Stealth checks when in a crowd of at least 100 creatures.</p>",
@@ -564,6 +576,10 @@
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.rKZE8BA9IQHSSWoW]{Emblazon Energy} when applied to a weapon.</p>\n<ul>\n<li><strong>Weapon</strong> The weapon deals an extra 1d4 fire damage, or an extra 1d6 fire damage if you have a domain spell with the fire trait.</li>\n</ul>",
             "name": "Effect: Emblazon Energy (Weapon, Fire)"
         },
+        "Stance: Desert Wind": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.ti6rPcSBsCuyEHqy]{Desert Wind}</p>\n<p>A vortex of sand and dust surrounds you. Each creature inside your kinetic aura (including you) is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from any creature outside your kinetic aura, and creatures outside the aura are concealed from creatures inside the aura other than you. Your air impulses carry sands that cut at great speed.</p>\n<p>When you use a damaging air impulse that affects at least one creature in your kinetic aura, that impulse deals 1 additional slashing damage, or 2 if the impulse has a single target.</p>\n<hr />\n<p><strong>Level (+2)</strong> The extra damage increases by 1, or 2 if the impulse has a single target.</p>",
+            "name": "Stance: Desert Wind"
+        },
         "Stance: Everstand Stance": {
             "description": "<p>When in this stance, you wield the shield with both hands. When wielding a shield this way, increase the weapon damage die of the shield's boss or spikes by one step, and increase the shield's Hardness by 2 when using the @UUID[Compendium.pf2e.feats-srd.Item.jM72TjJ965jocBV8]{Shield Block} reaction.</p>",
             "name": "Stance: Everstand Stance"
@@ -699,6 +715,10 @@
             "description": "<p>The target can't flank or contribute to allies' flanking.</p>",
             "name": "Effect: Tactical Debilitations (No Flanking)"
         },
+        "Stance: Ravel Of Thorns": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.mHvkBdBN4gs6CH1g]{Ravel Of Thorns}</p>\n<p>Thorny vines grow in geometric patterns on surfaces in your kinetic aura. A creature that starts its turn in the thorns takes a –10-foot circumstance penalty to its Speeds until it leaves the area. The thorns are hazardous terrain. A creature takes @Damage[(floor((@actor.level -4)/4)+2)[piercing]] damage each time it moves into one of these squares. If any square the thorns grow on is water or soil, double the hazardous terrain damage for all thorns. If you move, the thorns disappear; new thorns grow at the end of your turn.</p>\n<hr />\n<p><strong>Level (+4)</strong> The damage increases by 1.</p>",
+            "name": "Stance: Ravel Of Thorns"
+        },
         "Effect: Augment Senses": {
             "description": "<p>Until the start of your next turn, you can't be flanked.</p>",
             "name": "Effect: Augment Senses"
@@ -818,6 +838,10 @@
         "Effect: Enforce Oath": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.YZ138OqflDhrkqmR]{Enforce Oath}</p>\n<p>You gain a +1 status bonus to AC and saves against attacks and effects by the chosen creature. You also gain a +1 status bonus to attack rolls against the chosen creature.</p>\n<p>However, your dedication to Enforcing your Oath draws your focus away from all other foes. While you are Enforcing your Oath, you take a -1 status penalty to AC, attack rolls, and saves against all other creatures until you stop Enforcing your Oath.</p>\n<p>You stop Enforcing your Oath once the chosen creature is reduced to 0 Hit Points or offers a legitimate surrender to you or your allies. You immediately stop Enforcing your Oath if you are @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} or if the chosen creature goes @UUID[Compendium.pf2e.conditionitems.Item.9evPzg9E6muFcoSk]{Unnoticed} by you for more than 1 minute. You can also stop Enforcing your Oath at any time during your turn as a free action.</p>",
             "name": "Effect: Enforce Oath"
+        },
+        "Stance: Winter Sleet": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.xn6EaAbQlAB5ZGe6]{Winter Sleet}</p>\n<p>Bone-chilling, swirling sleet surrounds you, cruel as deepest winter. Surfaces in your kinetic aura are coated in slippery ice. A creature that moves on this uneven ground immediately falls unless it @UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{Balances} (DC 15). A creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} on the ice, as normal for uneven ground. You're immune to these effects.</p>\n<p>If a creature on the ice is critically hit by one of your water impulses or critically fails at a save against one, that creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the end of its next turn.</p>",
+            "name": "Stance: Winter Sleet"
         },
         "Effect: Core Cannon": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.zeyrLJr6b7hPdx4w]{Core Cannon}</p>\n<p>Your body transforms into a powerful magical cannon.</p>",
@@ -1010,6 +1034,10 @@
             "description": "<p>@UUID[Compendium.pf2e.feats-srd.Item.hT0pVPqFuiEsmRb8]{Six Pillars Stance}</p>\n<p><strong>Requirements</strong> You are unarmored.</p>\n<hr />\n<p>You stand firm, steeling your mind and body, allowing you to use your magic unperturbed. While in this stance, you gain a +4 circumstance bonus to AC against reactions triggered by using actions with the concentrate or manipulate traits. In addition, when you cast a spell that requires one or more actions while in this stance, your unarmed Strikes gain a +1 circumstance bonus to damage.</p>",
             "name": "Stance: Six Pillars Stance"
         },
+        "Stance: Magnetic Field": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.YJCAiNpFbX2MIc0G]{Magnetic Field}</p>\n<p>A magnetic field surrounds you. Choose a polarity when you take this action. You can switch the polarity as a free action at the start of each of your turns while you remain in this stance.</p>\n<p><strong>Attract</strong> A creature that is wearing metal armor, has the metal trait, or is made of metal treats squares in your kinetic aura as difficult terrain when moving away from you. You pull unattended metal objects of light Bulk or less in your kinetic aura to you. They gather in your space and move with you.</p>\n<p><strong>Repel</strong> A creature that is wearing metal armor, has the metal trait, or is made of metal treats squares in your kinetic aura as difficult terrain when moving closer to you. You push unattended metal objects of light Bulk or less in your kinetic aura away. They stop moving once they're outside your aura.</p>",
+            "name": "Stance: Magnetic Field"
+        },
         "Stance: Tiger Stance": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.VCjAlOvjNvFJOsG5]{Tiger Stance}</p>\n<p>You enter the stance of a tiger and can make tiger claw attacks. These deal 1d8 slashing damage; are in the brawling group; and have the agile, finesse, nonlethal, and unarmed traits.</p>\n<p>On a critical success with your tiger claws, if you deal damage, the target takes @Damage[1d4[bleed]].</p>\n<p>As long as your Speed is at least 20 feet while in Tiger Stance, you can Step 10 feet.</p>",
             "name": "Stance: Tiger Stance"
@@ -1088,6 +1116,14 @@
         "Effect: Inspiring Resilience": {
             "description": "<p>You gain a +1 circumstance bonus to their Will save against the triggering effect, or a +2 circumstance bonus if the effect originated from an undead.</p>",
             "name": "Effect: Inspiring Resilience"
+        },
+        "Effect: Aura Junction (Fire)": {
+            "description": "<p>Enemies in your kinetic aura gain weakness to fire from your fire impulses. The weakness is equal to half your level (minimum weakness 1).</p>",
+            "name": "Effect: Aura Junction (Fire)"
+        },
+        "Stance: Assume Earth's Mantle": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.vV0nW9OIJ0VdeVjy]{Assume Earth's Mantle}</p>\n<p>Enormous pieces of rock cluster around your body. You can Dismiss this impulse.</p>\n<ul>\n<li>You become Large if you were smaller. This increases your reach by 5 feet (or by 10 feet if you started out Tiny).</li>\n<li>You gain a climb Speed equal to your land Speed, but you can use it only to climb surfaces of earthen matter.</li>\n<li>The armor grants you a +1 circumstance bonus to your Fortitude saves and a +2 circumstance bonus to your Fortitude or Reflex DCs against attempts to @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove} you, @UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{Trip} you, or knock you @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</li>\n<li>If your Strength is below +4, this armor raises your Strength to +4. If your Strength is +4 or higher, this armor grants you a +1 item bonus to your Strength.</li>\n<li>If you have the Armor in Earth impulse, you can add its effects to Assume Earth's Mantle.</li>\n</ul>",
+            "name": "Stance: Assume Earth's Mantle"
         },
         "Effect: Supercharge Prosthetic Eyes": {
             "description": "<p>You gain darkvision and low-light vision, and you gain a +1 status bonus to visual Perception checks.</p>",
@@ -1206,6 +1242,10 @@
         "Effect: Shield Ally": {
             "description": "<p>The hardness of your equipped shield increases by 2.</p>",
             "name": "Effect: Shield Ally"
+        },
+        "Effect: Aura Junction (Water)": {
+            "description": "<p>You gain fire resistance equal to half the kineticist's level.</p>",
+            "name": "Effect: Aura Junction (Water)"
         },
         "Effect: Ghosts in the Storm (Activation)": {
             "description": "<p>The creature is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and its Strikes gain the <em>@UUID[Compendium.pf2e.equipment-srd.Item.NVst7e69agGG9Qwd]{Shock}</em> rune.</p>",
@@ -1399,6 +1439,10 @@
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.bqZkAFS6eq9TKXMO]{Dragon's Rage Wings}</p>\n<p>While you are raging, you gain a fly Speed equal to your land Speed.</p>",
             "name": "Effect: Dragon's Rage Wings"
         },
+        "Stance: Crowned in Tempest's Fury": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.8iHpUB0bYaHh86Kk]{Crowned in Tempest's Fury}</p>\n<p>You become one with a devastating thunderstorm from the Plane of Air, placing a crown of lightning upon your brow. Sparks flash in your eyes, and lightning strikes constantly in the air around you as howling winds lift you from the ground.</p>\n<ul>\n<li>Any creature that enters your kinetic aura or ends its turn there takes @Damage[2d12[electricity]] damage.</li>\n<li>If you don't have a fly Speed, you gain a 20-foot fly Speed. If you have the Cyclonic Ascent impulse, you instead gain that fly Speed and the extra benefits.</li>\n<li>You gain a +10-foot status bonus to all your Speeds.</li>\n<li>Your air Elemental Blasts deal an additional @Damage[1d12[electricity]] damage.</li>\n</ul>",
+            "name": "Stance: Crowned in Tempest's Fury"
+        },
         "Effect: Seedpod": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.dWGa6cFSVrASTEfd]{Seedpod}</p>\n<p>On a critical hit, a seedpod bursts, issuing forth a tangle of vegetation that imposes a -10-foot circumstance penalty on the target's Speed for 1 round.</p>",
             "name": "Effect: Seedpod"
@@ -1428,7 +1472,7 @@
             "name": "Effect: Emblazon Energy (Weapon, Acid)"
         },
         "Effect: Elemental Assault": {
-            "description": "<p>You shroud your arms and held weapons in elemental magic. Choose one element. Until the end of your next turn, your Strikes deal an additional [[/r 1d6]] damage of the indicated type and have the trait corresponding to the element: electricity for air, bludgeoning for earth, fire for fire, or cold for water.</p>",
+            "description": "<p>You shroud your arms and held weapons in elemental magic. Choose one element. Until the end of your next turn, your Strikes deal an additional 1d6 damage of the indicated type and have the trait corresponding to the element: electricity for air, bludgeoning for earth, fire for fire, or cold for water.</p>",
             "name": "Effect: Elemental Assault"
         },
         "Effect: Align Armament (Chaotic)": {
@@ -1438,6 +1482,10 @@
         "Effect: Cavalier's Banner": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.CAaXGhHDMRM3Pt4J]{Cavalier's Banner}</p>\n<p>You fly the banner of your pledge from your mount, raising your allies' spirits. You and all allies within 30 feet gain a +1 circumstance bonus to Will saves and DCs against fear effects. If your banner is destroyed or removed, allies within 30 feet become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>",
             "name": "Effect: Cavalier's Banner"
+        },
+        "Stance: Air Shroud": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.QV4NCyZQBCABykS1]{Air Shroud}</p>\n<p>Turbulent air suffuses your kinetic aura. This doesn't displace other matter but provides air for creatures in your kinetic aura that need air to breathe. Attacks with ranged weapons take a -1 circumstance penalty to their attack rolls if their paths pass through your kinetic aura. Air in your kinetic aura is difficult terrain for flying creatures other than yourself.</p>",
+            "name": "Stance: Air Shroud"
         },
         "Effect: Towering Presence": {
             "name": "Effect: Towering Presence"
@@ -1532,6 +1580,10 @@
         "Effect: Energy Shot": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.actionspf2e.Item.TSDbyYRQwhIyY2Oq]{Energy Shot}</p>\n<p>On your first three Strikes of this encounter with a firearm or crossbow, you deal an additional 1 acid, cold, fire or electricity damage. You choose which damage type to deal as part of making each Strike.</p>",
             "name": "Effect: Energy Shot"
+        },
+        "Stance: Rebirth In Living Stone": {
+            "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.mNiJvsbyxdLBnTRs]{Rebirth In Living Stone}<br /><br /></p>\n<p>Rock overflows from within you to consume your form before cracking open to reveal your body transformed into living stone. You gain 40 temporary Hit Points. You're immune to critical hits and precision damage. You can't be pushed, pulled, or tripped while you're standing on earth or stone. Your earth Elemental Blasts deal an additional 1d10 damage of their normal type. These benefits last until the end of your next turn, but you can Sustain them up to 1 minute. After you gain temporary Hit Points from this impulse, you can't do so again for 10 minutes.</p>\n<hr />\n<p><strong>Level (20th)</strong> You gain 50 temporary Hit Points.</p>",
+            "name": "Stance: Rebirth In Living Stone"
         },
         "Effect: Sniping Duo Dedication": {
             "description": "<p>Granted by @UUID[Compendium.pf2e.feats-srd.Item.6PP57Aa5HmSr0qIZ]{Sniping Duo Dedication}.</p>\n<p>Whenever you or your spotter successfully Strikes a target, the other member of your duo gains a +1 circumstance bonus per weapon damage die on the damage roll of their next Strike made against that target before the end of their next turn.</p>",

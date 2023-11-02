@@ -42,7 +42,7 @@
             "time": "3"
         },
         "Rainbow Fumarole": {
-            "description": "<p><strong>Area</strong> 20-foot radius, 60-foot-tall cylinder</p>\n<hr />\n<p>Multi-hued flames break through cracks in the ground, reaching high into the sky and giving off dangerous fumes. When you cast the spell, roll 1d8 on the table below to determine the effects of the fumarole.</p>\n<p>Any creature caught inside the area of <em>rainbow fumarole</em> when you cast it takes the indicated damage with a basic Reflex save and, on a failure, takes any added effect listed. Creatures must also attempt a saving throw when they move through the spell's area or end their turn in it. Squares within the area of the <em>rainbow fumarole</em> are difficult terrain.</p>\n<table class=\"pf2-table\">\n<thead>\n<tr>\n<th>1d8</th>\n<th>Color</th>\n<th>Damage</th>\n<th>Added Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Red</td>\n<td>@Damage[50[fire]] plus @Damage[2d6[persistent,fire]]</td>\n<td>--</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Orange</td>\n<td>@Damage[50[fire]]</td>\n<td>Knocked prone</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Yellow</td>\n<td>@Damage[20[fire]] plus @Damage[20[bludgeoning]]</td>\n<td>Pushed 10 feet</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Green</td>\n<td>@Damage[20[fire]] plus @Damage[20[acid]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Blue</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Indigo</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 minute</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Violet</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute</td>\n</tr>\n<tr>\n<td>8</td>\n<td>All</td>\n<td>Choose the color for each affected creature and use that color's damage and added effect; if a creature is affected again, you can choose a different color.</td>\n</tr>\n</tbody>\n</table>",
+            "description": "<p><strong>Area</strong> 20-foot radius, 60-foot-tall cylinder</p>\n<hr />\n<p>Multi-hued flames break through cracks in the ground, reaching high into the sky and giving off dangerous fumes. When you cast the spell, roll 1d8 on the table below to determine the effects of the fumarole.</p>\n<p>Any creature caught inside the area of <em>rainbow fumarole</em> when you cast it takes the indicated damage with a basic Reflex save and, on a failure, takes any added effect listed. Creatures must also attempt a saving throw when they move through the spell's area or end their turn in it. Squares within the area of the <em>rainbow fumarole</em> are difficult terrain.</p>\n<table class=\"pf2-table\">\n<thead>\n<tr>\n<th>[[/r 1d8]]{d8}</th>\n<th>Color</th>\n<th>Damage</th>\n<th>Added Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Red</td>\n<td>@Damage[50[fire]] plus @Damage[2d6[persistent,fire]]</td>\n<td>--</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Orange</td>\n<td>@Damage[50[fire]]</td>\n<td>Knocked prone</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Yellow</td>\n<td>@Damage[20[fire]] plus @Damage[20[bludgeoning]]</td>\n<td>Pushed 10 feet</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Green</td>\n<td>@Damage[20[fire]] plus @Damage[20[acid]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}</td>\n</tr>\n<tr>\n<td>5</td>\n<td>Blue</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round</td>\n</tr>\n<tr>\n<td>6</td>\n<td>Indigo</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 minute</td>\n</tr>\n<tr>\n<td>7</td>\n<td>Violet</td>\n<td>@Damage[30[fire]]</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute</td>\n</tr>\n<tr>\n<td>8</td>\n<td>All</td>\n<td>Choose the color for each affected creature and use that color's damage and added effect; if a creature is affected again, you can choose a different color.</td>\n</tr>\n</tbody>\n</table>",
             "name": "Rainbow Fumarole",
             "range": "500 feet",
             "duration": "1 minute",
@@ -207,6 +207,14 @@
             "name": "Passwall",
             "range": "touch",
             "duration": "1 hour",
+            "time": "2"
+        },
+        "Entangle Fate": {
+            "description": "<p>You cause a swirl of energy to entangle the fates of all caught within the blast. Each creature in the area must attempt a Will save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature's fate becomes distorted, and momentary conflicting glimpses of the immediate future cause the creature to become @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of its next turn.</p>\n<p><strong>Failure</strong> As success, but the creature is off-guard for the duration of the spell. If more than one of the targets failed to resist this spell, the creature also becomes @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for the duration of the spell as its fate and those of the other creatures continue to clash and strain against each other.</p>\n<p><strong>Critical Failure</strong> As failure, but any creature that becomes stupefied 1 for the duration of the spell also becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for the spell's duration.</p>",
+            "name": "Entangle Fate",
+            "target": "2 to 4 creatures in range",
+            "range": "30 feet",
+            "duration": "3 rounds",
             "time": "2"
         },
         "Dawnflower's Light": {
@@ -505,6 +513,13 @@
             "range": "30 feet",
             "duration": "until the start of your next turn",
             "time": "1"
+        },
+        "Life's Fresh Bloom": {
+            "description": "<p>The ground around you blooms with life, sprouting sparkling grass, flowers, and small shrubs. Each living and non-nindoru creature that starts its turn standing on the ground in the area recovers 1d6 Hit Points and gains a +5-foot status bonus to its Speed until the end of its next turn. Nindoru fiends and undead that start their turn in the area of life's fresh bloom instead become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} unless they succeed at a Fortitude saving throw.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.yYDj0G4O3q5iGexx]{Spell Effect: Life's Fresh Bloom}</p>\n<hr />\n<p><strong>Heightened (7th)</strong> Increase the Hit Points restored to 1d8 and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p><strong>Heightened (10th)</strong> Increase the Hit Points restored to 1d10 and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3}.</p>",
+            "name": "Life's Fresh Bloom",
+            "range": "30 feet",
+            "duration": "sustained up to 5 rounds",
+            "time": "2"
         },
         "Pollen Pods": {
             "description": "<p><strong>Area</strong> four unoccupied 5-foot squares, each of which is at least 20 feet apart</p>\n<hr />\n<p>You cultivate four wooden bulbs, each filled with toxic pollen and sensitive to motion. When a creature enters a space adjacent to a bulb, or when a bulb is touched or damaged (each bulb has AC 5), the bulb blossoms and releases pollen in a @Template[type:emanation|distance:15]. Creatures in the area take @Damage[8d8[poison]] damage and must attempt a Fortitude save with the following results.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Failure</strong> The creature takes full damage, becomes dazzled for 1 round, and becomes @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 minute.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage, is dazzled for 1 round, and becomes @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 minute.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by [[/r 2d8]].</p>",
@@ -1619,7 +1634,7 @@
             "time": "2"
         },
         "Positive Luminance": {
-            "description": "<p>Drawing life force into yourself, you become a beacon of positive energy. You glow with bright light in a 10-foot emanation, and you gain an internal pool of light called a luminance reservoir, which begins with a value of 4. At the start of each of your turns, you can use a free action to increase the luminance reservoir by 4. If you do, the radius of your light increases by 10 feet.</p>\n<p>If an undead creature damages you with an attack or spell while it's within the area of your light, that creature takes positive damage equal to half your luminance reservoir value. It takes this damage only the first time it damages you in a round.</p>\n<p>You can Dismiss this Spell. When you do, you can target a creature within your light and direct the positive energy into it. The target must be a willing living creature or an undead creature. This heals a living target or damages an undead target by an amount equal to your luminance reservoir's value.</p>\n<p>When you cast <em>positive luminance</em>, any other <em>positive luminance</em> spell you already had in effect ends.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> Both the initial value of your luminance reservoir and the amount you gain each turn increase by 1.</p>",
+            "description": "<p>Drawing life force into yourself, you become a beacon of positive energy. You glow with bright light in a 10-foot emanation, and you gain an internal pool of light called a luminance reservoir, which begins with a value of 4. At the start of each of your turns, you can use a free action to increase the luminance reservoir by 4. If you do, the radius of your light increases by 10 feet.</p>\n<p>If an undead creature damages you with an attack or spell while it's within the area of your light, that creature takes positive damage equal to half your luminance reservoir value. It takes this damage only the first time it damages you in a round.</p>\n<p>You can Dismiss this Spell. When you do, you can target a creature within your light and direct the positive energy into it. The target must be a willing living creature or an undead creature. This heals a living target or damages an undead target by an amount equal to your luminance reservoir's value.</p>\n<p>When you cast <em>positive luminance</em>, any other <em>positive luminance</em> spell you already had in effect ends.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.6ArAZeZyYSNLI0X5]{Spell Effect: Positive Luminance}</p>\n<hr />\n<p><strong>Heightened (+1)</strong> Both the initial value of your luminance reservoir and the amount you gain each turn increase by 1.</p>",
             "name": "Positive Luminance",
             "duration": "1 minute",
             "time": "1"
@@ -1832,6 +1847,12 @@
             "name": "Vector Screen",
             "range": "60 feet",
             "duration": "until the start of your next turn",
+            "time": "2"
+        },
+        "Tomorrow's Dawn": {
+            "description": "<p>The golden light of a new dawn and the promise of life beyond death radiates from your body. You cast bright light in a 20-foot radius (and dim light for the next 20 feet) and gain mental resistance 5. Any nindoru fiend or undead that begins its turn adjacent to you must attempt a Will save with the following results.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.SyF5kpZlZuBF4lMf]{Spell Effect: Tomorrow's Dawn}</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected and immune to this spell's effects for the remainder of the spell's duration.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} until the end of its turn.</p>\n<p><strong>Failure</strong> The creature is sickened 1. In addition, it becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> As failure, but @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} and the creature remains slowed 1 for the rest of the spell's duration.</p>\n<hr />\n<p><strong>Heightened (6th)</strong> You gain mental resistance 10.</p>\n<p><strong>Heightened (8th)</strong> You gain mental resistance 15.</p>",
+            "name": "Tomorrow's Dawn",
+            "duration": "sustained for up to 1 minute",
             "time": "2"
         },
         "Clone Companion": {
@@ -2238,7 +2259,7 @@
             "time": "2"
         },
         "Cloak of Light": {
-            "description": "<p>You surround yourself in holy light that restores the living and rebuffs undead. You glow with bright light in a 30-foot radius and dim light to the next 30 feet.</p>\n<p>Living creatures that begin their turn adjacent to you recover 2d4 Hit Points. Undead creatures that begin their turn adjacent to you take @Damage[4d4[vitality]] damage.</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The healing increases by 1d4, and the damage to undead increases by @Damage[2d4[vitality]] damage.</p>",
+            "description": "<p>You surround yourself in holy light that restores the living and rebuffs undead. You glow with bright light in a 30-foot radius and dim light to the next 30 feet.</p>\n<p>Living creatures that begin their turn adjacent to you recover 2d4 Hit Points. Undead creatures that begin their turn adjacent to you take @Damage[(floor(@item.level/2)*2)d4[vitality]] damage.</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The healing increases by 1d4, and the damage to undead increases by 2d4.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.eRRiss7y7TsneiEu]{Spell Effect: Cloak of Light}</p>",
             "name": "Cloak of Light",
             "duration": "sustained up to 5 rounds",
             "time": "2"
@@ -2595,6 +2616,13 @@
             "name": "Sea Surge",
             "duration": "until the start of your next turn",
             "time": "2"
+        },
+        "Life's Flowing River": {
+            "description": "<p>You create a volume of faint shimmering light that resembles a flowing river and sheds dim light for 10 feet on each side. The river begins in an adjacent square to you and extends in a straight 5-foot path to its maximum range or until it hits a solid wall, whichever comes first. A creature that begins its turn in the river or enters one of the river's spaces must attempt a Will save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature ignores the river's effects until the start of its next turn.</p>\n<p><strong>Success</strong> The creature treats all squares occupied by the river as difficult terrain until the start of its next turn. If the creature is undead or a nindoru fiend, it takes 2d6 mental damage.</p>\n<p><strong>Failure</strong> As success, but the creature is also knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If the creature is undead or a nindoru fiend, it takes 4d6 mental damage.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature is pushed 20 feet along the river's path in the direction of flow. If the creature is undead or a nindoru fiend, it takes 8d6 mental damage.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The mental damage increases by 1d6.</p>",
+            "name": "Life's Flowing River",
+            "range": "120 feet",
+            "duration": "1 minute",
+            "time": "3"
         },
         "Glass Shield": {
             "description": "<p>You summon a layer of clear glass to keep you from harm. This cantrip functions as the <em>@UUID[Compendium.pf2e.spells-srd.Item.TVKNbcgTee19PXZR]{Shield}</em> spell, except it has Hardness 2 and 4 Hit Points. If this shield breaks, provided the breaker is within 5 feet, they must succeed at a basic Reflex save or take @Damage[1d4[piercing]] damage from the glass shards.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.oDDS6D2KTjpbA491]{Spell Effect: Glass Shield}</p>\n<hr />\n<p><strong>Heightened (3rd)</strong> The shield has Hardness 4 and 8 Hit Points, and the damage increases to 1d4 + your spellcasting attribute modifier.</p>\n<p><strong>Heightened (5th)</strong> The shield has Hardness 7 and 16 Hit Points, and the damage increases to 2d4 + your spellcasting attribute modifier.</p>\n<p><strong>Heightened (7th)</strong> The shield has Hardness 10 and 24 Hit Points, and the damage increases to 3d4 + your spellcasting attribute modifier.</p>\n<p><strong>Heightened (9th)</strong> The shield has Hardness 12 and 32 Hit Points, and the damage increases to 4d4 + your spellcasting attribute modifier.eld</p>",
@@ -3394,6 +3422,12 @@
             "duration": "8 hours",
             "time": "10 minutes"
         },
+        "Wall Of Mirrors": {
+            "description": "<p>You create a solid wall of shimmering reflective glass up to 50 feet long and 20 feet high. The wall is an inch thick and stands vertically. You must create the wall in an unbroken open space so its edges don't pass through any creatures or objects, or the spell is lost. Each 10-foot-by-10-foot section of the wall has AC 10, Hardness 10, and 40 Hit Points, and it's immune to critical hits and precision damage. Everything on each side of the wall is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from creatures on the opposite side. If a creature Strikes the wall, the wall causes the creature to endure the mental anguish of that attack's pain as well; the creature takes 4d4 mental damage and can resist this damage with a basic Will save.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The Hit Points of each section of the wall increase by 10.</p>",
+            "name": "Wall Of Mirrors",
+            "range": "120 feet",
+            "time": "2"
+        },
         "Shadow Illusion": {
             "description": "<p>You create a shadowy illusion of a creature or a stationary object, but the illusion can exist only in an area of dim light or darkness. The spell ends if the illusion is ever out of an area of dim light or darkness. If the illusion is an object, it must fit within a 20-foot burst, and the creature can be of any size up to Gargantuan, filling a 20-foot-by-20-foot space.</p>\n<p>The object or creature appears to animate naturally; it even generates the appropriate sounds and smells, and feels believable to the touch, though its coloring is always muted.</p>\n<p>If the illusion is a creature, shadow illusion has the effects of an <em>@UUID[Compendium.pf2e.spells-srd.Item.f8SBoXiXQjlCKqly]{Illusory Creature}</em> spell of the same level, except it deals [[/r 2d8]] damage plus your spellcasting ability modifier, instead of the amount listed in illusory creature.</p>\n<hr />\n<p><strong>Heightened (+2)</strong> The area that an illusory object can fit in increases by 10 feet.</p>\n<p>The damage of the illusory creature's Strike increases by [[/r 1d8]].</p>",
             "name": "Shadow Illusion",
@@ -3802,6 +3836,17 @@
             "duration": "sustained up to 1 minute",
             "time": "2"
         },
+        "Regale the Lost Ones": {
+            "description": "<p>Autumn's shorter days herald an increase in hauntings, which only intensify during winter's cold, dark nights. As fall draws to a close, some of Shenmen's villages hire or set up Tian opera troupes to enact rituals to regale the lost ones, where they perform dramas drawn from literary classics and historical events that incorporate acting, music, acrobatics, and martial arts.</p>\n<p>These ritual performances fulfill a dual purpose; not only do they bring cheer to the living, but they also entertain and placate the \"lost ones\"—a euphemism for ghosts and other spirits—and seek to reduce the likelihood of attacks from such entities. Performing this ritual during the season of fall reduces the DCs of the ritual's skill checks by 2.</p>\n<p>If the ritual is successful, sentient undead and other spirits become less hostile, allowing villagers to focus their efforts on dealing with mindless undead and other more physical threats. This ritual can only be attempted once per year per settlement; additional attempts to <em>regale the lost ones</em> in the same settlement automatically result in a Critical Failure.</p>\n<hr />\n<p><strong>Critical Success</strong> Haunts and undead in the settlement that are level 3 or lower become easier to defeat. Reduce all Disable DCs for affected haunts in the settlement by 2, and all affected undead within the settlement begin combat @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}. If the PCs perform this ritual during this adventure, they gain 3 Hope Points.</p>\n<p><strong>Success</strong> Haunts in the settlement that are level 3 or lower become easier to notice and defeat. Reduce all Disable DCs for affected haunts in the settlement by 1. If the PCs perform this ritual during this adventure, they gain 1 Hope Point.</p>\n<p><strong>Failure</strong> The ritual has no effect.</p>\n<p><strong>Critical Failure</strong> Haunts and undead in the settlement that are level 3 or lower become more difficult to notice and defeat. Increase all Disable DCs for affected haunts in the settlement by 2, and all affected undead within the settlement gain the elite adjustment. If the PCs perform this ritual during this adventure, they lose 3 Hope Points.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> Increase the level of affected haunts and undead by 2.</p>",
+            "name": "Regale the Lost Ones",
+            "target": "a settlement with a level equal to or lower than twice the ritual’s level",
+            "duration": "1 year",
+            "time": "4 hours",
+            "cost": "fees for opera actors, their meals, facial paint, costumes, incense, and offerings of alcohol, tobacco, and food for the lost ones with a total value of 2 gp × the spell level × the settlement’s level",
+            "primarycheck": "Performance (expert)",
+            "secondarycasters": "3",
+            "secondarycheck": "Acrobatics, Occultism, or Religion"
+        },
         "Bit of Luck": {
             "description": "<p>You tilt the scales of luck slightly to protect a creature from disaster. When the target would attempt a saving throw, it can roll twice and use the better result. Once it does this, the spell ends. If you cast bit of luck again, any previous bit of luck you cast that's still in effect ends. After a creature has been targeted with bit of luck, it becomes temporarily immune for 24 hours.</p>",
             "name": "Bit of Luck",
@@ -3933,7 +3978,7 @@
             "time": "2"
         },
         "Vitrifying Blast": {
-            "description": "<p>You launch a cone of glass shards, which embed in creatures to turn them partially to glass. The shards deal @Damage[8d6[piercing]] damage to creatures in the area, based on each creature's saving throw.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage and gains weakness 3 to sonic and bludgeoning damage for 1 round.</p>\n<p><strong>Failure</strong> The target takes full damage, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and gains weakness to sonic and bludgeoning damage. The weakness is equal to 3 × the slowed value it has from this spell. The target must attempt a Fortitude save at the end of each of its turns; this ongoing save has the incapacitation trait. On a failed save, the creature's slowed value increases by 1 (or by 2 on a critical failure), to a maximum of @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 3}. A successful save reduces the creature's slowed value by 1 (or by 2 on a critical success). If the creature ends its turn with a slowed value of 0, the effect ends.</p>\n<p>Critical Failure As failure, but the target is initially @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by [[/r 1d6]].</p>",
+            "description": "<p>You launch a cone of glass shards, which embed in creatures to turn them partially to glass. The shards deal 8d6 piercing damage to creatures in the area, based on each creature's saving throw.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage and gains weakness 3 to sonic and bludgeoning damage for 1 round.</p>\n<p><strong>Failure</strong> The target takes full damage, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and gains weakness to sonic and bludgeoning damage. The weakness is equal to 3 × the slowed value it has from this spell. The target must attempt a Fortitude save at the end of each of its turns; this ongoing save has the incapacitation trait. On a failed save, the creature's slowed value increases by 1 (or by 2 on a critical failure), to a maximum of @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 3}. A successful save reduces the creature's slowed value by 1 (or by 2 on a critical success). If the creature ends its turn with a slowed value of 0, the effect ends.</p>\n<p><strong>Critical Failure</strong> As failure, but the target is initially @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by 1d6.</p>",
             "name": "Vitrifying Blast",
             "range": "60 feet",
             "duration": "varies",
@@ -3957,6 +4002,13 @@
             "description": "<p>A violent wind issues forth from your palm, blowing from the point where you are when you cast the spell to the line's opposite end. The wind extinguishes small non-magical fires, disperses fog and mist, blows objects of light Bulk or less around, and pushes larger objects. Large or smaller creatures in the area must attempt a Fortitude save. Large or smaller creatures that later move into the gust must attempt the save on entering.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature can't move against the wind.</p>\n<p><strong>Failure</strong> The creature is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If it was flying, it suffers the effects of critical failure instead.</p>\n<p><strong>Critical Failure</strong> The creature is pushed 30 feet in the wind's direction, knocked Prone, and takes 2d6 bludgeoning damage.</p>",
             "name": "Gust of Wind",
             "duration": "until the start of your next turn",
+            "time": "2"
+        },
+        "Sacred Nimbus": {
+            "description": "<p>You summon a small, fluffy white nimbus cloud that floats 10 feet above the ground and rains down pleasantly warm sanctified water. The rain deals @Damage[5d6[good]] damage to fiends, undead, and creatures that have a weakness to good damage in the area at the end of your turn. When you Sustain the Spell, you can move the cloud at a fly speed of 15 feet to anywhere in the spell's range. The water dissipates as it makes contact with any creatures or surfaces, leaving only a bit of humidity in its place.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The damage increases by 1d6.</p>",
+            "name": "Sacred Nimbus",
+            "range": "30 feet",
+            "duration": "sustained up to 1 minute",
             "time": "2"
         },
         "Crushing Despair": {
@@ -4841,6 +4893,15 @@
             "duration": "10 minutes",
             "time": "2"
         },
+        "Last Night's Vigil": {
+            "description": "<p>Obscure folktales state on the first day of spring, the Mother of Secrets wanders Tian Xia to dispense her blessings of health upon the frail and old. These stories claim the winter goddess is often drawn to lovers, friends, or families who hold sincere affection and genuine respect for each other. Last night's vigil is a folk ritual inspired by these stories, offering a chance at respite for those who wish the goddess's esoteric gifts not for themselves but for their loved ones.</p>\n<p>This simple ritual can only be performed at night, in the presence of someone whom you love, and who's ill, hurt, or otherwise unwell. You must stay awake through the night, keeping the sticks of incense lit to guide the goddess's passage. If you're indoors, you should keep a door or window slightly ajar to receive her holy presence. If performed on a winter night, the DCs of the ritual's skill checks are reduced by 1; if performed on the last night of winter before spring, the DCs are instead reduced by 2.</p>\n<p>If the ritual is successful, you fall asleep for the briefest of moments to the sound of snowfall and the swishing of a horse-tail whisk. When you awaken moments later, your loved one smiles at you, hopefully in better health.</p>\n<hr />\n<p><strong>Critical Success</strong> The target's Hit Points are fully restored, and all diseases that are equal or lower level than twice the ritual's level that they're currently suffering from reduce their stage by one. If this reduces a disease's stage below 1, it cures that affliction.</p>\n<p><strong>Success</strong> The target's Hit Points are fully restored, and one disease of a level that's equal to or lower than twice the ritual's level that they're currently suffering from reduces its stage by one. If this reduces the disease's stage below 1, it cures that affliction.</p>\n<p><strong>Failure</strong> The ritual has no effect.</p>\n<p><strong>Critical Failure</strong> You're @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} for the next 24 hours.</p>\n<hr />\n<p><strong>Heightened (4th)</strong> You can choose when you perform the ritual whether it affects curses or diseases.</p>\n<p><strong>Heightened (6th)</strong> You can affect curses and diseases simultaneously.</p>",
+            "name": "Last Night's Vigil",
+            "target": "1 creature whom you love",
+            "range": "10 feet",
+            "time": "8 hours",
+            "cost": "rare sticks of incense worth 10 gp",
+            "primarycheck": "Occultism (trained) or Survival (expert)"
+        },
         "Lose the Path": {
             "description": "<p><strong>Trigger</strong> A creature in range Strides</p>\n<hr />\n<p>You surround a moving creature with lifelike illusions, shifting their perception of the terrain to subtly lead them off course. The target must attempt a Will save. Regardless of the result, the creature is immune to lose the path for 1 hour.</p>\n<hr />\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature treats all squares as difficult terrain for its Stride.</p>\n<p><strong>Critical Failure</strong> As failure, except that you determine where the target moves during the Stride, though you can't move it into hazardous terrain or to a place it can't stand.</p>",
             "name": "Lose the Path",
@@ -5610,6 +5671,15 @@
             "range": "touch",
             "time": "2"
         },
+        "Ransack the Night": {
+            "description": "<p>When Fumeiyoshi was punished by the Celestial Court for deicide and fratricide, the rat who would become Lao Shu Po robbed the cangue-bound Fumeiyoshi of a sizable chunk of his shadow. This fully catalyzed the rat's transformation into Lao Shu Po, the new Tian goddess of night. Ransack the night is a Laoite ritual allowing you to mimic this divine thievery and shroud yourself in the night's cerements.</p>\n<p>This ritual can only be performed at night. You dig narrow troughs into the dirt and toss blessed salt as well as the juice of citrus fruits into these gashes in the ground. Performing this ritual in an area actively haunted by undead or frequented by fiends reduces the DCs of the ritual's skill checks by 2. If the ritual is successful, a smoky black miasma, said to be the blood and tears of Fumeiyoshi himself, emerges from the broken earth to augment and enhance your spiritual aura, helping you to remain undetected by fiends and undead.</p>\n<hr />\n<p><strong>Critical Success</strong> Fiends and undead who are 5th level or lower treat you as if you were @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}. If you take a hostile action against a fiend or undead, you lose this concealment against that fiend or undead until the end of your next turn.</p>\n<p><strong>Success</strong> As critical success, but when you lose concealment against a fiend or undead, you don't regain concealment from this ritual against that fiend or undead.</p>\n<p><strong>Failure</strong> The ritual has no effect.</p>\n<p><strong>Critical Failure</strong> The miasma occludes your senses instead; for 24 hours, the targets treat fiends and undead as if they were concealed.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> Increase the level of affected creatures by 2.</p>",
+            "name": "Ransack the Night",
+            "time": "1 hour",
+            "cost": "blessed salt, citrus fruits (such as yuzu or limes), and rare spices worth 25 gp × the spell level",
+            "primarycheck": "Religion (expert)",
+            "secondarycasters": "3",
+            "secondarycheck": "Arcana, Intimidation, or Occultism"
+        },
         "Dimensional Anchor": {
             "description": "<p>You interfere with the target's ability to teleport and travel between dimensions. Dimensional anchor attempts to counteract any teleportation effect, or any effect that would move the target to a different plane. The duration is determined by the target's Will save.</p>\n<hr /><strong>Critical Success</strong> The target is unaffected.\n<p><strong>Success</strong> The effect's duration is 1 minute.</p>\n<p><strong>Failure</strong> The effect's duration is 10 minutes.</p>\n<p><strong>Critical Failure</strong> The effect's duration is 1 hour.</p>",
             "name": "Dimensional Anchor",
@@ -6020,6 +6090,14 @@
             "duration": "1 hour",
             "time": "2"
         },
+        "Cycle of Retribution": {
+            "description": "<p>An understanding of how violence begets more violence fills your target, causing it mental anguish when it attempts to take violent actions. The target must attempt a Will saving throw.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The next time the target takes a hostile action, the target takes 1d4 mental damage; the spell's duration then ends.</p>\n<p><strong>Failure</strong> The first time in a round when the target takes a hostile action, the target takes 1d4 mental damage.</p>\n<p><strong>Critical Failure</strong> Each time the target takes a hostile action, the target takes 1d4 mental damage.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The mental damage increases by 1d4.</p>",
+            "name": "Cycle of Retribution",
+            "target": "1 creature",
+            "range": "touch",
+            "duration": "sustained up to 1 minute",
+            "time": "2"
+        },
         "Energy Aegis": {
             "description": "<p>You protect the target with a powerful, long-lasting energy barrier. The target gains resistance 5 to acid, cold, electricity, fire, force, negative, positive, and sonic damage.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.4Lo2qb5PmavSsLNk]{Spell Effect: Energy Aegis}</p>\n<hr />\n<p><strong>Heightened (9th)</strong> The resistances increase to 10.</p>",
             "name": "Energy Aegis",
@@ -6050,7 +6128,7 @@
             "time": "3"
         },
         "Shock to the System": {
-            "description": "<p>A dense lightning cloud descends to fill the target's space, then fires a jolt of revitalizing lightning into the target. If the target is a corpse that died within the last round, the creature comes back to life with 0 Hit Points, and any effects and conditions it had when it died, with the exception of dying, and its wounded condition increases by 1. The creature's initiative is right before yours.</p>\n<p>Regardless of whether the creature came back to life or was already alive, it regains 8d8 Hit Points, and the bolt wakes it up if it was @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. For the duration of the spell, the target is supercharged. It becomes @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} and can use the extra action to Stand, Stride, Strike, or Fly (if it has a fly Speed). In addition, it can cast 5th-rank <em>thunderstrike</em> as an innate spell at will, using your spell DC.</p>\n<p>The cloud that covered the creature remains until the end of the target's next turn. Any creature in the cloud is @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden}, and anything outside the cloud is hidden to any creature inside the cloud.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The healing increases by 2d8, and the thunderstrike rank increases by 1.</p>",
+            "description": "<p>A dense lightning cloud descends to fill the target's space, then fires a jolt of revitalizing lightning into the target. If the target is a corpse that died within the last round, the creature comes back to life with 0 Hit Points, and any effects and conditions it had when it died, with the exception of dying, and its wounded condition increases by 1. The creature's initiative is right before yours.</p>\n<p>Regardless of whether the creature came back to life or was already alive, it regains 8d8 Hit Points, and the bolt wakes it up if it was @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. For the duration of the spell, the target is supercharged. It becomes @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} and can use the extra action to Stand, Stride, Strike, or Fly (if it has a fly Speed). In addition, it can cast 5th-rank @UUID[Compendium.pf2e.spells-srd.Item.zDJS8E66UI0himqV]{Thunderstrike} as an innate spell at will, using your spell DC.</p>\n<p>The cloud that covered the creature remains until the end of the target's next turn. Any creature in the cloud is @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden}, and anything outside the cloud is hidden to any creature inside the cloud.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The healing increases by 2d8, and the thunderstrike rank increases by 1.</p>",
             "name": "Shock to the System",
             "target": "1 living creature or 1 corpse that died within the last round",
             "range": "30 feet",
@@ -6428,6 +6506,13 @@
             "target": "1 living creature",
             "range": "touch",
             "time": "2"
+        },
+        "Prophet's Luck": {
+            "description": "<p><strong>Trigger</strong> You or a creature within range attempts a saving throw against an obvious threat.</p>\n<hr />\n<p>You prophesize the result of the triggering saving throw as either a success (including a critical success) or a failure (including a critical failure). The target gains a +1 status bonus to the save if you predict success or a –1 status penalty if you predict failure. If you predict the result correctly, fortune favors you, and you gain a +1 status bonus to saving throws. If you predict incorrectly, fortune spurns the target, imparting a –1 status penalty to its saving throws.</p>\n<hr />\n<p><strong>Heightened (6th)</strong> The save bonus or penalty increases to +2 or –2.</p>\n<p><strong>Heightened (9th)</strong> The save bonus or penalty increases to +3 or –3.</p>",
+            "name": "Prophet's Luck",
+            "target": "1 creature",
+            "range": "60 feet",
+            "time": "reaction"
         },
         "Litany of Righteousness": {
             "description": "<p>Your litany denounces an evildoer, rendering it susceptible to the powers of good. The target gains weakness 7 to good. The target then becomes temporarily immune to all of your litanies for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.46vCC77mBNBWtmx3]{Spell Effect: Litany of Righteousness}</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The weakness increases by 1.</p>",
@@ -7036,6 +7121,11 @@
             "name": "Blazing Fissure",
             "time": "2"
         },
+        "Winter's Breath": {
+            "description": "<p>The cold and dour months of winter are an excellent time to gather with friends and family to enjoy a pot of hot tea. The so-called \"breath\" in this ritual refers to the steam that wafts up from a freshly brewed cup while held in the hands and inhaled. Despite the ritual's name, it can be cast during any season, but unless it is cast during winter, the DCs for successfully casting winter's breath increase by 2 (or by 4 if the ritual is cast during summer).</p>\n<p>When you cast this ritual, you call forth a magical pavilion consisting of a colorful tent or decorate an area within range with a large number of colorful banners. In either case, the ritual also creates a full supply of teas and tea ware for the casters to use and serve up to six guests (which can include the casters). During the ritual, all the guests must be polite and well-mannered. The tea created by winter's breath is always delicious, but the effects of the tea and taking part in the ceremony of its serving depend on the success of the magic. At the ceremony's end, the ritual is completed and you and the secondary caster attempt your checks as normal. If the ceremony is interrupted at any point, the tea vanishes and the ritual is disrupted.</p>\n<hr />\n<p><strong>Critical Success</strong> The ceremony is a true delight. The tea casts restoration and endure elements on each guest. Each guest also gains 10 temporary Hit Points and a +1 status bonus to saves against emotion effects for the next 12 hours.</p>\n<p><strong>Success</strong> As critical success, except guests must choose which of the two spells are cast on them, and they don't gain the status bonus to saves.</p>\n<p><strong>Failure</strong> The tea leaves a bitter, unpleasant taste in the mouth, and no benefits are granted.</p>\n<p><strong>Critical Failure</strong> Rather than invigorate and delight, the tea is disappointing and depressing. You and your guests are @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3} and can't reduce the condition for 12 hours.</p>\n<hr />\n<p><strong>Heightened (5th)</strong> The restoration and endure elements spells are heightened to 4th level, and the temporary Hit Points granted are increased by 4.</p>\n<p><strong>Heightened (7th)</strong> The restoration and endure elements spells are heightened to 6th level, and the temporary Hit Points granted are increased by 8.</p>",
+            "name": "Winter's Breath",
+            "time": "1 hour"
+        },
         "Zero Gravity": {
             "description": "<p><strong>Area</strong> 20-foot radius, 40-foot-tall cylinder</p>\n<hr />\n<p>You negate gravity's effects in the area. Creatures float in place unless they can Push Off a surface. Pushing Off is a single action which has the move trait, allowing the creature to move half its Speed in a straight line through the area. After Pushing Off a surface, the creature continues to move the same distance at the start of each of its turns until it leaves the area or Pushes Off against something else. A creature pushing against an untethered object of its size or smaller causes both the creature and the object to move at the same speed, but in opposite directions. Creatures who can levitate or fly can use those abilities to move around in the area without having to push off anything. Creatures who can't levitate or fly are usually on the ground, giving them a surface from which to push off.</p>\n<p>You can Dismiss this spell. When zero gravity ends, all creatures and objects in the area fall back down.</p>",
             "name": "Zero Gravity",
@@ -7278,6 +7368,18 @@
             "range": "60 feet",
             "duration": "sustained up to 1 minute",
             "time": "2"
+        },
+        "Open the Wall of Ghosts": {
+            "description": "<p>Your research into the nature of the so-called Willowshore Curse has revealed a possible method of opening a doorway through the eerie Wall of Ghosts found west of town. By starting with a consecrate ritual and then applying Sangpotshi theories of the cyclical nature of life and reincarnation, along with insights gleaned from Zoudou's notes, you've created a magical ritual that can quiet the angry spirits that haunt this misty barrier and allow other creatures to pass through into the regions beyond. This ritual is unlikely to grant total protection from the ghosts or evil spirits within the wall itself, so once you open the wall, you and your allies might need to face additional dangers within before you can exit the other side. In addition, the ritual must be performed during a crescent or new moon (a time that equates to the second half of each month).</p>\n<hr />\n<p><strong>Critical Success</strong> The ritual succeeds and offers unexpected protection while you're passing through the Wall of Ghosts. While navigating the Wall of Ghosts, you and the secondary casters to the ritual gain a +2 status bonus to Armor Class and saving throws.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.lGU4GIF2GUn21zFa]{Spell Effect: Open the Wall of Ghosts (Critical Success)}</p>\n<p><strong>Success</strong> The ritual succeeds.</p>\n<p><strong>Failure</strong> The ritual fails.</p>\n<p><strong>Critical Failure</strong> The ritual fails spectacularly, and two of the ghosts trapped within the wall tear free and attack. Treat each of these ghosts as a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.2H2AEwQnfKJC0nrd]{Ghost Commoner}, save that their ghostly hand attacks deal mental damage rather than negative damage.</p>",
+            "name": "Open the Wall of Ghosts",
+            "target": "the Wall of Ghosts",
+            "range": "40 feet",
+            "duration": "1 year",
+            "time": "1 day",
+            "cost": "rice grains and incense worth 60 gp",
+            "primarycheck": "Occultism or Religion (expert)",
+            "secondarycasters": "3",
+            "secondarycheck": "Deception, Diplomacy, or Intimidation"
         },
         "Heart's Desire": {
             "description": "<p>You surround your target with wondrous illusions of their greatest desires, which distract them from reality. The target must attempt a Will save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target disbelieves the illusion and is unaffected.</p>\n<p><strong>Success</strong> For 1 round, the target is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} and takes a -2 status penalty to any checks it makes to determine the effects of reactions.</p>\n<p><strong>Failure</strong> For 1 minute, the target is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} and can't use reactions.</p>\n<p><strong>Critical Failure</strong> As failure, and all spaces are difficult terrain for the target.</p>\n<hr />\n<p><strong>Heightened (+2)</strong> You can target one additional creature.</p>",
@@ -7784,6 +7886,14 @@
             "target": "1 creature",
             "range": "100 feet",
             "duration": "2 rounds",
+            "time": "2"
+        },
+        "Fateful Condemnation": {
+            "description": "<p>You draw upon the target's negative fate to afflict it and its nearby allies with the unintended consequences of its past lives. Spiritual echoes of the target's past lives instill overwhelming feelings of doubt, regret, and despair into the minds of the target and its nearby allies. The effects depend on the target's Will save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes 4d6 mental damage, and then an aura of shimmering mist with a @Template[type:emanation|distance:10] surrounds the creature. This mist isn't dense enough to affect sight, but it does cause the creature and any of its allies in the aura to take a –1 status penalty to all skill checks.</p>\n<p><strong>Failure</strong> As success, but the creature takes an initial 8d6 mental damage and is then @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for the duration of the effect.</p>\n<p><strong>Critical Failure</strong> As success, but the creature takes an initial 16d6 mental damage, then is slowed 1 for the duration of the effect. Any of the target's allies who begin their turn in the @Template[type:emanation|distance:10] is slowed 1 for 1 round.</p>",
+            "name": "Fateful Condemnation",
+            "target": "1 living creature",
+            "range": "30 feet",
+            "duration": "1 minute",
             "time": "2"
         },
         "Impending Doom": {
@@ -9352,6 +9462,16 @@
             "range": "30 feet",
             "time": "2"
         },
+        "Sweetest Solstice": {
+            "description": "<p>On long winter nights, many families in Tian Xia share a dish of glutinous rice balls. Wealthier families also dye these rice balls an auspicious pinkish-red in jujube juice and might serve or stuff them with expensive sweetened pastes of red beans, sesame, taro, or lotus. Sweetest solstice is a folk ritual that incorporates this tradition and allows entire villages to experience communal goodwill by celebrating a luxurious version of this dish together.</p>\n<p>This ritual is performed over 1 hour of cooking a soup of crushed black sesame and sugar in several large cauldrons while good-natured jokes and puns praising Daikitsu, Kofusachi, and other benevolent deities are uttered; quips inspired by Hei Feng and Sun Wukong are usually included in these jovialities, for these rambunctious deities are always ready for feasts and humor. Each time a joke or pun is made, a rice ball is dropped into the boiling soups.</p>\n<p>This ritual can only be performed once each winter season. If performed on the night of the winter solstice, the DCs of the ritual's skill checks are reduced by 2.</p>\n<p>If the ritual is successful, the delicious black sesame soup, like the longest of nights, seems never-ending and even hides windfalls of chewy sweetness. Sometimes, this small mercy of hot meals, and the hope for pleasant surprises to come, is all a community needs to endure the bleakest of winters together.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.HDT5oiQXXnRdDIKR]{Spell Effect: Sweetest Solstice}</p>\n<hr />\n<p><strong>Critical Success</strong> The pot contains enough black sesame soup and rice balls to feed a hot meal to everyone in the settlement for a month. The casters of the ritual gain a +1 status bonus to saves against emotion and fear effects until the end of winter.</p>\n<p><strong>Success</strong> The pot contains enough black sesame soup and rice balls to feed a hot meal to everyone in the settlement for a week. The casters of the ritual gain a +1 status bonus to saves against fear effects for 1 month or until the end of winter, whichever comes first.</p>\n<p><strong>Failure</strong> The ritual has no effect.</p>\n<p><strong>Critical Failure</strong> The soup becomes tainted; it not only provides no nourishment but spreads food poisoning through the town (this might have disastrous effects, as detailed in the next adventure). The casters of the ritual become particularly affected by illness and become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 4} and can't reduce the condition for 12 hours.</p>",
+            "name": "Sweetest Solstice",
+            "target": "a settlement with a level equal to or lower than twice the ritual’s level",
+            "time": "1 hour",
+            "cost": "sesame paste, sugar, rice balls, food dye, cooking pots, and utensils with a total value of 2 gp × the spell level × the settlement’s level",
+            "primarycheck": "Cooking Lore (expert)",
+            "secondarycasters": "3",
+            "secondarycheck": "Diplomacy, Performance, or Religion"
+        },
         "Light": {
             "description": "<p>You create an orb of light that sheds bright light in a 20-foot radius (and dim light for the next 20 feet) in a color you choose. If you create the light in the same space as a willing creature, you can attach the light to the creature, causing it to float near that creature as it moves. You can Sustain the spell to move the light up to 60 feet; you can attach or detach it from a creature as part of this movement.</p>\n<p>You can Dismiss the spell. If you Cast the Spell while you already have four <em>light</em> spells active, you must choose one of the existing spells to end.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.cVVZXNbV0nElVOPZ]{Spell Effect: Light}</p>\n<hr />\n<p><strong>Heightened (4th)</strong> The orb sheds light in a 60-foot radius (and dim light for the next 60 feet).</p>",
             "name": "Light",
@@ -9644,6 +9764,14 @@
             "name": "Allfood",
             "target": "1 unattended non-magical object of 1 Bulk or less",
             "time": "1 minute"
+        },
+        "Fated Healing": {
+            "description": "<p>You speak about the consequences of actions people take against each other and how it's possible to break cycles of violence simply by making a different choice. The targets regain 1d4 Hit Points at the end of their own turns while the spell is in effect. If a target uses a hostile action against the other target, the spell ends for the target that used the hostile action.</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The targets regain an additional 1d4 Hit Points at the end of their own turns.</p>",
+            "name": "Fated Healing",
+            "target": "2 creatures who are hostile toward each other",
+            "range": "30 feet",
+            "duration": "5 rounds",
+            "time": "2"
         },
         "Entropic Wheel": {
             "description": "<p><strong>Trigger</strong> You deal cold or fire damage to an enemy</p>\n<hr />\n<p>You stockpile thermal energy in a magical wheel-like construct that lets you burn opponents with cold or freeze their bodies with heat. When you Cast the Spell, the wheel has one mote of thermal energy, and when you use a cold or fire effect or deal cold or fire damage, the wheel spins, siphoning off a bit of energy and gaining another mote. The wheel can't gain motes more than once on a given turn, and the maximum number of motes is equal to entropic wheel's level.</p>\n<p>When you @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{Cast a Spell} that deals fire damage, the target also takes cold damage equal to the number of motes in the entropic wheel. When you Cast a Spell that deals cold damage, the target also takes fire damage equal to the number of motes in the entropic wheel. This applies only to the initial damage of the spell, not to any persistent damage or ongoing effects.</p>\n<hr />\n<p><strong>Amp</strong> You gain two motes instead of one when you Cast the Spell and each time the wheel gains another mote.</p>",
@@ -10150,6 +10278,18 @@
             "secondarycasters": "1",
             "secondarycheck": "Diplomacy or Society"
         },
+        "Gnaw at the Moon": {
+            "description": "<p>It's said that after his demise at the hands of jealous Fumeiyoshi, Tsukiyo's lunar corpse was left unguarded as the heavens mourned; this provided a humble matron-rat opportunities to nibble at moon flesh and sip upon god blood, a meal which propelled her first steps of apotheosis into Lao Shu Po. Gnaw at the moon, an obscure folk magic ritual popular among Shenmen's downtrodden, allows you to honor the Old Rat Woman's audacity and unlikely ascent.</p>\n<p>This ritual can only be performed on a night when the moon is visible in the sky above; you can't perform this ritual during a totally moonless night, while indoors, or while underground. Performing this ritual on the night of the full moon reduces the DCs of the ritual's skill checks by 2. You set out offerings of mooncakes and cups of tea on a flat surface (such as a table or a tray on the floor), assiduously ignore this food and drink, and praise the night's beauty while admiring and thanking the moon.</p>\n<p>At the end of a successful ritual, bite marks appear on the mooncakes, and some of the tea disappears as if sipped while no one was looking. Supposedly, the ritual and offerings gain Lao Shu Po's attention, who sends her rodent children to eat and drink their fill and grant stolen blessings of moonlit sight. The effusive admiration for the moon is said to avert Tsukiyo's displeasure for commemorating the event of his murder; after all, old tales warn against giving offense to the moon, lest it slice your ears in retribution...</p>\n<hr />\n<p><strong>Critical Success</strong> The targets gain darkvision.</p>\n<p><strong>Success</strong> The targets gain low-light vision.</p>\n<p><strong>Failure</strong> The ritual has no effect.</p>\n<p><strong>Critical Failure</strong> You and the targets are @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} for 24 hours. Your ears feel lacerated and raw as your earlobes become crisscrossed with tiny cuts.</p>",
+            "name": "Gnaw at the Moon",
+            "target": "yourself and the secondary casters",
+            "range": "30 feet",
+            "duration": "8 hours",
+            "time": "1 hour",
+            "cost": "mooncakes and rare tea worth 100 gp",
+            "primarycheck": "Diplomacy (expert)",
+            "secondarycasters": "3",
+            "secondarycheck": "Crafting, Occultism, or Religion"
+        },
         "Repulsion": {
             "description": "<p>You manifest an aura that prevents creatures from approaching you. When casting the spell, you can make the area any radius you choose, up to 40 feet. A creature must attempt a Will save if it's within the area when you cast the spell or as soon as it enters the area while the spell is in effect. Once a creature has attempted the save, it uses the same result for that casting of repulsion. Any restrictions on a creature's movement apply only if it voluntarily moves toward you. For example, if you move closer to a creature, it doesn't then need to move away.</p>\n<hr /><strong>Critical Success</strong> The creature's movement is not restricted.\n<p><strong>Success</strong> The creature treats each square in the area as difficult terrain when moving closer to you.</p>\n<p><strong>Failure</strong> The creature can't move closer to you within the area.</p>",
             "name": "Repulsion",
@@ -10597,7 +10737,7 @@
             "time": "2"
         },
         "Lay on Hands": {
-            "description": "<p>Your hands become infused with positive energy, healing a living creature or damaging an undead creature with a touch.</p>\n<p>If you use lay on hands on a willing living target, you restore 6 Hit Points; if the target is one of your allies, they also gain a +2 status bonus to AC for 1 round.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.lyLMiauxIVUM3oF1]{Spell Effect: Lay on Hands}</p>\n<p>Against an undead target, you deal 1d6 damage and it must attempt a basic Fortitude save; if it fails, it also takes a -2 status penalty to AC for 1 round.</p>\n<p><em>@UUID[Compendium.pf2e.spells-srd.Item.IxyD7YdRbSSucxZp]{Lay on Hands (Vs. Undead)}</em></p>\n<hr />\n<p><strong>Heightened (+1)</strong> The amount of healing increases by 6, and the damage to an undead target increases by 1d6.</p>",
+            "description": "<p>Your hands become infused with positive energy, healing a living creature or damaging an undead creature with a touch.</p>\n<p>If you use lay on hands on a willing living target, you restore 6 Hit Points; if the target is one of your allies, they also gain a +2 status bonus to AC for 1 round.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.lyLMiauxIVUM3oF1]{Spell Effect: Lay on Hands}</p>\n<p>Against an undead target, you deal 1d6 damage and it must attempt a basic Fortitude save; if it fails, it also takes a -2 status penalty to AC for 1 round.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.JhihziXQuoteftdd]{Spell Effect: Lay on Hands (Vs. Undead)}</p>\n<hr />\n<p><strong>Heightened (+1)</strong> The amount of healing increases by 6, and the damage to an undead target increases by 1d6.</p>",
             "name": "Lay on Hands",
             "target": "1 willing living creature or 1 undead creature",
             "range": "touch",
