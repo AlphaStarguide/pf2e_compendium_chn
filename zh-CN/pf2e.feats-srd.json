@@ -28841,7 +28841,7 @@
         },
         "Stasian Smash": {
             "name": "高压线圈 Stasian Smash",
-            "description": "<p>你在自己的机铠上使用了乌斯拉塔夫的史黛西亚线圈（Stasian coil），以便发出劈啪作响的强力电击。用进行一次打击。成功时，这次打击对目标造成额外的@Damage[1d12[electricity]]伤害；电火花还会四处飞舞，对10尺内最多两名敌人造成@Damage[1d4[electricity]]伤害。如果这次机铠打击掷出大失败，你自己会受到@Damage[1d12[electricity]]伤害。在计算多重攻击减值时，这算作两次攻击。到了18级，目标所受的额外电击伤害会增加到2d12，其他敌人所受的额外电击伤害则会增加到[[/r 2d4]]。这招会耗掉纹银机铠一小时的运作时间。</p>",
+            "description": "<p>你在自己的机铠上使用了乌斯拉塔夫的史黛西亚线圈（Stasian coil），以便发出劈啪作响的强力电击。用进行一次打击。成功时，这次打击对目标造成额外的1d12电击伤害；电火花还会四处飞舞，对10尺内最多两名敌人造成@Damage[(ternary(gte(@actor.level,18),2,1))d4[electricity]]伤害。如果这次机铠打击掷出大失败，你自己会受到@Damage[1d12[electricity]]伤害。在计算多重攻击减值时，这算作两次攻击。到了18级，目标所受的额外电击伤害会增加到2d12，其他敌人所受的额外电击伤害则会增加到2d4。这招会耗掉纹银机铠一小时的运作时间。</p>",
             "prerequisites": [
                 {
                     "value": "纹银机铠士入门"
@@ -31187,7 +31187,7 @@
         },
         "Retch Rust": {
             "name": "恶心锈物 Retch Rust",
-            "description": "<p>你喷出锈铁塑成的金属丝。@Template[type:cone|distance:30]的所有生物受到@Damage[(floor((@actor.level -8)/2)+4)d10[slashing]]伤害，@Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)|basic:true]豁免对抗你的职业DC。金特征的生物豁免失败后还会受到@Damage[(floor((@actor.level -8)/2)+2)d4[persistent,slashing]]伤害。</p>\n<hr />\n<p><strong>等级 (+2)</strong> 金属丝的挥砍伤害增加1d10，持续伤害增加1d4。</p>"
+            "description": "<p>你喷出锈铁塑成的金属丝。@Template[type:cone|distance:30]的所有生物受到@Damage[(floor((@actor.level -8)/2)+4)d10[slashing]]伤害，@Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)|basic:true]豁免对抗你的职业DC。金特征的生物豁免失败后还会受到@Damage[(floor((@actor.level -8)/2)+2)d4[persistent,slashing]]伤害。</p>\n<hr />\n<p><strong>升阶 (+2)</strong> 金属丝的挥砍伤害增加1d10，持续伤害增加1d4。</p>"
         },
         "Ravel Of Thorns": {
             "name": "缠结荆棘 Ravel Of Thorns",
