@@ -1,5 +1,39 @@
 {
     "label": "rage-of-elements-bestiary",
+    "mapping": {
+        "name": "name",
+        "portrait": {
+            "path": "img",
+            "converter": "npc-portrait-path"
+        },
+        "token": {
+            "path": "prototypeToken",
+            "converter": "npc-token-translation"
+        },
+        "data": {
+            "path": "system",
+            "converter": "npc-data-translation"
+        },
+        "items": {
+            "path": "items",
+            "converter": "npc-item-translation"
+        },
+        "publicNotes": "system.details.publicNotes",
+        "dr": "system.traits.dr",
+        "allSaves": "system.attributes.allSaves.value",
+        "senses": "system.traits.senses.value",
+        "hp": "system.attributes.hp.details",
+        "disable": "system.details.disable",
+        "hazarddescription": "system.details.description",
+        "reset": "system.details.reset",
+        "routine": "system.details.routine",
+        "blurb":"system.details.blurb",
+        "speed":"system.attributes.speed.details",
+        "languages":"system.traits.languages.custom",
+        "stealthdetails":"system.attributes.stealth.details",
+        "ac":"system.attributes.ac.details",
+        "di":"system.traits.di.custom"
+    },
     "entries": {
         "Jabali Shuyookh": {
             "data": {
@@ -1674,6 +1708,10 @@
                 "Defensive Camouflage": {
                     "name": "Defensive Camouflage",
                     "description": "<p>The living grove can @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} in natural environments even if it doesn't have cover. While Hiding, its root system is safely covered in dirt, granting the grove a +3 status bonus to AC. A critical hit cracks this protective layer of earth to disperse in the wind, ending the effect.</p>"
+                },
+                "Engulf":{
+                    "name": "包卷 Engulf",
+                    "description": "<p>@Check[type:reflex|dc:22], @Damage[5d8[bludgeoning]] damage, Escape DC 20, Rupture 10</p>\n<p>A creature Engulfed by the living grove must also attempt a @Check[type:fortitude|dc:22|basic:true] save as it's battered between the thin, tightly packed trunks.</p>\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 4}.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 }
             }
         },
