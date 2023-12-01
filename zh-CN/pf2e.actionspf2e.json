@@ -39,7 +39,7 @@
         },
         "Anchor": {
             "name": "深扎 Anchor",
-            "description": "<p>你将你的根须深深地扎入地底，这使得你更难被绊倒。直到你下一次进行移动前，你在尝试对抗推撞或摔绊时，你的强韧和反射DC获得+2环境加值 (若你是根莱西，则此加值改为+4)。在对抗那些试图让你移动或倒地的法术和效果的豁免上，此加值同样适用。</p>\n<p>若一个效果强迫你进行移动，则你被迫移动的距离只有通常的一半，因为它们必须先去费力把你的根须扯开。依据GM的判断，此能力也许不能在那些比岩石更具韧性的地表上使用(例如金属地板或者经魔法加固的砖石地面)。</p>"
+            "description": "<p><strong>需求</strong> 你正位于固体表面之上</p>\n<hr />\n<p><strong>效果</strong> 你将你的根须深深地扎入地底，这使得你更难被绊倒。直到你下一次进行移动前，你在尝试对抗@UUID[Compendium.pf2e.actionspf2e.Item.lOE4yjUnETTdaf2T]{移位 Reposition}、@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}或@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{摔绊 Trip}的强韧和反射DC上获得+2环境加值（若你是根莱西，则此加值改为+4）。在对抗那些试图让你移动或@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}的法术和效果的豁免上，此加值同样适用。若一个效果强迫你进行移动，则你被迫移动的距离只有通常的一半，因为它们必须先去费力把你的根须扯开。</p>"
         },
         "Arcane Cascade": {
             "name": "奥术奔涌 Arcane Cascade",
@@ -566,8 +566,8 @@
             "description": "<p><strong>触发</strong> 一个敌人伤害了你，并且他在你周围15尺的范围内。</p>\n<hr />\n<p><strong>效果</strong> 你让那个胆敢冒犯伤害你的敌人认清自己的身分。你命令你的敌人向你跪拜，向你臣服。如果他们胆坦拒绝，他们必须付出痛苦和折磨的代价。敌人必须选择下面一种效果： </p>\n<ul>\n<li>敌人跪拜，用一个自由动作进入@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</li>\n<li>敌人拒绝，你对他造成@Damage[1d6[mental]]伤害。伤害5级变成@Damage[2d6[mental]]伤害、9级变成@Damage[3d6[mental]]伤害 、12级变成@Damage[4d6[mental]]伤害、16级变成@Damage[5d6[mental]]伤害， 19级变成@Damage[6d6[mental]]伤害。</li>\n</ul>\n<p>此外，直到你下一回合结束，你对触发生物的打击额外造成[[/r (1}]]{1点伤害}。你每次使用这个反应动作都要选择伤害类型是邪恶还是虚能。9级时这个额外伤害变成[[/r {2}]]{2点伤害}，16级变成[[/r ({3}]]{3点伤害}。</p>"
         },
         "Jinx": {
-            "name": "霉运招来 Jinx",
-            "description": "<p><strong>频率</strong> 每日一次</p>\n<hr />\n<p>你能诅咒别人变得笨手笨脚。此诅咒的范围为30尺，而且你必须能够看到你的目标。目标获得一次@Check[type:will|dc:resolve(@actor.attributes.classOrSpellDC.value)]豁免检定来抵抗霉运招来，使用你的职业DC或法术DC，取用其中较高者。</p>\n<hr />\n<p><strong>成功</strong> 目标不受影响，并且在24小时内获得临时免疫。</p>\n<p><strong>失败</strong> 目标会在1分钟内陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}。</p>\n<p><strong>大失败</strong> 目标会在1分钟内陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}。</p>"
+            "name": "厄运招来 Jinx",
+            "description": "<p><strong>频率</strong> 每日一次</p>\n<hr />\n<p><strong>效果</strong> 你能诅咒别人让他们变得笨手笨脚的。此诅咒的范围为30尺，且你必须能够看到你的目标。目标进行一次@Check[type:will|dc:resolve(@actor.system.attributes.classOrSpellDC.value)]豁免对抗你职业DC或法术DC中的较高者。</p>\n<hr />\n<p><strong>成功</strong> 目标不受影响，并在24小时内对此能力临时免疫。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}状态，持续1分钟。</p>\n<p><strong>大失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}状态，持续1分钟。</p>"
         },
         "Jumping Jenny": {
             "name": "窜天猴 Jumping Jenny",
@@ -1527,6 +1527,14 @@
         "Drain Familiar": {
             "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 你的魔宠在你身上</p>\n<hr />\n<p>你消耗掉储存在魔宠中的魔力。在当前回合，你能够施放一个你本日已准备并已施放的法术，且无需花费法术位。你依然必须要施放法术（Cast the Spell）并满足法术的其他需求。</p>",
             "name": "汲取魔宠 Drain Familiar"
+        },
+        "Shed Spirit": {
+            "description": "<p><strong>频率</strong> 每10分钟1次</p>\n<hr />\n<p><strong>效果</strong> 你魔宠的灵魂离开其躯体，留下一具空壳，随后飞向20尺内的一个敌人，造成@Damage[(6+max(0,(ceil((@actor.level -8)/2)*2)))d6[spirit]]伤害，进行@Check[type:will|basic:true]豁免对抗你的法术DC。如果魔宠造成伤害，它随后飞向该敌人30尺内的一个盟友，恢复其造成伤害一半的生命值。你的魔宠之后在原方格重塑形态。在9级以及随后的每2级，此攻击多造成2d6伤害。</p>",
+            "name": "精魂出窍 Shed Spirit"
+        },
+        "Stitching Strike": {
+            "description": "<p><strong>频率</strong> 每10分钟1次</p>\n<hr />\n<p><strong>效果</strong> 你的魔宠分解成魔法纤维，包围30尺内的一个敌人，造成@Damage[(6+max(0,(ceil((@actor.level -8)/2)*2)))d6[slashing]]伤害，进行@Check[type:reflex|basic:true]豁免对抗你的法术DC。如果豁免失败，目标还将陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}一轮，或直到其@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}对抗你的法术DC。你的魔宠之后在原方格重塑形态。在9级以及随后的每2级，此攻击多造成2d6伤害。</p>",
+            "name": "缝合打击 Stitching Strike"
         }
     }
 }
