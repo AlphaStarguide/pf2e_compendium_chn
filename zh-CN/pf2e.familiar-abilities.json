@@ -15,15 +15,15 @@
         },
         "Major Resistance": {
             "name": "上等抗力 Major Resistance",
-            "description": "<p>你的魔宠从能量抗力魔宠能力中获得的抗力增加到和你等级相同的数值。你必须至少达到8级才能选择此项能力。</p>"
+            "description": "<p>你的魔宠将其由抗力魔宠能力给予的抗力提升至等于你等级的数值。要选择此能力你必须至少8级。</p>"
         },
         "Recall Familiar": {
             "name": "召回魔宠 Recall Familiar",
-            "description": "<p>你能将魔宠唤回身边。每日一次，你可以使用一个具有专注特征的三动作行动[AAA]，将魔宠传送至你所在的空间。你和魔宠必须相距1英里之内，否则召唤会失败。这是一个咒法系和传送效果。</p>"
+            "description": "<p>每天一次，你可以使用一个具有专注特征的3动作行动，来将你的魔宠传送到你所在空间。你的魔宠必须在1英里内，否则尝试召唤它将失败。这是一个传送效果。</p>"
         },
         "Restorative Familiar": {
-            "name": "恢复型魔宠 Restorative Familiar",
-            "description": "<p>每日一次，你的魔宠能使用一个具有专注特征的双动作行动[AA]，将它的一部分生命能量转移并治疗你。它必须和你位于同一空间才能如此做。你恢复[[/r max(floor(@actor.level/2)d8, 1d8)]]{相当于你等级一半数量的d8骰}的生命值（最少为1d8）。</p>"
+            "name": "愈生魔宠 Restorative Familiar",
+            "description": "<p>每天一次，你的魔宠可以使用一个具有专注特征的2动作，来放弃它一部分能量从而治疗你。它必须位于你所处空间才能这么做。你恢复[[/r max(floor(@actor.level/2),1)d8]]{等同于你等级一半次数的1d8生命值}（最小为1d8）。</p>"
         },
         "Second Opinion": {
             "name": "不同见解 Second Opinion",
@@ -75,14 +75,14 @@
         },
         "Speech": {
             "name": "说话 Speech",
-            "description": "<p>它能够理解和说出你知道的一种语言。</p>"
+            "description": "<p>你的魔宠可以理解并说出一种你知晓的语言。</p>"
         },
         "Independent": {
-            "name": "独行魔宠 Independent",
-            "description": "<p>在一场遭遇中，若你不对魔宠进行指挥，它仍旧会在每轮获得一个动作。通常情况下，你仍旧要决定它会如何花费该动作，但是GM可能会让你的魔宠选择自身偏好的策略，而非你想要它优先执行的动作。如果你能骑乘你的魔宠或能进行类似的情况，则你无法同时使用@UUID[Compendium.pf2e.familiar-abilities.Item.9PsptrEoCC4QdM23]{侍物魔仆 Valet}或类似的能力。</p>"
+            "name": "独行 Independent",
+            "description": "<p>在遭遇中，如果你没有指挥你的魔宠，它每轮仍能获得1个动作。通常你依然可以决定它如何使用该动作，但GM可以判定你的魔宠选择采用自己的战术，而非执行你更喜欢的动作。该能力不能用于@UUID[Compendium.pf2e.familiar-abilities.Item.9PsptrEoCC4QdM23]{贴身仆宠 Valet}或类似需要指挥的能力，例如骑乘魔宠或类似情况。</p>"
         },
         "Master's Form": {
-            "description": "<p>你的魔宠能够以单动作来变化形体，将自己的真身根据你的族裔变化为具有相同年龄、性别和构造的类人形态，不过它总是会保留与自己本质相关的明显非自然残留，比如猫眼或分叉的舌头。魔宠每次使用该能力化身的形态总是相同的。这在其他方面与使用<em>类人形态</em>相同，不过此种变化只是纯粹的装饰。它只是看起来化身人形，并且不会获得新功能。你的魔宠必须具有心灵手巧（Manual Dextierity）和说话（Speech）能力才能选取该能力。</p>",
+            "description": "<p>你的魔宠可以用一个单动作变形，基于其真身变成与你族裔相同的类人生物，具有和你相同的年龄，性别，但它总是会保留其本质的一点明显的不自然残余，比如猫的眼睛或蛇的信子。该形态在每次使用本能力时相同。该能力其余方面均使用@UUID[Compendium.pf2e.spells-srd.Item.2qGqa33E4GPUCbMV]{类人形态 Humanoid Form}的效果，除了这种变化只是纯粹的化妆。它只是外观呈现为类人生物，不会获得新能力。你的魔宠必须具有心灵手巧和说话能力才能选择该能力。</p>",
             "name": "主人之姿 Master's Form"
         },
         "Poison Reservoir": {
@@ -90,48 +90,48 @@
             "name": "毒素容器 Poison Reservoir"
         },
         "Skilled": {
-            "description": "<p>从特技或隐秘之外的技能选择一项。你的魔宠在该技能上的调整值不仅仅等同于你的等级，变为你的等级 + 你的关键施法属性调整值。你能重复选择该能力，每次要选取不同的技能。</p>",
+            "description": "<p>选择除特技或隐秘以外的一项技能。魔宠的该项技能调整等同于你的等级外加你的施法属性调整，而非仅为你的等级。你可以重复选择该能力，每次选择一项不同的技能。</p>",
             "name": "技能训练 Skilled"
         },
         "Spellcasting": {
-            "description": "<p>从你的法术库或本日已准备的法术中选择一个法术，该法术至少要比你的最高环级法术位低5级。你的魔宠每日能够施放一次该法术，使用你的魔法根源、法术攻击调整值以及法术DC。若法术具有会影响施法者的缺陷，那么你和你的魔宠都会受到影响。你必须能够使用法术位施放6环法术才可以选取该能力。</p>",
-            "name": "施法能力 Spellcasting"
+            "description": "<p>从你的法术库或今日已准备的法术中选择一项比你最高环级至少低5环的法术。你的魔宠可以每天一次使用你的魔法根源，法术攻击调整，和法术DC施放该法术。如果法术具有影响施法者的缺陷，你和你的魔宠都将被影响。你必须能够使用法术位施放6环法术才能选择此能力。</p>",
+            "name": "施法 Spellcasting"
         },
         "Toolbearer": {
-            "description": "<p>你的魔宠能够携带一套至多为轻负载的工具。只要魔宠与你相邻，你就能把取用和放回工具作为使用这些工具的动作的一部分，就好像你把这些工具带在身上一般。你的魔宠必须具有心灵手巧（Manual Dextierity）能力才能选取该能力。</p>",
-            "name": "工具助手 Toolbearer"
+            "description": "<p>你的魔宠能够携带一套至多为轻负载的工具包。只要魔宠与你相邻，你就能拿出或放回工具，作为使用工具的动作的一部分，如同你穿戴着它们。你的魔宠必须具有心灵手巧才能选择此能力。</p>",
+            "name": "工具驮兽 Toolbearer"
         },
         "Valet": {
-            "description": "<p>你能命令魔宠更有效地为你传递物品。在你下达命令后，你的魔宠不会立即使用它的两个动作。取而代之的是，至多在你的回合结束两次之前，你能让你的魔宠交互以从取得一件负载为轻或忽略不计、且穿在你身上的物品，并放置到你空着的手中。魔宠无法使用该能力取得已收纳的物品。若具有不同数量的动作，则当被下令以此方式行动时，它可以每个动作取得一件物品。</p>",
-            "name": "侍物魔仆 Valet"
+            "description": "<p>你可以指挥魔宠来为你更高效地传递物品。你的魔宠在你进行指挥时，不会立即使用它的2个动作。相反在你回合结束前至多两次，你可以让你的魔宠交互取出一件轻负载或负载忽略不计的，你正在穿戴的物品，并将其放在你的一只空手上。魔宠不能用该能力取出一件储藏中的物品。如果魔宠有不同数量的动作，它可以在被指挥时以此法用每个动作取出一件物品。</p>",
+            "name": "贴身仆宠 Valet"
         },
         "Cantrip Connection": {
-            "description": "<p>你可以准备一个额外的戏法，如果你拥有法术库，作为代替，每次选择这个能力时你都可以将一个戏法添加到你的法术库之中；你可以重训这个戏法，不过没法以其他方式改变它。你必须可以准备戏法或者可以将戏法添加到法术库中才能选择这个能力。</p>",
+            "description": "<p>你可以准备一个额外的戏法，或则在你拥有法术库时指定一个戏法，你每次选择此能力，将其添加到你的法术库中；除非你重训它，否则不能更改它。你必须能够准备戏法或将其添加到法术库中才能选择此能力。</p>",
             "name": "戏法联结 Cantrip Connection"
         },
         "Familiar Focus": {
-            "description": "<p>每天一次，你的魔宠可以使用2个带有专注特征的动作为你恢复1点聚能点，至多恢复至你正常的聚能点上限。你必须拥有聚能池才能选择这个能力。</p>",
+            "description": "<p>每天一次，你的魔宠可以使用具有专注特征的2动作来为你的聚能池恢复1聚能点，至多到你通常的最大值。你必须拥有聚能池才能选择此能力。</p>",
             "name": "魔宠聚能 Familiar Focus"
         },
         "Lifelink": {
-            "description": "<p>如果你的魔宠将要因伤害而使HP减少至0，你可以用一个带有专注特征的反应动作代替魔宠承受这次伤害。这么做的话，你会承受所有的伤害而魔宠不会受伤。不过，随着这次伤害而来的特殊效果（例如蛇毒）仍然会作用于你的魔宠。</p>",
-            "name": "生命链接 Lifelink"
+            "description": "<p>如果你的魔宠将因伤害减至0HP，你可以使用一个具有专注特征的反应动作，来承受此次全部伤害，而魔宠不会受到任何伤害。但由此次伤害产生的特殊效果（例如蛇毒）依然生效。</p>",
+            "name": "生命连接 Lifelink"
         },
         "Spell Delivery": {
-            "description": "<p>如果你的魔宠处于你所占据的空间，你能施展一个射程为接触的法术并将它的力量转化给魔宠，接着命令魔宠去传递这个法术。这么做的话，魔宠会使用自己的两个动作在这一轮内移动靠近你所选择的目标并接触它。如果它没法在这个回合内靠近并接触目标，这个法术会失去效果。</p>",
+            "description": "<p>如果你的魔宠处于你所在的空间，你可以施放一个具有接触射程的法术，将其能量转移给你的魔宠，然后指挥魔宠来传递该法术。如果你如此做，魔宠使用其本轮的2个动作来移动至你所选的一个目标，并接触该目标。如果它不能在本轮触及目标来接触它，法术将失去效果。</p>",
             "name": "法术传递 Spell Delivery"
         },
         "Share Senses": {
-            "description": "<p>每10分钟一次，你能使用具有专注特征的单动作来将你的感官投射到魔宠身上。当你这么做时，你会失去自己身体的所有感官信息，但是可以在至多1分钟内通过魔宠的身体来进行感知。你可以解消该效果。</p>",
+            "description": "<p>每10分钟一次，你可以使用一个具有专注特征的单动作来将你的感官投射到魔宠身上。当你如此做时，你失去来自自己身体的全部感官信息，但可以通过你魔宠的身体来进行感知，至多持续1分钟。你可以解消该效果。</p>",
             "name": "共享感官 Share Senses"
         },
         "Accompanist": {
             "name": "伴奏者 Accompanist",
-            "description": "<p>你的魔宠能够协助进行表演。每当你尝试表演检定时，若你的魔宠在身边并且能够行动的话，它便会用低鸣、敲击、或自己的微型乐器进行伴奏。这会为你提供+1环境加值，若你在表演上的熟练度达到了大师则为+2环境加值。</p>"
+            "description": "<p>你的魔宠能够协助进行表演。每当你尝试表演检定时，若你的魔宠在身边并且能够行动的话，它便会用低鸣、敲击、或自己的微型乐器进行伴奏。这会为你提供+1环境加值，如果你的表演为大师则为+2。</p>"
         },
         "Amphibious": {
             "name": "两栖 Amphibious",
-            "description": "<p>它获得25尺游泳速度（如果它已经拥有游泳速度，那就获得 25尺速度）。</p>"
+            "description": "<p>宠物获得两栖特征，允许它同时在水中和空气中呼吸，并同时具有地面速度和游泳速度，两者均等同于其地面速度或游泳速度中最高一项。</p>"
         },
         "Augury": {
             "name": "卜筮术 Augury",
@@ -139,27 +139,27 @@
         },
         "Burrower": {
             "name": "掘地 Burrower",
-            "description": "<p>它获得5尺掘地速度，能让它挖出超小型的洞穴。</p>"
+            "description": "<p>宠物获得5尺掘地速度，允许它挖出超小型洞穴。</p>"
         },
         "Climber": {
             "name": "攀援 Climber",
-            "description": "<p>它获得25尺攀爬速度。</p>"
+            "description": "<p>宠物获得25尺攀爬速度。</p>"
         },
         "Damage Avoidance: Fortitude": {
             "name": "回避伤害:强韧 Damage Avoidance: Fortitude",
-            "description": "<p>它在强韧豁免上取得成功时会免受伤害；这并不会阻止伤害之外的效果生效。</p>"
+            "description": "<p>魔宠在强韧豁免上取得成功时会免受伤害；这并不会阻止伤害之外的效果生效。</p>"
         },
         "Damage Avoidance: Reflex": {
             "name": "回避伤害:反射 Damage Avoidance: Reflex",
-            "description": "<p>它在反射豁免上取得成功时会免受伤害；这并不会阻止伤害之外的效果生效。</p>"
+            "description": "<p>魔宠在反射豁免上取得成功时会免受伤害；这并不会阻止伤害之外的效果生效。</p>"
         },
         "Damage Avoidance: Will": {
             "name": "回避伤害:意志 Damage Avoidance: Will",
-            "description": "<p>它在意志豁免上取得成功时会免受伤害；这并不会阻止伤害之外的效果生效。</p>"
+            "description": "<p>魔宠在意志豁免上取得成功时会免受伤害；这并不会阻止伤害之外的效果生效。</p>"
         },
         "Darkvision": {
             "name": "黑暗视觉 Darkvision",
-            "description": "<p>它获得黑暗视觉。</p>"
+            "description": "<p>宠物获得黑暗视觉。</p>"
         },
         "Fast Movement: Climb": {
             "name": "快速移动:攀爬 Fast Movement: Climb",
@@ -179,11 +179,11 @@
         },
         "Flier": {
             "name": "飞行 Flier",
-            "description": "<p>它获得25尺飞行速度。</p>"
+            "description": "<p>宠物获得25尺飞行速度。</p>"
         },
         "Focused Rejuvenation": {
             "name": "聚能复原 Focused Rejuvenation",
-            "description": "<p>当你再聚能时，你所产生的魔法能量可以治愈魔宠。每当你再聚能时，你的魔宠会恢复每等级1点生命值。</p>"
+            "description": "<p>当你再聚能时，你形成的魔法能量能够治疗你的魔宠。每当你再聚能时，魔宠恢复每等级1生命值。</p>"
         },
         "Extra Reagents": {
             "name": "额外试剂 Extra Reagents",
@@ -191,15 +191,15 @@
         },
         "Kinspeech": {
             "name": "同类交谈 Kinspeech",
-            "description": "<p>它能够和同类动物交流。要选择这个能力，魔宠必须是动物，它必须拥有说话（speech）能力，你也要达到至少6级。</p>"
+            "description": "<p>你的魔宠能够理解并与其同物种动物交谈。要选择此能力，你的魔宠必须是动物，它必须具有说话能力，且你必须至少为6级。</p>"
         },
         "Innate Surge": {
             "name": "激发潜能 Innate Surge",
-            "description": "<p> 每日一次，你能从魔宠的内在魔力中抽取力量以补充自己。你能够施放一个通过族裔专长获取、且本日已经施放过的内在法术。你仍旧需要施放法术，而且满足施放该法术的其他先决条件。</p>"
+            "description": "<p>每天一次，你可以抽取魔宠的内在魔力来补充自己的。你可以施放一次由族裔天赋授予，今日已经施放过的内在法术。你仍然必须施法且满足该法术的其他需求。</p>"
         },
         "Manual Dexterity": {
             "name": "心灵手巧 Manual Dexterity",
-            "description": "<p>它可以像双手一般运用肢体中的两肢来使用操作（manipulate）动作。</p>"
+            "description": "<p>宠物可以如同拥有双手一样使用它至多两条肢体，用于执行操作动作。</p>"
         },
         "Mask Freeze": {
             "name": "面具拟态 Mask Freeze",
@@ -210,28 +210,28 @@
             "description": "<p>你的魔宠能利用你神祇的力量@UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{施法 Cast a Spell}，每日一次。魔宠能施放单动作版本的<em>@UUID[Compendium.pf2e.spells-srd.Item.rfZpqmj0AIIdkVIs]{治疗术 Heal}</em>，其环位比你能施放的最高环位低2环，并且只能对你施放。你必须至少能施放3环法术才能选择此能力。</p>"
         },
         "Partner in Crime": {
-            "name": "完美共犯 Partner in Crime",
-            "description": "<p>你的魔宠同时还是你的犯罪同伙。尽管身为仆从，但你的魔宠会在其回合开始时获得一个反应动作，不过这只能用于协助你进行欺骗或贼活技能检定（它仍旧需要如常为了协助反应动作而进行协助准备）。它会在协助你进行上述技能的检定中自动成功；若你在上述技能的熟练度达到了大师，那么魔宠的协助会变为自动大成功。</p>"
+            "name": "犯罪同伙 Partner in Crime",
+            "description": "<p>你的魔宠是你的从犯。尽管具有仆从特征，但你的魔宠在其回合开始时会获得1反应动作，此反应动作只能用于在欺骗或贼活技能检定上协助你（它仍然需要如常进行准备来进行协助反应动作）。它在协助你的上述检定上自动成功，或你在相关技能上为大师时自动大成功。</p>"
         },
         "Plant Form": {
             "name": "植物形态 Plant Form",
-            "description": "<p>你的植物魔宠能够以单动作来变化形体，将自己变化为超小型植物，其类型与魔宠的本质大致相似。该能力在其他方面的效果与@UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{化身植物 One with Plants}一致。你必须有一只具有植物特征的魔宠才能选择该能力。</p>"
+            "description": "<p>你的植物魔宠可以用一个单动作变形，变成与魔宠本质大致相似类型的超小型植物。该能力其余方面均使用@UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{融身化树 One with Plants}的效果。你必须拥有一只具有植物特征的魔宠才能选择该能力。</p>"
         },
         "Radiant": {
             "name": "Radiant",
             "description": "<p>你的魔宠充满神圣的光辉，能抵抗邪恶的力量。你的魔宠获得相当于你等级一半的邪恶和虚能伤害抗力。</p>\n<p><em>注意：一个Actor身上的效果无法调取另一个Actor的数据，因此等于PC等级一半的抗性并未自动化。请手动录入魔宠的抗性。</em></p>"
         },
         "Scent": {
-            "name": "嗅觉 Scent",
-            "description": "<p>它获得嗅觉（模糊，30尺）。</p>"
+            "name": "灵敏嗅觉 Scent",
+            "description": "<p>宠物可以使用灵敏嗅觉作为30尺范围的模糊感官。</p>"
         },
         "Resistance": {
-            "name": "能量抗力 Resistance",
-            "description": "<p>从后述选项中选择两项：酸蚀、寒冷、电击、火焰、毒素或音波。你的魔宠获得针对相应伤害类型的抗力，数值等同于你的等级的一半（最少为1）。</p>"
+            "name": "抗力 Resistance",
+            "description": "<p>从下列选择两项：酸蚀，寒冷，电击，火焰，毒素，或音波。你的魔宠在所选伤害类型上或的等同于你等级一半的抗力（最小为抗力1）。</p>"
         },
         "Spell Battery": {
             "name": "法术储存 Spell Battery",
-            "description": "<p>你获得一个额外的法术位，这个法术位的环级必须比你能施展的最高法术环级还要低至少3环；你必须可以用法术位施展4环法术才能选择这个主人能力。</p>"
+            "description": "<p>你获得一个比你最高环级法术位至少低3环的额外法术位；你必须能够使用法术位施放4环法术才能选择此主人能力。</p>"
         },
         "Soul Sight": {
             "name": "灵魂视域 Soul Sight",
@@ -242,12 +242,12 @@
             "description": "<p>你的魔宠能够碰触到虚体生物。若你通过魔宠获得了法术传递（Spell Delivery）主人能力，那么由你的魔宠传递的任何法术都会获得<em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{幽冥 Ghost Touch}</em>性能符文的好处。</p>"
         },
         "Touch Telepathy": {
-            "name": "触摸传心 Touch Telepathy",
-            "description": "<p>通过触摸你的魔宠，你能和它进行心灵感应的交流。若它还具有说话（Speech）能力的话，它还能通过触摸与任意生物进行心灵感应的沟通，但前提是两者都懂得同一门语言。</p>"
+            "name": "接触传心 Touch Telepathy",
+            "description": "<p>通过接触，你的魔宠能够与你进行心灵感应交流。如果它具有说话能力，它能够通过与任何生物接触进行心灵感应交流，如果它们懂得同种语言的话。</p>"
         },
         "Tough": {
-            "name": "坚韧魔宠 Tough",
-            "description": "<p>你的魔宠的最大生命值增加，每等级增加2点。</p>"
+            "name": "坚韧 Tough",
+            "description": "<p>你的宠物最大HP提升每等级2点。</p>"
         },
         "Darkeater": {
             "name": "噬影 Darkeater",
@@ -256,6 +256,37 @@
         "Shadow Step": {
             "name": "影步 Shadow Step",
             "description": "<p>暗影魔宠使用这些额外的魔宠能力。然而@UUID[Compendium.pf2e.feats-srd.Item.ncrNQcwm4gOQRAA3]{暗影秘使 Shadowcaster}可以为任意类型的魔宠选择这些能力。你的魔宠获得@UUID[Compendium.pf2e.actionspf2e.Item.VQ5OxaDKE0lCj8Mr]{影步 Shadow Step}动作。</p>\n<p>你必须至少7级才能为你的魔宠选择这个魔宠能力。</p>"
+        },
+        "Construct": {
+            "description": "<p>你的魔宠具有构装体特征取代动物特征。魔宠免疫死亡效果，疾病，毁灭，流失，力竭，治疗，非致命攻击，麻痹，毒素，疾病，精魂，失去意识，命能，和虚能。你的魔宠必须具有@UUID[Compendium.pf2e.familiar-abilities.Item.Le8UWr5BU8rV3iBf]{坚韧 Tough}宠物能力才能选择该能力。</p>",
+            "name": "构装体 Construct"
+        },
+        "Elemental Familiar (Fire)": {
+            "description": ""
+        },
+        "Absorb Familiar": {
+            "description": "<p>你的魔宠可以变成你肉体上的一处印记，通常看上去像是一处胎记，纹身，或宝石，看上去略微像是魔宠的通常模样。当处于变身状态，魔宠不能行动，除非变回魔宠。它不会被区域效果影响，必须被单独指定为目标时才能影响到它，这需要知晓它是一个生物。</p>\n<p>这意味着在大多数敌人不知道其真实面貌时，你和你的盟友仍然可以治疗或帮助魔宠。生物必须尝试一次@Check[type:perception|dc:20]检定来进行@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}才能意识到它其实是一只魔宠。你的魔宠仍然可以通过共感来交流其感受。从魔宠和变身形态之间变化是一个具有专注特征的1分钟行动。</p>",
+            "name": "吸纳魔宠 Absorb Familiar"
+        },
+        "Dragon": {
+            "description": "<p>你的魔宠具有龙类特征取代动物特征。</p>",
+            "name": "龙类 Dragon"
+        },
+        "Fungus": {
+            "description": "<p>你的魔宠具有真菌特征取代动物特征。</p>",
+            "name": "真菌 Fungus"
+        },
+        "Echolocation": {
+            "description": "<p>宠物可以使用听觉作为20尺范围的精确感官。</p>",
+            "name": "回声定位 Echolocation"
+        },
+        "Plant": {
+            "description": "<p>你的魔宠具有植物特征取代动物特征。</p>",
+            "name": "植物 Plant"
+        },
+        "Elemental": {
+            "description": "<p>你的魔宠具有元素特征取代动物特征。从气，土，火，金，水，木中选择。你的魔宠获得相应特征。魔宠免疫流血，@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}，毒素，睡眠，和对应特征的元素。你的魔宠必须具有抗力魔宠能力才能选择该能力。</p>",
+            "name": "元素 Elemental"
         }
     }
 }
