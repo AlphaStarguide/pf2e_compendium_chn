@@ -347,7 +347,7 @@
         },
         "Dismiss": {
             "name": "解消 Dismiss",
-            "description": "<p>你结束一个法术效果或者魔法物品效果。这必须是一个你能够解消的效果，由法术或者物品决定。根据法术或者物品的描述，解消可能会完全结束效果，或者对特定目标结束效果。</p>"
+            "description": "<p>你使一个你能够解消的效果结束。除非另有说明，否则解消会使整个效果结束。</p>"
         },
         "Dispelling Bullet": {
             "name": "破法子弹 Dispelling Bullet",
@@ -491,7 +491,7 @@
         },
         "Grab an Edge": {
             "name": "抓住边缘 Grab an Edge",
-            "description": "<p><strong>触发</strong> 你处于坠落中时经过一个边缘或把手。</p>\n<p><strong>需求</strong>你的手没有被拘束在背后或处于 @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚}状态中。</p>\n<hr />\n<p>当坠落时的你经过一个边缘或把手时，你可以尝试抓住它，阻止自己的坠落。你必须在特技或反射（由你选择）豁免检定上成功，使用攀爬DC。当你抓住边缘或把手后，后续可用运动技能@UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{攀爬}上去。</p>\n<hr />\n<p><strong>大成功</strong> 无论你是否有自由手，你都抓住了边缘或把手，典型的比如用持握的物品挂住了你自己（例如战斧卡在了横栏上）。你仍然会受到已坠落距离带来的伤害，但坠落距离视为减少30尺来计算。</p>\n<p><strong>成功</strong> 若你至少有一只自由手，你抓住了边缘或把手，阻止了坠落。你仍然会受到已坠落距离带来的伤害，但坠落距离视为减少20尺来计算。若你没有自由手，你会如同检定失败一般继续坠落。</p>\n<p><strong>大失败</strong> 你继续坠落，坠落距离相比使用该反应动作前视为增加20尺来计算，且该次坠落中你每坠落20尺会受到10点钝击伤害。</p>"
+            "description": "<p><strong>触发</strong> 你处于坠落中时经过一个边缘或把手。</p>\n<p><strong>需求</strong>你的手没有被拘束在背后或处于 @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}状态中。</p>\n<hr />\n<p>当坠落时的你经过一个边缘或把手时，你可以尝试抓住它，阻止自己的坠落。你必须在特技或反射（由你选择）豁免检定上成功，使用攀爬DC。当你抓住边缘或把手后，后续可用运动技能@UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{攀爬 Climb}上去。</p>\n<hr />\n<p><strong>大成功</strong> 无论你是否有自由手，你都抓住了边缘或把手，典型的比如用持握的物品挂住了你自己（例如战斧卡在了横栏上）。你仍然会受到已坠落距离带来的伤害，但坠落距离视为减少30尺来计算。</p>\n<p><strong>成功</strong> 若你至少有一只自由手，你抓住了边缘或把手，阻止了坠落。你仍然会受到已坠落距离带来的伤害，但坠落距离视为减少20尺来计算。若你没有自由手，你会如同检定失败一般继续坠落。</p>\n<p><strong>大失败</strong> 你继续坠落，坠落距离相比使用该反应动作前视为增加20尺来计算，且该次坠落中你每坠落20尺会受到10点钝击伤害。</p>"
         },
         "Grapple": {
             "name": "擒拿 Grapple",
@@ -1535,6 +1535,10 @@
         "Stitching Strike": {
             "description": "<p><strong>频率</strong> 每10分钟1次</p>\n<hr />\n<p><strong>效果</strong> 你的魔宠分解成魔法纤维，包围30尺内的一个敌人，造成@Damage[(6+max(0,(ceil((@actor.level -8)/2)*2)))d6[slashing]]伤害，进行@Check[type:reflex|basic:true]豁免对抗你的法术DC。如果豁免失败，目标还将陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}一轮，或直到其@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}对抗你的法术DC。你的魔宠之后在原方格重塑形态。在9级以及随后的每2级，此攻击多造成2d6伤害。</p>",
             "name": "缝合打击 Stitching Strike"
+        },
+        "Sustain": {
+            "description": "<p>选择一个持续时间为维持，或者列出了维持时会获得特殊增益的效果。大多数类似效果来自法术或激活魔法物品。如果该效果的持续时间为维持，它的持续时间会延长到你的下一回合结束（在同一回合维持一次以上不会继续延长持续时间）。如果一项能力可以维持，但没有列出持续时间，则最多可以维持10分钟。</p>\n<p>一项效果可能会列出你维持它时才会获得的额外增益，这种情况有可能出现在持续时间不为维持效果上。如果该效果具有特殊增益且持续时间为维持，那么你的维持动作会延长持续时间并获得特殊增益。</p>\n<p>如果你的维持动作被打断，该能力结束。</p>",
+            "name": "维持 Sustain"
         }
     }
 }
