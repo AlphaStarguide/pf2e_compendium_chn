@@ -1672,6 +1672,10 @@
                 "Defensive Camouflage": {
                     "name": "防护性伪装 Defensive Camouflage",
                     "description": "<p>活化林地能在自然环境中@UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{躲藏 Hide}，哪怕它没有掩蔽。在躲藏中时，根系被泥土安全地覆盖，赋予活体林地的AC +3状态加值。重击会击碎这层土壤保护层，结束该效果。</p>"
+                },
+                "Engulf": {
+                    "description": "<p>@Check[type:reflex|dc:22] ，@Damage[5d8[bludgeoning]]伤害，逃脱DC 20,，破裂10</p>\n<p>被活体林地包卷的生物还必须尝试@Check[type:fortitude|dc:22|basic:true]豁免，因为他被又细又密的枝条来回击打。</p>\n<p><strong>大成功</strong> 生物不受影响</p>\n<p><strong>成功</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>失败</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}。</p>\n<p><strong>大失败</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 4}。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>",
+                    "name": "包卷 Engulf"
                 }
             },
             "data": {
@@ -1965,5 +1969,39 @@
                 "placeHolder": "placeHolder"
             }
         }
+    },
+    "mapping": {
+        "di": "system.traits.di.custom",
+        "name": "name",
+        "portrait": {
+            "converter": "npc-portrait-path",
+            "path": "img"
+        },
+        "token": {
+            "path": "prototypeToken",
+            "converter": "npc-token-translation"
+        },
+        "data": {
+            "path": "system",
+            "converter": "npc-data-translation"
+        },
+        "items": {
+            "path": "items",
+            "converter": "npc-item-translation"
+        },
+        "publicNotes": "system.details.publicNotes",
+        "dr": "system.traits.dr",
+        "allSaves": "system.attributes.allSaves.value",
+        "senses": "system.traits.senses.value",
+        "hp": "system.attributes.hp.details",
+        "disable": "system.details.disable",
+        "hazarddescription": "system.details.description",
+        "reset": "system.details.reset",
+        "routine": "system.details.routine",
+        "blurb": "system.details.blurb",
+        "speed": "system.attributes.speed.details",
+        "languages": "system.traits.languages.custom",
+        "stealthdetails": "system.attributes.stealth.details",
+        "ac": "system.attributes.ac.details"
     }
 }
