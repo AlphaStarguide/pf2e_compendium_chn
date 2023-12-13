@@ -198,7 +198,7 @@
         },
         "Entropic Wheel (Amped)": {
             "duration": "1分钟",
-            "time": "reaction",
+            "time": "",
             "name": "熵之轮转-增幅 Entropic Wheel (Amped)",
             "description": "<p><strong>触发</strong> 你对一个敌人造成寒冷或火焰伤害。</p>\n<hr />\n<p>你将热能储存在一个轮状的魔法构造中，让你用寒冷烧伤对手或用热力冻结他们的身体。当你施展这个法术时，熵轮获得一个热能微子，当你使用寒冷或火焰效果或造成寒冷或火焰伤害时，熵轮会旋转，吸取一点能量并获得另一个微子。熵轮在一个给定的回合中不能获得超过一次的微子，而微子的最大数量等于熵之轮转的法术等级。</p>\n<p>当你@UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{施展 Cast a Spell}一个造成火焰伤害的法术时，目标也会受到与熵轮中的微子数量相等的寒冷伤害。当你施放一个造成寒冷伤害的法术时，目标也会受到与熵轮中的微子数量相同的火焰伤害。这只适用于该法术的初始伤害，不适用于任何持续伤害或持续效果。</p>\n<hr />\n<p><strong>增幅</strong> 你在施法时以及在每次熵轮会获得一个微子时获得两个微子而不是一个。</p>"
         },
@@ -292,6 +292,42 @@
             "range": "60尺",
             "duration": "直到你下回合开始",
             "time": "2"
+        },
+        "Frostbite (Psychic)": {
+            "description": "<p>凛冽的寒气在目标周围凝聚，冻结其身体。目标受到2d4寒冷伤害，基础强韧豁免。大失败时，目标还会获得1点钝击弱点，持续到你下回合开始。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.DdqWMj7cuf4S1bgr]{法术效果: 冻伤}</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 伤害增加1d4点，大失败时获得的弱点增加1点。</p>",
+            "name": "冻伤-心能者 Frostbite (Psychic)",
+            "target": "一个生物",
+            "range": "120尺"
+        },
+        "Ignition (Amped)": {
+            "description": "<p>你打个响指并指向一个目标，后者便开始燃烧。作出一次法术攻击检定对抗目标的AC，命中时造成1d10火焰伤害加上1点火焰溅射伤害。若目标位于你的近战触及范围内，你能选择用火焰进行一次近战法术攻击以取代远程法术攻击，这会使得法术的所有伤害骰提升至d12骰子。使用近战形式引火术时，你的触及提高5尺。你不会受到增幅引火术的溅射伤害。</p>\n<hr />\n<p><strong>大成功</strong> 目标承受双倍伤害以及1d4点持续火焰伤害。</p>\n<p><strong>成功</strong> 目标承受全额伤害。</p>\n<hr />\n<p><strong>增幅升阶 (+1)</strong> 初始伤害增加1d10（近战为1d12），溅射伤害增加1。大成功的持续火焰伤害增加1d4。</p>\n<p>[[/r (@item.level)d4[persistent,fire]]]{按等级计算的持续火焰伤害}</p>\n<p>[[/r (@item.level)d6[persistent,fire]]]{按等级计算的持续火焰伤害 (近战)}</p>",
+            "name": "引火术-增幅 Ignition (Amped)",
+            "target": "一个生物",
+            "range": "60尺"
+        },
+        "Figment (Amped)": {
+            "name": "虚构幻术-增幅 Figment (Amped)",
+            "description": "<p>你创造出简单的声音或图像的幻术。声音会为法术添加听觉特征，且不能包含能被理解的单词或复杂的音乐。图像会为法术添加视觉特征，但是它不能大于5尺边长的立方体，且在15尺的距离内观察会发现它的构造明显很粗糙且缺乏细节。当你施放或维持该法术时，你能尝试用幻术让人@UUID[Compendium.pf2e.actionspf2e.Item.GkmbTGfg8KcgynOA]{分神 Create a Diversion}，这会为你的欺骗检定提供+2环境加值。若对某个生物进行的此尝试失败了，该生物就不会相信<em>虚构幻术</em>。</p>\n<p>当你维持法术时，你可以将明显的声音或视觉移动最多15尺。然后你可以像往常一样尝试@UUID[Compendium.pf2e.actionspf2e.Item.GkmbTGfg8KcgynOA]{分神 Create a Diversion}。那些已经识破幻术的生物不会受到分神的影响。你的虚构幻术还获得以下增幅。</p>\n<p><strong>增幅</strong> 当你增幅法术时，你可以在其正常效果的基础上创建一个特别分散注意力的幻术。选择法术范围内的一个未被占据的方格。该方格中的幻术为在你下一个回合开始前的单次近战攻击提供夹击。如果你维持法术，幻术的细节变化和转移，让你的敌人不安；夹击幻术的持续时间延长到你下一个回合开始，并且你可以将其移动到法术范围内的任何未被占据的方格。已经识破幻术的生物，夹击幻术不能提供其效果。</p>",
+            "range": "60尺",
+            "duration": "维持"
+        },
+        "Figment (Psychic)": {
+            "name": "虚构幻术-心能者 Figment (Psychic)",
+            "description": "<p>你创造出简单的声音或图像的幻术。声音会为法术添加听觉特征，且不能包含能被理解的单词或复杂的音乐。图像会为法术添加视觉特征，但是它不能大于5尺边长的立方体，且在15尺的距离内观察会发现它的构造明显很粗糙且缺乏细节。当你施放或维持该法术时，你能尝试用幻术让人@UUID[Compendium.pf2e.actionspf2e.Item.GkmbTGfg8KcgynOA]{分神 Create a Diversion}，这会为你的欺骗检定提供+2环境加值。若对某个生物进行的此尝试失败了，该生物就不会相信<em>虚构幻术</em>。</p>\n<p>当你维持法术时，你可以将明显的声音或视觉移动最多15尺。然后你可以像往常一样尝试@UUID[Compendium.pf2e.actionspf2e.Item.GkmbTGfg8KcgynOA]{分神 Create a Diversion}。那些已经识破幻术的生物不会受到分神的影响。</p>",
+            "range": "60尺",
+            "duration": "维持"
+        },
+        "Frostbite (Amped)": {
+            "name": "冻伤-增幅 Frostbite (Amped)",
+            "description": "<p>凛冽的寒气在目标周围凝聚，冻结其身体。目标受到2d4寒冷伤害，基础强韧豁免。大失败时，目标还会获得1点钝击弱点，持续到你下回合开始。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.DdqWMj7cuf4S1bgr]{法术效果: 冻伤}</p>\n<p><strong>增幅</strong> 你隔空汲取热量来补充自己的力量。球体造成3d4寒冷伤害。你获得数值等于你造成伤害的一半的临时生命值（在适用抗力之后）。你会在1分钟后失去这些临时生命。</p>\n<hr />\n<p><strong>增幅升阶 (+1)</strong> 初始伤害增加2d4而非1d4。大失败的弱点增加1。</p>",
+            "range": "120尺",
+            "target": "一个生物"
+        },
+        "Ignition (Psychic)": {
+            "name": "引火术-心能者 Ignition (Psychic)",
+            "description": "<p>你打个响指并指向一个目标，后者便开始燃烧。作出一次法术攻击检定对抗目标的AC，命中时造成2d4火焰伤害。若目标位于你的近战触及范围内，你能选择用火焰进行一次近战法术攻击以取代远程法术攻击，这会使得法术的所有伤害骰提升至d6骰子。使用近战形式引火术时，你的触及提高5尺。</p>\n<hr />\n<p><strong>大成功</strong> 目标承受双倍伤害以及1d4点持续火焰伤害。</p>\n<p><strong>成功</strong> 目标承受全额伤害。</p>\n<hr />\n<p><strong>升阶 (+1)</strong> 初始伤害增加1d4。大成功的持续火焰伤害增加1d4。</p>\n<p>[[/r (@item.level)d4[persistent,fire]]]{按等级计算的持续火焰伤害}</p>\n<p>[[/r (@item.level)d6[persistent,fire]]]{按等级计算的持续火焰伤害 (近战)}</p>",
+            "target": "一个生物",
+            "range": "60尺"
         }
     },
     "mapping": {
