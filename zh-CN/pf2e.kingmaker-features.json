@@ -18,7 +18,7 @@
         },
         "Defensive Stance": {
             "name": "防御姿态 Defensive Stance",
-            "description": "<p>需求 防御战术 你的军队在盾牌后面蹲下，用长柄武器组成矛墙，或移动至能保护被包抄的友军的位置。对一支敌军尝试一次机动检定。大成功 目标友军不再被任何敌军包抄。成功 目标友军不再被目标敌军包抄。大失败 你的防御姿态失败，你的军队自身被目标敌军包抄。</p>"
+            "description": "<p><strong>需求</strong> 防御战术</p>\n<hr />\n<p>你的军队在盾牌后面蹲下，用长柄武器组成矛墙，或移动至能保护被包抄的友军的位置。对一支敌军尝试一次@Check[maneuver|defense:maneuver]检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标友军不再被任何敌军包抄。</p>\n<p><strong>成功</strong> 目标友军不再被目标敌军包抄。</p>\n<p><strong>大失败</strong> 你的防御姿态失败，你的军队自身被目标敌军包抄。</p>"
         },
         "Engaged": {
             "name": "Engaged",
@@ -46,7 +46,7 @@
         },
         "Shaken": {
             "name": "Shaken",
-            "description": "<p>军队的士气开始动摇，可能是害怕强大的对手，也可能是超自然力量的影响，例如巨龙的恐怖外表，或者仅仅是在战斗中运气不佳。动摇总是拥有状态值。军队的士气检定受到等同于动摇状态值的环境减值，并且当军队受到伤害时，它必须通过 DC 11 纯骰检定，否则动摇状态值增加 1 点。陷入动摇 4 的军队会自动溃败。军队如果军队在王国回合中既没有尝试军队行动，也没有参与战争遭遇，则动摇状态值减少 1 点。</p>"
+            "description": "<p>军队的士气开始动摇，可能是害怕强大的对手，也可能是超自然力量的影响，例如巨龙的恐怖外表，或者仅仅是在战斗中运气不佳。</p>\n<p>动摇总是拥有状态值。军队的士气检定受到等同于动摇状态值的环境减值，并且当军队受到伤害时，它必须通过@Check[type:flat|dc:11]检定，否则动摇状态值增加 1 点。陷入动摇 4 的军队会自动@UUID[Compendium.pf2e.kingmaker-features.Item.aZImSBBmTHff2POP]{溃败 Routed}。军队如果军队在王国回合中既没有尝试军队行动，也没有参与战争遭遇，则动摇状态值减少 1 点。</p>"
         },
         "Hold the Line": {
             "name": "坚守战线 Hold the Line",
@@ -70,7 +70,7 @@
         },
         "Battlefield Medicine": {
             "name": "战地医疗 Battlefield Medicine",
-            "description": "<p>需求 验伤分类 你的军队尝试在战斗中医治友军的伤口。一旦你对某只军队尝试了这个战争动作，该军队在这场战争遭遇中余下的时间内将对战地医疗临时免疫。尝试DC 25 侦查检定，成功分类出友军的伤患并提供紧急救护。大成功 你恢复目标军队 2 点生命值。成功 你恢复目标军队 1 点生命值。大失败 你救治友军的尝试失败了，并且军队的疲劳状态值增加 1 点。</p>"
+            "description": "<p><strong>需求</strong> 验伤分类</p>\n<hr />\n<p>你的军队尝试在战斗中医治友军的伤口。一旦你对某只军队尝试了这个战争动作，该军队在这场战争遭遇中余下的时间内将对战地医疗临时免疫。尝试@Check[scouting|dc:25]检定，成功分类出友军的伤患并提供紧急救护。</p>\n<hr />\n<p><strong>大成功</strong> 你恢复目标军队 2 点生命值。</p>\n<p><strong>成功</strong> 你恢复目标军队 1 点生命值。</p>\n<p><strong>大失败</strong> 你救治友军的尝试失败了，并且军队的疲劳状态值增加 1 点。</p>"
         },
         "Civic Planning": {
             "description": "<p>在行动阶段（Activities phase）的公民行动（Civic Activities）步骤中，队伍所选择的一个定居点可以执行两项公民行动，而不是一项。第二项公民行动发生在所有的居民点都各自进行了公民行动之后。</p>",
@@ -86,7 +86,7 @@
         },
         "Routed": {
             "name": "Routed",
-            "description": "<p>军队撤退，可能被魔法强迫，也可能因为士气崩溃。溃败的军队在它的回合中必须执行撤退（Retreat）战争动作。当溃败时，军队的士气检定有-2 环境减值。该状态在战争遭遇结束后自动移除，但溃败的军队在这种情况下会增加 1 点动摇状态值。如果一方的所有军队同时处于溃败状态，则战斗结束并且另一方军队获胜。</p>"
+            "description": "<p>军队撤退，可能被魔法强迫，也可能因为士气崩溃。溃败的军队在它的回合中必须执行@UUID[Compendium.pf2e.kingmaker-features.Item.IhjlbJinff1wUSjL]{撤退 Retreat}战争动作。当溃败时，军队的士气检定有-2 环境减值。该状态在战争遭遇结束后自动移除，但溃败的军队在这种情况下会增加 1 点@UUID[Compendium.pf2e.kingmaker-features.Item.7LMDwpVijK7x5Jst]{动摇 Shaken}状态值。如果一方的所有军队同时处于溃败状态，则战斗结束并且另一方军队获胜。</p>"
         },
         "Craft Luxuries": {
             "name": "制造奢侈品 Craft Luxuries",
@@ -119,7 +119,7 @@
         },
         "Defeated": {
             "name": "Defeated",
-            "description": "<p>当一支军队的生命值减少至 0 时，它就战败了。战败的军队不能采取战争动作。战败的军队可以通过恢复军队（RecoverArmy）行动恢复到 1 点生命值（虽然在这种情况下基础 DC+5）。只要有效果能将战败的军队恢复至 1 点生命值，战败状态就会被移除。一支战败的军队在部署军队（Deploy Army）行动中每次只能移动 1 个地块。战败的军队可以被正常解散。只要军队处于战败状态，它就无法尝试其他军队行动。如果战败的军队再次受到伤害，它必须尝试DC 16 纯骰检定，否则被摧毁。如果其中一方的军队都战败了，这些军队都会被摧毁。</p>"
+            "description": "<p>当一支军队的生命值减少至 0 时，它就战败了。战败的军队不能采取战争动作。战败的军队可以通过@UUID[Compendium.pf2e.kingmaker-features.Item.1wzNJEvPCuMwJdHe]{恢复军队 Recover Army}行动恢复到 1 点生命值（虽然在这种情况下基础 DC+5）。只要有效果能将战败的军队恢复至 1 点生命值，战败状态就会被移除。一支战败的军队在@UUID[Compendium.pf2e.kingmaker-features.Item.ysKkyZp02RMujObE]{部署军队 Deploy Army}行动中每次只能移动 1 个地块。战败的军队可以被正常@UUID[Compendium.pf2e.kingmaker-features.Item.IWanYXCWh3cvC6ti]{解散军队 Disband Army}。只要军队处于战败状态，它就无法尝试其他军队行动。如果战败的军队再次受到伤害，它必须尝试@Check[type:flat|dc:16]检定，否则被摧毁。如果其中一方的军队都战败了，这些军队都会被摧毁。</p>"
         },
         "Rest and Relax": {
             "name": "休息和放松 Rest and Relax",
@@ -135,10 +135,10 @@
         },
         "Overwhelming Bombardment": {
             "name": "Overwhelming Bombardment",
-            "description": "<p>需求 爆炸弹药 你的工程机械将所有火力倾泻到防御工事上。该战争动作视为两次远程打击，但只消耗 1 发弹药。尝试一次远程打击对抗目标防御工事的 AC。大成功 你对防御工事造成 2 点伤害。你还能对由你选择的两支位于防御工事内的敌军各造成 1点额外伤害。成功 你对防御工事造成 1 点伤害，并且还能对防御工事或防御工事内的一支敌军造成 1 点额外伤害（由你选择）。失败 你对防御工事造成 1 点伤害。大失败 你未能造成伤害，你的军队自身被包抄，直到你的下个回合开始。</p>"
+            "description": "<p><strong>需求</strong> 爆炸弹药</p>\n<p>你的工程机械将所有火力倾泻到防御工事上。该战争动作视为两次远程打击，但只消耗 1 发弹药。尝试一次远程打击对抗目标防御工事的 AC。</p>\n<p><strong>大成功</strong> 你对防御工事造成 2 点伤害。你还能对由你选择的两支位于防御工事内的敌军各造成 1点额外伤害。</p>\n<p><strong>成功</strong> 你对防御工事造成 1 点伤害，并且还能对防御工事或防御工事内的一支敌军造成 1 点额外伤害（由你选择）。</p>\n<p><strong>失败</strong> 你对防御工事造成 1 点伤害。</p>\n<p><strong>大失败</strong> 你未能造成伤害，你的军队自身被包抄，直到你的下个回合开始。</p>"
         },
         "Flaming Shot": {
-            "description": "<p>军队使用经过炼金或魔法处理过的并且可以在发射时被点燃的弹药进行远程射击。当你的军队成功进行远程打击时，目标敌军必须尝试一次机动检定，对抗你军队的攻击 DC；如果失败的话，打击造成1 点额外伤害。</p>",
+            "description": "<p>军队使用经过炼金或魔法处理过的并且可以在发射时被点燃的弹药进行远程射击。当你的军队成功进行远程打击时，目标敌军必须尝试一次@Check[type:maneuver|dc:resolve(@actor.strikes.ranged.variants.0.mod + 10)]检定，对抗你军队的攻击 DC；如果失败的话，打击造成[[/r 1 #damage]]额外伤害。</p>",
             "name": "火焰弹药 Flaming Shot"
         },
         "Create a Masterpiece": {
@@ -195,7 +195,7 @@
             "name": "建设道路 Build Roads"
         },
         "Lost": {
-            "description": "<p>当军队尝试部署到新地点却失败时，它可能会陷入迷失。迷失的军队除了恢复军队（Recover Army）以外不能执行任何其他军队行动，并且该行动只能用于尝试移除迷失状态。当军队从迷失状态中恢复时，由 GM 决定该军队出现在哪个地点（通常来说这是一个位于其起点到终点之间的某个合适的中间点。）</p>",
+            "description": "<p>当军队尝试部署到新地点却失败时，它可能会陷入迷失。迷失的军队除了@UUID[Compendium.pf2e.kingmaker-features.Item.1wzNJEvPCuMwJdHe]{恢复军队 Recover Army}以外不能执行任何其他军队行动，并且该行动只能用于尝试移除迷失状态。当军队从迷失状态中恢复时，由 GM 决定该军队出现在哪个地点（通常来说这是一个位于其起点到终点之间的某个合适的中间点。）</p>",
             "name": "Lost"
         },
         "Fortified Fiefs": {
@@ -220,7 +220,7 @@
             "description": "<p>尝试一次基础@Check[agriculture|dc:resolve(@kingdom.control.dc)]检定，采集野生的食物，或收割农场里多余的作物。</p>\n<hr />\n<p><strong>大成功</strong> 获得 1d4 粮食商品。</p>\n<p><strong>成功</strong> 获得 1 粮食商品。</p>\n<p><strong>失败</strong> 没有获得粮食商品。</p>\n<p><strong>大失败</strong> 食物被糟蹋了，损失 1d4 粮食商品；如果你没有粮食可以损失，你获得 1 点动荡。</p>"
         },
         "Sharpshooter": {
-            "description": "<p>指挥官训练军队进行精准的远程攻击。你在远程打击时有+1 状态加值，但近战攻击有-2 状态加值。在 9 级时，近战打击的减值降低至-1，在 15 级时，近战打击减值被移除。该军队可以使用火力掩护（Covering Fire）战术战争动作。</p>",
+            "description": "<p>指挥官训练军队进行精准的远程攻击。你在远程打击时有+1 状态加值，但近战攻击有-2 状态加值。在 9 级时，近战打击的减值降低至-1，在 15 级时，近战打击减值被移除。</p>\n<p>该军队可以使用@UUID[Compendium.pf2e.kingmaker-features.Item.GIbm9qo8VuFgPywJ]{火力掩护 Covering Fire}战术战争动作。</p>",
             "name": "弹无虚发 Sharpshooter"
         },
         "Civil Service": {
@@ -229,7 +229,7 @@
         },
         "Flexible Tactics": {
             "name": "灵活战术 Flexible Tactics",
-            "description": "<p>该军队善于采用非常规战术。你可以使用该军队执行@UUID[Compendium.pf2e.kingmaker-features.Item.G2eBcOnUHb3yT7JL]{Dirty Fighting}，@UUID[Compendium.pf2e.kingmaker-features.Item.AOFU8pOTMjVdiyNd]{False Retreat}， @UUID[Compendium.pf2e.kingmaker-features.Item.Hi4LKGOKe6yMDOH5]{Feint}战术战争动作，和@UUID[Compendium.pf2e.kingmaker-features.Item.8wjiF3ctXUjP9oyX]{Counterattack}战术反应动作。</p>"
+            "description": "<p>该军队善于采用非常规战术。你可以使用该军队执行@UUID[Compendium.pf2e.kingmaker-features.Item.G2eBcOnUHb3yT7JL]{卑鄙战斗 Dirty Fighting}，@UUID[Compendium.pf2e.kingmaker-features.Item.Hi4LKGOKe6yMDOH5]{佯攻 Feint}战术战争动作，和@UUID[Compendium.pf2e.kingmaker-features.Item.8wjiF3ctXUjP9oyX]{反击 Counterattack}，@UUID[Compendium.pf2e.kingmaker-features.Item.AOFU8pOTMjVdiyNd]{假装撤退 False Retreat}战术反应动作。</p>"
         },
         "Pledge of Fealty (Trained)": {
             "name": "宣誓效忠（受训） Pledge of Fealty (Trained)",
@@ -261,7 +261,7 @@
             "name": "优质生活 Fine Living"
         },
         "Pinned": {
-            "description": "<p>军队无法自由移动。它获得被包抄状态，并且无法使用任何机动战争动作。被钉死的军队无法被部署到别处。</p>",
+            "description": "<p>军队无法自由移动。它获得@UUID[Compendium.pf2e.kingmaker-features.Item.ibcMcEGRbPRtk9Pu]{被包抄 Outflanked}状态，并且无法使用任何机动战争动作。被钉死的军队无法被@UUID[Compendium.pf2e.kingmaker-features.Item.ysKkyZp02RMujObE]{部署 deployed}到别处。</p>",
             "name": "Pinned"
         },
         "Outflank": {
@@ -305,7 +305,7 @@
             "name": "发起进攻 Offensive Gambit"
         },
         "Focused Devotion": {
-            "description": "<p>该军队对你的事业特别忠诚。军队在重整（Rally）时的士气检定有+1 加值。此加值在 9 级时提升至+2，在 17 级时提升至+3。</p>\n<p>该军队可以使用 @UUID[Compendium.pf2e.kingmaker-features.Item.ggVahjiAlVICpiPA]{Taunt} 战术战争动作。</p>",
+            "description": "<p>该军队对你的事业特别忠诚。军队在@UUID[Compendium.pf2e.kingmaker-features.Item.8XXylMGJuqe1ozMk]{重整 Rally}时的士气检定有+1 加值。此加值在 9 级时提升至+2，在 17 级时提升至+3。</p>\n<p>该军队可以使用@UUID[Compendium.pf2e.kingmaker-features.Item.ggVahjiAlVICpiPA]{叫阵 Taunt}战术战争动作。</p>",
             "name": "忠肝义胆 Focused Devotion"
         },
         "Insider Trading": {
@@ -318,7 +318,7 @@
             "name": "内部贸易 Insider Trading"
         },
         "Field Triage": {
-            "description": "<p>军队的士兵们擅长紧急处理伤口。军队获得战地医疗（Battlefield Medicine）战术战争动作。</p>",
+            "description": "<p>军队的士兵们擅长紧急处理伤口。军队获得@UUID[Compendium.pf2e.kingmaker-features.Item.agjqRWTTIWHwiKsd]{战地医疗 Battlefield Medicine}战术战争动作。</p>",
             "name": "验伤分类 Field Triage"
         },
         "Pull Together": {
@@ -347,7 +347,7 @@
             "name": "Dirty Fighting"
         },
         "Opening Salvo": {
-            "description": "<p>你的军队训练有素，可以率先向远处敌军开火。在战争遭遇的第一轮中，如果你的回合先于所有敌军的回合，你可以选择让这支军队在遭遇开始时直接和所有敌军部队保持远距状态。</p>",
+            "description": "<p>你的军队训练有素，可以率先向远处敌军开火。在战争遭遇的第一轮中，如果你的回合先于所有敌军的回合，你可以选择让这支军队在遭遇开始时直接和所有敌军部队保持@UUID[Compendium.pf2e.kingmaker-features.Item.8upne4E6Q7Da5T5w]{远离 Distant}状态。</p>",
             "name": "开幕齐射 Opening Salvo"
         },
         "Gather Livestock": {
@@ -379,15 +379,15 @@
             "name": "品质生活 Quality of Life"
         },
         "Mired": {
-            "description": "<p>军队的行动能力严重下降。它可能陷入泥潭、雪地、灌木丛、碎石或类似的地形，被沉重的负担拖累、或其他任何原因导致。迟滞总是有状态值。被迟滞的军队的所有机动检定和部属军队（Deploy Army）检定受到等于迟滞状态值的减值。如果军队陷入迟滞 4，它将被钉死。</p>",
+            "description": "<p>军队的行动能力严重下降。它可能陷入泥潭、雪地、灌木丛、碎石或类似的地形，被沉重的负担拖累、或其他任何原因导致。迟滞总是有状态值。被迟滞的军队的所有机动检定和@UUID[Compendium.pf2e.kingmaker-features.Item.ysKkyZp02RMujObE]{部属军队 Deploy Army}检定受到等于迟滞状态值的减值。如果军队陷入迟滞 4，它将@UUID[Compendium.pf2e.kingmaker-features.Item.d5CJgabylXtTD2qj]{被钉死 Pinned}。</p>",
             "name": "Mired"
         },
         "Guard": {
-            "description": "<p>你的军队花费 1 个战争动作进入防御姿态——举起盾牌、专注格挡攻击、或寻找掩护。尝试一次战技检定对抗一支目标敌军。大成功 你的军队在 AC 上有+2 物品加值，直到下个回合开始；该加值适用于所有针对该军队的攻击，而不仅仅是目标军队。成功 你的军队针对目标军队的攻击，在 AC 上有+2 物品加值，直到下个回合开始。失败 你的军队没能成功防卫目标敌军的攻击。大失败 你的军队在防卫目标敌军的攻击时可悲地失败了，陷入迟滞 1。</p>",
+            "description": "<p>你的军队花费 1 个战争动作进入防御姿态——举起盾牌、专注格挡攻击、或寻找掩护。尝试一次战技检定对抗一支目标敌军。</p>\n<p><strong>大成功</strong> 你的军队在 AC 上有+2 物品加值，直到下个回合开始；该加值适用于所有针对该军队的攻击，而不仅仅是目标军队。</p>\n<p>效果： @UUID[Compendium.pf2e.kingmaker-features.Item.EmfxjNH1uxtDDqZu]{防卫（大成功） Guarded (Critical Success)}</p>\n<p><strong>成功</strong> 你的军队针对目标军队的攻击，在 AC 上有+2 物品加值，直到下个回合开始。</p>\n<p>效果： @UUID[Compendium.pf2e.kingmaker-features.Item.rF8Nsas5KrrBEeqr]{防卫（成功） Guarded (Success)}</p>\n<p><strong>失败</strong> 你的军队没能成功防卫目标敌军的攻击。</p>\n<p><strong>大失败</strong> 你的军队在防卫目标敌军的攻击时可悲地失败了，陷入@UUID[Compendium.pf2e.kingmaker-features.Item.oVhkdym3D6TiTbrN]{迟滞 Mired 1}。</p>",
             "name": "卫兵 Guard"
         },
         "Disengage": {
-            "description": "<p>你的军队尝试脱离和敌军的缠斗，拉远和敌军的距离。</p>\n<p>尝试一次机动检定，对抗每一支和你的军队接战的敌军。</p>\n<p><strong>大成功</strong> 你的军队不再和目标军队接战。此外，在此战争动作中，你的军队自动不再和任何你尚未进行机动检定对抗的军队接战。</p>\n<p><strong>成功</strong> 你的军队不再和目标军队接战。</p>\n<p><strong>失败</strong> 你的军队依然和目标军队接战。</p>\n<p><strong>大失败</strong> 你的军队依然和目标军队接战，并且在本回合剩下的时间内，你的军队不能再尝试从任何与之接战的军队脱离。</p>",
+            "description": "<p>你的军队尝试脱离和敌军的缠斗，拉远和敌军的距离。</p>\n<p>尝试一次机动检定，对抗每一支和你的军队@UUID[Compendium.pf2e.kingmaker-features.Item.2IqM1XHELKwARAx1]{接战 Engaged}的敌军。</p>\n<p><strong>大成功</strong> 你的军队不再和目标军队接战。此外，在此战争动作中，你的军队自动不再和任何你尚未进行机动检定对抗的军队接战。</p>\n<p><strong>成功</strong> 你的军队不再和目标军队接战。</p>\n<p><strong>失败</strong> 你的军队依然和目标军队接战。</p>\n<p><strong>大失败</strong> 你的军队依然和目标军队接战，并且在本回合剩下的时间内，你的军队不能再尝试从任何与之接战的军队脱离。</p>",
             "name": "Disengage"
         },
         "Focused Attention": {
@@ -395,7 +395,7 @@
             "name": "集中注意 Focused Attention"
         },
         "Battle": {
-            "description": "<p>你的军队攻击敌军，使用打击对抗敌军 AC。你只有在和目标敌军接战时才能如此做。否则，你只能使用远程打击。</p>\n<p>军队在一场战争遭遇中最多使用 5次远程打击（除非他拥有@UUID[Compendium.pf2e.kingmaker-features.Item.DrUT5sE0EuU5dtPa]{增加弹药}战术）。由于带有攻击特征，在同一轮中多次进行打击会遭受多重攻击减值。</p>\n<p>攻城机械能使用战斗动作攻击和伤害防御工事。</p>\n<p><strong>大成功</strong> 你对敌军造成 2 点伤害。</p>\n<p><strong>成功</strong> 你对敌军造成 1 点伤害。</p>",
+            "description": "<p>你的军队攻击敌军，使用打击对抗敌军 AC。你只有在和目标敌军@UUID[Compendium.pf2e.kingmaker-features.Item.2IqM1XHELKwARAx1]{接战 Engaged}时才能如此做。否则，你只能使用远程打击。</p>\n<p>军队在一场战争遭遇中最多使用 5次远程打击（除非他拥有@UUID[Compendium.pf2e.kingmaker-features.Item.DrUT5sE0EuU5dtPa]{增加弹药}战术）。由于带有攻击特征，在同一轮中多次进行打击会遭受多重攻击减值。</p>\n<p>攻城机械能使用战斗动作攻击和伤害防御工事。</p>\n<p><strong>大成功</strong> 你对敌军造成 2 点伤害。</p>\n<p><strong>成功</strong> 你对敌军造成 1 点伤害。</p>",
             "name": "战斗 Battle"
         },
         "Request Foreign Aid": {
@@ -403,7 +403,7 @@
             "name": "寻求外援 Request Foreign Aid"
         },
         "Merciless": {
-            "description": "<p>该军队不会轻易让敌人溜走。当有接战的敌军尝试机动检定以脱离战斗（Disengage）时，该军队的机动 DC 有+2 状态加值。该军队能使用全军突击（All-Out Assault）战术战争动作。</p>",
+            "description": "<p>该军队不会轻易让敌人溜走。当有接战的敌军尝试机动检定以@UUID[Compendium.pf2e.kingmaker-features.Item.Pu5bptxLrKFyEzFh]{脱离战斗 Disengage}时，该军队的机动 DC 有+2 状态加值。</p>\n<p>该军队能使用@UUID[Compendium.pf2e.kingmaker-features.Item.Z6jMZgAxI1zRO7Sl]{全军突击 All-Out Assault}战术战争动作。</p>",
             "name": "毫无怜悯 Merciless"
         },
         "Liquidate Resources": {
@@ -497,7 +497,7 @@
             "description": "<p>Y你宣布将一个角色晋升为领导职务，无论是新任命的领导，还是从一个领导职务转变为其他领导职务。你通常会在王国回合开始时执行此行动，但如果意外事件（如角色死亡）导致失去了一名领导职务，你可以立即使用更换领导行动尝试为该职务分配一名新领导，即便在王国回合之外（根据情况，需要应用领导职位的空缺减值）。尝试一次基础@Check[intrigue|dc:resolve(@kingdom.control.dc)]、@Check[politics|dc:resolve(@kingdom.control.dc)]、@Check[statecraft|dc:resolve(@kingdom.control.dc)]或@Check[warfare|dc:resolve(@kingdom.control.dc)]技能检定，这些技能可以任意选用，但每个技能都和两个特定的领导职位有关系。</p>\n<ul>\n<li>密谋：指派特使（Emissaries）和司库（Treasurers）时有+2 环境加值。</li>\n<li>政治：指派参事（Counselors）和元首（Rulers）时有+2 环境加值。</li>\n<li>治理：指派魔导师（Magisters）和总督（Viceroys）时有+2 环境加值。</li>\n<li>战争：指派将军（Generals）和卫队长（Wardens）时有+2 环境加值。</li>\n</ul>\n<p>元首特别难以更换，当你使用这个活动重新指派一位新的元首时，你的技能检定有-4 环境减值，除非你取得大成功，否则会造成 1 点额外的动荡。在你指派领导的同时，你也可以使用该行动来尝试重新聚焦（invested）四位领导。只要结果不是大失败，你都可以这样做。</p>\n<hr />\n<p><strong>大成功</strong> 人民爱戴新领导。领导立即提供和领导职位有关的好处，并且在下个王国回合结束之前，他所进行的所有王国技能检定均有+1 环境加值。</p>\n<p><strong>成功</strong> 人民接受了新领导。领导立即提供和领导职位有关的好处。</p>\n<p><strong>失败</strong> 人民对领导没有信心。在每个王国回合的行动阶段，该领导对他们所尝试的所有检定都要承受-1 环境减值。在下个王国回合结束时，该领导可以尝试任何基于忠诚的基础技能检定来讨好民众。该林领袖可以在每个王国回合结束时尝试这个检定，直到他成功为止。成功会移除该减值，但该检定大失败会导致下面的结果。</p>\n<p><strong>大失败</strong> 人民拒绝新领导。领导角色被视为空缺。你必须在下个王国回合开始时重新尝试新任领导行动，重新指派它。增加 1 点动荡。</p>"
         },
         "Defensive Tactics": {
-            "description": "<p>该军队尤其擅长防御战术。该军队在进行防卫（Guard）时，机动检定有+1 状态加值。此加值在 9 级时达到+2，17 级时达到+3。军队能使用防御姿态（Defensive Stance）战术战争动作。</p>",
+            "description": "<p>该军队尤其擅长防御战术。该军队在进行@UUID[Compendium.pf2e.kingmaker-features.Item.phtwOol1wETryF7b]{防卫 Guard}时，机动检定有+1 状态加值。此加值在 9 级时达到+2，17 级时达到+3。</p>\n<p>军队能使用@UUID[Compendium.pf2e.kingmaker-features.Item.1U9SbpBDXgsLGlzq]{防御姿态 Defensive Stance}战术战争动作。</p>",
             "name": "防御战术 Defensive Tactics"
         },
         "Muddle Through": {
@@ -539,7 +539,7 @@
             "name": "黑暗视觉 Darkvision"
         },
         "Reckless Flankers": {
-            "description": "<p>你的军队擅长包围敌人和扰乱敌人，代价是散得太开反而会更脆弱。当你使用进军（Advance）战争动作成功和敌人接战时，你能选择让自己的 AC 承受 2 点环境减值，换来攻击骰+1 环境加值。如果你如此做，该调整值将一直有效，直到你不再接战。你可以使用侧翼迂回（Outflank）战术战争动作。</p>",
+            "description": "<p>你的军队擅长包围敌人和扰乱敌人，代价是散得太开反而会更脆弱。当你使用@UUID[Compendium.pf2e.kingmaker-features.Item.wHoXoyci1lddRR2R]{进军 Advance}战争动作成功和敌人接战时，你能选择让自己的 AC 承受 2 点环境减值，换来攻击骰+1 环境加值。如果你如此做，该调整值将一直有效，直到你不再接战。</p>\n<p>你可以使用@UUID[Compendium.pf2e.kingmaker-features.Item.dEdTJgaaYiDitp5O]{侧翼迂回 Outflank}战术战争动作。</p>",
             "name": "Reckless Flankers"
         },
         "Establish Farmland": {
@@ -555,7 +555,7 @@
             "name": "全军突击 All-Out Assault"
         },
         "Explosive Shot": {
-            "description": "<p>军队的远程攻击会爆炸并向四面八方溅射火焰、弹片或其他破坏性物质。每当该部队用远程打击对一支非远距（non-distant）的敌军造成重击时，对由你选择的另一支非远距的敌军造成1点额外伤害。该军队可以使用狂轰滥炸（ OverwhelmingBombardment）战术战争动作。</p>",
+            "description": "<p>军队的远程攻击会爆炸并向四面八方溅射火焰、弹片或其他破坏性物质。每当该部队用远程打击对一支非远距（non-distant）的敌军造成重击时，对由你选择的另一支非远距的敌军造成1点额外伤害。该军队可以使用@UUID[Compendium.pf2e.kingmaker-features.Item.HLu1o1RzCZxWjOJJ]{狂轰滥炸 Overwhelming Bombardment}战术战争动作。</p>",
             "name": "爆炸弹药 Explosive Shot"
         },
         "Engines of War": {
