@@ -1,39 +1,5 @@
 {
     "label": "rage-of-elements-bestiary",
-    "mapping": {
-        "name": "name",
-        "portrait": {
-            "path": "img",
-            "converter": "npc-portrait-path"
-        },
-        "token": {
-            "path": "prototypeToken",
-            "converter": "npc-token-translation"
-        },
-        "data": {
-            "path": "system",
-            "converter": "npc-data-translation"
-        },
-        "items": {
-            "path": "items",
-            "converter": "npc-item-translation"
-        },
-        "publicNotes": "system.details.publicNotes",
-        "dr": "system.traits.dr",
-        "allSaves": "system.attributes.allSaves.value",
-        "senses": "system.traits.senses.value",
-        "hp": "system.attributes.hp.details",
-        "disable": "system.details.disable",
-        "hazarddescription": "system.details.description",
-        "reset": "system.details.reset",
-        "routine": "system.details.routine",
-        "blurb":"system.details.blurb",
-        "speed":"system.attributes.speed.details",
-        "languages":"system.traits.languages.custom",
-        "stealthdetails":"system.attributes.stealth.details",
-        "ac":"system.attributes.ac.details",
-        "di":"system.traits.di.custom"
-    },
     "entries": {
         "Jabali Shuyookh": {
             "data": {
@@ -43,6 +9,22 @@
             "publicNotes": "<p>A jabali genie of great power and high social rank is called a shuyookh. Strong in body and mind, jabali shuyookhs value physical skill, fine artistry, and displays of strength. Incredibly proud, they're easily offended and quick to anger but lash out only after weighing the consequences. Shuyookhs view their desires as greater than those around them, leading them to provide aid as quickly and efficiently as possible, fulfilling the terms of bargains expediently and to the letter.</p>\n<p>Jabali shuyookhs are industrious and have many interests, including athletic competitions, engineering, jewelry-making, masonry, metalworking, and sculpting. They enjoy games of chance and bargaining, whether in a gambling hall, arena, or marketplace. Some mix their interests by managing organizations or guilds involving such concerns. Many shuyookhs reap the wealth of the Plane of Earth for sale elsewhere and speculate on the value of such commodities.</p>\n<h2>Industry Titans</h2>\n<p>The mercantile empires of jabali shuyookhs extend across the Plane of Earth and onto other planes. Jabalis especially like to trade in regions of the Universe and across the Plane of Fire. Many customers value gemstones, metals, and other precious materials mined on the Plane of Earth. Thus, the resources of the Plane of Earth feed industry across the planes.</p>",
             "languages": "Truespeech",
             "items": {
+                "Tremorsense (Imprecise) 60 feet": {
+                    "name": "Tremorsense (Imprecise) 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The jabali transforms into a Small or Medium earth elemental or land animal, typically a camel or dog. This doesn't affect the shuyookh's statistics, but it could change the damage type of their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                },
                 "Earth Glide": {
                     "name": "Earth Glide",
                     "description": "<p>The jabali can Burrow through dirt and stone at their full burrow Speed, leaving no tunnels or signs of their passing.</p>"
@@ -62,6 +44,10 @@
                 "Stone Crush": {
                     "name": "Stone Crush",
                     "description": "<p>The jabali deals @Damage[(2d6+13)[bludgeoning]] damage to all creatures within 100 feet that are @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by stone clutch, with a @Check[type:fortitude|dc:32|basic:true] save.</p>"
+                },
+                "Push 15 feet": {
+                    "name": "Push 15 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Push]</p>"
                 }
             }
         },
@@ -74,11 +60,11 @@
             "items": {
                 "Marinade": {
                     "name": "Marinade",
-                    "description": "<p>A creature taking persistent fire damage from the brochmaw's hot oil Strike is more readily cooked, taking a \u20132 circumstance penalty to Fortitude saves against Roast for as long as it is taking persistent fire damage.</p>"
+                    "description": "<p>A creature taking persistent fire damage from the brochmaw's hot oil Strike is more readily cooked, taking a –2 circumstance penalty to Fortitude saves against Roast for as long as it is taking persistent fire damage.</p>"
                 },
                 "Roast": {
                     "name": "Roast",
-                    "description": "<p>The brochmaw turns a skewer over their oven, cooking anything impaled on it. Creatures @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the brochmaw's skewer take @Damage[3d6[fire]] damage (@Check[type:fortitude|dc:32|basic:true] save). Creatures who have been Roasted take a \u20132 circumstance penalty to Fortitude saves against Serve for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.IySCRGYxxLFDlIZI]{Effect: Roast}</p>"
+                    "description": "<p>The brochmaw turns a skewer over their oven, cooking anything impaled on it. Creatures @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the brochmaw's skewer take @Damage[3d6[fire]] damage (@Check[type:fortitude|dc:32|basic:true] save). Creatures who have been Roasted take a –2 circumstance penalty to Fortitude saves against Serve for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.IySCRGYxxLFDlIZI]{Effect: Roast}</p>"
                 },
                 "Serve": {
                     "name": "Serve",
@@ -95,7 +81,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Brass Bastion",
-            "publicNotes": "<p>Brass bastions are formidable sentinels crafted from elemental fire and extraplanar brass. While they can be shaped into many forms, most depict muscular warriors with curving horns and stern or taunting expressions. Within each brass shell is a raging inferno\u2014the source of its ceaseless heat.</p>\n<p>Though ifrits originally created brass bastions to act as servants and guards, the knowledge of how to craft them has spread throughout the Plane of Fire. They can even be found on the Plane of Earth thanks to interplanar trade. In Medina Mudii'a, brass bastions walk the streets, tend shops, and stand guard. Bespoke brass bastions are passed down as family heirlooms or gifted to business partners and allies. Scions of the wealthiest ifrit lineages never travel without a train of brass bastions clad in family livery. Destroying a rival ifrit's brass bastion is a quick way to erode their political status, though anyone caught performing such sabotage faces swift retribution.</p>\n<p>Most brass bastions prominently display the sigil of their owner or maker, though magical methods can also determine who crafted a specific construct. Brass bastions forged by favored artisans are a status symbol in many ifrit communities. Ifrits consider a brass bastion crafted by a non-ifrit to be inherently inferior, barely worth the cost of its materials. Brass bastions obey magical programming imprinted at the time of their creation or follow commands from their owners. Most can't speak, but a few have magical voices and can parrot simple phrases, recite poetry, or tell bedtime stories at the crafter's fancy.</p>\n<h2>Brass Scraps</h2>\n<p>On the Plane of Fire, destroyed brass bastions are sold as scrap to enterprising ifrits, who reforge the remains into new brass bastions. Many ifrits pay more for the remains of a brass bastion crafted by their rivals yet react violently when offered brass bastion remains they originally created. Thus, identifying a brass bastion's original crafter is a valued skill. Few non-ifrits dare trade in brass bastion scraps, save in extralegal markets.</p>",
+            "publicNotes": "<p>Brass bastions are formidable sentinels crafted from elemental fire and extraplanar brass. While they can be shaped into many forms, most depict muscular warriors with curving horns and stern or taunting expressions. Within each brass shell is a raging inferno—the source of its ceaseless heat.</p>\n<p>Though ifrits originally created brass bastions to act as servants and guards, the knowledge of how to craft them has spread throughout the Plane of Fire. They can even be found on the Plane of Earth thanks to interplanar trade. In Medina Mudii'a, brass bastions walk the streets, tend shops, and stand guard. Bespoke brass bastions are passed down as family heirlooms or gifted to business partners and allies. Scions of the wealthiest ifrit lineages never travel without a train of brass bastions clad in family livery. Destroying a rival ifrit's brass bastion is a quick way to erode their political status, though anyone caught performing such sabotage faces swift retribution.</p>\n<p>Most brass bastions prominently display the sigil of their owner or maker, though magical methods can also determine who crafted a specific construct. Brass bastions forged by favored artisans are a status symbol in many ifrit communities. Ifrits consider a brass bastion crafted by a non-ifrit to be inherently inferior, barely worth the cost of its materials. Brass bastions obey magical programming imprinted at the time of their creation or follow commands from their owners. Most can't speak, but a few have magical voices and can parrot simple phrases, recite poetry, or tell bedtime stories at the crafter's fancy.</p>\n<h2>Brass Scraps</h2>\n<p>On the Plane of Fire, destroyed brass bastions are sold as scrap to enterprising ifrits, who reforge the remains into new brass bastions. Many ifrits pay more for the remains of a brass bastion crafted by their rivals yet react violently when offered brass bastion remains they originally created. Thus, identifying a brass bastion's original crafter is a valued skill. Few non-ifrits dare trade in brass bastion scraps, save in extralegal markets.</p>",
             "items": {
                 "Molten Demise": {
                     "name": "Molten Demise",
@@ -118,6 +104,10 @@
             "name": "Crystal Strider",
             "publicNotes": "<p>Each long, thin leg of a crystal strider is a single enormous crystal, typically quartz or selenite. The strider uses this panoply of legs and a fluctuating physical structure to rapidly move about crystalline caverns, unimpeded by terrain.</p>\n<hr />\n<p>The vast ranks of earth elementals have been slow to respond to the return of the elemental lords and the Planes of Metal and Wood. These events have not broken the mountains, nor have they blown away the sands.</p>\n<h2>Earthy Emotions</h2>\n<p>Earth elementals talk even less than most elementals. They're ponderous, weighing decisions so slowly they can crush the energy from a discussion. Their foremost concern is whether a situation can be endured. Though a rare or resplendent treasure might entice an earth elemental, it's difficult to spur any sense of urgency in them without the presence of an immediate threat.</p>",
             "items": {
+                "Tremorsense (Imprecise) 60 feet": {
+                    "name": "Tremorsense (Imprecise) 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "Crystal Refraction": {
                     "name": "Crystal Refraction",
                     "description": "<p><strong>Trigger</strong> The crystal strider is targeted by a light effect</p>\n<hr />\n<p><strong>Effect</strong> The strider redirects the triggering effect to a different creature of its choice within 30 feet or absorbs the effect harmlessly, reducing the number of rounds left to recharge Release Light by 1.</p>"
@@ -129,6 +119,10 @@
                 "Release Light": {
                     "name": "Release Light",
                     "description": "<p>The strider emits the light that continually refracts within them to cast <em>@UUID[Compendium.pf2e.spells-srd.Item.Hb8GdAhP0zBCv3zU]{Chromatic Ray}</em> as an innate primal spell heightened to 5th rank, with a +21 spell attack roll. The crystal strider can't Release Light again for [[/br 1d4 #rounds]]{1d4 rounds}.</p>"
+                },
+                "Trample": {
+                    "name": "Trample",
+                    "description": "<p>Large or smaller, leg, @Check[type:reflex|dc:29|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 }
             }
         },
@@ -140,6 +134,10 @@
             "publicNotes": "<p>The capricious and destructive metal scamps are self-appointed forces of entropy, taking great pleasure in indiscriminately wrecking everything around them, sometimes even to their own detriment. Metal scamps have a severe appearance, with pointed facial features and angular limbs, and their skin can be the color of any metal, often heavily oxidized as if by years of exposure to the elements.</p>",
             "hp": "fast healing 2 (while touching metal)",
             "items": {
+                "Fast Healing 2 (While Touching Metal)": {
+                    "name": "Fast Healing 2 (While Touching Metal)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
                 "Breathe Shrapnel": {
                     "name": "Breathe Shrapnel",
                     "description": "<p>The metal scamp breathes a @Template[type:cone|distance:15] of jagged metal flakes that deals @Damage[(2d4)[slashing],(1d4)[bleed]] damage to each creature within the area (@Check[type:reflex|dc:17|basic:true] save).</p>\n<p>The metal scamp can't Breathe Shrapnel again for [[/br 1d4 #Recharge Breathe Shrapnel]]{1d4 rounds}.</p>"
@@ -151,7 +149,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Zephyr, The West Wind",
-            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather\u2014weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
+            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather—weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
             "hp": "regeneration 15 (deactivated by earthbane)",
             "languages": "Truespeech",
             "items": {
@@ -162,6 +160,14 @@
                 "Wind Orchestra": {
                     "name": "Wind Orchestra",
                     "description": "<p>An anemos does not require instruments to perform music, instead using their winds to create and carry the sounds of any instruments they wish to duplicate. They can mimic any number of instruments simultaneously, creating and directing their own personal orchestra.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Regeneration 15 (Deactivated by Earthbane)": {
+                    "name": "Regeneration 15 (Deactivated by Earthbane)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
                 },
                 "Blessed by the Winds": {
                     "name": "Blessed by the Winds",
@@ -200,9 +206,13 @@
             "name": "Pine Pangolin",
             "publicNotes": "<p>These creatures sleep while hanging upside down by their partially curled tails and rely on their thick wooden scales to protect them from danger. One such danger the scales negate is the falling damage from deliberately rolling up and dropping onto the head of an unsuspecting opponent, which is one of their favorite combat strategies. Beneath their scales, pine pangolin bodies secrete a thick, sticky tar that serves as a secondary line of defense.</p>",
             "items": {
+                "Roll Up": {
+                    "name": "Roll Up",
+                    "description": "<p>The pine pangolin falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, closes up its scales, and rolls into a ball. While Rolled Up, the pangolin gains resistance 10 to physical damage and total immunity to falling damage from heights of 50 feet or less. The only action the pine pangolin can take is to Stand, and the effects of Roll Up end once the pangolin Stands.</p>"
+                },
                 "Secrete Tar": {
                     "name": "Secrete Tar",
-                    "description": "<p>The pine pangolin secretes a brown, sticky tar within a @Template[type:emanation|distance:5], making those squares difficult terrain for 1 minute. Each creature that enters or starts its turn in a tarred square must succeed at a @Check[type:fortitude|dc:25] save or become @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it Escapes. On a critical failure, the creature falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}; prone creatures take a \u20132 circumstance penalty to their checks to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} the tar. The pine pangolin is immune to the effects of its own tar.</p>"
+                    "description": "<p>The pine pangolin secretes a brown, sticky tar within a @Template[type:emanation|distance:5], making those squares difficult terrain for 1 minute. Each creature that enters or starts its turn in a tarred square must succeed at a @Check[type:fortitude|dc:25] save or become @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it Escapes. On a critical failure, the creature falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}; prone creatures take a –2 circumstance penalty to their checks to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} the tar. The pine pangolin is immune to the effects of its own tar.</p>"
                 }
             }
         },
@@ -217,6 +227,10 @@
                 "Bullying Bluster": {
                     "name": "Bullying Bluster",
                     "description": "<p>30 feet. The blustering gale constantly unleashes a tirade of insults and aggressive taunts. Each enemy who enters or starts their turn in the aura must succeed at a @Check[type:will|dc:30] save or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for as long as they remain within the aura (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} on a critical failure). The troop's members are collectively able to mimic a few curse words or insults in every language, allowing their Bullying Bluster to affect any creature who understands a language. A creature who succeeds at its save is temporarily immune for 1 hour. The blustering gale can activate or deactivate the aura with a free action, which has the concentrate trait.</p>"
+                },
+                "Troop Defenses": {
+                    "name": "Troop Defenses",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Pummeling Winds": {
                     "name": "Pummeling Winds",
@@ -237,7 +251,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Vegetable Lamb",
-            "publicNotes": "<p>Vegetable lambs are gaining popularity as the first elemental to be summoned by spellcasters in training, as they're docile until provoked and easy to control. Casters must take care, however, to not let them germinate in the Universe; they're a highly invasive species that can devour an entire forest within a decade.</p>\n<p>The healing and nourishing food that grows from vegetable lambs is appealing for adventurers and sedentary magical scholars alike. The taste is similar to the plants of the same kind that grow on Golarion, but not entirely. Many have noted that there's a slight similarity to meat\u2014a bit of umami one wouldn't find in an ordinary flower.</p>",
+            "publicNotes": "<p>Vegetable lambs are gaining popularity as the first elemental to be summoned by spellcasters in training, as they're docile until provoked and easy to control. Casters must take care, however, to not let them germinate in the Universe; they're a highly invasive species that can devour an entire forest within a decade.</p>\n<p>The healing and nourishing food that grows from vegetable lambs is appealing for adventurers and sedentary magical scholars alike. The taste is similar to the plants of the same kind that grow on Golarion, but not entirely. Many have noted that there's a slight similarity to meat—a bit of umami one wouldn't find in an ordinary flower.</p>",
             "items": {
                 "Nature's Bounty": {
                     "name": "Nature's Bounty",
@@ -279,7 +293,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Austral, The South Wind",
-            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather\u2014weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
+            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather—weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
             "hp": "regeneration 15 (deactivated by earthbane)",
             "languages": "Truespeech",
             "items": {
@@ -290,6 +304,14 @@
                 "Wind Orchestra": {
                     "name": "Wind Orchestra",
                     "description": "<p>An anemos does not require instruments to perform music, instead using their winds to create and carry the sounds of any instruments they wish to duplicate. They can mimic any number of instruments simultaneously, creating and directing their own personal orchestra.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Regeneration 15 (Deactivated by Earthbane)": {
+                    "name": "Regeneration 15 (Deactivated by Earthbane)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
                 },
                 "Blessed by the Winds": {
                     "name": "Blessed by the Winds",
@@ -329,6 +351,10 @@
             "publicNotes": "<p>The briny depths of the Boundless Sea sometimes twist large groups of merfolk into swarms with vicious rows of teeth and sharp claws known as saltborn stalkers. Saltborn stalkers hunt in groups, using their drooping, tentacle-like appendages as bioluminescent lures, posing them as wisps or bubbles of planar energy to draw unsuspecting prey into clever ambushes.</p>\n<hr />\n<p>THE RITE OF SALT AND STONE</p>\n<p>When a merfolk joins the ranks of the saltborn, they undergo a secret rite known only to other saltborn and the brine dragons of Kelizandrika. The recruits are encased in graves of salt and ice and left at the floor of the Boundless Sea to claw themselves free. Those who overcome the trial are never truly rid of the salt from their tombs, which covers the body of every saltborn stalker.</p>",
             "hp": "troop defenses",
             "items": {
+                "Troop Defenses": {
+                    "name": "Troop Defenses",
+                    "description": "<p><strong>Thresholds</strong> 160 (12 squares), 80 (8 squares)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
+                },
                 "Lightlure": {
                     "name": "Lightlure",
                     "description": "<p><strong>Effect</strong> The saltborn stalkers move their luminescent lures in an entrancing light show, drawing nearby creatures into their grasp. Each creature in a @Template[type:emanation|distance:100] must attempt a @Check[type:will|dc:33] save; regardless of the result of its save, the creature is then temporarily immune to Lightlure for 24 hours.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} with the lures and must spend all its actions on its next turn to move closer to them as expediently as possible, avoiding obvious dangers along its path.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature is also @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for [[/br 1d4 #rounds]]{1d4 rounds}.</p>"
@@ -364,7 +390,7 @@
                 },
                 "Decompose": {
                     "name": "Decompose",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Void energy seeps out of the ardande gardener, decaying everything within a @Template[type:emanation|distance:5] and causing plants and foliage to age and decompose. Natural difficult terrain is destroyed, and creatures in the area with the plant or wood trait take @Damage[1d6[negative]] damage (@Check[type:fortitude|dc:16|basic:true]).</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Void energy seeps out of the ardande gardener, decaying everything within a @Template[type:emanation|distance:5] and causing plants and foliage to age and decompose. Natural difficult terrain is destroyed, and creatures in the area with the plant or wood trait take @Damage[1d6[void]] damage (@Check[type:fortitude|dc:16|basic:true]).</p>"
                 }
             }
         },
@@ -373,7 +399,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Boreal, The North Wind",
-            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather\u2014weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
+            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather—weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
             "hp": "regeneration 15 (deactivated by earthbane)",
             "languages": "Truespeech",
             "items": {
@@ -384,6 +410,14 @@
                 "Wind Orchestra": {
                     "name": "Wind Orchestra",
                     "description": "<p>An anemos does not require instruments to perform music, instead using their winds to create and carry the sounds of any instruments they wish to duplicate. They can mimic any number of instruments simultaneously, creating and directing their own personal orchestra.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Regeneration 15 (Deactivated by Earthbane)": {
+                    "name": "Regeneration 15 (Deactivated by Earthbane)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
                 },
                 "Blessed by the Winds": {
                     "name": "Blessed by the Winds",
@@ -423,9 +457,25 @@
             "publicNotes": "<p>The most powerful zuhras draw followers and elemental metal with overwhelming force of personality and literal magnetism. When called upon to conduct wish rituals, they use their long isolation from the other planes as an excuse to misinterpret requests outlandishly, claiming linguistic differences.</p>\n<hr />\n<p>Zuhras, the genies of the elemental Plane of Metal, are bold and imposing, fond of being the center of attention and drawing a crowd with flashy performances, displays of skill, and tales of their personal victories. Despite their large personalities, their long-term relationships tend to be cool and somewhat distant; zuhras often make alliances but rarely form friendships, and the trust required for deeper relationships is rarer still. The few mortals who've gotten to know a zuhra often describe them as bombastic but emotionally aloof.</p>\n<p>Since the reconnection with other planes, zuhras have sought out and formed bonds with other genies. They find their jabali cousins to be capable smithing partners, if a bit staid and dull. Zuhras rarely pay non-genie elementals any more than a passing glance, finding even the intelligent ones uninteresting to communicate with or hard to relate to.</p>",
             "languages": "Truespeech",
             "items": {
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Conductive Redirection": {
+                    "name": "Conductive Redirection",
+                    "description": "<p><strong>Trigger</strong> The zuhra is hit by an attack, spell, or effect that deals electricity damage</p>\n<hr />\n<p><strong>Effect</strong> The zuhra conducts the electricity through their body, taking damage as normal, and redirecting a bolt at one target within 30 feet that they can see. The zuhra makes a ranged attack roll with a [[/r 1d20+27 #Conductive Redirection]]{+27} modifier against the target's AC. On a hit or critical hit, the target takes electricity damage equal to the full damage of the triggering effect.</p>"
+                },
                 "Magnetic Field": {
                     "name": "Magnetic Field",
-                    "description": "<p>10 feet.</p>\n<p>All squares in the aura are difficult terrain for creatures wearing metal armor or made of metal. Strikes with metallic weapons made by or against creatures in this aura take a \u20132 status penalty to the attack roll. Zuhras ignore these effects.</p>"
+                    "description": "<p>10 feet.</p>\n<p>All squares in the aura are difficult terrain for creatures wearing metal armor or made of metal. Strikes with metallic weapons made by or against creatures in this aura take a –2 status penalty to the attack roll. Zuhras ignore these effects.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The zuhra transforms into a Small or Medium metal elemental or animal. This doesn't affect the zuhra's statistics, but it could change the damage type of their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Magnetic Reposition": {
                     "name": "Magnetic Reposition",
@@ -448,6 +498,10 @@
             "name": "Oregorger",
             "publicNotes": "<p>Oregorgers are hulking, four-limbed brutes with bodies of raw primal metals accreted in layers. Driven entirely by an insatiable drive to consume metal, an oregorger stops at nothing to greedily devour as much metal as it can and expel it as caustic rust.</p>",
             "items": {
+                "Rust Vision": {
+                    "name": "Rust Vision",
+                    "description": "<p>An oregorger ignores the concealed condition from rust clouds.</p>"
+                },
                 "Caustic Rust": {
                     "name": "Caustic Rust",
                     "description": "<p>5 feet.</p>\n<p>The oregorger continually leaks tiny fragments of partially digested rust into the air around it. Any creature that ends its turn in the aura takes @Damage[2d6[acid]] damage with a @Check[type:reflex|dc:27|basic:true] save. A creature that critically fails is also @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>"
@@ -469,6 +523,10 @@
             "name": "Mercurial",
             "publicNotes": "<p>Some of the most populous denizens of the Plane of Metal, mercurials are weird creatures of liquid metal known for changing their features, chemical compositions, and temperaments with equal frequency. Excitable, curious, and friendly, mercurials are quick to offer assistance to extraplanar beings, but their volatile personalities can make them unreliable allies.</p>\n<hr />\n<p>Metal elementals can manifest in a wide variety of different forms, from shapeless amalgams of different metals to humanoid and beast-like monstrosities.</p>\n<h2>Metal Forms</h2>\n<p>Though metal elementals are made almost entirely of metal, most are composed of layers of different metals in tiny fragments, as complex as a body of flesh or plant matter. Many of these metals are rusted or decayed from the natural, slow entropy of the Plane of Metal.</p>\n<h2>Many Faces, Many Names</h2>\n<p>As immortal beings with comparatively short attention spans, mercurials invariably become bored with their current identities sooner or later and seek a change by adopting a new face and persona. To avoid confusion among friends and acquaintances, a mercurial's name typically consists not only of their current moniker, but a list of the last few names used, presented in chronological order as far back as the mercurial can remember.</p>",
             "items": {
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The mercurial takes on the appearance of any Small or Medium humanoid. This transformation allows for significant detail and can reproduce the features of a specific individual, but the mercurial retains a shiny, liquid-metal appearance that renders the transformation unsuitable as a disguise unless they're impersonating another mercurial. It doesn't change the mercurial's Speed or the attack and damage bonuses of their Strikes, but it does allow them to transform their limbs into metal tools or melee weapons, potentially changing the damage type dealt by their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                },
                 "Metallurgic Adaptation": {
                     "name": "Metallurgic Adaptation",
                     "description": "<p>The mercurial transmutes their liquid metal body into cold iron, copper, gold, iron, silver, or steel. Their unarmed melee Strikes are made of that material until they use Metallurgic Adaptation again.</p>"
@@ -535,6 +593,10 @@
                 "Consume Magic": {
                     "name": "Consume Magic",
                     "description": "<p><strong>Trigger</strong> The quickiron plasm succeeds at a saving throw against a spell</p>\n<hr />\n<p><strong>Effect</strong> The quickiron plasm consumes energy from the spell, regaining 5 Hit Points per rank of the spell.</p>"
+                },
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[2d6[bludgeoning]], @Check[type:fortitude|dc:22|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 }
             }
         },
@@ -571,6 +633,10 @@
             "publicNotes": "<p>These moss colonies coalesce over a century into the rough facsimile of a large sloth, right down to mimicking the unique structure of the animal's fur that attracts additional fungi and pollinating insects. Unless summoned or attacked, they rarely leave the trees upon which they first formed.</p>\n<hr />\n<p>At first glance, wood elementals might not seem to have the same destructive potential as their cousins from the Planes of Fire, Water, or Air, but don't be fooled. The woods can be a dangerous place.</p>\n<p>Though some resemble animals, the elemental beasts presented here are still plants, and their life cycles reflect it. Vegetable lambs grow on rooted stalks, from which they can't be removed until they've matured (or perhaps ripened), leaving them dependent on their immediate surroundings for food. Moss sloths are little more than lumps of green fluff for the first century of their existence, only gaining limited mobility once they can grow their defensive wooden claws.</p>\n<h2>Wild But Unwild</h2>\n<p>Many wood elementals are created by kizidhars and other powerful creatures on the Plane of Wood and placed in rote roles. Populating nature preserves and sprawling estates, they can be unsure how to behave if released into the wild. They're essentially born domesticated and will likely act far differently than the wild creatures they mimic, even in natural environments. Their natural predators are few, putting the elementals at less risk, although they're still sometimes eaten by giant termites or captured by some as pets.</p>\n<h2>A Brain By Any Other Name</h2>\n<p>Even if Lady Shumunue taught the wood elementals' ancestors to mimic animals, a wood elemental's consciousness is contained not in a brain but in its root system. Entities like nursery crawlers, living groves, and carved beasts use this to their advantage. That an elemental's wooden body can be carved and crafted, apparently without lasting harm, implies that they might not feel pain so long as their roots remain undamaged.</p>",
             "hp": "regeneration 5 (deactivated by fire)",
             "items": {
+                "Regeneration 5 (Deactivated by Fire)": {
+                    "name": "Regeneration 5 (Deactivated by Fire)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
                 "Insect Swarm": {
                     "name": "Insect Swarm",
                     "description": "<p>The first time each day that the moss sloth takes damage from a bludgeoning melee attack, a patch of moss collapses inward, releasing insects that swarm the attacking creature and deal @Damage[2d4[piercing]] damage (@Check[type:reflex|dc:15|basic:true] save).</p>"
@@ -586,7 +652,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Eural, The East Wind",
-            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather\u2014weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
+            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather—weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
             "hp": "regeneration 15 (deactivated by earthbane)",
             "languages": "Truespeech",
             "items": {
@@ -597,6 +663,14 @@
                 "Wind Orchestra": {
                     "name": "Wind Orchestra",
                     "description": "<p>An anemos does not require instruments to perform music, instead using their winds to create and carry the sounds of any instruments they wish to duplicate. They can mimic any number of instruments simultaneously, creating and directing their own personal orchestra.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Regeneration 15 (Deactivated by Earthbane)": {
+                    "name": "Regeneration 15 (Deactivated by Earthbane)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
                 },
                 "Blessed by the Winds": {
                     "name": "Blessed by the Winds",
@@ -633,13 +707,17 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Pelegox Cube",
-            "publicNotes": "<p>Pelegoxes are beings of condensed magnetic energy that fashion bodies for themselves using their surroundings. Though a pelegox's true form is a spherical core, it pulls metal fragments of various shapes and sizes to form a polyhedral shell. Though pelegoxes might develop preferences for a particular form when at rest, they continue to look for new configurations to call their own, happiest when they can experiment with endless possibilities, even if it means dismantling other metallic entities.</p>\n<p>These piecemeal creatures move by a combination of magnetic levitation and propulsion, and when that doesn't work, by continuously piercing the ground and shifting their weight forward, looking almost like moving caltrops. Over time, the magnetic signature of a pelegox becomes visible, etched into its body in patterns of concentric lines. These unique designs make it possible to distinguish between individual pelegoxes even when their surface has eroded.</p>\n<p>Pelegoxes are quick to form relationships with others of their kind. They delight in combining their individual bodies into ever larger, more elaborate structures and patterns. As such, it is rare to find a pelegox on their own\u2014 they prefer to travel in a clustered form.</p>",
+            "publicNotes": "<p>Pelegoxes are beings of condensed magnetic energy that fashion bodies for themselves using their surroundings. Though a pelegox's true form is a spherical core, it pulls metal fragments of various shapes and sizes to form a polyhedral shell. Though pelegoxes might develop preferences for a particular form when at rest, they continue to look for new configurations to call their own, happiest when they can experiment with endless possibilities, even if it means dismantling other metallic entities.</p>\n<p>These piecemeal creatures move by a combination of magnetic levitation and propulsion, and when that doesn't work, by continuously piercing the ground and shifting their weight forward, looking almost like moving caltrops. Over time, the magnetic signature of a pelegox becomes visible, etched into its body in patterns of concentric lines. These unique designs make it possible to distinguish between individual pelegoxes even when their surface has eroded.</p>\n<p>Pelegoxes are quick to form relationships with others of their kind. They delight in combining their individual bodies into ever larger, more elaborate structures and patterns. As such, it is rare to find a pelegox on their own—they prefer to travel in a clustered form.</p>",
             "hp": "140 (12 squares), 70 (8 squares)",
             "languages": "Telepathy 30 feet",
             "items": {
                 "Metalsense": {
                     "name": "Metalsense",
                     "description": "<p>A pelegox cube can sense metal creatures and objects as an imprecise sense.</p>"
+                },
+                "Troop Defenses": {
+                    "name": "Troop Defenses",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Entrancing Shapes": {
                     "name": "Entrancing Shapes",
@@ -667,6 +745,18 @@
             "publicNotes": "<p>Faydhaan shuyookhs are powerful faydhaans venerated as leaders, diplomats, and negotiators. As representatives of faydhaan-kind, they observe strict rules of etiquette and hospitality and hold the literary and performing arts in high esteem. A faydhaan shuyookh takes delight in greeting guests, and being greeted in return, to see how many different greetings they can demonstrate. Guests who creatively engage in this customary greeting game will impress a faydhaan shuyookh and receive magnificent hospitality.</p>",
             "languages": "telepathy 100 feet, truespeech",
             "items": {
+                "Detect Magic": {
+                    "name": "Detect Magic",
+                    "description": "<p>You cast detect magic at regular intervals. You move at half your travel speed or slower. You have no chance of accidentally overlooking a magic aura at a travel speed up to 300 feet per minute, but must be traveling no more than 150 feet per minute to detect magic auras before the party moves into them.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
                 "Aura of Hospitality": {
                     "name": "Aura of Hospitality",
                     "description": "<p>@Template[type:emanation|distance:60]{60 feet} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<hr />\n<p>The faydhaan shuyookh dissuades those around them from hostility. Willing creatures in the emanation gain a +2 status bonus to Society and Diplomacy checks. The shuyookh can suppress or resume the aura as a free action. If the shuyookh acts hostile, the aura deactivates and can't be reactivated for 1 hour. When any other creature in the aura acts hostile, it must attempt a @Check[type:will|dc:35] save. On a success, it's unaffected and doesn't need to save again for 1 hour; on a failure, its current action is disrupted, as are any other hostile actions it attempts for 1 round.</p>"
@@ -674,6 +764,10 @@
                 "Turbulent Seas": {
                     "name": "Turbulent Seas",
                     "description": "<p>@Template[type:emanation|distance:60]{60 feet} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<hr />\n<p>Water in the aura that is also in the same body of water as the faydhaan is difficult terrain for Swimming creatures. Creatures with the water trait are immune.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>\n<hr />\n<p>The faydhaan transforms into a Small or Medium water elemental, aquatic animal, or humanoid. This doesn't affect the faydhaan's statistics, but it could change the damage type of their Strikes.</p>"
                 },
                 "Diplomatic Wish": {
                     "name": "Diplomatic Wish",
@@ -706,7 +800,7 @@
                 },
                 "Freeze and Shatter": {
                     "name": "Freeze and Shatter",
-                    "description": "<p>If the boiling spring is destroyed with cold damage, their body freezes over and explodes, sending out a wave of frigid air and ice shards that deal @Damage[4d6[piercing]] damage plus @Damage[4d6[cold]] damage to creatures in a @Template[type:emanation|distance:20] (@Check[type:reflex|dc:36|basic:true] save).</p>"
+                    "description": "<p>If the boiling spring is destroyed with cold damage, their body freezes over and explodes, sending out a wave of frigid air and ice shards that deal @Damage[4d6[piercing],4d6[cold]]{4d6 piercing damage plus 4d6 cold damage} to creatures in a @Template[type:emanation|distance:20] (@Check[type:reflex|dc:36|basic:true] save).</p>"
                 },
                 "Scalding Breath": {
                     "name": "Scalding Breath",
@@ -737,13 +831,21 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Kizidhar Shuyookh",
-            "publicNotes": "<p>Kizidhar shuyookhs are the powerful rulers of the Glowing Infinity on the Plane of Wood. They view other genies, including other kizidhars, as subservient to their own greatness, manipulating them as though they were outsiders whenever it helps achieve their goals. Kizidhar shuyookh diplomats are sent as emissaries from the Plane of Wood to the Universe, representing the metropolis of Nodollin and Grand Sultana Eshal Muazzam Rayadii of the Glowing Infinity, Lady of All that Grows and Decays.</p>\n<hr />\n<p>The genies of the Plane of Wood, known as the kizidhars, are overbearing lords of their element. These master crafters of wood specialize in carpentry and all kinds of woodcarving, and they take a particular delight in reshaping the world in their own image\u2014either through creating wooden statues of themselves or by manipulating and controlling the living things around them. Though they're able to carve themselves similarly, they usually regard their own forms as perfect.</p>\n<p>Shunning the company of other genies, they prefer to avoid those equal in power and instead surround themselves with circles of sycophants and flatterers. With the pathways to the Universe open again for the first time in ages, kizidhars roam the multiverse to find mortals they can tempt into joining their palace retinues as servants, entertainers, and valuable sources of new information.</p>",
+            "publicNotes": "<p>Kizidhar shuyookhs are the powerful rulers of the Glowing Infinity on the Plane of Wood. They view other genies, including other kizidhars, as subservient to their own greatness, manipulating them as though they were outsiders whenever it helps achieve their goals. Kizidhar shuyookh diplomats are sent as emissaries from the Plane of Wood to the Universe, representing the metropolis of Nodollin and Grand Sultana Eshal Muazzam Rayadii of the Glowing Infinity, Lady of All that Grows and Decays.</p>\n<hr />\n<p>The genies of the Plane of Wood, known as the kizidhars, are overbearing lords of their element. These master crafters of wood specialize in carpentry and all kinds of woodcarving, and they take a particular delight in reshaping the world in their own image—either through creating wooden statues of themselves or by manipulating and controlling the living things around them. Though they're able to carve themselves similarly, they usually regard their own forms as perfect.</p>\n<p>Shunning the company of other genies, they prefer to avoid those equal in power and instead surround themselves with circles of sycophants and flatterers. With the pathways to the Universe open again for the first time in ages, kizidhars roam the multiverse to find mortals they can tempt into joining their palace retinues as servants, entertainers, and valuable sources of new information.</p>",
             "languages": "Speak With Plants, Truespeech",
             "ac": "(32 with shield raised)",
             "items": {
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
                 "Sprout Shield": {
                     "name": "Sprout Shield",
                     "description": "<p><strong>Trigger</strong> An enemy hits the kizidhar shuyookh with a melee Strike</p>\n<p><strong>Requirements</strong> The kizidhar shuyookh doesn't have a shield raised</p>\n<hr />\n<p><strong>Effect</strong> The shuyookh can use Sculpt Wood to create a duskwood shield if they don't already have one. The shuyookh then Raises their Shield. The circumstance bonus from the shield applies to their AC against the triggering attack.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The kizidhar transforms into a Small or Medium wood elemental or plant creature. This doesn't affect the kizidhar's statistics, but it could change the damage type of their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Manipulative Wish": {
                     "name": "Manipulative Wish",
@@ -778,6 +880,10 @@
                     "name": "Shallow Waters",
                     "description": "<p>The coldmire pond can occupy the same space as other creatures. Creatures who move through the coldmire pond treat it as difficult terrain. Two creatures both occupying the coldmire pond's space are flanking it, regardless of their actual positions within the coldmire pond.</p>"
                 },
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[1d6[bludgeoning],1d6[cold]]{1d6 bludgeoning plus 1d6 cold}, @Check[type:fortitude|dc:25|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                },
                 "Drag Below": {
                     "name": "Drag Below",
                     "description": "<p><strong>Requirements</strong> The coldmire pond occupies the same space as a target it has @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> The coldmire pond pulls the target below the surface. The target must succeed at a @Check[type:reflex|dc:26] save or fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} and begin drowning.</p>"
@@ -809,6 +915,10 @@
             "name": "Elder Outcrop",
             "publicNotes": "<p>An outcrop of dense stone that spends ages eroding can gain sapience and slowly awaken with the wisdom of nature. Such elemental beings are slow to action and difficult to anger, spurred only by immediate threats.</p>\n<hr />\n<p>The vast ranks of earth elementals have been slow to respond to the return of the elemental lords and the Planes of Metal and Wood. These events have not broken the mountains, nor have they blown away the sands.</p>\n<h2>Earthy Emotions</h2>\n<p>Earth elementals talk even less than most elementals. They're ponderous, weighing decisions so slowly they can crush the energy from a discussion. Their foremost concern is whether a situation can be endured. Though a rare or resplendent treasure might entice an earth elemental, it's difficult to spur any sense of urgency in them without the presence of an immediate threat.</p>\n<h2>Wisdom Of Stone</h2>\n<p>Elder outcrops learn a lesson for every grain of rock eroded away, every squall and freeze that has shaped their craggy bodies. As wizened advisors and tutors, they have the respect and affection of other elementals, as well as from natural creatures. Druids of the stone order revere the wisdom of elder outcrops, always happy to receive their wide perspective, literal and philosophical.</p>",
             "items": {
+                "Tremorsense 120 feet": {
+                    "name": "Tremorsense 120 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "Dust Eternal": {
                     "name": "Dust Eternal",
                     "description": "<p>30 feet. Dust swirls about the outcrop, rendering everything within its aura (including the outcrop) @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}. In addition, the dust at the outcrop's base creates difficult terrain on the ground within the aura. The outcrop can activate or deactivate this aura using a single action, which has the concentrate trait.</p>"
@@ -846,9 +956,17 @@
                     "name": "Inspiring Influence",
                     "description": "<p>A gennayn automatically succeeds with the @UUID[Compendium.pf2e.actionspf2e.Item.HCl3pzVefiv9ZKQW]{Aid} action supporting any Performance or Diplomacy skill check. Their Aid action automatically counts as a critical success while aiding in the creation of new art or a new performance.</p>"
                 },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
                 "Attuned Element": {
                     "name": "Attuned Element",
                     "description": "<p>Upon waking each day, a gennayn attunes to one planar element. They gain the corresponding trait, a movement Speed, a cantrip, resistance, and an elemental damage type for their energy fist attack based on their attuned element:</p>\n<ul>\n<li>air: fly 30 feet, resist electricity 5, electric arc, electricity damage;</li>\n<li>earth: burrow 15 feet, resist bludgeoning 5, scatter scree, bludgeoning damage;</li>\n<li>fire: fly 30 feet, resist fire 5, ignition, fire damage;</li>\n<li>metal: burrow 15 feet, resist slashing 5, needle darts, slashing damage; </li>\n<li>water: swim 20 feet, resist cold 5, frostbite, bludgeoning damage;</li>\n<li>wood: climb 15 feet, resist piercing 5, tangle vine, piercing damage.</li>\n</ul>\n<p>The attunement lasts until the gennayn attunes to a different element.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The gennayn transforms into a Tiny elemental or animal. This doesn't affect the gennayn's statistics, but it could change the damage type of their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Little Wish": {
                     "name": "Little Wish",
@@ -877,7 +995,7 @@
                 },
                 "Burning Touch": {
                     "name": "Burning Touch",
-                    "description": "<p>The munsahir gatecrasher's Strikes deal an extra @Damage[1d6[fire]] damage (included above). When the gatecrasher successfully performs a @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} or @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove} action, they also deal @Damage[1d6[fire]] damage to their target.</p>"
+                    "description": "<p>The munsahir gatecrasher's Strikes deal an extra 1d6 fire damage (included above). When the gatecrasher successfully performs a @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} or @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove} action, they also deal @Damage[1d6[fire]] damage to their target.</p>"
                 }
             }
         },
@@ -886,7 +1004,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Anemos",
-            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather\u2014weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
+            "publicNotes": "<p>The truth of life in the Universe is that weather controls the world. The life-giving water that flows across Golarion, the maintenance of healthy forests, and the snows, thaws, and rains that help crops flourish all rely on the weather—weather that's shaped at the whims of the winds. Anemoi are powerful beings from the Plane of Air tasked by ancient gods to guard the skies and shepherd the winds of every world across the planes. They guide the winds along their natural paths, and while neither malevolent nor malicious, an anemos has little regard for how a storm might affect any creature caught in its path.</p>\n<p>Anemoi can take several forms and shift between them as easily as they slip between the breezes. They wear humanoid guises to walk among mortals without drawing undue attention, and they transform into great, thunderous horses made of storm clouds and rain when they need to move quickly across the skies. Their true form, however, is wind coalesced into a humanoid shape, often with curling hair and feathery wings made of soft, drifting clouds.</p>\n<p>On Golarion, each of the four cardinal winds are created and directed by a quartet of cardinal anemoi. The cold north winds are guided by Boreal, bringer of winter. Austral shepherds hot winds from the south. Eural brings stormy winds from the east. Finally, the gentle winds of spring come at the call of Zephyr, from the west. These four cardinal anemoi, alongside their councils of lesser anemoi, shape and control the winds across all of Golarion. As far as anyone can tell, the cardinal anemoi don't answer to a greater authority. There are even more powerful maximal anemoi living in the Plane of Air, but they seem content to leave the Universe out of their plans.</p>\n<p>Though the cardinal anemoi try to keep a degree of separation from mortal affairs, lesser anemoi occasionally take a closer interest. Some monitor a single settlement or county, protecting, nourishing, or even vindictively destroying it. Each one has their own sets of interests. Many are vain or petty. Even more change attitudes just as quickly as the winds they guide. Pleasing an anemoi isn't a matter of following a set formula, but rather repeatedly changing course to give them what they desire for their mercurial current interests or perceived needs.</p>\n<h2>The Shape Of The Air</h2>\n<p>Anemoi on the Plane of Air are typically genderless, while those who spend time in the Universe sometimes experiment with or develop preferences for one of the genders of the mortals they watch or live close to.</p>",
             "hp": "regeneration 15 (deactivated by earthbane)",
             "languages": "Truespeech",
             "items": {
@@ -897,6 +1015,14 @@
                 "Wind Orchestra": {
                     "name": "Wind Orchestra",
                     "description": "<p>An anemos does not require instruments to perform music, instead using their winds to create and carry the sounds of any instruments they wish to duplicate. They can mimic any number of instruments simultaneously, creating and directing their own personal orchestra.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Regeneration 15 (Deactivated by Earthbane)": {
+                    "name": "Regeneration 15 (Deactivated by Earthbane)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
                 },
                 "Blessed by the Winds": {
                     "name": "Blessed by the Winds",
@@ -933,16 +1059,24 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Nightwood Guardian",
-            "publicNotes": "<p>The nightwoods are parts of the Plane of Wood permanently bathed in darkness due to an absence of fluorescent plants. Here, the flora and fauna require darkness, not light, to thrive. Troll-like creatures known as nightwood guardians patrol these woods to ensure they remain in perpetual shadow. Considering themselves righteous gardens, they care little for the excuses of anyone else\u2014intruders or residents. The guardians absolutely loathe the light, though it doesn't harm them as it does some varieties of creatures. Though wary of both light and any interloping lifeforms in their natural habitat, a nightwood guardian's fear turns easily to wrath, making the guardian a force of fury who seeks to drive out intruders.</p>",
+            "publicNotes": "<p>The nightwoods are parts of the Plane of Wood permanently bathed in darkness due to an absence of fluorescent plants. Here, the flora and fauna require darkness, not light, to thrive. Troll-like creatures known as nightwood guardians patrol these woods to ensure they remain in perpetual shadow. Considering themselves righteous gardens, they care little for the excuses of anyone else—intruders or residents. The guardians absolutely loathe the light, though it doesn't harm them as it does some varieties of creatures. Though wary of both light and any interloping lifeforms in their natural habitat, a nightwood guardian's fear turns easily to wrath, making the guardian a force of fury who seeks to drive out intruders.</p>",
             "hp": "flesh of wood",
             "items": {
                 "Fire-fueled Rage": {
                     "name": "Fire-fueled Rage",
-                    "description": "<p>When a nightwood guardian takes fire damage, they become enraged. The guardian gains 15 temporary Hit Points, deals 2 additional damage with melee Strikes, and has a \u20131 penalty to AC. They can't Raise their Shield or use actions with the concentrate trait except for @UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{Seek}. This effect ends when the nightwood guardian no longer observes any fire for 1 round or when they fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, whichever comes first.</p>\n<hr />\n<p>@UUID[Compendium.pf2e.feat-effects.Item.z3uyCMBddrPK5umr]{Effect: Rage}</p>"
+                    "description": "<p>When a nightwood guardian takes fire damage, they become enraged. The guardian gains 15 temporary Hit Points, deals 2 additional damage with melee Strikes, and has a –1 penalty to AC. They can't Raise their Shield or use actions with the concentrate trait except for @UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{Seek}. This effect ends when the nightwood guardian no longer observes any fire for 1 round or when they fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, whichever comes first.</p>\n<hr />\n<p>@UUID[Compendium.pf2e.feat-effects.Item.z3uyCMBddrPK5umr]{Effect: Rage}</p>"
                 },
                 "Flesh of Wood": {
                     "name": "Flesh of Wood",
                     "description": "<p>Wounds inflicted on a nightwood guardian turn their flesh to wood. When the guardian is reduced to 40 HP or fewer, their body becomes solid wood. They are stunned, have resistance 10 to all damage, and have regeneration 40 (deactivated by fire). This ends once the guardian has 100 HP or more, though they can choose to stay in this form indefinitely.</p>"
+                },
+                "Light Blindness": {
+                    "name": "Light Blindness",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LightBlindness]</p>"
+                },
+                "Reactive Strike": {
+                    "name": "Reactive Strike",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
                 "Shield Eyes": {
                     "name": "Shield Eyes",
@@ -961,13 +1095,17 @@
             "name": "Painted Stag",
             "hp": "regeneration 10 (deactivated by fire)",
             "items": {
+                "Regeneration 10 (Deactivated by Fire)": {
+                    "name": "Regeneration 10 (Deactivated by Fire)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
                 "Mauler": {
                     "name": "Mauler",
                     "description": "<p>A painted stag gains a +5 circumstance bonus to damage rolls against creatures it has grabbed.</p>"
                 },
                 "Painted Dance": {
                     "name": "Painted Dance",
-                    "description": "<p>The stag shakes the wooden plating along its body in a cacophonous clatter that sets its painted patterns dancing. All creatures within 60 feet of the painted stag who can see or hear it must attempt a @Check[type:will|dc:28] save; a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the stag takes a \u20134 circumstance penalty to its save. Regardless of the result of its save, each creature is temporarily immune for 1 hour.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the painted stag for 1 round.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} and fascinated by the painted stag for as long as it's stunned.</p>\n<p><strong>Critical Failure</strong> As failure, except @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 4}.</p>"
+                    "description": "<p>The stag shakes the wooden plating along its body in a cacophonous clatter that sets its painted patterns dancing. All creatures within 60 feet of the painted stag who can see or hear it must attempt a @Check[type:will|dc:28] save; a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the stag takes a –4 circumstance penalty to its save. Regardless of the result of its save, each creature is temporarily immune for 1 hour.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the painted stag for 1 round.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} and fascinated by the painted stag for as long as it's stunned.</p>\n<p><strong>Critical Failure</strong> As failure, except @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 4}.</p>"
                 }
             }
         },
@@ -976,12 +1114,15 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Asp of Grief",
-            "publicNotes": "<p>On the Plane of Metal, a soft whisper and gentle jingle often accompany the tempestuous winds, while what appear to be gold ribbons twist and writhe through the air. In actuality, these are asps of grief\u2014intelligent, snakelike creatures drawn to strong emotions. The iron irises of their eyes allow them to see the ever-shifting magnetic fields of the Plane of Metal, which the asps can use to sail across the skies.</p>\n<p>Asps of grief prey on sorrow and heartache, and times of loss, mourning, and bereavement attract them. Wearing delicate iron bells to announce their arrivals at funerals, battlefields, and the traditional columbaria built for the plane's dead, asps of grief shake their heads, making their bells chime and alerting mourners to their presence. \"Will you share your sorrow with me?\" they ask, their gentle voices low and sibilant.</p>\n<p>If the bereaved agrees, the asps' tongues flick out, tasting the anguish of the living, sipping on sadness and fear, and providing a temporary reprieve from suffering. Though the asps are associated with death, most denizens of the Plane of Metal see them as good omens.</p>\n<p>Intensely curious creatures, asps of grief crave information about magic and the multiverse. They might attach themselves to adventuring parties or ask wanderers they meet for any obscure arcane knowledge they may have come across on their journeys. In exchange, the asps of grief offer to help these travelers work through any anguish or trauma they may be carrying\u2014 or at least ease their emotional pain for a time.</p>\n<h2>Calling The Asps</h2>\n<p>In the Plane of Metal, funeral rites often include placing the deceased upon tall towers surrounded by dishes of water. Chunks of sodium, a silvery-white alkali metal, dance across the surface of the water and catch fire, sending plumes of hydrogen gas into the air. As the asps of grief skate upon the magnetic fields, they can sense this announcement of death and sorrow and follow the trail back to the mourners.</p>",
+            "publicNotes": "<p>On the Plane of Metal, a soft whisper and gentle jingle often accompany the tempestuous winds, while what appear to be gold ribbons twist and writhe through the air. In actuality, these are asps of grief—intelligent, snakelike creatures drawn to strong emotions. The iron irises of their eyes allow them to see the ever-shifting magnetic fields of the Plane of Metal, which the asps can use to sail across the skies.</p>\n<p>Asps of grief prey on sorrow and heartache, and times of loss, mourning, and bereavement attract them. Wearing delicate iron bells to announce their arrivals at funerals, battlefields, and the traditional columbaria built for the plane's dead, asps of grief shake their heads, making their bells chime and alerting mourners to their presence. \"Will you share your sorrow with me?\" they ask, their gentle voices low and sibilant.</p>\n<p>If the bereaved agrees, the asps' tongues flick out, tasting the anguish of the living, sipping on sadness and fear, and providing a temporary reprieve from suffering. Though the asps are associated with death, most denizens of the Plane of Metal see them as good omens.</p>\n<p>Intensely curious creatures, asps of grief crave information about magic and the multiverse. They might attach themselves to adventuring parties or ask wanderers they meet for any obscure arcane knowledge they may have come across on their journeys. In exchange, the asps of grief offer to help these travelers work through any anguish or trauma they may be carrying—or at least ease their emotional pain for a time.</p>\n<h2>Calling The Asps</h2>\n<p>In the Plane of Metal, funeral rites often include placing the deceased upon tall towers surrounded by dishes of water. Chunks of sodium, a silvery-white alkali metal, dance across the surface of the water and catch fire, sending plumes of hydrogen gas into the air. As the asps of grief skate upon the magnetic fields, they can sense this announcement of death and sorrow and follow the trail back to the mourners.</p>",
             "allSaves": "+1 status vs. emotion",
             "items": {
                 "Magnetic Vision": {
                     "name": "Magnetic Vision",
                     "description": "<p>An asp of grief can see magnetic fields, allowing it to detect large sources of magnetic metal (Bulk 1 or greater) as a precise sense.</p>"
+                },
+                "+1 Status to All Saves vs. Emotion": {
+                    "name": "+1 Status to All Saves vs. Emotion"
                 },
                 "Curtain of Calm": {
                     "name": "Curtain of Calm",
@@ -1040,8 +1181,12 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Gluttonous Geode",
-            "publicNotes": "<hr />\n<p>The vast ranks of earth elementals have been slow to respond to the return of the elemental lords and the Planes of Metal and Wood. These events have not broken the mountains, nor have they blown away the sands.</p>\n<h2>Earthy Emotions</h2>\n<p>Earth elementals talk even less than most elementals. They're ponderous, weighing decisions so slowly they can crush the energy from a discussion. Their foremost concern is whether a situation can be endured. Though a rare or resplendent treasure might entice an earth elemental, it's difficult to spur any sense of urgency in them without the presence of an immediate threat.</p>",
+            "publicNotes": "<p>The vast ranks of earth elementals have been slow to respond to the return of the elemental lords and the Planes of Metal and Wood. These events have not broken the mountains, nor have they blown away the sands.</p>\n<h2>Earthy Emotions</h2>\n<p>Earth elementals talk even less than most elementals. They're ponderous, weighing decisions so slowly they can crush the energy from a discussion. Their foremost concern is whether a situation can be endured. Though a rare or resplendent treasure might entice an earth elemental, it's difficult to spur any sense of urgency in them without the presence of an immediate threat.</p>",
             "items": {
+                "Tremorsense (Imprecise) 30 feet": {
+                    "name": "Tremorsense (Imprecise) 30 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "Attach": {
                     "name": "Attach",
                     "description": "<p>The geode Leaps up to 15 feet and makes a crystal teeth Strike. If it hits a creature larger than itself, it can attach to that creature. Doing so is like Grabbing the creature (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 17), but the geode moves with that creature rather than holding it in place. The geode is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} while attached. If the geode is killed or pushed away while attached to a creature, that creature takes @Damage[1[bleed]]{1 persistent bleed} damage. Escaping the attached geode or removing the geode in other ways doesn't cause bleed damage.</p>"
@@ -1093,6 +1238,10 @@
             "publicNotes": "<p>Civilizations die, buried by time, but their memory may yet linger in shattered pottery, collapsed edifices, and destroyed artwork, compressed and clarified under the weight of rock and soil. Some excavated sites might still hold a sliver of consciousness in their base materials, which walks again as an avatar of an extinct people when awakened. These lithic loci represent the triumphs and folly of their society. Speaking to one is speaking to a witness of an archaic time. The lithic locus's persona expresses their culture in all dimensions, and thus the attitudes of lithic loci vary greatly. Their appearances show the aesthetics and technology of their time, suspended in a cloud of excavated earth.</p>\n<p>As plentiful as archaeological sites are in the Universe, the Plane of Earth holds countless more of far older provenance. Some of its inhabitants have even found lithic loci from peoples far older than themselves, seeing directly what would remain should they dwindle out of living memory. This has led some civilizations to even plan their decline by leaving a legacy in the living rock.</p>\n<h2>Ancient Finds</h2>\n<p>Lithic loci often contain important and valuable items. None of these elemental constructs are likely to agree to be looted, but some loci bestow their antiquities upon worthy successors, proud to see their culture's creations put to effective use in the modern day. Lithic loci can also direct earnest seekers to other lost treasures, helping to restore knowledge of an extinct society.</p>",
             "languages": "Plus One Ancient Language",
             "items": {
+                "Tremorsense (Imprecise) 60 feet": {
+                    "name": "Tremorsense (Imprecise) 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "Antiques": {
                     "name": "Antiques",
                     "description": "<p>A lithic locus contains at least one magic item. Any such antiques are durable, permanent items that were part of the locus's site and typify their culture. The locus receives the benefits of such an item as if wearing or holding it and can activate it. A lithic locus typically has an item of their level.</p>"
@@ -1114,6 +1263,14 @@
             "name": "Elemental Thicket",
             "publicNotes": "<p>In the Universe, plant growth proceeds on a scale of days, weeks, years, and decades. Conversely, an elemental thicket grows constantly and in seconds. These writhing masses of living wood are the elemental embodiment of growth itself, swelling up when least expected to consume all in their path.</p>",
             "items": {
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[(1d12+7)[bludgeoning]], @Check[type:fortitude|dc:30|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                },
+                "Engulf": {
+                    "name": "Engulf",
+                    "description": "<p>@Check[type:reflex|dc:30], @Damage[(8d10)[bludgeoning]] damage, Escape DC 27, Rupture 20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                },
                 "Entangling Growth": {
                     "name": "Entangling Growth",
                     "description": "<p>30 feet.</p>\n<p>Plant life erupts out of any and all soil surrounding the elemental thicket, making the area greater difficult terrain out to 5 feet and difficult terrain out to 30 feet. This ability requires soil and has no effect on terrain without it, such as worked stone, solid rock, open water, etc.</p>"
@@ -1146,7 +1303,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Rakkatak",
-            "publicNotes": "<p>Pulsating organs and tumors squirm loosely within a sac of skin, all forming the misshapen lump that is the body of a rakkatak. The predator's eyes scan the area, shimmering in the smoke like glowing dots. Wriggling insectoid legs\u2014varying in number from one rakkatak to another\u2014hang from its bulbous body. These limbs flail chaotically as a rakkatak fights, only calming when it's time to eat or rest.</p>\n<p>Most rakkataks fly alone, picking off meals in sudden swooping strikes, but they will occasionally form a flock. Despite having little faculty for communication with other creatures, rakkataks have a certain ravenous genius for hunting with kin. Typically, once one grabs prey, the others swoop in to latch on as well, ingesting their meal with leech-like mouths.</p>\n<p>Rakkataks possess insatiable appetites to help them withstand the long periods of famine between their infrequent meals as they travel the expanses of the Plane of Fire. As a result, they easily overconsume if brought somewhere with more abundant fauna, like the Universe. A single rakkatak can hold a surprising quantity of offal, even growing in size as its body expands. It becomes more unwieldy the larger it gets, which planar biologists believe to be a survival tactic to keep a rakkatak from indulging its hunger until it quite literally bursts.</p>\n<h2>Ashen Hunting Grounds</h2>\n<p>Avoiding the blazing chaos and ifrit rule that typify much of the Plane of Fire, rakkataks prefer ashen wastelands as their hunting grounds. They dig simple burrows just barely below the surface, called rakkatak hills. Within, they can doze and digest in peace or lay and tend their horrifying eggs.</p>",
+            "publicNotes": "<p>Pulsating organs and tumors squirm loosely within a sac of skin, all forming the misshapen lump that is the body of a rakkatak. The predator's eyes scan the area, shimmering in the smoke like glowing dots. Wriggling insectoid legs—varying in number from one rakkatak to another—hang from its bulbous body. These limbs flail chaotically as a rakkatak fights, only calming when it's time to eat or rest.</p>\n<p>Most rakkataks fly alone, picking off meals in sudden swooping strikes, but they will occasionally form a flock. Despite having little faculty for communication with other creatures, rakkataks have a certain ravenous genius for hunting with kin. Typically, once one grabs prey, the others swoop in to latch on as well, ingesting their meal with leech-like mouths.</p>\n<p>Rakkataks possess insatiable appetites to help them withstand the long periods of famine between their infrequent meals as they travel the expanses of the Plane of Fire. As a result, they easily overconsume if brought somewhere with more abundant fauna, like the Universe. A single rakkatak can hold a surprising quantity of offal, even growing in size as its body expands. It becomes more unwieldy the larger it gets, which planar biologists believe to be a survival tactic to keep a rakkatak from indulging its hunger until it quite literally bursts.</p>\n<h2>Ashen Hunting Grounds</h2>\n<p>Avoiding the blazing chaos and ifrit rule that typify much of the Plane of Fire, rakkataks prefer ashen wastelands as their hunting grounds. They dig simple burrows just barely below the surface, called rakkatak hills. Within, they can doze and digest in peace or lay and tend their horrifying eggs.</p>",
             "languages": "Can't Speak Any Language",
             "items": {
                 "Exploding Guts": {
@@ -1159,7 +1316,7 @@
                 },
                 "Suck Innards": {
                     "name": "Suck Innards",
-                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the rakkatak's reach</p>\n<hr />\n<p><strong>Effect</strong> The rakkatak deals [[/r 3d6[untyped]] damage to the target (@Check[type:fortitude|dc:22|basic:true] save). If the creature takes at least 12 damage, the rakkatak regains @Damage[10[healing]]] HP.</p>"
+                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the rakkatak's reach</p>\n<hr />\n<p><strong>Effect</strong> The rakkatak deals @Damage[3d6[untyped]] damage to the target (@Check[type:fortitude|dc:22|basic:true] save). If the creature takes at least 12 damage, the rakkatak regains [[/r 10[healing]]] HP.</p>"
                 }
             }
         },
@@ -1171,6 +1328,10 @@
             "publicNotes": "<p>The vault keepers lost Sairazul's spark and have life spans of two to three millennia. They maintain and protect the xiomorns' many experiments.</p>\n<hr />\n<p>When Sairazul created xiomorns, they were immortal. She created 65,536, all in her own image, and all imbued with a piece of her divine spark. During her imprisonment, Ayrzul used visions of a future extinction to manipulate them into sacrificing their power to him. This sacrifice split xiomorns into two classes: 32,768 vault builders who kept Sairazul's essence and 32,768 vault keepers who would live forever no longer. For millennia, xiomorns built a vast, magical civilization across the Plane of Earth, and when there was no space left to build, they left. On each new world, xiomorns build their vaults and conduct their experiments, endlessly searching for clues to help them avoid their extinction.</p>\n<h2>Vault Seeds</h2>\n<p>Xiomorns create magical underground caverns using vault seeds, ancient magical tools bequeathed to their species by Ayrzul as a reward for their sacrifice. The vault seeds were used to create the Vaults of Orv in Golarion's Darklands, and an accident involving an out-of-control vault seed created the mysterious Emerald Spire.</p>\n<h2>Crystal Crafters</h2>\n<p>Xiomorns have mastered the creation of numerous magic items made of crystal beyond generation stones and vault seeds. These include pillars of black stone called whisperstones that allow xiomorns to communicate telepathically across vaults, orvgates that use weblike funnels of green crystal to allow teleportation between Darklands vaults, and a vortex in Orv called the Crystal Womb that connects to a crucial stronghold on the Plane of Earth.</p>",
             "languages": "Telepathy 300 Feet",
             "items": {
+                "Tremorsense (Imprecise) 120 feet": {
+                    "name": "Tremorsense (Imprecise) 120 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "+2 Status to Recall Knowledge About Earth": {
                     "name": "+2 Status to Recall Knowledge About Earth"
                 },
@@ -1181,6 +1342,14 @@
                 "Item Caster": {
                     "name": "Item Caster",
                     "description": "<p>The vault keeper can Cast a Spell from any item (such as a staff or wand) as though it were on their spell list.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
                 "Constraining Crystal": {
                     "name": "Constraining Crystal",
@@ -1204,9 +1373,25 @@
             "publicNotes": "<p>Zuhras, the genies of the elemental Plane of Metal, are bold and imposing, fond of being the center of attention and drawing a crowd with flashy performances, displays of skill, and tales of their personal victories. Despite their large personalities, their long-term relationships tend to be cool and somewhat distant; zuhras often make alliances but rarely form friendships, and the trust required for deeper relationships is rarer still. The few mortals who've gotten to know a zuhra often describe them as bombastic but emotionally aloof.</p>\n<p>Since the reconnection with other planes, zuhras have sought out and formed bonds with other genies. They find their jabali cousins to be capable smithing partners, if a bit staid and dull. Zuhras rarely pay non-genie elementals any more than a passing glance, finding even the intelligent ones uninteresting to communicate with or hard to relate to.</p>",
             "languages": "Truespeech",
             "items": {
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Conductive Redirection": {
+                    "name": "Conductive Redirection",
+                    "description": "<p><strong>Trigger</strong> The zuhra is hit by an attack, spell, or effect that deals electricity damage</p>\n<hr />\n<p><strong>Effect</strong> The zuhra conducts the electricity through their body, taking damage as normal, and redirecting a bolt at one target within 30 feet that they can see. The zuhra makes a ranged attack roll with a [[/r 1d20+20 #Conductive Redirection]]{+20} modifier against the target's AC. On a hit or critical hit, the target takes electricity damage equal to the full damage of the triggering effect.</p>"
+                },
                 "Blinding Reflection": {
                     "name": "Blinding Reflection",
                     "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirements</strong> The zuhra is in dim or bright light</p>\n<hr />\n<p><strong>Effect</strong> The zuhra briefly reshapes part of their metallic body into a concave surface to reflect the surrounding light into the eyes of a creature within 30 feet. The target must attempt a @Check[type:reflex|dc:26] save. It's then temporarily immune for 1 hour.</p>\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the start of the zuhra's next turn.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} until the start of the zuhra's next turn.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The zuhra transforms into a Small or Medium metal elemental or animal. This doesn't affect the zuhra's statistics, but it could change the damage type of their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 }
             }
         },
@@ -1217,6 +1402,10 @@
             "name": "Nanoshard Swarm",
             "publicNotes": "<p>This bizarre entity is actually a massive collective consisting of tens of thousands of constituent parts, each a tiny metal sphere barely the size of a pebble. Controlled by a single elemental spirit, the swarm is capable of flowing like liquid through the smallest openings before shaping itself into a powerful combatant, a solid wall, or any other form circumstances might require.</p>",
             "items": {
+                "Swarm Mind": {
+                    "name": "Swarm Mind",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.SwarmMind]</p>"
+                },
                 "Barrier Form": {
                     "name": "Barrier Form",
                     "description": "<p><strong>Requirements</strong> The nanoshard swarm is in swarm form</p>\n<hr />\n<p><strong>Effect</strong> The nanoshard swarm forms a continuous 6-inch-thick solid wall, up to 60 feet long and 10 feet high, originating from any one square in its current space. The wall can follow any path, with each 5 feet being placed on the border between squares. It doesn't need to stand vertically, so it can form a bridge or set of stairs, for example. The wall must be formed in an unbroken open space where its edges don't pass through any creatures or objects.</p>\n<p>A single 5-foot-by-5-foot section of the wall can be destroyed by dealing 18 points of damage to it, which also reduces the swarm's total Hit Points. A nanoshard swarm can't be knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} or forcibly moved while in barrier form, nor can it voluntarily move. A nanoshard swarm in barrier form can originate tendril attacks from any square of its wall.</p>"
@@ -1224,6 +1413,10 @@
                 "Battle Form": {
                     "name": "Battle Form",
                     "description": "<p><strong>Requirements</strong> The nanoshard swarm is in swarm form</p>\n<hr />\n<p><strong>Effect</strong> The nanoshard swarm coalesces into a Huge shape that looks like a humanoid or beast and can hold items. In battle form, its Speed is 15 feet, it's @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}, and it has the following Strike.</p>\n<p><strong>Melee</strong> <span class=\"action-glyph\">1</span> limb (reach 20 feet), <strong>Damage</strong> 4d8+9 bludgeoning</p>"
+                },
+                "Engulf (Swarm Form)": {
+                    "name": "Engulf (Swarm Form)",
+                    "description": "<p>@Check[type:reflex|dc:27], @Damage[(2d8+6)[bludgeoning]] damage, Escape DC 27, Rupture 18</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Swarm Form": {
                     "name": "Swarm Form",
@@ -1236,12 +1429,16 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Snapdrake",
-            "publicNotes": "<p>Skilled kizidhar mages and gardeners handcraft these lovely creatures as much for their shuyookhs\u2019 aesthetic pleasure as for their protection. Creating a snapdrake requires first painstakingly constructing a frame of living wood in the shape of a drake before weaving thousands of colorful snapdragon flowers into intricate patterns to form its body and scales. Once complete, snapdrakes often serve kizidhars as a combination of guards, pets, and decorations for as long as they are well fed.</p>",
+            "publicNotes": "<p>Skilled kizidhar mages and gardeners handcraft these lovely creatures as much for their shuyookhs’ aesthetic pleasure as for their protection. Creating a snapdrake requires first painstakingly constructing a frame of living wood in the shape of a drake before weaving thousands of colorful snapdragon flowers into intricate patterns to form its body and scales. Once complete, snapdrakes often serve kizidhars as a combination of guards, pets, and decorations for as long as they are well fed.</p>",
             "languages": "Can't Speak Any Language",
             "items": {
                 "Alluring Scent": {
                     "name": "Alluring Scent",
                     "description": "<p>30 feet.</p>\n<p>A creature that enters the emanation must attempt a @Check[type:will|dc:25] save. On a failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the snapdrake and must use at least 1 action on its next turn to Stride closer to the snapdrake. On a success, the target is immune to the snapdrake's alluring scent for 1 hour.</p>"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>Tail scythe only</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
                 "Greater Forest Passage": {
                     "name": "Greater Forest Passage",
@@ -1297,6 +1494,10 @@
                     "name": "Turbulent Skies",
                     "description": "<p>20 feet. Swirling winds make all squares in the emanation difficult terrain for Striding and Flying creatures. Creatures with the air trait are immune. The jaathoom can activate or deactivate this aura as a single action, which has the concentrate trait.</p>"
                 },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                },
                 "Hurricane Blast": {
                     "name": "Hurricane Blast",
                     "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The jaathoom moves all creatures without the air trait in their turbulent skies aura 20 feet directly away, clockwise, or counterclockwise. A creature avoids being moved if it succeeds at a @Check[type:fortitude|dc:29] save.</p>"
@@ -1322,9 +1523,13 @@
                     "name": "Grounded",
                     "description": "<p>When saving against an effect attempting to knock them @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, a whipping willow achieves one degree of success better than what they rolled. Additionally, the willow doesn't fall prone on a critical failure to @UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{Trip} an opponent.</p>"
                 },
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[(2d4+5)[bludgeoning]], @Check[type:fortitude|dc:21|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                },
                 "Strangling Vines": {
                     "name": "Strangling Vines",
-                    "description": "<p>When a whipping willow hits a creature with their whip Strike, they can choose to @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{Grab} and begin strangling the creature. The target is suffocating and can\u2019t speak as long as it\u2019s strangled.</p>"
+                    "description": "<p>When a whipping willow hits a creature with their whip Strike, they can choose to @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{Grab} and begin strangling the creature. The target is suffocating and can’t speak as long as it’s strangled.</p>"
                 },
                 "Unseating Sweep": {
                     "name": "Unseating Sweep",
@@ -1337,6 +1542,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Kinzaruk",
+            "publicNotes": "<p>In its natural state, the kinzaruk resembles a paper-thin, perfectly square sheet of lightweight silvery-white metal, approximately 15 feet across. It's almost never encountered this form, however, being far better known for its ability to intricately fold its body thousands of times in an instant to reconfigure itself into a varied assortment of deadly animal-like shapes.</p>\n<hr />\n<p>Metal elementals can manifest in a wide variety of different forms, from shapeless amalgams of different metals to humanoid and beast-like monstrosities.</p>\n<h2>Metal Forms</h2>\n<p>Though metal elementals are made almost entirely of metal, most are composed of layers of different metals in tiny fragments, as complex as a body of flesh or plant matter. Many of these metals are rusted or decayed from the natural, slow entropy of the Plane of Metal.</p>",
             "items": {
                 "Fold Form": {
                     "name": "Fold Form",
@@ -1354,7 +1560,7 @@
             "items": {
                 "Top-Heavy": {
                     "name": "Top-Heavy",
-                    "description": "<p>While the carved beast is not Dug In, its unwieldy design leaves it vulnerable to falling over. The DC of any attempt to knock the carved beast @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} is reduced by 5, and the beast takes a \u20135 status penalty to any check or save it attempts to resist being knocked prone. Additionally, whenever the beast fails to @UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{Trip} opponents with its roots Strike, it critically fails instead. If successfully Shoved by an opponent, the beast must succeed at a @Check[type:reflex|dc:20] save or fall prone.</p>"
+                    "description": "<p>While the carved beast is not Dug In, its unwieldy design leaves it vulnerable to falling over. The DC of any attempt to knock the carved beast @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} is reduced by 5, and the beast takes a –5 status penalty to any check or save it attempts to resist being knocked prone. Additionally, whenever the beast fails to @UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{Trip} opponents with its roots Strike, it critically fails instead. If successfully Shoved by an opponent, the beast must succeed at a @Check[type:reflex|dc:20] save or fall prone.</p>"
                 },
                 "Dig In": {
                     "name": "Dig In",
@@ -1370,9 +1576,17 @@
             "publicNotes": "<p>Elementals of the Plane of Earth can be fiercely territorial. Some more solitary elementals protect their lairs on their own, but occasionally others band together to defend larger regions that serve as shared turf. Notable among these alliances are avalanche legions, who patrol the perimeter of these shared territories, driving off intruders who dare to trespass upon their home ground.</p>\n<h2>Familial Instincts</h2>\n<p>Although elementals don't reproduce like typical creatures, living landslides sometimes develop bonds with smaller or weaker earth elementals, such as earth wisps, living boulders, and sod hounds. When several of these smaller elementals are gathered in one place, living landslides who cared for the creatures often continue to watch over their wards. Avalanche legions sometimes form from these gatherings, as multiple living landslides join forces to protect the smaller elementals.</p>",
             "hp": "16 squares Thresholds 160 (12 squares), 80 (8 squares)",
             "items": {
+                "Tremorsense (Imprecise) 60 feet": {
+                    "name": "Tremorsense (Imprecise) 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "Earthbound": {
                     "name": "Earthbound",
                     "description": "<p>When not touching solid ground, the avalanche legion is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}.</p>"
+                },
+                "Troop Defenses": {
+                    "name": "Troop Defenses",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Earth Glide": {
                     "name": "Earth Glide",
@@ -1418,10 +1632,22 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Kizidhar",
-            "publicNotes": "<p>Kizidhars look like walking trees, averaging 10 to 12 feet tall with branches twisting to form their arms, faces, and other features. A kizidhar can reshape their body to create any wooden object.</p>\n<hr />\n<p>The genies of the Plane of Wood, known as the kizidhars, are overbearing lords of their element. These master crafters of wood specialize in carpentry and all kinds of woodcarving, and they take a particular delight in reshaping the world in their own image\u2014either through creating wooden statues of themselves or by manipulating and controlling the living things around them. Though they're able to carve themselves similarly, they usually regard their own forms as perfect.</p>\n<p>Shunning the company of other genies, they prefer to avoid those equal in power and instead surround themselves with circles of sycophants and flatterers. With the pathways to the Universe open again for the first time in ages, kizidhars roam the multiverse to find mortals they can tempt into joining their palace retinues as servants, entertainers, and valuable sources of new information.</p>",
+            "publicNotes": "<p>Kizidhars look like walking trees, averaging 10 to 12 feet tall with branches twisting to form their arms, faces, and other features. A kizidhar can reshape their body to create any wooden object.</p>\n<hr />\n<p>The genies of the Plane of Wood, known as the kizidhars, are overbearing lords of their element. These master crafters of wood specialize in carpentry and all kinds of woodcarving, and they take a particular delight in reshaping the world in their own image—either through creating wooden statues of themselves or by manipulating and controlling the living things around them. Though they're able to carve themselves similarly, they usually regard their own forms as perfect.</p>\n<p>Shunning the company of other genies, they prefer to avoid those equal in power and instead surround themselves with circles of sycophants and flatterers. With the pathways to the Universe open again for the first time in ages, kizidhars roam the multiverse to find mortals they can tempt into joining their palace retinues as servants, entertainers, and valuable sources of new information.</p>",
             "languages": "Speak With Plants, Truespeech",
             "ac": "(24 with shield raised)",
             "items": {
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The kizidhar transforms into a Small or Medium wood elemental or plant creature. This doesn't affect the kizidhar's statistics, but it could change the damage type of their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                },
                 "Parting the Trees": {
                     "name": "Parting the Trees",
                     "description": "<p>The genie ignores difficult terrain from plants, and can share their space with larger plants, such as trees.</p>"
@@ -1436,12 +1662,46 @@
                 }
             }
         },
+        "Capritellix": {
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Capritellix",
+            "publicNotes": "<p>The Plane of Metal can seem unpredictable to the point of cruelty, and capritellixes embody this perfectly. With a head formed of discs that each depict a portion of their face, a capritellix reshapes their personality with a quick whir. Despite their different faces, each capritellix has a unified identity, with one memory and one name. Each mood that cycles through the pieces of their face is a massively amplified facet of their personality, rather than a completely different individual. The differences are subtle to most observers, but a capritellix can display numerous mood combinations—typically 64 for one with four faces per disc or 125 for one with five faces per disc. No matter how much they change their face, however, capritellixes can't suppress their haughty ego or shake the ceaseless despair they feel. The conflicting priorities of each mood within a capritellix make it difficult for any of these creatures to make long-term plans or form solid relationships. What one face builds up, another undermines, cursed all the while with full knowledge of the former intentions they will never fulfill and the well-laid plans they will abandon.</p>\n<h2>Recycled Remains</h2>\n<p>When horribly damaged or weary, capritellixes travel to a communal necropolis, much like a fabled elephant graveyard. Thousands of metallic hands reach up from the landscape, clawing at the sky, and severed discs that used to make up capritellixes pile up in endless heaps. Other elementals sometimes salvage these disparate parts and assemble them into a new capritellix—a unique individual with a brand-new identity.</p>",
+            "languages": "Plus One Language for Each of Their Mouths; Telepathy 100 feet",
+            "items": {
+                "All-Around Vision": {
+                    "name": "All-Around Vision",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AllAroundVision]</p>"
+                },
+                "Shift Mood": {
+                    "name": "Shift Mood",
+                    "description": "<p>The capritellix rotates the segments of their face, changing their personality and demeanor. Until they Shift their Mood again, the capritellix gains a +4 status bonus to a certain skill and to their Will DC against that skill, as well as a specific occult innate spell they can cast at will (9th rank, DC 38).</p>\n<p><strong>Angry</strong> Intimidation, <em>@UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate}</em></p>\n<p><strong>Gregarious</strong> Performance, <em>@UUID[Compendium.pf2e.spells-srd.Item.Jvyy6oVIQsD34MHB]{Uncontrollable Dance}</em></p>\n<p><strong>Serene</strong> Diplomacy, <em>@UUID[Compendium.pf2e.spells-srd.Item.qwlh6aDgi86U3Q7H]{Suggestion}</em></p>\n<p><strong>Sly</strong> Deception, <em>@UUID[Compendium.pf2e.spells-srd.Item.8kJbiBEjMWG4VUjs]{Warp Mind}</em></p>"
+                },
+                "Dual Beams": {
+                    "name": "Dual Beams",
+                    "description": "<p>The capritellix makes two eye beam Strikes against different creatures. Their multiple attack penalty doesn't increase until after both Strikes.</p>"
+                },
+                "Plentiful Metals": {
+                    "name": "Plentiful Metals",
+                    "description": "<p>Each of the capritellix's levitating hands is made of a different precious metal. Each time a capritellix makes a metal hand Strike, they choose whether the hand they use is adamantine, cold iron, dawnsilver, orichalcum, silver, or any other solid precious metal.</p>"
+                },
+                "Whirling Hands": {
+                    "name": "Whirling Hands",
+                    "description": "<p><strong>Trigger</strong> A creature starts its turn in the capritellix's melee reach</p>\n<hr />\n<p><strong>Effect</strong> The capritellix makes a metal hand Strike against the creature.</p>"
+                },
+                "Push 20 feet": {
+                    "name": "Push 20 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Push]</p>"
+                }
+            }
+        },
         "Ore Louse": {
             "data": {
                 "placeHolder": "placeHolder"
             },
             "name": "Ore Louse",
-            "publicNotes": "<p>Ore lice are six-legged insectile creatures that roost either just beneath or above the water's surface. They're highly territorial toward both strangers and each other, able to detect an intruder through the ripples in the water. Due to their diet, ore lice have incredibly tough chitin that's infused with metal. Cannibalism between ore lice is common when they're unable to locate other prey.</p>\n<p>Though there are far more suitable environments for ore lice bordering the Plane of Air, the creatures are often found where the Plane of Earth meets the Plane of Water. This was a mystery that puzzled many\u2014until the Plane of Metal returned between the Planes of Earth and Water. Planar researchers realized that ore lice must have hunted here before the planar schism. On the Plane of Metal, ore lice often appear in horror stories chasing down metal elementals and ferociously devouring them. Their connection to Ferrumnestra adds to their infamy.</p>",
+            "publicNotes": "<p>Ore lice are six-legged insectile creatures that roost either just beneath or above the water's surface. They're highly territorial toward both strangers and each other, able to detect an intruder through the ripples in the water. Due to their diet, ore lice have incredibly tough chitin that's infused with metal. Cannibalism between ore lice is common when they're unable to locate other prey.</p>\n<p>Though there are far more suitable environments for ore lice bordering the Plane of Air, the creatures are often found where the Plane of Earth meets the Plane of Water. This was a mystery that puzzled many—until the Plane of Metal returned between the Planes of Earth and Water. Planar researchers realized that ore lice must have hunted here before the planar schism. On the Plane of Metal, ore lice often appear in horror stories chasing down metal elementals and ferociously devouring them. Their connection to Ferrumnestra adds to their infamy.</p>",
             "items": {
                 "Metal Scent": {
                     "name": "Metal Scent",
@@ -1473,9 +1733,13 @@
             "publicNotes": "<p>Regarded as the progenitors of geniekind, janns hold a position of esteem above the genies tied to specific planes. They possess an inborn ability to grant wishes, which the other branches of geniekind lack and greatly envy. Nomadic jann shuyookhs rarely hold court, preferring to gather only when the need arises to perform great deeds. Lesser janns respect and venerate these leaders for their wisdom and total dedication to preserving the honor and reputation of their people. A jann shuyookh reads portents and omens when dealing with duplicitous mortals.</p>",
             "languages": "Truespeech",
             "items": {
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
                 "Commanding Presence": {
                     "name": "Commanding Presence",
-                    "description": "<p>20 feet.</p>\n<p>A creature that enters the aura must succeed at a @Check[type:will|dc:19] save or be @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure), and is then temporarily immune for 1 minute. A genie (with the exception of another jann) takes a \u20134 circumstance penalty to their save.</p>"
+                    "description": "<p>20 feet.</p>\n<p>A creature that enters the aura must succeed at a @Check[type:will|dc:19] save or be @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure), and is then temporarily immune for 1 minute. A genie (with the exception of another jann) takes a –4 circumstance penalty to their save.</p>"
                 },
                 "Elemental Resistance": {
                     "name": "Elemental Resistance",
@@ -1484,6 +1748,10 @@
                 "All Made One": {
                     "name": "All Made One",
                     "description": "<p>The jann shuyookh calls upon all the elements that make up their being and chooses one. They gain an additional arcane spell they can cast at will and empower their Strikes with the element, dealing an extra 1d6 damage of the listed type. These benefits last until the shuyookh uses this ability again.</p>\n<ul>\n<li>Air: <em>@UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{Lightning Bolt}</em>, 1d6 electricity;</li>\n<li>Earth: <em>@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{One with Stone}</em>, 1d6 bludgeoning;</li>\n<li>Fire: <em>@UUID[Compendium.pf2e.spells-srd.Item.sxQZ6yqTn0czJxVd]{Fireball}</em>, 1d6 fire;</li>\n<li>Metal: <em>@UUID[Compendium.pf2e.spells-srd.Item.3A3ueS9Q0s3U8KXE]{Noxious Metals}</em>, 1d6 electricity;</li>\n<li>Water: <em>@UUID[Compendium.pf2e.spells-srd.Item.LNOwaJAkCfsgTKgV]{Wall of Water}</em>, 1d6 bludgeoning;</li>\n<li>Wood: <em>@UUID[Compendium.pf2e.spells-srd.Item.KsWhliKfUs3IpW3c]{Wall of Thorns}</em>, 1d6 piercing.</li>\n</ul>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The jann transforms into a Small or Medium elemental or animal. This doesn't affect the gennayn's statistics, but it could change the damage type of their Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Wanderer's Wish": {
                     "name": "Wanderer's Wish",
@@ -1504,7 +1772,7 @@
                 },
                 "Retract": {
                     "name": "Retract",
-                    "description": "<p>The murajau fully retreats into their shell, gaining greater cover; the bonus to Stealth applies only if the murajau is undetected. While in their shell, the murajau can't see outside and takes a \u20132 circumstance penalty to auditory Perception checks. The only move actions the murajau can take are to Stand or Step. The murajau can come back out as a single action.</p>"
+                    "description": "<p>The murajau fully retreats into their shell, gaining greater cover; the bonus to Stealth applies only if the murajau is undetected. While in their shell, the murajau can't see outside and takes a –2 circumstance penalty to auditory Perception checks. The only move actions the murajau can take are to Stand or Step. The murajau can come back out as a single action.</p>"
                 },
                 "Talisman Faithful": {
                     "name": "Talisman Faithful",
@@ -1523,13 +1791,21 @@
             "name": "Veldenar",
             "publicNotes": "<p>Some dangers lurking within the Endless Sky can doom prey before they even realize it; such are the ambush tactics of the 20-foot-tall elementals known as veldenars. Their inherent invisibility and pale, almost translucent forms make them among the most deadly creatures to call the Plane of Air home.</p>\n<p>Veldenars resemble amphibians from the Universe, albeit with myriad red eyes and an affinity for cold. Hunting along the edges of eternal storms, the event horizons of dead zones, and the banks of sky streams, veldenars prey on the lesser denizens of their home plane. They can often be found using their natural buoyancy to drift among the large chunks of magical ice that crossed onto the Plane of Air from its former border with the Plane of Water. There, they extend their tongues to trap unwary flying insects or adventurers who might happen to float by. Their multiple eyes keep watch for their next meal even while devouring current prey.</p>\n<p>The intense cold of a veldenar's stomach rapidly incapacitates its victims, allowing the predator to focus on returning to invisibility and finding a secluded spot to digest. Victims who escape the veldenar's stomach often feel chilled to the bone for days.</p>\n<p>Veldenars aren't discerning about who or what they inhale. As a result, kinds of scrap can collect in their stomachs, especially inorganic material. Those hunting veldenars often wait until the elemental needs to regurgitate debris, as this is one of the few times a veldenar can be caught in a compromising position, unable to capture anything due to their clogged esophagus.</p>\n<h2>Paired Predators</h2>\n<p>Veldenars bond in partnership for life, which can be well over a century. Utilizing their ambush pack tactics, one veldenar will often drive potential prey into their partner's clutches. Visitors to the Plane of Air should keep in mind that if they happen to spot one veldenar, another is likely close by.</p>",
             "items": {
+                "All-Around Vision": {
+                    "name": "All-Around Vision",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AllAroundVision]</p>"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
                 "Natural Invisibility": {
                     "name": "Natural Invisibility",
                     "description": "<p>A veldenar is naturally @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{Invisible} and only becomes visible when using a hostile action. Creatures it has engulfed remain visible within it, albeit slightly blurred by the veldenar's translucent skin.</p>"
                 },
                 "Viscous Breath": {
                     "name": "Viscous Breath",
-                    "description": "<p>15 feet. The veldenar raises the viscosity of the surrounding air just by breathing it. Creatures who enter or start their turn within the emanation treat the area as difficult terrain and take a \u20132 status penalty to any non-magical physical attacks they attempt. This aura is suppressed whenever the veldenar has a creature engulfed.</p>"
+                    "description": "<p>15 feet. The veldenar raises the viscosity of the surrounding air just by breathing it. Creatures who enter or start their turn within the emanation treat the area as difficult terrain and take a –2 status penalty to any non-magical physical attacks they attempt. This aura is suppressed whenever the veldenar has a creature engulfed.</p>"
                 },
                 "Vacuum": {
                     "name": "Vacuum",
@@ -1542,11 +1818,11 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Twins of Rowan",
-            "publicNotes": "<p>Twins of rowan are among the most powerful elementals on the Plane of Wood, specially crafted to patrol a wide range of wilderness and maintain the plane\u2019s carefully constructed order. Despite having two heads and torsos, each twins of rowan is a singular creature; like all wood elementals, their true consciousness is not in their heads but in the roots, and their true body is the trunk of the tree, not the extended limbs.</p>",
+            "publicNotes": "<p>Twins of rowan are among the most powerful elementals on the Plane of Wood, specially crafted to patrol a wide range of wilderness and maintain the plane’s carefully constructed order. Despite having two heads and torsos, each twins of rowan is a singular creature; like all wood elementals, their true consciousness is not in their heads but in the roots, and their true body is the trunk of the tree, not the extended limbs.</p>",
             "items": {
                 "Shielded Eyes": {
                     "name": "Shielded Eyes",
-                    "description": "<p>A twins of rowan\u2019s protective mask shields them from blinding and dazzling effects.</p>"
+                    "description": "<p>A twins of rowan’s protective mask shields them from blinding and dazzling effects.</p>"
                 },
                 "Beacon of the Rowan Guard": {
                     "name": "Beacon of the Rowan Guard",
@@ -1558,7 +1834,11 @@
                 },
                 "Lifespring Burst": {
                     "name": "Lifespring Burst",
-                    "description": "<p>Once per day, the twins of rowan can strike the ground with their sword, releasing a @Template[type:burst|distance:30] of life energy centered on the twins that deals @Damage[14d6[positive]] damage (@Check[type:fortitude|dc:30|basic:true] save); the twins of rowan is immune. The area affected by this burst then becomes greater difficult terrain as vibrant new plant life ruptures through it.</p>"
+                    "description": "<p>Once per day, the twins of rowan can strike the ground with their sword, releasing a @Template[type:burst|distance:30] of life energy centered on the twins that deals @Damage[14d6[vitality]] damage (@Check[type:fortitude|dc:30|basic:true] save); the twins of rowan is immune. The area affected by this burst then becomes greater difficult terrain as vibrant new plant life ruptures through it.</p>"
+                },
+                "Throw Stump": {
+                    "name": "Throw Stump",
+                    "description": "<p>Can also be used to throw stumps and logs.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ThrowRock]</p>"
                 }
             }
         },
@@ -1576,6 +1856,10 @@
                 "Trap Weapon": {
                     "name": "Trap Weapon",
                     "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> A creature hits the living magma with a melee weapon</p>\n<hr />\n<p><strong>Effect</strong> The living magma attempts an @Check[type:athletics|defense:athletics] check against the triggering creature's Athletics DC. On a success, the living magma traps the weapon in its body and pulls it from the attacker's grasp. A creature can Interact to retrieve the weapon, but the attempt fails unless the creature succeeds at an @Check[type:athletics|dc:resolve(@actor.system.saves.fortitude.dc)] check against the living magma's Fortitude DC (typically 36). If the living magma uses Engulf, it also absorbs all trapped weapons, rendering them unreachable until it dies.</p>"
+                },
+                "Engulf": {
+                    "name": "Engulf",
+                    "description": "<p>@Check[type:reflex|dc:33], @Damage[2d10[bludgeoning],4d6[fire]] damage, Escape DC 33, Rupture 25</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Launch Lava": {
                     "name": "Launch Lava",
@@ -1619,6 +1903,10 @@
                     "name": "Ashen Smoke",
                     "description": "<p>When the sootsoldiers are reduced by an HP Threshold or are reduced to 0 HP, the destroyed soldiers crumble to a cloud of ash-laden smoke in @Template[type:burst|distance:20] centered on the sootsoldiers. All creatures within the cloud are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and all creatures outside it are concealed to those inside. The smoke lasts for 1 minute or until dispersed by a strong wind.</p>"
                 },
+                "Troop Defenses": {
+                    "name": "Troop Defenses",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
+                },
                 "Incinerating Grasp": {
                     "name": "Incinerating Grasp",
                     "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The sootsoldiers reach to constrain each enemy within 5 feet in their fiery clutches (@Check[type:reflex|dc:26|basic:true] save). The damage and additional effects depend on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[2d8[fire]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+7)[fire]] damage plus @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+7)[fire]] damage plus grabbed</p>"
@@ -1650,7 +1938,7 @@
                 },
                 "Downcast": {
                     "name": "Downcast",
-                    "description": "<p>The despairing pall Flies up to its Speed, then rains gloom and despair in a @Template[type:line|distance:15] straight down. Creatures in the area must succeed at a @Check[type:will|dc:16] save or take a \u20131 status penalty to attack rolls until the end of the despairing pall's next turn.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.zjVBG6uDd4WKWeKU]{Effect: Downcast}</p>"
+                    "description": "<p>The despairing pall Flies up to its Speed, then rains gloom and despair in a @Template[type:line|distance:15] straight down. Creatures in the area must succeed at a @Check[type:will|dc:16] save or take a –1 status penalty to attack rolls until the end of the despairing pall's next turn.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.zjVBG6uDd4WKWeKU]{Effect: Downcast}</p>"
                 }
             }
         },
@@ -1659,11 +1947,15 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Metal Wisp",
-            "publicNotes": "<p>A metal wisp is a roiling sphere of rust particles and sharp metal fragments, all furiously orbiting a liquid metal core that resembles the skull of a mortal creature\u2014usually a humanoid, but animal and even more fantastical skulls are not uncommon. They don't form attachments as easily as wisps from other elemental planes, which tend to view metal wisps as too morose, although they retain a certain curiosity since their return from the planar severance.</p>",
+            "publicNotes": "<p>A metal wisp is a roiling sphere of rust particles and sharp metal fragments, all furiously orbiting a liquid metal core that resembles the skull of a mortal creature—usually a humanoid, but animal and even more fantastical skulls are not uncommon. They don't form attachments as easily as wisps from other elemental planes, which tend to view metal wisps as too morose, although they retain a certain curiosity since their return from the planar severance.</p>",
             "items": {
                 "Rust Vision": {
                     "name": "Rust Vision",
                     "description": "<p>A metal wisp ignores the concealed condition from rust clouds.</p>"
+                },
+                "Accord Essence": {
+                    "name": "Accord Essence",
+                    "description": "<p><strong>Trigger</strong> An ally within 30 feet that benefited from the wisp's resonance in the last hour is targeted by an attack</p>\n<hr />\n<p><strong>Effect</strong> The wisp detonates itself in a small elemental explosion. Allies within 30 feet that have benefited from the wisp's resonance in the last hour gain temporary Hit Points equal to half the wisp's current Hit Points. These temporary Hit Points last 1 hour.</p>\n<p>A wisp that uses this reaction is permanently destroyed, and it can be restored only by a <em>@UUID[Compendium.pf2e.spells-srd.Item.6dDtGIUerazSHIOu]{Wish}</em> ritual or similarly powerful effect. If an ability would prevent the wisp's destruction (for instance, if the wisp is summoned and would merely be dismissed), Accord Essence has no effect.</p>"
                 },
                 "Resonance": {
                     "name": "Resonance",
@@ -1672,6 +1964,10 @@
                 "Rust Cloud": {
                     "name": "Rust Cloud",
                     "description": "<p>A metal wisp is constantly surrounded by a cloud of rust flakes that cause it to be @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from creatures more than 5 feet away from it.</p>"
+                },
+                "In Concert": {
+                    "name": "In Concert",
+                    "description": "<p>When a metal wisp rolls a critical failure on a check to Aid, they get a failure instead, and when they roll a success, they get a critical success instead.</p>"
                 }
             }
         },
@@ -1682,6 +1978,10 @@
             "name": "Munsahir Trooper",
             "publicNotes": "<p>Highly skilled troopers mostly come from the bronze class.</p>\n<hr />\n<p>Munsahirs build militaristic, traditional societies.</p>\n<h2>Munsahir Hierarchy</h2>\n<p>The three strata of munsahir society can be observed in the kilts worn by all members. Nobles, the unimpeachable rulers, wear elaborate brass kilts. In the middle of society are businesspeople and traders bedecked in bronze. Raw copper adorns those in the working class, who do most of the building and hard labor for munsahir society. Officially speaking, there is no class mobility; horrible crimes might cause a brass noble to be sent to prison but can't cause them to lose their station.</p>",
             "items": {
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
                 "Heat of the Forge": {
                     "name": "Heat of the Forge",
                     "description": "<p>10 feet. An munsahir's skin radiates heat like a forge's fire. A creature that starts its turn in the area must succeed at a @Check[type:fortitude|dc:20] save or become @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} while it remains in the area. Creatures immune to environmental heat effects or with any fire resistance are immune.</p>"
@@ -1692,7 +1992,11 @@
                 },
                 "Burning Touch": {
                     "name": "Burning Touch",
-                    "description": "<p>The munsahir gatecrasher's Strikes deal an extra @Damage[1d6[fire]] damage (included above). When the gatecrasher successfully performs a @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} or @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove} action, they also deal @Damage[1d6[fire]] damage to their target.</p>"
+                    "description": "<p>The munsahir gatecrasher's Strikes deal an extra 1d6 fire damage (included above). When the gatecrasher successfully performs a @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} or @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove} action, they also deal @Damage[1d6[fire]] damage to their target.</p>"
+                },
+                "Volcanic Hammer": {
+                    "name": "Volcanic Hammer",
+                    "description": "<p>The trooper makes a warhammer Strike that deals one extra weapon die of damage and @Damage[2d6[persistent,fire]] damage.</p>"
                 }
             }
         },
@@ -1705,12 +2009,16 @@
             "languages": "Understands But Can't Speak",
             "ac": "21 without defensive camouflage",
             "items": {
+                "Tremorsense 30 feet": {
+                    "name": "Tremorsense 30 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "Defensive Camouflage": {
                     "name": "Defensive Camouflage",
                     "description": "<p>The living grove can @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} in natural environments even if it doesn't have cover. While Hiding, its root system is safely covered in dirt, granting the grove a +3 status bonus to AC. A critical hit cracks this protective layer of earth to disperse in the wind, ending the effect.</p>"
                 },
-                "Engulf":{
-                    "name": "包卷 Engulf",
+                "Engulf": {
+                    "name": "Engulf",
                     "description": "<p>@Check[type:reflex|dc:22], @Damage[5d8[bludgeoning]] damage, Escape DC 20, Rupture 10</p>\n<p>A creature Engulfed by the living grove must also attempt a @Check[type:fortitude|dc:22|basic:true] save as it's battered between the thin, tightly packed trunks.</p>\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 4}.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 }
             }
@@ -1723,13 +2031,29 @@
             "publicNotes": "<p>The leaders and luminaries of ifrits come from the wise but cruel shuyookhs. These spiteful manipulators lord their might over other genies and twist mortal greed into grief. Ifrit shuyookhs guide the Dominion of Flame with their vicious whims and unwavering belief in ifrit supremacy.</p>\n<h2>Hot Gossip</h2>\n<p>Scion of the noble but disgraced Mishalq family, the ifrit information broker Qalkami Mishalq emerged from exile and returned to the Dominion of Flame following the death of Sultan Suleiman XXII. Qalkami used contacts in the Pathfinder Society to eliminate her rivals in the Cinderfury family and step into a power vacuum of her own creation, expanding her control and influence among the great nobility of Medina Mudii'a.</p>",
             "languages": "Truespeech",
             "items": {
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Exploit Regret": {
+                    "name": "Exploit Regret",
+                    "description": "<p><strong>Trigger</strong> A creature fails an attack against the shuyookh</p>\n<hr />\n<p><strong>Effect</strong> The shuyookh asks the triggering creature if it wishes it had hit. If the creature indicates yes, the shuyookh takes damage as if the attack had hit and the expression of regret makes the shuyookh @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for [[/br 1d4 #Quickened Rounds]]{1d4 rounds}; they can use their extra action to Fly, Stride, or Strike.</p>"
+                },
                 "Heat of Blazing Wings": {
                     "name": "Heat of Blazing Wings",
                     "description": "<p>5 feet, @Damage[4d6[fire]] damage (@Check[type:reflex|dc:31|basic:true])</p>"
                 },
                 "Burning Grasp": {
                     "name": "Burning Grasp",
-                    "description": "<p>When the ifrit Grabs or restrains a creature, that creature takes @Damage[4d6[fire]] damage, and takes @Damage[4d6[fire]] damage at the end of each of its turns until freed.</p>"
+                    "description": "<p>When the ifrit Grabs or restrains a creature, that creature takes @Damage[4d6[fire]] damage, and takes 4d6 fire damage at the end of each of its turns until freed.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The shuyookh transforms into a Small or Medium fire elemental or reptile, such as a snake. This doesn't affect the shuyookh's statistics, but it could change the damage type of their Strikes.</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Combat Grab": {
                     "name": "Combat Grab",
@@ -1767,7 +2091,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Lomori Sprout",
-            "publicNotes": "<p>Lomori sprouts are passionate gardeners who closely tend new growth on the Plane of Wood. Incredibly industrious, they lovingly guide young plants into elaborate constructions and patterns, forming tree tunnels, spiraling fields of flowers, complex hedge mazes, towering tapestries of interwoven bamboo, and other dizzying creations. Lomori sprouts meticulously collect the trimmings, seeds, and debris from the flora in their care. They plant the seeds to yield new growth and frenetically weave the rest into nests, spheres, and other simple objects. They're shy and skittish, often losing themselves in their labors, but they're always friendly to those who treat their gardens with respect.</p>\n<p>Lomoris are aeon spirits dispatched to the elemental planes long ago to pursue the act of creation. While most of the aeons dispatched to the other elemental planes performed their duties and rejoined their aeon brethren, those on the Plane of Wood lingered, becoming trapped as the plane receded. Over the ages, they adapted and evolved into lomoris. Today, lomoris have more in common with the other denizens of the Plane of Wood than they do with their aeon ancestors.</p>\n<p>Lomori sprouts, much like conrasus, have a central black sphere, known as a lomori's core, that functions as their primary body and consciousness. Where conrasus forge a sturdy exoskeleton, lomoris cultivate a tall mound of prairie grass surrounding their core, which easily grows to be 2\u20133 times the core's height. The lomori shapes the mound as it grows, creating protective layers to guard their core and forming other useful appendages. Most lomoris have six intricately detailed, crab-like legs of wood that emerge from the lower half of their core, allowing them to rapidly scuttle across the ground or climb trees.</p>",
+            "publicNotes": "<p>Lomori sprouts are passionate gardeners who closely tend new growth on the Plane of Wood. Incredibly industrious, they lovingly guide young plants into elaborate constructions and patterns, forming tree tunnels, spiraling fields of flowers, complex hedge mazes, towering tapestries of interwoven bamboo, and other dizzying creations. Lomori sprouts meticulously collect the trimmings, seeds, and debris from the flora in their care. They plant the seeds to yield new growth and frenetically weave the rest into nests, spheres, and other simple objects. They're shy and skittish, often losing themselves in their labors, but they're always friendly to those who treat their gardens with respect.</p>\n<p>Lomoris are aeon spirits dispatched to the elemental planes long ago to pursue the act of creation. While most of the aeons dispatched to the other elemental planes performed their duties and rejoined their aeon brethren, those on the Plane of Wood lingered, becoming trapped as the plane receded. Over the ages, they adapted and evolved into lomoris. Today, lomoris have more in common with the other denizens of the Plane of Wood than they do with their aeon ancestors.</p>\n<p>Lomori sprouts, much like conrasus, have a central black sphere, known as a lomori's core, that functions as their primary body and consciousness. Where conrasus forge a sturdy exoskeleton, lomoris cultivate a tall mound of prairie grass surrounding their core, which easily grows to be 2–3 times the core's height. The lomori shapes the mound as it grows, creating protective layers to guard their core and forming other useful appendages. Most lomoris have six intricately detailed, crab-like legs of wood that emerge from the lower half of their core, allowing them to rapidly scuttle across the ground or climb trees.</p>",
             "items": {
                 "Scurry": {
                     "name": "Scurry",
@@ -1788,7 +2112,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Skymetal Striker",
-            "publicNotes": "<p>A skymetal striker resembles a serpent\u2014or, more precisely, the two-headed serpent known as an amphisbaena\u2014made of a long string of dozens of spinning, sharp- toothed circular saw blades. These blades array themselves along the creature's body like beads on an invisible cord of magnetic force. Although the blades making up the creature are typically composed of many different metals and alloys, it is best known, feared, and named for the blades of orichalcum and inubrix that form the \"heads\" at either end of its serpentine body.</p>\n<hr />\n<p>Metal elementals can manifest in a wide variety of different forms, from shapeless amalgams of different metals to humanoid and beast-like monstrosities.</p>\n<h2>Metal Forms</h2>\n<p>Though metal elementals are made almost entirely of metal, most are composed of layers of different metals in tiny fragments, as complex as a body of flesh or plant matter. Many of these metals are rusted or decayed from the natural, slow entropy of the Plane of Metal.</p>\n<h2>Strange Metals</h2>\n<p>Inubrix and orichalcum are types of skymetal\u2014a collective term used in the Universe to refer to exceedingly rare metals, most possessing magical properties, found on distant planets and fallen stars. Skymetal can be found in abundance on the Plane of Metal, however, and many metal elementals contain at least a bit of one type or another. Inubrix, colloquially called ghost iron, is prized for its ability to phase through other metals, while orichalcum's mystical properties can warp the very flow of time around it.</p>",
+            "publicNotes": "<p>A skymetal striker resembles a serpent—or, more precisely, the two-headed serpent known as an amphisbaena—made of a long string of dozens of spinning, sharp- toothed circular saw blades. These blades array themselves along the creature's body like beads on an invisible cord of magnetic force. Although the blades making up the creature are typically composed of many different metals and alloys, it is best known, feared, and named for the blades of orichalcum and inubrix that form the \"heads\" at either end of its serpentine body.</p>\n<hr />\n<p>Metal elementals can manifest in a wide variety of different forms, from shapeless amalgams of different metals to humanoid and beast-like monstrosities.</p>\n<h2>Metal Forms</h2>\n<p>Though metal elementals are made almost entirely of metal, most are composed of layers of different metals in tiny fragments, as complex as a body of flesh or plant matter. Many of these metals are rusted or decayed from the natural, slow entropy of the Plane of Metal.</p>\n<h2>Strange Metals</h2>\n<p>Inubrix and orichalcum are types of skymetal—a collective term used in the Universe to refer to exceedingly rare metals, most possessing magical properties, found on distant planets and fallen stars. Skymetal can be found in abundance on the Plane of Metal, however, and many metal elementals contain at least a bit of one type or another. Inubrix, colloquially called ghost iron, is prized for its ability to phase through other metals, while orichalcum's mystical properties can warp the very flow of time around it.</p>",
             "items": {
                 "Phase Blade": {
                     "name": "Phase Blade",
@@ -1813,6 +2137,10 @@
             "allSaves": "+1 status to all saves vs. spells ( +4 status vs. earth)",
             "languages": "Telepathy 300 Feet",
             "items": {
+                "Tremorsense (Imprecise) 120 feet": {
+                    "name": "Tremorsense (Imprecise) 120 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
                 "+2 Status to Recall Knowledge About Earth": {
                     "name": "+2 Status to Recall Knowledge About Earth"
                 },
@@ -1823,6 +2151,20 @@
                 "Item Caster": {
                     "name": "Item Caster",
                     "description": "<p>The vault keeper can Cast a Spell from any item (such as a staff or wand) as though it were on their spell list.</p>"
+                },
+                "At-Will Spells": {
+                    "name": "At-Will Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                },
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "+4 Status to All Saves vs. Earth": {
+                    "name": "+4 Status to All Saves vs. Earth"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
                 "Constraining Crystal": {
                     "name": "Constraining Crystal",
@@ -1847,12 +2189,16 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Harvest Regiment",
-            "publicNotes": "<p>Great fruiting trees grow in massive orderly rows in a region of the Plane of Wood called Armory Grove. Over the course of decades, a regiment tree's branches grow heavy, laden with fruits uncannily shaped like people. They're cultivated by retired warriors whose tireless work ensures that these fruits grow into a form suitable for battle. Their efforts instill tactical knowledge in these fruit warriors so they're prepared to fight as soon as they fall from the tree\u2014which they do simultaneously, forming one battle-ready unit. Each soldier is equal in skill and similar in form, with a wooden outer shell that splits into portions as the flesh of the fruit inside ripens. A slain warrior contains seeds within its body that can slowly germinate in rich soil with enough water\u2014or blood. Every battlefield can become a new garden.</p>",
+            "publicNotes": "<p>Great fruiting trees grow in massive orderly rows in a region of the Plane of Wood called Armory Grove. Over the course of decades, a regiment tree's branches grow heavy, laden with fruits uncannily shaped like people. They're cultivated by retired warriors whose tireless work ensures that these fruits grow into a form suitable for battle. Their efforts instill tactical knowledge in these fruit warriors so they're prepared to fight as soon as they fall from the tree—which they do simultaneously, forming one battle-ready unit. Each soldier is equal in skill and similar in form, with a wooden outer shell that splits into portions as the flesh of the fruit inside ripens. A slain warrior contains seeds within its body that can slowly germinate in rich soil with enough water—or blood. Every battlefield can become a new garden.</p>",
             "hp": "Thresholds: 90, 45",
             "items": {
                 "Juice Shower": {
                     "name": "Juice Shower",
-                    "description": "<p>When a harvest regiment is critically hit or critically fails a save against a damaging effect, sticky fruit juices splash out. This affects all creatures in a @Template[type:emanation|distance:5]. A splashed creature takes a \u201310-foot status penalty to its Speeds and everything is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to it. A creature can Interact to clear off the juice.</p>"
+                    "description": "<p>When a harvest regiment is critically hit or critically fails a save against a damaging effect, sticky fruit juices splash out. This affects all creatures in a @Template[type:emanation|distance:5]. A splashed creature takes a –10-foot status penalty to its Speeds and everything is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to it. A creature can Interact to clear off the juice.</p>"
+                },
+                "Troop Defenses": {
+                    "name": "Troop Defenses",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Raise Shells": {
                     "name": "Raise Shells",
@@ -1882,6 +2228,14 @@
                 "Green Glow": {
                     "name": "Green Glow",
                     "description": "<p>20 feet.</p>\n<p>An abysium horror constantly emanates a powerful energy toxic to life. This radiation sheds dim light in the area. Any creature beginning its turn in the aura must attempt a @Check[type:fortitude|dc:27] save, becoming @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} on a failure or @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical failure. Once out of the aura, an affected creature's sickened condition automatically decreases by 1 at the beginning of each of its turns.</p>"
+                },
+                "Heavy": {
+                    "name": "Heavy",
+                    "description": "<p>As long as it is immobile, the elemental can't be forcibly moved or knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If it takes a move action, it loses this immunity until the start of its next turn.</p>"
+                },
+                "Trample": {
+                    "name": "Trample",
+                    "description": "<p>Large or smaller, claw, @Check[type:reflex|dc:27|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 }
             }
         },
@@ -1911,6 +2265,10 @@
                 "Tetanus": {
                     "name": "Tetanus",
                     "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:19]</p>\n<p><strong>Onset</strong> 1 week</p>\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} (1 week)</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} and can't speak (1 day)</p>\n<p><strong>Stage 3</strong> @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} with spasms (1 day)</p>\n<p><strong>Stage 4</strong> death</p>"
+                },
+                "Trample": {
+                    "name": "Trample",
+                    "description": "<p>Medium or smaller, claw, @Check[type:reflex|dc:23|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 }
             }
         },
@@ -1948,6 +2306,10 @@
                 "Swiftness": {
                     "name": "Swiftness",
                     "description": "<p>The picture-in-clouds's movement doesn't trigger reactions.</p>"
+                },
+                "Push 15 feet": {
+                    "name": "Push 15 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Push]</p>"
                 }
             }
         },
@@ -1958,6 +2320,10 @@
             "name": "Melomach",
             "publicNotes": "<p>Melomachs are massive, vaguely humanoid elementals composed of metal debris. They take great pride in decorating and augmenting their metallic bodies with haphazardly placed spikes, blades, humanoid or bestial skulls, and other similar adornments, the more ostentatious the better. When two melomachs meet, the resulting contests of physical might and vocal prowess can last for days, often leaving the landscape ravaged for miles in every direction.</p>",
             "items": {
+                "Heavy": {
+                    "name": "Heavy",
+                    "description": "<p>As long as it is immobile, the elemental can't be forcibly moved or knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If it takes a move action, it loses this immunity until the start of its next turn.</p>"
+                },
                 "Lightning Punch": {
                     "name": "Lightning Punch",
                     "description": "<p>The melomach makes a fist Strike, then makes a lightning Strike against a different creature within 120 feet of the fist Strike's target. Both Strikes count toward the melomach's multiple attack penalty, but it doesn't increase until after both attacks are made.</p>"
@@ -1983,6 +2349,10 @@
                 "Ashen Smoke": {
                     "name": "Ashen Smoke",
                     "description": "<p>Sootsoldiers who serve the other Lord of Fire, the Lambent King Atreia, are covered in glowing embers instead of black char.</p>\n<p>When the sootsoldiers are reduced by an HP Threshold or are reduced to 0 HP, the destroyed soldiers crumble to a cloud of ash-laden smoke in @Template[type:burst|distance:20] centered on the sootsoldiers. Any creature in the area must attempt a @Check[type:reflex|dc:29] save. On a failure, for 1 minute that creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} and its invisibility is negated.</p>"
+                },
+                "Troop Defenses": {
+                    "name": "Troop Defenses",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Incinerating Grasp": {
                     "name": "Incinerating Grasp",
