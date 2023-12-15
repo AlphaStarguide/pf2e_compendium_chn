@@ -625,16 +625,16 @@ class Dictionary {
             );
 
             // Translate magic weapons using a dictionary
-        } else if (item.type === "weapon" && !item.system.specific.value) {
+        } else if (item.type === "weapon" && !item.system.specific) {
             // Get base item gender
             const baseItemGender = this.translations.MagicWeapons.BaseItemGender[item.system.baseItem];
 
             // Get property rune
-            const propertyRune = item.system.potencyRune.value ? `+${item.system.potencyRune.value} ` : "";
+            const propertyRune = item.system.runes.potency ? `+${item.system.runes.potency} ` : "";
 
             // Get striking rune
-            const striking = item.system.strikingRune.value
-                ? ` ${this.translations.MagicWeapons.StrikingRunes[item.system.strikingRune.value]}`
+            const striking = item.system.runes.striking
+                ? ` ${this.translations.MagicWeapons.StrikingRunes[item.system.runes.striking]}`
                 : "";
 
             // Get material
@@ -647,10 +647,10 @@ class Dictionary {
 
             // Get property runes
             const propertyRunes = [];
-            for (let i = 1; i < 5; i++) {
-                if (item.system[`propertyRune${i}`].value) {
+            for (let i = 0; i < 4; i++) {
+                if (item.system.runes.property[i]) {
                     propertyRunes.push(
-                        this.translations.MagicWeapons.PropertyRunes[item.system[`propertyRune${i}`].value]
+                        this.translations.MagicWeapons.PropertyRunes[item.system.runes.property[i]]
                     );
                 }
             }
