@@ -500,7 +500,7 @@ class Dictionary {
             if (data.name.search(RegExp(`(Fast Healing)`, "g")) > -1) {
                 const rgx = new RegExp("Fast Healing ?(\\d+)?(?: \\(([^\\)]+)\\))?", "g");
                 translatedName = data.name.replace(rgx, (match, value, restriction) => {
-                    match = "快速愈合";
+                    match = "快速治疗";
                     if (value) match = match.concat(` ${value}`);
                     if (restriction)
                         match = match.concat(` (${this.translateFastHealingRestriction(restriction.toLowerCase())})`);
