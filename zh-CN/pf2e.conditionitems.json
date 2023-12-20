@@ -11,7 +11,7 @@
         },
         "Deafened": {
             "name": "耳聋 Deafened",
-            "description": "<p>你听不到声音。你在需要你听的察觉检定上自动大失败。你在用察觉进行的先攻检定，和包括声音但也依赖其它感官的察觉检定上都获得-2状态减值。若你进行拥有听觉特征的动作，你必须通过<strong>DC 5</strong>的纯骰检定，失败则失去该动作；该检定在消耗动作后，在动作生效前。在耳聋状态下，你免疫听觉效果。</p>"
+            "description": "<p>你听不到声音。你在需要你听的察觉检定上自动大失败。你在用察觉进行的先攻检定，和包括声音但也依赖其它感官的察觉检定上都获得-2状态减值。若你进行拥有听觉特征的动作，你必须通过@Check[type:flat|dc:5]检定，失败则失去该动作；该检定在消耗动作后，在动作生效前。在耳聋状态下，你免疫听觉效果。</p>"
         },
         "Dying": {
             "name": "濒死 Dying",
@@ -75,7 +75,7 @@
         },
         "Stupefied": {
             "name": "呆滞 Stupefied",
-            "description": "<p>你是思绪和本能被蒙蔽住。呆滞状态拥有状态值。你所有基于智力、感知和魅力的检定与DC获得等同于呆滞状态值的状态减值，包括意志豁免骰、法术攻击调整值、法术DC、使用这些属性值的技能检定。呆滞时若你尝试 @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{施放法术 Cast a Spell}，你必须通过DC=5+呆滞值的纯骰检定，否则法术会被打断。</p>"
+            "description": "<p>你是思绪和本能被蒙蔽住。呆滞状态拥有状态值。你所有基于智力、感知和魅力的检定与DC获得等同于呆滞状态值的状态减值，包括意志豁免骰、法术攻击调整值、法术DC、使用这些属性值的技能检定。呆滞时若你尝试 @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{施放法术 Cast a Spell}，你必须通过DC=5+呆滞值的@Check[type:flat|dc:resolve(5+@item.badge.value)]检定，否则法术会被打断。</p>"
         },
         "Unconscious": {
             "name": "失去意识 Unconscious",
