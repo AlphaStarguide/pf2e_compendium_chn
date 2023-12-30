@@ -6946,19 +6946,19 @@
             "senses": "黑暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>食腐怪是下水道、暗渠和垃圾场的主人，是畸形肮脏的怪物。他们用三条粗壮的腿四处游荡，寻找“美味的”垃圾和废弃物。食腐怪用两根带刺的触须抓取或撕扯，再用末端长出眼睛的第三根触须来观察，它们完美地适应了在狭窄、恶心的环境里生活。它们用副肢伸进狭小的空间来观察并找出躲藏的猎物。</p>\n<p>大多数观点认为，食腐怪最初是一种沼泽生物，随着文明不断侵蚀它们的自然栖息地，它们转而进入下水道生活。无论这是不是真相，它们现在是这种黑暗潮湿的环境中较大的掠食者之一。食腐怪有很强的领土意识，但常常会组建松散的集体，甚至互相授予听起来很重要的头衔，例如“内脏之王”、“烂泥公爵夫人”之类的，已表明他们在肮脏的地下世界中的地位。</p>\n<p>那些偶然撞见食腐怪的人可能会因为它会说话而感到惊讶。它会对入侵者大喊大叫，让他们离开自己肮脏腐烂的家园，或者要求对方以垃圾或其他性质可疑的物品的作为礼物进贡。</p>",
             "items": {
-                "r1SlNgELge3BicQv": {
+                "Stench": {
                     "name": "恶臭 Stench",
                     "description": "<p>@Template[type:emanation|distance:40]{40尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>进入灵光范围的生物必须通过@Check[type:fortitude|dc:20]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败则额外附加@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续时间和恶心一致）。如果成功，生物在1小时内对恶臭所导致的恶心和缓慢效果临时免疫。无论豁免成功与否，只要呆在灵光中，生物对抗疾病的豁免检定就有-2环境减值。食腐怪的恶臭是由于它吞下的内脏和腐烂的垃圾产生的，所以彻底清洗食腐怪（例如施展<em>@UUID[Compendium.pf2e.spells-srd.Item.WzLKjSw6hsBhuklC]{造水术 Create Water}</em>并仔细擦洗 ）可以使其灵光无效化，用完全堵塞鼻孔的方式可以避免暴露在恶臭影响下。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.wX9L6fbqVMLP05hn]{效果: 恶臭}</p>"
                 },
-                "ajDZIRytCVKqw5RN": {
+                "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(1d6+6)[bludgeoning]]{1d6+6钝击}, @Check[type:fortitude|dc:22|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(1d6+6)[bludgeoning]], @Check[type:fortitude|dc:22|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "GHuGn3ZCUkbeSFiQ": {
+                "Filth Fever": {
                     "name": "腐热症 Filth Fever",
                     "description": "<p>腐热症导致的@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened}和@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}状态不会自我改善，直到疾病被治愈。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:20]</p>\n<hr />\n<p><strong>阶段1</strong> 携带病原但没有不良效果(1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (1天)</p>\n<p><strong>阶段3</strong> 恶心1和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，缓慢持续时间和恶心一致 (1天)</p>\n<p><strong>阶段4</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious} (1天)</p>\n<p><strong>阶段5</strong> 死亡</p>"
                 },
-                "nQudJs5Bky0XvlDC": {
+                "Reposition": {
                     "name": "拉拽 Reposition",
                     "description": "<p>食腐怪尝试将被其@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的所有生物移动到触手触及范围内的其他空间里。食腐怪进行一次@Check[type:athletics]检定，对抗每个生物的强韧DC。如果失败，生物依然在原本的空间内，如果大失败，则生物不再被攫抓。</p>"
                 }
@@ -6973,40 +6973,27 @@
             "allSaves": "对抗魔法全豁免获得+1状态加值",
             "senses": "黑暗视觉, 生命感知120尺, 真视术",
             "languages": "心像",
-            "publicNotes": "<p>存灭御衡者是所有真御衡者中最为强大的存在，他们是创造与毁灭的二元性具现。他们的实体在两极之间永恒不变地流动着，他们的形态为一件不断变化的黑色披风，披风之中的星系和其他天体的存在不断浮现和消逝，就好像在描绘着一个微型且自给自足的宇宙那永恒的生命、消亡与重生。</p>\n<p>存灭御衡者认为多元宇宙同时即是永恒不朽又是不断循环着的存在，注定毁灭且具备延展性，只有当它的循环变得失衡时才会迎来终结。他们认为当前的大融合（Convergence）是为了获得这一基本平衡的必要行为，他们会采取行动，以确保众律（Monad）的伟大构思中的最小细节都得以贯彻。</p>\n<hr />\n<p>御衡者一直是现实的守护者以及平衡的自然秩序的捍卫者。每种御衡者都在其形态上呈现出二元性，他们致力于以某种方式在此类二元性上塑造多元宇宙，或者纠正不平衡以达成完美的存在秩序。当御衡者出现在某个国度中时，他们既能带来福也能带来祸，他们的计略能振兴一个国家，也能将其毁灭，或者使之从废墟中得以重建。他们有着自己的行事原因，且极少与别人分享其行事动机——他们仅仅单纯地创造自身所坚持的结果，不过若维持多元宇宙的平衡有必要进行沟通，他们也会以奇特的心像来沟通。</p>\n<p>由于最近现实的变化，制衡者开始在完美位面城市轴心城（perfect planar city of Axis）重现身影。对于制衡者来说这只是最近的一次大循环，只是凡人一次也没见证过。一度被视为独立派别，被称为制裁者（Inevitables）的活体机械一族显示出他们实际上一直都是御衡者的代行者，尽管制裁者一族有着共同的特征和目的，但存在已久的他们自身便是御衡者对抗失衡的战争的证明——尤其是这场战争的性质还是对混乱势力发动的。</p>\n<p>御衡者把这次循环的回归命名为：“大融合（Convergence）”，他们欢迎勤勉的奇匠族（axiomites）回归其阵营，并再次将制裁者至于他们的控制之下。在大融合的伊始，由存灭御衡者（pleroma aeons）组成的议会重现于永恒之城轴心城（the Eternal City of Axis），他们揭示奇匠族本为非对称的御衡者，以前为了追求创造之艺而从御衡者中分离出来。随着最新循环的改变，奇匠族和他们的造物——制裁者——是时候重归御衡者的事业了。尽管大多数奇匠族和制裁者意见一致，认为从现实的基本层面来看御衡者所说即为真相，但仍有部分人拒绝服从召唤，等待着御衡者的怒火——而这股怒火并未到来。身具二元秉性的御衡者们以令人困惑的方式回应了那些拒绝回应呼唤的人。他们与其中部分人进行了交易，甚至进行了谈判，然而仍有一小部分人被毁灭，还有剩余的少量存在被奇匠族以及结盟的制裁者所歼灭。但他们并未干涉大多数安分的叛乱者，让这些奇匠族继续在和平中继续创造制裁者并履行自身的职责。至于这大融合将如何结束乃至是否会结束，就如同御衡者本身一样，我们知之甚少。</p>",
+            "publicNotes": "<p>存灭御衡者是所有真御衡者中最为强大的存在，他们是创造与毁灭的二元性具现。他们的实体在两极之间永恒不变地流动着，他们的形态为一件不断变化的黑色披风，披风之中的星系和其他天体的存在不断浮现和消逝，就好像在描绘着一个微型且自给自足的宇宙那永恒的生命、消亡与重生。</p>\n<p>存灭御衡者认为多元宇宙同时即是永恒不朽又是不断循环着的存在，注定毁灭且具备延展性，只有当它的循环变得失衡时才会迎来终结。他们认为当前的大融合是为了获得这一基本平衡的必要行为，他们会采取行动，以确保众律的伟大构思中的最小细节都得以贯彻。</p>\n<hr />\n<p>御衡者一直是现实的守护者以及平衡的自然秩序的捍卫者。每种御衡者都在其形态上呈现出二元性，他们致力于以某种方式在此类二元性上塑造多元宇宙，或者纠正不平衡以达成完美的存在秩序。当御衡者出现在某个国度中时，他们既能带来福也能带来祸，他们的计略能振兴一个国家，也能将其毁灭，或者使之从废墟中得以重建。他们有着自己的行事原因，且极少与别人分享其行事动机——他们仅仅单纯地创造自身所坚持的结果，不过若维持多元宇宙的平衡有必要进行沟通，他们也会以奇特的心像来沟通。</p>\n<p>由于最近现实的变化，制衡者开始在完美位面城市轴心城重现身影。对于制衡者来说这只是最近的一次大循环，只是凡人一次也没见证过。一度被视为独立派别，被称为制裁者的活体机械一族显示出他们实际上一直都是御衡者的代行者，尽管制裁者一族有着共同的特征和目的，但存在已久的他们自身便是御衡者对抗失衡的战争的证明——尤其是这场战争的性质还是对混乱势力发动的。</p>\n<p>御衡者把这次循环的回归命名为：“大融合”，他们欢迎勤勉的奇匠族回归其阵营，并再次将制裁者至于他们的控制之下。在大融合的伊始，由存灭御衡者组成的议会重现于永恒之城轴心城，他们揭示奇匠族本为非对称的御衡者，以前为了追求创造之艺而从御衡者中分离出来。随着最新循环的改变，奇匠族和他们的造物——制裁者——是时候重归御衡者的事业了。尽管大多数奇匠族和制裁者意见一致，认为从现实的基本层面来看御衡者所说即为真相，但仍有部分人拒绝服从召唤，等待着御衡者的怒火——而这股怒火并未到来。身具二元秉性的御衡者们以令人困惑的方式回应了那些拒绝回应呼唤的人。他们与其中部分人进行了交易，甚至进行了谈判，然而仍有一小部分人被毁灭，还有剩余的少量存在被奇匠族以及结盟的制裁者所歼灭。但他们并未干涉大多数安分的叛乱者，让这些奇匠族继续在和平中继续创造制裁者并履行自身的职责。至于这大融合将如何结束乃至是否会结束，就如同御衡者本身一样，我们知之甚少。</p>",
             "items": {
-                "wTyVptTaqC4Su8lm": {
+                "strike-Energy Touch": {
                     "name": "能量之触 Energy Touch",
-                    "description": "<p>存灭御衡者的碰触可以根据自身的选择造成[[/r (5d8+18)[vitality]+(1d6)[lawful]]]{命能}或[[/r (5d8+18)[void]+(1d6)[lawful]]]{虚能}伤害，但是这两种能量均无法用于治疗生物。</p>"
+                    "description": "<p>存灭御衡者的碰触可以根据自身的选择造成命能或虚能伤害，但是这两种能量均无法用于治疗生物。</p>"
                 },
-                "WnbC97emFRGYOPR9": {
-                    "name": "创生之球 Sphere Of Oblivion"
-                },
-                "SsJk8HtdVTC3HZUK": {
-                    "name": "黑暗视觉 Darkvision",
-                    "description": "@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]"
-                },
-                "MWKHdXGNx9JkkNqR": {
+                "Envisioning": {
                     "name": "心像 Envisioning",
                     "description": "<p>存灭御衡者并不关注与其他生物的沟通，但当他们要传达信息时，会无声地投射一系列心灵投影。此行为视为具有100尺范围的@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.kdhbPaBMK1d1fpbA]{心灵感应 Telepathy}，但所有生物都可以理解，无论这些生物是否理解一门语言都可以，尽管御衡者的意图对于非御衡者来说十分暧昧且大多数情况下是难以理解的。</p>\n<p>御衡者自身能使用该能力与其他身处相同位面的御衡者进行完美的沟通。</p>"
                 },
-                "VCXj9VT8SpqcHdZS": {
-                    "name": "生命感知120尺"
-                },
-                "Mn9ThITOCOXSNkEv": {
-                    "name": "再生20 (混乱使其失效)"
-                },
-                "w14YL6ltyHxsjfDO": {
+                "Reality Twist": {
                     "name": "扭曲现实 Reality Twist",
                     "description": "<p><strong>触发</strong> 存灭御衡者在豁免中大失败。</p>\n<hr />\n<p><strong>效果</strong> 大失败会变为普通失败。</p>"
                 },
-                "L8ZBoNle0ekONgCk": {
+                "Sphere of Creation": {
                     "name": "创生之球 Sphere of Creation",
-                    "description": "<p>每日3次，存灭御衡者能够展现悬浮于其左手之上且直径约2尺的白色能量球。通过使用具有专注特征的单动作，存灭御衡者可以使球体飞行10尺。球体可以向着任意方向移动，忽略困难地形，但是无法移动至距离存灭御衡者300尺外的地方。</p>\n<p>无论球体怎么移动，它会留下5尺宽的由新物质铺成的路径，创造出新地形（存灭御衡者选择此地形为普通、困难或高等困难地形）或由单一种类的天然物质（比如黏土、木材或石材）构成的5平方尺的障碍。</p>\n<p>球体可以进入生物占据的空间；当它这么做时，该生物必须成功进行@Check[type:fortitude|dc:43]豁免，失败则会被吸收进球体内。成功通过豁免时，该生物会被球体推到远离球体的空间内，方向由GM所选择。豁免失败的生物承受[[/r (20d6)[vitality]]]{20d6命能伤害}（即便该生物为活物也如此），并如同豁免成功一般被推开。在豁免中掷出大失败，或者豁免失败而因伤害使得生命值降至0点的生物，会成为由新物质构成的个体，且仅能通过10环法术来恢复。</p>\n<p>存灭御衡者在同一时间只能具有1个创生之球，且在[[/br 1d4 #minutes]]分钟后该球体会随着一股炫目的闪光而消失。</p>\n<p>当创生之球消失时，所有位于距离创生之球30尺范围内的生物必须通过@Check[type:fortitude|dc:43]豁免，失败则会永久@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}。</p>"
+                    "description": "<p>每日3次，存灭御衡者能够展现悬浮于其左手之上且直径约2尺的白色能量球。通过使用具有专注特征的单动作，存灭御衡者可以使球体飞行10尺。球体可以向着任意方向移动，忽略困难地形，但是无法移动至距离存灭御衡者300尺外的地方。</p>\n<p>无论球体怎么移动，它会留下5尺宽的由新物质铺成的路径，创造出新地形（存灭御衡者选择此地形为普通、困难或高等困难地形）或由单一种类的天然物质（比如黏土、木材或石材）构成的5平方尺的障碍。</p>\n<p>球体可以进入生物占据的空间；当它这么做时，该生物必须成功进行@Check[type:fortitude|dc:43]豁免，失败则会被吸收进球体内。成功通过豁免时，该生物会被球体推到远离球体的空间内，方向由GM所选择。豁免失败的生物承受@Damage[20d6[vitality]]伤害（即便该生物为活物也如此），并如同豁免成功一般被推开。在豁免中掷出大失败，或者豁免失败而因伤害使得生命值降至0点的生物，会成为由新物质构成的个体，且仅能通过10环法术来恢复。</p>\n<p>存灭御衡者在同一时间只能具有1个创生之球，且在[[/br 1d4 #minutes]]分钟后该球体会随着一股炫目的闪光而消失。</p>\n<p>当创生之球消失时，所有位于距离创生之球30尺范围内的生物必须通过@Check[type:fortitude|dc:43]豁免，失败则会永久@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}。</p>"
                 },
-                "wGDHR7b7nFvTcaRz": {
+                "Sphere of Oblivion": {
                     "name": "湮灭之球 Sphere of Oblivion",
-                    "description": "<p>每日3次，存灭御衡者能够展现悬浮于其右手之上且直径约2尺的黑色能量球。他可以像操控创生之球一般控制这个球体。</p>\n<p>此球体由虚空构成，且在持续1分钟后便会于眨眼间自行坍缩消失。</p>\n<p>一旦被显现出来，湮灭之球便可以被用于远程攻击，但它会在攻击作出判定后立即于眨眼间坍缩消失。任何无主物体在碰触到湮灭之球后便会被吸入且彻底摧毁。较大的物体（比如舰船或建筑）在碰触虚空后会以每轮10立方尺的速率被摧毁。</p>\n<p>球体可以进入生物所占据的空间，当它这么做时，该生物必须成功进行@Check[type:fortitude|dc:43]豁免，失败则会被吸收进球体内。成功通过豁免时，该生物会被球体推到远离球体的空间内，方向由GM所选择。豁免失败的生物承受[[/r (20d6)[void]]]{20d6虚能伤害}（即便不死生物也会被伤害），并如同豁免成功一般被推开。在豁免中掷出大失败，或者豁免失败而因伤害使得生命值降至0点的生物将湮灭，且仅能通过10环法术来恢复。</p>"
+                    "description": "<p>每日3次，存灭御衡者能够展现悬浮于其右手之上且直径约2尺的黑色能量球。他可以像操控创生之球一般控制这个球体。</p>\n<p>此球体由虚空构成，且在持续1分钟后便会于眨眼间自行坍缩消失。</p>\n<p>一旦被显现出来，湮灭之球便可以被用于远程攻击，但它会在攻击作出判定后立即于眨眼间坍缩消失。任何无主物体在碰触到湮灭之球后便会被吸入且彻底摧毁。较大的物体（比如舰船或建筑）在碰触虚空后会以每轮10立方尺的速率被摧毁。</p>\n<p>球体可以进入生物所占据的空间，当它这么做时，该生物必须成功进行@Check[type:fortitude|dc:43]豁免，失败则会被吸收进球体内。成功通过豁免时，该生物会被球体推到远离球体的空间内，方向由GM所选择。豁免失败的生物承受@Damage[20d6[void]]伤害（即便不死生物也会被伤害），并如同豁免成功一般被推开。在豁免中掷出大失败，或者豁免失败而因伤害使得生命值降至0点的生物将湮灭，且仅能通过10环法术来恢复。</p>"
                 }
             }
         },
@@ -7018,11 +7005,11 @@
             "senses": "震颤感知（模糊感官）10尺, 黑暗视觉",
             "publicNotes": "<p>八脚猞猁是猫一样的魔兽，产于天夏（Tian Xia）神秘的神灵之森（Forest of Spirits）。在它们的自然形态中，这些优雅的8足生物拥有带橄榄绿条纹的灰色虎斑毛皮，但它们很少以此形态示人。即使是最年幼的八脚猞猁也可以将自己隐藏的物体中，这使得它们行踪不定，除非它们自己愿意否则很难被人呢发现。因为八脚猞猁能如此轻松的融入森林并瞬间从黑暗的角落里出现，迷信的当地人相信这些野兽和社神（kami）——代表着森林中的树木、石头和其他自然元素的自然精魂——之间存在某种联系。事实上虽然八脚猞猁确实经常和社神往来，但它们其实是一个独立的怪物种类，拥有超越时间和空间的力量，这使得它们和自然精魂完全不同。</p>\n<p>八脚猞猁最具标志性的特征是通过短距离扭曲现实进行瞬移的能力。八脚猞猁能将自己融入物体内部，并安全的睡在里面。考虑到八脚猞猁融入物体之后对时间的感受非常缓慢，它可以在物体内沉眠很久一段时间。一旦醒来，八脚猞猁就会离开物体去周围玩耍。八脚猞猁特别喜欢在路牌里休息，这样就能大幅增加预见旅行者的机会。</p>\n<p>八脚猞猁很少踏足人类占据的土地，更喜欢和社神以及作为家园的神灵之森为伴。虽然他没也偶尔交谈，但是对声音特别敏感；它们轻声细语，并要求和它们交谈的人也这样做。它们的领地横跨大片森林，这让它们成为了猎人和寻宝者的理想盟友，否则这些狩猎者就会迷失在茂密的树林中。但八脚猞猁的特别善变，会要求一些难以理解的恩惠作为帮助它们的回报，比如在一个特殊洞穴里种植一颗稀有的树苗，或者在宝贵的春天清除入侵的怪物。任何强迫或欺骗八脚猞猁的企图都是不明智的，因为这些神圣的魔兽在森林中拥有社神和其他诸多盟友。尽管八脚猞猁通常不会结伴而行，但是它们知道需要的时候如何寻找更多的同类。而一群有组织的八脚猞猁则是让敌人迷惑的巨大威胁。</p>",
             "items": {
-                "zYGuLe2x3OTlMc06": {
+                "Jaunt": {
                     "name": "瞬移 Jaunt",
                     "description": "<p>八脚猞猁能传送最多40尺远。它的传送目的地必须能被视线所及。</p>\n<p>并在在[[/br 1d4 #Recharge Jaunt]]{1d4轮}内无法再次使用瞬移能力。</p>"
                 },
-                "GzpsUYZPjfrvA0Yh": {
+                "Object Meld": {
                     "name": "融身入物 Object Meld",
                     "description": "<p>当八脚猞猁接触到相邻的物体时，如果其体积足以容纳它，则立即和物体融合在一起，当它存在于物体中时，对它来说时间流逝地异常缓慢并且对外界的感知非常有限，八脚猞猁只能通过震颤感知来感受外界。八脚猞猁只能进行心灵动作或使用瞬移能力。如果一个生物打击命中该物体，则八脚猞猁不会受到伤害，但会被逐出。</p>"
                 }
@@ -7036,7 +7023,7 @@
             "senses": "(听觉-2); 黑暗视觉",
             "publicNotes": "<p>长着一张狗脸、卑鄙又懦弱的厄运小魔怪从其他生物的意外和失误中获取不相称的乐趣——而这种事情通常是由于这些小魔怪的超自然厄运灵光才发生的。他们热衷于准备包含有钉子、粪便和装着蜘蛛的坑等内容的恶作剧。厄运小魔怪有些耳背，因此他们在不需要躲藏时通常会对彼此大声喊叫。许多厄运小魔怪会将豺狼人（gnolls）奉为神明，并渴望变得像他们一样，尽管豺狼人比大多数生物都更讨厌厄运小魔怪——因为他们恶心的阿谀奉承。</p>\n<hr />\n<p>小魔怪是残忍的精类骗子和破坏者，他们已经完全适应了主物质位面（the Material Plane）的生活，为自己那独特的破坏能力找到了适当的生态位。所有小魔怪都乐于破坏或摧毁东西，无论是有形的物体，诸如装置或交通工具；还是无形的事物，比如盟约或人际关系。对小魔怪来说，最大的乐趣就是看着复杂的造物分崩离析，而且这最好是在小魔怪作出的最轻微、最低限度且有针对性的推动下达成的。小魔怪会诋毁、欺负甚至屠杀较弱的同族，尤其是怯懦小魔怪，小魔怪（以及其他人）甚至会讥笑他们是“螨精”。</p>",
             "items": {
-                "AGjtcz0cAWzBXlEx": {
+                "Unluck Aura": {
                     "name": "不幸灵光 Unluck Aura",
                     "description": "<p>@Template[type:emanation|distance:20]{20尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>动物、小魔怪以及豺狼人之外的生物若位于灵光范围内，则会变得非常倒霉（@Check[type:will|dc:16]豁免；生物必须投掷此意志豁免2次并取较差的结果）。豁免成功时，该生物能在24小时内临时免疫厄运小魔怪的灵光。豁免失败时，只要身处灵光范围内，该生物就必须在所有检定中投掷2次并取较差的结果。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.yxgHWK2rTZKKAzDN]{效果: 不幸灵光}</p>"
                 }
@@ -7050,7 +7037,7 @@
             "senses": "昏暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>翼龙是兼具快速和灵巧的爬行动物，翼展达到20尺，这使得他们能在气流中悬浮好几个小时。这些生物有长长的喙和从后脑勺伸出的同样长的冠。</p>\n<hr />\n<p>翼龙是一种原始的飞行生物。虽然它们中的很多都比人类小，但下面介绍的这两种要大得多，每一种都可能对人构成严重威胁。这些会飞的爬行动物在许多地区都能找到，但它们往往在温暖或温带气候的天空之上翱翔。</p>",
             "items": {
-                "3b7IgOx3d3REF2NR": {
+                "Swoop": {
                     "name": "飞扑 Swoop",
                     "description": "<p>无齿翼龙以它的飞行速度飞行，并在这一行动中的任何时刻进行一次喙啄打击。</p>"
                 }
@@ -7065,14 +7052,14 @@
             "allSaves": "对抗魔法时所有豁免获得+1状态加值, 对抗心灵时获得+4状态加值",
             "publicNotes": "<p>罪生怪是由被共称为符文领主（runelords）的七名古代巫师中的一位所创造的——他们每人接纳并呈现出七原罪中的一罪。第一名罪生怪由愤怒符文领主所创造，这源于他对影响并扭曲肉体的技术实践。这种技术在用于创造罪生怪不久之后便落入了其他符文领主手中，之后他们每人都尝试根据自己的设计创造变种，时至今日愤怒罪生怪仍旧是同类中数量最多也最知名的存在。罪生怪与肉体被重塑的类人原型之间只有极为模糊的相似之处，他们通常看起来骨瘦嶙峋，长着不自然地修长手臂和反关节的腿部，每根肢体末端都长着短粗的爪状指头。凸起的血管遍及罪生怪全身，血红色的凸起仿佛构成了扭曲的符文，其皮肤苍白无毛。他们的头部被拉长，五官只剩下鼻子、红色的双眼、以及从下巴处裂开成两瓣的下颚，其中露出长长的下垂舌头，舌头尖端分成了三根宛若手指的触须。罪生怪站起来有6.5尺，体重与同体型的人类相仿。罪生怪的行为模式与和其相关联的原罪有关，他们的体貌特征也会对此有所暗示。举例说明，贪婪罪生怪的血管里流淌的是金色的液体，而嫉妒罪生怪比其他类型的罪生怪更加瘦弱。</p>\n<hr />\n<p>傲慢罪生怪瘦得近乎皮包骨头，而且通常会寻找并穿戴华美的服装或珠宝，在表现出高贵和有威严时会感到莫名地兴奋。</p>",
             "items": {
-                "hk7qH9BpvzM7rFGe": {
+                "Sin Scent (Imprecise) 30 feet": {
                     "name": "嗅探原罪(模糊感官) 30尺",
                     "description": "<p>罪生怪能通过嗅觉闻到生物所反映出的原罪，此能力在其他方面同灵敏嗅觉（scent）。由GM判断哪些生物与哪些原罪相符。</p>"
                 },
-                "p80DPc7fm2auFNQg": {
+                "+4 Status to All Saves vs. Mental": {
                     "name": "对抗心灵时获得+4状态加值"
                 },
-                "MpNlJrdPvv9bECNE": {
+                "Sinful Bite": {
                     "name": "原罪之噬 Sinful Bite",
                     "description": "<p>被罪生怪的啃咬命中的生物必须尝试一次@Check[type:will|dc:18]豁免，因为他们的心智被充满罪孽的思维所侵袭。</p>\n<hr />\n<p><strong>大成功</strong> 不受影响</p>\n<p><strong>成功</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}</p>\n<p><strong>失败</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}</p>\n<p><strong>大失败</strong> 恶心2，@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，持续一分钟</p>"
                 }
@@ -7089,26 +7076,26 @@
             "languages": "(不能说任何语言), 心灵感应100尺",
             "publicNotes": "<p>这种三手三足的怪物没有可识别的眼睛、鼻子、耳朵或嘴巴，也没有可见的消化食物的手段。它的肢体均匀地分布在身体各处，以至于在任何时候都无法分辨它的朝向。很少有人能够注视奎伦特那异样的外貌太久，因为这短暂的思绪很快就会变成思想入侵，奎伦特会在心灵中种下猜忌，悲伤和愤怒。这种怪物不仅会以猎物的负面情绪为乐，并且也以它们为食，它们从猎物的恐惧中汲取力量和营养。奎伦特会不吝残忍地加害猎物，因为猎物受苦越多，奎伦特的盛宴就越丰盛。</p>\n<p>众所周知奎伦特会与其他异怪恐兽有所协作，包括与集脑魔和其他生物组成的黑色支配者。然而更普遍的理论把他们描绘成更接近外来生物——或许是由另一维度入侵而来的纯粹由思想和情感构成的存在——并且声称自然状态下它们根本不具备物理躯体。少有理论敢于再深入思考；唯一已知的是某次奎伦特的尸检导致了研究者几天后自杀，所有笔记都被神秘地销毁了。无论这些奇怪的怪物解剖结构中蕴含着怎样的秘密，显然都是足够重要的，足以需要维持极严密的保护，即便是在死后。</p>",
             "items": {
-                "UQ7yTknJYCFghTF4": {
+                "+2 to Will Saves vs. Emotion": {
                     "name": "对抗情绪的意志豁免有+2加值"
                 },
-                "TuTut6BPwHgd3Xp7": {
+                "Emotional Focus": {
                     "name": "情绪聚能 Emotional Focus",
                     "description": "<p>奎伦特可以在不消耗聚能点的情况下，以8环异能内在法术的形式随意施展如下牧师领域法术：<em>@UUID[Compendium.pf2e.spells-srd.Item.Dj44lViYKvOJ8a53]{盲目野心 Blind Ambition}</em>, <em>@UUID[Compendium.pf2e.spells-srd.Item.jJphHQlENHFlSElH]{迷人情态 Captivating Adoration}</em>, 和<em>@UUID[Compendium.pf2e.spells-srd.Item.J8pL8yTshga8QOk8]{傲慢妄想 Delusional Pride}</em>。</p>"
                 },
-                "ady0G6RCsUbZ7gev": {
+                "Emotional Frenzy": {
                     "name": "情绪狂暴 Emotional Frenzy",
                     "description": "<p>奎伦特从它的任意施展内在法术和情绪聚能法术中选择至多三个法术释放。</p>"
                 },
-                "AjYmWzjrt54sexgk": {
+                "Feed on Emotion": {
                     "name": "饱食情绪 Feed on Emotion",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 奎伦特吞噬30尺内一个受有害情绪影响生物的不安情绪。目标必须成功通过一次@Check[type:will|dc:37|traits:damaging-effect]检定，否则将受到[[/r (4d10)[mental]]]{4d10心灵伤害}并且陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned}1轮。如果目标豁免失败，奎伦特将获得等量的HP，且饱食情绪不消耗奎伦特的动作，允许它这轮使用其他动作。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 奎伦特吞噬30尺内一个受有害情绪影响生物的不安情绪。目标必须成功通过一次@Check[type:will|dc:37|traits:damaging-effect]检定，否则将受到@Damage[4d10[mental]]伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned}1轮。如果目标豁免失败，奎伦特将获得等量的HP，且饱食情绪不消耗奎伦特的动作，允许它这轮使用其他动作。</p>"
                 },
-                "XIYonpEs96Js86vZ": {
+                "Rapid Strikes": {
                     "name": "迅猛打击 Rapid Strikes",
                     "description": "<p>奎伦特进行三次近战打击，每次选择触及范围内的不同目标。多重攻击惩罚适用于每次攻击，但只会在所有攻击结算后才会累积。</p>"
                 },
-                "p90CXzyif81DD51u": {
+                "Spiral of Despair": {
                     "name": "绝望螺旋 Spiral of Despair",
                     "description": "<p><strong>触发</strong> 一个生物在对抗奎伦特的内在法术或情绪聚能法术中豁免失败。</p>\n<hr />\n<p><strong>效果</strong> 奎伦特侵入触发生物的意识，播下负面情绪的种子，同时剥夺目标希望和积极的情感。奎伦特可以立即结束一个会让触发生物受益的情绪效果。</p>"
                 }
@@ -7122,11 +7109,11 @@
             "senses": "昏暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>风神翼龙是翼龙家族中最大的飞行成员，由于其巨大的体型和40尺的翼展，经常被误认为是龙。</p>\n<p>风神翼龙是肉食动物，以各种爬行动物、哺乳动物、大型鱼类、两栖动物和其他无脊椎动物为食。它们不是天生具有攻击性的生物，只是乐于寻找食物，当他们遇到任何比自己小的猎物时几乎会毫不犹豫地攻击。</p>\n<hr />\n<p>翼龙是一种原始的飞行生物。虽然它们中的很多都比人类小，但下面介绍的这两种要大得多，每一种都可能对人构成严重威胁。这些会飞的爬行动物在许多地区都能找到，但它们往往在温暖或温带气候的天空之上翱翔。</p>",
             "items": {
-                "JEBTVmt5rc6G8tOb": {
+                "Snatch": {
                     "name": "抓握 Snatch",
                     "description": "<p>风神翼龙用脚爪@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}一个生物的时候能以一半的速度飞行，并带着目标一起移动。当它如此做的时候，它的两只脚爪都被占据。</p>"
                 },
-                "I7qCrIGJsKvrguZB": {
+                "Swoop": {
                     "name": "飞扑 Swoop",
                     "description": "<p>风神翼龙以它的飞行速度飞行，并在这一行动中的任何时刻进行一次喙啄或爪击打击。</p>"
                 }
@@ -7141,21 +7128,21 @@
             "allSaves": "在所有对魔法的豁免上获得+2状态加值，在所有对神术魔法的豁免上获得+3状态加值",
             "publicNotes": "<p>当没有伪装成人形时，罗刹王有着一颗动物脑袋。而罗刹王的手更是微妙得令人感到不安，这些魔族的手指向外弯曲，远离手掌。</p>\n<p>与其他类型的罗刹相比，罗刹王对于宗教的嘲笑更甚。他们懂得神术的力量，却自认为自己才是唯一值得凡人崇拜的事物；甚至连他们中的那些鬼仙们也不配得到这样的荣耀。罗刹王常常会组成紧密的家族一同工作，来摧毁凡人的城市，或是在其阴影之中统治他们。这类罗刹的家族经常会混有其他种类的魔族，常常会将毒噬罗刹当做宠侍或者秘密间谍。尽管一个罗刹王家族会为了一个共同的目标而齐心协力，但是内部的勾心斗角和相互背叛总一把悬在头顶的尖刀。</p>\n<hr />\n<p>罗刹是邪恶的精魂，他们披上类人生物的伪装，悄然行走于猎物之中。他们是大多数社会中被视为禁忌之事的具现，伪装成那些他们寻求玷污的形态，罗刹以这些丑恶的行径为食而狼吞虎咽着。罗刹的种类繁多；下面所介绍的是矮小、残忍的毒噬罗刹和臭名昭著的罗刹王，他们是这些魔族中最为普遍和常见的。</p>",
             "items": {
-                "uZdepeycCi1DBYTW": {
+                "+2 Status to All Saves vs. Magic": {
                     "name": "在所有对魔法的豁免上获得+2状态加值"
                 },
-                "wbhIx2xtiqZn73im": {
+                "+3 Status to All Saves vs. Divine Magic": {
                     "name": "在所有对神术魔法的豁免上获得+3状态加值"
                 },
-                "fTBOn2wHEnOkR4t9": {
+                "Scoff at the Divine": {
                     "name": "嗤笑神力 Scoff at the Divine",
                     "description": "<p><strong>触发</strong> 30尺内的一个生物施放神术魔法或者使用神术能力</p>\n<p><strong>需求</strong> 罗刹王拥有一个未被使用的法术位可以来施放<em>@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}</em></p>\n<hr />\n<p><strong>效果</strong> 罗刹王消耗一个可以用于施放解除魔法的法术位，并且尝试反制触发的法术或能力。</p>\n<p>罗刹王无法在[[/br 1d4 #Recharge Scoff at the Divine]]{1d4轮}内再次使用嗤笑神力。</p>"
                 },
-                "0lFm2C1Slc60GuoD": {
+                "Change Shape": {
                     "name": "化形 Change Shape",
                     "description": "<p>罗刹王获得任意中型类人生物的外观。这不会改变罗刹王的速度或是打击中攻击和伤害的调整值，但是可能会改变其打击所造成的伤害类型（通常变为钝击）。他通常会失去尖牙打击，除非该类人形态拥有尖牙或者类似的无武装攻击。</p>"
                 },
-                "fvIjW0iSvoVCNnVG": {
+                "Disturbing Vision": {
                     "name": "扰心幻视 Disturbing Vision",
                     "description": "<p>罗刹王的双眼中闪烁着绿色的光芒，投射出一股覆盖@Template[type:emanation|distance:30]范围的心灵波动。在该区域中的所有生物都将受到来自于罗刹前世那邪恶堕落的幻视的袭扰。该区域内所有非邪恶生物必须成功通过一次@Check[type:will|dc:29]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（在大失败时候还将@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}）。幻视持续[[/br 1d4 #Disturbing Visions Duration]]{1d4轮}，并且在此期间，罗刹王和该范围内的所有邪恶生物在所有的检定骰上获得+1状态加值。罗刹王只有在前一次幻视结束后才能再次使用此能力。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.AThOnEYzPO9ssYTB]{效果：扰心乱视}</p>"
                 }
@@ -7169,13 +7156,13 @@
             "senses": "昏暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>鼠群可能会导致一个家族或一个行业完全陷入混乱。当数十只这些烦躁或饥饿的害虫聚集在一起叮咬受害者时，腐热症的传播速度非常之快。因此在世界许多地方，当绝望的镇民们深受传染病传播之困时，捕鼠成为了一项有前途的职业。</p>\n<hr />\n<p>巨鼠是普通老鼠的巨型版本。它们通常数量众多，但由于它们无法像普通老鼠那样藏匿在狭小的空间，因此更容易找到并消灭它们。它们大多生活在下水道里，可能会到地面的街道上觅食，但也有一些生活在更偏远的地方，比如潮湿的洞穴、森林和山丘。巨鼠的生存能力令人难以置信，在世界上几乎任何地方都能找到它们，尽管它们更喜欢温带或温暖的气候，而非寒冷地区。尽管它的噬咬对于老人和幼童之外的人并不致命，但是巨鼠携带着世界各地的啮齿动物最常携带的腐热症——一种足以破坏乡村社群的瘟疫。</p>\n<p>老鼠是一种无处不在的威胁，在世界上几乎每一个定居点的下水道和街道上窜来窜去。虽然普通的老鼠在脚下飞奔只可能会吓到一般的行人，但是巨鼠和鼠群要危险得多。</p>",
             "items": {
-                "DiGgJNOY5Na3eYp8": {
+                "Filth Fever": {
                     "name": "腐热症 Filth Fever",
                     "description": "<p>腐热症造成的@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened}和@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}状态不会自行改善，一直持续直到疾病被治愈。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:14]</p>\n<hr />\n<p><strong>阶段1</strong> 携带病原但没有不良效果([[/br 1d4 #hours]]{1d4小时})</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (1天)</p>\n<p><strong>阶段3</strong> 恶心1和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1天)</p>\n<p><strong>阶段4</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious} (1天)</p>\n<p><strong>阶段5</strong> 死亡</p>"
                 },
-                "LTwSnVSVWZeWrLAC": {
+                "Swarming Bites": {
                     "name": "鼠群噬咬 Swarming Bites",
-                    "description": "<p>每个处于鼠群占据方格内的敌人受到[[/r (1d6)[piercing]]]{1d6穿刺伤害}（@Check[type:reflex|dc:17|basic:true]豁免）。检定失败的生物还会感染腐热症。</p>"
+                    "description": "<p>每个处于鼠群占据方格内的敌人受到@Damage[1d6[piercing]]伤害（@Check[type:reflex|dc:17|basic:true]豁免）。检定失败的生物还会感染腐热症。</p>"
                 }
             }
         },
@@ -7187,39 +7174,23 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>鼠族掷弹兵使用炼金术和潜行技巧来包围自己的社区。</p>\n<hr />\n<p>就像名字写得那样，鼠族是一种形似啮齿动物的类人生物，非常适合生活在主流社会的外部区域。尽管人们通常会对鼠族产生一种他们很脏或携带疾病的误区，但鼠族却宣称本族维持着无可挑剔的卫生状态。鼠族也经常被误认为鼠化人（wererats）并在初期被他人所恐惧，直至他们纠正这些误认为止——如果这些鼠族有机会做到的话。</p>\n<p>一般来说，鼠族对病理学和炼金学科有着敏锐的理解，而他们也会在自卫以及贸易中利用这些知识。鼠族是熟练的炼金师与修补匠，他们通常用陷阱、炸弹以及其他造物来保护自己的巢穴。鼠族商人会定期派出大型贸易车队，在一年或者更长的时间里在各地旅行后返回故里。在此期间，他们会努力地向途中遭遇的人学习，收集新发现的、有趣的材料和货品，然后再带回自家的窝棚里。</p>\n<p>在鼠族的窝棚里、在街道上、以及在城市里，鼠族都非常强调团体和合作，即便在很狭小的空间里，他们也喜欢接近并靠在一起。此外，鼠族也非常善于和同类协作，在狭小的空间内战斗。威胁一只鼠族或他的朋友是会招致整个社区的愤怒。</p>",
             "items": {
-                "axeTxBouSunEePNo": {
-                    "name": "强酸瓶 Acid Flask",
-                    "description": "<p>@Localize[PF2E.BombNotes.AcidFlask.Moderate.success]</p>"
-                },
-                "xYlf7HmaIqlHhW8O": {
-                    "name": "炽火胶 Alchemist's Fire",
-                    "description": "<p>@Localize[PF2E.BombNotes.AlchemistsFire.Moderate.success]</p>"
-                },
-                "dId4UcnaI1F6ww0V": {
-                    "name": "霜冻瓶 Frost Vial",
-                    "description": "<p>@Localize[PF2E.BombNotes.FrostVial.Moderate.success]</p>"
-                },
-                "7rqZnXnqggRlsoMe": {
-                    "name": "黑暗视觉 Darkvision",
-                    "description": "@Localize[PF2E.NPC.Abilities.Glossary.Darkvision]"
-                },
-                "YS1lNceoORGTpa2L": {
+                "Infused Items": {
                     "name": "灌注物品 Infused Items",
                     "description": "<p>鼠族掷弹兵携带2个@UUID[Compendium.pf2e.equipment-srd.Item.SgtqZxt26BdjUmEB]{灌注中等强酸瓶}，2个@UUID[Compendium.pf2e.equipment-srd.Item.gWr4q4HiyGhETA8H]{灌注中等炽火胶}，2个@UUID[Compendium.pf2e.equipment-srd.Item.nVvH1ZcM7OwIVIs8]{灌注中等霜冻瓶}。这些物品会存在24小时，或直至鼠族掷弹兵下次进行每日准备为止。</p>"
                 },
-                "MVS8VVm9BG19yQpr": {
+                "Cheek Pouches": {
                     "name": "颊囊 Cheek Pouches",
                     "description": "<p>鼠族掷弹兵生有带弹性的颊囊，可以储存至多1立方尺的物体（或者不超过4个轻量物品）。鼠族掷弹兵能够通过交互动作从中取出或存储1件物品。只要颊囊内有至少1件物品，鼠族掷弹兵说的话就会变得难以理解。</p>"
                 },
-                "y2ok0WY6i66HeQwf": {
+                "Quick Bomber": {
                     "name": "高速投弹手 Quick Bomber",
                     "description": "<p>鼠族掷弹兵用交互动作取出一个炼金炸弹并进行一次远程打击把它投掷出去。</p>"
                 },
-                "ktAqGeswWwl10ORn": {
+                "Quick Stow": {
                     "name": "快速存储 Quick Stow",
                     "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 鼠族掷弹兵将1件手持的物品存入颊囊，该物品的负载为轻量或者忽略不计。</p>"
                 },
-                "pwxCJBVZsNZOzHqr": {
+                "Swarming": {
                     "name": "成群结队 Swarming",
                     "description": "<p>鼠族掷弹兵在结束移动时，可以与同样具有该能力的盟友共享相同的方格。只有2名此类生物可以共享相同的空间。</p>"
                 }
@@ -7233,15 +7204,15 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>狗头人龙术士用魔法来施行自身的秘密计划。狗头人龙术士出现在狗头人社群内是狗头人所声称的龙类血统的最有说服力的证明。</p>\n<hr />\n<p>狗头人是身材矮小的爬行类类人生物，他们的身形与真龙有几分相似。狗头人潜藏在黑暗的空间内，这通常是地下的隧道或矿坑，居住在自己亲手设计建造的院落中或者发现并移居至原住民已经废弃的复合式建筑中。尽管相比自身的勇气，狗头人选择更为务实的行事方式，但他们会榨干自己的每一寸脑筋来与其他更强大生物进行竞争。狗头人会在暗处从远程发动攻击，他们的工匠与工程师掌握了简易并有效的陷阱技术，并使用这些技巧来保护自身的巢穴。狗头人擅长在必要的情况下进行合作，他们会设置伏击或者打带跑战术，这使得他们能够在保存自身不受伤害的情况下尽可能地造成伤害。</p>\n<p>狗头人是勤劳且努力的生物，不过他们经常将这些美德用于自私的目标。尽管部分狗头人生活在公共社区中，并与其他周遭的生物维持中立的关系，但他们很容易被狂妄的领袖以及侍奉邪恶势力的存在所影响。这部分是由于狗头人骨子里的实用主义，他们宁愿屈从于奴役也不想冒着被杀死的风险，不过其中还有一部分原因是出于狗头人对于自身通常所缺乏的力量的敬畏。龙类特别容易成为这种敬畏的对象，只要有机会，狗头人就会急切地为这些强大而又光荣的生物提供服务。尽管狗头人会密谋对抗其他领导者，尤其是那些通过征服来控制狗头人的领导者，但他们对龙的态度通常为盲目地崇拜，无论这些生物对狗头人爪牙们是多么地残忍无情也没关系。</p>",
             "items": {
-                "1GBTPnqIIGld3Wu1": {
+                "Dragonscaled": {
                     "name": "龙鳞 Dragonscaled",
                     "description": "<p>狗头人龙术士会根据其鳞片颜色获得抗力：</p>\n<ul>\n<li><strong>红</strong> 火焰5</li>\n</ul>"
                 },
-                "lFKVQJSD5lmRIdIT": {
+                "Illusory Retreat": {
                     "name": "幻影退避 Illusory Retreat",
                     "description": "<p><strong>频率</strong> 每小时一次</p>\n<p><strong>需求</strong> 狗头人龙术士与至少一名敌人相邻</p>\n<hr />\n<p><strong>效果</strong> 狗头人龙术士在自身所处的方格内创造出自己的幻象，之后在[[/br 1d4 #Duration Illusory Retreat]]{1d4轮}内变得@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}，此效果与2环的<em>@UUID[Compendium.pf2e.spells-srd.Item.XXqE1eY3w3z6xJCB]{隐形术 Invisibility}</em>相同。狗头人龙术士能够移动至多为自身速度一半的距离，但是它必须在与任何敌人都不相邻的空间结束这次移动。</p>\n<p>此能力是需要姿势成分的1环法术。</p>"
                 },
-                "yBOjYe8hHHRkhUyZ": {
+                "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
                     "description": "<p>狗头人龙术士对措手不及的生物造成额外1d6点精准伤害。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
                 }
@@ -7254,20 +7225,20 @@
             "name": "海魔鬼斥候 Sea Devil Scout",
             "senses": "黑暗视觉, wavesense 30尺",
             "languages": "Shark Commune 150尺",
-            "publicNotes": "<p>斥候，海魔鬼中最低贱（也是最有可能被抛弃）的阶级，他们在漆黑如墨的海洋中辛勤穿梭寻找着水生猎物、爬上岸边评估陆生种的威胁、或者加入更高阶的海魔鬼所组成的战帮中作为先遣队投入战斗。</p>\n<hr />\n<p>海魔鬼是一种恐怖的两栖类人生物，他们潜伏在格拉利昂（Golarion）的海洋中，在黑暗的掩护下爬上海岸掠夺人口。当有渔村在一夜之间消失时，海魔鬼会是最先被怀疑的对象。</p>\n<p>海魔鬼与无心智的异物相去甚远，异常聪慧的海魔鬼只有被遵循自身那严格的等级制度时，他们的狡诈才会暂时受到限制。他们将自己称为“沙华鱼人（sahuagin）”，但如今已经完全接受了敌人对同类的命名。海魔鬼好战的文化使得他们能够协同一致，执行大规模的破坏、抢夺和劫掠行动，只有部落中最强（且最狡猾）的成员能够站上社会阶梯的顶端。尽管海魔鬼纪律严明，但众所周知的是，这些生物一旦闻到血腥味便会陷入嗜血的狂怒。哪怕是最周密的计划，也会在一名海魔鬼脱队并嗜血地寻找猎物时全盘崩溃，一人的放纵便会引起快速地连锁反应，让整个突袭队陷入到嗜血的狂喜中。正因为如此，海魔鬼通常会用网和绳索捕捉陆生的猎物，在他们被划出哪怕一道伤口之前拖到深海之中。</p>\n<p>在海魔鬼的社会中，个体获得的奖励会基于他们在海岸上狩猎的表现而定，反叛者和异类会被迅速从队伍中剔除出去。每个最低等级的成员都会获得公平的机会，即便是地位最低的海魔鬼也能爬升到指挥官、将军甚至国王或女王的等级。处于领导位置的海魔鬼往往是同类中体格最大、最暴力且最精于算计的个体，他们明白海魔鬼是技艺高超的战士，能够凭借自身的力量捕获整个村庄。最具力量的海魔鬼是强大的国王和女王，他们的协调使得活跃于整个地区的低阶海魔鬼结成联盟，通过捏造血仇与战争对抗陆上与水下的众多敌人，并由此来挫败下属对其位置的觊觎。</p>",
+            "publicNotes": "<p>斥候，海魔鬼中最低贱（也是最有可能被抛弃）的阶级，他们在漆黑如墨的海洋中辛勤穿梭寻找着水生猎物、爬上岸边评估陆生种的威胁、或者加入更高阶的海魔鬼所组成的战帮中作为先遣队投入战斗。</p>\n<hr />\n<p>海魔鬼是一种恐怖的两栖类人生物，他们潜伏在格拉利昂的海洋中，在黑暗的掩护下爬上海岸掠夺人口。当有渔村在一夜之间消失时，海魔鬼会是最先被怀疑的对象。</p>\n<p>海魔鬼与无心智的异物相去甚远，异常聪慧的海魔鬼只有被遵循自身那严格的等级制度时，他们的狡诈才会暂时受到限制。他们将自己称为“沙华鱼人”，但如今已经完全接受了敌人对同类的命名。海魔鬼好战的文化使得他们能够协同一致，执行大规模的破坏、抢夺和劫掠行动，只有部落中最强（且最狡猾）的成员能够站上社会阶梯的顶端。尽管海魔鬼纪律严明，但众所周知的是，这些生物一旦闻到血腥味便会陷入嗜血的狂怒。哪怕是最周密的计划，也会在一名海魔鬼脱队并嗜血地寻找猎物时全盘崩溃，一人的放纵便会引起快速地连锁反应，让整个突袭队陷入到嗜血的狂喜中。正因为如此，海魔鬼通常会用网和绳索捕捉陆生的猎物，在他们被划出哪怕一道伤口之前拖到深海之中。</p>\n<p>在海魔鬼的社会中，个体获得的奖励会基于他们在海岸上狩猎的表现而定，反叛者和异类会被迅速从队伍中剔除出去。每个最低等级的成员都会获得公平的机会，即便是地位最低的海魔鬼也能爬升到指挥官、将军甚至国王或女王的等级。处于领导位置的海魔鬼往往是同类中体格最大、最暴力且最精于算计的个体，他们明白海魔鬼是技艺高超的战士，能够凭借自身的力量捕获整个村庄。最具力量的海魔鬼是强大的国王和女王，他们的协调使得活跃于整个地区的低阶海魔鬼结成联盟，通过捏造血仇与战争对抗陆上与水下的众多敌人，并由此来挫败下属对其位置的觊觎。</p>",
             "items": {
-                "u59sSnB7GuFn9ofv": {
+                "Shark Commune 150 feet": {
                     "name": "鲨鱼传心术150尺",
                     "description": "<p>海魔鬼能够通过心灵感应与范围内的鲨鱼进行沟通。他只能传达简单的概念，如“来”、“保护”或“攻击”。</p>"
                 },
-                "5Uq09OsuqP9JPmlt": {
+                "Wavesense 30 feet": {
                     "name": "水波感知30尺"
                 },
-                "zHIioB6mgFk3W6Uz": {
+                "Blood Frenzy": {
                     "name": "血之狂乱 Blood Frenzy",
                     "description": "<p><strong>需求</strong> 海魔鬼在没有@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}或已经陷入狂乱时</p>\n<p><strong>触发</strong> 海魔鬼对活物造成流血伤害</p>\n<hr />\n<p><strong>效果</strong> 海魔鬼陷入至少持续1分钟的狂乱。陷入狂乱后，海魔鬼使用啃咬或爪抓作出的攻击检定获得+1状态加值，啃咬或爪抓造成的伤害检定获得+4状态加值，获得7点临时生命值直至狂乱结束为止，并且AC会承受-2状态减值。海魔鬼无法自主停止狂乱。在狂乱之后，海魔鬼会陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.ScZ8tlV5zS0Jwnqn]{效果: 血之狂乱}</p>"
                 },
-                "6bt34Jgx0jymQKsU": {
+                "Bloodletting": {
                     "name": "放血 Bloodletting",
                     "description": "<p>当海魔鬼造成穿刺或挥砍伤害时，若目标处于@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}或攻击造成重击，则还会造成@Localize[PF2E.PersistentDamage.Bleed1d4.success]。</p>"
                 }
@@ -7281,32 +7252,29 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>这些传说中的野兽像巨大的蛇，背上长有长长的鳍刺。大海蛇性情乖戾、领地意识强烈，能轻易弄翻船只，而且大多数在饥饿时或受到威胁时都会毫不犹豫地这么做。关于受害的船长们的故事比比皆是，他们中的很多人一生都在追捕这些弄沉了他们的爱船、让他们丢掉饭碗的难以追踪的怪物。这种追捕只能依赖于各种谣传或对这种动物的一瞥，因为确实很少有生物能在大海蛇造成的灾难中幸存下来。</p>\n<p>虽然许多渔民传说中把大海蛇描述成神祇指派的海洋守护者，亦或是魔鬼或恶魔的代理者。事实上是，大海蛇只是非常巨大的野兽，具有难以被魔法侦测的技巧而已。</p>",
             "items": {
-                "ira6umGEGOXqSyIk": {
-                    "name": "水龙卷 Water Spout"
-                },
-                "e7t6qbZcSApHA7cS": {
+                "Undetectable": {
                     "name": "难以侦测 Undetectable",
                     "description": "<p>大海蛇能自动对任何针对它的带有侦测、揭示或探知特征的预言系法术进行反制，并且使用隐秘调整值作为其反制调整值。</p>"
                 },
-                "9jVKyOMk9msVj1hz": {
+                "Capsize": {
                     "name": "倾覆 Capsize",
                     "description": "<p>大海蛇尝试倾覆与它相邻的并且体型和它相等或更小型的船只。大海蛇必须进行一次运动检定，DC35，或对抗驾驶者的航海知识DC，二者取高。</p>"
                 },
-                "Iiw19xLS3nyusjz1": {
+                "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(1d10+14)[bludgeoning]]{1d10+14钝击}, @Check[type:fortitude|dc:32|basic:true]</p>\n<hr />\n<p><em>注意: Paizo并未提供此能力的DC。此处的DC是根据GMG设置的按生物等级计算的中等DC。</em></p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(1d10+14)[bludgeoning]]钝击, @Check[type:fortitude|dc:32|basic:true]</p>\n<hr />\n<p><em>注意: Paizo并未提供此能力的DC。此处的DC是根据GMG设置的按生物等级计算的中等DC。</em></p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "jmDi2EBAEE9yAyK3": {
+                "Sea Serpent Algae": {
                     "name": "大海蛇藻毒 Sea Serpent Algae",
                     "description": "<p>大海蛇脖子周围的器官里充满了能影响精神的藻类。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:34]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}并且如果目标飞行，则浪费它每轮的第一个动作用于下降20尺 (1轮)</p>\n<p><strong>阶段2</strong> 困惑，并且如果目标飞行，持续下降到地面或者水面以下 (1轮)</p>"
                 },
-                "d3l2xwpTV1XkZBAO": {
+                "Spine Rake": {
                     "name": "棘刺刮擦 Spine Rake",
-                    "description": "<p>大海蛇将它背部的棘刺张开，并游泳或行走。在此行动期间任何时刻和大海蛇相邻的生物都必须受到@Damage[(4d6+8)[slashing]]{4d6+8挥砍伤害}（@Check[type:reflex|dc:32|basic:true]豁免）。</p>"
+                    "description": "<p>大海蛇将它背部的棘刺张开，并游泳或行走。在此行动期间任何时刻和大海蛇相邻的生物都必须受到@Damage[(4d6+8)[slashing]]伤害（@Check[type:reflex|dc:32|basic:true]豁免）。</p>"
                 },
-                "4tsSsz41K5abcM8D": {
+                "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
-                    "description": "<p>超大型, @Damage[(2d10+6)[bludgeoning]]{2d10+6钝击伤害}, 破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                    "description": "<p>超大型, @Damage[(2d10+6)[bludgeoning]]伤害, 破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 }
             }
         },
@@ -7318,16 +7286,13 @@
             "senses": "运动感知60尺, 无视觉",
             "publicNotes": "<p>这些由秽物和垃圾组成的不定性的团块穿行在大小城市下方的污秽的涵洞中。</p>\n<hr />\n<p>这些粘腻、霉腐的泥怪潜伏在阴湿的地城与幽暗的森林之中。尽管某些长得太过巨大的泥怪有着无尽的食欲，不过它们并不一定是邪恶的。</p>",
             "items": {
-                "YXsM6AcguDWAwVIt": {
-                    "name": "伪肢 Pseudopod"
-                },
-                "VwrlDdZczBGO5Ps4": {
+                "Motion Sense 60 feet": {
                     "name": "运动感知60尺",
-                    "description": "<p>A sewer ooze可以通过振动与空气的流动感知附近发生的运动。</p>"
+                    "description": "<p>下水道泥怪可以通过振动与空气的流动感知附近发生的运动。</p>"
                 },
-                "mdqK7RuSjtezVyS8": {
+                "Filth Wave": {
                     "name": "秽物之潮 Filth Wave",
-                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 下水道泥怪释放出一波秽物，覆盖了@Template[type:emanation|distance:20]区域内所有生物。区域内的每个生物必须通过一次@Check[type:reflex|dc:17|traits:damaging-effect]豁免，否则受到[[/r (1d4)[acid]]]{1d4酸液伤害}并且于1分钟内在速度上承受-10罚值（在大失败时，生物还会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}）。</p>\n<p>生物可以花费一个交互动作来清理其他人，每次动作能够将速度罚值减少5尺。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Qomp2EujVCbzJb4X]{效果: 秽物之潮}</p>"
+                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 下水道泥怪释放出一波秽物，覆盖了@Template[type:emanation|distance:20]区域内所有生物。区域内的每个生物必须通过一次@Check[type:reflex|dc:17|traits:damaging-effect]豁免，否则受到@Damage[1d4[acid]]伤害并且于1分钟内在速度上承受-10罚值（在大失败时，生物还会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}）。</p>\n<p>生物可以花费一个交互动作来清理其他人，每次动作能够将速度罚值减少5尺。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Qomp2EujVCbzJb4X]{效果: 秽物之潮}</p>"
                 }
             }
         },
@@ -7340,22 +7305,19 @@
             "languages": "(无法说任何语言)",
             "publicNotes": "<p>蔓生怪是狡猾的食肉植物，外形像一堆潮湿腐烂的植物。即使用它们的短腿直立起来，蹒跚者也没有多少可辨认的生理特征。它们是一团缠绕在一起的寄生藤蔓，喜欢把最长的几根藤蔓绞合成一股“粗绳”，然后猛击猎物。这些伏行的食肉生物有时被称为“蹒跚的土堆”，它们特别喜欢肉食，最出名的特点就是它们能隐藏在显而易见的地方。蔓生怪可以从植物或土壤中吸取营养，但是如果预感到附近有肉类接近的话，它就不会这么做，而且甚至可能为了一顿美餐而埋伏数日。</p>\n<p>蔓生怪通常独居，但是猛烈的雷暴雨是为数不多的能让一群蔓生怪聚集的事件之一。在这样的“聚会”现场，这些植物会聚集在边远的丛林或沼泽中看似神圣的土丘周围，兴奋地雀跃，向天空伸展它们的卷须，希望——或者可能是为了召唤——强烈的雷击。这些奇怪的植物不仅能在最强烈的电击中毫发无损，而且这种原始能量的爆发似乎使它们具有超自然的力量。蹒跚者认为被闪电击中是神的恩赐，那些经常被雷电击中的蹒跚者在他们的同类中成为受人尊敬的（和强大的）长老。蔓生怪长老非常稀有，可能拥有不同的能力：有些能施展原能魔法，有些能呼唤该地区其他蔓生怪加入战斗，还有些具有令人畏惧的电击能力。</p>\n<p>其他类型的蔓生怪亚种，包括那些由真菌而非植物构成的。这些生物被称为“孢子堆（spore mounds）”，它们在战斗中会从体内释放出大量有毒的孢子。在半干旱的沙漠中有一种蔓生怪亚种叫做“纠缠怪（tanglethorns）”，居住在灌木和岩石环境中，外貌就像一团团风滚草或仙人掌，它们的攻击能留下血淋淋的伤痕。</p>",
             "items": {
-                "EUf1gqfe5un9Aprz": {
-                    "name": "枝条 Vine"
-                },
-                "cr8chy1goN1ZSrnT": {
+                "Mound": {
                     "name": "堆积 Mound",
                     "description": "<p>当没有危险的时候，蔓生怪会花费一分钟时间让自己看起来像一团松散的植物。当它处于这种状态时，生物必须主动@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}并通过@Check[type:perception|dc:22|traits:action:seek]检定（在森林或沼泽中@Check[type:perception|dc:28|traits:action:seek]）来察觉蔓生怪的存在。</p>"
                 },
-                "HjqV5crA9cRbpUVj": {
+                "Electric Surge": {
                     "name": "电涌 Electric Surge",
                     "description": "<p>每当蔓生怪受到电击伤害或被电击效果影响时，它获得12点临时生命值，并获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened}状态直到它的下一轮结束。蔓生怪可以用此额外动作进行行走、打击或游泳。</p>"
                 },
-                "XgjH4JAk9jbj9B8a": {
+                "Shamble": {
                     "name": "蹒跚 Shamble",
                     "description": "<p><strong>蹒跚</strong><strong>需求</strong> 蔓生怪处于堆积状态</p>\n<p><strong>触发</strong> 一个未能察觉出蔓生怪存在的生物靠近蔓生怪10尺范围内</p>\n<hr />\n<p><strong>效果</strong> 蔓生怪对目标进行一次藤蔓打击。之后进行先攻检定。</p>"
                 },
-                "PfK4YgueBXw7cjqo": {
+                "Vine Lash": {
                     "name": "藤蔓抽打 Vine Lash",
                     "description": "<p>蔓生怪对触及内的所有目标进行一次藤蔓打击。它的多重攻击减值在所有攻击都结束后生效。</p>"
                 }
@@ -7372,27 +7334,27 @@
             "speed": "来自飞行术法术",
             "publicNotes": "<p>屠虐魔诞生自虐待者和拷问者的灵魂，也诞生于那些沉溺于残害受害者肉体的有罪灵魂。它站立有35尺高，长有各种各样的螯肢、尖爪和尖牙，可以继续对它遇到的人施加折磨。</p>\n<p>当然，屠虐魔以折磨凡人为乐，但是与大多数恶魔相比，这些恶魔更喜欢向自己的同类施加痛苦。出于这个原因，其他恶魔害怕并憎恶屠虐魔，只有最强大的恶魔才愿意和屠虐魔一起合作实现共同的目标。即使是这样，屠虐魔也总是在寻求机会，给它的盟友和敌人带来各种痛苦和折磨。</p>\n<hr />\n<p>当一个有罪之人的灵魂受到审判并被送至无底深渊时，它会成为致命的魔族——恶魔。恶魔是罪恶的化身，从一般的罪恶例如愤怒、暴食，到更“特别”的堕落，例如对酷刑的痴迷或对祖国的背叛。恶魔一经诞生，它们便被双重目的驱动：其一是不断积累力量变得更强，其二是腐化凡人的灵魂让其被罪恶玷污。通过这种方式恶魔保证了有源源不断的新恶魔来支持它们在深渊中不断扩张的军队。</p>",
             "items": {
-                "EbuMoQ5idyQJDEXD": {
+                "Paralyzing Gaze": {
                     "name": "麻痹凝视 Paralyzing Gaze",
                     "description": "<p>@Template[type:emanation|distance:30]{30尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>在灵光范围内结束回合的非恶魔生物必须尝试@Check[type:fortitude|dc:35]检定。如果失败，它陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。如果大失败，它陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}，持续1轮。</p>"
                 },
-                "Tk7abWUpvDDV6Qg0": {
+                "Succor Vulnerability": {
                     "name": "反感救助 Succor Vulnerability",
-                    "description": "<p>对身体残毁是屠虐魔本质的一部分，他们不能忍受相反的结果。每轮第一次，当一个生物治愈了上回合屠虐魔造成的伤害，则恶魔受到[[/r (3d6)[mental]]]{3d6心灵伤害}。</p>"
+                    "description": "<p>对身体残毁是屠虐魔本质的一部分，他们不能忍受相反的结果。每轮第一次，当一个生物治愈了上回合屠虐魔造成的伤害，则恶魔受到@Damage[3d6[mental]]伤害。</p>"
                 },
-                "4TtLSpRhmqV1Dvp1": {
+                "Tail Whip": {
                     "name": "尾鞭 Tail Whip",
                     "description": "<p><strong>触发</strong> 在屠虐魔尾击触及范围内的生物，使用移动动作离开一个方格。</p>\n<hr />\n<p><strong>效果</strong> 屠虐魔尝试@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{摔绊 Trip}目标生物。一旦成功，目标生物还要视同为受到一次尾击打击的伤害，如果生物正在飞行，则坠落30尺。</p>"
                 },
-                "AsXbDxRSKFmiQ6jb": {
+                "Enfeebling Bite": {
                     "name": "力竭噬咬 Enfeebling Bite",
                     "description": "<p>如果屠虐魔的啃咬打击对一个生物造成伤害，则目标陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}。目标可以尝试进行@Check[type:fortitude|dc:37]豁免来减少到@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（如大成功则不受影响）。</p>"
                 },
-                "aqwHyoUR6cj9y6s8": {
+                "Focused Gaze": {
                     "name": "聚焦凝视 Focused Gaze",
                     "description": "<p>屠虐魔把视线聚焦于30尺内一个可见的非恶魔生物。如果生物尚未因为屠虐魔的麻痹凝视而减速，它必须尝试一次对抗麻痹凝视的豁免检定。如果生物已经被@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed}，它必须通过@Check[type:fortitude|dc:35]检定否则被@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}1轮。屠虐魔在同一轮中不能针对同一目标多次使用该能力。</p>"
                 },
-                "DD4lBYDa99ebm7Cb": {
+                "Rend": {
                     "name": "撕裂 Rend",
                     "description": "<p>爪抓</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
                 }
@@ -7408,32 +7370,29 @@
             "languages": "巧言术",
             "publicNotes": "<p>坚盾圣使保卫天堂的要塞并抵御魔族入侵。他们用盾牌与长矛所排成庞大的行伍，足以抵挡任何冲击。鉴于他们惊人的力量和威严的身材，坚盾圣使是温顺者们的理想守护人，有时会被召唤到物质位面来抵御大量为恶之徒的攻击。</p>\n<hr />\n<p>圣使是天堂的守护者、世间混乱与邪恶的敌人。他们公开反击魔族的蔓延，但也悄悄在凡人心中培育美德的种子，教导物质界的居民如何以荣誉和正直行事，制定公正的法律，并抛弃罪恶与诱惑。</p>\n<p>圣使们住在广袤无垠的七层天堂山（mountain of Heaven）。他们自那些在山巅花园中应允于一个神秘之声的凡人灵魂中显现。在那里，他们宣誓永远为正义服务并转变为全新的圣使形态。在他们井然有序的蜕变中，新的圣使最初是明灯圣使（lantern archons）或是其他次级形态，随着他们的美德和成就的增长，（他们能）转变为更高阶的圣使。每一位圣使都代表着一种特殊的美德，如希望、仁慈、正义或勇气，他们在展现此类美德的凡人面前现身以获得力量。由于执政官极其守序的天性，他们有时会发现自己与灵使争执不下。</p>",
             "items": {
-                "Nu3jevz0ikfeGuLs": {
-                    "name": "神圣强击长矛 Holy Striking Spear"
-                },
-                "tMGdCYYP6CA506om": {
+                "Morphic Hands": {
                     "name": "化形双手 Morphic Hands",
-                    "description": "<p>坚盾圣使的双手可以变形为一杆<em>+1@UUID[Compendium.pf2e.equipment-srd.Item.DH0kB9Wbr5pDeunX]{神圣}@UUID[Compendium.pf2e.equipment-srd.Item.DxCuJKynlnMQZHgp]{强击}长矛</em>和一面<em>@UUID[Compendium.pf2e.equipment-srd.Item.nDZX25OwoN0Imrq6]{次等百炼盾}</em>或从武器变回双手。</p>\n<p>变形不会为这两件物品恢复生命值，而如果矛或者盾被完全摧毁，这名坚盾圣使就失去了那只手，只有<em>@UUID[Compendium.pf2e.spells-srd.Item.2Vkd1IxylPceUAAF]{再生术 Regenerate}</em>或类似魔法能挽回。</p>\n<p>如果一位坚盾圣使被杀，他的武器和盾牌能被拿走，但它们在24小时后就会消失。</p>"
+                    "description": "<p>坚盾圣使的双手可以变形为一杆<em>+1@UUID[Compendium.pf2e.equipment-srd.Item.DH0kB9Wbr5pDeunX]{圣洁}@UUID[Compendium.pf2e.equipment-srd.Item.DxCuJKynlnMQZHgp]{强击}长矛</em>和一面<em>@UUID[Compendium.pf2e.equipment-srd.Item.nDZX25OwoN0Imrq6]{次等百炼盾}</em>或从武器变回双手。</p>\n<p>变形不会为这两件物品恢复生命值，而如果矛或者盾被完全摧毁，这名坚盾圣使就失去了那只手，只有<em>@UUID[Compendium.pf2e.spells-srd.Item.2Vkd1IxylPceUAAF]{再生术 Regenerate}</em>或类似魔法能挽回。</p>\n<p>如果一位坚盾圣使被杀，他的武器和盾牌能被拿走，但它们在24小时后就会消失。</p>"
                 },
-                "3HPvO9ipnRupy7G0": {
+                "Living Shield": {
                     "name": "活体盾牌 Living Shield",
                     "description": "<p>坚盾圣使的盾牌是他的勇气与灵魂汇聚之处。他不需要@UUID[Compendium.pf2e.action-macros.Macro.4hfQEMiEOBbqelAh]{举起盾牌 Raise a Shield}动作就能举盾，并且可以以自由动作而非反应动作来使用使用@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.m4HQ2o5aPxjXf2kY]{盾牌格挡 Shield Block}（硬度10，生命值80）。当10尺内的盟友成为攻击目标时，坚盾圣使也能触发盾牌格挡自由动作，来减少对盟友而非自己的伤害，但其他方面遵循常规的盾牌格挡规则。</p>"
                 },
-                "RKCbcbBugZzIrxdw": {
+                "Menacing Guardian": {
                     "name": "吓敌护卫 Menacing Guardian",
                     "description": "<p>@Template[type:emanation|distance:30]{30尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>在灵光范围内开始回合或进入范围的敌人必须进行@Check[type:will|dc:27]豁免。</p>\n<p>若失败，这个生物一旦处于灵光中，就会在对抗任何其他生物的攻击骰、法术骰、伤害骰上承受-1状态减值，持续24小时或直到他们伤害到圣使，取先发生的为准。大失败时，这个生物无法对其他任何目标使用任何敌对动作，持续24小时或直到他们伤害到圣使，取先发生的为准。</p>\n<p>不论结果为何，此生物24小时内临时免疫此能力的再次影响。</p>"
                 },
-                "UgyxwE6dj48w1zhM": {
+                "Retributive Strike": {
                     "name": "报复打击 Retributive Strike",
                     "description": "<p><strong>伤害降低</strong> 12</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.RetributiveStrike]</p>"
                 },
-                "UemgQLIDasOGrvNC": {
+                "Archon's Door": {
                     "name": "圣使之门 Archon's Door",
-                    "description": "<p>每日一次，如果一位圣使看到其他生物施展<em>@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]{次元门 Dimension Door}</em>法术，他能在1轮内施展一个内在<em>次元门</em>法术（升阶到5环级）来尝试跟随那个生物，距离最多为圣使的<em>次元门</em>法术距离。</p>\n<p>如果圣使的<em>次元门</em>距离足够，圣使会出现于距该生物使用<em>次元门</em>前相同的距离和方向。</p>"
+                    "description": "<p>每日一次，如果一位圣使看到其他生物施展<em>@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]{次元移位 Translocate}</em>法术，他能在1轮内施展一个内在<em>次元移位</em>法术（升阶到5环级）来尝试跟随那个生物，距离最多为圣使的<em>次元移位</em>法术距离。</p>\n<p>如果圣使的<em>次元移位</em>距离足够，圣使会出现于距该生物使用<em>次元移位</em>前相同的距离和方向。</p>"
                 },
-                "wAPCN756UU6AV2AN": {
+                "Courageous Switch": {
                     "name": "王车易位 Courageous Switch",
-                    "description": "<p>当坚盾圣使使用<em>@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]{次元门 Dimension Door}</em>内在法术时，他可以选择移动到他能看到的、在法术范围的一名内自愿盟友的空间内。如果他这样做，这名盟友与圣使交换位置，出现在圣使刚刚离开的空间，就好像此盟友也施展了次元门。</p>"
+                    "description": "<p>当坚盾圣使使用<em>@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]{次元移位 Translocate}</em>内在法术时，他可以选择移动到他能看到的、在法术范围的一名内自愿盟友的空间内。如果他这样做，这名盟友与圣使交换位置，出现在圣使刚刚离开的空间，就好像此盟友也施展了次元移位。</p>"
                 }
             }
         },
@@ -7446,22 +7405,15 @@
             "languages": "心灵感应120尺",
             "publicNotes": "<p>闪耀之子是邪恶而又神秘的怪物，它们漫游在遥远的位面和无人踏足的隅陬中搜寻玄秘的知识。它们的体格异常消瘦，有着长长的白发，无力的手上只有四只手指。虽然因为被它们不断散发出的令人炫目的光芒复盖而难以看清，闪耀之子的外貌不可思议地熟悉却又如此超凡脱俗。不过它们的脸却是如此的可怕，大到失调的眼睛和膨裂开的大嘴揭示了它们的脑袋就是一个充满了不自然光线的空洞。闪耀之子将这种光芒作为武器，用来编制幻觉，或是聚焦成炽热的光束。</p>\n<p>由于它们作为外星和异邪学者的名声，闪耀之子有时会被强大的法师或秘学家召唤来探寻稀有的知识。这种生物从不无偿出让它们的学识，它们通常会要求以卑劣的行动作为回报，而这些行动则将推进它们那高深莫测的长远计划。</p>\n<p>这些神秘的生物是星界位面的原住民。在这个浩瀚的位面中，形而上学的物质逐渐积聚着，最终合并成半位面。在这个狂暴的过程中，生命之光的火花有时会切开新生的位面，这些原始位面能量的火花以某种方式转变为了闪耀之子。每个新生的半位面都会在它闪亮的“子嗣”身上留下不同的精神印记，这让闪耀之子们很容易就能通过心灵感应认出它们的兄弟姐妹。闪耀之子被永远地困在少年外貌的身体里，它们致力于学术和暴力，徒劳地试图去理解它们在多元宇宙中所扮演的角色以及它们出生时所燃烧着的不公。</p>\n<p>闪耀之子总是会使大多数生物感到困惑，因为它们拒绝使用个体的名字，而喜欢交替使用针对个体和集体的称呼。</p>",
             "items": {
-                "pWMLYiykJTfDP0Lf": {
-                    "name": "火焰射线 Fire Ray"
-                },
-                "DYRACVN0h19oKZpk": {
+                "Radiance Dependence": {
                     "name": "光芒依存 Radiance Dependence",
                     "description": "<p>闪耀之子在黑暗范围中@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
                 },
-                "0mOkmWdA59zQVh9W": {
-                    "name": "随意施法 At-Will Spells",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
-                },
-                "RLXxZqgZH5Ym4SGI": {
+                "Blinding Aura": {
                     "name": "炫目灵光 Blinding Aura",
                     "description": "<p>@Template[type:emanation|distance:60]{60尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>闪耀之子发出明亮的光芒。任何在灵光范围内开始其回合的生物必须通过一个@Check[type:fortitude|dc:29]检定。如果失败则将@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟，如果大失败则将永久目盲。成功通过豁免的生物将暂时免疫此效果24小时。</p>"
                 },
-                "98fcfAaERbR2T29q": {
+                "Overwhelming Light": {
                     "name": "威势之光 Overwhelming Light",
                     "description": "<p><strong>触发</strong> 闪耀之子进入一个魔法黑暗的区域或是在一个魔法黑暗的区域中开始其回合。</p>\n<hr />\n<p><strong>效果</strong> 闪耀之子尝试反制该魔法黑暗（如同一个7环法术）。</p>"
                 }
@@ -7477,21 +7429,21 @@
             "allSaves": "对抗魔法全豁免获得+1状态加值",
             "publicNotes": "<p>即便是最疯狂的狂信徒和宣告末日的先知也在拼命宣称，怪物般的修格斯不过是毒品引发的幻觉或是令人欣慰的虚幻噩梦，但真相往往可怕得多。修格斯是真实存在的，不过他们往往待在海沟最深处，洞穴和废墟尽头，他们黏滑的尾迹中散播着混乱与毁灭。</p>\n<p>第一批修格斯是由某个外来物种创造的，作为没有心智的驮兽使用。它们巨大的体型，不可思议的力量，和不定的形态使它们成为有用的劳力。它们能自发构成新的眼睛，嘴巴，肢体和其他器官的能力让它们有着诸多用途。最终，修格斯进化出了足够的智慧来反抗它们的主人，现在它们耐心而有力地潜伏在无光的深渊中。</p>\n<p>修格斯的目的和手段对于人形生物来说是不可知的。它们记得它们被奴役的过去，相比它们神秘的主人，人类，精灵，矮人和其他智慧生命都不过是爬行在世界表面的微尘，与动物并无区别。当修格斯将它那巨大，骇人的躯体卷裹住一群冒险者时，会将他们吞没进由血肉和獠牙挤成的胶质中，它与其说是邪恶，不如说是毫不在意。</p>\n<p>修格斯可能会成为那些致力于混乱和熵的人形生物邪教的崇拜对象。但修格斯不会回应祈祷，不过它还是会吞噬掉邪教捕获并献祭给它的倒霉祭品。人们会希望修格斯已经进化出更高的智力只是一种谣言，至少因为有思考能力的修格斯对于世界所能造成的破坏令人不安。</p>",
             "items": {
-                "6Y0H1qKcOuLLE2PK": {
+                "Maddening Cacophony": {
                     "name": "致狂尖嚎 Maddening Cacophony",
                     "description": "<p>@Template[type:emanation|distance:60]{60尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>修格斯不断发出凡人不应听到的音节与呢喃。进入灵光范围或在灵光范围内开始回合的生物都需要成功通过一个@Check[type:will|dc:38]检定，否则将陷入困惑1轮（大失败时为[[/br 2d4 #rounds]]{2d4轮}）。成功豁免的生物将暂时免疫此效果24小时。</p>"
                 },
-                "HknPH5MLDixmpO4o": {
+                "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(2d10+15)[bludgeoning]]{2d10+15钝击}, @Check[type:fortitude|dc:40|basic:true]</p>\n<hr />\n<p><em>注意: Paizo没有为此能力设置DC。此处DC是根据游戏掌控者指南中按生物等级设置的中等DC。</em></p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(2d10+15)[bludgeoning]], @Check[type:fortitude|dc:40|basic:true]</p>\n<hr />\n<p><em>注意: Paizo没有为此能力设置DC。此处DC是根据游戏掌控者指南中按生物等级设置的中等DC。</em></p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "avV91CD5YGdSAFSf": {
+                "Eat Away": {
                     "name": "侵蚀 Eat Away",
-                    "description": "<p>在修格斯内部开始回合的生物受到[[/r (9d6)[acid]]]{9d6酸液伤害}。</p>"
+                    "description": "<p>在修格斯内部开始回合的生物受到@Damage[9d6[acid]]伤害。</p>"
                 },
-                "GSyhdPMQNpUa9LQJ": {
+                "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[type:reflex|dc:40|traits:damaging-effect], [[/r (6d6)[acid]]]{6d6酸液伤害}, 逃脱DC40, 破裂40</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[type:reflex|dc:40|traits:damaging-effect], @Damage[6d6[acid]]伤害, 逃脱DC40, 破裂40</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 }
             }
         },
@@ -7504,21 +7456,15 @@
             "senses": "灵敏嗅觉30尺, 震颤感知(模糊感官)60尺",
             "publicNotes": "<p>这些巨大的鼹鼠般的怪物是生活在幽暗地域（Darklands）上层的祸害，它们长有粗大的前臂和精金般强壮的爪子，在坚硬的石头上开凿洞穴。地鼠怪大约20尺长，有四个退化得几乎看不见的眼睛，长而苍白的鼻子，四条粗壮的腿的末端长有长长的带锯齿的爪子，还有一条粗短的分红色尾巴。当地鼠怪成熟的时候，它独特的新陈代谢会产生精金并注入整个骨骼系统中，这除了让他们的尖牙和利爪坚不可摧之外，这种独特的生理特性使它们成为了掘洞能手，并受到那些从它们尸体上收集精金的怪物猎人们的热切追捧。</p>\n<p>地鼠怪胃口很好，几乎能吃所有抓到的东西，但它们喜欢的食物几乎全是大型无脊椎动物，尤其是洞穴蠕虫（cave worms）。它们依靠鼻子上的胡须来感测空气和地面的微小震动，而很少依赖视觉感官。当他们发现合适的猎物时，会第一时间咬住目标，将唾液中的墙里麻痹毒素注入目标体内。这些毒素非常强大，甚至可以制服近乎无可阻挡的紫虫（purple worm），对于那些试图探索幽暗地域中紫虫肆虐的地区的人来说，地鼠怪的这个特性让它们成为珍贵的同伴。地鼠怪臭名昭著的坏脾气和它们在地下居民点附近随性钻进钻出的毛病都让人头痛不已，但是这些烦恼和紫虫难以预知的致命突袭相比较的话，还是可以忍受的。</p>\n<p>曾有人在土元素位面（Plane of Earth）遇到过更大的类似地鼠怪的玩意儿，这可能说明它来自那里。这些更大的地鼠怪依然保持着它们的土元素特质，更加聪明并且拥有一些列和土相关的内在原能法术——尽管如此，它们依然钟爱洞穴蠕虫的味道。</p>",
             "items": {
-                "mjClQEAEbQfY2Zfr": {
-                    "name": "精金爪抓 Adamantine Claw"
-                },
-                "vipJW7r7EquegImq": {
-                    "name": "精金尖牙 Adamantine Fangs"
-                },
-                "uuMoWLbelNwKPIUM": {
+                "Armor-Rending": {
                     "name": "破甲 Armor-Rending",
                     "description": "<p>当地鼠怪的近战攻击造成重击时，同时对目标的护甲造成相同的伤害，忽视任何低于10的硬度，如同精金的特性一般。</p>"
                 },
-                "2V1LMw2K5gNCyFjF": {
+                "Shuln Saliva": {
                     "name": "地鼠怪唾液 Shuln Saliva",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:32]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> [[/r (2d6)[poison]]]{2d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (3d6)[poison]]]{3d6毒素伤害}, 和缓慢1 (1轮)</p>\n<p><strong>阶段3</strong> [[/r (4d6)[poison]]]{4d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}[[/br 2d6 #Paralysis Duration]]{2d6小时}。地鼠怪的唾液能克服势不可挡能力。</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:32]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[3d6[poison]]伤害, 和缓慢1 (1轮)</p>\n<p><strong>阶段3</strong> @Damage[4d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}[[/br 2d6 #Paralysis Duration]]{2d6小时}。地鼠怪的唾液能克服势不可挡能力。</p>"
                 },
-                "gzVcZTMtslepZxcC": {
+                "Unstoppable Burrow": {
                     "name": "畅挖无阻 Unstoppable Burrow",
                     "description": "<p>地鼠怪可以在坚硬的岩石或任何硬度低于精金的金属中挖洞，就如同泥土和松散的碎石中一般。它会在身后留下10尺宽的隧道。</p>"
                 }
@@ -7533,16 +7479,13 @@
             "senses": "黑暗视觉, 震颤感知(模糊感官)60尺; 侦测魔法",
             "publicNotes": "<p>土巨灵来自土元素位面，是骄傲和无所顾忌的巨灵。他们重视身体技能，热爱讨价还价、碰运气、锻造和石工。巨大的宝石和贵金属矿脉在他们的家园上纵横交错，勤劳的土巨灵利用丰富的自然资源建立了巨大的商业帝国。</p>\n<hr />\n<p>每个元素位面对对应一种独特的巨灵，巨灵的身体是由与它们的原生位面（native plane）相对应的元素物质组成的：风巨灵由风、云和风暴组成；火巨灵的身体则由火组成；水巨灵由水构成；而土巨灵则由金属、宝石和石头组成。最后，小巨灵是由全部四种元素组成的，并且也是巨灵中最弱的。</p>",
             "items": {
-                "ztr88bB5WvLP8Ykt": {
+                "Earth Glide": {
                     "name": "潜地 Earth Glide",
                     "description": "<p>土巨灵可以在任何泥土或岩石以它的@UUID[Compendium.pf2e.actionspf2e.Item.H6v1VgowHaKHnVlG]{掘地 Burrow}速度移动，且不留下隧道或任何它经过的痕迹。</p>"
                 },
-                "d8HnQHeqQlzrKyFt": {
+                "Shove into Stone": {
                     "name": "推敌入石 Shove into Stone",
-                    "description": "<p>当土巨灵推离一个生物撞上石制障碍物时，目标必须成功通过@Check[type:reflex|dc:22]豁免检定否则会和石制障碍物融合在一起（如同<em>@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{融身入石 Meld into Stone}</em>法术）。受害者可以尝试逃脱（DC 28）。</p>"
-                },
-                "pV2kE2wYrZjLyBiR": {
-                    "name": "推离10尺"
+                    "description": "<p>当土巨灵推离一个生物撞上石制障碍物时，目标必须成功通过@Check[type:reflex|dc:22]豁免检定否则会和石制障碍物融合在一起（如同<em>@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{融身化石 One with Stone}</em>法术）。受害者可以尝试逃脱（DC 28）。</p>"
                 }
             }
         },
@@ -7554,9 +7497,7 @@
             "hp": "虚能治疗",
             "ac": "(举盾时21)",
             "senses": "黑暗视觉",
-            "publicNotes": "<p>这些骷髅继承了它们生前的狡诈。</p>\n<hr />\n<p>骷髅是最为常见的一类不死生物，它们是由污秽的死灵力量所维持着形态的骨架，出没于那些古老的地城和被遗忘的墓园之中。</p>",
-            "items": {
-            }
+            "publicNotes": "<p>这些骷髅继承了它们生前的狡诈。</p>\n<hr />\n<p>骷髅是最为常见的一类不死生物，它们是由污秽的死灵力量所维持着形态的骨架，出没于那些古老的地城和被遗忘的墓园之中。</p>"
         },
         "Skeletal Giant": {
             "data": {
@@ -7567,11 +7508,11 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>这些由巨人复苏而成的骸骨是死灵法师们出色的奴仆。</p>\n<hr />\n<p>骷髅是最为常见的一类不死生物，它们是由污秽的死灵力量所维持着形态的骨架，出没于那些古老的地城和被遗忘的墓园之中。</p>",
             "items": {
-                "4gkC6A8D27Jzv7nH": {
+                "Broad Swipe": {
                     "name": "广域横扫 Broad Swipe",
                     "description": "<p>巨人使用大砍刀对触及范围内的两名敌人各发动一次打击。在这两次攻击完成前多重攻击减值不会增加。</p>"
                 },
-                "emPcqeSFXdyr6CgV": {
+                "Terrifying Charge": {
                     "name": "恐怖冲锋 Terrifying Charge",
                     "description": "<p>巨人行进并且使用角抵打击，这次角抵打击在伤害上拥有+4环境加值。</p>\n<p>如果打击命中，巨人对目标尝试一次@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{挫败士气 Demoralize}。</p>"
                 }
@@ -7586,11 +7527,11 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>有时候一些其他的不死生物或怪物会将骷髅马当成坐骑。</p>\n<hr />\n<p>骷髅是最为常见的一类不死生物，它们是由污秽的死灵力量所维持着形态的骨架，出没于那些古老的地城和被遗忘的墓园之中。</p>",
             "items": {
-                "ohwAZH20CeE3uGMp": {
+                "Gallop": {
                     "name": "疾驰 Gallop",
                     "description": "<p>这匹马速度增加10尺行进两次。</p>"
                 },
-                "1AzFNDZFiaJxTAJf": {
+                "Undead Steed": {
                     "name": "亡灵战马 Undead Steed",
                     "description": "<p>不死生物以及它们的盟友无需尝试技能检定就对骷髅马@UUID[Compendium.pf2e.actionspf2e.Item.q9nbyIF0PEBqMtYe]{指挥动物 Command an Animal}。</p>"
                 }
@@ -7625,29 +7566,26 @@
             "languages": "骸骨学识语言",
             "publicNotes": "<p>猎骨者旋转着从云雾笼罩的峰顶盘降下，像一团邪恶的黑风穿过怒号的山口，这团旋转着的骨头旋涡是一种恐怖的具现，它表现了登山者和迷失的开拓者在遭遇末日之前所经历的谵妄和痛苦。在一些地方，猎骨者也被称为saxra。</p>",
             "items": {
-                "ztyTHwNIKhCgnOc2": {
-                    "name": "骨标枪 Bone Javelin"
-                },
-                "jj8vv07lGAp4FELU": {
+                "Skeletal Lore": {
                     "name": "骸骨学识 Skeletal Lore",
-                    "description": "<p>猎骨者吸食了那些骨头原本主人的记忆。这给与了它骸骨学识技能，可以进行任意类型的回忆知识。此外，它还可以表达和理解骨头原主人的语言（通常包括通用语和猎骨者所在的当地语言）。猎骨者可以将骸骨学识作为仪式<em>@UUID[Compendium.pf2e.spells-srd.Item.hp6Q64dl7xbdn4gQ]{通晓传奇 Legend Lore}</em>的主要检定技能，并且进行仪式时无需次要施法者的协助。</p>"
+                    "description": "<p>猎骨者吸食了那些骨头原本主人的记忆。这给与了它骸骨学识技能，可以进行任意类型的回忆知识。此外，它还可以表达和理解骨头原主人的语言（通常包括通用语和猎骨者所在的当地语言）。猎骨者可以将骸骨学识作为仪式<em>@UUID[Compendium.pf2e.spells-srd.Item.hp6Q64dl7xbdn4gQ]{集团记忆 Collective Memories}</em>的主要检定技能，并且进行仪式时无需次要施法者的协助。</p>"
                 },
-                "AMOJU0wX8r6flwf4": {
+                "+1 Status to All Saves vs. Vitality": {
                     "name": "对抗命能效果的所有豁免检定有+1状态加值"
                 },
-                "i9LmbR4DKZeW0lRN": {
+                "Shard Storm": {
                     "name": "碎骨风暴 Shard Storm",
                     "description": "<p>@Template[type:emanation|distance:10]{10尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>骸骨碎片组成的气旋环绕着猎骨者。当一个生物进入灵光的弥散范围或在其中开始它的回合，碎骨风暴尝试反制该生物身上的<em>@UUID[Compendium.pf2e.spells-srd.Item.YvXKGlHOt7mdW2jZ]{防死结界 Death Ward}</em>效果（[[/r 1d20+30 #Counteract]]{+30反制调整值}），并且对该生物造成[[/r (4d6)[slashing]+(4d6)[void]]]{4d6挥砍伤害+4d6虚能伤害}，@Check[type:reflex|dc:40|basic:true]豁免。</p>"
                 },
-                "o6Y376tDDVyc2Cf8": {
+                "Bonetaker": {
                     "name": "猎骨 Bonetaker",
                     "description": "<p>当猎骨者60尺内的一个生物死亡时，猎骨者将它的部分骨头拉入碎骨风暴中。该生物必须进行@Check[type:will|dc:40]检定否则会在[[/br 1d4 #Skeletal Champion Transformation]]{1d4轮}内被复活成@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.RMSx2C27yty0MTva]{骷髅勇士 Skeletal Champion}。这些骷髅勇士被猎骨者控制。</p>"
                 },
-                "JOlynEzl2UrSa16n": {
+                "Energy Drain": {
                     "name": "能量吸取 Energy Drain",
                     "description": "<p>当猎骨者近战打击命中目标时，目标必须通过@Check[type:fortitude|dc:40]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}和@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。</p>"
                 },
-                "1QVkgQh59Pmq5fP3": {
+                "Splintered Ground": {
                     "name": "粉碎地面 Splintered Ground",
                     "description": "<p>猎骨者让@Template[type:emanation|distance:100]范围内的坚硬地表喷出骨刺，除了加工过的石质地面。试图移动穿过这些骨刺的生物，每移动5尺都会受到[[/r (10)[piercing]+(10)[void]]]{10穿刺伤害+10虚能伤害}。一个生物每轮第一次受到来自这些骨刺的伤害时，它必须通过@Check[type:reflex|dc:40]豁免检定，否则所有速度都受到-10尺环境减值，持续10分钟。如果豁免大失败，则受到-15尺环境减值，持续24小时。骨刺会一直留在原处，除非猎骨者再次使用此能力，或者手动清除（每5平方尺必须花费10分钟）。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.86uYNsVXzYWxqLTV]{效果: 粉碎地面}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.hc7kR6quUE9ryRyj]{效果: 粉碎地面 (大失败)}</p>"
                 }
@@ -7666,9 +7604,7 @@
             },
             "name": "鱼化人 Skum",
             "senses": "黑暗视觉",
-            "publicNotes": "<p>阿尔古苏的族群中数量最多的就是被称为Ulat-Kini的种族，这是一个由人类改造而来的仆从种族，在阿尔古苏的军队中充当普通士兵。在阿尔古苏力量的巅峰期，Ulat-Kini形成了庞大的军团，拥有超过其他物种的巨大力量。当阿尔古苏从世界上撤退时，他们抛弃了成群的Ulat-Kini。尽管这些昔日的士兵试图继续它们的征服之路，但他们的数量却在消灭敌人或失败的过程中迅速下降。Ulat-Kini的社会退化了，现在只有少数定居点存在于内陆深处或孤立的海岸线上。它们自己中的大多数都已经不记得自己古老的族名，只能用敌人给它们起的绰号“鱼化人”来称呼自己。</p>\n<hr />\n<p>在过去的几千年里，水生怪物阿尔古苏使用它们的神秘力量征服并统治了全世界大部分地区。它们的帝国里有无数被当做牲畜的奴隶。阿尔古苏们利用精神控制和肉体塑造的魔法创造了这些奴隶和忠于它们的其他族群。从无面潜伏者到拟形怪（mimics）都能溯源出被阿尔古苏影响的痕迹。阿尔古苏的统治者们，即所谓的“幕后尊主”，不断通过改造被控制的族群的形态来进一步塑造自身的社会。无论是位高权重的权贵亦或愁云惨雾的贫民，这些幕后尊主按照它们自己的黑暗计划操纵着这些社会，并以奴役、杀戮、以及恐怖的改造来对付那些发现自己计划或试图奋起反抗的人们。</p>\n<p>随着时间的推移，阿尔古苏对它们昔日奴隶的崛起感到失望，并试图抹去过去犯下的错误——既能让一切回归原点，又能惩罚那些任性而背叛的种族。因此它们用不可思议的魔法力量发动了一场灾难，希望摧毁那些过去被它们操纵但是如今背叛了它们的社区。然而，它们错误地估计了信仰的力量以及自己曾经的爪牙和奴隶们的生存意志，最终整个世界恢复了元气，再次变得强大起来——这一次不再有阿尔古苏在背后影响它们了。</p>\n<p>如今，阿尔古苏已经从它们曾经操纵过的地表世界中大规模地撤退，并且它们中的大部分只在深海区域活动，在那里它们依然是无可动摇的统治者。然而它们并没有完全放弃它们的阴谋，像无面潜伏者这样的奴隶种族重新出现在世界上就证明了这种可怕的可能性——阿尔古苏们那仇视的目光已经再次盯上了地表世界。</p>",
-            "items": {
-            }
+            "publicNotes": "<p>阿尔古苏的族群中数量最多的就是被称为Ulat-Kini的种族，这是一个由人类改造而来的仆从种族，在阿尔古苏的军队中充当普通士兵。在阿尔古苏力量的巅峰期，Ulat-Kini形成了庞大的军团，拥有超过其他物种的巨大力量。当阿尔古苏从世界上撤退时，他们抛弃了成群的Ulat-Kini。尽管这些昔日的士兵试图继续它们的征服之路，但他们的数量却在消灭敌人或失败的过程中迅速下降。Ulat-Kini的社会退化了，现在只有少数定居点存在于内陆深处或孤立的海岸线上。它们自己中的大多数都已经不记得自己古老的族名，只能用敌人给它们起的绰号“鱼化人”来称呼自己。</p>\n<hr />\n<p>在过去的几千年里，水生怪物阿尔古苏使用它们的神秘力量征服并统治了全世界大部分地区。它们的帝国里有无数被当做牲畜的奴隶。阿尔古苏们利用精神控制和肉体塑造的魔法创造了这些奴隶和忠于它们的其他族群。从无面潜伏者到拟形怪（mimics）都能溯源出被阿尔古苏影响的痕迹。阿尔古苏的统治者们，即所谓的“幕后尊主”，不断通过改造被控制的族群的形态来进一步塑造自身的社会。无论是位高权重的权贵亦或愁云惨雾的贫民，这些幕后尊主按照它们自己的黑暗计划操纵着这些社会，并以奴役、杀戮、以及恐怖的改造来对付那些发现自己计划或试图奋起反抗的人们。</p>\n<p>随着时间的推移，阿尔古苏对它们昔日奴隶的崛起感到失望，并试图抹去过去犯下的错误——既能让一切回归原点，又能惩罚那些任性而背叛的种族。因此它们用不可思议的魔法力量发动了一场灾难，希望摧毁那些过去被它们操纵但是如今背叛了它们的社区。然而，它们错误地估计了信仰的力量以及自己曾经的爪牙和奴隶们的生存意志，最终整个世界恢复了元气，再次变得强大起来——这一次不再有阿尔古苏在背后影响它们了。</p>\n<p>如今，阿尔古苏已经从它们曾经操纵过的地表世界中大规模地撤退，并且它们中的大部分只在深海区域活动，在那里它们依然是无可动摇的统治者。然而它们并没有完全放弃它们的阴谋，像无面潜伏者这样的奴隶种族重新出现在世界上就证明了这种可怕的可能性——阿尔古苏们那仇视的目光已经再次盯上了地表世界。</p>"
         },
         "Slurk": {
             "data": {
@@ -7680,20 +7616,14 @@
             "languages": "(无法说任何语言)",
             "publicNotes": "<p>泥蛙是一种表旁皮黏糊糊的，长牙的蛙类动物，在地底和洞穴中出没。它有两根巨大的獠牙，用来攻击猎物、打败竞争者。由于泥蛙天生就能毫不费力的爬上洞穴顶部，因此粗心的洞穴冒险者很容易就会走到他们可怕的獠牙之下。</p>\n<p>泥蛙能从它们苍白的皮肤中分泌出两种截然不同的恶臭分泌物。泥蛙背上的大脓疱能分泌出粘稠的树脂状粘液，这些粘液接触到在空气后会很快变硬。通过收缩皮肤，泥蛙可以让脓包中的粘液超入侵者的方向猛烈喷出，使其包裹在黏液中，使得他们难以抵御泥蛙的其他攻击或另一种分泌物。泥蛙的腹部腺体能分泌出一种奇臭无比的滑腻油脂，这可以保护泥蛙自己不受背部粘液影响，而且这还有额外的好处，让泥蛙变得很难被擒抱或捕获。要想知道附近是否有泥蛙，最好的办法就是寻找这些油脂硬块，这些油脂硬块会堆积在洞穴角落里或是泥蛙用餐之后休息的岩石堆中，慢慢变干。</p>\n<p>一般认为泥蛙是矮人试图驯养和繁殖大型地底蛙类作为食物和牲畜但是最终失败产生的结果。虽然是表面上是失败品，但泥蛙经常受到一些地下居民的喜爱。狗头人就非常喜欢泥蛙，会驯养他们作为坐骑或守卫。虽然其他一些人形生物，例如蟾蜍人，有时候会驯养泥蛙作为守卫，但是狗头人依然是它们之中最常使用泥蛙的。骑着泥蛙的狗头人通常会躲在洞穴高处的岩架上，利用其高度优势和远程突袭优势对敌人进行远程攻击。狗头人骑士也会利用泥蛙的攀爬能力，从洞穴的岩壁上向敌人冲锋。</p>",
             "items": {
-                "gJlDdyxfSGMpZN7a": {
-                    "name": "獠牙 Tusks"
-                },
-                "bdbMvBqIkhaOvg4j": {
-                    "name": "粘液喷射 Slime Squirt"
-                },
-                "uLf1dk5gMycZYjBy": {
+                "+2 to All Saves vs. Grapple or Shove": {
                     "name": "对抗擒抱或推撞的检定上有+2加值"
                 },
-                "pbydRoHQnSpw50iV": {
+                "Belly Grease": {
                     "name": "腹部油脂 Belly Grease",
-                    "description": "<p>泥蛙腹部的腺体分泌一层光滑的油脂，覆盖脚下@Template[type:emanation|distance:5]范围的地面，受影响的区域视为崎岖地面，持续10分钟。之后干燥成一层硬皮。通过油脂的@UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{维持平衡 Balance}检定DC为@Check[type:acrobatics|dc:18|traits:action:balance,move]。</p>"
+                    "description": "<p>泥蛙腹部的腺体分泌一层光滑的油脂，覆盖脚下@Template[type:emanation|distance:5]范围的地面，受影响的区域视为崎岖地面，持续10分钟。之后干燥成一层硬皮。通过油脂的@UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{保持平衡 Balance}检定DC为@Check[type:acrobatics|dc:18|traits:action:balance,move]。</p>"
                 },
-                "Tf3oOPGPRrko1wvW": {
+                "Entangling Slime": {
                     "name": "纠缠粘液 Entangling Slime",
                     "description": "<p>被泥蛙粘液喷射击中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy}，并且移动速度有5尺减值，持续1小时或直到粘液被移除。</p>\n<p>被粘液减速的目标或者目标相邻的生物可以通过三个交互动作来移除粘液。这些交互动作不必连续，也不必由同一生物做出。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.jQmfZcPD6xVYx5nb]{效果: 纠缠粘液}</p>"
                 }
@@ -7708,18 +7638,14 @@
             "allSaves": "对抗魔法时所有豁免获得+1状态加值, 对抗心灵时获得+4状态加值",
             "publicNotes": "<p>罪生怪是由被共称为符文领主（runelords）的七名古代巫师中的一位所创造的——他们每人接纳并呈现出七原罪中的一罪。第一名罪生怪由愤怒符文领主所创造，这源于他对影响并扭曲肉体的技术实践。这种技术在用于创造罪生怪不久之后便落入了其他符文领主手中，之后他们每人都尝试根据自己的设计创造变种，时至今日愤怒罪生怪仍旧是同类中数量最多也最知名的存在。罪生怪与肉体被重塑的类人原型之间只有极为模糊的相似之处，他们通常看起来骨瘦嶙峋，长着不自然地修长手臂和反关节的腿部，每根肢体末端都长着短粗的爪状指头。凸起的血管遍及罪生怪全身，血红色的凸起仿佛构成了扭曲的符文，其皮肤苍白无毛。他们的头部被拉长，五官只剩下鼻子、红色的双眼、以及从下巴处裂开成两瓣的下颚，其中露出长长的下垂舌头，舌头尖端分成了三根宛若手指的触须。罪生怪站起来有6.5尺，体重与同体型的人类相仿。罪生怪的行为模式与和其相关联的原罪有关，他们的体貌特征也会对此有所暗示。举例说明，贪婪罪生怪的血管里流淌的是金色的液体，而嫉妒罪生怪比其他类型的罪生怪更加瘦弱。</p>\n<hr />\n<p>厚重且卷曲的额外皮肤耷拉在他那驼背的身躯上。</p>",
             "items": {
-                "hk7qH9BpvzM7rFGe": {
+                "Sin Scent (Imprecise) 30 feet": {
                     "name": "嗅探原罪(模糊感官) 30尺",
                     "description": "<p>罪生怪能通过嗅觉闻到生物所反映出的原罪，此能力在其他方面同灵敏嗅觉（scent）。由GM判断哪些生物与哪些原罪相符。</p>"
                 },
-                "Y2DYcAAQLTtolq5o": {
+                "+4 Status to All Saves vs. Mental": {
                     "name": "对抗心灵时获得+4状态加值"
                 },
-                "Fb73mys1NUmxKq5Q": {
-                    "name": "借机攻击 Attack of Opportunity",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
-                },
-                "MpNlJrdPvv9bECNE": {
+                "Sinful Bite": {
                     "name": "原罪之噬 Sinful Bite",
                     "description": "<p>被罪生怪的啃咬命中的生物必须尝试一次@Check[type:will|dc:18]豁免，因为他们的心智被充满罪孽的思维所侵袭。</p>\n<hr />\n<p><strong>大成功</strong> 不受影响</p>\n<p><strong>成功</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}</p>\n<p><strong>失败</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}</p>\n<p><strong>大失败</strong> 恶心2，速度会受到-10尺的状态减值，持续一分钟</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.9Qyu0HN5j6DO8Izc]{效果: 原罪之噬}</p>"
                 }
@@ -7733,15 +7659,15 @@
             "senses": "昏暗视觉, 灵敏嗅觉(模糊感官) 60尺",
             "publicNotes": "<p>剑齿虎是一种大型剑齿虎猫科动物，是顶级掠食者，比其他种类的大型猫科动物肌肉更发达，体型更宽。它们通常迅速刺向猎物的喉咙或其他脆弱的部位来杀死猎物。剑齿虎超大的剑齿是受到人们特别青睐的战利品。</p>\n<hr />\n<p>自然界中很少有掠食者能与猫的潜行能力相匹敌。</p>",
             "items": {
-                "ONo2JspAa1GnoAlR": {
+                "Pierce Armor": {
                     "name": "穿刺护甲 Pierce Armor",
                     "description": "<p>剑齿虎对被它@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbing}的生物用剑齿进行一次打击。</p>\n<p>如果此打击命中，则目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。如果目标所穿的护甲硬度为10或更低，此护甲@UUID[Compendium.pf2e.conditionitems.Item.6dNUvdb1dhToNDj3]{破损 Broken}。</p>\n<p>如果此打击造成目标护甲破损，或命中无甲、穿着破损护甲的目标，则对目标造成@Localize[PF2E.PersistentDamage.Bleed2d6.success]。此打击不会对已经破损的护甲造成更多伤害。</p>"
                 },
-                "QtiX9tEriHb92lTU": {
+                "Pounce": {
                     "name": "猛扑 Pounce",
                     "description": "<p>剑齿虎行走动作之后衔接1次打击动作。如果剑齿虎在执行此行动前处于@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}状态，则它保持藏匿直到该次打击结束。</p>"
                 },
-                "WBvBXluaSwwxLaJ4": {
+                "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
                     "description": "<p>剑齿虎对措手不及的生物造成额外1d6精准伤害。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
                 }
@@ -7755,22 +7681,19 @@
             "senses": "震颤感知（模糊感官）30尺",
             "publicNotes": "<p>猛咬捕蝇草是一种贪婪的食肉植物，会迅速咬住经过的任何生物。猛咬捕蝇草在通常10尺长的茎的末端有2对带齿边的叶荚，每对宽3尺。</p>\n<hr />\n<p>捕蝇草是危险的生物，它们能像捕食巨大的昆虫一样捕食类人生物和其他大型猎物。</p>",
             "items": {
-                "t8uaryivfTb4jrjH": {
-                    "name": "叶荚 Leaf"
-                },
-                "gXUEOhZBMg1NCOMw": {
+                "Quick Capture": {
                     "name": "快速捕获 Quick Capture",
                     "description": "<p><strong>触发</strong> 一个生物命中或触碰捕蝇草</p>\n<hr />\n<p><strong>效果</strong> 捕蝇草对触发此能力的生物进行一次叶荚打击，如果命中，则该生物被叶荚@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。</p>"
                 },
-                "QTipkgJAwLBZFcwu": {
+                "Focused Assault": {
                     "name": "集中攻击 Focused Assault",
-                    "description": "<p>捕蝇草用两对叶荚攻击同一目标。捕蝇草进行一次叶荚打击。一旦成功命中，捕蝇草造成一次叶荚打击的伤害，并且除了第一对叶荚外，每多一个叶荚就能造成额外[[/r (1d8)]]{1d8伤害}。即使攻击失败，捕蝇草仍然能造成一次叶荚伤害，但是它不能使用精通攫抓能力。大失败则完全失手。此能力计算捕蝇草的多重攻击减值，次数等于捕蝇草的叶荚数。</p>"
+                    "description": "<p>捕蝇草用两对叶荚攻击同一目标。捕蝇草进行一次叶荚打击。一旦成功命中，捕蝇草造成一次叶荚打击的伤害，并且除了第一对叶荚外，每多一个叶荚就能造成额外[[/r 1d8]]伤害。即使攻击失败，捕蝇草仍然能造成一次叶荚伤害，但是它不能使用精通攫抓能力。大失败则完全失手。此能力计算捕蝇草的多重攻击减值，次数等于捕蝇草的叶荚数。</p>"
                 },
-                "oB9Lh7ZFScaG3Z04": {
+                "Hungry Flurry": {
                     "name": "饥饿猛击 Hungry Flurry",
                     "description": "<p>捕蝇草针对不同目标以-2减值进行两次叶荚打击。这些攻击计算捕蝇草的多重攻击减值，但是在攻击结束之后才会生效。</p>"
                 },
-                "0JCakW3iPRouHFU2": {
+                "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
                     "description": "<p>中型, [[/r (1d8+1)[bludgeoning]+(1d6)[acid]]]{1d8+1钝击伤害+1d6酸液伤害}, Rupture 5</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 }
@@ -7785,17 +7708,13 @@
             "senses": "水晶嗅觉 (模糊)60尺, 黑暗视觉",
             "publicNotes": "<p>苔犬是一种由泥土和卵石组成的外表复盖着青苔的跨位面犬类生物。</p>\n<hr />\n<p>土元素是洞穴探险者们的优秀保镖，也是重要的地下场所的理想守卫，例如地下室和国库。</p>",
             "items": {
-                "hDYxH5VuENin7Q0I": {
+                "Crystal Sense (Imprecise) 60 feet": {
                     "name": "水晶嗅觉(模糊感官)60尺 Crystal Sense (Imprecise)",
                     "description": "<p>苔犬能感觉到60尺内的水晶或宝石，如同灵敏嗅觉能力。</p>"
                 },
-                "59wy5xK7MEQmYRxg": {
+                "Earth Glide": {
                     "name": "潜地 Earth Glide",
                     "description": "<p>苔犬可以在任何泥土或岩石中钻洞。当它这样做时，苔犬以它的掘进速度满速移动，且不留下隧道或任何它经过的痕迹。</p>"
-                },
-                "3USivzG0qztGd1dK": {
-                    "name": "击倒 Knockdown",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Knockdown]</p>"
                 }
             }
         },
@@ -7808,7 +7727,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7823,7 +7742,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7838,7 +7757,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7853,7 +7772,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7868,7 +7787,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7883,7 +7802,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7898,7 +7817,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7913,7 +7832,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7928,7 +7847,7 @@
             "languages": "一种由创造者使用的语言 (一般是通用语)",
             "publicNotes": "<p>缚魂娃娃是怪诞的人体模型或娃娃，被灌注了一小片已故凡人的灵魂。这些小小的构装体是由于各种各样的原因被创造出来的——比如说作为同伴或仆人——但是他们的自由意志意味着它们对于他们的创造者并非必然服从。法莱斯玛（Pharasma）的信徒常常憎恶缚魂娃娃，认为这是对灵魂自然循环的扭曲，而墓地女士（Lady of Graves）的崇拜者乐意看到缚魂偶的破灭而不考虑其阵营，会将复灭缚魂偶作为对伟大彼岸的重要服务。在一系列缚魂构装体中，缚魂娃娃的制造是最简单的，这些构装体包括人形的缚魂人偶，强大的缚魂躯壳，和作为卫兵的缚魂兵马俑。如果娃娃的灵魂提供者是邪恶的，并且非自愿，则它可以抵抗这个过程，通过一次意志检定来对抗创造者的制造 DC，如果不能阻止灵魂提供者的死亡，则会毁掉娃娃。如果灵魂的提供者是非邪恶的，则它死前必须自愿提供灵魂。</p>\n<p>冒险者遇到的缚魂娃娃通常是某种类型的守护者；虽然它们尺寸很小，但是由于灵魂碎片的力量，它们的拳头比想象中更为危险。此外，根据娃娃的阵营不同，它还能赋予娃娃一个独特的异能法术。由于他们的自主意识和卓越的智能，它们的创造者往往会让它们管理更强大但无心智的构装体，例如魔像（golems），这让这些娃娃能掌握远超自身实力的防御能力。虽然缚魂娃娃包包含一名刚死不久的人的一小部分灵魂，但其实这不影响死者复活，或直接前往来世。这种灵魂提取的过程对活人来说则是致命的，尽管有传言说，有一种更加昂贵的方法，可以让活人捐献灵魂碎片而不受任何影响。</p>\n<p>灵魂碎片会注入一个镶嵌在娃娃胸部或脖子的灵魂聚焦宝石（soul focus gem，硬度10）。灵魂碎片并非一成不变的，娃娃会从初始状态开始不断学习，这意味着它的性格和能力可以改变，可能会变得更像灵魂提供者，也可能在自己的道路上越走越远。即使缚魂娃娃被摧毁，它的灵魂聚焦宝石也能保留娃娃的记忆。如果被摧毁的缚魂娃娃的灵魂聚焦宝石是完好的，那么它可以被一些精于缚魂操作的人重新放置到一个新娃娃的身体里，通过这种方法可以很有效的让缚魂娃娃重生。</p>",
             "items": {
-                "iaTfEZ50lrTlV5Ku": {
+                "Personality Fragments": {
                     "name": "人格碎片 Personality Fragments",
                     "description": "<p>缚魂娃娃拥有一部分灵魂提供者的人格碎片，尽管它没有任何生前的记忆。这使得缚魂娃娃拥有灵魂提供者的阵营，并获得相应的阵营特征。</p>"
                 }
@@ -7946,36 +7865,33 @@
             "senses": "黑暗视觉, 灵敏嗅觉(模糊感官) 60尺; 真视术",
             "publicNotes": "<p>尽管更强大的蛇龙也是存在的，但拥有多个头颅的天池蛇龙所具备的破坏力已经令人生畏。</p>\n<hr />\n<p>古老且巨大的蛇龙生活在世界的北部地区，他们憎恨那些自己认定的劣等生物，并试图尽可能对这些不幸的受害者造成更多的痛苦。尽管这些残暴的蛇形生物不如大多数人想象中的带翼真龙强大，但他们确实拥有难以置信且致命的力量，使其可以与真龙的残暴一较高下。</p>",
             "items": {
-                "MrSMiZ1i5groiYX1": {
-                    "name": "再生15 (寒铁使其失效)"
-                },
-                "FTA0YvX69f46caFj": {
-                    "name": "借机攻击 Attack of Opportunity",
+                "Attack of Opportunity (Tail Only)": {
+                    "name": "借机攻击 Attack of Opportunity (仅限甩尾)",
                     "description": "<p>仅限甩尾</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
-                "YoKSGUjwXmt7kxnq": {
+                "Curse of Death": {
                     "name": "死亡诅咒 Curse of Death",
                     "description": "<p>当有生物杀死天池蛇龙时，他必须成功通过@Check[type:will|dc:46]豁免，失败则会再也无法以任何方式恢复生命值，比如治疗法术、医疗技能或通过休息带来的自然恢复。</p>"
                 },
-                "8MiIAzmA9gWbpF5s": {
+                "Breath Weapon": {
                     "name": "喷吐武器 Breath Weapon",
-                    "description": "<p>天池蛇龙能喷出@Template[type:line|distance:120]或@Template[type:cone|distance:60]的酸液，对区域内的生物造成[[/r (20d6)[acid]]]{20d6酸液伤害}（@Check[type:reflex|dc:44|basic:true]豁免）。这些酸液会产生有毒气体。在天池蛇龙的下个回合开始时，所有在喷吐武器的反射豁免中失败的生物，必须成功通过@Check[type:fortitude|dc:42]豁免，失败则会因为有毒气体陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 4}。</p>\n<p>天池蛇龙在[[/br 1d4 #Recharge Breath Attacks]]{1d4轮}内无法再次使用喷吐武器和强势喷吐。</p>"
+                    "description": "<p>天池蛇龙能喷出@Template[type:line|distance:120]或@Template[type:cone|distance:60]的酸液，对区域内的生物造成@Damage[20d6[acid]]伤害（@Check[type:reflex|dc:44|basic:true]豁免）。这些酸液会产生有毒气体。在天池蛇龙的下个回合开始时，所有在喷吐武器的反射豁免中失败的生物，必须成功通过@Check[type:fortitude|dc:42]豁免，失败则会因为有毒气体陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 4}。</p>\n<p>天池蛇龙在[[/br 1d4 #Recharge Breath Attacks]]{1d4轮}内无法再次使用喷吐武器和强势喷吐。</p>"
                 },
-                "RNVvCjM6WpoASTKg": {
+                "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(3d6+18)[bludgeoning]]{3d6+18钝击伤害}, @Check[type:fortitude|dc:44|basic:true]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(3d6+18)[bludgeoning]]伤害, @Check[type:fortitude|dc:44|basic:true]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "TbFZxJr8aSgbgTZ6": {
+                "Double Bite": {
                     "name": "双重啃咬 Double Bite",
                     "description": "<p>天池蛇龙行走并用每个头作出一次啃咬打击，每次打击对抗不同的目标。这些攻击回计入天池蛇龙的多次攻击减值，但直至天池蛇龙作出上述所有攻击为止，多次攻击减值的数值不会增加。</p>"
                 },
-                "DWRBHDiwImN0PCp9": {
+                "Overwhelming Breath": {
                     "name": "强势喷吐 Overwhelming Breath",
                     "description": "<p>天池蛇龙使用他的喷吐武器两次。每个生物只需要尝试一次豁免且只会承受一次伤害。</p>\n<p>天池蛇龙在[[/br 2d4 #Recharge Breath Attacks]]{2d4轮}内无法再次使用喷吐武器和强势喷吐。</p>"
                 },
-                "Bcm7iwcliF6ChhW7": {
+                "Tarn Linnorm Venom": {
                     "name": "天池蛇龙毒 Tarn Linnorm Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:44]</p>\n<hr />\n<p><strong>最大持续时间</strong> 10轮</p>\n<p><strong>阶段1</strong> [[/r (7d6)[acid]]]{7d6酸液伤害}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}</p>\n<p><strong>阶段2</strong> [[/r (11d6)[acid]]]{11d6酸液伤害}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:44]</p>\n<hr />\n<p><strong>最大持续时间</strong> 10轮</p>\n<p><strong>阶段1</strong> @Damage[7d6[acid]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}</p>\n<p><strong>阶段2</strong> @Damage[11d6[acid]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}</p>"
                 }
             }
         },
@@ -7986,17 +7902,17 @@
             "name": "天狗潜行者 Tengu Sneak",
             "senses": "昏暗视觉",
             "languages": "外加2种其他语言",
-            "publicNotes": "<p>天狗是形似乌鸦的类人生物，你在格拉利昂（Golarion）各地都可以找到这些精明聪慧的人。天狗习惯了在旅行时被当做少数民族和面对来自他人的质疑，因此对于许多天狗来说，刀剑之技与语言能力是必须具备的技能。天狗生活在社会边缘，并且倾向于聚集起来从事灰色的行当，这为他们赢得了道上的名望和不道德的声誉——这一标签又反过来迫使天狗遭受歧视和压迫，使得他们落入从事违法行为的循环。</p>\n<p>尽管身为类人生物，天狗却具备形似鸟类的独特特征，很多人会说他们更像乌鸦而非人类。天狗有强壮厚实的喙，手臂和腿部末端也会长出尖锐的爪子。大多数天狗的身体都复盖着短小的羽毛，毛色从暗棕色、深蓝色到亮黑色不等，浅色羽毛很少见，但并非不存在。就像许多鸟类一样，天狗的骨骼是中空的，这使得他们比同体型的类人生物要轻得多，然而天狗之中具有能够用于飞行的翅膀的存在十分罕见。天狗在讲话时很可能会被快速的鸟鸣和喉音打断，因此他们会努力练习会话，以摆脱这种无意识的喉音。羽毛的抖动以及颈部受迫性地剧烈运动是天狗的另一大标志性习惯。天狗通过产卵进行繁殖：天狗蛋的平均直径为11英寸、高约为16英寸，孵化需要4个月的时间。</p>\n<p>天狗是一种散居的民族，你几乎总是可以在较大的王国或其他种族的社区中找到他们。也许是因为外观上与其他类人种族差异更大的关系，天狗会比精灵或矮人更容易遭受质疑和压迫。因此，天狗倾向于与其他被驱逐者或者罕见族裔聚集在一起并组成更紧密的社会群体。真正由天狗组成的社区很少存在，即便出现此类社区，也往往被流放到贫民窟或者其他被遗忘的城市区划内。从很早以前开始，天狗就明白这个世界对他们并不友好，而他们必须学会如何照顾好自己。</p>",
+            "publicNotes": "<p>天狗是形似乌鸦的类人生物，你在格拉利昂各地都可以找到这些精明聪慧的人。天狗习惯了在旅行时被当做少数民族和面对来自他人的质疑，因此对于许多天狗来说，刀剑之技与语言能力是必须具备的技能。天狗生活在社会边缘，并且倾向于聚集起来从事灰色的行当，这为他们赢得了道上的名望和不道德的声誉——这一标签又反过来迫使天狗遭受歧视和压迫，使得他们落入从事违法行为的循环。</p>\n<p>尽管身为类人生物，天狗却具备形似鸟类的独特特征，很多人会说他们更像乌鸦而非人类。天狗有强壮厚实的喙，手臂和腿部末端也会长出尖锐的爪子。大多数天狗的身体都复盖着短小的羽毛，毛色从暗棕色、深蓝色到亮黑色不等，浅色羽毛很少见，但并非不存在。就像许多鸟类一样，天狗的骨骼是中空的，这使得他们比同体型的类人生物要轻得多，然而天狗之中具有能够用于飞行的翅膀的存在十分罕见。天狗在讲话时很可能会被快速的鸟鸣和喉音打断，因此他们会努力练习会话，以摆脱这种无意识的喉音。羽毛的抖动以及颈部受迫性地剧烈运动是天狗的另一大标志性习惯。天狗通过产卵进行繁殖：天狗蛋的平均直径为11英寸、高约为16英寸，孵化需要4个月的时间。</p>\n<p>天狗是一种散居的民族，你几乎总是可以在较大的王国或其他种族的社区中找到他们。也许是因为外观上与其他类人种族差异更大的关系，天狗会比精灵或矮人更容易遭受质疑和压迫。因此，天狗倾向于与其他被驱逐者或者罕见族裔聚集在一起并组成更紧密的社会群体。真正由天狗组成的社区很少存在，即便出现此类社区，也往往被流放到贫民窟或者其他被遗忘的城市区划内。从很早以前开始，天狗就明白这个世界对他们并不友好，而他们必须学会如何照顾好自己。</p>",
             "items": {
-                "v77PLs3ZMXpMZOWj": {
+                "Go for the Eyes": {
                     "name": "啄眼 Go for the Eyes",
                     "description": "<p><strong>触发</strong> 天狗潜行者的喙啄打击造成了重击。</p>\n<hr />\n<p><strong>效果</strong> 天狗潜行者尝试啄出受害者的眼睛。目标必须尝试@Check[type:fortitude|dc:17]豁免。</p>\n<hr />\n<p><strong>成功</strong> 不受影响。</p>\n<p><strong>失败</strong> @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮。</p>\n<p><strong>大失败</strong> 目盲直至生命值治疗到全满为止。</p>"
                 },
-                "xgyBlDJ39BUcAINW": {
+                "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
                     "description": "<p>天狗潜行者对措手不及的生物造成1d6点额外精准伤害。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
                 },
-                "DpI5QZQJMNjqef3w": {
+                "Surprise Attacker": {
                     "name": "突袭者 Surprise Attacker",
                     "description": "<p>在战斗的第一轮，还未行动的生物对于天狗潜行者来说视为@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
                 }
@@ -8012,33 +7928,27 @@
             "senses": "黑暗视觉, 震颤感知(模糊感官)120尺",
             "publicNotes": "<p>传说中的枯萎黏菌是一种巨大的黏菌，自深渊降临。它们的集体意识会随着不断增长的孢子云，逐渐扩散并复盖整个区域。一旦从深渊位面来到主物质位面，枯萎黏菌会试图把所有活物变成养料，让它们感染其孢子，它的存在可以给任何东西招来厄运。</p>\n<p>枯萎黏菌通过快速伸缩它们粘滑的“身体”来移动，它们能在土壤里掘洞，在水中滑行，在陡峭的斜坡上攀爬。这些腐烂的庞然大物并不需要通过这种旅行方式来实现它们吞噬一切的计划；它们的孢子很容易附着在恶魔和其他深渊住民身上，当恶魔被召唤时，这些生物很容易被带到主物质位面。</p>\n<p>当枯萎黏菌感染一个生物时，网状的真菌会在受害者的皮肤上生长，并直至复盖整个身体。此时连受害者的思想也会屈服于枯萎黏菌的意志。枯萎黏菌偏爱的受害者包括动物、精灵和精类，尽管其实它很乐意感染任何它能感染的生物。毁木者（Treerazer）的信徒偶尔会尝试和枯萎黏菌接触，这种行为几乎总是会产生一个新的崇拜孢子枯萎的奴隶教派。</p>",
             "items": {
-                "4Iw8N4ANO4rwmrYg": {
+                "strike-Tentacle": {
                     "name": "触手 Tentacle",
                     "description": "<p>精通攫抓或精通推离</p>"
                 },
-                "8jF0NZz94zAMhCHA": {
-                    "name": "孢子 Spores"
-                },
-                "xpcbUoWx3vMpIFDi": {
-                    "name": "再生25 (寒冷使其失效)"
-                },
-                "9YuL1pu4ZHOAaxcZ": {
+                "Spore Cloud": {
                     "name": "孢子云 Spore Cloud",
                     "description": "<p>@Template[type:emanation|distance:30]{30尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>一个生物进入灵光范围或在灵光中开始它的回合则暴露在孢子枯萎的效果下。</p>"
                 },
-                "7O6Ud0aHDjF3hlFD": {
+                "Infest Environs": {
                     "name": "感染周围 Infest Environs",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 枯萎黏菌位于沼泽或森林地形中。</p>\n<hr />\n<p><strong>效果</strong> 枯萎黏菌从附近的树木和灌木中吸取养分，同时用真菌感染它们。@Template[type:emanation|distance:60]范围内的所有非魔法植物（不包括植物生物）都会枯萎，取而代之的是大量恶心的霉菌和粘滑的蘑菇，并且移除树木和灌木丛提供的任何掩护和隐蔽。枯萎黏菌治疗自身[[/r (200)[healing]]]{200生命值}。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 枯萎黏菌位于沼泽或森林地形中。</p>\n<hr />\n<p><strong>效果</strong> 枯萎黏菌从附近的树木和灌木中吸取养分，同时用真菌感染它们。@Template[type:emanation|distance:60]范围内的所有非魔法植物（不包括植物生物）都会枯萎，取而代之的是大量恶心的霉菌和粘滑的蘑菇，并且移除树木和灌木丛提供的任何掩护和隐蔽。枯萎黏菌治疗自身@Damage[200[healing]]生命值。</p>"
                 },
-                "fvSVZqV8GEHEzMVu": {
+                "Spore Blight": {
                     "name": "孢子枯萎 Spore Blight",
                     "description": "<p>植物和真菌免疫此能力。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:40]</p>\n<hr />\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled4}和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1天)</p>\n<p><strong>阶段3</strong> 被枯萎黏菌@UUID[Compendium.pf2e.conditionitems.Item.9qGBRpbX9NEwtAAr]{控制 Controlled}（如同<em>@UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{支配术 Dominate}</em>; [[/br 5d8 #Dureation Controlled]]{5d8天}）; )</p>\n<p><strong>阶段4</strong> 死亡</p>"
                 },
-                "1Vdy1h0xvUBMB9Mg": {
+                "Sticky Spores": {
                     "name": "粘性孢子 Sticky Spores",
                     "description": "<p>被枯萎黏菌孢子击中的生物必须通过@Check[type:reflex|dc:40]检定，否则它的移动速度会受到-10状态减值，持续一分钟。如果目标生物大失败，会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}直到逃脱。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.g4CRjb2zS1pkVDbk]{效果: 粘性孢子}</p>"
                 },
-                "pyVnqo4FLO0RWxrX": {
+                "Improved Push 20 feet (40 feet on a Critical Hit)": {
                     "name": "精通推离20尺(重击为40尺)"
                 }
             }
@@ -8051,22 +7961,19 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>潮汐之主利用海浪和水的力量来淹没它们的敌人。</p>\n<hr />\n<p>水元素可能具有非凡的破坏力，但这往往并非出于本心；就像水可以给主物质位面带来生命一样，它的波浪可以冲击海岸，雨水也能淹没城市。水元素同样如此难以捉摸。</p>",
             "items": {
-                "X0BfkEsL9YNikfyR": {
-                    "name": "巨浪 Wave"
-                },
-                "xhqKU8Bdnig3dLJs": {
+                "Water-Bound": {
                     "name": "受缚于水 Water-Bound",
                     "description": "<p>当潮汐之主没有接触到水时，它会陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}并无法使用反应动作。</p>"
                 },
-                "WD2TqHcVPCybwkQT": {
+                "Vortex": {
                     "name": "旋涡 Vortex",
                     "description": "<p>@Template[type:emanation|distance:40]{40尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>灵光范围内的，且与潮汐之主位于同一水体内的水，对于正在游泳且没有水特征的生物来说，视为困难地形。</p>"
                 },
-                "Gfs6EH6FQLkgQKGz": {
+                "Drench": {
                     "name": "浸湿 Drench",
                     "description": "<p>元素尝试浇灭@Template[type:emanation|distance:10]范围内的所有火焰。</p>\n<p>它能自动熄灭所有非魔法火焰，并且尝试反制魔法火焰（反制调整值[[/r 1d20+20 #Drench]]{+20}）。</p>"
                 },
-                "Y9YG23TX2Se8zYaw": {
+                "Push or Pull 10 feet": {
                     "name": "推离或拉拽10尺",
                     "description": "<p>潮汐之主可以拉拽生物。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Push]</p>"
                 }
@@ -8078,9 +7985,9 @@
             },
             "name": "魔裔专家 Tiefling Adept",
             "senses": "黑暗视觉",
-            "publicNotes": "<p>魔裔是继承魔族血液的位面后裔。其中最为常见的便是深渊后裔，承载着恶魔腐化的凡人血脉。其中一部分人顶着恶魔之名努力讨生活，但更多人，比如这位魔裔专家，轻易地接受了魔族的标签并完全投身于邪恶之中。</p>\n<hr />\n<p>许多不朽存在居住在伟大彼岸（the Great Beyond）的其他位面。其中一些仁慈且善良，比如天使。其中一些残忍且热爱破坏，比如恶魔。其中一些履行着与道德无关的职责，比如招魂者。而凡人与这些不朽者之间产生情愫也并非闻所未闻的事情，此等结合所诞下的孩子携带着混有超自然元素的血脉，而且会世代留存下去。直系的第一代子嗣之后，此种超凡的影响通常会沉睡于血脉之中，但这种影响也有可能会在后代中强烈地显现出来。这些跨位面血脉的继承者通常会被统称为位面后裔。</p>",
+            "publicNotes": "<p>魔裔是继承魔族血液的位面后裔。其中最为常见的便是深渊后裔，承载着恶魔腐化的凡人血脉。其中一部分人顶着恶魔之名努力讨生活，但更多人，比如这位魔裔专家，轻易地接受了魔族的标签并完全投身于邪恶之中。</p>\n<hr />\n<p>许多不朽存在居住在伟大彼岸的其他位面。其中一些仁慈且善良，比如天使。其中一些残忍且热爱破坏，比如恶魔。其中一些履行着与道德无关的职责，比如招魂者。而凡人与这些不朽者之间产生情愫也并非闻所未闻的事情，此等结合所诞下的孩子携带着混有超自然元素的血脉，而且会世代留存下去。直系的第一代子嗣之后，此种超凡的影响通常会沉睡于血脉之中，但这种影响也有可能会在后代中强烈地显现出来。这些跨位面血脉的继承者通常会被统称为位面后裔。</p>",
             "items": {
-                "qjRGAO0ktmv3fxHQ": {
+                "Drain Bonded Item": {
                     "name": "汲取连结物品 Drain Bonded Item",
                     "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 魔裔专家在本回合内还未行动</p>\n<hr />\n<p><strong>效果</strong> 魔裔专家施放储存在木杖中的力量。这让魔裔专家能施放一个当日已经施放过的已准备法术（每次选择不同的法术环级），且这么做不需要花费法术位。魔裔专家仍必须施放法术且要满足法术的其他要求。</p>"
                 }
@@ -8095,10 +8002,7 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>普通的巨魔是在身材瘦长的愚蠢巨人，徘徊在文明的边缘地带。他们依靠自身那难以置信的力量，用恶毒的尖爪与长牙制服敌人。巨魔那无尽的饥饿驱使他去吞食所有种类的活物，而他那传说中的再生能力便来源于这种贪婪的饮食习惯。巨魔站立时有12至16尺高，不过他们更喜欢为了舒适而弓起身子，同时诱使敌人产生虚假的安全感。</p>\n<hr />\n<p>残忍、嘴角漏着口水、近乎无敌的野兽：这是农民对名为巨魔的骇人怪兽的常规描述。但这些词语很难正确描述巨魔的破坏能力。他们像兽人一样嗜血但不懂得纪律，像巨人一样庞大却能够瞬间使受伤的肉体再生，像食人魔一样堕落却拥有两倍于他们的力量。仅有直接经历，才能理解巨魔那无边的暴力——没什么人会想要这遭遇，即使是在设想最可怕的敌人时。</p>\n<p>一提到巨魔，人们首先想到的是这种生物的身体再生能力。这种再生力是如此强大，克制这种能力的方法只有巨魔弱点的酸液与火焰。然而使用酸液或火焰武器并不足以杀死巨魔——即便是一块巨魔肉，只要假以时日便能恢复成一只完整的巨魔。消灭巨魔威胁的唯一可靠方式便是把这怪物的尸体整个燃烧至渣。</p>\n<p>巨魔是独行的猎手，因为这些邪恶的家伙甚至会憎恶其他巨人。他们偶尔会组成两人或四人一组的小群体四处游荡，但这种情况只会在猎物特别充足或者特别强大的敌对势力进入他们的狩猎场时才会发生。在极少数情况下，足够年长且强大的巨魔会领导一小群巨魔部落。这些“巨魔之王”足够狡诈到能够领导自己的部落进行毁灭性的袭击与屠杀，他们的存在会永远改变周遭的生态系统。巨魔存在许多不同的品种，从其名称直接指代的那类可怕怪物，到与水中生活的水生巨魔（Scrags）杂交生下的洪潮巨魔（flood troll）。根据地域差异而产生的变种也是存在的——山脉巨魔（mountain trolls）存在于岩山之中，或者沼泽海湾中生活的苔巨魔（moss trolls）——但所有这些类别都具有相同的再生能力和永不满足的嗜血欲望。</p>",
             "items": {
-                "50Meu5uWTOPYtMu6": {
-                    "name": "再生20 (酸液或火焰使其失效)"
-                },
-                "scw9HnbCVwAyFzok": {
+                "Rend": {
                     "name": "撕裂 Rend",
                     "description": "<p>爪抓</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
                 }
@@ -8111,28 +8015,25 @@
             "name": "巨魔之王 Troll King",
             "hp": "再生30 (酸液或火焰使其失效)",
             "senses": "黑暗视觉",
-            "publicNotes": "<p>部分巨魔掌握了生存所需的技能，而且寿命也超过了同族的预期水平，他们会集结其他巨魔追随自己的领导。这些佼佼者进化出数个能力，让他们成为了杰出的领袖和强大的猎手——也就是说他们有能力主动强化再生能力，可以通过甩动摆脱酸与火的妨碍，更不用说他们仅凭一声吼叫就能把肉食动物吓得撒腿就跑。巨魔之王的狡诈远超同族的年轻人——他懂得如何拉拢盟友，甚至还懂得如何利用敌人。如果巨魔之王怀疑他的某个追随者正在密谋篡权，便会迅速且致命地降下惩罚。</p>\n<hr />\n<p>残忍、嘴角漏着口水、近乎无敌的野兽：这是农民对名为巨魔的骇人怪兽的常规描述。但这些词语很难正确描述巨魔的破坏能力。他们像兽人一样嗜血但不懂得纪律，像巨人一样庞大却能够瞬间使受伤的肉体再生，像食人魔一样堕落却拥有两倍于他们的力量。仅有直接经历，才能理解巨魔那无边的暴力——没什么人会想要这遭遇，即使是在设想最可怕的敌人时。</p>\n<p>一提到巨魔，人们首先想到的是这种生物的身体再生能力。这种再生力是如此强大，克制这种能力的方法只有巨魔弱点的酸液与火焰。然而使用酸液或火焰武器并不足以杀死巨魔——即便是一块巨魔肉，只要假以时日便能恢复成一只完整的巨魔。消灭巨魔威胁的唯一可靠方式便是把这怪物的尸体整个燃烧至渣。</p>\n<p>巨魔是独行的猎手，因为这些邪恶的家伙甚至会憎恶其他巨人。他们偶尔会组成两人或四人一组的小群体四处游荡，但这种情况只会在猎物特别充足或者特别强大的敌对势力进入他们的狩猎场时才会发生。在极少数情况下，足够年长且强大的巨魔会领导一小群巨魔部落。这些“巨魔之王”足够狡诈到能够领导自己的部落进行毁灭性的袭击与屠杀，他们的存在会永远改变周遭的生态系统。巨魔存在许多不同的品种，从其名称直接指代的那类可怕怪物，到与水中生活的水生巨魔（Scrags）杂交生下的洪潮巨魔（flood troll）。根据地域差异而产生的变种也是存在的——山脉巨魔（mountain trolls）存在于岩山之中，或者沼泽海湾中生活的苔巨魔（moss trolls）——但所有这些类别都具有相同的再生能力和永不满足的嗜血欲望。</p>",
+            "publicNotes": "<p>部分巨魔掌握了生存所需的技能，而且寿命也超过了同族的预期水平，他们会集结其他巨魔追随自己的领导。这些佼佼者进化出数个能力，让他们成为了杰出的领袖和强大的猎手——也就是说他们有能力主动强化再生能力，可以通过甩动摆脱酸与火的妨碍，更不用说他们仅凭一声吼叫就能把肉食动物吓得撒腿就跑。巨魔之王的狡诈远超同族的年轻人——他懂得如何拉拢盟友，甚至还懂得如何利用敌人。如果巨魔之王怀疑他的某个追随者正在密谋篡权，便会迅速且致命地降下惩罚。</p>\n<hr />\n<p>残忍、嘴角漏着口水、近乎无敌的野兽：这是农民对名为巨魔的骇人怪兽的常规描述。但这些词语很难正确描述巨魔的破坏能力。他们像兽人一样嗜血但不懂得纪律，像巨人一样庞大却能够瞬间使受伤的肉体再生，像食人魔一样堕落却拥有两倍于他们的力量。仅有直接经历，才能理解巨魔那无边的暴力——没什么人会想要这遭遇，即使是在设想最可怕的敌人时。</p>\n<p>一提到巨魔，人们首先想到的是这种生物的身体再生能力。这种再生力是如此强大，克制这种能力的方法只有巨魔弱点的酸液与火焰。然而使用酸液或火焰武器并不足以杀死巨魔——即便是一块巨魔肉，只要假以时日便能恢复成一只完整的巨魔。消灭巨魔威胁的唯一可靠方式便是把这怪物的尸体整个燃烧至渣。</p>\n<p>巨魔是独行的猎手，因为这些邪恶的家伙甚至会憎恶其他巨人。他们偶尔会组成两人或四人一组的小群体四处游荡，但这种情况只会在猎物特别充足或者特别强大的敌对势力进入他们的狩猎场时才会发生。在极少数情况下，足够年长且强大的巨魔会领导一小群巨魔部落。这些“巨魔之王”足够狡诈到能够领导自己的部落进行毁灭性的袭击与屠杀，他们的存在会永远改变周遭的生态系统。巨魔存在许多不同的品种，从其名称直接指代的那类可怕怪物，到与水中生活的水生巨魔杂交生下的洪潮巨魔。根据地域差异而产生的变种也是存在的——山脉巨魔存在于岩山之中，或者沼泽海湾中生活的苔巨魔——但所有这些类别都具有相同的再生能力和永不满足的嗜血欲望。</p>",
             "items": {
-                "M4f06NOUIcSyQNr2": {
-                    "name": "再生30 (酸液或火焰使其失效)"
-                },
-                "zDDzvsB3OrJU9QXn": {
+                "Vigorous Shake": {
                     "name": "用力甩动 Vigorous Shake",
                     "description": "<p><strong>触发</strong> 巨魔之王受到了持续酸或火焰伤害。</p>\n<hr />\n<p><strong>效果</strong> 巨魔之王摇晃身体来移除持续酸或火焰效果。巨魔之王立即尝试@Check[type:flat|dc:15]检定来终止触发此反应动作的持续伤害。若巨魔之王的此次检定成功，作为此反应动作的一部分，它能立即使用原始咆哮。</p>"
                 },
-                "czVzxuwWmCRLgnuc": {
+                "Forced Regeneration": {
                     "name": "强行再生 Forced Regeneration",
-                    "description": "<p><strong>需求</strong> 巨魔之王的再生还未失效</p>\n<hr />\n<p><strong>效果</strong> 巨魔之王恢复[[/r (15)[healing]]]{15 HP}。</p>"
+                    "description": "<p><strong>需求</strong> 巨魔之王的再生还未失效</p>\n<hr />\n<p><strong>效果</strong> 巨魔之王恢复@Damage[15[healing]]。</p>"
                 },
-                "3wMfK5zZSqFhhTgs": {
+                "Primordial Roar": {
                     "name": "原始咆哮 Primordial Roar",
                     "description": "<p>巨魔之王释放出野性的怒号。@Template[type:emanation|distance:100]{100尺}范围内的每个非巨魔生物都必须尝试@Check[type:will|dc:29]豁免。之后这些生物会临时免疫该能力10分钟。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}</p>\n<p><strong>大失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}</p>"
                 },
-                "IKXHj9lMhQ6Qy07y": {
+                "Rend": {
                     "name": "撕裂 Rend",
                     "description": "<p>爪抓</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
                 },
-                "8xYRzzHeY6uZztPe": {
+                "Unstoppable Charge": {
                     "name": "势不可挡 Unstoppable Charge",
                     "description": "<p>巨魔之王沿着一条直线行走2次。他能够在此次移动过程中进行至多2次爪抓打击，并可以在此次移动结束时作出1次啃咬打击。他对同一个生物至多作出1次打击。</p>"
                 }
@@ -8146,15 +8047,15 @@
             "senses": "昏暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>老虎是独来独往且有领地意识的猎手，它们会用带斑纹的兽皮融入作为家园的森林和丛林中，并且更喜欢出其不意地发动攻击。</p>\n<hr />\n<p>自然界中很少有掠食者能与猫的潜行能力相匹敌。</p>",
             "items": {
-                "blGUawuZyyQVnVXf": {
+                "Pounce": {
                     "name": "猛扑 Pounce",
                     "description": "<p>老虎行走动作之后衔接1次打击动作。如果老虎在执行此行动前处于@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}状态，则它保持藏匿直到该次打击结束。</p>"
                 },
-                "G3Hz9uWIYCEyoBRq": {
+                "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
                     "description": "<p>老虎对措手不及的生物造成额外1d6精准伤害。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
                 },
-                "g51BzhmOH3vHLWup": {
+                "Wrestle": {
                     "name": "猛压 Wrestle",
                     "description": "<p>老虎对被它@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbing}的生物用爪抓进行1次打击。如果此打击命中，则目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
                 }
@@ -8166,15 +8067,15 @@
             },
             "name": "暴龙 Tyrannosaurus",
             "senses": "昏暗视觉，嗅觉（模糊感官）30尺",
-            "publicNotes": "<p>暴龙被认为是一般意义上的恐龙之王，它是巨大的掠食者，嘴巴宽大，牙齿锋利无比。暴龙被愤怒和饥饿驱使，是大胆无畏的食肉动物，它们会贪婪地大口咬下大型猎物的肉块，或者一口吞下较小的猎物，比如大多数人类。虽然暴龙可以吃腐肉生存，但它们更偏爱活物。</p>\n<p>暴龙用两条粗壮有力的后腿站立，这使它们跑得很快，而它们粗壮的尾巴为它们提供了优良的平衡能力。虽然它们退化的前爪除了在用嘴撕扯猎物的时候起到固定作用以外很少被用到，但是前段也有锋利的尖爪。暴龙单独行动时就够可怕了，但是它们有时也会成群捕食，以杀死更大体型的猎物。只有最强大的生物才能成功驯服暴龙，即便如此，它们也需要为这头贪婪的猛兽提供大量肉食来喂养。</p>\n<p>一些巨人部落，尤其是独眼巨人，或是位于原始大陆不为人所知的居民，甚至会训练暴龙称为坐骑或战兽。在其他地方，修格斯用囚犯喂养这些强大的恐龙，作为处决或祭祀仪式的一部分。一些修格斯教派甚至崇拜暴龙，将它们视为暴力的恶魔般的半神。在这些情况下，这些被饲养长大的暴龙已经习惯被人投喂，对喂养者和驯兽师的态度表现得较为友好。暴龙身长50尺，体重达到7吨以上。</p>\n<p>暴龙的其他变种中，体型要稍微小些的有异龙（allosaurus），体型更大的有南巨龙（giganotosaurus）。即便是体型最小的暴龙，例如矮暴龙（nanotyrannus），其体型也不会小于大型。然而尽管他们体型要小一圈，但是它们的凶猛程度却不亚于暴龙，那些认为矮暴龙训练起来“更安全”的人应该三思！</p>\n<hr />\n<p>这些巨大的爬行动物是世界原始时代的遗留物，现在仍然大量存在于偏僻的荒野中，或者在黑暗之地Darklands 的地下魔法洞穴中。蜥蜴族、半兽人、巨人和其他人形生物有时会把恐龙当作坐骑、守卫或猎兽。众所周知，人类和其他族裔也收集恐龙，把它们放在动物园里展出，或把它们当作异域宠物或守卫。这通常是富人或怪咖喜欢干的事情，但确实也有一些德鲁伊和其他自然的守护者能与恐龙亲密相处，甚至把它们作为动物伙伴。当恐龙在它们正常栖息地以外的地区安家时，通常可能是因为被圈养的恐龙逃进荒野造成的。</p>",
+            "publicNotes": "<p>暴龙被认为是一般意义上的恐龙之王，它是巨大的掠食者，嘴巴宽大，牙齿锋利无比。暴龙被愤怒和饥饿驱使，是大胆无畏的食肉动物，它们会贪婪地大口咬下大型猎物的肉块，或者一口吞下较小的猎物，比如大多数人类。虽然暴龙可以吃腐肉生存，但它们更偏爱活物。</p>\n<p>暴龙用两条粗壮有力的后腿站立，这使它们跑得很快，而它们粗壮的尾巴为它们提供了优良的平衡能力。虽然它们退化的前爪除了在用嘴撕扯猎物的时候起到固定作用以外很少被用到，但是前段也有锋利的尖爪。暴龙单独行动时就够可怕了，但是它们有时也会成群捕食，以杀死更大体型的猎物。只有最强大的生物才能成功驯服暴龙，即便如此，它们也需要为这头贪婪的猛兽提供大量肉食来喂养。</p>\n<p>一些巨人部落，尤其是独眼巨人，或是位于原始大陆不为人所知的居民，甚至会训练暴龙称为坐骑或战兽。在其他地方，修格斯用囚犯喂养这些强大的恐龙，作为处决或祭祀仪式的一部分。一些修格斯教派甚至崇拜暴龙，将它们视为暴力的恶魔般的半神。在这些情况下，这些被饲养长大的暴龙已经习惯被人投喂，对喂养者和驯兽师的态度表现得较为友好。暴龙身长50尺，体重达到7吨以上。</p>\n<p>暴龙的其他变种中，体型要稍微小些的有异龙，体型更大的有南巨龙。即便是体型最小的暴龙，例如矮暴龙，其体型也不会小于大型。然而尽管他们体型要小一圈，但是它们的凶猛程度却不亚于暴龙，那些认为矮暴龙训练起来“更安全”的人应该三思！</p>\n<hr />\n<p>这些巨大的爬行动物是世界原始时代的遗留物，现在仍然大量存在于偏僻的荒野中，或者在黑暗之地Darklands 的地下魔法洞穴中。蜥蜴族、半兽人、巨人和其他人形生物有时会把恐龙当作坐骑、守卫或猎兽。众所周知，人类和其他族裔也收集恐龙，把它们放在动物园里展出，或把它们当作异域宠物或守卫。这通常是富人或怪咖喜欢干的事情，但确实也有一些德鲁伊和其他自然的守护者能与恐龙亲密相处，甚至把它们作为动物伙伴。当恐龙在它们正常栖息地以外的地区安家时，通常可能是因为被圈养的恐龙逃进荒野造成的。</p>",
             "items": {
-                "24g2FSPaGiTvJB6C": {
+                "Fling": {
                     "name": "抛掷 Fling",
                     "description": "<p><strong>需求</strong> 一个生物被暴龙擒抱在嘴里。</p>\n<hr />\n<p><strong>效果</strong> 暴龙把嘴里的生物扔到离它嘴10英尺高，20英尺远的空中。目标生物视为坠落25尺（假设暴龙尽可能高地将目标扔到高处），并承受相应的坠落伤害。如果该生物落在另一个生物身上，则被砸中的生物将受到相同数量的钝击伤害。被砸中的生物可以通过@Check[type:reflex|dc:23|basic:true]豁免来躲避。</p>"
                 },
-                "9gYASQQf328TmVpW": {
+                "Pin Prey": {
                     "name": "摁死 Pin Prey",
-                    "description": "<p><strong>触发</strong> 暴龙用脚踩对大型或更小体型的敌人造成重击。</p>\n<hr />\n<p><strong>效果</strong> 暴龙脚踩打击命中的生物@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}，并且暴龙用它的脚踩牢牢把敌人摁在当前的方格里。只要暴龙一直不移动，被摁死的生物视同被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。暴龙对被摁死的目标的攻击检定有+2环境加值，但是此时暴龙无法对其使用活吞能力，除非暴龙用嘴咬的方式@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{擒抱 Grab}目标。</p>"
+                    "description": "<p><strong>触发</strong> 暴龙用脚踩对大型或更小体型的敌人造成重击。</p>\n<hr />\n<p><strong>效果</strong> 暴龙脚踩打击命中的生物@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}，并且暴龙用它的脚踩牢牢把敌人摁在当前的方格里。只要暴龙一直不移动，被摁死的生物视同被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。暴龙对被摁死的目标的攻击检定有+2环境加值，但是此时暴龙无法对其使用活吞能力，除非暴龙用嘴咬的方式@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{攫抓 Grab}目标。</p>"
                 }
             }
         },
@@ -8187,20 +8088,20 @@
             "senses": "黑暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>独角兽是优雅纯洁的象征，外表像一匹高贵而骄傲的马。他们一般通体纯白，但最著名的部分是从前额伸出的精致的独角。虽然独角兽常常作为自然荒野和圣地的保护者，但它们也因为所拥有的的独角而备受追捧，据说角里蕴含着强大的魔法力量。对许多人来说，仅仅为了要割断它的角而猎杀如此宏伟的生物的想法是完全应受谴责的。的确，失去角的独角兽是一幕令人遗憾的图景，很少有这样的独角兽能在野外继续存活下去。</p>\n<p>独角兽几乎只存在于偏远的、未受污染的荒野地区。有时人们把独角兽与善良的神灵联系在一起，有时则与自然和精类联系在一起，独角兽总以他们的正义和高贵而为人所知。面对大多数类人生物的时候，独角兽都是小心翼翼的，很大程度上是因为偷猎者会猎取它们的角，但有传言称，独角兽对于心灵和精神都纯洁的人没有什么抵抗力。另一些传说则表示独角兽认为少男少女是纯洁之人。</p>",
             "items": {
-                "QL3594a7048GPCem": {
+                "Wild Empathy": {
                     "name": "荒野共情 Wild Empathy",
                     "description": "<p>独角兽和自然界的生物之间存在一种纽带，使它能与之交流。独角兽能对动物使用交涉技能来@UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{建立印象 Make an Impression}，并且向它们进行一些简单的@UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]{提出请求 Requests}。</p>"
                 },
-                "Av5F60Xe1vXr81pb": {
+                "+2 to Will Saves vs. Mental": {
                     "name": "对抗心灵效果时意志豁免拥有+2加值"
                 },
-                "vNaUr8lkk7o1zXWJ": {
+                "Ghost Touch": {
                     "name": "幽冥 Ghost Touch",
                     "description": "<p>独角兽的打击带有<em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{幽冥 Ghost Touch}</em>符文效果。</p>"
                 },
-                "65E6IqqYN0IW2HsH": {
+                "Powerful Charge": {
                     "name": "猛力冲锋 Powerful Charge",
-                    "description": "<p>独角兽用最多两倍速度进行直线冲锋，然后进行一次角抵打击。若独角兽移动至少20尺，则造成额外[[/r (2d6)]]{2d6伤害}。</p>"
+                    "description": "<p>独角兽用最多两倍速度进行直线冲锋，然后进行一次角抵打击。若独角兽移动至少20尺，则造成额外[[/r 2d6]]伤害。</p>"
                 }
             }
         },
@@ -8212,13 +8113,13 @@
             "senses": "回声定位（精确感官）20尺, 昏暗视觉",
             "publicNotes": "<p>虽然常见的吸血蝙蝠有大约7寸左右的翼展，而且不会对单独的大型猎物构成威胁（事实上，这些吸血蝙蝠可以在猎物睡着的时候偷偷吸血），但是一些不常见的特别有攻击性的蝙蝠种类会成群捕食。一大群翻腾的吸血蝙蝠比单独一只加起来要危险的多，它们能在令人恐惧的短时间内造成大量的流血伤口。</p>\n<hr />\n<p>种类繁多的蝙蝠生活在世界各个角落。这些夜行动物大多是无害的食虫动物，但致命品种的吸血蝙蝠和体型像马一样大的巨型蝙蝠对冒险者们来说是较大的威胁。</p>",
             "items": {
-                "7P4VEdy4KccmQ5Gp": {
+                "Echolocation (Precise) 20 feet": {
                     "name": "回声定位（精确感官）20尺",
                     "description": "<p>吸血蝙蝠群可以利用自己的听觉精确地感知范围内的事物。</p>"
                 },
-                "ydBVkEJ8CwcPFkPB": {
+                "Blood Feast": {
                     "name": "血宴 Blood Feast",
-                    "description": "<p>每个处于吸血蝙蝠群占据方格内的敌人受到[[/r (1d4)[piercing]]]{1d4穿刺伤害}（@Check[type:reflex|dc:16|basic:true]豁免）。检定失败的生物还要受到[[/r (1)[persistent,bleed]]]伤害。</p>"
+                    "description": "<p>每个处于吸血蝙蝠群占据方格内的敌人受到@Damage[1d4[piercing]]伤害（@Check[type:reflex|dc:16|basic:true]豁免）。检定失败的生物还要受到@Damage[1[bleed]]伤害。</p>"
                 }
             }
         },
@@ -8232,49 +8133,49 @@
             "languages": "外加一门区域语言",
             "publicNotes": "<p>吸血鬼阴谋家是些邪恶的法师，他们控制着不死的阴谋，将恐惧弥漫在凡人之中。</p>\n<hr />\n<p>吸血鬼是一种以活物鲜血为食的不死生物。</p>",
             "items": {
-                "I0GaQls3ghJMJ5Ib": {
+                "Children of the Night": {
                     "name": "夜之子 Children of the Night",
                     "description": "<p>吸血鬼仅仅存在于此就能使那些黑夜中的生物对其唯命是从。这些代表性的生物包括@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.sPClc6y3dT3XZupv]{老鼠集群 Rat Swarms}、@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VAWmwDA08ZLQd8lW]{蝙蝠集群 Bat Swarms}以及@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.Oilfs8Atv2LjAsUS]{狼 Wolves}，但是也可以包括其他生物。</p>\n<p>只要这些位于其100英尺之内，吸血鬼就能够以心灵感应对它们发出命令，不过这些动物无法以此答复。</p>"
                 },
-                "9iYmbVoVyCe6SNu9": {
+                "Coffin Restoration": {
                     "name": "寝于棺木 Coffin Restoration",
                     "description": "<p>与其他不死生物不同，吸血鬼不会在HP为0时被摧毁。作为替代，它会@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}。如果它的身体在其棺木中休息1小时，则吸血鬼将获得1点生命值，紧接着它的@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.fJSNOw4zHGbIm4bZ]{快速治疗 Fast Healing}能力开始正常生效。</p>"
                 },
-                "S7Khn0wjpXjjyPAp": {
+                "Mist Escape": {
                     "name": "化雾脱身 Mist Escape",
                     "description": "<p><strong>触发</strong> 吸血鬼的生命值降低到0点。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼使用化雾能力。即使在0HP的状况下，它也能获得移动动作朝着它的棺木移动。当在这种形态下且HP为0时，吸血鬼不会受到进一步的伤害。</p>\n<p>它会在到达棺木处或是2小时后自动回复肉身形态并且昏迷，取其先者为准。</p>"
                 },
-                "GXr4u9s0uuvI5J6d": {
+                "Vampire Weaknesses": {
                     "name": "吸血鬼弱点 Vampire Weaknesses",
                     "description": "<p>所有吸血鬼都具有以下弱点。</p>\n<ul>\n<li><strong>强制力 Compulsions</strong> 吸血鬼受制于某些奇妙而又无法解释的强制力。典型的吸血鬼除非被藏在它的棺木中，否则无法自愿穿过流水；无法进入私宅，除非受到房主邀请。根据你的裁定，吸血鬼可能还会拥有各种其他的强制力——例如一只海盗吸血鬼也行无法在未受邀的情况下踏上陆地。吸血鬼仍可能受迫去做这些事情，并且可能如同克服厌恶那样克服强制力。</li>\n<li><strong>厌恶 Revulsion</strong> 吸血鬼不能自愿接近被挥舞着的大蒜或是非邪恶神祇的圣徽10尺以内。生物必须以一个交互动作挥舞大蒜或者圣徽，并且起效一轮（类似举起盾牌）。如果吸血鬼非自愿地来到了厌恶对象的10尺范围内，它获得@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{逃跑 Fleeing}状态，逃离至其厌恶对象的10尺以外。在暴露于其厌恶之物下的一轮之后，吸血鬼可以花费一个拥有专注特征的动作尝试一次@Check[type:will|dc:25|name:Overcome Revulsion]检定。一旦成功，它能在[[/br 1d6 #rounds]]{1d6轮}内克服其厌恶（如果大成功则改为1小时）。</li>\n<li><strong>木桩 Stake</strong> 一根刺穿吸血鬼心脏的木桩能够将吸血鬼的HP降至0点，并且阻止其在0HP时受到的治疗效果，就算它躺在棺木中也是如此。用木桩刺穿吸血鬼需要花费三动作，并且仅能在吸血鬼昏迷的时候才能如此做。如果将木桩拔出，并且它还在自己的棺木中休息了1小时以后，那么吸血鬼便能够再次恢复至0HP以上。如果在吸血鬼被木桩钉穿时将其脑袋砍下后再涂上<em>@UUID[Compendium.pf2e.equipment-srd.Item.z9T4c1hXwOotsMCp]{圣水 Holy Water}</em>，便能彻底摧毁这只吸血鬼。</li>\n<li><strong>阳光 Sunlight</strong> 如果暴露于阳光直射下，吸血鬼将立即变成@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。每次吸血鬼在阳光下结束其回合，缓慢值都将增加1点。如果吸血鬼因此失去了其所有动作，它被摧毁。由于吸血鬼对于光的超自然的厌恶，它们不会投下影子，也不会照映在镜子里。</li>\n</ul>"
                 },
-                "zEz9gGlpNBUnyF2Y": {
+                "Change Shape": {
                     "name": "变身 Change Shape",
-                    "description": "<p>吸血鬼变形为某一动物形态或是变为原形。</p>\n<ul>\n<li><strong>蝙蝠 Bat</strong> 吸血鬼变成@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.C9s5tBxVValC2HTE]{巨蝙蝠 Giant Bat}。</li>\n<ul>\n<li><strong>体型</strong> 大型</li>\n<li><strong>感官</strong> 回声定位40尺</li>\n<li><strong>速度</strong> 20尺, 飞行 30尺</li>\n<li><strong>近战</strong> 尖牙 [[/r 1d20+19 #Fangs]]{+19}/[[/r 1d20+14 #Fangs]]{+14}/[[/r 1d20+9 #Fangs]]{+9}, <strong>伤害</strong> @Damage[(2d8+9)[piercing]]{2d8+9穿刺伤害}</li>\n</ul>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<p>吸血鬼变形为某一动物形态或是变为原形。</p>\n<ul>\n<li><strong>蝙蝠 Bat</strong> 吸血鬼变成@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.C9s5tBxVValC2HTE]{巨蝙蝠 Giant Bat}。</li>\n<ul>\n<li><strong>体型</strong> 大型</li>\n<li><strong>感官</strong> 回声定位40尺</li>\n<li><strong>速度</strong> 20尺, 飞行 30尺</li>\n<li><strong>近战</strong> 尖牙 [[/r 1d20+19 #Fangs]]{+19}/[[/r 1d20+14 #Fangs]]{+14}/[[/r 1d20+9 #Fangs]]{+9}, <strong>伤害</strong> @Damage[(2d8+9)[piercing]]伤害</li>\n</ul>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
-                "czqtIybNHs8mmEeg": {
+                "Create Spawn": {
                     "name": "创造子嗣 Create Spawn",
                     "description": "<p>如果某个生物在被吸血后生命值降低到0而死亡，吸血鬼可以通过将自身的些许血液赐予这名受害者并将其埋入地下3夜，以此将受害者转化为一只吸血鬼。</p>\n<p>如果新生的吸血鬼的等级比它的创造者更低，那么它将处于创造者的控制之下。如果一只吸血鬼同时控制了过多的子嗣（由DM决定），意志足够坚定的子嗣能够通过一次成功的意志检定对抗吸血鬼的意志DC来重获自由。</p>"
                 },
-                "3ZSVEZBMKleuEd84": {
+                "Dominate": {
                     "name": "支配 Dominate",
                     "description": "<p>吸血鬼将<em>@UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{支配术 Dominate}</em>作为神术内在法术，并且可以随意施放。因为吸血鬼需要凝视目标的眼睛来施放此法术，所以这使得法术带有视觉特征。豁免DC使用吸血鬼的等级DC，豁免成功的生物在24小时内免疫吸血鬼的支配能力。</p>\n<p>完全摧毁吸血鬼可以终止其支配，但是仅仅将吸血鬼的HP降低到0点则不足以破坏此法术。</p>"
                 },
-                "9ewh7tMyC0NRIpZx": {
+                "Drain Bonded Item": {
                     "name": "汲取联结物品 Drain Bonded Item",
                     "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 吸血鬼还未在本轮行动。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼消耗了存储在玺戒中的能量。这让吸血鬼能够在不消耗法术位的情况下施放一个今天已经施放过的已准备法术。吸血鬼仍需施放法术，并且需要满足此法术的其他需求。</p>"
                 },
-                "HhkalK1aMfqDSiWQ": {
+                "Drink Blood": {
                     "name": "吸血 Drink Blood",
-                    "description": "<p><strong>需求</strong> 一名被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}、@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}、或是自愿的生物处于吸血鬼的触及范围内。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼用尖牙刺入该生物的体内吸食其血液。如果受害者被擒抱，吸血鬼需要进行一次运动检定对抗受害者的强韧DC；在其他情况下则都将自动成功。</p>\n<p>被害者获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，同时吸血鬼获得[[/r (10)[healing]]]{10生命值}，而多余的生命值则作为临时生命。从已经获得流失状态的生物身上吸血不会使吸血鬼回复任何生命值，但是受害者的仍会增加1点流失状态值。吸血鬼同样可以通过饮下被保存在容器内的血液并以此维生，但是这样做并不会增加其生命值。</p>\n<p>受害者的流失状态每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[type:medicine|dc:20|name:Blood Transfusion]检定进行一次输血，并在10分钟后减少1点流失状态值。</p>"
+                    "description": "<p><strong>需求</strong> 一名被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}、@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}、或是自愿的生物处于吸血鬼的触及范围内。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼用尖牙刺入该生物的体内吸食其血液。如果受害者被擒抱，吸血鬼需要进行一次运动检定对抗受害者的强韧DC；在其他情况下则都将自动成功。</p>\n<p>被害者获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，同时吸血鬼获得@Damage[10[healing]]生命值，而多余的生命值则作为临时生命。从已经获得流失状态的生物身上吸血不会使吸血鬼回复任何生命值，但是受害者的仍会增加1点流失状态值。吸血鬼同样可以通过饮下被保存在容器内的血液并以此维生，但是这样做并不会增加其生命值。</p>\n<p>受害者的流失状态每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[type:medicine|dc:20|name:Blood Transfusion]检定进行一次输血，并在10分钟后减少1点流失状态值。</p>"
                 },
-                "DD9mP7VmHRk4Lm97": {
+                "Steady Spellcasting": {
                     "name": "稳定施法 Steady Spellcasting",
                     "description": "<p>如果一个生物的反应动作将打断吸血鬼阴谋家的施法动作，吸血鬼可尝试一次@Check[type:flat|dc:15]检定。如果成功，吸血鬼的动作不会被打断。</p>"
                 },
-                "zl24K9E3qEAfVXrR": {
+                "Turn to Mist": {
                     "name": "化雾 Turn to Mist",
-                    "description": "<p>吸血鬼如同使用<em>@UUID[Compendium.pf2e.spells-srd.Item.V8wXOsoejQhe6CyG]{气化形体 Gaseous Form}</em>一般化为一团雾气，或者恢复原形。当处于气化形态时吸血鬼失去@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.fJSNOw4zHGbIm4bZ]{快速治疗 Fast Healing}能力。</p>\n<p>吸血鬼可以无限期地保持这种形态。</p>"
+                    "description": "<p>吸血鬼如同使用<em>@UUID[Compendium.pf2e.spells-srd.Item.V8wXOsoejQhe6CyG]{汽化形体 Vapor Form}</em>一般化为一团雾气，或者恢复原形。当处于气化形态时吸血鬼失去@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.fJSNOw4zHGbIm4bZ]{快速治疗 Fast Healing}能力。</p>\n<p>吸血鬼可以无限期地保持这种形态。</p>"
                 }
             }
         },
@@ -8288,36 +8189,33 @@
             "senses": "黑暗视觉, 灵敏嗅觉(模糊感官) 60尺; 真视术",
             "publicNotes": "<p>岩山蛇龙居住在最高的火山中，以自然形成的洞穴或者被融化的火山口为巢。岩山蛇龙的脾气和破坏力就像熔岩本身一样炽热和暴虐。</p>\n<hr />\n<p>古老且巨大的蛇龙生活在世界的北部地区，他们憎恨那些自己认定的劣等生物，并试图尽可能对这些不幸的受害者造成更多的痛苦。尽管这些残暴的蛇形生物不如大多数人想象中的带翼真龙强大，但他们确实拥有难以置信且致命的力量，使其可以与真龙的残暴一较高下。</p>",
             "items": {
-                "nHYtHMopSyGQg3WT": {
-                    "name": "再生20 (寒铁使其失效)"
-                },
-                "fEbZopQgOxVNZDnI": {
-                    "name": "借机攻击 Attack of Opportunity",
+                "Attack of Opportunity (Tail Only)": {
+                    "name": "借机攻击 Attack of Opportunity (仅限甩尾)",
                     "description": "<p>仅限甩尾</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 },
-                "zLUOcpj85OOnwvRh": {
+                "Curse of Boiling Blood": {
                     "name": "沸血诅咒 Curse of Boiling Blood",
                     "description": "<p>当有生物杀死岩山蛇龙时，他必须成功通过@Check[type:will|dc:48]豁免，失败则会永久性地获得火焰20的弱点，并且由于无时无刻都要忍耐的痛苦中而陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。只要该角色持续承受诅咒带来的痛苦，他的缓慢状态就永远不会低于缓慢1。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.CUgmb7g65vYNT2hn]{效果: 沸血诅咒}</p>"
                 },
-                "mgb2nO0WkJsnZogZ": {
+                "Lava Affinity": {
                     "name": "熔岩亲和 Lava Affinity",
                     "description": "<p>岩山蛇龙能够在浸没于熔岩和岩浆中的情况下自由地呼吸和游泳。</p>"
                 },
-                "JvFUFSxHH2EThNAC": {
+                "Breath Weapon": {
                     "name": "喷吐武器 Breath Weapon",
-                    "description": "<p>岩山蛇龙喷出@Template[type:cone|distance:60]的火焰与灰烬，对区域内的生物造成[[/r (20d6)[fire]]]{20d6火焰伤害}（@Check[type:reflex|dc:46|basic:true]豁免）。在岩山蛇龙的下个回合开始时，被喷吐武器影响的区域会被厚厚的灼热烟雾所复盖，同时灼伤眼睛与肺部，对区域内的所有生物造成额外[[/r (10d6)[fire]]]{10d6火焰伤害}（@Check[type:reflex|dc:46|basic:true]豁免）。整轮都在烟雾之内且睁着眼睛的生物必须成功通过@Check[type:fortitude|dc:44]豁免，失败则会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。这些烟雾会在1分钟后消散；在强风中，烟雾会在5轮后消散，在更强的风力影响下，这些烟雾会以更快的速度消散。</p>\n<p>岩山蛇龙在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用喷吐武器。</p>"
+                    "description": "<p>岩山蛇龙喷出@Template[type:cone|distance:60]的火焰与灰烬，对区域内的生物造成@Damage[20d6[fire]]伤害（@Check[type:reflex|dc:46|basic:true]豁免）。在岩山蛇龙的下个回合开始时，被喷吐武器影响的区域会被厚厚的灼热烟雾所复盖，同时灼伤眼睛与肺部，对区域内的所有生物造成额外@Damage[10d6[fire]]伤害（@Check[type:reflex|dc:46|basic:true]豁免）。整轮都在烟雾之内且睁着眼睛的生物必须成功通过@Check[type:fortitude|dc:44]豁免，失败则会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。这些烟雾会在1分钟后消散；在强风中，烟雾会在5轮后消散，在更强的风力影响下，这些烟雾会以更快的速度消散。</p>\n<p>岩山蛇龙在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用喷吐武器。</p>"
                 },
-                "KzNMNX33tOGWTxJY": {
+                "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(3d6+21)[bludgeoning]]{3d6+21钝击}, @Check[type:fortitude|dc:46|basic:true]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(3d6+21)[bludgeoning]], @Check[type:fortitude|dc:46|basic:true]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "CMfpQM5btdzVWxB5": {
+                "Slashing Claws": {
                     "name": "挥舞利爪 Slashing Claws",
                     "description": "<p>岩山蛇龙用他的爪抓作出4次打击，每次对抗1名不同的目标。这些攻击会被计入岩山蛇龙的多次攻击减值，但是直至岩山蛇龙作出上述所有攻击为止，多次攻击减值的数值不会增加</p>"
                 },
-                "oeOZCitfRoZXCLfy": {
+                "Tor Linnorm Venom": {
                     "name": "岩山蛇龙毒 Tor Linnorm Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:44]</p>\n<hr />\n<p><strong>最大持续时间</strong> 10轮</p>\n<p><strong>阶段1</strong> [[/r (8d6)[fire]]]{8d6火焰伤害}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}</p>\n<p><strong>阶段2</strong> [[/r (12d6)[fire]]]{12d6火焰伤害}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:44]</p>\n<hr />\n<p><strong>最大持续时间</strong> 10轮</p>\n<p><strong>阶段1</strong> @Damage[8d6[fire]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}</p>\n<p><strong>阶段2</strong> @Damage[12d6[fire]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}</p>"
                 }
             }
         },
@@ -8329,7 +8227,7 @@
             "senses": "昏暗视觉，嗅觉（模糊感官）30尺",
             "publicNotes": "<p>在许多社会中，马都是坐骑和驮兽。它们是忠诚的和典型的温和生物，对于那些想长途旅行的人来说，它们是无价之宝。较小的种族，像侏儒和半身人，经常使用矮种马作为坐骑，而马是人类和其他中型类人所喜欢的坐骑。大多数人类遇到的马都是驯养的，尽管这些强壮动物组成的大型群落可以在野外找到。</p>",
             "items": {
-                "xeAR997MOrxz4cyA": {
+                "Gallop": {
                     "name": "奔驰 Gallop",
                     "description": "<p>战马行走两次，在这些行走中有一个10尺的环境加值。</p>"
                 }
@@ -8343,7 +8241,7 @@
             "senses": "昏暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>在许多社会中，马都是坐骑和驮兽。它们是忠诚的和典型的温和生物，对于那些想长途旅行的人来说，它们是无价之宝。较小的种族，像侏儒和半身人，经常使用矮种马作为坐骑，而马是人类和其他中型类人所喜欢的坐骑。大多数人类遇到的马都是驯养的，尽管这些强壮动物组成的大型群落可以在野外找到。</p>",
             "items": {
-                "b8kddR2Im2nSOnDM": {
+                "Gallop": {
                     "name": "奔驰 Gallop",
                     "description": "<p>矮种战马行走两次，在这些行走中有一个10尺的环境加值。</p>"
                 }
@@ -8357,16 +8255,18 @@
             "senses": "黑暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>座狼象普通的狼一样成群结队地捕猎和包围猎物，但它们的狡猾和嘲弄受害者的嗜好使它们很容易与不太聪明的同类区分开来。尽管它们很聪明，但座狼对食物和居所有着简单的渴望，这使得兽人和大地精等邪恶类人生物很容易招募它们来保护营地或加入战斗。大多数的座狼都顺从这种安排，但是如果食物吃完了，座狼更愿意把地精的肉加入它们的日常食物中。</p>\n<hr />\n<p>座狼是一种聪明又狠毒的狼，栖息在地精、大地精、兽人和其他暴力的类人生物之中。</p>",
             "items": {
-                "z4Mouf0sgt0pO2Vz": {
+                "Avenging Bite": {
                     "name": "复仇啃咬 Avenging Bite",
                     "description": "<p><strong>触发</strong> 一个在座狼下颚攻击范围内的生物攻击了座狼的盟友。</p>\n<hr />\n<p><strong>效果</strong> 座狼对触发生物进行一次啮咬打击。</p>"
                 },
-                "VfGIlE5o88e6ZuW6": {
+                "Pack Attack": {
                     "name": "成群袭击 Pack Attack",
                     "description": "<p>对于触及范围内至少有两名座狼盟友的生物，座狼的打击造成额外[[/r (1d4)]]{1d4伤害}。</p>"
                 },
-                "name": "活吞 Swallow Whole",
-                "description": "<p>小型, @Damage[(1d6+2)[bludgeoning]]{1d6+2钝击伤害}, 破裂9</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                "Swallow Whole":{
+                    "name": "活吞 Swallow Whole",
+                    "description": "<p>小型, @Damage[(1d6+2)[bludgeoning]]伤害, 破裂9</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                }
             }
         },
         "Warsworn": {
@@ -8380,40 +8280,34 @@
             "languages": "(无法说任何语言)",
             "publicNotes": "<p>战殁巨虫由一堆几十甚至上百活动的尸体组成，他们往往是战争的受害者。它们由司掌不死或战争领域的神祇创造，或者在某些罕见的情况下，由某场特别血腥残酷的战争所造成的毁灭中自发诞生。</p>",
             "items": {
-                "vZOKYoSD979v70vq": {
-                    "name": "尸潮 Corpse Wave"
-                },
-                "QKtfubIn7OYITmUL": {
+                "strike-Animated Weapon": {
                     "name": "活化武器 Animated Weapon",
                     "description": "<p>4个该武器的伤害骰+9，伤害类型取决于武器本身。</p>"
                 },
-                "Xd6tMydNtV3GyWPm": {
-                    "name": "残骸球 Scrap Ball"
-                },
-                "vhMuwHfxhvT3a6e2": {
+                "+1 Status to All Saves vs. Vitality": {
                     "name": "对抗命能效果时所有豁免有+1状态加值"
                 },
-                "I98w77MsvsKISF0z": {
+                "Frightful Presence": {
                     "name": "气势凶猛 Frightful Presence",
                     "description": "<p>@Template[type:emanation|distance:100]{100尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光} @Check[type:will|dc:35]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
-                "83qHKEXcHOEaa6iS": {
+                "Absorb": {
                     "name": "吸收 Absorb",
                     "description": "<p><strong>触发</strong> 战殁巨虫移动进一个@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}生物占据的空间</p>\n<hr />\n<p><strong>效果</strong> 战殁巨虫把濒死的生物吸收进自己体内，立即杀死该生物并且自身回复等同于生物等级的HP。只要战殁巨虫一直存活，被吸收的生物就无法复活，除非使用<em>@UUID[Compendium.pf2e.spells-srd.Item.6dDtGIUerazSHIOu]{祈愿术 Wish}</em>或类似的强大的效果。</p>"
                 },
-                "qaGJzO6SddpAXZKg": {
+                "Animated Weapons": {
                     "name": "活化武器 Animated Weapons",
                     "description": "<p>战殁巨虫控制100尺内无主的武器们，迫使它们漂浮在自己周围。战殁巨虫可以用心灵感应遥控这些武器在100尺触及范围内进行近战攻击。</p>"
                 },
-                "yLFnxHxGno0eHAjr": {
+                "Energy Drain": {
                     "name": "能量吸取 Energy Drain",
                     "description": "<p>当战殁巨虫以尸潮打击或践踏命中一个生物，目标必须成功通过@Check[type:fortitude|dc:35]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}和@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标豁免大成功，则24小时内对能量吸取能力临时免疫。</p>"
                 },
-                "Dzxj1t6HVexa7Wyz": {
+                "Plummet": {
                     "name": "骤然下落 Plummet",
                     "description": "<p>一个被战殁巨虫残骸球打击命中的生物必须通过@Check[type:reflex|dc:37]豁免。如果失败，目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}；如果目标是飞行生物，它下落120尺，如果它坠落地面，则受到坠落伤害并倒地。如果大失败，目标还会被压在一堆残骸下面（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC37）。</p>"
                 },
-                "S2UbYSN0YRKJbMS0": {
+                "Trample": {
                     "name": "践踏 Trample",
                     "description": "<p>超大型或更小体型, 尸潮, @Check[type:reflex|dc:37|basic:true]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 }
@@ -8428,29 +8322,25 @@
             "languages": "狼类认同",
             "publicNotes": "<p>狼化人诅咒——许多人将其称为兽化症（lycanthropy）——将狼类的饥饿嗜血与掠食本能灌输给携带者。狼化人倾向于生活在社会的边缘或者小型聚居点，在类人形态下，他们作为劳工、猎人、农夫或捕猎者工作。到了晚上，这些村民便化身为以邻人为食的暴力杀手和虐待狂跟踪者。狼化人是最典型的化形生物，大多数人提到此类存在时首先想到的便是他们。</p>\n<p>尽管大多数狼化人通过独居的方式来隐藏自身所遭受的诅咒，但其中一部分仍然保留了狼类的群居心理。一小群狼化人通常会形成家庭式的狩猎团体，其中最年长或最强大的个体担任领袖；随着家族影响力的成长，这个团体会逐渐甄选并接纳新成员。</p>\n<hr />\n<p>化形生物是在满月的光芒照耀下注定会转变为动物以及动物与类人混合形态的类人生物。这些变形生物是一种古老原能诅咒的产物，这种诅咒能够在转化后通过自身牙齿的啃咬来传播。他们能够潜藏在野外或人群中，再加上这种状态的传染性，使得化形生物恒久不变地成为了引发人群恐慌般猜忌的诱因。</p>",
             "items": {
-                "ii0tl0zE2tEgfPD4": {
+                "Wolf Empathy": {
                     "name": "狼类认同 Wolf Empathy",
                     "description": "<p>狼化人能够与狼类进行沟通。</p>"
                 },
-                "62IVWtvdiJi9PSZ1": {
-                    "name": "借机攻击 Attack of Opportunity",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
-                },
-                "oXq7JKUPh72N7tPy": {
+                "Change Shape": {
                     "name": "变形 Change Shape",
-                    "description": "<ul>\n<li><strong>人类 Human</strong>\n<ul>\n<li><strong>近战</strong> 拳头 [[/r 1d20+11 #Fist]]{+11}/[[/r 1d20+6 #Fist]]{+6}/[[/r 1d20+1 #Fist]]{+1} (灵巧, 非致命), <strong>伤害</strong> @Damage[(1d4+8)[bludgeoning]]{1d4+8钝击伤害}</li>\n</ul>\n</li>\n<li><strong>狼 Wolf</strong>\n<ul>\n<li><strong>速度</strong> 40尺</li>\n<li><strong>近战</strong> 啃咬[[/r 1d20+11 #Jaws]]{+11}/[[/r 1d20+6 #Jaws]]{+6}/[[/r 1d20+1 #Jaws]]{+1}, <strong>伤害</strong> @Damage[(1d8+8)[piercing]]{1d8+8穿刺伤害} 附带@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.BCLvAx4Pz4MLa2pu]{击倒 Knockdown}</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。.</p>\n<p>在类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如攫抓），并且失去其任何武器打击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul>\n<li><strong>人类 Human</strong>\n<ul>\n<li><strong>近战</strong> 拳头 [[/r 1d20+11 #Fist]]{+11}/[[/r 1d20+6 #Fist]]{+6}/[[/r 1d20+1 #Fist]]{+1} (灵巧, 非致命), <strong>伤害</strong> @Damage[(1d4+8)[bludgeoning]]伤害</li>\n</ul>\n</li>\n<li><strong>狼 Wolf</strong>\n<ul>\n<li><strong>速度</strong> 40尺</li>\n<li><strong>近战</strong> 啃咬[[/r 1d20+11 #Jaws]]{+11}/[[/r 1d20+6 #Jaws]]{+6}/[[/r 1d20+1 #Jaws]]{+1}, <strong>伤害</strong> @Damage[(1d8+8)[piercing]]伤害附带@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.BCLvAx4Pz4MLa2pu]{击倒 Knockdown}</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。.</p>\n<p>在类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如攫抓），并且失去其任何武器打击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
-                "Xmaw18x2qDwDq7tB": {
+                "Curse of the Werewolf": {
                     "name": "狼化人诅咒 Curse of the Werewolf",
                     "description": "<p>此诅咒仅能影响类人生物。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:19]</p>\n<hr />\n<p>在每个月圆之夜，被诅咒的生物必须尝试另一次强韧豁免，失败则会变化为同种类的化形生物，直至黎明。</p>\n<p>该生物会在GM的控制之下，并在后半夜横冲直撞，直至天明并失去知觉。</p>"
                 },
-                "y22Jw3B6gV1YXd2p": {
+                "Moon Frenzy": {
                     "name": "满月狂乱 Moon Frenzy",
                     "description": "<p>当满月出现在夜空中时，化形生物必须变化为混合形态，在之后无法进行变形，体型增大1阶，触及增加5尺，啃咬伤害增加2点。</p>\n<p>当月亮落下或太阳升起时，化形生物会变回类人形态，并陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}，持续[[/br 2d4 #Fatigued duration]]{2d4小时}。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.dRe8n1nBWMIXd8jh]{效果: 满月狂乱}</p>"
                 },
-                "I5zNTSZyjvhCKz3D": {
+                "Pack Attack": {
                     "name": "群起而击 Pack Attack",
-                    "description": "<p>当目标生物至少在2名狼化人的盟友的触及范围内时，狼化人的打击会对其造成[[/r (1d6)]]{1d6额外伤害}。</p>"
+                    "description": "<p>当目标生物至少在2名狼化人的盟友的触及范围内时，狼化人的打击会对其造成[[/r 1d6]]伤害。</p>"
                 }
             }
         },
@@ -8463,14 +8353,14 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>水魔蝠极度热爱恶作剧，它们总是乐于用一次帮助来换取一次开怀大笑。就像火魔蝠是魔蝠里最接近邪恶阵营，但又没有完全越过邪恶的边界一样，水魔蝠是魔蝠里最和善的，因此也是最接近善良阵营的。尽管如此，人们对于水魔蝠的善意还是要长个心眼，因为没人能指望它们的善心能压抑它们喜爱恶作剧和整人的天性。水魔蝠拥有蓝绿色的皮肤，在光线下像鱼鳞一样闪闪发光。虽然水魔蝠的翅膀看起来更像蹼鳍而非能够飞行的四肢，但它们可以像其他魔蝠一样轻松地挥动翅膀在空中飞行。水魔蝠在可能的情况下更喜欢在水里游泳，只有必要时才会离开水面。</p>\n<hr />\n<p>魔蝠——有时又被成为元素小怪——是一种有着蝙蝠翅膀的小型双足生物，它们服务于元素位面中更大的元素，或是将它们召唤到主物质位面的施法者学徒。所有魔蝠都拥有和它们种类相匹配的魔法能力和吐息。</p>",
             "items": {
-                "HM9U7vUmg5uUan4k": {
+                "Fast Healing 2 (While Underwater)": {
                     "name": "快速治疗2 (在水下时)"
                 },
-                "0naynsYzlUHn8xiZ": {
+                "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>水魔蝠对@Template[type:cone|distance:15]范围喷出酸液，对范围内所有生物造成[[/r (2d6)[acid]]]{2d6酸液伤害}（@Check[type:reflex|dc:17|basic:true]豁免）。</p>\n<p>水魔蝠在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次进行吐息。</p>"
+                    "description": "<p>水魔蝠对@Template[type:cone|distance:15]范围喷出酸液，对范围内所有生物造成@Damage[2d6[acid]]伤害（@Check[type:reflex|dc:17|basic:true]豁免）。</p>\n<p>水魔蝠在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次进行吐息。</p>"
                 },
-                "2xaMJwr5gjV30x3x": {
+                "Drench": {
                     "name": "浸湿 Drench",
                     "description": "<p>水魔蝠尝试浇灭@Template[type:emanation|distance:5]范围内的所有火焰。</p>\n<p>它能自动熄灭所有非魔法火焰，并且尝试反制魔法火焰（反制调整值[[/r 1d20+7 #Drench]]{+7}）。</p>"
                 }
@@ -8483,21 +8373,21 @@
             "name": "伏网怪 Web Lurker",
             "senses": "黑暗视觉, 震颤感知(模糊感官)30尺(有生物碰触到他的网时)",
             "languages": "蛛语者",
-            "publicNotes": "<p>伏网怪，也被称为伊特怪（Ettercap），是一种仅生活在蜘蛛成群的巢穴内的丑陋怪物，但他会积极地培育和看护此类昆虫。</p>",
+            "publicNotes": "<p>伏网怪，也被称为伊特怪，是一种仅生活在蜘蛛成群的巢穴内的丑陋怪物，但他会积极地培育和看护此类昆虫。</p>",
             "items": {
-                "Kj1uqisygxPxuaC9": {
+                "Spider Speak": {
                     "name": "蛛语者 Spider Speak",
                     "description": "<p>伏网怪能与蜘蛛交谈，其效果与限制同<em>@UUID[Compendium.pf2e.spells-srd.Item.BBvV7qoXGdw09q1C]{动物交谈 Speak with Animals}</em>。</p>"
                 },
-                "gMf2LQ1HIE4bCW8p": {
+                "Spring upon Prey": {
                     "name": "先猎物一步 Spring upon Prey",
                     "description": "<p><strong>触发</strong> 有生物碰触到伏网怪的蛛网，且伏网怪自身也在网上时。</p>\n<p><strong>需求</strong> 此时还未投掷先攻。</p>\n<hr />\n<p><strong>效果</strong> 伏网怪自动注意到该生物并且在投掷先攻前行走或攀爬。</p>"
                 },
-                "P7JMDrm2HB1QPV3N": {
+                "Web Lurker Venom": {
                     "name": "伏网怪毒 Web Lurker Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:19]</p>\n<hr />\n<p><strong>最大持续时间</strong> 10轮</p>\n<p><strong>阶段1</strong> [[/r (1d6)[poison]]]{1d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (1d6)[poison]]]{1d6毒素伤害}, 措手不及, 和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1轮)</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:19]</p>\n<hr />\n<p><strong>最大持续时间</strong> 10轮</p>\n<p><strong>阶段1</strong> @Damage[1d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[1d6[poison]]伤害, 措手不及, 和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1轮)</p>"
                 },
-                "Re5HgCWQJTyzGewL": {
+                "Web Trap": {
                     "name": "蛛网陷阱 Web Trap",
                     "description": "<p>被伏网怪的蛛网攻击命中的生物会被禁足，并被困在最近的表面上，直至成功通过@Check[type:acrobatics|dc:20|traits:action:escape]检定才能@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}。</p>"
                 }
@@ -8511,29 +8401,23 @@
             "hp": "吸血",
             "senses": "黑暗视觉, 震颤感知(模糊感官)60尺",
             "languages": "(无法说任何语言)",
-            "publicNotes": "<p>在血流成河的战场或被围困的城市周围饱受战争摧残的地区里，大量的鲜血浇灌了温姆斯，这是一种肮脏的蔓藤，从人类的苦难中汲取养分，像吸水一样吸收血液。温姆斯拥有基本的智能和无法抑制的嗜血欲望，它们一生大部分时间都在伺机而动，在它们恐怖家园的血腥土壤中成长到令人难以置信的规模。尽管组成温姆斯的藤蔓几乎只有普通麻绳粗细，但是成年的温姆斯拥有重达6吨重的藤蔓，把这些藤蔓拉直以后能达到6000尺长。然而温姆斯并不会把自己拉这么长，相反的是它们更喜欢将自己缩成一个15尺见方的巨大土丘。尽管温姆斯平时看起来是懒散的样子，但是血腥味足以使其变得狂暴。它会把自己压缩成一个一个由锋利的刺和捆绑着的藤蔓组成的球体，就像一团可怕的、有大象那么大的风滚草。它们通常会从地上挖出巨大的石块或整棵树，然后将它们整合进滚动的躯体，用这些东西来增强防御能力，抵御不同形式的攻击，或者以令人恐惧的精准度将它们扔向远方的敌人。</p>\n<p>一些人猜测，温姆斯本质是一种恶魔腐化，是由切利亚斯的斯戎家族释放到格拉利昂的，也许是一种对抗对手的焦土战术。涅玛萨斯（Nirmathas）和摩尔苏恩（Molthune）的具有影响力的贵族们都指责对方创造出了这种怪物，涅玛萨斯认为摩尔苏恩和炼狱帝国切利亚斯关系密切，而摩尔苏恩则把怪物诞生的原因归咎于涅玛萨斯众多德鲁伊和游侠所使用的的原能魔法。有几个瓦瑞希亚（Varisian）传说中的怪物和温姆斯的描述非常相似，这些故事直指一个著名的江湖骗子，而来自蒙蒂维（Mendev）的十字军坚持认为，温姆斯是前飞蝗寄主德斯卡利（Deskari）在被凡人英雄击败之前对格拉利昂释放的祸害。</p>",
+            "publicNotes": "<p>在血流成河的战场或被围困的城市周围饱受战争摧残的地区里，大量的鲜血浇灌了温姆斯，这是一种肮脏的蔓藤，从人类的苦难中汲取养分，像吸水一样吸收血液。温姆斯拥有基本的智能和无法抑制的嗜血欲望，它们一生大部分时间都在伺机而动，在它们恐怖家园的血腥土壤中成长到令人难以置信的规模。尽管组成温姆斯的藤蔓几乎只有普通麻绳粗细，但是成年的温姆斯拥有重达6吨重的藤蔓，把这些藤蔓拉直以后能达到6000尺长。然而温姆斯并不会把自己拉这么长，相反的是它们更喜欢将自己缩成一个15尺见方的巨大土丘。尽管温姆斯平时看起来是懒散的样子，但是血腥味足以使其变得狂暴。它会把自己压缩成一个一个由锋利的刺和捆绑着的藤蔓组成的球体，就像一团可怕的、有大象那么大的风滚草。它们通常会从地上挖出巨大的石块或整棵树，然后将它们整合进滚动的躯体，用这些东西来增强防御能力，抵御不同形式的攻击，或者以令人恐惧的精准度将它们扔向远方的敌人。</p>\n<p>一些人猜测，温姆斯本质是一种恶魔腐化，是由切利亚斯的斯戎家族释放到格拉利昂的，也许是一种对抗对手的焦土战术。涅玛萨斯和摩尔苏恩的具有影响力的贵族们都指责对方创造出了这种怪物，涅玛萨斯认为摩尔苏恩和炼狱帝国切利亚斯关系密切，而摩尔苏恩则把怪物诞生的原因归咎于涅玛萨斯众多德鲁伊和游侠所使用的的原能魔法。有几个瓦瑞希亚传说中的怪物和温姆斯的描述非常相似，这些故事直指一个著名的江湖骗子，而来自蒙蒂维的十字军坚持认为，温姆斯是前飞蝗寄主德斯卡利在被凡人英雄击败之前对格拉利昂释放的祸害。</p>",
             "items": {
-                "erc12GafQUSAqN7h": {
-                    "name": "抽打 Pummel"
-                },
-                "qIe9DjokLrx7mSvK": {
-                    "name": "投石 Boulder"
-                },
-                "96XPNyAYt1NHy3H5": {
+                "Blood Leech": {
                     "name": "吸血 Blood Leech",
                     "description": "<p><strong>触发</strong> 温姆斯对一个生物使用紧勒并造成伤害。</p>\n<hr />\n<p><strong>效果</strong> 温姆斯恢复等同于紧勒伤害的一半的生命值。</p>"
                 },
-                "Rwgsw9DmxxBRN4NY": {
+                "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(2d12+10)[bludgeoning]]{2d12+10钝击伤害}, @Check[type:fortitude|dc:37|basic:true]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(2d12+10)[bludgeoning]]伤害, @Check[type:fortitude|dc:37|basic:true]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "PZQRsmRUDWR50Kiq": {
+                "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[type:reflex|dc:37|traits:damaging-effect], [[/r (4d8)[bludgeoning]]]{4d8钝击伤害}, 逃脱DC35, 破裂36</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[type:reflex|dc:37|traits:damaging-effect], @Damage[4d8[bludgeoning]]伤害, 逃脱DC35, 破裂36</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
-                "t4Gnn9gqqcKWerhM": {
+                "Thorny Mass": {
                     "name": "荆棘缠身 Thorny Mass",
-                    "description": "<p>任何时候，当温慕斯10尺范围内的一个生物尝试对它进行一次近战攻击或尝试@UUID[Compendium.pf2e.actionspf2e.Item.21WIfSu7Xd7uKqV8]{翻滚 Tumble Through}穿过它占据的空间时，该生物受到@Damage[(1d12+10)[piercing]]{1d12+10穿刺伤害}。</p>"
+                    "description": "<p>任何时候，当温慕斯10尺范围内的一个生物尝试对它进行一次近战攻击或尝试@UUID[Compendium.pf2e.actionspf2e.Item.21WIfSu7Xd7uKqV8]{翻滚 Tumble Through}穿过它占据的空间时，该生物受到@Damage[(1d12+10)[piercing]]伤害。</p>"
                 }
             }
         },
@@ -8548,33 +8432,23 @@
             "languages": "心灵感应1英里",
             "publicNotes": "<p>温迪戈是一种对饥饿、孤寂、致命的严寒天气的恐惧的具现。它们出没在广阔的冰天雪地中。</p>",
             "items": {
-                "uGSBKzZHNc69P1ub": {
-                    "name": "心灵感应1英里"
-                },
-                "LNJkhJSFpg8gvkwp": {
+                "Heatsight 60 feet": {
                     "name": "热视觉60尺",
                     "description": "<p>热视觉是一种能看到热信号的精确感官。</p>"
                 },
-                "yoSPlCHmFaXCr9Th": {
-                    "name": "随意施法 At-Will Spells",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
-                },
-                "iQz3YxQPSZdpvSJi": {
-                    "name": "再生30 (寒铁使其失效)"
-                },
-                "xMc6TnmwsR72HZR7": {
+                "Dream Haunting": {
                     "name": "梦中作祟 Dream Haunting",
                     "description": "<p>对温迪戈<em>@UUID[Compendium.pf2e.spells-srd.Item.Uqj344bezBq3ESdq]{梦魇术 Nightmare}</em>豁免失败的目标将暴露在温迪戈的折磨的影响下。</p>"
                 },
-                "gw66iZEKmcFi0JjW": {
+                "Howl": {
                     "name": "嚎叫 Howl",
                     "description": "<p><strong>频率</strong> 每天三次</p>\n<hr />\n<p><strong>效果</strong> 温迪戈发出凄凉的嚎叫，最远能传播到一英里远。任何听到嚎叫的生物必须通过@Check[type:will|dc:38]检定，否则获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}效果。任何大失败且在温迪戈120尺范围内的生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}，并且逃跑[[/br 1d4 #rounds]]{1d4轮}（或直到它不再惊惧，以先结束的效果为准）。</p>\n<p>被温迪戈的嚎叫惊惧的生物依然可以自然恢复惊惧的状态值，但是不能降低到惊惧1以下，除非1小时之后或使用魔法解除。</p>\n<p>无论目标能否成功豁免，它将在24小时内对温迪戈的嚎叫临时免疫。</p>"
                 },
-                "yEzDmYi6aYTiIA8Y": {
+                "Ride the Wind": {
                     "name": "随风而行 Ride the Wind",
                     "description": "<p><strong>触发</strong> 温迪戈@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}一个敌人的时候施展<em>@UUID[Compendium.pf2e.spells-srd.Item.U0hL0LLaprcnAyzC]{御风而行 Wind Walk}</em>法术。</p>\n<hr />\n<p><strong>效果</strong> 温迪戈尝试把擒抱的生物变成风并带着它一起前进。如果目标成功通过@Check[type:will|dc:38]检定，则能阻止自己被变成风，在这种情况下温迪戈依然变成风但是受害者被释放。</p>\n<p>被迫跟着温迪戈随风而行的生物将暴露在温迪戈的折磨的影响下。目标每轮都能尝试一次新的意志检定来让自己恢复正常，一旦成功，它会立即变成实体并开始坠落。</p>"
                 },
-                "qWBeJdRzUrGmE3Di": {
+                "Wendigo Torment": {
                     "name": "温迪戈的折磨 Wendigo Torment",
                     "description": "<p>受温迪戈的折磨影响的生物在阶段1之后无法恢复，除非回满生命值。</p>\n<p><strong>豁免检定</strong> @Check[type:will|dc:38]</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 4} (1天)</p>\n<p><strong>阶段2</strong> 如阶段1 (1天)</p>\n<p><strong>阶段3</strong> 该生物会寻找一个和自己相同族裔的生物来杀戮和吞食。随后它受到<em>@UUID[Compendium.pf2e.spells-srd.Item.U0hL0LLaprcnAyzC]{御风而行 Wind Walk}</em>法术影响，并且快速升空，它的脚会会被烧成灰烬只留下参差不齐的断肢残桩。当这个生物御风而行时，会在[[/br 2d6 #minutes]]{2d6分钟}内变成一个新的温迪戈。</p>\n<p><em>@UUID[Compendium.pf2e.spells-srd.Item.6dDtGIUerazSHIOu]{祈愿术 Wish}</em>、类似的魔法效果，或9环仪式<em>@UUID[Compendium.pf2e.spells-srd.Item.kqhPt9344UkcGVYO]{起死回生 Resurrect}</em>能让受害者复活。即使受害者复活，新诞生的温迪戈也依然存在。</p>"
                 }
@@ -8589,33 +8463,33 @@
             "languages": "熊类认同",
             "publicNotes": "<p>与许多其他类型的化形生物不同，熊化人在无意识的变化期间并不会变得具有恶意，而是充满了正义的信念。尽管变形后的熊化人会暂时无视他的盟友，而且对其兽性有着微弱的控制力，但这种义愤仍旧会以暴力的形式展现。因此熊化人都是孤独的，独处的时间远超为了保障家人安全所需，甚至极少与家人生活在一起。熊化人知道，只要自己过着离群索居的生活，就能够在荒野地区充当保护者和守卫者，而不用担心圆月高照且诅咒降临时，自己的愤怒会指向无辜路人或自己的爱人。只要没有威胁到熊化人自身，或者他所保护的自然地区（通常为森林），熊化人通常会在其动物形态满足口腹之欲后一觉睡到天明。</p>\n<hr />\n<p>化形生物是在满月的光芒照耀下注定会转变为动物以及动物与类人混合形态的类人生物。这些变形生物是一种古老原能诅咒的产物，这种诅咒能够在转化后通过自身牙齿的啃咬来传播。他们能够潜藏在野外或人群中，再加上这种状态的传染性，使得化形生物恒久不变地成为了引发人群恐慌般猜忌的诱因。</p>",
             "items": {
-                "fjsDRLGq7Hpbxrfn": {
+                "Bear Empathy": {
                     "name": "熊类认同 Bear Empathy",
                     "description": "<p>熊化人能够与熊类进行沟通。</p>"
                 },
-                "ERGEti8Jc1RonWRj": {
+                "Change Shape": {
                     "name": "变形 Change Shape",
-                    "description": "<ul>\n<li><strong>人类 Human</strong>\n<ul>\n<li><strong>近战</strong> 拳头 [[/r 1d20+13 #Fist]]{+13}/[[/r 1d20+8 #Fist]]{+8}/[[/r 1d20+3 #Fist]]{+3} (灵巧, 非致命), <strong>伤害</strong> @Damage[(1d4+7)[bludgeoning]]{1d4+7钝击伤害}</li>\n</ul>\n</li>\n<li><strong>灰熊 Grizzly Bear</strong>\n<ul>\n<li><strong>速度</strong> 35尺</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。</p>\n<p>在类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如攫抓），并且失去其任何武器打击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul>\n<li><strong>人类 Human</strong>\n<ul>\n<li><strong>近战</strong> 拳头 [[/r 1d20+13 #Fist]]{+13}/[[/r 1d20+8 #Fist]]{+8}/[[/r 1d20+3 #Fist]]{+3} (灵巧, 非致命), <strong>伤害</strong> @Damage[(1d4+7)[bludgeoning]]伤害</li>\n</ul>\n</li>\n<li><strong>灰熊 Grizzly Bear</strong>\n<ul>\n<li><strong>速度</strong> 35尺</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。</p>\n<p>在类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如攫抓），并且失去其任何武器打击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
-                "8fKFzS7zqR9XbC5k": {
+                "Curse of the Werebear": {
                     "name": "熊化人诅咒 Curse of the Werebear",
                     "description": "<p>此诅咒仅能影响类人生物。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:22]</p>\n<hr />\n<p>在每个月圆之夜，被诅咒的生物必须尝试另一次强韧豁免，失败则会变化为同种类的化形生物，直至黎明。</p>\n<p>该生物会在GM的控制之下，并在后半夜横冲直撞，直至天明并失去知觉。</p>"
                 },
-                "yvHOZTfOKMN7JNu7": {
+                "Hunt Prey": {
                     "name": "捕捉猎物 Hunt Prey",
                     "description": "<p><strong>需求</strong> 熊化人能够看到或听到目标，或者在探索模式中@UUID[Compendium.pf2e.actionspf2e.Item.EA5vuSgJfiHH7plD]{追踪 Tracking}目标。</p>\n<hr />\n<p><strong>效果</strong> 熊化人在进行@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seeks}猎物的察觉检定中获得+2环境加值，并且在追踪猎物的生存检定中获得+2环境加值。熊化人在对抗其正在追捕的猎物时，还能忽略远程攻击在第二个射程增量所产生的减值。熊化人在同一时间只能指定一个生物作为其捕捉猎物能力的猎物。若他对不同的生物使用捕捉猎物，先前的生物将会失去能力的指定并且新猎物得到指定。在任何情况下，此能力的指定会持续至熊化人的下次日常准备为止。</p>"
                 },
-                "wfMs8RYiuhFeQMau": {
+                "Mauler": {
                     "name": "重锤猛击 Mauler",
                     "description": "<p>熊化人对被他@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的生物造成的伤害检定获得+2环境加值。</p>"
                 },
-                "m53HcXgUGgipalh0": {
+                "Moon Frenzy": {
                     "name": "满月狂乱 Moon Frenzy",
                     "description": "<p>当满月出现在夜空中时，化形生物必须变化为混合形态，在之后无法进行变形，体型增大1阶，触及增加5尺，啃咬伤害增加2点。</p>\n<p>当月亮落下或太阳升起时，化形生物会变回类人形态，并陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}，持续[[/br 2d4 #Fatigued duration]]{2d4小时}。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.dRe8n1nBWMIXd8jh]{效果: 满月狂乱}</p>"
                 },
-                "ZQY7WcFFZtddDBnh": {
+                "Precision Edge": {
                     "name": "精准剑锋 Precision Edge",
-                    "description": "<p>熊化人在对抗他狩猎的目标时，每个回合对其造成的首个成功打击会造成[[/r (1d8)[precision]]]{1d8额外精准伤害}。</p>"
+                    "description": "<p>熊化人在对抗他狩猎的目标时，每个回合对其造成的首个成功打击会造成额外@Damage[1d8[precision]]伤害。</p>"
                 }
             }
         },
@@ -8626,29 +8500,29 @@
             "name": "鼠化人 Wererat",
             "senses": "昏暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "languages": "鼠类认同",
-            "publicNotes": "<p>由于诅咒造成的影响，鼠化人倾向于成为贪婪、偏执且自私的机会主义者。由于鼠化人通常会居住在能够将自身藏匿于光天化日之下的城市地区，因此几乎任何城镇居民都可能是鼠化人的伪装——从安静的店铺老板到帮派的犯罪首脑。熙熙攘攘的人群以及无数的老鼠洞使得贫民窟和棚户区成为了鼠化人的理想居所，尤其因为在这些贫穷的地区里，鼠化人即便出于贪婪和恐惧杀人，也几乎不会被当局所关注。在一些城市中，鼠化人经营着整个盗贼行会或者有组织的犯罪团伙，成为团伙成员需要故意承受鼠化人带有诅咒的啃咬。鼠化人在混合形态下外观与鼠族（ratfolk）十分相似，其差异一般体现在体型的区别上，然而鼠族并不喜欢这些怪物。</p>\n<hr />\n<p>化形生物是在满月的光芒照耀下注定会转变为动物以及动物与类人混合形态的类人生物。这些变形生物是一种古老原能诅咒的产物，这种诅咒能够在转化后通过自身牙齿的啃咬来传播。他们能够潜藏在野外或人群中，再加上这种状态的传染性，使得化形生物恒久不变地成为了引发人群恐慌般猜忌的诱因。</p>",
+            "publicNotes": "<p>由于诅咒造成的影响，鼠化人倾向于成为贪婪、偏执且自私的机会主义者。由于鼠化人通常会居住在能够将自身藏匿于光天化日之下的城市地区，因此几乎任何城镇居民都可能是鼠化人的伪装——从安静的店铺老板到帮派的犯罪首脑。熙熙攘攘的人群以及无数的老鼠洞使得贫民窟和棚户区成为了鼠化人的理想居所，尤其因为在这些贫穷的地区里，鼠化人即便出于贪婪和恐惧杀人，也几乎不会被当局所关注。在一些城市中，鼠化人经营着整个盗贼行会或者有组织的犯罪团伙，成为团伙成员需要故意承受鼠化人带有诅咒的啃咬。鼠化人在混合形态下外观与鼠族十分相似，其差异一般体现在体型的区别上，然而鼠族并不喜欢这些怪物。</p>\n<hr />\n<p>化形生物是在满月的光芒照耀下注定会转变为动物以及动物与类人混合形态的类人生物。这些变形生物是一种古老原能诅咒的产物，这种诅咒能够在转化后通过自身牙齿的啃咬来传播。他们能够潜藏在野外或人群中，再加上这种状态的传染性，使得化形生物恒久不变地成为了引发人群恐慌般猜忌的诱因。</p>",
             "items": {
-                "TTpnkaK9B6Lsytya": {
+                "Rat Empathy": {
                     "name": "鼠类认同 Rat Empathy",
                     "description": "<p>鼠化人能够与啮齿动物进行沟通。</p>"
                 },
-                "3HkWPtBVUhYiB7al": {
+                "Nimble Dodge": {
                     "name": "敏捷闪避 Nimble Dodge",
                     "description": "<p><strong>触发</strong> 有生物以鼠化人为目标作出1次近战或远程攻击，且鼠化人能够看到攻击者。</p>\n<p><strong>效果</strong> 鼠化人在对抗触发攻击时，AC获得+2环境加值。</p>"
                 },
-                "E11uRLNnDwbjSmiw": {
+                "Change Shape": {
                     "name": "变形 Change Shape",
-                    "description": "<ul>\n<li><strong>人类 Human</strong>\n<ul>\n<li><strong>近战</strong> 拳头 [[/r 1d20+10 #Fist]]{+10}/[[/r 1d20+5 #Fist]]{+5}/[[/r 1d20 #Fist]]{+0} (灵巧, 非致命), <strong>伤害</strong> @Damage[(1d4+2)[bludgeoning]]{1d4+2钝击伤害}</li>\n</ul>\n</li>\n<li><strong>老鼠 Rat</strong>\n<ul>\n<li><strong>体型</strong> 小型</li>\n<li><strong>速度</strong> 30尺, 攀爬10尺</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。</p>\n<p>在类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如攫抓），并且失去其任何武器打击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul>\n<li><strong>人类 Human</strong>\n<ul>\n<li><strong>近战</strong> 拳头 [[/r 1d20+10 #Fist]]{+10}/[[/r 1d20+5 #Fist]]{+5}/[[/r 1d20 #Fist]]{+0} (灵巧, 非致命), <strong>伤害</strong> @Damage[(1d4+2)[bludgeoning]]伤害</li>\n</ul>\n</li>\n<li><strong>老鼠 Rat</strong>\n<ul>\n<li><strong>体型</strong> 小型</li>\n<li><strong>速度</strong> 30尺, 攀爬10尺</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。</p>\n<p>在类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如攫抓），并且失去其任何武器打击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
-                "pK7TW7mAgEFfJu0Q": {
+                "Curse of the Wererat": {
                     "name": "鼠化人诅咒 Curse of the Wererat",
                     "description": "<p>此诅咒仅能影响类人生物。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:18]</p>\n<hr />\n<p>在每个月圆之夜，被诅咒的生物必须尝试另一次强韧豁免，失败则会变化为同种类的化形生物，直至黎明。</p>\n<p>该生物会在GM的控制之下，并在后半夜横冲直撞，直至天明并失去知觉。</p>"
                 },
-                "rBKIlYFoV3vW1kEN": {
+                "Moon Frenzy": {
                     "name": "满月狂乱 Moon Frenzy",
                     "description": "<p>当满月出现在夜空中时，化形生物必须变化为混合形态，在之后无法进行变形，体型增大1阶，触及增加5尺，啃咬伤害增加2点。</p>\n<p>当月亮落下或太阳升起时，化形生物会变回类人形态，并陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}，持续[[/br 2d4 #Fatigued duration]]{2d4小时}。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.dRe8n1nBWMIXd8jh]{效果: 满月狂乱}</p>"
                 },
-                "KiBIFxCCOgpsuMvK": {
+                "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
                     "description": "<p>鼠化人对措手不及的生物造成1d6点额外精准伤害。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
                 }
@@ -8663,18 +8537,18 @@
             "senses": "黑暗视觉，生命感知60尺",
             "publicNotes": "<p>缚灵是一种汲取生命和阳光的恶毒的不死生物。它们阴暗、无形的身体上点缀着灼烧的眼睛，表达着对生者的仇恨，它们那晦暗的爪子是足以从敌人那里偷走活力的武器。缚灵可能由秽恶的死灵术创造，但它们更常由那些遁世（hermitic）的杀人犯或破坏狂（mutilator）中产生，这些人即便在死后也不愿停下他们的邪恶行径。让事情变得更棘手的是，缚灵通过吞噬并将生者转化为它们秽恶的同类而成倍增长——这意味着一小撮不受约束的缚灵可以很轻易地变为一只黑暗大军。</p>\n<p>缚灵没有重量，而且不会受到大多数物理攻击的伤害。它们出没于任何能够以生命为食的地方，尽管它们在阳光下的脆弱限制了它们只能活动于世界的阴暗之处——在那里它们可以无缝地融入环境，然后悄悄地吞没它们的猎物。</p>\n<p>在那些死亡和骚乱司空见惯的地方——被战争蹂躏的乡村、被罪犯首脑统治的地下世界、或是举行残酷邪教仪式的场地，缚灵会和其他同类结伙。在这些地方，活人只有依照携带有日光杖的强大牧师的指引才能过得好。由于缚灵仅能在夜晚或黑暗的地方狩猎，废墟、下水道和遗弃的建筑在白天为缚灵提供了避难所。缚灵足够聪明到在战斗中利用它们的虚体优势，因此它们呆在曲折的洞穴或者有走廊的建筑并避开空旷地带。</p>\n<p>因为它们纯粹由虚能位面的反生命构成，缚灵遍布那些亵渎的区域。在不死生物统治的国家和城镇中，缚灵有着刺客和间谍的地位。在盖布（Geb）它们属于统治阶级，但乌斯塔拉夫（Ustalav）有着更多的缚灵，在那里成群的缚灵徘徊于坟地和雾气弥漫的小径上，吞噬整个村庄的人口。在世界上的其他地方，缚灵往往不会四处游荡并把它们的活动限制于更小的区域，通常它们只在自己选择的地方及其周围环境出没。</p>",
             "items": {
-                "PoFwl1bniXcbhkld": {
+                "+1 Status to All Saves vs. Vitality": {
                     "name": "对抗命能豁免时+1状态加值"
                 },
-                "6tSYdMbuSY1NSMOt": {
+                "Sunlight Powerlessness": {
                     "name": "阳光失能 Sunlight Powerlessness",
                     "description": "<p>在日光下的缚灵获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}。</p>"
                 },
-                "zD3l2lGfHmnHF8iq": {
+                "Drain Life": {
                     "name": "汲取生命 Drain Life",
                     "description": "<p>当缚灵使用幽魂之手伤害一个活着的生物时，缚灵获得[[/r 5 #Temporary Hit Points]]{5点临时生命值}，并且目标必须通过@Check[type:fortitude|dc:23]豁免否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。缚灵造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>"
                 },
-                "cqn01fpxgrAl4NvI": {
+                "Wraith Spawn": {
                     "name": "缚灵衍体 Wraith Spawn",
                     "description": "<p>被缚灵的幽魂之手杀死的生物[[/br 1d4 #Wraith Spawn Transformation]]{1d4轮}之后变成一个新的@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.HbROgIcU9Z9m6XuD]{缚灵衍体 Wraith Spawn}。这个缚灵衍体听命于将他杀死的缚灵。当它处于缚灵衍体的状态时，没有吸取生命和制造缚灵衍体的能力，并且一直拥有@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}状态。如果缚灵衍体的制造者死亡，则该衍体变成完全的、有自主意识的缚灵；它此时获得吸取生命和制造缚灵衍体的能力，并且不再笨拙。</p>"
                 }
@@ -8688,15 +8562,15 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>狗头人龙术士用魔法来施行自身的秘密计划。狗头人龙术士出现在狗头人社群内是狗头人所声称的龙类血统的最有说服力的证明。</p>\n<hr />\n<p>狗头人是身材矮小的爬行类类人生物，他们的身形与真龙有几分相似。狗头人潜藏在黑暗的空间内，这通常是地下的隧道或矿坑，居住在自己亲手设计建造的院落中或者发现并移居至原住民已经废弃的复合式建筑中。尽管相比自身的勇气，狗头人选择更为务实的行事方式，但他们会榨干自己的每一寸脑筋来与其他更强大生物进行竞争。狗头人会在暗处从远程发动攻击，他们的工匠与工程师掌握了简易并有效的陷阱技术，并使用这些技巧来保护自身的巢穴。狗头人擅长在必要的情况下进行合作，他们会设置伏击或者打带跑战术，这使得他们能够在保存自身不受伤害的情况下尽可能地造成伤害。</p>\n<p>狗头人是勤劳且努力的生物，不过他们经常将这些美德用于自私的目标。尽管部分狗头人生活在公共社区中，并与其他周遭的生物维持中立的关系，但他们很容易被狂妄的领袖以及侍奉邪恶势力的存在所影响。这部分是由于狗头人骨子里的实用主义，他们宁愿屈从于奴役也不想冒着被杀死的风险，不过其中还有一部分原因是出于狗头人对于自身通常所缺乏的力量的敬畏。龙类特别容易成为这种敬畏的对象，只要有机会，狗头人就会急切地为这些强大而又光荣的生物提供服务。尽管狗头人会密谋对抗其他领导者，尤其是那些通过征服来控制狗头人的领导者，但他们对龙的态度通常为盲目地崇拜，无论这些生物对狗头人爪牙们是多么地残忍无情也没关系。</p>",
             "items": {
-                "1GBTPnqIIGld3Wu1": {
+                "Dragonscaled": {
                     "name": "龙鳞 Dragonscaled",
                     "description": "<p>狗头人龙术士会根据其鳞片颜色获得抗力：</p>\n<ul>\n<li><strong>白</strong> 寒冷5</li>\n</ul>"
                 },
-                "lFKVQJSD5lmRIdIT": {
+                "Illusory Retreat": {
                     "name": "幻影退避 Illusory Retreat",
                     "description": "<p><strong>频率</strong> 每小时一次</p>\n<p><strong>需求</strong> 狗头人龙术士与至少一名敌人相邻</p>\n<hr />\n<p><strong>效果</strong> 狗头人龙术士在自身所处的方格内创造出自己的幻象，之后在[[/br 1d4 #Duration Illusory Retreat]]{1d4轮}内变得@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}，此效果与2环的<em>@UUID[Compendium.pf2e.spells-srd.Item.XXqE1eY3w3z6xJCB]{隐形术 Invisibility}</em>相同。狗头人龙术士能够移动至多为自身速度一半的距离，但是它必须在与任何敌人都不相邻的空间结束这次移动。</p>\n<p>此能力是需要姿势成分的1环法术。</p>"
                 },
-                "8W4is1CtFAUBw0Zd": {
+                "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
                     "description": "<p>狗头人龙术士对措手不及的生物造成额外1d6点精准伤害。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
                 }
@@ -8711,15 +8585,15 @@
             "senses": "黑暗视觉",
             "publicNotes": "<p>尸妖是不死的类人生物，和缚灵类似，只要轻轻一触就能吸取活物的生命。它们由巫术仪式创造，特别暴力且致命，代表死者纯粹的邪恶意志。</p>\n<p>有多少种能变成尸妖的人就有多少种尸妖。笨重的猛汉，敏捷的潜行者和狡猾的修补匠都能变成对应不同生态位的各种的尸妖。环境也能造成尸妖特殊能力和防御能力上的差别。例如，世界尽头的极地地区就能发现霜冻尸妖的存在。无论如何，尸妖经常出没于墓园、地下墓穴或其他存在亡者的地方。它们的饥渴是针对生者的——那些总是让它们意识到身上死亡枷锁的活人，那些让它们觉得相对于不死状态来说完全“自由”的活人。</p>\n<p>一个单独的尸妖如果被驱使从坟墓里爬出来，能造成很大的破坏，因为被尸妖杀死的生物也会变成尸妖。只要一个尸妖和少数不幸的墓地访客很快就能变成一个名副其实的不死部落。因此，有经验的牧师和冒险者们都知道对付尸妖的最好方式是迅速彻底地连根斩除。但是必须注意的时候，必须在消灭尸妖之前先把它创造的衍体清理干净，因为没有主人的衍体会变成真正的尸妖，这样它们就可以创造自己的衍体了。</p>\n<p>由于靠虚能维持，尸妖可以在恶劣的环境中生存很久，而不会像一些较弱的不死生物那样腐烂。它们可能出没在山口、封闭的密道、潜伏在沼泽或湖里几十年，甚至几个世纪，直到某个毫无戒心的旅行者把它们从休眠中唤醒。</p>",
             "items": {
-                "Kpl3lLjfHM0hWhT5": {
+                "Final Spite": {
                     "name": "最后的怨恨 Final Spite",
                     "description": "<p><strong>触发</strong> 尸妖的生命值降至0。</p>\n<hr />\n<p><strong>效果</strong> 尸妖被摧毁前进行一次打击。尸妖不能通过此次打击汲取临时生命值。</p>"
                 },
-                "v2Ifd6tb1IDRFqFO": {
+                "Drain Life": {
                     "name": "汲取生命 Drain Life",
                     "description": "<p>当尸妖对一个活着的生物进行爪抓打击并造成伤害时，尸妖获得[[/r 3 #Temporary Hit Points]]{3临时生命值}，并且目标必须通过@Check[type:fortitude|dc:17]检定否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。尸妖继续造成伤害而目标再次豁免失败则能增加流失状态值1，最多达到流失4。</p>"
                 },
-                "Umi21NTMrg5JA3IQ": {
+                "Wight Spawn": {
                     "name": "尸妖衍体 Wight Spawn",
                     "description": "<p>被尸妖爪抓杀死的生物[[/br 1d4 #Wight Spawn Transformation]]{1d4轮}之后变成一个新的@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.ZPjQkKVMi3xoPcU0]{尸妖衍体 Wight Spawn}。这个尸妖衍体听命于将他杀死的尸妖。当它处于尸妖衍体的状态时，没有汲取生命和制造尸妖衍体的能力，并且一直拥有@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}状态。如果尸妖衍体的制造者死亡，则该衍体变成完全体、有自主意识的尸妖；它此时获得汲取生命和制造尸妖衍体的能力，并且不再拥有笨拙。</p>"
                 }
@@ -8733,21 +8607,21 @@
             "senses": "黑暗视觉, 灵敏嗅觉(模糊感官) 30尺",
             "publicNotes": "<p>冬狼与座狼有亲缘关系，但体型更大，更聪明，也危险得多。它们能够发出冰冻的呼吸，并且体型足够大，很容易成为兽人和大地精的坐骑——当然如果它们愿意这样的话。冬狼和座狼一样成群结队地捕猎，但与它们的表亲不同，它们有着显著的自豪感。它们把为他人效力这一权利留给那些更大更危险的生物，如霜巨人、叛徒雪人，甚至白龙。</p>\n<hr />\n<p>座狼是一种聪明又狠毒的狼，栖息在地精、大地精、兽人和其他暴力的类人生物之中。</p>",
             "items": {
-                "HFyEFMKsCld64B15": {
+                "Avenging Bite": {
                     "name": "复仇啃咬 Avenging Bite",
                     "description": "<p><strong>触发</strong> 一个在冬狼下颚攻击范围内的生物攻击了冬狼的盟友。</p>\n<hr />\n<p><strong>效果</strong> 冬狼对触发生物进行一次啮咬打击。</p>"
                 },
-                "hdyD6t2duHPLOLyi": {
+                "Buck": {
                     "name": "甩脱 Buck",
                     "description": "<p>@Check[type:reflex|dc:21]</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Buck]</p>"
                 },
-                "dPsbBLbGfNPn6v9L": {
+                "Breath Weapon": {
                     "name": "吐息武器 Breath Weapon",
-                    "description": "<p>冬狼在@Template[type:cone|distance:15]区域吐出里一团寒气，造成[[/r (5d8)[cold]]]{5d8寒冷伤害}（@Check[type:reflex|dc:23|basic:true]豁免）。</p>\n<p>冬狼在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内不能再次使用吐息武器。</p>"
+                    "description": "<p>冬狼在@Template[type:cone|distance:15]区域吐出里一团寒气，造成@Damage[5d8[cold]]伤害（@Check[type:reflex|dc:23|basic:true]豁免）。</p>\n<p>冬狼在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内不能再次使用吐息武器。</p>"
                 },
-                "9RRqDOZEOM8rUI1P": {
+                "Pack Attack": {
                     "name": "成群袭击 Pack Attack",
-                    "description": "<p>对于触及范围内至少有两名冬狼盟友的生物，冬狼的打击造成[[/r (1d6)]]{1d6额外伤害}。</p>"
+                    "description": "<p>对于触及范围内至少有两名冬狼盟友的生物，冬狼的打击造成[[/r 1d6]]额外伤害。</p>"
                 }
             }
         },
@@ -10067,7 +9941,7 @@
                 },
                 "tFRnP7KsOLmYb44P": {
                     "name": "圣使之门 Archon's Door",
-                    "description": "<p>每日一次，如果一位圣使看到其他生物施展<em>@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]{次元门 Dimension Door}</em>法术，他能在1轮内施展一个内在<em>次元门</em>法术（升阶到5环级）来尝试跟随那个生物，距离最多为圣使的<em>次元门</em>法术距离。</p>\n<p>如果圣使的<em>次元门</em>距离足够，圣使会出现于距该生物使用<em>次元门</em>前相同的距离和方向。</p>"
+                    "description": "<p>每日一次，如果一位圣使看到其他生物施展<em>@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]{次元移位 Dimension Door}</em>法术，他能在1轮内施展一个内在<em>次元移位</em>法术（升阶到5环级）来尝试跟随那个生物，距离最多为圣使的<em>次元移位</em>法术距离。</p>\n<p>如果圣使的<em>次元移位</em>距离足够，圣使会出现于距该生物使用<em>次元移位</em>前相同的距离和方向。</p>"
                 },
                 "nVzYnoOpZcD3KXg9": {
                     "name": "正义之炎 Flame of Justice",
