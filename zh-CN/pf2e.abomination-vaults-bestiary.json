@@ -98,7 +98,7 @@
             "items":{
                 "Consume Flesh":{
                     "name": "啃食尸体 Consume Flesh",
-                    "description": "<p><strong>需求</strong> 奥格雷尔与刚死亡1小时内的生物尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 奥格雷尔吞食一大块尸体并恢复[[/r (2d6)[healing]]]{2d6生命值}。</p>\n<p>他从每具尸体上只能获取一次生命值恢复。</p>"
+                    "description": "<p><strong>需求</strong> 奥格雷尔与刚死亡1小时内的生物尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 奥格雷尔吞食一大块尸体并恢复@Damage[2d6[healing]]生命值。</p>\n<p>他从每具尸体上只能获取一次生命值恢复。</p>"
                 },
                 "Ghoul Fever":{
                     "name": "食尸鬼热 Ghoul Fever",
@@ -460,7 +460,7 @@
                 },
                 "Shoulder to Shoulder":{
                     "name": "肩并肩 Shoulder to Shoulder",
-                    "description": "<p>当卡利尼防御者和另一个或多个可见的防御者相邻时，防御者的打击造成额外[[/r (2d6}]]{2d6伤害}。</p>"
+                    "description": "<p>当卡利尼防御者和另一个或多个可见的防御者相邻时，防御者的打击造成额外[[/r 2d6]]{2d6伤害}。</p>"
                 }
             }
         },
@@ -476,7 +476,7 @@
                 },
                 "Consume Flesh":{
                     "name": "啃食尸体 Consume Flesh",
-                    "description": "<p><strong>需求</strong> 溃烂教徒与刚死亡一小时内的生物尸体相邻或携带有准备好的腐肉；</p>\n<hr />\n<p><strong>效果</strong> 溃烂教徒吞食一大块尸体或准备好的腐肉来恢复生命值。如果啃食尸体则恢复[[/r (1d6)[healing]]]{1d6生命值}，啃食腐肉则恢复[[/r (2d6)[healing]]]{2d6生命值}。</p>\n<p>他从每具尸体上只能获取一次生命值恢复。</p>"
+                    "description": "<p><strong>需求</strong> 溃烂教徒与刚死亡一小时内的生物尸体相邻或携带有准备好的腐肉；</p>\n<hr />\n<p><strong>效果</strong> 溃烂教徒吞食一大块尸体或准备好的腐肉来恢复生命值。如果啃食尸体则恢复[[/r (1d6)[healing]]]{1d6生命值}，啃食腐肉则恢复@Damage[2d6[healing]]生命值。</p>\n<p>他从每具尸体上只能获取一次生命值恢复。</p>"
                 },
                 "Ghoul Fever":{
                     "name": "食尸鬼热 Ghoul Fever",
@@ -585,11 +585,11 @@
                 },
                 "Claim Corpse":{
                     "name": "占据尸体 Claim Corpse",
-                    "description": "<p><strong>先决条件</strong> 尸火当前处于鬼火形态，并和一个在过去24小时内未被尸火占据的中型或小型尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 尸火和尸体融合，尸体会站立并恢复[[/r (3d6)[healing]]]{3d6生命值}。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.auJ02rr1Jr88oD3Z]{效果: 占据尸体 - 血肉}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.3np7EyJ8pyrVlpie]{效果: 占据尸体 - 骷髅}</p>"
+                    "description": "<p><strong>先决条件</strong> 尸火当前处于鬼火形态，并和一个在过去24小时内未被尸火占据的中型或小型尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 尸火和尸体融合，尸体会站立并恢复@Damage[3d6[healing]]生命值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.auJ02rr1Jr88oD3Z]{效果: 占据尸体 - 血肉}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.3np7EyJ8pyrVlpie]{效果: 占据尸体 - 骷髅}</p>"
                 },
                 "Death Light":{
                     "name": "死亡之光 Death Light",
-                    "description": "<p><strong>先决条件</strong> 尸火寄宿在一具尸体中；</p>\n<hr />\n<p><strong>效果</strong> 尸火从尸体的眼睛和嘴巴对@Template[type:cone|distance:20]范围发射出蓝色射线。范围内所有活着的生物必须尝试一次@Check[type:fortitude|dc:18|traits:damaging-effect]检定。如果至少有一个生物豁免失败，尸火恢复[[/r (2d6)[healing]]]{2d6生命值}，超过上限的部分会转化成临时生命值，持续一分钟。</p>\n<p>尸火在[[/br 1d4 #Recharge Death Light]]{1d4轮}内无法再次使用死亡之光。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到[[/r (1d6)[void]]]{1d6虚能伤害}。</p>\n<p><strong>失败</strong> 生物受到[[/r (2d6)[void]]]{2d6虚能伤害}并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>大失败</strong> 生物受到[[/r (4d6)[void]]]{4d6虚能伤害}并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}。</p>"
+                    "description": "<p><strong>先决条件</strong> 尸火寄宿在一具尸体中；</p>\n<hr />\n<p><strong>效果</strong> 尸火从尸体的眼睛和嘴巴对@Template[type:cone|distance:20]范围发射出蓝色射线。范围内所有活着的生物必须尝试一次@Check[type:fortitude|dc:18|traits:damaging-effect]检定。如果至少有一个生物豁免失败，尸火恢复@Damage[2d6[healing]]生命值，超过上限的部分会转化成临时生命值，持续一分钟。</p>\n<p>尸火在[[/br 1d4 #Recharge Death Light]]{1d4轮}内无法再次使用死亡之光。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到[[/r (1d6)[void]]]{1d6虚能伤害}。</p>\n<p><strong>失败</strong> 生物受到[[/r (2d6)[void]]]{2d6虚能伤害}并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>大失败</strong> 生物受到[[/r (4d6)[void]]]{4d6虚能伤害}并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}。</p>"
                 }
             }
         },
@@ -780,7 +780,7 @@
                 },
                 "Feed on Despair":{
                     "name": "吞食恐惧 Feed on Despair",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 恐怖鬼火15 尺的一个敌人处于恐惧、@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained}或@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}状态；</p>\n<hr />\n<p><strong>效果</strong> 恐怖鬼火吞食生物的绝望，恐怖鬼火恢复@Damage[2d8[healing]]生命值，对该生物造成[[/r (3d8)[void]]]{3d8虚能伤害}（@Check[type:fortitude|dc:25|basic:true]豁免），并且如果恐怖鬼火已经变暗，恐怖闪烁将重新激活。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 恐怖鬼火15 尺的一个敌人处于恐惧、@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained}或@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}状态；</p>\n<hr />\n<p><strong>效果</strong> 恐怖鬼火吞食生物的绝望，恐怖鬼火恢复@Damage[2d8[healing]]生命值，对该生物造成@Damage[3d8[void]]伤害（@Check[type:fortitude|dc:25|basic:true]豁免），并且如果恐怖鬼火已经变暗，恐怖闪烁将重新激活。</p>"
                 },
                 "Go Dark":{
                     "name": "变暗 Go Dark",
@@ -966,7 +966,7 @@
                 },
                 "Light the Living Wick":{
                     "name": "点燃活灯 Light the Living Wick",
-                    "description": "<p>被沙丘烛火的闪光攻击所伤害的生物必须通过@Check[type:fortitude|dc:24]豁免，否则就会着火，受到[[/r (1d4)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}。</p>\n<p>如果该生物已经受到持续的火焰伤害，豁免失败会使持续火焰伤害增加1d4。</p>"
+                    "description": "<p>被沙丘烛火的闪光攻击所伤害的生物必须通过@Check[type:fortitude|dc:24]豁免，否则就会着火，受到@Damage[1d4[persistent,fire]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}。</p>\n<p>如果该生物已经受到持续的火焰伤害，豁免失败会使持续火焰伤害增加1d4。</p>"
                 }
             }
         },
@@ -1451,7 +1451,7 @@
             "items":{
                 "Instinctual Tinker":{
                     "name": "修修补补 Instinctual Tinker",
-                    "description": "<p>摩洛克尝试修理一件相邻的构装体或机械陷阱。它尝试一次@Check[type:crafting]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的2倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复[[/r (4d6)[healing]]]{4d6生命值}并且在1分钟之内，攻击检定有+1环境加值。</p>\n<p><strong>成功</strong> 目标恢复[[/r (2d6)[healing]]]{2d6生命值}。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到[[/r (2d6}]]{2d6伤害}（一般是钝击、穿刺或挥砍，但是GM可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TEzLEXBZzNCp6flg]{效果: 修修补补(大成功)}</p>"
+                    "description": "<p>摩洛克尝试修理一件相邻的构装体或机械陷阱。它尝试一次@Check[type:crafting]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的2倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复[[/r (4d6)[healing]]]{4d6生命值}并且在1分钟之内，攻击检定有+1环境加值。</p>\n<p><strong>成功</strong> 目标恢复@Damage[2d6[healing]]生命值。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到[[/r 2d6]]{2d6伤害}（一般是钝击、穿刺或挥砍，但是GM可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TEzLEXBZzNCp6flg]{效果: 修修补补(大成功)}</p>"
                 },
                 "Leap Attack":{
                     "name": "跳跃攻击 Leap Attack",
@@ -1617,11 +1617,11 @@
             "items":{
                 "Consume Flesh":{
                     "name": "啃食尸体 Consume Flesh",
-                    "description": "<p><strong>需求</strong> 纳卡扎林与刚死亡一小时内的生物尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 纳卡扎林吞食一大块尸体，恢复生命值恢复[[/r (3d6)[healing]]]{3d6生命值}。</p>\n<p>纳卡扎林从每具尸体上只能获取一次生命值恢复。</p>"
+                    "description": "<p><strong>需求</strong> 纳卡扎林与刚死亡一小时内的生物尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 纳卡扎林吞食一大块尸体，恢复生命值恢复@Damage[3d6[healing]]生命值。</p>\n<p>纳卡扎林从每具尸体上只能获取一次生命值恢复。</p>"
                 },
                 "Consume Masterpiece":{
                     "name": "啃食杰作 Consume Masterpiece",
-                    "description": "<p><strong>需求</strong> 纳卡扎林与<strong>C34</strong>区域内腐烂的贝科拉塑像相邻；</p>\n<hr />\n<p><strong>效果</strong> 纳卡扎林从雕像上吞食一大块腐肉，恢复[[/r (3d6)[healing]]]{3d6生命值}，并且获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened 1}，持续1轮。她只能使用此额外动作来进行啃咬打击或施法。</p>\n<p>她每天只能使用一次啃食杰作能力。</p>"
+                    "description": "<p><strong>需求</strong> 纳卡扎林与<strong>C34</strong>区域内腐烂的贝科拉塑像相邻；</p>\n<hr />\n<p><strong>效果</strong> 纳卡扎林从雕像上吞食一大块腐肉，恢复@Damage[3d6[healing]]生命值，并且获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened 1}，持续1轮。她只能使用此额外动作来进行啃咬打击或施法。</p>\n<p>她每天只能使用一次啃食杰作能力。</p>"
                 },
                 "Ghoul Fever":{
                     "name": "食尸鬼热 Ghoul Fever",
@@ -2461,7 +2461,7 @@
                 },
                 "Right of Inspection":{
                     "name": "监察权 Right of Inspection",
-                    "description": "<p>乌瑞维安能随意施展内在法术<em>@UUID[Compendium.pf2e.spells-srd.Item.r784cIz17eWujtQj]{探知 Scrying}</em>，但单目标只能为与之订立契约的生物、在契约上签署确切姓名的生物或上述生物的后代。目标的豁免结果比投掷结果下降一个成功度级别。</p>"
+                    "description": "<p>乌瑞维安能随意施展内在法术<em>@UUID[Compendium.pf2e.spells-srd.Item.r784cIz17eWujtQj]{探知术 Scrying}</em>，但单目标只能为与之订立契约的生物、在契约上签署确切姓名的生物或上述生物的后代。目标的豁免结果比投掷结果下降一个成功度级别。</p>"
                 }
             }
         },
@@ -3192,7 +3192,7 @@
                 },
                 "Instinctual Tinker":{
                     "name": "修修补补 Instinctual Tinker",
-                    "description": "<p>摩洛克尝试修理一件相邻的构装体或机械陷阱。它尝试1次@Check[type:crafting]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的2倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复[[/r (4d6)[healing]]]{4d6生命值}并且在1分钟之内，攻击检定有+1环境加值。</p>\n<p><strong>成功</strong> 目标恢复[[/r (2d6)[healing]]]{2d6生命值}。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到[[/r (2d6}]]{2d6伤害}（一般是钝击、穿刺或挥砍，但是GM可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TEzLEXBZzNCp6flg]{效果: 修修补补(大成功)}</p>"
+                    "description": "<p>摩洛克尝试修理一件相邻的构装体或机械陷阱。它尝试1次@Check[type:crafting]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的2倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复[[/r (4d6)[healing]]]{4d6生命值}并且在1分钟之内，攻击检定有+1环境加值。</p>\n<p><strong>成功</strong> 目标恢复@Damage[2d6[healing]]生命值。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到[[/r 2d6]]{2d6伤害}（一般是钝击、穿刺或挥砍，但是GM可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TEzLEXBZzNCp6flg]{效果: 修修补补(大成功)}</p>"
                 },
                 "Leap Attack":{
                     "name": "跳跃攻击 Leap Attack",

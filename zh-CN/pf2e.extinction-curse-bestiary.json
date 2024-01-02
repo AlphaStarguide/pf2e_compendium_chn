@@ -925,7 +925,7 @@
 				},
 				"Alchemical Injection":{
                     "name": "炼金注射 Alchemical Injection",
-                    "description": "<p>当炼金魔像以注射器打击击中一个生物，投1d6并查阅炼金容器表来决定额外效果。注射器造成[[/r (2d6}]]{2d6}对应类型的额外伤害（或让目标暴露在恶心效果之下，取决于投掷结果）。</p>\n<table class=\"pf2-table\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Alchemical Injection]]{1d6}</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>@Damage[2d6[acid]]伤害</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@Damage[2d6[cold]]伤害</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@Damage[2d6[electricity]]伤害</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@Damage[2d6[fire]]伤害</td>\n</tr>\n<tr>\n<td>5</td>\n<td>@Damage[2d6[poison]]伤害</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
+                    "description": "<p>当炼金魔像以注射器打击击中一个生物，投1d6并查阅炼金容器表来决定额外效果。注射器造成[[/r 2d6]]对应类型的额外伤害（或让目标暴露在恶心效果之下，取决于投掷结果）。</p>\n<table class=\"pf2-table\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Alchemical Injection]]{1d6}</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>@Damage[2d6[acid]]伤害</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@Damage[2d6[cold]]伤害</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@Damage[2d6[electricity]]伤害</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@Damage[2d6[fire]]伤害</td>\n</tr>\n<tr>\n<td>5</td>\n<td>@Damage[2d6[poison]]伤害</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
 				},
 				"Generate Bomb":{
                     "name": "生成炸弹 Generate Bomb",
@@ -1344,7 +1344,7 @@
 				},
 				"Remove Face":{
 					"name": "移脸 Remove Face",
-					"description": "<p><strong>需求</strong> 无面屠夫在一名@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}，@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}或@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}的生物的触及范围内；</p>\n<hr />\n<p><strong>效果</strong> 无面屠夫尝试一次斩肉刀打击或运动检定来对抗生物的强韧DC。成功时，无面屠夫如同进行了一次成功的斩肉刀打击一样造成伤害，并且移除该生物的脸皮。大成功时，该伤害翻倍，且生物受到@Localize[PF2E.PersistentDamage.Bleed4d6.success]。脸皮被移除后，该生物的魅力检定以及以魅力为基础的技能检定获得永久的-4状态减值。只有在受害者从无面屠夫那里取回它的脸皮并对其施放<em>@UUID[Compendium.pf2e.spells-srd.Item.SnaLVgxZ9ryUFmUr]{复原术 Restoration}</em>，该减值才能被移除。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NLjzI7gt6djXSoXc]{效果: 移脸}</p>"
+					"description": "<p><strong>需求</strong> 无面屠夫在一名@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}，@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}或@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}的生物的触及范围内；</p>\n<hr />\n<p><strong>效果</strong> 无面屠夫尝试一次斩肉刀打击或运动检定来对抗生物的强韧DC。成功时，无面屠夫如同进行了一次成功的斩肉刀打击一样造成伤害，并且移除该生物的脸皮。大成功时，该伤害翻倍，且生物受到@Damage[4d6[bleed]]。脸皮被移除后，该生物的魅力检定以及以魅力为基础的技能检定获得永久的-4状态减值。只有在受害者从无面屠夫那里取回它的脸皮并对其施放<em>@UUID[Compendium.pf2e.spells-srd.Item.SnaLVgxZ9ryUFmUr]{复原术 Restoration}</em>，该减值才能被移除。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NLjzI7gt6djXSoXc]{效果: 移脸}</p>"
 				},
 				"Sudden Slices":{
 					"name": "突袭切削 Sudden Slices",
@@ -2696,7 +2696,7 @@
 				},
 				"Resin Spray":{
 					"name": "脂液喷射 Resin Spray",
-					"description": "<p>渗脂地蜥人活跃他的毛孔，喷射出@Template[type:line|distance:30]的脂液，造成[[/r (3d12)[poison]]]{3d12毒素伤害}， 并将目标击退5尺（@Check[type:reflex|dc:28|basic:true]豁免；成功或是大成功时，目标不会被击退，大失败时目标被击退10尺）。渗脂地蜥人在[[/br 1d4]]{1d4轮}内不能再使用脂液喷射。</p>"
+					"description": "<p>渗脂地蜥人活跃他的毛孔，喷射出@Template[type:line|distance:30]的脂液，造成@Damage[3d12[poison]]伤害， 并将目标击退5尺（@Check[type:reflex|dc:28|basic:true]豁免；成功或是大成功时，目标不会被击退，大失败时目标被击退10尺）。渗脂地蜥人在[[/br 1d4]]{1d4轮}内不能再使用脂液喷射。</p>"
 				},
 				"Xulgath Bile":{
 					"name": "地蜥人胆液 Xulgath Bile",
@@ -2734,7 +2734,7 @@
 				},
 				"Golem Antimagic":{
                     "name": "魔像抗魔 Golem Antimagic",
-                    "description": "<ul>\n<li><strong>被伤害</strong> 寒冷和水（[[/r (5d10}]]{5d10伤害}, 区域效果或可持续伤害则为[[/r (2d6}]]{2d6}）</li>\n<li><strong>被治疗</strong> 酸液 (区域效果[[/r (2d6)[healing]]]{2d6生命值})</li>\n<li><strong>被减速</strong> 土</li>\n</ul>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<ul>\n<li><strong>被伤害</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</li>\n<li><strong>被治疗</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</li>\n<li><strong>被减速</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</li>\n<li><strong>法术弱点</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</li>\n</ul>"
+                    "description": "<ul>\n<li><strong>被伤害</strong> 寒冷和水（[[/r 5d10]]伤害, 区域效果或可持续伤害则为[[/r 2d6]]）</li>\n<li><strong>被治疗</strong> 酸液 (区域效果@Damage[2d6[healing]]生命值)</li>\n<li><strong>被减速</strong> 土</li>\n</ul>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<ul>\n<li><strong>被伤害</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</li>\n<li><strong>被治疗</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</li>\n<li><strong>被减速</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</li>\n<li><strong>法术弱点</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</li>\n</ul>"
 				},
 				"Quicken":{
                     "name": "加速 Quicken",
@@ -2746,7 +2746,7 @@
 				},
 				"Berserk Slam":{
                     "name": "狂暴猛击 Berserk Slam",
-                    "description": "<p><strong>需求</strong> 黏土魔像处于狂暴状态</p>\n<hr />\n<p><strong>效果</strong> 黏土魔像以-1环境减值进行一次拳击打击，额外造成[[/r (1d8)[bludgeoning]]]{1d8钝击伤害}并且击倒目标使其@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                    "description": "<p><strong>需求</strong> 黏土魔像处于狂暴状态</p>\n<hr />\n<p><strong>效果</strong> 黏土魔像以-1环境减值进行一次拳击打击，额外造成@Damage[1d8[bludgeoning]]伤害并且击倒目标使其@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
 				},
 				"Cursed Wound":{
                     "name": "诅咒创伤 Cursed Wound",
@@ -2922,7 +2922,7 @@
 				},
 				"Dig Quickly":{
 					"name": "快速挖掘 Dig Quickly",
-					"description": "<p><strong>需求</strong> 你站在泥土、沙子、雪，或其他类似的颗粒物上面。</p>\n<hr />\n<p><strong>效果</strong> 当你需要快速挖洞时，你的手就像铁锹一样有效。你在你当前占据的方格内挖一个浅坑，把该格变为困难地形（对你自己也是困难地形）。此外，你也会在你选择的方向上制造出一片沙尘云。沙尘云可以扑灭无人看管的、非魔法的小型火焰，并且可以协助锥形范围内燃烧的生物扑灭身上的火焰；锥形范围内，受到@UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害的生物可以立即尝试一次额外的@Check[type:flat|dc:15]检定来结束持续伤害。</p>"
+					"description": "<p><strong>需求</strong> 你站在泥土、沙子、雪，或其他类似的颗粒物上面。</p>\n<hr />\n<p><strong>效果</strong> 当你需要快速挖洞时，你的手就像铁锹一样有效。你在你当前占据的方格内挖一个浅坑，把该格变为困难地形（对你自己也是困难地形）。此外，你也会在你选择的方向上制造出一片沙尘云。沙尘云可以扑灭无人看管的、非魔法的小型火焰，并且可以协助锥形范围内燃烧的生物扑灭身上的火焰；锥形范围内，受到持续火焰伤害的生物可以立即尝试一次额外的@Check[type:flat|dc:15]检定来结束持续伤害。</p>"
 				}
 			}
 		},
@@ -2933,7 +2933,7 @@
                 "placeHolder": "placeHolder"
             },
 			"items": {
-				"equipment-+2 Greater Resilient Elven Chain (Standard-Grade)": {
+				"equipment-Elven Chain (Standard-Grade)": {
 					"name": "+2高等抗力标准纯度精灵链甲 Elven Chain",
 					"description": "<p>精灵链甲是用秘银制作的@UUID[Compendium.pf2e.equipment-srd.Item.MPcM4Wt6KmWE2kGL]{链甲衫 Chain Shirt}，散发出微弱的光泽。</p>\n<p>由精灵工匠运用古老的工艺制作而成，精灵链甲十分安静。不同其它链甲衫——即便是普通秘银链甲衫——精灵链甲没有嘈杂特征。该护甲可像其它秘银链甲衫一样蚀刻符文上去。</p>\n<p><strong>制造需求</strong> 原材料所含秘银至少需要价值3,125gp</p>"
 				},
@@ -2968,7 +2968,7 @@
 				},
 				"Heart-Seeking Strike": {
 					"name": "穿心刺 Heart-Seeking Strike",
-					"description": "<p>雪恩死墓骑士快步（Step）1次，随后使用它的细剑打击。被这次攻击伤害的生物必须进行一次@Check[type:fortitude|dc:36|traits:damaging-effect]豁免。失败时，该生物受到@Localize[PF2E.PersistentDamage.Bleed4d6.success]伤害。大失败时，这次攻击刺穿了该生物的心脏，它立刻死亡。</p>"
+					"description": "<p>雪恩死墓骑士快步（Step）1次，随后使用它的细剑打击。被这次攻击伤害的生物必须进行一次@Check[type:fortitude|dc:36|traits:damaging-effect]豁免。失败时，该生物受到@Damage[4d6[bleed]]伤害。大失败时，这次攻击刺穿了该生物的心脏，它立刻死亡。</p>"
 				},
 				"Quick Draw": {
 					"name": "即刻备战 Quick Draw",
@@ -2994,7 +2994,7 @@
 			"items":{
 				"Coven":{
 					"name": "巫团 Coven",
-					"description": "<p>丝卡佳将<em>@UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{支配术 Dominate}</em>，<em>@UUID[Compendium.pf2e.spells-srd.Item.Uqj344bezBq3ESdq]{梦魇术 Nightmare}</em>，<em>@UUID[Compendium.pf2e.spells-srd.Item.r784cIz17eWujtQj]{探知 Scrying}</em>以及<em>@UUID[Compendium.pf2e.spells-srd.Item.8Umt1AzYfFbC4fui]{法力迸裂 Spellwrack}</em>加入到她的巫团法术中。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Coven]</p>"
+					"description": "<p>丝卡佳将<em>@UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{支配术 Dominate}</em>，<em>@UUID[Compendium.pf2e.spells-srd.Item.Uqj344bezBq3ESdq]{梦魇术 Nightmare}</em>，<em>@UUID[Compendium.pf2e.spells-srd.Item.r784cIz17eWujtQj]{探知术 Scrying}</em>以及<em>@UUID[Compendium.pf2e.spells-srd.Item.8Umt1AzYfFbC4fui]{法力迸裂 Spellwrack}</em>加入到她的巫团法术中。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Coven]</p>"
 				},
 				"Nightmare Rider":{
 					"name": "梦魇骑手 Nightmare Rider",
@@ -3035,11 +3035,11 @@
 				},
 				"Consume Flesh":{
 					"name": "啃食尸体 Consume Flesh",
-					"description": "<p><strong>需求</strong> 斯迈勒与刚死亡1小时内的生物尸体相邻。</p>\n<hr />\n<p><strong>效果</strong> 斯迈勒吞食一大块尸体并恢复[[/r (3d6)[healing]]]{3d6生命值}。</p>\n<p>斯迈勒从每具尸体上只能获取一次生命值恢复。</p>"
+					"description": "<p><strong>需求</strong> 斯迈勒与刚死亡1小时内的生物尸体相邻。</p>\n<hr />\n<p><strong>效果</strong> 斯迈勒吞食一大块尸体并恢复@Damage[3d6[healing]]生命值。</p>\n<p>斯迈勒从每具尸体上只能获取一次生命值恢复。</p>"
 				},
 				"Ghast Fever":{
 					"name": "妖鬼热 Ghast Fever",
-					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:18]</p>\n<hr />\n<p><strong>阶段1</strong> 携带病原但没有不良效果 (1天)</p>\n<p><strong>阶段2</strong> [[/r (3d8)[void]]]{3d8虚能伤害}且从任何治疗获得的生命值恢复均减半 (1天)</p>\n<p><strong>阶段3</strong> 如阶段2 (1天)</p>\n<p><strong>阶段4</strong> [[/r (3d8)[void]]]{3d8虚能伤害}且无法从治疗获得任何好处 (1天)</p>\n<p><strong>阶段5</strong> 如阶段4 (1天)</p>\n<p><strong>阶段6</strong> 死亡，并在下一日的午夜作为@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VC7rtYR4hLxwg7WZ]{妖鬼 Ghast}复生。</p>"
+					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:18]</p>\n<hr />\n<p><strong>阶段1</strong> 携带病原但没有不良效果 (1天)</p>\n<p><strong>阶段2</strong> @Damage[3d8[void]]伤害且从任何治疗获得的生命值恢复均减半 (1天)</p>\n<p><strong>阶段3</strong> 如阶段2 (1天)</p>\n<p><strong>阶段4</strong> @Damage[3d8[void]]伤害且无法从治疗获得任何好处 (1天)</p>\n<p><strong>阶段5</strong> 如阶段4 (1天)</p>\n<p><strong>阶段6</strong> 死亡，并在下一日的午夜作为@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VC7rtYR4hLxwg7WZ]{妖鬼 Ghast}复生。</p>"
 				},
 				"Paralysis":{
 					"name": "麻痹 Paralysis",
@@ -3067,7 +3067,7 @@
 				},
 				"Scorching Maul":{
 					"name": "燃烧打击 Scorching Maul",
-					"description": "<p>冒烟黑豹对它所@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的生物进行两次爪抓打击。被两次爪抓命中的生物也会受到[[/r (1d4)[persistent,fire]]] 。这两次攻击会计入多重攻击减值，但只有在两次攻击结束后才会增加。</p>"
+					"description": "<p>冒烟黑豹对它所@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的生物进行两次爪抓打击。被两次爪抓命中的生物也会受到@Damage[1d4[persistent,fire]] 。这两次攻击会计入多重攻击减值，但只有在两次攻击结束后才会增加。</p>"
 				},
 				"Sneak Attack":{
 					"name": "偷袭 Sneak Attack",
@@ -3092,7 +3092,7 @@
 				},
 				"Pummel the Fallen":{
 					"name": "痛击卧者 Pummel the Fallen",
-					"description": "<p>浸湿哨兵对@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}生物的第一次打击将额外造成[[/r {2d6}]]{2d6伤害}。</p>"
+					"description": "<p>浸湿哨兵对@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}生物的第一次打击将额外造成[[/r 2d6]]伤害。</p>"
 				},
 				"Seawater Retch":{
 					"name": "海水呕物 Seawater Retch",
@@ -3149,7 +3149,7 @@
 			"items":{
 				"Starvation Aura":{
 					"name": "饥饿灵光 Starvation Aura",
-					"description": "<p>@Template[type:emanation|distance:60]{60尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<p>。任何在灵光内结束回合的生物会感到一阵急剧的饥饿的痛苦，必须进行一次@Check[type:fortitude|dc:32]豁免。在失败时，该生物会变得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}并受到[[/r 7d6]]{7d6伤害}。生物从这个灵光受到的伤害和疲乏状态在它饱餐一顿之前无法被治愈。</p>"
+					"description": "<p>@Template[type:emanation|distance:60]{60尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<p>。任何在灵光内结束回合的生物会感到一阵急剧的饥饿的痛苦，必须进行一次@Check[type:fortitude|dc:32]豁免。在失败时，该生物会变得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}并受到[[/r 7d6]]伤害。生物从这个灵光受到的伤害和疲乏状态在它饱餐一顿之前无法被治愈。</p>"
 				},
 				"Breath Weapon":{
 					"name": "吐息武器 Breath Weapon",
@@ -3369,7 +3369,7 @@
 				},
 				"Remove Face":{
 					"name": "移脸 Remove Face",
-					"description": "<p><strong>需求</strong> 无面屠夫在一名@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}，@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}或@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}的生物的触及范围内；</p>\n<hr />\n<p><strong>效果</strong> 无面屠夫尝试一次斩肉刀打击或运动检定来对抗生物的强韧DC。成功时，无面屠夫如同进行了一次成功的斩肉刀打击一样造成伤害，并且移除该生物的脸皮。大成功时，该伤害翻倍，且生物受到@Localize[PF2E.PersistentDamage.Bleed4d6.success]。脸皮被移除后，该生物的魅力检定以及以魅力为基础的技能检定获得永久的-4状态减值。只有在受害者从无面屠夫那里取回它的脸皮并对其施放<em>@UUID[Compendium.pf2e.spells-srd.Item.SnaLVgxZ9ryUFmUr]{复原术 Restoration}</em>，该减值才能被移除。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NLjzI7gt6djXSoXc]{效果: 移脸}</p>"
+					"description": "<p><strong>需求</strong> 无面屠夫在一名@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}，@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}或@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}的生物的触及范围内；</p>\n<hr />\n<p><strong>效果</strong> 无面屠夫尝试一次斩肉刀打击或运动检定来对抗生物的强韧DC。成功时，无面屠夫如同进行了一次成功的斩肉刀打击一样造成伤害，并且移除该生物的脸皮。大成功时，该伤害翻倍，且生物受到@Damage[4d6[bleed]]。脸皮被移除后，该生物的魅力检定以及以魅力为基础的技能检定获得永久的-4状态减值。只有在受害者从无面屠夫那里取回它的脸皮并对其施放<em>@UUID[Compendium.pf2e.spells-srd.Item.SnaLVgxZ9ryUFmUr]{复原术 Restoration}</em>，该减值才能被移除。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NLjzI7gt6djXSoXc]{效果: 移脸}</p>"
 				},
 				"Sudden Slices":{
 					"name": "突袭切削 Sudden Slices",
@@ -3690,7 +3690,7 @@
 				},
 				"Set on Fire":{
 					"name": "着火 Set on Fire",
-					"description": "<p>如果维克多用造成火焰伤害的攻击大成功击中目标，或者如果他受到火焰伤害效果的目标豁免大失败，目标会受到 [[/r (1d4)[persistent,fire]]] 。</p>"
+					"description": "<p>如果维克多用造成火焰伤害的攻击大成功击中目标，或者如果他受到火焰伤害效果的目标豁免大失败，目标会受到 @Damage[1d4[persistent,fire]] 。</p>"
 				}
 			}
 		},
