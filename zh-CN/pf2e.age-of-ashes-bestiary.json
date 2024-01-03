@@ -547,7 +547,7 @@
 				},
 				"Volcanic Heat":{
 					"name": "火山热浪 Volcanic Heat",
-					"description": "<p>@Template[type:emanation|distance:10]{10尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>[[/r (3d6)[fire]]]{3d6火焰伤害} (@Check[type:reflex|dc:29|basic:true]豁免)。</p>"
+					"description": "<p>@Template[type:emanation|distance:10]{10尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>@Damage[3d6[fire]]伤害 (@Check[type:reflex|dc:29|basic:true]豁免)。</p>"
 				},
 				"Belch Smoke":{
 					"name": "浓烟滚滚 Belch Smoke",
@@ -746,7 +746,7 @@
 				},
 				"Breath-Seared Sword":{
 					"name": "龙息巨剑 Breath-Seared Sword",
-					"description": "<p>龙疤亡者的武器经过了龙的吐息魔法炙烤。当被生前就携带它的龙疤亡者使用时，这把剑会造成额外的[[/r (2d6)[void]]]{2d6虚能伤害}和[[/r (3d6)[fire]]]{3d6火焰伤害}。在其他任何生物手中，它只是一把破损巨剑。</p>"
+					"description": "<p>龙疤亡者的武器经过了龙的吐息魔法炙烤。当被生前就携带它的龙疤亡者使用时，这把剑会造成额外的[[/r (2d6)[void]]]{2d6虚能伤害}和@Damage[3d6[fire]]伤害。在其他任何生物手中，它只是一把破损巨剑。</p>"
 				},
 				"Glare of Rage":{
 					"name": "目光如炬 Glare of Rage",
@@ -1169,7 +1169,7 @@
 			"items":{
 				"Bleeding Nail":{
 					"name": "流血之钉 Bleeding Nail",
-					"description": "<p>如果地狱亡冠的尖钉打击命中敌人，目标必须通过@Check[type:fortitude|dc:16]检定。一旦失败，尖钉钉入目标身体，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，持续1分钟，并且还受到[[/r (1)[persistent,bleed]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续流血伤害}。（大失败则@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}，并且@Localize[PF2E.PersistentDamage.Bleed1d4.success]）。每多钉入一枚钉子，力竭状态值+1（最大力竭4），并且流血伤害+1。生物可以以一个交互动作来拔出钉子，这能减少力竭状态值和流血伤害。拔出最后一颗钉子就可以消除上述两种状态。</p>"
+					"description": "<p>如果地狱亡冠的尖钉打击命中敌人，目标必须通过@Check[type:fortitude|dc:16]检定。一旦失败，尖钉钉入目标身体，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，持续1分钟，并且还受到[[/r (1)[persistent,bleed]]] 持续流血伤害。（大失败则@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}，并且@Localize[PF2E.PersistentDamage.Bleed1d4.success]）。每多钉入一枚钉子，力竭状态值+1（最大力竭4），并且流血伤害+1。生物可以以一个交互动作来拔出钉子，这能减少力竭状态值和流血伤害。拔出最后一颗钉子就可以消除上述两种状态。</p>"
 				},
 				"Terrifying Stare":{
 					"name": "恐惧凝视 Terrifying Stare",
@@ -1553,7 +1553,7 @@
 			"items":{
 				"Slice Legs":{
 					"name": "割腿削肉 Slice Legs",
-					"description": "<p><strong>触发</strong> 体内有血液的生物移动穿过一团吸血水晶。</p>\n<hr />\n<p><strong>效果</strong> 水晶在该生物行走时扭曲并进行挥砍、活化并进行切割，造成[[/r (5d8)[slashing]]]{5d8挥砍伤害}。该生物必须尝试@Check[type:reflex|dc:28|traits:damaging-effect,environmental,magical]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物承受全额伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</p>\n<p><strong>失败</strong> 该生物承受双倍伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}。</p>\n<p><strong>大失败</strong> 同失败，外加该生物的血液会导致新水晶的生长。一团新的10尺方格的吸血水晶生长与现有这团水晶相邻的空间内。</p>"
+					"description": "<p><strong>触发</strong> 体内有血液的生物移动穿过一团吸血水晶。</p>\n<hr />\n<p><strong>效果</strong> 水晶在该生物行走时扭曲并进行挥砍、活化并进行切割，造成@Damage[5d8[slashing]]{5d8挥砍伤害}。该生物必须尝试@Check[type:reflex|dc:28|traits:damaging-effect,environmental,magical]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物承受全额伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</p>\n<p><strong>失败</strong> 该生物承受双倍伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}。</p>\n<p><strong>大失败</strong> 同失败，外加该生物的血液会导致新水晶的生长。一团新的10尺方格的吸血水晶生长与现有这团水晶相邻的空间内。</p>"
 				}
 			}
 		},
@@ -1929,7 +1929,7 @@
 				},
 				"Sneak Attack":{
 					"name": "偷袭 Sneak Attack",
-					"description": "<p>[[/r (3d6)[precision]]]{3d6精准伤害}</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
+					"description": "<p>@Damage[3d6[precision]]伤害</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SneakAttack]</p>"
 				},
 				"Weapon Trick":{
 					"name": "武器技巧 Weapon Trick",
