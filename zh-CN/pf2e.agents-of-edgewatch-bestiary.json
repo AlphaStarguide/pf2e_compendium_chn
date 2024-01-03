@@ -40,7 +40,7 @@
 			"hp": "以摧毁一个喷嘴；毒气罐硬度：20; 毒气罐HP： 100 (BT 50)以损毁毒气罐，阻止它喷出气体；",
 			"disable": "<p>@Check[type:thievery|dc:35|name:Block One Nozzle|traits:action:disable-a-device](专家)以阻塞一个喷嘴或@Check[type:thievery|dc:40|name:Shut Off the Tank|traits:action:disable-a-device](大师)以关上毒气罐。在5轮后，毒气罐排空，陷阱失效。</p>",
 			"hazarddescription": "<p>隐藏在公寓天花板上的五个喷嘴将藏在墙后的毒气罐中的赌气喷出，形成浓重的酸性毒云。</p>",
-			"routine": "<p>(1动作) 当它被触发时，陷阱有五个激活的喷嘴，但在每一轮它的回合结束时，一个随机的喷嘴失效。在陷阱的回合中，还激活的喷嘴会喷出一团酸性毒气，扩张到整个公寓中。毒云对房间中的每个生物和物体造成@Damage[1d6[acid]]伤害和[[/r (1d6)[poison]]]{1d6毒素伤害}（@Check[type:fortitude|dc:33|basic:true|name:Spew Cloud|traits:poison]豁免）。无人看管的物体会在针对伤害的豁免中自动失败。</p>",
+			"routine": "<p>(1动作) 当它被触发时，陷阱有五个激活的喷嘴，但在每一轮它的回合结束时，一个随机的喷嘴失效。在陷阱的回合中，还激活的喷嘴会喷出一团酸性毒气，扩张到整个公寓中。毒云对房间中的每个生物和物体造成@Damage[1d6[acid]]伤害和@Damage[1d6[poison]]伤害（@Check[type:fortitude|dc:33|basic:true|name:Spew Cloud|traits:poison]豁免）。无人看管的物体会在针对伤害的豁免中自动失败。</p>",
 			"stealthdetails": "<p>(大师)</p>",
 			"data": {
                 "placeHolder": "placeHolder"
@@ -175,7 +175,7 @@
 				},
 				"Fill Lungs":{
 					"name": "肺部充水 Fill Lungs",
-					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:26]</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (1轮)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2} (1轮)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3} (1轮)</p>\n<p><strong>阶段4</strong> 溺水，并且无法减少至阶段4 以下，除非肺部的水被清空；清空肺里的水需要一次成功的@Check[type:medicine|dc:26|name:Purge Water|traits:manipulate,action:administer-first-aid]检定进@UUID[Compendium.pf2e.actionspf2e.Item.MHLuKy4nQO2Z4Am1]{进行急救 Administer First Aid}（这能阻止生物溺水并将状态值减少到阶段3；大成功减少为阶段2），或者可以移除诅咒或恶心状态的魔法效果（能让生物停止溺水并解除诅咒）。</p>\n<p>如果生物溺亡，则下一次午夜时分将复活为一只新的藤壶食尸鬼。</p>"
+					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:26]</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (1轮)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2} (1轮)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3} (1轮)</p>\n<p><strong>阶段4</strong> 溺水，并且无法减少至阶段4 以下，除非肺部的水被清空；清空肺里的水需要一次成功的@Check[type:medicine|dc:26|name:Purge Water|traits:manipulate,action:administer-first-aid]检定进@UUID[Compendium.pf2e.actionspf2e.Item.MHLuKy4nQO2Z4Am1]{急救 Administer First Aid}（这能阻止生物溺水并将状态值减少到阶段3；大成功减少为阶段2），或者可以移除诅咒或恶心状态的魔法效果（能让生物停止溺水并解除诅咒）。</p>\n<p>如果生物溺亡，则下一次午夜时分将复活为一只新的藤壶食尸鬼。</p>"
 				},
 				"Nimble Swim":{
 					"name": "轻巧游泳 Nimble Swim",
@@ -453,7 +453,7 @@
                 },
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
-                    "description": "<p>被伤害：火焰([[/r (5d8}]]{5d8伤害}, 区域效果或可持续伤害则为[[/r (3d4}]]{3d4伤害}); 被治疗：电击(区域效果[[/r (2d4)[healing]]]{2d4生命值}); 被减速：寒冷</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<ul>\n<li><strong>被伤害</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</li>\n<li><strong>被治疗</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</li>\n<li><strong>被减速</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</li>\n<li><strong>法术弱点</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</li>\n</ul>"
+                    "description": "<p>被伤害：火焰([[/r (5d8}]]{5d8伤害}, 区域效果或可持续伤害则为[[/r (3d4}]]{3d4伤害}); 被治疗：电击(区域效果@Damage[2d4[healing]]生命值); 被减速：寒冷</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<ul>\n<li><strong>被伤害</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</li>\n<li><strong>被治疗</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</li>\n<li><strong>被减速</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</li>\n<li><strong>法术弱点</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</li>\n</ul>"
                 },
                 "Vulnerable to Flesh to Stone": {
                     "name": "法术弱点-石化术 Vulnerable to Flesh to Stone",
@@ -501,7 +501,7 @@
 				},
 				"Golem Antimagic":{
                     "name": "魔像抗魔 Golem Antimagic",
-                    "description": "<p>被伤害：音波([[/r (5d8}]]{5d8伤害}, 区域效果或可持续伤害则为[[/r 2d6]]{2d6伤害}; 被治疗：酸液(区域效果[[/r (2d4)[healing]]]{2d4生命值});被减速：寒冷</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<p><strong>被伤害 Harmed By</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</p>\n<p><strong>被治疗 Healed By</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</p>\n<p><strong>被减速 Slowed By</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>\n<p><strong>法术弱点 Vulnerable To</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</p>"
+                    "description": "<p>被伤害：音波([[/r (5d8}]]{5d8伤害}, 区域效果或可持续伤害则为[[/r 2d6]]{2d6伤害}; 被治疗：酸液(区域效果@Damage[2d4[healing]]生命值);被减速：寒冷</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<p><strong>被伤害 Harmed By</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</p>\n<p><strong>被治疗 Healed By</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</p>\n<p><strong>被减速 Slowed By</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>\n<p><strong>法术弱点 Vulnerable To</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</p>"
                 },
 				"Vulnerable to Shatter":{
                     "name": "法术弱点-粉碎音波 Vulnerable to Shatter",
@@ -692,7 +692,7 @@
 				},
 				"strike-Moderate Alchemist's Fire":{
 					"name": "中等炽火胶 Moderate Alchemist's Fire",
-					"description": "<p>[[/r (2)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}</p>\n<p>[[/r (2)[fire]]]{2火焰溅射伤害}</p>"
+					"description": "<p>[[/r (2)[persistent,fire]]] 持续火焰伤害</p>\n<p>[[/r (2)[fire]]]{2火焰溅射伤害}</p>"
 				},
 				"Dirty Bomb":{
 					"name": "脏弹 Dirty Bomb",
@@ -775,7 +775,7 @@
 				},
 				"Incendiary Spit":{
 					"name": "易燃唾液 Incendiary Spit",
-					"description": "<p>被燧石兽唾液击中的生物，表面会被一层光滑的易燃油脂覆盖。</p>\n<p>该生物必须成功通过@Check[type:reflex|dc:27]豁免，否则在易燃唾液覆盖时陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}。</p>\n<p>受到火焰伤害的生物会着火，受到[[/r (3d6)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}。一旦持续性火焰伤害结束，唾液就燃尽了。唾液也会在一个小时后自动消失，或者用肥皂、水并花费1分钟时间来擦洗。</p>"
+					"description": "<p>被燧石兽唾液击中的生物，表面会被一层光滑的易燃油脂覆盖。</p>\n<p>该生物必须成功通过@Check[type:reflex|dc:27]豁免，否则在易燃唾液覆盖时陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}。</p>\n<p>受到火焰伤害的生物会着火，受到[[/r (3d6)[persistent,fire]]] 持续火焰伤害。一旦持续性火焰伤害结束，唾液就燃尽了。唾液也会在一个小时后自动消失，或者用肥皂、水并花费1分钟时间来擦洗。</p>"
 				},
 				"Trail of Flame":{
 					"name": "火焰轨迹 Trail of Flame",
@@ -1244,7 +1244,7 @@
 			"items":{
 				"strike-Lesser Alchemist's Fire":{
 					"name": "次等炽火胶 Lesser Alchemist's Fire",
-					"description": "<p>[[/r (1)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}</p>\n<p>[[/r (1)[splash,fire]]]{1火焰溅射伤害}</p>"
+					"description": "<p>[[/r (1)[persistent,fire]]] 持续火焰伤害</p>\n<p>[[/r (1)[splash,fire]]]{1火焰溅射伤害}</p>"
 				},
 				"Goblin Scuttle":{
 					"name": "哥布林快跑 Goblin Scuttle",
@@ -1286,7 +1286,7 @@
 				},
 				"equipment-Hunting Spider Venom (in Reaper's Lancet)":{
 					"name": "猎蛛毒(死神手术刀中) Hunting Spider Venom",
-					"description": "<p>这种毒液能够腐蚀受害者的防御，以便蜘蛛捕食猎物。</p>\n<hr />\n<p><strong>启动</strong> <span class=\"action-glyph\">D</span> Interact (Injury)</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:21|name:Hunting Spider Venom]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d10[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (1d12)[poison]]]{1d12毒素伤害}、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和措手不及 (1轮)</p>\n<p><strong>阶段3</strong> [[/r (2d6)[poison]]]{2d6毒素伤害}、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和措手不及 (1轮)</p>"
+					"description": "<p>这种毒液能够腐蚀受害者的防御，以便蜘蛛捕食猎物。</p>\n<hr />\n<p><strong>启动</strong> <span class=\"action-glyph\">D</span> Interact (Injury)</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:21|name:Hunting Spider Venom]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d10[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (1d12)[poison]]]{1d12毒素伤害}、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和措手不及 (1轮)</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和措手不及 (1轮)</p>"
 				},
 				"strike-Reaper's Lancet Blade":{
 					"name": "死神手术刀 Reaper's Lancet Blade"
@@ -1695,7 +1695,7 @@
 				},
 				"Najra Lizard Venom":{
 					"name": "纳杰拉蜥蜴毒液 Najra Lizard Venom",
-					"description": "<p>中毒的生物会感觉生物非常口渴，在中毒时无法解渴；</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:21|traits:poison]</p>\n<p><strong>最大持续时间</strong> 4小时</p>\n<p><strong>阶段1</strong> [[/r (1d4)[poison]]]{1d4毒素伤害}、@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}，外加无法恢复的[[/r 1d4]]伤害，直到目标解渴 (1轮)</p>\n<p><strong>阶段2</strong> 如同阶段1 (1小时)</p>"
+					"description": "<p>中毒的生物会感觉生物非常口渴，在中毒时无法解渴；</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:21|traits:poison]</p>\n<p><strong>最大持续时间</strong> 4小时</p>\n<p><strong>阶段1</strong> @Damage[1d4[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}，外加无法恢复的[[/r 1d4]]伤害，直到目标解渴 (1轮)</p>\n<p><strong>阶段2</strong> 如同阶段1 (1小时)</p>"
 				},
 				"Najra Swarm Attack":{
 					"name": "纳杰拉集群攻击 Najra Swarm Attack",
@@ -1808,7 +1808,7 @@
 			"items":{
 				"strike-Lesser Alchemist's Fire":{
 					"name": "次等炽火胶 Lesser Alchemist's Fire",
-					"description": "<p>[[/r (1)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}</p>\n<p>[[/r (1)[splash,fire]]]{1火焰溅射伤害}</p>"
+					"description": "<p>[[/r (1)[persistent,fire]]] 持续火焰伤害</p>\n<p>[[/r (1)[splash,fire]]]{1火焰溅射伤害}</p>"
 				},
 				"Goblin Scuttle":{
 					"name": "哥布林快跑 Goblin Scuttle",
