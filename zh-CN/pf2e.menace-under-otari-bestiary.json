@@ -145,7 +145,7 @@
 			"items":{
 				"Bushwhack":{
 					"name": "灌木伏击 Bushwhack",
-					"description": "<p>熊地精掠夺者行走最多10尺，并且尝试@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒抱 Grapple}一个没有看见他也没有意识到他存在的生物。如果成功，它还能对目标造成拳击伤害。</p>"
+					"description": "<p>熊地精掠夺者行走最多10尺，并且尝试@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}一个没有看见他也没有意识到他存在的生物。如果成功，它还能对目标造成拳击伤害。</p>"
 				},
 				"Mauler":{
 					"name": "拳击手 Mauler",
@@ -330,7 +330,7 @@
 				},
 				"Incorporeal":{
 					"name": "虚体 Incorporeal",
-					"description": "<p>幽灵不具有物理形态。它们能够穿过包括墙壁的实体。但无法在其中结束它们的回合。大多数基于力量或需要和身体互动的动作，例如@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒抱 Grapple}和@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}，对幽灵不起作用，幽灵也无法用这些动作对付其他生物。</p>"
+					"description": "<p>幽灵不具有物理形态。它们能够穿过包括墙壁的实体。但无法在其中结束它们的回合。大多数基于力量或需要和身体互动的动作，例如@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}和@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}，对幽灵不起作用，幽灵也无法用这些动作对付其他生物。</p>"
 				},
 				"Rejuvenation":{
 					"name": "复生 Rejuvenation",
@@ -527,11 +527,11 @@
 			"items":{
 				"Breath Weapon":{
 					"name": "吐息 Breath Weapon",
-					"description": "<p>地狱犬喷出烈焰，对@Template[type:cone|distance:15]范围内所有生物造成[[/r (4d6)[fire]]]{4d6火焰伤害}（@Check[type:reflex|dc:19|basic:true]豁免）。</p>\n<p>地狱犬在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次吐息。假如地狱犬受到火焰伤害或者被火焰效果影响，则吐息能力会重新充能。</p>"
+					"description": "<p>地狱犬喷出烈焰，对@Template[type:cone|distance:15]范围内所有生物造成@Damage[4d6[fire]]伤害（@Check[type:reflex|dc:19|basic:true]豁免）。</p>\n<p>地狱犬在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次吐息。假如地狱犬受到火焰伤害或者被火焰效果影响，则吐息能力会重新充能。</p>"
 				},
 				"Evil Damage":{
-					"name": "邪恶伤害 Evil Damage",
-					"description": "<p>地狱犬的邪恶伤害只能伤害善良阵营的角色。</p>"
+					"name": "精魂伤害 Evil Damage",
+					"description": "<p>地狱犬的精魂伤害只能伤害善良阵营的角色。</p>"
 				}
 			}
 		},
@@ -680,7 +680,7 @@
 		"Mermaid Fountain (BB)": {
 			"name": "美人鱼喷泉 Mermaid Fountain (BB)",
 			"disable": "<p>@Check[type:thievery|dc:20|traits:complex,hazard|name:Disable Mechanism]分别解除每个角落的机关（必须解除三个机关才能让陷阱停下）</p>\n<p>每个角落的机关硬度8，HP15</p>",
-			"routine": "<p>每轮中喷泉都使用1个动作。投掷[[/r 1d10]]{1d10}，然后对比下表中的结果来决定陷阱该轮会采取什么行动： </p>\n<ul>\n<li><strong>1-4 单点喷射</strong> 雕像旋转起来，向房间里的一个随机目标喷射激流。投掷1个[/r 1d4]]{1d4}，从你左手边的玩家开始，数到你掷出的数字，以确定哪个英雄受到攻击。喷射激流是一次+10远程打击。一旦命中，能造成2d6钝击伤害（重击双倍伤害）。</li>\n<li><strong>5-7 角落喷射</strong> 雕像旋转起来，向房间内的每个机关尚未解除的角落都喷射一股激流。这会击中和机关相邻的任何生物，造成[[/r (2d6)[bludgeoning]]]{2d6钝击伤害}。所有成为目标的英雄必须通过@Check[type:reflex|dc:15|basic:true|traits:hazard]豁免。大成功时不受伤害，成功时伤害减半，失败时遭受全额伤害，大失败时遭受双倍伤害。</li>\n<li><strong>8-9 半房喷射</strong> 雕像旋转起来，向半侧房间里喷射激流。投掷任意骰子，如果为偶数的话则喷西半侧，否则就喷东半侧。这会对每个处于当前半侧的英雄造成[[/r (2d6)[bludgeoning]]]{2d6钝击伤害}。所有成为目标的英雄必须通过@Check[type:reflex|dc:15|basic:true|traits:hazard]豁免。</li>\n<li><strong>10 全房喷射</strong> 类似于半房喷射，但目标是房间里所有人。</li>\n</ul>",
+			"routine": "<p>每轮中喷泉都使用1个动作。投掷[[/r 1d10]]{1d10}，然后对比下表中的结果来决定陷阱该轮会采取什么行动： </p>\n<ul>\n<li><strong>1-4 单点喷射</strong> 雕像旋转起来，向房间里的一个随机目标喷射激流。投掷1个[/r 1d4]]{1d4}，从你左手边的玩家开始，数到你掷出的数字，以确定哪个英雄受到攻击。喷射激流是一次+10远程打击。一旦命中，能造成2d6钝击伤害（重击双倍伤害）。</li>\n<li><strong>5-7 角落喷射</strong> 雕像旋转起来，向房间内的每个机关尚未解除的角落都喷射一股激流。这会击中和机关相邻的任何生物，造成@Damage[2d6[bludgeoning]]伤害。所有成为目标的英雄必须通过@Check[type:reflex|dc:15|basic:true|traits:hazard]豁免。大成功时不受伤害，成功时伤害减半，失败时遭受全额伤害，大失败时遭受双倍伤害。</li>\n<li><strong>8-9 半房喷射</strong> 雕像旋转起来，向半侧房间里喷射激流。投掷任意骰子，如果为偶数的话则喷西半侧，否则就喷东半侧。这会对每个处于当前半侧的英雄造成@Damage[2d6[bludgeoning]]伤害。所有成为目标的英雄必须通过@Check[type:reflex|dc:15|basic:true|traits:hazard]豁免。</li>\n<li><strong>10 全房喷射</strong> 类似于半房喷射，但目标是房间里所有人。</li>\n</ul>",
 			"stealthdetails": "<p><strong>察觉</strong> @Check[type:perception|dc:20|traits:complex,hazard]检定</p>",
 			"data": {
                 "placeHolder": "placeHolder"
@@ -700,7 +700,7 @@
 			"items":{
 				"Adhesive":{
 					"name": "粘合剂 Adhesive",
-					"description": "<p>拟形怪身上有一层粘合剂构成的粘液。任何命中拟形怪、被拟形怪命中或@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒抱 Grapple}、@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}用其他方式触碰拟形怪的生物，都必须通过@Check[type:reflex|dc:23]检定否则被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 23）。命中拟形怪的武器会粘在拟形怪身上，并且可以通过@Check[type:athletics|dc:23]检定（以一个单动作）取下。拟形怪可以同时在它身上粘住任意数量的物品或生物，拟形怪可以以一个单动作释放被粘住的生物或物体。在拟形怪死亡一分钟之后，粘合剂会溶解，释放所有被粘住的物品或生物。</p>"
+					"description": "<p>拟形怪身上有一层粘合剂构成的粘液。任何命中拟形怪、被拟形怪命中或@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}、@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}用其他方式触碰拟形怪的生物，都必须通过@Check[type:reflex|dc:23]检定否则被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 23）。命中拟形怪的武器会粘在拟形怪身上，并且可以通过@Check[type:athletics|dc:23]检定（以一个单动作）取下。拟形怪可以同时在它身上粘住任意数量的物品或生物，拟形怪可以以一个单动作释放被粘住的生物或物体。在拟形怪死亡一分钟之后，粘合剂会溶解，释放所有被粘住的物品或生物。</p>"
 				},
 				"Object Lesson":{
 					"name": "“实物”教学 Object Lesson",
@@ -858,7 +858,7 @@
 			"items":{
 				"Incorporeal":{
 					"name": "虚体 Incorporeal",
-					"description": "<p>幽影不具有物理形态。它们能够穿过包括墙壁的实体。但无法在其中结束它们的回合。大多数基于力量或需要和身体互动的动作，例如@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒抱 Grapple}和@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}，对幽影不起作用，幽影也无法用这些动作对付其他生物。</p>"
+					"description": "<p>幽影不具有物理形态。它们能够穿过包括墙壁的实体。但无法在其中结束它们的回合。大多数基于力量或需要和身体互动的动作，例如@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}和@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}，对幽影不起作用，幽影也无法用这些动作对付其他生物。</p>"
 				},
 				"Light Vulnerability":{
 					"name": "光亮弱点 Light Vulnerability",
@@ -1089,7 +1089,7 @@
 			"items":{
 				"Circling Attack":{
 					"name": "盘旋攻击 Circling Attack",
-					"description": "<p>西风之鹰以一半的速度飞行，进行两次翼拍打击，然后再以半速飞行，回到初始地点。第二段移动不触发反应动作如@UUID[Compendium.pf2e.feats-srd.Item.NMWXHGWUcZGoLDKb]{借机攻击 Attack of Opportunity}，这两次打击都使用第一次攻击的多重攻击减值，但之后的攻击它必须承受-8的多重攻击减值。</p>"
+					"description": "<p>西风之鹰以一半的速度飞行，进行两次翼拍打击，然后再以半速飞行，回到初始地点。第二段移动不触发反应动作如@UUID[Compendium.pf2e.feats-srd.Item.NMWXHGWUcZGoLDKb]{反应打击 Reactive Strike}，这两次打击都使用第一次攻击的多重攻击减值，但之后的攻击它必须承受-8的多重攻击减值。</p>"
 				}
 			}
 		},

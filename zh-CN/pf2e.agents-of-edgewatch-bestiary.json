@@ -449,7 +449,7 @@
                 },
                 "Electric Reflexes": {
                     "name": "电击反射 Electric Reflexes",
-                    "description": "<p><strong>触发</strong> 魔像受到电击伤害并且一个生物与之相邻。</p>\n<hr />\n<p><strong>效果</strong> 魔像猛击并试图@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒抱 Grapple}相邻的生物。魔像尝试一次运动检定来擒抱相邻的生物，如果魔像成功，该生物还要受到[[/r (3d6)[electricity]]]{3d6电击伤害}；如果魔像大成功，则该生物受到[[/r (6d6)[electricity]]]{6d6电击伤害}。</p>"
+                    "description": "<p><strong>触发</strong> 魔像受到电击伤害并且一个生物与之相邻。</p>\n<hr />\n<p><strong>效果</strong> 魔像猛击并试图@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}相邻的生物。魔像尝试一次运动检定来擒抱相邻的生物，如果魔像成功，该生物还要受到[[/r (3d6)[electricity]]]{3d6电击伤害}；如果魔像大成功，则该生物受到[[/r (6d6)[electricity]]]{6d6电击伤害}。</p>"
                 },
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
@@ -779,7 +779,7 @@
 				},
 				"Trail of Flame":{
 					"name": "火焰轨迹 Trail of Flame",
-					"description": "<p>燧石兽行走两次，在它移动的时候，身后留下一道魔法火焰的痕迹。燧石兽经过的方格会燃起火焰，创造出5尺高的火墙，燃烧1轮。火墙会隐蔽另一侧的生物和物体。</p>\n<p>任何进入或在火墙范围内开始回合的生物将受到[[/r (6d6)[fire]]]{6d6火焰伤害}（@Check[type:reflex|dc:27|basic:true]豁免）。</p>"
+					"description": "<p>燧石兽行走两次，在它移动的时候，身后留下一道魔法火焰的痕迹。燧石兽经过的方格会燃起火焰，创造出5尺高的火墙，燃烧1轮。火墙会隐蔽另一侧的生物和物体。</p>\n<p>任何进入或在火墙范围内开始回合的生物将受到@Damage[6d6[fire]]伤害（@Check[type:reflex|dc:27|basic:true]豁免）。</p>"
 				}
 			}
 		},
@@ -1371,7 +1371,7 @@
 			"items":{
 				"Slam Shut":{
 					"name": "突然合拢 Slam Shut",
-					"description": "<p><strong>触发</strong> 一个生物走上陷阱的压力板（如地图上所示）；</p>\n<hr />\n<p><strong>效果</strong> 铁处女的前部以令人难以置信的力量关闭，并自己锁住了。触发生物会遭受@Damage[(4d10+10)[piercing]]{4d10+10穿刺伤害}和@Localize[PF2E.PersistentDamage.Bleed2d6.success]（@Check[type:reflex|dc:26|basic:true]豁免；如果该生物大成功，可以完全避开陷阱）。触发它的生物被禁足。只有当铁处女外的生物解锁装着（需要两次@Check[type:thievery|dc:28|name:Unlock Iron Maiden|traits:manipulate,action:disable-a-device]检定才能解除装置）或打破铁处女，之后被困的生物再通过DC25的检定以逃脱陷阱内部的尖刺，才能免除禁足。</p>"
+					"description": "<p><strong>触发</strong> 一个生物走上陷阱的压力板（如地图上所示）；</p>\n<hr />\n<p><strong>效果</strong> 铁处女的前部以令人难以置信的力量关闭，并自己锁住了。触发生物会遭受@Damage[(4d10+10)[piercing]]{4d10+10穿刺伤害}和@Damage[2d6[bleed]]伤害（@Check[type:reflex|dc:26|basic:true]豁免；如果该生物大成功，可以完全避开陷阱）。触发它的生物被禁足。只有当铁处女外的生物解锁装着（需要两次@Check[type:thievery|dc:28|name:Unlock Iron Maiden|traits:manipulate,action:disable-a-device]检定才能解除装置）或打破铁处女，之后被困的生物再通过DC25的检定以逃脱陷阱内部的尖刺，才能免除禁足。</p>"
 				}
 			}
 		},
@@ -1781,7 +1781,7 @@
 				},
 				"Wretched Weeps":{
 					"name": "悲恸脓血症 Wretched Weeps",
-					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:22]</p>\n<p><strong>阶段1</strong> 携带疾病但无效果 (1天)</p>\n<p><strong>阶段2</strong> 每小时@Localize[PF2E.PersistentDamage.Bleed2d8.success]，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段3</strong> 每小时@Localize[PF2E.PersistentDamage.Bleed2d8.success]，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>"
+					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:22]</p>\n<p><strong>阶段1</strong> 携带疾病但无效果 (1天)</p>\n<p><strong>阶段2</strong> 每小时@Damage[2d8[bleed]]伤害，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段3</strong> 每小时@Damage[2d8[bleed]]伤害，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>"
 				}
 			}
 		},
@@ -2176,7 +2176,7 @@
 				},
 				"Wire Catch":{
 					"name": "用线抓住 Wire Catch",
-					"description": "<p>皮锯缝纫师把缝纫针固定在一个厚丝绸环上，松散地包裹在手上，不拿武器，他们可以在战斗中用它来捆住或缴械攻击者；</p>\n<p><strong>触发</strong> 生物用近战攻击击中缝纫师；</p>\n<hr />\n<p><strong>效果</strong> 缝纫师试图对触发生物进行@UUID[Compendium.pf2e.action-macros.Macro.i95kcGLIQKOTsnv6]{擒抱 Grapple}或@UUID[Compendium.pf2e.action-macros.Macro.ooiO59Ch2QaebOmc]{卸武 Disarm}的运动检定。</p>"
+					"description": "<p>皮锯缝纫师把缝纫针固定在一个厚丝绸环上，松散地包裹在手上，不拿武器，他们可以在战斗中用它来捆住或缴械攻击者；</p>\n<p><strong>触发</strong> 生物用近战攻击击中缝纫师；</p>\n<hr />\n<p><strong>效果</strong> 缝纫师试图对触发生物进行@UUID[Compendium.pf2e.action-macros.Macro.i95kcGLIQKOTsnv6]{擒拿 Grapple}或@UUID[Compendium.pf2e.action-macros.Macro.ooiO59Ch2QaebOmc]{卸武 Disarm}的运动检定。</p>"
 				},
 				"Flay":{
 					"name": "剥皮 Flay",
@@ -2344,7 +2344,7 @@
 			"items":{
 				"Emotion Sense 120 feet":{
 					"name": "情绪感知120 尺",
-					"description": "<p>三角象能感受到120尺内生物的情绪，作为模糊感官。当范围内的生物受到一种情绪效果影响时，情绪感知对这种状态的目标时作为精确感官。受到<em>@UUID[Compendium.pf2e.spells-srd.Item.b515AZlB0sridKSq]{安定心神 Calm Emotions}</em>效果影响的目标无法被情绪感知。</p>"
+					"description": "<p>三角象能感受到120尺内生物的情绪，作为模糊感官。当范围内的生物受到一种情绪效果影响时，情绪感知对这种状态的目标时作为精确感官。受到<em>@UUID[Compendium.pf2e.spells-srd.Item.b515AZlB0sridKSq]{安定心神 Calm}</em>效果影响的目标无法被情绪感知。</p>"
 				},
 				"Empathetic Response":{
 					"name": "共情反应 Empathetic Response",
@@ -2590,7 +2590,7 @@
 				},
 				"Bloody Sneak Attack":{
 					"name": "嗜血偷袭 Bloody Sneak Attack",
-					"description": "<p>持续流血伤害的生物在面对剥皮人的攻击时视作措手不及。当剥皮人攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}的生物时，剥皮人造成额外[[/r (2d6)[precision]]]{2d6精准伤害}。</p>"
+					"description": "<p>持续流血伤害的生物在面对剥皮人的攻击时视作措手不及。当剥皮人攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}的生物时，剥皮人造成额外@Damage[2d6[precision]]伤害。</p>"
 				},
 				"Chain Expert":{
 					"name": "刺链专家 Chain Expert",
@@ -2602,7 +2602,7 @@
 				},
 				"Flay":{
 					"name": "剥皮 Flay",
-					"description": "<p>无论何时剥皮人对被擒抱的生物进行一次成功的斩肉刀打击，她造成@Damage[1d6[bleed]]伤害（重击则@Localize[PF2E.PersistentDamage.Bleed2d6.success]）。</p>"
+					"description": "<p>无论何时剥皮人对被擒抱的生物进行一次成功的斩肉刀打击，她造成@Damage[1d6[bleed]]伤害（重击则@Damage[2d6[bleed]]伤害）。</p>"
 				},
 				"Hook and Flay":{
 					"name": "肉钩剥皮 Hook and Flay",
