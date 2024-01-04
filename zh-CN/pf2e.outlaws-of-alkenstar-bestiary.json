@@ -902,7 +902,7 @@
 			"items":{
 				"Explosive Charge":{
 					"name": "定向炸药 Explosive Charge",
-					"description": "<p><strong>触发</strong> 桌上按钮被按下或者活板门被打开；</p>\n<hr />\n<p><strong>效果</strong> 活板门上的炸药爆炸。10尺内所有生物受到[[/r (2d10+6)[fire]+(1d10+3)[piercing]]]{2d10+6火焰伤害和1d10+3穿刺伤害}和@Localize[PF2E.PersistentDamage.Bleed1d6.success]（@Check[type:reflex|dc:22|basic:true]豁免）。房间被蒸汽充满，房间内所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}。然后陷阱投先攻。</p>"
+					"description": "<p><strong>触发</strong> 桌上按钮被按下或者活板门被打开；</p>\n<hr />\n<p><strong>效果</strong> 活板门上的炸药爆炸。10尺内所有生物受到[[/r (2d10+6)[fire]+(1d10+3)[piercing]]]{2d10+6火焰伤害和1d10+3穿刺伤害}和@Damage[1d6[bleed]]伤害（@Check[type:reflex|dc:22|basic:true]豁免）。房间被蒸汽充满，房间内所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}。然后陷阱投先攻。</p>"
 				}
 			}
 		},
@@ -1420,7 +1420,7 @@
 				},
 				"Belch Smoke":{
 					"name": "喷烟 Belch Smoke",
-					"description": "<p>飞艇引擎喷出@Template[type:cone|distance:30]炼金烟雾。范围内的生物必须尝试@Check[type:fortitude|dc:20|traits:hazard,haunt,complex]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[1d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>失败</strong> 生物受到@Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>大失败</strong> 生物受到[[/r (3d6)[poison]]]{3d6毒素伤害}和恶心2。</p>"
+					"description": "<p>飞艇引擎喷出@Template[type:cone|distance:30]炼金烟雾。范围内的生物必须尝试@Check[type:fortitude|dc:20|traits:hazard,haunt,complex]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[1d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>失败</strong> 生物受到@Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>大失败</strong> 生物受到@Damage[3d6[poison]]伤害和恶心2。</p>"
 				},
 				"strike-Red hot gear":{
 					"name": "红热齿轮 Red hot gear"
@@ -1775,7 +1775,7 @@
 				},
 				"Corrode Weapon":{
 					"name": "侵蚀武器 Corrode Weapon",
-					"description": "<p><strong>触发</strong> 锈蚀泥怪被一把近战武器命中；</p>\n<hr />\n<p><strong>效果</strong> 锈蚀泥怪对该物品造成[[/r (2d6)[acid]]]{2d6酸液伤害}，无视其硬度。</p>"
+					"description": "<p><strong>触发</strong> 锈蚀泥怪被一把近战武器命中；</p>\n<hr />\n<p><strong>效果</strong> 锈蚀泥怪对该物品造成@Damage[2d6[acid]]伤害，无视其硬度。</p>"
 				},
 				"Metal Resistance":{
 					"name": "金属抗力 Metal Resistance",
@@ -1783,7 +1783,7 @@
 				},
 				"Rust":{
 					"name": "锈蚀 Rust",
-					"description": "<p>当锈蚀泥怪的伪足打击造成重击时，它能对目标持握或穿戴的一件金属物品造成[[/r (2d6)[acid]]]{2d6酸液伤害}，无视其硬度。如果一个生物使用一面金属盾牌对锈蚀泥怪的伪足攻击进行盾牌格挡反应动作，该盾牌自动破损，但其他物品不会被锈蚀。</p>"
+					"description": "<p>当锈蚀泥怪的伪足打击造成重击时，它能对目标持握或穿戴的一件金属物品造成@Damage[2d6[acid]]伤害，无视其硬度。如果一个生物使用一面金属盾牌对锈蚀泥怪的伪足攻击进行盾牌格挡反应动作，该盾牌自动破损，但其他物品不会被锈蚀。</p>"
 				},
 				"Tetanus":{
 					"name": "破伤风 Tetanus",
@@ -2023,7 +2023,7 @@
 			"items":{
 				"Acidic Pustules":{
 					"name": "酸性脓包 Acidic Pustules",
-					"description": "<p>空贼的皮肤表面坏死的脓包受到攻击会爆裂。当一个生物对空贼造成挥砍或穿刺伤害时，5 尺内的每个生物都会受到[[/r (2d6)[acid]]]{2d6酸液伤害}（@Check[type:reflex|dc:22|basic:true]豁免）。如果大失败，生物还会受到[[/r (1d4)[persistent,acid]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续酸液伤害}。</p>"
+					"description": "<p>空贼的皮肤表面坏死的脓包受到攻击会爆裂。当一个生物对空贼造成挥砍或穿刺伤害时，5 尺内的每个生物都会受到@Damage[2d6[acid]]伤害（@Check[type:reflex|dc:22|basic:true]豁免）。如果大失败，生物还会受到[[/r (1d4)[persistent,acid]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续酸液伤害}。</p>"
 				},
                 "Runic Resistance": {
                     "name": "符文抗力 Runic Resistance",
