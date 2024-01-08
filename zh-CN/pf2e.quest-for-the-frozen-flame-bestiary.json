@@ -268,7 +268,7 @@
                 },
                 "Torch and Go": {
                     "name": "一触即燃 Torch and Go",
-                    "description": "<p><strong>需求</strong> 火把手正在夹击一个生物；</p>\n<hr />\n<p><strong>效果</strong> 火把手点燃分心的敌人。火把手使用火把对被夹击的生物进行一次打击，然后快步。如果火把手的打击对被夹击的生物造成伤害，则该生物同时承受[[/r (1)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}。</p>"
+                    "description": "<p><strong>需求</strong> 火把手正在夹击一个生物；</p>\n<hr />\n<p><strong>效果</strong> 火把手点燃分心的敌人。火把手使用火把对被夹击的生物进行一次打击，然后快步。如果火把手的打击对被夹击的生物造成伤害，则该生物同时承受[[/r (1)[persistent,fire]]] 持续火焰伤害。</p>"
                 }
             },
             "data": {
@@ -347,7 +347,7 @@
             "items": {
                 "strike-Tallow Bomb": {
                     "name": "油脂炸弹 Tallow Bomb",
-                    "description": "<p>[[/r (1d4)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}</p>\n<p>[[/r (1)[splash,fire]]]{1火焰溅射伤害}</p>"
+                    "description": "<p>@Damage[1d4[persistent,fire]] 持续火焰伤害</p>\n<p>[[/r (1)[splash,fire]]]{1火焰溅射伤害}</p>"
                 },
                 "Reaver's Howl": {
                     "name": "掠夺者吼叫 Reaver's Howl",
@@ -359,7 +359,7 @@
                 },
                 "Cut Down": {
                     "name": "砍倒 Cut Down",
-                    "description": "<p>当掠夺者的战斧打击命中一个生物时，目标必须通过@Check[type:fortitude|dc:16]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。如果该生物豁免大失败，则在倒地时还要承受[[/r (1d6)[bludgeoning]]]{1d6钝击伤害}。</p>"
+                    "description": "<p>当掠夺者的战斧打击命中一个生物时，目标必须通过@Check[type:fortitude|dc:16]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。如果该生物豁免大失败，则在倒地时还要承受@Damage[1d6[bludgeoning]]伤害。</p>"
                 }
             },
             "data": {
@@ -536,7 +536,7 @@
             "disable": "<p>@Check[type:religion|dc:23|name:Dissipate One of the Threads|traits:hazard,magical,trap,complex](专家)或@Check[type:performance|dc:21|name:Dissipate One of the Threads|traits:hazard,magical,trap,complex](受训)解除四道魔法中的一道。在参加埃瓦爷爷的葬礼时表演检定失败或大失败的角色会想起这段经历。这些角色在解除该陷阱的表演检定上获得+2环境加值。</p>\n<p>四道魔法都被解除之后，陷阱即被摧毁。</p>",
             "hazarddescription": "<p>四道短暂的魔法组成的旋风驱散不死生物，将生者笼罩在无尽的睡眠中。</p>",
             "reset": "<p>当100尺范围内没有活物或不死生物后，陷阱停止活动，然后重置。</p>",
-            "routine": "<p>(4动作) 每道能量随机穿过60尺范围内的一个活物或不死生物，造成4d6伤害（@Check[type:will|dc:22|basic:true|name:Death's Slumber Ward|traits:hazard,magical,trap,complex]豁免）。对活物造成的是[[/r (4d6)[void]]]{虚能伤害}，对不死生物造成的是[[/r (4d6)[vitality]]]{命能伤害}。每道能量会尽可能穿过不同的随机生物。每解除一道魔法，陷阱的动作数量-1。</p>",
+            "routine": "<p>(4动作) 每道能量随机穿过60尺范围内的一个活物或不死生物，造成4d6伤害（@Check[type:will|dc:22|basic:true|name:Death's Slumber Ward|traits:hazard,magical,trap,complex]豁免）。对活物造成的是@Damage[4d6[void]]{虚能伤害}，对不死生物造成的是[[/r (4d6)[vitality]]]{命能伤害}。每道能量会尽可能穿过不同的随机生物。每解除一道魔法，陷阱的动作数量-1。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "items": {
                 "Breath of Pharasma": {
@@ -1086,7 +1086,7 @@
                     "name": "奥术奔涌 Arcane Cascade"
                 },
                 "Spellstrike": {
-                    "description": "<p>伊瓦萨把法术力量注入到拳头或斧击中，以进行一次魔法充能攻击。她施放<em>@UUID[Compendium.pf2e.spells-srd.Item.O9w7r4BKgPogYDDe]{燃火术 Produce Flame}</em>或<em>@UUID[Compendium.pf2e.spells-srd.Item.gYjPm7YwGtEa1oxh]{冰冻射线 Ray of Frost}</em>。法术效应不会立刻显现，而是灌注到她的攻击中。她使用武器或无武装攻击进行一次近战打击，此次打击获得奥术特征。她的法术与攻击相结合，使用她的攻击骰结果来决定打击和法术两者的效果。在计算多重攻击减值时，这一动作算作两次攻击，但是直到完成法术打击后才开始应用减值。使用法术打击后，伊瓦萨无法再次使用法术打击，直到进行再充能为止。这样做需要花费一个单动作，并具有专注特征。当她施放雷鸣打击，她也会再充能自己的法术打击。</p>",
+                    "description": "<p>伊瓦萨把法术力量注入到拳头或斧击中，以进行一次魔法充能攻击。她施放<em>@UUID[Compendium.pf2e.spells-srd.Item.O9w7r4BKgPogYDDe]{引火术 Ignition}</em>或<em>@UUID[Compendium.pf2e.spells-srd.Item.gYjPm7YwGtEa1oxh]{冰冻射线 Ray of Frost}</em>。法术效应不会立刻显现，而是灌注到她的攻击中。她使用武器或无武装攻击进行一次近战打击，此次打击获得奥术特征。她的法术与攻击相结合，使用她的攻击骰结果来决定打击和法术两者的效果。在计算多重攻击减值时，这一动作算作两次攻击，但是直到完成法术打击后才开始应用减值。使用法术打击后，伊瓦萨无法再次使用法术打击，直到进行再充能为止。这样做需要花费一个单动作，并具有专注特征。当她施放雷鸣打击，她也会再充能自己的法术打击。</p>",
                     "name": "法术打击 Spellstrike"
                 }
             },
@@ -1391,7 +1391,7 @@
             "items": {
                 "strike-Tallow Bomb": {
                     "name": "油脂炸弹 Tallow Bomb",
-                    "description": "<p>[[/r (2d4)[persistent,fire]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}</p>\n<p>[[/r (2)[splash,fire]]]{2溅射火焰伤害}</p>"
+                    "description": "<p>[[/r (2d4)[persistent,fire]]] 持续火焰伤害</p>\n<p>[[/r (2)[splash,fire]]]{2溅射火焰伤害}</p>"
                 },
                 "Spurred by Death": {
                     "name": "死亡激励 Spurred by Death",
@@ -1399,11 +1399,11 @@
                 },
                 "Hunt Prey": {
                     "name": "猎杀目标 Hunt Prey",
-                    "description": "<p>帕卡诺指定一个他能看到且听到，或一个他正追踪的生物为猎物。他在用于@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}猎物的察觉检定和用于@UUID[Compendium.pf2e.actionspf2e.Item.EA5vuSgJfiHH7plD]{追踪 Track}猎物的生存检定上获得+2环境加值。</p>\n<p>当帕卡诺在一回合内第一次命中指定的猎物时，他额外造成[[/r (1d8)[precision]]]{1d8精准伤害}。帕卡诺还会在对抗猎物时忽略远程攻击的第二个射程增量减值。</p>\n<p>这些效果持续到帕卡诺再次使用猎杀目标。</p>"
+                    "description": "<p>帕卡诺指定一个他能看到且听到，或一个他正追踪的生物为猎物。他在用于@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}猎物的察觉检定和用于@UUID[Compendium.pf2e.actionspf2e.Item.EA5vuSgJfiHH7plD]{追踪 Track}猎物的生存检定上获得+2环境加值。</p>\n<p>当帕卡诺在一回合内第一次命中指定的猎物时，他额外造成@Damage[1d8[precision]]伤害。帕卡诺还会在对抗猎物时忽略远程攻击的第二个射程增量减值。</p>\n<p>这些效果持续到帕卡诺再次使用猎杀目标。</p>"
                 },
                 "Spear Fighter": {
                     "name": "矛斗士 Spear Fighter",
-                    "description": "<p>帕卡诺的矛具有格挡武器特征，并在被他用于打击时造成额外[[/r (1d6}]]{1d6伤害}。如果他使用矛对一个生物造成重击，该生物直到帕卡诺下回合开始前陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}。</p>"
+                    "description": "<p>帕卡诺的矛具有格挡武器特征，并在被他用于打击时造成额外[[/r 1d6]]{1d6伤害}。如果他使用矛对一个生物造成重击，该生物直到帕卡诺下回合开始前陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}。</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -1510,7 +1510,7 @@
                 },
                 "Noxious Sublimation": {
                     "name": "剧毒升腾 Noxious Sublimation",
-                    "description": "<p>雾凇泥每轮第一次受到火焰伤害时，一团令人作呕的腐烂毒云会向外升腾，对@Template[type:emanation|distance:10]范围内的所有生物造成[[/r (2d6)[poison]]]{2d6毒素伤害}（@Check[type:fortitude|dc:17|basic:true]豁免）。豁免失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}）。</p>"
+                    "description": "<p>雾凇泥每轮第一次受到火焰伤害时，一团令人作呕的腐烂毒云会向外升腾，对@Template[type:emanation|distance:10]范围内的所有生物造成@Damage[2d6[poison]]伤害（@Check[type:fortitude|dc:17|basic:true]豁免）。豁免失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}）。</p>"
                 },
                 "Slushy Undulation": {
                     "name": "泥泞起伏 Slushy Undulation",

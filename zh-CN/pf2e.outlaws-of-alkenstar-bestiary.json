@@ -85,7 +85,7 @@
                 },
                 "Serpent Venom": {
                     "name": "蛇毒 Serpent Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:25]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> [[/r (1d6)[poison]]]{1d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (2d6)[poison]]]{2d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1轮)</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:25]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1轮)</p>"
                 }
 			}
 		},
@@ -199,11 +199,11 @@
 			"items":{
                 "Final Blasphemy": {
                     "name": "最后的亵渎 Final Blasphemy",
-                    "description": "<p>当叛教尸被摧毁时，它爆裂成一股负能量波，效果等同于3环级<em>@UUID[Compendium.pf2e.spells-srd.Item.wdA52JJnsuQWeyqz]{伤害术 Harm}</em>（@Check[type:fortitude|dc:20|basic:true]）。</p>\n<p>因叛教尸已被摧毁，所以它不会从这个近似<em>伤害术</em>的效果中获得任何生命值，也不需要保有任何可用的伤害术来发动该技能。</p>"
+                    "description": "<p>当叛教尸被摧毁时，它爆裂成一股虚能波，效果等同于3环级<em>@UUID[Compendium.pf2e.spells-srd.Item.wdA52JJnsuQWeyqz]{伤害术 Harm}</em>（@Check[type:fortitude|dc:20|basic:true]）。</p>\n<p>因叛教尸已被摧毁，所以它不会从这个近似<em>伤害术</em>的效果中获得任何生命值，也不需要保有任何可用的伤害术来发动该技能。</p>"
                 },
                 "Heretic's Smite": {
                     "name": "异端斩 Heretic's Smite",
-                    "description": "<p>当它携带着生前信奉神祇的偏好武器时（例如，对于前布莱叛教尸来说，是轻锤），叛教尸的打击会对能施展神术的生物造成额外[[/r (1d6)[evil]]]{1d6邪恶伤害}。</p>"
+                    "description": "<p>当它携带着生前信奉神祇的偏好武器时（例如，对于前布莱叛教尸来说，是轻锤），叛教尸的打击会对能施展神术的生物造成额外[[/r (1d6)[spirit]]]{1d6精魂伤害}。</p>"
                 }
 			}
 		},
@@ -365,7 +365,7 @@
 			"items":{
                 "Verdant Burst": {
                     "name": "翠绿爆发 Verdant Burst",
-                    "description": "<p>当莱西死亡时，身体会爆发出一阵原能能量，@Template[type:emanation|distance:30]范围内的每个植物类生物恢复[[/r (1d4)[healing]]]{1d4生命值}。该区域立即长满缠结的藤蔓，变为困难地形。如果该地形环境不适合藤蔓生长，则这些藤蔓会在24小时后枯萎。</p>"
+                    "description": "<p>当莱西死亡时，身体会爆发出一阵原能能量，@Template[type:emanation|distance:30]范围内的每个植物类生物恢复@Damage[1d4[healing]]生命值。该区域立即长满缠结的藤蔓，变为困难地形。如果该地形环境不适合藤蔓生长，则这些藤蔓会在24小时后枯萎。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -377,7 +377,7 @@
                 },
 				"Heft Crate":{
 					"name": "举起板条箱 Heft Crate",
-					"description": "<p><strong>需求</strong> 净水清洁工和一个板条箱相邻；</p>\n<hr />\n<p><strong>效果</strong> 净水清洁工举起一个板条箱，将其投掷到最远15尺的地方。箱子落下时会在@Template[type:burst|distance:5]范围内爆裂开来。区域内的每个生物受到[[/r (2d6)[bludgeoning]]]{2d6钝击伤害}（@Check[type:reflex|dc:13|basic:true]豁免），并且该区域变为困难地形，直到碎片被清理完毕。</p>"
+					"description": "<p><strong>需求</strong> 净水清洁工和一个板条箱相邻；</p>\n<hr />\n<p><strong>效果</strong> 净水清洁工举起一个板条箱，将其投掷到最远15尺的地方。箱子落下时会在@Template[type:burst|distance:5]范围内爆裂开来。区域内的每个生物受到@Damage[2d6[bludgeoning]]伤害（@Check[type:reflex|dc:13|basic:true]豁免），并且该区域变为困难地形，直到碎片被清理完毕。</p>"
 				}
 			}
 		},
@@ -464,7 +464,7 @@
 				},
 				"Furnace Belch":{
 					"name": "熔炉喷气 Furnace Belch",
-					"description": "<p>发条清扫机喷出一阵包含灼热灰烬的烟雾，对@Template[type:cone|distance:15]范围造成[[/r (6d6)[fire]]]{6d6火焰伤害}（@Check[type:reflex|dc:22|basic:true]豁免）。发条清扫机在[[/br 1d4 #Furnace Belch Recharge]]{1d4轮}内无法再次使用熔炉喷气。</p>"
+					"description": "<p>发条清扫机喷出一阵包含灼热灰烬的烟雾，对@Template[type:cone|distance:15]范围造成@Damage[6d6[fire]]伤害（@Check[type:reflex|dc:22|basic:true]豁免）。发条清扫机在[[/br 1d4 #Furnace Belch Recharge]]{1d4轮}内无法再次使用熔炉喷气。</p>"
 				}
 			}
 		},
@@ -603,19 +603,19 @@
 				},
 				"Clockwork Swarm":{
 					"name": "发条集群 Clockwork Swarm",
-					"description": "<p>@Template[type:emanation|distance:30] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<p>一群飞行的、蜘蛛似的发条机械包围着发条傀儡师。在这团发条云中结束回合的生物将受到[[/r (4d8)[piercing]]]{4d8穿刺伤害}（@Check[type:reflex|dc:29|basic:true]豁免）。</p>"
+					"description": "<p>@Template[type:emanation|distance:30] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<p>一群飞行的、蜘蛛似的发条机械包围着发条傀儡师。在这团发条云中结束回合的生物将受到@Damage[4d8[piercing]]伤害（@Check[type:reflex|dc:29|basic:true]豁免）。</p>"
 				},
 				"Clockwork String":{
 					"name": "发条蛰刺 Clockwork String",
-					"description": "<p>任何被发条傀儡师蛰刺命中的生物将被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}。当有生物被蛰刺擒抱时，傀儡师可以移动，但是如果它移动至距离目标超过60尺时，它将自动松开目标。傀儡师同时能最多使用6枚蛰刺。它能以自由动作松开被擒抱的生物。每根蛰刺都有30AC，@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC为32。蛰刺能被一次至少造成[[/r (20)[slashing]]]{20挥砍伤害}的攻击砍断。砍断蛰刺不会对发条傀儡师本身造成伤害。 </p>"
+					"description": "<p>任何被发条傀儡师蛰刺命中的生物将被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。当有生物被蛰刺擒抱时，傀儡师可以移动，但是如果它移动至距离目标超过60尺时，它将自动松开目标。傀儡师同时能最多使用6枚蛰刺。它能以自由动作松开被擒抱的生物。每根蛰刺都有30AC，@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC为32。蛰刺能被一次至少造成[[/r (20)[slashing]]]{20挥砍伤害}的攻击砍断。砍断蛰刺不会对发条傀儡师本身造成伤害。 </p>"
 				},
 				"Create Puppet":{
 					"name": "创造傀儡 CCreate Puppet",
-					"description": "<p><strong>触发</strong> 一个被发条傀儡师蛰刺@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}的生物死亡；</p>\n<hr />\n<p><strong>效果</strong> 触发的生物的身体被微型发条占据。该傀儡完全被发条傀儡师控制，并且数据相当于同体型的丧尸，并且带有以下特殊调整：它失去[不死]特征，失去负能量治疗，失去正能量伤害弱点，获得[构装体]特征。</p>"
+					"description": "<p><strong>触发</strong> 一个被发条傀儡师蛰刺@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的生物死亡；</p>\n<hr />\n<p><strong>效果</strong> 触发的生物的身体被微型发条占据。该傀儡完全被发条傀儡师控制，并且数据相当于同体型的丧尸，并且带有以下特殊调整：它失去[不死]特征，失去虚能治疗，失去命能伤害弱点，获得[构装体]特征。</p>"
 				},
 				"Pull String":{
 					"name": "拉拽蛰刺 Pull String",
-					"description": "<p>发条傀儡师尝试操纵一个被蛰刺@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}的生物。傀儡师尝试一次运动检定，对抗生物的强韧DC。如果成功，傀儡师将目标向自己拉近15尺（大成功拉近30尺）。</p>"
+					"description": "<p>发条傀儡师尝试操纵一个被蛰刺@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的生物。傀儡师尝试一次运动检定，对抗生物的强韧DC。如果成功，傀儡师将目标向自己拉近15尺（大成功拉近30尺）。</p>"
 				}
 			}
 		},
@@ -627,7 +627,7 @@
 			"items":{
 				"strike-Jaws":{
 					"name": "啃咬 Jaws",
-					"description": "<p><strong>需求</strong> 丧尸有一个被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}的生物</p>"
+					"description": "<p><strong>需求</strong> 丧尸有一个被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}的生物</p>"
 				},
 				"Slow":{
 					"name": "缓慢 Slow",
@@ -778,11 +778,11 @@
 				},
 				"Jettison Cranium":{
 					"name": "弹射头颅 Jettison Cranium",
-					"description": "<p>存颅罐将其中一枚储藏的头颅弹出，射向100尺内某个点。玻璃罐会爆炸，并且@Template[type:burst|distance:10]范围内的所有生物必须尝试@Check[type:will|dc:28]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到[[/r (2d8)[mental]+(2d8)[negative]]]{2d8心灵伤害和2d8负能量伤害}。</p>\n<p><strong>失败</strong> 生物受到[[/r (4d8)[mental]+(4d8)[negative]]]{4d8心灵伤害和4d8负能量伤害}。罐子里的头颅释放出的心灵痛苦导致生物@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1轮。</p>\n<p><strong>大失败</strong> 生物受到[[/r (8d8)[mental]+(8d8)[negative]]]{8d8心灵和8d8负能量伤害}。罐子里的头颅释放出的心灵痛苦导致生物困惑2轮。</p>"
+					"description": "<p>存颅罐将其中一枚储藏的头颅弹出，射向100尺内某个点。玻璃罐会爆炸，并且@Template[type:burst|distance:10]范围内的所有生物必须尝试@Check[type:will|dc:28]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到[[/r (2d8)[mental]+(2d8)[void]]]{2d8心灵伤害和2d8虚能伤害}。</p>\n<p><strong>失败</strong> 生物受到[[/r (4d8)[mental]+(4d8)[void]]]{4d8心灵伤害和4d8虚能伤害}。罐子里的头颅释放出的心灵痛苦导致生物@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1轮。</p>\n<p><strong>大失败</strong> 生物受到[[/r (8d8)[mental]+(8d8)[void]]]{8d8心灵和8d8虚能伤害}。罐子里的头颅释放出的心灵痛苦导致生物困惑2轮。</p>"
 				},
 				"Slosh":{
 					"name": "晃荡 Slosh",
-					"description": "<p>每当存颅罐行走结束时，该动作会导致浸透死疽的防腐液和储藏的身体部件在它的罐子里晃荡并泼洒出来。每当存颅罐行走结束时，每个和它相邻的生物必须尝试@Check[type:will|dc:26]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到[[/r (1d8)[mental]+(1d8)[negative]]]{1d8心灵伤害和1d8负能量伤害}。</p>\n<p><strong>失败</strong> 生物受到[[/r (2d8)[mental]+(2d8)[negative]]]{2d8心灵伤害和2d8负能量伤害}。</p>\n<p><strong>大失败</strong> 生物受到[[/r (4d8)[mental]+(4d8)[negative]]]{4d8 mental and 4d8负能量伤害}。如果生物是活物，则储藏的身体部件会感知到活物的存在，并紧紧抓住对方，导致生物陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}，持续1轮。</p>"
+					"description": "<p>每当存颅罐行走结束时，该动作会导致浸透死疽的防腐液和储藏的身体部件在它的罐子里晃荡并泼洒出来。每当存颅罐行走结束时，每个和它相邻的生物必须尝试@Check[type:will|dc:26]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到[[/r (1d8)[mental]+(1d8)[void]]]{1d8心灵伤害和1d8虚能伤害}。</p>\n<p><strong>失败</strong> 生物受到[[/r (2d8)[mental]+(2d8)[void]]]{2d8心灵伤害和2d8虚能伤害}。</p>\n<p><strong>大失败</strong> 生物受到[[/r (4d8)[mental]+(4d8)[void]]]{4d8 mental and 4d8虚能伤害}。如果生物是活物，则储藏的身体部件会感知到活物的存在，并紧紧抓住对方，导致生物陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}，持续1轮。</p>"
 				}
 			}
 		},
@@ -829,7 +829,7 @@
 		},
 		"Disgorged Zombie": {
 			"name": "被吐出的丧尸 Disgorged Zombie",
-			"hp": "闪电充能, 负能量治疗",
+			"hp": "闪电充能, 虚能治疗",
 			"publicNotes": "<p>电激丧尸是丑陋的不死生物，全身被大量螺栓和电线复盖。大部分电激丧尸背后都有两个大线圈，用来吸收和投射电能。如果不加控制的话，电激丧尸通常会游荡到很远的地方，寻找发明家的实验室或闪电风暴来获取能量。在紧要关头，生物体内的自然电流也可以满足他们的需求。</p>",
 			"blurb": "变体带电丧尸",
 			"data":{},
@@ -902,7 +902,7 @@
 			"items":{
 				"Explosive Charge":{
 					"name": "定向炸药 Explosive Charge",
-					"description": "<p><strong>触发</strong> 桌上按钮被按下或者活板门被打开；</p>\n<hr />\n<p><strong>效果</strong> 活板门上的炸药爆炸。10尺内所有生物受到[[/r (2d10+6)[fire]+(1d10+3)[piercing]]]{2d10+6火焰伤害和1d10+3穿刺伤害}和@Localize[PF2E.PersistentDamage.Bleed1d6.success]（@Check[type:reflex|dc:22|basic:true]豁免）。房间被蒸汽充满，房间内所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}。然后陷阱投先攻。</p>"
+					"description": "<p><strong>触发</strong> 桌上按钮被按下或者活板门被打开；</p>\n<hr />\n<p><strong>效果</strong> 活板门上的炸药爆炸。10尺内所有生物受到[[/r (2d10+6)[fire]+(1d10+3)[piercing]]]{2d10+6火焰伤害和1d10+3穿刺伤害}和@Damage[1d6[bleed]]伤害（@Check[type:reflex|dc:22|basic:true]豁免）。房间被蒸汽充满，房间内所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}。然后陷阱投先攻。</p>"
 				}
 			}
 		},
@@ -1070,7 +1070,7 @@
 				},
 				"Grabbing Trunk":{
 					"name": "鼻卷 Grabbing Trunk",
-					"description": "<p>体型不超过中型的生物，被玻璃大象的象鼻攻击命中后会被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}。大象可以带着被擒抱的生物一起移动。</p>"
+					"description": "<p>体型不超过中型的生物，被玻璃大象的象鼻攻击命中后会被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。大象可以带着被擒抱的生物一起移动。</p>"
 				}
 			}
 		},
@@ -1285,7 +1285,7 @@
 				},
 				"I Venom":{
 					"name": "“我”之毒液 I Venom",
-					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:25]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> [[/r (2d6)[poison]]]{2d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (2d6)[poison]]]{2d6毒素伤害}，力竭1和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段3</strong> [[/r (2d6)[poison]]]{2d6毒素伤害}、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和措手不及 (1轮)</p>"
+					"description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:25]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]伤害，力竭1和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和措手不及 (1轮)</p>"
 				},
 				"Writhing Arms":{
 					"name": "翻腾触手 Writhing Arms",
@@ -1416,11 +1416,11 @@
 			"items":{
 				"Painful Whistle":{
 					"name": "痛苦汽笛 Painful Whistle",
-					"description": "<p><strong>触发</strong> 一个活物接近引擎10尺范围内（在地图上以T标出）；</p>\n<hr />\n<p><strong>效果</strong> 引擎发出一阵响亮的汽笛声，30尺内所有生物受到[[/r (2d6)[sonic]]]{2d6音波伤害}并陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（@Check[type:fortitude|dc:20|basic:true|traits:hazard,haunt,complex]豁免，成功不受震慑）。然后孤单的机魂投掷先攻。</p>"
+					"description": "<p><strong>触发</strong> 一个活物接近引擎10尺范围内（在地图上以T标出）；</p>\n<hr />\n<p><strong>效果</strong> 引擎发出一阵响亮的汽笛声，30尺内所有生物受到@Damage[2d6[sonic]]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（@Check[type:fortitude|dc:20|basic:true|traits:hazard,haunt,complex]豁免，成功不受震慑）。然后孤单的机魂投掷先攻。</p>"
 				},
 				"Belch Smoke":{
 					"name": "喷烟 Belch Smoke",
-					"description": "<p>飞艇引擎喷出@Template[type:cone|distance:30]炼金烟雾。范围内的生物必须尝试@Check[type:fortitude|dc:20|traits:hazard,haunt,complex]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到[[/r (1d6)[poison]]]{1d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>失败</strong> 生物受到[[/r (2d6)[poison]]]{2d6毒素伤害}和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>大失败</strong> 生物受到[[/r (3d6)[poison]]]{3d6毒素伤害}和恶心2。</p>"
+					"description": "<p>飞艇引擎喷出@Template[type:cone|distance:30]炼金烟雾。范围内的生物必须尝试@Check[type:fortitude|dc:20|traits:hazard,haunt,complex]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[1d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>失败</strong> 生物受到@Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>大失败</strong> 生物受到@Damage[3d6[poison]]伤害和恶心2。</p>"
 				},
 				"strike-Red hot gear":{
 					"name": "红热齿轮 Red hot gear"
@@ -1436,7 +1436,7 @@
 			"items":{
 				"Explode":{
 					"name": "爆炸 Explode",
-					"description": "<p><strong>触发</strong> 一个生物踩上玻璃瓶或玻璃瓶破损；</p>\n<hr />\n<p><strong>效果</strong> 玻璃瓶破损，对所在空间内的所有生物造成[[/r (2d8)[fire]]]{2d8火焰伤害}，外加[[/r (2)[persistent,fire]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续火焰伤害}和[[/r (2)[splash,fire]]{2火焰溅射伤害}（@Check[type:reflex|dc:18|basic:true|traits:hazard,mechanical,trap]豁免）。</p>"
+					"description": "<p><strong>触发</strong> 一个生物踩上玻璃瓶或玻璃瓶破损；</p>\n<hr />\n<p><strong>效果</strong> 玻璃瓶破损，对所在空间内的所有生物造成[[/r (2d8)[fire]]]{2d8火焰伤害}，外加[[/r (2)[persistent,fire]] 持续火焰伤害和[[/r (2)[splash,fire]]{2火焰溅射伤害}（@Check[type:reflex|dc:18|basic:true|traits:hazard,mechanical,trap]豁免）。</p>"
 				}
 			}
 		},
@@ -1523,7 +1523,7 @@
 				},
 				"Tongue Grab":{
 					"name": "舌卷 Tongue Grab",
-					"description": "<p>被巨蟾蜍以舌头命中的生物会自动被巨蟾蜍@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}。生物不会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，但是无法离开巨蟾蜍舌头的触及范围。生物能以一次至少造成[[/r (6)[slashing]]]{6挥砍伤害}的近战打击砍断舌头，舌头AC 15。</p>\n<p>这不会对巨蟾蜍造成伤害，但是在它的舌头恢复之前无法再使用舌头打击，恢复时间需要一周。</p>"
+					"description": "<p>被巨蟾蜍以舌头命中的生物会自动被巨蟾蜍@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。生物不会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，但是无法离开巨蟾蜍舌头的触及范围。生物能以一次至少造成[[/r (6)[slashing]]]{6挥砍伤害}的近战打击砍断舌头，舌头AC 15。</p>\n<p>这不会对巨蟾蜍造成伤害，但是在它的舌头恢复之前无法再使用舌头打击，恢复时间需要一周。</p>"
 				}
 			}
 		},
@@ -1593,7 +1593,7 @@
 				},
 				"Explode":{
 					"name": "爆炸 Explode",
-					"description": "<p>帕索斯将它的死灵机械大发明超载，对@Template[type:emanation|distance:10]范围造成@Damage[10d6[negative]]伤害（@Check[type:reflex|dc:31|basic:true]豁免）。帕索斯可以选择将自己包括在目标内。</p>"
+					"description": "<p>帕索斯将它的死灵机械大发明超载，对@Template[type:emanation|distance:10]范围造成@Damage[10d6[void]]伤害（@Check[type:reflex|dc:31|basic:true]豁免）。帕索斯可以选择将自己包括在目标内。</p>"
 				},
 				"Necromantic Winding":{
 					"name": "死灵上发条 Necromantic Winding",
@@ -1716,7 +1716,7 @@
 				},
 				"Split":{
 					"name": "分裂 Split",
-					"description": "<p>当一个大型爆熔雷泥怪被某次造成钝击或火焰伤害的攻击命中，并且它至少有10点HP，则它会爆炸，对10尺半径内的所有生物造成[[/r (6d6)[fire]]]{6d6火焰伤害}（@Check[type:reflex|dc:29|basic:true]豁免）。该爆炸不会导致其他爆熔雷泥怪分裂。在爆炸后，泥怪分裂为两个中型爆熔雷泥怪，每一个都拥有原来一半的HP。并且分裂出的每只泥怪都飞向空中，落在离原始泥怪15尺远的空间，方向随机。如果泥怪的落点空间被占据，他会自动推开该空间内的生物或物品以占据空间（如果生物或物品太大或难以推动，则由GM裁定）。</p>"
+					"description": "<p>当一个大型爆熔雷泥怪被某次造成钝击或火焰伤害的攻击命中，并且它至少有10点HP，则它会爆炸，对10尺半径内的所有生物造成@Damage[6d6[fire]]伤害（@Check[type:reflex|dc:29|basic:true]豁免）。该爆炸不会导致其他爆熔雷泥怪分裂。在爆炸后，泥怪分裂为两个中型爆熔雷泥怪，每一个都拥有原来一半的HP。并且分裂出的每只泥怪都飞向空中，落在离原始泥怪15尺远的空间，方向随机。如果泥怪的落点空间被占据，他会自动推开该空间内的生物或物品以占据空间（如果生物或物品太大或难以推动，则由GM裁定）。</p>"
 				},
 				"Exploding Split":{
 					"name": "爆炸分裂 Exploding Split",
@@ -1775,7 +1775,7 @@
 				},
 				"Corrode Weapon":{
 					"name": "侵蚀武器 Corrode Weapon",
-					"description": "<p><strong>触发</strong> 锈蚀泥怪被一把近战武器命中；</p>\n<hr />\n<p><strong>效果</strong> 锈蚀泥怪对该物品造成[[/r (2d6)[acid]]]{2d6酸液伤害}，无视其硬度。</p>"
+					"description": "<p><strong>触发</strong> 锈蚀泥怪被一把近战武器命中；</p>\n<hr />\n<p><strong>效果</strong> 锈蚀泥怪对该物品造成@Damage[2d6[acid]]伤害，无视其硬度。</p>"
 				},
 				"Metal Resistance":{
 					"name": "金属抗力 Metal Resistance",
@@ -1783,7 +1783,7 @@
 				},
 				"Rust":{
 					"name": "锈蚀 Rust",
-					"description": "<p>当锈蚀泥怪的伪足打击造成重击时，它能对目标持握或穿戴的一件金属物品造成[[/r (2d6)[acid]]]{2d6酸液伤害}，无视其硬度。如果一个生物使用一面金属盾牌对锈蚀泥怪的伪足攻击进行盾牌格挡反应动作，该盾牌自动破损，但其他物品不会被锈蚀。</p>"
+					"description": "<p>当锈蚀泥怪的伪足打击造成重击时，它能对目标持握或穿戴的一件金属物品造成@Damage[2d6[acid]]伤害，无视其硬度。如果一个生物使用一面金属盾牌对锈蚀泥怪的伪足攻击进行盾牌格挡反应动作，该盾牌自动破损，但其他物品不会被锈蚀。</p>"
 				},
 				"Tetanus":{
 					"name": "破伤风 Tetanus",
@@ -1837,11 +1837,11 @@
 				},
 				"Disgorge Mummy":{
 					"name": "放出木乃伊 Disgorge Mummy",
-					"description": "<p>如果吓人石棺的因为受到任何伤害（除了正能量）导致HP减少至0，它的石棺会破碎，其内部束缚的木乃伊会爬出来。这是一只弱化的@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.E5RDV3n7GnjAspQ5]{木乃伊卫士 Mummy Guardian}；如果木乃伊守卫独自生存1个月，它失去弱化调整。如果吓人石棺的因为受到任何正能量伤害导致HP减少至0，它的石棺会破碎，内部的木乃伊也会化为尘土。</p>"
+					"description": "<p>如果吓人石棺的因为受到任何伤害（除了命能）导致HP减少至0，它的石棺会破碎，其内部束缚的木乃伊会爬出来。这是一只弱化的@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.E5RDV3n7GnjAspQ5]{木乃伊卫士 Mummy Guardian}；如果木乃伊守卫独自生存1个月，它失去弱化调整。如果吓人石棺的因为受到任何命能伤害导致HP减少至0，它的石棺会破碎，内部的木乃伊也会化为尘土。</p>"
 				},
 				"Vulnerable to Positive Energy":{
-					"name": "正能量易伤 Vulnerable to Positive Energy",
-					"description": "<p>吓人石棺会受到正能量伤害，就如同它是不死生物那样。</p>"
+					"name": "命能易伤 Vulnerable to Positive Energy",
+					"description": "<p>吓人石棺会受到命能伤害，就如同它是不死生物那样。</p>"
 				},
 				"Sarcophagus":{
 					"name": "石棺 Sarcophagus",
@@ -1867,7 +1867,7 @@
 		},
 		"Shock Zombie": {
 			"name": "电激丧尸 Shock Zombie",
-			"hp": "闪电充能, 负能量治疗",
+			"hp": "闪电充能, 虚能治疗",
 			"publicNotes": "<p>电激丧尸是丑陋的不死生物，全身被大量螺栓和电线复盖。大部分电激丧尸背后都有两个大线圈，用来吸收和投射电能。如果不加控制的话，电激丧尸通常会游荡到很远的地方，寻找发明家的实验室或闪电风暴来获取能量。在紧要关头，生物体内的自然电流也可以满足他们的需求。</p>",
 			"data":{},
 			"items":{
@@ -1892,7 +1892,7 @@
 			"items":{
 				"strike-Acid Flask":{
 					"name": "强酸瓶 Acid Flask",
-					"description": "<p>[[/r (2d6)[persistent,acid]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续酸液伤害}</p>"
+					"description": "<p>[[/r (2d6)[persistent,acid]]] 持续酸液伤害</p>"
 				},
 				"Infused Items":{
 					"name": "灌注物品 Infused Items",
@@ -1951,7 +1951,7 @@
 				},
 				"Tongue Grab":{
 					"name": "舌卷 Tongue Grab",
-					"description": "<p>如果巨变色龙以舌头打击命中一个生物，该生物会被巨变色龙@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}。目标不会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，但是它无法移动出巨变色龙舌头触及范围。一个生物可以对舌头进行一次至少造成4点挥砍伤害的近战攻击来切断它，它的AC 为15。虽然这不会对巨变色龙造成任何伤害，但是在它的舌头重新长出来之前无法再使用舌头打击，这至少需要一周时间。</p>"
+					"description": "<p>如果巨变色龙以舌头打击命中一个生物，该生物会被巨变色龙@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。目标不会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，但是它无法移动出巨变色龙舌头触及范围。一个生物可以对舌头进行一次至少造成4点挥砍伤害的近战攻击来切断它，它的AC 为15。虽然这不会对巨变色龙造成任何伤害，但是在它的舌头重新长出来之前无法再使用舌头打击，这至少需要一周时间。</p>"
 				}
 			}
 		},
@@ -1991,7 +1991,7 @@
 		},
 		"Smog Wraith": {
 			"name": "霾缚灵 Smog Wraith",
-			"ac": "负能量治疗",
+			"ac": "虚能治疗",
 			"publicNotes": "<p>这些强大的亡灵周围持久不断地围绕着烟雾和有毒雾霾。他们不断喷出毒气，并且以那些无力抵抗毒气的生物的死亡为乐。这些恶臭的毒气密度是如此之大，以至于霾缚灵的受害者们的尸体甚至可以在里面漂浮起来。</p>\n<p>虽然人们可以通过死灵法术创造霾缚灵，但大部分霾缚灵都由实业家、发明家和污染者造就的。这些人在生活中通过开发自然来换取利润、权力或声望。当他们死亡时，这些可怜的灵魂便有可能复活为霾缚灵，继续他们的掠夺。</p>",
 			"data":{},
 			"items":{
@@ -2023,7 +2023,7 @@
 			"items":{
 				"Acidic Pustules":{
 					"name": "酸性脓包 Acidic Pustules",
-					"description": "<p>空贼的皮肤表面坏死的脓包受到攻击会爆裂。当一个生物对空贼造成挥砍或穿刺伤害时，5 尺内的每个生物都会受到[[/r (2d6)[acid]]]{2d6酸液伤害}（@Check[type:reflex|dc:22|basic:true]豁免）。如果大失败，生物还会受到[[/r (1d4)[persistent,acid]]] @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续酸液伤害}。</p>"
+					"description": "<p>空贼的皮肤表面坏死的脓包受到攻击会爆裂。当一个生物对空贼造成挥砍或穿刺伤害时，5 尺内的每个生物都会受到@Damage[2d6[acid]]伤害（@Check[type:reflex|dc:22|basic:true]豁免）。如果大失败，生物还会受到[[/r (1d4)[persistent,acid]]] 持续酸液伤害。</p>"
 				},
                 "Runic Resistance": {
                     "name": "符文抗力 Runic Resistance",
@@ -2055,7 +2055,7 @@
 			"items":{
 				"Bar Brawler":{
 					"name": "酒吧斗殴者 Bar Brawler",
-					"description": "<p>酒保有充足的酒吧斗殴经验。当在酒吧里打斗并且进行非致命攻击时，酒保的攻击检定有+1环境加值，并且造成额外[[/r (1d4}]]{1d4伤害}。</p>"
+					"description": "<p>酒保有充足的酒吧斗殴经验。当在酒吧里打斗并且进行非致命攻击时，酒保的攻击检定有+1环境加值，并且造成额外[[/r 1d4]]伤害。</p>"
 				},
 				"Barkeep's Advice":{
 					"name": "酒保的忠告 Barkeep's Advice",
@@ -2127,7 +2127,7 @@
 				},
 				"Otherworldly Mind":{
 					"name": "异界心智 Otherworldly Mind",
-					"description": "<p>当一个生物将廷达罗斯猎犬作为心灵效果的目标，该生物受到[[/r (4d6)[mental]]]{4d6心灵伤害}（@Check[type:will|dc:29|basic:true]豁免）。大失败时，它还将陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}[[/br 1d4 #rounds]]{1d4轮}。</p>"
+					"description": "<p>当一个生物将廷达罗斯猎犬作为心灵效果的目标，该生物受到@Damage[4d6[mental]]伤害（@Check[type:will|dc:29|basic:true]豁免）。大失败时，它还将陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}[[/br 1d4 #rounds]]{1d4轮}。</p>"
 				},
 				"Ripping Gaze":{
 					"name": "撕裂凝视 Ripping Gaze",
