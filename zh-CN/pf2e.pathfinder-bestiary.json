@@ -107,7 +107,7 @@
                     "name": "鞭子移位 Whip Reposition",
                     "description": "<p>当巴洛炎魔以它的鞭子打击@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{攫抓 Grabs}一个生物时候，它可以把目标生物移动至鞭子触及范围内的任何空间。巴洛炎魔可以移动且不结束攫抓状态，只要它能确保该生物依然位于它的鞭子触及范围之内。并且巴洛炎魔可以随时以一个交互动作将该生物移动到鞭子触及范围内的任何空间里。</p>"
                 },
-                "Attack of Opportunity (Special)":{
+                "Attack of Opportunity (Special)": {
                     "name": "借机攻击 Attack of Opportunity (特殊)",
                     "description": "<p>除了一般的触发方式之外，当巴洛炎魔触及范围内的一个生物进行专注特征的动作时也能触发它的借机攻击。它可以打断该专注动作，并且普通命中就能打断，并不一定需要造成重击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 }
@@ -399,6 +399,9 @@
                 "Surprise Attacker": {
                     "name": "突袭打击 Surprise Attacker",
                     "description": "<p>在战斗的第一轮，还未行动的生物对沙漠龙兽来说都视为处于@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                },
+                "Push": {
+                    "name": "推离 Push"
                 }
             }
         },
@@ -1025,7 +1028,7 @@
                     "name": "活吞 Swallow Whole",
                     "description": "<p>超大型，@Damage[(3d6+9)[bludgeoning]]伤害，破裂24</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 },
-                "Purple Worm Venom":{
+                "Purple Worm Venom": {
                     "name": "紫虫毒 Purple Worm Venom",
                     "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:32]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[5d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[6d6[poison]]伤害和力竭2 (1轮)</p>\n<p><strong>阶段3</strong> @Damage[8d6[poison]]伤害和力竭2 (1轮)</p>"
                 }
@@ -1162,6 +1165,9 @@
                 "Swiftness": {
                     "name": "迅捷 Swiftness",
                     "description": "<p>风暴领主的移动不会触发反应动作。</p>"
+                },
+                "Push 5 feet": {
+                    "name": "推离5尺 Push 5 feet"
                 }
             }
         },
@@ -1693,6 +1699,9 @@
                 "Earth Glide": {
                     "name": "潜地 Earth Glide",
                     "description": "<p>石拳手可以在任何泥土或岩石中钻洞。当它这样做时，石拳手以它的掘进速度满速移动，且不留下隧道或任何它经过的痕迹。</p>"
+                },
+                "Push 10 feet": {
+                    "name": "推离10尺 Push 10 feet"
                 }
             }
         },
@@ -4720,6 +4729,9 @@
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
                     "description": "<p>元素飓风对@Template[type:cone|distance:30]范围进行气流吐息。范围内的所有生物都必须通过@Check[type:fortitude|dc:29|traits:damaging-effect]检定否则会从元素身边击飞。</p>\n<p>如果一个生物被击飞到固体物体上会停止移动并受到@Damage[10d6[bludgeoning]]伤害。</p>\n<p>元素飓风在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被推离20尺。</p>\n<p><strong>失败</strong> 生物被推离40尺。</p>\n<p><strong>大失败</strong> 生物被推离40尺并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                },
+                "Push 10 feet": {
+                    "name": "推离10尺 Push 10 feet"
                 }
             }
         },
@@ -5828,7 +5840,7 @@
                     "name": "潜于阴影 Slink in Shadows",
                     "description": "<p>幽影可以在生物或物体的影子中@UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{躲藏 Hide}或作为@UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{潜行 Sneak}的终点。</p>"
                 },
-                "Steal Shadow":{
+                "Steal Shadow": {
                     "name": "窃影 Steal Shadow",
                     "description": "<p><strong>需求</strong> 幽影在前一个动作中以幽影之手打击命中一个活物；</p>\n<hr />\n<p><strong>效果</strong> 幽影抽出目标的影子，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}(重击时为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3})。这能和幽影造成的其他力竭效果相叠加，最大达到力竭4。如果该能力使目标的力竭达到3或更多，则目标的影子被完全从身上剥离（见幽影衍体）。此能力造成的力竭效果每小时减少1状态值。</p>"
                 }
@@ -6171,6 +6183,9 @@
                 "Touch of Charity": {
                     "name": "慈悲之触 Touch of Charity",
                     "description": "<p>一个鹿角圣使可以触摸另一个生物以分担该生物的伤势，这位鹿角圣使能将最多30点HP传递给被触摸的生物。鹿角圣使不能传递比他当前HP更多的HP。</p>"
+                },
+                "Push": {
+                    "name": "推离 Push"
                 }
             }
         },
@@ -7486,6 +7501,9 @@
                 "Shove into Stone": {
                     "name": "推敌入石 Shove into Stone",
                     "description": "<p>当土巨灵推离一个生物撞上石制障碍物时，目标必须成功通过@Check[type:reflex|dc:22]豁免检定否则会和石制障碍物融合在一起（如同<em>@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{融身化石 One with Stone}</em>法术）。受害者可以尝试逃脱（DC 28）。</p>"
+                },
+                "Push 10 feet": {
+                    "name": "推离10尺 Push 10 feet"
                 }
             }
         },
@@ -8263,7 +8281,7 @@
                     "name": "成群袭击 Pack Attack",
                     "description": "<p>对于触及范围内至少有两名座狼盟友的生物，座狼的打击造成额外[[/r (1d4)]]{1d4伤害}。</p>"
                 },
-                "Swallow Whole":{
+                "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
                     "description": "<p>小型, @Damage[(1d6+2)[bludgeoning]]伤害, 破裂9</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 }
@@ -9331,6 +9349,9 @@
                 "Shell Rake": {
                     "name": "背壳剐蹭 Shell Rake",
                     "description": "<p>巴莫在生物和船体旁游泳或行走，它背上强壮的棘刺会造成伤害。在巴莫行动路径上任意一点与之相邻的生物或船只都会受到[[/r (6d6+10)[slashing,piercing]]]{6d6+10挥砍+穿刺伤害}（@Check[type:reflex|dc:42|basic:true]豁免）。此外，对于船体来说，背壳剐蹭还能忽视其5点硬度，并且四散的碎片能对每一个位于甲板边缘@Template[type:burst|distance:10]{10尺}内的生物造成[[/r (3d6+5)]]伤害（@Check[type:reflex|dc:42|basic:true]豁免）。</p>"
+                },
+                "Push 40 feet": {
+                    "name": "推离40尺 Push 40 feet"
                 }
             }
         },
@@ -9522,6 +9543,9 @@
                 "Wrap in Coils": {
                     "name": "蜷曲缠缚 Wrap in Coils",
                     "description": "<p><strong>需求</strong> 被巨蟒啮咬所@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或者@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}住的生物（大型或者更小）。</p>\n<hr />\n<p><strong>效果</strong> 巨蟒缠绕上生物，张开双颚啮咬进行攻击，而后对该生物使用高等紧勒。巨蟒可以盘住在它占据方格内的所有生物。</p>"
+                },
+                "Push 10 feet": {
+                    "name": "推离10尺 Push 10 feet"
                 }
             }
         },
@@ -9976,6 +10000,9 @@
                 "Swiftness": {
                     "name": "迅捷 Swiftness",
                     "description": "<p>活体旋风在移动时不会触发反应动作。</p>"
+                },
+                "Push 5 feet": {
+                    "name": "推离5尺 Push 5 feet"
                 }
             }
         },
@@ -10335,6 +10362,9 @@
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
                     "description": "<p>超大型, @Damage[(2d8+5)[bludgeoning]], 破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                },
+                "Push 15 feet": {
+                    "name": "推离15尺 Push 15 feet"
                 }
             }
         },
@@ -10633,6 +10663,9 @@
                 "Stomp": {
                     "name": "重踏 Stomp",
                     "description": "<p>红帽精以他一半的速度移动，在移动过程中的任意一点进行一次铁靴子打击。如果铁靴子打击命中一个@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}的生物，将造成额外的@Damage[2d6[bleed]]伤害。</p>"
+                },
+                "equipment-Red Cap": {
+                    "name": "红帽子 Red Cap"
                 }
             }
         },
