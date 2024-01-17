@@ -22,7 +22,7 @@
                 },
                 "Dazzling Blooms": {
                     "name": "Dazzling Blooms",
-                    "description": "<p>The glimmervine shakes its iridescent blossoms to astound nearby foes. All creatures within @Template[type:emanation|distance:30]{30 feet}, except other glimmervines, must attempt a @Check[type:fortitude|dc:21] save. The glimmervine then can't use Dazzling Blooms for [[/r 1d4 #Recharge Dazzling Blooms]]{1d4 rounds}.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round, then dazzled for 1 round.</p>"
+                    "description": "<p>The glimmervine shakes its iridescent blossoms to astound nearby foes. All creatures within @Template[type:emanation|distance:30]{30 feet}, except other glimmervines, must attempt a @Check[type:fortitude|dc:21] save. The glimmervine then can't use Dazzling Blooms for [[/br 1d4 #Recharge Dazzling Blooms]]{1d4 rounds}.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round, then dazzled for 1 round.</p>"
                 }
             }
         },
@@ -31,7 +31,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Shroud of Silence",
-            "disable": "<p>@Check[type:occultism|dc:25] (expert) to twist the magic of the ley line around you, disabling the hazard for only you; or<em> <em>@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic}</em></em> (4th level; counteract DC 23) to disable the hazard permanently</p>",
+            "disable": "<p>@Check[type:occultism|dc:25] (expert) to twist the magic of the ley line around you, disabling the hazard for only you; or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (4th level; counteract DC 23) to disable the hazard permanently</p>",
             "hazarddescription": "<p>Sounds become muted in a 20-foot-wide, 100-foot-long segment of this street corridor.</p>",
             "stealthdetails": "<p>(expert)</p>",
             "items": {
@@ -47,7 +47,7 @@
             },
             "name": "Blackfrost Zombie",
             "publicNotes": "<p>Most creatures who perish from the cold while cursed with blackfrost rise as zombies. Though mindless, blackfrost zombies are driven by the @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{Invisible} will of blackfrost to spread their foul curse.</p>\n<hr />\n<p>These shambling arctic horrors are dead in name alone. Creatures who succumb to the frigid elements while cursed by blackfrost don't become mere corpses entombed in ice but rather vicious undead capable of spreading the curse of blackfrost even further. Cracked, frostbitten flesh that emits a freezing vapor like steam; inexorable, unhindered strides through feet of ash-blackened snow; a vacant, icy-blue gaze devoid of humanity—the descriptions of blackfrost dead vary by the teller, but none can deny the supernatural dread these monsters evoke.</p>\n<p>Blackfrost dead take a variety of forms. Most are mindless, lumbering brutes, largely indiscernible from mundane zombies except for the curse they can inflict. Others not only maintain their presence of mind but wield powers of psychic corruption not unlike those of blackfrost's originator, Osoyo, the Blackfrost Whale. What form a blackfrost dead takes depends primarily on the victim's psychic fortitude and its aptitude for occult magic.</p>\n<h3>Creating Blackfrost Dead</h3>\n<p>The simplest way to create a blackfrost dead is to use an existing undead, such as a zombie or a mummy, as your base creature. Replace the creature's abilities with abilities from the list on this page. All blackfrost dead gain the cold trait and have at least one way to inflict blackfrost, often using one of their Strikes.</p>\n<h3>Curse of the Crown</h3>\n<p>Blackfrost dead are found only around the Nameless Spires, under which a massive alien being named Osoyo remains imprisoned. Only recently has this ancient being stirred from its slumber, causing blackfrost to foam out of fissures in the ice and afflict unfortunate explorers. The spread of the blackfrost curse has been mercifully slow thus far, but with each creature afflicted, Osoyo's reach expands ever outward.</p>",
-            "hp": "negative healing",
+            "hp": "void healing",
             "items": {
                 "Ice Climb 20 feet": {
                     "name": "Ice Climb 20 feet",
@@ -57,9 +57,13 @@
                     "name": "Opportune Bite",
                     "description": "<p><strong>Trigger</strong> A creature critically fails a Strike within 10 feet of the blackfrost zombie</p>\n<hr />\n<p><strong>Effect</strong> The blackfrost zombie Steps toward the triggering creature, then makes a jaws Strike against that creature.</p>"
                 },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
                 "Blackfrost": {
                     "name": "Blackfrost",
-                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.OyFCwQuw8XRazsNr]{Remove Curse}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract level of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
+                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract rank of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
                 },
                 "Blackfrost Breath": {
                     "name": "Blackfrost Breath",
@@ -88,9 +92,9 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Shadowshift Field",
-            "disable": "<p>@Check[type:arcana|dc:17] (trained) to will the Material Plane's hold on the area back into firmness and disable the effect for 1 hour, or<em> <em>@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic}</em></em> (1st level; counteract DC 15) to end the effect permanently</p>",
+            "disable": "<p>@Check[type:arcana|dc:17] (trained) to will the Material Plane's hold on the area back into firmness and disable the effect for 1 hour, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (1st level; counteract DC 15) to end the effect permanently</p>",
             "hazarddescription": "<p>Cross-planar seepage from the Oaksteward rebels' ritual causes shadowy warping effects to strain and damage living creatures in the forest clearing.</p>",
-            "routine": "<p>(1 action) Each creature in the clearing must attempt a @Check[type:fortitude|dc:17] save as the planar warping threatens to create microscopic tears inside their body. Fey, plant creatures, and druids are unaffected.</p>\n<hr>\n<p><strong>Critical Success</strong> The creature is unaffected and immune for 24 hours. The land is healed 1d6 points by the primal magic.</p>\n<p><strong>Success</strong> The creature is unaffected and immune to the effect for 24 hours.</p>\n<p><strong>Failure</strong> The creature takes @Damage[(1d6+3)[force]].</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[(2d6+6)[force]].</p>",
+            "routine": "<p>(1 action) Each creature in the clearing must attempt a @Check[type:fortitude|dc:17] save as the planar warping threatens to create microscopic tears inside their body. Fey, plant creatures, and druids are unaffected.</p>\n<hr>\n<p><strong>Critical Success</strong> The creature is unaffected and immune for 24 hours. The land is healed [[/br 1d6]] points by the primal magic.</p>\n<p><strong>Success</strong> The creature is unaffected and immune to the effect for 24 hours.</p>\n<p><strong>Failure</strong> The creature takes @Damage[(1d6+3)[force]].</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[(2d6+6)[force]].</p>",
             "reset": "<p>This effect continues for 1 day, after which it ends and cannot be triggered again without another ritual.</p>",
             "stealthdetails": "<p>(trained) to notice the air and plants wavering and shifting</p>",
             "items": {
@@ -156,16 +160,19 @@
             },
             "name": "Blackfrost Prophet",
             "publicNotes": "<p>With their hulking physiques and the potent connection to the Crown of the World, saumen kar who succumb to blackfrost become especially dangerous blackfrost dead. Those who guarded the Temple of Aqakaru in life continue to do so in undeath, albeit even more vigilantly and much more violently. Blackfrost prophets, as these wardens are sometimes known, maintain their formidable intellect and innate connection to their boreal environment, though the curse of blackfrost has stripped them of their memories and filled their hearts with evil.</p>\n<hr />\n<p>These shambling arctic horrors are dead in name alone. Creatures who succumb to the frigid elements while cursed by blackfrost don't become mere corpses entombed in ice but rather vicious undead capable of spreading the curse of blackfrost even further. Cracked, frostbitten flesh that emits a freezing vapor like steam; inexorable, unhindered strides through feet of ash-blackened snow; a vacant, icy-blue gaze devoid of humanity—the descriptions of blackfrost dead vary by the teller, but none can deny the supernatural dread these monsters evoke.</p>\n<p>Blackfrost dead take a variety of forms. Most are mindless, lumbering brutes, largely indiscernible from mundane zombies except for the curse they can inflict. Others not only maintain their presence of mind but wield powers of psychic corruption not unlike those of blackfrost's originator, Osoyo, the Blackfrost Whale. What form a blackfrost dead takes depends primarily on the victim's psychic fortitude and its aptitude for occult magic.</p>\n<h3>Creating Blackfrost Dead</h3>\n<p>The simplest way to create a blackfrost dead is to use an existing undead, such as a zombie or a mummy, as your base creature. Replace the creature's abilities with abilities from the list on this page. All blackfrost dead gain the cold trait and have at least one way to inflict blackfrost, often using one of their Strikes.</p>\n<h3>Curse of the Crown</h3>\n<p>Blackfrost dead are found only around the Nameless Spires, under which a massive alien being named Osoyo remains imprisoned. Only recently has this ancient being stirred from its slumber, causing blackfrost to foam out of fissures in the ice and afflict unfortunate explorers. The spread of the blackfrost curse has been mercifully slow thus far, but with each creature afflicted, Osoyo's reach expands ever outward.</p>",
-            "hp": "negative healing",
-            "languages": "Telepathy 100 feet",
+            "hp": "void healing",
             "items": {
                 "Ice Climb 30 feet": {
                     "name": "Ice Climb 30 feet",
                     "description": "<p>The blackfrost dead can climb on ice as though it had the listed climb Speed. It ignores difficult terrain and greater difficult terrain from ice and snow and doesn't risk falling when crossing ice.</p>"
                 },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
                 "Blackfrost": {
                     "name": "Blackfrost",
-                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.OyFCwQuw8XRazsNr]{Remove Curse}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract level of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
+                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract rank of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
                 },
                 "Imprison Mind": {
                     "name": "Imprison Mind",
@@ -219,7 +226,7 @@
                 },
                 "Starlight": {
                     "name": "Starlight",
-                    "description": "<p>@Template[type:emanation|distance:15] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>The glow of the crownbound constellation creates dim light. It can suppress or resume this ability as a free action.</p>"
+                    "description": "<p>15 feet. The glow of the crownbound constellation creates dim light. It can suppress or resume this ability as a free action.</p>"
                 },
                 "Dazzling Assault": {
                     "name": "Dazzling Assault",
@@ -261,7 +268,7 @@
                 },
                 "Engulf": {
                     "name": "Engulf",
-                    "description": "<p>@Check[type:reflex|dc:30], @Damage[2d8[force],3d8[void]]{2d8 force damage plus 3d8 negative damage}, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 30, Rupture 25</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[type:reflex|dc:30], @Damage[2d8[force],3d8[void]]{2d8 force damage plus 3d8 void damage}, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 30, Rupture 25</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Unstable Magic": {
                     "name": "Unstable Magic",
@@ -276,10 +283,6 @@
             "name": "Kvernknurr",
             "publicNotes": "<p>Kvernknurrs are lanky fey giants that dwell in cold-water rivers and lakes. A kvernknurr's blue flesh allows it to camoufage itself in its preferred environ, where it haunts local millers and farmers by sabotaging water wheels and farm equipment.</p>\n<p>A kvernknurr's most distinguishing feature is its oversized mouth and the two rows of axe-like teeth therein. To eat, a kvernknurr need only unhinge its lower jaw, revealing in the process a yawning portal nearly the size of a human doorway—convenient, considering its favorite food is humans and their ilk.</p>\n<p>A lake- or riverbed is the perfect place for a kvernknurr to sleep off a big meal. It's also a perilous circumstance for swallowed prey lucky enough to escape the kvernknurr's belly. \"Out of the belly, into the water,\" goes one lakeside village saying.</p>\n<p>Kverknurrs despise humanoid-made disturbances to the waters in which they live, even seemingly harmless ones like waterwheels. In their anger, kvernknurrs use their oversized jaws to clamp down on such machinery. When townsfolk come to investigate their jammed mill, the kvernknurr then springs out from hiding to attack, roaring terribly before snatching a victim to eat whole. Folks brave enough to attack a kvernknurr soon learn to fight up close; the wily monster is quick enough to snatch arrows and spears in its jaws midair before swallowing the weapons down.</p>",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Swallow Projectile": {
                     "name": "Swallow Projectile",
                     "description": "<p><strong>Trigger</strong> A creature the kvernknurr can see targets it with a ranged Strike</p>\n<p><strong>Requirements</strong> The kvernknurr doesn't have a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} in its jaws</p>\n<hr />\n<p><strong>Effect</strong> The kvernknurr attempts to swallow the projectile, gaining a +4 circumstance bonus to AC against the triggering attack. If the attack misses, the kvernknurr consumes the projectile harmlessly.</p>"
@@ -301,10 +304,6 @@
             "name": "Amelekana",
             "publicNotes": "<p>Amelekanas are amphibious ambush predators native to rivers and lakes across Castrovel. An amelekana looks similar to a giant snail, with an opalescent spiraling shell and eyeless face sporting a crown of six antennae, but that's where the resemblance ends. Instead of one giant foot, the amelekana has fleshy tubes standing upright through holes in its shell and a host of tiny armored legs, like those of a crab. Yet perhaps the most unusual feature of the amelekana is that it's actually a symbiotic community of two separate organisms, neither of which can live without the other.</p>\n<p>Like many creatures on Castrovel, amelekanas have some basic psychic ability—in their case, a sense for nearby living creatures. A hunting amelekana submerges itself to obscure its location. When prey draws near, the amelekana rises from the water and releases compressed gasses to launch its symbiotes—blobby amoebas the size of a bread loaf—at their victims. These amoebas act as external digesters for the stomachless amelekana, using their acidic coating to dissolve prey and absorb nutrition. Once its amoebas have had their fill, the amelekana slurps them back up, providing the amoeba colony with a safe haven inside its body in exchange for a portion of the processed nutrients.</p>\n<p>A typical amelekana is 9 feet long and weighs up to 2,000 pounds.</p>",
             "items": {
-                "Lifesense 100 feet": {
-                    "name": "Lifesense 100 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Lifesense]</p>"
-                },
                 "Reflective Shell": {
                     "name": "Reflective Shell",
                     "description": "<p>An amelekana submerged in water gains a +4 circumstance bonus to Stealth checks. If the water is moving, this bonus increases to +8.</p>"
@@ -326,7 +325,6 @@
             "name": "Dreamscraper",
             "publicNotes": "<p>Dreamscrapers invade the dreams of sleeping mortals to scrape away at their minds and steal their dreams, leaving them raw and tired upon waking. Maggot-like, with many eyes surrounded by a circular, toothy mouth, dreamscrapers use sharp barbs attached to ethereal tendrils to trawl for dreams. After returning to the Dimension of Dreams with their prizes, they store them in their dark, spire-like cocoons, trade them, or offer them up to their heinous masters as some obscure tax.</p>\n<p>Although many dreamscrapers act as servants for more powerful creatures, some act independently. Unable to dream themselves, their fascination leads them to experiment with their collections. They attempt to either synthesize dreams of their own or implant collected dreams within themselves.</p>\n<h3>Dream collections</h3>\n<p>Dreams are fascinating creations of the imagination that many powerful entities seek to collect. Liches, for example, are intrigued by the dreams of mortals. Night hags and denizens of Leng see dreams as a valuable commodity, and their bartering draws many beings to the shadowy markets of Leng.</p>",
             "allSaves": "+1 status to all saves vs. magic",
-            "languages": "Telepathy 100 feet",
             "items": {
                 "Tireless": {
                     "name": "Tireless",
@@ -341,7 +339,7 @@
                 },
                 "Frightful Presence": {
                     "name": "Frightful Presence",
-                    "description": "<p>@Template[type:emanation|distance:90]{90 feet} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura} @Check[type:will|dc:22]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90 feet. @Check[type:will|dc:22]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Dream Step": {
                     "name": "Dream Step",
@@ -436,7 +434,7 @@
             },
             "name": "Equendia",
             "publicNotes": "<p>The cold of high places coupled with strong winds and less oxygen creates an effect that can preserve bodies, mummifying them through natural processes. Many are created deliberately by cults, and a rare few voluntarily transform.</p>\n<hr />\n<p>The versatility of mummification allows the creation of mummies through a wide range of methods—nature, ritual, alchemy, and combinations of all these.</p>",
-            "hp": "negative healing",
+            "hp": "void healing",
             "blurb": "Female blackfrost ice mummy",
             "items": {
                 "At-Will Spells": {
@@ -445,15 +443,19 @@
                 },
                 "Great Despair": {
                     "name": "Great Despair",
-                    "description": "<p>@Template[type:emanation|distance:30] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>Living creatures are @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} while in Equendia's great despair aura. They can't naturally recover from this fear while in the area but recover instantly once they leave it. When a creature first enters the area, it must succeed at a @Check[type:will|dc:27] save (after taking the penalty from being frightened) or be @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for [[/r 1d4 #Paralyzed Duration]]{1d4 rounds}. The creature is then temporarily immune for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.1bOSJ2LbEC28aI9f]{Effect: Despair}</p>"
+                    "description": "<p>30 feet. Living creatures are @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} while in Equendia's great despair aura. They can't naturally recover from this fear while in the area but recover instantly once they leave it. When a creature first enters the area, it must succeed at a @Check[type:will|dc:27] save (after taking the penalty from being frightened) or be @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for [[/r 1d4 #Paralyzed Duration]]{1d4 rounds}. The creature is then temporarily immune for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.1bOSJ2LbEC28aI9f]{Effect: Despair}</p>"
                 },
                 "Snow Vision": {
                     "name": "Snow Vision",
                     "description": "<p>Equendia ignores the @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} condition from falling snow.</p>"
                 },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
                 "Blackfrost Rot": {
                     "name": "Blackfrost Rot",
-                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.OyFCwQuw8XRazsNr]{Remove Curse}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract level of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:30]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
+                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract rank of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:30]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
                 },
                 "Frozen Breath": {
                     "name": "Frozen Breath",
@@ -477,10 +479,6 @@
             "publicNotes": "<p>Pteranodons are quick and agile reptiles with 20-foot wingspans that enable them to hover on wind currents for hours. These creatures have long beaks and equally long crests that protrude from the backs of their heads.</p>\n<hr />\n<p>Pterosaurs are primitive flying creatures. While many are smaller than a human, the two presented below are quite a bit larger. Each of these creatures could pose a serious threat to a person. These flying reptiles can be found in a wide selection of regions, but they tend to soar above warm or temperate climates.</p>",
             "blurb": "Variant pteranodon",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Pluck": {
                     "name": "Pluck",
                     "description": "<p>The cliff hunter pteranodon attempts to fling its prey of a cliff or into some other hazardous situation</p>\n<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> The pteranodon's last action this turn was a successful beak Strike. The pteranodon can use this ability mid-Swoop</p>\n<hr />\n<p><strong>Effect</strong> The pteranodon attempts to fling the struck creature into harm's way. The pteranodon makes an @Check[type:athletics|defense:fortitude] check against the target's Fortitude DC.</p>\n<p><strong>Success</strong> The target creature is flung 15 feet in a direction of the pteranodon's choosing and potentially falls or takes damage accordingly. The creature cannot use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction.</p>\n<p><strong>Failure</strong> The pteranodon fails to move the target creature.</p>\n<p><strong>Critical Failure</strong> As failure, but the pteranodon's clumsy movement leaves it open to attack. The pteranodon's turn ends, and it becomes off-guard until the beginning of its next turn.</p>"
@@ -498,13 +496,9 @@
             "name": "Skin Beetle",
             "publicNotes": "<p>A typical skin beetle is 1-1/2 feet long and weighs 10 pounds—about the size of a house cat. Its oval-shaped body is covered in dull-colored scales, and short, club-like antennae stem from shallow grooves in its head.</p>\n<hr />\n<p>Skin beetles are found in most environments that can sustain life, from cold, dry steppes to dense, humid jungles. They use their complex multi-jointed mandibles to strip the skin and flesh from recently deceased creatures with almost surgical precision.</p>\n<p>While skin beetles eat most of what they remove, they also preserve chunks for later by coating it in special salivary secretions similar to formaldehyde. The skin beetle rolls this coated flesh into a ball, then stores it under an exposed tree root or rock for leaner times. Signs of skin beetle activity include excoriated skeletons and the smell of the beetles' preservative saliva.</p>",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Surgical Mandibles": {
                     "name": "Surgical Mandibles",
-                    "description": "<p>A skin beetle can use its mandibles as @UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]{Healer's Tools}.</p>"
+                    "description": "<p>A skin beetle can use its mandibles as a @UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]{Healer's Toolkit}.</p>"
                 },
                 "Anesthetic Saliva": {
                     "name": "Anesthetic Saliva",
@@ -531,7 +525,7 @@
                 },
                 "Carver's Curse": {
                     "name": "Carver's Curse",
-                    "description": "<p>When a tupilaq is created, the curse imparted by its creator manifests in the form of a single 5th-level <em>@UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{Lightning Bolt}</em> the tupilaq can cast three times per day. The particular spell is a reflection of the creator's wish for vengeance.</p>"
+                    "description": "<p>When a tupilaq is created, the curse imparted by its creator manifests in the form of a single 5th-rank <em>@UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{Lightning Bolt}</em> the tupilaq can cast three times per day. The particular spell is a reflection of the creator's wish for vengeance.</p>"
                 }
             }
         },
@@ -558,10 +552,6 @@
             "name": "Desa-Desa",
             "publicNotes": "<p>Also known as \"bubble cats\" or \"gas cats,\" desa-desas are small, vaguely feline predators that hunt the jungles of Castrovel. A typical desa-desa is roughly the size and shape of a bobcat. Its head is reptilian, sporting large eyes and slender fangs that protrude from its lips. Desa-desa fur tends to match their environment—most are dark green and brown—and is punctuated by patterns of small, bubble-like bladders that protrude from the creature's skin like transparent boils. Every desa-desa has a different bladder pattern, and this distinctive anatomical feature is key to the creature's survival.</p>\n<p>Desa-desas' lives revolve around a little-understood (and likely magical) process by which the creatures transform water into its constituent gaseous elements. A desa-desa stores these gasses in the polyp-like bladders, which are lined with an electricity-conducting material that allows the creature to create sudden blasts of fame in all directions.</p>\n<p>As a predator, the desa-desa's most dangerous attack is its bite, which passes along its bubble venom, which can ravage the fluids in the victim's own body. This reaction causes water in the target's cells to split rapidly, creating bubbles of gas that percolate through the creature's flesh to its skin, where it balloons outward in large, agonizing blisters before popping. The combustible gasses in these blisters also make a creature particularly susceptible to fire attacks—such as the desa-desa's defensive blast. A typical desa-desa is 4 feet long counting the tail, and weighs just 30 pounds.</p>",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Bubble Venom": {
                     "name": "Bubble Venom",
                     "description": "<p>A creature bit by a desa-desa breaks out in large, painful blisters which expand and pop as water in the victim's body turns into volatile gasses. Magical healing of any kind counteracts the bubble venom</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:18]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> weakness to fire 2 and @Damage[1d6[piercing]] (1 round)</p>\n<p><strong>Stage 2</strong> weakness to fire 4 and @Damage[2d6[piercing]] (1 round)</p>"
@@ -608,10 +598,6 @@
             "name": "Skin Beetle Swarm",
             "publicNotes": "<p>When a massive creature such a dinosaur or giant dies in skin beetle territory, the industrious vermin swarm together.</p>\n<hr />\n<p>Skin beetles are found in most environments that can sustain life, from cold, dry steppes to dense, humid jungles. They use their complex multi-jointed mandibles to strip the skin and flesh from recently deceased creatures with almost surgical precision.</p>\n<p>While skin beetles eat most of what they remove, they also preserve chunks for later by coating it in special salivary secretions similar to formaldehyde. The skin beetle rolls this coated flesh into a ball, then stores it under an exposed tree root or rock for leaner times. Signs of skin beetle activity include excoriated skeletons and the smell of the beetles' preservative saliva.</p>",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Swarming Bites": {
                     "name": "Swarming Bites",
                     "description": "<p>Each enemy in the swarm's space takes @Damage[5d6[piercing]] (@Check[type:reflex|dc:23|basic:true]). A creature that fails the saving throw also takes @Damage[1d4[bleed]] and is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} as long as it's taking bleed damage.</p>"
@@ -624,7 +610,6 @@
             },
             "name": "Temagyr",
             "publicNotes": "<p>Temagyrs embody the fear of nocturnal hunters—predators that stalk through the dark of night and attack when their prey is most vulnerable. Able to blend in with and step between shadows to surprise victims, temagyrs delight in ambush tactics.</p>\n<p>An average temagyr is 8 feet long and weighs 500 pounds but moves with unnatural fluidity and grace, the shadows they carry seeming to hang in the air behind them. In combat, a temagyr can take down opponents either with physical attacks or by taking bites out of their enemy's shadow. These shadow wounds, which remain visible unless healed, often perplex Material Plane doctors and investigators; a corpse from a temagyr attack can appear pristine, its tattered shadow the only clue to how it met its untimely fate.</p>\n<hr />\n<p>Gorgas are fey embodiments of diurnal creatures' fear of the dark. Beings of shadow and hunger, they love to prey upon light-loving creatures. Many different kinds of gorgas exist, and each embodies a different facet of the night's countless terrors.</p>\n<p>Gorgas are common in the First World realm of Nighthold, where they once served the mysterious Count Ranalc. After Ranalc's disappearance, the gorgas quickly lost what little compassion they had, scattered into small bands led by their strongest members, and began hunting any fey they could find. All gorgas carry shrouds of shadow within them, and most find daylight unpleasant, tending to remain within Nighthold's perpetual gloom or hole up in caverns or deep forests until night falls. Their bizarre eyes—hollow pools of magical shadow—allow them to see even in magical darkness.</p>",
-            "languages": "Can't Speak Any Language",
             "items": {
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -667,7 +652,6 @@
             },
             "name": "Stone-Breasted Owl",
             "publicNotes": "<p>Sage spirit guides are among the wisest spirits. They often take the forms of raptors such as owls, using their keen senses to evaluate situations from high above before swooping in to aid imperiled mortals.</p>\n<p>Adventurers who befriend a sage guide are fortunate indeed; in addition to providing sage counsel before conflict begins, sage guides can restore and tend to their allies in the aftermath of a violent dispute.</p>\n<p>In many stories, the sage guide assumes the form of a large owl whose proud breast is composed of hard stone. This depiction combines the wisdom commonly attributed to the owl with the strength and fortitude of the earth.</p>\n<hr />\n<p>Spirit guides are ghostly creatures that manifest as primordial animals on the Material Plane. Many Sarkorian cultures believe that spirit guides came into being at the same time as the first mortal hunting bands. In this time before time, spirit guides took on the most elemental shapes of animals, and they taught humanoid communities about important aspects of nature. As they imparted their wisdom, these spirit guides took physical forms, becoming the wild animals that exist today. Though spirit guides bestowed most of their gifts unto mortals in ancient times, a rare few continue to lurk in forgotten or as-of-yet-undiscovered corners of the physical world.</p>",
-            "languages": "Tongues",
             "items": {
                 "Constant Spells": {
                     "name": "Constant Spells",
@@ -700,10 +684,6 @@
             "blurb": "Female centaur",
             "ac": "22 with shield raised",
             "items": {
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
-                },
                 "Trample": {
                     "name": "Trample",
                     "description": "<p>Medium or smaller, hoof, @Check[type:reflex|dc:18|basic:true] save</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
@@ -739,7 +719,6 @@
             "name": "Aspect of Ruun",
             "publicNotes": "<p>Sage spirit guides are among the wisest spirits. They often take the forms of raptors such as owls, using their keen senses to evaluate situations from high above before swooping in to aid imperiled mortals.</p>\n<p>Adventurers who befriend a sage guide are fortunate indeed; in addition to providing sage counsel before conflict begins, sage guides can restore and tend to their allies in the aftermath of a violent dispute.</p>\n<p>In many stories, the sage guide assumes the form of a large owl whose proud breast is composed of hard stone. This depiction combines the wisdom commonly attributed to the owl with the strength and fortitude of the earth.</p>\n<hr />\n<p>Spirit guides are ghostly creatures that manifest as primordial animals on the Material Plane. Many Sarkorian cultures believe that spirit guides came into being at the same time as the first mortal hunting bands. In this time before time, spirit guides took on the most elemental shapes of animals, and they taught humanoid communities about important aspects of nature. As they imparted their wisdom, these spirit guides took physical forms, becoming the wild animals that exist today. Though spirit guides bestowed most of their gifts unto mortals in ancient times, a rare few continue to lurk in forgotten or as-of-yet-undiscovered corners of the physical world.</p>",
             "blurb": "Variant stone-breasted owl",
-            "languages": "Tongues",
             "items": {
                 "Constant Spells": {
                     "name": "Constant Spells",
@@ -770,7 +749,6 @@
             "name": "Kithangian",
             "publicNotes": "<p>The kithangian—a horrifying amalgam of horse and scorpion also known as a \"beast demon\"—is a foul fend born of the souls of mortals who abused and tormented animals in life. Kithangians tend to roam wild areas rife with animals to torture, though humanoid settlements with plenty of pets or livestock also make for tantalizing hunting grounds. Uncontested for too long, a kithangian's presence has a corrupting influence on the local fauna, which birth fiendish monstrosities until the demon is vanquished. If it realizes it's being tracked by vengeful druids or demon slayers, a kithangian assumes the shape of an unassuming animal so it can get the jump on its pursuers.</p>",
             "allSaves": "+1 status to all saves vs. magic",
-            "languages": "speak with animals, telepathy 100 feet",
             "items": {
                 "At-Will Spells": {
                     "name": "At-Will Spells",
@@ -848,11 +826,7 @@
                 },
                 "Immortal Flesh": {
                     "name": "Immortal Flesh",
-                    "description": "<p>Umasi can't heal or recover HP in any way except their Flesh Grafting techniques. However, despite being living creatures, they don't take damage from either positive or negative damage.</p>"
-                },
-                "Shield Block": {
-                    "name": "Shield Block",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ShieldBlock]</p>"
+                    "description": "<p>Umasi can't heal or recover HP in any way except their Flesh Grafting techniques. However, despite being living creatures, they don't take damage from either vitality or void damage.</p>"
                 },
                 "Consume Organ": {
                     "name": "Consume Organ",
@@ -968,10 +942,6 @@
             },
             "name": "Tree Fisher",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Barbed Filament": {
                     "name": "Barbed Filament",
                     "description": "<p>A creature hit by the tree fisher's barbed filament is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}. The tree fisher can move while it has a creature grabbed with its filament, but automatically releases the Grab if the tree fisher moves beyond the filament's 60-foot length. A creature grabbed by the filament at the beginning of its turn takes @Damage[5[bleed]].</p>\n<p>The tree fisher can sever the filament and release any creature grabbed by it as a free action. The filament can be severed by a Strike that deals at least @Damage[10[slashing]] to it. This doesn't deal any damage to the tree fisher itself. The filament has AC 17, and its @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC is 19.</p>\n<p>The tree fisher has only one harpoon; if the filament is severed, the tree fisher loses this ability and its ranged attack for 1 week as it fashions a new harpoon.</p>"
@@ -1014,10 +984,6 @@
             "blurb": "variant elite hydra",
             "ac": "all-around vision",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "All-Around Vision": {
                     "name": "All-Around Vision",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AllAroundVision]</p>"
@@ -1096,7 +1062,7 @@
                 },
                 "Blackfrost Evasion": {
                     "name": "Blackfrost Evasion",
-                    "description": "<p><strong>Trigger</strong> Ainamuuren takes at least @Damage[35[physical]] from a single attack, and he isn't currently discorporated</p>\n<hr />\n<p><strong>Effect</strong> Ainamuuren discorporates into a whirling blizzard of blackfrost for 3 rounds. During this time, he gains resistance 10 to physical damage and weakness 10 to force damage. He gains a fly Speed of 40 feet, but the only action he can take is to Fly. While discorporated, the first time each round that Ainamuuren enters another creature's space or a creature enters Ainamuuren's space, that creature takes @Damage[4d8[cold]] and is exposed to blackfrost. At the start of his turn, Ainamuuren can end this effect as a free action.</p>"
+                    "description": "<p><strong>Trigger</strong> Ainamuuren takes at least 35 physical damage from a single attack, and he isn't currently discorporated</p>\n<hr />\n<p><strong>Effect</strong> Ainamuuren discorporates into a whirling blizzard of blackfrost for 3 rounds. During this time, he gains resistance 10 to physical damage and weakness 10 to force damage. He gains a fly Speed of 40 feet, but the only action he can take is to Fly. While discorporated, the first time each round that Ainamuuren enters another creature's space or a creature enters Ainamuuren's space, that creature takes @Damage[4d8[cold]] and is exposed to blackfrost. At the start of his turn, Ainamuuren can end this effect as a free action.</p>"
                 },
                 "Reactive Tentacles": {
                     "name": "Reactive Tentacles",
@@ -1108,7 +1074,7 @@
                 },
                 "Invasive Blackfrost": {
                     "name": "Invasive Blackfrost",
-                    "description": "<p>Gatewalker characters are not immune to blackfrost effects inflicted by Ainamuuren</p>\n<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.OyFCwQuw8XRazsNr]{Remove Curse}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract level of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:32]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
+                    "description": "<p>Gatewalker characters are not immune to blackfrost effects inflicted by Ainamuuren</p>\n<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract rank of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:32]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
                 },
                 "Twist Deviance": {
                     "name": "Twist Deviance",
@@ -1164,7 +1130,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Scholar's Bane",
-            "disable": "<p>@Check[type:thievery|dc:22] (trained) to carve out one eye sensor, @Check[type:arcana|dc:22] or Occultism (trained) to blank out one's mind (disables trap for self only), or <em>@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic}</em> (2nd level; counteract DC 20) to counteract one eye sensor</p>",
+            "disable": "<p>@Check[type:thievery|dc:22] (trained) to carve out one eye sensor, @Check[type:arcana|dc:22] or @Check[type:occultism|dc:22] (trained) to blank out one's mind (disables trap for self only), or <em>@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic}</em> (2nd level; counteract DC 20) to counteract one eye sensor</p>",
             "hazarddescription": "<p>Illusion magic overwhelms the minds of particularly intelligent creatures, forcing them to relive every intellectual failure and shame they've ever suffered.</p>",
             "routine": "<p>(4 actions) The trap uses each action to target a creature in the room with an Intelligence score of 10 or greater. A target must succeed at a @Check[type:will|dc:22] save or take @Damage[(2d8+2)[mental]]. On a critical failure, the creature takes a &ndash;10-foot status penalty to Speed for 1 minute as they stagger under the weight of their failures. The trap loses 1 action for each eye sensor disabled or destroyed.</p>",
             "reset": "<p>The trap can function for 10 rounds, which don't need to be consecutive, before it must recharge for 24 hours.</p>",
@@ -1184,7 +1150,6 @@
             "publicNotes": "<p>An animate dream coalesces from centuries of stray fragments of reverie and dream left behind as slumbering minds drift through the Dimension of Dreams. In most cases, these fragments simply disperse on their own, but when dreamers flee from nightmares back to the waking world, these fragments can take on a supernatural life of their own. They have little reasoning and intent except to seek similar fragments, absorb them, and grow. When enough of them gather together, they merge into a horrific form as an animate dream.</p>\n<p>Individually, animate dreams can hold a wide range of appearances, but most take on rudimentary shapes akin to the living forms of the minds that spawned them. Animate dreams that rise from slumbering humanoids, the most commonly encountered, thus appear humanoid, but with distorted, nightmarish shapes that incorporate additional twisted limbs and frightening features. In these forms, animate dreams find their way out of the Dreamlands and into the waking world, only to discover they have no way of returning and suffer a relentless hunger that only new nightmares can sate.</p>\n<p>An animate dream thrives on the terror fueled by nightmares and fear and uses its supernatural abilities to invoke such feelings in the minds of its victims, cursing its prey by creating a permanent link to that individual's dreams. Thereafter, the victim is subjected to all manner of reoccurring nightmares. As the nightmares continue, the victim finds it more and more difficult to remain awake. In the end, the victim plunges into an accursed slumber from which it cannot return. These victims provide the animate dream with the purest form of fear and are its preferred sustenance.</p>\n<p>An animate dream can subsist on the ambient fear generated by regular nightmares, but these lesser fears aren't as satisfying, often driving the animate dream to seek out new victims. Left without a source of fear, an animate dream won't starve to death, but it will grow increasingly violent and desperate. Famished animate dreams are the ones most often encountered, as they have been forced to abandon subtlety to pursue more blatant methods of harvesting fear. Yet such animate dreams also tend to be the least powerful of their kind. Those who have grown metaphysically fat on fear have generally done so by adopting a specific nightmare theme, such as being buried alive, being swept away by ocean waves, or being consumed by wild beasts. Such animate dreams often have similarly themed innate spells to augment their powers.</p>",
             "allSaves": "+1 status to all saves vs. magic",
             "blurb": "Male variant animate dream",
-            "languages": "Telepathy 100 feet",
             "items": {
                 "Telepathy": {
                     "name": "Telepathy",
@@ -1210,15 +1175,10 @@
             "name": "Pholebis",
             "publicNotes": "<p>Naiad queens rule over pristine wildernesses centered on untouched lakes or other bodies of fresh water. Bards' songs and artists' paintings of nymphs tend to depict naiad queens in their slightly more humanoid forms, which they don when they make the rare journey into civilized lands to garner allies or gauge threats.</p>\n<p>Most naiad queens treat those who respect their domains with kindness, but they are fierce and quick in eliminating foes. Their blinding beauty and breadth of offensive spells make naiad queens fierce opponents if forced into a fight.</p>\n<hr />\n<p>Nymphs are a family of fey that take the form of beautiful humanoids with elven features and have a deep association with the natural world. The most common of their kind are the dryads, which are spirits that embody great trees, but many other kinds of nymphs exist, including naiads, who watch over bodies of water. All nymphs are guardians of some element of nature, typically a specific tree or pond, or even-in the case of nymph queens-whole forests or massive bodies of water</p>",
             "blurb": "female naiad queen",
-            "languages": "Speak With Animals",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Tied to the Land": {
                     "name": "Tied to the Land",
-                    "description": "<p>A nymph queen is intrinsically tied to a specific region, such as a forest for a dryad queen. As long as the queen is healthy, the environment is exceptionally resilient, allowing the nymph queen to automatically attempt to counteract spells and rituals such as <em>@UUID[Compendium.pf2e.spells-srd.Item.7yWXx3qC4eFNHhxD]{Blight}</em> that would harm the environment, using her Spell DC with a counteract level equal to the highest-level druid spell she can cast. When the nymph queen becomes physically or psychologically unhealthy, however, her warded region eventually becomes twisted or unhealthy as well. In that case, restoring the nymph queen swiftly heals the entire region.</p>"
+                    "description": "<p>A nymph queen is intrinsically tied to a specific region, such as a forest for a dryad queen. As long as the queen is healthy, the environment is exceptionally resilient, allowing the nymph queen to automatically attempt to counteract spells and rituals such as <em>@UUID[Compendium.pf2e.spells-srd.Item.7yWXx3qC4eFNHhxD]{Blight}</em> that would harm the environment, using her Spell DC with a counteract rank equal to the highest-level druid spell she can cast. When the nymph queen becomes physically or psychologically unhealthy, however, her warded region eventually becomes twisted or unhealthy as well. In that case, restoring the nymph queen swiftly heals the entire region.</p>"
                 },
                 "Wild Empathy": {
                     "name": "Wild Empathy",
@@ -1234,7 +1194,7 @@
                 },
                 "Nymph's Beauty": {
                     "name": "Nymph's Beauty",
-                    "description": "<p>@Template[type:emanation|distance:30]{30 feet} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>On a failed save, the target is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} for this turn and whenever it begins its turn within 30 feet of the naiad queen for the next 24 hours, even if it can't see her on subsequent turns.</p>\n<hr />\n<p>Creatures that start their turn in the aura must succeed at a @Check[type:will|dc:23] save or suffer an effect described in the nymph queen's entry.</p>"
+                    "description": "<p>30 feet. On a failed save, the target is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} for this turn and whenever it begins its turn within 30 feet of the naiad queen for the next 24 hours, even if it can't see her on subsequent turns.</p>\n<hr />\n<p>Creatures that start their turn in the aura must succeed at a @Check[type:will|dc:23] save or suffer an effect described in the nymph queen's entry.</p>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",
@@ -1242,7 +1202,7 @@
                 },
                 "Focus Beauty": {
                     "name": "Focus Beauty",
-                    "description": "<p>On a failed save, if the target was already affected by the naiad queen's beauty, the image of the queen sears into the creature's mind, allowing no further sight and effectively @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinding} the creature until restored via <em>@UUID[Compendium.pf2e.spells-srd.Item.Et8RSCLx8w7uOLvo]{Restore Senses}</em> or a similar effect, or until the naiad queen chooses to remove the effect using a single action, which has the concentrate trait.</p>\n<hr />\n<p>The nymph queen focuses her beauty upon a target within her aura. The creature must attempt a @Check[type:will|dc:23] save. On a failure, it is affected as if by the nymph queen's nymph's beauty aura; if it was already affected by the aura, it suffers a greater effect described in the nymph queen's entry. A nymph queen can Focus Beauty on a given creature only once per turn.</p>"
+                    "description": "<p>On a failed save, if the target was already affected by the naiad queen's beauty, the image of the queen sears into the creature's mind, allowing no further sight and effectively @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinding} the creature until restored via <em>@UUID[Compendium.pf2e.spells-srd.Item.Et8RSCLx8w7uOLvo]{Sound Body}</em> or a similar effect, or until the naiad queen chooses to remove the effect using a single action, which has the concentrate trait.</p>\n<hr />\n<p>The nymph queen focuses her beauty upon a target within her aura. The creature must attempt a @Check[type:will|dc:23] save. On a failure, it is affected as if by the nymph queen's nymph's beauty aura; if it was already affected by the aura, it suffers a greater effect described in the nymph queen's entry. A nymph queen can Focus Beauty on a given creature only once per turn.</p>"
                 },
                 "Inspiration": {
                     "name": "Inspiration",
@@ -1276,7 +1236,6 @@
             },
             "name": "Etward Ritalson",
             "blurb": "Male human alchemist",
-            "languages": "Telepathy 30 feet",
             "items": {
                 "equipment-Manor Keys": {
                     "name": "Manor Keys"
@@ -1306,10 +1265,6 @@
             "name": "Ilverani Sentry",
             "blurb": "Elf hunters",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Arctic Forager": {
                     "name": "Arctic Forager",
                     "description": "<p>While using Survival to Subsist in arctic environments, if the Ilverani sentry rolls a failure or a critical failure, they get a success instead. If the sentry rolls a success, they can provide food for 4 additional creatures that eat about as much as a human, or 8 creatures on a critical success.</p>"
@@ -1339,7 +1294,7 @@
                 },
                 "Gibbering": {
                     "name": "Gibbering",
-                    "description": "<p>@Template[type:emanation|distance:60]{60 feet} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>Each creature that begins its turn within 60 feet of a gibbering mouther must attempt a @Check[type:will|dc:19] save. On a failure, they are @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round. On a success, they are temporarily immune for 1 minute.</p>"
+                    "description": "<p>60 feet. Each creature that begins its turn within 60 feet of a gibbering mouther must attempt a @Check[type:will|dc:19] save. On a failure, they are @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round. On a success, they are temporarily immune for 1 minute.</p>"
                 },
                 "Reactive Gnaw": {
                     "name": "Reactive Gnaw",
@@ -1372,7 +1327,7 @@
                 },
                 "Blackfrost": {
                     "name": "Blackfrost",
-                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.OyFCwQuw8XRazsNr]{Remove Curse}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract level of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
+                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract rank of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
                 },
                 "Blackfrost Breath": {
                     "name": "Blackfrost Breath",
@@ -1410,7 +1365,6 @@
             },
             "name": "Yaiafineti",
             "publicNotes": "<p>Yaiafinetis grow only during periods of extended twilight, thriving across the cold tundra of the Crown of the World exclusively in the winter months. To survive in such harsh conditions, the yaiafineti, or dusk poppy, sprouts independent polyps that detach and then creep across the tundra in search of food for their matriarch.</p>\n<p>Dusk poppies sprout from spores that attach to carcasses, but they only blossom during the long twilight unique to the Crown of the World. The perfect conditions for their development are so rare that yaiafineti have developed a vigorous appetite. They feed unceasingly. Much of their energy goes to developing more polyps, and one plant can easily spawn a small infestation of these deadly bulbs.</p>\n<p>The plants send out runner shoots that quickly develop purple bulbs. These bulbs, the plant's polyps, sprout many long, hooked vines before detaching from the mother plant. Polyps are short lived but active, foraging for a week or so before they shrivel and die. These polyps aren't dangerous unless handled. They secrete a fine dust that acts as a paralyzing poison that seizes the nervous system of creatures who come in contact with them.</p>\n<h3>Violet Dusk Poppy dye</h3>\n<p>Some natives of the Crown of the World hunt yaiafineti matriarchs and harvest their petals, which are used to create an expensive, glimmering violet dye. Although the polyps are far less useful for this purpose, skilled trackers follow their vine tracks back to their matriarch.</p>",
-            "languages": "Pheromones",
             "items": {
                 "Tremorsense (Imprecise) 120 feet": {
                     "name": "Tremorsense (Imprecise) 120 feet",
@@ -1418,7 +1372,7 @@
                 },
                 "Pheromones": {
                     "name": "Pheromones",
-                    "description": "<p>5 miles @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>Yaiafinetis communicate with others of their kind via airborne pheromones. They can use this form of communication to determine their relative distance to each other, call for help if they are under attack or need sustenance, announce that they've detected prey, and convey similar basic concepts. Pheromones coat everything within the aura and allow all dusk poppies to perceive with their pheromone sense.</p>"
+                    "description": "<p>5 miles. Yaiafinetis communicate with others of their kind via airborne pheromones. They can use this form of communication to determine their relative distance to each other, call for help if they are under attack or need sustenance, announce that they've detected prey, and convey similar basic concepts. Pheromones coat everything within the aura and allow all dusk poppies to perceive with their pheromone sense.</p>"
                 },
                 "Alluring Spores": {
                     "name": "Alluring Spores",
@@ -1461,7 +1415,6 @@
             "name": "Mindmoppet",
             "publicNotes": "<p>Mindmoppets are the result of laboratory experimentation that sought to harness telepathic energy within a liquid alchemical concoction. Mindmoppets feed on the latent telepathic energy of creatures. Even those with no apparent gift but with an active mind can sustain a mindmoppet for days. Such feeding is not invasive, and mindmoppets continually \"graze\" even while inactive.</p>\n<p>Mindmoppets are willing servants to anyone who concerns themselves with strenuous mental exercise. Their creator is usually an obvious first choice, and they serve them dutifully. However, they have only an academic understanding of good and evil, of ethics, or mortal limitations. They see service to their master's science as the ultimate standard by which they judge their actions or those of others. This can lead to conflict between them and their creator, especially if the master appears lax in their efforts to further their studies. To a mindmoppet, continuous learning is imperative.</p>\n<p>Mindmoppets appear to have some ability to see a short distance into the future, though this might only be that their innate interest for thought and cognition gives them a knack for anticipating the actions of others.</p>\n<h3>Scavenged Shell</h3>\n<p>Being amorphous, mindmoppets are resilient, but they still cling to their shells for protection. You can represent a shell of different material by replacing the Hardness, Hit Points, and Broken Threshold of the porcelain shell listed here with those listed in the Materials section of the Pathfinder Core Rulebook.</p>",
             "allSaves": "+1 status to all saves vs. magic",
-            "languages": "One Other Language; Telepathy 100 feet",
             "items": {
                 "equipment-Shell (Porcelain Doll)": {
                     "name": "Shell (Porcelain Doll)"
@@ -1487,7 +1440,7 @@
                 },
                 "Synapse Glow": {
                     "name": "Synapse Glow",
-                    "description": "<p>@Template[type:emanation|distance:5] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>The firing of the mindmoppet's synapses create dim light. The range increases to 10 feet if its shell is destroyed.</p>"
+                    "description": "<p>5 feet. The firing of the mindmoppet's synapses create dim light. The range increases to 10 feet if its shell is destroyed.</p>"
                 },
                 "Anticipate": {
                     "name": "Anticipate",
@@ -1573,11 +1526,10 @@
             },
             "name": "Ocluai",
             "publicNotes": "<p>Ocluais embody the fear of being lost and helpless in the darkness as well as the danger of unreasoning terror. An ocluai's gray body resembles that of a featherless owl with a serrated beak, the legs of a monkey, and oversized eye sockets full of shadow. The field of unnatural darkness that surrounds an ocluai disorients most creatures; while other gorgas are quick to move in for the kill, ocluais love to perch on a low branch or lintel and watch with their blank expressions as prey succumbs to panic. Though capable fighters, ocluais prefer to hang back and slash at those whose frantic fight brings them within range, letting their prey's own terror drive them over cliffs or bring them to their knees.</p>\n<p>Ocluais understand several languages but rarely communicate with non-fey. When they do, their communication takes the form of unsettling telepathic images projected directly into the other party's mind as the ocluai holds their gaze.</p>\n<hr />\n<p>Gorgas are fey embodiments of diurnal creatures' fear of the dark. Beings of shadow and hunger, they love to prey upon light-loving creatures. Many different kinds of gorgas exist, and each embodies a different facet of the night's countless terrors.</p>\n<p>Gorgas are common in the First World realm of Nighthold, where they once served the mysterious Count Ranalc. After Ranalc's disappearance, the gorgas quickly lost what little compassion they had, scattered into small bands led by their strongest members, and began hunting any fey they could find. All gorgas carry shrouds of shadow within them, and most find daylight unpleasant, tending to remain within Nighthold's perpetual gloom or hole up in caverns or deep forests until night falls. Their bizarre eyes—hollow pools of magical shadow—allow them to see even in magical darkness.</p>",
-            "languages": "Can't Speak Any Language; Telepathy 100 Feet, Images Only",
             "items": {
                 "Lost in the Dark": {
                     "name": "Lost in the Dark",
-                    "description": "<p>@Template[type:emanation|distance:60] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>An ocluai's presence distorts nearby creatures' senses of direction. Nonmagical bright light within the aura becomes dim light, and nonmagical dim light with the aura becomes darkness. Any non-gorga within range of the ocluai's aura that attempts to move must declare where they intend to move. Before moving, however, the creature must attempt a secret @Check[type:will|dc:20] saving throw. An ocluai can exempt specific creatures from this effect. Magical light anywhere within the ocluai's aura increases the light level as normal and reduces the Will save DC by 5.</p>\n<hr />\n<p><strong>Success</strong> The creature moves normally.</p>\n<p><strong>Failure</strong> The creature moves the intended distance, but not in the right direction. The ocluai chooses the creature's destination and route, which could be a straight line or could include multiple changes in direction. If the path is blocked or would go through obviously dangerous terrain (such as of a cliff or through a fire), the movement ends before the blockage or danger.</p>\n<p><strong>Critical Failure</strong> As failure, but if the creature's path would lead them into obviously dangerous terrain, they must succeed at a second Will save to end their movement just before they would enter the danger.</p>"
+                    "description": "<p>60 feet. An ocluai's presence distorts nearby creatures' senses of direction. Nonmagical bright light within the aura becomes dim light, and nonmagical dim light with the aura becomes darkness. Any non-gorga within range of the ocluai's aura that attempts to move must declare where they intend to move. Before moving, however, the creature must attempt a secret @Check[type:will|dc:20] saving throw. An ocluai can exempt specific creatures from this effect. Magical light anywhere within the ocluai's aura increases the light level as normal and reduces the Will save DC by 5.</p>\n<hr />\n<p><strong>Success</strong> The creature moves normally.</p>\n<p><strong>Failure</strong> The creature moves the intended distance, but not in the right direction. The ocluai chooses the creature's destination and route, which could be a straight line or could include multiple changes in direction. If the path is blocked or would go through obviously dangerous terrain (such as of a cliff or through a fire), the movement ends before the blockage or danger.</p>\n<p><strong>Critical Failure</strong> As failure, but if the creature's path would lead them into obviously dangerous terrain, they must succeed at a second Will save to end their movement just before they would enter the danger.</p>"
                 },
                 "Corner of the Eye": {
                     "name": "Corner of the Eye",
@@ -1754,10 +1706,6 @@
             "publicNotes": "<p>Charlatans use pretense and misdirection to swindle money and other valuables from the credulous and confused. Selling snake oil (literally or figuratively), distracting marks to pick their pockets, or faking mediumship are classic grifts.</p>\n<hr />\n<p>Some criminals are the desperate who have no option but to break the law to survive, while others choose a life of crime for thrills, forming gangs or underworld guilds that specialize in certain illegal ventures.</p>",
             "blurb": "Female half-elf elite charlatan",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Versatile Performance": {
                     "name": "Versatile Performance",
                     "description": "<p>The charlatan can use Performance instead of Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} and instead of Intimidation to @UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{Demoralize}. They can also use an acting Performance instead of Deception to @UUID[Compendium.pf2e.actionspf2e.Item.AJstokjdG6iDjVjE]{Impersonate}.</p>"
@@ -1774,7 +1722,6 @@
             },
             "name": "Immolis",
             "publicNotes": "<p>Most complex organisms, whether plant or animal, produce energy by converting fuel (such as food) into heat. Though this process is invaluable, it's also a vulnerability—one that the immolis has evolved to exploit.</p>\n<p>Immolises are psychic predators found all across Castrovel, especially underground and in cool environs. Mostly blind, they hunt by sensing the body heat of other creatures. When an immolis acquires a target, it focuses its innate psychic energies in an invisible beam aimed at its prey. The sudden influx of energy causes the target's metabolism to accelerate rapidly, spurring the creature's body to produce energy at a dangerous rate. This sudden rush of heat literally cooks the creature internally—innards burst, blood boils, and fat catches fire. The end result isn't just warm food, but a meal roasted to morbid perfection.</p>\n<p>An immolis's basic shape resembles that of a spidery, spindly frog covered in delicate scales. The head has a simian muzzle, the lips of which pull back to reveal a squid-like beak. Above the mouth, the creature has three pairs of nostrils, which fare and chuff as the creature hunts. Though they walk with a hunch, immolises climb with shocking speed.</p>\n<p>Unlike many other pyro-predators, immolises have a deep and paradoxical fear of fire, perhaps because they know how easily any flesh—their own included—can blacken and burn. As a result, they prefer to lair near water. This presents its own problem, however, as their heat sense is easily disrupted by creatures taking steps to hide their heat signatures, such as submerging themselves in water or snow. While intelligent enough to communicate and band together with others of their kind, immolises view all other species as either prey or threats and have as little interest in cultural exchange as in personal possessions. The average immolis stands 5 feet tall and weighs 150 pounds.</p>",
-            "languages": "Telepathy 100 feet",
             "items": {
                 "Heatsense 120 feet": {
                     "name": "Heatsense 120 feet",
@@ -1825,10 +1772,6 @@
             "name": "Kareq",
             "publicNotes": "<p>A kareq looks like a cross between a dinosaur and an insect. The kareq's torso extends back into a bulbous abdomen like an ant's.</p>\n<p>A kareq has a resonance chamber in its lower body, and when it flexes its muscular back legs against it, pressure builds up and sound waves are amplified and then focused as the kareq opens its mouth and releases the blast. The resulting shock wave can easily kill.</p>\n<p>Kareqs are thought to be related to Golarion's destrachans, though their similarities may simply be the result of convergent evolution. Unlike the stronger subterranean destrachans, kareqs are native to a variety of different environments, most often jungles and forests. A few sandy-colored species are found in the deserts of the Colonies, where formians regard the beasts as noble or, in some cases, practically sacred.</p>\n<p>Kareqs tend to be solitary predators, bold and unafraid, even willing to take on predators significantly larger than themselves. In combat, they keep their distance at first, softening up opponents with their boomstrikes before moving in for the kill with their claws.</p>\n<p>While they don't usually hunt in populated areas, kareqs are extremely territorial, and their desire to lay claim to tall landscape features can bring them into conflict with humanoids. During mating season, a kareq seeks height, climbing to the top of hills, boulders, or—if a settlement is particularly unlucky—towers and other buildings. From these perches, kareqs blast out their booming mating call which can carry for dozens of miles.</p>\n<p>A typical kareq stands 5 feet tall at the shoulder and is 10 feet long, weighing up to 300 pounds.</p>",
             "items": {
-                "Low-Light Vision": {
-                    "name": "Low-Light Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LowLightVision]</p>"
-                },
                 "Boomstrike": {
                     "name": "Boomstrike",
                     "description": "<p>The kareq beats its legs against its reverberation chamber, creating a blast of sound concentrated enough to ignite the air around it. The kareq chooses to affect either a @Template[type:cone|distance:30] (which deals sonic damage) or a @Template[type:line|distance:60] (which deals fire damage). Affected creatures must attempt a @Check[type:fortitude|dc:21] save.</p>\n<hr />\n<p><strong>Success</strong> The creature takes no damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[3d6[fire]] or @Damage[3d6[sonic]].</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[6d6[fire]] or @Damage[6d6[sonic]] and either is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute (if sonic damage) or takes @Damage[1d6[persistent,fire]] (if fire damage).</p>"
@@ -1841,7 +1784,6 @@
             },
             "name": "Green Monkey",
             "publicNotes": "<p>Nimble spirit guides are small and discreet, using their diminutive size and natural agility to dart from hiding place to hiding place. They tend to be much shyer than other spirit guides, at least initially, preferring to watch nearby mortals from a distance before deciding whether to trust them. When their trust is so earned, nimble spirit guides are often playful and contagiously exuberant. These spirit guides can often be found entertaining lost children with antics until they are rescued or freeing prisoners by stealing keys and picking locks. The green monkey is a nimble spirit guide who takes the appearance of a tiny primate with green fur that, on closer inspection, turns out to be fine blades of grass.</p>\n<hr />\n<p>Spirit guides are ghostly creatures that manifest as primordial animals on the Material Plane. Many Sarkorian cultures believe that spirit guides came into being at the same time as the first mortal hunting bands. In this time before time, spirit guides took on the most elemental shapes of animals, and they taught humanoid communities about important aspects of nature. As they imparted their wisdom, these spirit guides took physical forms, becoming the wild animals that exist today. Though spirit guides bestowed most of their gifts unto mortals in ancient times, a rare few continue to lurk in forgotten or as-of-yet-undiscovered corners of the physical world.</p>",
-            "languages": "Tongues",
             "items": {
                 "Constant Spells": {
                     "name": "Constant Spells",
@@ -1849,7 +1791,7 @@
                 },
                 "Aura of Good Cheer": {
                     "name": "Aura of Good Cheer",
-                    "description": "<p>@Template[type:emanation|distance:30] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{Aura}</p>\n<p>The green monkey's affable demeanor is contagious. Allies within the aura gain a +1 status bonus to Will saves against emotion effects.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.xOD3ufpzA8H7W4sP]{Effect: Aura of Good Cheer}</p>"
+                    "description": "<p>30 feet. The green monkey's affable demeanor is contagious. Allies within the aura gain a +1 status bonus to Will saves against emotion effects.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.xOD3ufpzA8H7W4sP]{Effect: Aura of Good Cheer}</p>"
                 },
                 "Nimble Dodge": {
                     "name": "Nimble Dodge",
@@ -1871,7 +1813,7 @@
             },
             "name": "Blackfrost Guecubu",
             "publicNotes": "<p>Sometimes an individual performs acts of horror so unspeakable that the earth they walk on becomes imprinted by their evil. With such villains, even slaying them and scattering their bones can't rid the world of their vile presence. Their souls rise again as guecubus, gruesome skeletons made of scorched bones, rotting flesh, and befouled earth. Guecubus roams the land seeking those they deem responsible for their death.</p>\n<p>A guecubu remembers what was done to them, and the memories of their supposed mistreatment fuel their quest for revenge. Guecubus are well-equipped to exact such vengeance. Along with monstrous power and the ability to move through earth, they retain all the cunning they had in life. These creatures are known to kill their enemies one by one, leaving no trace of their presence behind save pebbles and dust.</p>",
-            "hp": "negative healing",
+            "hp": "void healing",
             "items": {
                 "Tremorsense (Imprecise) 60 feet": {
                     "name": "Tremorsense (Imprecise) 60 feet",
@@ -1881,9 +1823,13 @@
                     "name": "At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
                 },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
                 "Blackfrost": {
                     "name": "Blackfrost",
-                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.OyFCwQuw8XRazsNr]{Remove Curse}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract level of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
+                    "description": "<p>This affliction can't be reduced below stage 1, nor the damage from it healed, until successfully treated with <em>@UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction}</em> or a similar effect; the affliction can then be removed as a normal disease. A creature that dies from cold damage while cursed with blackfrost rises as a blackfrost dead after 24 hours. Blackfrost has a counteract rank of 10.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:27]</p>\n<p><strong>Stage 1</strong> @Damage[4d6[cold]] (1 minute)</p>\n<p><strong>Stage 2</strong> weakness to cold 5 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> weakness to cold 10 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>"
                 },
                 "Break Ground": {
                     "name": "Break Ground",
@@ -1927,7 +1873,6 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Kaneepo the Slim",
-            "languages": "Telepathy 100 feet",
             "items": {
                 "Phasic Defenses": {
                     "name": "Phasic Defenses",
