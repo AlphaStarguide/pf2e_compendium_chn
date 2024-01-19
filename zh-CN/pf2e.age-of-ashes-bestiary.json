@@ -56,7 +56,7 @@
                 },
                 "Forge Breath": {
                     "name": "锻炉吐息 Forge Breath",
-                    "description": "<p>被诅咒的锻炉废料呼出一团由刺鼻的煤灰、尘埃和灼热的余烬组成的烟云。这能影响@Template[type:cone|distance:30]区域或以被诅咒的锻炉废料为中心的@Template[type:burst|distance:20]区域，并持续[[/br 1d4 #rounds]]{1d4轮}。</p>\n<p>每个进入或在该区域开始其回合的生物将受到[[/r (12d6)[fire]]]{12d6火焰伤害}（@Check[type:reflex|dc:36|basic:true]豁免）。</p>\n<p>豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。烟云里的生物处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}状态，但对于被诅咒的锻炉废料来说无效。</p>\n<p>直到被诅咒的锻炉废料使用鼓起风箱之前，他无法再次使用锻炉吐息。</p>"
+                    "description": "<p>被诅咒的锻炉废料呼出一团由刺鼻的煤灰、尘埃和灼热的余烬组成的烟云。这能影响@Template[type:cone|distance:30]区域或以被诅咒的锻炉废料为中心的@Template[type:burst|distance:20]区域，并持续[[/br 1d4 #rounds]]{1d4轮}。</p>\n<p>每个进入或在该区域开始其回合的生物将受到@Damage[12d6[fire]]伤害（@Check[type:reflex|dc:36|basic:true]豁免）。</p>\n<p>豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。烟云里的生物处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}状态，但对于被诅咒的锻炉废料来说无效。</p>\n<p>直到被诅咒的锻炉废料使用鼓起风箱之前，他无法再次使用锻炉吐息。</p>"
                 },
                 "Inflate Bellows": {
                     "name": "鼓起风箱 Inflate Bellows",
@@ -148,7 +148,7 @@
                 },
                 "Soul Shriek": {
                     "name": "灵魂尖啸 Soul Shriek",
-                    "description": "<p>阿鲁姆执法者发出一声哭嚎，对@Template[type:cone|distance:15]范围内生物造成[[/r (9d6)[sonic]]]{9d6音波伤害}（@Check[type:fortitude|dc:27|basic:true]豁免）。豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，大失败时获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p>阿鲁姆执法者在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用此能力。</p>"
+                    "description": "<p>阿鲁姆执法者发出一声哭嚎，对@Template[type:cone|distance:15]范围内生物造成@Damage[9d6[sonic]]伤害（@Check[type:fortitude|dc:27|basic:true]豁免）。豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，大失败时获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p>阿鲁姆执法者在[[/br 1d4 #Recharge Soul Shriek]]{1d4轮}内无法再次使用此能力。</p>"
                 }
             }
         },
@@ -164,7 +164,7 @@
                 },
                 "Channel Dragonstorm": {
                     "name": "引导龙灾 Channel Dragonstorm",
-                    "description": "<p>活化龙灾向着@Template[type:cone|distance:30]区域引导龙灾能量。这会对锥形区域内的生物造成[[/r (3d8)[acid] + (3d8)[cold] +{3d8)[electricity] +{3d8)[fire] +{3d8)[poison]]]{3d8点酸液、3d8点寒冷、3d8点电击、3d8点火焰和3d8点毒素伤害}（@Check[type:reflex|dc:40|basic:true]豁免）。活化龙灾在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用引导龙灾。</p>"
+                    "description": "<p>活化龙灾向着@Template[type:cone|distance:30]区域引导龙灾能量。这会对锥形区域内的生物造成@Damage[3d8[acid],3d8[cold],3d8[electricity],3d8[fire],3d8[poison]]{3d8点酸蚀、3d8点寒冷、3d8点电击、3d8点火焰和3d8点毒素伤害}（@Check[type:reflex|dc:40|basic:true]豁免）。活化龙灾在[[/br 1d4 #Recharge Channel Dragonstorm]]{1d4轮}内无法再次使用引导龙灾。</p>"
                 },
                 "Destructive Strikes": {
                     "name": "毁灭打击 Destructive Strikes",
@@ -172,7 +172,7 @@
                 },
                 "Dragonstorm Strike": {
                     "name": "龙灾袭 Dragonstorm Strike",
-                    "description": "<p>重击时，活化龙灾的拳头会爆发出龙灾能量。目标承受[[/r (1d6)[acid] + (1d6)[cold] +{1d6)[electricity] +{1d6)[fire] +{1d6)[poison]]]{1d6点酸液、1d6点寒冷、1d6点电击、1d6点火焰和1d6点毒素伤害}。</p>"
+                    "description": "<p>重击时，活化龙灾的拳头会爆发出龙灾能量。目标承受@Damage[1d6[acid],1d6[cold],1d6[electricity],1d6[fire],1d6[poison]]{1d6点酸蚀、1d6点寒冷、1d6点电击、1d6点火焰和1d6点毒素伤害}。</p>"
                 }
             }
         },
@@ -368,7 +368,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[type:reflex|dc:28|traits:damaging-effect], [[/r (2d6)[slashing]]]{2d6挥砍伤害}，逃脱DC 28，破裂25 (仅钝击)。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[type:reflex|dc:28|traits:damaging-effect], @Damage[2d6[slashing]]伤害，逃脱DC 28，破裂25 (仅钝击)。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Freeze": {
                     "name": "晶化 Freeze",
@@ -543,7 +543,7 @@
             "items": {
                 "Magma Splash": {
                     "name": "岩浆飞溅 Magma Splash",
-                    "description": "<p>每当火山妖受到近战打击伤害时，岩浆从他的开放性创口飞溅而出，粘到附近生物的身上。@Template[type:emanation|distance:10]范围内的生物必须进行@Check[type:reflex|dc:31|traits:damaging-effect]豁免。失败则因过热的岩石粘于身上后的冷却过程而受到[[/r (3d6)[persistent,fire]]] 持续火焰伤害。随着岩浆冷却，结束这个持续伤害的DC在第一回合后每回合减少5。</p>"
+                    "description": "<p>每当火山妖受到近战打击伤害时，岩浆从他的开放性创口飞溅而出，粘到附近生物的身上。@Template[type:emanation|distance:10]范围内的生物必须进行@Check[type:reflex|dc:31|traits:damaging-effect]豁免。失败则因过热的岩石粘于身上后的冷却过程而受到@Damage[3d6[persistent,fire]]伤害。随着岩浆冷却，结束这个持续伤害的DC在第一回合后每回合减少5。</p>"
                 },
                 "Volcanic Heat": {
                     "name": "火山热浪 Volcanic Heat",
@@ -559,7 +559,7 @@
                 },
                 "Lava Bomb": {
                     "name": "熔岩爆弹 Lava Bomb",
-                    "description": "<p>火山妖令它头部的火山喷发，抛出大量的熔融岩石，喷发高度可达100尺。这个熔岩爆弹对其命中点@Template[type:burst|distance:20]{20尺半径}范围内的所有生物造成[[/r (6d8)[fire]+(6d8)[bludgeoning]]]{6d8火焰伤害和6d8钝击伤害}，@Check[type:reflex|dc:33|basic:true]豁免。</p>\n<p>火山妖在[[/br 1d4 #rounds]]{1d4轮}内不能再次使用此能力。</p>"
+                    "description": "<p>火山妖令它头部的火山喷发，抛出大量的熔融岩石，喷发高度可达100尺。这个熔岩爆弹对其命中点@Template[type:burst|distance:20]{20尺半径}范围内的所有生物造成@Damage[6d8[fire],6d8[bludgeoning]]{6d8火焰伤害和6d8钝击伤害}，@Check[type:reflex|dc:33|basic:true]豁免。</p>\n<p>火山妖在[[/br 1d4 #Recharge Lava Bomb]]{1d4轮}内不能再次使用此能力。</p>"
                 }
             }
         },
@@ -702,7 +702,7 @@
                 },
                 "Green Eye Beam": {
                     "name": "绿眼射线 Green Eye Beam",
-                    "description": "<p>[[/r (6d6)[poison]]]{6d6毒素伤害} (@Check[type:reflex|dc:24|basic:true|traits:hazard,trap]豁免)</p>"
+                    "description": "<p>@Damage[6d6[poison]]伤害 (@Check[type:reflex|dc:24|basic:true|traits:hazard,trap]豁免)</p>"
                 },
                 "Indigo Eye Beam": {
                     "name": "靛蓝眼射线 Indigo Eye Beam",
@@ -710,11 +710,11 @@
                 },
                 "Yellow Eye Beam": {
                     "name": "黄眼射线 Yellow Eye Beam",
-                    "description": "<p>[[/r (6d6)[electricity]]]{6d6电击伤害} (@Check[type:reflex|dc:24|basic:true|traits:hazard,trap]豁免。)</p>"
+                    "description": "<p>@Damage[6d6[electricity]]伤害 (@Check[type:reflex|dc:24|basic:true|traits:hazard,trap]豁免。)</p>"
                 },
                 "Orange Eye Beam": {
                     "name": "橙眼射线 Orange Eye Beam",
-                    "description": "<p>[[/r (6d6)[acid]]]{6d6酸液伤害} (@Check[type:reflex|dc:24|basic:true|traits:hazard,trap]豁免。)</p>"
+                    "description": "<p>@Damage[6d6[acid]]伤害 (@Check[type:reflex|dc:24|basic:true|traits:hazard,trap]豁免。)</p>"
                 },
                 "Red Eye Beam": {
                     "name": "红眼射线 Red Eye Beam",
@@ -767,7 +767,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息武器 Breath Weapon",
-                    "description": "<p>构装使用下列中的一种吐息，它在[[/br 1d4 #rounds]]{1d4轮}内无法再使用吐息武器。。</p>\n<p>- 烈焰 Flame （奥术，塑能系，火焰） 迸发出的火焰对@Template[type:cone|distance:60]范围内的生物造成[[/r (15d10)[fire]]]{15d10火焰伤害}（@Check[type:reflex|dc:45|basic:true]豁免）。这股火焰伤害不会伤害物体或构装体。</p>\n<p>- 衰弱气体 Weakening Gas （奥术，死灵系） 一团闪着金点的气体强迫@Template[type:cone|distance:60]范围内的所有生物进行@Check[type:fortitude|dc:45]豁免；此效果持续1分钟。</p>\n<hr />\n<p><strong>大成功</strong> 此生物不受影响。</p>\n<p><strong>成功</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>\n<p><strong>失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 5}。</p>\n<p><strong>大失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 8}。</p>"
+                    "description": "<p>构装使用下列中的一种吐息，它在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再使用吐息武器。。</p>\n<p>- 烈焰 Flame （奥术，塑能系，火焰） 迸发出的火焰对@Template[type:cone|distance:60]范围内的生物造成@Damage[15d10[fire]]伤害（@Check[type:reflex|dc:45|basic:true]豁免）。这股火焰伤害不会伤害物体或构装体。</p>\n<p>- 衰弱气体 Weakening Gas （奥术，死灵系） 一团闪着金点的气体强迫@Template[type:cone|distance:60]范围内的所有生物进行@Check[type:fortitude|dc:45]豁免；此效果持续1分钟。</p>\n<hr />\n<p><strong>大成功</strong> 此生物不受影响。</p>\n<p><strong>成功</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>\n<p><strong>失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 5}。</p>\n<p><strong>大失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 8}。</p>"
                 },
                 "Reverberating Revenge": {
                     "name": "折射反击 Reverberating Revenge",
@@ -1045,7 +1045,7 @@
                 },
                 "Shoddy Blunderbuss": {
                     "name": "劣质大口径短枪 Shoddy Blunderbuss",
-                    "description": "<p>格哈德用他的大口径短枪进行爆炸射击，对@Template[type:cone|distance:30]区域内的所有生物造成[[/r (4d6)[bludgeoning]+(2d10)[fire]]]{4d6钝击伤害和2d10火焰伤害}（@Check[type:reflex|dc:26|basic:true]豁免）。</p>\n<p>在用大口径短枪射击后，格哈德必须成功通过@Check[type:crafting|dc:20]或@Check[type:engineering-lore|dc:20]{工程学识}检定，否则武器就会爆炸，对格哈德造成与锥形区域内的生物相同数值的伤害，并且摧毁枪支自身。若格哈德之外的其他人使用该武器，则必须在此检定中大成功才行。若有人事先检查该武器的话，成功通过@Check[type:crafting|dc:22]检定足够得知该武器的不稳定性。</p>\n<p>重新装填大口径短枪需要3个交互动作：添加1份火药，添加1份霰弹筒，最后把这些东西在枪管里压实。</p>"
+                    "description": "<p>格哈德用他的大口径短枪进行爆炸射击，对@Template[type:cone|distance:30]区域内的所有生物造成@Damage[4d6[bludgeoning],2d10[fire]]{4d6钝击伤害和2d10火焰伤害}（@Check[type:reflex|dc:26|basic:true]豁免）。</p>\n<p>在用大口径短枪射击后，格哈德必须成功通过@Check[type:crafting|dc:20]或@Check[type:engineering-lore|dc:20]{工程学识}检定，否则武器就会爆炸，对格哈德造成与锥形区域内的生物相同数值的伤害，并且摧毁枪支自身。若格哈德之外的其他人使用该武器，则必须在此检定中大成功才行。若有人事先检查该武器的话，成功通过@Check[type:crafting|dc:22]检定足够得知该武器的不稳定性。</p>\n<p>重新装填大口径短枪需要3个交互动作：添加1份火药，添加1份霰弹筒，最后把这些东西在枪管里压实。</p>"
                 },
                 "Whip Swing": {
                     "name": "皮鞭摆荡 Whip Swing",
@@ -1526,7 +1526,7 @@
                 },
                 "Breath Weapon": {
                     "name": "喷吐武器 Breath Weapon",
-                    "description": "<p>达哈克化身口中喷发出龙灾能量，对@Template[type:cone|distance:60]区域造成[[/r (5d6)[acid] + (5d6)[cold] +{5d6)[electricity] +{5d6)[fire] +{5d6)[poison]]]{5d6点酸液、5d6点寒冷、5d6点电击、5d6点火焰以及5d6点毒素伤害}（@Check[type:reflex|dc:46|basic:true|name:Dragonstorm Breath|traits:fire,acid,cold,electricity,poison]豁免）。</p>\n<p>他在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用喷吐武器。。</p>"
+                    "description": "<p>达哈克化身口中喷发出龙灾能量，对@Template[type:cone|distance:60]区域造成@Damage[5d6[acid],5d6[cold],5d6[electricity],5d6[fire],5d6[poison]]{5d6点酸液、5d6点寒冷、5d6点电击、5d6点火焰以及5d6点毒素伤害}（@Check[type:reflex|dc:46|basic:true|name:Dragonstorm Breath|traits:fire,acid,cold,electricity,poison]豁免）。</p>\n<p>他在[[/br 1d4 #Recharge Dragonstorm Breath]]{1d4轮}内无法再次使用喷吐武器。。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -1574,7 +1574,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[type:reflex|dc:22|traits:damaging-effect]豁免，[[/r (2d6)[acid]]]{2d6 acid}, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape} DC 24，破裂10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[type:reflex|dc:22|traits:damaging-effect]豁免，@Damage[2d6[acid]]伤害, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape} DC 24，破裂10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Entangling Residue": {
                     "name": "缠裹残液 Entangling Residue",
@@ -1594,7 +1594,7 @@
             "items": {
                 "Radiant Explosion": {
                     "name": "辉煌爆破 Radiant Explosion",
-                    "description": "<p><strong>触发</strong> 有生物碰触石门；</p>\n<hr />\n<p><strong>效果</strong> 所有距离石门20尺范围内的生物会被辉煌之光所灼伤，承受[[/r (20d6)[fire]]]{20d6火焰伤害}（@Check[type:reflex|dc:40|basic:true]豁免）。在此豁免中失败的生物会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1小时（大失败时为永久目盲）。</p>"
+                    "description": "<p><strong>触发</strong> 有生物碰触石门；</p>\n<hr />\n<p><strong>效果</strong> 所有距离石门20尺范围内的生物会被辉煌之光所灼伤，承受@Damage[20d6[fire]]伤害（@Check[type:reflex|dc:40|basic:true]豁免）。在此豁免中失败的生物会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1小时（大失败时为永久目盲）。</p>"
                 }
             }
         },
@@ -1643,7 +1643,7 @@
                 },
                 "Dragonstorm Aura": {
                     "name": "龙灾灵光 Dragonstorm Aura",
-                    "description": "<p>@Template[type:emanation|distance:10]{10尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>[[/r (2d6)[acid] + (2d6)[cold] +{2d6)[electricity] +{2d6)[fire] +{2d6)[poison]]]{10d6点伤害均分在酸液、寒冷、电击、火焰和毒素间}。</p>"
+                    "description": "<p>10尺。@Check[type:reflex|dc:45|basic:true]豁免。</p>\n<hr />\n<p>@Damage[2d6[acid],2d6[cold],2d6[electricity],2d6[fire],2d6[poison]]{10d6点伤害均分在酸液、寒冷、电击、火焰和毒素间}。</p>"
                 },
                 "Frightful Presence": {
                     "name": "气势凶猛 Frightful Presence",
@@ -1655,7 +1655,7 @@
                 },
                 "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>[[/r (2d10+10)[bludgeoning]+(2d6)[fire]]]{2d10+10钝击伤害和2d6火焰伤害}, @Check[type:fortitude|dc:48|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(2d10+10)[bludgeoning],2d6[fire]]{2d10+10钝击伤害和2d6火焰伤害}, @Check[type:fortitude|dc:48|basic:true]豁免。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -1667,11 +1667,11 @@
                 },
                 "Dragonstorm Breath": {
                     "name": "龙灾喷吐 Dragonstorm Breath",
-                    "description": "<p>达哈克化身喷出爆发性的龙灾能量，对半径@Template[type:cone|distance:60]区域造成[[/r (5d6)[acid] + (5d6)[cold] +{5d6)[electricity] +{5d6)[fire] +{5d6)[poison]]]{5d6点酸液、5d6点寒冷、5d6点电击、5d6点火焰和5d6点毒素伤害}（@Check[type:reflex|dc:48|basic:true|traits:fire,acid,cold,electricity,poison]豁免）。他在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用龙灾喷吐。</p>"
+                    "description": "<p>达哈克化身喷出爆发性的龙灾能量，对半径@Template[type:cone|distance:60]区域造成@Damage[5d6[acid],5d6[cold],5d6[electricity],5d6[fire],5d6[poison]]{5d6点酸液、5d6点寒冷、5d6点电击、5d6点火焰和5d6点毒素伤害}（@Check[type:reflex|dc:48|basic:true|traits:fire,acid,cold,electricity,poison]豁免）。他在[[/br 1d4 #Recharge Dragonstorm Breath]]{1d4轮}内无法再次使用龙灾喷吐。</p>"
                 },
                 "Focused Breath Weapon": {
                     "name": "聚焦龙息 Focused Breath Weapon",
-                    "description": "<p>达哈克化身喷出一股能量，对@Template[type:line|distance:90]区域造成[[/r (12d12}]]{12d12伤害}（@Check[type:reflex|dc:44|basic:true]豁免）。这次喷吐武器的伤害类型可以是酸液、寒冷、电击、火焰或毒素，由化身在发动攻击时进行选择。化身在两轮内无法再次使用聚焦龙息，而且当他下次使用这个喷吐武器时，则必须使用与上次龙息不同的伤害类型。</p>"
+                    "description": "<p>达哈克化身喷出一股能量，对@Template[type:line|distance:90]区域造成12d12伤害（@Check[type:reflex|dc:44|basic:true]豁免）。这次喷吐武器的伤害类型可以是@Damage[12d12[acid]]{酸蚀}、@Damage[12d12[cold]]{寒冷}、@Damage[12d12[electricity]]{电击}、@Damage[12d12[fire]]{火焰}或@Damage[12d12[poison]]{毒素}，由化身在发动攻击时进行选择。化身在两轮内无法再次使用聚焦龙息，而且当他下次使用这个喷吐武器时，则必须使用与上次龙息不同的伤害类型。</p>"
                 }
             }
         },
@@ -1757,7 +1757,7 @@
                 },
                 "Hair Barrage": {
                     "name": "刚毛射击 Hair Barrage",
-                    "description": "<p>巨狼蛛甩动它的腿，向@Template[type:cone|distance:15]范围内射出腿上的尖毛，造成[[/r (4d6)[piercing]]]{4d6穿刺伤害}，@Check[type:reflex|dc:25|basic:true]豁免。</p>"
+                    "description": "<p>巨狼蛛甩动它的腿，向@Template[type:cone|distance:15]范围内射出腿上的尖毛，造成@Damage[4d6[piercing]]伤害，@Check[type:reflex|dc:25|basic:true]豁免。</p>"
                 }
             }
         },
@@ -2087,7 +2087,7 @@
                 },
                 "Obliteration Beam": {
                     "name": "湮灭光束 Obliteration Beam",
-                    "description": "<p><strong>需求</strong> 魂缚阿鲁姆已用它的<em>@UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{夺魂术 Seize Soul}</em>内在法术束缚了一个灵魂；</p>\n<hr />\n<p><strong>效果</strong> 魂缚阿鲁姆将捕获的灵魂的精华转化为纯净的魔法能量，将灵魂引导成光束，在@Template[type:line|distance:30]范围内造成[[/r (20d6)[force]]]{20d6力场伤害}（@Check[type:reflex|dc:38|basic:true]豁免）。被捕获的灵魂的剩余碎片被释放回浩瀚众界。</p>\n<p>魂缚阿鲁姆在[[/br 1d4 #rounds]]{1d4轮}内不能再次使用此能力。</p>"
+                    "description": "<p><strong>需求</strong> 魂缚阿鲁姆已用它的<em>@UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{夺魂术 Seize Soul}</em>内在法术束缚了一个灵魂；</p>\n<hr />\n<p><strong>效果</strong> 魂缚阿鲁姆将捕获的灵魂的精华转化为纯净的魔法能量，将灵魂引导成光束，在@Template[type:line|distance:30]范围内造成@Damage[20d6[force]]伤害（@Check[type:reflex|dc:38|basic:true]豁免）。被捕获的灵魂的剩余碎片被释放回浩瀚众界。</p>\n<p>魂缚阿鲁姆在[[/br 1d4 #Recharge Obliteration Beam]]{1d4轮}内不能再次使用此能力。</p>"
                 },
                 "Paralyzing Force": {
                     "name": "麻痹力场 Paralyzing Force",
@@ -2099,7 +2099,7 @@
                 },
                 "Soul Shriek": {
                     "name": "灵魂尖啸 Soul Shriek",
-                    "description": "<p>阿鲁姆执法者发出一声哭嚎，对@Template[type:cone|distance:15]范围内生物造成[[/r (16d6)[sonic]]]{16d6音波伤害}（@Check[type:fortitude|dc:27|basic:true]豁免）。豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，大失败时获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p>阿鲁姆执法者在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用此能力。</p>"
+                    "description": "<p>阿鲁姆执法者发出一声哭嚎，对@Template[type:cone|distance:15]范围内生物造成@Damage[16d6[sonic]]伤害（@Check[type:fortitude|dc:27|basic:true]豁免）。豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，大失败时获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p>阿鲁姆执法者在[[/br 1d4 #Recharge Soul Shriek]]{1d4轮}内无法再次使用此能力。</p>"
                 }
             }
         },
@@ -2410,7 +2410,7 @@
                 },
                 "Anguished Shriek": {
                     "name": "痛苦尖叫 Anguished Shriek",
-                    "description": "<p>水晶之中翻卷着的死灵能量化为尖叫着的扭曲面容向着20尺范围内的一名随机活物迸射出来。目标承受[[/r (4d6)[mental] + (4d6)[sonic]]]{4d6心灵伤害和4d6音波伤害}（@Check[type:will|dc:33|basic:true]豁免）。</p>"
+                    "description": "<p>水晶之中翻卷着的死灵能量化为尖叫着的扭曲面容向着20尺范围内的一名随机活物迸射出来。目标承受@Damage[4d6[mental],4d6[sonic]]{4d6心灵伤害和4d6音波伤害}（@Check[type:will|dc:33|basic:true]豁免）。</p>"
                 }
             }
         },
@@ -2527,7 +2527,7 @@
                 },
                 "Firebleed": {
                     "name": "滴焰 Firebleed",
-                    "description": "<p><strong>触发</strong> 佐坦尼受到伤害；</p>\n<hr />\n<p><strong>效果</strong> 佐坦尼的伤口喷出岩浆，对@Template[type:cone|distance:30]范围造成[[/r (6d8)[fire]]]{6d8火焰伤害}和[[/r (6d8)[persistent,fire]]] 持续火焰伤害（@Check[type:reflex|dc:42|basic:true]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 佐坦尼受到伤害；</p>\n<hr />\n<p><strong>效果</strong> 佐坦尼的伤口喷出岩浆，对@Template[type:cone|distance:30]范围造成@Damage[6d8[fire],6d8[persistent,fire]]{6d8火焰和6d8持续火焰伤害}（@Check[type:reflex|dc:42|basic:true]豁免）。</p>"
                 },
                 "Frightful Presence": {
                     "name": "气势凶猛 Frightful Presence",
@@ -2547,7 +2547,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息武器 Breath Weapon",
-                    "description": "<p>佐坦尼呼出一阵烈焰，对@Template[type:cone|distance:70]范围内的所有生物造成[[/r (18d6)[fire]]]{18d6火焰伤害}和[[/r (4d6)[persistent,fire]]] 持续火焰伤害（@Check[type:reflex|dc:42|basic:true]豁免）。</p>\n<p>它在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用此能力。</p>"
+                    "description": "<p>佐坦尼呼出一阵烈焰，对@Template[type:cone|distance:70]范围内的所有生物造成@Damage[18d6[fire],4d6[persistent,fire]]{18d6火焰和4d6持续火焰伤害}（@Check[type:reflex|dc:42|basic:true]豁免）。</p>\n<p>它在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用此能力。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -2575,7 +2575,7 @@
                 },
                 "Explosion": {
                     "name": "自爆 Explosion",
-                    "description": "<p>当佐坦尼之嗣死亡时，它会自爆，对@Template[type:emanation|distance:30]范围内的生物造成[[/r (15d8)[fire]]]{15d8火焰伤害}（@Check[type:reflex|dc:39|basic:true]豁免）。</p>"
+                    "description": "<p>当佐坦尼之嗣死亡时，它会自爆，对@Template[type:emanation|distance:30]范围内的生物造成@Damage[15d8[fire]]伤害（@Check[type:reflex|dc:39|basic:true]豁免）。</p>"
                 },
                 "Frightful Presence": {
                     "name": "气势凶猛 Frightful Presence",
@@ -2583,15 +2583,15 @@
                 },
                 "Internal Furnace": {
                     "name": "壳内炉膛 Internal Furnace",
-                    "description": "<p><strong>触发</strong> 一个邻接佐坦尼之嗣的生物触碰它或用物理攻击击中它；</p>\n<hr />\n<p><strong>效果</strong> 触发生物承受[[/r (5d8)[persistent,fire]]] 持续火焰伤害（@Check[type:reflex|dc:37|traits:damaging-effect]豁免使之无效）。</p>"
+                    "description": "<p><strong>触发</strong> 一个邻接佐坦尼之嗣的生物触碰它或用物理攻击击中它；</p>\n<hr />\n<p><strong>效果</strong> 触发生物承受@Damage[5d8[persistent,fire]]伤害（@Check[type:reflex|dc:37|traits:damaging-effect]豁免使之无效）。</p>"
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>佐坦尼之嗣喷射出覆盖@Template[type:cone|distance:60]范围的岩浆，对该区域内的生物造成[[/r (10d10)[fire]]]{10d10火焰伤害}和[[/r (2d6)[persistent,fire]]] 持续火焰伤害（@Check[type:reflex|dc:39|basic:true]豁免）。</p>\n<p>佐坦尼之嗣在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用吐息武器。</p>"
+                    "description": "<p>佐坦尼之嗣喷射出覆盖@Template[type:cone|distance:60]范围的岩浆，对该区域内的生物造成@Damage[10d10[fire],2d6[persistent,fire]]{10d10火焰伤害和2d6持续火焰伤害}（@Check[type:reflex|dc:39|basic:true]豁免）。</p>\n<p>佐坦尼之嗣在[[/br 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息武器。</p>"
                 },
                 "Heat Surge": {
                     "name": "热能激增 Heat Surge",
-                    "description": "<p>当佐坦尼之嗣受到重击时，它的身躯陡然升温，其壳内炉膛能力造成的伤害增加至[[/r (10d8)[persistent,fire]]] 持续火焰伤害，直至其下个回合开始。</p>"
+                    "description": "<p>当佐坦尼之嗣受到重击时，它的身躯陡然升温，其壳内炉膛能力造成的伤害增加至@Damage[10d8[persistent,fire]]，直至其下个回合开始。</p>"
                 }
             }
         },
