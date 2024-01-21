@@ -1,321 +1,309 @@
 {
-	"label": "Clerics+ Feats",
-	"mapping": {
+    "label": "Clerics+ Feats",
+    "mapping": {
         "prerequisites": "system.prerequisites.value"
-	},
-	"entries": {
-		"Arise to Sainthood": {
-			"name": "Arise to Sainthood",
-			"description": "<p>You rise beyond the status of a mere follower to that of a saint, imbued with divine essence yourself. Around the world, people see you as an inspiration and pray to you as well as your deity. Choose any one domain that applies to yourself rather than your deity; you gain the initial domain spell now. If you have the @Compendium[pf2e.feats-srd.uR44wELN9OlU68cL]{Advanced Domain} feat, you may immediately retrain the spell you chose to the domain spell associated with your new domain. You follow your own edicts and anathema, use your own sacred weapon, and grant these blessings to would-be followers around the world. When you Refocus, you can listen to the prayers of your followers. This allows you to regain a single divine font spell slot, and you cannot Refocus to gain another divine font spell slot until you have used this slot. Followers of your deity immediately recognize you and are generally helpful and respectful to you.</p>",
-			"prerequisites": []
-		},
-		"Blessed Animal": {
-			"name": "Blessed Animal",
-			"description": "<p>Your sacred animal is blessed to receive even greater powers. It becomes a nimble or savage animal companion (your choice), gaining additional capabilities determined by the type of companion.</p>",
-			"prerequisites": [
-				{
-					"value": "decree of herald binding"
-				},
-				{
-					"value": "chosen animal"
-				}
-			]
-		},
-		"Blessed Regalia": {
-			"name": "Blessed Regalia",
-			"description": "<p>You wear armor that has been engraved with countless symbols of your deity and artistic depictions of their tales. When an enemy of your deity gets a critical hit against you while wearing your blessed regalia armor, you can attempt a @Check[type:flat|dc:16] to make it a normal hit instead. In addition, you gain resistance equal to twice your armor potency rune to one energy type and a single alignment that opposes your deity (or precision damage if your deity is neutral). You select these damage types when you first gain this feat and they cannot be changed. If your armor possessed the @Compendium[pf2e.equipment-srd.ujWnpVMkbTljMGN9]{Fortification (Greater)} rune, the flat check to remove a critical hit against you becomes 12 instead of the normal DC.</p>",
-			"prerequisites": [
-				{
-					"value": "armorclad doctrine"
-				}
-			]
-		},
-		"Blood is Thicker": {
-			"name": "Blood is Thicker",
-			"description": "<p><strong>Requirements </strong>You are suffering from persistent bleed damage caused by Stigmata.</p>\n<hr>\n<p>As your stigmata bleeds, your connection to your god&rsquo;s divine power grows, granting you the ability to manipulate your channel energy. You can bind your bleeding to another creature within 30 feet and the creature remains under the effect until your stigmata stops bleeding or 1 minute has passed, whichever comes first. You can only target one creature at a time with this effect and using it on another creature immediately ends the effect for any previous creature you targeted. The effect of this ability is determined by your divine font:</p>\n<p><strong>Harm </strong>The creature must attempt a @Check[type:fortitude|basic:true|dc:resolve(@actor.attributes.classOrSpellDC.value)] save against your spellcasting DC. Creatures that fail their save take persistent bleed damage equal to your Stigmata bleed damage when they take damage from Strikes that deal piercing or slashing damage.</p>\n<p><strong>Heal </strong>When you take persistent bleed damage from your Stigmata, the target creature heals an amount of Hit Points equal to the persistent damage you took. The target must be a living creature for you to target them with this ability. This effect has the healing trait.</p>\n<p>[[/r max(floor(@actor.level/4),1)d4[persistent,bleed]]]{Persistent Bleed Damage}@UUID[Compendium.pf2e.conditionitems.lDVqvLKA6eF3Df60]{Persistent Bleed Damage}</p>",
-			"prerequisites": [
-				{
-					"value": "divine font"
-				},
-				{
-					"value": "Stigmata"
-				}
-			]
-		},
-		"Canvas the Layfolk": {
-			"name": "Canvas the Layfolk",
-			"description": "<p>Seeking information is second nature to you. From discreetly asking for rumors in a church to interrogating persons of interest behind a seedy tavern, you never stop searching for leads to your quests. You can use Religion to Gather Information whenever you are in a settlement that would have at least a few followers of your deity and to Make an Impression if the person is a servitor of your deity or a servitor of a deity allied to your deity. If you&rsquo;re a master in Religion, when you make these actions and you would get a critical failure, you get a failure instead.</p>",
-			"prerequisites": [
-				{
-					"value": "seeker doctrine"
-				}
-			]
-		},
-		"Castigating Weapon+": {
-			"name": "Castigating Weapon+",
-			"description": "<p>The force of your deity's castigation strengthens your body so you can strike down the wicked.</p>\n<p>After you damage a fiend using a <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> spell, your weapon or unarmed Strikes deal extra good damage to fiends equal to double the level of the heal spell until the end of your next turn. This is cumulative with any good damage the weapon already deals (such as from a holy rune).</p>",
-			"prerequisites": [
-				{
-					"value": "Holy Castigation"
-				}
-			]
-		},
-		"Channel Smite+": {
-			"name": "Channel Smite+",
-			"description": "<p><strong>Cost</strong> Expend a <em>@UUID[Compendium.pf2e.spells-srd.wdA52JJnsuQWeyqz]{Harm}</em> or <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> spell.</p>\n<hr>\n<p>You siphon the destructive energies of positive or negative energy through a melee attack and into your foe. Your Strike gains additional effects and damage depending on the number of actions you spent. This is negative damage if you expended a harm spell or positive damage if you expended a heal spell. Alternatively, you can choose to deal an alignment damage type appropriate for your deity. The spell is expended regardless of the Strike&rsquo;s outcome.</p>\n<p><span class=\"action-glyph\">1</span> Make a melee Strike and add half the spell&rsquo;s damage to the Strike&rsquo;s damage.</p>\n<p><span class=\"action-glyph\">2</span> Make a melee Strike and add the spell&rsquo;s damage to the Strike&rsquo;s damage.</p>\n<p><span class=\"action-glyph\">3</span> You Strike a target creature adjacent to you and displace your divine energy into a 15-foot cone, a 20-foot line, or a 10-foot emanation that includes the target of your Strike. Creatures in the area must attempt a basic @Check[type:reflex|basic:true|dc:resolve(@actor.attributes.classOrSpellDC.value)] save against your spellcasting DC or take half the spell's damage of the type you selected. If you succeeded at your Strike, the creature you struck treats its save result as one degree worse.</p>",
-			"prerequisites": [
-				{
-					"value": "harmful font or healing font"
-				}
-			]
-		},
-		"Chosen Animal": {
-			"name": "Chosen Animal",
-			"description": "<p>Your sacred animal becomes chosen for power by your deity and becomes a mature animal companion. You can spend 2 actions to Command an Animal instead of 1 when commanding your sacred animal. If you do, it uses an additional action.</p>",
-			"prerequisites": [
-				{
-					"value": "decree of the herald keepr"
-				}
-			]
-		},
-		"Communal Healing+": {
-			"name": "Communal Healing+",
-			"description": "<p>You're a conduit for positive energy, and as you channel it through you, it heals some of your minor injuries.</p>\n<p>When you cast the <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> spell to heal a single creature other than yourself, you regain Hit Points equal to twice the spell level of the <em>heal </em>spell.</p>",
-			"prerequisites": []
-		},
-		"Cunning Fervor": {
-			"name": "Cunning Fervor",
-			"description": "<p>Your deity has given you the ability to press through physical resistances. You add the following benefit to the benefits you can choose from when you use Fervor:</p>\n<ul>\n<li>When you successfully Recall Knowledge on a creature with a resistance, you learn its highest resistance value and can ignore an amount of that resistance equal to half your level.</li>\n<li>You gain a +1 status bonus to Acrobatics checks to Tumble Through and Deception checks to Feint</li>\n</ul>\n<p>@Compendium[clerics.clerics-effects.ZiU6erBOdJEs1kT8]{Effect: Cunning Fervor}</p>",
-			"prerequisites": [
-				{
-					"value": "decree of sanctified slaying"
-				}
-			]
-		},
-		"Daily Obedience": {
-			"name": "Daily Obedience",
-			"description": "<p>The gods demand respect and worship in order to gain their blessings. You must perform a small action before the end of the day in praise of your deity; for example, balancing precious items on a scale and praying to Abadar, consensually cause someone pain as a follower of Zon-Kuthon or healing a stranger as a worshiper of Sarenrae, but the actions intent must be the same every day. Once during the next 24 hours, when you roll your divine skill, you may roll twice and take the higher result. You must declare you are using this effect before you make the roll.</p>\n<p>@UUID[Compendium.clerics.clerics-effects.Gc7fkGHl3XVm9tG0]{Effect: Daily Obedience}</p>",
-			"prerequisites": []
-		},
-		"Deific Channel": {
-			"name": "Deific Channel",
-			"description": "<p>Your deity has taught you a means to forge divine energy of your font into casting their deific spells. You gain the ability to prepare the 1st-level cleric spell granted by your deity in your divine font slots and that spell is automatically heightened to the highest level spell you can cast when you do so.</p>",
-			"prerequisites": [
-				{
-					"value": "cloistered doctrine"
-				}
-			]
-		},
-		"Deific Conduit": {
-			"name": "Deific Conduit",
-			"description": "<p><strong>Frequency </strong>Once per day&nbsp;</p>\n<hr>\n<p>By calling down the power of the gods, you can empower yourself with the spirit of your deity. When you do so, you may gain a beatific appearance resembling your deity for 1 minute and can cast domain spells by expending a spell slot from your divine font. All those who see you use this action know that you are a representative of your god, and you receive a +2 circumstance bonus to Charisma-based skill checks on servitors of your deity for the duration.</p>\n<p>@Compendium[clerics.clerics-effects.fO0lXmV5Pl9mcbSu]{Effect: Deific Conduit}</p>",
-			"prerequisites": []
-		},
-		"Divine Strategy": {
-			"name": "Divine Strategy",
-			"description": "<p>You survey any problem with a trained eye, seeking out simple truths as you go. Whenever you Devise a Stratagem, you can also attempt a check to Recall Knowledge as part of that action. If the required roll to Recall Knowledge uses Religion, you gain a +2 circumstance bonus to the roll. If you critically succeed at the Recall Knowledge check, you notice a weakness and gain a +1 circumstance bonus to your attack roll from Devise a Stratagem.&nbsp;</p>\n<p><strong>Special </strong>If you are a sanctified enforcer warpriest, you may take this feat at level 2.</p>\n<p>@UUID[Compendium.clerics.clerics-effects.eMrJtwK9MRZLdZvd]{Effect: Divine Strategy}</p>",
-			"prerequisites": [
-				{
-					"value": "seeker doctrine"
-				}
-			]
-		},
-		"Elemental Fervor": {
-			"name": "Elemental Fervor",
-			"description": "<p>You have learned to channel your fervor to grant you the power of elements. During your daily preparations, you pray to your god to bless you by the elements of acid, cold, electricity, or fire. When you use Fervor, you may choose the following benefits instead of the normal benefits:</p>\n<ul>\n<li>You gain a +1 status bonus against saves that have the trait of your chosen element and resistance equal to half your level against that damage type. @UUID[Compendium.clerics.clerics-effects.VERCo11tlOwdqcuu]{Effect: Elemental Fervor Saves}</li>\n<li>Your weapon and unarmed attacks deal an additional 1d4 damage of the element you selected. This damage increases by 1d4 for each additional damage die your weapon deals. @UUID[Compendium.clerics.clerics-effects.EwxSCLGg68uZZWlF]{Effect: Elemental Fervor Damage}</li>\n</ul>",
-			"prerequisites": [
-				{
-					"value": "Fervor"
-				}
-			]
-		},
-		"Fervor": {
-			"name": "Fervor",
-			"description": "<p>You have learned to forge your font energy into powerful boons. When you use this action, you gain one of the chosen fervor benefits listed below which lasts until the beginning of your next turn. You can extend the duration of this effect to 1 minute if you expend a divine font slot. You cannot benefit from more than one fervor benefit at a time and you immediately end the effects of a previous fervor if you use this action again before the duration has expired. If you have been given the @Compendium[clerics.clerics-features.HdwpT50APyPRgqSq]{Decree of the Herald Binding} by your deity, you may apply the benefits of your fervor to your sacred animal instead of yourself.</p>\n<ul>\n<li>You gain a +1 status bonus to your AC and to saves against mental effects. @UUID[Compendium.clerics.clerics-effects.2m5c9ugAuyr9HoTB]{Effect: Fervor AC}</li>\n<li>Your weapon and unarmed attacks deal an additional 1d4 evil damage if you selected <em>@Compendium[pf2e.spells-srd.wdA52JJnsuQWeyqz]{Harm}</em> as your divine font or 1d4 good damage if you selected <em>@Compendium[pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em>. This damage increases by 1d4 for each additional damage die your weapon deals. @UUID[Compendium.clerics.clerics-effects.l0CwgdWmoSwudVlG]{Effect: Fervor Damage}</li>\n</ul>"
-		},
-		"Fervor of Force": {
-			"name": "Fervor of Force",
-			"description": "<p>You have learned to channel your fervor to grant you protection through force. You add the following benefits to the benefits you can choose from when you use Fervor:</p>\n<ul>\n<li>Your wielded weapons gain the <em>@Compendium[pf2e.equipment-srd.JQdwHECogcTzdd8R]{Ghost Touch}</em> weapon property rune and you gain a +2 status bonus to Perception checks against incorporeal creatures. @UUID[Compendium.clerics.clerics-effects.B5JsgmJs6rJfcoOH]{Effect: Fervor of Force Ghost Touch}</li>\n<li>You gain resistance to force damage equal to half your level and a +2 status bonus against effects that cause forced movement. @UUID[Compendium.clerics.clerics-effects.c3I3SewteUxDPfyO]{Effect: Fervor of Force Resistance}</li>\n</ul>",
-			"prerequisites": []
-		},
-		"Fluid Fervor": {
-			"name": "Fluid Fervor",
-			"description": "<p><strong id=\"docs-internal-guid-8ea742fa-7fff-2bab-79e3-2d1d3a5f5134\">Requirements </strong>You are benefiting from Fervor.</p>\n<hr>\n<p>Your deity allows you to mold your fervor to your needs. You can change the benefits of your fervor to another benefit. The duration of your fervor is unchanged.</p>",
-			"prerequisites": []
-		},
-		"Fury of the Gods": {
-			"name": "Fury of the Gods",
-			"description": "<p><strong>Trigger </strong>An enemy of your deity within your reach uses a manipulate action or a move action, makes a ranged attack, or leaves a square during a move action it&rsquo;s using.</p>\n<hr>\n<p>Your deity's outrage flows through your body as you hold your weapon aloft. You make a melee Strike against a creature of opposite alignment of your deity or that acts anathema to your deity or violates its edicts. Your Strike gains the listed effects in addition to the normal results.</p>\n<p><strong>Critical Success</strong> The target is @Compendium[pf2e.conditionitems.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Success </strong>The target is @Compendium[pf2e.conditionitems.TBSHQspnbcqxsmjL]{Frightened 1}.</p>",
-			"prerequisites": [
-				{
-					"value": "armorclad doctrine"
-				}
-			]
-		},
-		"Heroic Recovery+": {
-			"name": "Heroic Recovery+",
-			"description": "<p>The restorative power of your healing invigorates the recipient.</p>\n<p>If the next action you use is to cast <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> targeting a single living creature and the target regains Hit Points from the spell, it also gains three bonuses until the end of its next turn: a +5-foot status bonus to its Speed, a +1 status bonus to attack rolls, and a +1 status bonus to damage rolls.</p>\n<p>At 16th level, the status bonus to speed increases to a +10-foot status bonus and the status bonus to damage rolls increases to +4.</p>\n<p>@UUID[Compendium.clerics.clerics-effects.6nnjfTUL023g4cSl]{Effect: Heroic Recovery+}</p>",
-			"prerequisites": [
-				{
-					"value": "healing font"
-				},
-				{
-					"value": "good alignment"
-				}
-			]
-		},
-		"Huddled Channel": {
-			"name": "Huddled Channel",
-			"description": "<p>You have learned to split the effects of your channel when targets are close. If the next action you use is to cast a 1-action <em>harm </em>or <em>heal </em>to heal or damage a single creature, choose one additional creature adjacent to either you or the target. The target of the spell receives half the normal amount of damage or healing and the secondary target takes half the normal amount of damage or healing as well.</p>",
-			"prerequisites": [
-				{
-					"value": "divine font"
-				}
-			]
-		},
-		"Inspired Lead": {
-			"name": "Inspired Lead",
-			"description": "<p>Your deity gives you signs to show that you are on the right track. When you @Compendium[pf2e.actionspf2e.xTK2zsWFyxSJvYbX]{Pursue a Lead} over the course of 10 minutes, you can ponder a hypothetical outcome of the lead; for example, the missing relic was stolen by an enemy church. Your hypothetical cannot name a specific culprit, only an action (Was it stolen? Did someone hide something here? Did someone take the left exit recently?) You then gain divine inspiration to guide your decisions. This functions as augury, except rather than weal, woe or nothing, you gain the following options respectively.</p>\n<ul>\n<li>Correct (if the hunch is the exact truth).</li>\n<li>Incorrect (if the hunch is entirely off base). If you get this result, you can immediately choose another subject for your Pursue a Lead without spending 10 minutes, but you do not gain the benefits of Inspired Lead.</li>\n<li>On the right track (if the hunch is partially correct, but isn't the whole truth).</li>\n</ul>",
-			"prerequisites": []
-		},
-		"Magic Hands+": {
-			"name": "Magic Hands+",
-			"description": "<p>The blessing of your deity heightens your healing ability, making your mundane healing work as if by magic.</p>\n<p>When you succeed at a Medicine check to @Compendium[pf2e.actionspf2e.1kGNdIIhuglAjIp9]{Treat Wounds}, your action gains the divine trait and your healing rolls for the Treat Wounds DC you attempt heal for the maximum amount you would roll.</p>",
-			"prerequisites": [
-				{
-					"value": "Healing Hands"
-				}
-			]
-		},
-		"Multi-Fervor": {
-			"name": "Multi-Fervor",
-			"description": "<p>Your deity&rsquo;s fervor has become multi-dimensional, your body further infused by its power. When you use Fervor, you can choose two benefits instead of one.</p>",
-			"prerequisites": [
-				{
-					"value": "Fervor"
-				}
-			]
-		},
-		"Outsider Caller": {
-			"name": "Outsider Caller",
-			"description": "<p>Your communion with your deity has given you the ability to call upon extraplanar allies that are far more powerful than normal. Choose one summon spell (such as <em>@Compendium[pf2e.spells-srd.lTDixrrNKaCvLKwX]{Summon Celestial}</em> or <em>@Compendium[pf2e.spells-srd.lpT6LotUaQPfinjj]{Summon Elemental}</em>) that would summon a servitor of your deity (subject to GM discretion). You can cast the chosen spell once per day and the spell is heightened to the highest spell level you can cast. This spell can be of a tradition other than the divine tradition, and if it is you cast the spell as a divine spell and the spell duration becomes 1 hour instead of the normal duration. You do not have to Sustain the Spell during the duration, but you must still spend an action to issue a Command to give the summoned creature actions.</p>",
-			"prerequisites": []
-		},
-		"Overpowering Fervor": {
-			"name": "Overpowering Fervor",
-			"description": "<p>Your deity has given you the ability to press through physical resistances. You add the following benefit to the benefits you can choose from when you use Fervor:</p>\n<ul>\n<li>You can ignore an amount of physical resistance equal to half your level.</li>\n<li>You gain a +1 status bonus to Athletics checks to Force Open, Grapple, and Shove.</li>\n</ul>\n<p>@UUID[Compendium.clerics.clerics-effects.XlCSQbewpR1jTHJn]{Effect: Overpowering Fervor}</p>",
-			"prerequisites": []
-		},
-		"Prophet's Staff": {
-			"name": "Prophet's Staff",
-			"description": "<p>Your deity has blessed you with the ability to attribute its deific might to a stave via implanting a sigil, monument, or marker of your deity upon it. During your daily preparations, you can attune a mundane staff to be a magical staff by expending a spell slot from your divine font slots to infuse the staff with divine power. When you do so, your staff becomes a focus for your deity and it gains a number of charges equal to the level of the spell you cast and it functions as a magical staff as long as it remains in your possession or until you attune another staff. You can use the charges of your staff to cast spells from your divine font and cleric spells granted to you by your deity. You can attune a magical staff in your possession in the same way you would a mundane staff and it gains the ability to cast your divine font spells and cleric spells in addition to the normal spells it could cast when attuned.</p>",
-			"prerequisites": [
-				{
-					"value": "cloistered doctrine"
-				}
-			]
-		},
-		"Sacred Avatar": {
-			"name": "Sacred Avatar",
-			"description": "<p>Your sacred animal develops its connection with your deity into a bridge of supernatural power, allowing it to become specialized. You can select one of the usual specializations or the avatar specialization.</p>\n<p><strong>Avatar </strong>Your animal companion gains the following benefits: Your companion is considered to be the embodiment of your deity and counts as your spellcasting focus as long as it is within 30 feet of you. Its proficiency rank in your deity&rsquo;s divine skill and Religion increase to expert and its Wisdom modifier increases by 2 and its Charisma modifier by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "decree of herald binding"
-				},
-				{
-					"value": "blessed animal"
-				}
-			]
-		},
-		"Stigmata": {
-			"name": "Stigmata",
-			"description": "<p>You give up your blood to honour your deity. You manifest scarified wounds appropriate to your faith, like a cleric of Desna scarred where Lamashtu wounded Curchanus, Iomedae's battle scars from the Shining Crusade, or a follower of Rovagug's wrists and ankles scarred from where the chains that bind him hold. As an action, these wounds can open,war pouring sacred blood from you. You take 1d4 persistent bleed damage for every 4 levels you possess. This persistent bleed damage cannot be removed and persists until you spend a single action with the concentrate trait to automatically end the bleeding and any of its ongoing effects. If you fall unconscious, the bleed damage and any ongoing effects automatically end. While you are suffering from this persistent bleed damage, you receive a +1 status bonus to Religion and your harm and heal spells gain the following additional effect:&nbsp;</p>\n<p><strong>Harm </strong>Your <em>harm </em>spells that target a single creature deal 1d4 persistent bleed damage for every 4 levels you possess to targets that fail their Fortitude save. If you use the 3-action cast, only targets that critically fail their save take persistent bleed damage.</p>\n<p><strong>Heal </strong>When you cast <em>heal </em>on a single target other than yourself, they automatically end any ongoing persistent damage they are suffering from. If you use the 3-action cast, targets instead get an immediate attempt to end any ongoing persistent damage they are suffering from by succeeding at a @Check[type:flat|dc:11] check.&nbsp;</p>\n<p>[[/r max(floor(@actor.level/4),1)d4[persistent,bleed]]]{Persistent Bleed Damage}@UUID[Compendium.pf2e.conditionitems.lDVqvLKA6eF3Df60]{Persistent Bleed Damage}</p>\n<p>@UUID[Compendium.clerics.clerics-effects.uqWVxHkIu054J0Xv]{Effect: Stigmata}</p>",
-			"prerequisites": []
-		},
-		"Strategic Spell": {
-			"name": "Strategic Spell",
-			"description": "<p><strong>Frequency </strong>once per hour</p>\n<p><strong>Trigger </strong>You make a successful spell attack roll with @Compendium[pf2e.actionspf2e.m0f2B7G9eaaTmhFL]{Devise a Stratagem} that deals damage but haven&rsquo;t rolled damage.</p>\n<hr>\n<p>You have learned to position your spells to take advantage of your planned precision. You can apply your @Compendium[pf2e.classfeatures.2Fe4YZCvAr9Yf6w7]{Strategic Strike} damage to the triggering spell. If your spell attack roll was a critical success, you double your strategic strike damage when applying it to the spell damage.</p>",
-			"prerequisites": [
-				{
-					"value": "seeker doctrine"
-				}
-			]
-		},
-		"Striving Fervor": {
-			"name": "Striving Fervor",
-			"description": "<p><strong>Requirements </strong>You have expended all of your divine font slots for the day.</p>\n<hr>\n<p>You have gained the ability to unearth deity&rsquo;s fervor even when you can no longer channel. You use Fervor and it lasts for 1 minute without needing to expend a channel slot.</p>",
-			"prerequisites": [
-				{
-					"value": "Fervor"
-				}
-			]
-		},
-		"Swift Banishment+": {
-			"name": "Swift Banishment+",
-			"description": "<p><strong>Trigger</strong> You critically hit a creature that is not on its home plane.</p>\n<p><strong>Requirements</strong> You have a banishment spell prepared</p>\n<hr>\n<p>The force of your blow sends your victim back to its home plane. You expend a <em>@UUID[Compendium.pf2e.spells-srd.bay4AfSu2iIozNNW]{Banishment}</em> spell you have prepared, affecting the creature you critically hit without needing to cast the spell. The creature can attempt to resist the spell as normal. The creature takes a -2 status penalty to its save against this effect.</p>",
-			"prerequisites": []
-		},
-		"Theurgic Studies": {
-			"name": "Theurgic Studies",
-			"description": "<p>Your readings of the scriptures have enlightened you to the divine accents of other traditions of magic. Choose Arcana, Nature, or Occultism, you become trained in the chosen skill or another skill in which you were untrained if you were already trained in the chosen skill. You gain the ability to cast a single cantrip from the tradition of the skill you chose and you cast that spell as a divine spell.</p>",
-			"prerequisites": [
-				{
-					"value": "cloistered doctrine"
-				}
-			]
-		},
-		"Theurgic Trickery": {
-			"name": "Theurgic Trickery",
-			"description": "<p>As you learn more and more on the fundamentals of magic, you have found that their implements serve you just as well as any holy symbol. You gain the @Compendium[pf2e.feats-srd.uR62fVC9FyQAMCO1]{Trick Magic Item} feat, and you increase one of the following trained skills to expert: Arcana, Nature, or Occultism. If you roll a critical failure to Trick a Magic Item to cast a spell that would be the tradition of the skill you chose, you get a failure instead.</p>",
-			"prerequisites": [
-				{
-					"value": "cloistered doctrine"
-				},
-				{
-					"value": "trained in Arcana, Nature or Occultism"
-				}
-			]
-		},
-		"To Arms!": {
-			"name": "To Arms!",
-			"description": "<p><strong>Trigger</strong> You roll initiative.</p>\n<hr>\n<p>Empowered by the might of your deity, you rush into battle to attack your foes or to defend your allies. As your first action on your first turn, you can Stride as a free action toward an enemy you can perceive. If you can't perceive any enemies or can't end your movement closer to one, you can't use this Stride.</p>",
-			"prerequisites": [
-				{
-					"value": "armorclad doctrine"
-				}
-			]
-		},
-		"Traveling Channel": {
-			"name": "Traveling Channel",
-			"description": "<p>You have learned to channel while keeping on the move. If the next action you use is to cast a spell from your divine font slots, you can Stride up to half your Speed before you Cast the Spell.</p>",
-			"prerequisites": [
-				{
-					"value": "seeker doctrine"
-				}
-			]
-		},
-		"Upon This Rock": {
-			"name": "Upon This Rock",
-			"description": "<p>You know that a church is not a place, but a community. You have learned to cultivate such communities with only a handful of followers. You can spend 1 hour setting forth the requirements for your church, such as an altar, prayer rug, or monuments, but through taking an assortment of unconventional replacements from your surroundings in order to replicate a make-shift house of worship. This area gains the effects of the consecrate ritual except it only takes you 1 hour and the duration of the effect is 24 hours. If you attempt to use this ability again, any previous consecrate effect ends but people may still use the location as an area of worship as long as the important fixtures that make it a church remain intact (such as an altar or monument to your deity). If you spend a month in this location, the effect lasts the normal duration for the consecrate ritual, and is considered a true church.</p>",
-			"prerequisites": []
-		},
-		"Warpriest Dedication": {
-			"name": "Warpriest Dedication",
-			"description": "<p>You are a warpriest, and your font can be manifested into more than a simple burst of energy. Just as a block of steel does not harness the same power as a hardened blade, so is true for his divine energy. You gain the @UUID[Compendium.clerics.clerics-feats.JeFnGN3GeC9cFgOl]{Fervor} action.</p>\n<p><strong>Special </strong>You can't select another dedication feat until you've gained two other feats from the warpriest archetype.</p>",
-			"prerequisites": [
-				{
-					"value": "sacred decree"
-				}
-			]
-		},
-		"Zealous Dash": {
-			"name": "Zealous Dash",
-			"description": "<p>You charge through the battleground, going where you are needed. You Stride and Cast a Spell with a casting time of two actions or less that targets yourself. If the spell could normally target another creature, you must target only yourself. You do not trigger reactions for when you Cast the Spell, but still provoke reactions that would trigger when you move.</p>",
-			"prerequisites": [
-				{
-					"value": "armorclad doctrinr"
-				}
-			]
-		}
-	}
+    },
+    "entries": {
+        "Arise to Sainthood": {
+            "name": "Arise to Sainthood",
+            "description": "<p>You rise beyond the status of a mere follower to that of a saint, imbued with divine essence yourself. Around the world, people see you as an inspiration and pray to you as well as your deity. Choose any one domain that applies to yourself rather than your deity; you gain the initial domain spell now. If you have the @Compendium[pf2e.feats-srd.uR44wELN9OlU68cL]{Advanced Domain} feat, you may immediately retrain the spell you chose to the domain spell associated with your new domain. You follow your own edicts and anathema, use your own sacred weapon, and grant these blessings to would-be followers around the world. When you Refocus, you can listen to the prayers of your followers. This allows you to regain a single divine font spell slot, and you cannot Refocus to gain another divine font spell slot until you have used this slot. Followers of your deity immediately recognize you and are generally helpful and respectful to you.</p>"
+        },
+        "Blessed Animal": {
+            "name": "Blessed Animal",
+            "description": "<p>Your sacred animal is blessed to receive even greater powers. It becomes a nimble or savage animal companion (your choice), gaining additional capabilities determined by the type of companion.</p>",
+            "prerequisites": [
+                {
+                    "value": "decree of herald binding"
+                },
+                {
+                    "value": "chosen animal"
+                }
+            ]
+        },
+        "Blessed Regalia": {
+            "name": "Blessed Regalia",
+            "description": "<p>You wear armor that has been engraved with countless symbols of your deity and artistic depictions of their tales. When an enemy of your deity gets a critical hit against you while wearing your blessed regalia armor, you can attempt a @Check[type:flat|dc:16] to make it a normal hit instead. In addition, you gain resistance equal to twice your armor potency rune to one energy type and a single alignment that opposes your deity (or precision damage if your deity is neutral). You select these damage types when you first gain this feat and they cannot be changed. If your armor possessed the @Compendium[pf2e.equipment-srd.ujWnpVMkbTljMGN9]{Fortification (Greater)} rune, the flat check to remove a critical hit against you becomes 12 instead of the normal DC.</p>",
+            "prerequisites": [
+                {
+                    "value": "armorclad doctrine"
+                }
+            ]
+        },
+        "Blood is Thicker": {
+            "name": "Blood is Thicker",
+            "description": "<p><strong>Requirements </strong>You are suffering from persistent bleed damage caused by Stigmata.</p>\n<hr>\n<p>As your stigmata bleeds, your connection to your god&rsquo;s divine power grows, granting you the ability to manipulate your channel energy. You can bind your bleeding to another creature within 30 feet and the creature remains under the effect until your stigmata stops bleeding or 1 minute has passed, whichever comes first. You can only target one creature at a time with this effect and using it on another creature immediately ends the effect for any previous creature you targeted. The effect of this ability is determined by your divine font:</p>\n<p><strong>Harm </strong>The creature must attempt a @Check[type:fortitude|basic:true|dc:resolve(@actor.attributes.classOrSpellDC.value)] save against your spellcasting DC. Creatures that fail their save take persistent bleed damage equal to your Stigmata bleed damage when they take damage from Strikes that deal piercing or slashing damage.</p>\n<p><strong>Heal </strong>When you take persistent bleed damage from your Stigmata, the target creature heals an amount of Hit Points equal to the persistent damage you took. The target must be a living creature for you to target them with this ability. This effect has the healing trait.</p>\n<p>[[/r max(floor(@actor.level/4),1)d4[persistent,bleed]]]{Persistent Bleed Damage}@UUID[Compendium.pf2e.conditionitems.lDVqvLKA6eF3Df60]{Persistent Bleed Damage}</p>",
+            "prerequisites": [
+                {
+                    "value": "divine font"
+                },
+                {
+                    "value": "Stigmata"
+                }
+            ]
+        },
+        "Canvas the Layfolk": {
+            "name": "Canvas the Layfolk",
+            "description": "<p>Seeking information is second nature to you. From discreetly asking for rumors in a church to interrogating persons of interest behind a seedy tavern, you never stop searching for leads to your quests. You can use Religion to Gather Information whenever you are in a settlement that would have at least a few followers of your deity and to Make an Impression if the person is a servitor of your deity or a servitor of a deity allied to your deity. If you&rsquo;re a master in Religion, when you make these actions and you would get a critical failure, you get a failure instead.</p>",
+            "prerequisites": [
+                {
+                    "value": "seeker doctrine"
+                }
+            ]
+        },
+        "Castigating Weapon+": {
+            "name": "Castigating Weapon+",
+            "description": "<p>The force of your deity's castigation strengthens your body so you can strike down the wicked.</p>\n<p>After you damage a fiend using a <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> spell, your weapon or unarmed Strikes deal extra good damage to fiends equal to double the level of the heal spell until the end of your next turn. This is cumulative with any good damage the weapon already deals (such as from a holy rune).</p>",
+            "prerequisites": [
+                {
+                    "value": "Holy Castigation"
+                }
+            ]
+        },
+        "Channel Smite+": {
+            "name": "Channel Smite+",
+            "description": "<p><strong>Cost</strong> Expend a <em>@UUID[Compendium.pf2e.spells-srd.wdA52JJnsuQWeyqz]{Harm}</em> or <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> spell.</p>\n<hr>\n<p>You siphon the destructive energies of positive or negative energy through a melee attack and into your foe. Your Strike gains additional effects and damage depending on the number of actions you spent. This is negative damage if you expended a harm spell or positive damage if you expended a heal spell. Alternatively, you can choose to deal an alignment damage type appropriate for your deity. The spell is expended regardless of the Strike&rsquo;s outcome.</p>\n<p><span class=\"action-glyph\">1</span> Make a melee Strike and add half the spell&rsquo;s damage to the Strike&rsquo;s damage.</p>\n<p><span class=\"action-glyph\">2</span> Make a melee Strike and add the spell&rsquo;s damage to the Strike&rsquo;s damage.</p>\n<p><span class=\"action-glyph\">3</span> You Strike a target creature adjacent to you and displace your divine energy into a 15-foot cone, a 20-foot line, or a 10-foot emanation that includes the target of your Strike. Creatures in the area must attempt a basic @Check[type:reflex|basic:true|dc:resolve(@actor.attributes.classOrSpellDC.value)] save against your spellcasting DC or take half the spell's damage of the type you selected. If you succeeded at your Strike, the creature you struck treats its save result as one degree worse.</p>",
+            "prerequisites": [
+                {
+                    "value": "harmful font or healing font"
+                }
+            ]
+        },
+        "Chosen Animal": {
+            "name": "Chosen Animal",
+            "description": "<p>Your sacred animal becomes chosen for power by your deity and becomes a mature animal companion. You can spend 2 actions to Command an Animal instead of 1 when commanding your sacred animal. If you do, it uses an additional action.</p>",
+            "prerequisites": [
+                {
+                    "value": "decree of the herald keepr"
+                }
+            ]
+        },
+        "Communal Healing+": {
+            "name": "Communal Healing+",
+            "description": "<p>You're a conduit for positive energy, and as you channel it through you, it heals some of your minor injuries.</p>\n<p>When you cast the <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> spell to heal a single creature other than yourself, you regain Hit Points equal to twice the spell level of the <em>heal </em>spell.</p>"
+        },
+        "Cunning Fervor": {
+            "name": "Cunning Fervor",
+            "description": "<p>Your deity has given you the ability to press through physical resistances. You add the following benefit to the benefits you can choose from when you use Fervor:</p>\n<ul>\n<li>When you successfully Recall Knowledge on a creature with a resistance, you learn its highest resistance value and can ignore an amount of that resistance equal to half your level.</li>\n<li>You gain a +1 status bonus to Acrobatics checks to Tumble Through and Deception checks to Feint</li>\n</ul>\n<p>@Compendium[clerics.clerics-effects.ZiU6erBOdJEs1kT8]{Effect: Cunning Fervor}</p>",
+            "prerequisites": [
+                {
+                    "value": "decree of sanctified slaying"
+                }
+            ]
+        },
+        "Daily Obedience": {
+            "name": "Daily Obedience",
+            "description": "<p>The gods demand respect and worship in order to gain their blessings. You must perform a small action before the end of the day in praise of your deity; for example, balancing precious items on a scale and praying to Abadar, consensually cause someone pain as a follower of Zon-Kuthon or healing a stranger as a worshiper of Sarenrae, but the actions intent must be the same every day. Once during the next 24 hours, when you roll your divine skill, you may roll twice and take the higher result. You must declare you are using this effect before you make the roll.</p>\n<p>@UUID[Compendium.clerics.clerics-effects.Gc7fkGHl3XVm9tG0]{Effect: Daily Obedience}</p>"
+        },
+        "Deific Channel": {
+            "name": "Deific Channel",
+            "description": "<p>Your deity has taught you a means to forge divine energy of your font into casting their deific spells. You gain the ability to prepare the 1st-level cleric spell granted by your deity in your divine font slots and that spell is automatically heightened to the highest level spell you can cast when you do so.</p>",
+            "prerequisites": [
+                {
+                    "value": "cloistered doctrine"
+                }
+            ]
+        },
+        "Deific Conduit": {
+            "name": "Deific Conduit",
+            "description": "<p><strong>Frequency </strong>Once per day&nbsp;</p>\n<hr>\n<p>By calling down the power of the gods, you can empower yourself with the spirit of your deity. When you do so, you may gain a beatific appearance resembling your deity for 1 minute and can cast domain spells by expending a spell slot from your divine font. All those who see you use this action know that you are a representative of your god, and you receive a +2 circumstance bonus to Charisma-based skill checks on servitors of your deity for the duration.</p>\n<p>@Compendium[clerics.clerics-effects.fO0lXmV5Pl9mcbSu]{Effect: Deific Conduit}</p>"
+        },
+        "Divine Strategy": {
+            "name": "Divine Strategy",
+            "description": "<p>You survey any problem with a trained eye, seeking out simple truths as you go. Whenever you Devise a Stratagem, you can also attempt a check to Recall Knowledge as part of that action. If the required roll to Recall Knowledge uses Religion, you gain a +2 circumstance bonus to the roll. If you critically succeed at the Recall Knowledge check, you notice a weakness and gain a +1 circumstance bonus to your attack roll from Devise a Stratagem.&nbsp;</p>\n<p><strong>Special </strong>If you are a sanctified enforcer warpriest, you may take this feat at level 2.</p>\n<p>@UUID[Compendium.clerics.clerics-effects.eMrJtwK9MRZLdZvd]{Effect: Divine Strategy}</p>",
+            "prerequisites": [
+                {
+                    "value": "seeker doctrine"
+                }
+            ]
+        },
+        "Elemental Fervor": {
+            "name": "Elemental Fervor",
+            "description": "<p>You have learned to channel your fervor to grant you the power of elements. During your daily preparations, you pray to your god to bless you by the elements of acid, cold, electricity, or fire. When you use Fervor, you may choose the following benefits instead of the normal benefits:</p>\n<ul>\n<li>You gain a +1 status bonus against saves that have the trait of your chosen element and resistance equal to half your level against that damage type. @UUID[Compendium.clerics.clerics-effects.VERCo11tlOwdqcuu]{Effect: Elemental Fervor Saves}</li>\n<li>Your weapon and unarmed attacks deal an additional 1d4 damage of the element you selected. This damage increases by 1d4 for each additional damage die your weapon deals. @UUID[Compendium.clerics.clerics-effects.EwxSCLGg68uZZWlF]{Effect: Elemental Fervor Damage}</li>\n</ul>",
+            "prerequisites": [
+                {
+                    "value": "Fervor"
+                }
+            ]
+        },
+        "Fervor": {
+            "name": "Fervor",
+            "description": "<p>You have learned to forge your font energy into powerful boons. When you use this action, you gain one of the chosen fervor benefits listed below which lasts until the beginning of your next turn. You can extend the duration of this effect to 1 minute if you expend a divine font slot. You cannot benefit from more than one fervor benefit at a time and you immediately end the effects of a previous fervor if you use this action again before the duration has expired. If you have been given the @Compendium[clerics.clerics-features.HdwpT50APyPRgqSq]{Decree of the Herald Binding} by your deity, you may apply the benefits of your fervor to your sacred animal instead of yourself.</p>\n<ul>\n<li>You gain a +1 status bonus to your AC and to saves against mental effects. @UUID[Compendium.clerics.clerics-effects.2m5c9ugAuyr9HoTB]{Effect: Fervor AC}</li>\n<li>Your weapon and unarmed attacks deal an additional 1d4 evil damage if you selected <em>@Compendium[pf2e.spells-srd.wdA52JJnsuQWeyqz]{Harm}</em> as your divine font or 1d4 good damage if you selected <em>@Compendium[pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em>. This damage increases by 1d4 for each additional damage die your weapon deals. @UUID[Compendium.clerics.clerics-effects.l0CwgdWmoSwudVlG]{Effect: Fervor Damage}</li>\n</ul>"
+        },
+        "Fervor of Force": {
+            "name": "Fervor of Force",
+            "description": "<p>You have learned to channel your fervor to grant you protection through force. You add the following benefits to the benefits you can choose from when you use Fervor:</p>\n<ul>\n<li>Your wielded weapons gain the <em>@Compendium[pf2e.equipment-srd.JQdwHECogcTzdd8R]{Ghost Touch}</em> weapon property rune and you gain a +2 status bonus to Perception checks against incorporeal creatures. @UUID[Compendium.clerics.clerics-effects.B5JsgmJs6rJfcoOH]{Effect: Fervor of Force Ghost Touch}</li>\n<li>You gain resistance to force damage equal to half your level and a +2 status bonus against effects that cause forced movement. @UUID[Compendium.clerics.clerics-effects.c3I3SewteUxDPfyO]{Effect: Fervor of Force Resistance}</li>\n</ul>"
+        },
+        "Fluid Fervor": {
+            "name": "Fluid Fervor",
+            "description": "<p><strong id=\"docs-internal-guid-8ea742fa-7fff-2bab-79e3-2d1d3a5f5134\">Requirements </strong>You are benefiting from Fervor.</p>\n<hr>\n<p>Your deity allows you to mold your fervor to your needs. You can change the benefits of your fervor to another benefit. The duration of your fervor is unchanged.</p>"
+        },
+        "Fury of the Gods": {
+            "name": "Fury of the Gods",
+            "description": "<p><strong>Trigger </strong>An enemy of your deity within your reach uses a manipulate action or a move action, makes a ranged attack, or leaves a square during a move action it&rsquo;s using.</p>\n<hr>\n<p>Your deity's outrage flows through your body as you hold your weapon aloft. You make a melee Strike against a creature of opposite alignment of your deity or that acts anathema to your deity or violates its edicts. Your Strike gains the listed effects in addition to the normal results.</p>\n<p><strong>Critical Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Success </strong>The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>",
+            "prerequisites": [
+                {
+                    "value": "armorclad doctrine"
+                }
+            ]
+        },
+        "Heroic Recovery+": {
+            "name": "Heroic Recovery+",
+            "description": "<p>The restorative power of your healing invigorates the recipient.</p>\n<p>If the next action you use is to cast <em>@UUID[Compendium.pf2e.spells-srd.rfZpqmj0AIIdkVIs]{Heal}</em> targeting a single living creature and the target regains Hit Points from the spell, it also gains three bonuses until the end of its next turn: a +5-foot status bonus to its Speed, a +1 status bonus to attack rolls, and a +1 status bonus to damage rolls.</p>\n<p>At 16th level, the status bonus to speed increases to a +10-foot status bonus and the status bonus to damage rolls increases to +4.</p>\n<p>@UUID[Compendium.clerics.clerics-effects.6nnjfTUL023g4cSl]{Effect: Heroic Recovery+}</p>",
+            "prerequisites": [
+                {
+                    "value": "healing font"
+                },
+                {
+                    "value": "good alignment"
+                }
+            ]
+        },
+        "Huddled Channel": {
+            "name": "Huddled Channel",
+            "description": "<p>You have learned to split the effects of your channel when targets are close. If the next action you use is to cast a 1-action <em>harm </em>or <em>heal </em>to heal or damage a single creature, choose one additional creature adjacent to either you or the target. The target of the spell receives half the normal amount of damage or healing and the secondary target takes half the normal amount of damage or healing as well.</p>",
+            "prerequisites": [
+                {
+                    "value": "divine font"
+                }
+            ]
+        },
+        "Inspired Lead": {
+            "name": "Inspired Lead",
+            "description": "<p>Your deity gives you signs to show that you are on the right track. When you @Compendium[pf2e.actionspf2e.xTK2zsWFyxSJvYbX]{Pursue a Lead} over the course of 10 minutes, you can ponder a hypothetical outcome of the lead; for example, the missing relic was stolen by an enemy church. Your hypothetical cannot name a specific culprit, only an action (Was it stolen? Did someone hide something here? Did someone take the left exit recently?) You then gain divine inspiration to guide your decisions. This functions as augury, except rather than weal, woe or nothing, you gain the following options respectively.</p>\n<ul>\n<li>Correct (if the hunch is the exact truth).</li>\n<li>Incorrect (if the hunch is entirely off base). If you get this result, you can immediately choose another subject for your Pursue a Lead without spending 10 minutes, but you do not gain the benefits of Inspired Lead.</li>\n<li>On the right track (if the hunch is partially correct, but isn't the whole truth).</li>\n</ul>"
+        },
+        "Magic Hands+": {
+            "name": "Magic Hands+",
+            "description": "<p>The blessing of your deity heightens your healing ability, making your mundane healing work as if by magic.</p>\n<p>When you succeed at a Medicine check to @Compendium[pf2e.actionspf2e.1kGNdIIhuglAjIp9]{Treat Wounds}, your action gains the divine trait and your healing rolls for the Treat Wounds DC you attempt heal for the maximum amount you would roll.</p>",
+            "prerequisites": [
+                {
+                    "value": "Healing Hands"
+                }
+            ]
+        },
+        "Multi-Fervor": {
+            "name": "Multi-Fervor",
+            "description": "<p>Your deity&rsquo;s fervor has become multi-dimensional, your body further infused by its power. When you use Fervor, you can choose two benefits instead of one.</p>",
+            "prerequisites": [
+                {
+                    "value": "Fervor"
+                }
+            ]
+        },
+        "Outsider Caller": {
+            "name": "Outsider Caller",
+            "description": "<p>Your communion with your deity has given you the ability to call upon extraplanar allies that are far more powerful than normal. Choose one summon spell (such as <em>@Compendium[pf2e.spells-srd.lTDixrrNKaCvLKwX]{Summon Celestial}</em> or <em>@Compendium[pf2e.spells-srd.lpT6LotUaQPfinjj]{Summon Elemental}</em>) that would summon a servitor of your deity (subject to GM discretion). You can cast the chosen spell once per day and the spell is heightened to the highest spell level you can cast. This spell can be of a tradition other than the divine tradition, and if it is you cast the spell as a divine spell and the spell duration becomes 1 hour instead of the normal duration. You do not have to Sustain the Spell during the duration, but you must still spend an action to issue a Command to give the summoned creature actions.</p>"
+        },
+        "Overpowering Fervor": {
+            "name": "Overpowering Fervor",
+            "description": "<p>Your deity has given you the ability to press through physical resistances. You add the following benefit to the benefits you can choose from when you use Fervor:</p>\n<ul>\n<li>You can ignore an amount of physical resistance equal to half your level.</li>\n<li>You gain a +1 status bonus to Athletics checks to Force Open, Grapple, and Shove.</li>\n</ul>\n<p>@UUID[Compendium.clerics.clerics-effects.XlCSQbewpR1jTHJn]{Effect: Overpowering Fervor}</p>"
+        },
+        "Prophet's Staff": {
+            "name": "Prophet's Staff",
+            "description": "<p>Your deity has blessed you with the ability to attribute its deific might to a stave via implanting a sigil, monument, or marker of your deity upon it. During your daily preparations, you can attune a mundane staff to be a magical staff by expending a spell slot from your divine font slots to infuse the staff with divine power. When you do so, your staff becomes a focus for your deity and it gains a number of charges equal to the level of the spell you cast and it functions as a magical staff as long as it remains in your possession or until you attune another staff. You can use the charges of your staff to cast spells from your divine font and cleric spells granted to you by your deity. You can attune a magical staff in your possession in the same way you would a mundane staff and it gains the ability to cast your divine font spells and cleric spells in addition to the normal spells it could cast when attuned.</p>",
+            "prerequisites": [
+                {
+                    "value": "cloistered doctrine"
+                }
+            ]
+        },
+        "Sacred Avatar": {
+            "name": "Sacred Avatar",
+            "description": "<p>Your sacred animal develops its connection with your deity into a bridge of supernatural power, allowing it to become specialized. You can select one of the usual specializations or the avatar specialization.</p>\n<p><strong>Avatar </strong>Your animal companion gains the following benefits: Your companion is considered to be the embodiment of your deity and counts as your spellcasting focus as long as it is within 30 feet of you. Its proficiency rank in your deity&rsquo;s divine skill and Religion increase to expert and its Wisdom modifier increases by 2 and its Charisma modifier by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "decree of herald binding"
+                },
+                {
+                    "value": "blessed animal"
+                }
+            ]
+        },
+        "Stigmata": {
+            "name": "Stigmata",
+            "description": "<p>You give up your blood to honour your deity. You manifest scarified wounds appropriate to your faith, like a cleric of Desna scarred where Lamashtu wounded Curchanus, Iomedae's battle scars from the Shining Crusade, or a follower of Rovagug's wrists and ankles scarred from where the chains that bind him hold. As an action, these wounds can open,war pouring sacred blood from you. You take 1d4 persistent bleed damage for every 4 levels you possess. This persistent bleed damage cannot be removed and persists until you spend a single action with the concentrate trait to automatically end the bleeding and any of its ongoing effects. If you fall unconscious, the bleed damage and any ongoing effects automatically end. While you are suffering from this persistent bleed damage, you receive a +1 status bonus to Religion and your harm and heal spells gain the following additional effect:&nbsp;</p>\n<p><strong>Harm </strong>Your <em>harm </em>spells that target a single creature deal 1d4 persistent bleed damage for every 4 levels you possess to targets that fail their Fortitude save. If you use the 3-action cast, only targets that critically fail their save take persistent bleed damage.</p>\n<p><strong>Heal </strong>When you cast <em>heal </em>on a single target other than yourself, they automatically end any ongoing persistent damage they are suffering from. If you use the 3-action cast, targets instead get an immediate attempt to end any ongoing persistent damage they are suffering from by succeeding at a @Check[type:flat|dc:11] check.&nbsp;</p>\n<p>[[/r max(floor(@actor.level/4),1)d4[persistent,bleed]]]{Persistent Bleed Damage}@UUID[Compendium.pf2e.conditionitems.lDVqvLKA6eF3Df60]{Persistent Bleed Damage}</p>\n<p>@UUID[Compendium.clerics.clerics-effects.uqWVxHkIu054J0Xv]{Effect: Stigmata}</p>"
+        },
+        "Strategic Spell": {
+            "name": "Strategic Spell",
+            "description": "<p><strong>Frequency </strong>once per hour</p>\n<p><strong>Trigger </strong>You make a successful spell attack roll with @Compendium[pf2e.actionspf2e.m0f2B7G9eaaTmhFL]{Devise a Stratagem} that deals damage but haven&rsquo;t rolled damage.</p>\n<hr>\n<p>You have learned to position your spells to take advantage of your planned precision. You can apply your @Compendium[pf2e.classfeatures.2Fe4YZCvAr9Yf6w7]{Strategic Strike} damage to the triggering spell. If your spell attack roll was a critical success, you double your strategic strike damage when applying it to the spell damage.</p>",
+            "prerequisites": [
+                {
+                    "value": "seeker doctrine"
+                }
+            ]
+        },
+        "Striving Fervor": {
+            "name": "Striving Fervor",
+            "description": "<p><strong>Requirements </strong>You have expended all of your divine font slots for the day.</p>\n<hr>\n<p>You have gained the ability to unearth deity&rsquo;s fervor even when you can no longer channel. You use Fervor and it lasts for 1 minute without needing to expend a channel slot.</p>",
+            "prerequisites": [
+                {
+                    "value": "Fervor"
+                }
+            ]
+        },
+        "Swift Banishment+": {
+            "name": "Swift Banishment+",
+            "description": "<p><strong>Trigger</strong> You critically hit a creature that is not on its home plane.</p>\n<p><strong>Requirements</strong> You have a banishment spell prepared</p>\n<hr>\n<p>The force of your blow sends your victim back to its home plane. You expend a <em>@UUID[Compendium.pf2e.spells-srd.bay4AfSu2iIozNNW]{Banishment}</em> spell you have prepared, affecting the creature you critically hit without needing to cast the spell. The creature can attempt to resist the spell as normal. The creature takes a -2 status penalty to its save against this effect.</p>"
+        },
+        "Theurgic Studies": {
+            "name": "Theurgic Studies",
+            "description": "<p>Your readings of the scriptures have enlightened you to the divine accents of other traditions of magic. Choose Arcana, Nature, or Occultism, you become trained in the chosen skill or another skill in which you were untrained if you were already trained in the chosen skill. You gain the ability to cast a single cantrip from the tradition of the skill you chose and you cast that spell as a divine spell.</p>",
+            "prerequisites": [
+                {
+                    "value": "cloistered doctrine"
+                }
+            ]
+        },
+        "Theurgic Trickery": {
+            "name": "Theurgic Trickery",
+            "description": "<p>As you learn more and more on the fundamentals of magic, you have found that their implements serve you just as well as any holy symbol. You gain the @Compendium[pf2e.feats-srd.uR62fVC9FyQAMCO1]{Trick Magic Item} feat, and you increase one of the following trained skills to expert: Arcana, Nature, or Occultism. If you roll a critical failure to Trick a Magic Item to cast a spell that would be the tradition of the skill you chose, you get a failure instead.</p>",
+            "prerequisites": [
+                {
+                    "value": "cloistered doctrine"
+                },
+                {
+                    "value": "trained in Arcana, Nature or Occultism"
+                }
+            ]
+        },
+        "To Arms!": {
+            "name": "To Arms!",
+            "description": "<p><strong>Trigger</strong> You roll initiative.</p>\n<hr>\n<p>Empowered by the might of your deity, you rush into battle to attack your foes or to defend your allies. As your first action on your first turn, you can Stride as a free action toward an enemy you can perceive. If you can't perceive any enemies or can't end your movement closer to one, you can't use this Stride.</p>",
+            "prerequisites": [
+                {
+                    "value": "armorclad doctrine"
+                }
+            ]
+        },
+        "Traveling Channel": {
+            "name": "Traveling Channel",
+            "description": "<p>You have learned to channel while keeping on the move. If the next action you use is to cast a spell from your divine font slots, you can Stride up to half your Speed before you Cast the Spell.</p>",
+            "prerequisites": [
+                {
+                    "value": "seeker doctrine"
+                }
+            ]
+        },
+        "Upon This Rock": {
+            "name": "Upon This Rock",
+            "description": "<p>You know that a church is not a place, but a community. You have learned to cultivate such communities with only a handful of followers. You can spend 1 hour setting forth the requirements for your church, such as an altar, prayer rug, or monuments, but through taking an assortment of unconventional replacements from your surroundings in order to replicate a make-shift house of worship. This area gains the effects of the consecrate ritual except it only takes you 1 hour and the duration of the effect is 24 hours. If you attempt to use this ability again, any previous consecrate effect ends but people may still use the location as an area of worship as long as the important fixtures that make it a church remain intact (such as an altar or monument to your deity). If you spend a month in this location, the effect lasts the normal duration for the consecrate ritual, and is considered a true church.</p>"
+        },
+        "Warpriest Dedication": {
+            "name": "Warpriest Dedication",
+            "description": "<p>You are a warpriest, and your font can be manifested into more than a simple burst of energy. Just as a block of steel does not harness the same power as a hardened blade, so is true for his divine energy. You gain the @UUID[Compendium.clerics.clerics-feats.JeFnGN3GeC9cFgOl]{Fervor} action.</p>\n<p><strong>Special </strong>You can't select another dedication feat until you've gained two other feats from the warpriest archetype.</p>",
+            "prerequisites": [
+                {
+                    "value": "sacred decree"
+                }
+            ]
+        },
+        "Zealous Dash": {
+            "name": "Zealous Dash",
+            "description": "<p>You charge through the battleground, going where you are needed. You Stride and Cast a Spell with a casting time of two actions or less that targets yourself. If the spell could normally target another creature, you must target only yourself. You do not trigger reactions for when you Cast the Spell, but still provoke reactions that would trigger when you move.</p>",
+            "prerequisites": [
+                {
+                    "value": "armorclad doctrinr"
+                }
+            ]
+        }
+    }
 }
