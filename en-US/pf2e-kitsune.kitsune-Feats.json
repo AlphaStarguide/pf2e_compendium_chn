@@ -1,604 +1,591 @@
 {
-	"label": "Kitsune - Feats",
+    "label": "Kitsune - Feats",
     "mapping": {
         "prerequisites": "system.prerequisites.value"
-	},
-	"entries": {
-		"Adroit Athleticism": {
-			"name": "Adroit Athleticism",
-			"description": "<p>You've mastered numerous tricks and techniques that help keep your body as sharp as your mind. You gain the trained proficiency rank in Acrobatics and Athletics. If you would automatically become trained in one of those skills (from your background or class, for example), you instead become trained in a skill of your choice. At 5th level, your proficiency rank in either Acrobatics or Athletics improves to expert.</p>",
-			"prerequisites": []
-		},
-		"Assume the Role": {
-			"name": "Assume the Role",
-			"description": "<p>You can remove creatures' faces, turning them into masks. Make a melee Strike with an unarmed attack. If you hit, instead of dealing damage the target attempts a @Check[type:will|dc:resolve(10+max(@actor.system.skills.cra.value,@actor.system.skills.prf.value))] saving throw against your Crafting DC or your Performance DC, whichever is higher. The target gets a critical success if it has no creature traits that have a noh mask item associated with them.</p>\n<hr />\n<p><strong>Critical Success</strong> As a success, and you are @Compendium[pf2e.conditionitems.Drained]{Drained 2}.</p>\n<p><strong>Success</strong> The creature is unaffected and immune to Assume the Role for 24 hours.</p>\n<p><strong>Failure</strong> You strip the target of its face for 24 hours, creating a noh mask magic item with its likeness. During this time, the creature is @Compendium[pf2e.conditionitems.e1XGnhKNSQIm5IXg]{Stupefied 4} and appears as a generic member of its ancestry rather than their previous, specific identity; only you can identify them as the person they once was. If you wear the noh mask and envision the creature's appearance, you assume the specific appearance of that creature, otherwise functioning as a noh mask that can be used to assume the form associated with the target. You can choose any type of noh mask of the associated type, provided its item level is equal to or less than your level. If the mask is destroyed, the creature's stupefied condition ends and they regain their appearance.</p>\n<p><strong>Critical Failure</strong> As a failure, but the duration is unlimited.</p>",
-			"prerequisites": [
-				{
-					"value": "Step Into Character"
-				}
-			]
-		},
-		"Clever Unarmed Kitsune": {
-			"name": "Clever Unarmed Kitsune",
-			"description": "<p>You possess extraordinary cunning when fighting without the use of weapons. Whenever you score a critical hit with an unarmed attack you gained from a kitsune ancestry feat, you apply the unarmed attack's critical specialization effect.</p>",
-			"prerequisites": [
-				{
-					"value": "any kitsune ancestry feat that grants an unarmed attack"
-				}
-			]
-		},
-		"Eerie Spellstrike": {
-			"name": "Eerie Spellstrike",
-			"description": "<p>You acquire greater flexibility over the spells you can use to Spellstrike your foe. When you Spellstrike using your foxfire unarmed attack, you can cast any spell that requires your target to attempt a saving throw as part of your Spellstrike, provided you gained the spell from a kitsune heritage or feat. If your Strike succeeds or critically succeeds, use the result of your attack roll as the spell's save DC or your spell DC, whichever is more advantageous for you. You can choose to deal no damage on a successful or critically successful Strike when Spellstriking in this manner.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "Foxfire Spellstrike"
-				}
-			]
-		},
-		"Enthralling Font": {
-			"name": "Enthralling Font",
-			"description": "<p>Add the following to the list of spells you can cast using your fox font spell slots:</p>\n<ul>\n<li><strong>1st</strong> @Compendium[pf2e.spells-srd.vLA0q0WOK2YPuJs6]{Charm}, @Compendium[pf2e.spells-srd.aIHY2DArKFweIrpf]{Command}, @Compendium[pf2e.spells-srd.4koZzrnMXhhosn0D]{Fear}, @Compendium[pf2e.spells-srd.o4lRVTwSxnOOn5vl]{Sleep}</li>\n<li><strong>2nd</strong> @Compendium[pf2e.spells-srd.tlSE7Ly8vi1Dgddv]{Hideous Laughter}</li>\n<li><strong>3rd</strong> @Compendium[pf2e.spells-srd.IihxWhRfpsBgQ5jS]{Enthrall}, @Compendium[pf2e.spells-srd.aewxsale5xWEPKLk]{Zone of Truth}</li>\n<li><strong>4th</strong> @Compendium[pf2e.spells-srd.LiGbewa9pO0yjbsY]{Confusion}, @Compendium[pf2e.spells-srd.JyxTmqjYYn63V5LY]{Glibness}, @Compendium[pf2e.spells-srd.qwlh6aDgi86U3Q7H]{Suggestion}</li>\n<li><strong>6th</strong> @Compendium[pf2e.spells-srd.OsOhx3TGIZ7AhD0P]{Dominate}, @Compendium[pf2e.spells-srd.5BbU1V6wGSGbrmRD]{Feeblemind}.</li>\n</ul>",
-			"prerequisites": [
-				{
-					"value": "Fox Font"
-				}
-			]
-		},
-		"Expert Nine-Tailed Spellcasting": {
-			"name": "Expert Nine-Tailed Spellcasting",
-			"description": "<p>You gain the expert spellcasting benefits.</p>",
-			"prerequisites": [
-				{
-					"value": "Nine-Tailed Scion Dedication"
-				},
-				{
-					"value": "master in Arcana, Nature, Occultism, or Religion, depending,on the spell list chosen with Nine-Tailed Scion Dedication"
-				}
-			]
-		},
-		"Fox Fireworks": {
-			"name": "Fox Fireworks",
-			"description": "<p>You can overcharge your foxfire with spiritual energy, causing your attacks to explode on impact. If your next action is to Strike, your foxfire unarmed attack gains the splash trait for that Strike, dealing 2 points of damage of the same type as your foxfire unarmed strike. Your foxfire unarmed strike's damage improves to 3 points if you are a master in unarmed strikes or 4 if you are legendary in unarmed strikes.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Fox Font": {
-			"name": "Fox Font",
-			"description": "<p>Each day during your daily preparations, you gain additional spell slots at your highest level of nine-tailed scion spell slots. The number of spell slots is equal to 1 + 1 per 2 nine-tailed scion feats you have other than the dedication feat, up to a maximum of 7. You can use these additional spell slots to cast any of the following spells, provided your repertoire has at least one spell of that spell's level:</p>\n<ul>\n<li><strong>1st</strong> @Compendium[pf2e.spells-srd.i35dpZFI7jZcRoBo]{Illusory Disguise}, @Compendium[pf2e.spells-srd.2oH5IufzdESuYxat]{Illusory Object}, @Compendium[pf2e.spells-srd.gfPjmG6Fe6D3MFjl]{Pest Form}</li>\n<li><strong>2nd</strong> @Compendium[pf2e.spells-srd.wp09USMB3GIW1qbp]{Animal Form}, @Compendium[pf2e.spells-srd.q5qmNn144ZJGxnvJ]{Befitting Attire}, @Compendium[pf2e.spells-srd.wzctak6BxOW8xvFV]{Enlarge}, @Compendium[pf2e.spells-srd.f8SBoXiXQjlCKqly]{Illusory Creature}, @Compendium[pf2e.spells-srd.2qGqa33E4GPUCbMV]{Humanoid Form}, @Compendium[pf2e.spells-srd.XXqE1eY3w3z6xJCB]{Invisibility}, @Compendium[pf2e.spells-srd.PjhUmyKnq6K5uDby]{Shrink}, @Compendium[pf2e.spells-srd.dileJ0Yxqg76LMvu]{Tree Shape}</li>\n<li><strong>3rd</strong> @Compendium[pf2e.spells-srd.MNiT0dHol5fEcKlz]{Threefold Aspect}</li>\n<li><strong>4th</strong> @Compendium[pf2e.spells-srd.NzXpEzcZAjuDTZjK]{Aerial Form}, @Compendium[pf2e.spells-srd.KhM8MhoUgoUjBMIz]{Dinosaur Form}, @Compendium[pf2e.spells-srd.HBJPsonQnWcC3qdX]{Hallucinatory Terrain}, @Compendium[pf2e.spells-srd.hkfH9Z53hPzcOwNB]{Veil}</li>\n<li><strong>5th</strong> @Compendium[pf2e.spells-srd.U58aQWJ47VrI36yP]{Hallucination}, @Compendium[pf2e.spells-srd.Ucf8eynbZMfUucjE]{Illusory Scene}</li>\n<li><strong>6th</strong> @Compendium[pf2e.spells-srd.5c692cCcTDXjSEzk]{Dragon Form}</li>\n<li><strong>7th</strong> @Compendium[pf2e.spells-srd.0873MWM0qKDDv81O]{Project Image}</li>\n<li><strong>8th</strong> @Compendium[pf2e.spells-srd.wfleiawxsfhpRRwf]{Disappearance}, @Compendium[pf2e.spells-srd.pswdik31kuHEvdno]{Shapechange}.</li>\n</ul>\n<p>You don't need to have these spells in your spell repertoire to cast them, and you can heighten any spell cast using your fox font up to the spell slot's level. The Nine-Tailed Breadth feat does not increase the number of spell slots you gain from Fox Font.</p>",
-			"prerequisites": [
-				{
-					"value": "Nine-Tailed Scion Dedication"
-				},
-				{
-					"value": "Foxfire"
-				}
-			]
-		},
-		"Foxaddle": {
-			"name": "Foxaddle",
-			"description": "<p>You fling a mote of foxfire at your foe's head, causing the foxfire to merge with their mind and muddy their thoughts. Strike one target with your foxfire unarmed attack. The Strike deals mental damage instead of its usual damage type, and if your Strike hits both the target's AC and Will DC, the target is @Compendium[pf2e.conditionitems.Confused]{Confused} for 1 minute. They can attempt a Will saving throw against the higher between your divine spell DC or your unarmed attack DC at the end of each of their turns to end the confusion; if your Strike critically succeeded against both the target's AC and Will DC, they cannot save to end early. If your Strike critically fails against the target's AC or Will DC, the target is immune to your Foxaddle for 24 hours.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Adept Dedication": {
-			"name": "Foxfire Adept Dedication",
-			"description": "<p>You have honed your expertise with foxfire. You can cast dancing lights as a divine innate cantrip at will. A cantrip is heightened to a spell level equal to half your level rounded up. Lights created with this cantrip always resemble the motes of flame created by your foxfire unarmed strike.</p>\n<p>You gain the @Compendium[pf2e-kitsune.kitsune-spells.6QdlByFknKv6gVxq]{Nine Aura's Stance} foxaura spell and a focus pool of 1 Focus Point that you can recover using the Refocus action. Foxaura spells are a type of divine focus spell and your key spellcasting ability is Charisma. You become trained in divine spell attacks and divine spell DCs. You become an expert in divine spellcasting at 12th level if you have at least two other foxfire adept feats and a master at 18th level if you have at least three other foxfire adept feats. When you Refocus, you focus on your breathing to allow your body to replenish your spiritual energy.</p>\n<p>Whenever you gain a class feature that grants you expert or greater proficiency in a given weapon or weapons, you also gain that proficiency for unarmed attacks. In addition, if a foxfire adept feat requires that you wield a type of loaded ranged weapon, you meet this requirement as long as you are able to make foxfire unarmed attacks and may make foxfire unarmed attacks instead of attacks with that weapon.</p>\n<p><strong>Special</strong> You can't select another dedication feat until you have gained one other feat from the Foxfire Adept archetype.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire"
-				},
-				{
-					"value": "you have the kitsune trait"
-				}
-			]
-		},
-		"Foxfire Atrillerist": {
-			"name": "Foxfire Atrillerist",
-			"description": "<p>When you Interact to reload a ranged weapon that requires ammunition, you can create a piece of ammunition for that weapon from foxfire to load into your weapon. You must shoot the ammunition before the end of your turn or the foxfire dissipates. Your attacks with the weapon count as foxfire unarmed strikes for all effects but gain the weapon's traits. If your attack is a critical success, you gain the critical specialization for the weapon's group. You can benefit from only one critical specialization effect at a time.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Avatar": {
-			"name": "Foxfire Avatar",
-			"description": "<p>You are able to transform yourself into a nine-tailed avatar of spiritual energy. When you cast @Compendium[pf2e-kitsune.kitsune-spells.HoHeH17wQVK25vKL]{Foxfire Tail Wreath} using 3 actions, you gain the benefit of three different foxaura spells. If you cast this foxaura spell using 2-rounds, you gain the benefits of seven different foxaura spells instead.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "you know at least nine different foxaura spells, one of which must be foxfire tail wreath."
-				}
-			]
-		},
-		"Foxfire Ball": {
-			"name": "Foxfire Ball",
-			"description": "<p>By pooling your spiritual energy into a massive orb, you've learned to set your foxfire into a deadly, explosive blast. You learn the @Compendium[pf2e-kitsune.kitsune-spells.iw9yAxYFv3N90a6J]{Foxfire Ball} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Breath": {
-			"name": "Foxfire Breath",
-			"description": "<p>You've discovered how to pool spiritual energy into your throat and expel it as a powerful attack. You learn the @Compendium[pf2e-kitsune.kitsune-spells.YKCBSoP3VKIjECyT]{Foxfire Breath} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Chrysalis": {
-			"name": "Foxfire Chrysalis",
-			"description": "<p>You sheath yourself in spiritual energy, defending you from harm while lashing out against your attackers. You learn the @Compendium[pf2e-kitsune.kitsune-spells.4OGfUidyjqa2snVY]{Foxfire Chrysalis} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Combatant": {
-			"name": "Foxfire Combatant",
-			"description": "<p>You gain access to the foxfire unarmed attack's critical specialization effect. When your attack roll with a foxfire unarmed attack is a critical hit and gains a critical specialization effect, you deal 1d6 persistent damage of the same type as your foxfire unarmed strike.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Encirclement": {
-			"name": "Foxfire Encirclement",
-			"description": "<p><strong>Frequency</strong> once per turn</p>\n<hr />\n<p>You imbue a weapon you're wielding with foxfire. Until the end of your turn, the weapon deals an extra 1d4 damage of the same type as your foxfire unarmed strike and gains the magical trait.</p>\n<p>@Compendium[pf2e-kitsune.kitsune-effects.ROxuF07a10pNW7qa]{Effect: Foxfire Encirclement}</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Firework Cascade": {
-			"name": "Foxfire Firework Cascade",
-			"description": "<p>Rather than a single firework, you unleash an entire spectacle of exploding motes of foxfire. Fox Fireworks loses the flourish trait, allowing you to use that action multiple times per turn.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "Fox Fireworks"
-				}
-			]
-		},
-		"Foxfire Medicine": {
-			"name": "Foxfire Medicine",
-			"description": "<p>You can use a foxfire unarmed strike instead of Medicine to @Compendium[pf2e.actionspf2e.Treat Wounds]{Treat Wounds}. When doing so, you don't need a healer's kit, can target any creature within range of your foxfire unarmed attack, and can determine the DC as though your proficiency rank in Medicine was one higher than your rank in unarmed attacks, up to legendary. These benefits also apply when using @Compendium[pf2e.feats-srd.wYerMk6F1RZb0Fwt]{Battle Medicine}.</p>\n<p>If you cast a foxaura spell that deals damage, you can have the spell heal willing living creatures that are targeted or within the spell's area instead of damaging them.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "trained in Medicine or able to cast heal"
-				}
-			]
-		},
-		"Foxfire Prescience": {
-			"name": "Foxfire Prescience",
-			"description": "<p>You fortify your mind with spiritual energy, temporarily bestowing godly foresight upon yourself. You learn the @Compendium[pf2e-kitsune.kitsune-spells.LXB83z7kDJH5pVdP]{Foxfire Prescience} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Rampage": {
-			"name": "Foxfire Rampage",
-			"description": "<p>You transform into a raging beast of raw foxfire. You gain @Compendium[pf2e.feats-srd.Zl6vDXJEM7Lbp8JQ]{Rampaging Form} as a bonus feat. When you cast nine auras stance, you can spend 1 Focus Point to gain the effects outlined by Rampaging Form. This doesn't count as your daily use of Rampage Form and the effects of fiery body are heightened to your level, rounded up. When you use Change Shape to assume Rampaging Form, you make foxfire unarmed strikes even though you're in a battle form.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "Change Shape with a fox alternate shape"
-				}
-			]
-		},
-		"Foxfire Resuscitation": {
-			"name": "Foxfire Resuscitation",
-			"description": "<p>You quickly donate your spiritual energy to an ally to prevent them from dying. You can cast @Compendium[pf2e.spells-srd.Hnc7eGi7vyZenAIm]{Breath of Life} as a divine innate spell by spending 1 Focus Point. The target regains Hit Points equal to your foxfire unarmed attack damage in addition to the amount listed by breath of life. Apply all effects that increase the amount of damage your foxfire unarmed attack deals (including your striking rune), but not effects that add additional damage dice to the attack (such as sneak attack or the flaming property rune). Once you use your innate breath of life to prevent a target from dying, they become immune to it for 24 hours.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "Foxfire Medicine"
-				}
-			]
-		},
-		"Foxfire Serenity": {
-			"name": "Foxfire Serenity",
-			"description": "<p>You flood your psyche with spiritual energy, extinguishing clearing your mind and body of negativity. You learn the @Compendium[pf2e-kitsune.kitsune-spells.Gx4nGLgdNpgsr8VS]{Foxfire Sentry} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Sight": {
-			"name": "Foxfire Sight",
-			"description": "<p>You fill your eyes with your spiritual energy, allowing them to burn away deception within your gaze. You learn the @Compendium[pf2e-kitsune.kitsune-spells.GcUzO52JUZJcpwZ1]{Foxfire Sight} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Spellstrike": {
-			"name": "Foxfire Spellstrike",
-			"description": "<p>You gain the magus's @Compendium[pf2e.actionspf2e.QDW9H8XLIjuW2fE4]{Spellstrike} activity. You can only couple your spell with a Strike made with your foxfire unarmed attack, and the infusion of spell energy into your foxfire Strike grants it whichever tradition trait the spell you infused into your Spellstrike has. You can recharge your Spellstrike as an activity that takes 1 minute or when you attempt one of the following actions against a creature whose level is equal to your level - 3 or higher and get a critical success: @Compendium[pf2e.actionspf2e.Demoralize]{Demoralize}, @Compendium[pf2e.actionspf2e.Disarm]{Disarm}, @Compendium[pf2e.actionspf2e.Feint]{Feint}, @Compendium[pf2e.actionspf2e.XMcnh4cSI32tljXa]{Hide}, @Compendium[pf2e.actionspf2e.Shove]{Shove}, @Compendium[pf2e.actionspf2e.Sneak]{Sneak}, @Compendium[pf2e.actionspf2e.Steal]{Steal}, @Compendium[pf2e.actionspf2e.Trip]{Trip}, or @Compendium[pf2e.actionspf2e.Tumble Through]{Tumble Through}. Since you can only Spellstrike with a foxfire unarmed strike, you can Spellstrike using a ranged attack instead of a melee attack.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "ability to cast spells"
-				}
-			]
-		},
-		"Foxfire Tail Wreath": {
-			"name": "Foxfire Tail Wreath",
-			"description": "<p>You flood your tails with spiritual energy, causing them to erupt into plumes of foxfire. You learn the @Compendium[pf2e-kitsune.kitsune-spells.HoHeH17wQVK25vKL]{Foxfire Tail Wreath} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "you know at least two different foxaura spells"
-				}
-			]
-		},
-		"Foxfire Trickster": {
-			"name": "Foxfire Trickster",
-			"description": "<p>You can use your foxfire to perform tricky maneuvers. You can use a foxfire unarmed strike instead of Athletics to @Compendium[pf2e.actionspf2e.Disarm]{Disarm} or @Compendium[pf2e.actionspf2e.Trip]{Trip}, Deception to @Compendium[pf2e.actionspf2e.Feint]{Feint}, or Intimidation to @Compendium[pf2e.actionspf2e.Demoralize]{Demoralize}. When doing so, you may Demoralize, Disarm, Feint, or Trip any creature within 20 feet by hurling a globe of foxfire at them. When you Feint a foe using your foxfire and succeed or critically succeed, that foe becomes @Compendium[pf2e.conditionitems.Off-Guard]{Off-Guard} against your foxfire unarmed strikes as though your foxfire were a melee attack.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Foxfire Wave": {
-			"name": "Foxfire Wave",
-			"description": "<p>Through intense training, you've learned to ignite a beam of spiritual energy with your foxfire and launch it at your foes. You learn the @Compendium[pf2e-kitsune.kitsune-spells.9ws1nzB8JGuAnWHR]{Foxfire Wave} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Gregarious": {
-			"name": "Gregarious",
-			"description": "<p>You're skilled at making impressions on others. When you @Compendium[pf2e.actionspf2e.Make an Impression]{Make an Impression}, your target's attitude towards you changes by two steps on a success or three steps on a critical success.</p>",
-			"prerequisites": [
-				{
-					"value": "trained in Diplomacy"
-				}
-			]
-		},
-		"Half Masked": {
-			"name": "Half Masked",
-			"description": "<p>You can Change Shape using a noh mask without completely covering your face, allowing you to assume a hybrid form that combines aspects of your true form and the noh mask's form. While in a hybrid form, you lose all drawbacks of your noh mask's form (such as the inability to wield weapons or use your hands in an animal form), can speak normally, and retain abilities from your heritage or ancestry that require your true form's anatomy at and the use of your gear, which adjusts to suit your hybrid form. You can Change Shape to return to your true form or alter the details of your hybrid form. Your hybrid form's features make it obvious that you aren't a normal person of your ancestry.</p>",
-			"prerequisites": [
-				{
-					"value": "Noh Mask Master Dedication"
-				}
-			]
-		},
-		"Keen Nose": {
-			"name": "Keen Nose",
-			"description": "<p>Like a wild fox, your black nose is able to keenly detect smells. You gain imprecise scent with a range of 30 feet. If you have an alternate form that grants you imprecise sense, improve the sense's range by 10 feet.</p>",
-			"prerequisites": []
-		},
-		"Kitsune Guile": {
-			"name": "Kitsune Guile",
-			"description": "<p>Your deceptions leave foes off-balance and vulnerable. When you critically succeed at a Deception check to @Compendium[pf2e.actionspf2e.Feint]{Feint}, your foe is @Compendium[pf2e.conditionitems.Clumsy]{Clumsy 2} until the start of your next turn instead of @Compendium[pf2e.conditionitems.Off-Guard]{Off-Guard}.</p>",
-			"prerequisites": [
-				{
-					"value": "expert in Deception"
-				}
-			]
-		},
-		"Kitsunebi": {
-			"name": "Kitsunebi",
-			"description": "<p>You can see through your foxfire, using it to lead the gullible astray. You can cast @Compendium[pf2e.spells-srd.Ek5XI0aEdZhBgm21]{Prying Eye} as a divine innate spell once per day. Each time you Sustain the Spell, you can wreath the prying eye in foxfire, appearing as your foxfire does when you Strike with it. If your prying eye is already wreathed in foxfire, you can snuff out the flames when you Sustain the Spell. While wreathed in flame, the prying eye appears to be an orb of foxfire floating in midair, producing light as a torch.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Kitsunetsuki": {
-			"name": "Kitsunetsuki",
-			"description": "<p>Once per day, you can cast 7th-level @Compendium[pf2e.spells-srd.wU6hNzK8Yfqdmc8m]{Possession} as an innate occult spell. The spell automatically heightens to 9th level if you're 18th level and to 10th level if you're 20th level and have Legendary Nine-Tailed Spellcasting. As a 10th level spell, possession lasts until you complete your daily preparations if the target fails its saving throw or has an unlimited duration if they critically fail.</p>",
-			"prerequisites": [
-				{
-					"value": "Nine-Tailed Scion Dedication"
-				}
-			]
-		},
-		"Leaping Pounce": {
-			"name": "Leaping Pounce",
-			"description": "<p>You creep upon an unsuspecting enemy and strike. You either Stride or @Compendium[pf2e.actionspf2e.Leap]{Leap} up to your Speed and make a Strike at the end of that movement. If you began this action @Compendium[pf2e.conditionitems.Hidden]{Hidden}, you remain hidden until after the Strike.</p>",
-			"prerequisites": []
-		},
-		"Legendary Nine-Tailed Spellcasting": {
-			"name": "Legendary Nine-Tailed Spellcasting",
-			"description": "<p>You gain a 9th-level spell slot. Each day during your daily preparations, you can select a fourth spell from your spell repertoire as your signature spell, lasting until the next time you complete your daily preparations.</p>",
-			"prerequisites": [
-				{
-					"value": "Master Nine-Tailed Spellcasting"
-				},
-				{
-					"value": "legendary in Arcana, Nature, Occultism, or Religion, depending on the spell list chosen with Nine-Tailed Scion Dedication"
-				}
-			]
-		},
-		"Liming Foxfire": {
-			"name": "Liming Foxfire",
-			"description": "<p>Your foxfire wreaths foes in a halo of liming light, making concealment difficult. Any creature you successfully hit with your foxfire unarmed attack is limed in colorful, heatless light until the start of your next turn, acting as though the target were affected by @Compendium[pf2e.spells-srd.HRb2doyaLtaoCfi3]{Faerie Fire}. If your foxfire unarmed strike deals persistent damage, the target is affected by faerie fire until the persistent damage ends.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Mask Maker": {
-			"name": "Mask Maker",
-			"description": "<p>You can transform others into masks. When a creature critically fails its Will save against Assume the Role, its physical body is trapped within the noh mask, as the object version of the imprisonment ritual. The creature can take no actions other than to speak telepathically with you, though it is under no compulsion to do so.</p>",
-			"prerequisites": [
-				{
-					"value": "Assume the Role"
-				},
-				{
-					"value": "legendary in Crafting"
-				}
-			]
-		},
-		"Mask of the Deity": {
-			"name": "Mask of the Deity",
-			"description": "<p>You've can craft masks that turn mortals into gods. When you create a noh mask using Noh Mask Master Dedication, you can designate one as a deity mask. When using Change Shape to assume the mask's form, you gain the benefits of the avatar spell for 1 minute for that mask's deity.</p>",
-			"prerequisites": [
-				{
-					"value": "Noh Mask Master Dedication"
-				},
-				{
-					"value": "legendary in Crafting and Deception"
-				}
-			]
-		},
-		"Master Nine-Tailed Spellcasting": {
-			"name": "Master Nine-Tailed Spellcasting",
-			"description": "<p>You gain the master spellcasting benefits.</p>",
-			"prerequisites": [
-				{
-					"value": "Expert Nine-Tailed Spellcasting"
-				},
-				{
-					"value": "legendary in Arcana, Nature, Occultism, or Religion, depending on the spell list chosen with Nine-Tailed Scion Dedication"
-				}
-			]
-		},
-		"Mesmerizing Foxfire": {
-			"name": "Mesmerizing Foxfire",
-			"description": "<p>The eerie glow of your foxfire can overwhelm simple minds. You gain the @Compendium[pf2e.feats-srd.7LB00jkh6JaJr3vS]{Fascinating Performance} skill feat. If you already have Fascinating Performance, you gain a different skill feat of your choice that lists Fascinating Performance as a prerequisite. You can use a foxfire unarmed attack instead of Performance to @Compendium[pf2e.actionspf2e.Perform]{Perform} and use your proficiency rank in unarmed attacks as your ranks in Performance to determine whether you meet the prerequisites of feats.</p>\n<hr />\n<p><em>Note: Currently this feat will grant @Compendium[pf2e.feats-srd.5GqjEM22n78Vmdpe]{Focused Fascination} if you already have Fascinating Performance since that is the only currently released feat that requires it. If you have a different third-party feat to take instead simply delete the granted feat and add the new one as a bonus feat.</em></p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Modular Foxfire": {
-			"name": "Modular Foxfire",
-			"description": "<p>You have learned to shift the energies used to manifest your foxfire on a whim. Your foxfire unarmed strike gains the modular trait with five configurations, and switching between these configurations is a single action with the concentrate trait. Each configuration allows your foxfire unarmed strike to deal a different type of damage, as follows: cold, electricity, fire, negative, or positive. Switching your foxfire's configuration to the damage type that matches the type you chose with Foxfire is a free action that doesn't have the concentrate trait.</p>\n<p>@Compendium[pf2e-kitsune.kitsune-effects.76sj1yU4HM81AL33]{Effect: Modular Foxfire}</p>\n<p>If you are a master in unarmed attacks, switching between your foxfire's configurations is a free action with the concentrate trait except as described above.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Morph Shape": {
-			"name": "Morph Shape",
-			"description": "<p>You adjust your true form's traits, adapting to new trials and adjusting to resemble that of a different heritage. Choose one kitsune heritage that you do not have. Your true form's physical traits (but not your age or body type) change, causing you to resemble a member of that heritage. While morphed into the chosen heritage, you replace your heritage with the chosen heritage except for your alternate form. In exchange, you gain all the listed benefits of the chosen heritage except its alternate form. Using Morph Shape counts as creating a disguise for the Impersonate use of Deception, and it counts as using Change Shape for the purpose of other feats you possess. You can remain in your alternate form indefinitely, and can shift back into your true kitsune form by using this action again, or by using Change Shape to assume another alternate form.</p>\n<p>If you are an expert in Deception, you choose two kitsune heritages with this ability and can use Morph Shape to assume either heritage. If you are a master in Deception, you choose four heritages and can choose uncommon versatile heritages. If you are legendary in Deception, you can choose eight heritages and can choose rare versatile heritages. You can only choose versatile heritages that kitsune can normally have.</p>",
-			"prerequisites": []
-		},
-		"Myriad Forms (Reforged)": {
-			"name": "Myriad Forms (Reforged)",
-			"description": "<p>With a bit of self-discovery, you find a new form. If you chose a fox form at 1st level, you gain a tailless form. If you chose a tailless form at 1st level, you gain a fox form.</p>",
-			"prerequisites": []
-		},
-		"Nimble Kitsune": {
-			"name": "Nimble Kitsune",
-			"description": "<p>You stride in a springing gait that pushes you further with every step. Increase your Speed by 5 feet. This benefit doesn't apply while you're in a tailless form.</p>",
-			"prerequisites": []
-		},
-		"Nine-Tailed Breadth": {
-			"name": "Nine-Tailed Breadth",
-			"description": "<p>Your repertoire expands, and you can cast more spells from your spell list each day. Increase the number of spells in your repertoire and number of spell slots you gain from nine-tailed scion archetype feats by 1 for each spell level other than your two highest sorcerer spell slots.</p>",
-			"prerequisites": [
-				{
-					"value": "Nine-Tailed Scion Dedication"
-				}
-			]
-		},
-		"Nine-Tailed Genjutsu": {
-			"name": "Nine-Tailed Genjutsu",
-			"description": "<p>You impose your will upon the laws of the universe, lowering an enemy's resistances to your spells. Choose a foe within 30 feet and one of the following skills, then roll a single check with that skill and compare it to each of the target's three save DCs. You can choose Deception, Diplomacy, Intimidate, or the skill associated with the spell list you chose with Nine-Tailed Scion Dedication (Arcana for arcane, Religion for divine, Occultism for occult, or Nature for primal). Determine the action's effects for each of the target's saves separately.</p>\n<hr />\n<p><strong>Critical Success</strong> The target takes a -3 status penalty to saves against your actions for each save your check is a critical success against for 1 minute.</p>\n<p><strong>Success</strong> As a success, but the penalty is -2 for each save for check is a success against.</p>\n<p><strong>Failure</strong> The target is unaffected.</p>\n<p><strong>Critical Failure</strong> As a failure, and the target is immune to your Nine-Tailed Genjutsu's effects for each save your check is a critical failure against for 24 hours.</p>",
-			"prerequisites": [
-				{
-					"value": "Nine-Tailed Scion Dedication"
-				}
-			]
-		},
-		"Nine-Tailed Scion Dedication": {
-			"name": "Nine-Tailed Scion Dedication",
-			"description": "<p>You have immense stores of spiritual energy within your body, allowing you to grow additional tails. You cast spells like a sorcerer. You gain a spell repertoire with two common cantrips from one spell list of your choice, and you gain the basic spellcasting benefits. Each time you gain a spell slot of a new level from the nine- tailed scion archetype, add a spell of the appropriate spell level to your repertoire: a common spell of your chosen spell list or another spell you have learned or discovered.</p>\n<p><strong>Special</strong> You can take Nine-Tailed Scion Dedication even if you are a sorcerer. Spell slots gained from the nine-tailed scion archetype are separate from those gained from sorcerer class levels and do not benefit from sorcerer class features or feats unless they apply to all spells you cast.</p>",
-			"prerequisites": [
-				{
-					"value": "Charisma 14"
-				},
-				{
-					"value": "you have the kitsune trait."
-				}
-			]
-		},
-		"Noh Ensemble": {
-			"name": "Noh Ensemble",
-			"description": "<p>You can teach others to wear your masks as well as you, creating an ensemble of shapeshifting performers. Each day when you complete your daily preparations, choose a number of allies equal to the total number of noh mask master feats you have. Those creatures can use noh masks you create with Noh Mask Master Dedication and receive benefits from all noh mask master feats you have that modify the effects of your noh masks, such as Perfect Fit, Half Masked, and Step Into Character, as though they had those feats themselves. Those allies also gain the Change Shape action if they don't already have it, as described by the Noh Mask Master Dedication feat.</p>",
-			"prerequisites": [
-				{
-					"value": "Noh Mask Master Dedication"
-				}
-			]
-		},
-		"Noh Mask Master": {
-			"name": "Noh Mask Master",
-			"description": "<p>You've learned to create a limited number of noh masks at no cost. Each day during your daily preparations, you can create four noh masks from your formula book. Each noh mask takes 3 Interact actions to Craft and can be of any level equal to your level or lower. The number of noh masks increases to six if you're a master in Crafting and eight if you're legendary. Noh masks prepared in this way don't cost you any resources to Craft and do not count against the total number of items you can invest. These masks lose their magical properties and become nonmagical after your next daily preparations or 24 hours.</p>\n<p>You gain the Change Shape action, which allows you to use one action to assume the form allowed by a noh mask you're wearing. This action has the concentrate, occult, polymorph, and transmutation traits. If you already have the Change Shape action (such as from your ancestry or heritage), you can instead Interact to don or remove a noh mask as a free action, triggered whenever you use a move or manipulate action. You cannot trigger this free action when you use a move or manipulate free action or reaction.</p>\n<p><strong>Special</strong> You cannot select another dedication feat until you have gained two other feats from this archetype.</p>",
-			"prerequisites": [
-				{
-					"value": "Magical Crafting"
-				},
-				{
-					"value": "trained in Crafting and Performance"
-				}
-			]
-		},
-		"Perfect Fit": {
-			"name": "Perfect Fit",
-			"description": "<p>You effortlessly step into character while donning a noh mask magic item. When you invest a <em>noh mask of ancestral shapes</em>, choose one 1st level ancestry feat from the mask's ancestry. You gain the chosen ancestry feat when you use Change Shape to assume that noh mask's tailless form. When you invest a <em>noh mask of animal shapes</em>, choose one ability listed by the mask that wasn't chosen for that mask. You gain the listed ability while using Change Shape to assume that mask's animal form. These benefits also apply when using Change Shape to assume a form granted by a noh mask you created using Noh Mask Master Dedication.</p>",
-			"prerequisites": [
-				{
-					"value": "Noh Mask Master Dedication"
-				}
-			]
-		},
-		"Quick Shift": {
-			"name": "Quick Shift",
-			"description": "<p><strong>Trigger</strong> You roll initiative</p>\n<hr />\n<p>You change forms the moment you sense trouble. You use Change Shape to assume an alternate form or return to your true form.</p>",
-			"prerequisites": []
-		},
-		"Rapid Foxfire Manifestation": {
-			"name": "Rapid Foxfire Manifestation",
-			"description": "<p>Constant training with your spiritual energy has taught you to summon your innermost reserves at a moment's notice, allowing you to draw upon your foxfire at a moment's notice. You are permanently @Compendium[pf2e.conditionitems.Quickened]{Quickened 1}. You can only use this additional action to Cast a foxaura Spell or Strike with your foxfire unarmed strike.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Restorative Shapechange": {
-			"name": "Restorative Shapechange",
-			"description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p>You use shapeshifting to knit your wounds shut. You Change Shape, then regain Hit Points equal to twice your level. If you are @Compendium[pf2e.conditionitems.MIRkyAjyBeXivMa7]{Enfeebled}, @Compendium[pf2e.conditionitems.fesd1n5eVhpCSS18]{Sickened}, or @Compendium[pf2e.conditionitems.Yl48xTdMh3aeQYL2]{Wounded}, reduce the value of those conditions by 1. If you are suffering persistent damage, attempt a @Check[type:flat|dc:10]. If you succeed, the condition ends. If you aren't affected by any of these conditions, you regain additional Hit Points equal to your level.</p>",
-			"prerequisites": []
-		},
-		"Shapechange Savage": {
-			"name": "Shapechange Savage",
-			"description": "<p>You lash out at enemies while you dance between forms. Change Shape, then Strike once. This Strike must be with a weapon or unarmed attack you have in your new form; for example, if you Change Shape from your true kitsune form into your fox form, you can Strike with your fox form's jaws, but not with your true form's katana because that weapon merged into your form.</p>",
-			"prerequisites": []
-		},
-		"Shifting Faces (Reforged)": {
-			"name": "Shifting Faces (Reforged)",
-			"description": "<p>You wear many faces, even those that don't belong to you. You can use Change Shape to adjust the appearance of your true kitsune form as well as any form you can assume using Change Shape, altering your apparent age, body type, and physical traits (including your voice and scent) to anything naturally available to a member of that ancestry or animal. You cannot use these adjustments to Impersonate a specific individual.</p>\n<p>If you're a master in Deception, you gain a tailless form for every common Medium humanoid you've encountered. If you're legendary in Deception, you can use Change Shape to Impersonate specific individuals and gain a tailless form for every Medium humanoid you've encountered, regardless of rarity.</p>",
-			"prerequisites": [
-				{
-					"value": "tailless alternate form"
-				}
-			]
-		},
-		"Skulk": {
-			"name": "Skulk",
-			"description": "<p><strong>Trigger</strong> You roll initiative</p>\n<hr />\n<p>You work silently while hiding. You can use Interact actions while undetected without becoming observed so long as using the Interact action doesn't create any obvious stimuli, such as loud noises, bright lights, or pungent odors. The GM determines which stimuli are obvious for the purpose of this ability.</p>",
-			"prerequisites": []
-		},
-		"Soulfire": {
-			"name": "Soulfire",
-			"description": "<p>Your foxfire glows with the pure color of your immortal soul, enhancing its power. When you succeed or critically succeed at a foxfire Strike, you add your Charisma modifier to the damage roll. When your foxfire Strike is a critical success, you deal [[/r {1d4}[persistent]]]{1d4 persistent damage} of the same damage type as your foxfire unarmed strike to the target.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire"
-				}
-			]
-		},
-		"Spiritual Focus": {
-			"name": "Spiritual Focus",
-			"description": "<p>You've mastered the art of rapidly restoring your spiritual energy. If you have spent at least 2 Focus Points since the last time you Refocused, you recover 2 Focus Points when you Refocus instead of 1.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Spiritual Wellspring": {
-			"name": "Spiritual Wellspring",
-			"description": "<p>Digging deep within yourself, you've learned to harness even more spiritual energy than any ever thought possible. Your @Compendium[pf2e-kitsune.kitsune-spells.6QdlByFknKv6gVxq]{Nine Aura's Stance} becomes a foxaura cantrip, a special foxaura spell that doesn't cost Focus Points, so you can use it as often as you like.</p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				}
-			]
-		},
-		"Springing Step": {
-			"name": "Springing Step",
-			"description": "<p>Your digitigrade legs add an extra spring to your strides, making it easier to propel yourself through the air. When you @Compendium[pf2e.actionspf2e.High Jump]{High Jump} or @Compendium[pf2e.actionspf2e.Long Jump]{Long Jump}, you treat your check's degree of success as being one step better (a critical failure is a failure, a failure is a success, and a success is a critical success).</p>",
-			"prerequisites": []
-		},
-		"Starspinner Synergy": {
-			"name": "Starspinner Synergy",
-			"description": "<p>You've learned to weave foxfire and star orbs together in beautiful efficiency. You gain Starspinner Dedication as a bonus feat, ignoring the usual requirements regarding how many foxfire adept archetype feats you need to take before selecting a new dedication feat. Foxfire adept feats are starspinner feats and starspinner feats are foxfire adept feats.</p>\n<p>Your shooting star unarmed attack gains the modular weapon trait, which is associated with all damage types you can deal with your foxfire unarmed attack. Your shooting star unarmed attack benefits from foxfire adept feats as though it were a foxfire unarmed attack. When you Strike with your shooting star unarmed attack, all foxfire Strikes you make before the end of your turn gain the agile weapon trait.</p>\n<hr />\n<p><em>Note: Starspinner Dedication is from Kitsune of Golarion: Starspinners. Content from that book will be added to this module in a future update.</em></p>",
-			"prerequisites": [
-				{
-					"value": "Foxfire Adept Dedication"
-				},
-				{
-					"value": "Star Orb"
-				}
-			]
-		},
-		"Startling Shapechange": {
-			"name": "Startling Shapechange",
-			"description": "<p>You use your shapechanging to startle foes who are unaware of your abilities. Change Shape, then either @Compendium[pf2e.actionspf2e.Demoralize]{Demoralize} or @Compendium[pf2e.actionspf2e.Feint]{Feint} all opponents within 30 feet. When you do, Demoralize or Feint gain the visual trait and Demoralize loses the auditory trait. You don't take a penalty to your check if a creature doesn't understand your language. Once you've used Startling Shapechange to Demoralize or Feint a creature, you cannot affect that creature with Startling Shapechange again for 24 hours.</p>",
-			"prerequisites": []
-		},
-		"Step into Character": {
-			"name": "Step into Character",
-			"description": "<p>You are able to customize noh masks, allowing you to precisely control your appearance. When you Craft a noh mask, you can paint a specific appearance upon it. When you use Change Shape to assume that noh mask's form, you can choose to either assume a form with roughly analogous physical features to yours or the specific form associated with the mask, assuming the mask's age, body type, and physical features rather than maintain traits that are analogous to yours. This does not allow you to Impersonate a specific individual.</p>",
-			"prerequisites": [
-				{
-					"value": "Noh Mask Master Dedication"
-				}
-			]
-		},
-		"Trickster's Ploy": {
-			"name": "Trickster's Ploy",
-			"description": "<p>You take advantage in your enemies' lapse in defense when casting your spells. Off-Guard creatures take a -2 status penalty to saving throws against your spells.</p>",
-			"prerequisites": [
-				{
-					"value": "Fox Font"
-				}
-			]
-		},
-		"Vulpine Jaws (Reforged)": {
-			"name": "Vulpine Jaws (Reforged)",
-			"description": "<p>You gain a jaws unarmed attack that deals [[/r {1d4}[piercing]]]{1d4 piercing damage}. Your jaws are in the brawling group and have the agile, finesse, and unarmed traits.</p>",
-			"prerequisites": []
-		}
-	}
+    },
+    "entries": {
+        "Adroit Athleticism": {
+            "name": "Adroit Athleticism",
+            "description": "<p>You've mastered numerous tricks and techniques that help keep your body as sharp as your mind. You gain the trained proficiency rank in Acrobatics and Athletics. If you would automatically become trained in one of those skills (from your background or class, for example), you instead become trained in a skill of your choice. At 5th level, your proficiency rank in either Acrobatics or Athletics improves to expert.</p>"
+        },
+        "Assume the Role": {
+            "name": "Assume the Role",
+            "description": "<p>You can remove creatures' faces, turning them into masks. Make a melee Strike with an unarmed attack. If you hit, instead of dealing damage the target attempts a @Check[type:will|dc:resolve(10+max(@actor.system.skills.cra.value,@actor.system.skills.prf.value))] saving throw against your Crafting DC or your Performance DC, whichever is higher. The target gets a critical success if it has no creature traits that have a noh mask item associated with them.</p>\n<hr />\n<p><strong>Critical Success</strong> As a success, and you are @Compendium[pf2e.conditionitems.Drained]{Drained 2}.</p>\n<p><strong>Success</strong> The creature is unaffected and immune to Assume the Role for 24 hours.</p>\n<p><strong>Failure</strong> You strip the target of its face for 24 hours, creating a noh mask magic item with its likeness. During this time, the creature is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 4} and appears as a generic member of its ancestry rather than their previous, specific identity; only you can identify them as the person they once was. If you wear the noh mask and envision the creature's appearance, you assume the specific appearance of that creature, otherwise functioning as a noh mask that can be used to assume the form associated with the target. You can choose any type of noh mask of the associated type, provided its item level is equal to or less than your level. If the mask is destroyed, the creature's stupefied condition ends and they regain their appearance.</p>\n<p><strong>Critical Failure</strong> As a failure, but the duration is unlimited.</p>",
+            "prerequisites": [
+                {
+                    "value": "Step Into Character"
+                }
+            ]
+        },
+        "Clever Unarmed Kitsune": {
+            "name": "Clever Unarmed Kitsune",
+            "description": "<p>You possess extraordinary cunning when fighting without the use of weapons. Whenever you score a critical hit with an unarmed attack you gained from a kitsune ancestry feat, you apply the unarmed attack's critical specialization effect.</p>",
+            "prerequisites": [
+                {
+                    "value": "any kitsune ancestry feat that grants an unarmed attack"
+                }
+            ]
+        },
+        "Eerie Spellstrike": {
+            "name": "Eerie Spellstrike",
+            "description": "<p>You acquire greater flexibility over the spells you can use to Spellstrike your foe. When you Spellstrike using your foxfire unarmed attack, you can cast any spell that requires your target to attempt a saving throw as part of your Spellstrike, provided you gained the spell from a kitsune heritage or feat. If your Strike succeeds or critically succeeds, use the result of your attack roll as the spell's save DC or your spell DC, whichever is more advantageous for you. You can choose to deal no damage on a successful or critically successful Strike when Spellstriking in this manner.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "Foxfire Spellstrike"
+                }
+            ]
+        },
+        "Enthralling Font": {
+            "name": "Enthralling Font",
+            "description": "<p>Add the following to the list of spells you can cast using your fox font spell slots:</p>\n<ul>\n<li><strong>1st</strong> @Compendium[pf2e.spells-srd.vLA0q0WOK2YPuJs6]{Charm}, @Compendium[pf2e.spells-srd.aIHY2DArKFweIrpf]{Command}, @Compendium[pf2e.spells-srd.4koZzrnMXhhosn0D]{Fear}, @Compendium[pf2e.spells-srd.o4lRVTwSxnOOn5vl]{Sleep}</li>\n<li><strong>2nd</strong> @Compendium[pf2e.spells-srd.tlSE7Ly8vi1Dgddv]{Hideous Laughter}</li>\n<li><strong>3rd</strong> @Compendium[pf2e.spells-srd.IihxWhRfpsBgQ5jS]{Enthrall}, @Compendium[pf2e.spells-srd.aewxsale5xWEPKLk]{Zone of Truth}</li>\n<li><strong>4th</strong> @Compendium[pf2e.spells-srd.LiGbewa9pO0yjbsY]{Confusion}, @Compendium[pf2e.spells-srd.JyxTmqjYYn63V5LY]{Glibness}, @Compendium[pf2e.spells-srd.qwlh6aDgi86U3Q7H]{Suggestion}</li>\n<li><strong>6th</strong> @Compendium[pf2e.spells-srd.OsOhx3TGIZ7AhD0P]{Dominate}, @Compendium[pf2e.spells-srd.5BbU1V6wGSGbrmRD]{Feeblemind}.</li>\n</ul>",
+            "prerequisites": [
+                {
+                    "value": "Fox Font"
+                }
+            ]
+        },
+        "Expert Nine-Tailed Spellcasting": {
+            "name": "Expert Nine-Tailed Spellcasting",
+            "description": "<p>You gain the expert spellcasting benefits.</p>",
+            "prerequisites": [
+                {
+                    "value": "Nine-Tailed Scion Dedication"
+                },
+                {
+                    "value": "master in Arcana, Nature, Occultism, or Religion, depending,on the spell list chosen with Nine-Tailed Scion Dedication"
+                }
+            ]
+        },
+        "Fox Fireworks": {
+            "name": "Fox Fireworks",
+            "description": "<p>You can overcharge your foxfire with spiritual energy, causing your attacks to explode on impact. If your next action is to Strike, your foxfire unarmed attack gains the splash trait for that Strike, dealing 2 points of damage of the same type as your foxfire unarmed strike. Your foxfire unarmed strike's damage improves to 3 points if you are a master in unarmed strikes or 4 if you are legendary in unarmed strikes.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Fox Font": {
+            "name": "Fox Font",
+            "description": "<p>Each day during your daily preparations, you gain additional spell slots at your highest level of nine-tailed scion spell slots. The number of spell slots is equal to 1 + 1 per 2 nine-tailed scion feats you have other than the dedication feat, up to a maximum of 7. You can use these additional spell slots to cast any of the following spells, provided your repertoire has at least one spell of that spell's level:</p>\n<ul>\n<li><strong>1st</strong> @Compendium[pf2e.spells-srd.i35dpZFI7jZcRoBo]{Illusory Disguise}, @Compendium[pf2e.spells-srd.2oH5IufzdESuYxat]{Illusory Object}, @Compendium[pf2e.spells-srd.gfPjmG6Fe6D3MFjl]{Pest Form}</li>\n<li><strong>2nd</strong> @Compendium[pf2e.spells-srd.wp09USMB3GIW1qbp]{Animal Form}, @Compendium[pf2e.spells-srd.q5qmNn144ZJGxnvJ]{Befitting Attire}, @Compendium[pf2e.spells-srd.wzctak6BxOW8xvFV]{Enlarge}, @Compendium[pf2e.spells-srd.f8SBoXiXQjlCKqly]{Illusory Creature}, @Compendium[pf2e.spells-srd.2qGqa33E4GPUCbMV]{Humanoid Form}, @Compendium[pf2e.spells-srd.XXqE1eY3w3z6xJCB]{Invisibility}, @Compendium[pf2e.spells-srd.PjhUmyKnq6K5uDby]{Shrink}, @Compendium[pf2e.spells-srd.dileJ0Yxqg76LMvu]{Tree Shape}</li>\n<li><strong>3rd</strong> @Compendium[pf2e.spells-srd.MNiT0dHol5fEcKlz]{Threefold Aspect}</li>\n<li><strong>4th</strong> @Compendium[pf2e.spells-srd.NzXpEzcZAjuDTZjK]{Aerial Form}, @Compendium[pf2e.spells-srd.KhM8MhoUgoUjBMIz]{Dinosaur Form}, @Compendium[pf2e.spells-srd.HBJPsonQnWcC3qdX]{Hallucinatory Terrain}, @Compendium[pf2e.spells-srd.hkfH9Z53hPzcOwNB]{Veil}</li>\n<li><strong>5th</strong> @Compendium[pf2e.spells-srd.U58aQWJ47VrI36yP]{Hallucination}, @Compendium[pf2e.spells-srd.Ucf8eynbZMfUucjE]{Illusory Scene}</li>\n<li><strong>6th</strong> @Compendium[pf2e.spells-srd.5c692cCcTDXjSEzk]{Dragon Form}</li>\n<li><strong>7th</strong> @Compendium[pf2e.spells-srd.0873MWM0qKDDv81O]{Project Image}</li>\n<li><strong>8th</strong> @Compendium[pf2e.spells-srd.wfleiawxsfhpRRwf]{Disappearance}, @Compendium[pf2e.spells-srd.pswdik31kuHEvdno]{Shapechange}.</li>\n</ul>\n<p>You don't need to have these spells in your spell repertoire to cast them, and you can heighten any spell cast using your fox font up to the spell slot's level. The Nine-Tailed Breadth feat does not increase the number of spell slots you gain from Fox Font.</p>",
+            "prerequisites": [
+                {
+                    "value": "Nine-Tailed Scion Dedication"
+                },
+                {
+                    "value": "Foxfire"
+                }
+            ]
+        },
+        "Foxaddle": {
+            "name": "Foxaddle",
+            "description": "<p>You fling a mote of foxfire at your foe's head, causing the foxfire to merge with their mind and muddy their thoughts. Strike one target with your foxfire unarmed attack. The Strike deals mental damage instead of its usual damage type, and if your Strike hits both the target's AC and Will DC, the target is @Compendium[pf2e.conditionitems.Confused]{Confused} for 1 minute. They can attempt a Will saving throw against the higher between your divine spell DC or your unarmed attack DC at the end of each of their turns to end the confusion; if your Strike critically succeeded against both the target's AC and Will DC, they cannot save to end early. If your Strike critically fails against the target's AC or Will DC, the target is immune to your Foxaddle for 24 hours.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Adept Dedication": {
+            "name": "Foxfire Adept Dedication",
+            "description": "<p>You have honed your expertise with foxfire. You can cast dancing lights as a divine innate cantrip at will. A cantrip is heightened to a spell level equal to half your level rounded up. Lights created with this cantrip always resemble the motes of flame created by your foxfire unarmed strike.</p>\n<p>You gain the @Compendium[pf2e-kitsune.kitsune-spells.6QdlByFknKv6gVxq]{Nine Aura's Stance} foxaura spell and a focus pool of 1 Focus Point that you can recover using the Refocus action. Foxaura spells are a type of divine focus spell and your key spellcasting ability is Charisma. You become trained in divine spell attacks and divine spell DCs. You become an expert in divine spellcasting at 12th level if you have at least two other foxfire adept feats and a master at 18th level if you have at least three other foxfire adept feats. When you Refocus, you focus on your breathing to allow your body to replenish your spiritual energy.</p>\n<p>Whenever you gain a class feature that grants you expert or greater proficiency in a given weapon or weapons, you also gain that proficiency for unarmed attacks. In addition, if a foxfire adept feat requires that you wield a type of loaded ranged weapon, you meet this requirement as long as you are able to make foxfire unarmed attacks and may make foxfire unarmed attacks instead of attacks with that weapon.</p>\n<p><strong>Special</strong> You can't select another dedication feat until you have gained one other feat from the Foxfire Adept archetype.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire"
+                },
+                {
+                    "value": "you have the kitsune trait"
+                }
+            ]
+        },
+        "Foxfire Atrillerist": {
+            "name": "Foxfire Atrillerist",
+            "description": "<p>When you Interact to reload a ranged weapon that requires ammunition, you can create a piece of ammunition for that weapon from foxfire to load into your weapon. You must shoot the ammunition before the end of your turn or the foxfire dissipates. Your attacks with the weapon count as foxfire unarmed strikes for all effects but gain the weapon's traits. If your attack is a critical success, you gain the critical specialization for the weapon's group. You can benefit from only one critical specialization effect at a time.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Avatar": {
+            "name": "Foxfire Avatar",
+            "description": "<p>You are able to transform yourself into a nine-tailed avatar of spiritual energy. When you cast @Compendium[pf2e-kitsune.kitsune-spells.HoHeH17wQVK25vKL]{Foxfire Tail Wreath} using 3 actions, you gain the benefit of three different foxaura spells. If you cast this foxaura spell using 2-rounds, you gain the benefits of seven different foxaura spells instead.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "you know at least nine different foxaura spells, one of which must be foxfire tail wreath."
+                }
+            ]
+        },
+        "Foxfire Ball": {
+            "name": "Foxfire Ball",
+            "description": "<p>By pooling your spiritual energy into a massive orb, you've learned to set your foxfire into a deadly, explosive blast. You learn the @Compendium[pf2e-kitsune.kitsune-spells.iw9yAxYFv3N90a6J]{Foxfire Ball} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Breath": {
+            "name": "Foxfire Breath",
+            "description": "<p>You've discovered how to pool spiritual energy into your throat and expel it as a powerful attack. You learn the @Compendium[pf2e-kitsune.kitsune-spells.YKCBSoP3VKIjECyT]{Foxfire Breath} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Chrysalis": {
+            "name": "Foxfire Chrysalis",
+            "description": "<p>You sheath yourself in spiritual energy, defending you from harm while lashing out against your attackers. You learn the @Compendium[pf2e-kitsune.kitsune-spells.4OGfUidyjqa2snVY]{Foxfire Chrysalis} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Combatant": {
+            "name": "Foxfire Combatant",
+            "description": "<p>You gain access to the foxfire unarmed attack's critical specialization effect. When your attack roll with a foxfire unarmed attack is a critical hit and gains a critical specialization effect, you deal 1d6 persistent damage of the same type as your foxfire unarmed strike.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Encirclement": {
+            "name": "Foxfire Encirclement",
+            "description": "<p><strong>Frequency</strong> once per turn</p>\n<hr />\n<p>You imbue a weapon you're wielding with foxfire. Until the end of your turn, the weapon deals an extra 1d4 damage of the same type as your foxfire unarmed strike and gains the magical trait.</p>\n<p>@Compendium[pf2e-kitsune.kitsune-effects.ROxuF07a10pNW7qa]{Effect: Foxfire Encirclement}</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Firework Cascade": {
+            "name": "Foxfire Firework Cascade",
+            "description": "<p>Rather than a single firework, you unleash an entire spectacle of exploding motes of foxfire. Fox Fireworks loses the flourish trait, allowing you to use that action multiple times per turn.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "Fox Fireworks"
+                }
+            ]
+        },
+        "Foxfire Medicine": {
+            "name": "Foxfire Medicine",
+            "description": "<p>You can use a foxfire unarmed strike instead of Medicine to @Compendium[pf2e.actionspf2e.Treat Wounds]{Treat Wounds}. When doing so, you don't need a healer's kit, can target any creature within range of your foxfire unarmed attack, and can determine the DC as though your proficiency rank in Medicine was one higher than your rank in unarmed attacks, up to legendary. These benefits also apply when using @Compendium[pf2e.feats-srd.wYerMk6F1RZb0Fwt]{Battle Medicine}.</p>\n<p>If you cast a foxaura spell that deals damage, you can have the spell heal willing living creatures that are targeted or within the spell's area instead of damaging them.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "trained in Medicine or able to cast heal"
+                }
+            ]
+        },
+        "Foxfire Prescience": {
+            "name": "Foxfire Prescience",
+            "description": "<p>You fortify your mind with spiritual energy, temporarily bestowing godly foresight upon yourself. You learn the @Compendium[pf2e-kitsune.kitsune-spells.LXB83z7kDJH5pVdP]{Foxfire Prescience} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Rampage": {
+            "name": "Foxfire Rampage",
+            "description": "<p>You transform into a raging beast of raw foxfire. You gain @Compendium[pf2e.feats-srd.Zl6vDXJEM7Lbp8JQ]{Rampaging Form} as a bonus feat. When you cast nine auras stance, you can spend 1 Focus Point to gain the effects outlined by Rampaging Form. This doesn't count as your daily use of Rampage Form and the effects of fiery body are heightened to your level, rounded up. When you use Change Shape to assume Rampaging Form, you make foxfire unarmed strikes even though you're in a battle form.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "Change Shape with a fox alternate shape"
+                }
+            ]
+        },
+        "Foxfire Resuscitation": {
+            "name": "Foxfire Resuscitation",
+            "description": "<p>You quickly donate your spiritual energy to an ally to prevent them from dying. You can cast @Compendium[pf2e.spells-srd.Hnc7eGi7vyZenAIm]{Breath of Life} as a divine innate spell by spending 1 Focus Point. The target regains Hit Points equal to your foxfire unarmed attack damage in addition to the amount listed by breath of life. Apply all effects that increase the amount of damage your foxfire unarmed attack deals (including your striking rune), but not effects that add additional damage dice to the attack (such as sneak attack or the flaming property rune). Once you use your innate breath of life to prevent a target from dying, they become immune to it for 24 hours.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "Foxfire Medicine"
+                }
+            ]
+        },
+        "Foxfire Serenity": {
+            "name": "Foxfire Serenity",
+            "description": "<p>You flood your psyche with spiritual energy, extinguishing clearing your mind and body of negativity. You learn the @Compendium[pf2e-kitsune.kitsune-spells.Gx4nGLgdNpgsr8VS]{Foxfire Sentry} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Sight": {
+            "name": "Foxfire Sight",
+            "description": "<p>You fill your eyes with your spiritual energy, allowing them to burn away deception within your gaze. You learn the @Compendium[pf2e-kitsune.kitsune-spells.GcUzO52JUZJcpwZ1]{Foxfire Sight} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Spellstrike": {
+            "name": "Foxfire Spellstrike",
+            "description": "<p>You gain the magus's @Compendium[pf2e.actionspf2e.QDW9H8XLIjuW2fE4]{Spellstrike} activity. You can only couple your spell with a Strike made with your foxfire unarmed attack, and the infusion of spell energy into your foxfire Strike grants it whichever tradition trait the spell you infused into your Spellstrike has. You can recharge your Spellstrike as an activity that takes 1 minute or when you attempt one of the following actions against a creature whose level is equal to your level - 3 or higher and get a critical success: @Compendium[pf2e.actionspf2e.Demoralize]{Demoralize}, @Compendium[pf2e.actionspf2e.Disarm]{Disarm}, @Compendium[pf2e.actionspf2e.Feint]{Feint}, @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide}, @Compendium[pf2e.actionspf2e.Shove]{Shove}, @Compendium[pf2e.actionspf2e.Sneak]{Sneak}, @Compendium[pf2e.actionspf2e.Steal]{Steal}, @Compendium[pf2e.actionspf2e.Trip]{Trip}, or @Compendium[pf2e.actionspf2e.Tumble Through]{Tumble Through}. Since you can only Spellstrike with a foxfire unarmed strike, you can Spellstrike using a ranged attack instead of a melee attack.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "ability to cast spells"
+                }
+            ]
+        },
+        "Foxfire Tail Wreath": {
+            "name": "Foxfire Tail Wreath",
+            "description": "<p>You flood your tails with spiritual energy, causing them to erupt into plumes of foxfire. You learn the @Compendium[pf2e-kitsune.kitsune-spells.HoHeH17wQVK25vKL]{Foxfire Tail Wreath} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "you know at least two different foxaura spells"
+                }
+            ]
+        },
+        "Foxfire Trickster": {
+            "name": "Foxfire Trickster",
+            "description": "<p>You can use your foxfire to perform tricky maneuvers. You can use a foxfire unarmed strike instead of Athletics to @Compendium[pf2e.actionspf2e.Disarm]{Disarm} or @Compendium[pf2e.actionspf2e.Trip]{Trip}, Deception to @Compendium[pf2e.actionspf2e.Feint]{Feint}, or Intimidation to @Compendium[pf2e.actionspf2e.Demoralize]{Demoralize}. When doing so, you may Demoralize, Disarm, Feint, or Trip any creature within 20 feet by hurling a globe of foxfire at them. When you Feint a foe using your foxfire and succeed or critically succeed, that foe becomes @Compendium[pf2e.conditionitems.Off-Guard]{Off-Guard} against your foxfire unarmed strikes as though your foxfire were a melee attack.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Foxfire Wave": {
+            "name": "Foxfire Wave",
+            "description": "<p>Through intense training, you've learned to ignite a beam of spiritual energy with your foxfire and launch it at your foes. You learn the @Compendium[pf2e-kitsune.kitsune-spells.9ws1nzB8JGuAnWHR]{Foxfire Wave} foxaura spell. Increase the number of Focus Points in your focus pool by 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Gregarious": {
+            "name": "Gregarious",
+            "description": "<p>You're skilled at making impressions on others. When you @Compendium[pf2e.actionspf2e.Make an Impression]{Make an Impression}, your target's attitude towards you changes by two steps on a success or three steps on a critical success.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Diplomacy"
+                }
+            ]
+        },
+        "Half Masked": {
+            "name": "Half Masked",
+            "description": "<p>You can Change Shape using a noh mask without completely covering your face, allowing you to assume a hybrid form that combines aspects of your true form and the noh mask's form. While in a hybrid form, you lose all drawbacks of your noh mask's form (such as the inability to wield weapons or use your hands in an animal form), can speak normally, and retain abilities from your heritage or ancestry that require your true form's anatomy at and the use of your gear, which adjusts to suit your hybrid form. You can Change Shape to return to your true form or alter the details of your hybrid form. Your hybrid form's features make it obvious that you aren't a normal person of your ancestry.</p>",
+            "prerequisites": [
+                {
+                    "value": "Noh Mask Master Dedication"
+                }
+            ]
+        },
+        "Keen Nose": {
+            "name": "Keen Nose",
+            "description": "<p>Like a wild fox, your black nose is able to keenly detect smells. You gain imprecise scent with a range of 30 feet. If you have an alternate form that grants you imprecise sense, improve the sense's range by 10 feet.</p>"
+        },
+        "Kitsune Guile": {
+            "name": "Kitsune Guile",
+            "description": "<p>Your deceptions leave foes off-balance and vulnerable. When you critically succeed at a Deception check to @Compendium[pf2e.actionspf2e.Feint]{Feint}, your foe is @Compendium[pf2e.conditionitems.Clumsy]{Clumsy 2} until the start of your next turn instead of @Compendium[pf2e.conditionitems.Off-Guard]{Off-Guard}.</p>",
+            "prerequisites": [
+                {
+                    "value": "expert in Deception"
+                }
+            ]
+        },
+        "Kitsunebi": {
+            "name": "Kitsunebi",
+            "description": "<p>You can see through your foxfire, using it to lead the gullible astray. You can cast @Compendium[pf2e.spells-srd.Ek5XI0aEdZhBgm21]{Prying Eye} as a divine innate spell once per day. Each time you Sustain the Spell, you can wreath the prying eye in foxfire, appearing as your foxfire does when you Strike with it. If your prying eye is already wreathed in foxfire, you can snuff out the flames when you Sustain the Spell. While wreathed in flame, the prying eye appears to be an orb of foxfire floating in midair, producing light as a torch.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Kitsunetsuki": {
+            "name": "Kitsunetsuki",
+            "description": "<p>Once per day, you can cast 7th-level @Compendium[pf2e.spells-srd.wU6hNzK8Yfqdmc8m]{Possession} as an innate occult spell. The spell automatically heightens to 9th level if you're 18th level and to 10th level if you're 20th level and have Legendary Nine-Tailed Spellcasting. As a 10th level spell, possession lasts until you complete your daily preparations if the target fails its saving throw or has an unlimited duration if they critically fail.</p>",
+            "prerequisites": [
+                {
+                    "value": "Nine-Tailed Scion Dedication"
+                }
+            ]
+        },
+        "Leaping Pounce": {
+            "name": "Leaping Pounce",
+            "description": "<p>You creep upon an unsuspecting enemy and strike. You either Stride or @Compendium[pf2e.actionspf2e.Leap]{Leap} up to your Speed and make a Strike at the end of that movement. If you began this action @Compendium[pf2e.conditionitems.Hidden]{Hidden}, you remain hidden until after the Strike.</p>"
+        },
+        "Legendary Nine-Tailed Spellcasting": {
+            "name": "Legendary Nine-Tailed Spellcasting",
+            "description": "<p>You gain a 9th-level spell slot. Each day during your daily preparations, you can select a fourth spell from your spell repertoire as your signature spell, lasting until the next time you complete your daily preparations.</p>",
+            "prerequisites": [
+                {
+                    "value": "Master Nine-Tailed Spellcasting"
+                },
+                {
+                    "value": "legendary in Arcana, Nature, Occultism, or Religion, depending on the spell list chosen with Nine-Tailed Scion Dedication"
+                }
+            ]
+        },
+        "Liming Foxfire": {
+            "name": "Liming Foxfire",
+            "description": "<p>Your foxfire wreaths foes in a halo of liming light, making concealment difficult. Any creature you successfully hit with your foxfire unarmed attack is limed in colorful, heatless light until the start of your next turn, acting as though the target were affected by @Compendium[pf2e.spells-srd.HRb2doyaLtaoCfi3]{Faerie Fire}. If your foxfire unarmed strike deals persistent damage, the target is affected by faerie fire until the persistent damage ends.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Mask Maker": {
+            "name": "Mask Maker",
+            "description": "<p>You can transform others into masks. When a creature critically fails its Will save against Assume the Role, its physical body is trapped within the noh mask, as the object version of the imprisonment ritual. The creature can take no actions other than to speak telepathically with you, though it is under no compulsion to do so.</p>",
+            "prerequisites": [
+                {
+                    "value": "Assume the Role"
+                },
+                {
+                    "value": "legendary in Crafting"
+                }
+            ]
+        },
+        "Mask of the Deity": {
+            "name": "Mask of the Deity",
+            "description": "<p>You've can craft masks that turn mortals into gods. When you create a noh mask using Noh Mask Master Dedication, you can designate one as a deity mask. When using Change Shape to assume the mask's form, you gain the benefits of the avatar spell for 1 minute for that mask's deity.</p>",
+            "prerequisites": [
+                {
+                    "value": "Noh Mask Master Dedication"
+                },
+                {
+                    "value": "legendary in Crafting and Deception"
+                }
+            ]
+        },
+        "Master Nine-Tailed Spellcasting": {
+            "name": "Master Nine-Tailed Spellcasting",
+            "description": "<p>You gain the master spellcasting benefits.</p>",
+            "prerequisites": [
+                {
+                    "value": "Expert Nine-Tailed Spellcasting"
+                },
+                {
+                    "value": "legendary in Arcana, Nature, Occultism, or Religion, depending on the spell list chosen with Nine-Tailed Scion Dedication"
+                }
+            ]
+        },
+        "Mesmerizing Foxfire": {
+            "name": "Mesmerizing Foxfire",
+            "description": "<p>The eerie glow of your foxfire can overwhelm simple minds. You gain the @Compendium[pf2e.feats-srd.7LB00jkh6JaJr3vS]{Fascinating Performance} skill feat. If you already have Fascinating Performance, you gain a different skill feat of your choice that lists Fascinating Performance as a prerequisite. You can use a foxfire unarmed attack instead of Performance to @Compendium[pf2e.actionspf2e.Perform]{Perform} and use your proficiency rank in unarmed attacks as your ranks in Performance to determine whether you meet the prerequisites of feats.</p>\n<hr />\n<p><em>Note: Currently this feat will grant @Compendium[pf2e.feats-srd.5GqjEM22n78Vmdpe]{Focused Fascination} if you already have Fascinating Performance since that is the only currently released feat that requires it. If you have a different third-party feat to take instead simply delete the granted feat and add the new one as a bonus feat.</em></p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Modular Foxfire": {
+            "name": "Modular Foxfire",
+            "description": "<p>You have learned to shift the energies used to manifest your foxfire on a whim. Your foxfire unarmed strike gains the modular trait with five configurations, and switching between these configurations is a single action with the concentrate trait. Each configuration allows your foxfire unarmed strike to deal a different type of damage, as follows: cold, electricity, fire, negative, or positive. Switching your foxfire's configuration to the damage type that matches the type you chose with Foxfire is a free action that doesn't have the concentrate trait.</p>\n<p>@Compendium[pf2e-kitsune.kitsune-effects.76sj1yU4HM81AL33]{Effect: Modular Foxfire}</p>\n<p>If you are a master in unarmed attacks, switching between your foxfire's configurations is a free action with the concentrate trait except as described above.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Morph Shape": {
+            "name": "Morph Shape",
+            "description": "<p>You adjust your true form's traits, adapting to new trials and adjusting to resemble that of a different heritage. Choose one kitsune heritage that you do not have. Your true form's physical traits (but not your age or body type) change, causing you to resemble a member of that heritage. While morphed into the chosen heritage, you replace your heritage with the chosen heritage except for your alternate form. In exchange, you gain all the listed benefits of the chosen heritage except its alternate form. Using Morph Shape counts as creating a disguise for the Impersonate use of Deception, and it counts as using Change Shape for the purpose of other feats you possess. You can remain in your alternate form indefinitely, and can shift back into your true kitsune form by using this action again, or by using Change Shape to assume another alternate form.</p>\n<p>If you are an expert in Deception, you choose two kitsune heritages with this ability and can use Morph Shape to assume either heritage. If you are a master in Deception, you choose four heritages and can choose uncommon versatile heritages. If you are legendary in Deception, you can choose eight heritages and can choose rare versatile heritages. You can only choose versatile heritages that kitsune can normally have.</p>"
+        },
+        "Myriad Forms (Reforged)": {
+            "name": "Myriad Forms (Reforged)",
+            "description": "<p>With a bit of self-discovery, you find a new form. If you chose a fox form at 1st level, you gain a tailless form. If you chose a tailless form at 1st level, you gain a fox form.</p>"
+        },
+        "Nimble Kitsune": {
+            "name": "Nimble Kitsune",
+            "description": "<p>You stride in a springing gait that pushes you further with every step. Increase your Speed by 5 feet. This benefit doesn't apply while you're in a tailless form.</p>"
+        },
+        "Nine-Tailed Breadth": {
+            "name": "Nine-Tailed Breadth",
+            "description": "<p>Your repertoire expands, and you can cast more spells from your spell list each day. Increase the number of spells in your repertoire and number of spell slots you gain from nine-tailed scion archetype feats by 1 for each spell level other than your two highest sorcerer spell slots.</p>",
+            "prerequisites": [
+                {
+                    "value": "Nine-Tailed Scion Dedication"
+                }
+            ]
+        },
+        "Nine-Tailed Genjutsu": {
+            "name": "Nine-Tailed Genjutsu",
+            "description": "<p>You impose your will upon the laws of the universe, lowering an enemy's resistances to your spells. Choose a foe within 30 feet and one of the following skills, then roll a single check with that skill and compare it to each of the target's three save DCs. You can choose Deception, Diplomacy, Intimidate, or the skill associated with the spell list you chose with Nine-Tailed Scion Dedication (Arcana for arcane, Religion for divine, Occultism for occult, or Nature for primal). Determine the action's effects for each of the target's saves separately.</p>\n<hr />\n<p><strong>Critical Success</strong> The target takes a -3 status penalty to saves against your actions for each save your check is a critical success against for 1 minute.</p>\n<p><strong>Success</strong> As a success, but the penalty is -2 for each save for check is a success against.</p>\n<p><strong>Failure</strong> The target is unaffected.</p>\n<p><strong>Critical Failure</strong> As a failure, and the target is immune to your Nine-Tailed Genjutsu's effects for each save your check is a critical failure against for 24 hours.</p>",
+            "prerequisites": [
+                {
+                    "value": "Nine-Tailed Scion Dedication"
+                }
+            ]
+        },
+        "Nine-Tailed Scion Dedication": {
+            "name": "Nine-Tailed Scion Dedication",
+            "description": "<p>You have immense stores of spiritual energy within your body, allowing you to grow additional tails. You cast spells like a sorcerer. You gain a spell repertoire with two common cantrips from one spell list of your choice, and you gain the basic spellcasting benefits. Each time you gain a spell slot of a new level from the nine- tailed scion archetype, add a spell of the appropriate spell level to your repertoire: a common spell of your chosen spell list or another spell you have learned or discovered.</p>\n<p><strong>Special</strong> You can take Nine-Tailed Scion Dedication even if you are a sorcerer. Spell slots gained from the nine-tailed scion archetype are separate from those gained from sorcerer class levels and do not benefit from sorcerer class features or feats unless they apply to all spells you cast.</p>",
+            "prerequisites": [
+                {
+                    "value": "Charisma 14"
+                },
+                {
+                    "value": "you have the kitsune trait."
+                }
+            ]
+        },
+        "Noh Ensemble": {
+            "name": "Noh Ensemble",
+            "description": "<p>You can teach others to wear your masks as well as you, creating an ensemble of shapeshifting performers. Each day when you complete your daily preparations, choose a number of allies equal to the total number of noh mask master feats you have. Those creatures can use noh masks you create with Noh Mask Master Dedication and receive benefits from all noh mask master feats you have that modify the effects of your noh masks, such as Perfect Fit, Half Masked, and Step Into Character, as though they had those feats themselves. Those allies also gain the Change Shape action if they don't already have it, as described by the Noh Mask Master Dedication feat.</p>",
+            "prerequisites": [
+                {
+                    "value": "Noh Mask Master Dedication"
+                }
+            ]
+        },
+        "Noh Mask Master": {
+            "name": "Noh Mask Master",
+            "description": "<p>You've learned to create a limited number of noh masks at no cost. Each day during your daily preparations, you can create four noh masks from your formula book. Each noh mask takes 3 Interact actions to Craft and can be of any level equal to your level or lower. The number of noh masks increases to six if you're a master in Crafting and eight if you're legendary. Noh masks prepared in this way don't cost you any resources to Craft and do not count against the total number of items you can invest. These masks lose their magical properties and become nonmagical after your next daily preparations or 24 hours.</p>\n<p>You gain the Change Shape action, which allows you to use one action to assume the form allowed by a noh mask you're wearing. This action has the concentrate, occult, polymorph, and transmutation traits. If you already have the Change Shape action (such as from your ancestry or heritage), you can instead Interact to don or remove a noh mask as a free action, triggered whenever you use a move or manipulate action. You cannot trigger this free action when you use a move or manipulate free action or reaction.</p>\n<p><strong>Special</strong> You cannot select another dedication feat until you have gained two other feats from this archetype.</p>",
+            "prerequisites": [
+                {
+                    "value": "Magical Crafting"
+                },
+                {
+                    "value": "trained in Crafting and Performance"
+                }
+            ]
+        },
+        "Perfect Fit": {
+            "name": "Perfect Fit",
+            "description": "<p>You effortlessly step into character while donning a noh mask magic item. When you invest a <em>noh mask of ancestral shapes</em>, choose one 1st level ancestry feat from the mask's ancestry. You gain the chosen ancestry feat when you use Change Shape to assume that noh mask's tailless form. When you invest a <em>noh mask of animal shapes</em>, choose one ability listed by the mask that wasn't chosen for that mask. You gain the listed ability while using Change Shape to assume that mask's animal form. These benefits also apply when using Change Shape to assume a form granted by a noh mask you created using Noh Mask Master Dedication.</p>",
+            "prerequisites": [
+                {
+                    "value": "Noh Mask Master Dedication"
+                }
+            ]
+        },
+        "Quick Shift": {
+            "name": "Quick Shift",
+            "description": "<p><strong>Trigger</strong> You roll initiative</p>\n<hr />\n<p>You change forms the moment you sense trouble. You use Change Shape to assume an alternate form or return to your true form.</p>"
+        },
+        "Rapid Foxfire Manifestation": {
+            "name": "Rapid Foxfire Manifestation",
+            "description": "<p>Constant training with your spiritual energy has taught you to summon your innermost reserves at a moment's notice, allowing you to draw upon your foxfire at a moment's notice. You are permanently @Compendium[pf2e.conditionitems.Quickened]{Quickened 1}. You can only use this additional action to Cast a foxaura Spell or Strike with your foxfire unarmed strike.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Restorative Shapechange": {
+            "name": "Restorative Shapechange",
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p>You use shapeshifting to knit your wounds shut. You Change Shape, then regain Hit Points equal to twice your level. If you are @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled}, @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened}, or @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded}, reduce the value of those conditions by 1. If you are suffering persistent damage, attempt a @Check[type:flat|dc:10]. If you succeed, the condition ends. If you aren't affected by any of these conditions, you regain additional Hit Points equal to your level.</p>"
+        },
+        "Shapechange Savage": {
+            "name": "Shapechange Savage",
+            "description": "<p>You lash out at enemies while you dance between forms. Change Shape, then Strike once. This Strike must be with a weapon or unarmed attack you have in your new form; for example, if you Change Shape from your true kitsune form into your fox form, you can Strike with your fox form's jaws, but not with your true form's katana because that weapon merged into your form.</p>"
+        },
+        "Shifting Faces (Reforged)": {
+            "name": "Shifting Faces (Reforged)",
+            "description": "<p>You wear many faces, even those that don't belong to you. You can use Change Shape to adjust the appearance of your true kitsune form as well as any form you can assume using Change Shape, altering your apparent age, body type, and physical traits (including your voice and scent) to anything naturally available to a member of that ancestry or animal. You cannot use these adjustments to Impersonate a specific individual.</p>\n<p>If you're a master in Deception, you gain a tailless form for every common Medium humanoid you've encountered. If you're legendary in Deception, you can use Change Shape to Impersonate specific individuals and gain a tailless form for every Medium humanoid you've encountered, regardless of rarity.</p>",
+            "prerequisites": [
+                {
+                    "value": "tailless alternate form"
+                }
+            ]
+        },
+        "Skulk": {
+            "name": "Skulk",
+            "description": "<p><strong>Trigger</strong> You roll initiative</p>\n<hr />\n<p>You work silently while hiding. You can use Interact actions while undetected without becoming observed so long as using the Interact action doesn't create any obvious stimuli, such as loud noises, bright lights, or pungent odors. The GM determines which stimuli are obvious for the purpose of this ability.</p>"
+        },
+        "Soulfire": {
+            "name": "Soulfire",
+            "description": "<p>Your foxfire glows with the pure color of your immortal soul, enhancing its power. When you succeed or critically succeed at a foxfire Strike, you add your Charisma modifier to the damage roll. When your foxfire Strike is a critical success, you deal [[/r {1d4}[persistent]]]{1d4 persistent damage} of the same damage type as your foxfire unarmed strike to the target.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire"
+                }
+            ]
+        },
+        "Spiritual Focus": {
+            "name": "Spiritual Focus",
+            "description": "<p>You've mastered the art of rapidly restoring your spiritual energy. If you have spent at least 2 Focus Points since the last time you Refocused, you recover 2 Focus Points when you Refocus instead of 1.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Spiritual Wellspring": {
+            "name": "Spiritual Wellspring",
+            "description": "<p>Digging deep within yourself, you've learned to harness even more spiritual energy than any ever thought possible. Your @Compendium[pf2e-kitsune.kitsune-spells.6QdlByFknKv6gVxq]{Nine Aura's Stance} becomes a foxaura cantrip, a special foxaura spell that doesn't cost Focus Points, so you can use it as often as you like.</p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                }
+            ]
+        },
+        "Springing Step": {
+            "name": "Springing Step",
+            "description": "<p>Your digitigrade legs add an extra spring to your strides, making it easier to propel yourself through the air. When you @Compendium[pf2e.actionspf2e.High Jump]{High Jump} or @Compendium[pf2e.actionspf2e.Long Jump]{Long Jump}, you treat your check's degree of success as being one step better (a critical failure is a failure, a failure is a success, and a success is a critical success).</p>"
+        },
+        "Starspinner Synergy": {
+            "name": "Starspinner Synergy",
+            "description": "<p>You've learned to weave foxfire and star orbs together in beautiful efficiency. You gain Starspinner Dedication as a bonus feat, ignoring the usual requirements regarding how many foxfire adept archetype feats you need to take before selecting a new dedication feat. Foxfire adept feats are starspinner feats and starspinner feats are foxfire adept feats.</p>\n<p>Your shooting star unarmed attack gains the modular weapon trait, which is associated with all damage types you can deal with your foxfire unarmed attack. Your shooting star unarmed attack benefits from foxfire adept feats as though it were a foxfire unarmed attack. When you Strike with your shooting star unarmed attack, all foxfire Strikes you make before the end of your turn gain the agile weapon trait.</p>\n<hr />\n<p><em>Note: Starspinner Dedication is from Kitsune of Golarion: Starspinners. Content from that book will be added to this module in a future update.</em></p>",
+            "prerequisites": [
+                {
+                    "value": "Foxfire Adept Dedication"
+                },
+                {
+                    "value": "Star Orb"
+                }
+            ]
+        },
+        "Startling Shapechange": {
+            "name": "Startling Shapechange",
+            "description": "<p>You use your shapechanging to startle foes who are unaware of your abilities. Change Shape, then either @Compendium[pf2e.actionspf2e.Demoralize]{Demoralize} or @Compendium[pf2e.actionspf2e.Feint]{Feint} all opponents within 30 feet. When you do, Demoralize or Feint gain the visual trait and Demoralize loses the auditory trait. You don't take a penalty to your check if a creature doesn't understand your language. Once you've used Startling Shapechange to Demoralize or Feint a creature, you cannot affect that creature with Startling Shapechange again for 24 hours.</p>"
+        },
+        "Step into Character": {
+            "name": "Step into Character",
+            "description": "<p>You are able to customize noh masks, allowing you to precisely control your appearance. When you Craft a noh mask, you can paint a specific appearance upon it. When you use Change Shape to assume that noh mask's form, you can choose to either assume a form with roughly analogous physical features to yours or the specific form associated with the mask, assuming the mask's age, body type, and physical features rather than maintain traits that are analogous to yours. This does not allow you to Impersonate a specific individual.</p>",
+            "prerequisites": [
+                {
+                    "value": "Noh Mask Master Dedication"
+                }
+            ]
+        },
+        "Trickster's Ploy": {
+            "name": "Trickster's Ploy",
+            "description": "<p>You take advantage in your enemies' lapse in defense when casting your spells. Off-Guard creatures take a -2 status penalty to saving throws against your spells.</p>",
+            "prerequisites": [
+                {
+                    "value": "Fox Font"
+                }
+            ]
+        },
+        "Vulpine Jaws (Reforged)": {
+            "name": "Vulpine Jaws (Reforged)",
+            "description": "<p>You gain a jaws unarmed attack that deals [[/r {1d4}[piercing]]]{1d4 piercing damage}. Your jaws are in the brawling group and have the agile, finesse, and unarmed traits.</p>"
+        }
+    }
 }
