@@ -43,7 +43,7 @@
                 },
                 "Spray Acid": {
                     "name": "喷射酸液 Spray Acid",
-                    "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 掘地虫对@Template[type:cone|distance:30]范围喷射酸液，造成[[/r (3d6)[acid]]]{3d6酸蚀伤害}和@Damage[1d6[persistent,acid]]伤害（@Check[type:reflex|dc:20|basic:true]豁免）。</p>"
+                    "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 掘地虫对@Template[type:cone|distance:30]范围喷射酸液，造成@Damage[3d6[acid],1d6[persistent,acid]]{3d6酸蚀伤害和1d6持续酸蚀伤害}（@Check[type:reflex|dc:20|basic:true]豁免）。</p>"
                 }
             }
         },
@@ -173,7 +173,7 @@
             "items": {
                 "Destructive Croak": {
                     "name": "破灭鸣叫 Destructive Croak",
-                    "description": "<p>沼泽先知发出强力的嘶鸣，这会对@Template[type:emanation|distance:15]{15尺弥漫}范围的非沼蜍人生物造成@Damage[4d6[sonic]]伤害（@Check[type:fortitude|dc:19|basic:true]豁免）。</p>\n<p>任何处于@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened}状态的生物都会承受额外音波伤害，伤害数值为惊惧状态数值的两倍。</p>\n<p>沼泽先知在之后的[[/br 1d4 #rounds]]{1d4轮}内无法再次使用破灭鸣叫。</p>"
+                    "description": "<p>沼泽先知发出强力的嘶鸣，这会对@Template[type:emanation|distance:15]{15尺弥漫}范围的非沼蜍人生物造成@Damage[4d6[sonic]]伤害（@Check[type:fortitude|dc:19|basic:true]豁免）。</p>\n<p>任何处于@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened}状态的生物都会承受额外音波伤害，伤害数值为惊惧状态数值的两倍。</p>\n<p>沼泽先知在之后的[[/br 1d4 #Recharge Destructive Croak]]{1d4轮}内无法再次使用破灭鸣叫。</p>"
                 },
                 "Drowning Drone": {
                     "name": "淹没之音 Drowning Drone",
@@ -523,7 +523,7 @@
                 },
                 "Pack Attack": {
                     "name": "围攻 Pack Attack",
-                    "description": "<p>若林焰猞猁的打击目标身处至少2名林焰猞猁盟友的触及范围内时，林焰猞猁的打击会额外造成[[/r 1d6]]伤害。</p>"
+                    "description": "<p>若林焰猞猁的打击目标身处至少2名林焰猞猁盟友的触及范围内时，林焰猞猁的打击会额外造成1d6伤害。</p>"
                 },
                 "Pounce": {
                     "name": "猛扑 Pounce",
@@ -657,7 +657,7 @@
             "items": {
                 "Chill Breath": {
                     "name": "冻寒吐息 Chill Breath",
-                    "description": "<p>霜巨人呼出@Template[type:cone|distance:15|damaging:yes]{15尺锥形}的寒冷水汽，瞬间凝结成冰，造成@Damage[4d6[cold]]伤害。锥形范围内的每个生物都必须通过@Check[type:reflex|dc:28|basic:true]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC 28）。</p>\n<p>霜巨人在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用冻寒吐息。</p>"
+                    "description": "<p>霜巨人呼出@Template[type:cone|distance:15|damaging:yes]{15尺锥形}的寒冷水汽，瞬间凝结成冰，造成@Damage[4d6[cold]]伤害。锥形范围内的每个生物都必须通过@Check[type:reflex|dc:28|basic:true]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC 28）。</p>\n<p>霜巨人在[[/br 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
                 },
                 "Ice Stride": {
                     "name": "冰上行走 Ice Stride",
@@ -878,11 +878,11 @@
                 },
                 "Frenzy Pheromone": {
                     "name": "狂暴信息素 Frenzy Pheromone",
-                    "description": "<p>巢母释放一种信息素，使得@Template[type:emanation|distance:100]范围内其他掘地虫获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened 1}效果，持续到巢母下轮行动开始为止。该额外动作仅仅可以用来掘进、移动、或打击。</p>\n<p>巢母在[[/br 1d4 #rounds]]{1d4轮}内无法再次释放信息素。</p>"
+                    "description": "<p>巢母释放一种信息素，使得@Template[type:emanation|distance:100]范围内其他掘地虫获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened 1}效果，持续到巢母下轮行动开始为止。该额外动作仅仅可以用来掘进、移动、或打击。</p>\n<p>巢母在[[/br 1d4 #Recharge Frenzy Pheromone]]{1d4轮}内无法再次释放信息素。</p>"
                 },
                 "Spray Acid": {
                     "name": "喷射酸液 Spray Acid",
-                    "description": "<p>巢母对@Template[type:cone|distance:60]范围喷射酸液，造成@Damage[8d6[acid]]伤害和@Damage[1d6[persistent,acid]]伤害（@Check[type:reflex|dc:26|basic:true]豁免）。</p>\n<p>巢母在[[/br 1d4 #rounds]]{1d4轮}内无法再次喷射酸液。</p>"
+                    "description": "<p>巢母对@Template[type:cone|distance:60]范围喷射酸液，造成@Damage[8d6[acid]]伤害和@Damage[1d6[persistent,acid]]伤害（@Check[type:reflex|dc:26|basic:true]豁免）。</p>\n<p>巢母在[[/br 1d4 #Recharge spew acid]]{1d4轮}内无法再次喷射酸液。</p>"
                 }
             }
         },
@@ -1044,7 +1044,7 @@
             "items": {
                 "Pack Attack": {
                     "name": "群起攻之 Pack Attack",
-                    "description": "<p>犬的打击目标如果位于至少两个盟友的触及范围内，则造成[[/r 1d4]]额外伤害。</p>"
+                    "description": "<p>犬的打击目标如果位于至少两个盟友的触及范围内，则造成1d4额外伤害。</p>"
                 }
             }
         },
@@ -1804,7 +1804,7 @@
                 },
                 "Slowing Pulse": {
                     "name": "减速脉冲 Slowing Pulse",
-                    "description": "<p>@Template[type:emanation|distance:10]{10尺弥漫}范围内的每个生物必须通过@Check[type:fortitude|dc:30]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1分钟。</p>\n<p>魔像在[[/br 1d4 #Slowing Pulse Recharge]]{1d4轮}内无法再次使用减速脉冲。</p>"
+                    "description": "<p>@Template[type:emanation|distance:10]{10尺弥漫}范围内的每个生物必须通过@Check[type:fortitude|dc:30]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1分钟。</p>\n<p>魔像在[[/br 1d4 #Recharge Slowing Pulse]]{1d4轮}内无法再次使用减速脉冲。</p>"
                 }
             }
         },
@@ -2037,7 +2037,7 @@
                 },
                 "Vent": {
                     "name": "喷气 Vent",
-                    "description": "<p>精金魔像对@Template[type:cone|distance:30]{30尺锥形}范围喷出炉心中的过热蒸汽。对范围内所有生物造成@Damage[15d6[fire]]伤害（@Check[type:reflex|dc:40|basic:true]豁免）。</p>\n<p>魔像在[[/br 1d6 #Vent Recharge]]{1d6轮}内无法再次进行喷气。</p>"
+                    "description": "<p>精金魔像对@Template[type:cone|distance:30]{30尺锥形}范围喷出炉心中的过热蒸汽。对范围内所有生物造成@Damage[15d6[fire]]伤害（@Check[type:reflex|dc:40|basic:true]豁免）。</p>\n<p>魔像在[[/br 1d6 #Recharge Vent]]{1d6轮}内无法再次进行喷气。</p>"
                 }
             }
         },
@@ -3800,7 +3800,7 @@
                 },
                 "Eye Beams": {
                     "name": "眼部射线 Eye Beams",
-                    "description": "<p>圣盔天使从其眼部射出高热或极寒射线，对@Template[type:line|distance:15]{15尺线形}区域造成@Damage[2d6[cold]]伤害或@Damage[2d6[fire]]伤害（@Check[type:reflex|dc:17|basic:true]豁免）。</p>\n<p>他在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用眼部射线。</p>"
+                    "description": "<p>圣盔天使从其眼部射出高热或极寒射线，对@Template[type:line|distance:15]{15尺线形}区域造成@Damage[2d6[cold]]伤害或@Damage[2d6[fire]]伤害（@Check[type:reflex|dc:17|basic:true]豁免）。</p>\n<p>他在[[/br 1d4 #Recharge Eye Beams]]{1d4轮}内无法再次使用眼部射线。</p>"
                 },
                 "Repository of Lore": {
                     "name": "知识储备 Repository of Lore",
@@ -4360,7 +4360,7 @@
                 },
                 "Pack Attack": {
                     "name": "成群袭击 Pack Attack",
-                    "description": "<p>对于触及范围内至少有两名恐狼盟友的生物，恐狼的打击造成[[/r (1d6)]]{1d6额外伤害}。</p>"
+                    "description": "<p>对于触及范围内至少有两名恐狼盟友的生物，恐狼的打击造成1d6额外伤害。</p>"
                 },
                 "Worry": {
                     "name": "撕咬 Worry",
@@ -5504,7 +5504,7 @@
             "items": {
                 "Pack Attack": {
                     "name": "群起而攻 Pack Attack",
-                    "description": "<p>对位于豺狼人至少两个盟友的触及范围内的生物，该豺狼人的攻击可造成额外[[/r 1d4]]额外伤害。</p>"
+                    "description": "<p>对位于豺狼人至少两个盟友的触及范围内的生物，该豺狼人的攻击可造成额外1d4额外伤害。</p>"
                 },
                 "Rugged Travel": {
                     "name": "如履平地 Rugged Travel",
@@ -5562,7 +5562,7 @@
                 },
                 "Pack Attack": {
                     "name": "群起而攻 Pack Attack",
-                    "description": "<p>对位于豺狼人至少两个盟友的触及范围内的生物，该豺狼人的攻击可造成额外[[/r 1d4]]额外伤害。</p>"
+                    "description": "<p>对位于豺狼人至少两个盟友的触及范围内的生物，该豺狼人的攻击可造成额外1d4额外伤害。</p>"
                 },
                 "Rugged Travel": {
                     "name": "如履平地 Rugged Travel",
@@ -5580,7 +5580,7 @@
             "items": {
                 "Pack Attack": {
                     "name": "群起而攻 Pack Attack",
-                    "description": "<p>对位于豺狼人至少两个盟友的触及范围内的生物，该豺狼人的攻击可造成额外[[/r 1d4]]额外伤害。</p>"
+                    "description": "<p>对位于豺狼人至少两个盟友的触及范围内的生物，该豺狼人的攻击可造成额外1d4额外伤害。</p>"
                 },
                 "Rugged Travel": {
                     "name": "如履平地 Rugged Travel",
@@ -5877,7 +5877,7 @@
                 },
                 "Exhale Miasma": {
                     "name": "呼出瘴气 Exhale Miasma",
-                    "description": "<p>绿鬼婆呼出一阵绿色的瘴气。@Template[type:cone|distance:15]范围内的生物都受到衰竭体液的影响（正常进行豁免）。</p>\n<p>她在[[/br 1d4 #rounds]]{1d4轮}之内无法再次使用该能力。</p>"
+                    "description": "<p>绿鬼婆呼出一阵绿色的瘴气。@Template[type:cone|distance:15]范围内的生物都受到衰竭体液的影响（正常进行豁免）。</p>\n<p>她在[[/br 1d4 #Recharge Exhale Miasma]]{1d4轮}之内无法再次使用该能力。</p>"
                 }
             }
         },
@@ -6033,7 +6033,7 @@
             "items": {
                 "Pack Attack": {
                     "name": "群起攻之 Pack Attack",
-                    "description": "<p>犬的打击目标如果位于至少两个盟友的触及范围内，则造成额外[[/r (1d4)]]{1d4额外伤害}。</p>"
+                    "description": "<p>犬的打击目标如果位于至少两个盟友的触及范围内，则造成额外1d4额外伤害。</p>"
                 }
             }
         },
@@ -6237,7 +6237,7 @@
                 },
                 "Pack Attack": {
                     "name": "群起攻之 Pack Attack",
-                    "description": "<p>鬣齿兽的敌人如果处于另外两只友方鬣狗的触及范围内，则造成[[/r 1d6]]伤害。</p>"
+                    "description": "<p>鬣齿兽的敌人如果处于另外两只友方鬣狗的触及范围内，则造成1d6伤害。</p>"
                 }
             }
         },
@@ -6320,7 +6320,7 @@
                 },
                 "Pack Attack": {
                     "name": "群起攻之 Pack Attack",
-                    "description": "<p>鬣狗的敌人如果处于另外两只友方鬣狗的触及范围内，则造成额外[[/r 1d4]]伤害。</p>"
+                    "description": "<p>鬣狗的敌人如果处于另外两只友方鬣狗的触及范围内，则造成额外1d4伤害。</p>"
                 }
             }
         },
@@ -8119,7 +8119,7 @@
                 },
                 "Powerful Charge": {
                     "name": "猛力冲锋 Powerful Charge",
-                    "description": "<p>独角兽用最多两倍速度进行直线冲锋，然后进行一次角抵打击。若独角兽移动至少20尺，则造成额外[[/r 2d6]]伤害。</p>"
+                    "description": "<p>独角兽用最多两倍速度进行直线冲锋，然后进行一次角抵打击。若独角兽移动至少20尺，则造成额外2d6伤害。</p>"
                 }
             }
         },
@@ -8279,7 +8279,7 @@
                 },
                 "Pack Attack": {
                     "name": "成群袭击 Pack Attack",
-                    "description": "<p>对于触及范围内至少有两名座狼盟友的生物，座狼的打击造成额外[[/r (1d4)]]{1d4伤害}。</p>"
+                    "description": "<p>对于触及范围内至少有两名座狼盟友的生物，座狼的打击造成额外1d4伤害。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -8358,7 +8358,7 @@
                 },
                 "Pack Attack": {
                     "name": "群起而击 Pack Attack",
-                    "description": "<p>当目标生物至少在2名狼化人的盟友的触及范围内时，狼化人的打击会对其造成[[/r 1d6]]伤害。</p>"
+                    "description": "<p>当目标生物至少在2名狼化人的盟友的触及范围内时，狼化人的打击会对其造成1d6伤害。</p>"
                 }
             }
         },
@@ -8639,7 +8639,7 @@
                 },
                 "Pack Attack": {
                     "name": "成群袭击 Pack Attack",
-                    "description": "<p>对于触及范围内至少有两名冬狼盟友的生物，冬狼的打击造成[[/r 1d6]]额外伤害。</p>"
+                    "description": "<p>对于触及范围内至少有两名冬狼盟友的生物，冬狼的打击造成1d6额外伤害。</p>"
                 }
             }
         },
@@ -8653,7 +8653,7 @@
             "items": {
                 "Pack Attack": {
                     "name": "成群袭击 Pack Attack",
-                    "description": "<p>对于触及范围内至少有两名狼盟友的生物，狼的打击造成[[/r (1d4)]]{1d4额外伤害}。</p>"
+                    "description": "<p>对于触及范围内至少有两名狼盟友的生物，狼的打击造成1d4额外伤害。</p>"
                 }
             }
         },
@@ -9052,7 +9052,7 @@
                 },
                 "Alchemical Rupture": {
                     "name": "炼金破裂 Alchemical Rupture",
-                    "description": "<p>当炼金魔像受到重击伤害或受到<em>@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]{粉碎音波 Shatter}</em>魔法影响时，身上的一个玻璃容器会碎裂，对@Template[type:emanation|distance:5]{5尺弥漫}范围喷出炼金液体。</p>\n<p>投1d6并查阅炼金容器 Alchemical Chambers表来决定碎裂的是哪个容器——当结果为1-5时，范围中的生物受到[[/r 10d6]]对应类型的伤害（@Check[type:reflex|dc:28|basic:true]豁免）。当结果为6时，生物必须进行对抗恶心效果的强韧豁免检定。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Alchemical Rupture]]{1d6}</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>@Damage[10d6[acid]]伤害 @Check[type:reflex|dc:28|basic:true|traits:acid]</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@Damage[10d6[cold]]伤害 @Check[type:reflex|dc:28|basic:true|traits:cold]</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@Damage[10d6[electricity]]伤害 @Check[type:reflex|dc:28|basic:true|traits:electricity]</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@Damage[10d6[fire]]伤害 @Check[type:reflex|dc:28|basic:true|traits:fire]</td>\n</tr>\n<tr>\n<td>5</td>\n<td>@Damage[10d6[poison]]伤害 @Check[type:reflex|dc:28|basic:true|traits:poison]</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
+                    "description": "<p>当炼金魔像受到重击伤害或受到<em>@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]{粉碎音波 Shatter}</em>魔法影响时，身上的一个玻璃容器会碎裂，对@Template[type:emanation|distance:5]{5尺弥漫}范围喷出炼金液体。</p>\n<p>投1d6并查阅炼金容器 Alchemical Chambers表来决定碎裂的是哪个容器——当结果为1-5时，范围中的生物受到10d6对应类型的伤害（@Check[type:reflex|dc:28|basic:true]豁免）。当结果为6时，生物必须进行对抗恶心效果的强韧豁免检定。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Alchemical Rupture]]{1d6}</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>@Damage[10d6[acid]]伤害 @Check[type:reflex|dc:28|basic:true|traits:acid]</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@Damage[10d6[cold]]伤害 @Check[type:reflex|dc:28|basic:true|traits:cold]</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@Damage[10d6[electricity]]伤害 @Check[type:reflex|dc:28|basic:true|traits:electricity]</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@Damage[10d6[fire]]伤害 @Check[type:reflex|dc:28|basic:true|traits:fire]</td>\n</tr>\n<tr>\n<td>5</td>\n<td>@Damage[10d6[poison]]伤害 @Check[type:reflex|dc:28|basic:true|traits:poison]</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
                 },
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
@@ -9064,7 +9064,7 @@
                 },
                 "Alchemical Injection": {
                     "name": "炼金注射 Alchemical Injection",
-                    "description": "<p>当炼金魔像以注射器打击击中一个生物，投1d6并查阅炼金容器表来决定额外效果。注射器造成[[/r 2d6]]{2d6}对应类型的额外伤害（或让目标暴露在恶心效果之下，取决于投掷结果）。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Alchemical Injection]]</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>@Damage[2d6[acid]]伤害</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@Damage[2d6[cold]]伤害</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@Damage[2d6[electricity]]伤害</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@Damage[2d6[fire]]伤害</td>\n</tr>\n<tr>\n<td>5</td>\n<td>@Damage[2d6[poison]]伤害</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
+                    "description": "<p>当炼金魔像以注射器打击击中一个生物，投1d6并查阅炼金容器表来决定额外效果。注射器造成2d6对应类型的额外伤害（或让目标暴露在恶心效果之下，取决于投掷结果）。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Alchemical Injection]]</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>@Damage[2d6[acid]]伤害</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@Damage[2d6[cold]]伤害</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@Damage[2d6[electricity]]伤害</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@Damage[2d6[fire]]伤害</td>\n</tr>\n<tr>\n<td>5</td>\n<td>@Damage[2d6[poison]]伤害</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
                 },
                 "Generate Bomb": {
                     "name": "生成炸弹 Generate Bomb",
@@ -10097,7 +10097,7 @@
             "items": {
                 "Pack Attack": {
                     "name": "群起攻之 Pack Attack",
-                    "description": "<p>狮子的敌人如果处于另外两只友方狮子的触及范围内，则造成[[/r 1d4]]额外伤害。</p>"
+                    "description": "<p>狮子的敌人如果处于另外两只友方狮子的触及范围内，则造成1d4额外伤害。</p>"
                 },
                 "Pounce": {
                     "name": "猛扑 Pounce",
@@ -10606,7 +10606,7 @@
                 },
                 "Change Shape": {
                     "name": "变形 Change Shape",
-                    "description": "<ul>\n<li><strong>蝙蝠 Bat</strong>\n<ul>\n<li><strong>感官</strong> 回声定位40尺</li>\n<li><strong>速度</strong> 15尺, 飞行30尺</li>\n<li><strong>近战</strong> 尖牙 [[/r 1d20+7 #Fangs]]{+7}/[[/r 1d20+3 #Fangs]]{+3}/[[/r 1d20-1 #Fangs]]{-1} (灵巧), <strong>伤害</strong> @Damage[(1d4-1)[piercing]]伤害</li>\n<li><strong>近战</strong> 翼击 [[/r 1d20+7 #Wing]]{+7}/[[/r 1d20+3 #Wing]]{+3}/[[/r 1d20-1 #Wing]]{-1} (灵巧), <strong>伤害</strong> @Damage[(1d4-1)[bludgeoning]]伤害</li>\n</ul>\n</li>\n<li><strong>蜈蚣 Centipede</strong>\n<ul>\n<li><strong>速度</strong> 10尺, 攀爬10尺</li>\n<li><strong>近战</strong> 虫颚 [[/r 1d20+7 #Mandibles]]{+7}/[[/r 1d20+2 #Mandibles]]{+2}/[[/r 1d20-3 #Mandibles]]{-3} (毒素), <strong>伤害</strong> @Damage[1[piercing],1d4[poison]]{1穿刺伤害 + 1d4毒素伤害}</li>\n</ul>\n</li>\n<li><strong>蟾蜍 Toad</strong>\n<ul>\n<li><strong>感官</strong> @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉} (模糊感官) 30尺</li>\n<li><strong>速度</strong> 5尺</li>\n<li><strong>近战</strong> 啃咬 [[/r 1d20+7 #Jaws]]{+7}/[[/r 1d20+2 #Jaws]]{+2}/[[/r 1d20-3 #Jaws]]{-3}, <strong>伤害</strong> @Damage[1[bludgeoning]]伤害</li>\n</ul>\n</li>\n<li><strong>狼 Wolf</strong>\n<ul>\n<li><strong>体型</strong> 中型</li>\n<li><strong>感官</strong> @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉} (模糊感官) 30尺</li>\n<li><strong>速度</strong> 40尺, 攀爬10尺</li>\n<li><strong>近战</strong> 啃咬 [[/r 1d20+7 #Jaws]]{+7}/[[/r 1d20+2 #Jaws]]{+2}/[[/r 1d20-3 #Jaws]]{-3}, <strong>伤害</strong> @Damage[(1d10-1)[piercing]]伤害附带@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.BCLvAx4Pz4MLa2pu]{击倒 Knockdown}</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul>\n<li><strong>蝙蝠 Bat</strong>\n<ul>\n<li><strong>感官</strong> 回声定位40尺</li>\n<li><strong>速度</strong> 15尺, 飞行30尺</li>\n<li><strong>近战</strong> 尖牙 +7 (灵巧), <strong>伤害</strong> 1d4-1穿刺伤害</li>\n<li><strong>近战</strong> 翼击 +7 (灵巧), <strong>伤害</strong> 1d4-1钝击伤害</li>\n</ul>\n</li>\n<li><strong>蜈蚣 Centipede</strong>\n<ul>\n<li><strong>速度</strong> 10尺, 攀爬10尺</li>\n<li><strong>近战</strong> 虫颚 +7 (毒素), <strong>伤害</strong> 1穿刺伤害 + 1d4毒素伤害</li>\n</ul>\n</li>\n<li><strong>蟾蜍 Toad</strong>\n<ul>\n<li><strong>感官</strong> @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉} (模糊感官) 30尺</li>\n<li><strong>速度</strong> 5尺</li>\n<li><strong>近战</strong> 啃咬 +7, <strong>伤害</strong> 1钝击伤害</li>\n</ul>\n</li>\n<li><strong>狼 Wolf</strong>\n<ul>\n<li><strong>体型</strong> 中型</li>\n<li><strong>感官</strong> @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉} (模糊感官) 30尺</li>\n<li><strong>速度</strong> 40尺, 攀爬10尺</li>\n<li><strong>近战</strong> 啃咬 +7, <strong>伤害</strong> 1d10-1穿刺伤害附带@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.BCLvAx4Pz4MLa2pu]{击倒 Knockdown}</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Quasit Venom": {
                     "name": "小恶魔毒液 Quasit Venom",
@@ -10846,7 +10846,7 @@
                 },
                 "Invoke Rune": {
                     "name": "祈祷符文 Invoke Rune",
-                    "description": "<p>符文巨人向身体上其中一个符文祈祷，该符文对@Template[type:cone|distance:30|damaging:yes]{30尺锥形}范围喷射出火花，对范围内所有生物造成@Damage[6d12[electricity]]伤害（@Check[type:reflex|dc:37|basic:true]豁免）。</p>\n<p>一个发光的符文副本出现在巨人持有的一件武器上，给与该武器下列可选效果之一。</p>\n<p>巨人在[[/br 1d4 #rounds]]{1d4轮}内无法再次祈祷符文。武器效果持续1分钟，如果巨人在武器上放置了一个新符文，则旧符文的符文立即消失并且效果结束。</p>\n<ul>\n<li><strong>毁灭符文 Rune of Destruction</strong> 武器获得致命特征，重击时增加3个该武器的基础伤害骰。并且被该武器命中的生物必须通过@Check[type:fortitude|dc:35|name:Rune of Destruction]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</li>\n<li><strong>火焰符文 Rune of Flames</strong> 该武器的所有攻击造成额外@Damage[3d6[fire]]伤害。</li>\n<li><strong>猛击符文 Rune of Smiting</strong> 该武器命中时，巨人能击退目标10尺（重击则击退20尺）。</li>\n</ul>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.svXRrZvixRInmabj]{效果: 毁灭符文(巨剑)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.vJAHjBoEuFKGQoGs]{效果: 毁灭符文(长矛)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.vbxcQIjLVWa43sdt]{效果: 毁灭符文(投石)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.zBQM4rzLfkLzpET6]{效果: 火焰符文(巨剑)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.0ifqiVhhKULXJyf9]{效果: 火焰符文(长矛)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.3QUaxNvpHDmf9cTo]{效果: 火焰符文(投石)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.VAy6IZ0ck7ALVL4b]{效果: 猛击符文(巨剑)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Y5vsF5Kb8oNIccWo]{效果: 猛击符文(长矛)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.bV70ZxnUAoYnfXaZ]{效果: 猛击符文(投石)}</p>"
+                    "description": "<p>符文巨人向身体上其中一个符文祈祷，该符文对@Template[type:cone|distance:30|damaging:yes]{30尺锥形}范围喷射出火花，对范围内所有生物造成@Damage[6d12[electricity]]伤害（@Check[type:reflex|dc:37|basic:true]豁免）。</p>\n<p>一个发光的符文副本出现在巨人持有的一件武器上，给与该武器下列可选效果之一。</p>\n<p>巨人在[[/br 1d4 #Recharge Invoke Rune]]{1d4轮}内无法再次祈祷符文。武器效果持续1分钟，如果巨人在武器上放置了一个新符文，则旧符文的符文立即消失并且效果结束。</p>\n<ul>\n<li><strong>毁灭符文 Rune of Destruction</strong> 武器获得致命特征，重击时增加3个该武器的基础伤害骰。并且被该武器命中的生物必须通过@Check[type:fortitude|dc:35|name:Rune of Destruction]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</li>\n<li><strong>火焰符文 Rune of Flames</strong> 该武器的所有攻击造成额外@Damage[3d6[fire]]伤害。</li>\n<li><strong>猛击符文 Rune of Smiting</strong> 该武器命中时，巨人能击退目标10尺（重击则击退20尺）。</li>\n</ul>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.svXRrZvixRInmabj]{效果: 毁灭符文(巨剑)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.vJAHjBoEuFKGQoGs]{效果: 毁灭符文(长矛)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.vbxcQIjLVWa43sdt]{效果: 毁灭符文(投石)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.zBQM4rzLfkLzpET6]{效果: 火焰符文(巨剑)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.0ifqiVhhKULXJyf9]{效果: 火焰符文(长矛)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.3QUaxNvpHDmf9cTo]{效果: 火焰符文(投石)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.VAy6IZ0ck7ALVL4b]{效果: 猛击符文(巨剑)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Y5vsF5Kb8oNIccWo]{效果: 猛击符文(长矛)}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.bV70ZxnUAoYnfXaZ]{效果: 猛击符文(投石)}</p>"
                 },
                 "Wide Swing": {
                     "name": "猛挥 Wide Swing",
