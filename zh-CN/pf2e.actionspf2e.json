@@ -399,7 +399,7 @@
         },
         "Energy Emanation": {
             "name": "能量爆发 Energy Emanation",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成[[/r (1d6}]]{1d6点所选类型伤害}（基础反射豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加[[/r (1d6}]]{1d6点}。</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成@Damage[ceil(@actor.level/2)d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|traits:area-damage]伤害（@Check[type:reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic:true]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>"
         },
         "Energy Shot": {
             "name": "能量射击 Energy Shot",
