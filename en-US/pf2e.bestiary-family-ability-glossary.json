@@ -14,7 +14,7 @@
             "name": "(Divine Warden) Divine Domain Spells"
         },
         "(Ghost) Telekinetic Assault": {
-            "description": "<p>The ghost cries out in pain and anguish as small objects and debris fly about in a @Template[type:emanation|distance:30]. Creatures in this area take @Damage[1d6[bludgeoning]] damage + 1d6 per 2 levels, subject to a @Check[type:reflex|dc:|basic:true] save.</p>",
+            "description": "<p>The ghost cries out in pain and anguish as small objects and debris fly about in a @Template[type:emanation|distance:30]. Creatures in this area take @Damage[1d6[bludgeoning]] damage + 1d6 per 2 levels, subject to a @Check[type:reflex|dc:|basic:true] save.</p>\n<p>For DCs, use the high spell DC of the ghost's level.</p>",
             "name": "(Ghost) Telekinetic Assault"
         },
         "(Graveknight) Portentous Glare": {
@@ -32,6 +32,10 @@
         "(Beheaded) Furious Headbutt": {
             "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The beheaded makes a wild Strike, taking a -2 penalty to its AC until the end of its next turn. If the Strike damages a creature, it deals additional damage equal to the beheaded's level.</p>",
             "name": "(Beheaded) Furious Headbutt"
+        },
+        "(Ghoul) Grave Knowledge": {
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> The ghoul calls upon knowledge it retains from one creature it has consumed in the past 7 days. The ghoul attempts a skill check using a skill in which the consumed creature was trained (if it's unclear whether the creature was trained, the GM decides). The ghoul is treated as trained and uses the high skill modifier for the ghoul's level. This takes the same amount of actions or time as usual for the check.</p>\n<p>The ghoul can instead automatically learn something specific known by a creature it consumed in the last 7 days, like the location of a @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} treasure or the name of a loved one. The ghoul can do this only once for a given creature, no matter how much of its flesh the ghoul consumed.</p>",
+            "name": "(Ghoul) Grave Knowledge"
         },
         "(Vampire, Vetalarana, Basic) Mental Rebirth": {
             "description": "<p>Unlike most other undead, a vetalarana isn't destroyed when they reach 0 HP. Instead, their body is destroyed, crumbling to ash, and their mind is immediately transferred into a creature they rendered comatose through Drain Thoughts. This creature must be within 1 mile; if no such creature is in range, the vetalarana is destroyed. The creature becomes controlled by the vetalarana and loses the stupefied and @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} conditions. If the creature controlled by a vetalarana in this way is killed, the vetalarana's mind transfers to another creature within 1 mile who they rendered comatose through Drain Thoughts.</p>\n<p>After [[/br 1d6 #days]]{1d6 days} of being controlled, the controlled creature dies, and its body transforms into that of the vetalarana who rendered it comatose.</p>",
@@ -98,11 +102,11 @@
             "name": "(Vampire, Vrykolakas) Vrykolakas Vulnerabilities"
         },
         "(Graveknight) Graveknight's Curse": {
-            "description": "<p>This curse affects anyone who wears a graveknight's armor for at least 1 hour.</p>\n<p><strong>Saving Throw</strong> @Check[type:will|dc:] save</p>\n<hr />\n<p><strong>Onset</strong> 1 hour</p>\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} and cannot remove the armor (1 day)</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, the creature's Speed is reduced by 10, and cannot remove the armor (1 day)</p>\n<p><strong>Stage 3</strong> dies and transforms into the armor's graveknight.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.6rnB7nK6J6zF4vea]{Effect: Graveknight's Curse}</p>",
+            "description": "<p>This curse affects anyone who wears a graveknight's armor for at least 1 hour</p>\n<p><strong>Saving Throw</strong> @Check[type:will|dc:] save</p>\n<p><strong>Onset</strong> 1 hour</p>\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} and can't remove armor (1 day)</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, –10-foot status penalty to Speeds, and can't remove armor (1 day)</p>\n<p><strong>Stage 3</strong> dies and transforms into the armor's graveknight.</p>",
             "name": "(Graveknight) Graveknight's Curse"
         },
         "(Vampire, Basic) Vampire Weaknesses": {
-            "description": "<p>All vampires possess the following weaknesses.</p>\n<ul>\n<li><strong>Compulsions</strong> Vampires are creatures of strange and unknowable compulsions. A typical vampire can't voluntarily cross running water unless it is transported while it hides within its coffin, nor can it enter a private dwelling unless invited in by someone with the authority to do so. At your discretion, vampires might have different compulsions-a pirate vampire might not be able to set foot on solid ground without being invited, for example. The vampire can still be forced to do these things and might be able to overcome its compulsion just as it does its revulsion.</li>\n<li><strong>Revulsion</strong> A vampire can't voluntarily come within 10 feet of brandished garlic or a brandished religious symbol of a non-evil deity. To brandish garlic or a religious symbol, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the vampire involuntarily comes within 10 feet of an object of its revulsion, it gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the object of its revulsion until it ends an action beyond 10 feet. After 1 round of being exposed to the subject of its revulsion, a vampire can attempt a @Check[type:will|dc:25|name:Overcome Revulsion] save as a single action, which has the concentrate trait. On a success, it overcomes its revulsions for [[/br 1d6 #rounds]]{1d6 rounds} (or 1 hour on a critical success).</li>\n<li><strong>Stake</strong> A wooden stake driven through a vampire's heart drops the vampire to 0 HP and prevents it from healing above 0 HP, even in its coffin. Staking a vampire requires three actions and works only if the vampire is unconscious. If the stake is removed, the vampire can heal above 0 HP again, and if it's in its coffin the 1-hour rest period begins once the stake is removed. If the vampire's head is severed and anointed with <em>@UUID[Compendium.pf2e.equipment-srd.Item.z9T4c1hXwOotsMCp]{Holy Water}</em> while the stake is in place, the vampire is destroyed.</li>\n<li><strong>Sunlight</strong> If exposed to direct sunlight, a vampire immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}. The slowed value increases by 1 each time the vampire ends its turn in sunlight. If the vampire loses all its actions in this way, it is destroyed. Due to their supernatural aversion to light, vampires don't cast shadows or show a reflection in mirrors.</li>\n</ul>",
+            "description": "<p>All vampires possess the following vulnerabilities.</p>\n<ul>\n<li><strong>Compulsions</strong> Vampires are creatures with strange and unknowable compulsions. A typical vampire can't voluntarily cross running water unless they're transported while they hide within their coffin, nor can they enter a private dwelling unless invited in by someone with the authority to do so. At your discretion, vampires might have different compulsions—a pirate vampire might not be able to set foot on solid ground without being invited, for example. The vampire can still be forced to do these things and might be able to overcome their compulsion just as they do their revulsion.</li>\n<li><strong>Revulsion</strong> A vampire can't voluntarily come within 10 feet of brandished garlic or a brandished religious symbol of a deity with a holy sanctification option. To brandish garlic or a religious symbol, a creature must Interact to do so, and it remains brandished for 1 round (similar to Raising a Shield). If the vampire involuntarily comes within 10 feet of an object of their revulsion, they gain the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the object of their revulsion until they end an action beyond 10 feet. After 1 round of being exposed to the subject of their revulsion, a vampire can attempt a @Check[type:will|dc:25] save as a single action, which has the concentrate trait. On a success, they overcome their revulsions for [[/br 1d6 #rounds]]{1d6 rounds} (or 1 hour on a critical success).</li>\n<li><strong>Stake</strong> A wooden stake driven through a vampire's heart drops the vampire to 0 HP and prevents them from healing above 0 HP, even in their coffin. Staking a vampire requires 3 actions and works only if the vampire is @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If the stake is removed, the vampire can heal above 0 HP again, and if they're in their coffin, the 1-hour rest period begins once the stake is removed. If the vampire's head is severed and anointed with holy water while the stake is in place, the vampire is destroyed.</li>\n<li><strong>Sunlight</strong> If exposed to direct sunlight, a vampire immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}. The slowed value increases by 1 each time the vampire ends their turn in sunlight, and the condition ends when they're no longer in sunlight. If the vampire loses all their actions in this way, they're destroyed. Due to their supernatural aversion to light, vampires don't cast shadows or show a reflection in mirrors\n</li>\n</ul>",
             "name": "(Vampire, Basic) Vampire Weaknesses"
         },
         "(Ghost) Pyre's Memory": {
@@ -122,7 +126,7 @@
             "name": "(Graveknight) Weapon Master"
         },
         "(Graveknight) Ruinous Weapons": {
-            "description": "<p>At the time of its creation, a graveknight chooses one of the following energy types that was relevant to its life or death: acid, cold, electricity, or fire.</p>\n<p>Any weapon the graveknight wields gains the effects of the <em>caustic</em>, <em>frost</em>, <em>shock</em>, or <em>flaming</em> weapon rune, respectively, in addition to a <em>+1 striking weapon</em> rune.</p>\n<p>If the graveknight is 14th level or higher, its weapons instead gain the effects of the greater versions of both of these runes.</p>",
+            "description": "<p>When created, a graveknight chooses one of the following energy types that was relevant to their life or death: acid, cold, electricity, or fire.</p>\n<p>Any weapon the graveknight wields or unarmed attack the graveknight uses gains the effects of the <em>caustic</em>, <em>frost</em>, <em>shock</em>, or <em>flaming</em> weapon rune, respectively, in addition to a +1 striking weapon rune.</p>\n<p>If the graveknight is 14th level or higher, their weapons instead gain the effects of the greater versions of both of these runes.</p>",
             "name": "(Graveknight) Ruinous Weapons"
         },
         "(Cryptid, Primeval) Stench": {
@@ -142,7 +146,7 @@
             "name": "(Zombie) Spitting Zombie"
         },
         "(Lich) Blasphemous Utterances": {
-            "description": "<p>10 feet. The lich is accompanied by a constant echo of blasphemous murmurs and tainted whispers.</p>\n<p>A creature in the aura takes a -2 circumstance penalty to saves against mental effects and can't take actions that have the concentrate trait unless they succeed at a @Check[type:flat|dc:10] check. Failing this check wastes the action.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.jrfuplUEq3PIo6j1]{Effect: Blasphemous Utterances}</p>",
+            "description": "<p>10 feet. The lich is accompanied by a constant echo of blasphemous murmurs and tainted whispers.</p>\n<p>A creature in the aura takes a -2 circumstance penalty to saves against mental effects and can't take actions that have the concentrate trait unless they succeed at a @Check[type:flat|dc:10] check. On a failure, the action is disrupted.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.jrfuplUEq3PIo6j1]{Effect: Blasphemous Utterances}</p>",
             "name": "(Lich) Blasphemous Utterances"
         },
         "(Vampire, Strigoi Progenitor) Create Spawn": {
@@ -178,7 +182,7 @@
             "name": "(Ulgrem-Axaan) Ichor Coating"
         },
         "(Lich) Rejuvenation": {
-            "description": "<p>When a lich is destroyed, its soul immediately transfers to its <em>@UUID[Compendium.pf2e.equipment-srd.Item.NEbr7nKuiluJgBHT]{Soul Cage}</em>. A lich can be permanently destroyed only if its <em>soul cage</em> is found and destroyed.</p>",
+            "description": "<p>When a lich is destroyed, its soul immediately transfers to their <em>@UUID[Compendium.pf2e.equipment-srd.Item.NEbr7nKuiluJgBHT]{Soul Cage}</em>. A lich can be permanently destroyed only if their <em>soul cage</em> is found and destroyed.</p>",
             "name": "(Lich) Rejuvenation"
         },
         "(Cryptid, Rumored) Hybrid Form": {
@@ -190,11 +194,11 @@
             "name": "(Sporeborn) Contagious Spores"
         },
         "(Ghost) Frightful Moan": {
-            "description": "<p>The ghost laments its fate, forcing each living creature within @Template[type:emanation|distance:30]{30 feet} to attempt a @Check[type:will|dc:] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>",
+            "description": "<p>The ghost laments its fate, forcing each living creature within @Template[type:emanation|distance:30]{30 feet} to attempt a @Check[type:will|dc:] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>\n<p>For DCs, use the high spell DC of the ghost's level.</p>",
             "name": "(Ghost) Frightful Moan"
         },
         "(Vampire, True) Dominate": {
-            "description": "<p>The vampire can cast @UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate} at will as a divine innate spell. Casting it requires staring into the target's eyes, giving the spell the visual trait (@Check[type:will|dc:]). The save DC uses the DC of the vampire's level, and a creature that succeeds is temporarily immune to that vampire's Dominate for 24 hours.</p>\n<p>Fully destroying the vampire ends the domination, but merely reducing the vampire to 0 HP is insufficient to break the spell.</p>",
+            "description": "<p>The vampire can cast @UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate} at will as a divine innate spell. Casting it requires staring into the target's eyes, giving the spell the visual trait (@Check[type:will|dc:]). The save DC uses the high spell DC of the vampire's level, and a creature that succeeds is temporarily immune to that vampire's Dominate for 24 hours.</p>\n<p>Fully destroying the vampire ends the domination, but merely reducing the vampire to 0 HP is insufficient to break the spell.</p>",
             "name": "(Vampire, True) Dominate"
         },
         "(Graveknight) Eager for Battle": {
@@ -222,7 +226,7 @@
             "name": "(Vampire, Strigoi) Domain of Dusk"
         },
         "(Lich) Siphon Life": {
-            "description": "<p><strong>Trigger</strong> The lich deals damage with its hand Strike.</p>\n<hr />\n<p><strong>Effect</strong> The lich regains Hit Points equal to half the damage dealt.</p>",
+            "description": "<p>A lich's form draws forth life from those who come into contact with it. When the lich damages a living creature with an unarmed attack, the lich gains 5 temporary Hit Points and the creature must succeed at a @Check[type:fortitude] save against the lich's spell DC – 2 or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. If the lich is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} at the start of its turn, each creature grabbing or restraining it must succeed at a Fortitude save or become drained 1. If the lich siphons a creature's life again, the drained value increase by 1, to a maximum of @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 4}.</p>",
             "name": "(Lich) Siphon Life"
         },
         "(Vampire, Jiang-Shi, Basic) One More Breath": {
@@ -234,7 +238,7 @@
             "name": "(Ghost) Site Bound"
         },
         "(Graveknight) Phantom Mount": {
-            "description": "<p>HP __; AC __, Fort +__, Ref +__, Will +__</p>\n<hr />\n<p>The graveknight summons a supernatural mount as per @UUID[Compendium.pf2e.spells-srd.Item.WPKJOhEihhcIm2uQ]{Marvelous Mount}, heightened to a level equal to half the graveknight's level.</p>\n<p>Unlike <em>phantom steed</em>, the steed's AC and saving throw bonuses are all 4 lower than the graveknight's, and the steed has one-third the graveknight's Hit Points (rounded down).</p>\n<p>If the steed is destroyed, the graveknight must wait 1 hour before using this ability again.</p>",
+            "description": "<p>HP __; AC __, Fort +__, Ref +__, Will +__</p>\n<hr />\n<p>The graveknight summons a supernatural mount, as @UUID[Compendium.pf2e.spells-srd.Item.WPKJOhEihhcIm2uQ]{Marvelous Mount} heightened to a rank equal to half the graveknight's level. Unlike <em>marvelous mount</em>, the steed's AC and saving throw bonuses are all 4 lower than the graveknight's, and the steed has one-third the graveknight's Hit Points (rounded down).</p>\n<p>If the steed is destroyed, the graveknight must wait 1 hour before using this ability again.</p>",
             "name": "(Graveknight) Phantom Mount"
         },
         "(Harrowkin) Shuffle the Deck": {
@@ -258,7 +262,7 @@
             "name": "(Zombie) Unkillable"
         },
         "(Graveknight) Sacrilegious Aura": {
-            "description": "<p>30 feet. When a creature in the aura uses a vitality spell or ability, the graveknight automatically attempts to counteract it, with a counteract modifier of [[/r 1d20+0 #Counteract]]{+x}.</p>",
+            "description": "<p>30 feet.</p>\n<p>When a creature in the aura uses a vitality spell or ability, the graveknight automatically attempts to counteract it, with a counteract modifier of [[/r 1d20+0 #Counteract]]{+x}.</p>",
             "name": "(Graveknight) Sacrilegious Aura"
         },
         "(Skeleton) Frozen": {
@@ -270,7 +274,7 @@
             "name": "(Ghast) Paralysis"
         },
         "(Vampire, Basic) Drink Blood": {
-            "description": "<p><strong>Requirement</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the vampire's reach.</p>\n<hr />\n<p><strong>Effect</strong> The vampire sinks its fangs into that creature to drink its blood. This requires an @Check[type:athletics|defense:fortitude] check against the victim's Fortitude DC if the victim is grabbed and is automatic for any of the other conditions.</p>\n<p>The victim is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} and the vampire regains HP equal to 10% of its maximum HP, gaining any excess HP as temporary Hit Points. Drinking Blood from a creature that's already drained doesn't restore any HP to the vampire but increases the victim's drain value by 1. A vampire can also consume blood that's been emptied into a vessel for sustenance, but it gains no HP from doing so.</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a @Check[type:medicine|dc:20|name:Blood Transfusion] check and sufficient blood or a blood donor, reduces the drain by 1 after 10 minutes.</p>",
+            "description": "<p><strong>Requirement</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the vampire's reach.</p>\n<hr />\n<p><strong>Effect</strong> The vampire sinks its fangs into that creature to drink its blood. This requires an @Check[type:athletics|defense:fortitude] check against the victim's Fortitude DC if the victim is grabbed and is automatic for any of the other conditions.</p>\n<p>The victim is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} and the vampire regains HP equal to 10% of its maximum HP, gaining any excess HP as temporary Hit Points. Drinking Blood from a creature that's already drained doesn't restore any HP to the vampire but increases the victim's drained value by 1, killing the victim when it reaches drained 5. A vampire can also consume blood that's been emptied into a vessel for sustenance, but it gains no HP from doing so.</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a @Check[type:medicine|dc:20|name:Blood Transfusion] check and sufficient blood or a blood donor, reduces the drain by 1 after 10 minutes.</p>",
             "name": "(Vampire, Basic) Drink Blood"
         },
         "(Sporeborn) Fungal Armor": {
@@ -354,7 +358,7 @@
             "name": "(Zombie) Putrid Stench"
         },
         "(Werecreature) Moon Frenzy": {
-            "description": "<p>When a full moon appears in the night sky, the werecreature must enter hybrid form, can't Change Shape thereafter, becomes one size larger, increases its reach by 5 feet, and increases the damage of its jaws Strike (or a similar Strike) by 2.</p>\n<p>When the moon sets or the sun rises, the werecreature returns to humanoid form and is @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} for [[/br 2d4 #Fatigued duration]]{2d4 hours}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.dRe8n1nBWMIXd8jh]{Effect: Moon Frenzy}</p>",
+            "description": "<p>When a full moon appears in the night sky, the werecreature must enter hybrid form, can't Change Shape thereafter, becomes one size larger, increases its reach by 5 feet, and increases the damage of its jaws by 2.</p>\n<p>When the moon sets or the sun rises, the werecreature returns to humanoid form and is @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} for [[/br 2d4 #hours]]{2d4 hours}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.dRe8n1nBWMIXd8jh]{Effect: Moon Frenzy}</p>",
             "name": "(Werecreature) Moon Frenzy"
         },
         "(Mana Wastes Mutant) Mirror Thing": {
@@ -374,7 +378,7 @@
             "name": "(Mana Wastes Mutant) Magic Hunger"
         },
         "(Lich) Drain Soul Cage": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The lich taps into its <em>@UUID[Compendium.pf2e.equipment-srd.Item.NEbr7nKuiluJgBHT]{Soul Cage's}</em> power to cast any arcane spell up to the highest level the lich can cast, even if the spell being cast is not one of the lich's prepared spells. The lich's <em>soul cage</em> doesn't need to be present for the lich to use this ability.</p>",
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The lich taps into their <em>@UUID[Compendium.pf2e.equipment-srd.Item.qFVPeeJ70B1u2n81]{Soul Cage}</em>'s power to cast any arcane spell up to the highest rank the lich can cast, even if the spell being cast is not one of the lich's prepared spells. The lich's soul cage doesn't need to be present for the lich to use this ability.</p>",
             "name": "(Lich) Drain Soul Cage"
         },
         "(Ravener) Soul Ward": {
@@ -382,7 +386,7 @@
             "name": "(Ravener) Soul Ward"
         },
         "(Lich) Dark Deliverance": {
-            "description": "<p>The lich has resistance to vitality equal to its level.</p>",
+            "description": "<p>The lich has resistance equal to their level to vitality.</p>",
             "name": "(Lich) Dark Deliverance"
         },
         "(Ghost) Draining Touch": {
@@ -406,7 +410,7 @@
             "name": "(Melfesh Monster) Burrowing Grasp"
         },
         "(Ghost) Corrupting Gaze": {
-            "description": "<p>The ghost stares at a creature it can see within 30 feet. The target takes @Damage[1d6[void]] damage + 1d6 per 2 levels with a @Check[type:will|dc:]{basic Will} save.</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 minute.</p>",
+            "description": "<p>The ghost stares at a creature it can see within 30 feet. The target takes @Damage[1d6[void]] damage + 1d6 per 2 levels with a @Check[type:will|dc:]{basic Will} save.</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 minute.</p>\n<p>For DCs, use the high spell DC of the ghost's level.</p>",
             "name": "(Ghost) Corrupting Gaze"
         },
         "(Siabrae) Rejuvenation": {
@@ -498,11 +502,11 @@
             "name": "(Ghost) Ghost Storm"
         },
         "(Werecreature) Animal Empathy": {
-            "description": "<p>A werecreature can communicate with animals of the same general kind.</p>",
+            "description": "<p>The werecreature can ask questions of, receive answers from, and use the Diplomacy skill with animals of its general kind.</p>",
             "name": "(Werecreature) Animal Empathy"
         },
         "(Werecreature) Curse of the Werecreature": {
-            "description": "<p>This curse affects only humanoids.</p>\n<hr />\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:|name:Curse of the Werecreature] DC is the standard DC for the werecreature's new level -1.</p>\n<p>On each full moon, the cursed creature must succeed at another Fortitude save or turn into the same kind of werecreature until dawn.</p>\n<p>The creature is under the GM's control and goes on a rampage for half the night before falling unconscious until dawn.</p>",
+            "description": "<p>This curse affects only humanoids.</p>\n<hr />\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:|name:Curse of the Werecreature] DC is the moderate spell DC for the werecreature's new level.</p>\n<p>On each full moon, the cursed creature must succeed at another Fortitude save or turn into the same kind of werecreature until dawn.</p>\n<p>The creature is under the GM's control and goes on a rampage for half the night before falling unconscious until dawn.</p>",
             "name": "(Werecreature) Curse of the Werecreature"
         },
         "(Nymph Queen) Inspiration": {
@@ -530,15 +534,15 @@
             "name": "(Protean) Protean Anatomy"
         },
         "(Zombie) Feast": {
-            "description": "<p>If the zombie is adjacent to a helpless or unconscious creature, or a deceased creature that died in the past hour, the zombie can feast upon its flesh to heal itself.</p>\n<p>This restores an amount of Hit Points equal to the zombie's level. If the creature is alive, the zombie deals damage equal to its jaws, fist, or claw damage.</p>",
+            "description": "<p>If the zombie is adjacent to a @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} or @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} creature, or a corpse that died in the past hour, the zombie can feast upon its flesh to heal itself.</p>\n<p>This restores an amount of Hit Points equal to the zombie's level. If the creature is alive, the zombie deals damage equal to its jaws, fist, or claw damage.</p>",
             "name": "(Zombie) Feast"
         },
         "(Ghost) Malevolent Possession": {
-            "description": "<p>The ghost attempts to possess an adjacent corporeal creature. This has the same effect as the @UUID[Compendium.pf2e.spells-srd.Item.wU6hNzK8Yfqdmc8m]{Possession} spell, except since the ghost doesn't have a physical body, it is unaffected by that restriction of the spell.</p>",
+            "description": "<p>The ghost attempts to possess an adjacent corporeal creature. This has the same effect as the @UUID[Compendium.pf2e.spells-srd.Item.wU6hNzK8Yfqdmc8m]{Possession} spell, except since the ghost doesn't have a physical body, it is unaffected by that restriction of the spell.</p>\n<p>For DCs, use the high spell DC of the ghost's level.</p>",
             "name": "(Ghost) Malevolent Possession"
         },
         "(Graveknight) Devastating Blast": {
-            "description": "<p>The graveknight unleashes a @Template[type:cone|distance:30] of energy. Creatures in the area take @Damage[1d12[damagetype]] damage, plus an additional 1d12 damage for every two levels the graveknight has (@Check[type:reflex|dc:|basic:true] save).</p>\n<p>The graveknight can use this ability once every [[/br 1d4 #Recharge Devastating Blast]]{1d4 rounds}.</p>\n<p>This energy damage is of the same type as that of its ruinous weapons; <em>Devastating Blast gains the associated energy trait</em>.</p>",
+            "description": "<p>The graveknight unleashes a @Template[type:cone|distance:30] of energy. Creatures in the area take limited use area damage for a creature of the graveknight's level with a @Check[type:reflex|dc:|basic:true] based on a high DC of the graveknight's level.</p>\n<p>The graveknight can use this ability once every [[/br 1d4 #Rounds]] rounds.</p>\n<p>This energy damage is of the same type as that of their ruinous weapons, and Devastating Blast gains the associated trait.</p>",
             "name": "(Graveknight) Devastating Blast"
         },
         "(Ghoul) Consume Flesh": {
@@ -558,7 +562,7 @@
             "name": "(Kallas Devil) Blameless"
         },
         "(Ghost) Inhabit Object": {
-            "description": "<p>The ghost possesses an object of size Large or smaller within 20 feet, making it an animated object. This animated object's level can be no higher than the ghost's level -2. If the target object is being held by a creature, the bearer can attempt a @Check[type:will|dc:] save to prevent the possession.</p>\n<p>This possession ends when the object is destroyed or the ghost leaves it. At this point, the ghost reappears in the object's square and can't Inhabit an Object again for [[/br 1d4 #Recharge Inhabit Object]]{1d4 rounds}.</p>",
+            "description": "<p>The ghost possesses an object of size Large or smaller within 20 feet, making it an animated object. This animated object's level can be no higher than the ghost's level -2. If the target object is being held by a creature, the bearer can attempt a @Check[type:will|dc:] save to prevent the possession.</p>\n<p>This possession ends when the object is destroyed or the ghost leaves it. At this point, the ghost reappears in the object's square and can't Inhabit an Object again for [[/br 1d4 #Recharge Inhabit Object]]{1d4 rounds}.</p>\n<p>For DCs, use the high spell DC of the ghost's level.</p>",
             "name": "(Ghost) Inhabit Object"
         },
         "(Coven) Share Senses": {
@@ -674,7 +678,7 @@
             "name": "(Dragon) Change Shape"
         },
         "(Zombie) Plague-Ridden": {
-            "description": "<p>The zombie carries a plague that can create more of its own kind.</p>\n<p>This functions as the @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.KxN9aGFGPxl6oLGF]{Plague Zombie's} zombie rot, except at stage 5, the victim rises as another of the zombie's type, rather than a plague zombie.</p>\n<hr />\n<p><strong>Zombie Rot</strong></p>\n<p>An infected creature can't heal damage it takes from zombie rot until it has been cured of the disease.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:|name:Zombie Rot]</p>\n<p><strong>Stage 1</strong> carrier with no ill effect (1 day)</p>\n<p><strong>Stage 2</strong> @Damage[1d6[void]] damage (1 day)</p>\n<p><strong>Stage 3</strong> @Damage[1d6[void]] damage (1 day)</p>\n<p><strong>Stage 4</strong> @Damage[1d6[void]] damage (1 day)</p>\n<p><strong>Stage 5</strong> dead, rising as another of the zombie's type immediately</p>",
+            "description": "<p>The zombie emits an aura of rot and disease that causes wounds to fester. Any living creature that starts its turn within 10 feet of the zombie and is not at full Hit Points takes @Damage[1d6[void]] damage. This damage increases by 1d6 for every 6 levels the zombie has.</p>",
             "name": "(Zombie) Plague-Ridden"
         },
         "(Mana Wastes Mutant) Chameleon Skin": {
@@ -698,7 +702,7 @@
             "name": "(Ghoul) Ghoul Fever"
         },
         "(Cryptid, Rumored) Vanishing Escape": {
-            "description": "<p>The rumored cryptid breaks away and fades into the background. It Strides, then Hides.</p>",
+            "description": "<p>The rumored cryptid breaks away and fades into the background. It Strides, then @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hides}.</p>",
             "name": "(Cryptid, Rumored) Vanishing Escape"
         },
         "(Kallas Devil) Infectious Water": {
@@ -778,7 +782,7 @@
             "name": "(Vampire, Vrykolakas) Feral Possession"
         },
         "(Skeleton) Bloody": {
-            "description": "<p>The skeleton is covered in dripping blood and gains @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.fJSNOw4zHGbIm4bZ]{Fast Healing} equal to its level.</p>",
+            "description": "<p>A coating of blood gives the skeleton fast healing equal to its level.</p>",
             "name": "(Skeleton) Bloody"
         },
         "(Kuworsys) Careless Block": {
@@ -788,6 +792,10 @@
         "(Kallas Devil) Underwater Views": {
             "description": "<p>While underwater, the Kallas Devil can blend in with the surrounding environment and hide from other creatures by attempting a Stealth check. She has a +4 circumstance bonus for this check.</p>",
             "name": "(Kallas Devil) Underwater Views"
+        },
+        "(Ghoul) Ghoul Whispers": {
+            "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, or @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} creature is within the ghoul's reach</p>\n<hr />\n<p><strong>Effect</strong> The ghoul whispers dark thoughts and vile cravings into the creature's ears. The creature must save against the forbidden cravings curse.</p>\n<p><strong>Forbidden Cravings</strong> (curse)</p>\n<p><strong>Saving Throw</strong> @Check[type:will|dc:|traits:curse], using the high spell DC for the ghoul's level</p>\n<p><strong>Stage 1</strong> carrier with no ill effects (1 day)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[void]] damage and the target is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} until it consumes raw meat (1 day)</p>\n<p><strong>Stage 3</strong> as stage 2</p>\n<p><strong>Stage 4</strong> as stage 2 unless the target has consumed raw meat in the past 24 hours, then it takes @Damage[4d6[void]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} until it consumes raw meat;</p>\n<p><strong>Stage 5</strong> if the creature has eaten raw meat in the past 24 hours, it dies and rises as a ghoul, if not, it returns to stage 4</p>",
+            "name": "(Ghoul) Ghoul Whispers"
         },
         "(Lich) Aura of Rot": {
             "description": "<p>The lich is surrounded by pervasive, supernatural rot. Unattended food and drink within 30 feet of the lich immediately spoils. Anyone attempting to eat or drink within this area must succeed at a @Check[type:flat|dc:5] or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} as the sustenance spoils before it can be ingested (ruining potions and other magical food and drink). Ordinary plants that remain within this aura for more than 1 minute wither and begin to die (depending on their size, this might take significantly longer).</p>",
@@ -810,7 +818,7 @@
             "name": "(Cryptid, Rumored) Creature Obscura"
         },
         "(Vampire, Strigoi) Strigoi Weaknesses": {
-            "description": "<p>All strigoi possess the following weaknesses:</p>\n<ul>\n<li><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, it gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until it ends an action beyond 10 feet. After 1 round of being exposed to the subject of its revulsion, a strigoi can attempt a @Check[type:will|dc:25] save as a single action, which has the concentrate trait. On a success, it overcomes its revulsions for [[/r 1d6 #Overcome Revulsions Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}.</li>\n<li><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. It appears to be dead: it doesn't breathe, its body temperature matches its surroundings, and it doesn't react to pain or other stimuli. A successful @Check[type:perception|dc:resolve(10+@actor.system.saves.reflex.value)] check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by its \"dead\" body shifts and moves slightly, its edges twisting and active. Spells like @UUID[Compendium.pf2e.spells-srd.Item.QnTtGCAvdWRU4spv]{Detect Alignment}, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally, and could reveal the truth without needing a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses its resistance to physical damage. If the strigoi takes enough damage that it would be reduced to 0 Hit Points, its body quickly decomposes, and the strigoi is destroyed.</li>\n<li><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided it approaches no closer than 10 feet to the liquid's surface. If forced into running water against its will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as it remains in the water. At the end of any turn in which the strigoi remains in running water, it must succeed at a @Check[type:flat|dc:5] or be destroyed.</li>\n</ul>",
+            "description": "<p>All strigoi possess the following weaknesses:</p>\n<ul>\n<li><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, it gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until it ends an action beyond 10 feet. After 1 round of being exposed to the subject of its revulsion, a strigoi can attempt a @Check[type:will|dc:25] save as a single action, which has the concentrate trait. On a success, it overcomes its revulsions for [[/gmr 1d6 #Overcome Revulsions Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}.</li>\n<li><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. It appears to be dead: it doesn't breathe, its body temperature matches its surroundings, and it doesn't react to pain or other stimuli. A successful @Check[type:perception|dc:resolve(10+@actor.system.saves.reflex.value)] check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by its \"dead\" body shifts and moves slightly, its edges twisting and active. Spells like @UUID[Compendium.pf2e.spells-srd.Item.QnTtGCAvdWRU4spv]{Detect Alignment}, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally, and could reveal the truth without needing a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses its resistance to physical damage. If the strigoi takes enough damage that it would be reduced to 0 Hit Points, its body quickly decomposes, and the strigoi is destroyed.</li>\n<li><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided it approaches no closer than 10 feet to the liquid's surface. If forced into running water against its will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as it remains in the water. At the end of any turn in which the strigoi remains in running water, it must succeed at a @Check[type:flat|dc:5] or be destroyed.</li>\n</ul>",
             "name": "(Vampire, Strigoi) Strigoi Weaknesses"
         },
         "(Kallas Devil) Waterfall Torrent": {
@@ -828,6 +836,10 @@
         "(Graveknight) Dark Deliverance": {
             "description": "<p>The graveknight has vitality resistance equal to its level.</p>",
             "name": "(Graveknight) Dark Deliverance"
+        },
+        "(Bulwark) Serpentstone Breath": {
+            "description": "<p>The bulwark breathes a 60- foot cone of green gas. Each creature in the area must attempt a @Check[type:fortitude|dc:34] save. The bulwark can't use Serpentstone Breath again for [[/br 1d4 #Recharge Serpentstone Breath]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature's body hardens, causing it to become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</p>\n<p><strong>Failure</strong> The creature becomes petrified for 1 minute. It can attempt a new save at the end of each of its turns.</p>\n<p><strong>Critical Failure</strong> The creature becomes petrified permanently.</p>",
+            "name": "(Bulwark) Serpentstone Breath"
         },
         "(Melfesh Monster) Corpse Bomb": {
             "description": "<p>The Melfesh Monster injects a creature's corpse with spores over the course of 10 minutes, priming it to explode. These spores last 1 day, and the Melfesh Monster can only have three corpses primed at a time; if it primes another, the oldest corpse bomb deactivates harmlessly. Creatures that succeed at a @Check[type:perception|dc:21|name:Notice Corpse Bomb|traits:action:seek,action:investigate,secret] check while Seeking or Investigating notice a corpse bomb's explosive nature. Creatures can attempt to disarm a corpse bomb with a @Check[type:nature|dc:21|name:Disable Corpse Bomb (Nature)|traits:action:disable-a-device], @Check[type:survival|dc:21|name:Disable Corpse Bomb (Survival)|traits:action:disable-a-device], or @Check[type:thievery|dc:21|name:Disable Corpse Bomb (Thievery)|traits:action:disable-a-device] check to Disable a Device. A corpse bomb explodes in a @Template[type:burst|distance:10] if a creature comes within 5 feet or if the Melfesh Monster detonates it as a single action, which it can use once per round. This deals @Damage[2d8[fire],2d8[poison]]{2d8 fire and 2d8 poison damage} (@Check[type:reflex|dc:21|basic:true|name:Corpse Bomb] save) and leaves a lingering, 10-foot-radius spore cloud. A creature that enters or begins its turn within the cloud inhales spores, which remain in its body for 1 minute. This ability replaces Spore Cloud.</p>",
@@ -906,7 +918,7 @@
             "name": "(Skeleton) Bone Powder"
         },
         "(Vampire, True) Mist Escape": {
-            "description": "<p><strong>Trigger</strong> The vampire is reduced to 0 HP.</p>\n<hr />\n<p><strong>Effect</strong> The vampire uses Turn to Mist. It can take move actions to move toward its coffin even though it's at 0 HP. While at 0 HP in this form, the vampire is unaffected by further damage.</p>\n<p>It automatically returns to its corporeal form, unconscious, if it reaches its coffin or after 2 hours, whichever comes first.</p>",
+            "description": "<p><strong>Trigger</strong> The vampire is reduced to 0 HP.</p>\n<hr />\n<p><strong>Effect</strong> The vampire uses Turn to Mist. They can take move actions to move toward its coffin even though it's at 0 HP. While at 0 HP in this form, the vampire is unaffected by further damage.</p>\n<p>They automatically returns to its corporeal form, unconscious, if they reaches their coffin or after 2 hours, whichever comes first.</p>",
             "name": "(Vampire, True) Mist Escape"
         },
         "(Vampire, Vrykolakas Master) Change Shape": {
@@ -966,7 +978,7 @@
             "name": "(Mana Wastes Mutant) Hulking Form"
         },
         "(Cryptid, Experimental) Clobber": {
-            "description": "<p>The experimental cryptid Strikes a creature. On a hit, the creature is pushed 5 feet (10 feet on a critical hit) and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If this causes the creature to collide with a solid object, the creature takes an additional [[/r 1d10]]{1d10 damage}. If the experimental cryptid is at least 5th level, this Strike deals one additional weapon damage die of damage, and if the experimental cryptid is at least 15th level, this Strike deals two additional weapon damage dice of damage.</p>",
+            "description": "<p>The experimental cryptid Strikes a creature. On a hit, the creature is pushed 5 feet (10 feet on a critical hit) and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If this causes the creature to collide with a solid object, the creature takes an additional 1d10 damage. If the experimental cryptid is at least 5th level, this Strike deals one additional weapon damage die of damage, and if the experimental cryptid is at least 15th level, this Strike deals two additional weapon damage dice of damage.</p>",
             "name": "(Cryptid, Experimental) Clobber"
         },
         "(Nymph Queen) Tied to the Land": {
@@ -1014,7 +1026,7 @@
             "name": "(Blackfrost Dead) Shattering Death"
         },
         "(Zombie) Disgusting Pustules": {
-            "description": "<p>The zombie is covered in pustules that rupture when it takes any piercing damage or any critical hit.</p>\n<p>In either case, adjacent creatures are hit with vile fluid, causing them to become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} unless they succeed at a @Check[type:fortitude|dc:|name:Disgusting Pustules] save.</p>",
+            "description": "<p>The zombie is covered in pustules that rupture when it takes any piercing damage or any critical hit.</p>\n<p>Adjacent creatures are hit with vile fluid, causing them to become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} unless they succeed at a @Check[type:fortitude|dc:|name:Disgusting Pustules] save against the moderate spell DC for the zombie's level.</p>",
             "name": "(Zombie) Disgusting Pustules"
         },
         "(Ravener) Consume Soul": {
@@ -1046,7 +1058,7 @@
             "name": "(Visitant) Noxious Breath"
         },
         "(Graveknight) Create Grave Squire": {
-            "description": "<p>The graveknight can gift a piece of its armor to a willing ally, which becomes its grave squire.</p>\n<p>The graveknight can communicate telepathically with its squire at any distance, see through the squire's senses, and cast @UUID[Compendium.pf2e.spells-srd.Item.qwlh6aDgi86U3Q7H]{Suggestion} as a divine innate spell through the telepathic link at will; the squire treats its degree of success as one step worse.</p>\n<p>If the graveknight's main armor is destroyed, the squire's piece expands to cover the squire's body over [[/br 1d10 #days]]{1d10 days}, after which point it becomes the graveknight's new body.</p>\n<p>The graveknight can have only one squire at a time, and must recover the gifted piece of armor if it wishes to create a new squire.</p>",
+            "description": "<p>The graveknight can gift a piece of their armor to another creature, which becomes their grave squire.</p>\n<p>The graveknight can communicate telepathically with their squire at any distance, see through the squire's senses, and cast @UUID[Compendium.pf2e.spells-srd.Item.qwlh6aDgi86U3Q7H]{Suggestion} as a divine innate spell through the telepathic link at will; the squire treats their degree of success as one step worse.</p>\n<p>If the graveknight's main armor is destroyed, the squire's piece expands to cover the squire's body over [[/br 1d10 #Days]]{1d10 days}, after which point it becomes the graveknight's new body.</p>\n<p>The graveknight can have only one squire at a time and must recover the armor piece to create a new squire.</p>",
             "name": "(Graveknight) Create Grave Squire"
         },
         "(Path Maiden) Vengeful Frenzy": {
@@ -1054,7 +1066,7 @@
             "name": "(Path Maiden) Vengeful Frenzy"
         },
         "(Skeleton) Explosive Death": {
-            "description": "<p>When the skeleton is destroyed, its bones shatter and explode as the necromantic energy holding it together is released.</p>\n<p>Adjacent creatures take @Damage[1d6[slashing]] damage per 2 levels (minimum 1d6) with a @Check[type:reflex|dc:|basic:true|name:Explosive Death] save.</p>",
+            "description": "<p>When the skeleton is destroyed, its bones shatter and explode.</p>\n<p>Adjacent creatures take @Damage[1d6[slashing]] damage per 2 levels (minimum 1d6) with a @Check[type:reflex|dc:|basic:true|name:Explosive Death] save against the moderate spell DC for the skeleton’s level.</p>",
             "name": "(Skeleton) Explosive Death"
         },
         "(Melfesh Monster) Death Throes": {
@@ -1066,7 +1078,7 @@
             "name": "(Vampire, Vetalarana, Manipulator) Drain Thoughts"
         },
         "(Lich) Cold Beyond Cold": {
-            "description": "<p>The lich's hand Strike deals cold damage instead of void, and instead of being paralyzed, the target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}.</p>\n<p>A successful @Check[type:fortitude|name:Cold Beyond Cold|traits:arcane,curse,necromancy] save reduces this to @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} (or negates it on a critical success).</p>",
+            "description": "<p>The lich's hand Strike deals cold damage instead of void, and the target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}.</p>\n<p>A successful @Check[type:fortitude|name:Cold Beyond Cold|traits:arcane,curse,necromancy] save reduces this to @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} (or negates it on a critical success).</p>",
             "name": "(Lich) Cold Beyond Cold"
         },
         "(Mana Wastes Mutant) Increased Speed": {
@@ -1085,9 +1097,9 @@
             "description": "<p>The ghost loses the incorporeal trait, temporarily increasing its Strength modifier to equal its Charisma modifier. The ghost loses its immunity to precision damage and its resistance to all damage while corporeal.</p>\n<p>The ghost can resume being incorporeal by using this action again.</p>",
             "name": "(Ghost) Corporeal Manifestation"
         },
-        "(Vampire, True) Create Spawn": {
-            "description": "<p>If a creature dies after being reduced to 0 HP by Drink Blood, the vampire can turn this victim into a vampire by donating some of its own blood to the victim and burying the victim in earth for 3 nights.</p>\n<p>If the new vampire is lower level than its creator, it is under the creator's control. If a vampire controls too many spawn at once (as determined by the GM), strong-willed spawn can free themselves by succeeding at a @Check[type:will|dc:resolve(10+@actor.system.saves.will.value)|name:Escape Thralldom] saving throw against the vampire's Will DC.</p>",
-            "name": "(Vampire, True) Create Spawn"
+        "(Vampire, True) Create Servitor": {
+            "description": "<p>If a creature dies after being reduced to 0 HP by Drink Blood, the vampire can turn this victim into a vampire servitor by donating some of their own blood to the victim and burying the victim in earth for 3 nights.</p>\n<p>A vampiric servitor is compelled to obey its creator, but if a vampire controls too many vampiric servitors at once (as determined by the GM), or if the servitor is a higher level than the vampire that created it, strongwilled servitors can free themselves by succeeding at a @Check[type:will|defense:will] saving throw against the vampire's Will DC.</p>",
+            "name": "(Vampire, True) Create Servitor"
         },
         "(Kuworsys) Rain Blows": {
             "description": "<p><strong>Requirements</strong> Kuworsys is Reared Back</p>\n<hr />\n<p><strong>Effect</strong> Kuworsys Strikes each creature within its reach, to a maximum of four Strikes (one for each available limb). It can make limb Strikes or weapon Strikes, including with ranged weapons, but can use each weapon only once. Each attack counts toward Kuworsys's multiple attack penalty, but the multiple attack penalty doesn't increase until after it makes all the attacks.</p>",
@@ -1114,11 +1126,11 @@
             "name": "(Ravener) Vicious Criticals"
         },
         "(Vampire, True) Drink Blood": {
-            "description": "<p><strong>Requirement</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the vampire's reach.</p>\n<hr />\n<p><strong>Effect</strong> The vampire sinks its fangs into that creature to drink its blood. This requires an @Check[type:athletics|defense:fortitude] check against the victim's Fortitude DC if the victim is grabbed and is automatic for any of the other conditions.</p>\n<p>The victim is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} and the vampire regains HP equal to 10% of its maximum HP, gaining any excess HP as temporary Hit Points. Drinking Blood from a creature that's already drained doesn't restore any HP to the vampire but increases the victim's drain value by 1. A vampire can also consume blood that's been emptied into a vessel for sustenance, but it gains no HP from doing so.</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a @Check[type:medicine|dc:20|name:Blood Transfusion] check and sufficient blood or a blood donor, reduces the drain by 1 after 10 minutes.</p>",
+            "description": "<p><strong>Requirement</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the vampire's reach.</p>\n<hr />\n<p><strong>Effect</strong> The vampire sinks its fangs into that creature to drink its blood. This requires an @Check[type:athletics|defense:fortitude] check against the victim's Fortitude DC if the victim is grabbed and is automatic for any of the other conditions.</p>\n<p>The victim is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} and the vampire regains HP equal to 10% of its maximum HP, gaining any excess HP as temporary Hit Points. Drinking Blood from a creature that's already drained doesn't restore any HP to the vampire but increases the victim's drained value by 1, killing the victim when it reaches drained 5. A vampire can also consume blood that's been emptied into a vessel for sustenance, but it gains no HP from doing so.</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a @Check[type:medicine|dc:20|name:Blood Transfusion] check and sufficient blood or a blood donor, reduces the drain by 1 after 10 minutes.</p>",
             "name": "(Vampire, True) Drink Blood"
         },
         "(Cryptid, Rumored) Stalk": {
-            "description": "<p><strong>Requirements</strong> The rumored cryptid is undetected</p>\n<hr />\n<p><strong>Effect</strong> The rumored cryptid swiftly stalks prey from hiding. It Strides, then Strikes.</p>",
+            "description": "<p><strong>Requirements</strong> The rumored cryptid is @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected}</p>\n<hr />\n<p><strong>Effect</strong> The rumored cryptid swiftly stalks prey from hiding. It Strides, then Strikes.</p>",
             "name": "(Cryptid, Rumored) Stalk"
         },
         "(Clockwork Creature) Wind-Up": {
@@ -1210,7 +1222,7 @@
             "name": "(Vampire, Strigoi) Levitation"
         },
         "(Graveknight) Rejuvenation": {
-            "description": "<p>When a graveknight is destroyed, its armor rebuilds its body over the course of [[/br 1d10 #days]]{1d10 days}-or more quickly if the armor is worn by a living host. If the body is destroyed before then, the process restarts.</p>\n<p>A graveknight can only be permanently destroyed by obliterating its armor (such as with @UUID[Compendium.pf2e.spells-srd.Item.r7ihOgKv19eJQnik]{Disintegrate}), transporting it to the Forge of Creation, or throwing it into the heart of a volcano.</p>",
+            "description": "<p>When a graveknight is destroyed, their armor rebuilds their body over the course of [[/br 1d10]] days—or more quickly if the armor is worn by a living host. If the body is destroyed before then, the process restarts.</p>\n<p>A graveknight can only be permanently destroyed by obliterating their armor (such as with @UUID[Compendium.pf2e.spells-srd.Item.r7ihOgKv19eJQnik]{Disintegrate}), transporting it to the Forge of Creation, or throwing it into the heart of a volcano.</p>",
             "name": "(Graveknight) Rejuvenation"
         },
         "(Coven) Contribute Spell": {
@@ -1218,7 +1230,7 @@
             "name": "(Coven) Contribute Spell"
         },
         "(Vampire, True) Change Shape": {
-            "description": "<p>The vampire transforms into one of its animal forms or back into its normal form. Most vampires can turn into a bat, but some can turn into a different creature, such as a rat or a wolf.</p>\n<p>Use the options in the @UUID[Compendium.pf2e.spells-srd.Item.NzXpEzcZAjuDTZjK]{Aerial Form} and @UUID[Compendium.pf2e.spells-srd.Item.wp09USMB3GIW1qbp]{Animal Form} spells as guidelines.</p>\n<ul>\n<li><strong>Bat</strong> The vampire changes into a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VAWmwDA08ZLQd8lW]{Bat Swarm} or @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.C9s5tBxVValC2HTE]{Giant Bat}. It gains echolocation 40 feet, a land Speed of 20 feet and a fly Speed of 30 feet, and a fangs Strike with the same attack bonus as its highest melee attack. These fangs deal the same amount of damage as the vampire's claws, but deal piercing damage rather than slashing damage.</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>",
+            "description": "<p>The vampire transforms into one of its animal forms or back into its normal form. Most vampires can turn into a bat, but some can turn into a different creature, such as a rat or a wolf.</p>\n<p>Use the options in the @UUID[Compendium.pf2e.spells-srd.Item.NzXpEzcZAjuDTZjK]{Aerial Form} and @UUID[Compendium.pf2e.spells-srd.Item.wp09USMB3GIW1qbp]{Animal Form} spells as guidelines.</p>\n<ul>\n<li><strong>Bat</strong> The vampire changes into a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.VAWmwDA08ZLQd8lW]{Bat Swarm} or @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.C9s5tBxVValC2HTE]{Giant Bat}. They gain echolocation 40 feet, a land Speed of 20 feet and a fly Speed of 30 feet, and a fangs Strike with the same attack bonus as their highest melee attack. These fangs deal the same amount of damage as the vampire's claws, but deal piercing damage rather than slashing damage.</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>",
             "name": "(Vampire, True) Change Shape"
         },
         "(Skeleton) Lacquered": {
