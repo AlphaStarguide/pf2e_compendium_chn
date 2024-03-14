@@ -1238,7 +1238,7 @@
                     "value": "Envenom"
                 }
             ],
-            "description": "<p>你的身体可以选择不制造毒液，改为制造一种能治愈伤口的物质。取代通常的腹血裔毒液，你可以使用@UUID[Compendium.pf2e.actionspf2e.Item.s4V7JWSMF9JPJAeX]{下毒 Envenom}行动来制造血疗剂。无论你能多频繁地使用下毒能力，你每10分种只能制造一份血疗剂。你或一个邻接生物可以通过交互来喝下血疗剂，恢复[[/r 3d6[healing]]]{3d6生命值}。这是一个命能治疗效果。你的下回合开始时，血疗剂会浪费掉。当你达到15级时，血疗剂会恢复[[/r 5d6[healing]]]{5d6生命值}。</p>"
+            "description": "<p>你的身体可以选择不制造毒液，改为制造一种能治愈伤口的物质。取代通常的腹血裔毒液，你可以使用@UUID[Compendium.pf2e.actionspf2e.Item.s4V7JWSMF9JPJAeX]{下毒 Envenom}行动来制造血疗剂。无论你能多频繁地使用下毒能力，你每10分种只能制造一份血疗剂。你或一个邻接生物可以通过交互来喝下血疗剂，恢复@Damage[(ternary(gte(@actor.level,15),5,3))d6[vitality,healing]|shortLabel]生命值。这是一个命能治疗效果。你的下回合开始时，血疗剂会浪费掉。当你达到15级时，血疗剂会恢复5d6生命值。</p>"
         },
         "Reveal Hidden Self": {
             "name": "发现自我 Reveal Hidden Self",
@@ -7033,7 +7033,7 @@
         },
         "Angel Of Death": {
             "name": "告死天使 Angel Of Death",
-            "description": "<p>你对被@UUID[Compendium.pf2e.actionspf2e.Item.orjJjLdm4XNAcFi8]{死亡标记 Marked for Death} 所标记的生物作出的所有@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]{打击 Strikes }均被视为具有死亡特征，这使得目标在生命值被你降至0点时会立即被杀死。</p>\n<p>若有生物被如此杀死，那么尝试与其沟通、使其复活或将其转化为不死生物或其他扰乱目标来世的行为均会失败，除非上述效果的反制等级比你在杀死目标生物时的等级一半更高（向上取整），或者上述效果来源于神器或神祇。</p>",
+            "description": "<p>你对被@UUID[Compendium.pf2e.actionspf2e.Item.orjJjLdm4XNAcFi8]{死亡标记 Marked for Death} 所标记的生物作出的所有打击均被视为具有死亡特征，这使得目标在生命值被你降至0点时会立即被杀死。</p>\n<p>若有生物被如此杀死，那么尝试与其沟通、使其复活或将其转化为不死生物或其他扰乱目标来世的行为均会失败，除非上述效果的反制等级比你在杀死目标生物时的等级一半更高（向上取整），或者上述效果来源于神器或神祇。</p>",
             "prerequisites": [
                 {
                     "value": "刺客入门"
@@ -17508,7 +17508,7 @@
         },
         "Animate Net": {
             "name": "活化绳网 Animate Net",
-            "description": "<p>当你施展活化绳时，你可以将其目标修改为1张网。如果你这样做了，你可以用以下效果取代该法术的标准效果：你使一张网活化起来，并将其丢向周围20尺内的一个中型或小型生物。尝试用法术攻击骰对抗目标的反射DC。如果成功，目标会@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，并在其速度上受到-10尺的减值，直到它逃脱；如果大成功，它也会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，直到它逃脱。在法术持续期间逃脱的DC等于你的法术DC。一旦法术结束，逃脱的DC就会回到正常的网的DC（通常是16），并且目标相邻的生物可以通过交互动作来移除网。</p>",
+            "description": "<p>当你施展@UUID[Compendium.pf2e.spells-srd.Item.rVANhQgB8Uqi9PTl]{活化绳 Animate Rope}时，你可以将其目标修改为1张@UUID[Compendium.pf2e.equipment-srd.Item.T8EopYZLT137CsdW]{网 Net}。如果你这样做了，你可以用以下效果取代该法术的标准效果：你使一张网活化起来，并将其丢向周围20尺内的一个中型或小型生物。尝试用法术攻击骰对抗目标的反射DC。如果成功，目标会@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，并在其速度上受到-10尺的减值，直到它逃脱；如果大成功，它也会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，直到它逃脱。在法术持续期间逃脱的DC等于你的法术DC。一旦法术结束，逃脱的DC就会回到正常的网的DC（通常是16），并且目标相邻的生物可以通过交互动作来移除网。</p>",
             "prerequisites": [
                 {
                     "value": "魔咒技法师入门"
@@ -18299,7 +18299,7 @@
         },
         "Scattered Fire": {
             "name": "火焰散射 Scattered Fire",
-            "description": "<p>当你施放火球术时，你可以将它的范围修改为两个不重叠的@Template[type:burst|distance:10]{10尺爆发}范围。</p>",
+            "description": "<p>当你施放@UUID[Compendium.pf2e.spells-srd.Item.sxQZ6yqTn0czJxVd]{火球术 Fireball}时，你可以将它的范围修改为两个不重叠的@Template[type:burst|distance:10]范围。</p>",
             "prerequisites": [
                 {
                     "value": "魔咒技法师入门"
@@ -18311,7 +18311,7 @@
         },
         "Lingering Flames": {
             "name": "火焰萦绕 Lingering Flames",
-            "description": "<p>当你施放火球术时，你可以修改其效果，将基础伤害降低至5d6，并使其对豁免失败的生物造成2点持续的火焰伤害，大失败时加倍。如果你这样做，用以下内容取代它的升阶条目：</p>\n<hr />\n<p><strong>升阶(+1)</strong> 伤害增加1d6，持续火焰伤害增加2。</p>",
+            "description": "<p>当你施放@UUID[Compendium.pf2e.spells-srd.Item.sxQZ6yqTn0czJxVd]{火球术 Fireball}时，你可以修改其效果，将基础伤害降低至5d6，并使其对豁免失败的生物造成2点持续的火焰伤害，大失败时加倍。如果你这样做，用以下内容取代它的升阶条目：</p>\n<hr />\n<p><strong>升阶(+1)</strong> 伤害增加1d6，持续火焰伤害增加2。</p>",
             "prerequisites": [
                 {
                     "value": "魔咒技法师入门"
@@ -21290,7 +21290,7 @@
                     "value": "反应打击"
                 },
                 {
-                    "value": "突刺"
+                    "value": "反应打击"
                 }
             ]
         },
@@ -23402,7 +23402,7 @@
         },
         "Drenching Mist": {
             "name": "茫茫水雾 Drenching Mist",
-            "description": "<p>当你施放迷雾术 Mist时，你可以对它进行修改，使其效果上增加以下的升阶条目：</p>\n<hr />\n<p><strong>升阶(3环级)</strong> 你的雾气中充满了水分。区域内的非魔法火焰会自动熄灭。选择该区域内的一个魔法火焰或火系法术并试图反制它。</p>",
+            "description": "<p>当你施放@UUID[Compendium.pf2e.spells-srd.Item.9XHmC2JgTUIQ1CCm]时，你可以对它进行修改，使其效果上增加以下的升阶条目：</p>\n<hr />\n<p><strong>升阶(3环级)</strong> 你的雾气中充满了水分。区域内的非魔法火焰会自动熄灭。选择该区域内的一个魔法火焰或火系法术并试图反制它。</p>",
             "prerequisites": [
                 {
                     "value": "魔咒技法师入门"
@@ -24278,7 +24278,7 @@
         },
         "Educate Allies": {
             "name": "言传身教 Educate Allies",
-            "description": "<p><strong>触发</strong> 一名获得你组曲法术增益的盟友受制于一个具有听觉，视觉，语言，音波或视觉特征的效果。</p>\n<hr />\n<p>你扭转组曲法术的性质来传授一些抵御知识。所有受你组曲法术影响的盟友直到你下个回合开始获得@UUID[Compendium.pf2e.feats-srd.Item.iX5HEqRImhKzfPR2]{内行看门道 Well-Versed}提供的+1环境加值。教学相长之下，直到下回合开始，你自己从内行看门道获得的环境加值也会提高到+2。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.WrWSieH9Acy6XuzV]{效果: 言传身教-盟友}</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.KceTcamIZ4ZrQJLD]{效果: 言传身教-自身}</p>",
+            "description": "<p><strong>触发</strong> 一名获得你组曲法术增益的盟友受制于一个具有听觉，视觉，语言，音波或视觉特征的效果。</p>\n<hr />\n<p>你扭转组曲法术的性质来传授一些抵御知识。所有受你组曲法术影响的盟友直到你下个回合开始获得@UUID[Compendium.pf2e.feats-srd.Item.iX5HEqRImhKzfPR2]{内行看门道 Well-Versed}提供的+1环境加值。教学相长之下，直到下回合开始，你自己从内行看门道获得的环境加值也会提高到+2。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.WrWSieH9Acy6XuzV]{效果: 言传身教}</p>",
             "prerequisites": [
                 {
                     "value": "内行看门道"
@@ -24882,7 +24882,7 @@
         },
         "Weight of Guilt": {
             "name": "负罪之重 Weight of Guilt",
-            "description": "<p>负罪感笼罩在那些忽视你救赎瞥视的敌人心中。你可以选择取代给触发反应动作的生物造成力竭2，令其在同样的时间内承受呆滞2。</p>",
+            "description": "<p>负罪感笼罩在那些忽视你@UUID[Compendium.pf2e.actionspf2e.Item.tuZnRWHixLArvaIf]{救赎瞥视 Glimpse of Redemption}的敌人心中。你可以选择取代给触发反应动作的生物造成力竭2，令其在同样的时间内承受@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>",
             "prerequisites": [
                 {
                     "value": "救赎者事业"
@@ -25443,7 +25443,7 @@
         },
         "Radiant Circuitry": {
             "name": "辐射电路 Radiant Circuitry",
-            "description": "<p>你的生物电路像手电筒一样发光，在20尺半径内产生明亮光照（以及接下来的20尺产生昏暗光照）。当你再次采取这个动作或@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}时，光就会关闭。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.263Cd5JMj8Lgc9yz]{效果: 辐射电路}</p>"
+            "description": "<p>你的生物电路像手电筒一样发光，在20尺半径内产生明亮光照（以及接下来的20尺产生昏暗光照）。当你再次采取这个动作或@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}时，光就会关闭。</p>"
         },
         "Combat Reading": {
             "name": "辨析战斗 Combat Reading",
@@ -26722,7 +26722,7 @@
         },
         "Wild Lights": {
             "name": "野性之光 Wild Lights",
-            "description": "<p>当你施放光亮术时，你可以将其持续时间修改为1分钟，并修改其标准效果，以创造一个具有超小型生物形状的漂浮光源，而不是最多四个光源。这个生物会在你的头上盘旋，除非你花一个具有专注特性的单动作来引导光源移动最多30尺，在这种情况下，它会一直留在那里直到你再次引导它。如果你引导它回到你的头上，它就会在你头上盘旋并再次跟随你，直到你把它引导到其他地方。如果生物移动到你的120尺以外，它就会立即消失。</p>",
+            "description": "<p>当你施放@UUID[Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4]{光亮术 Light}时，你可以将其持续时间修改为1分钟，并修改其标准效果，以创造一个具有超小型生物形状的漂浮光源，而不是最多四个光源。这个生物会在你的头上盘旋，除非你花一个具有专注特性的单动作来引导光源移动最多30尺，在这种情况下，它会一直留在那里直到你再次引导它。如果你引导它回到你的头上，它就会在你头上盘旋并再次跟随你，直到你把它引导到其他地方。如果生物移动到你的120尺以外，它就会立即消失。</p>",
             "prerequisites": [
                 {
                     "value": "魔咒技法师入门"
@@ -31786,7 +31786,7 @@
         },
         "Vigorous Anthem": {
             "name": "活力颂歌 Vigorous Anthem",
-            "description": "<p>当你激励盟友进攻时，也会徐徐向他们体内灌输魔法活力。如果你的下一个动作是施放@UUID[Compendium.pf2e.spells-srd.Item.IAjvwqgiDr3qGYxY]{英勇颂歌 Courageous Anthem}组曲法术，你和所有受影响的盟友获得等同于3+你魅力调整值的临时生命值，持续1分钟。</p>"
+            "description": "<p>当你激励盟友进攻时，也会徐徐向他们体内灌输魔法活力。如果你的下一个动作是施放@UUID[Compendium.pf2e.spells-srd.Item.IAjvwqgiDr3qGYxY]{英勇颂歌 Courageous Anthem}组曲法术，你和所有受影响的盟友获得等同于3+你魅力调整值的临时生命值，持续1分钟。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.7AzGhIOx4Df5Cicr]{效果：活力颂歌}</p>"
         },
         "Fortissimo Composition": {
             "prerequisites": [
