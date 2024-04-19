@@ -6006,7 +6006,12 @@
             "name": "Basic Sorcerer Spellcasting"
         },
         "Hair Trigger": {
-            "description": "<p><strong>Prerequisites</strong> initial deed that allows you to Interact to draw a weapon</p>\n<hr />\n<p>No one can react faster than you can pull your trigger. When using your initial deed, instead of Interacting to draw a weapon, you can Strike with a firearm or crossbow you're already wielding. If this Strike hits, the target is also @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the end of your first turn of the encounter.</p>\n<p><strong>Special</strong> If your initial deed allows you to Interact to draw a weapon more than once, this feat allows you to replace one of these Interact actions and use the other one to draw a weapon. You can't replace both Interact actions with Strikes, but you can draw a loaded firearm or crossbow with one of the actions and immediately shoot it with the other.</p>",
+            "description": "<p>No one can react faster than you can pull your trigger. When using your initial deed, instead of Interacting to draw a weapon, you can Strike with a firearm or crossbow you're already wielding. If this Strike hits, the target is also @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the end of your first turn of the encounter.</p>\n<p><strong>Special</strong> If your initial deed allows you to Interact to draw a weapon more than once, this feat allows you to replace one of these Interact actions and use the other one to draw a weapon. You can't replace both Interact actions with Strikes, but you can draw a loaded firearm or crossbow with one of the actions and immediately shoot it with the other.</p>",
+            "prerequisites": [
+                {
+                    "value": "initial deed that allows you to Interact to draw a weapon"
+                }
+            ],
             "name": "Hair Trigger"
         },
         "Splendid Companion": {
@@ -6450,7 +6455,7 @@
             "name": "Hypnotic Lure"
         },
         "Dragon's Breath": {
-            "description": "<p>You can put more effort into your Kobold Breath to channel greater draconic power, though it takes more out of you. When you use Kobold Breath, you can increase the damage dice to d8s and increase the area to @Template[type:line|distance:60]{60 feet} for a line breath weapon or @Template[type:cone|distance:30]{30 feet} for a cone. If you do, you can't use Kobold Breath again for 1 hour.</p>\n<p>@Damage[ceil(@actor.level/2)d8[@actor.flags.pf2e.draconicExemplar.damageType|traits:area-damage]]{Leveled damage}</p>",
+            "description": "<p>You can put more effort into your Kobold Breath to channel greater draconic power, though it takes more out of you. When you use Kobold Breath, you can increase the damage dice to d8s and increase the area to 60 feet for a line breath weapon or 30 feet for a cone. If you do, you can't use Kobold Breath again for 1 hour.</p>",
             "prerequisites": [
                 {
                     "value": "Kobold Breath"
@@ -12283,6 +12288,18 @@
             ],
             "name": "Expand Aura"
         },
+        "Sense the Strike": {
+            "description": "<p><strong>Trigger</strong> A creature targets you with an attack and you can see the attacker.</p>\n<hr />\n<p>You sense how an incoming attack moves through ambient primal energy, predicting how best to dodge. The triggering attack targets your Survival DC instead of your AC. Though this allows you to avoid taking penalties to your AC, it doesn't remove any conditions or other effects causing such penalties. For example, an enemy with sneak attack would still deal extra damage to you for being @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}, even though you wouldn't take the –2 circumstance penalty when defending against the attack.</p>",
+            "prerequisites": [
+                {
+                    "value": "Verduran Shadow Dedication"
+                },
+                {
+                    "value": "master in Survival"
+                }
+            ],
+            "name": "Sense the Strike"
+        },
         "Knight Reclaimant Dedication": {
             "description": "<p>You have sworn the Crimson Oath and become a full member of the Crimson Reclaimers. You gain expert proficiency in Stealth and Survival. Whenever you roll a success on a saving throw against an undead's special ability, you get a critical success instead. This applies to any abilities that come from being undead, including an undead's innate spells (but not its prepared or spontaneous spells).</p>\n<p><strong>Special</strong> You cannot select another dedication feat until you have gained two other feats from the @UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.OcioDiLTdgzvT8VX]{Knight Reclaimant} archetype.</p>",
             "prerequisites": [
@@ -13092,6 +13109,18 @@
         "Cantrip Casting": {
             "description": "<p>You increase your ability to cast simple spells. You gain two additional cantrips from the tradition matching your trait.</p>",
             "name": "Cantrip Casting"
+        },
+        "Verduran Shadow Dedication": {
+            "description": "<p>Your awareness of primal energies allows you to explore forests with preternatural ease. You become an expert in Survival. You can substitute your proficiency in Survival for your proficiency in Stealth when meeting feat prerequisites and gaining additional benefits from feats for being an expert, master, or legendary in Stealth; however, unless you also fulfill the Stealth prerequisite, you can only use those feats in forest terrain. While in forests, you can use your Survival modifier in place of your Stealth modifier when you @UUID[Compendium.pf2e.actionspf2e.Item.IE2nThCmoyhQA0Jn]{Avoid Notice}, @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide}, @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneak}, or would use Stealth to roll initiative.</p>\n<hr />\n<p><strong>Special</strong> You can't select another dedication feat until you've gained two other feats from the Verduran Shadow archetype.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Stealth"
+                },
+                {
+                    "value": "trained in Survival"
+                }
+            ],
+            "name": "Verduran Shadow Dedication"
         },
         "Practiced Paddler": {
             "description": "<p>You're skilled at navigating bogs and marshes, even for a paddler shoony. You gain a swim Speed of 15 feet.</p>",
@@ -14160,6 +14189,18 @@
                 }
             ],
             "name": "Beast Speaker"
+        },
+        "Death from Above": {
+            "description": "<p><strong>Requirements</strong> You are standing, climbing, or balancing on a surface at least 10 feet above your target.</p>\n<hr />\n<p>You leap down on your target, using their body to cushion your fall and your momentum to empower your attack. Attempt an Athletics check to @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leap} to a space adjacent to the target. If you land adjacent to the target, compare the @Check[type:athletics|defense:reflex] check result against your target's Reflex DC.</p>\n<p>When you leap onto a creature in this way, you do not also deal damage for falling on a creature. Regardless of your result, the target is temporarily immune to your Death from Above for 1 minute.</p>\n<hr />\n<p><strong>Critical Success</strong> The target falls and lands @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, reducing the falling damage you take by an amount equal to twice your level. You then can make a melee Strike against the target. The Strike gains the deadly d8 weapon property and deals an additional 1d6 bludgeoning damage. This additional damage increases to 2d6 if you are a master in Athletics, and to 3d6 if you are legendary in Athletics.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the beginning of your next turn, reducing the falling damage you take by an amount equal to your level. You can then make a melee Strike against the target, adding the deadly d8 weapon property to the attack.</p>\n<p><strong>Failure</strong> You can make a Strike against the target.</p>\n<p><strong>Critical Failure</strong> You fall prone, whether you take falling damage or not.</p>",
+            "prerequisites": [
+                {
+                    "value": "Canopy Predator"
+                },
+                {
+                    "value": "expert in Athletics"
+                }
+            ],
+            "name": "Death from Above"
         },
         "Negate Damage": {
             "description": "<p><strong>Trigger</strong> You would take damage.</p>\n<hr />\n<p>Your armor innovation activates various devices you prepared ahead of time, and you use one of them to reduce the damage you would take by 15.</p>\n<p><strong>Unstable Function</strong> You activate all the precautions at once, violently repelling the incoming attack to blunt its force. Add the unstable trait to Negate Damage and reduce the damage you would take by 50.</p>\n<p>@Check[flat|dc:17|options:unstable-check|name:PF2E.SpecificRule.Inventor.Unstable.FlatCheck.Label]{PF2E.SpecificRule.Inventor.Unstable.FlatCheck.Label}</p>",
@@ -17032,6 +17073,18 @@
                 }
             ],
             "name": "Effortless Captivation"
+        },
+        "Canopy Predator": {
+            "description": "<p>You are as at home in the treetops as you are beneath their branches. You gain a climb Speed of 15 feet when moving through trees, vines, and other foliage. Whenever you succeed at an Athletics check to Climb a tree or an Acrobatics check to @UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{Balance} on a branch, you get a critical success instead. You aren't @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} while Climbing or Balancing on a tree.</p>",
+            "prerequisites": [
+                {
+                    "value": "Verduran Shadow Dedication"
+                },
+                {
+                    "value": "trained in Athletics"
+                }
+            ],
+            "name": "Canopy Predator"
         },
         "Hybrid Shape": {
             "description": "<p>Mastery of your shapeshifting lets you combine the best features of your humanoid and spider forms. When using your @UUID[Compendium.pf2e.actionspf2e.Item.34E7k2YRcsOU5uyl]{Change Shape} ability, you can assume a bipedal hybrid shape.</p>\n<p>This form gains all the benefits of your spider shape as well as the ability to use items and take manipulate actions just as easily as your human shape.</p>",
@@ -21457,6 +21510,15 @@
             ],
             "name": "Ward Casting"
         },
+        "Underbrush Trailblazer": {
+            "description": "<p>You gain the @UUID[Compendium.pf2e.feats-srd.Item.beyw5bdA5hkQbmaG]{Terrain Stalker} feat, selecting the underbrush terrain; if you already have Terrain Stalker for underbrush, you can select a different type of difficult terrain. If you @UUID[Compendium.pf2e.actionspf2e.Item.IE2nThCmoyhQA0Jn]{Avoid Notice} while exploring, and if any allies use @UUID[Compendium.pf2e.actionspf2e.Item.tfa4Sh7wcxCEqL29]{Follow the Expert} to follow you as you do so, you can extend your Terrain Stalker feat's benefits to one ally so long as they remain within 10 feet of you. If you have master proficiency in Stealth, you can extend the effect to two allies. If you have legendary proficiency in Stealth, you can extend it to four allies.</p>",
+            "prerequisites": [
+                {
+                    "value": "Verduran Shadow Dedication"
+                }
+            ],
+            "name": "Underbrush Trailblazer"
+        },
         "Counter Thought": {
             "description": "<p><strong>Trigger</strong> A creature Casts a Spell with the mental trait.</p>\n<p><strong>Requirements</strong> You have an unexpended spell slot you could use to @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{Cast a Spell} with the mental trait.</p>\n<hr />\n<p>When a foe @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{Casts a Spell} that has the mental trait and you can see its manifestations, you can use your own mental magic to disrupt it. You expend one of your spell slots to counter the triggering creature's casting of a spell with the mental trait. You lose your spell slot as if you had cast the triggering spell; this spell slot must be one for which you could Cast a Spell with the mental trait. You then attempt to counteract the triggering spell.</p>",
             "name": "Counter Thought"
@@ -25036,6 +25098,18 @@
                 }
             ],
             "name": "Peafowl Strut"
+        },
+        "Verduran Ambush": {
+            "description": "<p>You prepare to ambush a foe. You Ready an activity that takes 2 actions, though that activity must either be Death from Above or an activity with the requirement that you be @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} or @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected} by all your opponents (such as @UUID[Compendium.pf2e.feats-srd.Item.jvQoupE76OeUpjZp]{Scout's Pounce}). After using the reaction, you cannot use this feat again for 10 minutes.</p>",
+            "prerequisites": [
+                {
+                    "value": "Verduran Shadow Dedication"
+                },
+                {
+                    "value": "expert in Stealth"
+                }
+            ],
+            "name": "Verduran Ambush"
         },
         "Greater Cruelty": {
             "description": "<p>The extent of the corruption within you does more than simply sap your foes' strength, it devastates their minds and reflexes.</p>\n<p>When you use @UUID[Compendium.pf2e.feats-srd.Item.vxA0VRN10OwUkGAr]{Cruelty}, choose whether you want to make the creature enfeebled as normal, to make it @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} on a failed save (clumsy 2 on a critical failure), or to make it @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} on a failed save (stupefied 2 on a critical failure).</p>",
