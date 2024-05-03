@@ -1,1 +1,76 @@
-{}
+{
+    "label": "Focus Spells",
+    "mapping": {
+        "primarycheck": "system.primarycheck.value",
+        "secondarycasters": "system.secondarycasters.value",
+        "secondarycheck": "system.secondarycheck.value",
+        "target": "system.target.value",
+        "range": "system.range.value",
+        "duration": "system.duration.value",
+        "time": "system.time.value",
+        "cost": "system.cost.value"
+    },
+    "entries": {
+        "Coiling Grasp": {
+            "name": "Coiling Grasp",
+            "target": "1 Medium or smaller creature",
+            "range": "15 feet",
+            "duration": "4 rounds",
+            "description": "<p>You whip your flail at your opponent, causing it to bind them and send agonizing pain through them. You @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} the target with the required weapon even if it would be outside the weapons normal reach using your @UUID[Compendium.pf2e.action-macros.Macro.i95kcGLIQKOTsnv6]{Athletics} modifier or your @UUID[Compendium.magus.magus-macros.Macro.HF9VRZBZktKzNhYs]{spell attack roll modifier}, whichever is higher. When you @UUID[Compendium.pf2e.actionspf2e.Item.3f5DMFu8fPiqHpRg]{Sustain a Spell}, you attempt to maintain the Grapple against the target of the spell. The target can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} as normal. You cannot use the required item or hand that is holding it while this spell is active and if you release your grip on the item the spell immediately ends. Instead of the normal effects, your Grapple has the following effects.</p>\n<p><strong>Critical Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}. You can make Spellstrikes and Strikes against the target with the required weapon.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}. You can make Spellstrikes and Strikes against the target with the required weapon.</p>\n<p><strong>Critical Failure</strong> The target can either grab you if you are within its reach, as if it succeeded at using the Grapple action against you, or force you to fall and land @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<hr />\n<p><strong>Heightened (3rd)</strong> You may target and Grapple Large or smaller creatures with this spell.</p>\n<p><strong>Heightened (6th)</strong> You may target and Grapple Huge or smaller creatures with this spell.</p>\n<p><strong>Heightened (9th)</strong> You may target and Grapple Gargantuan or smaller creatures with this spell.</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>",
+            "time": "1"
+        },
+        "Dual-Pattern Strike": {
+            "duration": "1 minute",
+            "time": "1",
+            "name": "Dual-Pattern Strike",
+            "description": "<p>You swing your weapons, one after the other, creating an arcane sigil that lingers with your strokes. Make two Strikes against a single target, one with each of the required weapons. If both your Strikes hit, you brand the target with an arcane sigil, giving them a weakness of 2 to one of the following damage types: acid, cold, electricity, fire, force, mental, negative, poison, or positive. Apply your multiple attack penalty to each Strike normally.</p>\n<p><strong>Heightened (+2)</strong> The weakness increases by 1.</p>\n<hr />\n<p>@UUID[Compendium.magus.magus-effects.Item.bj5j2Fdftrq7JttP]{Spell Effect: Dual-Pattern Strike}</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>"
+        },
+        "Hyper-Arcane Pressure Point Strike": {
+            "duration": "1 minute",
+            "name": "Hyper-Arcane Pressure Point Strike",
+            "description": "<p>You jab your fingers quickly into pressure points in your opponents body in such a way that you channel up strange arcane shocks through their body. Make a Strike with the required unarmed attack. If you hit, on subsequent turns during the duration you can spend a single action with the concentrate trait during the duration to activate your pressure point magic and the target must attempt a @Check[type:fortitude|dc:resolve(@actor.attributes.spellDC.value)|traits:magical,evocation] against your spell DC, after which the spell immediately ends.</p>\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target's muscles surge with pain and they become temporarily weaker. Roll damage for the required unarmed Strike again and the target takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 round.</p>\n<p><strong>Failure</strong> As success, except the target takes full damage and any time it attempts to take an action with the manipulate trait while enfeebled, the target must succeed at a flat check with a DC equal to 5 + its enfeebled value or the action is disrupted.</p>\n<p><strong>Critical Failure</strong> As failure, but the target takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2}.</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>",
+            "time": "1"
+        },
+        "Cascading Weapon Blast": {
+            "name": "Cascading Weapon Blast",
+            "description": "<p>You use your residual energy and make a powerful blast by pointing your weapon, creating a weapon of the energy from your lingering magic. Make a ranged attack roll with a weapon or unarmed attack you are wielding and apply the result against all creatures within a 5-foot burst within 30 feet of you. If the weapon you chose is a melee weapon, you can use your Strength modifier for the attack roll instead of your Dexterity modifier. If you hit, you deal damage as if you landed a Strike with your weapon but all of the damage from this Strike is of the same damage type as your Arcane Cascade. After you Cast the Spell, you immediately leave Arcane Cascade and end any ongoing effects related to Arcane Cascade.</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>",
+            "range": "30 feet",
+            "time": "1"
+        },
+        "Wreak Havok": {
+            "time": "1",
+            "name": "Wreak Havok",
+            "description": "<p>You unleash the magical energy ravaging your body. Creatures in a @Template[type:emanation|distance:5], @Template[type:cone|distance:10], or@Template[type:line|distance:15] of you take 2d4 damage. Creatures that fail their save are @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to you until the beginning of your next turn. The damage dealt by this spell is the same type as your Arcane Cascade.</p>"
+        },
+        "Force Manipulate": {
+            "name": "Force Manipulate",
+            "description": "<p><strong>Trigger</strong> You make a successful Strike or Spellstrike.</p>\n<hr />\n<p>You thrust yourself as if to land a martial blow, manipulating creatures or objects with magical force in the same motion. Attempt a Shove or Force Open against the target at the same multiple attack penalty as the required Strike or Spellstrike using your proficiency in Athletics (@UUID[Compendium.pf2e.action-macros.Macro.yNry1xMZqdWHncbV]{Shove: Athletics}, @UUID[Compendium.pf2e.action-macros.Macro.yMTKMnaYSGtDz4wk]{Force Open: Athletics}) or your spell attack roll modifier (@UUID[Compendium.magus.magus-macros.Macro.qOp3y9bHGUXIDffq]{Shove: Arcane Spell Attack Mod}, @UUID[Compendium.magus.magus-macros.Macro.Hg5aG8agz3pi8Urx]{Force Open: Arcane Spell Attack Mod}), whichever is higher. You can choose any unoccupied square adjacent to the target as your location for the purposes of determining the effects.</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>",
+            "target": "1 Large or smaller creature or an object of 8 bulk or less",
+            "range": "30 feet",
+            "time": "reaction"
+        },
+        "Metamorphic Armor": {
+            "name": "Metamorphic Armor",
+            "description": "<p>Your armor reshapes itself dramatically to gain a new appearance, such as taking on a sheen of color associated with a certain energy type, or sprouting metal thorns or studs to enhance your frame. Make a melee Strike against a creature and then @UUID[Compendium.magus.magus-macros.Macro.lCc5jQLfsIu9PufV]{choose an effect} from the list below. For the duration, when you make a Strike against an enemy you can change the effect you chose to another choice.</p>\n<ul>\n<li>Gain a resistance to bludgeoning, piercing or slashing damage equal to half your level (minimum 1).</li>\n<li>Gain a resistance to acid, cold, electricity, or fire equal to half your level plus 2 or increase one of these resistances by half your level.</li>\n<li>Gain a +1 circumstance bonus to AC.</li>\n<li>Gain a +1 status bonus to your reflex saves against area of effect spells.</li>\n</ul>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>",
+            "duration": "1 minute",
+            "time": "1"
+        },
+        "Mystic Bomb": {
+            "name": "Mystic Bomb",
+            "description": "<p>You spontaneously create a burst of magical energy that appears in the specified location within range. Your mystic bomb appears in the location and deals 4d6 damage to each creature within the area on a basic Reflex save and the bomb disappears. The damage of your mystic bomb is of the same damage type as your Arcane Cascade. If no creatures are in the area, the bomb remains in the area. On subsequent rounds, the first time you Sustain this Spell each round, you can leave the mystic bomb in its space or move it to another square within range, immediately exploding after this action is completed if any creatures are in its area. At the end of each turn that you Sustain the Spell, you can choose to increase the size of the burst by 5 feet, up to a maximum of a 20-foot burst.</p>\n<p>For the duration of the spell, allies within 60 feet of your mystic bomb can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.HCl3pzVefiv9ZKQW]{Aid} you by lending their strength and making an Athletics or Arcana check at a standard DC of your level. If they succeed, they increase the number of damage dice the spell deals by 1d6, or by 2d6 if they critically succeed. After an ally successfully Aids you in this way, they cannot Aid you again and you can only receive Aid for this spell 3 times before further attempts automatically fail, treating critical successes as 2 times for the purposes of attempts.</p>\n<p>If you have @UUID[Compendium.pf2e.feats-srd.Item.84n92oBsRVCxjifM]{Expansive Spellstrike}, you can deliver your mystic bomb through a Spellstrike, moving the mystic bomb up to 30 feet as part of this activity and applying the effects as if you had Cast the Spell the same turn.</p>\n<hr />\n<p><strong>Heightened (+1) </strong>The initial damage increases by 1d6 and the number of times your spell can receive Aid increases by 1.</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>",
+            "range": "120 feet",
+            "duration": "4 rounds",
+            "time": "1"
+        },
+        "Quantum Shot": {
+            "name": "Quantum Shot",
+            "time": "1",
+            "description": "<p>You split your ammunition into two states, allowing it to exist in two places at once. Make a Strike with the required weapon, the ammunition you used to make the Strike is not expended and the required weapon remains loaded with that ammunition.</p>\n<hr />\n<p><strong>Heightened (4th)</strong> You can use magical or special ammunition when you cast this spell. If the item level of the ammunition is greater than your level–3 you must attempt a @Check[type:flat|dc:5] or the ammunition is expended as normal due to quantum instability.</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>"
+        },
+        "Rebounding Figment Strike": {
+            "name": "Rebounding Figment Strike",
+            "description": "<p>You bring down a mighty blow that causes a figment to echo off your swing in tandem. Make a thrown Strike with your bonded weapon or a figment against a creature within its first range increment. If you successfully hit the creature with this Strike, a figment spawns from your Strike and travels in another trajectory, allowing you to make a second thrown Strike against another creature within your weapon's range increment from the first creature. Both of these Strikes are made at their normal multiple attack penalty.</p>\n<p data-visibility=\"owner\"><em>Note: Conflux spells refresh Spellstrike.</em></p>",
+            "time": "1"
+        }
+    }
+}
