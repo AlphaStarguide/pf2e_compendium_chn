@@ -2,784 +2,813 @@
     "entries": {
         "Animated Wine Vessel": {
             "items": {
-                "Spit Wine": {
-                    "description": "<p>The wine vessel opens its mouth and blows a stream of wine in a @Template[type:line|distance:15], dealing @Damage[2d8[bludgeoning]] damage (@Check[type:reflex|dc:19|basic:true] save).</p>",
-                    "name": "Spit Wine"
-                },
-                "Swallow Whole": {
-                    "name": "Swallow Whole",
-                    "description": "<p>Medium, @Damage[(2d8+4)[bludgeoning]] plus Wine-Soaked, Rupture 10</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                "Wine-Soaked": {
+                    "name": "溺酒 Wine-Soaked",
+                    "description": "<p>当生物在被活化酒器活吞时结束回合，它必须成功通过一次@Check[type:fortitude|dc:19]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>"
                 },
                 "Construct Armor (Hardness 4)": {
-                    "name": "Construct Armor (Hardness 4)",
-                    "description": "<p>Like normal objects, an animated wine vessel has Hardness. This Hardness reduces any damage it takes by an amount equal to the Hardness. Once an animated wine vessel is reduced to less than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks and its Armor Class is reduced to 17.</p>"
+                    "name": "构装护甲 Construct Armor (硬度 4)",
+                    "description": "<p>与普通的物体一样，活化酒器同样拥有硬度。硬度可以减少其所受到的任何伤害，其数值等同于硬度的数值。一旦活化酒器的生命值降低至一半以下，或是受到重击伤害后，其构装护甲将会破损，其AC降低至17。</p>"
                 },
-                "Wine-Soaked": {
-                    "name": "Wine-Soaked",
-                    "description": "<p>When a creature ends its turn Swallowed Whole by the animated wine vessel, it must succeed at a @Check[type:fortitude|dc:19] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>"
+                "Spit Wine": {
+                    "name": "喷酒 Spit Wine",
+                    "description": "<p>酒器张开嘴，朝@Template[type:line|distance:15]范围喷出一股酒水，造成@Damage[2d8[bludgeoning]]伤害（@Check[type:reflex|dc:19|basic:true]豁免）。</p>"
+                },
+                "Swallow Whole": {
+                    "name": "活吞 Swallow Whole",
+                    "description": "<p>中型，@Damage[(2d8+4)[bludgeoning]] 外加溺酒，破裂10</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 }
             },
             "prototypeToken": {
-                "name": "Animated Wine Vessel"
+                "name": "活化酒器"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Animated Wine Vessel",
-            "publicNotes": "<p>A beautiful wine vessel presents a mark of status among drinkers, to say nothing of an animated one that pours the wine on its own. Although normally harmless servants, these vessels will just as quickly follow instructions to swallow intruders and drown them in strong wine.</p>",
-            "ac": "17 when broken; construct armor"
+            "name": "活化酒器 Animated Wine Vessel",
+            "publicNotes": "<p>精美的酒器是饮酒者身份的象征，更不用说能自己斟酒的活化酒器了。虽然这些酒器通常是无害的仆人，但它们也会按照指示快速吞下入侵者，将其淹没在烈酒中。</p>",
+            "ac": "破损时17；构装护甲"
         },
         "Peng": {
+            "prototypeToken": {
+                "name": "鹏"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "鹏 Peng",
             "items": {
-                "Windslice": {
-                    "description": "<p>Pengs can move in any wind with easy grace. A peng ignores difficult terrain caused by wind and doesn't need to Maneuver in Flight in high winds.</p>",
-                    "name": "Windslice"
-                },
                 "Heaven's View": {
-                    "name": "Heaven's View",
-                    "description": "<p>Clouds don't impair a peng's vision.</p>"
+                    "name": "苍穹之眼 Heaven's View",
+                    "description": "<p>云不会阻碍鹏的视觉。</p>"
+                },
+                "Cloud Cover": {
+                    "name": "云层掩蔽 Cloud Cover",
+                    "description": "<p>鹏呼出一片密云，把自己笼罩在云雾中。鹏获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}直到其下回合结束。</p>"
+                },
+                "Flap Wings": {
+                    "name": "振翅 Flap Wings",
+                    "description": "<p>鹏拍打翅膀，创造出一股强大的寒气，将敌人推开。鹏10尺内的每个生物受到4d6钝击和@Damage[4d6[cold]]伤害（@Check[type:reflex|dc:32|basic:true]豁免）。豁免失败的生物会被推离10尺；大失败则被推离20尺并被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
                 },
                 "At-Will Spells": {
-                    "name": "At-Will Spells",
+                    "name": "随意施法 At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
                 },
                 "Calm Weather Aura": {
-                    "name": "Calm Weather Aura",
-                    "description": "<p>1 mile.</p>\n<p>The ambient weather around a peng is always lightly cloudy with a pleasant breeze, and the temperature is pleasantly warm for the season. Another creature that attempts to alter the weather within this aura (such as with a control weather ritual or localized effect like gust of wind) must succeed at a @Check[type:will|dc:32] save; otherwise, the effect is disrupted. The peng can activate or deactivate this aura as a single action with the concentrate trait.</p>"
+                    "name": "天朗灵光 Calm Weather Aura",
+                    "description": "<p>1英里。</p>\n<p>1英里。一头鹏周围的天气总是略有云彩、微风怡人，气温总是处于本季节中温暖的水平。尝试在此光环中改变天气的生物（例如使用操控天气仪式或造风术等局部效果）必须成功通过@Check[type:will|dc:32]豁免。否则效果就会被打断。鹏可以通过具有专注特征的单动作启动或关闭灵光。</p>"
                 },
-                "Cloud Cover": {
-                    "name": "Cloud Cover",
-                    "description": "<p>The peng exhales a thick cloud and envelops themself in the mist. The peng is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} until the end of their next turn.</p>"
+                "Windslice": {
+                    "name": "乘风 Windslice",
+                    "description": "<p>鹏能在任何风中从容不迫地飞行。鹏忽视由风引起的困难地形，也不需要在大风中进行空中机动。</p>"
+                }
+            },
+            "publicNotes": "<p>鹏是一种巨大的鸟类，能毫不费力地飞翔在最高的云层间。它们明亮的羽毛让人很难在蔚蓝的空中瞥见它们的身形，但只要有耐心，观测者就可能注意到一些速度快到不可能是云的移动物。</p>\n<p>美丽且优雅的鹏有着最不可思议的起源：残忍的鲲，一条充满怨恨的鱼怪，其对大海深处的偏好与鹏对明亮、开阔的天空的热爱互相对照。在鲲为获得一颗高贵的心而通过沐浴于阳光下来牺牲自己的力量后，它们变成了这种壮丽的鸟，其会尽力避免暴力，除非它们必须战斗以保持自由。鹏不求危险或刺激；他们只想继续自己的漫长旅行，并不受干扰地飞翔。</p>\n<p>鹏不追求危险或刺激；它们只想不受干扰地进行远航和飞行。然而，它们有时会与会狩猎它们或阻挡其道路的龙和其他高空飞行的生物发生冲突。虽然凡人不清楚鹏的旅行有什么目的，但与气或自由有关的天界势力有时会要求他们的凡人追随者帮助鹏完成旅程。</p>\n<p>鹏那冷静与平和的天性是如此强大，以至于仅是它的存在就能平息风暴与狂风。水手和领航员们认为，看到鹏是好运的象征。每当天空湛蓝、天气在很长一段时间都很温和的时候，人们就会把这种好海况归功于一位看不见的鹏。</p>"
+        },
+        "Five-Color Orchid Mantis": {
+            "items": {
+                "Harvesting Limbs": {
+                    "name": "收获之肢 Harvesting Limbs",
+                    "description": "<p>螳螂进行两次腿攻击。如果两次攻击均命中，螳螂获得10点临时生命值，且目标必须成功通过一次@Check[type:fortitude|dc:27]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}）。流失状态会在螳螂降至0生命值时结束。</p>"
                 },
-                "Flap Wings": {
-                    "name": "Flap Wings",
-                    "description": "<p>The peng beats their wings to create a mighty burst of frosty air and push away foes. Each creature within 10 feet of the peng takes 4d6 bludgeoning and @Damage[4d6[cold]] damage (@Check[type:reflex|dc:32|basic:true] save). Creatures that fail their save are pushed away 10 feet; creatures that critically fail are pushed away 20 feet and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+                "Sudden Strike": {
+                    "name": "突袭 Sudden Strike",
+                    "description": "<p>在战斗第一轮，尚未行动的敌人对兰花螳螂@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                },
+                "Floral Camouflage": {
+                    "name": "花朵迷彩 Floral Camouflage",
+                    "description": "<p>当躲藏时，五彩兰花螳螂可以从任意数量的叶子和花瓣处获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，即便这些叶子和花瓣的厚度不足以使其他生物隐蔽。</p>"
+                },
+                "Elemental Expulsion": {
+                    "name": "元素斥逐 Elemental Expulsion",
+                    "description": "<p><strong>需求</strong> 螳螂从色彩变幻中获得一种元素特征</p>\n<p><strong>触发</strong> 其被某个武器打击伤害</p>\n<hr />\n<p><strong>效果</strong> 元素能量反击这一攻击，使攻击者在攻击掷骰上承受-2状态减值，直到其下回合开始。如果武器包含有与螳螂特征相符的材料（例如土对应投石，火对应火把），则螳螂对此次打击获得全伤害抗力10。</p>"
+                },
+                "Color Shift": {
+                    "name": "色彩变幻 Color Shift",
+                    "description": "<p><strong>Frequency</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 螳螂与五行之一相适应，并相应地改变颜色（土为黄色，火为红色，金为白色，水为黑色，木为绿色）。它获得对应的特征，以及在对抗具有此特征的效果时豁免上+2状态加值，直到其下回合开始。如果螳螂在下回合使用色彩变幻，它必须选择一种不同的颜色。</p>"
                 }
             },
             "prototypeToken": {
-                "name": "Peng"
+                "name": "五彩兰花螳螂"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Peng",
-            "publicNotes": "<p>A peng is a massive avian beast who flies effortlessly among the highest clouds. Their bright plumage makes it difficult to see their shape against an azure sky, but with patience, an onlooker might notice movement too swift to be a natural cloud.</p>\n<p>Beautiful and graceful, a peng arises from the unlikeliest of origins: the cruel kun, a hateful fish monster whose predilection for the crushing depths of the sea matches the peng's own love of the bright, open sky. After a kun sacrifices their power for a noble heart by bathing in the sun's rays, they transform into this majestic bird, which eschews violence unless they must fight to stay free.</p>\n<p>A peng doesn't seek danger or thrills; they want only to make their long voyages and fly without disruption. However, they sometimes come into conflict with dragons and other high-flying creatures that would hunt them or block their path. Although it's unclear to mortals what purpose a peng's journeys serve, celestial powers related to air or freedom will sometimes ask their mortal followers to assist a peng in its journey.</p>\n<p>A peng's calm and steady nature is so strong that its mere presence can quell storms and still winds. Spotting a peng is undoubtedly a sign of good luck for sailors and mariners—a feeling shared with most others lucky enough to lay eyes on these rare and beautiful creatures. When the sky is clear and blue with gentle weather for an extended period, such fine conditions can be attributed to the presence of an unseen peng.</p>"
+            "name": "五彩兰花螳螂 Five-Color Orchid Mantis",
+            "publicNotes": "<p>很少有生物像兰花螳螂一样美丽。它们优雅的外形和颜色都很像花朵，许多人把这种娇嫩的生物当做短命的宠物。虽然这些普通的昆虫对类人生物而言并不危险，但它们仍能捕食比自己大好几倍的猎物。兰花螳螂在花丛中展开身姿，以令人目眩的速度，甚至能用它们锋利的牙齿和强力的撕咬追赶觅食的蝴蝶。</p>\n<hr />\n<p>兰花螳螂的寿命自然很短，没有大量的时间来积聚精魂能量。但是，螳螂在足够丰富的环境中可以延长它们的寿命，并逐渐学会理解元素。这些生物成为五彩兰花螳螂，尽管它们性格暴戾，但被认为对齐仲来说尤其神圣。因此，在采集草药时，人们通常会避开或安抚这些危险的螳螂，而不是驱赶它们。</p>"
         },
-        "Five-Color Orchid Mantis": {
+        "Bul-Gae": {
+            "name": "天蚀狗 Bul-Gae",
             "prototypeToken": {
-                "name": "Five-Color Orchid Mantis"
+                "name": "天蚀狗"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Five-Color Orchid Mantis",
-            "publicNotes": "<p>Few creatures appear as beautiful as the orchid mantises. Their elegant form and coloration resemble flowers, and many people adopt the delicate creatures as short-lived pets. While these mundane insects aren't dangerous to humanoids, they can still bring down prey several times their own size. Unfolding from their flowery pose, orchid mantises lash out with blinding speed, even chasing foraging butterflies with their sharp-toothed arms and powerful bite.</p>\n<hr />\n<p>Orchid mantises naturally live short lives that don't offer a great deal of time to gather spiritual energy. However, a mantis in a rich enough environment can extend their life span and grow to understand the elements. These creatures become five-color orchid mantises and, despite their violent attitudes, are thought to be especially sacred to Qi Zhong. As such, these dangerous mantises are often avoided or placated while gathering herbs rather than driven off.</p>",
+            "publicNotes": "<p>天蚀狗是日月蚀的化身。它们看起来像大型犬科动物，不过它们的颜色和特征会随着它们操控热和冷的力量的发挥而改变。根据它们最近释放的是月蚀还是日蚀的力量，天蚀狗分别像一条浑身燃烧着火焰的深红色猎犬或一只碧蓝色的霜冻狐狸。</p>\n<p>传说中，第一只天蚀狗试图从天上偷走太阳。当它们咬住燃烧的天体时，天蚀狗被严重烧伤。失败后，他们又试图夺取月亮，但当他们触碰到月亮时，天蚀狗被冻得结结实实，掉到了地上。天蚀狗的后代永远磨练着他们的火和冰的力量，以便有一天他们能在祖先失败的地方取得成功。</p>\n<p>传说中，天蚀狗是第一只天蚀狗那古老而阴暗的主人的忠实伙伴。这些故事声称，阴影之主可以透过所有天蚀狗扭曲的光观察世间，并利用猎犬监视物质宇宙以达到未知的目的。</p>",
             "items": {
-                "Floral Camouflage": {
-                    "name": "Floral Camouflage",
-                    "description": "<p>When Hiding, the five-color orchid mantis is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} by any amount of leaves or petals, even if they aren't thick enough to make other creatures concealed.</p>"
+                "Eclipse Aura": {
+                    "name": "蚀刻灵光 Eclipse Aura",
+                    "description": "<p>100尺。</p>\n<p>天蚀狗周围的光线奇异地变幻着。灵光范围内的非魔法明亮光照减弱为昏暗光照。当生物尝试在灵光范围内使用具有光亮特征的动作时，它必须尝试一次@Check[type:will|dc:34]豁免。失败时，该动作被打断。</p>"
                 },
-                "Elemental Expulsion": {
-                    "name": "Elemental Expulsion",
-                    "description": "<p><strong>Requirements</strong> The mantis has an elemental trait from Color Shift</p>\n<p><strong>Trigger</strong> It's damaged by a weapon Strike</p>\n<hr />\n<p><strong>Effect</strong> Elemental energy pushes back against the blow, giving the attacker a –2 status penalty to attack rolls until the beginning of its next turn. If the weapon contains material that matches the mantis's trait (such as earth for a thrown rock or fire for a lit torch), the mantis gains resistance 10 to all damage from this Strike.</p>"
+                "Solar Flare": {
+                    "name": "太阳耀斑 Solar Flare",
+                    "description": "<p><strong>触发</strong> 天蚀狗受到伤害</p>\n<hr />\n<p><strong>效果</strong> 天蚀狗在@Template[type:emanation|distance:30]范围内施放出一道太阳耀斑。区域内每个生物受到@Damage[6d8[fire]]伤害（@Check[type:reflex|dc:34|basic:true]豁免）。大失败时，生物还将受到@Damage[2d10[persistent,fire]]伤害。在使用此能力后，天蚀狗的火焰冷却，它无法再次使用太阳耀斑，直到其使用了月爆能力。</p>"
                 },
-                "Color Shift": {
-                    "name": "Color Shift",
-                    "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The mantis attunes itself to one of five elements, changing color accordingly (yellow for earth, red for fire, white for metal, black for water, or green for wood). It gains that trait and a +2 status bonus to saving throws against effects with that trait until the beginning of its next turn. If the mantis uses Color Shift on its next turn, it must choose a different color.</p>"
+                "Lunar Burst": {
+                    "name": "月爆 Lunar Burst",
+                    "description": "<p>天蚀狗释放出一道异界霜寒，对@Template[type:emanation|distance:10]范围内每个生物造成@Damage[6d8[cold]]伤害（@Check[type:reflex|dc:34|basic:true]豁免）。大失败时，生物还将陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}一轮。在使用此能力后，天蚀狗的火焰升温，它无法再次使用月爆，直到其使用了太阳耀斑反应动作。</p>"
                 },
-                "Harvesting Limbs": {
-                    "name": "Harvesting Limbs",
-                    "description": "<p>The mantis makes two leg attacks. If both attacks hit, the mantis gains 10 temporary Hit Points, and the target must succeed at a @Check[type:fortitude|dc:27] saving throw or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure). The drained condition ends when the mantis is reduced to 0 Hit Points.</p>"
+                "Shadow Leap": {
+                    "name": "影跃 Shadow Leap",
+                    "description": "<p><strong>需求</strong> 天蚀狗处于昏暗光照或黑暗中</p>\n<hr />\n<p><strong>效果</strong> 天蚀狗遁入阴影，然后在40尺内的阴影中重新出现。</p>"
                 },
-                "Sudden Strike": {
-                    "name": "Sudden Strike",
-                    "description": "<p>On the first round of combat, creatures that haven't acted are @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to the mantis.</p>"
+                "Thermal Mastery": {
+                    "name": "热能掌控 Thermal Mastery",
+                    "description": "<p>天蚀狗能够完全掌控寒冷与火焰的力量。它每次使用颚咬进行攻击时，它可以选择额外伤害造成寒冷伤害还是火焰伤害。</p>"
                 }
             }
         },
         "The Great Flood": {
             "items": {
-                "Reactive Strike": {
-                    "name": "Reactive Strike",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
+                "Coordinated Actions": {
+                    "description": "<p>相柳的多个头允许他以两个独立的先攻行动，掷骰两次先攻，以两个结果分别行动。他不能进行延迟。在每个回合开始时，他获得两个动作（反应动作见下文多重反应）。只要相柳还剩余至少一颗头，任何斩下他一颗头的能力都不会导致其立即死亡，但这会导致他失去由被斩断的头所提供的额外反应动作。</p>",
+                    "name": "协调动作 Coordinated Actions"
                 },
-                "Flood Breath": {
-                    "name": "Flood Breath",
-                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:42]</p>\n<hr />\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>\n<p><strong>Stage 3</strong> drained 2 and @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} (1 day)</p>\n<p><strong>Stage 4</strong> You die and your body collapses, releasing a cloud of toxin. Any creature within @Template[type:emanation|distance:10]{10 feet} of your death is exposed to flood breath (1 day)</p>"
-                },
-                "Great Wave": {
-                    "name": "Great Wave",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The Great Flood gathers all nearby water and floods a mile burst. Any creature in the area must succeed at a @Check[type:reflex|dc:42] save or be moved up to 60 feet in a direction of the Great Flood's choice. The area remains flooded with 30-foot-deep water for 1 hour or until the Great Flood dies, then drains naturally.</p>"
-                },
-                "Nine-Jawed Frenzy": {
-                    "name": "Nine-Jawed Frenzy",
-                    "description": "<p><strong>Requirements</strong> It's the Great Flood's second turn in the round (see Coordinated Actions)</p>\n<hr />\n<p><strong>Effect</strong> The Great Flood Strides or Swims twice, moving through smaller creatures' spaces freely. Each creature they move through or are adjacent to takes @Damage[(4d8+20)[piercing]] damage (@Check[type:reflex|dc:42|basic:true] save). Creatures that fail the save are also exposed to flood breath.</p>"
+                "Leading Head": {
+                    "name": "主导头颅 Leading Head"
                 },
                 "Scent (Imprecise) 120 feet": {
-                    "name": "Scent (Imprecise) 120 feet",
+                    "name": "灵敏嗅觉 (模糊) 120 尺",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
                 },
                 "Bitter Breath": {
-                    "name": "Bitter Breath",
-                    "description": "<p>90 feet.</p>\n<p>If a creature ends its turn in the aura, it's exposed to the Great Flood's flood breath disease.</p>"
-                },
-                "Coordinated Actions": {
-                    "name": "Coordinated Actions",
-                    "description": "<p>The Great Flood's multiple heads allow them to act on two separate initiatives, rolling initiative twice and acting on both results. They can't Delay. At the start of each of their turns, they gain 2 actions (see Multiple Reactions below for reactions). Any ability that would sever one of the Great Flood's heads doesn't cause the Great Flood to die if they still have at least one head, but it does cause them to lose the additional reaction granted by the severed head.</p>"
-                },
-                "Leading Head": {
-                    "name": "Leading Head"
+                    "name": "苦涩呼吸 Bitter Breath",
+                    "description": "<p>90尺。</p>\n<p>在灵光范围内结束回合的生物，将承受相柳的相柳毒息疾病。</p>"
                 },
                 "Multiple Reactions": {
-                    "name": "Multiple Reactions",
-                    "description": "<p>The Great Flood gains an extra reaction per round for each of its nine heads, which they can use only to make Reactive Strikes with their jaws. They can't use more than 1 reaction on the same triggering action, even if a creature leaves several squares within the Great Flood's reach, and they gain reactions on only their first turn each round.</p>"
+                    "name": "多重反应 Multiple Reactions",
+                    "description": "<p>相柳九颗头每一颗每轮都会提供一个额外反应动作，这些反应动作只能用于进行颚咬的反应打击。他不能在同一个触发动作上使用超过一个反应动作，即便某个生物离开了相柳触及范围内的多个方格，他只会在每轮第一个回合获得反应动作。</p>"
+                },
+                "Reactive Strike": {
+                    "name": "反应打击 Reactive Strike",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
+                },
+                "Flood Breath": {
+                    "name": "相柳毒息 Flood Breath",
+                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:42]</p>\n<hr />\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2} (1天)</p>\n<p><strong>阶段3</strong> 流失2和@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1} (1天)</p>\n<p><strong>阶段4</strong> 你死亡，身体破碎，释放出一团毒云。你死时@Template[type:emanation|distance:10]{10尺}范围内任何生物都将承受相柳毒息。 (1天)</p>"
+                },
+                "Great Wave": {
+                    "name": "巨涛 Great Wave",
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 相柳汇聚周围所有的水，淹没1英里爆发范围。区域内任何生物必须成功通过一次@Check[type:reflex|dc:42]豁免，否则朝由相柳选择的方向移动至多60尺。该区域将被30尺深的水淹没，持续1小时或直到相柳死亡，随后自然排干。</p>"
+                },
+                "Nine-Jawed Frenzy": {
+                    "name": "九颚狂咬 Nine-Jawed Frenzy",
+                    "description": "<p><strong>需求</strong> 这是相柳每轮的第二个回合（见协调动作）</p>\n<hr />\n<p><strong>效果</strong> 相柳行走或游泳两次，可以随意移动穿越更小体型生物所处空间。每个被移动穿越或相邻的生物受到@Damage[(4d8+20)[piercing]]伤害（@Check[type:reflex|dc:42|basic:true]豁免）。豁免失败的生物还将承受相柳毒息。</p>"
                 }
             },
             "prototypeToken": {
-                "name": "The Great Flood"
+                "name": "相柳"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "The Great Flood",
-            "publicNotes": "<p>There are few creatures capable of such ecological destruction while staying as humorous and lighthearted as the Great Flood. The Great Flood towers with their giant serpent body and nine humanoid heads, each one with a different personality, though all serve the same purpose—to vanquish all signs of life that shouldn't be where they are. This creature intends to maintain the balance of the universe, ensuring that nothing takes up more space than necessary. Unfortunately, the judgment of where someone or something should be is only seen and weighed by the 18 eyes of the Great Flood, with little regard to mortal input.</p>\n<p>The Great Flood is an immortal, or at least ageless, being who hibernates for 12 years at a stretch. On the thirteenth year, they emerge from the depths of the oceans and begin weighing the state of the world and the environments closest to their resting place: should the first thing they see on dry land be destroyed? Each of the Great Flood's nine heads lends their thoughts and insights to this deliberation, and upon reaching a consensus, they'll either carry on to the next location or they'll drown the land, immersing miles of dry land in salty waters from the ocean. In instances where they perceive the excess life as particularly problematic, they'll even decide to poison the waters with their bitter breath to ensure that nothing survives the judgment they've decreed. The Great Flood, despite its inherently destructive nature, isn't actually bloodthirsty and will often afford an opportunity for poor townsfolk to state their case and beg for the lives of their town to be saved. While the Great Flood has the capacity for mercy and consideration, the godlike creature stands adamant once they've made their decision. One or two of the heads might feel a twinge of guilt and tell a small joke to the townsfolk, relieving themselves of the mental pressure, before murdering an entire village.</p>\n<p>The nine personalities of the serpentine creature often run into contention with each other. One is a perfectionist, while another is aloof; one is assertive, while another is playful; one is capricious, while another is suspicious; one is ambitious, while the other is a people pleaser. The last one is quiet and secretive, only ever whispering to the heads closest to them. Though the heads squabble like siblings, they eventually always make a compromise.</p>"
-        },
-        "Imugi": {
-            "items": {
-                "Constrict": {
-                    "name": "Constrict",
-                    "description": "<p>@Damage[(2d8+4)[bludgeoning]], @Check[type:fortitude|dc:25|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
-                },
-                "Floodwaters": {
-                    "name": "Floodwaters",
-                    "description": "<p>Waters rush forth in a @Template[type:line|distance:60], dealing @Damage[4d6[bludgeoning]] damage (@Check[type:reflex|dc:25|basic:true] save). Creatures that fail the save and aren't @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the imugi are pushed 10 feet away.</p>"
-                },
-                "Nesting": {
-                    "name": "Nesting",
-                    "description": "<p>By coiling around a butterfly koi egg for 1 minute, the imugi designates it as their chosen heir, which grants the imugi the effects of a constant status spell on that egg. If the egg is destroyed or otherwise made nonviable, the imugi can choose a new koi egg with this ability after 1 week.</p>"
-                },
-                "Parental Wrath": {
-                    "name": "Parental Wrath",
-                    "description": "<p><strong>Trigger</strong> A creature damages the imugi's chosen koi egg or ends its turn within 40 feet of the egg</p>\n<hr />\n<p><strong>Effect</strong> The imugi Strides or Swims toward the triggering creature. If they end their movement within reach of the creature, they can attempt a melee Strike against it.</p>"
-                },
-                "Storm Veil": {
-                    "name": "Storm Veil",
-                    "description": "<p>The imugi twists any nearby precipitation into a swirling veil of sleet and wind. They gain concealment when in any form of mist or rain.</p>"
-                }
-            },
-            "prototypeToken": {
-                "name": "Imugi"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Imugi",
-            "publicNotes": "<p>Imugi (ee-moo-ghee) are dragon-like serpents with great mystic potential, including that of ascension into another form. While some imperial dragons are born to their birthright, many that currently roam Tian Xia are ascended imugi—though they would strike down anyone who claimed such.</p>\n<p>To become an imperial dragon, imugi must care for a koi egg for a thousand years. The power from the nurtured egg hatching is enough to power a draconic ascension ritual, and whatever power lingers transforms the koi into an imugi to continue the cycle. The kind of imperial dragon that the imugi becomes depends on where it chooses to nurture the koi egg. Imugi strongly prefer long-finned koi, and Tian koi farmers have learned to keep a separate pool of these butterfly koi away from the others they tend, as imugi tend to displace quite a bit of water—and koi—when swooping down to snatch an egg they want.</p>\n<p>Though imugi have some power over rain and storms, most aren't powerful enough to exact a true sense of weather control. Many are known for their benevolence, and some villages even rely on imugi's forays out of streams or lakes, bringing rains during the growing season. Imugi have as wide a range of temperaments as the dragons they become, and some are notorious for how their impatience twists into a foul temper or an arrogance that flicks people aside as if they were bugs. While some might consider mean-spirited imugi corrupted and claim they can be purified somehow, imugi simply hold themselves higher than the average creature and see no reason to conceal their true nature from someone they see as beneath them.</p>"
+            "name": "相柳 The Great Flood",
+            "publicNotes": "<p>很少有生物会像相柳一样在破坏生态的同时还能保持幽默轻松。相柳有着巨大的蛇类身躯，和九颗类人头，每颗头都有着不同的性格，但他们全部都有着一个共同目的，消灭所有不应存在的生命。该生物的目的是为了维持物质宇宙的平衡，确保没有任何事物占据不必要的空间。不幸的是，相柳只会靠他那18只眼睛来判断权衡某人或某物应该存在于何处，甚少考虑凡人的意见。</p>\n<p>相柳是一名不朽者，至少不会衰老，他一次冬眠会持续12年。到了第十三年，他就会从海洋深处浮出水面，开始权衡世界的状况，以及其休眠地周围的环境：是否应该毁灭他在陆地上看到的第一件事物？相柳的每颗头都会在此次商议中提供自己的见解和想法，在达成共识后，他要么继续前往下一个地点，要么淹没陆地，将数英里的旱地浸没在海洋的咸水中。如果他认为过剩的生命特别有问题，他甚至会决定用苦涩的呼吸毒化海水，以确保没有任何生命能在他的审判中存活下来。虽然相柳极具破坏性，但他其实并不嗜血，而且常常会给可怜的镇民以供机会，让他们陈述自己的情况，以求拯救镇中的生命。虽然相柳有商量和考虑的余地，但他一旦做出决定，这个似神的生物便会坚持己见。其中一两颗头可能会感到一阵内疚，于是在杀害整个村庄前，他们会给村民讲个小笑话，减轻自己的心理压力。</p>\n<p>这个蛇形生物的九个人格经常相互发生争执，一个完美主义，一个冷漠；一个自信，一个贪玩；一个多变，一个多疑；一个富有野性，一个兼爱于人；最后一个则安静而神秘，只对最靠近他的人低语。虽然这些头像兄弟姐妹一样争吵不休，但他们最终总会达成妥协。</p>"
         },
         "Ijhyeojin": {
             "items": {
-                "Overwrite Memory": {
-                    "name": "Overwrite Memory",
-                    "description": "<p>The ijhyeojin alters the memories of a target within 30 feet, insinuating their faceless visage in the place of others. The target must attempt a @Check[type:will|dc:34] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} and treats no one as an ally for as long as it's frightened.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and is @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for as long as it's frightened.</p>\n<p><strong>Critical Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4} and confused for as long as it's frightened. If the target is a joseung saja, they instead realize the fear of being forgotten and become an ijhyeojin.</p>"
-                },
                 "Easy to Call": {
-                    "name": "Easy to Call",
-                    "description": "<p>An ijhyeojin's level is considered 2 lower for the purpose of being conjured by the @UUID[Compendium.pf2e.spells-srd.Item.vgy00hnqxN9VoeoF]{Planar Servitor} ritual (and potentially other rituals, at the GM's discretion), but they're always free to attack or leave instead of negotiate unless the primary caster's check is a critical success.</p>"
+                    "name": "易于召唤 Easy to Call",
+                    "description": "<p>遗忘魔在被@UUID[Compendium.pf2e.spells-srd.Item.vgy00hnqxN9VoeoF]{异界侍从 Planar Servitor}仪式（也可能是其他仪式，由GM判断）召唤时，等级视作低两级，但他们总是可以自由攻击或离开，而不是进行谈判，除非主要施法者的检定为大成功。</p>"
+                },
+                "Swipe Countenance": {
+                    "name": "偷窃面容 Swipe Countenance",
+                    "description": "<p><strong>需求</strong> 遗忘魔前一个动作为对目标的成功爪抓打击</p>\n<hr />\n<p><strong>效果</strong> 遗忘魔复制目标的面容，将其完美地印在自己空白的脸上。虽然他只有脸会改变，但生物必须@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}他，并成功通过一次@Check[type:will|dc:34]豁免，才能将他与原生物区分开。恐亡魔会保持同一张面孔24小时，或直到他们偷走另一个面容。</p>"
                 },
                 "At-Will Spells": {
-                    "name": "At-Will Spells",
+                    "name": "随意施法 At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
                 },
                 "Constant Spells": {
-                    "name": "Constant Spells",
+                    "name": "常驻法术 Constant Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
                 },
                 "Forgotten Presence": {
-                    "name": "Forgotten Presence",
-                    "description": "<p><strong>Trigger</strong> The ijhyeojin critically succeeds at a saving throw against a spell</p>\n<hr />\n<p><strong>Effect</strong> The ijhyeojin redirects the triggering spell to a new target other than its caster. If the ijhyeojin is wearing that target's face, the new target takes a –2 circumstance penalty to this saving throw.</p>"
+                    "name": "遗忘威压 Forgotten Presence",
+                    "description": "<p><strong>触发</strong> 遗忘魔在对抗法术的豁免上大成功</p>\n<hr />\n<p><strong>效果</strong> 遗忘魔将触发法术反射向施法者外的另一个目标。如果遗忘魔戴着目标的脸，新目标在此豁免上承受-2环境减值。</p>"
                 },
-                "Swipe Countenance": {
-                    "name": "Swipe Countenance",
-                    "description": "<p><strong>Requirements</strong> The ijhyeojin's previous action was a successful claw Strike against the target</p>\n<hr />\n<p><strong>Effect</strong> The ijhyeojin copies the countenance of the target, imprinting it perfectly onto their own blank face. While only their face changes, creatures must @UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{Seek} them and succeed at a @Check[type:will|dc:34] save to distinguish them visually from the original creature. The sakhil keeps the same visage for 24 hours or until they steal another.</p>"
+                "Overwrite Memory": {
+                    "name": "复写记忆 Overwrite Memory",
+                    "description": "<p>遗忘魔修改30尺内一个目标的记忆，将他们无脸的面孔植入其中。目标必须尝试一次@Check[type:will|dc:34]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，且处于惊惧状态时无法将任何人视作盟友。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，且处于惊惧状态时还将陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}。</p>\n<p><strong>大失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 4}，且处于惊惧状态时还将陷入困惑。如果目标为黄泉使者，其会改为意识到被遗忘的恐惧，变为遗忘魔。</p>"
                 }
             },
             "prototypeToken": {
-                "name": "Ijhyeojin"
+                "name": "遗忘魔"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Ijhyeojin",
-            "publicNotes": "<p>Ijhyeojins (ee-jyuh-jeens) were once joseung sajas, psychopomps who guided the dead to the Boneyard as divine punishment for their sins. Over time, they rejected their roles and became sakhils. Some did this due to a sense of injustice over having to atone for their sins in the afterlife, but all do so partially out of a desperate desire to reclaim their memories—for ijhyeojins are named for the fear they manifest, the fear of being forgotten. They prey on people who are socially isolated by circumstances or those obsessed with their legacy, slowly cutting their victims off from friends, professional contacts, and family. Ijhyeojins particularly enjoy infiltrating medical facilities to prey on patients who fear about being forgotten in their deaths, snatching away crucial memories from them or their visiting loved ones. Hunting in this way also grants the sahkils ideal positioning to lure joseung sajas to their demise.</p>\n<p>Ijhyeojins resemble the pale-skinned psychopomps they used to be, except their faces have no distinguishable features, like a skull with a smooth layer of skin pulled over it. Their bodies continue to twist and grow the longer they live.</p>"
+            "name": "遗忘魔 Ijhyeojin",
+            "publicNotes": "<p>遗忘魔曾经是黄泉使者，是引导死者前往骨园的招魂者，作为对他们罪孽的神罚。着时间的推移，他们放弃了自己的角色，成了恐亡魔。有些遗忘魔这样做是因为对必须在来世赎罪感到不公，但所有遗忘魔这样做的部分原因都是急切地想要找回自己的记忆。他们捕食那些因环境而与世隔绝的人或那些执着于自己遗产的人，慢慢切断受害者与朋友，同事和家人的联系。遗忘魔尤其喜欢潜入医疗机构，捕食那些害怕死后被遗忘的病人，夺走他们或探望他们的亲人的重要记忆。通过这种方式进行狩猎也为遗忘魔提供了理想的位置，以引诱黄泉使者走向消逝。</p>\n<p>遗忘魔貌似他们曾经作为的苍白皮肤的招魂者，除了其面部没有明显的五官，就像头骨上蒙了一层光滑的皮肤。他们的身体不断扭曲，且活得越久长得越长。</p>"
         },
         "Pixiu": {
-            "items": {
-                "Devour Wealth": {
-                    "description": "<p><strong>Requirements</strong> The pixiu's previous action was a successful jaws Strike</p>\n<hr />\n<p><strong>Effect</strong> The pixiu swallows up to [[/r 2d12]] gold pieces on the target's person and gains temporary Hit Points equal to the amount devoured. These temporary Hit Points last for 1 minute.</p>",
-                    "name": "Devour Wealth"
-                },
-                "Trample": {
-                    "name": "Trample",
-                    "description": "<p>Medium or smaller, claw, @Check[type:reflex|dc:26|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
-                },
-                "Stored Wealth": {
-                    "name": "Stored Wealth",
-                    "description": "<p>Pixius can eat gold and gems with no adverse effects. A pixiu's belly can hold any number of gold pieces, usually around 100. Whenever it takes slashing or piercing damage, a number of gold pieces equal to the damage falls from its belly to the ground in its square.</p>"
-                },
-                "Goldsense (Precise) 120 feet": {
-                    "name": "Goldsense (Precise) 120 feet",
-                    "description": "<p>The pixiu can detect the presence, location, and approximate value of gold within 120 feet.</p>"
-                },
-                "Good Fortune": {
-                    "name": "Good Fortune",
-                    "description": "<p><strong>Trigger</strong> The pixiu, or an ally within 30 feet, is about to attempt a saving throw but hasn't rolled yet</p>\n<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> That creature rolls the triggering saving throw twice and takes the better result.</p>"
-                }
-            },
             "prototypeToken": {
-                "name": "Pixiu"
+                "name": "貔貅 Pixiu"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Pixiu",
-            "publicNotes": "<p>To witness a pixiu (pee-shee-oh) is a blessing indeed—and a sight to behold. This winged, dragon-headed lion has a formidable appearance that belies its youthful exuberance. Legend claims it was this overenthusiastic playfulness that caused the first of their kind to be banished from heaven, cursed to gather wealth and never let it go. Whatever the case, each pixiu has an uncanny ability to sniff out gold, which it loves to eat. Curiously, a pixiu's touch is also able to sunder curses and censure malign spirits, perhaps a remnant of its lost divinity.</p>\n<p>Due to its celestial background and ability to exorcise curses, a pixiu is also believed to be a bringer and protector of prosperity, attracting good fortune and fending off evil spirits. Its heavenly origins and love of wealth may be the reason why imperial dragons have cared for them since time immemorial, valuing them as guardians and loyal companions. In particular, underworld dragons employ pixius to expand their hoards, and many sovereign dragons value them as status symbols. In dragon-ruled realms across Tian Xia, the presence of a pixiu within a community is seen as a sign of its draconic patron's approval and goodwill.</p>\n<p>Despite the protection of imperial dragons, the lure of wealth is still enough to drive some to attack a pixiu. Although a pixiu will rarely forgive an attacker, it prefers to withdraw peacefully from those it judges as purehearted but desperate. A pixiu's draconic masters, however, aren't always as forgiving.</p>"
+            "name": "貔貅 Pixiu",
+            "items": {
+                "Goldsense (Precise) 120 feet": {
+                    "name": "黄金感知 (精确) 120 尺",
+                    "description": "<p>貔貅可以侦测到120尺内黄金的存在，位置，和大致价值。</p>"
+                },
+                "Good Fortune": {
+                    "name": "好运 Good Fortune",
+                    "description": "<p><strong>触发</strong> 貔貅，或30尺内一名盟友，将要尝试一次豁免骰但还未掷骰</p>\n<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 该生物掷骰触发豁免两次，并采用较好的结果。</p>"
+                },
+                "Stored Wealth": {
+                    "name": "敛财 Stored Wealth",
+                    "description": "<p>貔貅可以吃下黄金和宝石而不产生不良影响。貔貅的肚子里能够容纳任意数量的金币，通常在100枚左右。每当它受到挥砍或穿刺伤害，等同于伤害数量的金币就会从它的肚子里掉落到所处方格中。</p>"
+                },
+                "Devour Wealth": {
+                    "name": "吞财 Devour Wealth",
+                    "description": "<p><strong>需求</strong> 貔貅前一个动作为成功命中的颚咬打击</p>\n<hr />\n<p><strong>效果</strong> 貔貅吞掉目标身上至多[[/r 2d12]]枚金币，并获得等同于吞下金币数量的临时生命值。这些临时生命值持续1分钟。</p>"
+                },
+                "Trample": {
+                    "name": "践踏 Trample",
+                    "description": "<p>中型或更小体型，爪抓，@Check[type:reflex|dc:26|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                }
+            },
+            "publicNotes": "<p>亲眼目睹貔貅确实是一件幸事——也是一道风景。这种长着翅膀的龙头狮子有着威猛的外表，却掩盖不了它少年般的精力充沛。传说中，正是因为这种过度的贪玩，它们中的第一位被逐出了天堂，并被诅咒要聚敛财富，永不散去。无论如何，每只貔貅都有一种神奇的能嗅出它们爱吃的金子的嗅觉。奇怪的是，貔貅的触摸还能消除诅咒和惩戒恶灵，这也许是它失去的神性的残余。</p>\n<p>由于貔貅具有天族的背景和驱除诅咒的能力，人们还认为貔貅是繁荣的带来者和保护者，能招来好运，抵御邪灵。貔貅出身于天庭，喜欢财富，这可能是自古以来帝龙对貔貅关爱有加，将其视为守护者和忠实伙伴的原因。伏藏龙尤其会雇佣貔貅来扩大自己的囤积，许多君龙也将貔貅视为身份的象征。在天夏各地由龙统治的国度中，一个社区里有一只貔貅，就代表着其龙君的认可和善意。</p>\n<p>尽管有帝龙的保护，但财富的诱惑仍然足以驱使一些人攻击貔貅。虽然貔貅很少会原谅攻击者，但它也更愿意从那些它认为心地善良但绝望的人身边和平地离开。然而貔貅的龙主人并不总是选择原谅。</p>"
         },
         "Joseung Saja": {
             "items": {
                 "At-Will Spells": {
-                    "name": "At-Will Spells",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>",
+                    "name": "随意施法 At-Will Spells"
                 },
                 "Constant Spells": {
-                    "name": "Constant Spells",
+                    "name": "常驻法术 Constant Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
                 },
                 "Reap Memory": {
-                    "name": "Reap Memory",
-                    "description": "<p>The joseung saja looks into the eyes of a creature within 30 feet and removes inconvenient or painful memories that are preventing it from moving on to death. The target is aware that the joseung saja attempted to alter its memory and can attempt a Will save to resist. Willing targets receive the effects of a critical failure.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes @Damage[2d10[mental]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 round.</p>\n<p><strong>Failure</strong> The target takes @Damage[4d10[mental]] damage and is stupefied 2 for 1 week.</p>\n<p><strong>Critical Failure</strong> The target loses all painful emotions and memories, leaving an indistinct haze. If the target is an ijhyeojin, then all of their memories are reaped and they become a joseung saja.</p>"
+                    "name": "收割记忆 Reap Memory",
+                    "description": "<p>黄泉使者凝视30尺内一个生物的眼睛，移除阻碍其走向死亡的不便或痛苦的记忆。目标会意识到黄泉使者在试图改变它的记忆，并可以尝试意志豁免进行抵抗。自愿目标受到大失败效果。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到@Damage[2d10[mental]]伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，持续1轮。</p>\n<p><strong>失败</strong> 目标受到@Damage[4d10[mental]]伤害，并陷入呆滞2，持续1周。</p>\n<p><strong>大失败</strong> 目标失去所有痛苦的情绪和记忆，只留下一片模糊不清的阴霾。如果目标是遗忘魔，那么其所有记忆都将被收割，然后变为黄泉使者。</p>"
                 },
                 "Reap Souls": {
-                    "name": "Reap Souls",
-                    "description": "<p><strong>Trigger</strong> The joseung saja brings a target to 0 Hit Points or successfully Strikes a target with the dying condition</p>\n<hr />\n<p><strong>Effect</strong> The target must succeed at a @Check[type:will|dc:34] save or immediately die. A reaped creature can't be return to life or become undead except by a 9th-rank or higher ritual.</p>"
+                    "name": "收割灵魂 Reap Souls",
+                    "description": "<p><strong>触发</strong> 黄泉使者使目标降至0生命值，或成功打击一个具有濒死状态的目标</p>\n<hr />\n<p><strong>效果</strong> 目标必须成功通过一次@Check[type:will|dc:34]豁免，否则立即死亡。被收割的生物不能复活或成为不死生物，除非通过不低于9环的仪式。</p>"
                 },
                 "Shifting Form": {
-                    "name": "Shifting Form",
-                    "description": "<p>The joseung saja is incorporeal until the end of their next turn. While they're incorporeal, they have resistance 10 to all damage (except force, void, and ghost touch weapons).</p>"
+                    "name": "变幻形态 Shifting Form",
+                    "description": "<p>黄泉使者成为虚体直到其下回合结束。当其成为虚体时，他获得全伤害抗力10（力场，虚能，幽冥武器除外）。</p>"
                 },
                 "Spirit Touch": {
-                    "name": "Spirit Touch",
-                    "description": "<p>A joseung saja's Strikes all have the effects of a ghost touch property rune and deal an extra @Damage[3d6[void]] damage to living creatures and @Damage[3d6[vitality]] damage to undead.</p>"
+                    "name": "精魂之触 Spirit Touch",
+                    "description": "<p>黄泉使者所有攻击都具有幽冥性能符文效果，并对所有活物造成额外@Damage[3d6[void]]伤害，对所有不死生物造成额外@Damage[3d6[vitality]]伤害。</p>"
                 }
             },
             "prototypeToken": {
-                "name": "Joseung Saja"
+                "name": "黄泉使者"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Joseung Saja",
-            "publicNotes": "<p>Joseung saja (jo-seung sah-jah) is a name sometimes bestowed on creatures in the afterlife who have committed grave sins in their lifetimes. Known also as reapers, these pale and sunken-eyed creatures are psychopomps—beings who guide the souls of the dead to the Boneyard. No one knows the specific criteria for one to become joseung sajas, but those who are selected have their memories erased and must work as joseung sajas until they've been deemed to have fully atoned for their sins.</p>\n<p>Joseung sajas from different eras wander the world, and when a creature nears death, one will appear and await the target's demise as their afterlife guide. When needed, they even alter their target's memories to remove painful emotions that might chain them to the mortal world, easing them into a peaceful death. This duty prevents those who die tragic or violent deaths from becoming bound to the world as ghosts—a mercy, though one often unappreciated by the wards of joseung sajas. If a creature targeted by a joseung saja becomes undead or otherwise cheats death, the reaper must fulfill their duty of granting the creature a true death.</p>\n<p>Because joseung sajas linger among mortals in order to perform their duties, they're one of the most commonly seen psychopomps.</p>"
+            "name": "黄泉使者 Joseung Saja",
+            "publicNotes": "<p>黄泉使者是有时候赋予给生前犯下严重罪孽的转世生物的名字。这些面色苍白、眼睛凹陷的生物亦被称作死神，他们是招魂者——引导亡者灵魂前往骨园的存在。没有人知道成为黄泉使者的具体标准，但那些被选中的人会被抹除记忆，必须作为黄泉使者工作，直到他们被认为完全赎罪。</p>\n<p>来自不同时代的黄泉使者在世界上游荡，当一个生物濒临死亡时，就会出现一名黄泉使者，作为目标来世的向导，等待其死亡。必要时，他们甚至会篡改目标人物的记忆，消除可能将他们束缚在凡间的痛苦情绪，让他们安详地死去。这一职责可以防止那些悲惨或暴力死亡的人变成幽灵而被束缚在这个世界上——这是一种慈悲，虽然经常不受黄泉使者的监护所赏识。如果被黄泉使者盯上的生物变成了不死生物或以其他方式逃避死亡，这位死神就必须履行他的职责，赋予该生物真正的死亡。</p>\n<p>因为黄泉使者会在人间徘徊，以旅行他们的职责，他们也是最常见的招魂者之一。</p>"
         },
         "Animated Bamboo Figurine": {
-            "ac": "16 when broken; construct armor",
-            "items": {
-                "Construct Armor (Hardness 3)": {
-                    "name": "Construct Armor (Hardness 3)",
-                    "description": "<p>Like normal objects, an animated bamboo figuring has Hardness. This Hardness reduces any damage it takes by an amount equal to the Hardness. Once an animated bamboo figuring is reduced to less than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks and its Armor Class is reduced to 16.</p>"
-                },
-                "Spring Forward": {
-                    "name": "Spring Forward",
-                    "description": "<p>The animated bamboo figure jumps up to 30 feet and makes two fist Strikes against different targets. It can use Knockdown following this activity, attempting to @UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{Trip} each creature struck.</p>"
-                }
-            },
+            "name": "活化竹人 Animated Bamboo Figurine",
             "prototypeToken": {
-                "name": "Animated Bamboo Figurine"
+                "name": "活化竹人"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Animated Bamboo Figurine",
-            "publicNotes": "<p>Supple but strong bamboo strips woven into intricate patterns form the base of the animated bamboo figure. These materials are plentiful and easy to come by, though they require great care and patience to prepare, making them ideal guardians for isolated communities. These hollow and pliable handcrafts can stretch or compress, jumping and springing farther than most humanoids.</p>"
+            "publicNotes": "<p>编织成复杂图案的柔软而结实的竹条，构成了活化竹人的底座。这些材料来源丰富，容易获得，虽然制作过程需要极大的细心和耐心，但它们是偏远社区的理想守护者。这些中空柔韧的手工艺品可以拉伸或压缩，跳跃和弹跳的距离比大多数类人生物都要远。</p>",
+            "ac": "破损时AC16；构装护甲",
+            "items": {
+                "Construct Armor (Hardness 3)": {
+                    "name": "构装护甲 Construct Armor (硬度 3)",
+                    "description": "<p>与普通的物体一样，活化竹人同样拥有硬度。硬度可以减少其所受到的任何伤害，其数值等同于硬度的数值。一旦活化竹人的生命值降低至一半以下，或是受到重击伤害后，其构装护甲将会破损，其AC降低至16。</p>"
+                },
+                "Spring Forward": {
+                    "name": "弹跳冲击 Spring Forward",
+                    "description": "<p>活化竹人跳跃至多30尺，然后对不同目标进行两次拳头打击。它可以在此行动之后使用击倒，对每个被打击的生物尝试@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{摔绊 Trip}。</p>"
+                }
+            }
         },
         "Nue": {
             "prototypeToken": {
-                "name": "Nue"
+                "name": "鵺"
+            },
+            "items": {
+                "Viper Tail": {
+                    "name": "蛇尾 Viper Tail",
+                    "description": "<p><strong>触发</strong> 鵺15尺内一个生物在所使用的一次移动动作中离开或进入一个会使鵺陷入夹击的方格</p>\n<hr />\n<p><strong>效果</strong> 鵺鞭笞周围，对触发生物尝试一次尾打击。此打击既不累计也不应用鵺的多重攻击减值。</p>"
+                },
+                "Cloud Form": {
+                    "name": "云团形态 Cloud Form",
+                    "description": "<p>鵺变形成为一团黑色的风暴云。处于云团形态时，鵺获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，以及60尺飞行速度，在阻止其他人看穿其伪装的欺骗DC上获得+4状态加值，并无法攻击，但可以使用其嚎叫能力。鵺可以解消此效果。</p>"
+                },
+                "Monstrous Howl": {
+                    "name": "怪物嚎叫 Monstrous Howl",
+                    "description": "<p>鵺发出阴森恐怖的嚎叫，让生物的灵魂发颤。60尺内的生物必须尝试一次@Check[type:will|dc:27]豁免（在夜间@Check[type:will|dc:29]）。他们随后临时免疫怪物嚎叫10分钟。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[2d8[persistent,void]]伤害。</p>\n<p><strong>失败</strong> 同成功，外加目标陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</p>\n<p><strong>大失败</strong> 同成功，外加目标陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}与@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>"
+                },
+                "Thundering Howl": {
+                    "name": "雷霆嚎叫 Thundering Howl",
+                    "description": "<p>鵺向天空发出嚎叫，召唤一道闪电束打击离鵺最近的生物，最大射程60尺。闪电束造成@Damage[12d6[electricity]]伤害（@Check[type:reflex|dc:27|basic:true]豁免）。鵺不能在[[/br 1d4 #rounds]]{1d4轮}内再次使用雷霆嚎叫。</p>"
+                }
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Nue",
-            "publicNotes": "<p>A nue is an ancient creature of enormous size and destructive power. Though sightings are rare, it's described as having the head of a monkey, the body of a tanuki, the limbs of a tiger, and a snake for a tail. The beast's eerie body is matched by its ability to drain the life force of those around it just by howling.</p>\n<p>According to certain tales, in ancient times, a nue would freely terrorize kingdoms and inflict nightmares upon it victims. It first appears as an enormous storm cloud before turning a poisonous black color. When angered, a nue can summon lightning to cause massive amounts of collateral damage. Hearing a nue's howl is considered an ill omen.</p>",
-            "items": {
-                "Viper Tail": {
-                    "name": "Viper Tail",
-                    "description": "<p><strong>Trigger</strong> A creature within 15 feet of the nue leaves a square during a move action it's using or moves into a square that would cause the nue to become flanked</p>\n<hr />\n<p><strong>Effect</strong> The nue whips around and attempts a tail Strike against the triggering creature. This Strike doesn't count toward the nue's multiple attack penalty, and its multiple attack penalty doesn't apply to this Strike.</p>"
-                },
-                "Cloud Form": {
-                    "name": "Cloud Form",
-                    "description": "<p>The nue changes its shape into that of a dark storm cloud. In Cloud Form, the nue is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, gains a 60-foot fly Speed, gains a +4 status bonus to its Deception DC to prevent others from seeing through its disguise, and can't make attacks, though it can use its howl abilities. The nue can Dismiss this effect.</p>"
-                },
-                "Monstrous Howl": {
-                    "name": "Monstrous Howl",
-                    "description": "<p>The nue lets out an eerie howl that rattles creatures' very souls. Creatures within 60 feet must attempt a @Check[type:will|dc:27] save (DC 29 at night). They're then temporarily immune to Monstrous Howl for 10 minutes.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[2d8[persistent,void]] damage.</p>\n<p><strong>Failure</strong> As success, plus the target is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}.</p>\n<p><strong>Critical Failure</strong> As success, plus the target is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
-                },
-                "Thundering Howl": {
-                    "name": "Thundering Howl",
-                    "description": "<p>The nue howls to the sky, calling down a bolt of lightning that strikes the creature closest to the nue, to a maximum range of 60 feet. The bolt deals @Damage[12d6[electricity]] damage (@Check[type:reflex|dc:27|basic:true] save). The nue then can't use Thundering Howl for [[/br 1d4 #rounds]]{1d4 rounds}.</p>"
-                }
-            }
+            "name": "鵺 Nue",
+            "publicNotes": "<p>鵺是一种古老的生物，体型巨大，破坏力极强。虽然很稀有，但它被描述为有猴子的头，狸猫的身体，老虎的四肢，和蛇的尾巴。与这种魔兽怪异的身体相符合的是，它能仅靠嚎叫便能消耗周围的生命力。</p>\n<p>根据某些传说，在远古时代，鵺会肆意恐吓王国，给受害者带来噩梦。它最初表现为巨大的风暴云，然后变成有毒的黑色。被激怒时，鵺可以召唤闪电，造成巨大的附带伤害。听到鵺的嚎叫被认为是不祥之兆。</p>"
         },
         "Kun": {
             "items": {
-                "Funnel": {
-                    "name": "Funnel",
-                    "description": "<p>The kun inhales violently, sucking in heat and all creatures in the water in a @Template[type:cone|distance:60]. Creatures take @Damage[10d8[cold]] damage and must attempt a @Check[type:fortitude|dc:33] save. The kun can't Funnel again for [[/br 1d4 #Recharge Funnel]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is pulled 30 feet toward the kun.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is pulled 60 feet toward the kun.</p>"
+                "Light Blindness": {
+                    "name": "强光致盲 Light Blindness",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LightBlindness]</p>"
                 },
                 "Wavesense (Imprecise) 60 feet": {
-                    "name": "Wavesense (Imprecise) 60 feet",
+                    "name": "水波感知 (模糊) 60 尺",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Wavesense]</p>"
                 },
                 "At-Will Spells": {
-                    "name": "At-Will Spells",
+                    "name": "随意施法 At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
                 },
-                "Light Blindness": {
-                    "name": "Light Blindness",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LightBlindness]</p>"
-                },
                 "Spite": {
-                    "name": "Spite",
-                    "description": "<p><strong>Trigger</strong> A creature within reach of the kun's tail uses an action to heal or help anyone else</p>\n<hr />\n<p><strong>Effect</strong> The kun bats the triggering creature away with their tail, making a tail Strike against the creature. On a hit, the action is disrupted and the creature is pushed 10 feet.</p>"
+                    "name": "恶意 Spite",
+                    "description": "<p><strong>触发</strong> 在鲲的尾触及范围内的生物使用动作治疗或帮助另一个生物</p>\n<hr />\n<p><strong>效果</strong> 鲲用它的尾巴拍打触发生物，对触发生物进行一次尾扫打击。若命中，触发动作被打断，该生物则被推离10尺。</p>"
+                },
+                "Funnel": {
+                    "name": "汇吸 Funnel",
+                    "description": "<p>鲲猛吸一口气，吞没@Template[type:cone|distance:60]范围内的生物与热量。生物受到@Damage[10d8[cold]]伤害且必须尝试一次@Check[type:fortitude|dc:33]豁免。鲲在[[/br 1d4 #Recharge Funnel]]{1d4轮}内不能再次使用汇吸。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全额伤害，并被拉向鲲30尺。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，并被拉向鲲60尺。</p>"
                 },
                 "Heart of Darkness": {
-                    "name": "Heart of Darkness",
-                    "description": "<p>Whenever the kun makes a jaws Strike from within an area of darkness, their jaws deals an additional @Damage[2d6[spirit]] damage and gains the unholy trait.</p>"
+                    "name": "黑暗之心 Heart of Darkness",
+                    "description": "<p>每当鲲在黑暗区域内进行颚咬打击时，其颚咬打击会额外造成@Damage[2d6[spirit]]伤害并获得邪秽特征。</p>"
                 },
                 "Swallow Whole": {
-                    "name": "Swallow Whole",
-                    "description": "<p>Huge, @Damage[(3d12+7)[bludgeoning]], Rupture 30</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                    "name": "活吞 Swallow Whole",
+                    "description": "<p>超大型，@Damage[(3d12+7)[bludgeoning]]，破裂30</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 }
             },
             "prototypeToken": {
-                "name": "Kun"
+                "name": "鲲"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Kun",
-            "publicNotes": "<p>Hungry and resentful, the malevolent kuns are mythological fish monsters that dwell in the remotest, coldest depths of the ocean. These massively powerful creatures could easily rule a subaquatic domain if they cared to, but kuns are also famous for their total self-absorption and complete ambivalence toward other forms of life. Kuns remain as far away from other creatures as they can, subsisting on only their own icy hatred. They can consume and digest prey, but such feedings are incidental or driven more by spite than any physical need. Most kuns remain ignorant and uncaring, keeping themselves in the dark and disregarding any signs of life around them except to occasionally lash out when disturbed.</p>\n<p>The kun hunts at the bottom of the cold, dark sea. But if shown the light of the sun, a kun begins to understand that it dwells within a different, bigger world. When flocks of birds or schools of fish cast their dappled shadows upon a kun, they might grow weary of their solitude or become curious about the realm above.</p>"
+            "name": "鲲 Kun",
+            "publicNotes": "<p>饥肠辘辘又满腔怒火，恶毒的鲲是神话中的鱼形怪物，栖息于最遥远、最寒冷的深海。倘若它们愿意，这些无比强大的生物能轻易统治一片水下领土，但鲲也以其绝对的自我专注与对其他生命形态的矛盾心理而著称。一头鲲能离其他生物多远就有多远，只和自己冰冷的仇恨一起过活。它们能进食并消化猎物，但这通常出于偶然。大多数鲲保持无知与冷漠，将自己隐藏于黑暗中，无视周围任何的生命迹象，除了偶尔在受到惊扰时会发怒。</p>\n<p>鲲在冰冷黑暗的海底狩猎。但是，如果它照到阳光，鲲就会开始明白，它生活在一个不同的，更大的世界里。当群鸟或鱼群投下斑驳的光影时，鲲可能会对自己的孤独感到厌倦，或者对上方的世界感到好奇。</p>"
         },
         "Animated Kite": {
-            "ac": "13 when broken; construct armor",
-            "items": {
-                "Construct Armor (Hardness 1)": {
-                    "name": "Construct Armor (Hardness 1)",
-                    "description": "<p>Like normal objects, an animated kite has Hardness. This Hardness reduces any damage it takes by an amount equal to the Hardness. Once an animated kite is reduced to less than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks and its Armor Class is reduced to 13.</p>"
-                },
-                "Attach Line": {
-                    "name": "Attach Line",
-                    "description": "<p>The animated kite gives its line to an adjacent ally with a free hand. The kite remains attached until the creature releases it or the kite flies more than 60 feet away. A creature between them can also sever the line with a successful Strike against AC 13 that deals any amount of slashing damage.</p>"
-                },
-                "Sawing Line": {
-                    "name": "Sawing Line",
-                    "description": "<p><strong>Requirements</strong> The animated kite has its line attached to an ally</p>\n<hr />\n<p><strong>Effect</strong> Each creature along the line between the kite and its ally takes @Damage[1d6[slashing]] damage (@Check[type:reflex|dc:16|basic:true] save).</p>"
-                }
-            },
+            "name": "活化风筝 Animated Kite",
+            "ac": "破损时AC13；构装护甲",
             "prototypeToken": {
-                "name": "Animated Kite"
+                "name": "活化风筝"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Animated Kite",
-            "publicNotes": "<p>An animated kite is perfect for spying, allowing observation from a great distance, although many are treated more like pets. The kite itself is a simple handcraft, easily created and destroyed, made of enchanted paper stretched over a fine bamboo frame. More advanced kites can be decorated with a variety of runes that allow the enchanter to see or hear from a distance.</p>"
+            "publicNotes": "<p>活化风筝非常适合做间谍，可以从极远处进行观察，尽管许多风筝更像是宠物。风筝本身是一种简单的手工艺品，很容易制作和销毁，使用盖在精致竹框上附魔纸张制成。更高级的风筝可以装饰上各种符文，使施法者可以看到或听到远处的声音。</p>",
+            "items": {
+                "Construct Armor (Hardness 1)": {
+                    "name": "构装护甲 Construct Armor (硬度 1)",
+                    "description": "<p>与普通的物体一样，活化风筝同样拥有硬度。硬度可以减少其所受到的任何伤害，其数值等同于硬度的数值。一旦活化风筝的生命值降低至一半以下，或是受到重击伤害后，其构装护甲将会破损，其AC降低至13。</p>"
+                },
+                "Attach Line": {
+                    "name": "连线 Attach Line",
+                    "description": "<p>活化风筝将它的线交给一名有一只空手的相邻盟友。风筝会一直保持连接，直到该生物松手或风筝飞离60尺外。在他们之间的生物可以通过成功命中的造成任意数量挥砍伤害的打击，对抗AC 13来切断连线。</p>"
+                },
+                "Sawing Line": {
+                    "name": "锯线 Sawing Line",
+                    "description": "<p><strong>需求</strong> 活化风筝与一名盟友连线</p>\n<hr />\n<p><strong>效果</strong> 风筝与其盟友之间连线中的每个生物受到@Damage[1d6[slashing]]伤害（@Check[type:reflex|dc:16|basic:true]豁免）。</p>"
+                }
+            }
         },
         "Shui Gui": {
             "items": {
-                "Drown the Living": {
-                    "name": "Drown the Living",
-                    "description": "<p><strong>Requirements</strong> The target must be holding its breath and be @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the shui gui</p>\n<hr />\n<p><strong>Effect</strong> The shui gui tightens its grip. The target must succeed at a @Check[type:fortitude|dc:24] save or immediately lose [[/br 1d4 #actions]]{1d4 actions} worth of air (or twice that on a critical failure).</p>"
-                },
-                "Rejuvenation": {
-                    "description": "<p>When the shui gui is destroyed, it reforms after [[/br 2d4 #days]]{2d4 days} within the body of water it's bound to, fully healing. It can be permanently destroyed if the body of the shui gui who originally died in the water can be found and laid to rest.</p>",
-                    "name": "Rejuvenation"
-                },
                 "Water-Bound Curse": {
-                    "name": "Water-Bound Curse",
-                    "description": "<p>The shui gui is bound to the body of water in which it died. It's unable to move further than 120 feet from the edge of the water.</p>"
-                },
-                "Ti Shõn": {
-                    "name": "Ti Shõn",
-                    "description": "<p><strong>Trigger</strong> A creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the shui gui dies of suffocation</p>\n<hr />\n<p><strong>Effect</strong> Ripping the spirit of its drowned victim out of the target's body, the shui gui enters the corpse to take the original owner's place. The shui gui then returns to life at the edge of its body of water as if it had been the target of a successful resurrect ritual, except it has the appearance of the target rather than its original body. After a week, the spirit of the drowned creature becomes a shui gui. The new spirit can't be raised from the dead by normal magical means until they've been destroyed as a shui gui.</p>"
+                    "name": "困水诅咒 Water-Bound Curse",
+                    "description": "<p>水鬼被束缚在其死亡的水体中。它无法移动超出水体边缘120尺。</p>"
                 },
                 "Void Healing": {
-                    "name": "Void Healing",
+                    "name": "虚能治疗 Void Healing",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
+                "Rejuvenation": {
+                    "name": "复生 Rejuvenation",
+                    "description": "<p>当水鬼被摧毁时，它会在[[/br 2d4 #days]]{2d4天}后于其束缚的水体中重构，被完全治疗。如果能找到最初死在水中的水鬼尸体并将之安葬，水鬼便能被永久摧毁。</p>"
+                },
+                "Ti Shõn": {
+                    "name": "替死 Ti Shõn",
+                    "description": "<p><strong>触发</strong> @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于水鬼的生物因窒息死亡</p>\n<hr />\n<p><strong>效果</strong> 水鬼将溺死受害者的灵魂从身体中剥离，然后进入尸体中取代原主人的位置。水鬼会在水体边缘复活，如同成为成功的起死回生仪式的目标，除了它会获得目标的外观而非原本的身体。一周后，溺死生物的精魂将成为一只水鬼。新的精魂无法通过普通的魔法手段从死亡中唤起，直到他以水鬼的身份被摧毁。</p>"
+                },
                 "Drag Under": {
-                    "name": "Drag Under",
-                    "description": "<p>The shui gui Swims at half Speed, along with any creature it has @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}.</p>"
+                    "name": "拽入水下 Drag Under",
+                    "description": "<p>水鬼带着@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的生物，以一半速度游泳。</p>"
+                },
+                "Drown the Living": {
+                    "name": "溺死生者 Drown the Living",
+                    "description": "<p><strong>需求</strong> 目标必须屏住呼吸或@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于水鬼</p>\n<hr />\n<p><strong>效果</strong> 水鬼收紧抓握。目标必须成功通过一次DC 24的强韧豁免，否则立即失去价值[[/br 1d4 #actions]]{1d4动作}的空气（大失败时失去两倍）。</p>"
                 },
                 "Ghostly Grasp": {
-                    "name": "Ghostly Grasp",
-                    "description": "<p>A shui gui can @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} corporeal creatures despite being incorporeal. The shui gui uses its Athletics check to Grapple as normal but can't use Athletics for other actions that require corporeal contact, like @UUID[Compendium.pf2e.actionspf2e.Item.SjmKHgI7a5Z9JzBx]{Force Open} or @UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{Trip}.</p>"
+                    "name": "幽灵抓握 Ghostly Grasp",
+                    "description": "<p>水鬼虽然是虚体，但是可以@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}有实体的生物。水鬼可以如常使用运动检定进行擒拿，但不能使用运动来执行其他需要实体接触的动作，例如@UUID[Compendium.pf2e.actionspf2e.Item.SjmKHgI7a5Z9JzBx]{破拆 Force Open}或@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{摔绊 Trip}。</p>"
                 }
             },
             "prototypeToken": {
-                "name": "Shui Gui"
+                "name": "水鬼"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Shui Gui",
-            "hp": "void healing, rejuvenation"
+            "name": "水鬼 Shui Gui",
+            "hp": "虚能治疗，复生"
+        },
+        "Gau Cho Rong": {
+            "items": {
+                "Subsumed Traits": {
+                    "name": "归属特征 Subsumed Traits",
+                    "description": "<p>在完全消化一顿饱餐之后，空心熊会从该生物上获得一个特征，直到其下一次饱腹。获得动物特征的空心熊会获得60尺的灵敏嗅觉作为模糊感官，而获得两栖或水栖特征的空心熊获得25尺游泳速度。类人特征的空心熊获得反应打击反应动作。如火焰这样的特征会给空心熊的抗力添加该伤害类型。其他特征具有的效果由GM决定。</p>"
+                },
+                "Ambush": {
+                    "name": "伏击 Ambush",
+                    "description": "<p><strong>需求</strong> 空心熊正在躲藏，且一个未侦测到它的生物处于其20尺内</p>\n<hr />\n<p><strong>效果</strong> 空心熊朝该生物行走。一旦生物处于触及范围内，空心熊对其进行一次打击。对于此次攻击目标生物陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                },
+                "Devour": {
+                    "name": "吞噬 Devour",
+                    "description": "<p><strong>需求</strong> 空心熊上一个动作为成功的颚咬打击</p>\n<hr />\n<p><strong>效果</strong> 目标受到@Damage[1d6[persistent,bleed]]伤害。空心熊从该生物的血液中获得一些知识，教会它理解和说出该生物掌握的所有语言，持续1分钟，它会用目标声音的扭曲版说话。在此期间，空心熊在对该生物@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{挫败士气 Demoralize}的威吓检定上获得+2环境加值。</p>"
+                },
+                "Full Belly": {
+                    "name": "饱腹 Full Belly",
+                    "description": "<p>当空心熊吃饱时，这需要吃下一整只中型生物或6负载的肉，它就会变得平和，甚至贪玩。它在伪装成普通太阳熊的欺骗检定和DC上自动取33的结果，但会失去其抗力。空心熊可以保持饱腹状态8小时。</p>"
+                },
+                "Reactive Strike (Humanoid Subsumed Trait Only)": {
+                    "name": "反应打击 Reactive Strike (仅限类人归属特征)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "空心熊"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "空心熊 Gau Cho Rong",
+            "publicNotes": "<p>篝火故事里空心熊起源于偷猎者猎物的幽灵前来复仇，是鬼婆捏造的爪牙，或是被诅咒的野兽，对在不该去的地方乱逛的小孩的肉上了瘾。它们有个令人不安的绰号“空心熊”，很容易被误认为它们善良的表亲，太阳熊。它们身高只有 3 英尺多一点，舌头又长又软，吃饱时像可爱的小熊，但当它们开始饥饿和空虚时，就会变成骇物。饥饿的空心熊皮毛会变得松弛，直到看起来只剩下一袋皮毛中的脆弱骨骼，就像一个被剥去填充物的旧玩偶。空心熊会蠕动和呜咽，引诱同情的受害者或投机的猎人。当这些目标靠近时，其他空心熊就会从树枝上落下来，扑向猎物的背部和脸部，当它们用钩状长爪攻击猎物时，松软的皮毛会使大多数攻击变得迟钝。吃饱喝足后，空心熊又恢复了可爱的样子。就这样，它们继续着嬉戏、狩猎、偷懒、杀戮、玩闹和撕咬的生活。</p>"
         },
         "Aoyin": {
+            "prototypeToken": {
+                "name": "獓因"
+            },
             "items": {
-                "Trample": {
-                    "name": "Trample",
-                    "description": "<p>Medium, Hoof, @Check[type:reflex|dc:29|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                "Horn Toss": {
+                    "name": "角抛 Horn Toss",
+                    "description": "<p>獓因行走并进行一次角抵打击。如果此次打击命中，目标被向獓因所选方向抛投20尺。</p>"
                 },
                 "Scent (Precise) 30 feet": {
-                    "name": "Scent (Precise) 30 feet",
+                    "name": "灵敏嗅觉 (精确) 30 尺",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
                 },
                 "Bloodsense (Precise) 60 feet": {
-                    "name": "Bloodsense (Precise) 60 feet",
-                    "description": "<p>An aoyin can detect exposed blood as a precise sense at the listed range, including from creatures taking persistent bleed damage.</p>"
-                },
-                "Horn Toss": {
-                    "name": "Horn Toss",
-                    "description": "<p>The aoyin Strides and makes a horn Strike. If the Strike hits, the target is flung 20 feet in a direction of the aoyin's choice.</p>"
-                },
-                "Mountain Stride": {
-                    "name": "Mountain Stride",
-                    "description": "<p>An aoyin isn't impeded by difficult terrain caused by snow or mountainous terrain, nor does it need to @UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{Balance} to move over uneven ground created by those conditions.</p>"
+                    "name": "血液感知 (精确) 60 尺",
+                    "description": "<p>獓因可以用精确感官侦测到所列范围内暴露的血液，包括受到持续流血伤害的生物。</p>"
                 },
                 "Driven by Hunger": {
-                    "name": "Driven by Hunger",
-                    "description": "<p><strong>Trigger</strong> The aoyin fails or succeeds at a save against an emotion effect</p>\n<hr />\n<p><strong>Effect</strong> The aoyin's hunger is powerful enough to blot out any other emotion. The aoyin critically succeeds at the save instead. If a creature within 40 feet is taking persistent bleed damage, the aoyin can also Stride up to its Speed in a straight line toward that target as it seeks out the closest source of food.</p>"
+                    "name": "饥饿驱使 Driven by Hunger",
+                    "description": "<p><strong>触发</strong> 獓因在对抗情绪效果的豁免上失败或成功</p>\n<hr />\n<p><strong>效果</strong> 獓因的饥饿感强到足以掩盖其他任何情绪。獓因改为在豁免上大成功。如果40尺内有生物受到持续流血伤害，獓因还可以行走至多其速度，向目标直线前进，以寻找最近的食物来源。</p>"
+                },
+                "Mountain Stride": {
+                    "name": "山地行走 Mountain Stride",
+                    "description": "<p>獓因不会因为雪地或山地地形导致的困难地形阻碍，它也不需要@UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{保持平衡 Balance}来移动通过这些条件所创造的不稳表面。</p>"
+                },
+                "Trample": {
+                    "name": "践踏 Trample",
+                    "description": "<p>中型，蹄击，@Check[type:reflex|dc:29|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 }
-            },
-            "prototypeToken": {
-                "name": "Aoyin"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Aoyin",
-            "publicNotes": "<p>An aoyin resembles an ox with a pale body, four horns, and hair as coarse as straw. Although this large, solitary beast bears a slight resemblance to the common draft ox, it's a highly aggressive and territorial carnivore who stalks and devours its prey. An aoyin dwells high in the mountains, rarely being seen by common folk. However, during lean winters, an aoyin might descend from its mountain home in search of food, resulting in gruesome encounters with nearby settlements. It's believed that a single aoyin can decimate the population of an entire village, only to retreat into the nearby mountains once it has satiated its hunger. An aoyin, even a herd of the creatures, is primarily driven by hunger and other natural urges. Outside of its natural habitat, an aoyin might occasionally be kept by those who revel in bloodlust. Even with magical control, a captive aoyin is more likely to turn on its handlers than obey commands. As an uncontrolled weapon, however, a hungry aoyin poses a terrible threat to most communities. Tales in certain isolated areas claim that the growling call of an aoyin can drive those unlucky enough to hear it into a frenzy of hunger and violence. Villages will be found consumed by infighting without any sign of an aoyin even entering its borders. Although it's possible a powerful variant of this creature might possess this ability, most of these stories are inspired by the terrible magic available to those who understand the aoyin's secrets and are spread when villages collapse through magic compulsions or mundane infighting.</p>"
+            "name": "獓因 Aoyin",
+            "publicNotes": "<p>獓因看起来像是牛，身体苍白，长着四只角，毛发像稻草一样粗糙。虽然这种独居的大型野兽与普通的耕牛有几分相似，但它是一种极具攻击性和领地意识的食肉动物，会跟踪并吞食猎物。獓因栖息在高山上，很少被普通人目击。不过在寒冷的冬天，獓因可能会下山寻找食物，从而与附近的聚居地发生可怕的遭遇。据说一头獓因便能消灭整座村庄的人口，而它的饥饿一旦得到满足，就会退回到附近的山中。一头獓因，甚至一群这种生物，主要受到饥饿和其他本能冲动的驱使。在它的自然栖息地之外，偶尔也会被那些嗜血成性的人豢养。即使有魔法控制，被圈养的獓因更有可能背叛饲养者，而不是服从命令。然而，作为一种不受控制的武器，饥饿的獓因会对大多数社区构成可怕的威胁。某些偏远地区的传说称，獓因的咆哮能会让那些不幸听到的人陷入饥饿和暴力的狂热之中。村庄会被内讧所吞噬，甚至没有任何迹象表明有獓因进入其边界。虽然这种生物的强大变种可能拥有这种能力，这些故事的灵感大多来自于那些了解獓因秘密的人所掌握的可怕魔法，并在村庄被魔法蛊惑或普通的内讧而崩溃时传播开来。</p>"
         },
-        "Jiidon": {
+        "Yeongno": {
+            "items": {
+                "equipment-Wooden Pipe": {
+                    "name": "木笛 Wooden Pipe"
+                },
+                "Goldsense (Precise) 100 feet": {
+                    "name": "黄金感知 (精确) 120尺",
+                    "description": "<p>殃龙可以侦测到120尺内黄金的存在，位置，和大致价值。</p>"
+                },
+                "Fortune's Favor": {
+                    "name": "财富的宠爱 Fortune's Favor",
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 30尺内一个目标生物必须成功通过一次@Check[type:will|dc:25]豁免，否则将获得@UUID[Compendium.pf2e.spells-srd.Item.dN8QBNuTiaBHCKUe]{恶咒变形术 Cursed Metamorphosis}的效果，被变形成为一头猪，其腰围由目标的财富决定。24小时后，目标可以通过解消动作来结束此效果，此时殃龙会意识到效果结束。殃龙只有在当前没有目标处于此效果时才能使用财富的宠爱。</p>"
+                },
+                "Money is Pain": {
+                    "name": "钱财即苦痛 Money is Pain",
+                    "description": "<p><strong>需求</strong> 目标携带价值至少100gp的珍稀金属</p>\n<hr />\n<p><strong>效果</strong> 殃龙用财富的重量碾碎一个他能看见的生物。与目标财富相近的金币幻化为实体，从四面八方扑向目标。目标尝试一次@Check[type:will|dc:25]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 目标受到@Damage[3d6[persistent,mental]]伤害，且只要伤害持续便陷入缓慢1。如果其携带贵金属价值少于100gp，此效果立即结束。</p>\n<p><strong>大失败</strong> 同失败，此外移除持续伤害的任何纯骰检定自动失败。</p>"
+                },
+                "Swallow Whole": {
+                    "name": "活吞 Swallow Whole",
+                    "description": "<p>中型，@Damage[(3d6+6)[bludgeoning]], 破裂 [20]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                }
+            },
             "prototypeToken": {
-                "name": "Jiidon"
+                "name": "殃龙"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Jiidon",
-            "items": {
-                "Scurrying Retreat": {
-                    "name": "Scurrying Retreat",
-                    "description": "<p><strong>Trigger</strong> The jiidon takes damage from a Strike</p>\n<p><strong>Requirements</strong> They're currently transformed into in a humanoid form</p>\n<hr />\n<p><strong>Effect</strong> The jiidon reverts to their rat form and Climbs or Strides. They can't resume humanoid form for 1 minute.</p>"
-                },
-                "Consumed Fragments": {
-                    "name": "Consumed Fragments",
-                    "description": "<p>The jiidon takes on the form of any Medium or Small humanoid creature whose fingernails or similar fragments they've consumed within the last week, gaining the effects of a 3rd-rank illusory disguise spell to impersonate the creature for 8 hours; this is a polymorph effect rather than an illusion effect. Once a jiidon has transformed into a creature in this way, they must eat that creature's fingernails again to transform into it again. If a jiidon consumes the nails of a specific humanoid three nights in a row, they can take the form of that humanoid at will but can't use this ability to imitate any other humanoid thereafter.</p>"
-                },
-                "Sneak Attack": {
-                    "name": "Sneak Attack",
-                    "description": "<p>The creature's Strikes deal an additional 1d6 precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
-                },
-                "Tactical Gnaw": {
-                    "name": "Tactical Gnaw",
-                    "description": "<p>The jiidon uses their nearly indestructible teeth to chew through even the toughest armor, leaving an opponent vulnerable. The jiidon makes a jaws Strike. On a successful attack, if the target is wearing armor with Hardness 10 or lower, the armor becomes @UUID[Compendium.pf2e.conditionitems.Item.6dNUvdb1dhToNDj3]{Broken}. This Strike doesn't further damage armor that's already broken.</p>"
-                }
-            },
-            "publicNotes": "<p>Legends among jiidons explain that many ages ago, when magic was wilder and of less distinct order, a magic-touched rat consumed the discarded fingernails of a human, and the gods granted that rat the ability to shapeshift into a copy of that human. True or not, jiidons are seemingly normal rats who share the blessing from this story. It's unclear where the first jiidon was born because their descendants live among rat and humanoid populations around the world. In their original forms, jiidons are extremely difficult to distinguish from an ordinary rat and often even finds a home leading its non-sapient kin.</p>\n<p>After eating the discarded fingernails of a humanoid, however, a jiidon can assume the shape of the clippings' owner, resembling the subject in all of the obvious and superficial ways, with several subtle differences. Their ears are a little larger and sometimes come to a small point. Their teeth continue to grow for their entire lifetimes, so they must regularly chew on stones, bark, and other hard materials to file their teeth down and conceal their true nature. The whiskers that grow from the sides of their faces also require daily trimming.</p>\n<p>Jiidons are mostly harmless, but their powers provoke alarm among those who know of them. Mothers scold their children not to clip their nails after nightfall, lest a lurking jiidon seize a sliver that got lost in the dark. Though as cautious as any rat, most jiidons want nothing more than to transform and take a place in humanoid society. In order to reduce suspicion, they've been known to target those who are unpopular among their neighbors. The gratitude they feel when they do replace a humanoid can sometimes be seen in their actions, revealing the fact that the target has been replaced or endearing jiidons to those who didn't appreciate the original's attitude.</p>\n<p>Jiidons from large families will often seek a role that grants them access to nail trimmings, such as a cleaner or doctor, and pass the gift of humanoid form through the family.</p>"
-        },
-        "Orchid Mantis Swarm": {
-            "prototypeToken": {
-                "name": "Orchid Mantis Swarm"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Orchid Mantis Swarm",
-            "publicNotes": "<p>Few creatures appear as beautiful as the orchid mantises. Their elegant form and coloration resemble flowers, and many people adopt the delicate creatures as short-lived pets. While these mundane insects aren't dangerous to humanoids, they can still bring down prey several times their own size. Unfolding from their flowery pose, orchid mantises lash out with blinding speed, even chasing foraging butterflies with their sharp-toothed arms and powerful bite.</p>\n<hr />\n<p>Some mantises have unusually strong connections to elemental power. Though they lack the training to cultivate this energy, when orchid mantises gather at a place of abundant food or overflowing natural energy, they can bring trees to bloom in the depths of winter or turn any stretch of ground into a garden. Despite their beauty, gathering in large groups only seems to exacerbate the mantises' tempers. Although the mantises are individually harmless, anyone disturbing the countless false blossoms is likely to be recognized as food, no matter their size.</p>",
-            "items": {
-                "Floral Camouflage": {
-                    "name": "Floral Camouflage",
-                    "description": "<p>When Hiding, the orchid mantis swarm is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} by any amount of leaves or petals, even if they aren't thick enough to make other creatures concealed.</p>"
-                },
-                "Biting Blossom": {
-                    "name": "Biting Blossom",
-                    "description": "<p>Each enemy in the swarm's space takes @Damage[3d6[piercing]] damage (@Check[type:reflex|dc:24|basic:true] save). Creatures that fail this save also take @Damage[1d4[persistent,bleed]] damage.</p>"
-                },
-                "Drifting Petals": {
-                    "name": "Drifting Petals",
-                    "description": "<p>The swarm Flies. Each creature whose space it moves through must attempt a @Check[type:will|dc:24] save or be transfixed by their blossom-like bodies.</p>\n<hr />\n<p><strong>Critical Success</strong> No effect.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Failure</strong> The creature is dazzled and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 round.</p>"
-                }
-            }
-        },
-        "Giant Orchid Mantis": {
-            "items": {
-                "Floral Camouflage": {
-                    "name": "Floral Camouflage",
-                    "description": "<p>When Hiding, the giant orchid mantis is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} by any amount of leaves or petals, even if they aren't thick enough to make other creatures concealed.</p>"
-                },
-                "Barbed Limbs": {
-                    "name": "Barbed Limbs",
-                    "description": "<p>The giant orchid mantis makes two leg Strikes. If it hits the same creature with both attacks, that creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} until the end of the mantis's next turn.</p>"
-                },
-                "Sudden Strike": {
-                    "name": "Sudden Strike",
-                    "description": "<p>In the first round of combat, creatures that haven't acted are @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to the orchid mantis.</p>"
-                }
-            },
-            "prototypeToken": {
-                "name": "Giant Orchid Mantis"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Giant Orchid Mantis",
-            "publicNotes": "<p>Few creatures appear as beautiful as the orchid mantises. Their elegant form and coloration resemble flowers, and many people adopt the delicate creatures as short-lived pets. While these mundane insects aren't dangerous to humanoids, they can still bring down prey several times their own size. Unfolding from their flowery pose, orchid mantises lash out with blinding speed, even chasing foraging butterflies with their sharp-toothed arms and powerful bite.</p>\n<hr />\n<p>These mantises have grown to an unusual size, which makes their camouflage less effective in most environments. As such, they're usually found in areas where a blossom the size of an adult human could pass as normal, in the lushest rainforests, or in lands where rare medicinal herbs are cultivated. Tame giant orchid mantises can also be found protecting those rich enough to afford such decorative guards.</p>"
+            "name": "殃龙 Yeongno",
+            "publicNotes": "<p>殃龙既非类人也非魔兽，但又貌似两者，他们曾是天堂的居民，但由于自己的贪婪被放逐至凡间物质宇宙。殃龙声称自己曾是天界龙，他们穿戴着拉长的龙面具，全身裹着有鳞片花纹的外衣以纪念此种说法——尽管无人能证实这种说法的真实性。在他们游荡时，他们嘴里会叼着柳木笛子，发出独特的“哔哔”声，这往往预示着他们的出现。</p>\n<p>虽然殃龙的名声如同吃人的怪物，但他们受到穷苦人的欢迎，他们认为这种生物是智慧且正义的。殃龙相信只要吃掉100个滥用财富或通过不正当或剥削手段积累财富的富人，他们就能为自己的贪婪赎罪，让他们能升回天堂。腐败贪婪的人只要捐出自己所有的财富，并同意变成猪一年，就可以摆脱被殃龙吃掉的命运。如果这个人能够忍受一年的变猪生活，并接受曾经被他伤害过的家庭的照顾，永诺就会放过他。</p>"
         },
         "Aso Berang": {
-            "prototypeToken": {
-                "name": "Aso Berang"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Aso Berang",
-            "publicNotes": "<p>Deep within the woods are grand, giant creatures with tusked maws. Their visages have inspired various tusked demon masks used for great festivals across Tian Xia. These beasts are known as aso berangs, or bear dogs, in the islands of Minata. As their name suggests, they resemble large canines with the bulk of a bear. However, aso berangs aren't simply large and charismatic animals, for many say they're the kings of forest spirits and patrons of guardians. They're often revered as protective entities by those who live outside the woods they guard. These guardians only appear to common folk if the forest they live in is in danger or if they need something. When they do so, aso berangs can appear as large and powerful humans who emanate a regal presence. Aso berangs have wickedly sharp talons that shed regularly, and they're strong enough to climb trees in pursuit of witches who attempt to escape up them. Very often, aso berangs attack visitors whose hearts they deem impure or those they consider as potential threats to their forest. Unfortunately, receiving this judgment usually takes little more than forgetting to perform the proper rites of respect and reverence.</p>",
             "items": {
-                "Scent (Imprecise) 120 feet": {
-                    "name": "Scent (Imprecise) 120 feet",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
-                },
                 "Watch over Evil": {
-                    "name": "Watch over Evil",
-                    "description": "<p><strong>Trigger</strong> A creature within 30 feet of the aso berang Casts a Spell</p>\n<hr />\n<p><strong>Effect</strong> The aso berang makes a spectral flame Strike against the triggering creature. If the Strike hits a creature with the tanggal trait or is a critical hit, the triggering action is disrupted.</p>"
+                    "name": "监视邪恶 Watch over Evil",
+                    "description": "<p><strong>触发</strong> 犬熊30尺内的某个生物施法</p>\n<hr />\n<p><strong>效果</strong> 犬熊对触发生物进行一次幽火打击。如果打击命中具有分体怪特征的生物，或则重击，触发动作被打断。</p>"
                 },
                 "At-Will Spells": {
-                    "name": "At-Will Spells",
+                    "name": "随意施法 At-Will Spells",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
                 },
+                "Phantom Flames": {
+                    "name": "魅影火焰 Phantom Flames",
+                    "description": "<p>犬熊的火焰既是虚体又是实体。每当犬熊造成火焰伤害时，它可以改为造成精魂伤害。犬熊的火焰不会点燃植物或物体，除非犬熊想要这么做。</p>"
+                },
+                "Scent (Imprecise) 120 feet": {
+                    "name": "灵敏嗅觉 (模糊) 120 尺",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
+                },
                 "Change Shape": {
-                    "name": "Change Shape",
-                    "description": "<p>The aso berang takes the appearance of any Medium or Small humanoid creature. In this form, the aso berang can't use their tusk Strikes, and their claw Strike becomes a fist Strike that deals bludgeoning damage and loses the reach trait.</p>"
+                    "name": "变身 Change Shape",
+                    "description": "<p>犬熊变形成任意中型或更小体型类人生物的外貌。在此形态下，犬熊无法使用獠牙打击，其爪打击变为造成钝击伤害的拳头打击，并失去触及特征。</p>"
                 },
                 "Cleanse the Forest": {
-                    "name": "Cleanse the Forest",
-                    "description": "<p>The aso berang dashes to attack each nearby enemy so quickly that it's impossible to tell they've moved at all, save for a slight flicker in their outline. The aso berang Strides adjacent to an enemy and attempts a melee Strike. If successful, the aso berang can Stride and attempt to Strike a different enemy. If this second attack is successful, they can Stride and attempt to Strike a third enemy. Once they fail a Strike (or upon succeeding at their third Strike), the aso berang Strides back to the space where they began.</p>"
-                },
-                "Phantom Flames": {
-                    "name": "Phantom Flames",
-                    "description": "<p>The aso berang's flames are as much spectral as physical. Whenever an aso berang deals fire damage, they can have that damage be spirit damage instead. The aso berang's flames never burn plants or objects unless the aso berang wishes it.</p>"
+                    "name": "净化森林 Cleanse the Forest",
+                    "description": "<p>犬熊攻击每个附近的敌人，速度快得根本看不出它有移动过，只能看到他们的轮廓在微微闪动。犬熊行走靠近一名敌人，尝试一次近战打击。如果成功命中，犬熊可以行走并尝试打击一名不同敌人。如果第二次攻击成功，它尝试行走并打击第三名敌人。一旦其打击失败（或在第三次打击成功后），犬熊行走回开始所处空间。</p>"
                 }
-            }
-        },
-        "Bul-Gae": {
+            },
             "prototypeToken": {
-                "name": "Bul-Gae"
+                "name": "犬熊"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Bul-Gae",
-            "publicNotes": "<p>Bul-gaes are manifestations of the eclipsed sun and moon. They look like large canines, though their coloration and features change as they exercise their powers over heat and cold. Depending on whether they've most recently unleashed their lunar or solar powers, bul-gaes resemble either a crimson hound wreathed in flames or a cerulean, frostbitten fox, respectively.</p>\n<p>Legends say that the first bul-gae attempted to steal the sun from the sky. As they bit down on the burning sphere, though, the bul-gae was badly burned. Having failed, they then tried to retrieve the moon, but when they touched the moon, the bul-gae froze solid and fell to the ground. The descendants of that bul-gae forever hone their powers of flame and ice so that they might one day succeed where their ancestor failed.</p>\n<p>Tales say that bul-gaes serve as faithful companions to the ancient, shadowy master of the first bul-gae. These stories purport that the shadow master can see through the distorted light of all bul-gaes and use the hounds as a means to watch the universe for unknown purposes.</p>",
+            "name": "犬熊 Aso Berang",
+            "publicNotes": "<p>森林深处有一些长着獠牙大嘴的巨大生物。它们的面容激发了天夏各地用于盛大节日的各种长牙恶魔面具的灵感。这些野兽在民那塔岛被称为犬熊，或者熊犬。顾名思义，它们就像体型庞大的熊。然而，犬熊并不只是体型庞大，魅力无穷的动物，很多人说它们是森林精魂之王和守护神。生活在它们守护的森林之外的人们常常把它们尊崇为保护神。这些守护者只有在他们居住的森林面临危险或他们需要什么东西时才会出现在普通人面前。当他们出现时，犬熊会以高大威猛的人类形象出现，散发出威严的气势。犬熊有锋利无比的爪子，会定期脱落，而且它们足够强壮，可以爬到树上追捕试图从树上逃跑的女巫。犬熊通常会攻击那些它们认为心灵不洁或对森林构成潜在威胁的访客。不幸的是，要接受这种审判通常只需要忘记履行适当的尊重和敬畏仪式。</p>"
+        },
+        "Imugi": {
+            "prototypeToken": {
+                "name": "螭龙"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "螭龙 Imugi",
+            "publicNotes": "<p>螭龙是有着巨大魔法潜能的类龙巨蛇，能够飞升成另一种形态。虽然有些帝龙生来便是帝龙了，但目前游荡在天夏的许多帝龙都是飞升而来的螭龙——尽管他们会攻击任何如此声称的人。</p>\n<p>要变成帝龙，螭龙必须照顾一枚锦鲤卵一千年。来自被培育的卵的力量足以驱动龙族飞升仪式，而剩余的力量会将锦鲤转化为螭龙，继续循环。螭龙会变成哪种帝龙取决于他们在何处培育的锦鲤卵。螭龙尤其喜欢鱼鳍长的锦鲤，而天夏的锦鲤养殖户已经学会将这些蝴蝶锦鲤鱼其他锦鲤分开饲养，因为螭龙扑下来抢走想要的卵时，往往会带走大量的水——还有锦鲤。</p>\n<p>虽然螭龙对降雨和风暴有一定的掌控力，但大多数螭龙的力量还不足以真正控制天气。许多螭龙都以善行著称，有些村庄甚至会依赖螭龙在溪流和湖泊中觅食，在生长季节带来降雨。螭龙的脾气就像他们化成的龙一样千差万别，一些螭龙因其急躁的脾气演变成暴躁或傲慢，而把人当成虫子一样撵到一边。虽然有些人可能会认为刻薄的螭龙已经堕落，并声称他们可以通过某种方式得到净化，但螭龙只是把自己看得比普通生物更高，认为没有理由向他们认为低人一等的人隐瞒自己的本性。</p>",
             "items": {
-                "Eclipse Aura": {
-                    "name": "Eclipse Aura",
-                    "description": "<p>100 feet.</p>\n<p>Light and shadows morph strangely around the bul-gae. Non-magical bright light is reduced to dim light within the aura. When a creature attempts an action within the aura that has the light trait, it must attempt a @Check[type:will|dc:34] save. On a failure, the action is disrupted.</p>"
+                "Nesting": {
+                    "name": "筑巢 Nesting",
+                    "description": "<p>在蝴蝶锦鲤卵周围盘绕1分钟，螭龙就会指定它为自己选定的继承者，这会授予螭龙对这枚卵的常驻关照术效果。如果鱼卵被毁坏或无法存活，该螭龙在一周后可以用此能力选择一枚新锦鲤卵。</p>"
                 },
-                "Solar Flare": {
-                    "name": "Solar Flare",
-                    "description": "<p><strong>Trigger</strong> The bul-gae takes damage</p>\n<hr />\n<p><strong>Effect</strong> The bul-gae releases a solar flare in a @Template[type:emanation|distance:30]. Each creature in the area takes @Damage[6d8[fire]] damage (@Check[type:reflex|dc:34|basic:true] save). On a critical failure, a creature also takes @Damage[2d10[persistent,fire]] damage. After using this ability, the bul-gae's flames cool, and they can't use Solar Flare again until after they've used their Lunar Burst ability.</p>"
+                "Parental Wrath": {
+                    "name": "家长之怒 Parental Wrath",
+                    "description": "<p><strong>触发</strong> 某个生物对螭龙选定的锦鲤卵造成伤害，或在卵40尺内结束回合</p>\n<hr />\n<p><strong>效果</strong> 螭龙朝触发生物行走或游泳。如果他在移动结束时处于该生物的触及范围内，他对其尝试一次近战打击。</p>"
                 },
-                "Lunar Burst": {
-                    "name": "Lunar Burst",
-                    "description": "<p>The bul-gae releases a blast of otherworldly frost that deals @Damage[6d8[cold]] damage to each creature in a @Template[type:emanation|distance:10] (@Check[type:reflex|dc:34|basic:true] save). On a critical failure, a creature also becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} for 1 round. After using this ability, the bul-gae's flames heat up and they can't use Lunar Burst again until after they've used their Solar Flare reaction.</p>"
+                "Constrict": {
+                    "name": "紧勒 Constrict",
+                    "description": "<p>@Damage[(2d8+4)[bludgeoning]], @Check[type:fortitude|dc:25|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "Shadow Leap": {
-                    "name": "Shadow Leap",
-                    "description": "<p><strong>Requirements</strong> The bul-gae is in dim light or darkness</p>\n<hr />\n<p><strong>Effect</strong> The bul-gae dives into a shadow and reappears from a shadow within 40 feet.</p>"
+                "Floodwaters": {
+                    "name": "洪水 Floodwaters",
+                    "description": "<p>水流冲向前方@Template[type:line|distance:60]范围，造成@Damage[4d6[bludgeoning]]伤害（@Check[type:reflex|dc:25|basic:true]豁免）。豁免失败且未@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于螭龙的生物被推离10尺。</p>"
                 },
-                "Thermal Mastery": {
-                    "name": "Thermal Mastery",
-                    "description": "<p>The bul-gae has total control over the powers of cold and fire. Each time it attacks with its jaws, it can choose to have the additional damage be either cold damage or fire damage.</p>"
+                "Storm Veil": {
+                    "name": "风暴帷幕 Storm Veil",
+                    "description": "<p>螭龙将附近的降水扭转成冻雨与风的旋涡状帷幕。他在任何形式的雾和雨中都会获得隐蔽。</p>"
                 }
             }
         },
         "Caterpillar Carriage": {
             "prototypeToken": {
-                "name": "Caterpillar Carriage"
+                "name": "毛虫车"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Caterpillar Carriage",
+            "name": "毛虫车 Caterpillar Carriage",
             "items": {
                 "Tremorsense (Imprecise) 100 feet": {
-                    "name": "Tremorsense (Imprecise) 100 feet",
+                    "name": "震颤感知 (模糊) 100 尺",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
                 },
                 "Like Clockwork": {
-                    "name": "Like Clockwork",
-                    "description": "<p><strong>Trigger</strong> The caterpillar carriage gains the @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed} or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned} condition</p>\n<hr />\n<p><strong>Effect</strong> The carriage is @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 1 round.</p>"
+                    "name": "宛如发条 Like Clockwork",
+                    "description": "<p><strong>触发</strong> 毛虫车获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed}或@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned}状态</p>\n<hr />\n<p><strong>效果</strong> 毛虫车获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened}状态，持续1轮。</p>"
                 },
                 "Constrict": {
-                    "name": "Constrict",
+                    "name": "紧勒 Constrict",
                     "description": "<p>@Damage[(4d10+4)[bludgeoning]], @Check[type:fortitude|dc:40|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
                 "Rescue": {
-                    "name": "Rescue",
-                    "description": "<p>The caterpillar carriage absorbs a willing construct within its reach. That construct doesn't exist separately until the caterpillar carriage releases it as an Interact action or is destroyed.</p>"
+                    "name": "救援 Rescue",
+                    "description": "<p>毛虫车吸收触及范围内一个自愿构装体。该构装体不再独立存在，直到毛虫车以一个交互动作释放它，或毛虫车被摧毁。</p>"
                 },
                 "Rock Tunneler": {
-                    "name": "Rock Tunneler",
-                    "description": "<p>The caterpillar carriage can burrow through solid stone at a Speed of 20 feet. It can leave a tunnel if it desires, and it usually does.</p>"
+                    "name": "穿岩者 Rock Tunneler",
+                    "description": "<p>毛虫车可以用20尺速度掘地穿越坚固岩石。如果它愿意的话还能留下一条隧道，并且它通常也会这么做。</p>"
                 },
                 "Trample": {
-                    "name": "Trample",
-                    "description": "<p>Huge or Smaller, Wheel, @Check[type:reflex|dc:40|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                    "name": "践踏 Trample",
+                    "description": "<p>超大型或更小体型，车轮，@Check[type:reflex|dc:40|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 }
             }
         },
         "Inkdrop": {
             "prototypeToken": {
-                "name": "Inkdrop"
+                "name": "墨滴"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Inkdrop",
-            "publicNotes": "<p>Not all handcrafts are intended for war. The inkdrop is an infiltrator used by spellcasters to learn secrets or alter documents. Embodied in a single fist-sized drop of ink, the inkdrop can glide across a page, changing characters or removing them altogether, with devastating consequences for statecraft.</p>",
+            "name": "墨滴 Inkdrop",
+            "publicNotes": "<p>并非所有手工艺品都用于战争。墨滴是一种被施法者使用的潜入者，用来了解秘密或篡改文件。墨滴能化身成拳头大小的一滴墨，在一页纸上滑行，改变文字或将其完全删除，从而对国政造成毁灭性的影响。</p>",
             "items": {
                 "Perfect Memory": {
-                    "name": "Perfect Memory",
-                    "description": "<p>An inkdrop remembers the exact pattern of any ink it moves over physically.</p>"
+                    "name": "完美记忆 Perfect Memory",
+                    "description": "<p>墨滴可以记住它物理移动通过时所有墨水的确切图案。</p>"
                 },
                 "Blotting": {
-                    "name": "Blotting",
-                    "description": "<p>While a creature has the inkdrop grabbed or pinned, it can destroy the inkdrop by smudging the inkdrop out with an Interact action.</p>"
+                    "name": "擦除墨迹 Blotting",
+                    "description": "<p>当生物使墨滴受擒或被束缚，它能够通过一个交互动作来抹掉墨滴从而摧毁它。</p>"
                 },
                 "Blinding Ink": {
-                    "name": "Blinding Ink",
-                    "description": "<p>A creature critically struck by the inkdrop's pseudopod is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} by the ink until it clears its eyes using an Interact action.</p>"
+                    "name": "致盲墨 Blinding Ink",
+                    "description": "<p>被墨滴的伪足重击的生物会因墨汁陷入目盲，直到其使用一个交互动作擦干眼睛。</p>"
                 },
                 "Ink Blot": {
-                    "name": "Ink Blot",
-                    "description": "<p>The inkdrop leaves a pattern it remembers over a square foot of surface. If there's existing non-magical ink on the surface, the inkdrop erases the nonmagical ink.</p>"
+                    "name": "墨迹 Ink Blot",
+                    "description": "<p>墨滴在一平方尺的表面上留下它记住的图案。如果表面上已存在非魔法墨水，墨滴会擦除掉非魔法墨水。</p>"
                 }
             }
         },
         "Manananggal": {
             "prototypeToken": {
-                "name": "Manananggal"
+                "name": "马纳南加尔"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Manananggal",
-            "publicNotes": "<p>Manananggals are wicked monsters that live as humanoids during the day but feed upon people at night. To hide their depravities, these beings disguise themselves as everyday people—typically recluses or eccentrics—and use their proximity to a community to pick out their next targets before striking under cover of night. Manananggals use their long, hollow tongues to drain victims' blood from vital organs such as the liver, and the resulting odd drainage marks make it difficult to determine the exact nature of a victim's death. This mystery typically leads to confusion, terror, and mistrust among communities, which most manananggals savor. While they fly, manananggals make a distinctive ticking sound, leading some to refer to the creatures as \"tik-tiks,\" and badly affected communities descend into fearful chaos at the first reports of this telltale noise.</p>\n<p>Manananggals share their cannibalistic, body-separating traits with other types of tanggals, such as penanggalans, though a number of characteristics set them apart. For instance, whereas penanggalans relish vinegar and even bathe in the substance, manananggals abhor the merest scent of it.</p>",
+            "name": "马纳南加尔 Manananggal",
+            "publicNotes": "<p>马纳南加尔是一种白天像类人生物生活而半夜却吸食他们的邪恶怪物。为了隐藏自身的邪恶，这些生物会伪装成普通人——一般是隐士或者怪人——然后从他们身边社区中挑选出下一个在夜幕降临时袭击的目标。马纳南加尔使用它们细长、中空的舌头从受害者的重要器官，例如肝脏，吸食受害者的血液，因此留下的奇怪血痕使得人们难以断定死者死亡的具体原因。这一般会导致疑惑、猜疑与不信任在社区蔓延，其也正是马纳南加尔所乐于见到的。当他们飞行时，马纳南加尔会发出独特的声音，人们因此也将其称为“滴答-滴答”，而深受其害的社区会一听到这种提示音就陷入恐惧的混乱中。</p>\n<p>马纳南加尔和其他种类的分体怪 ，例如庞南加兰一样具有食人、躯体分离的特性，但一些特性让他们与众不同。例如，庞南加兰喜欢醋味甚至用醋洗澡，而马纳南加尔却对醋味深恶痛绝。</p>",
             "items": {
                 "Light Blindness": {
-                    "name": "Light Blindness",
+                    "name": "强光致盲 Light Blindness",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LightBlindness]</p>"
                 },
                 "Blood Drain": {
-                    "name": "Blood Drain",
-                    "description": "<p><strong>Requirements</strong> The manananggal has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> The manananggal drives their tongue into the grabbed creature to drink its blood. This deals @Damage[4d6] damage, and the manananggal gains temporary Hit Points equal to the damage dealt. A creature whose blood is drained by a manananggal is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} until it receives healing (of any kind or amount).</p>"
+                    "name": "饮血 Blood Drain",
+                    "description": "<p><strong>需求</strong> @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于马纳南加尔</p>\n<hr />\n<p><strong>效果</strong> 马纳南加尔驱动它的舌头去吸取被擒抱生物的鲜血。造成@Damage[4d6]伤害，并且马纳南加尔获得等同于所造成伤害数值的临时生命值。被马纳南加尔吸取血量的生物@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}直到它得到治疗（任何方式和数值）。</p>"
                 },
                 "Separated Body": {
-                    "name": "Separated Body",
-                    "description": "<p>A manananggal typically resembles a living humanoid. They don't appear as an aberration at first glance and receive a +4 status bonus to their Deception DC when Impersonating a humanoid. At any time, but especially at night, a manananggal can, as a 3-action activity with the manipulate trait, rip their upper torso from their bottom half, leaving the lower torso limp and helpless but allowing the upper torso to fly free. A manananggal can separate their body at any time, but they risk further damage if they do so during the day.</p>\n<p>The manananggal's upper and lower halves share the same pool of HP. If its lower half is damaged, the manananggal is immediately aware of the attack. Each minute a manananggal remains separated after sunrise and before sunset, it takes @Damage[2d6] points of damage until it reattaches its upper and lower torsos or is destroyed, whichever comes first.</p>"
-                }
-            }
-        },
-        "Gau Cho Rong": {
-            "prototypeToken": {
-                "name": "Gau Cho Rong"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Gau Cho Rong",
-            "publicNotes": "<p>Campfire stories claim gau cho rongs originated as the ghosts of poachers' prey come back for revenge, concocted minions of hags, or cursed beasts that became addicted to the flesh of children who wander where they're told not to. Known by the unsettling nickname of \"hollow bears,\" gau cho rongs are easily mistaken for their good-natured cousin, the sun bear. Little more than 3 feet tall with long, lolling tongues, they resemble adorable little cubs when glutted but turn into terrors when they begin to hunger and hollow. The hungry gau cho rong's pelt goes slack until it appears little more than brittle bone in a sack of fur, like an old doll shucked of its filling. The hollow bears writhe and whimper, luring sympathetic victims or opportunistic hunters. As these targets approach, other gau cho rongs drop down from the boughs above on the backs and faces of their prey, their loose fur dulling most attacks as they rake victims with their long, hooked claws. Once they've finally eaten their fill, the gau cho rongs revert to their disarmingly endearing state. Thus continues their life of playing, hunting, lazing, slaying, romping, and rending.</p>",
-            "items": {
-                "Full Belly": {
-                    "name": "Full Belly",
-                    "description": "<p>When a gau cho rong is full, which requires consuming an entire Medium creature or 6 Bulk of meat, it becomes peaceful and even playful. It has an automatic result of 33 on Deception checks and DCs to pass as a normal sun bear, but it loses its resistances. A gau cho rong remains full for 8 hours.</p>"
-                },
-                "Subsumed Traits": {
-                    "name": "Subsumed Traits",
-                    "description": "<p>After it finishes digesting a full meal, the gau cho rong will gain a trait from that creature until the next time it's full. Gau cho rongs that gain the animal trait have scent out to 60 feet as an imprecise sense, while those with the amphibious or aquatic trait gain a swim speed of 25 feet. Humanoid hollow bears gain the Reactive Strike reaction. Traits like fire add that damage type to a gau cho rong's resistances. Other traits have effects at the GM's discretion.</p>"
-                },
-                "Reactive Strike (Humanoid Subsumed Trait Only)": {
-                    "name": "Reactive Strike (Humanoid Subsumed Trait Only)",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
-                },
-                "Ambush": {
-                    "name": "Ambush",
-                    "description": "<p><strong>Requirements</strong> The gau cho rong is hiding and a creature that hasn't detected it is within 20 feet</p>\n<hr />\n<p><strong>Effect</strong> The gau cho rong Strides toward the creature. Once the creature is in reach, the gau cho rong makes a Strike against it. The target creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to this attack.</p>"
-                },
-                "Devour": {
-                    "name": "Devour",
-                    "description": "<p><strong>Requirements</strong> The gau cho rong's last action was a successful jaws Strike</p>\n<hr />\n<p><strong>Effect</strong> The target takes @Damage[1d6[persistent,bleed]] damage. The gau cho rong gains some knowledge from the creature's blood, learning how to understand and speak all languages that creature knows for 1 minute, which it does in a distorted version of the target's voice. During that time, the gau cho rong also gains a +2 circumstance bonus to Intimidation checks to @UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{Demoralize} that creature.</p>"
+                    "name": "躯体分离 Separated Body",
+                    "description": "<p>马纳南加尔一般会模仿活着的类人生物。在第一眼看来，其外形不像异怪并且在他模仿时他的欺骗技能 DC 获得+4状态加值。但是在夜晚时，马纳南加尔可以使用一个具有操作特征的3动作行动，将他上半身与下半身撕裂开来，遗留的下半身失去力量不能自理，但是使得上半身可以自由飞行。马纳南加尔可以在任何时候分离躯体，但是它在白天时分离会有被进一步伤害的风险。</p>\n<p>马纳南加尔的上下半身具有同样数值的 HP。如果他的下半身受到伤害，马纳南加尔会立刻察觉到攻击。在日出后日落前，马纳南加尔每保持分离状态一分钟，下半身受到 2d6 伤害直到它上下半身重新结合或者被摧毁，以先满足为准。</p>"
                 }
             }
         },
         "Hopping Head": {
             "prototypeToken": {
-                "name": "Hopping Head"
+                "name": "蹦跳头"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Hopping Head",
-            "publicNotes": "<p>A hopping head is shaped like a humanoid head, sometimes with elaborate facial features, other times with a crude toylike visage. Below the head is a spring-loaded column that allows the hopping head to move itself around.</p>",
+            "name": "蹦跳头 Hopping Head",
+            "publicNotes": "<p>蹦跳头形似类人生物的头，有时候会有精致的五官，其他时候则只有粗糙的玩具一样的面部。在头的下方是一根弹簧柱，允许蹦跳头自行移动。</p>",
             "items": {
                 "Hopping Strike": {
-                    "name": "Hopping Strike",
-                    "description": "<p>The hopping head Leaps 15 feet and makes one spring Strike at any point during that movement, dealing an additional @Damage[1d6[bludgeoning]] damage.</p>"
+                    "name": "蹦跳打击 Hopping Strike",
+                    "description": "<p>蹦跳头跳跃15尺，在此次移动中任意一点进行一次弹簧打击，造成额外@Damage[1d6[bludgeoning]]伤害。</p>"
                 }
             }
         },
-        "Yeongno": {
+        "Jiidon": {
             "prototypeToken": {
-                "name": "Yeongno"
+                "name": "鼠鬼"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Yeongno",
-            "publicNotes": "<p>Neither human nor beast yet resembling both, yeongno (yeong-no) are creatures that once were denizens of heaven but were cast out, down to the mortal Universe, due to their own greed. Yeongno claim to have once been celestial dragons and wear elongated dragon masks with full-body wraps decorated with scale patterns in honor of this claim—though no one has been able to confirm the veracity of this belief. As they wander, they hold a willow pipe in their mouths, producing a distinct \"bibi\" sound that often heralds their appearance.</p>\n<p>Despite their reputation as monsters who eat people, yeongno are welcomed by the poor and oppressed, who see the creatures as wise and just. Yeongno believe that by eating 100 wealthy individuals who abuse their wealth or who accumulated their wealth by underhanded or exploitative means, they can atone for their own greed, allowing them to ascend back into heaven. A corrupt and greedy individual can escape their fate of being eaten by a yeongno by giving away all of their wealth and agreeing to be transformed into a pig for one year. If the person can endure one year living as a pig in the care of a household they once harmed, the yeongno will spare them.</p>",
+            "name": "鼠鬼 Jiidon",
+            "publicNotes": "<p>根据鼠鬼的传说，很久很久以前，当魔法还比较狂野，秩序还不那么分明的时候，一只会魔法的老鼠吃掉了一个人类丢弃的指甲，于是神赐予了这只老鼠变形为那个人类的复制的能力。无论真假，鼠鬼都是看似普通的老鼠，它们分享着这个故事的祝福。目前还不清楚第一只鼠鬼是在哪里诞生的，因为它们的后代生活在世界各地的老鼠和类人群体中。在原始形态下，鼠鬼很难与普通老鼠区分开来，它们甚至经常在非智慧亲属的带领下找到一个家。</p>\n<p>不过，吃了人形生物丢弃的指甲后，鼠鬼就会变成指甲主人的外貌，在所有明显和外在的方面都与主人相似，但也有一些细微的差别。它们的耳朵稍大，有时会变成一个小点。它们的牙齿一生都在生长，因此必须经常咀嚼石头、树皮和其他坚硬的材料，以锉平牙齿，掩盖它们的真实面目。脸部两侧长出的胡须也需要每天修剪。</p>\n<p>鼠鬼大多无害，但它们的力量却让知晓它们的人感到恐慌。母亲们会训斥孩子不要在夜幕降临后剪指甲，以防潜伏的鼠鬼捡走掉落在黑暗中的指甲片。虽然像老鼠一样小心翼翼，但大多数鼠鬼只想变身，在类人社会中占有一席之地。众所周知，为了减少猜疑，它们会把目标对准那些在邻居中不受欢迎的人。当它们取代一个类人时，它们的感激之情有时会在行动中显露出来，揭示目标已被取代的事实，或者让那些不喜欢原身性格的人对鼠鬼产生好感。</p>\n<p>来自大家族的鼠鬼通常会寻找一个让他们能够修剪指甲的职业，如清洁工或医生，并通过家族传承类人形态的天赋。</p>",
             "items": {
-                "equipment-Wooden Pipe": {
-                    "name": "Wooden Pipe"
+                "Scurrying Retreat": {
+                    "name": "仓皇撤退 Scurrying Retreat",
+                    "description": "<p><strong>触发</strong> 鼠鬼受到来自打击的伤害</p>\n<p><strong>需求</strong> 它当前正变身成类人形态</p>\n<hr />\n<p><strong>效果</strong> 鼠鬼恢复成鼠形态，并进行攀爬或行走。它在1分钟内不能重新变回类人形态。</p>"
                 },
-                "Goldsense (Precise) 100 feet": {
-                    "name": "Goldsense (Precise) 100 feet",
-                    "description": "<p>The yeongno can detect the presence, location, and approximate value of gold within 120 feet.</p>"
+                "Consumed Fragments": {
+                    "name": "吞食指甲 Consumed Fragments",
+                    "description": "<p>鼠鬼变成其在一周内吃下指甲或类似碎片的中型或更小体型类人生物，获得3环幻象伪装法术效果，来乔装成该生物，持续8小时；这是个变形效果而非幻术效果。一旦鼠鬼以此方式变身成过某生物，那它必须再次吃下该生物的指甲才能再次变身成后者。如果鼠鬼连续三个晚上吃下某个特定类人生物的指甲，它就能随意变身成该类人生物，但从此以后不能用此能力模仿其他任何类人生物。</p>"
                 },
-                "Fortune's Favor": {
-                    "name": "Fortune's Favor",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> A target creature within 30 feet must succeed at a @Check[type:will|dc:25] save or gain the effects of @UUID[Compendium.pf2e.spells-srd.Item.dN8QBNuTiaBHCKUe]{Cursed Metamorphosis}, being polymorphed into a pig whose girth is determined by the target's wealth. After 24 hours, the target can end this effect using a Dismiss action, at which point the yeongno becomes aware that the effect has ended. A yeongno can use Fortune's Favor only if no targets are currently under its effects.</p>"
+                "Sneak Attack": {
+                    "name": "偷袭 Sneak Attack",
+                    "description": "<p>鼠鬼对@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}的生物造成额外1d6精准伤害。</p>"
                 },
-                "Money is Pain": {
-                    "name": "Money is Pain",
-                    "description": "<p><strong>Requirements</strong> The target is carrying at least 100 gp worth of precious metals</p>\n<hr />\n<p><strong>Effect</strong> The yeongno crushes a creature it can see with the weight of their wealth. Apparitions of gold coins approximating the wealth of the target materialize and pummel the target from all sides. The target attempts a @Check[type:will|dc:25] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</p>\n<p><strong>Failure</strong> The target takes @Damage[3d6[persistent,mental]] damage and is slowed 1 as long as the damage continues. The effect immediately ends if they're carrying less than 100 gp worth of precious metals.</p>\n<p><strong>Critical Failure</strong> As failure, except any flat checks to remove the persistent damage automatically fail.</p>"
+                "Tactical Gnaw": {
+                    "name": "战术啃咬 Tactical Gnaw",
+                    "description": "<p>鼠鬼能用它那几乎坚不可摧的牙齿咬碎哪怕是最坚硬的护甲，让对手变得不堪一击。鼠鬼进行一次颚打击。成功命中时，如果目标穿戴着不高于硬度10的护甲，则护甲变为破损。此次打击不会继续伤害已经破损的护甲。</p>"
+                }
+            }
+        },
+        "Orchid Mantis Swarm": {
+            "prototypeToken": {
+                "name": "兰花螳螂群"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "兰花螳螂群 Orchid Mantis Swarm",
+            "publicNotes": "<p>很少有生物像兰花螳螂一样美丽。它们优雅的外形和颜色都很像花朵，许多人把这种娇嫩的生物当做短命的宠物。虽然这些普通的昆虫对类人生物而言并不危险，但它们仍能捕食比自己大好几倍的猎物。兰花螳螂在花丛中展开身姿，以令人目眩的速度，甚至能用它们锋利的牙齿和强力的撕咬追赶觅食的蝴蝶。</p>\n<hr />\n<p>有些螳螂与元素之力有着异常强烈的联系。虽然它们缺少运用这份能量的训练，但当兰花螳螂聚集在食物丰富或自然能量充沛的地方时，它们可以让树木在寒冬中开花 ，或将任何一片土地变成花园。尽管它们很美，但大群聚集似乎只会加剧螳螂的脾气。虽然螳螂个体是无害的，但任何打扰到这无数假花的人都可能会被认为是食物，无论体型大小。/p>",
+            "items": {
+                "Floral Camouflage": {
+                    "name": "花朵迷彩 Floral Camouflage",
+                    "description": "<p>当躲藏时，兰花螳螂群可以从任意数量的叶子和花瓣处获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，即便这些叶子和花瓣的厚度不足以使其他生物隐蔽。</p>"
                 },
-                "Swallow Whole": {
-                    "name": "Swallow Whole",
-                    "description": "<p>Medium, @Damage[(3d6+6)[bludgeoning]], Rupture [20]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                "Biting Blossom": {
+                    "name": "咬人之花 Biting Blossom",
+                    "description": "<p>集群空间内每个敌人受到@Damage[3d6[piercing]]伤害（@Check[type:reflex|dc:24|basic:true]豁免）。豁免失败的生物还将受到@Damage[1d4[persistent,bleed]]伤害。</p>"
+                },
+                "Drifting Petals": {
+                    "name": "飘零花瓣 Drifting Petals",
+                    "description": "<p>集群飞行。被其移动穿越所处空间的生物必须尝试一次@Check[type:will|dc:24]豁免，否则会被它们花一般的躯体所惊住。</p>\n<hr />\n<p><strong>大成功</strong> 无效果。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}状态，持续1轮。</p>\n<p><strong>失败</strong> 生物陷入目眩与@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1轮。</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}与@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，持续1轮。</p>"
+                }
+            }
+        },
+        "Giant Orchid Mantis": {
+            "prototypeToken": {
+                "name": "巨兰花螳螂"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "巨兰花螳螂 Giant Orchid Mantis",
+            "publicNotes": "<p>很少有生物像兰花螳螂一样美丽。它们优雅的外形和颜色都很像花朵，许多人把这种娇嫩的生物当做短命的宠物。虽然这些普通的昆虫对类人生物而言并不危险，但它们仍能捕食比自己大好几倍的猎物。兰花螳螂在花丛中展开身姿，以令人目眩的速度，甚至能用它们锋利的牙齿和强力的撕咬追赶觅食的蝴蝶。</p>\n<hr />\n<p>这些螳螂的体型异常庞大，这使得它们的伪装在大多数环境中都不太有效。因此，它们通常出现在最茂密的热带雨林里，或者在种植稀有药草的地方。被驯服的巨兰花螳螂还能保护那些富有到买得起这种装饰性护卫的人。</p>",
+            "items": {
+                "Floral Camouflage": {
+                    "name": "花朵迷彩 Floral Camouflage",
+                    "description": "<p>当躲藏时，巨兰花螳螂可以从任意数量的叶子和花瓣处获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，即便这些叶子和花瓣的厚度不足以使其他生物隐蔽。</p>"
+                },
+                "Barbed Limbs": {
+                    "name": "带刺肢体 Barbed Limbs",
+                    "description": "<p>巨兰花螳螂进行两次腿打击。如果两次攻击均命中相同生物，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}状态，直到螳螂下回合结束。</p>"
+                },
+                "Sudden Strike": {
+                    "name": "突袭 Sudden Strike",
+                    "description": "<p>在战斗第一轮，尚未行动的敌人对兰花螳螂@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
                 }
             }
         }
     },
-    "label": "pf2e.lost-omens-tian-xia-world-guide"
+    "mapping": {
+        "name": "name",
+        "portrait": {
+            "path": "img",
+            "converter": "npc-portrait-path"
+        },
+        "token": {
+            "path": "prototypeToken",
+            "converter": "npc-token-translation"
+        },
+        "data": {
+            "path": "system",
+            "converter": "npc-data-translation"
+        },
+        "items": {
+            "path": "items",
+            "converter": "npc-item-translation"
+        },
+        "publicNotes": "system.details.publicNotes",
+        "allSaves": "system.attributes.allSaves.value",
+        "senses": "system.traits.senses.value",
+        "hp": "system.attributes.hp.details",
+        "blurb": "system.details.blurb",
+        "speed": "system.attributes.speed.details",
+        "languages": "system.traits.languages.custom",
+        "ac": "system.attributes.ac.details",
+        "di": "system.traits.di.custom",
+        "prototypeToken": "prototypeToken"
+    },
+    "label": "天夏世界指南怪物图鉴 Tianxia World Guide Bestiary"
 }
