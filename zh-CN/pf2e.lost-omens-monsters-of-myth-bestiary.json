@@ -22,130 +22,1654 @@
     },
     "entries": {
         "Ainamuuren": {
-            "name": "Ainamuuren"
+            "name": "Ainamuuren",
+            "allSaves": "+1 status bonus to saves against evil and necromancy spells and effects",
+            "items": {
+                "Frostbite Runes": {
+                    "description": "<p>Ainamuuren is marked by the runes of the saumen kar, a gift tied to their ancient curse. Ainamuuren gains a +1 status bonus to saving throws against evil and necromancy spells and effects. He can sense the presence of evil undead as a pervasive taste of oily corruption in the air. This is a vague sense that allows him to know when such a creature is within 60 feet, though he can't precisely pinpoint their location with this sense. This sense also extends to living creatures who have the void healing ability, like dhampir.</p>",
+                    "name": "Frostbite Runes"
+                },
+                "Snowblind": {
+                    "name": "Snowblind",
+                    "description": "<p>Ainamuuren can @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} and @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneak} during even light snowfall, even if it wouldn't be thick enough to normally grant concealment.</p>"
+                },
+                "Blizzard Evasion": {
+                    "name": "Blizzard Evasion",
+                    "description": "<p><strong>Trigger</strong> Ainamuuren takes at least 40 points of physical damage from a single attack, and he isn't currently discorporated</p><hr /><p><strong>Effect</strong> Ainamuuren discorporates into a whirling blizzard for 3 rounds. During this time, he gains resistance 10 to physical damage and weakness 10 to force damage. He gains a fly speed of 40 feet, but the only action he can take is to Fly. While discorporated, the first time each round that Ainamuuren enters another creature's space or a creature enters Ainamuuren's space, that creature takes @Damage[4d8[cold]] damage and must succeed at a @Check[type:fortitude|dc:34] save or be @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. At the start of his turn, Ainamuuren can end this effect as a free action.</p>"
+                },
+                "Curse of the Saumen Kar": {
+                    "name": "Curse of the Saumen Kar",
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr />\n<p><strong>Effect</strong> Ainamuuren activates the runes covering his body to create an icy prison around a Huge or smaller creature he can see within 60 feet. The prison is a sphere made of unmelting ice, just large enough to fit his target. The target, and any creatures sharing its space, must attempt a @Check[type:reflex|dc:34] save. A creature that fails becomes trapped inside the prison. If it succeeds, the creature is pushed outside the prison into a space of its choice. If the target shares its space with a gargantuan creature, the effect fails.</p>\n<p>The dome has AC 10, Hardness 20, and 40 Hit Points; and is immune to cold, critical hits, and precision damage. The prison lasts until destroyed, until Ainamuuren uses this ability to create a new prison, or until he dies.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Ainamuuren"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Like all saumen kar, Ainamuuren is a large, muscular humanoid with large horns atop his head. Thick, white fur covers everywhere except his face, hands, and feet, which reveal darker skin beneath the fur, covered in an intricate pattern of stylized runes. Unlike other saumen kar, Ainamuuren possess not two but four long, curving horns, jutting from his head like a primal crown. The large, magical greataxe he carries bears intricate, stylized runic patterns that greatly resemble those carved upon his flesh, with the same sharp focus on angular lines and triangular shapes.</p>"
         },
         "Collapsing Structure": {
-            "name": "Collapsing Structure"
+            "name": "Collapsing Structure",
+            "prototypeToken": {
+                "name": "Collapsing Structure"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "hazarddescription": "<p>Ebeshra brushes against a structure, possibly causing it to collapse.</p>",
+            "routine": "<p>The GM rolls a @Check[type:flat|dc:9|showDC:owner] to determine if the building partially collapses, increasing the DC as listed above. On a successful check, dust and debris fall within the building and 30 feet around it, providing concealment and dealing @Damage[6d6[bludgeoning]] damage to [[/r 1d4 #Targets]] randomly chosen targets (@Check[type:reflex|dc:35|basic:true|name:Falling Debris|traits:hazard,complex,environmental,kaiju] save; on a critical failure, the creature is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}). On a critical success, the effect is the same, but the debris deals @Damage[12d6[bludgeoning]] damage to [[/r 2d4 #Targets]] randomly chosen targets instead (@Check[type:reflex|dc:35|basic:true|name:Falling Debris|traits:hazard,complex,environmental,kaiju] save; on a critical failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by rubble until freed [@UUID[Compendium.pf2e.actionspf2e.Item.SjmKHgI7a5Z9JzBx]{Force Open} DC 38, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 35]).</p>",
+            "disable": "<p>@Check[type:athletics|dc:43|name:Brace Building (Athletics)|traits:complex,environmental,kaiju,hazard] (master), @Check[type:crafting|dc:43|name:Brace Building (Crafting)|traits:complex,environmental,kaiju,hazard] (master), or @Check[type:engineering|dc:43|name:Brace Building (Engineering)|traits:complex,environmental,kaiju,hazard]{Engineering Lore} (master) to brace the structure to reduce the risk of collapse until the end of the creature's next turn. The DC of the flat check for this round (see Routine) is increased by 4 on a success, or by 8 on a critical success. Increasing the flat check DC to 21 or higher stabilizes the structure, ending this hazard.</p>",
+            "reset": "<p>The building becomes susceptible to Shake Apart again 1d6 rounds after it's stabilized.</p>",
+            "stealthdetails": "<p>(master) to notice cracks forming in the walls of the structure as Ebeshra approaches</p>",
+            "items": {
+                "Shake Apart": {
+                    "name": "Shake Apart",
+                    "description": "<p><strong>Trigger</strong> Ebeshra applies any amount of force to the structure</p>\n<hr />\n<p><strong>Effect</strong> The building trembles. The floors of the building and the streets within 30 feet of the building become difficult terrain; creatures on this difficult terrain take a -2 circumstance penalty to attack rolls, AC, and skill checks. The hazard rolls initiative.</p>"
+                }
+            }
         },
         "Crystal Pin": {
-            "name": "Crystal Pin"
+            "name": "Crystal Pin",
+            "hazarddescription": "<p>Ebeshra fires a crystal at a creature to pin them onto the Material Plane.</p>",
+            "items": {
+                "Fire Pin": {
+                    "name": "Fire Pin",
+                    "description": "<p><strong>Trigger</strong> A creature Ebeshra can see begins to use a teleportation effect or an effect that would move any number of targets to a different plane</p>\n<hr />\n<p><strong>Effect</strong> Ebeshra hurls a crystal at the triggering creature. The triggering creature and all creatures within 50 feet of the creature take @Damage[16d8[piercing]] damage (@Check[type:reflex|dc:45|basic:true|traits:abjuration,divine,environmental,kaiju,hazard] save) and additional effects based on the result of their save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The effect is counteracted, and the creature can't use teleportation effects or planar travel effects for 1 minute.</p>\n<p><strong>Failure</strong> As success, but for 1 day instead of 1 minute.</p>\n<p><strong>Critical Failure</strong> As success, but for 1 week instead of 1 minute. Additionally, the creature becomes pinned under the crystal and must succeed at 3 total DC 45 checks to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} from under the crystal.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Crystal Pin"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "disable": "<p>@Check[type:occultism|dc:48|name:Earn Ebeshra's Favor (Occultism)|traits:abjuration,divine,environmental,kaiju,hazard] (legendary) or @Check[type:religion|dc:48|name:Earn Ebeshra's Favor (Religion)|traits:abjuration,divine,environmental,kaiju,hazard] (legendary) to earn Ebeshra's favor and allow safe travel or @Check[type:deception|dc:51|name:Divert Ebeshra's Attention|traits:abjuration,divine,environmental,kaiju,hazard] (master) to momentarily divert Ebeshra's attention</p>",
+            "reset": "<p>Ebeshra waits [[/br 1d4 #Rounds]] rounds to break off another crystal.</p>"
         },
         "Cuetzmonquali": {
-            "name": "Cuetzmonquali"
+            "name": "Cuetzmonquali",
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[(2d6+8)[bludgeoning],2d10[fire]]{2d6+8 bludgeoning damage plus 2d10 fire damage}, @Check[type:fortitude|dc:38|basic:true] save</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                },
+                "Impaling Charge": {
+                    "name": "Impaling Charge",
+                    "description": "<p>Cuetzmonquali charges forward and attempts to gore a foe. It Strides and attempts a horn Strike. On a hit, the target becomes impaled on one of Cuetzmonquali's horns. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}. If Cuetzmonquali moves, it brings the grabbed creature along with it. Cuetzmonquali doesn't need to use additional actions to keep the creature grabbed; the creature remains grabbed as long as it's impaled. The grabbed creature can attempt to Escape as normal, but the DC to do so is 40, rather than Cuetzmonquali's Athletics DC. If Cuetzmonquali critically hit the creature to impale it, that creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} for 1 round, in addition to being grabbed and impaled as per a success.</p>"
+                },
+                "Follower of the Flame": {
+                    "name": "Follower of the Flame",
+                    "description": "<p>Cuetzmonquali recognizes the might of the wielder of the <em>Spear of the Destroyer's Flame</em>. Out of its respect for that strength, it follows the commands of the spear's wielder and can understand the wielder, regardless of the language the wielder speaks.</p>"
+                },
+                "Searing Skin": {
+                    "name": "Searing Skin",
+                    "description": "<p>5 feet. Cuetzmonquali's flesh burns as hot as flame. Creatures that end their turn in the emanation take @Damage[4d6[fire]] damage (@Check[type:fortitude|dc:35|basic:true] save).</p>"
+                },
+                "Smoke Vision": {
+                    "name": "Smoke Vision",
+                    "description": "<p>Smoke doesn't impair Cuetzmonquali's vision; it ignores concealment from smoke.</p>"
+                },
+                "Breath Weapon": {
+                    "name": "Breath Weapon",
+                    "description": "<p>Cuetzmonquali unleashes a blast of fire that deals @Damage[12d10[fire]] damage in a @Template[type:cone|distance:50] (@Check[type:reflex|dc:38|basic:true] save). Creatures that fail their saves catch on fire and take @Damage[1d12[persistent,fire]] damage. Cuetzmonquali can't use Breath Weapon again for [[/br 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                },
+                "Burning Venom": {
+                    "name": "Burning Venom",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:38]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[4d6[poison],2d10[fire]]{4d6 poison plus 2d10 fire}, and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[6d6[poison],3d10[fire]]{6d6 poison plus 3d10 fire}, and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[8d6[poison],4d10[fire]]{8d6 poison plus 4d10 fire}, and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 3} (1 round)</p>"
+                },
+                "Double Sting": {
+                    "name": "Double Sting",
+                    "description": "<p>Cuetzmonquali makes two tail Strikes, each targeting a different creature. These attacks count toward Cuetzmonquali's multiple attack penalty, but the penalty doesn't increase until after both attacks.</p>"
+                },
+                "Trample": {
+                    "name": "Trample",
+                    "description": "<p>Large or smaller, claw, @Check[type:reflex|dc:38|basic:true] save</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Cuetzmonquali"
+            },
+            "publicNotes": "<p>Though stories call it the Burning Dragon, Cuetzmonquali is a unique creature with no draconic heritage. Cuetzmonquali resembles an enormous reptile with large frills, two tails ending in massive stingers, and scales that appear to be made of burning flame. Cuetzmonquali is capable of growing any number of horns from its head, on which it can impale and trap its enemies. Each horn grows in a burst of searing flame that burns flesh and scales and results in a blackened obsidian spike jutting from its forehead. These horns molt off occasionally, leaving behind warnings of the beast's presence.</p>\n<p>In combat, Cuetzmonquali is a terrifying foe who uses its horns to skewer foes, unleashes white-hot blasts of flame to devastate those who don't approach, and injects a potent burning venom that ignites a foe from within their own body, sapping their strength. Against groups of weaker foes, it simply tramples them to death underfoot. Anyone courageous enough to face Cuetzmonquali and powerful or cunning enough to slay the creature can lay claim to the treasure that lies in its belly: the legendary artifact known as the <em>Spear of the Destroyer's Flame</em>.</p>"
         },
         "Desert's Howl": {
-            "name": "Desert's Howl"
+            "name": "Desert's Howl",
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Forlorn Howl": {
+                    "name": "Forlorn Howl",
+                    "description": "<p>Desert's Howl vents a long and desolate wail full of nightmares and despair. The devastating howl can be heard up to 1 mile away under the open sky. Any creature who hears it experiences a sudden sinking in its stomach and heart palpitations, its hair stands on end, and it must attempt a @Check[type:will|dc:38] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected and becomes temporarily immune for 1 hour.</p>\n<p><strong>Success</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}.</p>\n<p><strong>Critical Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}, @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4}, and is @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+                },
+                "Illusory Ambush": {
+                    "name": "Illusory Ambush",
+                    "description": "<p>Desert's Howl shimmers with illusions and devastates a foe who lost track of its position. Desert's Howl Strides up to twice its Speed. If it ends its movement within its melee reach of at least one enemy to which it's undetected, it can attempt two claw Strikes against that enemy. These attacks count toward Desert's Howl's multiple attack penalty, but the multiple attack penalty doesn't increase until after Desert's Howl makes both of these attacks. Desert's Howl remains undetected to the creature it's attacking until after resolving both of the claw attacks.</p>"
+                },
+                "Regeneration 30 (Deactivated by Cold)": {
+                    "name": "Regeneration 30 (Deactivated by Cold)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Aura of Agony": {
+                    "name": "Aura of Agony",
+                    "description": "<p>10 miles. Desert's Howl exudes a massive psychic disturbance many miles away from its location, assaulting the minds and spirits of those who dare to sleep within the unsettling bounds of its aura of agony. Creatures that attempt to rest while they're within this emanation are beset by disturbing nightmares and hallucinations, regardless of whether they're aware of Desert's Howl's presence. This restlessness causes creatures to wake up @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued}, and they don't recover from fatigue by resting. Creatures affected by aura of agony don't reduce their @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened} condition by resting as long as they remain within the area of the aura.</p>"
+                },
+                "Fear Scent (Precise) 120 feet": {
+                    "name": "Fear Scent (Precise) 120 feet",
+                    "description": "<p>Desert's Howl can observe any frightened creatures within 120 feet using an incredibly accurate sense of psychic smell as a precise sense. However, its fear scent extends further if the creature was frightened by Desert's Howl. The taste of such a bouquet of fear in the air becomes irresistible and easy for Desert's Howl to detect, like a shark smelling blood in water. Desert's Howl can sense a creature frightened by its own fear effects as an imprecise sense at a distance of up to 1 mile away.</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>90 feet. @Check[type:will|dc:38]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Putrid Evanescence": {
+                    "name": "Putrid Evanescence",
+                    "description": "<p><strong>Frequency</strong> once per minute</p>\n<p><strong>Trigger</strong> Desert's Howl is damaged by another creature</p>\n<hr />\n<p><strong>Effect</strong> Desert's Howl bursts into a cloud of putrid smoke, ash, and nightmares, becoming @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{Invisible} and teleporting up to 100 feet away to an unoccupied space it can see. It remains invisible until the end of its next turn or until it uses a hostile action, whichever comes first.</p>"
+                },
+                "Nightmare Fuel": {
+                    "name": "Nightmare Fuel",
+                    "description": "<p>Desert's Howl's claws are infused with some of the nightmares that make up Desert's Howl's being, and they infect victims with lasting fear, cycling their victims' fears and anxieties in a horrific loop that takes time and rest to break. A creature that takes damage from Desert's Howl's claw Strike while frightened no longer reduces its @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened} condition at the end of each turn. Instead, the creature can only decrease its frightened condition by 1 after each full night's rest or with magical effects counteracting the fear, such as @UUID[Compendium.pf2e.spells-srd.Item.EfFMLVbmkBWmzoLF]{Clear Mind}.</p>"
+                },
+                "Paralytic Secretion": {
+                    "name": "Paralytic Secretion",
+                    "description": "<p>Desert's Howl's saliva is a potent paralytic substance that drains the energy from prey. A creature hit by its spit Strike must succeed at a @Check[type:fortitude|dc:41] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} as well as @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round. If the target was already drained, it instead increases the condition's value by 1, to a maximum of drained 4.</p>"
+                },
+                "Profane Feast": {
+                    "name": "Profane Feast",
+                    "description": "<p><strong>Requirements</strong> Desert's Howl has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> Desert's Howl begins to consume the creature, dealing @Damage[(2d12+15)[piercing]] damage (@Check[type:fortitude|dc:41|basic:true] save) and exposing the creature to its paralytic secretion.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Desert's Howl"
+            },
+            "publicNotes": "<p>Desert's Howl is a towering, gray abomination with a shape vaguely similar to that of a bearded man with glowing yellow eyes, long ibex horns, deadly black claws, and cloven hooves. These features have sometimes caused those who encounter it to mistake it for some kind of fiend, a fatal mistake likely to lead to their demise, as Desert's Howl is in truth a twisted aberration composed of a disgusting mix of nightmares, smoke, and ash. As such, holy water and other measures that might be effective against fiends have no effect on Desert's Howl.</p>\n<p>According to the oral histories of the people who have survived in the Thuvian desert the longest, when Desert's Howl first appeared, it was in much the same shape but no larger than a human. Over time, its proportions lengthened and grew, as did its frightening abilities and appetite for suffering.</p>\n<p>Given the incredible range on Desert's Howl's namesake desolate exclamation, creatures are much more likely to hear Desert's Howl than see it. Though such forewarning potentially gives distant creatures additional time to prepare to face or escape the creature, Desert's Howl enjoys the steady build-up of fear that this approach allows, potentially breaking its victims' resolve long before it even appears. Besides, a creature of its power has little to fear from travelers, or even most adventurers, regardless of how much time they have to prepare. In the end, a greater struggle just makes destroying them all the sweeter.</p>",
+            "hp": "regeneration 30 (deactivated by cold)"
         },
         "Fafnheir": {
-            "name": "Fafnheir"
+            "name": "Fafnheir",
+            "prototypeToken": {
+                "name": "Fafnheir"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Enormous": {
+                    "name": "Enormous",
+                    "description": "<p>Fafnheir takes up a space of 6 squares by 6 squares (30 feet by 30 feet) and is 60 feet long.</p>"
+                },
+                "Boiling Blood": {
+                    "name": "Boiling Blood",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:48]</p>\n<p><strong>Maximum Duration</strong> 10 rounds</p>\n<p><strong>Stage 1</strong> @Damage[6d8[fire]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[6d10[fire]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[6d12[fire]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3} (1 round)</p>"
+                },
+                "Furious Frenzy": {
+                    "name": "Furious Frenzy",
+                    "description": "<p>Fafnheir makes two claw Strikes and one Strike with his jaws, horns, or tail, in any order.</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Regeneration 20 (Deactivated by Cold Iron)": {
+                    "name": "Regeneration 20 (Deactivated by Cold Iron)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>[reaction] Tail only.</p>"
+                },
+                "Attack of Opportunity (Tail Only)": {
+                    "name": "Attack of Opportunity (Tail Only)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Curse of the Woeful Wyrd": {
+                    "name": "Curse of the Woeful Wyrd",
+                    "description": "<p>When a creature slays Fafnheir, it becomes home to his soul, which slowly emerges from his killer's body. The creature must attempt a @Check[type:will|dc:52] save or become @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2} (@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} on a success, unaffected on a critical success). Unless the creature critically succeeded at the saving throw, each day the doomed value increases by 1. If the creature dies while suffering the curse of the woeful wyrd, its corpse explodes in a @Template[type:burst|distance:60] with the effect of Blasting Breath. Fafnheir is immediately returned to life in the nearest available space to the corpse with full Hit Points and no conditions. Even an indirect slaying usually still allows Fafnheir to curse the soul of his slayer through the metaphysical link between them.</p>"
+                },
+                "Extra Reactions": {
+                    "name": "Extra Reactions",
+                    "description": "<p>Fafnheir gains 2 reactions at the start of each of his turns.</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>90 feet. @Check[type:will|dc:45]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Spit Boiling Blood": {
+                    "name": "Spit Boiling Blood",
+                    "description": "<p><strong>Trigger</strong> A creature within 60 feet damages Fafnheir</p>\n<hr />\n<p><strong>Effect</strong> Fafnheir spits blood at the creature. It must immediately attempt a Fortitude save against boiling blood.</p>"
+                },
+                "Blasting Breath": {
+                    "name": "Blasting Breath",
+                    "description": "<p>Fafnheir exhales a cataclysmic firestorm laced with lightning and hurricane-strength winds, dealing @Damage[20d6[fire]] damage in a @Template[type:cone|distance:90] (@Check[type:reflex|dc:48|basic:true] save). Additionally, Fafnheir deals @Damage[10d6[electricity]]{10d6} additional electricity damage to one creature within the area of Blasting Breath of Fafnheir's choice, determined by the same basic Reflex save. Creatures in the area must also attempt a @Check[type:fortitude|dc:48|name:Resist Winds|traits:damaging-effect] save to resist the powerful winds and deafening thunderclaps of the breath. Creatures that fail experience the effects of @UUID[Compendium.pf2e.spells-srd.Item.g8QqHpv2CWDwmIm1]{Gust of Wind}, affecting Large or smaller creatures as normal. Finally, creatures that fail their Fortitude save become @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute (permanently deafened on a critical failure).</p>"
+                }
+            },
+            "publicNotes": "<p>Fafnheir is the fabled Father of Linnorms. He's larger than all other linnorms on Golarion, with a length of 60 feet and a weight upwards of 10 tons. Fafnheir is a clever and powerful creature, worthy of the fear of all people in the Lands of the Linnorm Kings.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "hp": "regeneration 20 (deactivated by cold iron)"
         },
         "Grisantian Lion": {
-            "name": "Grisantian Lion"
+            "name": "Grisantian Lion",
+            "prototypeToken": {
+                "name": "Grisantian Lion"
+            },
+            "items": {
+                "Dual Pounce": {
+                    "name": "Dual Pounce",
+                    "description": "<p>The grisantian lion Strides and makes two claw Strikes against the same creature at the end of that movement. Each attack counts against the grisantian lion's multiple attack penalty, but the penalty doesn't increase until after the grisantian lion makes both attacks. If both attacks hit, combine their damage for the purpose of resistances and weaknesses.</p>"
+                },
+                "Rend": {
+                    "name": "Rend",
+                    "description": "<p>claw.</p>\n<p>If the grisantian lion Rends after a successful Dual Pounce, combine the Rend's damage with that from the Dual Pounce for the purpose of resistances and weaknesses.</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
+                },
+                "Vicious Rend": {
+                    "description": "<p><strong>Trigger</strong> The grisantian lion uses Rend</p>\n<hr />\n<p><strong>Effect</strong> The target's armor takes damage equal to the damage from Rend. The target can attempt a @Check[type:reflex|dc:29|basic:true] save to reduce this damage.</p>",
+                    "name": "Vicious Rend"
+                }
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            }
         },
         "Grogrisant": {
-            "name": "Grogrisant"
+            "name": "Grogrisant",
+            "prototypeToken": {
+                "name": "Grogrisant"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Grogrisant is an enormous lion with multiple eyes and a golden, glowing mane. As it was originally slain by Taldor's founding emperor, the legendary hero Taldaris, Grogrisant's appearance marks both danger for the people of Taldor and the potential for Taldans to prove their might against a creature from their fabled past. How it continues to appear time and time again remains a mystery, one that Taldan scholars continuously attempt to decipher.</p>",
+            "items": {
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Aura of Blinding Light": {
+                    "name": "Aura of Blinding Light",
+                    "description": "<p>40 feet. Any creature that begins its turn in the aura must attempt a @Check[type:fortitude|dc:34|traits:damaging-effect] save or be @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 minute and become temporarily immune for 1 day. If the creature critically fails this save, it's permanently blinded.</p>"
+                },
+                "Dual Pounce": {
+                    "name": "Dual Pounce",
+                    "description": "<p>Grogrisant Strides and makes two claw Strikes against the same creature at the end of that movement. Each attack counts against Grogrisant's multiple attack penalty, but the penalty doesn't increase until after Grogrisant makes both attacks. If both attacks hit, combine their damage for the purpose of resistances and weaknesses.</p>"
+                },
+                "Rend": {
+                    "name": "Rend",
+                    "description": "<p>claw.</p>\n<p>If Grogrisant Rends after a successful Dual Pounce, combine the Rend's damage with that from the Dual Pounce for the purpose of resistances and weaknesses.</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
+                },
+                "Vicious Rend": {
+                    "name": "Vicious Rend",
+                    "description": "<p><strong>Trigger</strong> Grogrisant uses Rend</p>\n<hr />\n<p><strong>Effect</strong> The target's armor takes damage equal to the damage from Rend. The target can attempt a @Check[type:reflex|dc:37|basic:true] save, negating the armor damage on a successful save.</p>"
+                }
+            }
         },
         "Howling Spawn": {
-            "name": "Howling Spawn"
+            "name": "Howling Spawn",
+            "prototypeToken": {
+                "name": "Howling Spawn"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>While Desert's Howl is presumed to be unique, given its inexplicable origin, there have been reports of creatures resembling Desert's Howl that stalk the sands of Thuvia. Though quite similar to the descriptions of Desert's Howl, they seem to be individuals who haven't yet fully completed their transformation into the terrifying beast. Whether these unfortunate people met a cruel fate similar to that which spawned Desert's Howl or are spawn of the nightmarish creature itself is unclear. Some reports of encounters with these creatures note that it's possible to revert the creature back to its humanoid form by cleansing its mind of nightmarish visions, though there's no solid evidence of such an event ever occurring.</p>",
+            "hp": "regeneration 20 (deactivated by cold)",
+            "items": {
+                "Regeneration 20 (Deactivated by Cold)": {
+                    "name": "Regeneration 20 (Deactivated by Cold)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Fear Scent (Precise) 60 feet": {
+                    "name": "Fear Scent (Precise) 60 feet",
+                    "description": "<p>Howling spawn can sense frightened creatures within 60 feet, using an incredibly accurate sense of psychic smell as a precise sense.</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>60 feet. @Check[type:will|dc:27]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Putrid Evanescence": {
+                    "name": "Putrid Evanescence",
+                    "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> The howling spawn is damaged by another creature</p>\n<hr />\n<p><strong>Effect</strong> The howling spawn bursts into a cloud of putrid smoke, ash, and nightmares, becoming @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{Invisible} and teleporting up to 30 feet away to an unoccupied space it can see. It remains invisible until the end of its next turn or until it uses a hostile action, whichever comes first.</p>"
+                },
+                "Illusory Ambush": {
+                    "name": "Illusory Ambush",
+                    "description": "<p>The howling spawn shimmers with illusions and devastates a foe who lost track of its position. It Strides up to twice its Speed. If it ends its movement within its melee reach of at least one enemy to which it is undetected, it can attempt two claw Strikes against that enemy. The howling spawn remains undetected to the creature it's attacking until after resolving both of the claw attacks.</p>"
+                },
+                "Paralytic Secretion": {
+                    "name": "Paralytic Secretion",
+                    "description": "<p>The howling spawn's saliva is a potent paralytic substance that drains the energy from its prey. A creature hit by its spit Strike must succeed at a @Check[type:fortitude|dc:30] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} as well as @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round. If the target was already drained, it instead increases the condition's value by 1, to a maximum of drained 4.</p>"
+                },
+                "Profane Feast": {
+                    "name": "Profane Feast",
+                    "description": "<p><strong>Requirements</strong> The howling spawn has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> The howling spawn begins to consume the creature, dealing @Damage[(2d12+5)[piercing]] damage (@Check[type:fortitude|dc:30|basic:true] save) and exposing the creature to its paralytic secretion.</p>"
+                }
+            }
         },
         "Imperfect Automaton": {
-            "name": "Imperfect Automaton"
+            "name": "Imperfect Automaton",
+            "items": {
+                "Impassioned Strikes": {
+                    "name": "Impassioned Strikes",
+                    "description": "<p>While the imperfect automaton is affected by an emotion effect, its fist Strikes deal 1d6 additional mental damage.</p>"
+                },
+                "Unsubstantiated Consciousness": {
+                    "name": "Unsubstantiated Consciousness",
+                    "description": "<p>When an imperfect automaton succeeds at a Will save, it gets a critical success instead. When it fails at a Will save, it gets a critical failure instead.</p>"
+                },
+                "Empty Wail": {
+                    "name": "Empty Wail",
+                    "description": "<p>The imperfect automaton utters a mournful cry in a @Template[type:cone|distance:30]{30-foot cone}. The cry deals @Damage[4d6[mental]] damage to all creatures in the area (@Check[type:will|dc:22] save). The imperfect automaton can't use its Empty Wail again for [[/br 1d4 #Recharge Empty Wail]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for [[/br 1d4+1 #rounds]]{1d4+1 rounds}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is stupefied 1 for 1d4+1 rounds and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
+                },
+                "Mortal Reflection": {
+                    "name": "Mortal Reflection",
+                    "description": "<p><strong>Requirements</strong> The imperfect automaton has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}</p><hr />\n<p><strong>Effect</strong> The imperfect automaton draws upon the target's emotions to recall a semblance of mortal feeling, gaining a +5-foot status bonus to its Speed for 1 minute. If the grabbed or restrained creature has an ongoing emotion or mental effect with a counteract rank of 4 or lower, the imperfect automaton can gain a copy of that effect that lasts for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.vUFIbQ74jz22rOXw]{Effect: Mortal Reflection}</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Imperfect Automaton"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            }
         },
         "Kallas Devil": {
-            "name": "Kallas Devil"
+            "name": "Kallas Devil",
+            "items": {
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The Kallas Devil can take on the appearance of any Medium or Small female humanoid. This doesn't change her Speed or her attack and damage bonuses with her Strikes but might change the damage type her Strikes deal (typically to bludgeoning).</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                },
+                "Devil's Charge": {
+                    "name": "Devil's Charge",
+                    "description": "<p><strong>Requirements</strong> The Kallas Devil is mounted on the Skinned Steed</p>\n<hr />\n<p><strong>Effect</strong> The Kallas Devil Strides twice. If she ends her movement within melee reach of at least one creature, she can make a melee Strike against that creature.</p>"
+                },
+                "Flay Alive": {
+                    "name": "Flay Alive",
+                    "description": "<p><strong>Requirements</strong> The Kallas Devil has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, and it has been grabbed since her last turn.</p>\n<hr />\n<p><strong>Effect</strong> The Kallas Devil flays her prey, dealing @Damage[(2d12+17)[slashing]] damage, and the target must attempt a @Check[type:fortitude|dc:25] save. On a failure, it becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure). On a critical success, the creature escapes from being grabbed; otherwise, the Kallas Devil extends the grabbed condition until the end of her next turn.</p>"
+                },
+                "Sewer Haze": {
+                    "name": "Sewer Haze",
+                    "description": "<p>Many healers and alchemists suspect that sewer haze has a supernatural origin, given its association with particularly strong otyughs.</p>\n<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:23|name:Sewer Hsaze]</p>\n<p><strong>Onset</strong> 2 days</p>\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} (1 day)</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} and stupefied 2 (1 day)</p>\n<p><strong>Stage 3</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 3} (1 day)</p>"
+                },
+                "equipment-Skinned Cloak": {
+                    "name": "Skinned Cloak"
+                },
+                "Wavesense (Imprecise) 30 feet": {
+                    "name": "Wavesense (Imprecise) 30 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Wavesense]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Coven": {
+                    "name": "Coven",
+                    "description": "<p>The Kallas Devil adds @UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate}, @UUID[Compendium.pf2e.spells-srd.Item.RCbLd7dfquHnuvrZ]{False Vision}, @UUID[Compendium.pf2e.spells-srd.Item.XXqE1eY3w3z6xJCB]{Invisibility}, and @UUID[Compendium.pf2e.spells-srd.Item.GP3wewkQXEPrLxYj]{Subconscious Suggestion} to her coven's spells.</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>20 feet. @Check[type:will|dc:26]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Leatherwork": {
+                    "name": "Leatherwork",
+                    "description": "<p>Once a month, the Kallas Devil can spend 1 day stitching the skin of a person into her coat. This gives her skinned cloak a +1 circumstance bonus to her AC for one week.</p>"
+                },
+                "Loathsome Stench": {
+                    "name": "Loathsome Stench",
+                    "description": "<p>20 feet. A creature entering the aura or starting its turn in the aura must succeed at a @Check[type:fortitude|dc:20] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical failure). A creature that succeeds at its saves is temporarily immune for 1 minute.</p>"
+                },
+                "Mount Steed": {
+                    "name": "Mount Steed",
+                    "description": "<p><strong>Trigger</strong> The Skinned Steed enters a space adjacent to the Kallas Devil</p>\n<hr />\n<p><strong>Effect</strong> The Kallas Devil mounts the horse.</p>"
+                },
+                "Skinned Steed": {
+                    "name": "Skinned Steed",
+                    "description": "<p>The Kallas Devil has a horse minion known as the Skinned Steed. The horse has a swim speed equal to its standard Speed and the minion trait, and it's under the control of the Kallas Devil. The Kallas Devil automatically succeeds at all checks to Command the Skinned Steed. While mounted on the Skinned Steed, the Kallas Devil fuses with the horse, causing the two to become a single being. The Skinned Steed doesn't act on its own while fused with the Kallas Devil, instead acting as the Devil's legs to move around the battlefield. The Kallas Devil doesn't command the Skinned Steed in this state and instead replaces her Speeds with the mount's speeds until she dismounts. While the two are separated, the Kallas Devil needs to Command the Steed, as normal. If the Skinned Steed is killed, the Kallas Devil can replace it by spending 1 day to prepare another horse, converting it into her new Skinned Steed.</p>"
+                },
+                "Aquatic Ambush": {
+                    "name": "Aquatic Ambush",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AquaticAmbush]</p>"
+                },
+                "Call Steed": {
+                    "name": "Call Steed",
+                    "description": "<p><strong>Requirements</strong> The Skinned Steed hasn't been killed and is within 60 feet</p>\n<hr />\n<p><strong>Effect</strong> The Kallas Devil whistles loudly and calls for her steed, prompting the creature to Stride twice toward the Kallas Devil.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Kallas Devil"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Bearing a resemblance to the flayed nuckelavee that lurks in stagnant swamps, the Kallas Devil distinguishes herself by being able to separate herself from her mount without issue, as well as with her powers of disguise and subtlety. Though her wicked trident and violent fury are enough to sear her image into the minds of the local people, it's the Kallas Devil's ability to slip unseen among her would-be victims that elevates the creature beyond the ranks of a common horror. No matter how careful the residents of Riverton are with their youth and the vulnerable, the Kallas Devil claims her chosen target more often than not, luring the hapless victim toward doom while wearing a smiling child's face.</p>"
         },
         "Kothogaz, Dance Of Disharmony": {
-            "name": "Kothogaz, Dance Of Disharmony"
+            "name": "Kothogaz, Dance Of Disharmony",
+            "prototypeToken": {
+                "name": "Kothogaz, Dance Of Disharmony"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Kothogaz is a towering horror of claws and eyes, surrounded by swarming insects.</p>",
+            "hp": "regeneration 30",
+            "items": {
+                "Regeneration 30": {
+                    "name": "Regeneration 30",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>300 feet. @Check[type:will|dc:41]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Horrific Speed": {
+                    "name": "Horrific Speed",
+                    "description": "<p>Kothogaz is permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened 1}. It can use this extra action to Stride or Strike.</p>"
+                },
+                "Noxious Aura": {
+                    "name": "Noxious Aura",
+                    "description": "<p>120 feet. A creature that enters or begins its turn in the emanation must succeed at a @Check[type:fortitude|dc:41] save or be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} (sickened 3 on a critical failure).</p>"
+                },
+                "Reactive": {
+                    "name": "Reactive",
+                    "description": "<p>Kothogaz gains 3 reactions each round.</p>"
+                },
+                "Tympanic Heartbeat": {
+                    "name": "Tympanic Heartbeat",
+                    "description": "<p>120 feet. Kothogaz's heartbeat booms like a deity's drum. A creature that enters or begins its turn in the emanation must attempt a @Check[type:will|dc:41] save. On a failure, its next two actions must be move actions to move at least half its Speed away from Kothogaz. A creature that critically succeeds is temporarily immune to tympanic heartbeat for 1 minute.</p>"
+                },
+                "Disharmonic Door": {
+                    "name": "Disharmonic Door",
+                    "description": "<p>Kothogaz disappears, then bursts as a cacophonous sound from the throat of a creature within 240 feet. Kothogaz appears within reach of the creature and makes a melee Strike against it. The Strike deals an additional @Damage[2d12[sonic]] damage.</p>"
+                },
+                "Many-Eyed Blight": {
+                    "name": "Many-Eyed Blight",
+                    "description": "<p>@Check[type:fortitude|dc:44]</p>\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}</p>\n<p><strong>Stage 2</strong> stupefied 2 and @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled}</p>\n<p><strong>Stage 3</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 3}, @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused}, and @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded}</p>\n<p><strong>Stage 4</strong> if you die, at the next new moon, your body splits, and your viscera become an undead under Kothogaz's control.</p>"
+                },
+                "Pox the Land": {
+                    "name": "Pox the Land",
+                    "description": "<p>Kothogaz raises a pustule from the ground within 120 feet, which erupts in a @Template[type:burst|distance:10]{10-foot radius}, 200-foot-high cylinder of cloying filth. Creatures in the area must succeed at a @Check[type:reflex|dc:44|basic:true] save or take @Damage[6d10[poison]] damage. On a failure, they can't fly for 1 round (1 minute on a critical failure); flying creatures fall safely to the ground.</p>"
+                },
+                "Suppurating Passage": {
+                    "name": "Suppurating Passage",
+                    "description": "<p>The earth festers in Kothogaz's wake. Kothogaz Strides up to its Speed. Squares through which Kothogaz passes are greater difficult terrain until the start of its next turn, and any creature that enters or begins its turn in those squares must succeed at a @Check[type:reflex|dc:44] save or take @Damage[4d10[poison],4d10[acid]]{4d10 poison damage and 4d10 acid damage} (on a critical failure, double damage and exposed to many-eyed blight).</p>"
+                },
+                "Swallow Whole": {
+                    "name": "Swallow Whole",
+                    "description": "<p>Huge, @Damage[(4d10+18)[bludgeoning],2d12[sonic]]{4d10+18 bludgeoning plus 2d12 sonic} and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} while swallowed, Rupture 40</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                }
+            }
         },
         "Krampus (The Horned Miser)": {
-            "name": "Krampus (The Horned Miser)"
+            "name": "Krampus (The Horned Miser)",
+            "prototypeToken": {
+                "name": "Krampus (The Horned Miser)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Krampus is a tall, goatlike humanoid with a pointed nose, swept-back horns, and hooved feet. His long, greasy tongue continually flickers out from his mouth, occasionally licking droplets of spittle from his dark brown fur. He wields a set of iron chains that act as an extension of his will. Krampus is never seen without a wicker basket draped over one shoulder, its bottom often stained with the blood of his victims. Krampus stands a little over 14 feet tall and weighs nearly 1,000 pounds.</p>\n<p>Krampus's origin is unknown; residents of the small towns and villages he terrorizes in northern Irrisen believe the creature has always existed, coming forth once a year to punish those he deems wicked. While many legends have been told about Krampus's beginning, the most popular of them starts with a handful of mountain towns under the protection of a circle of druids. After a series of harsh winters that the townsfolk barely survived, they began to doubt the power of the druids and their rituals. As the villagers grew more resentful, the druid circle took drastic action. Under the light of a blue moon, the druids opened an imperfect portal to the primal realm of the fey and called forth the most powerful spiritual essence they could, and a new creature was born-Krampus. However, unknown to the druids, the portal had been corrupted by the villagers' bitter resentment and doubt. Instead of a central figure to lead them in winter celebrations, as they had hoped, the druids had spawned a monster who sought to punish those who had behaved selfishly during lean times.</p>\n<p>Recognizing their error, the druids sought to banish their creation. They tracked Krampus down as he slept and shackled him in cold iron chains, hoping to subdue him and force him back to the First World. But Krampus was no fey, and cold iron held no power over him. When he awoke, he ripped the chains free, claimed them as his own, and tracked down the druids who had dared try to capture him. After their betrayal, Krampus can see no good in any mortal and longs only to punish the wicked for their selfish misdeeds.</p>\n<p>To this day, Krampus takes vicious delight in transforming his victims into the petulant children before killing them, and no manner of sacrifice can appease him. Luckily for any nearby villages, Krampus stalks their streets but once a year.</p>\n<p>Locals believe that Krampus makes his lair among the deep crevasses of ice somewhere within the Winterwall Glacier, which lines Avistan's northernmost reaches. No adventurer has yet braved the treacherous expanse to find and defeat him.</p>\n<p>While Krampus is most infamous for tracking and punishing the naughty, his own sins often inform his vindictive responses to others' misdeeds. An incarnation of Krampus who arose from irrepressible greed might possess abilities that better reflect his fierce miserly behavior, emphasizing less the abduction of miscreants and more the disproportionate punishment of thieves and robbers. Such a variant Krampus might arise in different cultures that tell different stories about Krampus, or Krampus's powers and nature might drift between incarnations each time he is defeated and arises anew elsewhere in the world the following year. In these cultures or incarnations, Krampus represents a remorseless yet generous spirit who's willing to grant boons to the truly worthy while tormenting any who fail his morality tests.</p>\n<p>Unfortunately for people in regions terrorized by this Krampus, his definition of \"any who fail his morality tests\" tend to be nearly everyone but the most innocent and generous of people.</p>",
+            "blurb": "Variant Krampus",
+            "items": {
+                "Thief Scent": {
+                    "name": "Thief Scent",
+                    "description": "<p>Krampus can perceive anyone who has ever stolen or moved one of his possessions, using scent as an imprecise sense with a range of 1 mile.</p>"
+                },
+                "Blizzard Sight": {
+                    "name": "Blizzard Sight",
+                    "description": "<p>Krampus ignores circumstance penalties to visual Perception checks due to ice or snow, as well as concealment due to ice or snow.</p>"
+                },
+                "Bountiful Bag": {
+                    "name": "Bountiful Bag",
+                    "description": "<p>Krampus carries a large bag brimming with barely contained gifts and trinkets, including one of every common item with the consumable trait of levels 1 to 20, at least 20 <em>golden rod mementos</em>, and an assortment of food and valuables. Once every 24 hours, the bag's contents magically regenerate, replacing any of these items that have been removed. Krampus can Interact with the bag to stow or withdraw items, always finding the desired stored item at the top of the bag. The bag is an extradimensional space, so the weight of its contents doesn't count against Krampus's Bulk limit. The bag functions as a normal sack if used by anyone other than Krampus, and if the bag is stolen or Krampus is slain, the bag retains only [[/r 2d4]] random common consumable items of 16th level or higher.</p>\n<p>A creature can use @UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]{Disarm} or @UUID[Compendium.pf2e.actionspf2e.Item.RDXXE7wMrSPCLv5k]{Steal} to extract a consumable item from Krampus's bag. As part of the action, the creature can envision a specific item it wants to extract. On a success, the creature Disarms or Steals the object and rolls a @Check[type:flat|dc:13|name:Stealing from Krampus' Bag|showDC:owner] check.</p>\n<hr />\n<p><strong>Success</strong> The creature Disarms or Steals the envisioned object. If the creature didn't envision an object, it Disarms or Steals a random common consumable item of a level at least half the creature's level.</p>\n<p><strong>Failure</strong> The creature Disarms or Steals a random common consumable item of a level at least half the creature's level.</p>\n<p><strong>Critical Failure</strong> The creature Disarms or Steals a <em>golden rod memento</em> instead of a consumable item.</p>"
+                },
+                "Capture": {
+                    "description": "<p><strong>Requirements</strong> Krampus has a Medium or smaller creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> Krampus attempts to stuff the grabbed creature into his basket, attempting an @Check[type:athletics|defense:reflex] check against the target's Reflex DC. If he succeeds, the creature is shoved into Krampus's basket and Krampus's spiked chain or claw is freed for future Strikes.</p>\n<p>The captured creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and subjected to Krampus's regression ability (see below) at the start of each round it is captured.</p>\n<p>If the victim @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 48), it climbs out of the basket. A captured creature can attack the interior of the basket, but only with unarmed attacks or weapons of light Bulk or less, against an AC of 40. If the captured creature deals 40 slashing or piercing damage, the basket is broken and all the creatures inside spill out. A creature that gets free by either Escaping or by someone breaking the basket is deposited in a square of their choosing adjacent to Krampus.</p>\n<p>The basket is an extradimensional space, so the weight of the creatures within doesn't count against Krampus's Bulk limit. Up to four Small creatures or two Medium creatures can fit in the basket at one time.</p>\n<p>Krampus can @UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{Repair} the basket as a 2-action activity that doesn't require tools. If the basket is lost or destroyed, Krampus can create a new one with 1 hour of work. The basket functions as a normal sack if used by anyone other than Krampus.</p>",
+                    "name": "Capture"
+                },
+                "Crushing Avarice": {
+                    "name": "Crushing Avarice",
+                    "description": "<p>Krampus's greed is so great that expending any of his wealth causes him to become physically ill and potentially nauseous. Whenever Krampus uses a consumable item from his bountiful bag, or when he witnesses one of his possessions stolen, he must attempt a @Check[type:will|dc:44] save.</p>\n<p><strong>Success</strong> Krampus is unaffected.</p>\n<p><strong>Failure</strong> Krampus becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Critical Failure</strong> Krampus becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>"
+                },
+                "Snowstep": {
+                    "description": "<p>Krampus ignores difficult terrain and greater difficult terrain caused by snow and ice, and he leaves no tracks when moving through areas of snow or ice.</p>",
+                    "name": "Snowstep"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>120 feet. @Check[type:will|dc:42]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Limited Immortality": {
+                    "name": "Limited Immortality",
+                    "description": "<p>Though Krampus still needs to eat, drink, and sleep, he doesn't age and can't die of old age. If Krampus is killed, a new Krampus forms elsewhere in the world after a year's time.</p>\n<p>The new Krampus retains the memories of the previous iteration and likely holds a grudge against whoever killed him the year before. If a method to disrupt this cycle exists, it has yet to be discovered by mortals.</p>"
+                },
+                "Punish the Naughty": {
+                    "name": "Punish the Naughty",
+                    "description": "<p><strong>Requirements</strong> Krampus can sense the target with his thief scent.</p>\n<hr />\n<p>Krampus designates a single target he can see as \"naughty\" He gains a +2 circumstance bonus to Perception checks when he Seeks the naughty target and a +2 circumstance bonus to Survival checks to Track the naughty target.</p>\n<p>On melee attacks against the naughty target, Krampus's spiked chain gains the agile trait. In addition, when Krampus Grabs the naughty target, he can attempt to Capture them as a free action. Krampus can have only one naughty target at a time.</p>"
+                }
+            }
         },
         "Krampus Celebrant": {
-            "name": "Krampus Celebrant"
+            "name": "Krampus Celebrant",
+            "items": {
+                "Frightful Parade": {
+                    "name": "Frightful Parade",
+                    "description": "<p>The Krampus celebrant Strides up to its Speed and attempts a birch bundle Strike against one creature within its reach at any point during that movement.</p>"
+                },
+                "Relentless Torment": {
+                    "name": "Relentless Torment",
+                    "description": "<p><strong>Trigger</strong> The Krampus celebrant hits a frightened creature with its birch bundle Strike</p>\n<hr />\n<p><strong>Effect</strong> The target must attempt a @Check[type:will|dc:26] save to resist the effects of the fearful assault.</p>\n<hr />\n<p><strong>Success</strong> The target is unaffected.</p>\n<p><strong>Failure</strong> The creature takes @Damage[1d8[mental]] damage. At the end of the creature's next turn, its frightened condition doesn't decrease by 1.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[2d8[mental]] damage, and its frightened condition increases by 1 (maximum 4). At the end of its next turn, its frightened condition doesn't decrease by 1.</p>"
+                },
+                "Snowstride": {
+                    "name": "Snowstride",
+                    "description": "<p>The Krampus celebrant ignores difficult terrain caused by snow and ice, and it treats greater difficult terrain caused by snow and ice as difficult terrain.</p>"
+                },
+                "Vandal": {
+                    "name": "Vandal",
+                    "description": "<p>Whenever the Krampus celebrant deals damage to an object, it ignores the first 10 points of the object's Hardness.</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>30 feet. @Check[type:will|dc:23]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Krampus Celebrant"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            }
         },
         "Kuworsys": {
-            "name": "Kuworsys"
+            "name": "Kuworsys",
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Pinion": {
+                    "name": "Pinion",
+                    "description": "<p><strong>Trigger</strong> A creature within 10 feet of Kuworsys uses an action to Fly</p>\n<strong>Requirements</strong> Kuworsys is Reared Back\n<hr />\n<p><strong>Effect</strong> Kuworsys lashes out at the triggering creature, attempting to swat it to the ground. Kuworsys attempts a melee Strike against the creature. If the Strike hits, the creature's movement is interrupted. The creature is knocked to the ground; on a critical hit, they also can't Fly again for 1 minute.</p>"
+                },
+                "Addictive Exhaustion": {
+                    "name": "Addictive Exhaustion",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:32]</p>\n<p>Creatures with addictive exhaustion can't reduce their sickened condition from addictive exhaustion while they have the disease</p>\n<p><strong>Stage 1</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. One skill of the creature's choice doesn't suffer the status penalty from this sickened condition to its skill checks (1 day)</p>\n<p><strong>Stage 2</strong> As Stage 1, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} and is @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} (5 days)</p>\n<p><strong>Stage 3</strong> As Stage 2, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3} and has incurable hunger and thirst, in addition to being fatigued (1 day)</p>"
+                },
+                "Gauge Potential": {
+                    "name": "Gauge Potential",
+                    "description": "<p>Kuworsys studies a creature it can see, attempting to predict its actions. The creature attempts a @Check[type:will|dc:32] save. On a failed save, Kuworsys predicts the creature's moves, gaining a +2 circumstance bonus to attack rolls and AC against the target creature for 1 minute.</p>"
+                },
+                "Infectious Spores": {
+                    "name": "Infectious Spores",
+                    "description": "<p>Kuworsys releases a choking field of spores within a @Template[type:burst|distance:30]{30-foot radius}, continuing to release them until the end of its next turn. Creatures who begin their turns within the area of the spores, or who enter the area, must attempt a @Check[type:fortitude|dc:32|traits:disease] save. On a failure, the creature becomes afflicted with addictive exhaustion.</p>\n<p>Kuworsys then can't use its Infectious Spores again for [[/br 1d4 #Recharge Infectious Spores]]{1d4 rounds}.</p>"
+                },
+                "Rear Back": {
+                    "name": "Rear Back",
+                    "description": "<p>Kuworsys stands on its two hind limbs, bringing its other four limbs to bear on its foes. Kuworsys stays Reared Back until it uses a single action to return to its normal stance. While Kuworsys is Reared Back, it is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} but can use its Pinion and Yank abilities.</p>"
+                },
+                "Yank": {
+                    "name": "Yank",
+                    "description": "<p><strong>Requirements</strong> Kuworsys is Reared Back</p>\n<hr />\n<p><strong>Effect</strong> Kuworsys makes a melee limb Strike against a creature and, on a success, attempts to steal the creature's weapon from its hands. Kuworsys attempts a @Check[type:thievery|defense:reflex] check against the target's Reflex DC.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature's weapon falls to the floor in the creature's space.</p>\n<p><strong>Success</strong> Until the start of that creature's turn, attempts to @UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]{Disarm} the creature of its weapon gain a +2 circumstance bonus, and the target takes a -2 circumstance penalty to attacks with the weapon or other checks requiring a firm grasp on the weapon.</p>\n<p><strong>Failure</strong> The creature is unaffected.</p>\n<p><strong>Critical Failure</strong> The creature can use a reaction to attempt a melee Strike against Kuworsys with the weapon Kuworsys attempted to grab.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Kuworsys"
+            },
+            "publicNotes": "<p>At a distance, the creature known as Kuworsys might be mistaken for a crawling undead hand, possessed of two thumbs instead of one. These \"thumbs\" are actually the being's hind limbs, which it can clumsily stand upon should it choose. Each of its fingerlike limbs bears a smaller hand on the end, giving Kuworsys an eerie gait possessed of too many moving joints. Wedged within the wrist-shaped tissue that makes up the creature's head are three bloodshot eyes, glaring balefully from lids twisted into shape from ropes of flesh.</p>\n<p>Whether part of its base nature or due to its long imprisonment, Kuworsys appears to be skinned and rotting, its body riddled with ragged holes held together by raw sinew. Despite its glistening and putrid appearance, it isn't undead, nor does it leave any trace of blood or gristle in its wake. Those who believe its condition might slow it down are often shocked by the creature's jittering speed, and those who believe they might be able to track it by the scent of rotting flesh find themselves inhaling the beast's deadly, exhausting spores instead.</p>\n<p>When encountering another creature, Kuworsys doesn't approach initially, instead observing the stranger while hidden or at a distance. While it might grow bolder and approach to examine or provoke another being, it prefers to avoid direct confrontation and is intelligent and stealthy enough to deftly avoid discovery. Its presence proves deadly enough, even without any further aggression, as those who Kuworsys stalks eventually succumb to a lethal lethargy.</p>"
         },
         "Melfesh Monster": {
-            "name": "Melfesh Monster"
+            "name": "Melfesh Monster",
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "prototypeToken": {
+                "name": "Melfesh Monster"
+            },
+            "items": {
+                "Reactive Growth": {
+                    "name": "Reactive Growth",
+                    "description": "<p><strong>Trigger</strong> The Melfesh Monster takes physical damage</p>\n<hr />\n<p><strong>Effect</strong> The Melfesh Monster shifts plant matter to blunt the attack. It gains resistance 5 against the triggering physical damage.</p>"
+                },
+                "Sporesight": {
+                    "name": "Sporesight",
+                    "description": "<p>If a creature has inhaled any of the Melfesh Monster's spores, the Melfesh Monster can sense the creature at the listed range.</p>"
+                },
+                "Terrorspores": {
+                    "name": "Terrorspores",
+                    "description": "<p>60 feet. A creature that enters the emanation must attempt a @Check[type:will|dc:21] save. Regardless of outcome, the creature is temporarily immune to terrorspores for 1 minute.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} and inhales spores that remain in its body for 1 minute.</p>\n<p><strong>Failure</strong> As success, but @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and the spores remain for 1 hour.</p>\n<p><strong>Critical Failure</strong> As success, but @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}, the spores remain for 1 hour, and the creature's frightened condition can't be reduced below 1 as long as spores remain in its body.</p>"
+                },
+                "Envelop": {
+                    "name": "Envelop",
+                    "description": "<p>The Melfesh Monster attempts to @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} a creature within reach. On a success, the creature is pulled into the Monster's body. The Melfesh Monster is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} while it envelops a creature, and this otherwise has the effects of @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.uJSseLa57HZYSMUu]{Swallow Whole} (the Melfesh Monster's size or smaller, @Damage[1d10[bludgeoning],1d12[poison]]{1d10 bludgeoning and 1d12 poison}, Rupture 15).</p>"
+                },
+                "Fulminate": {
+                    "name": "Fulminate",
+                    "description": "<p><strong>Requirements</strong> The Melfesh Monster has created a spore cloud, and the cloud is within range of one of the Melfesh Monster's fire abilities</p>\n<hr />\n<p><strong>Effect</strong> The Melfesh Monster targets the cloud with one of its abilities with the fire trait. The spore cloud explodes, dealing @Damage[4d10[fire]] damage and @Damage[4[persistent,fire]] damage in a @Template[type:burst|distance:40] originating from a single square within the cloud (@Check[type:reflex|dc:24|basic:true] save).</p>"
+                },
+                "Spore Cloud": {
+                    "name": "Spore Cloud",
+                    "description": "<p><strong>Frequency</strong> once per minute</p>\n<hr />\n<p><strong>Effect</strong> The Melfesh Monster conjures a cloud of spores within 60 feet in a @Template[type:burst|distance:20]. The cloud lasts 1 minute. Creatures that enter or begin their turn within the cloud must succeed at a @Check[type:fortitude|dc:21] save or take @Damage[3d8[poison]] damage, be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}, and inhale spores that remain in their bodies for 1 minute (on a critical failure, @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3} and an additional @Damage[4[persistent,poison]] damage).</p>"
+                }
+            },
+            "publicNotes": "<p>Each Melfesh Monster is unique at any given time since the parent fungus only gives birth to a single monster at once, and each of these creations works a little differently and looks a little different from the last. However, their forms all bear similarities. A twisting mass of creeping vines creates the bulk of a Melfesh Monster's body, sculpted into a towering figure that can glide effortlessly across the ground. Mossy growths and trumpeting fungi cover the creature like matted fur, dripping from its back and shoulders in excess. A hood of dampened bark and thick moss covers its face, revealing only a crusty wooden jaw and a pair of gleaming red eyes. An acrid stench of burning manure follows the creature, often serving as the only warning that anyone gets before it attacks.</p>\n<p>Despite their fungal nature, Melfesh Monsters are undamaged by their own jets of flame and resistant to fires set by others, often surprising hunters who paid too little attention to the legends before encountering the creature. Their terrifying spores also mean that most survivors of their attacks tend to be disoriented and delirious, relating accounts of the monster that are distorted by confusion and fear. This, along with the natural variance between different Melfesh Monsters, means that even the most diligent of researchers will come across contradictory evidence. Even if they learn from all the prior information collected over the years, they're still often caught off guard when trying to hunt down and fell the threat since the new Melfesh Monster might have an ability never seen before. The canniest researchers, when faced with the seemingly contradictory evidence, speculate that the creature might evolve or change over time, which is closer to the truth but still falls short.</p>"
         },
         "Mosquito Witch": {
-            "name": "Mosquito Witch"
+            "name": "Mosquito Witch",
+            "prototypeToken": {
+                "name": "Mosquito Witch"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Haunting Gaze": {
+                    "description": "<p>30 feet. When a creature ends its turn in the emanation, it must attempt a @Check[type:will|dc:29] save. If the creature fails, it becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}. If it's already frightened, its frightened value instead increases by 1 (maximum @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}) and doesn't decrease by 1 at the end of the creature's next turn. If a creature's frightened value is 3 or higher before failing its save, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>",
+                    "name": "Haunting Gaze"
+                },
+                "Dipteric Dread": {
+                    "name": "Dipteric Dread",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:29]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[2d6[piercing],2d6[poison]]{2d6 piercing and 2d6 poison} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[piercing],3d6[poison]]{2d6 piercing and 3d6 poison} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[piercing],5d6[poison]]{2d6 piercing and 5d6 poison}</p>"
+                },
+                "Terror From Within": {
+                    "name": "Terror From Within",
+                    "description": "<p>The Mosquito Witch's powers feed on fear. When taking bleed or piercing damage dealt by the Mosquito Witch's bleed and dipteric dread, a creature takes additional damage equal to twice the creature's frightened value.</p>"
+                },
+                "Swarmsense (Imprecise) 30 feet": {
+                    "name": "Swarmsense (Imprecise) 30 feet",
+                    "description": "<p>The Mosquito Witch receives constant updates from nearby insects and can use her touch as an imprecise sense at the listed range as long as there are insects around to guide her.</p>"
+                },
+                "Wild Empathy": {
+                    "name": "Wild Empathy",
+                    "description": "<p>The Mosquito Witch can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on and make Requests of arthropods (insects, spiders, and similar invertebrates like bloodseekers). Most arthropods have a starting attitude of indifferent to the Mosquito Witch.</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                }
+            },
+            "publicNotes": "<p>The Mosquito Witch is a humanoid figure with unpleasant, waxy skin. She always seems to have her head bowed and her shoulders hunched, a mane of unkempt black hair hiding all of her face save for a pair of unblinking red eyes and a long, sharp tongue that's as stiff and pointed as a proboscis. Fleshy, ribbed mosquito wings protrude from her back. She has six handless arms that taper into malformed points, which she keeps clutched to her chest like the legs of an insect's pupae. Her spindly legs also taper into points; when bloated from feeding, she must run on all eight limbs, which leave small holes in the ground as tracks.</p>"
         },
         "Mosquito Witch (The Hemoprophet)": {
-            "name": "Mosquito Witch (The Hemoprophet)"
+            "name": "Mosquito Witch (The Hemoprophet)",
+            "items": {
+                "Swarmsense (Imprecise) 30 feet": {
+                    "name": "Swarmsense (Imprecise) 30 feet",
+                    "description": "<p>The Mosquito Witch receives constant updates from nearby insects and can use her touch as an imprecise sense at the listed range as long as there are insects around to guide her.</p>"
+                },
+                "Wild Empathy": {
+                    "name": "Wild Empathy",
+                    "description": "<p>The Mosquito Witch can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on and make Requests of arthropods (insects, spiders, and similar invertebrates like bloodseekers). Most arthropods have a starting attitude of indifferent to the Mosquito Witch.</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Dipteric Dread": {
+                    "name": "Dipteric Dread",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:29]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[2d6[piercing],2d6[poison]]{2d6 piercing and 2d6 poison} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[piercing],3d6[poison]]{2d6 piercing and 3d6 poison} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[piercing],5d6[poison]]{2d6 piercing and 5d6 poison}</p>"
+                },
+                "Bloodbelly": {
+                    "name": "Bloodbelly",
+                    "description": "<p>The Mosquito Witch steals and stores stolen blood to power her divinations. Whenever she deals piercing damage, the Mosquito Witch can gain an equal number of Blood Points, to a maximum of 100 Blood Points. She becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} so long as she has at least 40 Blood Points stored, or @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} if she has at least 80 Blood Points stored.</p>"
+                },
+                "Haunting Gaze": {
+                    "name": "Haunting Gaze",
+                    "description": "<p>30 feet. When a creature ends its turn in the emanation, it must attempt a @Check[type:will|dc:29] save. If the creature fails, it becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}. If it's already frightened, its frightened value instead increases by 1 (maximum @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}) and doesn't decrease by 1 at the end of the creature's next turn. If a creature's frightened value is 3 or higher before failing its save, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+                },
+                "Prophecy in Red": {
+                    "name": "Prophecy in Red",
+                    "description": "<p>The Mosquito Witch can't Cast an occult Spell without simultaneously expending a number of Blood Points equal to 10 × the spell's rank.</p>"
+                },
+                "Slurp": {
+                    "name": "Slurp",
+                    "description": "<p><strong>Trigger</strong> A creature adjacent to the Mosquito Witch takes persistent bleed damage</p>\n<hr />\n<p><strong>Effect</strong> The Mosquito Witch slurps up some of the creature's blood and gains Blood Points equal to the bleed damage dealt.</p>"
+                },
+                "Terror From Within": {
+                    "name": "Terror From Within",
+                    "description": "<p>The Mosquito Witch's powers feed on fear. When taking bleed or piercing damage dealt by the Mosquito Witch's bleed and dipteric dread, a creature takes additional damage equal to twice the creature's frightened value.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Mosquito Witch (The Hemoprophet)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The Mosquito Witch is a humanoid figure with unpleasant, waxy skin. She always seems to have her head bowed and her shoulders hunched, a mane of unkempt black hair hiding all of her face save for a pair of unblinking red eyes and a long, sharp tongue that's as stiff and pointed as a proboscis. Fleshy, ribbed mosquito wings protrude from her back. She has six handless arms that taper into malformed points, which she keeps clutched to her chest like the legs of an insect's pupae. Her spindly legs also taper into points; when bloated from feeding, she must run on all eight limbs, which leave small holes in the ground as tracks.</p>\n<h2>The Hemoprophet</h2>\n<p>Already versed in several folk divinations like dowsing and reading patterns in windblown winnowed husks, Shimmerford residents swiftly attributed divinatory powers to the Mosquito Witch.</p>\n<p>This \"hemoprophet\" aspect can supposedly smell conundrums, and she visits those facing difficult decisions or mysteries in their dreams. The witch offers an answer to the dreamer's deepest question, and if the dreamer accepts, the witch drinks their blood as they sleep, tastes their options, and leaves an answer nearby, written with some of the stolen fluids. This Mosquito Witch isn't necessarily malicious, but neither does she worry about draining too much or painting embarrassing blood-truths for all of Shimmerford to see. The blood's weight makes her footfalls heavy, and hunters often remark that especially deep tracks left by anyone are \"heavy with answers\" in homage to the Witch.</p>"
         },
         "Mosquito Witch (The Legion Leech)": {
-            "name": "Mosquito Witch (The Legion Leech)"
+            "name": "Mosquito Witch (The Legion Leech)",
+            "items": {
+                "Wild Empathy": {
+                    "description": "<p>The Mosquito Witch can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on and make Requests of arthropods (insects, spiders, and similar invertebrates like bloodseekers). Most arthropods have a starting attitude of indifferent to the Mosquito Witch.</p>",
+                    "name": "Wild Empathy"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Haunting Gaze": {
+                    "name": "Haunting Gaze",
+                    "description": "<p>30 feet. When a creature ends its turn in the emanation, it must attempt a @Check[type:will|dc:29] save. If the creature fails, it becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}. If it's already frightened, its frightened value instead increases by 1 (maximum @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}) and doesn't decrease by 1 at the end of the creature's next turn. If a creature's frightened value is 3 or higher before failing its save, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+                },
+                "Dipteric Dread": {
+                    "name": "Dipteric Dread",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:29]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[2d6[piercing],2d6[poison]]{2d6 piercing and 2d6 poison} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[piercing],3d6[poison]]{2d6 piercing and 3d6 poison} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[piercing],5d6[poison]]{2d6 piercing and 5d6 poison}</p>"
+                },
+                "Terror From Within": {
+                    "description": "<p>The Mosquito Witch's powers feed on fear. When taking bleed or piercing damage dealt by the Mosquito Witch's bleed and dipteric dread, a creature takes additional damage equal to twice the creature's frightened value.</p>",
+                    "name": "Terror From Within"
+                },
+                "Swarmsense (Imprecise) 30 feet": {
+                    "name": "Swarmsense (Imprecise) 30 feet",
+                    "description": "<p>The Mosquito Witch receives constant updates from nearby insects and can use her touch as an imprecise sense at the listed range as long as there are insects around to guide her.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Mosquito Witch (The Legion Leech)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The Mosquito Witch is a humanoid figure with unpleasant, waxy skin. She always seems to have her head bowed and her shoulders hunched, a mane of unkempt black hair hiding all of her face save for a pair of unblinking red eyes and a long, sharp tongue that's as stiff and pointed as a proboscis. Fleshy, ribbed mosquito wings protrude from her back. She has six handless arms that taper into malformed points, which she keeps clutched to her chest like the legs of an insect's pupae. Her spindly legs also taper into points; when bloated from feeding, she must run on all eight limbs, which leave small holes in the ground as tracks.</p>\n<h2>The Legion Leech</h2>\n<p>Mosquitoes are parasites. Like her namesake, the Mosquito Witch wanders the world before alighting in an unguarded area to drain it of life and happiness. Once sated, she withdraws to digest her stolen vitality.</p>\n<p>This Legion Leech is associated with inexplicable wasting sicknesses, bloodseekers bold enough to carry off lambs, and ravenous mosquito swarms that cover and drain a bull dead in moments. Whereas other aspects are occasionally helpful or curious, the Legion Leech cares for little beyond snuffing out life.</p>"
         },
         "Mosquito Witch (The Swarm Seer)": {
-            "name": "Mosquito Witch (The Swarm Seer)"
+            "name": "Mosquito Witch (The Swarm Seer)",
+            "publicNotes": "<p>The Mosquito Witch is a humanoid figure with unpleasant, waxy skin. She always seems to have her head bowed and her shoulders hunched, a mane of unkempt black hair hiding all of her face save for a pair of unblinking red eyes and a long, sharp tongue that's as stiff and pointed as a proboscis. Fleshy, ribbed mosquito wings protrude from her back. She has six handless arms that taper into malformed points, which she keeps clutched to her chest like the legs of an insect's pupae. Her spindly legs also taper into points; when bloated from feeding, she must run on all eight limbs, which leave small holes in the ground as tracks.</p>\n<h2>The Swarm Seer</h2>\n<p>Few have seen the Mosquito Witch, yet almost everyone has suffered her namesake vermin at some point in time. Shimmerford summer skies shimmer with flies hatching from the river and myriad creeks, and \"wherever pests fly, the Witch can spy.\" In her Swarm Seer aspect, the Mosquito Witch is a haunting predator and verminous voyeur whose sanguineous appetites are equal to her fascination with societies. She keeps tabs on every inhabitant with parasocial glee, obsessing over their superstitions and abandoned trinkets-especially any representations of herself.</p>\n<p>This Mosquito Witch rarely acts with outright malice or to bring direct harm to those around her. However, her haunting appearance, alien values, and tendency to express emotions with sky-blotting swarms inspires terror in her neighbors. Depending on the circumstances she might represent a fearsome and ineffable ally, a demigod of fecundity, or a terrible foe who long ago lost patience with humanity.</p>",
+            "items": {
+                "Wild Empathy": {
+                    "description": "<p>The Mosquito Witch can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on and make Requests of arthropods (insects, spiders, and similar invertebrates like bloodseekers). Most arthropods have a starting attitude of indifferent to the Mosquito Witch.</p>",
+                    "name": "Wild Empathy"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Fecund Wounds": {
+                    "name": "Fecund Wounds",
+                    "description": "<p>Insect larvae clog and wriggle out of open wounds within 100 feet of the Mosquito Witch. A creature that takes bleed damage in the area also becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for 1 round.</p>"
+                },
+                "Haunting Gaze": {
+                    "name": "Haunting Gaze",
+                    "description": "<p>30 feet. When a creature ends its turn in the emanation, it must attempt a @Check[type:will|dc:29] save. If the creature fails, it becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}. If it's already frightened, its frightened value instead increases by 1 (maximum @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}) and doesn't decrease by 1 at the end of the creature's next turn. If a creature's frightened value is 3 or higher before failing its save, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+                },
+                "Obscuring Host": {
+                    "name": "Obscuring Host",
+                    "description": "<p>20 feet. A thick swarm of mosquitoes surrounds the Mosquito Witch, creating concealment in the aura. A creature that begins its turn in the emanation becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} unless it succeeds at a @Check[type:fortitude|dc:26] save. The Mosquito Witch and arthropods can see through this aura and are immune to its sickened effect.</p>"
+                },
+                "Dipteric Dread": {
+                    "name": "Dipteric Dread",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:29]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[2d6[piercing],2d6[poison]]{2d6 piercing and 2d6 poison} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[piercing],3d6[poison]]{2d6 piercing and 3d6 poison} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[piercing],5d6[poison]]{2d6 piercing and 5d6 poison}</p>"
+                },
+                "Terror From Within": {
+                    "description": "<p>The Mosquito Witch's powers feed on fear. When taking bleed or piercing damage dealt by the Mosquito Witch's bleed and dipteric dread, a creature takes additional damage equal to twice the creature's frightened value.</p>",
+                    "name": "Terror From Within"
+                },
+                "Swarmsense (Imprecise) 100 feet": {
+                    "name": "Swarmsense (Imprecise) 100 feet",
+                    "description": "<p>The Mosquito Witch receives constant updates from nearby insects and can use her touch as an imprecise sense at the listed range as long as there are insects around to guide her.</p>"
+                },
+                "Swarmsight (precise) 20 feet": {
+                    "name": "Swarmsight (precise) 20 feet",
+                    "description": "<p>The Mosquito Witch can feel anything in contact with her obscuring host and can use her touch as a precise sense at the listed range.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Mosquito Witch (The Swarm Seer)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            }
         },
         "Planar Tear": {
-            "name": "Planar Tear"
+            "name": "Planar Tear",
+            "routine": "<p>The rift pulls creatures within 500 feet toward it. The rift can pull any creature, regardless of its size. Creatures in the area must attempt a @Check[type:fortitude|dc:45|name:Planar Rift|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] or @Check[type:reflex|dc:45|name:Planar Rift|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] save (the creature's choice) to resist the effects of this pull or attempt to grab something to avoid getting pulled.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature resists the pull and doesn't move toward the rift.</p>\n<p><strong>Success</strong> The creature is moved 25 feet toward the rift.</p>\n<p><strong>Failure</strong> The creature is moved 50 feet toward the rift.</p>\n<p><strong>Critical Failure</strong> The creature is moved 100 feet toward the rift. The harsh pull causes the creature to take @Damage[10d6[bludgeoning]] damage.</p>\n<p>If a creature is directly beneath the rift when the rift pulls it, the creature instead attempts a @Check[type:fortitude|dc:50|name:Pull Into the Rift|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] or @Check[type:reflex|dc:50|name:Pull Into the Rift|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] save (the creature's choice) to avoid being pulled into the rift. On a failure, the creature is pulled up into the rift and thrown to a random point on the plane on the other side.</p>",
+            "items": {
+                "Tear Reality": {
+                    "name": "Tear Reality",
+                    "description": "<p><strong>Trigger</strong> Ebeshra recognizes a nearby threat as needing an indisputable resolution, or a deity tasks Ebeshra with creating a planar rift</p>\n<hr />\n<p><strong>Effect</strong> Ebeshra twists its body, aligning its segmented sections into a fine blade, and cuts the fabric of the Material Plane. It creates an enormous rift in a point in the sky within 1 mile. The rift is 100 feet long and 50 feet wide. The hazard rolls initiative.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Planar Tear"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "disable": "<p>DC 47 Lore (master) related to the specific plane beyond the rift to disrupt the planar frequency and close the rift, @Check[type:arcana|dc:52|name:Undo the Rift's Manifestation (Arcana)|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] (legendary) or @Check[type:occultism|dc:52|name:Undo the Rift's Manifestation (Occultism)|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] (legendary) to undo the magical manifestation of the rift, @Check[type:performance|dc:55|name:Counteract the Rift's Frequency|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] (legendary) to play a tone that counteracts the rift's harmonic frequency, or @Check[type:diplomacy|dc:55|name:Plead With Ebeshra (Diplomacy)|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] (legendary) or @Check[type:religion|dc:55|name:Plead With Ebeshra (Religion)|traits:complex,conjuration,divine,environmental,kaiju,teleportation,hazard] (legendary) to plead with Ebeshra to close the rift</p>",
+            "hazarddescription": "<p>Ebeshra opens a massive rift in the Material Plane that pulls nearby creatures into another plane entirely. The rift is typically to a random plane in the multiverse, though Ebeshra can have the rift pull creatures into a plane of Ebeshra's choosing. Additionally, Ebeshra can choose any number of creatures to be immune to the effects of the planar rift, usually due to the kaiju recognizing the innocence of the creatures.</p>",
+            "reset": "<p>Ebeshra vanishes 1 minute after opening the rift, which closes the rift. Ebeshra must wait 1 week before it can open another planar rift.</p>",
+            "stealthdetails": "<p>(master) to notice Ebeshra twisting its shape in preparation of creating a planar rift</p>"
         },
         "Quaking Slither": {
-            "name": "Quaking Slither"
+            "name": "Quaking Slither",
+            "reset": "<p>Ebeshra doesn't rush this way again for [[/br 1d4 #Rounds]] rounds.</p>",
+            "prototypeToken": {
+                "name": "Quaking Slither"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "disable": "<p>three @Check[type:athletics|dc:38|name:Brace for Earthquake (Athletics)|traits:environmental,kaiju,hazard] (trained), @Check[type:crafting|dc:38|name:Brace for Earthquake (Crafting)|traits:environmental,kaiju,hazard] (trained), or @Check[type:engineering|dc:38|name:Brace for Earthquake (Engineering)|traits:environmental,kaiju,hazard]{Engineering Lore} (trained) checks to brace a small structure or surface to cancel the effects of the quake in that area, or a single @Check[type:diplomacy|dc:41|name:Entreat With Ebeshra|traits:environmental,kaiju,hazard] (master) check to entreat Ebeshra to stand down</p>",
+            "hazarddescription": "<p>Ebeshra slithers across the ground, causing the earth to tremble as though from a powerful earthquake.</p>",
+            "items": {
+                "Quake": {
+                    "name": "Quake",
+                    "description": "<p><strong>Trigger</strong> Ebeshra moves at least 60 feet on land</p>\n<hr />\n<p><strong>Effect</strong> The ground shakes in a @Template[type:emanation|distance:120] from Ebeshra's space. This creates a variety of effects depending on the surrounding environment.</p>\n<p>In an area without significant underground space, the ground becomes greater difficult terrain, and creatures on it are @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} for 1 round.</p>\n<p>In areas with existing underground spaces (like sewers, sinkholes, or catacombs), fissures open up in the ground. Creatures in the area tumble into the resulting 80-foot-deep hole unless they succeed at a @Check[type:reflex|dc:40|name:Avoid Fissure|traits:environmental,kaiju,hazard] save.</p>\n<p>In bays, on beaches, and in other relatively substantial but shallow bodies of water, the tremors create dangerous waves. Creatures in the water or within 60 feet of the waterline are struck by waves that deal @Damage[10d8[bludgeoning]] damage (@Check[type:reflex|dc:35|basic:true|name:Crashing Waves|traits:environmental,kaiju,hazard] save). On a critical failure, a creature is instantly swept 60 feet out to sea and 60 feet under the water's surface.</p>"
+                }
+            }
         },
         "Somnalu": {
-            "name": "Somnalu"
+            "name": "Somnalu",
+            "items": {
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>30 feet. @Check[type:will|dc:33]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Acid Spew": {
+                    "name": "Acid Spew",
+                    "description": "<p>Somnalu jets acid from its skin, dousing all creatures in a @Template[type:line|distance:60|width:15]{15-foot-wide, 60-foot-long line}. Each creature in this area takes @Damage[10d8[acid]] damage (@Check[type:reflex|dc:33|basic:true] save). It can't use this ability again for [[/br 1d4 #Recharge Acid Spew]]{1d4 rounds}.</p>"
+                },
+                "Baleful Gaze": {
+                    "name": "Baleful Gaze",
+                    "description": "<p><strong>Trigger</strong> A creature within 100 feet makes a ranged attack or uses an action that has the concentrate trait</p><hr /><p><strong>Effect</strong> Somnalu fixes its central eye upon the triggering creature in an attempt to frighten it, jolting it and disrupting its action. The creature must attempt a @Check[type:will|dc:36] save; on a failure, Somnalu disrupts the triggering action and the creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>"
+                },
+                "Corrosive Wounds": {
+                    "name": "Corrosive Wounds",
+                    "description": "<p>The acid that coats the skin of Somnalu eats away at a weapon that Strikes it. As long as Digestive Secretions is active on Somnalu, whenever a creature hits Somnalu with a metal or wooden weapon, the creature must succeed at a @Check[type:reflex|dc:33|traits:damaging-effect] save or else the weapon takes @Damage[2d8[acid]] damage (after dealing damage to Somnalu as normal). Thrown weapons and ammunition take this damage automatically with no saving throw.</p>"
+                },
+                "Sleep Scent (Imprecise) 60 feet": {
+                    "name": "Sleep Scent (Imprecise) 60 feet",
+                    "description": "<p>Somnalu can smell creatures that are asleep, as the scent ability.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
+                },
+                "Caustic Trench": {
+                    "name": "Caustic Trench",
+                    "description": "<p>Somnalu Burrows three times. It digs a trench along its path, filling the trench with acid pumped from its skin. The trench is hazardous terrain, and any creature that moves into it takes @Damage[4d6[persistent,acid]] damage. While Burrowing, if Somnalu would move through a space occupied by another creature, that creature must attempt a @Check[type:reflex|dc:36] save to avoid falling into the trench and taking the acid damage. The acid remains for 1 minute.</p>"
+                },
+                "Digestive Secretions": {
+                    "name": "Digestive Secretions",
+                    "description": "<p>Somnalu secretes acid for 1 round. Whenever it makes a melee Strike, it deals an additional [[/r (2d8[splash])[acid]]]{2d8 acid splash damage}. Like most splash damage, this damage applies to the target and adjacent creatures and applies even on a failure, though not on a critical failure.</p>"
+                },
+                "Drain Nutrients": {
+                    "description": "<p>Somnalu targets a creature with a claw Strike. On a success, Somnalu drains the creature's life through its skin. The creature must succeed at a @Check[type:fortitude|dc:36] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} on a success, no effect on a critical success). Somnalu gains temporary Hit Points equal to the amount of Hit Points the creature loses from this Strike.</p>",
+                    "name": "Drain Nutrients"
+                },
+                "Vent Fumes": {
+                    "name": "Vent Fumes",
+                    "description": "<p>Somnalu blasts poison gas in a @Template[type:burst|distance:30]{30-foot radius}. The gas lingers for 1 round, and all creatures that begin their turn in the gas or enter the gas take @Damage[4d8[poison]] damage (@Check[type:fortitude|dc:36|basic:true] save). Any creature in the gas is @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and other creatures are concealed to all creatures in the gas. However, Somnalu can see through this concealment.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Somnalu"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>With its lithe, sinuous body and a flexible, twisting spine, Somnalu bears a resemblance to a giant lizard, save for its striking visage. Spiny frills run down the creature's mottled black back, interlaced with dull red stripes that streak from head to tail. Its two sets of forelimbs are bound to each other by small webs of skin. Its distinctive face lacks any visible mouth, nose, or ears, instead possessing only a huge red eye surrounded by six smaller, secondary eyes.</p>"
         },
         "Somnalu Oculus": {
-            "name": "Somnalu Oculus"
+            "name": "Somnalu Oculus",
+            "prototypeToken": {
+                "name": "Somnalu Oculus"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>When Somnalu is defeated, its central eye abandons its dying body to create an ethereal body from the wisps of dreams. Over centuries-or sooner, if it can find a powerful source of nightmares-it can re-form a full body and return to its corporeal self.</p>",
+            "hp": "regeneration 10 (deactivated by mental)",
+            "items": {
+                "Regeneration 10 (Deactivated by Mental)": {
+                    "name": "Regeneration 10 (Deactivated by Mental)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Clearing Blink": {
+                    "name": "Clearing Blink",
+                    "description": "<p><strong>Trigger</strong> The Somnalu Oculus would be affected by a condition</p>\n<hr />\n<p><strong>Effect</strong> The Somnalu Oculus rapidly blinks, using dream wisps as an eyelid. The Somnalu Oculus attempts to counteract the source of the condition with a counteract modifier of [[/r 1d20+24 #Counteract]]{+24} and a counteract rank of 8.</p>\n<p>It can't use Clearing Blink again for [[/br 1d4 #Recharge Clearing Blink]]{1d4 rounds}.</p>"
+                },
+                "Scrutinizing Presence": {
+                    "name": "Scrutinizing Presence",
+                    "description": "<p>60 feet. The Somnalu Oculus scrutinizes creatures around it, causing them to falter with nervousness and self-doubt. Upon entering the emanation, a creature must attempt a @Check[type:will|dc:34] save. On a failed save, the creature is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 round. Regardless of the result of the saving throw, the creature is temporarily immune to scrutinizing presence for 1 minute.</p>"
+                }
+            }
         },
         "Spawn Of Kothogaz": {
-            "name": "Spawn Of Kothogaz"
+            "name": "Spawn Of Kothogaz",
+            "prototypeToken": {
+                "name": "Spawn Of Kothogaz"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Kothogaz's presence causes the land to sprout festering hives. Insectile, acid-drooling spawn slither from these growths as lesser versions of their creator.</p>",
+            "hp": "regeneration 10 (deactivated by holy)",
+            "items": {
+                "Regeneration 10 (Deactivated by Holy)": {
+                    "name": "Regeneration 10 (Deactivated by Holy)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Disharmonious Decay": {
+                    "name": "Disharmonious Decay",
+                    "description": "<p>When a spawn dies, its foulness seeps into the land in a @Template[type:burst|distance:100]{100-foot radius}. Non-magical plant life in the area decays within 1 hour, and new non-magical growth can't sprout for 1 month. A creature can act on the spawn's corpse within 1 minute of its death to limit this decay to a 10-foot square by succeeding at a @Check[type:medicine|dc:22|name:Prevent Spread of Decay (Medicine)], @Check[type:nature|dc:22|name:Prevent Spread of Decay (Nature)], or @Check[type:occultism|dc:22|name:Prevent Spread of Decay (Occultism)] check.</p>"
+                },
+                "Fusing Spit": {
+                    "name": "Fusing Spit",
+                    "description": "<p>The spawn retches up thick, caustic sludge and spits it at a creature within 60 feet, causing equipment and flesh to melt and partially fuse together. The creature must succeed at a @Check[type:reflex|dc:23] save or be @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} for 1 minute.</p>"
+                }
+            }
         },
         "Spectral Devil": {
-            "name": "Spectral Devil"
+            "name": "Spectral Devil",
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Trample": {
+                    "name": "Trample",
+                    "description": "<p>Medium or smaller, Ghostly Hoof, @Check[type:reflex|dc:26|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                },
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Attack of Opportunity (Ghostly Hoof Only)": {
+                    "name": "Attack of Opportunity (Ghostly Hoof Only)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Rejuvenation": {
+                    "name": "Rejuvenation",
+                    "description": "<p>Destroying the Spectral Devil releases its pure, evil essence into the world, where it can find a new body and re-form. When the Spectral Devil is destroyed, its essence finds the remains of a dead horse and rebuilds its physical body over the course of [[/br 1d10 #days]]{1d10 days}. Only completing a @UUID[Compendium.pf2e.spells-srd.Item.Dbd5W6G8U2vzWolN]{Consecrate} ritual heightened to at least 6th level, which consecrates the site of the Spectral Devil's destruction to a good deity, can prevent the Spectral Devil from returning and haunting the world once more.</p>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Accursed Shriek": {
+                    "name": "Accursed Shriek",
+                    "description": "<p>The Spectral Devil unleashes a terrifying whinny in a @Template[type:cone|distance:30]{30-foot cone} that deals @Damage[5d10[sonic]] damage. Each creature in the area must attempt a @Check[type:reflex|dc:29] save.</p>\n<p>The Spectral Devil can't use Accursed Shriek for [[/br 1d4 #Recharge Accursed Shriek]]{1d4 rounds}.</p>\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} by the eerie noise.</p>\n<p><strong>Critical Failure</strong> The creature takes full damage, is frightened 2, and becomes cursed. The victim's mind echoes with the sound of the whinny, impairing concentration. The cursed creature is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} until the curse is removed.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Spectral Devil"
+            },
+            "allSaves": "+1 status to all saves vs. magic",
+            "hp": "void healing"
         },
         "Spring-Heeled Jack": {
-            "name": "Spring-Heeled Jack"
+            "name": "Spring-Heeled Jack",
+            "items": {
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Frightful Presence": {
+                    "name": "Frightful Presence",
+                    "description": "<p>15 feet. @Check[type:will|dc:17]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                },
+                "Breath Weapon": {
+                    "name": "Breath Weapon",
+                    "description": "<p>Spring-Heeled Jack exhales a gout of bright blue fire that deals @Damage[4d6[fire]] damage in a @Template[type:cone|distance:15] (@Check[type:reflex|dc:20|basic:true] save).</p>\n<p>He can't use Breath Weapon again for [[/br 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                },
+                "Malicious Stab": {
+                    "name": "Malicious Stab",
+                    "description": "<p>Spring-Heeled Jack deals an additional 1d6 precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened} creatures (2d6 precision damage to creatures that are both off-guard and frightened).</p>"
+                },
+                "Vault": {
+                    "name": "Vault",
+                    "description": "<p>Spring-Heeled Jack jumps up to 20 feet in any direction, including vertically. This movement doesn't trigger reactions based on movement.</p>"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Spring-Heeled Jack"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The greatest secret of the murderous trickster known as Spring-Heeled Jack is that he isn't a unique creature. Instead, he's one of a rare type of fey native to the First World who enjoy causing bloody mayhem in the Material Plane. These fey are so rare and so distrustful of one another's company that two have never been seen together; the mistaken assumption that only a single Spring-Heeled Jack exists is therefore entirely understandable. The fact that sightings occur across Ustalav (and beyond) and across centuries of time is ascribed to the trickster's long lifespan and mysterious ability to travel quickly, or to the belief that there's no such creature, merely an urban legend that twisted minds attempt to bring to life through costumes, magic, and a series of murders and mayhem. Even in fear-drenched Ustalav, no one has yet guessed that multiple Spring-Heeled Jacks exist or postulated that some future event might drive them to overcome their mutual disdain and gather into a murderous cabal, far more powerful than the sum of its parts.</p>\n<p>Spring-Heeled Jacks are cruel-eyed, hairy fey with vaguely humanoid shapes and extra features that cause them to be easily mistaken for demons or devils. Glowing eyes, cloven hooves, menacing horns, and a pointed tail combine to create the mien of a wicked imp; his love of sudden and sadistic violence completes the impression. Almost all have jet-black skin and fur, though a few exceptions might exist.</p>\n<p>Spring-Heeled Jacks typically hide their features in tattered cloaks, appearing as a hunched elder or a youth in the nighttime conditions they enjoy. Such a disguise rarely holds up to any scrutiny, but that doesn't matter much to the Spring-Heeled Jack, who only needs something that offers just enough doubt for their target to move within striking distance, which can be from much farther away than most other creatures even realize. Once close enough, the Spring-Heeled Jack leaps startling distances in the blink of an eye to easily slash at a victim who had, until that moment, considered themself safe.</p>"
         },
         "Storm Discharge": {
-            "name": "Storm Discharge"
+            "name": "Storm Discharge",
+            "prototypeToken": {
+                "name": "Storm Discharge"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "disable": "<p>@Check[type:nature|dc:45|name:Balance the Electrical Charges|traits:divine,electricity,environmental,evocation,kaiju,hazard] (master) to balance the electrical charges in the area or @Check[type:deception|dc:48|name:Divert Ebeshra's Attention|traits:divine,electricity,environmental,evocation,kaiju,hazard] (expert) to momentarily divert Ebeshra's attention</p>",
+            "hazarddescription": "<p>Ebeshra aligns its crystalline form to produce a blast of lightning that charges the surrounding area with electrical energy.</p>",
+            "reset": "<p>Ebeshra waits [[/br 1d4 #Lightning Blast Wait]] rounds before another blast.</p>",
+            "items": {
+                "Lightning Blast": {
+                    "name": "Lightning Blast",
+                    "description": "<p><strong>Trigger</strong> A creature takes a hostile action against Ebeshra, produces a visible area effect, or flies within 120 feet of Ebeshra</p>\n<hr />\n<p><strong>Effect</strong> Ebeshra unleashes a @Template[type:line|distance:240] of electricity toward the triggering creature. Creatures in the line take @Damage[16d8[electricity]] damage (@Check[type:reflex|dc:42|basic:true|traits:divine,electricity,environmental,evocation,kaiju,hazard] save). The electricity creates a static field in all squares that the line passed through and all adjacent squares. For 1 round, any creatures that enter a space in the static field take @Damage[4d8[electricity]] damage (@Check[type:reflex|dc:38|basic:true|name:Static Field|traits:divine,electricity,environmental,evocation,kaiju,hazard] save).</p>"
+                }
+            }
         },
         "Taljjae": {
-            "name": "Taljjae"
+            "name": "Taljjae",
+            "prototypeToken": {
+                "name": "Taljjae"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>",
+            "items": {
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                },
+                "Jelly Sense": {
+                    "name": "Jelly Sense",
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>"
+                },
+                "Change Characters": {
+                    "name": "Change Characters",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>"
+                },
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                }
+            }
         },
         "Taljjae (The Beast)": {
-            "name": "Taljjae (The Beast)"
+            "name": "Taljjae (The Beast)",
+            "items": {
+                "Jelly Sense": {
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>",
+                    "name": "Jelly Sense"
+                },
+                "Change Characters": {
+                    "name": "Change Characters",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>"
+                },
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Rend": {
+                    "name": "Rend",
+                    "description": "<p>Claw</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                },
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Taljjae (The Beast)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>\n<p>With this mask, Taljjae assumes a low stance and gathers power.</p>"
         },
         "Taljjae (The General)": {
-            "name": "Taljjae (The General)"
+            "name": "Taljjae (The General)",
+            "items": {
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Attack of Opportunity (Special)": {
+                    "name": "Attack of Opportunity (Special)",
+                    "description": "<p>Taljjae disrupts actions on any hit, not just a critical hit.</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                },
+                "Jelly Sense": {
+                    "name": "Jelly Sense",
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>"
+                },
+                "Change Characters": {
+                    "name": "Change Characters",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>"
+                },
+                "Masterful Engagement": {
+                    "name": "Masterful Engagement",
+                    "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> Taljjae maintains the perfect distance between itself and its foe. It Steps and Strikes, in any order.</p>"
+                },
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Taljjae (The General)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>\n<p>Carved scars mark the face of this severe mask, which gives Taljjae the skill at arms of a veteran commander.</p>"
         },
         "Taljjae (The Grandmother)": {
-            "name": "Taljjae (The Grandmother)"
+            "name": "Taljjae (The Grandmother)",
+            "items": {
+                "Change Characters": {
+                    "name": "Change Characters",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>"
+                },
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Gentle Facade": {
+                    "name": "Gentle Facade",
+                    "description": "<p>60 feet. Serenity and a sense of ease blot out all other emotions. Creatures in the emanation must succeed at a @Check[type:will|dc:37] save or become unable to be affected by beneficial emotion effects while within the aura and for 1 minute after leaving it. The creature is then temporarily immune for 10 minutes.</p>"
+                },
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                },
+                "Jelly Sense": {
+                    "name": "Jelly Sense",
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Taljjae (The Grandmother)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>\n<p>The kind eyes of this mask sap any attackers' will to fight while granting Taljjae powerful supportive magic.</p>"
         },
         "Taljjae (The Hermit)": {
-            "name": "Taljjae (The Hermit)"
+            "name": "Taljjae (The Hermit)",
+            "items": {
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                },
+                "Jelly Sense": {
+                    "name": "Jelly Sense",
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>"
+                },
+                "Change Characters": {
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>",
+                    "name": "Change Characters"
+                },
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                },
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Flexible Counterspell": {
+                    "name": "Flexible Counterspell",
+                    "description": "<p><strong>Trigger</strong> A creature Casts a Spell of the same or lower level as one of Taljjae's unexpended spell slots</p>\n<hr />\n<p><strong>Effect</strong> Taljjae expends any prepared spell of the same or higher level, losing a spell slot as if it had Cast the triggering Spell. Taljjae then attempts to counteract the spell with a counteract modifier of [[/r 1d20+27 #Counteract]]{+27}.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Taljjae (The Hermit)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>\n<p>This wizened male face draws upon the powers of a true sage</p>"
         },
         "Taljjae (The Hero)": {
-            "name": "Taljjae (The Hero)"
+            "name": "Taljjae (The Hero)",
+            "items": {
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                },
+                "Jelly Sense": {
+                    "name": "Jelly Sense",
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>"
+                },
+                "Change Characters": {
+                    "name": "Change Characters",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>"
+                },
+                "Cometfall Arrow": {
+                    "name": "Cometfall Arrow",
+                    "description": "<p>Taljjae fires an arrow that could shoot a star from the sky. All creatures in a @Template[type:line|distance:120] take @Damage[10d12[piercing]] damage (@Check[type:reflex|dc:37|basic:true] save); on a critical failure, the target falls to the ground without taking falling damage, and it can't Fly, Leap, levitate, or otherwise leave the ground until the end of Taljjae's next turn.</p>\n<p>Taljjae then can't use Cometfall Arrow for [[/br 1d4 #Recharge Cometfall Arrow]]{1d4 rounds}.</p>"
+                },
+                "Double Shot": {
+                    "name": "Double Shot",
+                    "description": "<p>Taljjae fires two shots, making two Strikes, each against a separate target and with a -2 penalty. Both attacks count toward its multiple attack penalty, but the penalty doesn't increase until after it makes both attacks.</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Taljjae (The Hero)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>\n<p>The eyes of this female face seem to glint with determination.</p>"
         },
         "Taljjae (The Nobleman)": {
-            "name": "Taljjae (The Nobleman)"
+            "name": "Taljjae (The Nobleman)",
+            "items": {
+                "Parasitic Healing": {
+                    "name": "Parasitic Healing",
+                    "description": "<p><strong>Trigger</strong> A creature within 60 feet regains Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae takes what should belong to another. The triggering creature regains only half the number of Hit Points, and Taljjae regains the full amount.</p>"
+                },
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                },
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                },
+                "Jelly Sense": {
+                    "name": "Jelly Sense",
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>"
+                },
+                "Change Characters": {
+                    "name": "Change Characters",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>"
+                },
+                "Covetous Confiscation": {
+                    "name": "Covetous Confiscation",
+                    "description": "<p>Taljjae holds out a hand and attempts to take something that doesn't belong to it. It telekinetically attracts an unattended, unsecured object of up to 5 Bulk within 100 feet. If the object is in a creature's possession, Taljjae must critically succeed at an attempt to @UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]{Disarm} that creature, but it can't critically fail.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Taljjae (The Nobleman)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>\n<p>This twisted mask mocks members of the nobility for their parasitic greed.</p>"
         },
         "Taljjae (The Wanderer)": {
-            "name": "Taljjae (The Wanderer)"
+            "name": "Taljjae (The Wanderer)",
+            "items": {
+                "Constant Spells": {
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>",
+                    "name": "Constant Spells"
+                },
+                "Exit Stage": {
+                    "name": "Exit Stage",
+                    "description": "<p><strong>Trigger</strong> Taljjae is reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> Taljjae retains 1 Hit Point and teleports to an empty space within 30 feet. One of its masks remains behind and is broken.</p>"
+                },
+                "Jelly Gluttony": {
+                    "name": "Jelly Gluttony",
+                    "description": "<p>If Taljjae detects buckwheat jelly with its jelly sense, it becomes @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the food and the creature possessing it (if applicable) and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all other creatures for [[/br 1d4 #Rounds]]{1d4 rounds}, or until it uses an appropriate number of Interact actions to consume the jelly (generally 2: 1 to take the jelly, and another to eat it). If there's more than one helping of jelly, the condition ends once Taljjae consumes the jelly once.</p>"
+                },
+                "Jelly Sense": {
+                    "name": "Jelly Sense",
+                    "description": "<p>Taljjae has scent as a precise sense out to 120 feet, but only to detect buckwheat jelly, the only food Taljjae loves more than flesh.</p>"
+                },
+                "Change Characters": {
+                    "name": "Change Characters",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Taljjae removes its current mask and dons a new one. The change refreshes Taljjae, restoring 25 Hit Points. Once Taljjae has removed a mask, it can't Change Characters back to that mask until it has worn all of its unbroken masks at least once, after which the cycle starts again. Taljjae can't don a broken mask.</p>\n<p>When Taljjae Changes Characters, it gains access to the listed abilities. Any items (such as weapons) associated with its previous mask immediately disappear and are replaced by fresh ones for its new mask, but the effects of any mask abilities it has active persist. Removing a mask and later reapplying it doesn't restore any limited-use abilities.</p>"
+                },
+                "Circling the Kingdom": {
+                    "name": "Circling the Kingdom",
+                    "description": "<p>Taljjae Strides twice and makes two quarterstaff Strikes at any point along its movement.</p>"
+                },
+                "Prop Master": {
+                    "name": "Prop Master",
+                    "description": "<p>Taljjae has access to the critical specialization effects of any weapons it wields from one of its masks.</p>"
+                },
+                "Second Act": {
+                    "name": "Second Act",
+                    "description": "<p><strong>Trigger</strong> Taljjae's turn begins <strong>Requirements</strong> Taljjae has 200 or fewer Hit Points</p><hr /><p><strong>Effect</strong> Taljjae's dance reaches a frantic climax, allowing it to change personas rapidly. Taljjae Changes Characters.</p>"
+                },
+                "Sneak Attack": {
+                    "name": "Sneak Attack",
+                    "description": "<p>Taljjae deals an additional 2d6 precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} foes.</p>"
+                },
+                "Waypoints": {
+                    "name": "Waypoints",
+                    "description": "<p>Taljjae leaves behind images of itself as it travels. Whenever it makes a Strike, it leaves behind a ghostly image of itself that lasts until the beginning of its next turn. These images block movement for Taljjae's enemies, and they provide flanking to Taljjae and its allies.</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Taljjae (The Wanderer)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>The form of Taljjae's body can vary from visit to visit or even moment to moment, but it's easily recognized due to its signature cloak and masks. So long as Taljjae's mood is placid, it can be approached safely, but its mercurial temperament can be hard to predict.</p>\n<p>The slightly upturned smile of this mask depicts a sense of joy and wonder at travel and new experiences.</p>"
         },
         "Tehialai-Thief-of-Ships": {
-            "name": "Tehialai-Thief-of-Ships"
+            "name": "Tehialai-Thief-of-Ships",
+            "items": {
+                "Exoskeletal Armory": {
+                    "name": "Exoskeletal Armory",
+                    "description": "<p>At the beginning of each day, Tehialai can molt to change the morph of her two massive striking claws. She chooses two morphs and adds their Strikes and Release Claw effects to the stat block presented here. Tehialai can molt two different claws or two copies of the same claw.</p>"
+                },
+                "Ship Armor": {
+                    "name": "Ship Armor",
+                    "description": "<p>Tehialai hides within a shell made of all the ships she has stolen. This ship armor reduces any damage Tehialai takes by an amount equal to its Hardness. Once Tehialai is reduced to fewer than half her Hit Points, or immediately upon being damaged by a critical hit, her ship armor breaks, removing her Hardness and reducing her Armor Class to 32.</p>"
+                },
+                "Capsize": {
+                    "name": "Capsize",
+                    "description": "<p>Tehialai attempts to capsize an aquatic vessel of her size or smaller that she's adjacent to. She must succeed at a @Check[type:athletics|dc:33] check (reduced by 5 for each size smaller the vessel is) or the pilot's Sailing Lore DC, whichever is higher.</p>"
+                },
+                "Move Home": {
+                    "name": "Move Home",
+                    "description": "<p><strong>Requirements</strong> Tehialai is adjacent to a broken ship, and her ship armor is broken</p><hr /><p><strong>Effect</strong> Tehialai claims nearby ship pieces to rebuild her home. She destroys the adjacent ship and rebuilds her ship armor, restoring her Hardness and increasing her AC back to 36.</p>"
+                },
+                "Pressurize Claw": {
+                    "name": "Pressurize Claw",
+                    "description": "<p><strong>Requirements</strong> Tehialai's claw isn't currently Pressurized</p>\n<hr />\n<p><strong>Effect</strong> Tehialai draws water into the base of one of her claws, building immense hydraulic pressure as she prepares to attack. The claw remains loaded until she Releases that Claw or 1 minute has passed, whichever comes first. While the claw is Pressurized, Tehialai can't use that claw to Strike. If Tehialai isn't at least partially within a body of water when she Pressurizes her Claw, she takes a -2 penalty to any attack rolls and DCs when she Releases that Claw.</p>"
+                },
+                "Release Claw": {
+                    "description": "<p><strong>Requirements</strong> Tehialai has Pressurized a Claw</p><hr />\n<p><strong>Effect</strong> Tehialai lashes out with the force of the sea. See each claw for its released effect; the DC for any effect is 33. After Releasing a Claw, the claw depressurizes.</p>",
+                    "name": "Release Claw"
+                },
+                "Release Claw (Barbed Spear)": {
+                    "name": "Release Claw (Barbed Spear)",
+                    "description": "<p><strong>Requirements</strong> Tehialai has Pressurized a Claw</p><hr />\n<p>Tehialai's spear shoots out, impaling prey and reeling them back. All creatures in a @Template[type:line|distance:40] take @Damage[8d6[piercing]] damage (@Check[type:reflex|dc:33|basic:true] save); creatures that critically fail are @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} until the end of Tehialai's next turn.</p>\n<hr />\n<p>After Releasing a Claw, the claw depressurizes.</p>"
+                },
+                "Wavesense 60 feet": {
+                    "name": "Wavesense 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Wavesense]</p>"
+                },
+                "+2 Status to All Saves vs. Water": {
+                    "name": "+2 Status to All Saves vs. Water"
+                },
+                "Release Claw (Boiling Club)": {
+                    "name": "Release Claw (Boiling Club)",
+                    "description": "<p><strong>Requirements</strong> Tehialai has Pressurized a Claw</p><hr />\n<p>The impact of Tehialai's claw begets a burning vacuum. Tehialai makes a boiling club Strike against one target within 15 feet. If she hits, a shock wave booms out, dealing @Damage[3d6[fire]] damage and @Damage[3d6[sonic]] damage to all creatures except her within @Template[type:burst|distance:15]{15 feet of the target}, including the target itself (@Check[type:fortitude|dc:33|basic:true] save). If the Strike was a critical hit, the target uses the degree of success one lower than it rolled on its save. Unlike most fire abilities, this ability can be used underwater, and the typical 5 fire resistance for being underwater doesn't apply.</p>\n<hr />\n<p>After Releasing a Claw, the claw depressurizes.</p>"
+                },
+                "Release Claw (Salt Darts)": {
+                    "name": "Release Claw (Salt Darts)",
+                    "description": "<p>Tehialai launches a flurry of darts. She makes two salt dart Strikes against two different creatures. Both attacks count towards her multiple attack penalty, but she doesn't increase her penalty until after she has made both attacks.</p>"
+                },
+                "Release Claw (Tidal Gourd)": {
+                    "name": "Release Claw (Tidal Gourd)",
+                    "description": "<p>Tehialai atomizes the water in her claw to create a mist that fills a @Template[type:emanation|distance:40] centered on her and that lasts until the end of her next turn or until dispersed by a strong wind. All creatures within the mist become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and all creatures outside the mist become concealed to creatures within it. Wavesense functions through the mist and ignores the concealment.</p>"
+                },
+                "Release Claw (Toothed Shredder)": {
+                    "name": "Release Claw (Toothed Shredder)",
+                    "description": "<p>Tehialai's claw whirs and spins to cut through armor and ship hulls. Tehialai makes a toothed shredder Strike. On a hit, the target becomes @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the end of Tehialai's next turn and takes @Damage[2d12[bleed]].</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Tehialai-Thief-of-Ships"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Though her current form is but a small and pale shell of her former glory, Tehialai is a legend even in her waning days. The titanic crustacean wears the hulls of ruined ships as her shell, ripped into shape by vessel-rending claws, as nothing else in Golarion's oceans is large enough to shield her body-or perhaps nothing else will satisfy her. Few ships can withstand her might, and fewer still are prepared for her appearance. Those who don't know of the thief of ships won't know to watch for her coming, and those who do know Tehialai offer her tribute to ward off her predation.</p>",
+            "allSaves": "+2 status to all saves vs. water",
+            "hp": "Hardness 10 (Ship Armor)"
         },
         "Temteki": {
-            "name": "Temteki"
+            "name": "Temteki",
+            "prototypeToken": {
+                "name": "Temteki"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Tremorsense (Imprecise) 60 feet": {
+                    "name": "Tremorsense (Imprecise) 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
+                },
+                "Imposing Mien": {
+                    "name": "Imposing Mien",
+                    "description": "<p>Temteki can use Intimidation to Coerce or Demoralize up to four targets instead of one, rolling separate Intimidation checks against the Will DCs of each target. In addition, since Temteki Demoralizes using its appearance alone, it doesn't take a penalty to Intimidation checks to Demoralize for not speaking a language.</p>"
+                },
+                "Interposing Earth": {
+                    "name": "Interposing Earth",
+                    "description": "<p><strong>Trigger</strong> Temteki is targeted with a melee or ranged attack from an attacker it can see</p>\n<hr />\n<p><strong>Effect</strong> Temteki raises earth to block, gaining a +2 circumstance bonus to AC against the triggering attack.</p>"
+                },
+                "Earth Glide": {
+                    "name": "Earth Glide",
+                    "description": "<p>Temteki can Burrow through any earthen matter, including rock. When it does so, it moves at its full burrow Speed, leaving no tunnel or sign of its passing.</p>"
+                },
+                "Earthen Cypress": {
+                    "name": "Earthen Cypress",
+                    "description": "<p><strong>Requirements</strong> Temteki is standing on the ground</p><hr /><p><strong>Effect</strong> Temteki draws up the earth around itself into the shape of a cypress tree. While in this stance, Temteki's reach for spike Strikes increases to 15 feet, but Temteki can't move except to Burrow into the ground using Earth Glide. Doing so causes Temteki to leave this stance and creates a heap of earth in the square Temteki left, making the square difficult terrain.</p>"
+                },
+                "Toolbreaker": {
+                    "description": "<p>Temteki can only target worked or crafted items with @UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]{Shatter}, not natural objects.</p>",
+                    "name": "Toolbreaker"
+                },
+                "Push": {
+                    "name": "Push",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Push]</p>"
+                }
+            },
+            "publicNotes": "<p>Though it superficially resembles a cypress tree and is easily mistaken for an arboreal or other similar plant creature, Temteki is actually an earth elemental, a creature of living earth and stone. In normal situations, Temteki is content to remain still and blend into the jungle when observing other creatures, using its natural camouflage to assist in harrying those it considers interlopers disturbing its home. Temteki usually dissuades such intruders with a combination of surprise attacks and nonlethal snares; the elemental is more interested in getting them to leave than in dealing them any permanent harm. However, to those who prove determined to harm Temteki or its home, Temteki can be an implacable foe. Temteki's asymmetrical gait and appearance often alarm and confuse creatures who aren't expecting to spot it, especially since it's surprisingly stealthy for its size and appearance.</p>"
         },
         "Ulgrem-Axaan": {
-            "name": "Ulgrem-Axaan"
+            "name": "Ulgrem-Axaan",
+            "items": {
+                "Ferocity": {
+                    "name": "Ferocity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Ferocity]</p>"
+                },
+                "Territorial Rage": {
+                    "name": "Territorial Rage",
+                    "description": "<p><strong>Trigger</strong> A creature comes within melee reach of Ulgrem-Axaan while it's burrowed underground or underwater</p><hr /><p><strong>Effect</strong> Ulgrem-Axaan lunges and makes a jaws Strike against the creature, which is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against the attack and takes an additional [[/r {1d6}]]{1d6 damage} on a hit.</p>"
+                },
+                "Swallow Whole": {
+                    "description": "<p>Medium, @Damage[(1d12+8)[bludgeoning]], Rupture 18</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>",
+                    "name": "Swallow Whole"
+                },
+                "Unnatural Vengeance": {
+                    "name": "Unnatural Vengeance",
+                    "description": "<p>Ulgrem-Axaan gains a +1 circumstance bonus to attack and damage rolls against undead.</p>"
+                },
+                "Voltaic Blow": {
+                    "name": "Voltaic Blow",
+                    "description": "<p><strong>Requirements</strong> Ulgrem-Axaan has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} with its tail</p><hr />\n<p><strong>Effect</strong> An electric shock passes through Ulgrem-Axaan's tail, dealing @Damage[(2d4+8)[electricity]] damage to the creature (@Check[type:fortitude|dc:25|basic:true] save).</p>"
+                },
+                "Frozen Contemplation": {
+                    "name": "Frozen Contemplation",
+                    "description": "<p>Being frozen stops the constant pain Ulgrem-Axaan has experienced since its death. Ulgrem-Axaan has fast healing 5 while in severe cold or colder environments, or for 1 round after taking cold damage.</p>"
+                },
+                "Wavesense (Imprecise) 60 feet": {
+                    "name": "Wavesense (Imprecise) 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Wavesense]</p>"
+                },
+                "+2 Status to All Saves vs. Non-primal Emotion Effects": {
+                    "name": "+2 Status to All Saves vs. Non-primal Emotion Effects"
+                },
+                "Baleful Glare": {
+                    "name": "Baleful Glare",
+                    "description": "<p>15 feet. Creatures entering or starting their turn in the emanation that can see Ulgrem-Axaan must succeed at a @Check[type:will|dc:22] save or be @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure). A creature that succeeds at its save is temporarily immune to baleful glare for 1 minute.</p>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Aquatic Ambush": {
+                    "name": "Aquatic Ambush",
+                    "description": "<p>30 feet</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AquaticAmbush]</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Ulgrem-Axaan"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "allSaves": "+2 status to all non-primal emotion effects",
+            "hp": "void healing"
         },
         "Ulgrem-Lurann": {
-            "name": "Ulgrem-Lurann"
+            "name": "Ulgrem-Lurann",
+            "prototypeToken": {
+                "name": "Ulgrem-Lurann"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "items": {
+                "Bump in the River": {
+                    "name": "Bump in the River",
+                    "description": "<p>An Ulgrem-Lurann can pretend to be a floating log while in water by attempting a Stealth check. It has a +2 circumstance bonus to its checks and DCs to do so. While using Stealth this way, creatures see the log but don't realize it's an Ulgrem-Lurann.</p>"
+                },
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Nurtured Loathing": {
+                    "name": "Nurtured Loathing",
+                    "description": "<p>An Ulgrem-Lurann gains a +1 circumstance bonus to attack and damage rolls against creatures with the undead trait.</p>"
+                },
+                "Sparking Bite": {
+                    "name": "Sparking Bite",
+                    "description": "<p><strong>Requirements</strong> The Ulgrem-Lurann has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} with its jaws</p><hr /><p><strong>Effect</strong> Electricity courses through its body and mouth, dealing an additional @Damage[(1d4+6)[electricity]] damage to the grabbed target with a @Check[type:fortitude|dc:20|basic:true] save.</p>"
+                },
+                "Swallow Whole": {
+                    "name": "Swallow Whole",
+                    "description": "<p>Small, @Damage[(1d6+6)[bludgeoning]], Rupture 9</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                },
+                "Voltaic Blow": {
+                    "name": "Voltaic Blow",
+                    "description": "<p><strong>Requirements</strong> The Ulgrem-Lurann has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} with its jaws</p><hr />\n<p><strong>Effect</strong> Electricity courses through its body and mouth, dealing an additional @Damage[(1d4+6)[electricity]] damage to the creature (@Check[type:fortitude|dc:20|basic:true|name:Sparking Bite] save).</p>"
+                }
+            }
         },
         "Ulistul": {
-            "name": "Ulistul"
+            "name": "Ulistul",
+            "prototypeToken": {
+                "name": "Ulistul"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "allSaves": "+2 status to all saves vs. effects created by constructs",
+            "items": {
+                "Statuesense": {
+                    "name": "Statuesense",
+                    "description": "<p>Ulistul built herself components granting her enhanced senses that can detect the location of other constructs and similar objects. She's aware of any constructs or inanimate statuary at the listed range.</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "+2 Status to All Saves vs. Effects Created by Constructs": {
+                    "name": "+2 Status to All Saves vs. Effects Created by Constructs"
+                },
+                "Artificer's Command": {
+                    "name": "Artificer's Command",
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr />\n<p><strong>Effect</strong> Ulistul directs one construct within 60 feet that can perceive her and has a level lower than hers, delivering helpful commands that improve its capabilities. The construct gains a +1 status bonus to attack rolls, damage rolls, and saving throws.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.FjcvJWPFwkyy5vEk]{Effect: Artificer's Command}</p>"
+                },
+                "Artificer's Eye": {
+                    "name": "Artificer's Eye",
+                    "description": "<p>Ulistul chooses one construct or statue she can currently perceive with a precise sense or with statuesense; usually, her only precise sense is vision. After choosing her target, she begins to perceive the target's surroundings as though she occupied its space. If the target is either an inanimate statue or a mindless creature, she can also verbally interact with nearby creatures (including issuing Artificer's Commands) or cause the target to move subtly, such as moving its mouth. This ability can be sustained indefinitely as long as Ulistul can perceive the target, though her visual stimuli from her own body are harder to process; she's @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} when using her own senses for the effect's duration.</p>"
+                },
+                "Dismantler": {
+                    "name": "Dismantler",
+                    "description": "<p>Ulistul's attacks against constructs and objects gain the deadly d12 trait and ignore up to 10 of the target's Hardness and resistances.</p>"
+                },
+                "Ivory Dictum": {
+                    "name": "Ivory Dictum",
+                    "description": "<p>Ulistul takes control of a construct within 30 feet. This has the effects of @UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate}(@Check[type:will|dc:32]) but can affect mindless creatures and ignores the target's golem antimagic, if any.</p>"
+                }
+            }
         },
         "Young Linnorm": {
-            "name": "Young Linnorm"
+            "name": "Young Linnorm",
+            "prototypeToken": {
+                "name": "Young Linnorm"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "publicNotes": "<p>Female linnorms lay eggs in the wilderness, where linnorms are known to hunt. A linnorm egg remains viable for many years, protected by a tough, leathery skin easily mistaken for stone. When a male linnorm eventually stumbles across the egg, he fertilizes it and takes it to a secure and remote location, leaving it alone to eventually hatch. Newborn linnorms remain hidden in their nests for several months as they mature, growing large enough to hunt on their own and setting out into the world. These linnorms are roughly the equivalent of older teenagers when compared to other species. Younger linnorms, while still primal creatures with a strong tie to the First World, haven't yet manifested most of their magical powers. They still can't breathe deadly fire or lightning or see invisible creatures, and, most importantly, they can be slain without prompting the linnorm's legendary death curse. They do, however, have voracious appetites, consuming any living thing to fuel their rapid growth. A linnorm is most vulnerable during this time; scouts who find tracks of a young linnorm quickly muster a hunting party of stalwart and experienced warriors to track the creature down and kill it quickly-before they draw the attention of the linnorm's father.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "hp": "regeneration 5 (deactivated by cold iron)",
+            "items": {
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Regeneration 5 (Deactivated by Cold Iron)": {
+                    "name": "Regeneration 5 (Deactivated by Cold Iron)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Attack of Opportunity (Tail Only)": {
+                    "name": "Attack of Opportunity (Tail Only)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[(2d8+4)[bludgeoning]] damage, @Check[type:fortitude|dc:25|basic:true] save</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                },
+                "Young Linnorm Venom": {
+                    "name": "Young Linnorm Venom",
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:25]</p>\n<p><strong>Maximum Duration</strong> 10 rounds</p>\n<p><strong>Stage 1</strong> @Damage[4d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}</p>"
+                }
+            }
         }
     }
 }
