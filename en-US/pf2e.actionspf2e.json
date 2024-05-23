@@ -17,6 +17,14 @@
             "description": "<p>You change into your humanoid or hybrid shape. Each shape has a specific, persistent appearance, and most beastkin remain in their hybrid shapes by default.</p>\n<p>In hybrid shape, you appear as a mix between your ancestry and your inherent animal. While in hybrid shape, you gain a jaws unarmed Strike resembling the features of your inherent animal (fangs for bats, beaks for eagles, mandibles for wasps, and so on). Your jaws deal 1d4 piercing damage, have the agile, finesse, and unarmed traits, and are in the brawling weapon group.</p>\n<p>In your humanoid shape, you retain the appearance of your original ancestry.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.qIOEe4kUN7FOBifb]{Effect: Hybrid Shape}</p>",
             "name": "Change Shape (Beastkin)"
         },
+        "Dazzle Seeker": {
+            "description": "<p><strong>Trigger</strong> A creature attempts a flat check to target you due to you being @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from it</p>\n<hr />\n<p><strong>Effect</strong> You flash your bright scales in the creature's eyes, making it hard for them to pinpoint your exact location. The creature must roll the flat check twice and take the worse result.</p>",
+            "name": "Dazzle Seeker"
+        },
+        "Raise Slabs": {
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Thick slabs of stone rise around you before tilting over. You deal @Damage[(ceil(@actor.level/2)d6)[bludgeoning]] damage to all adjacent creatures (@Check[type:reflex|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true] against your class DC or spell DC, whichever is higher). On a critical failure, the creature is also knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. At 3rd level, and every 2 levels thereafter, this damage increases by 1d6.</p>",
+            "name": "Raise Slabs"
+        },
         "Breath Weapon (Piercing) (Cone)": {
             "description": "<p>Your eidolon exhales a blast of destructive energy. Your eidolon deals @Damage[1d6[piercing]] damage to all creatures in a @Template[type:cone|distance:30], with a basic Reflex save against your spell DC.</p>\n<p>Your eidolon then can't use their Breath Weapon again for the next [[/r 1d4 #rounds]]{1d4 rounds}.</p>\n<p>At 3rd level and every 2 levels thereafter, the damage increases by 1d6. [[/r ((ceil(@actor.level/2))d6)[piercing]]]{Leveled Damage}</p>",
             "name": "Breath Weapon (Piercing) (Cone)"
@@ -106,7 +114,7 @@
             "name": "Drink Blood"
         },
         "Subsist": {
-            "description": "<p>You try to provide food and shelter for yourself, and possibly others as well, with a standard of living. This typically uses <span data-pf2-action=\"subsist\" data-pf2-skill=\"society\">Society</span> if you’re in a settlement or <span data-pf2-action=\"subsist\" data-pf2-skill=\"survival\">Survival</span> if you’re in the wild. The GM determines the DC based on the nature of the place where you're trying to Subsist. You might need a minimum proficiency rank to Subsist in particularly strange environments. Unlike most downtime activities, you can Subsist after 8 hours or less of exploration, but if you do, you take a –5 penalty.</p>\n<section class=\"sample-tasks\">\n<h2>Sample Subsist Tasks</h2>\n<ul>\n<li><strong>Untrained</strong> a lush forest with calm weather or a large city with plentiful resources</li>\n<li><strong>Trained</strong> typical hillside or village</li>\n<li><strong>Expert</strong> typical mountains or insular hamlet</li>\n<li><strong>Master</strong> typical desert or city under siege</li>\n<li><strong>Legendary</strong> barren wasteland or city of undead</li>\n</ul>\n</section>\n<hr />\n<p><strong>Critical Success</strong> You either provide a subsistence living for yourself and one additional creature, or you improve your own food and shelter, granting yourself a comfortable living.</p>\n<p><strong>Success</strong> You find enough food and shelter with basic protection from the elements to provide you a subsistence living.</p>\n<p><strong>Failure</strong> You're exposed to the elements and don't get enough food, becoming @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} until you attain sufficient food and shelter.</p>\n<p><strong>Critical Failure</strong> You attract trouble, eat something you shouldn't, or otherwise worsen your situation. You take a –2 circumstance penalty to checks to Subsist for 1 week. You don't find any food at all; if you don't have any stored up, you're in danger of starving or dying of thirst if you continue failing.</p>",
+            "description": "<p>You try to provide food and shelter for yourself, and possibly others as well, with a standard of living. This typically uses <span data-pf2-action=\"subsist\" data-pf2-skill=\"society\">Society</span> if you're in a settlement or <span data-pf2-action=\"subsist\" data-pf2-skill=\"survival\">Survival</span> if you're in the wild. The GM determines the DC based on the nature of the place where you're trying to Subsist. You might need a minimum proficiency rank to Subsist in particularly strange environments. Unlike most downtime activities, you can Subsist after 8 hours or less of exploration, but if you do, you take a –5 penalty.</p>\n<section class=\"sample-tasks\">\n<h2>Sample Subsist Tasks</h2>\n<ul>\n<li><strong>Untrained</strong> a lush forest with calm weather or a large city with plentiful resources</li>\n<li><strong>Trained</strong> typical hillside or village</li>\n<li><strong>Expert</strong> typical mountains or insular hamlet</li>\n<li><strong>Master</strong> typical desert or city under siege</li>\n<li><strong>Legendary</strong> barren wasteland or city of undead</li>\n</ul>\n</section>\n<hr />\n<p><strong>Critical Success</strong> You either provide a subsistence living for yourself and one additional creature, or you improve your own food and shelter, granting yourself a comfortable living.</p>\n<p><strong>Success</strong> You find enough food and shelter with basic protection from the elements to provide you a subsistence living.</p>\n<p><strong>Failure</strong> You're exposed to the elements and don't get enough food, becoming @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} until you attain sufficient food and shelter.</p>\n<p><strong>Critical Failure</strong> You attract trouble, eat something you shouldn't, or otherwise worsen your situation. You take a –2 circumstance penalty to checks to Subsist for 1 week. You don't find any food at all; if you don't have any stored up, you're in danger of starving or dying of thirst if you continue failing.</p>",
             "name": "Subsist"
         },
         "Finish The Job": {
@@ -150,7 +158,7 @@
             "name": "Influence"
         },
         "Spinning Crush": {
-            "description": "<p><strong>Requirements</strong> You're wielding a loaded firearm or loaded crossbow.</p>\n<hr />\n<p>You go into a vicious spin, smashing your weapon into those nearby and increasing your momentum by firing. All creatures adjacent to you take [[/r (1d6+@actor.abilities.str.mod)[bludgeoning]]]{1d6 bludgeoning} damage plus your Strength modifier; this increases to [[/r (2d6+@actor.abilities.str.mod)[bludgeoning]]]{2d6} if your firearm has a striking rune, [[/r (3d6+@actor.abilities.str.mod)[bludgeoning]]]{3d6} if it has a greater striking rune, and [[/r (4d6+@actor.abilities.str.mod)[bludgeoning]]]{4d6} if it has a major striking rune. This ability does not apply other effects that increase damage with your firearm Strikes such as weapon specialization. Creatures affected by this attack must attempt a @Check[type:reflex|dc:resolve(@actor.attributes.classDC.value)|basic:true] save. A creature that fails its save is also pushed 5 feet directly away from you.</p>",
+            "description": "<p><strong>Requirements</strong> You're wielding a loaded firearm or loaded crossbow.</p>\n<hr />\n<p>You go into a vicious spin, smashing your weapon into those nearby and increasing your momentum by firing. All creatures adjacent to you take @Damage[(4d6+@actor.abilities.str.mod)[bludgeoning]]{4d6 bludgeoning damage plus your Strength modifier}; this increases to @Damage[(6d6+@actor.abilities.str.mod)[bludgeoning]]{6d6} if your firearm has a striking rune, @Damage[(8d6+@actor.abilities.str.mod)[bludgeoning]]{8d6} if it has a greater striking rune, and @Damage[(10d6+@actor.abilities.str.mod)[bludgeoning]]{10d6} if it has a major striking rune. This ability does not apply other effects that increase damage with your firearm Strikes such as weapon specialization. Creatures affected by this attack must attempt a @Check[type:reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic:true] save. A creature that fails its save is also pushed 10 feet directly away from you.</p>",
             "name": "Spinning Crush"
         },
         "Thundering Roar": {
@@ -258,7 +266,7 @@
             "name": "Fade Into Daydreams"
         },
         "Dismiss": {
-            "description": "<p>You end an effect that states you can Dismiss it. Dimissing ends the entire effect unless noted otherwise.</p>",
+            "description": "<p>You end an effect that states you can Dismiss it. Dismissing ends the entire effect unless noted otherwise.</p>",
             "name": "Dismiss"
         },
         "Impersonate": {
@@ -268,6 +276,10 @@
         "Airy Step": {
             "description": "<p><strong>Frequency</strong> Once per day</p>\n<p><strong>Trigger</strong> A creature targets you with an attack or other targeted effect, and you can see the attacker.</p>\n<hr />\n<p>You create a blanket of fog in a 5-foot burst centered on one corner of your space. All creatures within that area are concealed, and all others are concealed to them. This concealment applies to the triggering effect, and the fog lasts for 1 minute or until dispersed by a strong wind. After resolving the triggering effect, you Step. If an effect prevents you from Stepping, you attempt to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} the effect and Step if you succeed.</p>",
             "name": "Airy Step"
+        },
+        "Lantern Beam": {
+            "description": "<p><strong>Requirements</strong> Your lantern light is shining</p>\n<hr />\n<p><strong>Effect</strong> Your lenses focus your light into a searing beam. You deal @Damage[((max(5,ceil(@actor.level/2)))d4)[fire]] damage to all creatures in a @Template[type:line|distance:30], with a @Check[type:reflex|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true] saving throw against the higher of your class DC or spell DC. Your lantern light then extinguishes, and you can't use this ability or use your lantern light again for [[/r 1d4 #Recharge Lantern Beam]]{1d4 rounds}. At 11th level and every two levels thereafter, the damage increases by 1d4.</p>",
+            "name": "Lantern Beam"
         },
         "Blood Feast": {
             "description": "<p>Your vampiric animal companion attacks a bleeding foe and drinks its blood. Your companion attempts a Strike against a creature currently taking persistent bleed damage. The Strike deals 2d8 additional. If the Strike hits and deals damage, your vampiric animal companion gains temporary Hit Points equal to half your level that last for up to 1 minute.</p>",
@@ -280,6 +292,10 @@
         "Breath Weapon (Cold) (Cone)": {
             "description": "<p>Your eidolon exhales a blast of destructive energy. Your eidolon deals @Damage[1d6[cold]] damage to all creatures in a @Template[type:cone|distance:30], with a basic Reflex save against your spell DC.</p>\n<p>Your eidolon then can't use their Breath Weapon again for the next [[/r 1d4 #rounds]]{1d4 rounds}.</p>\n<p>At 3rd level and every 2 levels thereafter, the damage increases by 1d6. [[/r ((ceil(@actor.level/2))d6)[cold]]]{Leveled Damage}</p>",
             "name": "Breath Weapon (Cold) (Cone)"
+        },
+        "Lantern Strobe": {
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> As you pulse your lantern, your emitters flash erratically, disorienting your opponents that see it. Each opponent in a @Template[type:cone|distance:15] must attempt a @Check[type:fortitude|dc:resolve(@actor.system.attributes.classOrSpellDC.value)] save against your class DC or spell DC (whichever is higher). On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round. On a critical failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round and dazzled for the following round.</p>",
+            "name": "Lantern Strobe"
         },
         "Breath Weapon (Poison) (Line)": {
             "description": "<p>Your eidolon exhales a blast of destructive energy. Your eidolon deals @Damage[1d6[poison]] damage to all creatures in a @Template[type:line|distance:60], with a basic Reflex save against your spell DC.</p>\n<p>Your eidolon then can't use their Breath Weapon again for the next [[/r 1d4 #rounds]]{1d4 rounds}.</p>\n<p>At 3rd level and every 2 levels thereafter, the damage increases by 1d6. [[/r ((ceil(@actor.level/2))d6)[poison]]]{Leveled Damage}</p>",
@@ -348,6 +364,10 @@
         "Bestial Clarity": {
             "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> You fail a saving throw against an enchantment effect</p>\n<hr />\n<p><strong>Effect</strong> Your bestial manifestation becomes more pronounced, and your mind gains a flash of clarity as your instincts take over. You can reroll the triggering saving throw with a +2 circumstance bonus, but you must use the new result. This is a fortune effect.</p>",
             "name": "Bestial Clarity"
+        },
+        "Dampening Harmonics": {
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> You establish a force field that grants you resistance 10 to damage dealt by spells and magical abilities with the trait of your magiphage ability, except for force damage. The force field lasts for 10 minutes. Each time the field prevents damage, the duration decreases by 1 minute.</p>",
+            "name": "Dampening Harmonics"
         },
         "Practical Research": {
             "description": "<p><strong>Requirement</strong> You are a conversant or lore-speaker.</p>\n<hr />\n<p>You identify something interesting in the field and perform special research on it. This requires an appropriate check, which the GM will describe when the opportunity arises. The results of the check vary. While they typically include all the benefits of the Study activity, some opportunities for Practical Research also offer unique benefits, such as access to new character options.</p>",
@@ -777,6 +797,10 @@
             "description": "<p><strong>Requirements</strong> If summoning a weapon or shield, you have the hands free to wield it; if summoning armor, you aren't wearing any armor</p>\n<hr />\n<p><strong>Effect</strong> You immediately wield or wear the soulforged armament bound to you. The soulforged armament remains manifested until you Dismiss this effect.</p>\n<p>Once per day when you use this ability, you can manifest the armament's essence form. You gain the armament's essence power until it's Dismissed. After 1 minute, the essence form armament is automatically Dismissed.</p>",
             "name": "Manifest Soulforged Armament"
         },
+        "Unwavering Resilience": {
+            "description": "<p><strong>Trigger</strong> You attempt a saving throw against a poison, disease, or mental effect, but you haven't rolled yet.</p>\n<hr />\n<p>You tap into the power of the Plane of Wood, gaining strength and mental fortitude. You gain a +1 circumstance bonus on the triggering save. If you critically succeed at this saving throw, you become bolstered by your success; blossoms and new growth temporarily sprout all over your body, and you gain a number of temporary Hit Point equal to your level. These temporary Hit Points last for one minute. When there temporary Hit Points are lost, the verdant growth subsides.</p>",
+            "name": "Unwavering Resilience"
+        },
         "Recall the Teachings": {
             "description": "<p>The heightened power of your psyche lets you recall every lesson you've ever learned. You search your mind for the right teaching, which at first seems cryptic but comes into clarity when it's most relevant. Until the start of your next turn, you count as having prepared to @UUID[Compendium.pf2e.actionspf2e.Item.HCl3pzVefiv9ZKQW]{Aid} all allies within 30 feet of you. If you use the Aid reaction to help one of them during that time, you roll an @Check[type:occultism|dc:20|traits:action:aid]{Occultism check} for Aid as you recall a lesson to help them. Most lessons take the form of short axioms, parables, or sayings, meaning that conveying them to your ally usually grants your Aid reaction the auditory and linguistic traits.</p>",
             "name": "Recall the Teachings"
@@ -793,6 +817,10 @@
             "description": "<p>You can spend time fortifying your camp for defense with a successful Crafting check (typically at a trained or expert DC). Anyone keeping watch or defending the camp gains a +2 circumstance bonus to initiative rolls and Perception checks to Seek creatures attempting to sneak up on the camp.</p>",
             "name": "Fortify Camp"
         },
+        "Trench Digging": {
+            "description": "<p><strong>Trigger</strong> You're subjected to forced movement</p>\n<hr />\n<p><strong>Effect</strong> You deploy your claw spikes to churn the earth asunder, creating difficult terrain in each square of ground you're moved through.</p>",
+            "name": "Trench Digging"
+        },
         "Dutiful Retaliation": {
             "description": "<p><strong>Trigger</strong> An enemy within 15 feet of you hits you with a Strike and deals damage to you.</p>\n<p><strong>Requirements</strong> Your eidolon is within 15 feet of you.</p>\n<p>Your eidolon instinctively flashes with ectoplasmic energy, allowing them to strike back against an enemy who dares to harm you. Your eidolon makes a melee unarmed Strike against the triggering enemy, even if that enemy isn't within your eidolon's reach.</p>",
             "name": "Dutiful Retaliation"
@@ -806,7 +834,7 @@
             "name": "Breath Weapon (Electricity) (Cone)"
         },
         "Recall Under Pressure": {
-            "description": "<p><strong>Trigger</strong> You attempt to Recall Knowledge during a combat</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Rather than roll a different skill to Recall Knowledge during the fight, your memory flashes back to something you read in some old book. You instead attempt this Recall Knowledge check with an Academia Lore check. If the information you recall ends up being helpful and positive in an obvious way before you take your next turn, draw a random harrow card. You gain a +1 status bonus to saving throws for the remainder of the combat encounter as your morale soars or a +2 status bonus if the card you drew was from the suit of Books.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.CW4zphOOpeaLJIWc]{Effect: Recall Under Pressure}</p>",
+            "description": "<p><strong>Trigger</strong> You attempt to @UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{Recall Knowledge} during a combat</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Rather than roll a different skill to Recall Knowledge during the fight, your memory flashes back to something you read in some old book. You instead attempt this Recall Knowledge check with an Academia Lore check. If the information you recall ends up being helpful and positive in an obvious way before you take your next turn, draw a random harrow card. You gain a +1 status bonus to saving throws for the remainder of the combat encounter as your morale soars or a +2 status bonus if the card you drew was from the suit of Books.</p>",
             "name": "Recall Under Pressure"
         },
         "Run Over": {
@@ -1190,7 +1218,7 @@
             "name": "Field of Roots"
         },
         "Energy Shot": {
-            "description": "<p><strong>Trigger</strong> You roll initiative.</p>\n<hr />\n<p>You unleash a small surge of magical energy into your weapon, shrouding the bullet with potential energy and granting it the ability to deal energy damage to your foes to exploit their weaknesses. You can Interact to draw a ranged weapon. On your first three Strikes of this encounter with a firearm or crossbow, you deal an additional 1 acid, cold, fire or electricity damage. You choose which damage type to deal as part of making each Strike.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.zocU4IYIlWwRKUuE]{Effect: Energy Shot}</p>",
+            "description": "<p><strong>Trigger</strong> You roll initiative.</p>\n<hr />\n<p>You unleash a small surge of magical energy into your weapon, shrouding the bullet with potential energy and granting it the ability to deal energy damage to your foes to exploit their weaknesses. You can Interact to draw a ranged weapon. On your first three Strikes of this encounter with a firearm or crossbow, you deal an additional 1 acid, cold, fire or electricity damage per weapon damage die. You choose which damage type to deal as part of making each Strike.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.zocU4IYIlWwRKUuE]{Effect: Energy Shot}</p>",
             "name": "Energy Shot"
         },
         "Whirlwind Maul": {
@@ -1313,6 +1341,10 @@
             "description": "<p><strong>Trigger</strong> The target of @UUID[Compendium.pf2e.spells-srd.Item.qsNeG9KZpODSACMq]{Foresight} defends against a hostile creature or other danger.</p>\n<hr />\n<p><strong>Effect</strong> If the hostile creature or danger forces the target to roll dice (a saving throw, for example), the target rolls twice and uses the higher result, and this spell gains the fortune trait. But if the hostile creature or danger is rolling against the target (an attack roll or skill check, for example), that hostile creature or danger rolls twice and uses the lower result, and this spell gains the misfortune trait.</p>",
             "name": "Foresight"
         },
+        "Stridulating Song": {
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You circulate magic through your wings, causing them to vibrate at high speeds such that their scraping produces disruptive sounds. You focus the sound at one creature within 30 feet who must succeed at a @Check[type:fortitude|dc:resolve(@actor.system.attributes.classOrSpellDC.value)] save against your class DC or spell DC (whichever is higher) or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, or @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical failure, as the vibrations disrupt its inner equilibrium. You can Sustain the effect for up to 1 minute; the creature can't recover from the sickened condition as long as you continue your song and it can hear you.</p>",
+            "name": "Stridulating Song"
+        },
         "Shadow Step": {
             "description": "<p><strong>Requirements</strong> The familiar is in dim light or darkness.</p>\n<hr />\n<p><strong>Effect</strong> The familiar teleports itself up to 30 feet. The destination must be in dim light or darkness and must be within your familiar's line of sight and line of effect.</p>\n<p>This action has the trait matching your tradition of magic, or occult if you aren't a spellcaster.</p>",
             "name": "Shadow Step"
@@ -1332,6 +1364,10 @@
         "Shake It Off": {
             "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> You fail or critically fail a saving throw against a condition or adverse effect (such as @UUID[Compendium.pf2e.spells-srd.Item.dN8QBNuTiaBHCKUe]{Cursed Metamorphosis})</p>\n<hr />\n<p><strong>Effect</strong> You reroll the triggering save and use the better result.</p>",
             "name": "Shake It Off"
+        },
+        "I Defy You!": {
+            "description": "<p><strong>Trigger</strong> You fail a save against a mental effect</p>\n<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> You reroll the triggering save and must take the second result.</p>",
+            "name": "I Defy You!"
         },
         "Primal Howl": {
             "description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> Your familiar screeches and howls, empowered with natural magic. All creatures in a @Template[type:cone|distance:30] take @Damage[(floor(@actor.level/2))d6[sonic]] damage for every 2 levels your companion has, with a @Check[type:fortitude|dc:resolve(@actor.system.attributes.spellDC.value)|basic:true] save against your spell DC. Creatures that fail become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}, and creatures that critically fail become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}. The fright is an emotion, fear, and mental effect.</p>",
@@ -1432,6 +1468,10 @@
         "Drifter's Wake": {
             "description": "<p>You drift across the battlefield, striking down foes as you go. You Stride, and you can Strike up to three times at any points during your movement. Each attack must target a different enemy and must be made with a one-handed firearm, crossbow, melee weapon, or unarmed attack. Each attack counts toward your multiple attack penalty, but your multiple attack penalty doesn't increase until you've made all your attacks. Your movement doesn't trigger reactions.</p>",
             "name": "Drifter's Wake"
+        },
+        "Shielding Wave": {
+            "description": "<p>You raise a magical barrier of twisting currents. Until the start of your next turn, the first time you take acid or fire damage, you gain resistance to that damage equal to half your level (minimum 1). The resistance is equal to your level instead if you're submerged in water, if you already Cast a Spell with the water trait, or if you used another ability with the water trait this turn.</p>",
+            "name": "Shielding Wave"
         },
         "Learn Name": {
             "description": "<p>You spend a week trying to discover and learn a creature's name. The exact form of your effort varies depending on the skill you use, the resources you have available, and other circumstances. Decide if you are searching for the name of a specific individual or for names in general. If you're looking for the name of an individual, you must be able to clearly identify that individual; for example, \"the general leading the invasion\" is enough, but \"the person who killed the duchess\" isn't, if you don't know who killed the duchess. If you're searching for names more generally, name one creature type.</p>\n<p>The GM chooses a DC, typically based on the level of the creature in question. If you're seeking names more generally, the DC is typically based on the level of the creature whose name the GM decides to provide, usually a creature from the chosen type of your level or lower. The GM might modify the DC of the task based on the resources you have available, or on using an unusually appropriate or inappropriate skill, or on other circumstances. Attempt a check with a skill that could be used to Recall Knowledge about the creature's type. After attempting to Learn a Name, you typically can't try to learn the name of the same individual again unless you gain access to a substantial new source of information, as determined by the GM.</p>\n<hr />\n<p><strong>Critical Success</strong> You find one or more private names of the specific individual you chose, or the private name of a creature with the type you chose and a level equal to the task level. You also find hidden fragments of their true name and, at the GM's discretion, you might find a clue leading to an adventure where you can learn the rest of the true name.</p>\n<p><strong>Success</strong> As critical success, except you find only one private name and don't find hidden fragments of their true name.</p>\n<p><strong>Critical Failure</strong> If you were searching for the name of a specific individual, you find no new information and that individual becomes aware of your efforts. If you were searching for a general name of a specific type, you find a creature's name or names likely to get you in trouble, possibly the names of a different type of creature entirely.</p>",
