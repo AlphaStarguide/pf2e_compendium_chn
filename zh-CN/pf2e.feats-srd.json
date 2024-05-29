@@ -33572,7 +33572,7 @@
             "name": "生于树间 Born to the Trees"
         },
         "The Thousand Lashes of the Weeping Willow": {
-            "description": "<p>你召唤一个巨大的垂柳，用千根柳条鞭打你的敌人。垂柳的树干直径为10尺，出现在500尺内的一个未被占据的空间内。树以垂柳的树干为中心，向@Template[type:emanation|distance:30]{30尺半径}内的所有敌人挥动其枝条，造成@Damage[(10 + floor(@actor.level/20)*4)d8[slashing]]伤害，@Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)|basic:true]豁免对抗你的职业DC。豁免失败的生物还会被悲伤所压倒——只要垂柳存在，它就会不可控制地哭泣，陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。垂柳不会攻击你或你的盟友。</p>\n<p>The willow tree remains until the end of your next turn, but you can Sustain it up to 1 minute. The first time you Sustain the impulse each round, the weeping willow attacks again, dealing @Damage[floor(@actor.level/4)d8[slashing]] damage to all enemies in the area with a basic reflex save. If you use this impulse again, the previous one ends.</p>\n<hr />\n<p><strong>Level (20th)</strong> The initial damage is 14d8, and the Sustained damage is 5d8.</p>",
+            "description": "<p>你召唤一个巨大的垂柳，用千根柳条鞭打你的敌人。垂柳的树干直径为10尺，出现在500尺内的一个未被占据的空间内。树以垂柳的树干为中心，向@Template[type:emanation|distance:30]{30尺半径}内的所有敌人挥动其枝条，造成@Damage[(10 + floor(@actor.level/20)*4)d8[slashing]]伤害，@Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.kineticist.dc)|basic:true]豁免对抗你的职业DC。豁免失败的生物还会被悲伤所压倒——只要垂柳存在，它就会不可控制地哭泣，陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。垂柳不会攻击你或你的盟友。</p>\n<p>垂柳持续到你的下一个回合结束，但你可以维持它最长1分钟。当你每轮第一次维持该涌动时，垂柳再次攻击，对区域内的所有敌人造成@Damage[floor(@actor.level/4)d8[slashing]]伤害，基础反射豁免。如果你再次使用该涌动，先前的将结束。</p>\n<hr />\n<p><strong>等级 (20级)</strong> 初始伤害为14d8，持续伤害为5d8。</p>",
             "name": "垂柳千鞭 The Thousand Lashes of the Weeping Willow"
         },
         "Ride On": {
@@ -33608,6 +33608,38 @@
                 }
             ],
             "description": "<p>你培养植物来困住你的敌人。你获得了@UUID[Compendium.pf2e.spells-srd.Item.z0ffligcrkVtKZd6]{灌木监牢 Hedge Prison}教派法术。</p>"
+        },
+        "Release Spores": {
+            "description": "<p>你创造了一团孢子。这些孢子填充射程100尺内的一个@Template[type:burst|distance:20]区域，并持续轮数和你等级相同。所有在孢子内的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，所有在孢子外的生物对孢子内的生物获得隐蔽。你可以轻松看穿孢子。你可以解消孢子。</p>\n<p><strong>觉醒</strong> 孢子散发出恶臭。在区域内的生物只要留在区域内，就会@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，离开区域后再加上2轮。</p>\n<p><strong>觉醒</strong> 孢子具有毒性。你每有2级，孢子对区域内的生物造成@Damage[(floor(@actor.level/2))[poison]]伤害；这包括你施放孢子是位于范围内的生物、在区域内开始回合的生物、以及进入区域内的生物。</p>",
+            "name": "释放孢子 Release Spores"
+        },
+        "Rotten Slurry": {
+            "description": "<p>你从你的躯干、手或口中喷出一团腐烂、恶臭的泥浆攻击一个敌人。对30尺内的一个生物进行@Check[type:deviant|defense:ac]{远程攻击掷骰}。如果你成功，你每有2级，泥浆对目标造成@Damage[(floor(@actor.level/2)d4)[bludgeoning]]伤害，重击双倍伤害。被攻击伤害的生物@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（重击@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}）。</p>\n<p><strong>觉醒</strong> 泥浆爆炸，溅到周围的人。你每有4级，攻击造成额外@Damage[((floor(@actor.level/4)d4)[splash])[poison]]{1d4毒素溅射伤害}。</p>\n<p><strong>觉醒</strong> 泥浆具有腐蚀性，并钻入接触到的肉体。攻击造成额外@Damage[1d4[persistent,acid]]伤害。</p>",
+            "name": "腐烂泥浆 Rotten Slurry"
+        },
+        "Irradiate": {
+            "description": "<p>你散发出辐射灵光，使周围的人都生病。在@Template[type:emanation|distance:15]内的所有生物必须成功通过@Check[type:fortitude|dc:resolve(@actor.system.attributes.classOrSpellDC.value)]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。在大失败时，他们也会@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}1分钟。你对自身的辐射免疫。6级之后每多5级，造成的恶心状态的值增加1。</p>\n<p><strong>觉醒</strong> 你更有效地散发出这种辐射光环。灵光的半径变为@Template[type:emanation|distance:60]{60尺}。</p>\n<p><strong>觉醒</strong> 你的辐射变得更强大。区域内的生物额外承受@Damage[(floor(@actor.level/2))d4[poison]]{1d4毒素}伤害，@Check[type:fortitude|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true]豁免（只进行一次强韧豁免，并将其结果应用于伤害和恶心状态）。 </p>",
+            "name": "辐射 Irradiate"
+        },
+        "Sprout Fruit": {
+            "description": "<p>你身上的植物长出一个成熟的果实。除了你之外的生物，通过一个三动作活动（1个交互动作摘取果实，2个交互动作食用）食用这个果实，你每拥有2个等级，他就能恢复@Damage[(floor(@actor.level/2)d4)[healing]]生命值。</p>\n<p><strong>觉醒</strong> 果实更加强大。将治疗量从d4提升到d6(@Damage[(floor(@actor.level/2)d6)[healing]])。 </p>\n<p><strong>觉醒</strong> 果实更加丰富。2级之后，你每提升5个等级，就会多出一个额外的果实。此外，食用果实的生物可以减少他受到的一个正在影响他状态的状态值1点。</p>",
+            "name": "发芽果实 Sprout Fruit"
+        },
+        "Unleash the Blight": {
+            "description": "<p>你释放了感染你的腐烂，将荒疫传播给附近的人。你每有2级，在@Template[type:emanation|distance:60]内的所有生物承受@Damage[(floor(@actor.level/2)d6)[void]]伤害，进行@Check[type:fortitude|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true]豁免。</p>\n<p><strong>觉醒</strong> 瘟疫具有传染性。被你的瘟疫伤害的生物额外承受@Damage[1d6[persistent,void]]伤害，因为他们开始腐烂。</p>\n<p><strong>觉醒</strong> 瘟疫具有削弱性。被伤害的生物在成功时陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}持续1轮，失败时陷入流失1持续1分钟，大失败时陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}持续1分钟。</p>",
+            "name": "释放荒疫 Unleash the Blight"
+        },
+        "Vine Lash": {
+            "description": "<p><strong>需求</strong> 你有一只空闲的手。</p>\n<hr />\n<p>一根长藤从你的手臂上长出，你可以暂时像持用鞭子一样持用它。对30尺内的一个生物进行近战@Check[type:deviant|defense:ac]{攻击掷骰}。如果成功，你每拥有2个等级，藤蔓就会对目标造成@Damage[(floor(@actor.level/2)d6)[slashing]]伤害，重击双倍伤害。</p>\n<p><strong>觉醒</strong> 藤蔓缠绕住你的敌人，将他们勒死。如果成功命中，目标@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于藤蔓。@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}藤蔓的DC等于你的职业DC或法术DC，以较高的为准。每轮在你的回合，如果目标仍然受擒，藤蔓会挤压他们，你每拥有2个等级，就造成@Damage[(floor(@actor.level/2)d6)[bludgeoning]]伤害。</p>\n<p><strong>觉醒</strong> 而不是用一根藤蔓鞭打你的敌人，数十根扭曲的藤蔓从你的手中涌出，鞭打一个大型区域内所有生物。你可以使用藤蔓鞭打作为一个双动作活动，对@Template[type:cone|distance:30]范围内的所有生物造成伤害，@Check[type:reflex|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true]豁免。</p>",
+            "name": "藤蔓鞭打 Vine Lash"
+        },
+        "Defensive Growth": {
+            "description": "<p><strong>触发</strong> 你成为一次物理攻击的目标。</p>\n<hr />\n<p>你生长出一个由编织的花朵和树枝构成的盾牌，然后举起那个盾牌来防御触发攻击。如果你会从攻击中受到伤害，你立即进行@UUID[Compendium.pf2e.feats-srd.Item.jM72TjJ965jocBV8]{盾牌格挡 Shield Block}。这是一个@UUID[Compendium.pf2e.equipment-srd.Item.ezVp13Uw8cWW08Da]{木盾 Wooden Shield}（硬度3，生命值12，破损阈值6）。盾牌在你手中保留的轮数等于你的等级，或者直到它被摧毁。</p>\n<p><strong>觉醒</strong> 盾牌变得更加坚固。它有硬度5，生命值40，破损阈值20。</p>\n<p><strong>觉醒</strong> 盾牌获得了自己的意志，并在被摧毁时报复性地反击。当盾牌被摧毁时，它会爆炸，对你的攻击者造成@Damage[4d6[piercing]]伤害，@Check[type:reflex|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true]豁免。</p>",
+            "name": "防御性生长 Defensive Growth"
+        },
+        "Disperse Into Petals": {
+            "description": "<p>你与身上的花朵融合并分散，变成一个可见的花瓣云。你变为不定形态。你失去任何物品对AC的加值，以及所有来自护甲的其他效果和加值，你使用你的熟练加值进行无甲防御。你获得等于你等级一半的物理伤害抗力，并且免疫精准伤害。你不能施放法术、启动物品、使用具有攻击或操作特征的动作。你获得10尺的飞行速度。你可以保持这种形态最多1分钟。你可以解消这个效果。</p>\n<p><strong>觉醒</strong> 你可以保持你的形态更长时间。你可以保持这种形态最多1小时。</p>\n<p><strong>觉醒</strong> 你学会了即使在花瓣状态下也能伤害他人。你可以进入其他人占据的空间。当与其他人占据相同空间时，你可以花费1个动作在花瓣的旋风中旋转，对生物造成你每5个等级@Damage[(floor(@actor.level/5)d4)[slashing]]{1d4挥砍}伤害，基础反射豁免。</p>",
+            "name": "散花形态 Disperse Into Petals"
         }
     },
     "mapping": {
