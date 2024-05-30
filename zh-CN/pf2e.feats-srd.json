@@ -33640,6 +33640,285 @@
         "Disperse Into Petals": {
             "description": "<p>你与身上的花朵融合并分散，变成一个可见的花瓣云。你变为不定形态。你失去任何物品对AC的加值，以及所有来自护甲的其他效果和加值，你使用你的熟练加值进行无甲防御。你获得等于你等级一半的物理伤害抗力，并且免疫精准伤害。你不能施放法术、启动物品、使用具有攻击或操作特征的动作。你获得10尺的飞行速度。你可以保持这种形态最多1分钟。你可以解消这个效果。</p>\n<p><strong>觉醒</strong> 你可以保持你的形态更长时间。你可以保持这种形态最多1小时。</p>\n<p><strong>觉醒</strong> 你学会了即使在花瓣状态下也能伤害他人。你可以进入其他人占据的空间。当与其他人占据相同空间时，你可以花费1个动作在花瓣的旋风中旋转，对生物造成你每5个等级@Damage[(floor(@actor.level/5)d4)[slashing]]{1d4挥砍}伤害，基础反射豁免。</p>",
             "name": "散花形态 Disperse Into Petals"
+        },
+        "Talon Sweep": {
+            "description": "<p><strong>触发</strong> 一名正在夹击你的生物对你尝试一次打击</p>\n<hr />\n<p>你脚上的长爪令你能够同时扫掠来自两侧的敌人。如果你未处于扫击架势，则进入该架势，若触发打击未命中，对任一正夹击你的生物进行一次扫掠脚爪打击。</p>",
+            "name": "脚爪横扫 Talon Sweep",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Wheeling Grab": {
+            "description": "<p>你用利爪支撑进行侧翻，在敌人身前舞动。你进入猛抓架势并@UUID[Compendium.pf2e.actionspf2e.Item.21WIfSu7Xd7uKqV8]{翻滚 Tumble Through}。若你成功通过一名敌人所处的空间，你可以对其@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}。</p>",
+            "name": "翻滚擒拿 Wheeling Grab",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                },
+                {
+                    "value": "在特技上受训"
+                }
+            ]
+        },
+        "Hindquarter Kick": {
+            "name": "翻身踢 Hindquarter Kick",
+            "description": "<p><strong>需求</strong> 你正处于猛抓架势且有一名生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于你</p>\n<hr />\n<p>你用双爪擒住猎物挣扎的四肢，与此同时朝其无防备的另一侧迅猛踢去。切换至扫击架势并对受擒的生物进行两次扫掠脚爪打击。这些打击会如常应用你的多重攻击减值。随后你放开该受擒生物。</p>",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Claw Snag": {
+            "description": "<p><strong>触发</strong> 一名受擒于你或被你@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}的生物尝试@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}</p>\n<hr />\n<p>你用利爪钩入目标的躯体，将自己拉向前方并撕扯其血肉。如果你未处于猛抓架势，则进入该架势，随后对触发生物进行一次狂乱爪抓打击。</p>",
+            "name": "爪准时机 Claw Snag",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Abscission Shards": {
+            "description": "<p><strong>需求</strong> 你的上一个动作是进行了一次狂乱爪抓获扫掠脚爪打击并命中。</p>\n<hr />\n<p>你扭转自己的利爪，使其分裂出一道破片嵌入目标体内。破片造成@Damage[1d6[persistent,bleed]]伤害。该伤害在你的无武装攻击拥有三个武器骰时（譬如通过高等强击符文）提高至2d6，四个武器骰时提高至3d6。</p>",
+            "name": "鞘壳破裂 Abscission Shards",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Clawdancer Dedication": {
+            "description": "<p>你精研了使用自己天生所具的双爪进行作战的技艺，譬如用其牢牢勾住猎物，或是横扫包围你的敌人。你获得下列动作，允许你进入使你的利爪攻击更加有效的架势。</p>\n<p><strong>猛抓架势 Claw Stance</strong> <span class=\"action-glyph\">1</span> (架势) <strong>效果</strong> 你令手中的利爪伸长，专注于制服单一目标。你只能使用狂乱爪抓无武装攻击进行打击。这是一种造成@Damage[1d6[slashing]]伤害，属于搏击武器组，具有灵巧，娴熟，擒拿，无武装和多用P特征的攻击。</p>\n<p><strong>扫击架势 Talon Stance</strong> <span class=\"action-glyph\">1</span> (架势) <strong>效果</strong> 你放松身体，进入一种摇摆不定的架势，允许你使用脚爪扫出大范围的弧线攻击复数敌人。你只能使用扫掠脚爪无武装攻击进行打击。这是一种造成@Damage[1d8[slashing]]伤害，属于搏击武器组，具有娴熟，横扫与无武装特征的攻击。你在使用扫掠脚爪打击时无需有空置的手。</p>",
+            "prerequisites": [
+                {
+                    "value": "拥有非临时的爪抓或脚爪攻击（可能来源于你的族裔或移植等方式）"
+                }
+            ],
+            "name": "利爪舞者变体 Clawdancer Dedication"
+        },
+        "Spinning Stand": {
+            "description": "<p><strong>需求</strong> 你正陷入@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>\n<hr />\n<p>你猛然圆张双腿，利用反冲的动量在猛踢敌人的同时回到站立姿态。如果你未处于扫击架势，则进入该架势，对触及内的一名敌人进行一次扫掠脚爪打击，随后站立。你不会因为倒地而在这一攻击中承受-2环境减值，且站立时也不会触发反应。你可以为回旋起身花费两个动作，以进行两次而非一次扫掠脚爪打击；这些打击必须选择不同目标。</p>",
+            "name": "回旋起身 Spinning Stand",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Hunting Snag": {
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ],
+            "description": "<p><strong>触发</strong> 你触及范围内的一名生物使用了一个移动动作，或在其使用的一个移动动作当中离开了你触及内的方格。</p>\n<hr />\n<p>从自然界的那些天生的捕食者身上，你学到了防止猎物逃脱的技巧。对触发生物进行一次爪抓或脚爪打击。若造成重击且此动作是被一个移动动作触发，打断该动作。如果打击命中且该生物离开了一个邻接于你的一个方格，你可以快步到该方格中。</p>",
+            "name": "猎杀机会 Hunting Snag"
+        },
+        "Claw and Talon Flow": {
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ],
+            "description": "<p><strong>需求</strong> 你正处于猛抓架势或扫击架势。</p>\n<hr />\n<p>你灵活地在两种架势之间切换。你使用当前利爪舞者架势赋予的无武装攻击，随后切换至另一种架势（如果你处于猛抓架势，进行一次狂乱爪抓打击并切换至扫击架势，反之亦然）。</p>",
+            "name": "扫抓如流 Claw and Talon Flow"
+        },
+        "Tear Tendons": {
+            "description": "<p><strong>需求</strong> 你正处于猛抓架势且有两只手未被占用。</p>\n<hr />\n<p>你用双爪切入敌人的肉体，割断其肌腱从而使其难以发力。对同一目标进行两次狂乱爪抓攻击，如常提升多重攻击减值。如果两次攻击均命中，目标必须成功通过一次对抗你职业DC的@Check[type:fortitude|dc:resolve(@actor.system.attributes.classDC.value)]豁免，否则在1轮内陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}；若大失败则改为在1分钟内陷入力竭2。</p>",
+            "name": "撕裂肌腱 Tear Tendons",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Feline Dance": {
+            "description": "<p><strong>许可</strong> 猫族族裔</p>\n<p><strong>频率</strong> 每小时一次</p>\n<p><strong>触发</strong> 你尝试一次基础反射豁免</p>\n<p><strong>需求</strong> 你正处于猛抓架势或扫击架势。</p>\n<hr />\n<p>你在躲闪的过程中柔若无骨地于两种架势之间切换。掷两次豁免骰并取较高值。随后若你处于猛抓架势，切换至扫击架势，反之亦然。</p>",
+            "name": "灵猫舞步 Feline Dance",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Springboard": {
+            "description": "<p><strong>需求</strong> 你的上一个动作是对一名邻接敌人进行扫掠脚爪打击并命中。</p>\n<hr />\n<p>你爆发自己的腿部力量，借助你敌人的身体起跳，用脚爪在空中划出一道新月般的弧线并跃向另一名敌人。你@UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{跳跃 Leap}，这不会触发你之前命中敌人的反应动作。如果你降落位置的近战触及范围内有一名敌人，你可以朝其进行一次扫掠脚爪打击。</p>",
+            "name": "跳板 Springboard",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Precise Hooks": {
+            "description": "<p>你的身体是一具灵活而致命的武器。当你使用爪抓或脚爪打击造成重击时，你可以基于所处的架势应用重击专精效果。对于猛抓架势，应用短刃武器组的效果。对于扫击架势，应用斧武器组的效果。即使你如常应用了爪抓或脚爪打击原本武器组的重击专精效果，你也可以额外应用上述效果。</p>",
+            "name": "精准爪钩 Precise Hooks",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ]
+        },
+        "Tenacious Endurance": {
+            "name": "顽强坚忍 Tenacious Endurance",
+            "description": "<p>在你的鼓励之下，你的伙伴拒绝向哪怕最强大的敌人屈服。当你的一名动物伙伴HP降低至0时，若其未受伤，其可以屹立不倒，保留1HP并获得@UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{受伤 Wounded 1}。</p>",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                }
+            ]
+        },
+        "Bestial Protection": {
+            "description": "<p>仅仅是你伙伴的存在，就能令那些俯首于其阴影之下的生物战栗不已。当一名邻接于你动物伙伴且体型小于其的生物指定你为攻击目标时，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>",
+            "name": "兽性戍卫 Bestial Protection",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴体型不小于大型"
+                }
+            ]
+        },
+        "Nature's Precision": {
+            "description": "<p>你的动物伙伴能精准选择敌人的弱点进行攻击。当你的动物伙伴使用灵巧或娴熟无武装攻击打击一名@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}的生物时，其造成额外1d4精准伤害（若其已是特化动物伙伴则为2d4）。若动物伙伴本身已经能够造成精准伤害，则将此精准伤害与之加总。</p>",
+            "name": "天然精准 Nature's Precision",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴拥有灵巧或娴熟无武装攻击"
+                }
+            ]
+        },
+        "Pack Movement": {
+            "description": "<p>你和你的伙伴展开移动，突袭同一名敌人。你和你的动物伙伴同时行走。如果你们移动的终点均能触及同一生物，你和你的动物伙伴各对该生物进行一次近战打击。如果你和你的动物伙伴拥有掘地，攀爬，飞行或游泳速度，你也可以在协同机动中选择相应的移动来代替行走。</p>",
+            "name": "协同机动 Pack Movement",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                }
+            ]
+        },
+        "Sweeping Tail": {
+            "description": "<p>你的伙伴猛力挥扫长尾。你拥有先决条件所需无武装打击的动物伙伴获得横扫尾鞭动作。</p>\n<p><strong>横扫尾鞭 Sweeping Tail</strong> <span class=\"action-glyph\">2</span> 该动物伙伴对触及范围内两个不同目标进行两次尾击打击，这会如常提升其多重攻击减值。若命中，其将目标推离5尺，重击则为10尺。这是一种强制移动。</p>",
+            "name": "横扫尾鞭 Sweeping Tail",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴有尾击无武装攻击"
+                }
+            ]
+        },
+        "Pack Takedown": {
+            "description": "<p><strong>需求</strong> 你有两只活跃的动物伙伴。</p>\n<hr />\n<p>兽群在行止如一时才最为强盛，你们像是饥饿的狼群一般共同袭杀同一目标。如果你和两只活跃的动物伙伴均能威胁同一生物，你们均对其进行一次近战打击。该生物对这些攻击陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。若上述攻击命中超过一次，则将所有命中的打击伤害加总，只应用一次抗力和弱点。</p>",
+            "name": "兽群强袭 Pack Takedown",
+            "prerequisites": [
+                {
+                    "value": "率领兽群"
+                }
+            ]
+        },
+        "Ferocious Charge": {
+            "description": "<p>你教会了自己的动物伙伴如何径直冲向敌人。你拥有先决条件所需无武装打击的动物伙伴获得残暴冲刺动作。</p>\n<p><strong>残暴冲刺 Ferocious Charge</strong> <span class=\"action-glyph\">2</span> 该动物伙伴行走至多等于其两倍速度的直线距离，并进行一次角抵，头槌或角刺打击。若其位移了至少20尺，其造成额外@Damage[1d8[untyped]]伤害。若伙伴已特化则额外伤害提高至2d8。如果你的动物伙伴拥有掘地，攀爬，飞行或游泳速度，其也可以在协同机动中选择相应的移动来代替行走。</p>",
+            "name": "残暴冲刺 Ferocious Charge",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴有角抵，头槌或角刺无武装攻击"
+                }
+            ]
+        },
+        "Running Kick": {
+            "description": "<p>你的伙伴在战场中七进七出，迅猛地发起攻势并随后占据有利位置。你拥有先决条件所需无武装打击的动物伙伴获得奔袭猛踢动作。</p>\n<p><strong>奔袭猛踢 Running Kick</strong> <span class=\"action-glyph\">2</span> 该动物伙伴行走至多等于其两倍速度的直线距离，并在移动过程中的任意一点进行一次足踢，蹄击或脚爪打击。该移动不会触发被此打击所伤害的生物的反应。</p>",
+            "name": "奔袭猛踢 Running Kick",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴有足踢，蹄击或脚爪无武装攻击"
+                }
+            ]
+        },
+        "Sinking Jaws": {
+            "description": "<p>你的伙伴用尖牙利齿死死咬住猎物，向一条紧勒其美餐的巨蟒般一点点将目标的生命挤碎。你拥有先决条件所需无武装打击的动物伙伴获得深痕颚咬动作。</p>\n<p><strong>深痕颚咬 Sinking Jaws</strong> <span class=\"action-glyph\">1 </span><strong>需求</strong> 有生物正被该动物伙伴用其颚咬或尖牙所@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}或@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}</p>\n<hr />\n<p><strong>效果</strong> 被该动物伙伴束缚，或受擒于其的敌人受到等同于该动物伙伴等级外加力量调整值的伤害。</p>",
+            "name": "深痕颚咬 Sinking Jaws",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴有颚咬或尖牙无武装攻击"
+                }
+            ]
+        },
+        "Heightened Instincts": {
+            "description": "<p>你致力于打磨自己同伴的本能，以至于一种超自然的地步。当你的动物伙伴在一次豁免中成功时，其改为获得大成功结果。</p>",
+            "name": "强化本能 Heightened Instincts",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                }
+            ]
+        },
+        "Vicious Rend": {
+            "description": "<p>你的伙伴用利爪陷入血肉并开始撕扯。你拥有先决条件所需无武装打击的动物伙伴获得残忍撕碎动作。</p>\n<p><strong>残忍撕碎 Vicious Rend</strong> <span class=\"action-glyph\">2</span> 该动物伙伴对同一目标进行两次爪击，拳击，夹取或脚爪打击，这会如常提升其多重攻击减值。若两次打击均命中，目标受到额外@Damage[1d6[persistent,bleed]]伤害。若你的动物伙伴已特化，伤害提高至2d6。</p>",
+            "name": "残忍撕碎 Vicious Rend",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴有爪击，拳击，鳌夹或脚爪无武装攻击"
+                }
+            ]
+        },
+        "Billowing Wings": {
+            "description": "<p>你训练自己的有翼伙伴，使其学会了在羽翼上积聚气流，再抽打集中的气旋袭击敌人。你的有翼动物伙伴获得气旋远程无武装攻击，造成1d4钝击伤害，射程30尺，具有气和助进特征。若重击，目标被推离5尺。这是一种强制移动效果。</p>",
+            "name": "翻腾羽翼 Billowing Wings",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                },
+                {
+                    "value": "动物伙伴有翅膀"
+                }
+            ]
+        },
+        "Storm of Claws": {
+            "name": "爪刃风暴 Storm of Claws",
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ],
+            "description": "<p><strong>需求</strong> 你正处于猛抓架势或扫击架势。</p>\n<hr />\n<p>你向早已饥渴多日的野兽扑向猎物一般，用自己生爪的四肢展开暴风骤雨般的猛击，随后回撤一步，欣赏自己的杰作。打击三次，你的多重攻击减值会如常增加。在每次攻击命中并造成伤害后，你都可以快步。</p>"
+        },
+        "Dashing Pounce": {
+            "prerequisites": [
+                {
+                    "value": "利爪舞者入门"
+                }
+            ],
+            "description": "<p><strong>需求</strong> 你正处于猛抓架势且有两只手未被占用。</p>\n<hr />\n<p>你爆发式地加速，高高跃起并用双爪挥砍。你@UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{跳跃 Leap}，随后若你在邻接于一名敌人的位置结束移动，你对其进行两次狂乱爪抓无武装打击。你如常为这些打击应用多重攻击减值。若两次打击均未命中，你在跳跃的终点陷入@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>",
+            "name": "爆发猛扑 Dashing Pounce"
+        },
+        "Spirit of the Beast": {
+            "name": "野兽之魂 Spirit of the Beast",
+            "prerequisites": [
+                {
+                    "value": "兽王入门"
+                }
+            ],
+            "description": "<p>你将其它动物的特性灌注到自己的伙伴体内。你获得野兽之魂聚能法术。</p>"
         }
     },
     "mapping": {
