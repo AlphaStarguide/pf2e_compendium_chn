@@ -34051,6 +34051,126 @@
                 }
             ],
             "description": "<p>你擅长使用防御信息素，几乎能够完全控制它们。当你喷射防御臭气时，你可以选择增加对单个目标的伤害，将伤害骰提升至d8（@Damage[(floor((@actor.level +1)/2)+1)d8[poison]]）；或者伤害不变，但改为向@Template[type:cone|distance:15]范围内喷洒信息素。</p>"
+        },
+        "Levered Swing": {
+            "description": "<p>你一扫缠住树枝或栏杆，随后荡到你想去的地方。选择你扫击触及内的一个支点。你飞行至多等于你速度的距离落在一个未被占据的空间内，你的支点必须仍在你触及内。如果你结束回合时没有处在能站立的空间，你会坠落。</p>",
+            "name": "摇荡穿梭 Levered Swing",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                },
+                {
+                    "value": "运动大师"
+                }
+            ]
+        },
+        "Tail Guard": {
+            "description": "<p><strong>触发</strong> 一个生物进入到将会夹击你的方格。</p>\n<hr />\n<p>那些想背刺你的敌人会意外发现你的尾巴早已严阵以待。对触发反应的生物进行一次尾扫打击，如果这次打击是重击，目标的移动被打断。这次攻击不计算MAP，你的MAP也不应用在这次攻击上。</p>",
+            "name": "尾扫后卫 Tail Guard",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                },
+                {
+                    "value": "尾巴无武装攻击"
+                }
+            ]
+        },
+        "Thlipit Contestant Dedication": {
+            "description": "<p>刻苦训练使你的舌头或尾巴强韧到足以成为一件利器。你获得扫击。这是一种造成@Damage[1d4[bludgeoning]]伤害，属于链枷武器组，具有触及、擒抱特征的近战无武装攻击。你可以使用满足变体先决条件的任何肢体进行扫击。</p>",
+            "name": "舌击斗士入门 Thlipit Contestant Dedication",
+            "prerequisites": [
+                {
+                    "value": "拥有长而灵巧的舌头或尾巴。在GM的判断下，其他灵活的肢体，如触手，也可以胜任。"
+                }
+            ]
+        },
+        "Fly Swat": {
+            "description": "<p>你学会了用舌头清扫害虫的技巧，也许还时不时以此大快朵颐。你的扫击攻击忽略集群生物的物理抗性，数值等于你的等级。</p>",
+            "name": "扫蝇势 Fly Swat",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                }
+            ]
+        },
+        "Lassoing Lash": {
+            "description": "<p><strong>需求</strong> 目标体型最多比你大一级。</p>\n<hr />\n<p>你一扫之后紧缠敌手，将它们拉向自己。尝试一次运动检定，对抗你扫击触及内一个生物的强韧DC：</p>\n<hr />\n<p><strong>大成功</strong> 你将目标移动到与你相邻的任意方格。</p>\n<p><strong>成功</strong> 你将目标移动到最近的与你相邻的方格。</p>\n<p><strong>大失败</strong> 你失去平衡并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>\n<hr />\n<p><strong>特殊</strong> 如果你有巨人摔角术，你可以对体型最多比你大两级的生物尝试，且若你在运动技能上的熟练度达到传奇，则目标可以是体型最多比你大三级的生物。</p>",
+            "name": "飞索套击 Lassoing Lash",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                },
+                {
+                    "value": "运动受训"
+                }
+            ]
+        },
+        "Slurp Up": {
+            "description": "<p>你的舌头猝然弹出，寻找清凉的饮品。选择你舌头触及范围内不超过一个L负载的液体容器，比如药水或灵药。容器必须是被拿在手上或放在明处的，而不能是收在背包或背带里的。如果容器是无主或由自愿的盟友持有，你可以立刻交互饮用内容物。如果容器由非自愿的生物持有，你必须使用你的攻击或盗窃检定，成功对抗该生物的反射DC才能饮用内容物；这会添加攻击特性。</p>",
+            "name": "一扫而空 Slurp Up",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                },
+                {
+                    "value": "舌头无武装攻击"
+                }
+            ]
+        },
+        "Slingshot Maneuver": {
+            "description": "<p><strong>触发</strong> 一个自愿生物用移动动作进入你扫击的触及范围内</p>\n<hr />\n<p>你抽向盟友，助推他们的移动。你将触发的生物移动15尺，终点在你的扫击触及内。如果你的盟友还有移动力，他们可以在弹射机动结束后继续完成移动。</p>",
+            "name": "弹射机动 Slingshot Maneuver",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                }
+            ]
+        },
+        "Spinning Release": {
+            "description": "<p><strong>需求</strong> 一个生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}于你的扫击</p>\n<hr />\n<p>你将缠住的敌手高速旋转，使他们头昏脑胀。你释放你的敌人，使他们朝着你选择的一个方向移动10尺，这是受迫移动。你的目标必须进行一次@Check[type:fortitude|dc:resolve(@actor.system.attributes.classDC.value)]检定对抗你的职业DC：</p>\n<p><strong>失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}直到下回合结束。在这之后目标免疫天旋地转造成的困惑和恶心效果10分钟，但天旋地转仍然可以使他们移动。</p>\n<p><strong>大失败</strong> 同失败，但额外受到@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>",
+            "name": "天旋地转 Spinning Release",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                }
+            ]
+        },
+        "Whirling Clobber": {
+            "description": "<p><strong>需求</strong> 一个生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}于你的扫击</p>\n<hr />\n<p>你将缠住的敌手当做流星锤甩动起来，砸向周围的敌人。对每个触及内的敌人进行一次近战打击。你的最后一次打击必须以被你擒抱的那个生物为目标，并且你在这次攻击上获得等同于你砸中敌人数量的环境加值（最高+3）。每次攻击都会计入多重攻击减值，但这一减值直到你完成所有攻击动作之前不会增加。大旋风甩击结束后，你将那个被擒抱的生物释放到触及范围内的一个未被占据的空间中。</p>",
+            "name": "大旋风甩击 Whirling Clobber",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                }
+            ]
+        },
+        "Reflexive Grapple": {
+            "name": "反射擒抱 Reflexive Grapple",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                }
+            ],
+            "description": "<p>你的反射神经高度发达，在扫中敌人的瞬间就能将其缠住。进行一次扫击打击，如果命中，你立刻尝试@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}目标。两次动作都会计入多重攻击减值，但这一减值直到你完成两次动作之前不会增加。</p>"
+        },
+        "Powerful Lash": {
+            "name": "强力扫击 Powerful Lash",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                }
+            ],
+            "description": "<p>锻炼使你的扫击速度更快，范围更大。你的扫击伤害骰增加到1d6并获得横扫特征。</p>"
+        },
+        "Snap Falling Fruit": {
+            "name": "飞攫落果 Snap Falling Fruit",
+            "prerequisites": [
+                {
+                    "value": "舌击斗士入门"
+                }
+            ],
+            "description": "<p><strong>触发</strong> 你或你扫击触及内的盟友成为物理远程攻击的目标</p>\n<hr />\n<p>你凌空一扫，拦截飞来的射弹。目标获得对抗触发攻击的+2AC环境加值。如果攻击失败，你将射弹凌空打落。</p>"
         }
     },
     "mapping": {
