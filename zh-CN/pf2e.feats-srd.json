@@ -34171,6 +34171,146 @@
                 }
             ],
             "description": "<p><strong>触发</strong> 你或你扫击触及内的盟友成为物理远程攻击的目标</p>\n<hr />\n<p>你凌空一扫，拦截飞来的射弹。目标获得对抗触发攻击的+2AC环境加值。如果攻击失败，你将射弹凌空打落。</p>"
+        },
+        "Rip and Tear": {
+            "description": "<p><strong>需求</strong> 你的上一个动作使用化形或变形效果赋予的无武装打击造成了穿刺或挥砍伤害。</p>\n<hr />\n<p>你学会了像掠食者撕扯猎物一般削弱你的敌人。对相同目标进行一次无武装打击。若此打击命中并造成穿刺或挥砍伤害，目标受到额外@Damage[1d6[persistent,bleed]]伤害。若你的等级达到12级，持续流血伤害提高至@Damage[2d6[persistent,bleed]]。</p>",
+            "name": "撕成碎片 Rip and Tear",
+            "prerequisites": [
+                {
+                    "value": "动物本能或无羁教派"
+                }
+            ]
+        },
+        "Toppling Transformation": {
+            "description": "<p><strong>触发</strong> 你的体型因为一个变形效果而增大。</p>\n<hr />\n<p>你利用自己体型的膨胀，像撬动杠杆一般推离相邻的生物。你尝试@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}或@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{摔绊 Trip}一名邻接生物。使用你在因触发效果变化的最终体型来决定你可以影响的生物体型。</p>",
+            "name": "倾覆变形 Toppling Transformation"
+        },
+        "Defensive Dismissal": {
+            "name": "防御解消 Defensive Dismissal",
+            "description": "<p><strong>触发</strong> 你能感知到的一名生物对你进行打击时造成了重击。</p>\n<p><strong>需求</strong> 你正处于一个可以主动解消的变形效果之下。</p>\n<hr />\n<p>你通过变化形态来规避一次可能致命的重创。你解消所处的变形效果，触发打击变为一次普通命中而非重击。如果你没有合适的空间变回原形，本动作失败且你不会解消变形效果。</p>"
+        },
+        "Too Much to Swallow": {
+            "description": "<p><strong>触发</strong> 一个你可以尝试@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}的效果指定你为目标。</p>\n<hr />\n<p>尽管你的体型可能小到足以被轻易攫抓，但你可以在眨眼之间改变形态，令攻守易势。你施放@UUID[Compendium.pf2e.spells-srd.Item.8RWfKConLYFZpQ9X]{无羁形态 Untamed Form}。如果你新形态的体型对于该效果而言不再适用，你自动逃脱。否则，你可以尝试逃脱。如果在此过程中终止了一个使你进入某生物所处空间的效果，譬如@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.uJSseLa57HZYSMUu]{活吞 Swallow Whole}，你将该生物驱离到邻接于你新形态所处位置的区域中。</p>",
+            "name": "无可吞食 Too Much to Swallow",
+            "prerequisites": [
+                {
+                    "value": "无羁形态"
+                }
+            ]
+        },
+        "Brutal Crush": {
+            "description": "<p><strong>需求</strong> 你的上一个动作使用化形或变形效果赋予的无武装打击造成了钝击伤害。</p>\n<hr />\n<p>你学会了如何使用连续攻击产生的凶残震荡来令敌人头脑陷入一片混沌。对相同目标进行一次无武装打击。若此打击命中并造成钝击伤害，目标在1轮内陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}（重击则提升至@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}）。</p>",
+            "prerequisites": [
+                {
+                    "value": "动物本能或无羁教派"
+                }
+            ],
+            "name": "凶蛮粉碎 Brutal Crush"
+        },
+        "Misty Transformation": {
+            "description": "<p><strong>频率</strong> 每分钟一次</p>\n<p><strong>触发</strong> 你因为一个变形效果而变化形态。</p>\n<hr />\n<p>荒野的迷雾遮蔽住你的形体。你以自己所处方格的一角为中心，创造一片@Template[type:burst|distance:5]的雾霭云。如果你的新形态为大型或更大，则云雾会改为遮蔽你所处的所有方格。区域内的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，且外部的生物对其为隐蔽。云雾持续到你的下回合开始，但会立即被强风驱散。</p>",
+            "name": "迷雾变形 Misty Transformation"
+        },
+        "Explosive Metamorphosis": {
+            "description": "<p>你在变形时注入额外的原能魔力，在变身的同时创造一阵元素能量的爆炸。如果你的下一个动作是施放一个非戏法的化形或变形法术，选择酸蚀，寒冷，电击或火焰。你在变身的同时会以你的新形态为中心创造一阵@Template[type:emanation|distance:5]的冲击，造成该法术每环级1d6所选类型的伤害。区域内的所有生物需要尝试一次对抗你法术DC的基础反射豁免。</p>\n<p>如果你的变形动作具有某一能量类型特征，你必须选择该类型。此动作也会获得相应的能量类型特征。</p>",
+            "name": "爆裂变化 Explosive Metamorphosis"
+        },
+        "Cleansing Transformation": {
+            "description": "<p>你学会了利用你的变形魔法在改变形态的同时洁净肉身中毒素的方法。当你使用治愈变形时，你的变形法术还能尝试反制正影响目标的一个疾病或毒素效果。如果你未能成功反制，你无法在24小时内再对相同苦难效果使用洁净变形。</p>",
+            "name": "洁净变形 Cleansing Transformation",
+            "prerequisites": [
+                {
+                    "value": "治愈变形"
+                }
+            ]
+        },
+        "Towering Transformation": {
+            "description": "<p><strong>触发</strong> 你的体型由于变形效果而增大。</p>\n<hr />\n<p>你在变化后膨胀到令人叹为观止的身躯使敌人心神震颤。在你30尺范围内小于你新体型的每名敌人必须尝试一次@Check[type:will|dc:resolve(@actor.system.attributes.classOrSpellDC.value)]豁免来对抗你的职业DC或法术DC，二者取高。</p>\n<hr />\n<p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>大失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，且你可以将其推离你10尺，这是一种强制移动效果。</p>",
+            "name": "参天变化 Towering Transformation"
+        },
+        "Bestial Snarling": {
+            "description": "<p>你可以通过一阵模仿掠食者的低沉嚎叫来隐晦地传达威胁之意。尝试一次@Check[nature]或@Check[performance]检定，并将结果与每名邻接于你的敌人的意志DC比较。如果你拥有一名动物仆从，譬如一头动物伙伴或召唤动物，则你还可以将结果与所有邻接于你动物仆从的敌人比较。对于每名比较成功的生物而言，其陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}（若其为野兽则改为@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}）。无论结果如何，每名目标都会在10分钟内对你的兽性低吼临时免疫。</p>",
+            "name": "兽性低吼 Bestial Snarling",
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                }
+            ]
+        },
+        "Zoophonic Communication": {
+            "description": "<p>你的研习赋予了你同动物世界进行谈判交涉的能力。你可以使用表演代替交涉技能向动物提出[[/act request skill=performance]]{请求 Request}，视同你们掌握一种共通语言，但这不会赋予你理解动物请求的特殊能力。你也可以使用表演代替自然技能来[[/act command-an-animal skill=performance]]{指挥动物 Command an Animal}。</p>",
+            "name": "天籁之言 Zoophonic Communication",
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                }
+            ]
+        },
+        "Zoophonic Composition": {
+            "description": "<p><strong>需求</strong> 你的上一个动作是施放一个组曲法术。</p>\n<hr />\n<p>当灵感来临时，你可以将传递给动物的信息编织到组曲之中。你维持召唤动物法术或@UUID[Compendium.pf2e.actionspf2e.Item.q9nbyIF0PEBqMtYe]{指挥动物 Command an Animal}。</p>",
+            "name": "天籁组曲 Zoophonic Composition",
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                }
+            ]
+        },
+        "Musical Summons": {
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                }
+            ],
+            "description": "<p>你通过钻研获得了对野兽和魔兽更深层次的理解，使你能够在施放法术的同时将其召唤到自己身边。你施放召唤动物和一个单动作组曲法术。</p>",
+            "name": "音律召唤 Musical Summons"
+        },
+        "Chorus Companion": {
+            "description": "<p>动物不但能成为音乐的主题或听众，更能成为协奏者的一员。你的动物伙伴在表演上受训（若已受训则提升至专家）。当你施放组曲法术时，若你的动物伙伴距离你30尺之内，你能够任选该法术以你自身或你的动物伙伴作为起始点。</p>",
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                },
+                {
+                    "value": "成熟动物伙伴"
+                }
+            ],
+            "name": "谐乐伙伴 Chorus Companion"
+        },
+        "Pack Performance": {
+            "name": "兽群共演 Pack Performance",
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                }
+            ],
+            "description": "<p><strong>触发</strong> 一名生物反制或打断了你的施法。</p>\n<p><strong>需求</strong> 你的动物仆从距离你30尺以内。</p>\n<hr />\n<p>当你与动物齐唱之时，你的歌声会变得更加嘹亮而激越，能够穿破一切障碍阻挠。协助你的动物仆从可以行走并打击触发生物。若此攻击命中，你本次施法不会被反制或打断。</p>"
+        },
+        "Creature Comforts": {
+            "prerequisites": [
+                {
+                    "value": "动物本能或无羁教派"
+                }
+            ],
+            "description": "<p><strong>触发</strong> 你陷入惊惧</p>\n<p><strong>需求</strong> 你正处于化形或变形状态下</p>\n<hr />\n<p>你通过其它生物的形态寻求慰藉，使自己与恐惧之感隔绝开来。你的惊惧状态值降低1（最低为0）。</p>",
+            "name": "生灵抚慰 Creature Comforts"
+        },
+        "Ears of the Forest": {
+            "name": "森林之耳 Ears of the Forest",
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                }
+            ],
+            "description": "<p>你超脱于对自身感官的依赖，随时保持着对附近友好生物的感知以助探明周身环境。当你@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}时，若在所选区域内有任何自愿野兽，你可以借用其感官。若如此做，你可以使用嗅觉与震颤感知作为模糊感官来搜索，GM也可以酌情根据区域内动物的种类选择其它合适感官。</p>"
+        },
+        "Songbird's Call": {
+            "name": "鸣鸟召来 Songbird's Call",
+            "prerequisites": [
+                {
+                    "value": "天籁缪斯"
+                }
+            ],
+            "description": "<p>你用一阵婉转的鸟鸣朝荒野发起呼唤，召来一群飞禽。你学到了@UUID[Compendium.pf2e.spells-srd.Item.CzMCiFbgLj1irnP4]{鸣鸟召来 Songbird's Call}组曲戏法。</p>"
         }
     },
     "mapping": {
