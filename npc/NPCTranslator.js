@@ -1,3 +1,5 @@
+import {CompendiumMapping} from "../babele/script/compendium-mapping.js";
+
 // Register token setting
 Hooks.once("init", () => {
     game.settings.register("pf2e_compendium_chn", "token", {
