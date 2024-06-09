@@ -1,12 +1,12 @@
 Hooks.once("init", () => {
   if (typeof Babele !== "undefined") {
-    Babele.get().register({
+    game.babele.register({
       module: "pf2e_compendium_chn",
       lang: "cn",
       dir: "compendium",
     });
 
-    Babele.get().registerConverters({
+    game.babele.registerConverters({
       "npc-portrait-path": (data, translations, dataObject, translatedCompendium, translationObject) => {
         return game.npcTrans.portrait(data, translations, dataObject, translatedCompendium, translationObject);
       },
