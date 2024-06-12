@@ -1,4 +1,4 @@
-import {CompendiumMapping} from "../babele/script/compendium-mapping.js";
+import {CompendiumMapping} from "../../babele/script/compendium-mapping.js";
 
 // Register token setting
 Hooks.once("init", () => {
