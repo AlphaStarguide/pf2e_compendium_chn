@@ -1,11 +1,11 @@
 # Foundry VTT PF2e 合集包中文化
 ![downloads](https://img.shields.io/github/downloads/AlphaStarguide/pf2e_compendium_chn/total)
 
-**关于V12**
-本模组正在观察PF2社群的主要mod的V12支持进度，在维护者判断V12的环境可以使用后会更新V12支持。
-
 本模组为 FVTT 的 Pathfinder 2e 系统合集包提供了中文翻译。
 **需搭配 [PF2 系统汉化](https://github.com/losyky/pf2e_cn)一同使用以达到完整的汉化效果**。
+
+## 关于V12适配  
+本模组正在观察PF2社群的主要mod的V12支持进度，在维护者判断V12的环境可以使用后会更新V12支持。
 
 ## 安装
 - [x] 模组管理器中，粘贴清单文件地址： [https://raw.githubusercontent.com/AlphaStarguide/pf2e_compendium_chn/main/module.json](https://raw.githubusercontent.com/AlphaStarguide/pf2e_compendium_chn/main/module.json)
