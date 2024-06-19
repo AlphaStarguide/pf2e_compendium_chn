@@ -1,6 +1,9 @@
 # Foundry VTT PF2e 合集包中文化
 ![downloads](https://img.shields.io/github/downloads/AlphaStarguide/pf2e_compendium_chn/total)
 
+**关于V12**
+本模组正在观察PF2社群的主要mod的V12支持进度，在维护者判断V12的环境可以使用后会更新V12支持。
+
 本模组为 FVTT 的 Pathfinder 2e 系统合集包提供了中文翻译。
 **需搭配 [PF2 系统汉化](https://github.com/losyky/pf2e_cn)一同使用以达到完整的汉化效果**。
 
@@ -10,12 +13,9 @@
 - [x] 下载 https://github.com/AlphaStarguide/pf2e_compendium_chn/releases/latest/download/pf2e_compendium_chn.zip 并解压至 `modules/pf2e_compendium_chn` 文件夹下
 
 ## 加入我们/报告bug
-- QQ 频道： https://qun.qq.com/qqweb/qunpro/share?_wv=3&_wwv=128&appChannel=share&inviteCode=3cheK&appChannel=share&businessType=9&from=246610&biz=ka
+- QQ 群： 611584480
 - Discord 服务器： https://discord.gg/7UrkEg634m
 
 ### 如何参与到翻译中
-本项目使用 [Weblate](http://150.109.5.239/projects/pf2/) 进行翻译工作，使用 Weblate 无需拥有任何 Git 使用知识，只需在界面上进行中英对照翻译即可！
+本项目使用 [Weblate](https://weblate.org/) 进行翻译工作，使用 Weblate 无需拥有任何 Git 使用知识，只需在界面上进行中英对照翻译即可！
 
-<a href="http://150.109.5.239/engage/pf2/">
-<img src="http://150.109.5.239/widgets/pf2/-/open-graph.png" alt="翻译状态" />
-</a>
