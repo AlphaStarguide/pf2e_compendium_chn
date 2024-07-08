@@ -5,7 +5,7 @@
             "items": {
                 "Metal Allergy": {
                     "name": "Metal Allergy",
-                    "description": "<p>When a magnegor takes damage from a metal weapon or an effect with the metal trait, it takes 5 additional damage and must succeed at a @Check[type:flat|dc:5] or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. The value of the sickened condition increases each time the magnegor fails such a check, to a maximum of 3.</p>"
+                    "description": "<p>When a magnegor takes damage from a metal weapon or an effect with the metal trait, it takes @Damage[5[untyped]] additional damage and must succeed at a @Check[type:flat|dc:5] or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. The value of the sickened condition increases each time the magnegor fails such a check, to a maximum of 3.</p>"
                 },
                 "Excavating Spines": {
                     "name": "Excavating Spines",
@@ -13,11 +13,11 @@
                 },
                 "Wallow": {
                     "name": "Wallow",
-                    "description": "<p><strong>Requirements</strong> The magnegor is @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p>\n<hr />\n<p><strong>Effect</strong> The magnegor rolls on its spine covered back, up to its Speed, furrowing the earth and crushing any Large or smaller creatures in its path. This deals @Damage[4d10[piercing]] damage with a @Check[type:reflex|dc:24|basic:true] save; on a failed save, a creature wearing metal armor or made of metal is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by the magnegor's magnetized coat (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 24). For each metal object or piece of equipment a restrained creature chooses to leave stuck to the magnegor, it gains a +1 circumstance bonus to its attempts to Escape. A creature that relinquishes all its metal Escapes automatically. The magnegor can move at its full Speed while it has a creature restrained in this way, bringing the creature along.</p>"
+                    "description": "<p><strong>Requirements</strong> The magnegor is @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p>\n<hr />\n<p><strong>Effect</strong> The magnegor rolls on its spine-covered back, up to its Speed, furrowing the earth and crushing any Large or smaller creatures in its path. This deals @Damage[4d10[piercing]] damage with a @Check[type:reflex|dc:24|basic:true] save; on a failed save, a creature wearing metal armor or made of metal is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by the magnegor's magnetized coat (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 24). For each metal object or piece of equipment a restrained creature chooses to leave stuck to the magnegor, it gains a +1 circumstance bonus to its attempts to Escape. A creature that relinquishes all its metal Escapes automatically. The magnegor can move at its full Speed while it has a creature restrained in this way, bringing the creature along.</p>"
                 },
                 "Magnetized Coat": {
                     "name": "Magnetized Coat",
-                    "description": "<p>Magnetized Coat When a magnegor comes within 30 feet of a metal object or a deposit of metal ore, its thousands of wiry hairs stand on end, pointing towards the metal and creating a magnetic field. Metal items of light or negligible Bulk that touch the magnegor's coat adhere to it magnetically, requiring an Interact action to be pried free. Creatures wearing or primarily composed of metal treat all squares in a 10-foot radius around the magnegor as difficult terrain, unless they are moving directly towards it.</p>"
+                    "description": "<p>When a magnegor comes within 30 feet of a metal object or a deposit of metal ore, its thousands of wiry hairs stand on end, pointing towards the metal and creating a magnetic field. Metal items of light or negligible Bulk that touch the magnegor's coat adhere to it magnetically, requiring an Interact action to be pried free. Creatures wearing or primarily composed of metal treat all squares in a 10-foot radius around the magnegor as difficult terrain, unless they are moving directly towards it.</p>"
                 }
             },
             "prototypeToken": {
@@ -67,7 +67,7 @@
                 },
                 "Spill": {
                     "name": "Spill",
-                    "description": "<p><strong>Requirements</strong> The flynkett is Kettled Up</p>\n<p><strong>Trigger</strong> The flynkett takes physical damage or is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p>\n<hr />\n<p><strong>Effect</strong> The flynkett spills the contents of its full skin flaps, releasing its digestive juices in a cloud of acidic vapor that deals @Damage[2d8[acid]] damage to all non-flynkett creatures within 20 feet (@Check[type:fortitude|dc:18|basic:true] save). If the flynkett was boiling, the damage is increased to @Damage[4d8[acid]].</p>"
+                    "description": "<p><strong>Requirements</strong> The flynkett is Kettled Up</p>\n<p><strong>Trigger</strong> The flynkett takes physical damage or is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p>\n<hr />\n<p><strong>Effect</strong> The flynkett spills the contents of its full skin flaps, releasing its digestive juices in a cloud of acidic vapor that deals @Damage[2d8[acid]] damage to all non-flynkett creatures within @Template[type:emanation|distance:20]{20 feet} (@Check[type:fortitude|dc:18|basic:true] save). If the flynkett was boiling, the damage is increased to @Damage[4d8[acid]].</p>"
                 }
             },
             "prototypeToken": {
@@ -90,7 +90,7 @@
                 },
                 "Deep Puncture": {
                     "name": "Deep Puncture",
-                    "description": "<p>Creatures critically hit by the fangtooth's bite take an additional @Damage[1d8[bleed]] damage.</p>"
+                    "description": "<p>Creatures critically hit by the fangtooth's bite take an additional 1d8 persistent bleed damage.</p>"
                 },
                 "Sunless Sight": {
                     "name": "Sunless Sight",
@@ -109,10 +109,10 @@
             "items": {
                 "Skymetal Metamorphosis": {
                     "name": "天金蜕变 Skymetal Metamorphosis",
-                    "description": "<p>每条星腑多头蛇至少蜕变一次，会通过吞下一种特定的天金，内化其性质。如果你考虑给予一条星腑多头蛇一种以上的蜕变，则应提高其等级并修改其数据。</p>\n<p><strong>精金</strong> 星腑多头蛇的打击能绕开硬度，并视作为精金。星腑多头蛇获得对物理伤害的抗力10（精金除外）。</p>\n<p><strong>渊铀</strong> （灵光，毒素） 星腑多头蛇以体内的渊铀发出令人作呕辐射的灵光。任何在星腑多头蛇30尺内开始回合的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>血汞</strong> （魔法） 星腑多头蛇对抗魔法时豁免获得+1状态加值。</p>\n<p><strong>虚铅</strong> 星腑多头蛇的打击忽视金属护甲的护甲专精效果带来的伤害抗力，且不会触发盾牌格挡反应动作，或是来自护甲性能符文的反应动作。</p>\n<p><strong>零晶</strong> 星腑多头蛇的打击和能力对有能力施放法术的生物造成的伤害获得+2状态加值。</p>\n<p><strong>山铜</strong> 当星腑多头蛇只剩下两颗头时，它会获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened}状态。它只能用此额外动作进行行走或打击。</p>\n<p><strong>漠石</strong> 星腑多头蛇受到火焰伤害时，它会变得过热，获得免疫火焰，以及对寒冷的弱点10。在处于过热时，寒冷伤害可以用于灼烧断颈。在星腑多头蛇受到寒冷伤害后，它会变得冰冷，获得免疫寒冷，以及对火焰的弱点10。</p>"
+                    "description": "<p>每条星腑多头蛇至少蜕变一次，会通过吞下一种特定的天金，内化其性质。如果你考虑给予一条星腑多头蛇一种以上的蜕变，则应提高其等级并修改其数据。</p>\n<p><strong>@UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.Bds5RP9grJxhZALW]{精金 Adamantine}</strong> 星腑多头蛇的打击能绕开硬度，并视作为精金。星腑多头蛇获得对物理伤害的抗力10（精金除外）。</p>\n<p><strong>@UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.lFRU108HnGlnMwqS]{渊铀Abysium}</strong> （灵光，毒素） 星腑多头蛇以体内的渊铀发出令人作呕辐射的灵光。任何在星腑多头蛇30尺内开始回合的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>@UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.N4l6y6v9pKy8Nj5i]{血汞 Djezet}</strong> （魔法） 星腑多头蛇对抗魔法时豁免获得+1状态加值。</p>\n<p><strong>@UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.5bRdhgghjtWF1Vuu]{虚铅 Inubrix}</strong> 星腑多头蛇的打击忽视金属护甲的护甲专精效果带来的伤害抗力，且不会触发盾牌格挡反应动作，或是来自护甲性能符文的反应动作。</p>\n<p><strong>@UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.sTlptNnUX2eA0DIH]{零晶 Noqual}</strong> 星腑多头蛇的打击和能力对有能力施放法术的生物造成的伤害获得+2状态加值。</p>\n<p><strong>@UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.6Z0v9Tsthm9hyzb3]{山铜 Orichalcum}</strong> 当星腑多头蛇只剩下两颗头时，它会获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened}状态。它只能用此额外动作进行行走或打击。</p>\n<p><strong>@UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.SXJRjw4R8m7NPDGc]{漠石 Siccatite}</strong> 星腑多头蛇受到火焰伤害时，它会变得过热，获得免疫火焰，以及对寒冷的弱点10。在处于过热时，寒冷伤害可以用于灼烧断颈。在星腑多头蛇受到寒冷伤害后，它会变得冰冷，获得免疫寒冷，以及对火焰的弱点10。</p>"
                 },
                 "Head Regrowth": {
-                    "description": "<p>星腑多头蛇初始拥有五颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断多头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。多头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成酸蚀或火焰伤害，灼烧它来阻止其重生。对于单目标的酸蚀或火焰效果必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的酸蚀或火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意酸蚀或火焰伤害，则断颈立即被灼烧。如果五颗头都被灼烧，则多头蛇会死亡。</p>",
+                    "description": "<p>星腑多头蛇初始拥有五颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断多头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。多头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成酸蚀或火焰伤害，灼烧它来阻止其重生。对于单目标的酸蚀或火焰效果必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的酸蚀或火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意酸蚀或火焰伤害，则断颈立即被灼烧。如果五颗头都被灼烧，则多头蛇会死亡。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uZJOdounIHaFDC1t]{效果：多头}</p>",
                     "name": "头部重生 Head Regrowth"
                 },
                 "Reactive Heads": {
@@ -129,15 +129,15 @@
                 },
                 "Hydra Regeneration": {
                     "name": "多头蛇再生 Hydra Regeneration",
-                    "description": "<p>星腑多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次DC 29的强韧检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p>"
+                    "description": "<p>星腑多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次@Check[type:fortitude|immutable:true|dc:29]检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p>"
                 },
                 "Stargut Hydra Heads": {
                     "name": "星腑多头蛇之头 Stargut Hydra Heads",
-                    "description": "<p><strong>HP</strong>(头) 22，头部重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 挥砍10</p>"
+                    "description": "<p><strong>HP</strong> (头)22，头部重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 挥砍10</p>"
                 },
                 "Vomit Meteorites": {
                     "name": "喷吐陨石 Vomit Meteorites",
-                    "description": "<p>星腑多头蛇摇摆整具身体，朝@Template[type:cone|distance:30]范围喷吐陨石块，对区域内所有生物造成@Damage[5d6[bludgeoning]]伤害（@Check[type:reflex|dc:25|basic:true]豁免）。区域内成为困难地形，持续1分钟，不过生物可以使用一个交互动作来清理一格的碎石。星腑多头蛇在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用喷吐陨石。</p>"
+                    "description": "<p>星腑多头蛇摇摆整具身体，朝@Template[type:cone|distance:30]范围喷吐陨石块，对区域内所有生物造成@Damage[5d6[bludgeoning]]伤害（@Check[type:reflex|dc:25|basic:true]豁免）。区域内成为困难地形，持续1分钟，不过生物可以使用一个交互动作来清理一格的碎石。星腑多头蛇在[[/br 1d4 #Recharge Vomit Meteorites]]{1d4轮}内无法再次使用喷吐陨石。</p>"
                 }
             },
             "prototypeToken": {
@@ -155,7 +155,7 @@
             "items": {
                 "Frill Block": {
                     "name": "壳皱格挡 Frill Block",
-                    "description": "<p><strong>需求</strong> 原角龙处于防御姿态</p>\n<p><strong>触发</strong> 一个相邻盟友将要受到物理伤害</p>\n<hr />\n<p><strong>效果</strong> 原角龙用壳皱部分挡下攻击，减少5点伤害。</p>"
+                    "description": "<p><strong>需求</strong> 原角龙处于防御姿态</p>\n<p><strong>触发</strong> 一个相邻盟友将要受到物理伤害</p><hr /><p><strong>效果</strong> 原角龙用壳皱部分挡下攻击，减少5点伤害。</p>"
                 },
                 "Defensive Posture": {
                     "name": "防御姿态 Defensive Posture",
@@ -172,7 +172,7 @@
             "items": {
                 "Dreadful Resonance": {
                     "name": "Dreadful Resonance",
-                    "description": "<p>60 feet. Each creature that enters or starts its turn in the emanation must succeed at a @Check[type:fortitude|dc:36] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} on a critical failure) and take 3d8 sonic damage.</p>"
+                    "description": "<p>60 feet. Each creature that enters or starts its turn in the emanation must succeed at a @Check[type:fortitude|dc:36] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} on a critical failure) and take @Damage[3d8[sonic]] damage.</p>"
                 },
                 "Enthralling Call": {
                     "name": "Enthralling Call",
@@ -188,7 +188,7 @@
                 },
                 "Inexorable": {
                     "name": "Inexorable",
-                    "description": "<p>The rumindrol recovers from the @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, slowed, and stunned conditions at the end of its turn. It's also immune to penalties to its Speeds and the @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} condition, and it ignores difficult terrain and greater difficult terrain.</p>"
+                    "description": "<p>The rumindrol recovers from the @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed}, and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned} conditions at the end of its turn. It's also immune to penalties to its Speeds and the @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} condition, and it ignores difficult terrain and greater difficult terrain.</p>"
                 },
                 "Swallow Whole": {
                     "name": "Swallow Whole",
@@ -200,7 +200,7 @@
                 },
                 "Trample": {
                     "name": "Trample",
-                    "description": "<p>Huge or smaller, Leg, @Check[type:reflex|dc:36|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                    "description": "<p>Huge or smaller, leg, @Check[type:reflex|dc:36|basic:true]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 },
                 "Motion Sense": {
                     "description": "<p>A rumindrol can sense nearby motion through vibration and air movement.</p>",
@@ -215,7 +215,7 @@
             "items": {
                 "Majestic Presence": {
                     "name": "威严气势 Majestic Presence",
-                    "description": "<p>90尺，DC 38。进入灵光范围的超大型或更小体型的生物必须尝试一次@Check[will|dc:38]豁免。无论豁免结果如何，生物都将临时免疫泰坦巨龙的威严气势1小时。</p>\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被泰坦巨龙@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{迷魂 Fascinated}，持续1轮。</p>\n<p><strong>失败</strong> 生物被迷魂2轮。</p>\n<p><strong>大失败</strong> 生物被迷魂1分钟。</p>"
+                    "description": "<p>90尺，DC 38。进入灵光范围的超大型或更小体型的生物必须尝试一次@Check[will|dc:38]豁免。无论豁免结果如何，生物都将临时免疫泰坦巨龙的威严气势1小时。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被泰坦巨龙@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{迷魂 Fascinated}，持续1轮。</p>\n<p><strong>失败</strong> 生物被迷魂2轮。</p>\n<p><strong>大失败</strong> 生物被迷魂1分钟。</p>"
                 },
                 "Trample": {
                     "name": "践踏 Trample",
@@ -243,7 +243,7 @@
             "items": {
                 "Vicious Mauling": {
                     "name": "凶猛撕咬 Vicious Mauling",
-                    "description": "<p>食肉牛龙的颚打击对@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}的目标造成额外@Damage[1d8[bleed]]伤害。</p>"
+                    "description": "<p>食肉牛龙的颚打击对@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}的目标造成额外1d8持续流血伤害。</p>"
                 },
                 "Headbutt": {
                     "name": "头撞 Headbutt",
@@ -251,7 +251,7 @@
                 },
                 "Powerful Charge": {
                     "name": "强力冲锋 Powerful Charge",
-                    "description": "<p>食肉牛龙垂下角，向敌人冲去。它行走两次，然后进行一次角打击。如果它从起始位置开始移动了至少20尺，角打击的伤害会增加到@Damage[(2d12+9)[piercing]]，并且在成功命中时将目标击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                    "description": "<p>食肉牛龙垂下角，向敌人冲去。它行走两次，然后进行一次角打击。如果它从起始位置开始移动了至少20尺，角打击的伤害会增加到2d12+9，并且在成功命中时将目标击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
                 }
             },
             "prototypeToken": {
@@ -278,7 +278,7 @@
                 },
                 "Head Regrowth": {
                     "name": "头部重生 Head Regrowth",
-                    "description": "<p>多头蛇初始拥有10颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断多头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。\n多头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成酸蚀或火焰伤害，灼烧它来阻止其重生。对于单目标的酸蚀或火焰效果必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的酸蚀或火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意酸蚀或火焰伤害，则断颈立即被灼烧。如果10颗头都被灼烧，则多头蛇会死亡。</p>"
+                    "description": "<p>多头蛇初始拥有10颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断多头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。\n多头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成酸蚀或火焰伤害，灼烧它来阻止其重生。对于单目标的酸蚀或火焰效果必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的酸蚀或火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意酸蚀或火焰伤害，则断颈立即被灼烧。如果10颗头都被灼烧，则多头蛇会死亡。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uZJOdounIHaFDC1t]{效果：多头}</p>"
                 },
                 "Reactive Strike": {
                     "name": "反应打击 Reactive Strike",
@@ -290,11 +290,11 @@
                 },
                 "Hydra Regeneration": {
                     "name": "多头蛇再生 Hydra Regeneration",
-                    "description": "<p>多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次@Check[type:fortitude|dc:43]检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p>"
+                    "description": "<p>多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次@Check[type:fortitude|immutable:true|dc:43]检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p>"
                 },
                 "Mocking Chorus Head": {
                     "name": "齐笑魔之头 Mocking Chorus Head",
-                    "description": "<p><strong>HP</strong>(头部) 35，头部重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 挥砍10</p>"
+                    "description": "<p><strong>HP</strong> (头部) 35，头部重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 挥砍10</p>"
                 },
                 "Reactive Heads": {
                     "name": "多头反应 Reactive Heads",
@@ -351,7 +351,7 @@
             "items": {
                 "Focused Reflection": {
                     "name": "Focused Reflection",
-                    "description": "<p><strong>Requirements</strong> The vibrant pup swarm is in bright light</p>\n<hr />\n<p><strong>Effect</strong> The swarm simultaneously turns to focus the light in an arcing beam, dealing @Damage[(6d12)[fire]] damage to all creatures in a @Template[type:cone|distance:30] (@Check[type:reflex|dc:30|basic:true]). A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round (or 1 minute on a critical failure). The swarm can't use Focused Reflection again for [[/br 1d4 #Recharge Focused Reflection]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Requirements</strong> The vibrant pup swarm is in bright light</p><hr /><p><strong>Effect</strong> The swarm simultaneously turns to focus the light in an arcing beam, dealing @Damage[(6d12)[fire]] damage to all creatures in a @Template[type:cone|distance:30] (@Check[type:reflex|dc:30|basic:true] save). A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round (or 1 minute on a critical failure). The swarm can't use Focused Reflection again for [[/br 1d4 #Recharge Focused Reflection]]{1d4 rounds}.</p>"
                 },
                 "Swarming Bites": {
                     "name": "Swarming Bites",
@@ -359,7 +359,7 @@
                 },
                 "Feel No Pain": {
                     "name": "Feel No Pain",
-                    "description": "<p><strong>Trigger</strong> The vibrant pup swarm is critically hit by a Strike;</p>\n<hr />\n<p><strong>Effect</strong> The worker pups become insensitive to pain and leap to the front. The swarm gains 10 temporary Hit Points that last for 1 round.</p>"
+                    "description": "<p><strong>Trigger</strong> The vibrant pup swarm is critically hit by a Strike</p><hr /><p><strong>Effect</strong> The worker pups become insensitive to pain and leap to the front. The swarm gains 10 temporary Hit Points that last for 1 round.</p>"
                 },
                 "Reflective Skin": {
                     "name": "Reflective Skin",
@@ -405,7 +405,7 @@
                 },
                 "Shrieking Slam": {
                     "name": "Shrieking Slam",
-                    "description": "<p>The mjolgat lets out a terrifying screech before bashing its head into the ground. Creatures within 30 feet of the mjolgat must attempt a @Check[type:will|dc:21] save. Regardless of the result of the save, they are then immune to Shrieking Slam.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+                    "description": "<p>The mjolgat lets out a terrifying screech before bashing its head into the ground. Creatures within @Template[type:emanation|distance:30]{30 feet} of the mjolgat must attempt a @Check[type:will|dc:21] save. Regardless of the result of the save, they are then immune to Shrieking Slam.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
                 }
             }
         },
@@ -419,7 +419,7 @@
             "items": {
                 "All Are One": {
                     "name": "众成一 All Are One",
-                    "description": "<p><strong>频率</strong> 每回合一次</p>\n<hr />\n<p><strong>效果</strong> 守望者吸引能扩大其影响力的有机物。生物光大漩涡的范围和其触手触手打击的触及范围提高10尺，持续1分钟，最高到额外30尺。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Rs64h4dLbYVWvFJe]{效果: 众成一}</p>"
+                    "description": "<p><strong>频率</strong> 每回合一次</p><hr /><p><strong>效果</strong> 守望者吸引能扩大其影响力的有机物。生物光大漩涡的范围和其触手触手打击的触及范围提高10尺，持续1分钟，最高到额外30尺。</p>"
                 },
                 "Arctic Embrace": {
                     "name": "极地之拥 Arctic Embrace",
@@ -431,7 +431,7 @@
                 },
                 "I Am The Tide": {
                     "name": "吾既潮汐 I Am The Tide",
-                    "description": "<p>守望者创造出三道线形的湍急水流，每道宽10尺，长120尺。区域内的生物受到@Damage[18d8[bludgeoning]]伤害（@Check[type:fortitude|dc:45|basic:true]豁免）。守望者可以选择推离或拉近，所有在此次豁免中失败的生物朝所选方向移动至多40尺。守望者不能在[[/br 1d4 #Recharge I Am The Tide]]{1d4轮}内再次使用吾即潮汐。</p>"
+                    "description": "<p>守望者创造出三道线形的湍急水流，每道@Template[type:line|distance:120|width:10]{宽10尺，长120尺}。区域内的生物受到@Damage[18d8[bludgeoning]]伤害（@Check[type:fortitude|dc:45|basic:true]豁免）。守望者可以选择推离或拉近，所有在此次豁免中失败的生物朝所选方向移动至多40尺。守望者不能在[[/br 1d4 #Recharge I Am The Tide]]{1d4轮}内再次使用吾即潮汐。</p>"
                 },
                 "Scent (Imprecise) 200 feet": {
                     "name": "灵敏嗅觉 (模糊) 200 尺",
@@ -481,7 +481,7 @@
                 },
                 "Sensitive Echolocation": {
                     "name": "Sensitive Echolocation",
-                    "description": "<p>The morthak can use its hearing as a precise sense with the listed range. If the morthak takes sonic damage beyond its resistance, its senses are overloaded and all creatures are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from it for 1 round.</p>"
+                    "description": "<p>The drthak can use its hearing as a precise sense with the listed range. If the drthak takes sonic damage beyond its resistance, its senses are overloaded and all creatures are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from it for 1 round.</p>"
                 },
                 "Bubble Burst": {
                     "name": "Bubble Burst",
@@ -520,7 +520,7 @@
                 },
                 "Paired Spikes": {
                     "name": "Paired Spikes",
-                    "description": "<p>The barded manticore flings two spikes from their tail, targeting up to two creatures within 20 feet of each other. They make a separate ranged Strike against each creature, which counts as a single Strike for the barded manticore's multiple attack penalty, and the penalty doesn't increase until they've made both Strikes. If the manticore targeted only one creature and hits, that creature takes normal damage for a single spike, but also gains weakness 15 to electricity damage until the spikes are removed with an Interact action.</p>"
+                    "description": "<p>The barded manticore flings two spikes from their tail, targeting up to two creatures within 20 feet of each other. They make a separate ranged Strike against each creature, which counts as a single Strike for the barded manticore's multiple attack penalty, and the penalty doesn't increase until they've made both Strikes. If the manticore targeted only one creature and hits, that creature takes normal damage for a single spike, but also gains weakness 15 to electricity damage until the spikes are removed with an Interact action.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.nW9GbEP1NqFodqE0]{Effect: Paired Spikes}</p>"
                 }
             },
             "data": {
@@ -543,7 +543,7 @@
                 },
                 "Sensitive Echolocation": {
                     "name": "Sensitive Echolocation",
-                    "description": "<p>The morthak can use its hearing as a precise sense with the listed range. If the morthak takes sonic damage beyond its resistance, its senses are overloaded and all creatures are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from it for 1 round.</p>"
+                    "description": "<p>The soniphak can use its hearing as a precise sense with the listed range. If the soniphak takes sonic damage beyond its resistance, its senses are overloaded and all creatures are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from it for 1 round.</p>"
                 },
                 "Disruptive Screech": {
                     "name": "Disruptive Screech",
@@ -571,11 +571,11 @@
                 },
                 "Petrify Vapor": {
                     "name": "Petrify Vapor",
-                    "description": "<p>The stony bat breathes petrifying gas in a 15-foot cone, too thin to harm creatures in the area. However, it petrifies ambient moisture, raining down a cascade of tiny stones onto any creatures in the space directly below the cone. The falling rocks deal @Damage[4d6[bludgeoning]] damage (@Check[type:reflex|dc:20|basic:true]). The stony bat can't use Petrify Vapor again for [[/br 1d4 #Recharge Petrify Vapor]]{1d4 rounds}</p>"
+                    "description": "<p>The stony bat breathes petrifying gas in a @Template[type:cone|distance:15], too thin to harm creatures in the area. However, it petrifies ambient moisture, raining down a cascade of tiny stones onto any creatures in the space directly below the cone. The falling rocks deal @Damage[4d6[bludgeoning]] damage (@Check[type:reflex|dc:20|basic:true]). The stony bat can't use Petrify Vapor again for [[/br 1d4 #Recharge Petrify Vapor]]{1d4 rounds}.</p>"
                 },
                 "Stone Feast": {
                     "name": "Stone Feast",
-                    "description": "<p>The stony bat specifically targets petrified body parts, which it can consume, unlike flesh. The stony bat's jaws deal an extra @Damage[1d6[untyped]] damage against a creature that has been petrified, either partially or completely, and ignore the Hardness of petrified creatures.</p>"
+                    "description": "<p>The stony bat specifically targets petrified body parts, which it can consume, unlike flesh. The stony bat's jaws deal an extra 1d6 damage against a creature that has been petrified, either partially or completely, and ignore the Hardness of petrified creatures.</p>"
                 },
                 "Echolocation": {
                     "name": "Echolocation",
@@ -606,7 +606,7 @@
                 },
                 "Crying Cicada Poison": {
                     "name": "Crying Cicada Poison",
-                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:19]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d6[poison]] damage plus @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[1d6[poison]] damage plus @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[poison]] damage plus slowed 2 and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} (1 round).</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:19]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d6[poison]] damage plus @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} (1 round)</p>\n<p><strong>Stage 2</strong> 1d6 poison damage plus @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[poison]] damage plus slowed 2 and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} (1 round).</p>"
                 },
                 "Sob": {
                     "name": "Sob",
@@ -622,7 +622,7 @@
         "Weremoose": {
             "items": {
                 "Deer Empathy": {
-                    "description": "<p>A weremoose can communicate with deer, including moose</p>",
+                    "description": "<p>A weremoose can communicate with deer, including moose.</p>",
                     "name": "Deer Empathy"
                 },
                 "Cold Adaptation": {
@@ -670,7 +670,7 @@
                 },
                 "Dive-bomb": {
                     "name": "Dive-bomb",
-                    "description": "<p><strong>Requirements</strong> The chaos falcon is Flying</p>\n<hr />\n<p><strong>Effect</strong> The chaos falcon Flies twice straight down. If they reach the ground or a similarly solid object at the end of this movement, their landing shatters that surface into sharp shards and droplets of molten stone deal @Damage[4d6[fire]] and @Damage[3d8[piercing]] damage (@Check[type:reflex|dc:26|basic:true] save) to all other creatures within 20 feet.</p>"
+                    "description": "<p><strong>Requirements</strong> The chaos falcon is Flying</p>\n<hr />\n<p><strong>Effect</strong> The chaos falcon Flies twice straight down. If they reach the ground or a similarly solid object at the end of this movement, their landing shatters that surface into sharp shards and droplets of molten stone deal @Damage[4d6[fire],3d8[piercing]]{4d6 fire and 3d8 piercing} damage (@Check[type:reflex|dc:26|basic:true] save) to all other creatures within @Template[type:emanation|distance:20]{20 feet}.</p>"
                 },
                 "Flash Storm": {
                     "name": "Flash Storm",
@@ -678,7 +678,7 @@
                 },
                 "Storm Nexus": {
                     "name": "Storm Nexus",
-                    "description": "<p>15 feet, @Damage[3d6[fire]], @Check[reflex|dc:26|basic] save. The chaos falcon is surrounded by a cloud of volcanic ash, lightning arcing within the cloud as it glows hot in some areas and collects ice in others. A chaos falcon can change the damage type of this aura to @Damage[3d6[cold]], @Damage[3d6[electricity]], or @Damage[3d6[fire]] as an action, which has the concentrate trait.</p>"
+                    "description": "<p>15 feet, @Damage[3d6[untyped]], @Check[reflex|dc:26|basic] save. The chaos falcon is surrounded by a cloud of volcanic ash, lightning arcing within the cloud as it glows hot in some areas and collects ice in others. A chaos falcon can change the damage type of this aura to cold, electricity, or fire as an action, which has the concentrate trait.</p>"
                 }
             },
             "data": {
@@ -797,19 +797,19 @@
                 },
                 "Prismhydra Heads": {
                     "name": "虹彩多头蛇之头 Prismhydra Heads",
-                    "description": "<p><strong>HP</strong>(头) 36，虹彩头部重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 挥砍15</p>"
+                    "description": "<p><strong>HP</strong> (头) 36，虹彩头部重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 挥砍15</p>"
                 },
                 "Chromatic Explosion": {
                     "name": "混乱爆炸 Chromatic Explosion",
-                    "description": "<p>虹彩多头蛇的头部充满了充满奥术能量。每当虹彩多头蛇成功用唾液打击一个目标，或当一个对手烧灼了虹彩多头蛇的一个头，该对手受到@Damage[6d6[untyped]]与此头部易伤相同类型的伤害（通常为酸蚀，寒冷，火焰，或电击），进行@Check[type:reflex|dc:37|basic:true]豁免。</p>"
+                    "description": "<p>虹彩多头蛇的头部充满了充满奥术能量。每当虹彩多头蛇成功用唾液打击一个目标，或当一个对手烧灼了虹彩多头蛇的一个头，该对手受到6d6与此头部易伤相同类型的伤害（通常为@Damage[6d6[acid]]{酸蚀}，@Damage[6d6[cold]]{寒冷}，@Damage[6d6[fire]]{火焰}或@Damage[6d6[electricity]]{电击}），进行@Check[type:reflex|dc:37|basic:true]豁免。</p>"
                 },
                 "Hydra Regeneration": {
                     "name": "多头蛇再生 Hydra Regeneration",
-                    "description": "<p>多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次@Check[type:fortitude|dc:39]检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p>"
+                    "description": "<p>多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次@Check[type:fortitude|immutable:true|dc:39]检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p>"
                 },
                 "Prismatic Head Regrowth": {
                     "name": "虹彩头部重生 Prismatic Head Regrowth",
-                    "description": "<p>星腑多头蛇初始拥有8颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断多头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。多头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成特定类型伤害，灼烧它来阻止其重生。对于单目标的特定类型伤害必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的酸蚀或火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意特定类型伤害，则断颈立即被灼烧。</p>\n<p>每颗头需要不同伤害类型来灼烧；通常，每两颗头分别容易受到酸蚀，寒冷，电击和火焰伤害，但也可能出现其他组合或更奇特的易伤。当虹彩多头蛇成功重生头部时，所有重新长出的头具有相同的易伤，且必须与虹彩多头蛇某个未被砍断的头的易伤相同。</p>\n<p>如果8颗头都被灼烧，则多头蛇会死亡。</p>"
+                    "description": "<p>星腑多头蛇初始拥有8颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断多头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。多头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成特定类型伤害，灼烧它来阻止其重生。对于单目标的特定类型伤害必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的酸蚀或火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意特定类型伤害，则断颈立即被灼烧。</p>\n<p>每颗头需要不同伤害类型来灼烧；通常，每两颗头分别容易受到酸蚀，寒冷，电击和火焰伤害，但也可能出现其他组合或更奇特的易伤。当虹彩多头蛇成功重生头部时，所有重新长出的头具有相同的易伤，且必须与虹彩多头蛇某个未被砍断的头的易伤相同。</p>\n<p>如果8颗头都被灼烧，则多头蛇会死亡。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uZJOdounIHaFDC1t]{效果：多头}</p>"
                 },
                 "Reactive Heads": {
                     "name": "多头反应 Reactive Heads",
@@ -829,7 +829,7 @@
                 },
                 "Hexdust Wind": {
                     "name": "Hexdust Wind",
-                    "description": "<p>With a few fierce wingbeats, the hexmoth expels magical scale dust in a @Template[type:cone|distance:30]. This deals 10d6 damage of the type to which the hexmoth is immune (DC 23 basic Fortitude save). It can't use Hexdust Wind again for [[/br 1d4 #Recharge Hexdust Wind]]{1d4 rounds}.</p>"
+                    "description": "<p>With a few fierce wingbeats, the hexmoth expels magical scale dust in a @Template[type:cone|distance:30]. This deals @Damage[10d6[untyped]] damage of the type to which the hexmoth is immune (@Check[type:fortitude|dc:23|basic:true] save). It can't use Hexdust Wind again for [[/br 1d4 #Recharge Hexdust Wind]]{1d4 rounds}.</p>"
                 },
                 "Arcanosense": {
                     "name": "Arcanosense",
@@ -870,11 +870,11 @@
                 },
                 "Manticore Venom": {
                     "name": "Manticore Venom",
-                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:32]; Maximum Duration 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[3d8[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 round);</p>\n<p><strong>Stage 2</strong> @Damage[4d8[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[5d8[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3} (1 round)</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:32]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[3d8[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[4d8[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[5d8[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3} (1 round)</p>"
                 },
                 "Scorpion Sting": {
                     "name": "Scorpion Sting",
-                    "description": "<p>The desert manticore Strikes an @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creature with its stinger. The attack injects venom deeply, dealing an additional @Damage[4d8[poison]] damage and giving the target a –2 circumstance penalty to their initial save against the poison.</p>"
+                    "description": "<p>The desert manticore Strikes an @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creature with its stinger. The attack injects venom deeply, dealing an additional 4d8 poison damage and giving the target a –2 circumstance penalty to their initial save against the poison.</p>"
                 }
             },
             "name": "Desert Manticore"
@@ -890,7 +890,7 @@
             "items": {
                 "Forage for Gems": {
                     "name": "Forage for Gems",
-                    "description": "<p>The cave squirrel dives underground in search of gems. The cave squirrel Burrows up to its Speed. It must end its movement back on the surface. During its burrow, it happens upon [[/r 1d4]] cheap gems (such as salt or quartz), which it stuffs in its cheeks, up to its maximum of 6.</p>"
+                    "description": "<p>The cave squirrel dives underground in search of gems. The cave squirrel Burrows up to its Speed. It must end its movement back on the surface. During its burrow, it happens upon [[/br 1d4 #Gems]] cheap gems (such as salt or quartz), which it stuffs in its cheeks, up to its maximum of 6.</p>"
                 },
                 "Studded Cheeks": {
                     "name": "Studded Cheeks",
@@ -910,7 +910,7 @@
                 },
                 "Screaming Force": {
                     "name": "Screaming Force",
-                    "description": "<p>The cave squirrel lets out a terrible scream. Non–cave squirrel creatures within 30 feet must succeed at a @Check[type:fortitude|dc:22] save or take @Damage[2d10[sonic]] damage. On a critical failure, a creature is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute. The cave squirrel can't use Screaming Force again for [[/br 1d4 #Recharge Screaming Force]]{1d4 rounds}.</p>"
+                    "description": "<p>The cave squirrel lets out a terrible scream. Non–cave squirrel creatures within @Template[type:emanation|distance:30]{30 feet} must succeed at a @Check[type:fortitude|dc:22] save or take @Damage[2d10[sonic]] damage. On a critical failure, a creature is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute. The cave squirrel can't use Screaming Force again for [[/br 1d4 #Recharge Screaming Force]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -965,7 +965,7 @@
                 },
                 "Whisker Sense": {
                     "name": "Whisker Sense",
-                    "description": "<p>A leopard seal can use its whiskers to sense vibrations as a precise sense at the listed range, but only underwater</p>"
+                    "description": "<p>A leopard seal can use its whiskers to sense vibrations as a precise sense at the listed range, but only underwater.</p>"
                 },
                 "Aquatic Ambush": {
                     "name": "Aquatic Ambush",
@@ -973,7 +973,7 @@
                 },
                 "Predatory Slam": {
                     "name": "Predatory Slam",
-                    "description": "<p><strong>Requirements</strong> The leopard seal is in water</p>\n<hr />\n<p><strong>Effect</strong> The leopard seal travels up to 40 feet, ending its movement on land. Enemies adjacent to the leopard seal when it ends its movement take 2d10 bludgeoning damage (@Check[type:reflex|dc:21|basic:true] save) and are knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} on a failure.</p>"
+                    "description": "<p><strong>Requirements</strong> The leopard seal is in water</p>\n<hr />\n<p><strong>Effect</strong> The leopard seal travels up to 40 feet, ending its movement on land. Enemies adjacent to the leopard seal when it ends its movement take @Damage[2d10[bludgeoning]] damage (@Check[type:reflex|dc:21|basic:true] save) and are knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} on a failure.</p>"
                 }
             },
             "prototypeToken": {
@@ -991,7 +991,7 @@
             "items": {
                 "Static Field": {
                     "name": "Static Field",
-                    "description": "<p>The storm snake gathers all static electricity in the area before releasing it in a @Template[type:emanation|distance:30] that deals @Damage[3d12[electricity]] damage to all non-plant creatures (@Check[type:reflex|dc:19] save) and grants plant creatures 5 temporary Hit Points that last for 1 minute. Plant life in the area begins to grow significantly faster than the average for plants of their genus; in forests, fields, or otherwise floral locations, this immediately transforms the area into non-magical difficult terrain. The storm snake can't use Static field again for [[/br 1d4 #Recharge Static field]]{1d4 rounds}.</p>"
+                    "description": "<p>The storm snake gathers all static electricity in the area before releasing it in a @Template[type:emanation|distance:30] that deals @Damage[3d12[electricity]] damage to all non-plant creatures (@Check[type:reflex|dc:19] save) and grants plant creatures 5 temporary Hit Points that last for 1 minute. Plant life in the area begins to grow significantly faster than the average for plants of their genus; in forests, fields, or otherwise floral locations, this immediately transforms the area into non-magical difficult terrain. The storm snake can't use Static field again for [[/br 1d4 #Recharge Static Field]]{1d4 rounds}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.MGlENdqYCAwBkyXt]{Effect: Static Field}</p>"
                 },
                 "Static Shock": {
                     "name": "Static Shock",
@@ -1015,11 +1015,11 @@
                 },
                 "Blood Scent": {
                     "name": "Blood Scent",
-                    "description": "<p>The Helicoprion can smell blood in the water from up to 1 mile away</p>"
+                    "description": "<p>The helicoprion can smell blood in the water from up to 1 mile away.</p>"
                 },
                 "Deshell": {
                     "name": "Deshell",
-                    "description": "<p><strong>Requirements</strong> A creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} in the helicoprion's jaws;</p>\n<hr />\n<p><strong>Effect</strong> The shark rips into the creature dealing @Damage[3d10[slashing]] damage (@Check[type:reflex|dc:26|basic:true] save).</p>"
+                    "description": "<p><strong>Requirements</strong> A creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} in the helicoprion's jaws</p>\n<hr />\n<p><strong>Effect</strong> The shark rips into the creature dealing @Damage[3d10[slashing]] damage (@Check[type:reflex|dc:26|basic:true] save).</p>"
                 }
             },
             "prototypeToken": {
@@ -1056,7 +1056,7 @@
                 },
                 "Stone Tunnel": {
                     "name": "Stone Tunnel",
-                    "description": "<p>When a plated python burrows through ground, it petrifies and destroys the material in front of it, leaving a 5-foot diameter tunnel in its wake. A plated python doesn't need to Squeeze to pass through any space at least that wide.</p>"
+                    "description": "<p>When a plated python burrows through ground, it petrifies and destroys the material in front of it, leaving a 5-foot diameter tunnel in its wake. A plated python doesn't need to @UUID[Compendium.pf2e.actionspf2e.Item.kMcV8e5EZUxa6evt]{Squeeze} to pass through any space at least that wide.</p>"
                 },
                 "Swallow Whole": {
                     "name": "Swallow Whole",
@@ -1100,7 +1100,7 @@
                 },
                 "Spell Mimicry": {
                     "name": "Spell Mimicry",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> A creature Casts a Spell of 3rd rank or lower since the end of the virtuosic lyrebird' s last turn, and the virtuosic lyrebird heard the incantation for the spell;</p>\n<hr />\n<p><strong>Effect</strong> The virtuosic lyrebird learns the spell enough to mimic and cast it this turn, using as many actions as the original spell took.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> A creature Casts a Spell of 3rd rank or lower since the end of the virtuosic lyrebird' s last turn, and the virtuosic lyrebird heard the incantation for the spell</p><hr /><p><strong>Effect</strong> The virtuosic lyrebird learns the spell enough to mimic and cast it this turn, using as many actions as the original spell took.</p>"
                 },
                 "Spellsong Casting": {
                     "name": "Spellsong Casting",
@@ -1154,7 +1154,7 @@
                 },
                 "Coppermouth Venom": {
                     "name": "Coppermouth Venom",
-                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:25];</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d6[poison]] and @Damage[1d6[electricity]] (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[poison]] and @Damage[1d6[electricity]] electricity and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[poison]] and @Damage[2d6[electricity]] electricity and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2}</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:25]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d6[poison],1d6[electricity]]{1d6 poison and 1d6 electricity} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[poison],1d6[electricity]]{2d6 poison and 1d6 electricity} and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[poison],2d6[electricity]]{2d6 poison and 2d6 electricity} and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2}</p>"
                 },
                 "Deep Breath": {
                     "name": "Deep Breath",
@@ -1192,7 +1192,7 @@
                 },
                 "Three-Headed": {
                     "name": "Three-Headed",
-                    "description": "<p>Any ability that would sever a greater chimera's head (such as a critical hit with a vorpal weapon) severs one head at random. Losing a head doesn't kill a chimera (as long as it has at least one head left), but it does prevent it from making Strikes with the lost head or using any abilities granted by the head.</p>"
+                    "description": "<p>Any ability that would sever a greater chimera's head (such as a critical hit with a @UUID[Compendium.pf2e.equipment-srd.Item.6xaxxKfvXED6LfIY]{Vorpal} weapon) severs one head at random. Losing a head doesn't kill a chimera (as long as it has at least one head left), but it does prevent it from making Strikes with the lost head or using any abilities granted by the head.</p>"
                 }
             },
             "data": {
@@ -1214,7 +1214,7 @@
                 },
                 "Crowned Royalty": {
                     "name": "戴冠皇室 Crowned Royalty",
-                    "description": "<p>皇冠蛇怪的皇冠牢固地附着在其头上，但可以像持有的物品一样被卸除。失去皇冠之后，皇冠蛇怪对毒素的掌控会被削弱，失去其毒雾遮蔽能力。皇冠蛇怪可以通过交互动作，装备一顶在其尾巴触及范围内的皇冠。皇冠蛇怪的皇冠通常由铁制成，可以使其使用毒雾遮蔽能力，但由其他更奇异材料制成的皇冠可能赋予不同的能力。</p>"
+                    "description": "<p>皇冠蛇怪的皇冠牢固地附着在其头上，但可以像持有的物品一样被@UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]。失去皇冠之后，皇冠蛇怪对毒素的掌控会被削弱，失去其毒雾遮蔽能力。皇冠蛇怪可以通过交互动作，装备一顶在其尾巴触及范围内的皇冠。皇冠蛇怪的皇冠通常由铁制成，可以使其使用毒雾遮蔽能力，但由其他更奇异材料制成的皇冠可能赋予不同的能力。</p>"
                 },
                 "Miasmatic Shroud": {
                     "name": "毒雾遮蔽 Miasmatic Shroud",
@@ -1226,11 +1226,11 @@
                 },
                 "Royal Basilisk Venom": {
                     "name": "皇冠蛇怪毒液 Royal Basilisk Venom",
-                    "description": "<p><strong>豁免检定</strong> DC 36</p>\n<p><strong>最大持续</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d10[poison]]和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[3d10[poison]]和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3} (1轮)</p>\n<p><strong>阶段3</strong> @Damage[4d10[poison]]、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3}和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1轮)</p>"
+                    "description": "<p><strong>豁免检定</strong> DC 36</p>\n<p><strong>最大持续</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d10[poison]]和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[3d10[poison]]和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3} (1轮)</p>\n<p><strong>阶段3</strong> @Damage[4d10[poison]]、笨拙3和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1轮)</p>"
                 },
                 "Stone-Hewing Spit": {
                     "name": "破石吐息 Stone-Hewing Spit",
-                    "description": "<p>皇冠蛇怪以巨大的力量喷出其毒液，对@Template[type:line|distance:240]范围内的生物造成@Damage[5d10[acid]]和@Damage[5d8[piercing]]伤害（@Check[type:reflex|dc:32|basic:true]豁免），并使每个受伤的生物暴露于皇冠蛇怪毒液之中。该直线攻击能穿透硬度小于20的障碍物，无视其提供的任何掩蔽带来的好处。皇冠蛇怪在[[/br 1d4 #Recharge Stone-Hewing Spit]]{1d4轮}内不能再次使用破石吐息。</p>"
+                    "description": "<p>皇冠蛇怪以巨大的力量喷出其毒液，对@Template[type:line|distance:240]范围内的生物造成@Damage[5d10[acid],5d8[piercing]]伤害（@Check[type:reflex|dc:32|basic:true]豁免），并使每个受伤的生物暴露于皇冠蛇怪毒液之中。该直线攻击能穿透硬度小于20的障碍物，无视其提供的任何掩蔽带来的好处。皇冠蛇怪在[[/br 1d4 #Recharge Stone-Hewing Spit]]{1d4轮}内不能再次使用破石吐息。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -1267,7 +1267,7 @@
                 },
                 "Goring Charge": {
                     "name": "冲锋刺击 Goring Charge",
-                    "description": "<p>独角兔低下头，向选定的猎物凶猛地冲去。独角兔行走两次。如果它的移动结束时进入了至少一个敌人的近战触及范围内，它对该敌人进行一次角打击。该打击会额外造成@Damage[1d6[persistent,bleed]]伤害。</p>"
+                    "description": "<p>独角兔低下头，向选定的猎物凶猛地冲去。独角兔行走两次。如果它的移动结束时进入了至少一个敌人的近战触及范围内，它对该敌人进行一次角打击。该打击会额外造成1d6持续流血伤害。</p>"
                 },
                 "Into the Earth": {
                     "name": "入土 Into the Earth",
@@ -1290,11 +1290,11 @@
                 },
                 "Startling Roar": {
                     "name": "开场咆哮 Startling Roar",
-                    "description": "<p>当玛君龙使用隐秘掷骰先攻时，它可以用自由动作对30尺内每个生物进行@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{挫败士气 Demoralize}。无论结果如何，每个生物随后都将临时免疫1小时。</p>"
+                    "description": "<p>当玛君龙使用隐秘掷骰先攻时，它可以用自由动作对@Template[type:emanation|distance:30]内每个生物进行@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{挫败士气 Demoralize}。无论结果如何，每个生物随后都将临时免疫1小时。</p>"
                 },
                 "Crack Bones": {
                     "name": "裂骨 Crack Bones",
-                    "description": "<p><strong>需求</strong> 玛君龙用颚@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒获 Grabbed}着一个生物</p>\n<hr />\n<p><strong>效果</strong> 玛君龙对该生物造成@Damage[3d8[bludgeoning]]伤害（@Check[fortitude|dc:24|basic]豁免）。此次豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，直到其生命值完全恢复。</p>"
+                    "description": "<p><strong>需求</strong> 玛君龙用颚@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒获 Grabbed}着一个生物</p><hr /><p><strong>效果</strong> 玛君龙对该生物造成@Damage[3d8[bludgeoning]]伤害（@Check[fortitude|dc:24|basic]豁免）。此次豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，直到其生命值完全恢复。</p>"
                 }
             },
             "publicNotes": "<p>玛君龙以蹲伏的姿势游走，它的姿态非常低，与猎物的视线紧紧相接。与大多数食肉恐龙不同的是，玛君龙主要是一种伏击型掠食者，它耐心地等待猎物来到近前，然后从掩体中冲出，发出一声标志性的吼声发动攻击。</p>"
@@ -1322,7 +1322,7 @@
                 },
                 "Full Bloom": {
                     "name": "完全绽放 Full Bloom",
-                    "description": "<p>绽放守护者鹿角上的花朵绽放，展现其光辉，同时侵蚀宿主。在这种架势下，绽放守护者的攻击额外造成@Damage[2d4[poison]] 伤害和@Damage[5[persistent,poison]]伤害；命中时，目标必须通过@Check[type:fortitude|dc:36]豁免，否则会变得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。只要架势生效，绽放守护者就会受到@Damage[5[persistent,poison]]伤害。</p>"
+                    "description": "<p>绽放守护者鹿角上的花朵绽放，展现其光辉，同时侵蚀宿主。在这种架势下，绽放守护者的攻击额外造成2d4毒素伤害和5持续毒素伤害；命中时，目标必须通过@Check[type:fortitude|dc:36]豁免，否则会变得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。只要架势生效，绽放守护者就会受到@Damage[5[persistent,poison]]伤害。</p>"
                 },
                 "Goring Charge": {
                     "name": "冲刺撞击 Goring Charge",
@@ -1344,15 +1344,15 @@
                 },
                 "Rollout Trample": {
                     "name": "Rollout Trample",
-                    "description": "<p><strong>Requirements</strong> The hooplamander is Wheels Up</p>\n<hr />\n<p><strong>Effect</strong> As @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.UNah0bxXxkcZjxO3]{Trample} (Large or smaller, ridged tail, DC 22), except targets that critically fail their Reflex save are @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}, and the hooplamander Unfurls at the end of its movement.</p>"
+                    "description": "<p><strong>Requirements</strong> The hooplamander is Wheels Up</p>\n<hr />\n<p><strong>Effect</strong> As @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.UNah0bxXxkcZjxO3]{Trample} (Large or smaller, ridged tail, @Check[type:reflex|dc:22|basic:true]), except targets that critically fail their Reflex save are @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}, and the hooplamander Unfurls at the end of its movement.</p>"
                 },
                 "Unfurl": {
                     "name": "Unfurl",
-                    "description": "<p><strong>Requirements</strong> The hooplamander is Wheels Up</p>\n<hr />\n<p><strong>Effect</strong> The hooplamander releases its tail, Leaping up to 20 feet as it exists its wheeled shape and unfurls to land on its four legs.</p>"
+                    "description": "<p><strong>Requirements</strong> The hooplamander is Wheels Up</p>\n<hr />\n<p><strong>Effect</strong> The hooplamander releases its tail, @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leaping} up to 20 feet as it exits its wheeled shape and unfurls to land on its four legs.</p>"
                 },
                 "Wheels Up": {
                     "name": "Wheels Up",
-                    "description": "<p><strong>Requirements</strong> The hooplamander is Unfurled</p>\n<hr />\n<p><strong>Effect</strong> The hooplamander Leaps and then rolls into its wheeled form. Any creature within 5 feet must succeed at a @Check[type:reflex|dc:22] save or be @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} for one round. While it's Wheels Up, the hooplamander can't make Strikes and its Speed increases to 40 feet.</p>"
+                    "description": "<p><strong>Requirements</strong> The hooplamander is Unfurled</p>\n<hr />\n<p><strong>Effect</strong> The hooplamander @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leaps} and then rolls into its wheeled form. Any creature within 5 feet must succeed at a @Check[type:reflex|dc:22] save or be @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} for one round. While it's Wheels Up, the hooplamander can't make Strikes and its Speed increases to 40 feet.</p>"
                 }
             },
             "prototypeToken": {
@@ -1386,11 +1386,11 @@
                 },
                 "Instinctive Teleportation": {
                     "name": "本能传送 Instinctive Teleportation",
-                    "description": "<p><strong>触发</strong> 斯戎暴龙受到来自圣洁效果的伤害</p>\n<hr />\n<p><strong>效果</strong> 斯戎暴龙带着任何被它活吞的生物，传送到它能看见的60尺内的一处开放空间内。</p>"
+                    "description": "<p><strong>触发</strong> 斯戎暴龙受到来自圣洁效果的伤害</p><hr /><p><strong>效果</strong> 斯戎暴龙带着任何被它活吞的生物，传送到它能看见的60尺内的一处开放空间内。</p>"
                 },
                 "Hellfire Blast": {
                     "name": "狱火爆 Hellfire Blast",
-                    "description": "<p>斯戎暴龙以三种方式之一引导硫磺狱火。斯戎暴龙选择一种效果，但不能连续两轮做出相同的选择。</p>\n<ul>\n<li><strong>炎炎烈日 Blistering Sun</strong> （神术，火，邪秽） 斯戎暴龙在两角间燃起一团狱火球，能够向@Template[type:emanation|distance:30]范围辐射热量，造成@Damage[2d8[persistent,fire]]伤害。</li>\n<li><strong>窒息毒烟 Choking Fumes</strong> （神术，毒素，邪秽） 斯戎暴龙突出一道@Template[type:cone|distance:60]的硫磺烟雾，造成@Damage[6d8[poison]]伤害（@Check[type:fortitude|dc:38|basic:true]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</li>\n<li><strong>火焰光束 Fiery Beam</strong> （神术，火，邪秽） 斯戎暴龙的眼中发出一道@Template[type:line|distance:120]的地狱烈焰，造成@Damage[6d10[fire]]伤害（@Check[type:reflex|dc:38|basic:true]豁免）。\n\n</li>\n</ul>"
+                    "description": "<p>斯戎暴龙以三种方式之一引导硫磺狱火。斯戎暴龙选择一种效果，但不能连续两轮做出相同的选择。</p><ul><li><strong>炎炎烈日 Blistering Sun</strong> （神术，火，邪秽） 斯戎暴龙在两角间燃起一团狱火球，能够向@Template[type:emanation|distance:30]范围辐射热量，造成@Damage[2d8[persistent,fire]]伤害。</li><li><strong>窒息毒烟 Choking Fumes</strong> （神术，毒素，邪秽） 斯戎暴龙突出一道@Template[type:cone|distance:60]的硫磺烟雾，造成@Damage[6d8[poison]]伤害（@Check[type:fortitude|dc:38|traits:divine,poison,unholy|basic:true]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</li><li><strong>火焰光束 Fiery Beam</strong> （神术，火，邪秽） 斯戎暴龙的眼中发出一道@Template[type:line|distance:120]的地狱烈焰，造成@Damage[6d10[fire]]伤害（@Check[type:reflex|dc:38|traits:divine,fire,unholy|basic:true]豁免）。</li></ul>"
                 }
             }
         },
@@ -1409,7 +1409,7 @@
                     "description": "<p>风、降雨和云不会阻挡守望者的视觉；她忽略风暴、雾、降雨和类似状况带来的@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}状态。</p>"
                 },
                 "Song of the Skies": {
-                    "description": "<p>守望者发出欢快的鸟鸣，为60尺范围内的所有盟友带来恩惠，并唤起飞行的自由。在接下来的1分钟内，受影响的盟友获得@UUID[Compendium.pf2e.spells-srd.Item.aqRYNoSvxsVfqglH]{行动无碍 Unfettered Movement}，60尺飞行速度，并且在他们处于空中时将所有位于地面的生物视作@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.dZDpfgU63rXbBHpe]{效果: 天空之歌}</p>",
+                    "description": "<p>守望者发出欢快的鸟鸣，为@Template[type:emanation|distance:60]内的所有盟友带来恩惠，并唤起飞行的自由。在接下来的1分钟内，受影响的盟友获得@UUID[Compendium.pf2e.spells-srd.Item.aqRYNoSvxsVfqglH]{行动无碍 Unfettered Movement}，60尺飞行速度，并且在他们处于空中时将所有位于地面的生物视作@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.dZDpfgU63rXbBHpe]{效果: 天空之歌}</p>",
                     "name": "天空之歌 Song of the Skies"
                 },
                 "Tempest Downdrafts": {
@@ -1418,7 +1418,7 @@
                 },
                 "Crystal Exhalation": {
                     "name": "冰晶呼吸 Crystal Exhalation",
-                    "description": "<p>守望者吐息，形成冰晶风暴。@Template[type:cone|distance:60]范围内所有生物受到@Damage[4d8[cold]]伤害和@Damage[4d8[slashing]]伤害（@Check[type:reflex|dc:44|basic:true]豁免）。大失败时，生物还将被冰@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}。守望者不能在[[/br 1d4 #rounds]]{1d4轮}内再次使用冰晶呼吸。</p>"
+                    "description": "<p>守望者吐息，形成冰晶风暴。@Template[type:cone|distance:60]范围内所有生物受到@Damage[4d8[cold],4d8[slashing]]伤害（@Check[type:reflex|dc:44|basic:true]豁免）。大失败时，生物还将被冰@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}。守望者不能在[[/br 1d4 #Recharge Crystal Exhalation]]{1d4轮}内再次使用冰晶呼吸。</p>"
                 },
                 "Orogenesis Dive": {
                     "name": "造山俯冲 Orogenesis Dive",
@@ -1449,15 +1449,15 @@
                 },
                 "Bury Beneath Stone": {
                     "name": "葬于岩底 Bury Beneath Stone",
-                    "description": "<p><strong>需求</strong> 守望者@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒获 Grabbed}一个生物；</p>\n<hr />\n<p><strong>效果</strong> 守望者尝试将受擒于其虫颚的生物楔入它下方打开的地缝中。守望者尝试一次运动检定对抗受擒生物的反射DC。如果成功，它将该生物埋于地里。生物受到@Damage[10d10[bludgeoning]]伤害。它还将陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，且必须屏住呼吸否则将开始窒息，直到其逃脱（DC 42）。如果生物在回合结束时仍然被埋葬，它受到@Damage[5d10[bludgeoning]]伤害。</p>"
+                    "description": "<p><strong>需求</strong> 守望者@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒获 Grabbed}一个生物；</p><hr /><p><strong>效果</strong> 守望者尝试将受擒于其虫颚的生物楔入它下方打开的地缝中。守望者尝试一次@Check[type:athletics|defense:reflex]检定对抗受擒生物的反射DC。如果成功，它将该生物埋于地里。生物受到@Damage[10d10[bludgeoning]]伤害。它还将陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，且必须屏住呼吸否则将开始窒息，直到其@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]（DC 42）。如果生物在回合结束时仍然被埋葬，它受到@Damage[5d10[bludgeoning]]伤害。</p>"
                 },
                 "Called to Depths": {
                     "name": "唤至深穴 Called to Depths",
-                    "description": "<p>深穴呼唤着守望者，尤其是在它在空中移动时。当它@UUID[Compendium.pf2e.actionspf2e.Item.JUvAvruz7yRQXfz2]{跳远 Long Jump}时，它可以使用任何跳远未用完的移动来进行掘地移动。此外，守望者可以掘地穿越任何泥土物质，包括岩石。当它如此做时，它以全额掘地速度移动。</p>"
+                    "description": "<p>深穴呼唤着守望者，尤其是在它在空中移动时。当它@UUID[Compendium.pf2e.actionspf2e.Item.JUvAvruz7yRQXfz2]{跳远 Long Jump}时，它可以使用任何跳远未用完的移动来进行@UUID[Compendium.pf2e.actionspf2e.Item.H6v1VgowHaKHnVlG]移动。此外，守望者可以掘地穿越任何泥土物质，包括岩石。当它如此做时，它以全额掘地速度移动。</p>"
                 },
                 "Erupting Jump": {
                     "name": "爆发跳跃 Erupting Jump",
-                    "description": "<p>守望者引出一股熔岩，然后随着其冷却跳跃降下一大团凝固重物。守望者跳跃至多其两倍速度。当它着陆时，冲击力会对@Template[type:emanation|distance:15]范围内的所有生物造成@Damage[6d12[bludgeoning]]伤害，进行@Check[type:fortitude|dc:42|basic:true]豁免。大失败时，生物还将被推离守望者10尺远。</p>"
+                    "description": "<p>守望者引出一股熔岩，然后随着其冷却跳跃降下一大团凝固重物。守望者@UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]至多其两倍速度。当它着陆时，冲击力会对@Template[type:emanation|distance:15]范围内的所有生物造成@Damage[6d12[bludgeoning]]伤害，进行@Check[type:fortitude|dc:42|basic:true]豁免。大失败时，生物还将被推离守望者10尺远。</p>"
                 },
                 "Wall Cling": {
                     "name": "攀墙 Wall Cling",
@@ -1512,7 +1512,7 @@
                 },
                 "Telepathic Link": {
                     "name": "Telepathic Link",
-                    "description": "<p>A rider who would tame a shotalashu for a mount must first form a telepathic link with it. Establishing this link require spending a week with the desired mount and succeeding at a @Check[type:occultism|dc:21] check. Any creature with telepathic capabilities, such as telepathy, touch telepathy, empathic sense, or the ability to cast spells such as telepathy, gains a +4 circumstance bonus to this check. This link remains and neither can form a new link until one member dies. The shock of a partner dying leaves the survivor @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 24 hours and prevents forming a new link for at least a month.</p>"
+                    "description": "<p>A rider who would tame a shotalashu for a mount must first form a telepathic link with it. Establishing this link require spending a week with the desired mount and succeeding at a @Check[type:occultism|dc:21] check. Any creature with telepathic capabilities, such as telepathy, touch telepathy, empathic sense, or the ability to cast spells such as @UUID[Compendium.pf2e.spells-srd.Item.HqTI6wRrck1YXp3F]{Telepathy}, gains a +4 circumstance bonus to this check. This link remains and neither can form a new link until one member dies. The shock of a partner dying leaves the survivor @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 24 hours and prevents forming a new link for at least a month.</p>"
                 },
                 "Telepathic Pounce": {
                     "name": "Telepathic Pounce",
@@ -1525,10 +1525,10 @@
             "items": {
                 "Razor-Edged Flight": {
                     "name": "利刃飞行 Razor-Edged Flight",
-                    "description": "<p>腾云狮鹫猛烈地向前滑翔，飞行两次。它可以在移动过程中任意位置对至多两个不同的目标进行一次翅膀打击；如果其中有打击重击，目标还将受到@Damage[2d6[persistent,bleed]]伤害。</p>"
+                    "description": "<p>腾云狮鹫猛烈地向前滑翔，飞行两次。它可以在移动过程中任意位置对至多两个不同的目标进行一次翅膀打击；如果其中有打击重击，目标还将受到2d6持续流血伤害。</p>"
                 },
                 "Terrifying Screech": {
-                    "description": "<p>腾云狮鹫发出可怕的叫声，让猎物感到恐惧。100尺内的每个生物必须尝试一次@Check[type:will|dc:30]豁免。无论结果如何，生物都将临时免疫1分钟。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物陷入惊惧2，且@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{逃跑 Fleeing}1轮。</p>",
+                    "description": "<p>腾云狮鹫发出可怕的叫声，让猎物感到恐惧。@Template[type:emanation|distance:100]内的每个生物必须尝试一次@Check[type:will|dc:30]豁免。无论结果如何，生物都将临时免疫1分钟。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物陷入惊惧2，且@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{逃跑 Fleeing}1轮。</p>",
                     "name": "恐惧尖嚣 Terrifying Screech"
                 },
                 "Disembowel": {
@@ -1664,7 +1664,7 @@
                 },
                 "Swallow Whole": {
                     "name": "Swallow Whole",
-                    "description": "<p>Large, @Damage[(2d10+9)[force],(2d10)[fire]], Rupture 32</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                    "description": "<p>Large, @Damage[(2d10+9)[force],(2d10)[fire]]{2d10+9 force and 2d10 fire}, Rupture 32</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 },
                 "Unleash the Sun": {
                     "name": "Unleash the Sun",
@@ -1718,7 +1718,7 @@
                 },
                 "Mimicry": {
                     "name": "仿声 Mimicry",
-                    "description": "<p>伤齿龙可以重复至多12个上周听到的单词。如果它对成功通过一次对抗听众察觉DC的欺骗检定，则声音与原声无异。伤齿龙无法复制基于声音的能力或法术，尽管它可以模仿法术的声音。</p>"
+                    "description": "<p>伤齿龙可以重复至多12个上周听到的单词。如果它对成功通过一次对抗听众察觉DC的@Check[type:deception|defense:perception]检定，则声音与原声无异。伤齿龙无法复制基于声音的能力或法术，尽管它可以模仿法术的声音。</p>"
                 }
             },
             "data": {
@@ -1750,7 +1750,7 @@
                 },
                 "Static Cling": {
                     "name": "Static Cling",
-                    "description": "<p>If the gecko hits Small or smaller creature with its tongue, and the target is made of metal or is wearing metallic armor, the gecko's tongue latches on to the creature. The creature must attempt a @Check[type:reflex|dc:17] save or become @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}. While the gecko is Grabbing a creature in this way, it can attempt an Athletics check against the target's Fortitude DC to pull the creature to a space adjacent to the gecko. A creature grabbed in this way can @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} normally.</p>"
+                    "description": "<p>If the gecko hits Small or smaller creature with its tongue, and the target is made of metal or is wearing metallic armor, the gecko's tongue latches on to the creature. The creature must attempt a @Check[type:reflex|dc:17] save or become @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}. While the gecko is Grabbing a creature in this way, it can attempt an @Check[type:athletics|defense:fortitude] check against the target's Fortitude DC to pull the creature to a space adjacent to the gecko. A creature grabbed in this way can @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} normally.</p>"
                 }
             },
             "prototypeToken": {
@@ -1783,7 +1783,7 @@
                 },
                 "Wild Empathy": {
                     "name": "荒野共情 Wild Empathy",
-                    "description": "<p>天角兽能与自然界的生物共感。天角兽可以使用交涉来对动物建立印象，并可以对它们提出简单的请求。</p>"
+                    "description": "<p>天角兽能与自然界的生物共感。天角兽可以使用交涉来对动物@UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]，并可以对它们@UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]。</p>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
@@ -1832,7 +1832,7 @@
             "items": {
                 "Warm Brain": {
                     "name": "Warm Brain",
-                    "description": "<p><strong>Requirements</strong> The swordfish is in cold water</p>\n<p><strong>Trigger</strong> The swordfish rolls initiative</p>\n<hr />\n<p><strong>Effect</strong> The swordfish Seeks or Swims.</p>"
+                    "description": "<p><strong>Requirements</strong> The swordfish is in cold water</p>\n<p><strong>Trigger</strong> The swordfish rolls initiative</p><hr /><p><strong>Effect</strong> The swordfish @UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{Seeks} or @UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]{Swims}.</p>"
                 },
                 "Fast Sweep": {
                     "name": "Fast Sweep",
@@ -1844,7 +1844,7 @@
             "items": {
                 "Lithe": {
                     "name": "Lithe",
-                    "description": "<p>A holdfast treats any tight space it can barely fit its head in or wider as difficult terrain and doesn't need to Squeeze to move through it.</p>"
+                    "description": "<p>A holdfast treats any tight space it can barely fit its head in or wider as difficult terrain and doesn't need to @UUID[Compendium.pf2e.actionspf2e.Item.kMcV8e5EZUxa6evt]{Squeeze} to move through it.</p>"
                 },
                 "Burst from Below": {
                     "name": "Burst from Below",
@@ -1852,7 +1852,7 @@
                 },
                 "Constrict": {
                     "name": "Constrict",
-                    "description": "<p>@Damage[(2d6+2)[piercing]], @Check[type:fortitude|dc:21|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(2d6+2)[piercing]] plus crush throat, @Check[type:fortitude|dc:21|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
                 "Hold Tight": {
                     "name": "Hold Tight",
@@ -1875,7 +1875,7 @@
             "items": {
                 "Limb Regrowth": {
                     "name": "Limb Regrowth",
-                    "description": "<p>A healthy mammoth land star typically has five limbs. A creature can sever a limb by targeting it and dealing damage equal to the limb's Hit Points. The mammoth land star can regrow a missing limb over the course of 24 hours.</p>"
+                    "description": "<p>A healthy mammoth land star typically has five limbs. A creature can sever a limb by targeting it and dealing damage equal to the limb's Hit Points. The mammoth land star can regrow a missing limb over the course of 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Dby3ecpqPheBrgnT]{Effect: Mammoth Land Star Limbs}</p>"
                 },
                 "Glide": {
                     "name": "Glide",
@@ -1887,7 +1887,7 @@
                 },
                 "Spiny Venom": {
                     "name": "Spiny Venom",
-                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:26];</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> 1d6 poison and @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}</p>\n<p><strong>Stage 2</strong> 2d6 poison and @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}</p>\n<p><strong>Stage 3</strong> 2d8 poison and @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[type:fortitude|dc:26]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d6[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}</p>\n<p><strong>Stage 2</strong> @Damage[2d6[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}</p>\n<p><strong>Stage 3</strong> @Damage[2d8[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}</p>"
                 },
                 "Limbs": {
                     "name": "Limbs",
@@ -1907,7 +1907,7 @@
                 },
                 "Digest": {
                     "name": "Digest",
-                    "description": "<p><strong>Requirements</strong> The mammoth land star has a target @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed};</p>\n<hr />\n<p><strong>Effect</strong> The mammoth land star extrudes its stomach onto its prey and digests it alive. The target takes @Damage[(2d12+6)[acid]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}.</p>"
+                    "description": "<p><strong>Requirements</strong> The mammoth land star has a target @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p><hr /><p><strong>Effect</strong> The mammoth land star extrudes its stomach onto its prey and digests it alive. The target takes @Damage[(2d12+6)[acid]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}.</p>"
                 }
             },
             "prototypeToken": {
@@ -1923,11 +1923,11 @@
             "items": {
                 "Hydra Regeneration": {
                     "name": "多头蛇再生 Hydra Regeneration",
-                    "description": "<p>豁免失败时幻头蛇会长出两颗幻术头颅。</p>\n<p>多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次@Check[type:fortitude|dc:31]检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p>"
+                    "description": "<p>豁免失败时幻头蛇会长出两颗幻术头颅。</p>\n<p>多头蛇拥有等同于3×头部数量的再生。如果多头蛇的身体失去了任意头颅并且余下的断颈还没有被灼烧，多头蛇可以通过再生能力恢复生命值之后尝试一次@Check[type:fortitude|immutable:true|dc:31]检定。如果成功，一个未被灼烧的断颈重新长出两颗头；如果大成功，两个未被灼烧的断颈分别各自长出两颗头。多头蛇长出的头的数量无法超过原本头数量的两倍。多头蛇的再生能力只有在它所有头都被砍断、所有断颈都被灼烧的情况下才会完全失效，此时它会死亡。</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
                 },
                 "Deceptive Regrowth": {
                     "name": "虚幻再生 Deceptive Regrowth",
-                    "description": "<p>幻头蛇初始拥有六颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断幻头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。幻头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成火焰伤害，灼烧它来阻止其重生。对于单目标的火焰效果必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意火焰伤害，或是由寒铁武器造成，则断颈立即被灼烧。如果六颗头都被灼烧，则多头蛇会死亡。</p>"
+                    "description": "<p>幻头蛇初始拥有六颗头。生物可以专门将头作为目标并造成等同于头部生命值的伤害，来切断幻头蛇的一颗头。任何生物的回合结束时，未被完全切断的头部都将恢复全部生命值。幻头蛇可以使用多头蛇再生能力使被切断的头部重新长出。生物可以通过对断颈造成火焰伤害，灼烧它来阻止其重生。对于单目标的火焰效果必须指定灼烧某个特定的断颈，但溅射伤害或影响整个多头蛇占据空间的火焰效果能对所有断颈进行灼烧。如果切断头部的攻击造成任意火焰伤害，或是由寒铁武器造成，则断颈立即被灼烧。如果六颗头都被灼烧，则多头蛇会死亡。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uZJOdounIHaFDC1t]{效果：多头}</p>"
                 },
                 "Reactive Strike": {
                     "name": "反应打击 Reactive Strike",
@@ -1935,11 +1935,11 @@
                 },
                 "Tyrafdir Heads": {
                     "name": "幻头蛇之头 Tyrafdir Heads",
-                    "description": "<p><strong>HP</strong>(头) 30，虚幻重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 寒铁10，挥砍10</p>"
+                    "description": "<p><strong>HP</strong> (头) 30，虚幻重生</p>\n<p><strong>免疫</strong> 区域伤害</p>\n<p><strong>弱点</strong> 寒铁10，挥砍10</p>"
                 },
                 "Noxious Exhalation": {
                     "name": "喷吐毒气 Noxious Exhalation",
-                    "description": "<p>幻头蛇从所有口中喷出毒雾，扩散至@Template[type:emanation|distance:20]范围，对区域内所有生物造成4d10毒素伤害（@Check[type:reflex|dc:24|basic:true]豁免）。任何豁免失败的生物必须尝试一次@Check[type:will|dc:24]豁免，否则会获得心灵弱点10，以及意志豁免承受-1状态减值，持续24小时。幻头蛇在[[/br 1d4 #Recharge Noxious Exhalation]]{1d4轮}内不能再次使用喷吐毒气。</p>"
+                    "description": "<p>幻头蛇从所有口中喷出毒雾，扩散至@Template[type:emanation|distance:20]范围，对区域内所有生物造成@Damage[4d10[poison]]伤害（@Check[type:reflex|dc:24|basic:true]豁免）。任何豁免失败的生物必须尝试一次@Check[type:will|dc:24]豁免，否则会获得心灵弱点10，以及意志豁免承受-1状态减值，持续24小时。幻头蛇在[[/br 1d4 #Recharge Noxious Exhalation]]{1d4轮}内不能再次使用喷吐毒气。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.G1pvduwOVRz4YFUF]{效果：喷吐毒气}</p>"
                 },
                 "All-Around Vision": {
                     "name": "全域视野 All-Around Vision",
@@ -1947,7 +1947,7 @@
                 },
                 "Deceptive Heads": {
                     "name": "虚幻头颅 Deceptive Heads",
-                    "description": "<p>幻头蛇虽然不聪明，但却十分狡猾，它会利用再生头颅的幻术来迷惑干扰对手。当幻头蛇重生头颅的强韧豁免失败，但没有大失败时，它会具现出幻影来模仿重生。这会产生两颗虚幻头颅，其功能与真实的头颅不同。只要存在一颗虚幻头颅，幻头蛇便会获得虚幻之颚打击。任何攻击虚幻头颅或使用@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}动作检查的生物能能够尝试识破幻术（@Check[type:will|dc:27]豁免）。</p>"
+                    "description": "<p>幻头蛇虽然不聪明，但却十分狡猾，它会利用再生头颅的幻术来迷惑干扰对手。当幻头蛇重生头颅的强韧豁免失败，但没有大失败时，它会具现出幻影来模仿重生。这会产生两颗虚幻头颅，其功能与真实的头颅不同。只要存在一颗虚幻头颅，幻头蛇便会获得虚幻之颚打击。任何攻击虚幻头颅或使用@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}动作检查的生物能能够尝试识破幻术（@Check[type:will|dc:27]豁免）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NZ3MrmXkmfQuJp7S]{效果：虚幻头颅}</p>"
                 },
                 "Reactive Heads": {
                     "name": "多头反应 Reactive Heads",
@@ -1975,7 +1975,7 @@
             "items": {
                 "Junk Nest": {
                     "name": "Junk Nest",
-                    "description": "<p>The scroungefeather's nest of sharp metallic junk covers a 15-foot-by 15-foot area. The area is difficult terrain and hazardous terrain to any non-scroungefeather creatures. A creature that moves on the ground through the nest takes @Damage[3[piercing]] damage for each square of the area it moves into. Scroungefeathers can @UUID[Compendium.pf2e.actionspf2e.Item.ust1jJSCZQUhBZIz]{Take Cover} at any point in the nest.</p>"
+                    "description": "<p>The scroungefeather's nest of sharp metallic junk covers a 15-foot-by-15-foot area. The area is difficult terrain and hazardous terrain to any non-scroungefeather creatures. A creature that moves on the ground through the nest takes @Damage[3[piercing]] damage for each square of the area it moves into. Scroungefeathers can @UUID[Compendium.pf2e.actionspf2e.Item.ust1jJSCZQUhBZIz]{Take Cover} at any point in the nest.</p>"
                 },
                 "Tossed Scraps": {
                     "name": "Tossed Scraps",
@@ -1983,7 +1983,7 @@
                 },
                 "Grab Debris": {
                     "name": "Grab Debris",
-                    "description": "<p><strong>Requirements</strong> The scroungefeather is in its nest or another environment rich with debris</p>\n<hr />\n<p><strong>Effect</strong> The scroungefeather uses an Interact action to grab an item with its beak, selected randomly; roll 1d4 to determine the type of debris. The scroungefeather gains access to the listed abilities until it uses Tossed Scraps to discard the debris or until it Releases the debris. The scroungefeather can't use its beak attack while it is using its beak to Grab Debris.</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>d4</th>\n<th>Item</th>\n<th>Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Armor Scrap</td>\n<td>The scroungefeather gains a +2 circumstance bonus to its AC.</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Shattered blade</td>\n<td>The scroungefeather gains a broken blade melee Strike with a +12 attack modifier that deals 2d10+6 slashing damage.</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Unexploded bomb</td>\n<td>When the scroungefeather throws this with Tossed Scraps, all the damage is fire damage, and the bomb also deals 3 fire splash damage.</td>\n</tr>\n<tr>\n<td>4</td>\n<td>Faulty wand</td>\n<td>The scroungefeather gains a magic bolt ranged Strike witha +14 attack modifier that deals 2d6+6 force damage.</td>\n</tr>\n</tbody>\n</table>"
+                    "description": "<p><strong>Requirements</strong> The scroungefeather is in its nest or another environment rich with debris</p><hr /><p><strong>Effect</strong> The scroungefeather uses an Interact action to grab an item with its beak, selected randomly; roll 1d4 to determine the type of debris. The scroungefeather gains access to the listed abilities until it uses Tossed Scraps to discard the debris or until it Releases the debris. The scroungefeather can't use its beak attack while it is using its beak to Grab Debris.</p><table class=\"pf2e\"><thead><tr><th>d4</th><th>Item</th><th>Effect</th></tr></thead><tbody><tr><td>1</td><td>Armor scrap</td><td>The scroungefeather gains a +2 circumstance bonus to its AC.</td></tr><tr><td>2</td><td>Shattered blade</td><td>The scroungefeather gains a broken blade melee Strike with a +12 attack modifier that deals 2d10+6 slashing damage.</td></tr><tr><td>3</td><td>Unexploded bomb</td><td>When the scroungefeather throws this with Tossed Scraps, all the damage is fire damage, and the bomb also deals 3 fire splash damage.</td></tr><tr><td>4</td><td>Faulty wand</td><td>The scroungefeather gains a magic bolt ranged Strike witha +14 attack modifier that deals 2d6+6 force damage.</td></tr></tbody></table>"
                 }
             }
         },
@@ -1998,7 +1998,7 @@
             "items": {
                 "Fearless Rush": {
                     "name": "无畏冲刺 Fearless Rush",
-                    "description": "<p><strong>触发</strong> 犀角兽陷入惊惧状态</p>\n<hr />\n<p><strong>效果</strong> 犀角兽减少自身1点惊惧状态值（最低到0）。犀角兽随后朝一名敌人行走。</p>"
+                    "description": "<p><strong>触发</strong> 犀角兽陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]状态</p>\n<hr />\n<p><strong>效果</strong> 犀角兽减少自身1点惊惧状态值（最低到0）。犀角兽随后朝一名敌人行走。</p>"
                 },
                 "Ghost Touch": {
                     "name": "幽冥 Ghost Touch",
@@ -2050,7 +2050,7 @@
                 },
                 "Fox's Wager": {
                     "name": "狐之赌注 Fox's Wager",
-                    "description": "<p>守望者授予他能看见的一个除他以外的自愿生物一道恩惠，请求该生物承诺使用被授予的来摧毁或根除文明的造物。目标在对由类人生物制造的构装体，物体和建筑的攻击掷骰上获得+1状态加值，在伤害上获得+5状态加值。它还将在对抗类人生物时，在隐秘检定上获得+2状态加值。守望者一次只能授予一份赌注。赌注会在目标被捕获或死亡时结束。</p>"
+                    "description": "<p>守望者授予他能看见的一个除他以外的自愿生物一道恩惠，请求该生物承诺使用被授予的来摧毁或根除文明的造物。目标在对由类人生物制造的构装体，物体和建筑的攻击掷骰上获得+1状态加值，在伤害上获得+5状态加值。它还将在对抗类人生物时，在隐秘检定上获得+2状态加值。守望者一次只能授予一份赌注。赌注会在目标被捕获或死亡时结束。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Hc0BhuLHaldO3vqG]{效果：狐之赌注}</p>"
                 },
                 "Magical Pounce": {
                     "name": "魔法扑击 Magical Pounce",
@@ -2133,7 +2133,7 @@
                 },
                 "Unbalancing Burrow": {
                     "name": "Unbalancing Burrow",
-                    "description": "<p>The hardhead mole Burrows up to 20 feet in a straight line, displacing the earth on the surface. Any creature it passes through takes @Damage[1d6[bludgeoning]] damage (@Check[type:reflex|dc:14|basic:true]). On a failed save, a creature is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. This creates a burrow hole at the beginning and end of the line.</p>"
+                    "description": "<p>The hardhead mole Burrows up to 20 feet in a straight line, displacing the earth on the surface. Any creature it passes through takes @Damage[1d6[bludgeoning]] damage (@Check[type:reflex|dc:14|basic:true] save). On a failed save, a creature is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. This creates a burrow hole at the beginning and end of the line.</p>"
                 }
             }
         },
@@ -2152,7 +2152,7 @@
                 },
                 "Camouflage": {
                     "name": "Camouflage",
-                    "description": "<p>The goblin shark's coloration blends in with the water. It doesn't need cover to attempt to Hide with a Stealth check while underwater</p>"
+                    "description": "<p>The goblin shark's coloration blends in with the water. It doesn't need cover to attempt to @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} with a Stealth check while underwater.</p>"
                 },
                 "Electrolocation": {
                     "name": "Electrolocation",
@@ -2224,7 +2224,7 @@
                 },
                 "Whisker Sense": {
                     "name": "Whisker Sense",
-                    "description": "<p>A harbor seal can use its whiskers to sense vibrations as a precise sense at the listed range, but only underwater</p>"
+                    "description": "<p>A harbor seal can use its whiskers to sense vibrations as a precise sense at the listed range, but only underwater.</p>"
                 },
                 "Aquatic Ambush": {
                     "name": "Aquatic Ambush",
@@ -2255,7 +2255,7 @@
                 },
                 "Terrifying Display": {
                     "name": "Terrifying Display",
-                    "description": "<p>The ghost ape beats their chest in a terrifying display. Creatures within 30 feet must succeed a @Check[type:will|dc:20] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure). While a creature is frightened by this ability, it's @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to the ape. On a success, the creature is temporarily immune for 1 minute.</p>"
+                    "description": "<p>The ghost ape beats their chest in a terrifying display. Creatures within @Template[type:emanation|distance:30]{30 feet} must succeed a @Check[type:will|dc:20] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure). While a creature is frightened by this ability, it's @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to the ape. On a success, the creature is temporarily immune for 1 minute.</p>"
                 }
             },
             "publicNotes": "<p>Ghost apes are reclusive and territorial creatures that usually reveal themselves only when their homes are threatened. Most ghost apes will first attempt to use their imposing presence and natural teleportation to frighten and confuse their foes into fleeing. Ghost apes can speak but aren’t particularly talkative, though they will, on rare occasions,&amp;nbsp;treat with those who approach them with respect. Ghost apes can&amp;nbsp;be powerful allies when motivated by a common cause, although they tend to be suspicious of outsiders, and their trust isn’t easily earned.</p>"
@@ -2274,7 +2274,7 @@
                 },
                 "Cliff Climber": {
                     "name": "Cliff Climber",
-                    "description": "<p>A stony goat can trot across the steepest cliffs. It doesn't need to attempt Climb checks to scale inclines, and it isn't @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} while Climbing an incline. It ignores difficult terrain caused by rocks, rubble, and uneven ground made of earth and stone.</p>"
+                    "description": "<p>A stony goat can trot across the steepest cliffs. It doesn't need to attempt @UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{Climb} checks to scale inclines, and it isn't @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} while Climbing an incline. It ignores difficult terrain caused by rocks, rubble, and uneven ground made of earth and stone.</p>"
                 },
                 "All-Around Vision": {
                     "name": "All-Around Vision",
@@ -2282,15 +2282,15 @@
                 },
                 "Self-Petrify": {
                     "name": "Self-Petrify",
-                    "description": "<p><strong>Trigger</strong> The stony goat gains the frightened condition or takes more than 8 damage in a single hit</p>\n<hr />\n<p><strong>Effect</strong> The stony goat turns to stone in self-defense. It gains the petrified condition for [[/br 1d4 #rounds]]{1d4 rounds}. If the goat is damaged while it's petrified, it immediately heals by that amount by absorbing minerals from its cud, causing its cud to lose value equal to the amount of Hit Points restored (for instance, losing 5 gp worth of value to restore 5 Hit Points); if the goat's cud is reduced to 0 gp, it has the minerals fully drained from it, and the goat won't form more cud until it has eaten a sufficient quantity of rock and slept.</p>"
+                    "description": "<p><strong>Trigger</strong> The stony goat gains the @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened} condition or takes more than 8 damage in a single hit</p>\n<hr />\n<p><strong>Effect</strong> The stony goat turns to stone in self-defense. It gains the @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified} condition for [[/br 1d4 #rounds]]{1d4 rounds}. If the goat is damaged while it's petrified, it immediately heals by that amount by absorbing minerals from its cud, causing its cud to lose value equal to the amount of Hit Points restored (for instance, losing 5 gp worth of value to restore 5 Hit Points); if the goat's cud is reduced to 0 gp, it has the minerals fully drained from it, and the goat won't form more cud until it has eaten a sufficient quantity of rock and slept.</p>"
                 },
                 "Stone Bolt": {
-                    "description": "<p><strong>Trigger</strong> The stony goat loses the petrified condition</p>\n<hr />\n<p><strong>Effect</strong> The stony goat's first instinct is to escape. It Strides with a +20 circumstance bonus to its Speed.</p>",
+                    "description": "<p><strong>Trigger</strong> The stony goat loses the @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified} condition</p>\n<hr />\n<p><strong>Effect</strong> The stony goat's first instinct is to escape. It Strides with a +20 circumstance bonus to its Speed.</p>",
                     "name": "Stone Bolt"
                 },
                 "Overhead Leap": {
                     "name": "Overhead Leap",
-                    "description": "<p>The stony goat Leaps up to 12 feet vertically and 20 feet horizontally; this movement doesn't trigger reactions.</p>"
+                    "description": "<p>The stony goat @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leaps} up to 12 feet vertically and 20 feet horizontally; this movement doesn't trigger reactions.</p>"
                 },
                 "Shove and Run": {
                     "name": "Shove and Run",
@@ -2310,7 +2310,7 @@
             "items": {
                 "Defensive Spines": {
                     "name": "Defensive Spines",
-                    "description": "<p>When a creature moves into a space with one or more stonefish, that creature takes @Damage[1d4[piercing]] damage and is exposed to stonefish venom.</p>"
+                    "description": "<p>When a creature enters the stonefish swarm's space, that creature takes @Damage[1d4[piercing]] damage and is exposed to stonefish swarm venom.</p>"
                 },
                 "Reef Camouflage": {
                     "name": "Reef Camouflage",
@@ -2330,7 +2330,7 @@
             "items": {
                 "Soporific Spores": {
                     "name": "Soporific Spores",
-                    "description": "<p>The sporeback frog shakes the plants and fungi on its back until they emit a cloud of spores in a @Template[type:emanation|distance:20]. All creatures in the area must succeed a @Check[type:fortitude|dc:22] save or become @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 minute (@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 3} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 3} on a critical failure). This ability can't be used again for [[/br 1d4 #Recharge be used]]{1d4 rounds}.</p>"
+                    "description": "<p>The sporeback frog shakes the plants and fungi on its back until they emit a cloud of spores in a @Template[type:emanation|distance:20]. All creatures in the area must succeed a @Check[type:fortitude|dc:22] save or become @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 minute (@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 3} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 3} on a critical failure). This ability can't be used again for [[/br 1d4 #Recharge Soporific Spores]]{1d4 rounds}.</p>"
                 },
                 "Seed Spores": {
                     "name": "Seed Spores",
@@ -2405,7 +2405,7 @@
                 },
                 "Sparking Shell": {
                     "name": "Sparking Shell",
-                    "description": "<p>The lightning turtle withdraws into its shell. This increases its AC to 36, but it can't act except to use Shell Shock or reemerge as a single action. While in its shell, the turtle's Shell Shock deals another @Damage[4d6[electricity]] damage and loses the nonlethal trait.</p>"
+                    "description": "<p>The lightning turtle withdraws into its shell. This increases its AC to 36, but it can't act except to use Shell Shock or reemerge as a single action. While in its shell, the turtle's Shell Shock deals another 4d6 damage and loses the nonlethal trait.</p>"
                 }
             }
         },
