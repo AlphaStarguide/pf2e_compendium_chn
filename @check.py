@@ -3,7 +3,7 @@ import json
 
 def count_at_symbols(value):
     if isinstance(value, str):
-        return value.count('@')
+        return value.count('@Check')
     elif isinstance(value, dict):
         return sum(count_at_symbols(v) for v in value.values())
     elif isinstance(value, list):
@@ -51,6 +51,6 @@ def compare_folders(folder1, folder2, result_file):
 # 使用示例
 folder1 = 'en-US'
 folder2 = 'zh-CN'
-result_file = '@checkouput.txt'
+result_file = '@Checkcheckouput.txt'
 
 compare_folders(folder1, folder2, result_file)
