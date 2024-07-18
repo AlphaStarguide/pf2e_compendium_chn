@@ -112,7 +112,7 @@
                 },
                 "Lifedrinker": {
                     "name": "汲取生命 Lifedrinker",
-                    "description": "<p><strong>触发</strong> 巴洛炎魔杀死一只至少15级的生物。</p>\n<hr />\n<p><strong>效果</strong> 巴洛吸取目标的生命，并且恢复@Damage[(10d8+80)[healing]]生命值。</p>"
+                    "description": "<p><strong>触发</strong> 巴洛炎魔杀死一只至少15级的生物。</p>\n<hr />\n<p><strong>效果</strong> 巴洛吸取目标的生命，并且恢复[[/r (10d8+80)[healing]]]生命值。</p>"
                 },
                 "Whip Reposition": {
                     "name": "鞭子移位 Whip Reposition",
@@ -683,7 +683,7 @@
             "items": {
                 "Burning Grasp": {
                     "name": "燃烧之握 Burning Grasp",
-                    "description": "<p>当火巨灵擒获一个生物时，该生物受到@Damage[2d6[fire]]伤害，并且只要维持@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}状态，该生物每回合结束时都要受到@Damage[2d6[fire]]伤害。</p>"
+                    "description": "<p>当火巨灵擒获一个生物时，该生物受到@Damage[2d6[fire]]伤害，并且只要维持@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}状态，该生物每回合结束时都要受到2d6火焰伤害。</p>"
                 },
                 "Change Size": {
                     "name": "改变体型 Change Size",
@@ -1169,7 +1169,7 @@
                 },
                 "Spray Acid": {
                     "name": "喷射酸液 Spray Acid",
-                    "description": "<p>巢母对@Template[type:cone|distance:60]范围喷射酸液，造成@Damage[8d6[acid]]伤害和@Damage[1d6[persistent,acid]]伤害（@Check[type:reflex|dc:26|basic:true]豁免）。</p>\n<p>巢母在[[/br 1d4 #Recharge spew acid]]{1d4轮}内无法再次喷射酸液。</p>"
+                    "description": "<p>巢母对@Template[type:cone|distance:60]范围喷射酸液，造成@Damage[8d6[acid],1d6[persistent,acid]]伤害（@Check[type:reflex|dc:26|basic:true]豁免）。</p>\n<p>巢母在[[/br 1d4 #Recharge spew acid]]{1d4轮}内无法再次喷射酸液。</p>"
                 },
                 "Tremorsense (Imprecise) 90 feet": {
                     "name": "震颤感知（模糊）90尺 Tremorsense (Imprecise) 90 feet",
@@ -4798,7 +4798,7 @@
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
-                    "description": "<ul>\n<li><strong>蜥蜴 Lizard</strong>\n<ul>\n<li><strong>速度</strong> 20尺</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Jaws]]{啃咬 +8} (灵巧, 娴熟), <strong>伤害</strong> @Damage[(1d8+1)[piercing]]</li>\n</ul>\n</li>\n<li><strong>章鱼 Octopus</strong>\n<ul>\n<li><strong>体型</strong> 小型</li>\n<li><strong>速度</strong> 20尺, 游泳30尺</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Tentacle]]{触手 +8} (娴熟), <strong>伤害</strong> @Damage[(1d8+1)[bludgeoning]]附带 @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{擒获 Grab}</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Beak]]{喙啄 +8} (灵巧, 娴熟), <strong>伤害</strong> [[/r (1d6)[piercing] + (2)[poison] # Beak]]{1d6穿刺+2毒素}</li>\n</ul>\n</li>\n<li><strong>蝎子 Scorpion</strong>\n<ul>\n<li><strong>体型</strong> 小型</li>\n<li><strong>速度</strong> 30尺</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Pincer]]{螯夹 +8} (灵巧, 娴熟), <strong>伤害</strong> @Damage[(1d6+1)[bludgeoning]] 附带@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{擒获 Grab}</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Stinger]]{钉刺 +8} (灵巧, 娴熟), <strong>伤害</strong> [[/r (1d6)[piercing] + (1d4)[poison] # Stinger]]{1d6穿刺+1d4毒素}</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul>\n<li><strong>蜥蜴 Lizard</strong>\n<ul>\n<li><strong>速度</strong> 20尺</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Jaws]]{啃咬 +8} (灵巧, 娴熟), <strong>伤害</strong> @Damage[(1d8+1)[piercing]]</li>\n</ul>\n</li>\n<li><strong>章鱼 Octopus</strong>\n<ul>\n<li><strong>体型</strong> 小型</li>\n<li><strong>速度</strong> 20尺, 游泳30尺</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Tentacle]]{触手 +8} (娴熟), <strong>伤害</strong> @Damage[(1d8+1)[bludgeoning]]附带 @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{擒获 Grab}</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Beak]]{喙啄 +8} (灵巧, 娴熟), <strong>伤害</strong> [[/r (1d6)[piercing] + (2)[poison] # Beak]]{1d6穿刺+2毒素}</li>\n</ul>\n</li>\n<li><strong>蝎子 Scorpion</strong>\n<ul>\n<li><strong>体型</strong> 小型</li>\n<li><strong>速度</strong> 30尺</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Pincer]]{螯夹 +8} (灵巧, 娴熟), <strong>伤害</strong> @Damage[(1d6+1)[bludgeoning]] 附带@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{擒获 Grab}</li>\n<li><strong>近战</strong> <span class=\"action-glyph\">1</span> [[/r 1d20+8 #Stinger]]{钉刺 +8} (灵巧, 娴熟), <strong>伤害</strong> @Damage[1d6[piercing],1d4[poison]]</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Soul Lock": {
                     "name": "魂锁 Soul Lock",
@@ -6543,7 +6543,7 @@
             "items": {
                 "Consume Flesh": {
                     "name": "啃食尸体 Consume Flesh",
-                    "description": "<p><strong>需求</strong> 食尸鬼与刚死亡一小时内的生物尸体相邻</p>\n<hr />\n<p><strong>效果</strong> 食尸鬼吞食一大块尸体并恢复@Damage[1d6[healing]]生命值。</p>\n<p>食尸鬼从每具尸体上只能获取一次生命值恢复。</p>"
+                    "description": "<p><strong>需求</strong> 食尸鬼与刚死亡一小时内的生物尸体相邻</p>\n<hr />\n<p><strong>效果</strong> 食尸鬼吞食一大块尸体并恢复[[/r 1d6[healing]]]生命值。</p>\n<p>食尸鬼从每具尸体上只能获取一次生命值恢复。</p>"
                 },
                 "Ghoul Fever": {
                     "name": "食尸鬼热 Ghoul Fever",
@@ -6611,7 +6611,7 @@
             "items": {
                 "Verdant Burst": {
                     "name": "翠绿爆发 Verdant Burst",
-                    "description": "<p>当真菌莱西死亡时会从它的身体爆发出一股原能能量，恢复@Template[type:emanation|distance:30]范围内所有植物类型的生物@Damage[2d8[healing]]生命值。此区域旋即长满真菌，视为困难地形。如果该地表不适宜真菌生长，它们会在24小时后枯萎。</p>"
+                    "description": "<p>当真菌莱西死亡时会从它的身体爆发出一股原能能量，恢复@Template[type:emanation|distance:30]范围内所有植物类型的生物[[/r 2d8[healing]]]生命值。此区域旋即长满真菌，视为困难地形。如果该地表不适宜真菌生长，它们会在24小时后枯萎。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -6822,7 +6822,7 @@
                 },
                 "Consume Flesh": {
                     "name": "啃食尸体 Consume Flesh",
-                    "description": "<p><strong>需求</strong> 妖鬼与刚死亡1小时内的生物尸体相邻。</p>\n<hr />\n<p><strong>效果</strong> 妖鬼吞食一大块尸体并恢复@Damage[3d6[healing]]生命值。</p>\n<p>妖鬼从每具尸体上只能获取一次生命值恢复。</p>"
+                    "description": "<p><strong>需求</strong> 妖鬼与刚死亡1小时内的生物尸体相邻。</p>\n<hr />\n<p><strong>效果</strong> 妖鬼吞食一大块尸体并恢复[[/r 3d6[healing]]]生命值。</p>\n<p>妖鬼从每具尸体上只能获取一次生命值恢复。</p>"
                 },
                 "Ghast Fever": {
                     "name": "妖鬼热 Ghast Fever",
@@ -7749,7 +7749,7 @@
                 },
                 "Energy Drain": {
                     "name": "能量吸取 Energy Drain",
-                    "description": "<p>当收割者死神以巨镰命中目标并造成伤害，它恢复@Damage[20[healing]]生命值，并且目标必须通过@Check[type:fortitude|dc:43]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标已经陷入毁灭，则毁灭的状态值增加1（最大达到毁灭3）。</p>"
+                    "description": "<p>当收割者死神以巨镰命中目标并造成伤害，它恢复[[/r 20[healing]]]生命值，并且目标必须通过@Check[type:fortitude|dc:43]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标已经陷入毁灭，则毁灭的状态值增加1（最大达到毁灭3）。</p>"
                 },
                 "Final Death": {
                     "name": "最终死亡 Final Death",
@@ -7971,7 +7971,7 @@
                 },
                 "Crossbow Precision": {
                     "name": "精准弩手 Crossbow Precision",
-                    "description": "<p>在大地精射手在每轮中首次使用弩攻击命中时，会造成额外@Damage[1d8[precision]]伤害。</p>"
+                    "description": "<p>在大地精射手在每轮中首次使用弩攻击命中时，会造成额外1d8精准伤害。</p>"
                 },
                 "Perfect Aim": {
                     "name": "完美瞄准 Perfect Aim",
@@ -8215,11 +8215,11 @@
             "items": {
                 "Change Shape": {
                     "name": "变身 Change Shape",
-                    "description": "<ul>\n<li><strong>野猪 Boar</strong>\n<ul>\n<li><strong>体型</strong> 中型</li>\n<li>@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉（模糊） 30尺}</li>\n<li><strong>速度</strong> 40尺</li>\n<li><strong>近战</strong> 獠牙 [[/r 1d20+9 #Tusk]]{+9}/[[/r 1d20+4 #Tusk]]{+4}/[[/r 1d20-1 #Tusk]]{-1} (娴熟), <strong>伤害</strong> @Damage[(1d10-1)[piercing]]伤害</li>\n</ul>\n</li>\n<li><strong>巨蜘蛛 Giant Spider</strong>\n<ul>\n<li><strong>体型</strong> 中型</li>\n<li><strong>速度</strong> 25尺, 攀爬25尺</li>\n<li><strong>近战</strong> 尖牙 [[/r 1d20+9 #Fangs]]{+9}/[[/r 1d20+4 #Fangs]]{+4}/[[/r 1d20-1 #Fangs]]{-1} (娴熟, 毒素), <strong>伤害</strong> [[/r (1d6-1)[piercing]+(1d4)[poison]]]{1d6-1穿刺伤害+1d4毒素伤害}</li>\n</ul>\n</li>\n<li><strong>鼠 Rat</strong>\n<ul>\n<li>@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉 Scent}</li>\n<li><strong>速度</strong> 20尺</li>\n<li><strong>近战</strong> 啃咬 [[/r 1d20+9 #Jaws]]{+9}/[[/r 1d20+5 #Jaws]]{+5}/[[/r 1d20+1 #Jaws]]{+1} (灵巧, 娴熟), <strong>伤害</strong> @Damage[1[piercing]]伤害</li>\n</ul>\n</li>\n<li><strong>渡鸦 Raven</strong>\n<ul>\n<li>@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉}</li>\n<li><strong>速度</strong> 10尺, 飞行 40尺</li>\n<li><strong>近战</strong> beak [[/r 1d20+9 #Beak]]{+9}/[[/r 1d20+4 #Beak]]{+4}/[[/r 1d20-1 #Beak]]{-1} (娴熟), <strong>伤害</strong> @Damage[1[piercing]]伤害</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul>\n<li><strong>野猪 Boar</strong>\n<ul>\n<li><strong>体型</strong> 中型</li>\n<li>@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉（模糊） 30尺}</li>\n<li><strong>速度</strong> 40尺</li>\n<li><strong>近战</strong> 獠牙 [[/r 1d20+9 #Tusk]]{+9}/[[/r 1d20+4 #Tusk]]{+4}/[[/r 1d20-1 #Tusk]]{-1} (娴熟), <strong>伤害</strong> @Damage[(1d10-1)[piercing]]伤害</li>\n</ul>\n</li>\n<li><strong>巨蜘蛛 Giant Spider</strong>\n<ul>\n<li><strong>体型</strong> 中型</li>\n<li><strong>速度</strong> 25尺, 攀爬25尺</li>\n<li><strong>近战</strong> 尖牙 [[/r 1d20+9 #Fangs]]{+9}/[[/r 1d20+4 #Fangs]]{+4}/[[/r 1d20-1 #Fangs]]{-1} (娴熟, 毒素), <strong>伤害</strong> @Damage[(1d6-1)[piercing],1d4[poison]]伤害</li>\n</ul>\n</li>\n<li><strong>鼠 Rat</strong>\n<ul>\n<li>@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉 Scent}</li>\n<li><strong>速度</strong> 20尺</li>\n<li><strong>近战</strong> 啃咬 [[/r 1d20+9 #Jaws]]{+9}/[[/r 1d20+5 #Jaws]]{+5}/[[/r 1d20+1 #Jaws]]{+1} (灵巧, 娴熟), <strong>伤害</strong> @Damage[1[piercing]]伤害</li>\n</ul>\n</li>\n<li><strong>渡鸦 Raven</strong>\n<ul>\n<li>@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.rqfnQ5VHT5hxm25r]{灵敏嗅觉}</li>\n<li><strong>速度</strong> 10尺, 飞行 40尺</li>\n<li><strong>近战</strong> beak [[/r 1d20+9 #Beak]]{+9}/[[/r 1d20+4 #Beak]]{+4}/[[/r 1d20-1 #Beak]]{-1} (娴熟), <strong>伤害</strong> @Damage[1[piercing]]伤害</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Diabolic Healing": {
                     "name": "魔鬼治疗 Diabolic Healing",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 小魔鬼恢复@Damage[1d6[healing]]生命值。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 小魔鬼恢复[[/r 1d6[healing]]]生命值。</p>"
                 },
                 "Imp Venom": {
                     "name": "小魔鬼毒液 Imp Venom",
@@ -8312,7 +8312,7 @@
             "items": {
                 "Elemental Endurance": {
                     "name": "元素耐性 Elemental Endurance",
-                    "description": "<p>小巨灵可以在任意元素位面生存最多48小时，之后它每小时会受到@Damage[1]伤害，直到它离开或死亡。</p>"
+                    "description": "<p>小巨灵可以在任意元素位面生存最多48小时，之后它每小时会受到[[/r {1}]]伤害，直到它离开或死亡。</p>"
                 },
                 "Change Size": {
                     "name": "改变体型 Change Size",
@@ -8926,7 +8926,7 @@
                 },
                 "Water Healing": {
                     "name": "水泽治愈 Water Healing",
-                    "description": "<p>当水泽仙女处于她的关联水域中时（见水泽依存），她每10分钟治愈@Damage[1[healing]]生命值。</p>"
+                    "description": "<p>当水泽仙女处于她的关联水域中时（见水泽依存），她每10分钟治愈[[/r 1[healing]]]生命值。</p>"
                 },
                 "Constant Spells": {
                     "name": "常驻法术 Constant Spells",
@@ -8972,7 +8972,7 @@
                 },
                 "Water Healing": {
                     "name": "水泽治愈 Water Healing",
-                    "description": "<p>当水泽仙女处于她的领地中时，她每10分钟治愈@Damage[28[healing]]生命值。</p>"
+                    "description": "<p>当水泽仙女处于她的领地中时，她每10分钟治愈[[/r 28[healing]]]生命值。</p>"
                 },
                 "Constant Spells": {
                     "name": "常驻法术 Constant Spells",
@@ -10318,7 +10318,7 @@
                 },
                 "Infest Environs": {
                     "name": "感染周围 Infest Environs",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 枯萎黏菌位于沼泽或森林地形中。</p>\n<hr />\n<p><strong>效果</strong> 枯萎黏菌从附近的树木和灌木中吸取养分，同时用真菌感染它们。@Template[type:emanation|distance:60]范围内的所有非魔法植物（不包括植物生物）都会枯萎，取而代之的是大量恶心的霉菌和粘滑的蘑菇，并且移除树木和灌木丛提供的任何掩护和隐蔽。枯萎黏菌治疗自身@Damage[200[healing]]生命值。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 枯萎黏菌位于沼泽或森林地形中。</p>\n<hr />\n<p><strong>效果</strong> 枯萎黏菌从附近的树木和灌木中吸取养分，同时用真菌感染它们。@Template[type:emanation|distance:60]范围内的所有非魔法植物（不包括植物生物）都会枯萎，取而代之的是大量恶心的霉菌和粘滑的蘑菇，并且移除树木和灌木丛提供的任何掩护和隐蔽。枯萎黏菌治疗自身[[/r 200[healing]]]生命值。</p>"
                 },
                 "Spore Blight": {
                     "name": "孢子枯萎 Spore Blight",
@@ -10439,7 +10439,7 @@
                 },
                 "Forced Regeneration": {
                     "name": "强行再生 Forced Regeneration",
-                    "description": "<p><strong>需求</strong> 巨魔之王的再生还未失效</p>\n<hr />\n<p><strong>效果</strong> 巨魔之王恢复@Damage[15[healing]]。</p>"
+                    "description": "<p><strong>需求</strong> 巨魔之王的再生还未失效</p>\n<hr />\n<p><strong>效果</strong> 巨魔之王恢复[[/r 15[healing]]]。</p>"
                 },
                 "Primordial Roar": {
                     "name": "原始咆哮 Primordial Roar",
@@ -10622,7 +10622,7 @@
                 },
                 "Drink Blood": {
                     "name": "吸血 Drink Blood",
-                    "description": "<p><strong>需求</strong> 一名被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}、@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}、或是自愿的生物处于吸血鬼的触及范围内。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼用尖牙刺入该生物的体内吸食其血液。如果受害者被擒抱，吸血鬼需要进行一次运动检定对抗受害者的强韧DC；在其他情况下则都将自动成功。</p>\n<p>被害者获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，同时吸血鬼获得@Damage[10[healing]]生命值，而多余的生命值则作为临时生命。从已经获得流失状态的生物身上吸血不会使吸血鬼回复任何生命值，但是受害者的仍会增加1点流失状态值。吸血鬼同样可以通过饮下被保存在容器内的血液并以此维生，但是这样做并不会增加其生命值。</p>\n<p>受害者的流失状态每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[type:medicine|dc:20|name:Blood Transfusion]检定进行一次输血，并在10分钟后减少1点流失状态值。</p>"
+                    "description": "<p><strong>需求</strong> 一名被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}、@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}、或是自愿的生物处于吸血鬼的触及范围内。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼用尖牙刺入该生物的体内吸食其血液。如果受害者被擒抱，吸血鬼需要进行一次运动检定对抗受害者的强韧DC；在其他情况下则都将自动成功。</p>\n<p>被害者获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，同时吸血鬼获得[[/r 10[healing]]]生命值，而多余的生命值则作为临时生命。从已经获得流失状态的生物身上吸血不会使吸血鬼回复任何生命值，但是受害者的仍会增加1点流失状态值。吸血鬼同样可以通过饮下被保存在容器内的血液并以此维生，但是这样做并不会增加其生命值。</p>\n<p>受害者的流失状态每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[type:medicine|dc:20|name:Blood Transfusion]检定进行一次输血，并在10分钟后减少1点流失状态值。</p>"
                 },
                 "Steady Spellcasting": {
                     "name": "稳定施法 Steady Spellcasting",
@@ -11056,7 +11056,7 @@
                 },
                 "Precision Edge": {
                     "name": "精准剑锋 Precision Edge",
-                    "description": "<p>熊化人在对抗他狩猎的目标时，每个回合对其造成的首个成功打击会造成额外@Damage[1d8[precision]]伤害。</p>"
+                    "description": "<p>熊化人在对抗他狩猎的目标时，每个回合对其造成的首个成功打击会造成额外1d8精准伤害。</p>"
                 }
             },
             "prototypeToken": {
@@ -11767,7 +11767,7 @@
                 },
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
-                    "description": "<p>被伤害：音波([[/r 5d8]]伤害, 区域效果或可持续伤害则为[[/r 2d6]]伤害; 被治疗：酸蚀(区域效果@Damage[2d4[healing]]生命值);被减速：寒冷</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<p><strong>被伤害 Harmed By</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</p>\n<p><strong>被治疗 Healed By</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</p>\n<p><strong>被减速 Slowed By</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>\n<p><strong>法术弱点 Vulnerable To</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</p>"
+                    "description": "<p>被伤害：音波([[/r 5d8]]伤害, 区域效果或可持续伤害则为[[/r 2d6]]伤害; 被治疗：酸蚀(区域效果[[/r 2d4[healing]]]生命值);被减速：寒冷</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<p><strong>被伤害 Harmed By</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</p>\n<p><strong>被治疗 Healed By</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</p>\n<p><strong>被减速 Slowed By</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>\n<p><strong>法术弱点 Vulnerable To</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</p>"
                 },
                 "Vulnerable to Shatter": {
                     "name": "法术弱点-粉碎音波 Vulnerable to Shatter",
@@ -11779,7 +11779,7 @@
                 },
                 "Generate Bomb": {
                     "name": "生成炸弹 Generate Bomb",
-                    "description": "<p>炼金魔像从炼金容器中汲取物质填满一个小瓶来制造一枚炸弹，并进行一次炸弹打击。</p>\n<p>投1d6并查阅炼金容器表来决定炸弹效果。</p>\n<p>如果结果为1-4，则它创造的炸弹相当于高等炼金炸弹：容器1为@UUID[Compendium.pf2e.equipment-srd.Item.jC8GmH0Un6vDxdMj]{酸液瓶 Acid Flask}，容器2为@UUID[Compendium.pf2e.equipment-srd.Item.intVPcEzbE9o4NQd]{霜冻瓶 Frost Vial}，容器3为@UUID[Compendium.pf2e.equipment-srd.Item.r2iTRbt1zpkAqHj2]{瓶装闪电 Bottled Lightning}，容器4为@UUID[Compendium.pf2e.equipment-srd.Item.n5yTlTs63o53n3k6]{炽火胶 Alchemist's Fire}。</p>\n<p>如果结果为5，则它创造出一枚能造成3d10毒素伤害和3毒素溅射伤害的毒液炸弹，但没有其他效果。</p>\n<p>如果结果为6，则它创造出一枚恶心炸弹，将目标和溅射半径内的所有生物暴露在恶心效果之下；只被溅射影响的生物在强韧豁免检定上有+2环境加值。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Generate Bomb]]</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>酸液瓶 Acid Flask: @Damage[1[acid]]伤害, @Damage[3d6[persistent,acid]]伤害和@Damage[(3[splash])[acid]]伤害</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>霜冻瓶: @Damage[3d6[cold]]伤害, @Damage[(3[splash])[cold]]伤害和-10尺速度状态减值直到目标的下回合结束@UUID[Compendium.pf2e.equipment-effects.Item.nJRoiSyd67eQ1dYj]{效果：高等霜冻瓶}</td>\n</tr>\n<tr>\n<td>3</td>\n<td>瓶装闪电: @Damage[3d6[electricity]]伤害, @Damage[(3[splash])[electricity]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}直到目标下个回合开始</td>\n</tr>\n<tr>\n<td>4</td>\n<td>炽火胶: @Damage[3d8[fire]]伤害, @Damage[3[persistent,fire]]伤害和@Damage[(3[splash])[fire]]伤害</td>\n</tr>\n<tr>\n<td>5</td>\n<td>毒液炸弹: @Damage[3d10[poison]]伤害和@Damage[(3[splash])[poison]]伤害</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
+                    "description": "<p>炼金魔像从炼金容器中汲取物质填满一个小瓶来制造一枚炸弹，并进行一次炸弹打击。</p>\n<p>投1d6并查阅炼金容器表来决定炸弹效果。</p>\n<p>如果结果为1-4，则它创造的炸弹相当于高等炼金炸弹：容器1为@UUID[Compendium.pf2e.equipment-srd.Item.jC8GmH0Un6vDxdMj]{酸液瓶 Acid Flask}，容器2为@UUID[Compendium.pf2e.equipment-srd.Item.intVPcEzbE9o4NQd]{霜冻瓶 Frost Vial}，容器3为@UUID[Compendium.pf2e.equipment-srd.Item.r2iTRbt1zpkAqHj2]{瓶装闪电 Bottled Lightning}，容器4为@UUID[Compendium.pf2e.equipment-srd.Item.n5yTlTs63o53n3k6]{炽火胶 Alchemist's Fire}。</p>\n<p>如果结果为5，则它创造出一枚能造成3d10毒素伤害和3毒素溅射伤害的毒液炸弹，但没有其他效果。</p>\n<p>如果结果为6，则它创造出一枚恶心炸弹，将目标和溅射半径内的所有生物暴露在恶心效果之下；只被溅射影响的生物在强韧豁免检定上有+2环境加值。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>[[/br 1d6[Alchemical Effect] #Generate Bomb]]</th>\n<th>炼金效果 Alchemical Effect</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>\n<p>酸液瓶 Acid Flask: @Damage[1[acid],3d6[persistent,acid],(3[splash])[acid]]伤害</p>\n</td>\n</tr>\n<tr>\n<td>2</td>\n<td>霜冻瓶: @Damage[3d6[cold],(3[splash])[cold]]伤害和-10尺速度状态减值直到目标的下回合结束@UUID[Compendium.pf2e.equipment-effects.Item.nJRoiSyd67eQ1dYj]{效果：高等霜冻瓶}</td>\n</tr>\n<tr>\n<td>3</td>\n<td>瓶装闪电: @Damage[3d6[electricity],(3[splash])[electricity]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}直到目标下个回合开始</td>\n</tr>\n<tr>\n<td>4</td>\n<td>炽火胶: @Damage[3d8[fire],3[persistent,fire],(3[splash])[fire]]伤害</td>\n</tr>\n<tr>\n<td>5</td>\n<td>毒液炸弹: @Damage[3d10[poison],(3[splash])[poison]]伤害</td>\n</tr>\n<tr>\n<td>6</td>\n<td>恶心 Sickness: @Check[type:fortitude|dc:26|name:Alchemical Sickness|traits:disease]豁免，失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (大失败则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2})</td>\n</tr>\n</tbody>\n</table>"
                 }
             },
             "prototypeToken": {
@@ -12764,7 +12764,7 @@
             "items": {
                 "Verdant Burst": {
                     "name": "翠绿爆发 Verdant Burst",
-                    "description": "<p>当叶莱西死亡时会从它的身体爆发出一股原能能量，恢复@Template[type:emanation|distance:30]范围内所有植物类型的生物@Damage[1d4[healing]]生命值。此区域旋即长满树苗，视为困难地形。如果该地表不适宜植物生长，则树苗会在24小时后枯萎。</p>"
+                    "description": "<p>当叶莱西死亡时会从它的身体爆发出一股原能能量，恢复@Template[type:emanation|distance:30]范围内所有植物类型的生物[[/r 1d4[healing]]]生命值。此区域旋即长满树苗，视为困难地形。如果该地表不适宜植物生长，则树苗会在24小时后枯萎。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -13787,7 +13787,7 @@
                 },
                 "Abyssal Healing": {
                     "name": "深渊治疗 Abyssal Healing",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 小恶魔恢复@Damage[1d6[healing]]HP。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 小恶魔恢复[[/r 1d6[healing]]]HP。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -14422,7 +14422,7 @@
                 },
                 "Drink Blood": {
                     "name": "吸血 Drink Blood",
-                    "description": "<p><strong>需求</strong> 一名被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}、@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}、或是自愿的生物处于吸血鬼的触及范围内。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼用尖牙刺入该生物的体内吸食其血液。如果受害者被擒抱，吸血鬼需要进行一次运动检定对抗受害者的强韧DC；在其他情况下则都将自动成功。</p>\n<p>被害者获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，同时吸血鬼获得@Damage[5[healing]]生命值，而多余的生命值则作为临时生命。从已经获得流失状态的生物身上吸血不会使吸血鬼回复任何生命值，但是受害者的仍会增加1点流失状态值。吸血鬼同样可以通过饮下被保存在容器内的血液并以此维生，但是这样做并不会增加其生命值。</p>\n<p>受害者的流失状态每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[type:medicine|dc:20|name:Blood Transfusion]检定进行一次输血，并在10分钟后减少1点流失状态值。</p>"
+                    "description": "<p><strong>需求</strong> 一名被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}、@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}、或是自愿的生物处于吸血鬼的触及范围内。</p>\n<hr />\n<p><strong>效果</strong> 吸血鬼用尖牙刺入该生物的体内吸食其血液。如果受害者被擒抱，吸血鬼需要进行一次运动检定对抗受害者的强韧DC；在其他情况下则都将自动成功。</p>\n<p>被害者获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，同时吸血鬼获得[[/r 5[healing]]]生命值，而多余的生命值则作为临时生命。从已经获得流失状态的生物身上吸血不会使吸血鬼回复任何生命值，但是受害者的仍会增加1点流失状态值。吸血鬼同样可以通过饮下被保存在容器内的血液并以此维生，但是这样做并不会增加其生命值。</p>\n<p>受害者的流失状态每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[type:medicine|dc:20|name:Blood Transfusion]检定进行一次输血，并在10分钟后减少1点流失状态值。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -14509,7 +14509,7 @@
                 },
                 "Pack Attack": {
                     "name": "群起攻之 Pack Attack",
-                    "description": "<p>如果伶盗龙的目标处于另外两只友方伶盗龙触及范围内，则造成@Damage[1d4]额外伤害。</p>"
+                    "description": "<p>如果伶盗龙的目标处于另外两只友方伶盗龙触及范围内，则造成1d4额外伤害。</p>"
                 }
             },
             "prototypeToken": {
@@ -15337,7 +15337,7 @@
                 },
                 "Feed on Fear": {
                     "name": "吞食恐惧 Feed on Fear",
-                    "description": "<p><strong>需求</strong> 鬼火15尺内的一个敌人受到恐惧效果影响或陷入@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}。</p>\n<hr />\n<p><strong>效果</strong> 鬼火以生物的恐惧为食。它恢复@Damage[2d4[healing]]生命值，并且如果它已经变暗，则会重新让自己发光。</p>\n<p>鬼火每轮只能使用一次该能力。</p>"
+                    "description": "<p><strong>需求</strong> 鬼火15尺内的一个敌人受到恐惧效果影响或陷入@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}。</p>\n<hr />\n<p><strong>效果</strong> 鬼火以生物的恐惧为食。它恢复[[/r 2d4[healing]]]生命值，并且如果它已经变暗，则会重新让自己发光。</p>\n<p>鬼火每轮只能使用一次该能力。</p>"
                 },
                 "Go Dark": {
                     "name": "变暗 Go Dark",
@@ -15492,7 +15492,7 @@
                 },
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
-                    "description": "<ul>\n<li><strong>被伤害</strong> 寒冷和水（@Damage[5d10]伤害, 区域效果或可持续伤害则为@Damage[2d6]）</li>\n<li><strong>被治疗</strong> 酸蚀 (区域效果@Damage[2d6[healing]]生命值)</li>\n<li><strong>被减速</strong> 土</li>\n</ul>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<ul>\n<li><strong>被伤害</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</li>\n<li><strong>被治疗</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</li>\n<li><strong>被减速</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</li>\n<li><strong>法术弱点</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</li>\n</ul>"
+                    "description": "<ul>\n<li><strong>被伤害</strong> 寒冷和水（[[/r {5d10}]]伤害, 区域效果或可持续伤害则为[[/r {2d6}]]）</li>\n<li><strong>被治疗</strong> 酸蚀 (区域效果[[/r 2d6[healing]]]生命值)</li>\n<li><strong>被减速</strong> 土</li>\n</ul>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<ul>\n<li><strong>被伤害</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</li>\n<li><strong>被治疗</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</li>\n<li><strong>被减速</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</li>\n<li><strong>法术弱点</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</li>\n</ul>"
                 },
                 "Quicken": {
                     "name": "加速 Quicken",
