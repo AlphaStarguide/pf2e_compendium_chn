@@ -1510,7 +1510,8 @@
             "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 你的宠物发出经由自然魔法赋能的尖啸或嚎叫。@Template[type:cone|distance:30]范围内的所有生物受到你的伙伴@Damage[(floor(@actor.level/2))d6[sonic]]{每等级1d6点音波}伤害，且有一个等同于你法术DC的@Check[type:fortitude|dc:resolve(@actor.system.attributes.spellDC.value)|basic:true]豁免。在豁免中失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，大失败则改为@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。施加该惊惧状态是一种情绪，恐惧以及心灵效应。</p>"
         },
         "Inspired Stratagem": {
-            "name": "启发策略 Inspired Stratagem"
+            "name": "启发策略 Inspired Stratagem",
+            "description": "<p><strong>Trigger</strong> An ally you reviewed stratagems with is about to attempt an attack roll or skill check</p>\n<hr />\n<p><strong>Effect</strong> The ally rolls the triggering check twice and takes the better of the two results. That ally then becomes temporarily immune to your Inspired Stratagem until your next daily preparations.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.K0Sv9AHgq245hSLC]{Effect: Inspired Stratagem}</p>"
         },
         "Patron's Claim": {
             "name": "庇护主索取 Patron's Claim",
@@ -1591,6 +1592,142 @@
         "Dazzle Seeker": {
             "name": "眩惑搜查者 Dazzle Seeker",
             "description": "<p><strong>触发</strong> 你对一个生物视为@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，对方试图进行纯骰检定瞄准你</p>\n<hr />\n<p><strong>效果</strong> 你鲜艳的鳞片映入对方的眼帘，使之难以锁定你的确切位置。对方必须进行两次纯骰检定，并取较差结果。</p>"
+        },
+        "Fated Not to Die": {
+            "description": "<p><strong>Trigger</strong> You are dying</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Draw a harrow card, and you automatically lose the dying condition, though you remain @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} at 0 Hit Points. If the card you drew was from the suit of Shields, you awaken and have an amount of Hit Points restored to you equal to [[/r (1d6+@actor.level)[healing]]]{1d6 + your level}.</p>",
+            "name": "Fated Not to Die"
+        },
+        "Shatter Glass": {
+            "description": "<p><strong>Trigger</strong> An adjacent creature Strikes you with a melee weapon or unarmed attack and deals damage</p>\n<p><strong>Requirements</strong> Your innate @UUID[Compendium.pf2e.spells-srd.Item.2BV2yYPfVJ5zirZt]{Mountain Resilience} from @UUID[Compendium.pf2e.feats-srd.Item.VF5XFpzBlqUFd8Mw]{Glass Skin} is active</p>\n<hr />\n<p><strong>Effect</strong> You shatter some of the glass on your skin to damage your attacker. The attacker takes @Damage[3d10[slashing]] damage and the duration of the stoneskin decreases by 1 minute. At 14th level, the damage increases to @Damage[4d10[slashing]] damage, and at 18th level, the damage increases to @Damage[5d10[slashing]] damage.</p>",
+            "name": "Shatter Glass"
+        },
+        "Turn Aside Ambient Magic": {
+            "name": "Turn Aside Ambient Magic",
+            "description": "<p>Your ostilli glows a faint yellow as it establishes a barrier. Choose acid, cold, electricity, fire, or sonic damage. Until the beginning of your next turn, you gain resistance against the chosen damage type equal to half your level.</p>"
+        },
+        "Death Drone": {
+            "description": "<p>The cicadas in your swarm make a droning sound that stimulates a fear response. Each creature within your swarm's space takes @Damage[6d4[mental]] damage and must attempt a @Check[type:will|dc:resolve(@actor.system.attributes.classOrSpellDC.value)] save against your class DC or spell DC, whichever is higher.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creatures takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage, is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}, and takes a –2 circumstance penalty to Perception checks that require hearing.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage, is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}, and is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} until the start of your next turn.</p>",
+            "name": "Death Drone"
+        },
+        "Transform Ammunition": {
+            "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> You transform a non-magical arrow or bolt on your person into a piece of magical ammunition of one type you chose for the @UUID[Compendium.pf2e.feats-srd.Item.vUFvcrvszXlHvz2Y]{Magic Ammunition} feat. You must shoot the ammunition before the end of your turn or the magic dissipates. If the ammunition has an Activate entry, you still need to spend the required actions to activate the ammunition before shooting it.</p>\n<p>You can choose a type of magical ammunition that is typically not available to the type of ammunition you're using—for example, you can use @UUID[Compendium.pf2e.equipment-srd.Item.n5L7HE9H8jn8ftQy]{Climbing Bolt} on an arrow, even though that magical ammunition is normally only found on bolts.</p>",
+            "name": "Transform Ammunition"
+        },
+        "Quick-Tempered": {
+            "description": "<p><strong>Trigger</strong> You roll initiative.</p>\n<p><strong>Requirements</strong> You are not @UUID[Compendium.pf2e.conditionitems.Item.D5mg6Tc7Jzrj6ro7]{Encumbered} or wearing heavy armor.</p><hr /><p>So long as you are able to move freely, your fury is instinctive and instantaneous. You @UUID[Compendium.pf2e.actionspf2e.Item.Ah5g9pDwWF9b9VW9]{Rage}.</p>",
+            "name": "Quick-Tempered"
+        },
+        "Drape Ambient Magic": {
+            "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> Your ostilli turns clear as it converts its stored magic into a bubble of refracting light around you. You become @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} to all creatures until the end of your turn. If you Strike a creature, that creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against that attack, and you then become observed.</p>",
+            "name": "Drape Ambient Magic"
+        },
+        "Harvest Heartsliver": {
+            "description": "<p><strong>Requirements</strong> You're inside Kothogaz's body.</p>\n<hr />\n<p>You attempt to steal a section of Kothogaz's heart. Attempt an attack roll or a @Check[type:acrobatics|dc:40], @Check[type:athletics|dc:40], @Check[type:medicine|dc:40], @Check[type:nature|dc:40], @Check[type:occultism|dc:40], or @Check[type:religion|dc:40] check.</p>\n<hr />\n<p><strong>Critical Success</strong> You steal a small disharmonic heartsliver, stow it on your person, and can exit Kothogaz's body.</p>\n<p><strong>Success</strong> As critical success, but you can't exit.</p>\n<p><strong>Failure</strong> You take Kothogaz's Swallow Whole damage.</p>\n<p><strong>Critical Failure</strong> You take double Kothogaz's Swallow Whole damage and are @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} by its heartbeat for 1 minute.</p>",
+            "name": "Harvest Heartsliver"
+        },
+        "Flash of Grandeur": {
+            "description": "<p><strong>Trigger</strong> An enemy damages your ally, and both are in your champion's aura</p><hr /><p><strong>Effect</strong> Imperious divine light flashes out from you to surround your foe. The ally gains resistance to all damage against the triggering damage equal to 2 + your level. For 1 round, the attacker is affected by @UUID[Compendium.pf2e.spells-srd.Item.0qaqksrGGDj74HXE]{Revealing Light}.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DawVHfoPKbPJsz4k]{Effect: Champion's Resistance}</p>",
+            "name": "Flash of Grandeur"
+        },
+        "Cobble Together": {
+            "description": "<p>You @UUID[Compendium.pf2e.actionspf2e.Item.rmwa3OyhTZ2i2AHl]{Craft} a temporary item out of anything, anywhere, with whatever materials happen to be on hand, spending only 10 minutes to perform the initial Crafting check.</p>\n<p>The temporary item must be one you've memorized or have the formula for, and must be common, non-magical, half your level or lower, and must be a weapon, armor, or a non-consumable piece of adventuring gear (non-consumable adventuring gear appears on page 291 of Player Core). Instead of a single item, you can create 10 pieces of a single type of ammunition. You can create only the physical item, not any information or magic, so for example, while you could create a blank journal or one with random pages, you couldn't use it as a scholarly journal or a religious text</p>",
+            "name": "Cobble Together"
+        },
+        "Administer Ambient Magic": {
+            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p><strong>Effect</strong> Your ostilli pulses a calm lavender color as it converts stored magic into a curative balm. You regain @Damage[(2*(floor(@actor.level/4))d4)[healing]] Hit Points, and you can immediately attempt a flat check to recover from persistent bleed damage with the DC reduced to 10. This healing increases by 2d4 at 8th level and every 4 levels thereafter.</p>",
+            "name": "Administer Ambient Magic"
+        },
+        "Erupting Spurs": {
+            "description": "<p><strong>Trigger</strong> A creature takes persistent bleed damage from your bone flense spell</p><hr /><p><strong>Effect</strong> You will the bone spurs to erupt in a particularly devastating manner, dealing @Damage[6d6[piercing]] damage (basic Fortitude save) to the triggering creature instead of the persistent bleed damage from bone flense. The duration of bone flense immediately ends.</p>",
+            "name": "Erupting Spurs"
+        },
+        "Spit Ambient Magic": {
+            "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> Your ostilli flashes red as it regurgitates a dart of magic at a target within 30 feet. This magical dart deals @Damage[((1+floor((@actorl.level -2)/4))d6)[piercing]] damage (@Check[type:reflex|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true] save against the higher of your class DC or spell DC). This damage increases by 1d6 at 6th level and every 4 levels thereafter.</p>",
+            "name": "Spit Ambient Magic"
+        },
+        "Swirl Crimson Shroud": {
+            "description": "<p>You can Interact with your shroud, swirling it around you, to gain a +1 circumstance bonus to AC until the beginning of your next turn.</p>",
+            "name": "Swirl Crimson Shroud"
+        },
+        "Shake It Off": {
+            "name": "Shake It Off",
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> You fail or critically fail a saving throw against a condition or adverse effect (such as @UUID[Compendium.pf2e.spells-srd.Item.dN8QBNuTiaBHCKUe]{Cursed Metamorphosis})</p>\n<hr />\n<p><strong>Effect</strong> You reroll the triggering save and use the better result.</p>"
+        },
+        "Lantern Beam": {
+            "name": "Lantern Beam",
+            "description": "<p><strong>Requirements</strong> Your lantern light is shining</p>\n<hr />\n<p><strong>Effect</strong> Your lenses focus your light into a searing beam. You deal @Damage[((max(5,ceil(@actor.level/2)))d4)[fire]] damage to all creatures in a @Template[type:line|distance:30], with a @Check[type:reflex|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true] saving throw against the higher of your class DC or spell DC. Your lantern light then extinguishes, and you can't use this ability or use your lantern light again for [[/r 1d4 #Recharge Lantern Beam]]{1d4 rounds}. At 11th level and every two levels thereafter, the damage increases by 1d4.</p>"
+        },
+        "Once Bitten": {
+            "description": "<p><strong>Trigger</strong> A creature adjacent to you hits you with a melee unarmed Strike</p>\n<p><strong>Requirements</strong> You have prepared your clothing to poison attackers</p><hr /><p><strong>Effect</strong> The triggering creature is exposed to the suffused poison, and the poison becomes inert.</p>",
+            "name": "Once Bitten"
+        },
+        "Devour Ambient Magic": {
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> A creature Casts a Spell with you as the only target</p><hr /><p><strong>Effect</strong> Your ostilli radiates cyan light as its tentacle-like filters attempt to consume the magical effect. You can attempt to counteract the triggering spell with an @Check[type:arcana] or @Check[type:nature] check and a counteract rank equal to half your level.</p>",
+            "name": "Devour Ambient Magic"
+        },
+        "Reactive Falsehood": {
+            "name": "Reactive Falsehood",
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> You fail to @UUID[Compendium.pf2e.actionspf2e.Item.ewwCglB7XOPLUz72]{Lie} to a creature in public</p><hr /><p><strong>Effect</strong> As your target sees through your lie, you spin your falsehood in a way that utilizes the crowd's reaction to bolster believability. Re-roll your Deception check to Lie with a +2 status bonus and use this check's result as the actual result to Lie.</p>"
+        },
+        "Swift Choreography": {
+            "name": "Swift Choreography",
+            "description": "<p><strong>Trigger</strong> An ally within 30 feet would become @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}, @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}</p><hr /><p><strong>Effect</strong> You call out a quick reminder to your ally about a special move you'd suggested to them at some point in the past, allowing the ally to avoid the triggering effect completely.</p>"
+        },
+        "Swarm Forth": {
+            "name": "Swarm Forth",
+            "description": "<p><strong>Requirements</strong> Your swarm is within your body</p><hr /><p><strong>Effect</strong> Your swarm boils forth from your body into a space adjacent to yours. (Its space can overlap yours.) It remains separate from you until the end of your next turn, but you can Sustain the effect up to 1 minute. The effect also ends if you end your turn more than 60 feet away from the swarm. When you use Swarm Forth and each time you Sustain the effect, you can have the swarm Stride.</p>"
+        },
+        "Influence Rumor": {
+            "description": "<p>You spend at least 1 day of downtime attempting to manipulate the course, tone, or content of a rumor to your benefit. You need to succeed at a Diplomacy check to shift the rumor as you intend. The difficulty is determined by the GM based on the size of the community, the relative perceptiveness of the inhabitants, and the agency of other rumormongers, but it typically is no lower than DC 15 for a small village, DC 20 for a town, DC 30 for a city, or DC 40 for a metropolis.</p>",
+            "name": "Influence Rumor"
+        },
+        "Talon Stance": {
+            "description": "<p><strong>Effect</strong> You sway in a loose stance that lets you sweep in wide arcs with the claws on your feet. The only Strikes you can make are spinning talon unarmed attacks. These deal @Damage[1d8[slashing]] damage, are in the brawling group, and have the finesse, sweep, and unarmed traits. You don't need a free hand to use spinning talon strikes.</p>",
+            "name": "Talon Stance"
+        },
+        "Bite and Sting": {
+            "description": "<p><strong>Requirements</strong> Your swarm is outside your body</p><hr /><p><strong>Effect</strong> Each creature in your swarm's space takes @Damage[(floor(@actor.level/2))d4[piercing]] damage with a @Check[type:reflex|dc:resolve(@actor.system.attributes.classOrSpellDC.value)|basic:true] save against your class DC or spell DC, whichever is higher. At 4th level and every 2 levels thereafter, the damage increases by 1d4.</p>",
+            "name": "Bite and Sting"
+        },
+        "Rearrange Bones": {
+            "description": "<p>You arrange your bones into the form of a Small or Medium humanoid's skeleton. This doesn't change your normal Speeds, Strikes, or senses. If you are wearing heavy clothing or impersonating a skeleton, this counts as setting up a disguise for the Impersonate use of Deception and grants a +1 status bonus to those Deception checks.</p>",
+            "name": "Rearrange Bones"
+        },
+        "Pitch-Perfect Projection": {
+            "name": "Pitch-Perfect Projection",
+            "description": "<p>By using your perfect pitch, you can amplify your voice to cause magical auditory effects to reach further. If your next action this round is to Cast a Spell or use an action that creates an auditory effect with a range, increase that range by 30 feet.</p>"
+        },
+        "Impromptu Investment": {
+            "description": "<p>(one minute)</p>\n<p><strong>Frequency</strong> once per 10 minutes</p><hr /><p><strong>Effect</strong> You can remove investiture from an item you currently have invested, and this investiture does not count against your daily limit. You can invest a new item in this item's place.</p>",
+            "name": "Impromptu Investment"
+        },
+        "Plummeting Roll": {
+            "description": "<p><strong>Trigger</strong> You fall at least 10 feet and take no damage from the fall</p><hr /><p><strong>Effect</strong> You tuck and roll with the motion. You land on your feet and Stride up to half your Speed</p>",
+            "name": "Plummeting Roll"
+        },
+        "Claw Stance": {
+            "description": "<p><strong>Effect</strong> You extend the claws in your hands and focus your attention to take down single targets. The only Strikes you can make are frenzied claw unarmed attacks. These deal @Damage[1d6[slashing]] damage, are in the brawling group, and have the agile, finesse, grapple, unarmed, and versatile piercing traits.</p>",
+            "name": "Claw Stance"
+        },
+        "Change Shape (Werecreature)": {
+            "description": "<p>You transform into your hybrid or animal shape. Your equipment transforms with you and continues to provide bonuses, but your animal shape cannot use weapons, shields, or other held items and cannot use manipulate actions. You gain a movement speed, unarmed attacks, and potentially other abilities based on your werecreature type. These unarmed attacks are in the brawling group. You can Dismiss the effect to return to your humanoid shape, and you resume your humanoid shape automatically if you're reduced to 0 Hit Points.</p>",
+            "name": "Change Shape (Werecreature)"
+        },
+        "Inured to Death": {
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> You take damage from an effect with the death or void trait</p>\n<hr />\n<p><strong>Effect</strong> You gain resistance to that damage equal to half your level (minimum 1).</p>",
+            "name": "Inured to Death"
+        },
+        "Dancing Dodge": {
+            "description": "<p><strong>Trigger</strong> You're hit by a Strike during the first round of combat</p><hr /><p><strong>Effect</strong> You take advantage of the fact that your foe isn't ready to anticipate your dance-like moves in combat. Add a +3 circumstance bonus to your Armor Class against the triggering Strike to determine the Strike's actual result.</p>",
+            "name": "Dancing Dodge"
+        },
+        "Activate Resonant Reflection": {
+            "description": "<p><strong>Activate</strong> <span class=\"action-glyph\">2</span> envision</p>\n<p><strong>Frequency</strong> once per day for each reflection</p><hr /><p>You activate one of your resonant reflections:</p>",
+            "name": "Activate Resonant Reflection"
+        },
+        "Repel Ambient Magic": {
+            "description": "<p>Your ostilli glows green as it absorbs magic. Until the start of your next turn, you gain a +1 circumstance bonus to AC and saving throws against the next magical attack, cantrip, or spell that targets you. This bonus increases to +2 at 12th level.</p>",
+            "name": "Repel Ambient Magic"
         }
     }
 }
