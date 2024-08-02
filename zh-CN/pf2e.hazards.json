@@ -19,12 +19,12 @@
             "converter": "npc-item-translation"
         },
         "hp": "system.attributes.hp.details",
-        "publicNotes":"system.details.publicNotes",
-        "hazarddisable":"system.details.disable",
-        "hazarddescription":"system.details.description",
-        "hazardreset":"system.details.reset",
-        "hazardroutine":"system.details.routine",
-        "stealthdetails":"system.attributes.stealth.details"
+        "publicNotes": "system.details.publicNotes",
+        "hazarddisable": "system.details.disable",
+        "hazarddescription": "system.details.description",
+        "hazardreset": "system.details.reset",
+        "hazardroutine": "system.details.routine",
+        "stealthdetails": "system.attributes.stealth.details"
     },
     "entries": {
         "Armageddon Orb": {
@@ -35,11 +35,15 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Burn It All":{
+            "items": {
+                "Burn It All": {
                     "name": "烧尽一切 Burn It All",
                     "description": "<p><strong>触发</strong> 由陷阱主人所设置的特殊条件；比如说当陷阱主人死亡时；</p>\n<hr />\n<p><strong>效果</strong> 周围半径100英里的土地降下火雨，对所有生物和物品造成@Damage[10d6[fire]]伤害。每个生物或物品都可以尝试进行@Check[type:reflex|dc:46|basic:true]豁免。任何生命值减少为0的生物立即死亡。此效果不足以完全烧毁整座深林、夷平整座山或城市，但通常能杀死该地区绝大部分生物。</p>"
                 }
+            },
+            "disable": "<p>@Check[type:thievery|dc:48|name:Imbue Thieves' Tools|traits:action:disable-a-device] (legendary) to imbue a thieves' toolkit with aspects representing Asmodeus and Sarenrae and use them to drain away the orb's power over 10 minutes; the character attempting this check takes @Damage[5[fire]] damage each round until the orb is depleted</p>",
+            "prototypeToken": {
+                "name": "Armageddon Orb"
             }
         },
         "Banshee's Symphony": {
@@ -52,12 +56,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Scream":{
+            "items": {
+                "Scream": {
                     "name": "尖叫 Scream",
                     "description": "<p><strong>触发</strong> 3个或更多的生物在陷阱100尺范围内停留超过6秒；</p>\n<hr />\n<p><strong>效果</strong> 陷阱释放奥术法术<em>女妖之嚎</em>（DC40），范围为100尺半径弥散范围，而非原来的40尺，影响范围内的所有生物，之后陷阱进行先攻检定。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Banshee's Symphony"
+            },
+            "disable": "<p>@Check[type:thievery|dc:42|name:Pierce Larynx|traits:action:disable-a-device] (master) to pierce the invisible larynx so precisely that the magic releases in a trickle before the trap activates, @Check[type:thievery|dc:44|name:Deconstruct Larynx|traits:action:disable-a-device] (legendary) three times to deconstruct the larynx while the trap is active in such a way that it tears the spell apart, or spell DC 38 (9th level) to counteract the <em>wail of the banshee</em> before the trap activates</p>",
+            "reset": "<p>The trap ends when the trap is unable to make a creature scream (usually because no creature failed its save on the previous turn or because all creatures have critically succeeded in the past). It then resets over 24 hours, as a new scream builds up in the mummified larynx.</p>",
+            "routine": "<p>(1 action) The trap uses its action to force one random creature that failed its save against <em>wail of the banshee</em> last turn to emit a <em>wail of the banshee</em> with the same statistics as the initial one. The creature wails even if it is dead or unable to speak, no matter how far away from the trap it is. Unlike a casting of the spell, the drained condition from this trap's <em>wail of the banshee</em> spells increases the targets' drained condition values. A creature that critically succeeds at any of its saves can still be affected by the trap on future rounds, but can't be forced to wail by the trap.</p>"
         },
         "Bloodthirsty Urge": {
             "name": "嗜杀冲动 Bloodthirsty Urge",
@@ -67,12 +77,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Quietus":{
+            "items": {
+                "Quietus": {
                     "name": "偿债 Quietus",
                     "description": "<p><strong>触发</strong> 一个生物走近作祟物品10尺范围内；</p>\n<hr />\n<p><strong>效果</strong> 作祟控制触发此效果的生物，强迫它攻击自己。目标必须通过@Check[type:will|dc:29]检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标对自己进行一次打击，并且自动命中；同时目标惊惧1。</p>\n<p><strong>失败</strong> 目标对自己进行一次打击，并且自动命中且重击；同时目标惊惧2。</p>\n<p><strong>大失败</strong> 目标必须进行一次强韧检定。如果目标成功，则视同为失败的结果。如果目标失败，生命值立即归0并死亡。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Bloodthirsty Urge"
+            },
+            "disable": "<p>@Check[type:religion|dc:29|name:Exorcise Spirit] (master) to exorcise the spirit or @Check[type:diplomacy|dc:31|name:Talk Down the Spirit] (expert) to talk it down</p>"
         },
         "Bottomless Pit": {
             "name": "无底深坑 Bottomless Pit",
@@ -83,12 +97,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Infinite Pitfall":{
+            "items": {
+                "Infinite Pitfall": {
                     "name": "无尽坠落 Infinite Pitfall",
                     "description": "<p><strong>触发</strong> 一个生物踩上活板门；</p>\n<hr />\n<p><strong>效果</strong> 触发陷阱的生物一直坠落，并可能永远坠落下去。该生物可以尝试抓住边缘来避免坠落。攀爬或抓住边缘的DC为26。坑壁上有许多把手，所以下落的生物每6秒可以尝试一次抓住边缘。如果该生物成功，它可以从那个点开始向上攀爬（虽然攀爬距离可能会很长很长，这取决于他坠落距离有多深）。当生物处于无尽的坠落状态时，它可以在坠落过程中休息甚至准备法术，然而掉下去的物品通常永远也找不回来了。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Bottomless Pit"
+            },
+            "disable": "<p>@Check[type:thievery|dc:28|name:Remove Trapdoor|traits:action:disable-a-device] (trained) to remove the trapdoor</p>",
+            "reset": "<p>The trap still causes creatures to fall forever if they fall in, but the trapdoor must be reset manually for the trap to become Hidden again.</p>"
         },
         "Brown Mold": {
             "name": "褐霉菌 Brown Mold",
@@ -99,16 +118,21 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Emit Cold":{
+            "items": {
+                "Emit Cold": {
                     "name": "严寒 Emit Cold",
                     "description": "<p>@Template[type:emanation|distance:5]{5尺} @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>褐霉菌对相邻的生物造成[[/r (2d6)[cold]]]{2d6寒冷伤害}。</p>"
                 },
-                "Leech Warmth":{
+                "Leech Warmth": {
                     "name": "榨取温度 Leech Warmth",
                     "description": "<p><strong>触发</strong> 褐霉菌5尺范围内有火焰；</p>\n<hr />\n<p><strong>效果</strong> 褐霉菌向占据空间相邻的每个方格扩张。当它扩张时会对周围吸收更多的热量，对扩张后10尺范围内的生物造成@Damage[(2d6+6)[cold]]{2d6+6寒冷伤害}（@Check[type:fortitude|dc:18|basic:true]豁免）。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Brown Mold"
+            },
+            "disable": "<p>@Check[type:survival|dc:18|name:Remove Brown Mold|traits:environmental,fungus] (trained) to safely remove the mold</p>",
+            "reset": "<p>After expanding, the brown mold can't grow again for 1 day.</p>"
         },
         "Confounding Betrayal": {
             "name": "迷之背叛 Confounding Betrayal",
@@ -120,12 +144,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Unmask":{
+            "items": {
+                "Unmask": {
                     "name": "揭开面具 Unmask",
                     "description": "<p><strong>触发</strong> 两个或更多的生物进入作祟区域；</p>\n<hr />\n<p><strong>效果</strong> 每个生物都会看到身边生物的形态发生改变，似乎变成了嗜血的魔族或异怪。该区域内的每个生物都必须尝试一次@Check[type:will|dc:30]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物看穿了幻象，并在1分钟之内对作祟的例行程序临时免疫。</p>\n<p><strong>成功</strong> 目标不受幻象的影响。</p>\n<p><strong>失败</strong> 生物相信了幻象是真实的；如果它们受到作祟的例行程序影响而陷入困惑，则它们不能在受到伤害时通过纯骰检定来结束困惑状态。</p>\n<p><strong>大失败</strong> 类似失败，但该生物也会对他人产生挥之不去的怀疑，并且在24小时之内无法从协助反应动作中获益。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Confounding Betrayal"
+            },
+            "disable": "<p>@Check[type:deception|dc:28|name:Confound the Haunt] (expert) twice to confound the haunt with your own deceptions, or @Check[type:occultism|dc:28|name:Create a Ward Against Influence] (trained) twice to create a ward against the haunt's mental influence</p>",
+            "reset": "<p>The haunt deactivates 1 minute after all creatures leave the area but resets immediately thereafter.</p>",
+            "routine": "<p>(1 action; illusion, incapacitation, occult) The haunt continues to confound victims' senses and inspire them to commit violence against each other. Each creature in the haunt's area must attempt a @Check[type:will|dc:26] save.</p>\n<hr>\n<p><strong>Critical Success</strong> The creature is unaffected and temporarily immune for 1 minute.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature is confused for 1 minute.</p>"
         },
         "Dance Of Death": {
             "name": "死亡之舞 Dance Of Death",
@@ -137,12 +167,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Prelude":{
+            "items": {
+                "Prelude": {
                     "name": "序曲 Prelude",
                     "description": "<p><strong>触发</strong> 一个生物接近管弦乐队30尺范围内；</p>\n<hr />\n<p><strong>效果</strong> 管弦乐队迫使所有能听到它的生物开始跳舞。每个生物都必须尝试一次@Check[type:will|dc:41]豁免，其效果如下。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物措手不及并且无法使用反应动作。此外，它每轮必须花费一个动作来跳舞。跳舞是一个移动动作，允许生物以半速行走。</p>\n<p><strong>失败</strong> 类似成功，除了生物每轮必须花费两个动作来跳舞。</p>\n<p><strong>大失败</strong> 类似失败，除了生物每轮必须花费三个动作来跳舞。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Dance Of Death"
+            },
+            "reset": "<p>The eerie orchestra spends an hour retuning its phantasmal instruments, after which it is ready to begin its routine again.</p>",
+            "disable": "<p>@Check[type:intimidation|dc:42|name:Frighten the Orchestra|traits:action:demoralize] (expert) three times to frighten dancers and spectral musicians alike away from participating in the deadly performance, @Check[type:performance|dc:40|name:Disrupt Compulsion] (master) twice to produce a tune discordant enough to disrupt the compulsion, or @Check[type:religion|dc:42|name:Banish Spirits] (master) three times to banish the spirits with prayers</p>",
+            "routine": "<p>(1 action; auditory, incapacitation, mental, occult) The orchestra performs a raucous tune, compelling all creatures that can hear it to spend actions dancing. Each round, creature must attempt a @Check[type:will|dc:37] save; the results of this save modify the number of actions that the creature must spend dancing each round. If this would cause the creature to spend more actions dancing than it can use on its turn, the creature takes @Damage[10d6] damage (or double that on a critical failure) from moving faster than its body can manage.</p>\n<hr>\n<p><strong>Critical Success</strong> The creature decreases the number of actions it must spend dancing by 1.</p>\n<p><strong>Success</strong> No effect.</p>\n<p><strong>Failure</strong> The creature increases the actions it must spend dancing by 1.</p>\n<p><strong>Critical Failure</strong> The creature increases the actions it must spend dancing by 2.</p>"
         },
         "Darkside Mirror": {
             "name": "黑镜 Darkside Mirror",
@@ -154,12 +190,19 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Reflection of Evil":{
+            "items": {
+                "Reflection of Evil": {
                     "name": "邪恶镜像 Reflection of Evil",
                     "description": "<p><strong>触发</strong> 一个非邪恶的生物在镜中形成倒影；</p>\n<hr />\n<p><strong>效果</strong> 魔镜将该生物吸了进去，然后用它邪恶的镜像副本取而代之（通过@Check[type:reflex|dc:34]豁免可以防止被吸到镜中），之后魔镜进行先攻检定。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Darkside Mirror"
+            },
+            "hp": "The mirror can't be damaged while any mirror duplicate is alive",
+            "disable": "<p>@Check[type:thievery|dc:34|name:Retrieve Creature from Other Dimension|traits:action:disable-a-device] (legendary) to retrieve a creature from the other dimension within 10 minutes of the switch (possible only if their mirror duplicate is dead), @Check[type:thievery|dc:39|name:Permanently Disable Mirror|traits:action:disable-a-device] (master) to permanently disable the mirror once all mirror duplicates are dead, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th level; counteract DC 32) to counteract the mirror for 1 minute and prevent additional replacements during that time</p>",
+            "routine": "<p>(1 action) The mirror absorbs another reflected creature into the mirror and replaces it with a mirror duplicate. Mirror duplicates attack on their own initiative, using the same statistics as the original creature, but with an evil alignment (changing only abilities that shift with the alignment change). A mirror duplicate can spend 3 actions in contact with the mirror to return to its original dimension and release the creature it duplicated, but most mirror duplicates prefer not to.</p>",
+            "reset": "<p>The mirror is always ready to absorb creatures into the other dimension. Ten minutes after a creature is sucked into the mirror, if an ally doesn't rescue the creature with Thievery, it reaches the other dimension, where it might be captured or killed. In the mirror dimension, it counts as a mirror duplicate, so the denizens of the other dimension can't destroy the mirror on their side while the absorbed creature is there. These dimensions are alternate realities, not planes, so even rituals like <em>plane shift</em> can't reach them.</p>"
         },
         "Drowning Pit": {
             "name": "溺水坑 Drowning Pit",
@@ -172,12 +215,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Pitfall":{
+            "items": {
+                "Pitfall": {
                     "name": "陷坑 Pitfall",
                     "description": "<p><strong>触发</strong> 一个生物走上活板门；</p>\n<hr />\n<p><strong>效果</strong> 触发陷阱的生物坠落到坑底并受到坠落伤害，计算坠落距离时由于底部有水所以减少5尺（一般而言是[[/r (12)[bludgeoning]]]{12钝击伤害}）。生物可以通过@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{抓住边缘 Grab an Edge}来避免坠落。活板门随即猛地关上，然后陷阱进行先攻检定。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Drowning Pit"
+            },
+            "disable": "<p>@Check[type:thievery|dc:18] (trained) to seal each water spout, @Check[type:thievery|dc:22] (trained) to open the trapdoor, or @Check[type:athletics|dc:22] to @UUID[Compendium.pf2e.action-macros.Macro.yMTKMnaYSGtDz4wk]{Force Open: Athletics} the trapdoor</p>",
+            "routine": "<p>(4 actions) The trap loses 1 action each turn for each disabled water spout. On each of the trap's actions, a spout pours water, increasing the depth of the water by 5 feet. Once the pit is full of water, the pit stops using actions, but creatures in the pit begin drowning.</p>",
+            "reset": "<p>The trap can be reset if the door is manually reengaged and the water tanks are refilled; it can be reset without draining the pit, but doing so renders the pit less effective.</p>"
         },
         "Electric Latch Rune": {
             "name": "电击符文 Electric Latch Rune",
@@ -187,12 +236,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Electrocution":{
+            "items": {
+                "Electrocution": {
                     "name": "放电 Electrocution",
                     "description": "<p><strong>触发</strong> 一个生物直接握住，或以工具触碰门闩；</p>\n<hr />\n<p><strong>效果</strong> 陷阱对目标造成[[/r (3d12)[electricity]]]{3d12电击伤害}（@Check[type:reflex|dc:22|basic:true]豁免）。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Electric Latch Rune"
+            },
+            "disable": "<p>@Check[type:thievery|dc:20|name:Scratch Out the Rune|traits:action:disable-a-device] (expert) to scratch out the rune without allowing electricity to flow, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (2nd rank; counteract DC 18) to counteract the rune</p>"
         },
         "Eternal Flame": {
             "name": "永恒烈焰 Eternal Flame",
@@ -204,12 +257,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Searing Agony":{
+            "items": {
+                "Searing Agony": {
                     "name": "灼热痛苦 Searing Agony",
                     "description": "<p><strong>触发</strong>  一个活着的生物接近最初火灾的受害者遗骸10尺范围内；</p>\n<hr />\n<p><strong>效果</strong> 火灾受害者的痛苦回忆冲击触发生物的心灵。生物必须尝试一次@Check[type:will|dc:25]豁免，然后作祟进行先攻检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入恶心1。</p>\n<p><strong>失败</strong> 生物陷入恶心2。</p>\n<p><strong>大失败</strong> 生物陷入恶心3，只要它位于作祟区域内，就会措手不及，并在离开区域后额外持续3轮。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Eternal Flame"
+            },
+            "disable": "<p>@Check[type:diplomacy|dc:27|name:Calm the Spirit's Rage] (expert) to temporarily calm the rage of one of the three spirits, or @Check[type:religion|dc:30|name:Exorcise Spirit] (trained) to exorcise one of the spirits; three total successes are required to disable the haunt</p>",
+            "routine": "<p>(1 action) Phantom flames rage across the haunted area, dealing @Damage[4d6[fire]] damage to each living creature within the area (@Check[type:will|dc:23|basic:true] save). Undead creatures in the area are infused with flames for the following round. They gain the fire trait and immunity to fire, and all their attacks deal an additional @Damage[1d6[fire]] damage. Objects in the area are unaffected.</p>",
+            "reset": "<p>The flames cease 1 minute after all living creatures leave the area, but after 1 hour, the anger and pain simmer up and the haunt is ready to trigger again.</p>"
         },
         "Fireball Rune": {
             "name": "火球符文 Fireball Rune",
@@ -219,12 +278,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Fireball":{
+            "items": {
+                "Fireball": {
                     "name": "火球 Fireball",
                     "description": "<p><strong>触发</strong> 一个活着的生物进入传感器范围；</p>\n<hr />\n<p><strong>效果</strong> 符文向该生物所处的方格中心发射火球并引爆。这等同于一个3环@UUID[Compendium.pf2e.spells-srd.Item.sxQZ6yqTn0czJxVd]{火球术 Fireball}，造成@Damage[6d6[fire]]伤害（@Check[type:reflex|dc:22|basic:true]豁免）。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Fireball Rune"
+            },
+            "disable": "<p>@Check[type:thievery|dc:22|name:Erase the Rune] (expert) to erase the rune without triggering the sensor, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (3rd rank; counteract DC 20) to counteract the rune</p>"
         },
         "Flensing Blades": {
             "name": "旋刃风暴 Flensing Blades",
@@ -236,12 +299,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Whirling Blades":{
+            "items": {
+                "Whirling Blades": {
                     "name": "旋风之刃 Whirling Blades",
                     "description": "<p><strong>触发</strong> 三个或更多的生物进入作祟范围；</p>\n<hr />\n<p><strong>效果</strong> 尖锐的碎片从地面升起，开始飞速旋转，并且占据一个5尺方格。然后作祟进行先攻检定。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Flensing Blades"
+            },
+            "reset": "<p>The haunt draws jagged shards back into its area over the course of an hour, after which it can trigger again.</p>",
+            "disable": "<p>@Check[type:thievery|dc:35|name:Adjust Blades|traits:action:disable-a-device] (master) to precisely adjust the blades so that they destroy each other, or @Check[type:religion|dc:38|name:Weaken the Haunt] (expert) to weaken the haunt; four successes are required to disable it</p>",
+            "routine": "<p>(3 actions) The tornado of blades uses 3 actions to move, traveling up to 30 feet with each action and dealing @Damage[(2d10+10)[slashing]] damage. Each creature in its path must attempt a @Check[type:reflex|dc:33].</p>\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage plus @Damage[1d10[bleed]].</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and @Damage[1d10[bleed]]. It also becomes @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded 1} (or increases its wounded value by 1, if it is already wounded).</p>\n<p>Each successful check to disable this hazard reduces the haunt's movement by 30 feet, and the fourth success disables it completely.</p>"
         },
         "Frozen Moment": {
             "name": "瞬间静滞 Frozen Moment",
@@ -251,12 +320,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Adrift in Time":{
+            "items": {
+                "Adrift in Time": {
                     "name": "时间漂流 Adrift in Time",
                     "description": "<p><strong>触发</strong> 一个生触碰带有警戒功能的物品或区域；</p>\n<hr />\n<p><strong>效果</strong> 触发的生物和30尺范围内所有生物被静滞在固定的时间流中（通过@Check[type:fortitude|dc:38]检定则不受影响）。这些生物的思维运转速度很快，以至于每一轮似乎都过了一个世纪那么久，但是他们的身体和魔法能量移动的非常慢，以至于它们除了回忆知识以为不能进行任何动作。受影响的生物必须立即对<i>心灵扭曲</i>法术进行@Check[type:will|dc:36]豁免，并且在该生物被冻结后的每一分钟再次进行豁免。此效果持续时间无限，但是可以被反制。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Frozen Moment"
+            },
+            "disable": "<p>@Check[type:thievery|dc:38|name:Disassemble Spell Components|traits:action:disable-a-device] (legendary) to rapidly disassemble the spell's myriad components in a single blink of an eye; or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (9th level; counteract DC 36) to counteract the trap before it triggers or to counteract the effect on one creature after the trap is triggered</p>"
         },
         "Ghostly Choir": {
             "name": "鬼灵唱诗班 Ghostly Choir",
@@ -266,12 +339,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Profane Chant":{
+            "items": {
+                "Profane Chant": {
                     "name": "亵渎颂歌 Profane Chant",
                     "description": "<p><strong>触发</strong> 一个生物走进幽灵唱诗班升起的地板的10尺之内；</p>\n<hr />\n<p><strong>效果</strong> 幽灵唱诗班升起，它的歌声对幽灵形态30尺内的非邪恶生物造成@Damage[(4d8+18)[mental]]{4d8+18心灵伤害}。受影响的生物每次都要尝试一次@Check[type:will|dc:24|traits:damaging-effect]鉴定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物受到全伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，同时陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}，并且@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{逃跑 Fleeing}1轮。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Ghostly Choir"
+            },
+            "disable": "<p>@Check[type:performance|dc:28|name:Sing a Different Tune|traits:haunt] (trained) to disrupt the song's resonance with another tune or @Check[type:religion|dc:28|name:Ritually Silence the Haunt|traits:haunt] (trained) to ritually silence the spirits</p>"
         },
         "Grasp Of The Damned": {
             "name": "诅咒之握 Grasp Of The Damned",
@@ -282,12 +359,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Mark for Damnation":{
+            "items": {
+                "Mark for Damnation": {
                     "name": "诅咒印记 Mark for Damnation",
                     "description": "<p><strong>触发</strong> 3个或更多13级或更高级别的生物进入作祟区域；</p>\n<hr />\n<p><strong>效果</strong> 作祟对每个进入作祟区域的生物造成@Damage[(6d12+35)[negative]]{6d12+35负能量伤害}，并且每个生物都必须尝试@Check[type:will|dc:40|traits:damaging-effects]检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受伤害，但是陷入毁灭1。</p>\n<p><strong>成功</strong> 生物受到一半伤害，并且陷入毁灭1。</p>\n<p><strong>失败</strong> 生物受到满伤害，陷入毁灭2，并且被诅咒标记。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，陷入毁灭3，并且被诅咒标记。如果生物在被诅咒标记之后的24小时内死亡，包括作祟的伤害导致的死亡，它的灵魂立即被拖到被诅咒的灵魂所侍奉的邪恶神灵所在的位面，在那里该生物的灵魂被那位神祇其中一位的强大仆从所奴役。只有<i>祈愿术</i>和类似的强大效果才能立即恢复失去的灵魂；但是，也可以通过前往邪恶位面并击败灵魂的俘获者来恢复灵魂。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Grasp Of The Damned"
+            },
+            "disable": "<p>@Check[type:religion|dc:46|name:Call For Divine Intervention] (master) to inspire a deity to intervene and counteract the ritual</p>",
+            "reset": "<p>1 day</p>"
         },
         "Gravehall Trap": {
             "name": "Gravehall Trap",
@@ -297,12 +379,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Lunging Dead":{
+            "items": {
+                "Lunging Dead": {
                     "name": "Lunging Dead",
                     "description": "<p><strong>触发</strong> A living creature crosses the midpoint of the tunnel</p>\n<hr />\n<p><strong>效果</strong> The dead reach out from the walls and ceiling, moaning and spewing writhing maggots. Creatures in the room must attempt a @Check[type:will|dc:21] save. The trap then rolls initiative.</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened}</p>\n<p><strong>失败</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}. It can't reduce its frightened condition below 1 while in the trap's area.</p>\n<p><strong>大失败</strong> As failure, and the target is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round.</p>"
                 }
-            }
+            },
+            "routine": "<p>(1 action) Undead fists assail all creatures in the hall, dealing @Damage[4d6[bludgeoning]] damage. Creatures in the hall must attempt a @Check[type:reflex|dc:21].</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage.</p>\n<p><strong>Failure</strong> The target takes full damage, and its Speeds are reduced by 10 feet (to a minimum of 5 feet) for 1 round.</p>\n<p><strong>Critical Failure</strong> The target takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} for 1 round.</p>",
+            "prototypeToken": {
+                "name": "Gravehall Trap"
+            },
+            "disable": "<p>@Check[type:thievery|dc:24|name:Disrupt Magical Trigger|traits:action:disable-a-device] (expert) to disrupt the magical trigger before the hazard rolls initiative, or @Check[type:religion|dc:18|name:Overwhelm the Area with Vitality Energy] (trained) to overwhelm the area with vitality energy and prevent the hazard from using its routine for 1 round; on the third successful Religion check, the necromantic energies are disrupted and the hazard is destroyed.</p>"
         },
         "Green Slime": {
             "name": "绿史莱姆 Green Slime",
@@ -313,12 +400,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Dissolving Ambush":{
+            "items": {
+                "Dissolving Ambush": {
                     "name": "溶解伏击 Dissolving Ambush",
                     "description": "<p><strong>触发</strong> 一个生物走到史莱姆下方；</p>\n<hr />\n<p><strong>效果</strong>绿史莱姆落到生物的头顶，试图将其溶解为营养液。目标必须尝试一次@Check[type:reflex|dc:28]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标从史莱姆下落的路径上跳走，不受影响。</p>\n<p><strong>成功</strong> 一小部分史莱姆落到了目标身上，目标陷入流失1。</p>\n<p><strong>失败</strong> 史莱姆落到目标身上，目标陷入流失1 ，并且除非史莱姆被移除，否则它每回合结束时流失状态值都会+1，如果目标已经达到流失4，下一次流失状态值增加时，目标会死亡并且溶解为营养液。复盖目标的史莱姆不能再通过生存检定剥除，并且对史莱姆造成的伤害同样会作用于目标（应用目标的免疫、弱点和抗力而不是绿史莱姆的）。</p>\n<p><strong>大失败</strong> 绿史莱姆完全覆盖了目标全身。这类似于失败的效果，只是目标立即陷入流失2，并且1轮之后陷入流失4，2轮之后死亡。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Green Slime"
+            },
+            "disable": "<p>@Check[type:survival|dc:33|name:Peel the Slime Off the Ceiling] (expert) to carefully peel the slime off the ceiling without touching it</p>",
+            "reset": "<p>1 hour, as the slime feasts and then slowly creeps back up to the ceiling</p>"
         },
         "Hallucination Powder Trap": {
             "name": "致幻粉末陷阱 Hallucination Powder Trap",
@@ -328,16 +420,20 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Powder Burst":{
+            "items": {
+                "Powder Burst": {
                     "name": "粉末爆发 Powder Burst",
                     "description": "<p><strong>触发</strong> 门闩被打开或装粉末的管子破损；</p>\n<hr />\n<p><strong>效果</strong> 管子爆炸，向@Template[type:cone|distance:30]范区域洒致幻粉末。锥形区域内的生物必须通过@Check[type:will|dc:24]检定，否则困惑1轮，并且察觉检定、对影响心灵效果的豁免检定受到-2状态减值，持续[[/br 1d4 #hours]]{1d4小时}。如果大失败，则-4。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Hallucination Powder Trap"
+            },
+            "disable": "<p>@Check[type:thievery|dc:26|name:Disable Hammer|traits:action:disable-a-device] (expert) to disable the hammer that strikes the percussion cap</p>"
         },
         "Hammer Of Forbiddance": {
             "name": "禁止之锤 Hammer Of Forbiddance",
-            "hp":"铰链HP：64 (BT 32), 铰链硬度：16",
+            "hp": "铰链HP：64 (BT 32), 铰链硬度：16",
             "hazarddisable": "<p>@Check[type:thievery|dc:28|name:Prevent Hammer from Swinging|traits:action:disable-a-device] (专家)一次解除锤子本身，再一次解除锤子的铰链来防止锤子摆动。</p>",
             "hazarddescription": "<p>一个巨大的锤子在建筑物的入口处摆荡下来，伤害进入此区域的生物，把它推回去并阻止它进一步前进。</p>",
             "hazardreset": "<p>陷阱会在整个回合结束后重置，暂停1回合后准备再次摆动。</p>",
@@ -345,16 +441,21 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Forbid Entry":{
+            "items": {
+                "Forbid Entry": {
                     "name": "禁止进入 Forbid Entry",
                     "description": "<p><strong>触发</strong> 一个生物尝试进入入口；</p>\n<hr />\n<p><strong>效果</strong> 摆锤挥下，对目标生物进行一次攻击。</p>"
                 },
-                "strike-Hammer":{
+                "strike-Hammer": {
                     "name": "锤子 Hammer",
                     "description": "<p>命中时，目标被击退10尺，并且必须通过@Check[type:will|dc:30]检定，如果失败则24小时内不能进入建筑物内部（如果重击，目标的意志豁免自动失败）；无多重攻击减值。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Hammer Of Forbiddance"
+            },
+            "disable": "<p>@Check[type:thievery|dc:28|name:Prevent Hammer from Swinging|traits:action:disable-a-device] (expert) once on the hammer itself and once on its joint to prevent the hammer from swinging</p>",
+            "reset": "<p>The trap resets over the course of the round, and is ready to swing again 1 round later.</p>"
         },
         "Hampering Web": {
             "name": "捕虫网 Hampering Web",
@@ -364,12 +465,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Ensnare":{
+            "items": {
+                "Ensnare": {
                     "name": "诱捕 Ensnare",
                     "description": "<p><strong>触发</strong> 一个不是蜘蛛的生物走进网中；</p>\n<hr />\n<p><strong>效果</strong> 蛛网缠绕着触发生物的身体，捆住它的四肢。触发生物必须通过@Check[type:reflex|dc:20]豁免，否则速度会受到-10环境减值，直到它成功逃脱蛛网的束缚（DC 20）。如果大失败，蛛网还会黏在生物的脸上，让它陷入恶心1，并且除非它成功逃脱，否则无法降低恶心状态值。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Hampering Web"
+            },
+            "disable": "<p>@Check[type:survival|dc:17|name:Dislodge Web] (trained) to dislodge it</p>"
         },
         "Hidden Pit": {
             "name": "陷坑 Hidden Pit",
@@ -380,12 +485,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Pitfall":{
+            "items": {
+                "Pitfall": {
                     "name": "陷坑 Pitfall",
                     "description": "<p><strong>触发</strong> 一个生物踩上活板门；</p>\n<hr />\n<p><strong>效果</strong> 生物坠入陷坑并受到坠落伤害（一般为[[/r (10)[bludgeoning]]]{10钝击伤害}）。该生物可以进行一次@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{抓住边缘 Grab an Edge}的反应动作来避免坠落。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Hidden Pit"
+            },
+            "disable": "@Check[type:thievery|dc:12|name:Remove the Trapdoor] to remove the trapdoor",
+            "reset": "<p>Creatures can still fall into the trap, but the trapdoor must be reset manually for the trap to become hidden again.</p>"
         },
         "Insistent Privacy Fence": {
             "name": "严守隐私围栏 Insistent Privacy Fence",
@@ -396,12 +506,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Shock":{
+            "items": {
+                "Shock": {
                     "name": "电击 Shock",
                     "description": "<p><strong>触发</strong> 一个生物直接触摸栅栏，或用工具或武器触碰栅栏；</p>\n<hr />\n<p><strong>效果</strong> 栅栏对触发的生物造成[[/r (7d12)[electricity]]]{7d12电击伤害}（@Check[type:reflex|dc:26|basic:true|traits:electricity,mechanical,trap,hazard]豁免）。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Insistent Privacy Fence"
+            },
+            "disable": "<p>@Check[type:thievery|dc:28|name:Disconnect the coil from the fence|traits:electricity,hazard,trap,mechanical] (expert) to carefully disconnect the coil from the fence or @Check[type:crafting|dc:30|name:Jury-rig a grounding device|traits:electricity,hazard,trap,mechanical] (master) to jury-rig a grounding device to nullify the shock</p>",
+            "reset": "<p>The trap deactivates and resets after 1 minute.</p>"
         },
         "Jealous Abjurer": {
             "name": "嫉妒的护法师 Jealous Abjurer",
@@ -412,12 +527,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Rend Magic":{
+            "items": {
+                "Rend Magic": {
                     "name": "撕裂魔法 Rend Magic",
                     "description": "<p><strong>触发</strong> 1个受到增益法术效果影响的单位接近护法师30尺范围内；</p>\n<hr />\n<p><strong>效果</strong> 嫉妒的护法师嫉妒他人的名望和魔法能力，试图将目标身上最高环级的增益法术扭转为灾难性的失败。它尝试一次+26调整值的反制检定。如果反制成功，该法术将被解除，目标将因为法术猛烈地内爆而受到@Damage[(4d12+30)[force]]{4d12+30力场伤害}（@Check[type:reflex|dc:32|basic:true]豁免）。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Jealous Abjurer"
+            },
+            "reset": "<p>1 hour</p>",
+            "disable": "<p>@Check[type:arcana|dc:36|name:Convince the Spirit], @Check[type:nature|dc:36|name:Convince the Spirit], @Check[type:occultism|dc:36|name:Convince the Spirit], or @Check[type:religion|dc:36|name:Convince the Spirit] (master) to convince the spirit that the target's magical knowledge is too great to be trifled with</p>"
         },
         "Lava Flume Tube": {
             "name": "岩浆管道 Lava Flume Tube",
@@ -430,12 +550,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Flume Activation":{
+            "items": {
+                "Flume Activation": {
                     "name": "管道开启 Flume Activation",
                     "description": "<p><strong>触发</strong> 一个生物尝试离开房间；</p>\n<hr />\n<p><strong>效果</strong> 出口立即封闭，陷阱进行先攻检定。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Lava Flume Tube"
+            },
+            "disable": "<p>@Check[type:thievery|dc:29|name:Block a Channel|traits:action:disable-a-device] (expert) to block a channel, or @Check[type:thievery|dc:31|name:Release Floor Latch|traits:action:disable-a-device] (master) to release the floor latch and escape to the chamber below</p>",
+            "routine": "<p>(4 actions) The trap loses 1 action per disabled channel each turn. On each action, a different channel spews lava, dealing 4d6 fire damage to each creature within 10 feet of the channel (@Check[type:reflex|dc:27|basic:true]), and increasing the depth of the lava in the room by 1 foot (4 feet per round if all the channels are active).</p>\n<p>A creature that starts its turn in lava takes 8d6 fire damage and is immobilized until it Escapes the hardening lava (DC 27). The creature might suffocate if covered in lava.</p>\n<p>Lava from the previous round hardens fully at the start of the trap's turn, effectively raising the floor of the room. Once the room is full of lava, the trap stops taking actions, but creatures in the room remain stuck until the floor opens and the trap resets.</p>",
+            "reset": "<p>The trap deactivates and resets after 1 hour by withdrawing the floor, cracking and dumping the hardened lava (and any creatures trapped inside) into the chamber. Creatures fall 40 feet, taking falling damage (typically 17 bludgeoning damage).</p>"
         },
         "Malevolent Mannequins": {
             "name": "怨毒模特 Malevolent Mannequins",
@@ -446,15 +572,21 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Awaken":{
+            "items": {
+                "Awaken": {
                     "name": "唤醒 Awaken",
                     "description": "<p><strong>触发</strong> 一个生物接近到模特30尺范围内；</p>\n<hr />\n<p><strong>效果</strong> 所有发条模特都蹒跚着走向触发的生物，行走最多50尺远，然后作祟进行先攻检定。</p>"
                 },
-                "strike-Clockwork Fist":{
+                "strike-Clockwork Fist": {
                     "name": "发条拳 Clockwork Fist"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Malevolent Mannequins"
+            },
+            "disable": "<p>@Check[type:thievery|dc:37|name:Jam a mannequin's clockwork mechanisms|traits:clockwork,haunt,mechanical,hazard]{Thievery (master)} to jam a mannequin's clockwork mechanisms or a @Check[type:religion|dc:35|name:Exorcise a spirit from a mannequin|traits:clockwork,haunt,mechanical,hazard]{Religion (expert)} twice to exorcise a spirit from a mannequin.</p>",
+            "routine": "<p>(9 actions) Each of the mannequins uses three of the haunt's actions on each turn, and the haunt loses three actions each turn for every disabled or destroyed mannequin. Each mannequin uses its first action to Stride up to 50 feet and its remaining two actions to make clockwork fist Strikes. Each has its own separate multiple attack penalty.</p>",
+            "reset": "<p>The haunt deactivates after it has no target creatures and resets, usually over the course of 1 round, as the mannequins move to their original positions. If a mannequin is more than 150 feet from its original position, the haunt takes longer to reset, as the mannequin moves back 150 feet each round.</p>"
         },
         "Perilous Flash Flood": {
             "name": "危险的洪流 Perilous Flash Flood",
@@ -465,16 +597,21 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Burst Free":{
+            "items": {
+                "Burst Free": {
                     "name": "突然爆发 Burst Free",
                     "description": "<p><strong>触发</strong> 一个生物或效果打破了洪水的围挡；</p>\n<hr />\n<p><strong>效果</strong> 随着洪水爆发，危害进行先攻检定。</p>"
                 },
-                "Filth Fever":{
+                "Filth Fever": {
                     "name": "污秽热 Filth Fever",
                     "description": "<p>在疾病治愈前，恶心和@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}状态不会被移除。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:20]</p>\n<p><strong>阶段1</strong> 携带病毒但不发病 (1d4小时)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (1天)</p>\n<p><strong>阶段3</strong> 恶心1，只要恶心还持续着就获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1} (1天)</p>\n<p><strong>阶段4</strong> 失去意识 (1天)</p>\n<p><strong>阶段5</strong> 死亡</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Perilous Flash Flood"
+            },
+            "disable": "<p>Three @Check[type:athletics|dc:35|name:Move Barricade], @Check[type:crafting|dc:35|name:Construct Barricade], or @Check[type:survival|dc:35|name:Construct Barricade] checks to move or construct barricades strong enough to create a shelter from the flood. While this creates a safe place to stand, creatures outside of the barricaded area may still be in danger depending on the nature and the source of the flood.</p>",
+            "routine": "<p>(1 action) The flood advances forward 60 feet, crashing into all creatures within its area. Each creature must attempt a @Check[type:fortitude|dc:30] save as the floodwaters pummel them and pull them downstream. The amount and type of damage dealt are based on the nature of the flood, and certain types of floods impose additional effects. The turbulent waters mean creatures within the area of the flood must attempt a @Check[type:athletics|dc:20|name:Swim|traits:action:swim] check to Swim in order to move, and those who do not succeed at a check to Swim each round may drown.</p>\n<hr>\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is moved 10 feet along with the water.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is moved 20 feet along with the water.</p>\n<hr>\n<ul>\n<li><strong>Acidic Runoff</strong> This caustic flood dissolves flesh as it moves, dealing @Damage[1d12[bludgeoning],(1d12+8)[acid]]{1d12 bludgeoning damage and 1d12+8 acid damage}. Additionally, it deals @Damage[2d6[persistent,acid]] damage to creatures who critically fail their Fortitude saves.</li>\n<li><strong>Battering Waves</strong> This flood of rushing water deals @Damage[(2d12+10)[bludgeoning]] damage.</li>\n<li><strong>Repulsive Refuse</strong> This flood has picked up tainted or disease-ridden objects like sewer runoff or rotting food. It deals @Damage[(2d12+8)[bludgeoning]] damage. Each creature exposed to the flood must attempt a @Check[type:fortitude|dc:29] save, becoming @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} on a failure or @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical failure. Additionally, creatures who come into contact with the flood waters are exposed to filth fever (@Check[type:fortitude|dc:20]).</li>\n<li><strong>Sharp Debris</strong> The waters have picked up various objects, some of which are particularly sharp. The flood deals @Damage[1d12[bludgeoning]] damage and @Damage[(1d12+12)[piercing]] damage.</li>\n<li><strong>Sticky Goo</strong> The substance is particularly sticky. It deals @Damage[(2d12+6)[bludgeoning]] damage. Additionally, each creature in the flood must attempt a @Check[type:reflex|dc:29] save at the beginning of their turn each round. On a failed saving throw, they take a -10-foot circumstance penalty to all their Speeds for 1 round. On a critical failure, they are instead @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} for 1 round.</li>\n</ul>"
         },
         "Pharaoh's Ward": {
             "name": "法老之护 Pharaoh's Ward",
@@ -485,12 +622,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Curse the Intruders":{
+            "items": {
+                "Curse the Intruders": {
                     "name": "诅咒闯入者 Curse the Intruders",
                     "description": "<p><strong>触发</strong> 古墓的封印被人从外面破坏；</p>\n<hr />\n<p><strong>效果</strong> 任何60尺内活着的生物必须通过@Check[type:will|dc:23]检定，否则受到法老的诅咒。被诅咒的生物的强韧豁免遭受-2状态减值，并且受到的任何自然或魔法的治疗减半。诅咒会一直持续，直到被@UUID[Compendium.pf2e.spells-srd.Item.OyFCwQuw8XRazsNr]{净化苦难 Cleanse Affliction}或类似的魔法移除。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Pharaoh's Ward"
+            },
+            "reset": "<p>The trap resets when the door is shut.</p>",
+            "disable": "<p>@Check[type:thievery|dc:27|name:Remove the Lintel] (master) to painstakingly remove the lintel without triggering the magic, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (4th rank; counteract DC 25) to counteract the rune</p>"
         },
         "Planar Rift": {
             "name": "位面裂隙 Planar Rift",
@@ -500,12 +642,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Into the Great Beyond":{
+            "items": {
+                "Into the Great Beyond": {
                     "name": "进入伟大彼岸 Into the Great Beyond",
                     "description": "<p><strong>触发</strong> 一个生物靠近裂隙10尺范围内；</p>\n<hr />\n<p><strong>效果</strong> 触发陷阱的生物连同裂隙30尺内的所有生物被拉进其他位面。每个生物都可以尝试@Check[type:reflex|dc:33]豁免检定来避免此命运。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Planar Rift"
+            },
+            "disable": "<p>@Check[type:thievery|dc:33|name:Assemble a Rift Seal|traits:action:disable-a-device] (master) to assemble a rift seal using objects strongly grounded to your plane, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 31) to counteract the rift</p>"
         },
         "Plummeting Doom": {
             "name": "坠落末日 Plummeting Doom",
@@ -516,16 +662,21 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Call of the Ground":{
+            "items": {
+                "Call of the Ground": {
                     "name": "大地的召唤 Call of the Ground",
                     "description": "<p><strong>触发</strong> 一个生物接近悬崖边缘15尺范围内；</p>\n<hr />\n<p><strong>效果</strong> 每个鬼魂尝试把悬崖边缘60尺范围内的生物丢下悬崖，以+26调整值对抗目标的强韧DC。如果作祟成功，目标就会被扔出悬崖边缘，然后坠落到120高的崖底。直到作祟被击败之前，悬崖边缘60尺内的每个生物每次进行阻止坠落、飞行、抓住边缘或其他避免坠落的其他动作时都必须尝试1次@Check[type:will|dc:40]豁免；如果豁免失败，动作将被打断。鬼魂会自动尝试反制任何减缓坠落或减轻坠落效果的法术，例如<i>羽落术</i>，反制调整值+32。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Plummeting Doom"
+            },
+            "reset": "<p>1 hour</p>",
+            "disable": "<p>@Check[type:athletics|dc:40|name:Forcefully Push Spirits Back] (trained) to push back so forcefully that the spirits fear being thrown off the cliff, or @Check[type:religion|dc:40|name:Seal the Spirits] (expert) to temporarily seal the spirits away</p>"
         },
         "Poisoned Dart Gallery": {
             "name": "毒镖走廊 Poisoned Dart Gallery",
-            "hp":"摧毁控制面板并解除陷阱",
+            "hp": "摧毁控制面板并解除陷阱",
             "hazarddisable": "<p>@Check[type:thievery|dc:21|name:Disable Trap (Control Panel)|traits:action:disable-a-device] (专家)操作控制面板关闭陷阱</p>",
             "hazarddescription": "<p>长长的走廊上有无数的洞排成一行，洞里能射出毒镖，走廊尽头有一个隐藏的控制面板。</p>",
             "hazardreset": "<p>陷阱关闭并在1分钟之后重置。</p>",
@@ -534,24 +685,34 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Dart Volley":{
+            "items": {
+                "Dart Volley": {
                     "name": "飞镖齐射 Dart Volley",
                     "description": "<p><strong>触发</strong> 一个生物进入走廊或在走廊里结束回合；</p>\n<hr />\n<p><strong>效果</strong> 陷阱对触发生物进行一次毒镖打击，然后进行先攻。</p>"
                 },
-                "strike-Poisoned Dart":{
+                "strike-Poisoned Dart": {
                     "name": "毒镖 Poisoned Dart",
                     "description": "<p>附加飞镖毒；无多重攻击减值。</p>"
                 },
-                "Continuous Barrage":{
+                "Continuous Barrage": {
                     "name": "持续弹幕 Continuous Barrage",
                     "description": "<p><strong>触发</strong> 一个生物位于被激活的走廊里，并且完成一个动作；</p>\n<hr />\n<p><strong>效果</strong> 陷阱对触发生物进行一次毒镖打击。</p>"
                 },
-                "Flesset Poison":{
+                "Flesset Poison": {
                     "name": "飞镖毒 Flesset Poison",
                     "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:22]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2} (1轮)</p>\n<p><strong>阶段3</strong> @Damage[3d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3} (1轮)</p>"
+                },
+                "No MAP": {
+                    "name": "No MAP",
+                    "description": "<p>The poisoned dart Strikes do not apply a MAP.</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Poisoned Dart Gallery"
+            },
+            "disable": "<p>@Check[type:thievery|dc:21|name:Disable Trap (Control Panel)|traits:action:disable-a-device] (expert) on the control panel deactivates the trap.</p>",
+            "routine": "<p>(1 action) The trap launches one dart against every creature in the gallery as 1 action. Because it launches darts continuously, the trap can also use the Continuous Barrage free action (see below) to launch darts at each creature during that creature's turn.</p>",
+            "reset": "<p>The trap deactivates and resets after 1 minute.</p>"
         },
         "Poisoned Lock": {
             "name": "毒锁 Poisoned Lock",
@@ -561,16 +722,20 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Spring":{
+            "items": {
+                "Spring": {
                     "name": "弹簧 Spring",
                     "description": "<p><strong>触发</strong> 一个生物尝试开锁；</p>\n<hr />\n<p><strong>效果</strong> 毒针刺出，攻击该生物。</p>"
                 },
-                "Cladis Poison":{
+                "Cladis Poison": {
                     "name": "针毒 Cladis Poison",
                     "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:19]</p>\n<p><strong>最大持续时间</strong> 4小时</p>\n<p><strong>阶段1</strong> @Damage[1d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1} (1小时)</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2} (1小时)</p>\n<p><strong>阶段3</strong> @Damage[3d6[poison]]伤害和流失2 (1小时)</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Poisoned Lock"
+            },
+            "disable": "<p>@Check[type:thievery|dc:17|name:Disarm Lock Trap|traits:mechanical,trap] (trained) on the spring mechanism</p>"
         },
         "Polymorph Trap": {
             "name": "变形陷阱 Polymorph Trap",
@@ -580,12 +745,20 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Baleful Polymorph":{
+            "items": {
+                "Baleful Polymorph": {
                     "name": "恶意变形 Baleful Polymorph",
                     "description": "<p><strong>触发</strong> 一个生物进入刻文30尺范围内，但是没有用德鲁伊语说出密语；</p>\n<hr />\n<p><strong>效果</strong> 该生物被<i>恶意变形术</i>攻击（@Check[type:will|dc:32]豁免）。 </p>"
+                },
+                "Cursed Metamorphosis": {
+                    "name": "Cursed Metamorphosis",
+                    "description": "<p><strong>Trigger</strong> A creature moves within 30 feet of the glyph without speaking the passphrase in Druidic</p>\n<hr />\n<p><strong>Effect</strong> The creature is targeted by @UUID[Compendium.pf2e.spells-srd.Item.dN8QBNuTiaBHCKUe]{Cursed Metamorphosis} (@Check[type:will|dc:32] save).</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Polymorph Trap"
+            },
+            "disable": "<p>@Check[type:thievery|dc:32|name:Drain Glyph's Power|traits:action:disable-a-device] (master) to drain the glyph's power harmlessly, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (6th rank; counteract DC 30) to counteract the glyph</p>"
         },
         "Quicksand": {
             "name": "流沙 Quicksand",
@@ -597,12 +770,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Submerge":{
+            "items": {
+                "Submerge": {
                     "name": "吞没 Submerge",
                     "description": "<p><strong>触发</strong> 一个大型或更小体型的生物走上流沙；</p>\n<hr />\n<p><strong>效果</strong> 触发的生物腰部以下淹没到流沙中。如果流沙还未投先攻，则进行先攻检定。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Quicksand"
+            },
+            "disable": "<p>@Check[type:survival|dc:18|name:Safely Disturb the Surface] (trained) to disturb the surface</p>",
+            "reset": "<p>The hazard still submerges anyone who walks in, but the surface doesn't become hidden again until it settles over the course of 24 hours.</p>",
+            "routine": "<p>(1 action) On its initiative, the quicksand pulls down each creature within it. A creature that was submerged up to its waist becomes submerged up to its neck, and a creature that was submerged up to its neck is pulled under and has to hold its breath to avoid suffocation. A creature in the quicksand can attempt a @Check[type:athletics|dc:20|traits:action:swim] check to Swim to either raise itself by one step if it's submerged to its neck or worse, or to move 5 feet if it's submerged only up to its waist. On a critical failure, the creature is pulled down one step. A creature that Swims out of the quicksand escapes the hazard and is @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} in a space adjacent to the quicksand patch. Other creatures can Aid the creature, typically by using a rope or similar aid, or attempt to pull the creature out with their own @Check[type:athletics|dc:20|name:Aid Another Creature in Quicksand] check, with the same results as if the creature attempted the check.</p>"
         },
         "Scythe Blades": {
             "name": "摆镰 Scythe Blades",
@@ -613,16 +792,25 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Falling Scythes":{
+            "items": {
+                "Falling Scythes": {
                     "name": "摆镰 Falling Scythes",
                     "description": "<p><strong>触发</strong> 绊线被拉动或被切断；</p>\n<hr />\n<p><strong>效果</strong> 两片镰刃同时向下摆动，每片镰刃都攻击天花板凹槽下的所有生物。</p>"
                 },
-                "strike-Scythe":{
+                "strike-Scythe": {
                     "name": "巨镰 Scythe",
                     "description": "<p>无多重攻击减值。</p>"
+                },
+                "No MAP": {
+                    "name": "No MAP",
+                    "description": "<p>The Scythe Strikes do not apply a MAP.</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Scythe Blades"
+            },
+            "disable": "<p>@Check[type:thievery|dc:21|name:Disable a Blade] (trained) to disable each blade</p>",
+            "reset": "<p>The trap resets after 15 minutes.</p>"
         },
         "Second Chance": {
             "name": "从头再来 Second Chance",
@@ -632,11 +820,15 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "In the Beginning":{
+            "items": {
+                "In the Beginning": {
                     "name": "回到初生 In the Beginning",
                     "description": "<p><strong>触发</strong> 一个生物试图窃取物品或入侵该位置。如果生物使用代行者或欺骗手段进行盗窃或入侵，陷阱会准确无误地锁定真正的幕后黑手——无论距离多远，甚至能跨越位面；</p>\n<hr />\n<p><strong>效果</strong> 触发陷阱的生物和最多五位密谋者立即变回婴儿，失去所有记忆、职业能力和后天受训的技能（通过@Check[type:fortitude|dc:44]检定则不受影响）。要逆转这种效果几乎是不可能的，需要像<i>祈愿术</i>这样强大的魔法。</p>"
                 }
+            },
+            "disable": "<p>@Check[type:thievery|dc:46|name:Dismantle Spell|traits:action:disable-a-device] (legendary) to take apart the spell one tiny piece at a time, with eyes closed, while recalling every vivid life memory in order, starting from the earliest memory</p>",
+            "prototypeToken": {
+                "name": "Second Chance"
             }
         },
         "Shrieker": {
@@ -647,12 +839,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Shriek":{
+            "items": {
+                "Shriek": {
                     "name": "尖叫 Shriek",
                     "description": "<p><strong>触发</strong> 一个生物或光源接近尖叫蕈10尺以内，或尖叫蕈受到伤害；</p>\n<hr />\n<p><strong>效果</strong> 尖叫蕈发出震耳欲聋的尖叫声，对30尺范围内的生物造成@Damage[1d6[sonic]]伤害（@Check[type:fortitude|dc:16|basic:true|traits:auditory]豁免；检定大失败的生物将@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{耳聋 Deafened}1分钟）。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Shrieker"
+            },
+            "disable": "<p>@Check[type:survival|dc:18|name:Disable Air Sac|traits:environmental,fungus] to carefully approach and cut the mushroom's air sac without triggering the shrieker</p>",
+            "reset": "<p>1 minute</p>"
         },
         "Slamming Door": {
             "name": "瓮中捉鳖 Slamming Door",
@@ -662,12 +859,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Slam Shut":{
+            "items": {
+                "Slam Shut": {
                     "name": "突然落下 Slam Shut",
                     "description": "<p><strong>触发</strong> 任何地砖受到压力；</p>\n<hr />\n<p><strong>效果</strong> 走廊两边的门落下并关闭。石板会对其下方区域或相邻的任何生物造成[[/r (3d8)[bludgeoning]]]{3d8钝击伤害}，并将它们按随机方向推离其所在空间。成功通过@Check[type:reflex|dc:17|traits:damaging-effect]豁免的生物不受伤害，并沿随机方向滚出。如果该生物大成功，它可以选择翻滚的方向。</p>\n<p>抬起落下的石板需要进行成功的@Check[type:athletics|dc:25|name:Lift a Slab Athletics|showDC:all]检定。</p>\n<p>命中压力板会触发陷阱，石板与陷阱的AC和豁免相同，但是它拥有硬度 12, HP 48 (BT 24)。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Slamming Door"
+            },
+            "disable": "<p>@Check[type:thievery|dc:15|name:Disable Floor Panel] (trained) on the floor panels before the slab falls</p>"
         },
         "Snowfall": {
             "name": "落雪 Snowfall",
@@ -677,12 +878,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Snowdrop":{
+            "items": {
+                "Snowdrop": {
                     "name": "雪崩 Snowdrop",
                     "description": "<p><strong>触发</strong> 一个生物在雪堆的下方移动；</p>\n<hr />\n<p><strong>效果</strong> 冰雪砸在触发的生物身上，造成@Damage[(2d6+3)[bludgeoning]]{2d6+3钝击伤害}（@Check[type:reflex|dc:18|basic:true]豁免）并弄湿他们的衣服。除非他们换上干净的衣服，或者在温度正常或更温暖的环境下待上至少1个小时，否则对于他们来说，寒冷环境的严峻程度会增加一级（举例来说，严寒会被视为极寒）。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Snowfall"
+            },
+            "disable": "<p>@Check[type:survival|dc:19|name:Safely Dislodge the Snow] (trained) to safely dislodge the snow, or deal any amount of fire damage to destroy the hazard without triggering it</p>"
         },
         "Spear Launcher": {
             "name": "矛墙 Spear Launcher",
@@ -692,12 +897,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Spear":{
+            "items": {
+                "Spear": {
                     "name": "矛 Spear",
                     "description": "<p><strong>触发</strong> 地砖受到压力；</p>\n<hr />\n<p><strong>效果</strong> 矛从墙孔里射出，攻击触发地板的生物或物品。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Spear Launcher"
+            },
+            "disable": "<p>@Check[type:thievery|dc:18|name:Disable Thievery] (trained) on the floor tile or wall socket</p>"
         },
         "Spectral Reflection": {
             "name": "镜中鬼影 Spectral Reflection",
@@ -708,23 +917,28 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Spectral Impale":{
+            "items": {
+                "Spectral Impale": {
                     "name": "幽魂刺击 Spectral Impale",
                     "description": "<p><strong>触发</strong> 一个生物接近镜子15尺范围内，并且镜子被昏暗或明亮光照照亮；</p>\n<hr />\n<p><strong>效果</strong> 作祟的幽灵进行一次阴影倒钩打击，刺穿生物在镜子中的身体。</p>"
                 },
-                "strike-Shadow Barbs":{
+                "strike-Shadow Barbs": {
                     "name": "阴影倒钩 Shadow Barbs"
                 },
-                "Sap Vitality":{
+                "Sap Vitality": {
                     "name": "侵蚀活力 Sap Vitality",
                     "description": "<p>镜中鬼影试图将被刺穿的生物的一部分生命精华吸进镜子，该生物必须通过@Check[type:fortitude|dc:22]豁免，如果豁免失败，目标陷入流失1，大失败时陷入流失2。</p>"
                 },
-                "Special":{
+                "Special": {
                     "name": "特殊 Special",
                     "description": "<p>镜中鬼影常常在整栋建筑里活动，任何足够大的镜子都能让其显现。数据中的生命值和硬度代表了被鬼影强化过的一般镜子；根据你的判断，鬼影可能会显现在更难被摧毁的反射面上。通过破坏反射面能阻止鬼影再次利用它显现。如果该遭遇出现在一个有很多镜面的地方，考虑给与PC通过一般简单危害的双倍甚至三倍的XP。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Spectral Reflection"
+            },
+            "disable": "<p>@Check[type:religion|dc:23|name:Exorcise Spirit] (trained) to exorcise the spirit, or @Check[type:thievery|dc:23|name:Cover the Mirror|traits:action:disable-a-device] (trained) to quickly cover the mirror</p>",
+            "reset": "<p>The haunt re-forms after 1 minute, manifesting in any mirror within its infused area (see Special below).</p>"
         },
         "Spinning Blade Pillar": {
             "name": "旋刃柱 Spinning Blade Pillar",
@@ -737,34 +951,47 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Rising Pillar":{
+            "items": {
+                "Rising Pillar": {
                     "name": "升起旋刃柱 Rising Pillar",
                     "description": "<p><strong>触发</strong> 一个生物踩上任意一块触发板；</p>\n<hr />\n<p><strong>效果</strong> 旋刃柱突然从网格的交叉点伸出，并立即用旋刃攻击一个相邻的生物（如果有的话），然后陷阱进行先攻检定。</p>"
                 },
-                "Speed":{
+                "Speed": {
                     "name": "速度 Speed",
                     "description": "<p>10尺</p>"
                 },
-                "strike-Spinning Blade":{
+                "strike-Spinning Blade": {
                     "name": "旋刃 Spinning Blade"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Spinning Blade Pillar"
+            },
+            "disable": "<p>@Check[type:thievery|dc:21|name:Disable Pillar|traits:action:disable-a-device] (trained) twice on the pillar, or @Check[type:thievery|dc:19|name:Disable Trap (Control Panel)|traits:action:disable-a-device] (expert) once on the control panel deactivates the whole trap. Breaking the control panel prevents anyone from disabling the trap using the control panel and prevents the trap from deactivating automatically.</p>",
+            "routine": "<p>(3 actions) The trap uses its first action to make a spinning blade Strike against each adjacent creature, its second action to move straight in a random direction (roll [[/br 1d4 #Direction]] to determine the direction), and its third to make a spinning blade Strike against each adjacent creature. This trap doesn't take a multiple attack penalty.</p>",
+            "reset": "<p>The trap deactivates and resets after 1 minute.</p>"
         },
         "Sportlebore": {
             "name": "拟餐虫 Sportlebore",
             "hazarddisable": "<p>一名发现拟餐虫的生物可以使用一个交互动作把它从藏身的食物中剔除。</p>",
             "hazarddescription": "<p>拟餐虫会藏在一盘食物或一袋干粮内</p>",
             "stealthdetails": "<p>(专家)</p>",
-            "items":{
-                "Mimic Food":{
+            "items": {
+                "Mimic Food": {
                     "name": "拟态食物 Mimic Food",
                     "description": "<p><strong>触发</strong> 一名生物食用了拟餐虫藏身其中的食物。</p>\n<hr />\n<p><strong>效果</strong> 拟餐虫在宿主胃部快速增殖，使得宿主获得拟餐虫感染。</p>"
                 },
-                "Sportlebore Infestation":{
+                "Sportlebore Infestation": {
                     "name": "拟餐虫感染 Sportlebore Infestation",
                     "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:22]</p>\n<p><strong>阶段1</strong> 携带但不发病(1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1小时)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1小时)</p>\n<p><strong>阶段4</strong> [[/r (4d6)[bludgeoning]]]{4d6钝击伤害} (@Check[type:fortitude|dc:25|basic:true]豁免)，与此同时宿主痛苦地呕吐出一团拟餐虫群并回到阶段 1。</p>"
                 }
+            },
+            "disable": "<p>A creature that notices the sportlebore can remove it from the food it is hidden within automatically as an Interact action.</p>",
+            "prototypeToken": {
+                "name": "Sportlebore"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
             }
         },
         "Steam Vents": {
@@ -775,12 +1002,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Steam Blast":{
+            "items": {
+                "Steam Blast": {
                     "name": "蒸汽爆炸 Steam Blast",
                     "description": "<p><strong>触发</strong> 绊线被拉动或拉断，一般是由于生物走过绊线所在的方格；</p>\n<hr />\n<p><strong>效果</strong> 蒸汽从管道里喷出，对15尺内所有生物造成[[/r (3d6)[bludegeoning]]]{3d6钝击伤害}和@Damage[3d6[fire]]伤害（@Check[type:reflex|dc:24|basic:true|name:Avoid the erupting steam|traits:mechanical,trap,hazard]豁免）。豁免大失败的生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Steam Vents"
+            },
+            "disable": "<p>@Check[type:thievery|dc:22|name:Disconnect the trip wire|traits:mechanical,trap,hazard]{Thievery (trained)} to disconnect the trip wire or a @Check[type:crafting|dc:24|name:Reduce the pressure|traits:mechanical,trap,hazard]{Crafting (expert)} to carefully reduce the pressure and prevent the blast</p>"
         },
         "Summoning Rune": {
             "name": "召唤符文 Summoning Rune",
@@ -791,12 +1022,17 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Summon Monster":{
+            "items": {
+                "Summon Monster": {
                     "name": "召唤怪物 Summon Monster",
                     "description": "<p><strong>触发</strong> 一个生物进入魔法传感器的范围内；</p>\n<hr />\n<p><strong>效果</strong> 此陷阱召唤一个特殊的1级生物，具体由陷阱创造时决定。该生物进行先攻检定并持续存在[[/br 2d6 #rounds]]{2d6轮}，法术效果结束之后该生物消失。如果法术效果结束前有人解除了陷阱则召唤生物也会消失。和大多数召唤的生物不同的是，此陷阱召唤的生物每轮拥有3个动作并且可以使用反应动作。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Summoning Rune"
+            },
+            "disable": "<p>@Check[type:acrobatics|dc:15|name:Approach Rune] to approach without triggering the trap followed by @Check[type:thievery|dc:17|name:Erase Rune|traits:action:disable-a-device] (trained) to erase the rune, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (1st rank; counteract DC 15) to counteract the rune</p>",
+            "reset": "<p>The trap resets each day at dawn.</p>"
         },
         "Telekinetic Swarm Trap": {
             "name": "念动集群陷阱 Telekinetic Swarm Trap",
@@ -809,15 +1045,21 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Agitate":{
+            "items": {
+                "Agitate": {
                     "name": "搅动起来 Agitate",
                     "description": "<p><strong>触发</strong> 一个生物呆在房间里至少6秒；</p>\n<hr />\n<p><strong>效果</strong> 每个念动感应装饰物生成一个由房间内物品组成的云团（总共三个）并且陷阱进行先攻。当陷阱被触发的时候，当时位于房间内的生物成为陷阱的目标，不管它们之后离开房间还是有其他生物之后进入房间。每个念动装饰物能选择不同的生物作为目标。当目标离开陷阱至少1英里时，该生物就不再是目标。此时陷阱会选择一个新目标。</p>"
                 },
-                "strike-Objects":{
+                "strike-Objects": {
                     "name": "物品风暴 Objects"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Telekinetic Swarm Trap"
+            },
+            "reset": "<p>The trap deactivates and resets 10 minutes after it has no target creatures (because the creatures either moved too far away or died).</p>",
+            "disable": "<p>@Check[type:thievery|dc:27|name:Take Apart Cloud|traits:action:disable-a-device] (expert) to take apart a telekinetic cloud, @Check[type:thievery|dc:32|name:Disable Telekinetic Decoration|traits:action:disable-a-device] (master) to disable each telekinetic decoration, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (6th level; counteract DC 30) to counteract each telekinetic decoration</p>",
+            "routine": "<p>(9 actions) Each decoration uses 3 of the trap's actions each turn, and the trap loses 3 actions each turn for every decoration that is disabled. A decoration uses its first action to move its cloud of objects up to 200 feet, its second action to make the objects Strike, and its third action to add more objects to the cloud, increasing its damage by 1d12 (to a maximum of 4d12+10). If a decoration's cloud is already at maximum damage, it does nothing with its third action.</p>\n<p>If a decoration's cloud has been destroyed, the decoration instead spends its first action to create a new cloud of objects inside the room (using the starting damage value) and then its second and third actions to have the cloud move and attack.</p>"
         },
         "Titanic Flytrap": {
             "name": "巨捕蝇草 Titanic Flytrap",
@@ -828,20 +1070,25 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Snap Shut":{
+            "items": {
+                "Snap Shut": {
                     "name": "猛然咬合 Snap Shut",
                     "description": "<p><strong>触发</strong>  一个小型或中型的生物走进隐藏的捕蝇夹的触及范围内；</p>\n<hr />\n<p><strong>效果</strong> 捕蝇草的捕蝇夹猛然咬合，对触发的生物进行一次啃咬打击。</p>"
                 },
-                "Devour":{
+                "Devour": {
                     "name": "吞食 Devour",
                     "description": "<p>目标被捕蝇草的啃咬困住，陷入擒抱状态，直到它逃脱（DC 21）。此外，它还会暴露在夹子内部数百根细小的麻痹鞭毛施放的毒素中。如果捕蝇草的啃咬打击大成功，生物在对抗此毒素时的豁免鉴定有-2环境减值。被擒抱目标每个回合结束时，都会受到3d6酸蚀伤害。</p>"
                 },
-                "Titanic Flytrap Toxin":{
+                "Titanic Flytrap Toxin": {
                     "name": "巨捕蝇草毒液 Titanic Flytrap Toxin",
                     "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:21]; <strong>最大持续时间</strong> 4轮</p>\n<p><strong>阶段1</strong> 2d6毒素伤害和震慑1 (1轮)</p>\n<p><strong>阶段2</strong> 3d6毒素伤害和震慑2 (1轮)</p>\n<p><strong>阶段3</strong> 4d6毒素伤害和麻痹(1轮)</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Titanic Flytrap"
+            },
+            "disable": "<p>@Check[type:survival|dc:22|name:Mislead the Flytrap's Senses] (trained) to mislead the flytrap's sense of weight and pressure</p>",
+            "reset": "<p>1 hour (or longer, after a large meal)</p>"
         },
         "Treacherous Scree": {
             "name": "不稳固的碎石 Treacherous Scree",
@@ -851,12 +1098,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Rockslide":{
+            "items": {
+                "Rockslide": {
                     "name": "岩崩 Rockslide",
                     "description": "<p><strong>触发</strong> 一个生物走上不稳定的地表；</p>\n<hr />\n<p><strong>效果</strong> 岩石崩落导致触发的生物跌倒，并造成@Damage[(2d10+13)[bludgeoning]]{2d10+13钝击伤害}，该生物必须尝试一次@Check[type:reflex|dc:21|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受伤害。</p>\n<p><strong>成功</strong> 该生物受到一半的伤害，并且在它占据的空间内倒地。</p>\n<p><strong>失败</strong> 生物受到全伤害，在它占据的空间内倒地，并且滚落至斜坡下方。</p>\n<p><strong>大失败</strong> 类似失败，但是造成双倍伤害。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Treacherous Scree"
+            },
+            "disable": "<p>@Check[type:survival|dc:20|name:Navigate Safe Path] (trained) to navigate a safe path</p>"
         },
         "Vorpal Executioner": {
             "name": "斩首处决者 Vorpal Executioner",
@@ -868,20 +1119,29 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Total Decapitation":{
+            "items": {
+                "Total Decapitation": {
                     "name": "全部斩首 Total Decapitation",
                     "description": "<p><strong>触发</strong> 一个生物尝试离开房间；</p>\n<hr />\n<p><strong>效果</strong> 锯刃沿着轨道移动，对房间里的所有生物进行一次打击，不断调整它的行进路线和高度来确保尽可能斩首每个目标。</p>"
                 },
-                "strike-Saw Blade":{
+                "strike-Saw Blade": {
                     "name": "锯刃 Saw Blade",
                     "description": "<p>无多重攻击减值。</p>"
                 },
-                "Decapitation":{
+                "Decapitation": {
                     "name": "斩首 Decapitation",
                     "description": "<p>一旦陷阱造成重击，目标必须通过@Check[type:fortitude|dc:39|traits:damaging-effect]检定，否则被斩首，立即死亡，除非它没有头部也能活。</p>"
+                },
+                "No MAP": {
+                    "name": "No MAP",
+                    "description": "<p>The saw blade Strikes do not apply a MAP.</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Vorpal Executioner"
+            },
+            "reset": "<p>The trap resets over the course of the round and can be triggered again 1 round later.</p>",
+            "disable": "<p>@Check[type:thievery|dc:41|name:Jam Saw Blade|traits:action:disable-a-device] (expert) at four different junctions to jam all the saw blade's possible paths, preventing it from traveling through the room</p>"
         },
         "Web Lurker Deadfall": {
             "name": "伏网怪落石陷阱 Web Lurker Deadfall",
@@ -891,12 +1151,16 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Deadfall":{
+            "items": {
+                "Deadfall": {
                     "name": "落石陷阱 Deadfall",
                     "description": "<p><strong>触发</strong> 有生物进入拌足绳圈所在的方格。</p>\n<hr />\n<p><strong>效果</strong> 陷阱所在10尺边长方格内的所有生物受到@Damage[2d6[bludgeoning]]伤害（@Check[type:reflex|dc:20|basic:true]豁免）。 </p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Web Lurker Deadfall"
+            },
+            "disable": "<p>Survival (trained) or Thievery (expert) DC 20 to rearrange the webbing.</p>"
         },
         "Web Lurker Noose": {
             "name": "伏网怪套索 Web Lurker Noose",
@@ -905,16 +1169,20 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Web Noose":{
+            "items": {
+                "Web Noose": {
                     "name": "蛛网套索 Web Noose",
                     "description": "<p><strong>触发</strong> 有生物走入拌足绳圈所在的方格。</p>\n<hr />\n<p><strong>效果</strong> 伏网怪套索作出套索打击对抗触发陷阱的生物。</p>"
                 },
-                "strike-Noose":{
+                "strike-Noose": {
                     "name": "套索 Noose",
                     "description": "<p>命中时造成3d6钝击伤害，目标被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbed}并拽离地面（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC22）。</p>\n<p>只要目标被套索捕捉着，目标就会在其每个回合结束时承受@Damage[1d6[bludgeoning]]伤害。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Web Lurker Noose"
+            },
+            "disable": "<p>@Check[type:survival|dc:18|name:Rearrange the Webbing|traits:mechanical,trap] (trained) or @Check[type:thievery|dc:18|name:Rearrange the Webbing|traits:mechanical,trap] (expert) to rearrange the webbing.</p>"
         },
         "Wheel Of Misery": {
             "name": "神秘之轮 Wheel Of Misery",
@@ -926,12 +1194,18 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Wheel Spin":{
+            "items": {
+                "Wheel Spin": {
                     "name": "轮转 Wheel Spin",
                     "description": "<p><strong>触发</strong> 一个生物进入传感器的探测范围；</p>\n<hr />\n<p><strong>效果</strong> 轮子开始行动并进行先攻检定。</p>"
                 }
-            }
+            },
+            "prototypeToken": {
+                "name": "Wheel Of Misery"
+            },
+            "disable": "<p>@Check[type:thievery|dc:26|name:Stop Wheel from Spinning|traits:action:disable-a-device] (expert) on the wheel to stop it from spinning, @Check[type:thievery|dc:22|name:Erase Rune|traits:action:disable-a-device] (master) to erase each rune, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (4th rank; counteract DC 22) to counteract each rune</p>",
+            "reset": "<p>The trap deactivates and resets if 1 minute passes without any creature moving within range of its sensor.</p>",
+            "routine": "<p>(2 actions) On its initiative, the trap uses its first action to spin, then stops. Roll 1d6 to determine which segment is topmost when the wheel stops spinning. The wheel uses its second action to replicate the spell listed for that segment (3rd rank, DC 24, spell attack modifier +14). This spell's target is centered on or otherwise includes the nearest creature in the area. This increases the spell's range to 100 feet if necessary. Any spell cast by this trap is arcane.</p>\n<p><strong>1</strong>@UUID[Compendium.pf2e.spells-srd.Item.o4lRVTwSxnOOn5vl]{Sleep}</p>\n<p><strong>2</strong>@UUID[Compendium.pf2e.spells-srd.Item.DCQHaLrYXMI37dvW]{Paralyze}</p>\n<p><strong>3</strong>@UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{Lightning Bolt} (100-foot line)</p>\n<p><strong>4</strong>@UUID[Compendium.pf2e.spells-srd.Item.VosLNn2M8S7JH67D]{Blindness}</p>\n<p><strong>5</strong>@UUID[Compendium.pf2e.spells-srd.Item.thAHF1zxNplLCJPO]{Caustic Blast}</p>\n<p><strong>6</strong>@UUID[Compendium.pf2e.spells-srd.Item.J7Y7tl0bbdz7TcCc]{Enfeeble}</p>"
         },
         "Yellow Mold": {
             "name": "黄霉菌 Yellow Mold",
@@ -941,14 +1215,45 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "items":{
-                "Spore Explosion":{
+            "items": {
+                "Spore Explosion": {
                     "name": "孢子爆发 Spore Explosion",
                     "description": "<p><strong>触发</strong> 一个生物移动到霉菌占据的空间或对霉菌造成伤害。如果霉菌被阳光直射，或伤害类型为火焰伤害，则该反应动作不可用；</p>\n<hr />\n<p><strong>效果</strong> 目标生物和@Template[type:emanation|distance:10]{10尺}范围内的所有生物都暴露在黄霉菌孢子中。</p>"
                 },
-                "Yellow Mold Spores":{
+                "Yellow Mold Spores": {
                     "name": "黄霉菌孢子 Yellow Mold Spores",
                     "description": "<p>孢子造成的任何流失状态都持续到毒素的持续时间结束之后；</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:26]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d8[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[2d8[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2} (1轮)</p>\n<p><strong>阶段3</strong> @Damage[3d8[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 3} (1轮)</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "Yellow Mold"
+            },
+            "disable": "<p>@Check[type:survival|dc:26|name:Remove the Mold] (expert) to remove the mold without triggering the spores</p>"
+        },
+        "Poisonous Mold": {
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Poisonous Mold",
+            "stealthdetails": "<p>(trained)</p>",
+            "prototypeToken": {
+                "name": "Poisonous Mold"
+            },
+            "disable": "<p>@Check[type:survival|dc:18] (trained) to safely remove the mold</p>",
+            "hazarddescription": "<p>This grotesque fungus releases poisonous spores when a creature comes near.</p>",
+            "reset": "<p>Unless entirely eradicated (typically with acid or fire), the mold regrows over the course of 2 weeks.</p>",
+            "items": {
+                "Feed on Decay": {
+                    "name": "Feed on Decay",
+                    "description": "<p>The mold expands when fed by blood or decay. If at any point a creature takes bleed damage while adjacent to the mold or a dying or dead body is adjacent to the mold, the mold grows to expand into every square adjacent to its current space. This can happen only once per day.</p>"
+                },
+                "Spore Burst": {
+                    "name": "Spore Burst",
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> A creature touches the mold, hits it, or damages it</p>\n<hr />\n<p><strong>Effect</strong> The mold explodes in a burst of spores and mold clusters, dealing @Damage[(2d6+6)[poison]] damage to creatures within 10 feet of it, with a @Check[type:fortitude|dc:18|basic:true] save.</p>"
+                },
+                "Floating Spores": {
+                    "name": "Floating Spores",
+                    "description": "<p>5 feet. A creature that enters or starts its turn in the aura takes @Damage[2d6[poison]] damage.</p>"
                 }
             }
         }
