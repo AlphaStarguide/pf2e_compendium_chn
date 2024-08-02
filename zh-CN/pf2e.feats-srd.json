@@ -2658,10 +2658,10 @@
         },
         "Suspect of Opportunity": {
             "name": "临时嫌犯 Suspect of Opportunity",
-            "description": "<p><strong>频率</strong> 每小时一次</p>\n<p><strong>触发</strong> 一名敌人在战斗中对你采取敌对行动。</p>\n<hr />\n<p>有时，有些事会无预警地闯入你的案子，例如一次要结束你调查的埋伏。你已经学会了如何区分你的主要方向，并为当前的困境展开新的追查。</p>\n<p>你可以对触发的敌人使用@UUID[Compendium.pf2e.actionspf2e.Item.xTK2zsWFyxSJvYbX]{追查方向 Pursue a Lead}行动，如果你有两个方向，可以搁置但不结束一个当前的方向。在战斗遭遇结束时，你中止敌人触发的追查方向行动，如果你有搁置一个事件，则回到你搁置的事件中。</p>",
+            "description": "<p><strong>触发</strong> 一个据你所知与你的任意主动调查毫无关联的生物在战斗中对你采取敌对行动。</p><hr /><p>有时，有些事会无预警地闯入你的案子，例如一次要结束你调查的埋伏。你对触发的生物使用疑犯追踪动作。这不能使你比正常频率更频繁的使用疑犯追踪。</p>",
             "prerequisites": [
                 {
-                    "value": "Person of Interest"
+                    "value": "疑犯追踪"
                 }
             ]
         },
@@ -3629,7 +3629,7 @@
         },
         "Detective's Readiness": {
             "name": "侦探预备 Detective's Readiness",
-            "description": "<p>当你调查事件时，您会保持警惕和果断——以防止嫌犯可能使用的诡计。</p>\n<p>你在@UUID[Compendium.pf2e.actionspf2e.Item.xTK2zsWFyxSJvYbX]{追查方向 Pursue a Lead}上获得的环境加值，可以用在对抗追查客体的意志豁免（通常，这也会增加意志DC），并且你可以使用@UUID[Compendium.pf2e.actionspf2e.Item.25WDi1cVUrW92sUj]{提供线索 Clue In}反应动作协助一名盟友，在意志豁免上对抗追查客体。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.rUKtp4q8y73AvCbo]{效果: 提供线索 (侦探预备)}</p>"
+            "description": "<p>当你调查事件时，您会保持警惕和果断——以防止嫌犯可能使用的诡计。你在追查方向上获得的加值，可以用在对抗与调查的核心问题相关的生物或效果的豁免中（通常也包括它们的DC），并且你可以使用提供线索反应动作协助一名盟友使其在对抗该生物或效果的豁免。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.rUKtp4q8y73AvCbo]{效果: 提供线索 (侦探预备)}</p>"
         },
         "Sidestep": {
             "name": "侧滑瞬步 Sidestep",
@@ -4165,7 +4165,7 @@
         },
         "Clue Them All In": {
             "name": "全体提醒 Clue Them All In",
-            "description": "<p>你可以同时向所有盟友提供线索。当你使用@UUID[Compendium.pf2e.actionspf2e.Item.25WDi1cVUrW92sUj]{提供线索 Clue In}反应动作，你所有也在尝试调查相同方向的盟友，在检定上会获得来自提供线索的环境加值。如果你是在一场遭遇中使用本能力，那么他们必须在你进行全体提醒的同一轮尝试这个检定。</p>"
+            "description": "<p>你可以同时向所有盟友提供线索。当你使用提供线索反应动作，你所有也在调查同一主动调查的盟友，在检定上会获得来自提供线索的环境加值。如果你是在一场遭遇中使用本能力，那么他们必须在你进行全体提醒的同一轮尝试这个检定。</p>"
         },
         "Coordinated Charge": {
             "name": "全军突击 Coordinated Charge",
@@ -5053,7 +5053,7 @@
         },
         "Shared Stratagem": {
             "name": "分享战略 Shared Stratagem",
-            "description": "<p>你的计划有你也有他。当你攻击并击中一个生物，而你的攻击是使用@UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]{出谋划策 Devise a Strategem}取代的攻击骰，你指定一个盟友。</p>\n<p>在你下一回合开始前，你指定的盟友对该生物的下一次攻击，该生物对盟友视为@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+            "description": "<p>你的计划有你也有他。当你攻击并击中一个生物，而你的攻击是使用出谋划策取代的攻击骰，你指定一个盟友。在你下一回合开始前，你指定的盟友对该生物的下一次攻击，该生物对盟友视为@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
         },
         "Share Rage": {
             "name": "分享狂暴 Share Rage",
@@ -7409,7 +7409,7 @@
         },
         "Solid Lead": {
             "name": "固定方向 Solid Lead",
-            "description": "<p>有时候你的事件会分裂成无数个小谜团，但你知道如何不至于忘却大局。每天一次，当你因为再次进行@UUID[Compendium.pf2e.actionspf2e.Item.xTK2zsWFyxSJvYbX]{追查方向 Pursue a Lead}行动导致你必须放弃一个方向时，你可以指定你停止追查的方向作为每天的固定方向。即便你停止追查固定方向，你仍就可以用一个动作，无数次把追查方向改回固定方向，这动作有专注特性。这样做会使当前某个追查方向结束，同一般情况。</p>\n<p>在你下一次日常准备期间，你可以维持你的固定方向，或你可以将之移除；移除固定方向能让你在日后指定新的固定方向。</p>"
+            "description": "<p>有时候你的事件会分裂成无数个小谜团，但你知道如何不至于忘却大局。每天一次，当你因为再次进行追查方向行动导致你必须放弃一个方向时，你可以指定你停止追查的方向作为每天的固定方向。即便你停止追查固定方向，你仍就可以用一个动作，无数次把追查方向改回固定方向，这动作有专注特性。这样做会使当前某个追查方向结束，同一般情况。</p>\n<p>在你下一次日常准备期间，你可以维持你的固定方向，或你可以将之移除；移除固定方向能让你在日后指定新的固定方向。</p>"
         },
         "Round Ears": {
             "name": "圆耳朵 Round Ears",
@@ -10701,7 +10701,7 @@
         },
         "Trap Finder": {
             "name": "寻找陷阱 Trap Finder",
-            "description": "<p>你的直觉提醒着你陷阱的存在。你在寻找陷阱的察觉检定、对抗陷阱时的AC及豁免检定上获得 +1 环境加值。即使你没有搜索，你也可以进行检定来找到通常需要进行搜索才能发现的陷阱。你仍然需要满足寻找陷阱的其他需求。</p>\n<p>你能解除需要大师熟练贼活才能解除的陷阱。如果你的贼活已经有大师熟练了，那你能解除需要传奇熟练的陷阱，并且在对抗陷阱时获得+2环境加值。</p>"
+            "description": "<p>你的直觉提醒着你危险和陷阱的存在。你在寻找陷阱的察觉检定、对抗陷阱时的AC及豁免检定上获得 +1 环境加值。即使你没有搜索，你也可以进行检定来找到通常需要进行搜索才能发现的陷阱。你仍然需要满足寻找陷阱的其他需求。你能解除需要大师熟练贼活才能解除的陷阱。如果你的贼活已经有大师熟练了，那你能解除需要传奇熟练的陷阱，并且在对抗陷阱时获得+2环境加值。</p>"
         },
         "Magic Finder": {
             "name": "寻法者 Magic Finder",
@@ -13696,7 +13696,7 @@
         },
         "Strategic Assessment": {
             "name": "战略评估 Strategic Assessment",
-            "description": "<p>你通过观察敌人的动作来了解他们的强处和弱点。当你攻击一个生物，并用@UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]{出谋划策 Devising a Strategem}能力对攻击骰进行取代的攻击出了大成功时，GM选择敌人的以下一个信息告诉你： </p>\n<ul>\n<li>敌人的哪个弱点是最致命的</li>\n<li>敌人的哪个抗性是最高的</li>\n<li>敌人哪一项的豁免最低</li>\n<li>一项敌人有的免疫</li>\n</ul>\n<p>GM可以随机或选定一项告诉你，但是他不能选择敌人没有的东西（例如对一个没有免疫的敌人，选择告知免疫）。此能力只用于你首次对选定生物造成重击。</p>"
+            "description": "<p>你通过观察敌人的动作来了解他们的强处和弱点。当你用出谋划策能力取代了攻击骰并命中一个生物时，GM选择敌人的以下一个信息告诉你： </p><ul><li>敌人的哪个弱点是最致命的</li><li>敌人的哪个抗性是最高的</li><li>敌人哪一项的豁免最低</li><li>一项敌人有的免疫</li></ul><p>GM可以随机或选定一项告诉你，但是他不能选择敌人没有的东西（例如对一个没有免疫的敌人，选择告知免疫）。此能力只用于你首次命中选定生物。</p>"
         },
         "Defy The Darkness": {
             "name": "战胜黑暗 Defy The Darkness",
@@ -14257,7 +14257,7 @@
         },
         "Takedown Expert": {
             "name": "抱摔专家 Takedown Expert",
-            "description": "<p>你精通实战，让你能迅速贴身并生擒敌人。</p>\n<p>除了本来就可以的武器，如果你一只手使用棍棒武器组[例如棍棒、杖或闷棍]的武器，你在使用@UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]{出谋划策 Devise a Strategem}能力时可以把智力调整值用在攻击骰上，并且这些打击能用在@UUID[Compendium.pf2e.classfeatures.Item.2Fe4YZCvAr9Yf6w7]{策士之击 Strategic Strike}上。</p>\n<p>此外，你进行的任何非致命打击无须承受正常的-2罚值。</p>"
+            "description": "<p>你精通实战，让你能迅速贴身并生擒敌人。除了本来就可以的武器，如果你一只手使用棍棒武器组（如棍棒或权杖）的武器，你在使用攻击策略时可以把智力调整值用在攻击骰上，并且这些打击能用在策士之击上。此外，你可以将你的任何打击变为非致命而无须承受正常的-2罚值。</p>"
         },
         "Ankle Biter": {
             "name": "抱脚啃腿 Ankle Biter",
@@ -17485,7 +17485,7 @@
         },
         "Known Weaknesses": {
             "name": "洞悉弱点 Known Weaknesses",
-            "description": "<p>在你使用@UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]{出谋划策 Devise a Strategem}能力时，你还能以这个动作的一部分尝试@UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{回忆知识 Recall Knowledge}。如果你在回忆知识检定上大成功，你了解他的一个弱点，并在出谋划策能力中的攻击骰上获得+1环境加值。</p>\n<p>作为检定的一部分，如果你即刻将此信息传递给你的盟友，只要他们在你的下一回合开始前发动攻击，他们在对目标的下一次攻击检定中就会获得+1环境加值。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DvyyA11a63FBwV7x]{效果: 洞悉弱点}</p>"
+            "description": "<p>在你使用@UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]时，你还能在骰D20前以这个动作的一部分的形式尝试回忆知识。如果你在回忆知识检定上大成功，你了解他的一个弱点且可以将此信息传递给你的盟友，在你的下一回合开始前对目标的下一次攻击检定上获得+1环境加值。若你选择攻击策略，该加值也能用于此次攻击检定。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DvyyA11a63FBwV7x]{效果: 洞悉弱点}</p>"
         },
         "Know Oneself": {
             "name": "洞悉自身 Know Oneself",
@@ -17785,7 +17785,7 @@
         },
         "Thorough Research": {
             "name": "深入研究 Thorough Research",
-            "description": "<p>当你在一个@UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{回忆知识 Recall Knowledge}检定上成功，你了解到这个对象的一个额外事实。当你在回忆知识上大成功时，你会获得比正常情况下更多的额外信息或背景信息，由GM决定。</p>"
+            "description": "<p>你对感兴趣的领域有着渊博的知识。当你在一个回忆知识检定上成功，你了解到一个额外的信息或背景情报。当你在回忆知识上大成功时，你会获得比正常情况下更多的额外信息/背景或被允许询问一个额外的后续问题（由GM决定）。</p>"
         },
         "Deep Freeze": {
             "name": "深度冷冻 Deep Freeze",
@@ -18722,7 +18722,7 @@
         },
         "Alchemical Discoveries": {
             "name": "炼金发现 Alchemical Discoveries",
-            "description": "<p>您在实验室上花费了额外的时间来提高对炼金术的了解。每次升级时，您可以学习两个炼金物品的配方，而非一个（仍然必须是灵药或工具）。</p>\n<p>如果您工艺上是专家熟练，则每天可以制造的多用途瓶数量将增加1，如果您是大师熟练则增加2，如果您是传奇熟练，则增加3。</p>",
+            "description": "<p>您在实验室上花费了额外的时间来提高对炼金术的了解。每次升级时，您可以学习两个炼金物品的配方，而非一个（仍然必须是灵药或工具）。如果您工艺上是专家熟练，则每天可以制造的多用途瓶数量将增加一个，如果您是大师熟练则增加两个，如果您是传奇熟练，则增加三个。</p>",
             "prerequisites": [
                 {
                     "value": "炼金科学方法论"
@@ -20065,7 +20065,7 @@
         },
         "Blind-Fight": {
             "name": "盲斗 Blind-Fight",
-            "description": "<p><strong>战士，游荡者</strong> 你的战斗直觉让你能更明显地察觉到@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}与@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}的敌人。</p>\n<p><strong>游侠</strong>你敏锐的感官让你能够本能地发现看不见的对手。</p>\n<hr />\n<p>你不需要在纯骰检定中成功就能指定隐蔽的生物为目标。对你@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}的敌人不会使你对其@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}（除非出于隐藏状态之外的原因使你对其措手不及），并且只需要在@Check[type:flat|dc:5]检定中成功就能指定隐藏的生物为目标。</p>\n<p>当你与等级和你相同或更低的@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}生物相邻时，它只视作对你藏匿。.</p>",
+            "description": "<p><strong>战士，游荡者，调查员</strong> 你的战斗直觉让你能更明显地察觉到@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}与@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}的敌人。</p>\n<p><strong>游侠</strong>你敏锐的感官让你能够本能地发现看不见的对手。</p><hr /><p>你不需要在纯骰检定中成功就能指定隐蔽的生物为目标。对你@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}的敌人不会使你对其@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}（除非出于隐藏状态之外的原因使你对其措手不及），并且只需要在@Check[type:flat|dc:5]检定中成功就能指定隐藏的生物为目标。</p>\n<p>当你与等级和你相同或更低的@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}生物相邻时，它只视作对你藏匿。.</p>",
             "prerequisites": [
                 {
                     "value": "察觉熟练度为大师"
@@ -24718,7 +24718,7 @@
         },
         "Whodunnit?": {
             "name": "谁干的 Whodunnit?",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>你慎重思索着你的案件，并将思绪缩小至某些细节。当你使用@UUID[Compendium.pf2e.actionspf2e.Item.xTK2zsWFyxSJvYbX]{追查方向 Pursue a Lead}行动并完成行动时，你能花10分钟而非1分钟，向GM问两个问题。</p>\n<p>GM必须诚实回答「是」或「否」，但如果回答会误导或对你的调查没有实际用处，GM可以回答「无关」。你在一个方向上只能问一次「谁干的?」，不管经过几天都一样。</p>\n<p>你的问题必须出自下表，不论是用在生物还是你找到的线索：</p>\n<ul>\n<li>这个线索是由[生物特征]遗留的吗?（选择一个生物特征，例如类人、不死或矮人；这特性必须精准到从线索被遗留时开始）。 </li>\n<li>线索被留下的时间在一小时内吗？</li>\n<li>线索被留下的时间在一天内吗？</li>\n<li>留下线索的生物在留下线索时情绪强烈吗？</li>\n<li>该生物有没有试着想隐藏这个线索？</li>\n</ul>"
+            "description": "<p><strong>频率</strong> 每天一次</p><hr /><p>你慎重思索着你的案件，并将思绪缩小至某些细节。当你使用追查方向行动并发现存在更大的谜团后，你能在开展调查时向GM问两个与你的调查相关的问题。GM必须诚实回答「是」或「否」，但如果回答会误导或对你的调查没有实际用处，GM可以回答「无关」。你在一个方向上只能问一次「谁干的?」，不管经过几天都一样。你的问题必须出自下表：</p><ul><li>这个线索是由[生物特征]遗留的吗?（选择一个生物特征，例如类人、不死或矮人；这特性必须精准到从线索被遗留时开始）。 </li><li>线索被留下的时间在一小时内吗？</li><li>线索被留下的时间在一天内吗？</li><li>留下线索的生物在留下线索时情绪强烈吗？</li><li><p>有没有人试着想隐藏这个线索？</p>\n</li></ul>"
         },
         "Halcyon Spellcasting Initiate": {
             "name": "调和法术学徒 Halcyon Spellcasting Initiate",
@@ -24832,7 +24832,7 @@
         },
         "Lead Investigator": {
             "name": "调查首脑 Lead Investigator",
-            "description": "<p>你花1分钟为最多四位盟友做了你追查的一个方向的简报。</p>\n<p>这些盟友在调查该方向时的检定上，会获得你@UUID[Compendium.pf2e.actionspf2e.Item.xTK2zsWFyxSJvYbX]{追查方向 Pursue a Lead}能力给的相同环境加值。这个加值会持续直到你取消追查该方向，或1天，取决于哪个先。这个能力不会授予任何追查方向在其他方面的好处，例如在豁免上享有@UUID[Compendium.pf2e.feats-srd.Item.5cYFHKQK6OZCwavI]{侦探预备 Detective's Readiness}的环境加值。</p>",
+            "description": "<p>你花1分钟为最多四位盟友做了你一个主动调查的简报。这些盟友在与该调查问题核心相关的检定上会获得你追查方向能力的相同环境加值。这个加值会持续直到你取消追查该方向，或1天，取决于哪个先。这个能力不会授予任何追查方向在其他方面的好处，例如在豁免上享有侦探预备的环境加值。</p>",
             "prerequisites": [
                 {
                     "value": "全体提醒"
@@ -25573,7 +25573,7 @@
         },
         "Lie Detector": {
             "name": "辨谎高手 Lie Detector",
-            "description": "<p>你擅于发现说谎者，渗出的汗水、通红的脸、颤抖的声音、急促的心跳。</p>\n<p>你在对抗向你@UUID[Compendium.pf2e.actionspf2e.Item.ewwCglB7XOPLUz72]{说谎 Lie}的人时，在察觉检定、@UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{察言观色 Sense Motive}检定以及察觉DC上获得+1环境加值。</p>\n<p>当你判断有人对你说谎时，你能利用他们的谎言作为自己的优势，在下一分钟时于下一次对抗该生物的欺瞒、交涉、威吓或表演检定上获得+1环境加值。</p>",
+            "description": "<p>你擅于发现说谎者渗出的汗水、通红的脸、颤抖的声音、急促的心跳。你在对抗说谎时，在察觉检定、@UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{察言观色 Sense Motive}检定以及察觉DC上获得+1环境加值。当你判断有人对你说谎时，你能利用他们的谎言作为自己的优势，在下一分钟时于下一次对抗该生物的欺瞒、交涉、威吓或表演检定上获得+1环境加值。</p>\n<p>若你已经在上述的检定中获得了来自追查方向的加值，则改为该加值提升1点而非获得+1加值。</p>",
             "prerequisites": [
                 {
                     "value": "经验主义或审讯学方法论"
@@ -25809,7 +25809,7 @@
         },
         "Athletic Strategist": {
             "name": "运动战略家 Athletic Strategist",
-            "description": "<p>你知道如何主动操纵关节和体重。除了使用@UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]{出谋划策 Devise a Strategem}调整打击外，你可以把这种调整用在@UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]{卸武 Disarm}、@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}、@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}或@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{摔拌 Trip}上，用出谋划策的骰子取代运动检定。你必须在首次符合条件的攻击中用上这个取代，无论这是一次打击还是一个运动动作。</p>\n<p>在你用出谋划策策的骰子取代时，你还可以用智力而非力量调整值进行运动检定，除非你在进行战技时使用了武器，并且那武器还不符合出谋划策在用智力调整取代时的限制。</p>",
+            "description": "<p>你知道如何主动操纵关节和体重。除了使用攻击策略替换打击骰外，你也可以用在@UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]{卸武 Disarm}、@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}、@UUID[Compendium.pf2e.actionspf2e.Item.lOE4yjUnETTdaf2T]、@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}或@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]{摔拌 Trip}上，用出谋划策的骰子取代运动检定。你必须在首次符合条件的攻击中用上这个取代，无论这是一次打击还是一个运动动作。</p>\n<p>在你用出谋划策策的骰子取代时，你还可以用智力而非力量调整值进行运动检定，除非你在进行战技时使用了武器，并且那武器还不符合出谋划策在用智力调整取代时的限制。</p>",
             "prerequisites": [
                 {
                     "value": "运动技能熟练度为受训"
@@ -25835,7 +25835,7 @@
         },
         "Just One More Thing": {
             "name": "还有一点 Just One More Thing",
-            "description": "<p><strong>需求</strong> 你最近的一个动作是虚招，提出请求或者挫败士气，并且你失败了，但是没有大失败。</p>\n<hr />\n<p>在你试图影响某人的努力失败后，你添加了一点资讯或提出一个尖锐的问题，可能会挽救你先前的尝试。</p>\n<p>重骰失败的检定并使用新结果。如果检定失败的目标是你正在追查的客体，把从@UUID[Compendium.pf2e.actionspf2e.Item.xTK2zsWFyxSJvYbX]{追查方向 Pursue a Lead}上得到的加值在这重骰检定上翻倍。该生物会暂时免疫本能力一天。</p>\n<p>如果你在说谎，搜集信息，建立印象或者胁迫检定上失败，但没有大失败时，你也可以使用此动作。在这种情况下，使用本能力不是一个动作，而是你第一次进行检定所花的时间的一半，至少1轮。</p>"
+            "description": "<p><strong>需求</strong> 你最近的一个动作是@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]，@UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]或@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]，并且你失败了，但是没有大失败。</p><hr /><p>在你试图影响某人的努力失败后，你添加了一点资讯或提出一个尖锐的问题，可能会挽救你先前的尝试。重骰失败的检定并使用新结果。如果检定失败的目标是你正在追查的客体，把从追查方向上得到的加值在这重骰的检定上翻倍。该生物会暂时免疫本能力一天。</p>\n<p>如果你在说谎，搜集信息，@UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]或@UUID[Compendium.pf2e.actionspf2e.Item.tHCqgwjtQtzNqVvd]检定上失败，但没有大失败时，你也可以使用此动作。在这种情况下，使用本能力不是一个动作，而是你第一次进行检定所花的时间的一半，至少1轮。</p>"
         },
         "Call Your Shot": {
             "name": "还有谁?? Call Your Shot",
@@ -29845,7 +29845,7 @@
         },
         "Underworld Investigator": {
             "name": "黑街调查员 Underworld Investigator",
-            "description": "<p>调查员的职涯使您熟悉犯罪的成分。可能你自己就是罪犯，或者可能你在旁观中了解了他们的运作方式。</p>\n<p>你在黑街学识（Underworld Lore）上受训，并且你在调查客体时，可以将@UUID[Compendium.pf2e.actionspf2e.Item.xTK2zsWFyxSJvYbX]{追查方向 Pursue a Lead}行动的环境加值用在贼活上（例如从疑犯那偷线索，或打开藏有犯罪文件的保险箱的锁）。</p>"
+            "description": "<p>调查员的职涯使您熟悉犯罪的成分。可能你自己就是罪犯，或者可能你在旁观中了解了他们的运作方式。你在黑街学识（Underworld Lore）上受训，并且你在调查案件时，可以将追查方向行动的环境加值用在贼活上（例如从疑犯那@UUID[Compendium.pf2e.actionspf2e.Item.RDXXE7wMrSPCLv5k]线索，或打开藏有犯罪文件的保险箱的锁）。</p>"
         },
         "Secret Speech": {
             "name": "黑话交谈 Secret Speech",
@@ -36453,8 +36453,8 @@
             "name": "Hone Claws"
         },
         "Certain Stratagem": {
-            "description": "<p>You know exactly where to strike a foe to target their weak spots. When you make a Strike that you're adding your Intelligence modifier to due to @UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]{Devising a Stratagem} and miss, you deal half of your @UUID[Compendium.pf2e.classfeatures.Item.2Fe4YZCvAr9Yf6w7]{Strategic Strike} damage to the target. This damage type is that of the weapon or unarmed attack you used for the Strike.</p>",
-            "name": "Certain Stratagem"
+            "description": "<p>你非常确信攻击何处能打击到敌人的弱点。当你因@UUID[Compendium.pf2e.actionspf2e.Item.m0f2B7G9eaaTmhFL]将智力调整值应用到打击并未命中时，你对目标造成你的@UUID[Compendium.pf2e.classfeatures.Item.2Fe4YZCvAr9Yf6w7一半的伤害。伤害类型由你打击所使用的武器或非武装攻击而决定。</p>",
+            "name": "笃定策略 Certain Stratagem"
         },
         "Improvise Admixture": {
             "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> You have fewer than your maximum number of versatile vials, and you're either holding or wearing an alchemist's toolkit.</p><hr /><p>You scrounge together enough ingredients from what's left in your alchemist's toolkit to produce a few more versatile vials on the fly. Attempt a @Check[type:crafting|dc:@self.level] check. The DC is usually a standard-difficulty DC for your level, but the GM can assign a different DC based on the circumstances. The number of vials you regain depends on the result of your check (up to your maximum).</p><hr /><p><strong>Critical Success</strong> You regain 3 versatile vials.</p>\n<p><strong>Success</strong> You regain 2 versatile vials.</p>\n<p><strong>Failure</strong> You regain 1 versatile vial.</p>\n<p><strong>Critical Failure</strong> You don't regain any versatile vials.</p>",
@@ -36612,8 +36612,8 @@
             "name": "Animalistic Brutality"
         },
         "Defensive Stratagem": {
-            "description": "<p>By scrutinizing a foe, you learn how to better avoid its attacks. When you use Devise a Stratagem, you can choose a defensive stratagem instead of an attack or skill stratagem after you roll a d20.</p>\n<p><strong>Defensive Stratagem</strong> You can't attempt to Strike the target until the start of your next turn. You gain a +1 circumstance bonus to all your defenses against effects caused by the target until the start of your next turn.</p>",
-            "name": "Defensive Stratagem"
+            "description": "<p>通过观察你的敌人，你学会了如何避开攻击。当你使用出谋划策时，在攻击策略和技能策略外，你还可以在骰D20后选择防御策略。</p>\n<p><strong>防御策略</strong> 你的下回合开始前，你不能对目标打击。你在对抗由目标产生的所有效果时，你的所有防御获得+1环境加值，直到你的下回合开始。</p>",
+            "name": "防御策略 Defensive Stratagem"
         },
         "Fantastic Leaps": {
             "description": "<p>Your leaps seem to defy gravity as you soar through the air in a single bound. When Leaping, increase the maximum distance you can @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leap} horizontally by 10 feet, and the maximum distance you can Leap vertically by 5 feet.</p>",
@@ -36867,8 +36867,8 @@
             "name": "Breath Of The Dragon (Dragon Disciple)"
         },
         "Exploit Blunder": {
-            "description": "<p><strong>Trigger</strong> A creature you Devised a Stratagem against on your most recent turn fails or critically fails a Strike against you.</p><hr /><p>By watching your foes closely, you can make the most out of their mistakes. You Step.</p>",
-            "name": "Exploit Blunder"
+            "description": "<p><strong>触发</strong> 一名在最近回合中成为你出谋划策目标的生物在对你的打击中失败或大失败。</p><hr /><p>通过仔细观察你的敌人，你得以充分利用其犯下的错误。你快步。</p>",
+            "name": "漏洞扩展 Exploit Blunder"
         },
         "Expert Disassembly": {
             "description": "<p>You can apply the same techniques you use to reverse engineer objects to disable them. You can use Crafting instead of Thievery to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} or @UUID[Compendium.pf2e.actionspf2e.Item.2EE4aF4SZpYf0R6H]{Pick a Lock}.</p>",
@@ -36993,8 +36993,8 @@
             "name": "血之主权 Blood Sovereignty"
         },
         "Eliminate Red Herrings": {
-            "description": "<p>You have a keen sense for avoiding spurious lines of inquiry. When you roll a critical failure on a skill check to Recall Knowledge related to a question about one of your active investigations, you get a failure instead.</p>",
-            "name": "Eliminate Red Herrings"
+            "description": "<p>你有规避错误调查路线的敏锐直觉。当你在回憶知识的技能中大失败，且其与你的主动调查之一相关时，你改为获得失败。</p>",
+            "name": "排除“红鲱鱼” Eliminate Red Herrings"
         },
         "Vision of Weakness": {
             "description": "<p>You can call upon divine insights to single out your foes' weak points. You learn the @UUID[Compendium.pf2e.spells-srd.Item.NhNKzq1DvFxkvTEc]{Vision of Weakness} revelation spell. Increase the number of Focus Points in your focus pool by 1.</p>",
@@ -37072,7 +37072,7 @@
             "description": "<p>You fundamentally understand everything to the point where your research can't possibly be wrong. You are permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} and can use the extra action to Recall Knowledge. In addition, you gain the following benefits with Recall Knowledge.</p><ul><li>Your checks to Recall Knowledge are no longer secret.</li><li>When you Recall Knowledge, you use the outcome for one degree of success better than the result of your check.</li><li>If an effect (such as Dubious Knowledge) would give you inaccurate information from your Recall Knowledge check, you know which information is inaccurate.</li><li><p>When one of your allies Recalls Knowledge and gains false information, you also know that information is inaccurate if they share it with you</p>\n</li></ul>",
             "prerequisites": [
                 {
-                    "value": "Thorough Research"
+                    "value": "深入研究"
                 }
             ],
             "name": "Just the Facts"
