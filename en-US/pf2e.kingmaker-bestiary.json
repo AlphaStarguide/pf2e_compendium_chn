@@ -840,7 +840,7 @@
                 },
                 "Hydra Regeneration": {
                     "name": "Hydra Regeneration",
-                    "description": "<p>The hydra has regeneration equal to 3 x the number of heads it has. If a hydra's body is missing any heads and the remaining stumps have not been cauterized, the hydra attempts a @Check[fortitude|immutable|dc:35] save after it regains Hit Points from regeneration. On a success, one uncauterized stump regrows two heads; on a critical success, two uncauterized stumps regrow into two heads each. The hydra can never grow more than double the number of heads it ordinarily has. The hydra's regeneration only fully deactivates if all its heads are severed and all stumps are cauterized, at which point it dies.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>\n<hr />\n<p><em><strong>Note:</strong> The source specifies hydra regeneration 15, but this conflicts with standard hydra regeneration.</em></p>"
+                    "description": "<p>The hydra has regeneration equal to 3 x the number of heads it has. If a hydra's body is missing any heads and the remaining stumps have not been cauterized, the hydra attempts a @Check[fortitude|immutable:true|dc:35] save after it regains Hit Points from regeneration. On a success, one uncauterized stump regrows two heads; on a critical success, two uncauterized stumps regrow into two heads each. The hydra can never grow more than double the number of heads it ordinarily has. The hydra's regeneration only fully deactivates if all its heads are severed and all stumps are cauterized, at which point it dies.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>\n<hr />\n<p><em><strong>Note:</strong> The source specifies hydra regeneration 15, but this conflicts with standard hydra regeneration.</em></p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -1184,7 +1184,7 @@
             "items": {
                 "Collapse": {
                     "name": "Collapse",
-                    "description": "<p><strong>Trigger</strong> A support is destroyed</p>\n<p><strong>Effect</strong> The bridge collapses. Any creature on the bridge between the red dotted lines falls 30 feet into water or onto land, taking damage as appropriate plus an additional @Damage[5d6[bludgeoning]] damage (@Check[reflex|dc:24|basic]) from falling debris; a creature within five feet of the red dotted line can try to @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} (@Check[reflex|dc:24]) to avoid falling. A creature under the bridge-either directly below it or within ten feet of it-must attempt a @Check[reflex|dc:24] save; a creature that's not directly under the bridge improves the result of their saving throw one degree.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes [[/r (2d8 + 9)[bludgeoning]]] damage.</p>\n<p><strong>Failure</strong> The creature takes [[/r (4d8 + 18)[bludgeoning]]] damage and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<p><strong>Critical Failure</strong> The creature takes [[/r (8d8 + 18)[bludgeoning]]] damage, is knocked prone, and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} by fallen rubble from the collapsed bridge.</p>"
+                    "description": "<p><strong>Trigger</strong> A support is destroyed</p>\n<p><strong>Effect</strong> The bridge collapses. Any creature on the bridge between the red dotted lines falls 30 feet into water or onto land, taking damage as appropriate plus an additional @Damage[5d6[bludgeoning]] damage (@Check[reflex|dc:24|basic]) from falling debris; a creature within five feet of the red dotted line can try to @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} (@Check[reflex|dc:24]) to avoid falling. A creature under the bridge-either directly below it or within ten feet of it-must attempt a @Check[reflex|dc:24] save; a creature that's not directly under the bridge improves the result of their saving throw one degree.</p><hr /><p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes @Damage[(2d8 + 9)[bludgeoning]] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[(4d8 + 18)[bludgeoning]] damage and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[(8d8 + 18)[bludgeoning]] damage, is knocked prone, and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} by fallen rubble from the collapsed bridge.</p>"
                 }
             }
         },
@@ -1465,7 +1465,8 @@
             "blurb": "Human cleric of Lamashtu",
             "items": {
                 "Monstrous Bloom": {
-                    "name": "Monstrous Bloom"
+                    "name": "Monstrous Bloom",
+                    "description": "<p>This ritual uses numerous dangerous components, such as spores from yellow mold, and is a risky magic to work, yet the Cult of the Bloom still manages to spread this evil ritual's effects throughout the Stolen Lands, putting the PCs' kingdom into peril.</p>\n<p>As monstrous bloom is not intended to be a ritual the PCs can learn, and all of the after-effects of the ritual are quantified as needed in Chapter 5, the ritual itself is not presented in detail here. Methods by which the PCs can learn more about the ritual and how to combat its effects are detailed on page 229.</p>"
                 },
                 "Absorb the Bloom": {
                     "name": "Absorb the Bloom",
@@ -1758,7 +1759,7 @@
                 },
                 "Recovery": {
                     "name": "Recovery",
-                    "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> The Spiral Seal is damaged but is above its Broken Threshold</p>\n<hr />\n<p><strong>Effect</strong> The Spiral Seal repairs itself, regaining [[/r 30[healing]]]{30 Hit Points}.</p>"
+                    "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> The Spiral Seal is damaged but is above its Broken Threshold</p><hr /><p><strong>Effect</strong> The Spiral Seal repairs itself, regaining @Damage[30[healing]] Hit Points.</p>"
                 }
             }
         },
@@ -2489,7 +2490,7 @@
             "items": {
                 "Collapse": {
                     "name": "Collapse",
-                    "description": "<p><strong>Trigger</strong> Two or more Medium creatures or a Large or larger creature crosses the bridge</p>\n<p><strong>Effect</strong> The bridge collapses. The triggering creature(s) fall into the river below, taking no damage from the fall itself due to the deep water, but taking [[/r (2d8 + 5)[bludgeoning]]] damage (@Check[reflex|dc:21|basic]) from falling debris. For 1 round after the collapse, the waters below the bridge churn violently, requiring a @Check[athletics|dc:20] check to Swim.</p>"
+                    "description": "<p><strong>Trigger</strong> Two or more Medium creatures or a Large or larger creature crosses the bridge</p>\n<p><strong>Effect</strong> The bridge collapses. The triggering creature(s) fall into the river below, taking no damage from the fall itself due to the deep water, but taking @Damage[(2d8 + 5)[bludgeoning]] damage (@Check[reflex|dc:21|basic]) from falling debris. For 1 round after the collapse, the waters below the bridge churn violently, requiring a @Check[athletics|dc:20] check to Swim.</p>"
                 }
             }
         },
@@ -3570,7 +3571,7 @@
             "items": {
                 "Monstrous Bloom": {
                     "name": "Monstrous Bloom",
-                    "description": "<p>This ritual uses numerous dangerous components, such as spores from yellow mold, and is a risky magic to work, yet the Cult of the Bloom still manages to spread this evil ritual's effects throughout the Stolen Lands, putting the PCs' kingdom into peril. As monstrous bloom is not intended to be a ritual the PCs can learn, and all of the after-effects of the ritual are quantified as needed in Chapter 5, the ritual itself is not presented in detail here. Methods by which the PCs can learn more about the ritual and how to combat its effects are detailed on page 229.</p>"
+                    "description": "<p>This ritual uses numerous dangerous components, such as spores from yellow mold, and is a risky magic to work, yet the Cult of the Bloom still manages to spread this evil ritual's effects throughout the Stolen Lands, putting the PCs' kingdom into peril.</p>\n<p>As monstrous bloom is not intended to be a ritual the PCs can learn, and all of the after-effects of the ritual are quantified as needed in Chapter 5, the ritual itself is not presented in detail here. Methods by which the PCs can learn more about the ritual and how to combat its effects are detailed on page 229.</p>"
                 },
                 "equipment-Religious Symbol of Lamashtu (Gold)": {
                     "name": "Religious Symbol of Lamashtu (Gold)"
@@ -7077,8 +7078,8 @@
                 "equipment-Clothing and Crown made of thorny vines and weeds": {
                     "name": "Clothing and Crown made of thorny vines and weeds"
                 },
-                "+1 Status vs. Posion": {
-                    "name": "+1 Status vs. Posion"
+                "+1 Status vs. Poison": {
+                    "name": "+1 Status vs. Poison"
                 },
                 "Goblin Scuttle": {
                     "name": "Goblin Scuttle",

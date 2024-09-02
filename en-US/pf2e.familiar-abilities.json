@@ -1,13 +1,29 @@
 {
     "label": "familiar-abilities",
     "entries": {
+        "Lightning Needles": {
+            "description": "<p><strong>Requirements</strong> You Cast a Spell that had the air or electricity traits this turn;</p><hr /><p><strong>Effect</strong> Your familiar absorbs excess electrical charge and unleashes a @Template[type:emanation|distance:5] of static electricity that flows into creatures' meridians. Creatures in the emanation that fail a @Check[fortitude|against:spell] save against your spell DC become clumsy 1 until the end of their next turn. If a creature is soaked or standing over or in water inside the emanation, it also takes @Damage[1d4[persistent,electricity]] damage on a failed save.</p>",
+            "name": "Lightning Needles"
+        },
+        "Versatile Form": {
+            "description": "<p>The crafted body of your familiar allows you to make adjustments to it when required. Once per day, you can spend 10 minutes to change one familiar or master ability your familiar possesses. To select this ability, your familiar must be a construct, and you must be at least trained in Crafting.</p>",
+            "name": "Versatile Form"
+        },
         "Darkvision": {
             "description": "<p>It gains darkvision.</p>",
             "name": "Darkvision"
         },
+        "Mass-Produced": {
+            "description": "<p>If your shikigami dies, you can rebind its spirit to another paper doll during your next daily preparations.</p>",
+            "name": "Mass-Produced"
+        },
         "Independent": {
             "description": "<p>In an encounter, if you don't Command your familiar, it still gains 1 action each round. Typically, you still decide how it spends that action, but, the GM might determine that your familiar chooses its own tactics rather than performing your preferred action. This doesn't work with @UUID[Compendium.pf2e.familiar-abilities.Item.9PsptrEoCC4QdM23]{Valet} or similar abilities that require a command, if you're capable of riding your familiar, or similar situations.</p>",
             "name": "Independent"
+        },
+        "Seal-Bearer": {
+            "description": "<p>During your daily preparations, you can inscribe a symbol or seal upon your shikigami that corresponds to the air, earth, fire, metal, water, or wood element. If you use the shikigami's kindling ability that day, it applies to a spell that deals damage with the relevant trait to the chosen element, instead of only the fire trait.</p>",
+            "name": "Seal-Bearer"
         },
         "Radiant": {
             "description": "<p>Your familiar is filled with a divine radiance that makes it resistant to the forces of evil. Your familiar gains resistance to evil and void damage equal to half your level.</p>\n<p><em>Note: As effects placed on one actor cannot reference data from another actor, the resistance of half the PC level is not automatable. Please update the familiars resistances accordingly.</em></p>",
@@ -32,6 +48,10 @@
         "Damage Avoidance: Will": {
             "description": "<p>It takes no damage when it succeeds at Will saves; this doesn't prevent effects other than damage.</p>",
             "name": "Damage Avoidance: Will"
+        },
+        "Flatten": {
+            "description": "<p>Your familiar can flatten itself to the width of a sheet of paper, easily fitting through the smallest of cracks and gaps. So long as a door or other obstacle has a gap that can fit a sheet of paper, your familiar can move through it without needing to Squeeze.</p>",
+            "name": "Flatten"
         },
         "Familiar of Balanced Luck": {
             "description": "<p>Your familiar has a spot on its body that looks like a good luck charm or a bad omen, depending on the angle. When you Cast or Sustain a hex, one creature within 15 feet of your familiar gets your choice of either a +1 status bonus to its AC or a –1 status penalty to its AC until the start of your next turn.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.0JvxhEv83bAD5PGv]{Effect: Familiar of Balanced Luck}</p>",
@@ -145,6 +165,10 @@
             "description": "<p>Once every 10 minutes, you can use a single action with the concentrate trait to project your senses into your familiar. When you do, you lose all sensory information from your own body, but can sense through your familiar's body for up to 1 minute. You can Dismiss this effect.</p>",
             "name": "Share Senses"
         },
+        "Kindling": {
+            "description": "<p>You can immolate your familiar's body for a surge of power. Once per day as a free action, when you Cast a Spell that has the fire trait, deals damage, and doesn't have a duration, you can sacrifice your familiar to empower the spell. Your familiar is immediately slain, and you gain a status bonus to that spell's damage equal to twice the spell level.</p>",
+            "name": "Kindling"
+        },
         "Major Resistance": {
             "description": "<p>Your familiar increases the resistance it gains from its @UUID[Compendium.pf2e.familiar-abilities.Item.FcQQLMAJMgOLjnSv]{Resistance} familiar ability to a value equal to your level. To select this you must be at least 8th level.</p>",
             "name": "Major Resistance"
@@ -209,6 +233,14 @@
             "description": "<p>Prerequisites @UUID[Compendium.pf2e.feats-srd.Item.baz18CdB13DVMHV9]{Leshy Familiar Secrets}</p>\n<p>Your familiar can extend vines or similar tendrils, increasing its reach to 15 feet.</p>",
             "name": "Grasping Tendrils"
         },
+        "Dazzling Show": {
+            "description": "<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> Your kinnara flashes his brilliant feathers. Each creature within a @Template[type:emanation|distance:30] must attempt a @Check[will|against:class-spell] save against your class DC or spell DC, whichever is higher, or be @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 2 rounds.</p>",
+            "name": "Dazzling Show"
+        },
+        "Soul Bond": {
+            "description": "<p>Your kinnars' spirits are intrinsically linked. While they're two beings, they're still considered a single creature, act as a single creature, use normal familiar statistics, and are subject to all of the normal effects that come with being a single creature. Their linked spirits allow them to stave off attacks against their mind. If your kinnars are subjected to a mental effect that allows a saving throw, they roll twice and take the higher result; this is a fortune effect.</p>",
+            "name": "Soul Bond"
+        },
         "Elemental Familiar (Water)": {
             "description": "<p>Your familiar gains the water elemental trait.</p>\n<p>Your familiar can move through a gap at least 2 inches wide without Squeezing and can Squeeze through a gap at least 1 inch wide.</p>",
             "name": "Elemental Familiar (Water)"
@@ -233,6 +265,10 @@
             "description": "<p>Your familiar seems hostile to all creatures other than you, hissing at them if they get too near. When you Cast or Sustain a hex, your familiar can curse a creature within 15 feet of it, prolonging the duration of any negative conditions affecting it by 1 round. This is a curse effect. This prolongs only conditions with a timed duration (such as \"1 round\" or \"until the end of your next turn\") and doesn't prevent conditions from being removed by other means.</p>",
             "name": "Familiar of Ongoing Misery"
         },
+        "Vina Song": {
+            "description": "<p><strong>Frequency</strong> once per hour, see below</p><hr /><p><strong>Effect</strong> Your kinnari elegantly plays her instrument. Each creature within a @Template[type:emanation|distance:30] must attempt a Will save against your class DC or spell DC, whichever is higher, or be @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} for 1 round. A kinnar can use this ability again on the next round to continue the song and force affected creatures to attempt another Will save; on a failure, a creature is fascinated for an additional round. Once the kinnar stops playing, they can't use this ability again for 1 hour. A creature that succeeds at any save or has its fascination broken is temporarily immune to that kinnar's Vina Song for 24 hours. Kinnars are immune to this ability.</p>",
+            "name": "Vina Song"
+        },
         "Spirit Touch": {
             "description": "<p>Your familiar can touch incorporeal creatures. If you have the spell delivery master ability from your familiar, any spell the familiar delivers with it gains the benefits of the <em>@UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch}</em> property rune.</p>",
             "name": "Spirit Touch"
@@ -240,6 +276,10 @@
         "Soul Sight": {
             "description": "<p>Your familiar gains @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.sebk9XseMCRkDqRg]{Lifesense} with a range of 30 feet.</p>",
             "name": "Soul Sight"
+        },
+        "Path of the Tempest": {
+            "description": "<p><strong>Frequency</strong> once per 10 minutes;</p><hr /><p><strong>Effect</strong> Your familiar summons winds that speed up and protect you. You gain a +10-foot status bonus to your Speed until the end of your turn. When you Stride this turn, you don't trigger reactions. In addition, you don't need to Stride before a @UUID[Compendium.pf2e.actionspf2e.Item.JUvAvruz7yRQXfz2]{Long Jump} this turn.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.2CJwgnCsYtk4R5sO]{Effect: Path of the Tempest}</p>",
+            "name": "Path of the Tempest"
         },
         "Focused Rejuvenation": {
             "description": "<p>When you Refocus, you generate magical energy that heals your familiar. Your familiar regains 1 Hit Point per level whenever you Refocus.</p>",
@@ -249,9 +289,17 @@
             "description": "<p>Your familiar has glinting eyes, twitching ears, or some other sign of a beast's powerful senses. When you Cast or Sustain a hex, your familiar gains your choice of an imprecise scent, tremorsense, or wavesense, with a range of 60 feet until the start of your next turn, and it can immediately @UUID[Compendium.pf2e.actionspf2e.Item.sn2hIy1iIJX9Vpgj]{Point Out} as a free action.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.4wJM0OA9y2gsBAh7]{Effect: Familiar of Keen Senses}</p>",
             "name": "Familiar of Keen Senses"
         },
+        "Stunning Flare": {
+            "description": "<p><strong>Frequency</strong> once per 10 minutes;</p><hr /><p><strong>Effect</strong> Your lantern wisp unleashes a large burst of flame, casting an unnaturally bright light. Each creature within a @Template[type:emanation|distance:15] must attempt a @Check[fortitude|against:class-spell] save against your class DC or spell DC, whichever is higher, or be @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round and then @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 2 rounds after.</p>",
+            "name": "Stunning Flare"
+        },
         "Luminous": {
             "description": "<p>Your familiar glows with a comforting light. It sheds bright light in a 30-foot radius and dim light for the next 30 feet. It can suppress or resume this light by using an action, which has the concentrate trait.</p>",
             "name": "Luminous"
+        },
+        "Play Dead": {
+            "description": "<p>Your familiar pretends to be inanimate, hiding its supernatural capabilities. It can Hide without any cover or concealment from creatures that don't realize it's alive, so long as it's in a location where it wouldn't seem out of place. If the familiar succeeds, onlookers still see it, but they mistake it for an inanimate object. After being fooled once, they realize your familiar is alive, and it can't Hide from them in that way again.</p>",
+            "name": "Play Dead"
         },
         "Restorative Familiar": {
             "description": "<p>Once per day, your familiar can use 2 actions with the concentrate trait to give up some of its energy and heal you. It must be in your space to do so. You restore a number of Hit Points equal to @Damage[(max(floor(@actor.level/2),1))d8[healing]]{1d8 times half your level} (minimum 1d8).</p>",
@@ -297,6 +345,10 @@
             "description": "<p>Your familiar can transform into a tattoo you carry on your flesh. When transformed into a tattoo, the familiar looks like a colorful and stylized version of itself and can't act except to turn back into a familiar. It isn't affected by area effects and must be targeted separately to affect it, which requires knowledge that it's a creature. This means you and your allies can heal or assist the familiar while most enemies stay unaware of its true nature. Creatures must attempt a @Check[perception|dc:20|showDC:all] check to Seek to realize a tattoo is actually a familiar (which few foes will try). Your familiar can still communicate its feelings empathically. Transforming into a tattoo or back to familiar form is a 1-minute activity that has the concentrate trait.</p>",
             "name": "Tattoo Transformation"
         },
+        "Pot of Tea": {
+            "description": "<p>Your tapir sage is trained in the art of herbal medication and can prepare a pot of healing tea. Once per day, your familiar can spend 10 minutes to brew fine tea leaves and herbs. The tapir sage must focus on the tea during this time—if it performs any other action, the tea is ruined, though the tapir sage can start over again. Once the pot of tea is brewed, the tapir sage can serve two cups of tea with each of the below actions; each time, it gives 1 cup to an adjacent ally, and it drinks 1 cup itself. The three infusions must be poured and offered in order (for example, the tapir sage can't serve the second infusion until it has served the first). The tea remains good for 1 hour after brewing; if not drunk by this point, the pot goes cold, and any remaining tea loses its power.</p><ul><li><strong>First Infusion</strong> <span class=\"action-glyph\">2</span> The infusion restores a number of Hit Points equal to 1d8 times half your level (minimum 1d8) and grants a +4 circumstance bonus to the next saving throw against disease or poison attempted within 24 hours.</li><li><strong>Second Infusion</strong> <span class=\"action-glyph\">2</span> The infusion restores a number of Hit Points equal to 1d4 times half your level (minimum 1d4) and grants a +2 circumstance bonus to the next saving throw against disease or poison attempted within 24 hours.</li><li><p><strong>Third Infusion</strong> <span class=\"action-glyph\">2</span> The infusion grants temporary Hit Points equal to your level for 1 hour.</p>\n</li></ul>",
+            "name": "Pot of Tea"
+        },
         "Familiar of Nimble Flight": {
             "description": "<p>Even if your familiar doesn't have wings, it can sometimes move as if carried aloft by the wind. When you Cast or Sustain a hex, your familiar can Fly up to 15 feet; this movement doesn't trigger reactions.</p>",
             "name": "Familiar of Nimble Flight"
@@ -341,6 +393,10 @@
             "description": "<p>Your familiar gains the wood elemental trait.</p>\n<p>If your familiar remains in bright light for 1 round, it gains fast healing equal to half your level. Once it is out of bright light, this effect ends.</p>",
             "name": "Elemental Familiar (Wood)"
         },
+        "Shadow Projection": {
+            "description": "<p>Your makhluk wayang projects its shadow into a larger silhouette of itself, allowing it to grasp things outside of its obvious reach. It increases its reach to 10 feet for the purposes of taking non-hostile Interact actions until the end of your turn.</p>",
+            "name": "Shadow Projection"
+        },
         "Familiar of Restored Spirit": {
             "description": "<p>Your familiar is pleasantly warm and soft, seeming to wash away worries with its mere presence. When you Cast or Sustain a hex, one willing creature within 15 feet of your familiar gains temporary Hit Points equal to 2 + half your level, which last until the start of your next turn.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.twvhTLrLEfr7dz1m]{Effect: Familiar of Restored Spirit}</p>",
             "name": "Familiar of Restored Spirit"
@@ -364,6 +420,10 @@
         "Elemental Familiar (Earth)": {
             "description": "<p>Your familiar gains the earth elemental trait.</p>\n<p>Your familiar gains resistance to physical damage (except adamantine) equal to half your level.</p>",
             "name": "Elemental Familiar (Earth)"
+        },
+        "Lightning Armillary": {
+            "description": "<p><strong>Effect</strong> Your familiar flies around and around an adjacent ally's weapon or hand, dissolving into multiple rings of lightning. Until the beginning of your next turn, the affected weapon or unarmed attack deals an additional @Damage[1d6[electricity]] damage, or @Damage[1d8[electricity]] damage if you Cast a Spell with the air or electricity trait this turn. Your familiar remains in lightning ring form, preventing it from being targeted or taking any actions.</p>",
+            "name": "Lightning Armillary"
         },
         "Speech": {
             "description": "<p>It understands and speaks a language you know.</p>",

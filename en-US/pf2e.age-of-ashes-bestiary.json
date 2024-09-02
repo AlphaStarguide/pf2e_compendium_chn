@@ -1227,6 +1227,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Dragonstorm Fire Giant",
+            "blurb": "Variant fire giant",
             "items": {
                 "equipment-Sack With 5 Rocks": {
                     "name": "Sack With 5 Rocks"
@@ -1241,7 +1242,7 @@
                 },
                 "Dragonstorm Blade": {
                     "name": "Dragonstorm Blade",
-                    "description": "<p>The dragonstorm fire giant raises one hand to the sky, channeling dragonstorm energy into the blade held in the other. The giant makes a greatsword Strike with a -2 circumstance penalty against each creature within its reach. It makes only one attack roll and compares the result against each creature's AC. This Strike deals an additional @Damage[1d8[acid]], @Damage[1d8[cold]], @Damage[1d8[electricity]], @Damage[1d8[fire]], and @Damage[1d8[poison]] damage and counts as two attacks for the giant's multiple attack penalty.</p>"
+                    "description": "<p>The dragonstorm fire giant raises one hand to the sky, channeling dragonstorm energy into the blade held in the other. The giant makes a greatsword Strike with a -2 circumstance penalty against each creature within its reach. It makes only one attack roll and compares the result against each creature's AC. This Strike deals an additional 1d8 acid, 1d8 cold, 1d8 electricity, 1d8 fire, and 1d8 poison damage and counts as two attacks for the giant's multiple attack penalty.</p>"
                 }
             }
         },
@@ -2920,6 +2921,38 @@
                 }
             }
         },
+        "Spawn of Dahak": {
+            "prototypeToken": {
+                "name": "Spawn of Dahak"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Spawn of Dahak",
+            "blurb": "Variant Racharak",
+            "items": {
+                "Tail Swipe": {
+                    "name": "Tail Swipe",
+                    "description": "<p><strong>Trigger</strong> A creature within reach of the spawn's tail uses a move action or leaves a square during a move action it's using.</p>\n<hr />\n<p><strong>Effect</strong> The spawn of Dahak makes a tail Strike at the creature with a -2 penalty. If it hits, they disrupt the creature's action.</p>"
+                },
+                "Breath Weapon": {
+                    "name": "Breath Weapon",
+                    "description": "<p>The spawn breathes flames that deals @Damage[9d6[fire]] damage to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/br 1d4 #Recharge Breath Weapon]]{1d4 rounds}</p>"
+                },
+                "Draconic Frenzy": {
+                    "name": "Draconic Frenzy",
+                    "description": "<p>The spawn makes two claw Strikes and one bite Strike in any order.</p>"
+                },
+                "Shrieking Frenzy": {
+                    "name": "Shrieking Frenzy",
+                    "description": "<p><strong>Trigger</strong> The spawn's turn begins.</p>\n<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> The spawn is @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} until the end of their turn, and can use the extra action to Stride or Strike. While in the frenzy, the spawn can't speak and automatically critically fails Stealth checks, due to their loud wailing.</p>"
+                },
+                "Thrown Weapon Mastery": {
+                    "name": "Thrown Weapon Mastery",
+                    "description": "<p>When the spawn throws a weapon, the weapon gains the deadly d6 weapon trait. When they throw an improvised weapon, they don't take the -2 penalty for using an improvised weapon, nor do they take the penalty for using that weapon to make a lethal attack instead of a nonlethal attack.</p>"
+                }
+            }
+        },
         "Seismic Spears Trap": {
             "prototypeToken": {
                 "name": "Seismic Spears Trap"
@@ -3906,11 +3939,11 @@
                 },
                 "Giant Tarantula Venom": {
                     "name": "Giant Tarantula Venom",
-                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:23]</p>\n<p><strong>Maximum Duration</strong> 8 rounds</p>\n<p><strong>Stage 1</strong> 1d6 poison (1 round)</p>\n<p><strong>Stage 2</strong> 1d6 poison, off-guard, and clumsy 1 (1 round)</p>\n<p><strong>Stage 3</strong> 1d6 poison, off-guard, and clumsy 2 (1 round)</p>\n<p><strong>Stage 4</strong> 1d6 poison and paralyzed (1 round).</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:23]</p>\n<p><strong>Maximum Duration</strong> 8 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d6[poison]] (1 round)</p>\n<p><strong>Stage 2</strong> 1d6 poison, @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}, and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} (1 round)</p>\n<p><strong>Stage 3</strong> 1d6 poison, off-guard, and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} (1 round)</p>\n<p><strong>Stage 4</strong> 1d6 poison and @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} (1 round).</p>"
                 },
                 "Hair Barrage": {
                     "name": "Hair Barrage",
-                    "description": "<p>The tarantula flicks its legs, flinging spiky hairs in a @Template[cone|distance:15]. This deals @Damage[4d6[piercing]] damage with a @Check[reflex|dc:25|basic] save.</p>"
+                    "description": "<p>The tarantula flicks its legs, flinging spiky hairs in a @Template[cone|distance:15]. This deals @Damage[4d6[piercing]|traits:area-damage] damage with a @Check[reflex|dc:25|basic] save.</p>"
                 }
             }
         }
