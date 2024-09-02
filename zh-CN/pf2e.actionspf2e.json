@@ -75,7 +75,7 @@
         },
         "Barbed Quills": {
             "name": "带刺羽尖 Barbed Quills",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>触发</strong> 你被以无武装攻击或是一把非长触及近战武器发起的打击命中</p>\n<hr />\n<p>你将尖刺留在敌人的血肉之中。你对触发反应的生物造成@Damage[ceil(@actor.level/2)d8[piercing]]伤害（使用你职业DC或法术DC中较高者的@Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免）。如果豁免大失败，由于你的尖刺深深扎进了血肉之中，该生物还会受到@Damage[(1d4+ceil(@actor.level/2)-1)[bleed]]伤害。在3级及之后的每2级，这一伤害提高1d8，持续穿刺伤害提高1。</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>触发</strong> 你被以无武装攻击或是一把非长触及近战武器发起的打击命中</p>\n<hr />\n<p>你将尖刺留在敌人的血肉之中。你对触发反应的生物造成@Damage[ceil(@actor.level/2)d8[piercing]]伤害（使用你职业DC或法术DC中较高者的@Check[reflex|against:class-spell|basic]豁免）。如果豁免大失败，由于你的尖刺深深扎进了血肉之中，该生物还会受到@Damage[(1d4+ceil(@actor.level/2)-1)[bleed]]伤害。在3级及之后的每2级，这一伤害提高1d8，持续穿刺伤害提高1。</p>"
         },
         "Basic Finisher": {
             "name": "基础终结技 Basic Finisher",
@@ -399,7 +399,7 @@
         },
         "Energy Emanation": {
             "name": "能量爆发 Energy Emanation",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成@Damage[ceil(@actor.level/2)d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|traits:area-damage]伤害（@Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成@Damage[ceil(@actor.level/2)d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|traits:area-damage]伤害（@Check[reflex|against:class-spell|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>"
         },
         "Energy Shot": {
             "name": "能量射击 Energy Shot",
@@ -827,7 +827,7 @@
         },
         "Salt Wound": {
             "name": "伤口涂盐 Salt Wound",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>触发</strong> 一个有血液，且生命值不满的生物以近战攻击击中你</p>\n<hr />\n<p><strong>效果</strong> 你将你血液中的盐和盐水导入该生物的伤口。该生物必须尝试进行对抗你的等级DC或法术DC（以较高者为准）的@Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)]豁免。如果失败，该生物会受到@Damage[1d6[persistent,acid]]伤害，并因疼痛而受到@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。在大失败的情况下，它将受到@Damage[2d6[persistent,acid]]伤害，并@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>触发</strong> 一个有血液，且生命值不满的生物以近战攻击击中你</p>\n<hr />\n<p><strong>效果</strong> 你将你血液中的盐和盐水导入该生物的伤口。该生物必须尝试进行对抗你的等级DC或法术DC（以较高者为准）的@Check[fortitude|against:class-spell]豁免。如果失败，该生物会受到@Damage[1d6[persistent,acid]]伤害，并因疼痛而受到@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。在大失败的情况下，它将受到@Damage[2d6[persistent,acid]]伤害，并@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>"
         },
         "Scout": {
             "name": "侦察 Scout",
@@ -1015,7 +1015,7 @@
         },
         "Toxic Skin": {
             "name": "毒性皮肤 Toxic Skin",
-            "description": "<p><strong>频率</strong> 每小时一次</p>\n<p><strong>触发</strong> 一个生物接触了你，比如@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]了你，用无武装攻击成功命中你，或对你使用接触射程的法术。</p><hr /><p><strong>效果</strong> 你释放一种致命的毒素。触发生物受到@Damage[(ceil(@actor.level/2))d4[poison]]伤害（@Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免，使用你的职业DC或法术DC，取两者较高一项）。在3级以及此后每升2级，伤害增加1d4。</p>"
+            "description": "<p><strong>频率</strong> 每小时一次</p>\n<p><strong>触发</strong> 一个生物接触了你，比如@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]了你，用无武装攻击成功命中你，或对你使用接触射程的法术。</p><hr /><p><strong>效果</strong> 你释放一种致命的毒素。触发生物受到@Damage[(ceil(@actor.level/2))d4[poison]]伤害（@Check[fortitude|against:class-spell|basic]豁免，使用你的职业DC或法术DC，取两者较高一项）。在3级以及此后每升2级，伤害增加1d4。</p>"
         },
         "Track": {
             "name": "追踪 Track",
@@ -1111,7 +1111,7 @@
         },
         "Fling Magic": {
             "name": "杖掷 Fling Magic",
-            "description": "<p><strong>需求</strong> 你持握着你的杖奇具。</p>\n<hr />\n<p>你对一个60尺内的目标投掷魔法能量，对目标造成的伤害等于1d4+你的魅力调整值，对抗你职业DC的@Check[reflex|dc:resolve(@actor.attributes.classDC.value)|basic]豁免。该伤害的伤害类型是你在获得你的杖奇具时所选择的类型。在3级和之后的每两级，伤害提升1d4。</p>\n<p>[[/r (ceil(@actor.level/2)d4+@actor.abilities.cha.mod)]]{按等级计算的伤害}</p>\n<p>你可以花费比通常更多的能量来激发杖掷动作的效果，造成d6而非d4的伤害。当你这么做时，杖需花费[[/r 1d4 #Recharge Wand]]{1d4轮}轮以重新充能，在这段时间内你无法激发杖的伤害，但可以继续正常使用杖掷动作。如果你的一次打击重击，你的杖立刻充能完成，因为它从冲击中汲取了力量。</p>\n<p>[[/r (ceil(@actor.level/2)d6+@actor.abilities.cha.mod)]]{按等级计算的增幅伤害}</p>\n<hr />\n<p><strong>特殊</strong> 这个行动拥有对应于你所选伤害类型的特征。</p>"
+            "description": "<p><strong>需求</strong> 你持握着你的杖奇具。</p>\n<hr />\n<p>你对一个60尺内的目标投掷魔法能量，对目标造成的伤害等于1d4+你的魅力调整值，对抗你职业DC的@Check[reflex|against:class|basic]豁免。该伤害的伤害类型是你在获得你的杖奇具时所选择的类型。在3级和之后的每两级，伤害提升1d4。</p>\n<p>[[/r (ceil(@actor.level/2)d4+@actor.abilities.cha.mod)]]{按等级计算的伤害}</p>\n<p>你可以花费比通常更多的能量来激发杖掷动作的效果，造成d6而非d4的伤害。当你这么做时，杖需花费[[/r 1d4 #Recharge Wand]]{1d4轮}轮以重新充能，在这段时间内你无法激发杖的伤害，但可以继续正常使用杖掷动作。如果你的一次打击重击，你的杖立刻充能完成，因为它从冲击中汲取了力量。</p>\n<p>[[/r (ceil(@actor.level/2)d6+@actor.abilities.cha.mod)]]{按等级计算的增幅伤害}</p>\n<hr />\n<p><strong>特殊</strong> 这个行动拥有对应于你所选伤害类型的特征。</p>"
         },
         "Implement's Interruption": {
             "name": "兵断 Implement's Interruption",
@@ -1231,11 +1231,11 @@
         },
         "Energy Emanation (Electricity)": {
             "name": "能量爆发(电击) Energy Emanation (Electricity)",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点电击伤害（@Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[electricity]]]{按等级计算的伤害}</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点电击伤害（@Check[reflex|against:class-spell|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[electricity]]]{按等级计算的伤害}</p>"
         },
         "Energy Emanation (Fire)": {
             "name": "能量爆发(火焰) Energy Emanation (Fire)",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点火焰伤害（@Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[fire]]]{按等级计算的伤害}</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点火焰伤害（@Check[reflex|against:class-spell|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[fire]]]{按等级计算的伤害}</p>"
         },
         "Forge Documents": {
             "name": "伪造文件 Forge Documents",
@@ -1275,11 +1275,11 @@
         },
         "Energy Emanation (Acid)": {
             "name": "能量爆发(酸蚀) Energy Emanation (Acid)",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点酸蚀伤害（@Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[acid]]]{按等级计算的伤害}</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点酸蚀伤害（@Check[reflex|against:class-spell|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[acid]]]{按等级计算的伤害}</p>"
         },
         "Energy Emanation (Cold)": {
             "name": "能量爆发(寒冷) Energy Emanation (Cold)",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点寒冷伤害（@Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[cold]]]{按等级计算的伤害}</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成1d6点寒冷伤害（@Check[reflex|against:class-spell|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>\n<p>[[/r (ceil(@actor.level/2))d6[cold]]]{按等级计算的伤害}</p>"
         },
         "Sense Weakness": {
             "name": "识破弱点 Sense Weakness",
@@ -1339,7 +1339,7 @@
         },
         "Wicked Thorns": {
             "name": "险恶棘刺 Wicked Thorns",
-            "description": "<p><strong>触发</strong> 你被无武装打击或非长触及近战武器打击命中。</p>\n<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>你的几根刺会折断并钩入攻击者的身体。你对触发的生物造成1d8穿刺伤害。这是一次对抗你的职业DC或法术DC中较高者的@Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免。在大失败时，该生物还会因你的荆棘刺入它的血肉而受到1d4流血伤害。</p>\n<p>在第3级和之后的每2级，此伤害增加1d8，并且持续流血伤害增加1。</p>\n<p>[[/r (ceil(@actor.level/2)d8)[piercing]]]{根据等级计算的穿刺伤害}</p>\n<p>[[/r (1d4+ceil(@actor.level/2)-1)[bleed]]]{根据等级计算的流血伤害}</p>"
+            "description": "<p><strong>触发</strong> 你被无武装打击或非长触及近战武器打击命中。</p>\n<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>你的几根刺会折断并钩入攻击者的身体。你对触发的生物造成1d8穿刺伤害。这是一次对抗你的职业DC或法术DC中较高者的@Check[reflex|against:class-spell|basic]豁免。在大失败时，该生物还会因你的荆棘刺入它的血肉而受到1d4流血伤害。</p>\n<p>在第3级和之后的每2级，此伤害增加1d8，并且持续流血伤害增加1。</p>\n<p>[[/r (ceil(@actor.level/2)d8)[piercing]]]{根据等级计算的穿刺伤害}</p>\n<p>[[/r (1d4+ceil(@actor.level/2)-1)[bleed]]]{根据等级计算的流血伤害}</p>"
         },
         "Drive Them Down": {
             "name": "打爆他们 Drive Them Down",
@@ -1363,7 +1363,7 @@
         },
         "Envenom": {
             "name": "下毒 Envenom",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>通过使用唾液或血液，你可以将腹血裔毒液涂到你的武器或弹药上。要使用你的血液，你必须受伤，或者作为行动的一部分对自己造成@Damage[1[slashing]]伤害。在你的下一回合结束之前，或者直到你因为命中或大失败消耗掉毒液，腹血裔毒液会一直保持效力。</p>\n<p><strong>次等腹血裔毒液</strong> (伤口，毒素)</p>\n<hr />\n<p><strong>豁免检定</strong> @Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:injury,poison,damaging-effect]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d4[poison]]伤害 (1轮)</p>\n<p><strong>阶段2</strong> @Damage[1d4[poison]]伤害 (1轮)</p>\n<p><strong>阶段3</strong> @Damage[1d4[poison]]伤害 (1轮)</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>通过使用唾液或血液，你可以将腹血裔毒液涂到你的武器或弹药上。要使用你的血液，你必须受伤，或者作为行动的一部分对自己造成@Damage[1[slashing]]伤害。在你的下一回合结束之前，或者直到你因为命中或大失败消耗掉毒液，腹血裔毒液会一直保持效力。</p>\n<p><strong>次等腹血裔毒液</strong> (伤口，毒素)</p>\n<hr />\n<p><strong>豁免检定</strong> @Check[fortitude|against:class-spell|traits:injury,poison,damaging-effect]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d4[poison]]伤害 (1轮)</p>\n<p><strong>阶段2</strong> @Damage[1d4[poison]]伤害 (1轮)</p>\n<p><strong>阶段3</strong> @Damage[1d4[poison]]伤害 (1轮)</p>"
         },
         "Venom Draw": {
             "name": "涂毒备战 Venom Draw",

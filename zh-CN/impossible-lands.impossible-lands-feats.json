@@ -153,7 +153,7 @@
                     "value": "虔诚法术 - 腐化之触"
                 }
             ],
-            "description": "<p>你的载具充满了邪恶力量。当尝试@UUID[Compendium.pf2e.actionspf2e.Item.lID4rJHAVZB6tavf]{碾压 Run Over}动作时，你可以在载具上释放 @UUID[Compendium.pf2e.spells-srd.Item.jFmWSIpJGGebim6y]{腐化之触 Touch of Corruption}。你的法术与你试图和影响你碾压的敌人，但只对碰撞的第一个敌人生效。碰撞的伤害和你@UUID[Compendium.pf2e.spells-srd.Item.jFmWSIpJGGebim6y]{腐化之触 Touch of Corruption}的伤害合并，敌人只需进行一次单独的@Check[reflex|basic|dc:resolve(@actor.attributes.classDC.value)]豁免，对抗你的职业DC。.</p>"
+            "description": "<p>你的载具充满了邪恶力量。当尝试@UUID[Compendium.pf2e.actionspf2e.Item.lID4rJHAVZB6tavf]{碾压 Run Over}动作时，你可以在载具上释放 @UUID[Compendium.pf2e.spells-srd.Item.jFmWSIpJGGebim6y]{腐化之触 Touch of Corruption}。你的法术与你试图和影响你碾压的敌人，但只对碰撞的第一个敌人生效。碰撞的伤害和你@UUID[Compendium.pf2e.spells-srd.Item.jFmWSIpJGGebim6y]{腐化之触 Touch of Corruption}的伤害合并，敌人只需进行一次单独的@Check[reflex|basic|against:class]豁免，对抗你的职业DC。.</p>"
         },
         "Divine Stability": {
             "prerequisites": [
@@ -278,7 +278,7 @@
                 }
             ],
             "name": "死之舞 Danse Macabre",
-            "description": "<p>你跳起最令人心碎的舞蹈，姿态美丽而可怕，观众会产生一种无法抗拒的冲动来表演死之舞。选择一个你视线内可以看见的生物。该生物必须对你的职业DC或法术DC尝试@Check[will|dc:resolve(@actor.attributes.classOrSpellDC.value)]豁免，以更高的为准。死之舞使用苦难的规则。</p>\n<p><strong>最大持续时间</strong> 5轮</p>\n<p><strong>阶段1</strong> 生物受到@Damage[5d6[mental]]伤害，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，因为他开始跳舞 (1轮)</p>\n<p><strong>阶段2</strong> @Damage[6d6[mental]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2} (1轮)</p>\n<p><strong>阶段3</strong> @Damage[7d6[mental]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 3} (1轮)</p>\n<p><strong>阶段4</strong> 舞蹈迎来了它绚丽的终局。生物在一阵狂喜中被杀死。</p>"
+            "description": "<p>你跳起最令人心碎的舞蹈，姿态美丽而可怕，观众会产生一种无法抗拒的冲动来表演死之舞。选择一个你视线内可以看见的生物。该生物必须对你的职业DC或法术DC尝试@Check[will|against:class-spell]豁免，以更高的为准。死之舞使用苦难的规则。</p>\n<p><strong>最大持续时间</strong> 5轮</p>\n<p><strong>阶段1</strong> 生物受到@Damage[5d6[mental]]伤害，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，因为他开始跳舞 (1轮)</p>\n<p><strong>阶段2</strong> @Damage[6d6[mental]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2} (1轮)</p>\n<p><strong>阶段3</strong> @Damage[7d6[mental]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 3} (1轮)</p>\n<p><strong>阶段4</strong> 舞蹈迎来了它绚丽的终局。生物在一阵狂喜中被杀死。</p>"
         },
         "Effortless Command": {
             "prerequisites": [
@@ -296,7 +296,7 @@
                 }
             ],
             "name": "带电舞步 Electric Slide",
-            "description": "<p><strong>开销 </strong>耗费一个法术位</p>\n<hr />\n<p>你的双脚因为魔法力量劈啪作响，你向前迈出一系列炽热的步伐，在身后留下了一道电幕。</p>\n<p>你行走或@UUID[Compendium.pf2e.actionspf2e.Item.21WIfSu7Xd7uKqV8]{翻滚 Tumble Through}。在此行动期间，你无视困难地形和高等困难地形。在此移动中，你在你离开的每个方格内创造一道10尺高的电幕，持续到你的下个回合结束。任何在电幕内开始回合或试图经过电幕的生物，受到消耗的每个法术环级@Damage[1d6[electricity]]伤害，@Check[reflex|basic|dc:resolve(@actor.attributes.classOrSpellDC.value)]豁免，对抗你的职业DC或法术DC，以更高者为准。</p>"
+            "description": "<p><strong>开销 </strong>耗费一个法术位</p>\n<hr />\n<p>你的双脚因为魔法力量劈啪作响，你向前迈出一系列炽热的步伐，在身后留下了一道电幕。</p>\n<p>你行走或@UUID[Compendium.pf2e.actionspf2e.Item.21WIfSu7Xd7uKqV8]{翻滚 Tumble Through}。在此行动期间，你无视困难地形和高等困难地形。在此移动中，你在你离开的每个方格内创造一道10尺高的电幕，持续到你的下个回合结束。任何在电幕内开始回合或试图经过电幕的生物，受到消耗的每个法术环级@Damage[1d6[electricity]]伤害，@Check[reflex|basic|against:class-spell]豁免，对抗你的职业DC或法术DC，以更高者为准。</p>"
         },
         "Enhanced School Project": {
             "name": "强化学院课题 Enhanced School Project",
@@ -479,7 +479,7 @@
                 }
             ],
             "name": "点名 Call-Out",
-            "description": "<p><strong>需求</strong> 目标对你或你的盟友进行过敌对动作你通过展示你灵光中存在的一个危险分子来吸引观众们的注意力。你指出一个位于你灵光范围内的生物，他必须尝试@Check[will|dc:resolve(@actor.attributes.classDC.value)]豁免，对抗你的职业DC。</p>\n<hr />\n<p><strong>大成功</strong> 目标进行了迅速而有效的反驳。他不受影响，24小时内免疫。</p>\n<p><strong>成功</strong> 目标会因为你的突然关注而暂时受到阻碍。他的隐秘检定和意志豁免有-1状态减值，并且在1轮内无法从掩蔽或@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}状态中获得好处。</p>\n<p><strong>失败</strong> 目标对所面对的事实感到困惑，他不知道该怎么回应你的关注。类似成功，但状态减值-2，持续1分钟。</p>\n<p><strong>大失败</strong> 目标认为自己犯了个巨大错误，在震惊的同时失去了自己的情感和对事物的感知。他陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，并且在1分钟内无法从掩蔽、隐蔽或@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}状态中受益。</p>\n<p>@UUID[Compendium.impossible-lands.impossible-lands-effects.ICtdnxE62Vo88uPP]{效果: 点名}</p>"
+            "description": "<p><strong>需求</strong> 目标对你或你的盟友进行过敌对动作你通过展示你灵光中存在的一个危险分子来吸引观众们的注意力。你指出一个位于你灵光范围内的生物，他必须尝试@Check[will|against:class]豁免，对抗你的职业DC。</p>\n<hr />\n<p><strong>大成功</strong> 目标进行了迅速而有效的反驳。他不受影响，24小时内免疫。</p>\n<p><strong>成功</strong> 目标会因为你的突然关注而暂时受到阻碍。他的隐秘检定和意志豁免有-1状态减值，并且在1轮内无法从掩蔽或@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}状态中获得好处。</p>\n<p><strong>失败</strong> 目标对所面对的事实感到困惑，他不知道该怎么回应你的关注。类似成功，但状态减值-2，持续1分钟。</p>\n<p><strong>大失败</strong> 目标认为自己犯了个巨大错误，在震惊的同时失去了自己的情感和对事物的感知。他陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，并且在1分钟内无法从掩蔽、隐蔽或@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}状态中受益。</p>\n<p>@UUID[Compendium.impossible-lands.impossible-lands-effects.ICtdnxE62Vo88uPP]{效果: 点名}</p>"
         },
         "Comic's Visitation": {
             "prerequisites": [
@@ -604,7 +604,7 @@
         },
         "Total Soul Concentration: Eruption": {
             "name": "魂力全集中: 激 Total Soul Concentration: Eruption",
-            "description": "<p><strong>需求 </strong>你处于一种降魔秘法架势中</p>\n<hr />\n<p>你将整个灵魂引导为@template[emanation|distance:30]范围的能量爆炸，造成每个等级1d6点伤害。伤害类型为善良，或者和你灵魂颜色相匹配的伤害类型。该区域内所有生物进行@Check[fortitude|dc:resolve(@actor.attributes.classDC.value)|basic]豁免，对抗你的职业DC。如果生物为魔族，则豁免有-3状态减值。失败时，受到伤害的生物还会@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}。大失败时，则震慑1轮。在使用此能力之后，你的降魔秘法架势立即结束。如果你或你的盟友将你30尺内的一个魔族的生命值减少至0，你能在[[/r 1d4 #rounds]]{1d4轮}后再次进入降魔秘法架势。此外，在使用此能力后，你陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}，或者如果你已经陷入毁灭，将你的毁灭状态值+1。以这种方式获得的毁灭需要花费正常2倍的休息时间才能降低，如果你的毁灭值等于你的最大濒死值，你会立即正常死亡。</p>",
+            "description": "<p><strong>需求 </strong>你处于一种降魔秘法架势中</p>\n<hr />\n<p>你将整个灵魂引导为@template[emanation|distance:30]范围的能量爆炸，造成每个等级1d6点伤害。伤害类型为善良，或者和你灵魂颜色相匹配的伤害类型。该区域内所有生物进行@Check[fortitude|against:class|basic]豁免，对抗你的职业DC。如果生物为魔族，则豁免有-3状态减值。失败时，受到伤害的生物还会@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}。大失败时，则震慑1轮。在使用此能力之后，你的降魔秘法架势立即结束。如果你或你的盟友将你30尺内的一个魔族的生命值减少至0，你能在[[/r 1d4 #rounds]]{1d4轮}后再次进入降魔秘法架势。此外，在使用此能力后，你陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}，或者如果你已经陷入毁灭，将你的毁灭状态值+1。以这种方式获得的毁灭需要花费正常2倍的休息时间才能降低，如果你的毁灭值等于你的最大濒死值，你会立即正常死亡。</p>",
             "prerequisites": [
                 {
                     "value": "降魔秘法：弑或降魔秘法：护"

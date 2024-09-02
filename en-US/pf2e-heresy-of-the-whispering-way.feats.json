@@ -33,7 +33,7 @@
 		},
 		"Aura of Rot": {
 			"name": "Aura of Rot",
-			"description": "<p dir=\"ltr\">You can emit an aura of pervasive, supernatural rot. This aura is a 15-foot emanation, which you can activate or deactivate as a single concentrate action. A living enemy that enters or ends its turn in the aura must attempt a @Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)] check against the higher of your spell DC or class DC. Ordinary plants that remain within this aura for more than 1 round wither and begin to die, and creatures with the plant trait have a -2 circumstance penalty to the save. Further, unattended food within the aura immediately spoils.</p>\n<p dir=\"ltr\"><strong>Success</strong> The creature is unaffected and temporarily immune to your Aura of Rot for 1 minute.</p>\n<p dir=\"ltr\"><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} and can’t reduce its sickened value below 1 while in the emanation. All perishable food, drink, and potions on their person (magical or otherwise) spoil and require a @Check[flat|dc:5] to be ingested.</p>\n<p dir=\"ltr\"><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-edbad2f4-7fff-4ed3-71e5-e15437a6209c\">Special</strong> This feat gains the trait that matches your lich tradition (arcane if your lich tradition is arcane, etc).</p>",
+			"description": "<p dir=\"ltr\">You can emit an aura of pervasive, supernatural rot. This aura is a 15-foot emanation, which you can activate or deactivate as a single concentrate action. A living enemy that enters or ends its turn in the aura must attempt a @Check[fortitude|against:class-spell] check against the higher of your spell DC or class DC. Ordinary plants that remain within this aura for more than 1 round wither and begin to die, and creatures with the plant trait have a -2 circumstance penalty to the save. Further, unattended food within the aura immediately spoils.</p>\n<p dir=\"ltr\"><strong>Success</strong> The creature is unaffected and temporarily immune to your Aura of Rot for 1 minute.</p>\n<p dir=\"ltr\"><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} and can’t reduce its sickened value below 1 while in the emanation. All perishable food, drink, and potions on their person (magical or otherwise) spoil and require a @Check[flat|dc:5] to be ingested.</p>\n<p dir=\"ltr\"><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-edbad2f4-7fff-4ed3-71e5-e15437a6209c\">Special</strong> This feat gains the trait that matches your lich tradition (arcane if your lich tradition is arcane, etc).</p>",
 			"prerequisites": [
 				{
 					"value": "Lich Dedication"
@@ -155,7 +155,7 @@
 		},
 		"Corrupting Gaze": {
 			"name": "Corrupting Gaze",
-			"description": "<p dir=\"ltr\">You stare a creature in the eyes, causing them to wither. Select a creature that can see you within 30 feet. The target takes @Damage[(floor((@actor.level)/2))d6[void]] damage with a @Check[will|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic] save. A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for one round (or one minute on a critical failure).</p>\n<hr />\n<p><strong id=\"docs-internal-guid-3900ead8-7fff-2e08-0adf-b987c5e29daf\">Level (+2)</strong> The void damage increases by 1d6.</p>",
+			"description": "<p dir=\"ltr\">You stare a creature in the eyes, causing them to wither. Select a creature that can see you within 30 feet. The target takes @Damage[(floor((@actor.level)/2))d6[void]] damage with a @Check[will|against:class-spell|traits:damaging-effect|basic] save. A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for one round (or one minute on a critical failure).</p>\n<hr />\n<p><strong id=\"docs-internal-guid-3900ead8-7fff-2e08-0adf-b987c5e29daf\">Level (+2)</strong> The void damage increases by 1d6.</p>",
 			"prerequisites": [
 				{
 					"value": "Phantasmagoria"
@@ -191,7 +191,7 @@
 		},
 		"Devastating Blast": {
 			"name": "Devastating Blast",
-			"description": "<p dir=\"ltr\">You unleash a blast of ruinous energy in a @template[cone|distance:30]. Creatures in the area take @Damage[(floor((@actor.level)/2))d12[@actor.flags.pf2e.graveknightArchetype.ruinous-element]] damage of your ruinous element, with a @Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic] save against your class DC or spell DC, whichever is higher.</p>\n<p dir=\"ltr\"><strong>Special </strong>This feat gains the same trait as your ruinous element.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-bccf53b2-7fff-3d95-2fd8-7d7692609698\">Level (+2)</strong> The damage increases by 1d12.</p>",
+			"description": "<p dir=\"ltr\">You unleash a blast of ruinous energy in a @template[cone|distance:30]. Creatures in the area take @Damage[(floor((@actor.level)/2))d12[@actor.flags.pf2e.graveknightArchetype.ruinous-element]] damage of your ruinous element, with a @Check[reflex|against:class-spell|traits:damaging-effect|basic] save against your class DC or spell DC, whichever is higher.</p>\n<p dir=\"ltr\"><strong>Special </strong>This feat gains the same trait as your ruinous element.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-bccf53b2-7fff-3d95-2fd8-7d7692609698\">Level (+2)</strong> The damage increases by 1d12.</p>",
 			"prerequisites": [
 				{
 					"value": "Graveknight Dedication"
@@ -547,7 +547,7 @@
 		},
 		"Paralytic Fear": {
 			"name": "Paralytic Fear",
-			"description": "<p dir=\"ltr\">When you would use predatory assault, instead of making an Athletics check you can force the creature to attempt a @Check[will|dc:resolve(@actor.attributes.classOrSpellDC.value)] save against your class DC or spell DC, whichever is higher.</p>\n<p dir=\"ltr\"><strong>Critical Success </strong>The target is unaffected.</p>\n<p dir=\"ltr\"><strong>Success </strong>The target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}by fear until the end of your next turn.</p>\n<p dir=\"ltr\"><strong>Failure </strong>The target is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} and takes a –2 circumstance penalty to its Fortitude DC against your Drink Blood ability until the end of your next turn.</p>\n<p><strong>Critical Failure </strong>As failure, and the target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>",
+			"description": "<p dir=\"ltr\">When you would use predatory assault, instead of making an Athletics check you can force the creature to attempt a @Check[will|against:class-spell] save against your class DC or spell DC, whichever is higher.</p>\n<p dir=\"ltr\"><strong>Critical Success </strong>The target is unaffected.</p>\n<p dir=\"ltr\"><strong>Success </strong>The target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}by fear until the end of your next turn.</p>\n<p dir=\"ltr\"><strong>Failure </strong>The target is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} and takes a –2 circumstance penalty to its Fortitude DC against your Drink Blood ability until the end of your next turn.</p>\n<p><strong>Critical Failure </strong>As failure, and the target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>",
 			"prerequisites": [
 				{
 					"value": "Predatory Assault"
@@ -676,7 +676,7 @@
 		},
 		"Share Trauma": {
 			"name": "Share Trauma",
-			"description": "<p dir=\"ltr\">You cause a creature within 30 feet to relive the experience of your death. The target takes @Damage[(floor((@actor.level)/2))d4[mental,persistent]] damage with a @Check[will|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic] save. On a failure, all other creatures are concealed to the target until the persistent damage ends as they are immersed in the experience of your death.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-eeb5ca91-7fff-2772-7201-785192157ea4\">Level (+2)</strong> The persistent damage increases by 1d4.</p>",
+			"description": "<p dir=\"ltr\">You cause a creature within 30 feet to relive the experience of your death. The target takes @Damage[(floor((@actor.level)/2))d4[mental,persistent]] damage with a @Check[will|against:class-spell|traits:damaging-effect|basic] save. On a failure, all other creatures are concealed to the target until the persistent damage ends as they are immersed in the experience of your death.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-eeb5ca91-7fff-2772-7201-785192157ea4\">Level (+2)</strong> The persistent damage increases by 1d4.</p>",
 			"prerequisites": [
 				{
 					"value": "Phantasmagoria"
@@ -735,7 +735,7 @@
 		},
 		"Telekinetic Assault": {
 			"name": "Telekinetic Assault",
-			"description": "<p dir=\"ltr\">You cause small objects to fly about in a @template[burst|distance:5] within 60 feet. You deal your choice of @Damage[(floor((@actor.level)/2)-1)d6] bludgeoning, slashing, or piercing damage to all creatures in the area, with a @Check[reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic] save. You can spend up to 3 actions activating this impulse; for each additional action, you create an additional 5-foot burst. Your 5-foot bursts cannot overlap.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-f16bc4a9-7fff-47c8-43ab-0f1bc38c921a\">Level (+2)</strong> The damage increases by 1d6.</p>",
+			"description": "<p dir=\"ltr\">You cause small objects to fly about in a @template[burst|distance:5] within 60 feet. You deal your choice of @Damage[(floor((@actor.level)/2)-1)d6] bludgeoning, slashing, or piercing damage to all creatures in the area, with a @Check[reflex|against:class-spell|traits:damaging-effect|basic] save. You can spend up to 3 actions activating this impulse; for each additional action, you create an additional 5-foot burst. Your 5-foot bursts cannot overlap.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-f16bc4a9-7fff-47c8-43ab-0f1bc38c921a\">Level (+2)</strong> The damage increases by 1d6.</p>",
 			"prerequisites": [
 				{
 					"value": "Phantasmagoria"

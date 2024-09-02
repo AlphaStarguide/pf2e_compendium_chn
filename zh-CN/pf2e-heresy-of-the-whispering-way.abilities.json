@@ -35,7 +35,7 @@
         },
         "Advanced Ability (Ravener)": {
             "name": "Advanced Ability (Ravener)",
-            "description": "<p>Your ability to both survive and rip apart souls improves. You treat an attack roll with an unarmed Strike as a critical hit on a roll of 19 or 20, as long as the attack roll was a success. When you critically hit a creature with an unarmed Strike, the target must succeed on a @Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)] save or gain the @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} condition. If the target already has a drained value of greater than 0, their drained value instead increases by 1, to a maximum of drained 4. Whenever you apply drain to a creature in this way, your soul ward regains 5 Hit Points. This is a critical specialization effect. You also gain the @UUID[Compendium.pf2e-heresy-of-the-whispering-way.abilities.Item.oDPs7BbvX6bhmDd2]{Discorporate} free action.</p>"
+            "description": "<p>Your ability to both survive and rip apart souls improves. You treat an attack roll with an unarmed Strike as a critical hit on a roll of 19 or 20, as long as the attack roll was a success. When you critically hit a creature with an unarmed Strike, the target must succeed on a @Check[fortitude|against:class-spell] save or gain the @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} condition. If the target already has a drained value of greater than 0, their drained value instead increases by 1, to a maximum of drained 4. Whenever you apply drain to a creature in this way, your soul ward regains 5 Hit Points. This is a critical specialization effect. You also gain the @UUID[Compendium.pf2e-heresy-of-the-whispering-way.abilities.Item.oDPs7BbvX6bhmDd2]{Discorporate} free action.</p>"
         },
         "Advanced Ability (True Lich)": {
             "name": "Advanced Ability (True Lich)",
@@ -111,7 +111,7 @@
         },
         "Consume Soul": {
             "name": "Consume Soul",
-            "description": "<p dir=\"ltr\"><strong>Trigger</strong> A living creature within 30 feet of you dies</p>\n<hr />\n<p dir=\"ltr\">You tear the soul from the creature’s body. The creature must make one final @Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)] save against your spell DC or class DC, whichever is higher. You cannot perform this free action and the Steal Soul free action from the Void Shroud archetype feat at the same time; if you have access to both, however, creatures have a -2 penalty to the saving throw against either.</p>\n<p dir=\"ltr\"><strong>Critical Success</strong> The creature is unaffected.</p>\n<p dir=\"ltr\"><strong>Success</strong> You tear away a small chunk of the creature’s soul. If they are restored to life, they are @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} in addition to any other side effects of returning to life. Your soul ward regains hit points equal to half the creature’s level.</p>\n<p dir=\"ltr\"><strong>Failure</strong> As success, but the creature’s soul is ravaged. The creature is instead @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3} and your soul ward regains hit points equal to the creature’s level.</p>\n<p><strong id=\"docs-internal-guid-4b65797e-7fff-c785-ade0-002a082064b5\">Critical Failure</strong> As failure, but you devour the creature’s soul entirely. The creature cannot be restored to life as long as you exist except an effect like wish, and your soul ward regains hit points equal to twice the creature’s level.</p>"
+            "description": "<p dir=\"ltr\"><strong>Trigger</strong> A living creature within 30 feet of you dies</p>\n<hr />\n<p dir=\"ltr\">You tear the soul from the creature’s body. The creature must make one final @Check[fortitude|against:class-spell] save against your spell DC or class DC, whichever is higher. You cannot perform this free action and the Steal Soul free action from the Void Shroud archetype feat at the same time; if you have access to both, however, creatures have a -2 penalty to the saving throw against either.</p>\n<p dir=\"ltr\"><strong>Critical Success</strong> The creature is unaffected.</p>\n<p dir=\"ltr\"><strong>Success</strong> You tear away a small chunk of the creature’s soul. If they are restored to life, they are @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} in addition to any other side effects of returning to life. Your soul ward regains hit points equal to half the creature’s level.</p>\n<p dir=\"ltr\"><strong>Failure</strong> As success, but the creature’s soul is ravaged. The creature is instead @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3} and your soul ward regains hit points equal to the creature’s level.</p>\n<p><strong id=\"docs-internal-guid-4b65797e-7fff-c785-ade0-002a082064b5\">Critical Failure</strong> As failure, but you devour the creature’s soul entirely. The creature cannot be restored to life as long as you exist except an effect like wish, and your soul ward regains hit points equal to twice the creature’s level.</p>"
         },
         "Darkness": {
             "name": "黑暗 Darkness",
@@ -123,7 +123,7 @@
         },
         "Domain of Dusk": {
             "name": "黄昏领域 Domain of Dusk",
-            "description": "<p dir=\"ltr\">你招手，呼唤周围黑暗带来毁灭，阴影凝为蝙蝠、老鼠和狼出现。@template[emanation|distance:15]范围内的所有活物承受@Damage[(floor((@actor.level)))d6[void]]伤害，@Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)|basic]豁免，对抗你的职业DC或法术DC（以较高者为准）。在此豁免中失败的生物还陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}，持续1轮（大失败时@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮）。</p>\n<hr />\n<p><strong id=\"docs-internal-guid-159f4717-7fff-543d-a523-3f5dfb62a9b4\">升级 (+1)</strong> 伤害增加1d6。</p>"
+            "description": "<p dir=\"ltr\">你招手，呼唤周围黑暗带来毁灭，阴影凝为蝙蝠、老鼠和狼出现。@template[emanation|distance:15]范围内的所有活物承受@Damage[(floor((@actor.level)))d6[void]]伤害，@Check[fortitude|against:class-spell|basic]豁免，对抗你的职业DC或法术DC（以较高者为准）。在此豁免中失败的生物还陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}，持续1轮（大失败时@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮）。</p>\n<hr />\n<p><strong id=\"docs-internal-guid-159f4717-7fff-543d-a523-3f5dfb62a9b4\">升级 (+1)</strong> 伤害增加1d6。</p>"
         },
         "Drain Companion": {
             "name": "Drain Companion",
@@ -191,7 +191,7 @@
         },
         "Memory Nourishment": {
             "name": "记忆滋养 Memory Nourishment",
-            "description": "<p><strong>基础能力：</strong> 你汲取生物的记忆而非血液。你的不死饥渴是活物的记忆。你获得100尺思维感知作为一种模糊感官，它允许你发现范围内的有心智生物。</p>\n<p dir=\"ltr\">你只能对有心智生物使用饮血（它们不必是活物）。当你对一个生物使用饮血并获得临时生命值时，它陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied}而非流失。如果你拥有吸干抹净专长，受害者在陷入呆滞5时植物人化，永久陷入失去意识状态，直到呆滞状态被治愈。无论是哪种情况，你都可以看到受害者脑海中浮现的一段记忆。 </p>\n<p dir=\"ltr\"><strong>进阶能力：</strong> 当你使用饮血，你可以选择改变、增强或抹去看到的记忆，效果同4环@UUID[Compendium.pf2e.spells-srd.Item.FhOaQDTSnsY7tiam]{修订记忆 Rewrite Memory}，DC为你的职业DC或法术DC（以较高者为准）。@Check[will|dc:resolve(@actor.attributes.classOrSpellDC.value)]</p>\n<p dir=\"ltr\"> </p>"
+            "description": "<p><strong>基础能力：</strong> 你汲取生物的记忆而非血液。你的不死饥渴是活物的记忆。你获得100尺思维感知作为一种模糊感官，它允许你发现范围内的有心智生物。</p>\n<p dir=\"ltr\">你只能对有心智生物使用饮血（它们不必是活物）。当你对一个生物使用饮血并获得临时生命值时，它陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied}而非流失。如果你拥有吸干抹净专长，受害者在陷入呆滞5时植物人化，永久陷入失去意识状态，直到呆滞状态被治愈。无论是哪种情况，你都可以看到受害者脑海中浮现的一段记忆。 </p>\n<p dir=\"ltr\"><strong>进阶能力：</strong> 当你使用饮血，你可以选择改变、增强或抹去看到的记忆，效果同4环@UUID[Compendium.pf2e.spells-srd.Item.FhOaQDTSnsY7tiam]{修订记忆 Rewrite Memory}，DC为你的职业DC或法术DC（以较高者为准）。@Check[will|against:class-spell]</p>\n<p dir=\"ltr\"> </p>"
         },
         "Predatory Assault": {
             "name": "掠食突袭 Predatory Assault",
@@ -235,7 +235,7 @@
         },
         "Sickening Aura": {
             "name": "致呕灵光 Sickening Aura",
-            "description": "<p><strong>基础能力：</strong> 你发出一股致病光环。该光环为30尺弥漫，拥有灵光和神术特征。该光环中的生物对抗疾病、毒素和造成恶心状态的效果时全豁免-1状态减值。</p>\n<p><strong>进阶能力：</strong> 一个进入你周围10尺弥漫范围或在其中结束回合的敌人必须尝试一次@Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)]豁免，对抗你的法术DC或职业DC（以较高者为准）。失败时，生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，且在灵光范围内无法将恶心值降为1以下。成功时，该生物对此效果临时免疫1分钟，大成功时临时免疫1小时。</p>"
+            "description": "<p><strong>基础能力：</strong> 你发出一股致病光环。该光环为30尺弥漫，拥有灵光和神术特征。该光环中的生物对抗疾病、毒素和造成恶心状态的效果时全豁免-1状态减值。</p>\n<p><strong>进阶能力：</strong> 一个进入你周围10尺弥漫范围或在其中结束回合的敌人必须尝试一次@Check[fortitude|against:class-spell]豁免，对抗你的法术DC或职业DC（以较高者为准）。失败时，生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，且在灵光范围内无法将恶心值降为1以下。成功时，该生物对此效果临时免疫1分钟，大成功时临时免疫1小时。</p>"
         },
         "Sixth Doctrine (Undead Lord)": {
             "name": "Sixth Doctrine (Undead Lord)",
@@ -335,7 +335,7 @@
         },
         "Vampire Advanced Ability (Memory Nourishment)": {
             "name": "吸血鬼进阶能力 Vampire Advanced Ability (记忆滋养)",
-            "description": "<p>当你使用饮血，你可以选择改变、增强或抹去看到的记忆，效果同4环@UUID[Compendium.pf2e.spells-srd.Item.FhOaQDTSnsY7tiam]{修订记忆 Rewrite Memory}，DC为你的职业DC或法术DC（以较高者为准）。@Check[will|dc:resolve(@actor.attributes.classOrSpellDC.value)]</p>"
+            "description": "<p>当你使用饮血，你可以选择改变、增强或抹去看到的记忆，效果同4环@UUID[Compendium.pf2e.spells-srd.Item.FhOaQDTSnsY7tiam]{修订记忆 Rewrite Memory}，DC为你的职业DC或法术DC（以较高者为准）。@Check[will|against:class-spell]</p>"
         },
         "Vampire Advanced Ability (Qi Nourishment)": {
             "name": "吸血鬼进阶能力 Vampire Advanced Ability (精气滋养)",
@@ -351,7 +351,7 @@
         },
         "Vampire Advanced Ability (Sickening Aura)": {
             "name": "吸血鬼进阶能力 Vampire Advanced Ability (致呕灵光)",
-            "description": "<p>一个进入你周围10尺弥漫范围或在其中结束回合的敌人必须尝试一次@Check[fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)]豁免，对抗你的法术DC或职业DC（以较高者为准）。失败时，生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，且在灵光范围内无法将恶心值降为1以下。成功时，该生物对此效果临时免疫1分钟，大成功时临时免疫1小时。</p>"
+            "description": "<p>一个进入你周围10尺弥漫范围或在其中结束回合的敌人必须尝试一次@Check[fortitude|against:class-spell]豁免，对抗你的法术DC或职业DC（以较高者为准）。失败时，生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，且在灵光范围内无法将恶心值降为1以下。成功时，该生物对此效果临时免疫1分钟，大成功时临时免疫1小时。</p>"
         },
         "Vampire Advanced Ability (Sustaining Blood)": {
             "name": "吸血鬼进阶能力 Vampire Advanced Ability (延命之血)",
