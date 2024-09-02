@@ -3,7 +3,7 @@
     "entries": {
         "All that Shines Belongs to Me": {
             "name": "万光归我 All that Shines Belongs to Me",
-            "description": "<p>你进入@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形} 一轮,然后你进行一次行走. 每个与你在本次行走内移动路径接邻的敌人必须成功通过一次基于你职业DC的 @Check[type:fortitud|dc:resolve(@actor.system.attributes.classDC.value)] 豁免，否则陷入 @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲} 状态1分钟; 如果在对抗此效应的豁免中大失败, 他们会陷入永久失明. 对于每个因为此效应陷入失明的生物,只要你依然置身于他们“窃取”的光中，你的隐形就会增加1轮.</p>"
+            "description": "<p>你进入@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形} 一轮,然后你进行一次行走. 每个与你在本次行走内移动路径接邻的敌人必须成功通过一次基于你职业DC的 @Check[fortitud|against:class] 豁免，否则陷入 @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲} 状态1分钟; 如果在对抗此效应的豁免中大失败, 他们会陷入永久失明. 对于每个因为此效应陷入失明的生物,只要你依然置身于他们“窃取”的光中，你的隐形就会增加1轮.</p>"
         },
         "Apparition's Possession": {
             "name": "精魄占据 Apparition's Possession",
@@ -19,11 +19,11 @@
         },
         "Blinding of the Needle": {
             "name": "如芒刺目 Blinding of the Needle",
-            "description": "<p>你使用你的武器圣痕进行一次打击. 如果这次打击成功, 目标必须成功通过你职业DC的 @Check[type:fortitude|dc:resolve(@actor.system.attributes.classDC.value)] 豁免，否则陷入 @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲} 一轮或直到他们使用一个交互动作来清理阻挡他们视野的鲜血.</p>"
+            "description": "<p>你使用你的武器圣痕进行一次打击. 如果这次打击成功, 目标必须成功通过你职业DC的 @Check[fortitude|against:class] 豁免，否则陷入 @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲} 一轮或直到他们使用一个交互动作来清理阻挡他们视野的鲜血.</p>"
         },
         "Break the Sun's Legs": {
             "name": "致残光明 Break the Sun's Legs",
-            "description": "<p>无论是天空中的太阳，亦或者洞穴内的火炬，你的斩击终将撕毁一切光明. 周围所有的光源之上将会展开一道所有人可见的裂缝，吸走所有光明.你周围 @Template[type:burst|distance:120] 范围内将会处于9环 <em>@Compendium[pf2e.spells-srd.4GE2ZdODgIQtg51c]{黑暗术}</em> 中，持续1分钟. 窃取的光线被引导到你的瞳孔内，在效果持续期间，你获得高等黑暗视觉。</p>"
+            "description": "<p>无论是天空中的太阳，亦或者洞穴内的火炬，你的斩击终将撕毁一切光明. 周围所有的光源之上将会展开一道所有人可见的裂缝，吸走所有光明.你周围 @template[burst|distance:120] 范围内将会处于9环 <em>@Compendium[pf2e.spells-srd.4GE2ZdODgIQtg51c]{黑暗术}</em> 中，持续1分钟. 窃取的光线被引导到你的瞳孔内，在效果持续期间，你获得高等黑暗视觉。</p>"
         },
         "Burn out of Time": {
             "name": "燃尽时界 Burn out of Time",
@@ -31,11 +31,11 @@
         },
         "Captivating Charm": {
             "name": "迷人魅力 Captivating Charm",
-            "description": "<p>你集中注意力于30尺内的一个生物之上, 以压制他们的感知. 他必须成功通过你职业DC的基础@Check[type:will|dc:resolve(@actor.system.attributes.classDC.value)] 豁免检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{迷魂} 直到你的下个回合.这个状态会在你或你的盟友对其进行敌对性行动时立刻强制结束.</p>"
+            "description": "<p>你集中注意力于30尺内的一个生物之上, 以压制他们的感知. 他必须成功通过你职业DC的基础@Check[will|against:class] 豁免检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{迷魂} 直到你的下个回合.这个状态会在你或你的盟友对其进行敌对性行动时立刻强制结束.</p>"
         },
         "Coiling Serpent": {
             "name": "万蛇侵缠 Coiling Serpent",
-            "description": "<p>使用你的武器圣痕进行一次打击. 如果打击成功造成伤害,目标必须成功通过你职业DC的基础 @Check[type:reflex|dc:resolve(@actor.system.attributes.classDC.value)] 豁免检定，否则这枚箭矢将会化作无数长蛇将目标缠绕, 直到进行一次成功的，你职业DC的 @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} 动作脱离前，他被禁足.</p>"
+            "description": "<p>使用你的武器圣痕进行一次打击. 如果打击成功造成伤害,目标必须成功通过你职业DC的基础 @Check[reflex|against:class] 豁免检定，否则这枚箭矢将会化作无数长蛇将目标缠绕, 直到进行一次成功的，你职业DC的 @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} 动作脱离前，他被禁足.</p>"
         },
         "Complete the Hero's Journey": {
             "name": "完成英雄之旅 Complete the Hero's Journey",
@@ -51,11 +51,11 @@
         },
         "Embrace of Destiny": {
             "name": "命运之拥 Embrace of Destiny",
-            "description": "<p>你将灵光范围内的敌人拉取到你的攻击范围内， 他们必须成功通过一次你职业DC的 @Check[type:fortitude|dc:resolve(@actor.system.attributes.classDC.value)] 豁免检定，否则将他们直接向你的方向移动到近战触及范围内的方格中.</p>"
+            "description": "<p>你将灵光范围内的敌人拉取到你的攻击范围内， 他们必须成功通过一次你职业DC的 @Check[fortitude|against:class] 豁免检定，否则将他们直接向你的方向移动到近战触及范围内的方格中.</p>"
         },
         "Fleeting Arc through Heaven and Earth": {
             "name": "光，贯穿天地之间 Fleeting Arc through Heaven and Earth",
-            "description": "<p>你将你的武器转换成一条宽阔的能够造成 @Damage[8d6[spirit]] + [[/r 8d6]]与你武器伤害类型相同伤害的的炫目虹色剑光，对 @Template[type:cone|distance:60]内所有敌人造成伤害, 对抗你职业DC的@Check[type:fortitude|dc:resolve(@actor.system.attributes.classDC.value)|basic:true]豁免检定，当剑光消散时，你可以传送到效果区域内的任何一格.</p>"
+            "description": "<p>你将你的武器转换成一条宽阔的能够造成 @Damage[8d6[spirit]] + [[/r 8d6]]与你武器伤害类型相同伤害的的炫目虹色剑光，对 @template[cone|distance:60]内所有敌人造成伤害, 对抗你职业DC的@Check[fortitude|against:class|basic]豁免检定，当剑光消散时，你可以传送到效果区域内的任何一格.</p>"
         },
         "Heaven Rains an Ending": {
             "name": "天堂之雨，落于终末 Heaven Rains an Ending",
@@ -63,11 +63,11 @@
         },
         "Judgment from Clear Skies": {
             "name": "青空之裁 Judgment from Clear Skies",
-            "description": "<p>当你发射或投掷一把武器时，它会变为隆隆雷霆.使用你的远程武器圣痕对第一射程增量或30尺（取最远）内的一个生物进行远程打击. 如果打击成功, 目标生物与它15尺内的所有生物必须成功通过你职业DC的 @Check[type:fortitude|dc:resolve(@actor.system.attributes.classDC.value)|basic:true] 豁免，否则受到雷霆的冲击造成的 @Damage[1d6[electricity],1d6[sonic]]伤害; 在你12级时，伤害提升到 @Damage[2d6[electricity],2d6[sonic]] , 17级时，伤害提升到 [3d6[electricity],3d6[sonic]] . 你的武器圣痕会在打击结束后回到手中.</p>"
+            "description": "<p>当你发射或投掷一把武器时，它会变为隆隆雷霆.使用你的远程武器圣痕对第一射程增量或30尺（取最远）内的一个生物进行远程打击. 如果打击成功, 目标生物与它15尺内的所有生物必须成功通过你职业DC的 @Check[fortitude|against:class|basic] 豁免，否则受到雷霆的冲击造成的 @Damage[1d6[electricity],1d6[sonic]]伤害; 在你12级时，伤害提升到 @Damage[2d6[electricity],2d6[sonic]] , 17级时，伤害提升到 [3d6[electricity],3d6[sonic]] . 你的武器圣痕会在打击结束后回到手中.</p>"
         },
         "Kneel Before Greatness": {
             "name": "拜服于圣 Kneel Before Greatness",
-            "description": "<p>你要求所有人对你忠诚，这是你应得的，所有在你破损圣痕灵光范围内的敌人必须成功通过你职业DC的@Check[type:will|dc:resolve(@actor.system.attributes.classDC.value)] 豁免检定，否则他会立刻跪下，以一个自由动作进入i@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地}. 在豁免中大失败的敌人还会额外受到你等级2倍的伤害。</p>"
+            "description": "<p>你要求所有人对你忠诚，这是你应得的，所有在你破损圣痕灵光范围内的敌人必须成功通过你职业DC的@Check[will|against:class] 豁免检定，否则他会立刻跪下，以一个自由动作进入i@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地}. 在豁免中大失败的敌人还会额外受到你等级2倍的伤害。</p>"
         },
         "Marathon Dash": {
             "name": "马拉松军势 Marathon Dash",
@@ -91,7 +91,7 @@
         },
         "Rain of Seven Lights": {
             "name": "七光之雨 Rain of Seven Lights",
-            "description": "<p>你用你的武器圣痕向空中发射一枚弹体，在60尺以内的@Template[type:burst|distance:5] 内形成一场光雨。该区域中的每个生物都必须在对你的职业DC的@Check[type:reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic:true] 豁免中成功，失败时受到与你使用此武器圣痕打击时所造成的相同数值的精魂伤害。如果你的武器ikon具有致命或夺命特性，当一个生物在对抗该效果时大失败时，你可以将这些特性造成的额外伤害计入此次对其造成的精魂伤害中。你可以在使用这个技能之前进行选择，赋予它非致命特性，在这种情况下，将生物的生命值降低到0只会让他们进入昏迷。</p>"
+            "description": "<p>你用你的武器圣痕向空中发射一枚弹体，在60尺以内的@template[burst|distance:5] 内形成一场光雨。该区域中的每个生物都必须在对你的职业DC的@Check[reflex|against:class|basic] 豁免中成功，失败时受到与你使用此武器圣痕打击时所造成的相同数值的精魂伤害。如果你的武器ikon具有致命或夺命特性，当一个生物在对抗该效果时大失败时，你可以将这些特性造成的额外伤害计入此次对其造成的精魂伤害中。你可以在使用这个技能之前进行选择，赋予它非致命特性，在这种情况下，将生物的生命值降低到0只会让他们进入昏迷。</p>"
         },
         "Reap the Field": {
             "name": "收割此地 Reap the Field",
@@ -123,11 +123,11 @@
         },
         "Topple the Pillar of Heaven": {
             "name": "擎天御柱 Topple the Pillar of Heaven",
-            "description": "<p>你的武器圣痕延伸到了一个不可能的长度，一路冲击. 你对 @Template[type:line|distance:60]内的所有生物造成6d8的伤害，使用你职业DC的 @Check[type:reflex|dc:resolve(@actor.system.attributes.classDC.value)|basic:true] 豁免检定. 伤害类型与你武器的伤害类型相同. 14级以及之后每两级，伤害增加1D8.</p>"
+            "description": "<p>你的武器圣痕延伸到了一个不可能的长度，一路冲击. 你对 @template[line|distance:60]内的所有生物造成6d8的伤害，使用你职业DC的 @Check[reflex|against:class|basic] 豁免检定. 伤害类型与你武器的伤害类型相同. 14级以及之后每两级，伤害增加1D8.</p>"
         },
         "Wound The World": {
             "name": "世界之伤 Wound The World",
-            "description": "<p>你的武器刺穿了你脚下的地面，产生 @Template[type:line|distance:60]大小的的裂缝. 所有在效果范围内的地形变为困难地形，如果已经是困难地形，变为高等困难地形. 任何一个在受影响方格内站立的生物必须通过你职业DC的 @Check[type:reflex|dc:resolve(@actor.system.attributes.classDC.value)] 豁免检定，否则 @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地}. 倒地的生物还会因为晃动的大地受到 @Damage[2d6[bludgeoning]] 伤害; 这个伤害会在12级提高到 @Damage[4d6[bludgeoning]] ，在17级提升到 @Damage[6d6[bludgeoning]] .</p>"
+            "description": "<p>你的武器刺穿了你脚下的地面，产生 @template[line|distance:60]大小的的裂缝. 所有在效果范围内的地形变为困难地形，如果已经是困难地形，变为高等困难地形. 任何一个在受影响方格内站立的生物必须通过你职业DC的 @Check[reflex|against:class] 豁免检定，否则 @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地}. 倒地的生物还会因为晃动的大地受到 @Damage[2d6[bludgeoning]] 伤害; 这个伤害会在12级提高到 @Damage[4d6[bludgeoning]] ，在17级提升到 @Damage[6d6[bludgeoning]] .</p>"
         },
         "A Moment Unending": {
             "name": "未止之刻 A Moment Unending",
@@ -139,7 +139,7 @@
         },
         "Sea's Claim": {
             "name": "海之篡夺 Sea's Claim",
-            "description": "<p>一个咆哮的漩涡在你周围盘旋，把你的敌人聚集在一起，接受你神圣的裁决。60英尺以内的所有敌人都必须成功通过你职业DC的@Check[type:fortitude|dc:resolve(@actor.system.attributes.classDC.value)] 豁免检定，否则被强制移动到15尺内的任意一处，并且直到下个回合开始时处于措手不及状态. 这个效果属于被迫移动. 你可以在这之后对你触及范围内的一个敌人进行一次打击.</p>"
+            "description": "<p>一个咆哮的漩涡在你周围盘旋，把你的敌人聚集在一起，接受你神圣的裁决。60英尺以内的所有敌人都必须成功通过你职业DC的@Check[fortitude|against:class] 豁免检定，否则被强制移动到15尺内的任意一处，并且直到下个回合开始时处于措手不及状态. 这个效果属于被迫移动. 你可以在这之后对你触及范围内的一个敌人进行一次打击.</p>"
         }
     }
 }

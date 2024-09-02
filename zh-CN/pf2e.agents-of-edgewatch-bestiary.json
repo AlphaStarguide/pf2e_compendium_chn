@@ -39,9 +39,9 @@
         "Acidic Poison Cloud Trap": {
             "name": "酸性毒云陷阱 Acidic Poison Cloud Trap",
             "hp": "以摧毁一个喷嘴；毒气罐硬度：20; 毒气罐HP： 100 (BT 50)以损毁毒气罐，阻止它喷出气体；",
-            "disable": "<p>@Check[type:thievery|dc:35|name:Block One Nozzle|traits:action:disable-a-device](专家)以阻塞一个喷嘴或@Check[type:thievery|dc:40|name:Shut Off the Tank|traits:action:disable-a-device](大师)以关上毒气罐。在5轮后，毒气罐排空，陷阱失效。</p>",
+            "disable": "<p>@Check[thievery|dc:35|name:Block One Nozzle|traits:action:disable-a-device](专家)以阻塞一个喷嘴或@Check[thievery|dc:40|name:Shut Off the Tank|traits:action:disable-a-device](大师)以关上毒气罐。在5轮后，毒气罐排空，陷阱失效。</p>",
             "hazarddescription": "<p>隐藏在公寓天花板上的五个喷嘴将藏在墙后的毒气罐中的赌气喷出，形成浓重的酸性毒云。</p>",
-            "routine": "<p>(1动作) 当它被触发时，陷阱有五个激活的喷嘴，但在每一轮它的回合结束时，一个随机的喷嘴失效。在陷阱的回合中，还激活的喷嘴会喷出一团酸性毒气，扩张到整个公寓中。毒云对房间中的每个生物和物体造成@Damage[1d6[acid]]伤害和@Damage[1d6[poison]]伤害（@Check[type:fortitude|dc:33|basic:true|name:Spew Cloud|traits:poison]豁免）。无人看管的物体会在针对伤害的豁免中自动失败。</p>",
+            "routine": "<p>(1动作) 当它被触发时，陷阱有五个激活的喷嘴，但在每一轮它的回合结束时，一个随机的喷嘴失效。在陷阱的回合中，还激活的喷嘴会喷出一团酸性毒气，扩张到整个公寓中。毒云对房间中的每个生物和物体造成@Damage[1d6[acid]]伤害和@Damage[1d6[poison]]伤害（@Check[fortitude|dc:33|basic|name:Spew Cloud|traits:poison]豁免）。无人看管的物体会在针对伤害的豁免中自动失败。</p>",
             "stealthdetails": "<p>(大师)</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -114,7 +114,7 @@
         },
         "Arcane Feedback Trap": {
             "name": "Arcane Feedback Trap",
-            "disable": "<p>@Check[type:arcana|dc:33|name:Quell Rippling Stone](大师)to quell the rippling stone or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (7th level, counteract DC 31) to dispel the magical feedback。</p>",
+            "disable": "<p>@Check[arcana|dc:33|name:Quell Rippling Stone](大师)to quell the rippling stone or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (7th level, counteract DC 31) to dispel the magical feedback。</p>",
             "hazarddescription": "<p>A spike of stone bursts from the south wall and quickly retracts。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "data": {
@@ -176,7 +176,7 @@
                 },
                 "Fill Lungs": {
                     "name": "肺部充水 Fill Lungs",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:26]</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (1轮)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2} (1轮)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3} (1轮)</p>\n<p><strong>阶段4</strong> 溺水，并且无法减少至阶段4 以下，除非肺部的水被清空；清空肺里的水需要一次成功的@Check[type:medicine|dc:26|name:Purge Water|traits:manipulate,action:administer-first-aid]检定进@UUID[Compendium.pf2e.actionspf2e.Item.MHLuKy4nQO2Z4Am1]{急救 Administer First Aid}（这能阻止生物溺水并将状态值减少到阶段3；大成功减少为阶段2），或者可以移除诅咒或恶心状态的魔法效果（能让生物停止溺水并解除诅咒）。</p>\n<p>如果生物溺亡，则下一次午夜时分将复活为一只新的藤壶食尸鬼。</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:26]</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1} (1轮)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2} (1轮)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3} (1轮)</p>\n<p><strong>阶段4</strong> 溺水，并且无法减少至阶段4 以下，除非肺部的水被清空；清空肺里的水需要一次成功的@Check[medicine|dc:26|name:Purge Water|traits:manipulate,action:administer-first-aid]检定进@UUID[Compendium.pf2e.actionspf2e.Item.MHLuKy4nQO2Z4Am1]{急救 Administer First Aid}（这能阻止生物溺水并将状态值减少到阶段3；大成功减少为阶段2），或者可以移除诅咒或恶心状态的魔法效果（能让生物停止溺水并解除诅咒）。</p>\n<p>如果生物溺亡，则下一次午夜时分将复活为一只新的藤壶食尸鬼。</p>"
                 },
                 "Nimble Swim": {
                     "name": "轻巧游泳 Nimble Swim",
@@ -184,7 +184,7 @@
                 },
                 "Paralysis": {
                     "name": "麻痹 Paralysis",
-                    "description": "<p>任意活着的、非精灵生物在受到食尸鬼的攻击时必须成功通过@Check[type:fortitude|dc:26]豁免，失败则会陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}。</p>\n<p>被麻痹的生物可以在自己的每个回合结束时尝试一次新的豁免，每次此豁免的DC都会递减1点。</p>"
+                    "description": "<p>任意活着的、非精灵生物在受到食尸鬼的攻击时必须成功通过@Check[fortitude|dc:26]豁免，失败则会陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}。</p>\n<p>被麻痹的生物可以在自己的每个回合结束时尝试一次新的豁免，每次此豁免的DC都会递减1点。</p>"
                 }
             }
         },
@@ -220,7 +220,7 @@
                 },
                 "Agonizing Wail": {
                     "name": "痛苦哀嚎 Agonizing Wail",
-                    "description": "<p>双体幽灵释放出一阵悲苦的哭声，让其他人陷入极度的悲伤中。30尺内的所有生物必须尝试@Check[type:will|dc:17]检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响且1分钟之内对痛苦哀嚎效果免疫。</p>\n<p><strong>成功</strong> 目标在1轮内无法使用反应动作。</p>\n<p><strong>失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}并且目标开始哭泣，在1分钟内无法使用反应动作。它每轮结束时可以尝试一次新的意志检定来结束这个效果。</p>\n<p><strong>大失败</strong> 如同失败，但是目标无法进行豁免来结束这个效果。</p>"
+                    "description": "<p>双体幽灵释放出一阵悲苦的哭声，让其他人陷入极度的悲伤中。30尺内的所有生物必须尝试@Check[will|dc:17]检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响且1分钟之内对痛苦哀嚎效果免疫。</p>\n<p><strong>成功</strong> 目标在1轮内无法使用反应动作。</p>\n<p><strong>失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}并且目标开始哭泣，在1分钟内无法使用反应动作。它每轮结束时可以尝试一次新的意志检定来结束这个效果。</p>\n<p><strong>大失败</strong> 如同失败，但是目标无法进行豁免来结束这个效果。</p>"
                 },
                 "Dual Assault": {
                     "name": "双体攻击 Dual Assault",
@@ -244,7 +244,7 @@
         },
         "Blackfinger's Prayer": {
             "name": "Blackfinger's Prayer",
-            "disable": "<p>@Check[type:thievery|dc:50|name:Gum Up Trapdoor|traits:action:disable-a-device] (legendary) to gum up the trapdoor's porous metal surface, @Check[type:crafting|dc:45|name:Render Toxin Inert](大师)to render the toxin inert, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (9th level; counteract DC 45) to counteract the trap's magic</p>",
+            "disable": "<p>@Check[thievery|dc:50|name:Gum Up Trapdoor|traits:action:disable-a-device] (legendary) to gum up the trapdoor's porous metal surface, @Check[crafting|dc:45|name:Render Toxin Inert](大师)to render the toxin inert, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (9th level; counteract DC 45) to counteract the trap's magic</p>",
             "hazarddescription": "<p>The trapdoor's metal is infused with a deadly toxin that seeps out when the trap is triggered。</p>",
             "stealthdetails": "<p>(legendary)</p>",
             "data": {
@@ -274,7 +274,7 @@
             "items": {
                 "Concussive Beatdown": {
                     "name": "震荡猛击 Concussive Beatdown",
-                    "description": "<p><strong>需求</strong>伯勒斯刚用他的铲子摔绊了一个生物；</p>\n<hr />\n<p><strong>效果</strong> 伯勒斯残忍地用铲子铲向倒下的敌人，进行铲子打击。如果命中，打击正常造成伤害，同时目标必须进行一次@Check[type:fortitude|dc:30]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>失败</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}。</p>\n<p><strong>大失败</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}，并且@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，持续1分钟。</p>"
+                    "description": "<p><strong>需求</strong>伯勒斯刚用他的铲子摔绊了一个生物；</p>\n<hr />\n<p><strong>效果</strong> 伯勒斯残忍地用铲子铲向倒下的敌人，进行铲子打击。如果命中，打击正常造成伤害，同时目标必须进行一次@Check[fortitude|dc:30]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>失败</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}。</p>\n<p><strong>大失败</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}，并且@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，持续1分钟。</p>"
                 },
                 "Decapitate": {
                     "name": "斩首 Decapitate",
@@ -302,7 +302,7 @@
         },
         "Boiling Fountains": {
             "name": "沸腾的喷泉 Boiling Fountains",
-            "disable": "<p>@Check[type:thievery|dc:21|name:Disable Pressure Plate|traits:action:disable-a-device](受训)以解除每个压力板，@Check[type:thievery|dc:16|name:Jam Fountain|traits:action:disable-a-device]以堵塞每个喷泉，@Check[type:thievery|dc:18|name:Deflect Fountain's Spray|traits:action:disable-a-device]以偏转喷泉的喷头</p>",
+            "disable": "<p>@Check[thievery|dc:21|name:Disable Pressure Plate|traits:action:disable-a-device](受训)以解除每个压力板，@Check[thievery|dc:16|name:Jam Fountain|traits:action:disable-a-device]以堵塞每个喷泉，@Check[thievery|dc:18|name:Deflect Fountain's Spray|traits:action:disable-a-device]以偏转喷泉的喷头</p>",
             "hazarddescription": "<p>地板下的四个压力板会激活房间两侧的龙头喷泉，使它们向中间的区域喷洒沸水。</p>",
             "reset": "<p>压力板激活后，必须手动复位。</p>",
             "stealthdetails": "<p>(受训)以发现压力板</p>",
@@ -312,13 +312,13 @@
             "items": {
                 "Scalding Spray": {
                     "name": "喷洒沸水 Scalding Spray",
-                    "description": "<p><strong>触发</strong> 重物被放置在地图上标有“T”的任意方块上，触发压力板；</p>\n<hr />\n<p><strong>效果</strong> 喷泉将沸水喷到自己的方格即它们之间的10 尺的区域（虚线标记），对该区域内的任意生物造成@Damage[(4d6+4)[fire]]{4d6+4火焰伤害}（@Check[type:reflex|dc:22|basic:true]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 重物被放置在地图上标有“T”的任意方块上，触发压力板；</p>\n<hr />\n<p><strong>效果</strong> 喷泉将沸水喷到自己的方格即它们之间的10 尺的区域（虚线标记），对该区域内的任意生物造成@Damage[(4d6+4)[fire]]{4d6+4火焰伤害}（@Check[reflex|dc:22|basic]豁免）。</p>"
                 }
             }
         },
         "Boiling Tub Trap": {
             "name": "沸腾的铁缸 Boiling Tub Trap",
-            "disable": "<p>@Check[type:thievery|dc:32|name:Remove Trip Wire|traits:action:disable-a-device](大师)以安全地在炸弹边上移除绊线。</p>",
+            "disable": "<p>@Check[thievery|dc:32|name:Remove Trip Wire|traits:action:disable-a-device](大师)以安全地在炸弹边上移除绊线。</p>",
             "hazarddescription": "<p>一根绊线突然绷断，引爆了炼金炸弹，炸毁了铁缸的一部分，沸水洒在了陷阱的受害者身上。</p>",
             "stealthdetails": "<p>(大师)</p>",
             "data": {
@@ -327,7 +327,7 @@
             "items": {
                 "Overflowing Boiling Water": {
                     "name": "溢出的沸水 Overflowing Boiling Water",
-                    "description": "<p><strong>触发</strong> 绊线被拉动或绷断了；</p>\n<hr />\n<p><strong>效果</strong> 强酸瓶爆裂开来，酸液溅射到周围的生物身上，并导致沸水缸向相同的方向裂开。</p>\n<p>所有位于被触发的沸水缸东向的@Template[type:cone|distance:5]内的敌人受到[[/r (3d6)[persistent,acid]]] 持续酸蚀伤害、[[/r (3)[splash,acid]]]{3酸液溅射伤害}、和@Damage[(8d6+20)[fire]]{8d6+20火焰伤害}（@Check[type:reflex|dc:31|basic:true|traits:acid,fire]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 绊线被拉动或绷断了；</p>\n<hr />\n<p><strong>效果</strong> 强酸瓶爆裂开来，酸液溅射到周围的生物身上，并导致沸水缸向相同的方向裂开。</p>\n<p>所有位于被触发的沸水缸东向的@template[cone|distance:5]内的敌人受到[[/r (3d6)[persistent,acid]]] 持续酸蚀伤害、[[/r (3)[splash,acid]]]{3酸液溅射伤害}、和@Damage[(8d6+20)[fire]]{8d6+20火焰伤害}（@Check[reflex|dc:31|basic|traits:acid,fire]豁免）。</p>"
                 }
             }
         },
@@ -356,11 +356,11 @@
                 },
                 "Marrow Rot": {
                     "name": "骨髓热疫 Marrow Rot",
-                    "description": "<p>骨髓热疫只能影响具有骨骼系统的生物；</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:24]</p>\n<p><strong>潜伏期</strong> 1天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1} (1天)</p>"
+                    "description": "<p>骨髓热疫只能影响具有骨骼系统的生物；</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:24]</p>\n<p><strong>潜伏期</strong> 1天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1} (1天)</p>"
                 },
                 "Swarming Bites": {
                     "name": "虫群噬咬 Swarming Bites",
-                    "description": "<p>虫群占据空间内的每个生物受到[[/r (3d6)[piercing]]]{3d6穿刺伤害}（@Check[type:reflex|dc:24|basic:true]豁免）外加骨髓热疫。</p>"
+                    "description": "<p>虫群占据空间内的每个生物受到[[/r (3d6)[piercing]]]{3d6穿刺伤害}（@Check[reflex|dc:24|basic]豁免）外加骨髓热疫。</p>"
                 }
             }
         },
@@ -394,11 +394,11 @@
         },
         "Burning Chandelier Trap": {
             "name": "Burning Chandelier Trap",
-            "disable": "<p>@Check[type:thievery|dc:36|name:Disable a Chandelier|traits:action:disable-a-device](大师)to disable a chandelier or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (8th level; counteract DC 33) to permanently drain the magic from a chandelier. Any amount of cold damage that overcomes a chandelier's cold resistance extinguishes its flames and removes its persistent fire damage and flame dart attack. @Check[type:thievery|dc:41|name:Disable Trap (Control Panel)|traits:action:disable-a-device] (legendary) to disable the entire trap from the hidden control panel in the southeast corner of the room。</p>",
+            "disable": "<p>@Check[thievery|dc:36|name:Disable a Chandelier|traits:action:disable-a-device](大师)to disable a chandelier or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (8th level; counteract DC 33) to permanently drain the magic from a chandelier. Any amount of cold damage that overcomes a chandelier's cold resistance extinguishes its flames and removes its persistent fire damage and flame dart attack. @Check[thievery|dc:41|name:Disable Trap (Control Panel)|traits:action:disable-a-device] (legendary) to disable the entire trap from the hidden control panel in the southeast corner of the room。</p>",
             "hazarddescription": "<p>Four large flaming chandeliers swing wildly around the room。</p>",
             "reset": "<p>The trap deactivates and resets 1 minute after there are no living creatures remaining in the room。</p>",
             "routine": "<p>(4动作)For every chandelier disabled, the trap's actions are reduced by 1. For each of the trap's actions, a different chandelier attacks a random creature in the room. A chandelier uses its swinging chandelier attack if it can, but it can't make melee attacks against creatures in the cage, the closet, or the gap between the two double doors leading into the vault. Against a creature it can't reach with a melee attack, it uses a flame dart attack instead. The trap doesn't take multiple attack penalties。</p>",
-            "stealthdetails": "<p>(大师)or @Check[type:perception|dc:38|traits:action:seek](大师)to spot the trap's control panel</p>",
+            "stealthdetails": "<p>(大师)or @Check[perception|dc:38|traits:action:seek](大师)to spot the trap's control panel</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -420,7 +420,7 @@
         },
         "Canopy Drop": {
             "name": "天顶坠落 Canopy Drop",
-            "disable": "<p>@Check[type:thievery|dc:23|name:Jam Trapdoor Mechanism|traits:action:disable-a-device](专家)以堵塞机械机构、防止活板门打开、或者找到隐藏在房间外楼梯立管下的开关</p>",
+            "disable": "<p>@Check[thievery|dc:23|name:Jam Trapdoor Mechanism|traits:action:disable-a-device](专家)以堵塞机械机构、防止活板门打开、或者找到隐藏在房间外楼梯立管下的开关</p>",
             "hazarddescription": "<p>一个与地板的传感器连接的活板门在地图上标记的地板处打开，周围的地板突然倾斜45度角，墙上的喷泉开始因高压洒水使得瓷砖很滑并将生物推向打开的斜槽。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "data": {
@@ -446,7 +446,7 @@
                 },
                 "Berserk": {
                     "name": "狂暴 Berserk",
-                    "description": "<p>严重损坏的血肉魔像可能会狂暴。每当它开始回合时，如果生命值小于等于40点，血肉魔像必须通过@Check[type:flat|dc:5]检定，否则狂暴。狂暴的血肉魔像会胡乱攻击最近的活物，如果附近没有生物时则会攻击附近的物体。</p>"
+                    "description": "<p>严重损坏的血肉魔像可能会狂暴。每当它开始回合时，如果生命值小于等于40点，血肉魔像必须通过@Check[flat|dc:5]检定，否则狂暴。狂暴的血肉魔像会胡乱攻击最近的活物，如果附近没有生物时则会攻击附近的物体。</p>"
                 },
                 "Electric Reflexes": {
                     "name": "电击反射 Electric Reflexes",
@@ -498,7 +498,7 @@
                 },
                 "Alchemical Rupture": {
                     "name": "炼金破裂 Alchemical Rupture",
-                    "description": "<p>当炼金魔像受到重击伤害或受到@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]{粉碎音波 Shatter}魔法影响时，身上的一个玻璃容器会碎裂，对@Template[type:emanation|distance:5]范围喷出炼金液体。</p>\n<p>投1d6并查阅炼金容器表来决定碎裂的是哪个容器，魔像周围@Template[type:emanation|distance:5]内所有生物都被该随机容器内的物质影响，如果希望的话，他们必须投掷反射豁免来抵抗炼金物质的效果。</p>"
+                    "description": "<p>当炼金魔像受到重击伤害或受到@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]{粉碎音波 Shatter}魔法影响时，身上的一个玻璃容器会碎裂，对@template[emanation|distance:5]范围喷出炼金液体。</p>\n<p>投1d6并查阅炼金容器表来决定碎裂的是哪个容器，魔像周围@template[emanation|distance:5]内所有生物都被该随机容器内的物质影响，如果希望的话，他们必须投掷反射豁免来抵抗炼金物质的效果。</p>"
                 },
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
@@ -537,7 +537,7 @@
         },
         "Clockwork Arms": {
             "name": "Clockwork Arms",
-            "disable": "<p>@Check[type:thievery|dc:43|name:Deactivate One Arm|traits:action:disable-a-device](大师)to jam and deactivate one of the arms or @Check[type:athletics|dc:46|name:Tear Arm Off Machine] (legendary) to tear an arm off the machine。</p>",
+            "disable": "<p>@Check[thievery|dc:43|name:Deactivate One Arm|traits:action:disable-a-device](大师)to jam and deactivate one of the arms or @Check[athletics|dc:46|name:Tear Arm Off Machine] (legendary) to tear an arm off the machine。</p>",
             "hazarddescription": "<p>Four claw-tipped clockwork arms suspended from the ceiling pick up and deposit creatures into a nearby hatch。</p>",
             "routine": "<p>(4动作)The trap loses 1 action per arm destroyed or disabled. On its turn, the trap makes claw Strikes against creatures other than the Rumormonger or the Inkmaster. If an arm already has a creature grabbed, the trap spends 2 actions to use its Open Hatch ability。</p>",
             "stealthdetails": "<p>(专家)</p>",
@@ -570,7 +570,7 @@
         "Clockwork Poison Bomb": {
             "name": "发条毒素爆弹 Clockwork Poison Bomb",
             "hp": "以毁坏喷嘴（这使得它难以被关闭，因此唯一的处理爆弹的方式使毁灭它全部的气罐）；<strong>气罐硬度</strong> 15; <strong>气罐HP</strong> 80 (BT 40)以摧毁一个气罐（必须摧毁所有的气罐才能处理爆弹）",
-            "disable": "<p>Three @Check[type:thievery|dc:31|name:Disable a Latch|traits:action:disable-a-device](专家)以@UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{解除装置 Disable a Device}，打开喷嘴处的锁闩；接着一次@Check[type:thievery|dc:35|name:Turn Off Nozzle|traits:action:disable-a-device](大师)检定以解除装置，关闭喷嘴；如果奥格乌姆陷入禁足、麻痹、失去意识或死亡，则DC会降低2</p>",
+            "disable": "<p>Three @Check[thievery|dc:31|name:Disable a Latch|traits:action:disable-a-device](专家)以@UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{解除装置 Disable a Device}，打开喷嘴处的锁闩；接着一次@Check[thievery|dc:35|name:Turn Off Nozzle|traits:action:disable-a-device](大师)检定以解除装置，关闭喷嘴；如果奥格乌姆陷入禁足、麻痹、失去意识或死亡，则DC会降低2</p>",
             "hazarddescription": "<p>发条爆弹释放出一股股有毒的烟雾。烟雾会从一个连接着两个加压毒气罐的喷嘴中喷出。</p>",
             "reset": "<p>陷阱会一直释放烟云，直到3分钟后气罐干涸。必须更换气罐才能重新激活爆弹。</p>",
             "routine": "<p>(1动作) 在它的回合内，爆弹继续喷发出一阵@UUID[Compendium.pf2e.equipment-srd.Item.WvDbdESFJY6Be2u1]{黑指枯毒素 Blackfinger Blight}的烟云。烟云重新填满20尺半径，或当只有一个气罐完好时，填满10尺半径。如果爆弹已经位于黑指枯烟云的中心，那么取而代之，这片烟云的半径就会增加20 尺(或当只有一个气罐完好时，增加10尺半径）。</p>",
@@ -581,7 +581,7 @@
             "items": {
                 "Poisonous Cloud": {
                     "name": "毒云喷发 Poisonous Cloud",
-                    "description": "<p><strong>触发</strong> 有人启动了炸弹，这需要3个动作；</p>\n<hr />\n<p><strong>效果</strong> 爆弹在20尺半径内释放出一阵@UUID[Compendium.pf2e.equipment-srd.Item.WvDbdESFJY6Be2u1]{黑指枯毒素 Blackfinger Blight}的烟云。处在烟云中的生物对其他生物@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}。</p>\n<p>任何在烟云内开始它的回合的生物必须骰@Check[type:fortitude|dc:32|name:Blackfinger Blight|traits:contact,virulent]，以对抗黑指枯毒素。</p>\n<p>烟云持续存在1分钟，或直到被强风吹散。</p>"
+                    "description": "<p><strong>触发</strong> 有人启动了炸弹，这需要3个动作；</p>\n<hr />\n<p><strong>效果</strong> 爆弹在20尺半径内释放出一阵@UUID[Compendium.pf2e.equipment-srd.Item.WvDbdESFJY6Be2u1]{黑指枯毒素 Blackfinger Blight}的烟云。处在烟云中的生物对其他生物@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}。</p>\n<p>任何在烟云内开始它的回合的生物必须骰@Check[fortitude|dc:32|name:Blackfinger Blight|traits:contact,virulent]，以对抗黑指枯毒素。</p>\n<p>烟云持续存在1分钟，或直到被强风吹散。</p>"
                 }
             }
         },
@@ -605,7 +605,7 @@
                 },
                 "Pummeling Assault": {
                     "name": "持续攻击 Pummeling Assault",
-                    "description": "<p>每个位于石螨群占据空间内的敌人受到[[/r (2d4)[bludgeoning]]]{2d4钝击伤害}（@Check[type:reflex|dc:17|basic:true]豁免）。</p>"
+                    "description": "<p>每个位于石螨群占据空间内的敌人受到[[/r (2d4)[bludgeoning]]]{2d4钝击伤害}（@Check[reflex|dc:17|basic]豁免）。</p>"
                 }
             }
         },
@@ -666,11 +666,11 @@
         "Dart Barrage": {
             "name": "飞镖 Dart Barrage",
             "hp": "(BT 30)以破坏印章解除陷阱",
-            "disable": "<p>@Check[type:thievery|dc:22|name:Disable Pressure Plate|traits:action:disable-a-device](受训)以解除压力板，或四次@Check[type:thievery|dc:18|name:Plug Dart Launcher|traits:action:disable-a-device](受训)以堵住飞镖发射孔</p>",
+            "disable": "<p>@Check[thievery|dc:22|name:Disable Pressure Plate|traits:action:disable-a-device](受训)以解除压力板，或四次@Check[thievery|dc:18|name:Plug Dart Launcher|traits:action:disable-a-device](受训)以堵住飞镖发射孔</p>",
             "hazarddescription": "<p>隐藏在斜对角墙面上的四根飞镖管道连接到房间中心黄铜印章下的压力板。</p>",
             "reset": "<p>在4轮发射后，飞镖会耗尽，必须通过拆除墙壁手动给发射孔装填。在任何时刻，若不超过两个生物站在印章上，陷阱会停止发射，但仍然保持待击发，随时准备再次发射剩余的飞镖。</p>",
             "routine": "<p>(4动作)对于每个失效的发射孔失去1个动作。在陷阱的每一次行动中，它都会向房间中央的一个生物发射一个飞镖。</p>",
-            "stealthdetails": "<p>(受训)或@Check[type:perception|dc:23|traits:action:seek](受训)以注意到音乐管周围的划痕和轻微翘起的印章。</p>",
+            "stealthdetails": "<p>(受训)或@Check[perception|dc:23|traits:action:seek](受训)以注意到音乐管周围的划痕和轻微翘起的印章。</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -697,7 +697,7 @@
                 },
                 "Dirty Bomb": {
                     "name": "脏弹 Dirty Bomb",
-                    "description": "<p><strong>需求</strong> 炼金师至少携带一枚炸弹；</p>\n<hr />\n<p><strong>效果</strong> 炼金师草率地在炸弹中混入了有害物质，并用其进行一次远程打击。如果命中并造成伤害，目标必须通过@Check[type:fortitude|dc:27]豁免，否则在[[/br 1d6 #rounds]]{1d6轮}中获得@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}；如果豁免大失败，则增加为@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}。在接下来的24小时内，目标对抗同一个炼金师的脏弹而进行的额外强韧豁免时，获得-2的环境减值（大失败时则为-3）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.5ZK22sNW7o26aST0]{效果: 脏弹}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.ryY6fdqpC5Ztnagd]{效果: 脏弹(大失败)}</p>"
+                    "description": "<p><strong>需求</strong> 炼金师至少携带一枚炸弹；</p>\n<hr />\n<p><strong>效果</strong> 炼金师草率地在炸弹中混入了有害物质，并用其进行一次远程打击。如果命中并造成伤害，目标必须通过@Check[fortitude|dc:27]豁免，否则在[[/br 1d6 #rounds]]{1d6轮}中获得@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}；如果豁免大失败，则增加为@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}。在接下来的24小时内，目标对抗同一个炼金师的脏弹而进行的额外强韧豁免时，获得-2的环境减值（大失败时则为-3）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.5ZK22sNW7o26aST0]{效果: 脏弹}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.ryY6fdqpC5Ztnagd]{效果: 脏弹(大失败)}</p>"
                 },
                 "Quick Brew": {
                     "name": "快速混合 Quick Brew",
@@ -756,7 +756,7 @@
                 },
                 "Dreadsong": {
                     "name": "恐惧之歌 Dreadsong",
-                    "description": "<p>颂惧舞者旋转着挥舞它全身骇人的歌之刃，以幻术包裹全身。@Template[type:emanation|distance:30]范围内的每个非魔族生物都必须尝试@Check[type:will|dc:29]检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响，并且对此能力临时免疫24小时。颂惧舞者受到演出焦虑效果影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}2，并且颂惧舞者对该生物@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}，持续1分钟。生物无法搜索颂惧舞者。</p>\n<p><strong>大失败</strong> 同失败，但是生物在1分钟之内无法将惊惧状态值减少到2以下。此外，颂惧舞者受到演出焦虑效果影响。</p>"
+                    "description": "<p>颂惧舞者旋转着挥舞它全身骇人的歌之刃，以幻术包裹全身。@template[emanation|distance:30]范围内的每个非魔族生物都必须尝试@Check[will|dc:29]检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响，并且对此能力临时免疫24小时。颂惧舞者受到演出焦虑效果影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}2，并且颂惧舞者对该生物@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}，持续1分钟。生物无法搜索颂惧舞者。</p>\n<p><strong>大失败</strong> 同失败，但是生物在1分钟之内无法将惊惧状态值减少到2以下。此外，颂惧舞者受到演出焦虑效果影响。</p>"
                 },
                 "Rend": {
                     "name": "撕裂 Rend",
@@ -772,15 +772,15 @@
             "items": {
                 "Arrogant Taunts": {
                     "name": "傲慢的嘲弄 Arrogant Taunts",
-                    "description": "<p>燧石兽发出粗鲁的侮辱和威胁的咆哮。30尺内的每个生物必须尝试一次@Check[type:will|dc:27]豁免。</p>\n<p>之后生物将临时免疫10分钟。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}并且@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}1轮。</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 4}并且麻痹[[/br 1d4 #rounds]]{1d4轮}。</p>"
+                    "description": "<p>燧石兽发出粗鲁的侮辱和威胁的咆哮。30尺内的每个生物必须尝试一次@Check[will|dc:27]豁免。</p>\n<p>之后生物将临时免疫10分钟。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}并且@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}1轮。</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 4}并且麻痹[[/br 1d4 #rounds]]{1d4轮}。</p>"
                 },
                 "Incendiary Spit": {
                     "name": "易燃唾液 Incendiary Spit",
-                    "description": "<p>被燧石兽唾液击中的生物，表面会被一层光滑的易燃油脂覆盖。</p>\n<p>该生物必须成功通过@Check[type:reflex|dc:27]豁免，否则在易燃唾液覆盖时陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}。</p>\n<p>受到火焰伤害的生物会着火，受到[[/r (3d6)[persistent,fire]]] 持续火焰伤害。一旦持续性火焰伤害结束，唾液就燃尽了。唾液也会在一个小时后自动消失，或者用肥皂、水并花费1分钟时间来擦洗。</p>"
+                    "description": "<p>被燧石兽唾液击中的生物，表面会被一层光滑的易燃油脂覆盖。</p>\n<p>该生物必须成功通过@Check[reflex|dc:27]豁免，否则在易燃唾液覆盖时陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}。</p>\n<p>受到火焰伤害的生物会着火，受到[[/r (3d6)[persistent,fire]]] 持续火焰伤害。一旦持续性火焰伤害结束，唾液就燃尽了。唾液也会在一个小时后自动消失，或者用肥皂、水并花费1分钟时间来擦洗。</p>"
                 },
                 "Trail of Flame": {
                     "name": "火焰轨迹 Trail of Flame",
-                    "description": "<p>燧石兽行走两次，在它移动的时候，身后留下一道魔法火焰的痕迹。燧石兽经过的方格会燃起火焰，创造出5尺高的火墙，燃烧1轮。火墙会隐蔽另一侧的生物和物体。</p>\n<p>任何进入或在火墙范围内开始回合的生物将受到@Damage[6d6[fire]]伤害（@Check[type:reflex|dc:27|basic:true]豁免）。</p>"
+                    "description": "<p>燧石兽行走两次，在它移动的时候，身后留下一道魔法火焰的痕迹。燧石兽经过的方格会燃起火焰，创造出5尺高的火墙，燃烧1轮。火墙会隐蔽另一侧的生物和物体。</p>\n<p>任何进入或在火墙范围内开始回合的生物将受到@Damage[6d6[fire]]伤害（@Check[reflex|dc:27|basic]豁免）。</p>"
                 }
             }
         },
@@ -815,7 +815,7 @@
                 },
                 "Vomit Blood": {
                     "name": "吐血 Vomit Blood",
-                    "description": "<p>剥皮尸喷出一大口血淋满被擒抱的生物全身。被擒抱的生物必须通过@Check[type:fortitude|dc:25]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>"
+                    "description": "<p>剥皮尸喷出一大口血淋满被擒抱的生物全身。被擒抱的生物必须通过@Check[fortitude|dc:25]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>"
                 }
             }
         },
@@ -828,7 +828,7 @@
         },
         "Exploding Statue": {
             "name": "爆炸雕像 Exploding Statue",
-            "disable": "<p>@Check[type:thievery|dc:21|name:Safely Cut Wire|traits:action:disable-a-device](受训)以安全地切断引线</p>",
+            "disable": "<p>@Check[thievery|dc:21|name:Safely Cut Wire|traits:action:disable-a-device](受训)以安全地切断引线</p>",
             "hazarddescription": "<p>一个装满炸药的中空雕像连接在沿着相邻门运行的引线上。</p>",
             "stealthdetails": "<p>(受训)</p>",
             "data": {
@@ -837,13 +837,13 @@
             "items": {
                 "Explosion": {
                     "name": "爆炸 Explosion",
-                    "description": "<p><strong>触发</strong> 一个生物打开北门，但没有先解除引线；</p>\n<hr />\n<p><strong>效果</strong> 雕像爆炸，以一个@Template[type:cone|distance:5]向西喷射弹片，对受影响地区的所有生物造成@Damage[(1d10+7)[piercing]]{1d10+7穿刺}和[[/r (1d10)[fire]]]{1d10火焰伤害}（@Check[type:reflex|dc:18|basic:true]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物打开北门，但没有先解除引线；</p>\n<hr />\n<p><strong>效果</strong> 雕像爆炸，以一个@template[cone|distance:5]向西喷射弹片，对受影响地区的所有生物造成@Damage[(1d10+7)[piercing]]{1d10+7穿刺}和[[/r (1d10)[fire]]]{1d10火焰伤害}（@Check[reflex|dc:18|basic]豁免）。</p>"
                 }
             }
         },
         "Explosive Barrels": {
             "name": "爆炸桶 Explosive Barrels",
-            "disable": "<p>@Check[type:survival|dc:20|name:Smother the Flames]在不使其破裂的情况下扑灭火焰。</p>",
+            "disable": "<p>@Check[survival|dc:20|name:Smother the Flames]在不使其破裂的情况下扑灭火焰。</p>",
             "hazarddescription": "<p>标有油滴符号的木桶着火就会爆炸。</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -851,13 +851,13 @@
             "items": {
                 "Explode": {
                     "name": "爆炸 Explode",
-                    "description": "<p><strong>触发</strong> 警探们到达后经过4轮无人处理；</p>\n<hr />\n<p><strong>效果</strong> 油桶爆炸了，对20英尺半径内造成@Damage[(3d6+8)[fire]]{3d6+8火焰伤害}（@Check[type:reflex|dc:20|basic:true|traits:fire]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 警探们到达后经过4轮无人处理；</p>\n<hr />\n<p><strong>效果</strong> 油桶爆炸了，对20英尺半径内造成@Damage[(3d6+8)[fire]]{3d6+8火焰伤害}（@Check[reflex|dc:20|basic|traits:fire]豁免）。</p>"
                 }
             }
         },
         "Eyeball Tank": {
             "name": "Eyeball Tank",
-            "disable": "<p>@Check[type:thievery|dc:38|name:Acidify Slime|traits:action:disable-a-device](大师)or @Check[type:crafting|dc:34|name:Acidify Slime](专家)to acidify the slime inside the tank, destroying the eyeballs</p>",
+            "disable": "<p>@Check[thievery|dc:38|name:Acidify Slime|traits:action:disable-a-device](大师)or @Check[crafting|dc:34|name:Acidify Slime](专家)to acidify the slime inside the tank, destroying the eyeballs</p>",
             "hazarddescription": "<p>A vat of thick glass stands 10 feet high and is filled with green slime and fist-sized eyeballs。</p>",
             "routine": "<p>(3 actions) Each round, the vat uses all three of its actions to shoot random eye rays at any living creatures (except Ixusoth) in range。</p>",
             "stealthdetails": "<p>(大师)</p>",
@@ -868,7 +868,7 @@
         },
         "False Door Trap": {
             "name": "False Door Trap",
-            "disable": "<p>@Check[type:thievery|dc:32|name:Jam Needle in Housing|traits:action:disable-a-device](大师)to jam the needle in its housing or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (6th level, counteract DC 30) to dispel the magical poison。</p>",
+            "disable": "<p>@Check[thievery|dc:32|name:Jam Needle in Housing|traits:action:disable-a-device](大师)to jam the needle in its housing or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (6th level, counteract DC 30) to dispel the magical poison。</p>",
             "hazarddescription": "<p>A hidden needle delivers a magical poison to anyone trying to open the door。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "data": {
@@ -910,7 +910,7 @@
         },
         "Field Of Opposition": {
             "name": "Field Of Opposition",
-            "disable": "<p>@Check[type:thievery|dc:42|name:Disable Thievery] (legendary) to permanently disable the planar distortion (DC increases by 2 for each duplicate still extant), or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (10th level; counteract DC 42) to destroy the planar distortion</p>",
+            "disable": "<p>@Check[thievery|dc:42|name:Disable Thievery] (legendary) to permanently disable the planar distortion (DC increases by 2 for each duplicate still extant), or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (10th level; counteract DC 42) to destroy the planar distortion</p>",
             "hazarddescription": "<p>A distortion in space spawns an aggressive, malevolent shadow duplicate of any characters who pass between Terimor's faces。</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -919,11 +919,11 @@
         },
         "Flying Guillotine": {
             "name": "飞行断头台 Flying Guillotine",
-            "disable": "<p>@Check[type:thievery|dc:20|name:Erase Glyph|traits:action:disable-a-device](受训)以抹除浮雕（如果刀片已经激活，则需要先进行成功的非武装攻击动作）；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}magic（3环；反制DC20）以反制浮雕。这个陷阱有一个只有蕾瑟和普拉切特知道的秘密诀窍：只要断头台侦测到房间里的一个生物用空着的手合拢拇指和小指，它就会处于休眠。</p>",
+            "disable": "<p>@Check[thievery|dc:20|name:Erase Glyph|traits:action:disable-a-device](受训)以抹除浮雕（如果刀片已经激活，则需要先进行成功的非武装攻击动作）；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}magic（3环；反制DC20）以反制浮雕。这个陷阱有一个只有蕾瑟和普拉切特知道的秘密诀窍：只要断头台侦测到房间里的一个生物用空着的手合拢拇指和小指，它就会处于休眠。</p>",
             "hazarddescription": "<p>断头台刀片上一个看不见的魔法浮雕会检测房间里的生物，使刀片从铰链上飞出并发动攻击。</p>",
             "reset": "<p>1分钟后，陷阱关闭，但门仍然锁着。陷阱会在每天的黎明时重新准备好。</p>",
             "routine": "<p>(1动作) 刀片@UUID[Compendium.pf2e.actionspf2e.Item.cS9nfDRGD83bNU1p]{飞行 Flies}至多20尺，打击任何经过的格子上的生物。它每一轮不能瞄准同一生物超过一次。刀片无法被擒抱，也不会受到多次攻击的减值。</p>",
-            "stealthdetails": "<p>(受训)或@Check[type:perception|dc:23|traits:action:seek](专家)以发现浮雕</p>",
+            "stealthdetails": "<p>(受训)或@Check[perception|dc:23|traits:action:seek](专家)以发现浮雕</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -969,13 +969,13 @@
                 },
                 "Splash Poison": {
                     "name": "泼洒毒药 Splash Poison",
-                    "description": "<p>弗兰卡对流血的敌人泼洒毒药。</p>\n<p>她从携带物中取出毒药，然后泼向一个10尺内的正在遭受持续流血伤害的生物。</p>\n<p>该生物必须通过@Check[type:reflex|dc:32]豁免鉴定，否则将暴露于毒素的影响下。</p>"
+                    "description": "<p>弗兰卡对流血的敌人泼洒毒药。</p>\n<p>她从携带物中取出毒药，然后泼向一个10尺内的正在遭受持续流血伤害的生物。</p>\n<p>该生物必须通过@Check[reflex|dc:32]豁免鉴定，否则将暴露于毒素的影响下。</p>"
                 }
             }
         },
         "Freezing Alarm": {
             "name": "Freezing Alarm",
-            "disable": "<p>@Check[type:arcana|dc:53|name:Disable Arcana] (legendary) to draw a fiery counteracting glyph over each snowflake, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (9th level, counteract DC 48)</p>",
+            "disable": "<p>@Check[arcana|dc:53|name:Disable Arcana] (legendary) to draw a fiery counteracting glyph over each snowflake, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (9th level, counteract DC 48)</p>",
             "hazarddescription": "<p>Miniature snowflake-shaped glyphs on the ground cause a layer of ice to ripple over the floor of the room and sound a silent alarm。</p>",
             "reset": "<p>1天</p>",
             "stealthdetails": "<p>(大师)</p>",
@@ -999,7 +999,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>30尺， @Check[type:will|dc:25]豁免 @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>30尺， @Check[will|dc:25]豁免 @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Rejuvenation": {
                     "name": "复生 Rejuvenation",
@@ -1070,10 +1070,10 @@
         },
         "Gas Trap": {
             "name": "毒气陷阱 Gas Trap",
-            "disable": "<p>Four @Check[type:thievery|dc:20|name:Block Gas Vents|traits:action:disable-a-device] checks to block the gas vents, or a @Check[type:thievery|dc:26|name:Unlock Door|traits:action:pick-a-lock] check to unlock the door and escape</p>",
+            "disable": "<p>Four @Check[thievery|dc:20|name:Block Gas Vents|traits:action:disable-a-device] checks to block the gas vents, or a @Check[thievery|dc:26|name:Unlock Door|traits:action:pick-a-lock] check to unlock the door and escape</p>",
             "hazarddescription": "<p>在四个隐藏的气体通风口开始向房间注入毒气之前，房间的门突然关上并上锁。</p>",
             "reset": "<p>必须通过疏浚通风口或更换<strong>E30</strong>区域的毒气箱以手动重新启用陷阱。</p>",
-            "routine": "<p>(1动作) 每一轮到它的回合，陷阱都会向房间注入更多的毒气。</p>\n<p>房间里的任何在呼吸的生物都会受到[[/r (4d6)[poison]]]{4d6毒素伤害}（成功通过@Check[type:fortitude|dc:22|traits:poison,damaging-effect]豁免以减半伤害）。如果在第一轮，一个生物在陷阱的回合之前行动，它可以选择屏住呼吸来推迟受到陷阱的伤害——在陷阱第一次行动后屏住呼吸将没有效果，因为该生物肺部的空气已经受到了污染。找到并阻塞其中一个隐藏的气体出口可以减少1d6的毒素伤害——如果所有的四个出口都被阻塞了，陷阱将被解除，尽管门仍然是锁着的。否则，陷阱将运行1分钟，然后所有气体耗尽，房间中的生物停止受到伤害，之后陷阱再打开房间1分钟。</p>",
+            "routine": "<p>(1动作) 每一轮到它的回合，陷阱都会向房间注入更多的毒气。</p>\n<p>房间里的任何在呼吸的生物都会受到[[/r (4d6)[poison]]]{4d6毒素伤害}（成功通过@Check[fortitude|dc:22|traits:poison,damaging-effect]豁免以减半伤害）。如果在第一轮，一个生物在陷阱的回合之前行动，它可以选择屏住呼吸来推迟受到陷阱的伤害——在陷阱第一次行动后屏住呼吸将没有效果，因为该生物肺部的空气已经受到了污染。找到并阻塞其中一个隐藏的气体出口可以减少1d6的毒素伤害——如果所有的四个出口都被阻塞了，陷阱将被解除，尽管门仍然是锁着的。否则，陷阱将运行1分钟，然后所有气体耗尽，房间中的生物停止受到伤害，之后陷阱再打开房间1分钟。</p>",
             "stealthdetails": "<p>(受训)以闻到毒气或听到嘶嘶声</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -1109,7 +1109,7 @@
                 },
                 "Marrow Rot": {
                     "name": "骨髓热疫 Marrow Rot",
-                    "description": "<p>骨髓热疫只能影响具有骨骼系统的生物。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:25|traits:disease]</p>\n<p><strong>潜伏期</strong> 1天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1} (1天)</p>"
+                    "description": "<p>骨髓热疫只能影响具有骨骼系统的生物。</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:25|traits:disease]</p>\n<p><strong>潜伏期</strong> 1天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1} (1天)</p>"
                 }
             }
         },
@@ -1255,7 +1255,7 @@
         },
         "Hands Of The Forgotten": {
             "name": "被遗忘者之手 Hands Of The Forgotten",
-            "disable": "<p>@Check[type:religion|dc:30|name:Exorcise Spirits](大师)以驱除灵魂或@Check[type:intimidation|dc:32|name:Scare Away the Hands|traits:action:demoralize](专家)以吓跑这些手</p>",
+            "disable": "<p>@Check[religion|dc:30|name:Exorcise Spirits](大师)以驱除灵魂或@Check[intimidation|dc:32|name:Scare Away the Hands|traits:action:demoralize](专家)以吓跑这些手</p>",
             "hazarddescription": "<p>灵体的手从墙壁和地板上伸出来，试图抓住附近的生物。</p>",
             "stealthdetails": "<p>(受训)</p>",
             "data": {
@@ -1264,7 +1264,7 @@
             "items": {
                 "Waylay": {
                     "name": "拦路 Waylay",
-                    "description": "<p><strong>触发</strong> 一个生物进入地图上标记的地区；</p>\n<hr />\n<p><strong>效果</strong> 雾蓝色的手从走廊的石砖里伸出来，抓住触发的生物，它必须尝试@Check[type:reflex|dc:26|traits:damaging-effect]豁免，以避免被灵体的手阻碍或伤害。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}持续1轮。</p>\n<p><strong>失败</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}持续1轮，受到@Damage[(2d10+10)[void]]{2d10+10虚能伤害}。</p>\n<p><strong>大失败</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}持续1轮，受到@Damage[(4d10+15)[void]]{4d10+15虚能伤害}。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物进入地图上标记的地区；</p>\n<hr />\n<p><strong>效果</strong> 雾蓝色的手从走廊的石砖里伸出来，抓住触发的生物，它必须尝试@Check[reflex|dc:26|traits:damaging-effect]豁免，以避免被灵体的手阻碍或伤害。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}持续1轮。</p>\n<p><strong>失败</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}持续1轮，受到@Damage[(2d10+10)[void]]{2d10+10虚能伤害}。</p>\n<p><strong>大失败</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}持续1轮，受到@Damage[(4d10+15)[void]]{4d10+15虚能伤害}。</p>"
                 }
             }
         },
@@ -1287,7 +1287,7 @@
                 },
                 "equipment-Hunting Spider Venom (in Reaper's Lancet)": {
                     "name": "猎蛛毒(死神手术刀中) Hunting Spider Venom",
-                    "description": "<p>这种毒液能够腐蚀受害者的防御，以便蜘蛛捕食猎物。</p>\n<hr />\n<p><strong>启动</strong> <span class=\"action-glyph\">D</span> Interact (Injury)</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:21|name:Hunting Spider Venom]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d10[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (1d12)[poison]]]{1d12毒素伤害}、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和措手不及 (1轮)</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和措手不及 (1轮)</p>"
+                    "description": "<p>这种毒液能够腐蚀受害者的防御，以便蜘蛛捕食猎物。</p>\n<hr />\n<p><strong>启动</strong> <span class=\"action-glyph\">D</span> Interact (Injury)</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:21|name:Hunting Spider Venom]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d10[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1轮)</p>\n<p><strong>阶段2</strong> [[/r (1d12)[poison]]]{1d12毒素伤害}、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和措手不及 (1轮)</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和措手不及 (1轮)</p>"
                 },
                 "strike-Reaper's Lancet Blade": {
                     "name": "死神手术刀 Reaper's Lancet Blade"
@@ -1310,7 +1310,7 @@
         },
         "Hidden Chute": {
             "name": "隐藏的陷坑 Hidden Chute",
-            "disable": "<p>@Check[type:thievery|dc:20|name:Remove Trapdoor|traits:action:disable-a-device](受训)以拆下活板门或使用隐藏在房间门框内的卡具将其锁在适当位置</p>",
+            "disable": "<p>@Check[thievery|dc:20|name:Remove Trapdoor|traits:action:disable-a-device](受训)以拆下活板门或使用隐藏在房间门框内的卡具将其锁在适当位置</p>",
             "hazarddescription": "<p>地板上的一个活板门隐藏了一个石质滑槽。</p>",
             "stealthdetails": "<p>(受训)</p>",
             "data": {
@@ -1339,7 +1339,7 @@
         },
         "Ink Drowning Vats": {
             "name": "Ink Drowning Vats",
-            "disable": "<p>@Check[type:thievery|dc:40|name:Seal an Ink Spout|traits:action:disable-a-device](大师)to seal an ink spout, @Check[type:thievery|dc:48|name:Unlock a Door|traits:action:pick-a-lock](大师)to unlock a steel hatch door, or @Check[type:athletics|dc:45|name:Force Open a Door|traits:action:force-open](大师)to Force Open a steel hatch door</p>",
+            "disable": "<p>@Check[thievery|dc:40|name:Seal an Ink Spout|traits:action:disable-a-device](大师)to seal an ink spout, @Check[thievery|dc:48|name:Unlock a Door|traits:action:pick-a-lock](大师)to unlock a steel hatch door, or @Check[athletics|dc:45|name:Force Open a Door|traits:action:force-open](大师)to Force Open a steel hatch door</p>",
             "hazarddescription": "<p>Steel hatch doors automatically lock shut in each of the four vats labeled <strong>J2</strong>. Four ink spouts (one per vat) jut through a narrow aperture in the ceiling of each vat, 20 feet above。</p>",
             "reset": "<p>The trap can be reset by refilling the ink storage tanks above the vats。</p>",
             "routine": "<p>(4动作)The trap loses 1 action for each disabled ink spout. On each of the trap's actions, a spout pours ink, increasing the depth of the ink in that vat by 2 feet. Creatures standing in the ink are exposed to a dose of poison ink. Once the vat is full of ink, the trap stops using actions, but creatures in the vat might start drowning。</p>",
@@ -1351,7 +1351,7 @@
         },
         "Inky Tendrils": {
             "name": "Inky Tendrils",
-            "disable": "<p>@Check[type:athletics|dc:48|name:Disable Athletics] (legendary) or @Check[type:athletics|dc:45|name:Disable Acrobatics]{Acrobatics}(大师)to tie one tentacle into a knot, rendering it useless, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (8th level; counteract DC 44) to counteract one tentacle。</p>\n<p>The death of the Daemonic Rumormonger permanently dispels all the inky tendrils。</p>",
+            "disable": "<p>@Check[athletics|dc:48|name:Disable Athletics] (legendary) or @Check[athletics|dc:45|name:Disable Acrobatics]{Acrobatics}(大师)to tie one tentacle into a knot, rendering it useless, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (8th level; counteract DC 44) to counteract one tentacle。</p>\n<p>The death of the Daemonic Rumormonger permanently dispels all the inky tendrils。</p>",
             "hazarddescription": "<p>Six giant tentacles reach up from the ink lake, grabbing any foes in reach and dragging them underwater。</p>",
             "routine": "<p>(6 actions) The hazard loses 1 action for every tentacle that is disabled or destroyed. The tentacles can combine their actions to use the hazard's Inky Imitator ability. A broken tentacle can still Strike, but it can't Grab. This hazard takes no multiple attack penalty。</p>",
             "data": {
@@ -1362,7 +1362,7 @@
         "Iron Maiden Trap": {
             "name": "铁处女陷阱 Iron Maiden Trap",
             "hp": "铁处女硬度：12; 铁处女HP：46 (BT 23)",
-            "disable": "<p>@Check[type:thievery|dc:28|name:Disable Pressure Plate|traits:action:disable-a-device]以解除压力板。</p>",
+            "disable": "<p>@Check[thievery|dc:28|name:Disable Pressure Plate|traits:action:disable-a-device]以解除压力板。</p>",
             "hazarddescription": "<p>触发隐藏在铁处女前的地面上的压力板，折磨装置会突然合拢并将触发的生物困在里面。</p>",
             "reset": "<p>压力板必须被手动重置。</p>",
             "stealthdetails": "<p>(专家)</p>",
@@ -1372,7 +1372,7 @@
             "items": {
                 "Slam Shut": {
                     "name": "突然合拢 Slam Shut",
-                    "description": "<p><strong>触发</strong> 一个生物走上陷阱的压力板（如地图上所示）；</p>\n<hr />\n<p><strong>效果</strong> 铁处女的前部以令人难以置信的力量关闭，并自己锁住了。触发生物会遭受@Damage[(4d10+10)[piercing]]{4d10+10穿刺伤害}和@Damage[2d6[bleed]]伤害（@Check[type:reflex|dc:26|basic:true]豁免；如果该生物大成功，可以完全避开陷阱）。触发它的生物被禁足。只有当铁处女外的生物解锁装着（需要两次@Check[type:thievery|dc:28|name:Unlock Iron Maiden|traits:manipulate,action:disable-a-device]检定才能解除装置）或打破铁处女，之后被困的生物再通过DC25的检定以逃脱陷阱内部的尖刺，才能免除禁足。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物走上陷阱的压力板（如地图上所示）；</p>\n<hr />\n<p><strong>效果</strong> 铁处女的前部以令人难以置信的力量关闭，并自己锁住了。触发生物会遭受@Damage[(4d10+10)[piercing]]{4d10+10穿刺伤害}和@Damage[2d6[bleed]]伤害（@Check[reflex|dc:26|basic]豁免；如果该生物大成功，可以完全避开陷阱）。触发它的生物被禁足。只有当铁处女外的生物解锁装着（需要两次@Check[thievery|dc:28|name:Unlock Iron Maiden|traits:manipulate,action:disable-a-device]检定才能解除装置）或打破铁处女，之后被困的生物再通过DC25的检定以逃脱陷阱内部的尖刺，才能免除禁足。</p>"
                 }
             }
         },
@@ -1472,7 +1472,7 @@
         },
         "Kharnas's Lesser Glyph": {
             "name": "Kharnas's Lesser Glyph",
-            "disable": "<p>Disable @Check[type:thievery|dc:46|name:Destroy Glyph|traits:action:disable-a-device] (legendary) to destroy the glyph, @Check[type:arcana|dc:42|name:Divert Glyph's Power](大师)to harmlessly divert the glyph's power, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (7th level; counteract DC 38) to counteract the glyph</p>",
+            "disable": "<p>Disable @Check[thievery|dc:46|name:Destroy Glyph|traits:action:disable-a-device] (legendary) to destroy the glyph, @Check[arcana|dc:42|name:Divert Glyph's Power](大师)to harmlessly divert the glyph's power, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (7th level; counteract DC 38) to counteract the glyph</p>",
             "hazarddescription": "<p>A hidden glyph suddenly lights up and dominates the mind of any creature not bearing the sigil of Kharnas the Angel-Binder。</p>",
             "reset": "<p>The glyph can affect two creatures before it deactivates for 5 minutes and automatically resets。</p>",
             "routine": null,
@@ -1509,10 +1509,10 @@
         "Life Magnet": {
             "name": "生物磁体 Life Magnet",
             "hp": "栅栏HP：40 (BT 20), 栅栏硬度：15",
-            "disable": "<p>@Check[type:thievery|dc:29|name:Deactivate Panel|traits:action:disable-a-device](专家)以拆除嵌板，或使用@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环；反制DC22）来反制嵌板上的魔法</p>",
+            "disable": "<p>@Check[thievery|dc:29|name:Deactivate Panel|traits:action:disable-a-device](专家)以拆除嵌板，或使用@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环；反制DC22）来反制嵌板上的魔法</p>",
             "hazarddescription": "<p>隐藏在房间角落的嵌板后有一块神奇的磁体，会将生物而不是金属拉向它，并忽略途中的任何障碍。</p>",
             "reset": "<p>在铁栅栏没有接触任何生物1分钟后，陷阱解除并重置。</p>",
-            "routine": "<p>(1动作) 陷阱将至多四个已经触发了它生物磁化能力的生物拉向房间的一个角落，可能会将他们压到铁栅栏上。如果受影响的生物和磁板间的所有铁栅栏还保持完好，该生物受到@Damage[(2d10+10)[bludgeoning]]{2d10+10钝击伤害}，需要通过@Check[type:fortitude|dc:25]豁免，失败则被束缚（逃脱DC23）。</p>\n<p>如果一根铁栅破损了，则生物只会受到@Damage[(1d10+5)[bludgeoning]]{1d10+5钝击伤害}，如果连续的两根铁栅都破损了，则生物不会受到任何伤害（但豁免失败仍会被束缚）。</p>",
+            "routine": "<p>(1动作) 陷阱将至多四个已经触发了它生物磁化能力的生物拉向房间的一个角落，可能会将他们压到铁栅栏上。如果受影响的生物和磁板间的所有铁栅栏还保持完好，该生物受到@Damage[(2d10+10)[bludgeoning]]{2d10+10钝击伤害}，需要通过@Check[fortitude|dc:25]豁免，失败则被束缚（逃脱DC23）。</p>\n<p>如果一根铁栅破损了，则生物只会受到@Damage[(1d10+5)[bludgeoning]]{1d10+5钝击伤害}，如果连续的两根铁栅都破损了，则生物不会受到任何伤害（但豁免失败仍会被束缚）。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -1533,7 +1533,7 @@
         },
         "Living Paints": {
             "name": "Living Paints",
-            "disable": "<p>@Check[type:crafting|dc:41|name:Crafting Disable](大师)to mix the paints into bland, useless colors, @Check[type:thievery|dc:41|name:Thievery Disable] (legendary) to dismantle the animated brushes, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (8th level; counteract DC 41) to counteract the magic within the paint。</p>",
+            "disable": "<p>@Check[crafting|dc:41|name:Crafting Disable](大师)to mix the paints into bland, useless colors, @Check[thievery|dc:41|name:Thievery Disable] (legendary) to dismantle the animated brushes, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (8th level; counteract DC 41) to counteract the magic within the paint。</p>",
             "hazarddescription": "<p>A mass of brushes use magical paint to convert creatures into art。</p>",
             "stealthdetails": "<p>(大师)</p>",
             "data": {
@@ -1585,7 +1585,7 @@
                 },
                 "Rabbit Punch": {
                     "name": "兔拳 Rabbit Punch",
-                    "description": "<p><strong>触发</strong> 毛丽萨可以进行一次反应打击；</p>\n<hr />\n<p><strong>效果</strong> 毛丽萨猛击对手的后脑勺或脖子，甚至可能造成脑震荡。</p>\n<p>目标必须尝试一次@Check[type:fortitude|dc:26]豁免检定。如果失败，该生物将受到毛丽萨的拳击打击的伤害，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。如果大失败，生物陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>"
+                    "description": "<p><strong>触发</strong> 毛丽萨可以进行一次反应打击；</p>\n<hr />\n<p><strong>效果</strong> 毛丽萨猛击对手的后脑勺或脖子，甚至可能造成脑震荡。</p>\n<p>目标必须尝试一次@Check[fortitude|dc:26]豁免检定。如果失败，该生物将受到毛丽萨的拳击打击的伤害，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。如果大失败，生物陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>"
                 }
             }
         },
@@ -1696,7 +1696,7 @@
                 },
                 "Najra Lizard Venom": {
                     "name": "纳杰拉蜥蜴毒液 Najra Lizard Venom",
-                    "description": "<p>中毒的生物会感觉生物非常口渴，在中毒时无法解渴；</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:21|traits:poison]</p>\n<p><strong>最大持续时间</strong> 4小时</p>\n<p><strong>阶段1</strong> @Damage[1d4[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}，外加无法恢复的[[/r 1d4]]伤害，直到目标解渴 (1轮)</p>\n<p><strong>阶段2</strong> 如同阶段1 (1小时)</p>"
+                    "description": "<p>中毒的生物会感觉生物非常口渴，在中毒时无法解渴；</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:21|traits:poison]</p>\n<p><strong>最大持续时间</strong> 4小时</p>\n<p><strong>阶段1</strong> @Damage[1d4[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}，外加无法恢复的[[/r 1d4]]伤害，直到目标解渴 (1轮)</p>\n<p><strong>阶段2</strong> 如同阶段1 (1小时)</p>"
                 },
                 "Najra Swarm Attack": {
                     "name": "纳杰拉集群攻击 Najra Swarm Attack",
@@ -1707,7 +1707,7 @@
         "Needling Stairs": {
             "name": "针刺楼梯 Needling Stairs",
             "hp": "以击断一级楼梯下的弹簧，使得可以安全站立在这一级上",
-            "disable": "<p>@Check[type:thievery|dc:33|name:Disable Stair Spring|traits:action:disable-a-device](大师)来解除任意一级楼梯内的弹簧，或关闭<strong>C8</strong>区的开关以关闭整个陷阱。切断连接楼梯和楼梯最顶端的控制开关之间的导线（@Check[type:thievery|dc:35|name:Cut Wire on Top-Most Stair|traits:action:disable-a-device]解除装置），可以防止控制开关激活或关闭陷阱。</p>",
+            "disable": "<p>@Check[thievery|dc:33|name:Disable Stair Spring|traits:action:disable-a-device](大师)来解除任意一级楼梯内的弹簧，或关闭<strong>C8</strong>区的开关以关闭整个陷阱。切断连接楼梯和楼梯最顶端的控制开关之间的导线（@Check[thievery|dc:35|name:Cut Wire on Top-Most Stair|traits:action:disable-a-device]解除装置），可以防止控制开关激活或关闭陷阱。</p>",
             "hazarddescription": "<p>这条楼梯上每一级台阶下都有弹簧，当有人踩上时，毒针会从木头微小的洞里射出。每一级楼梯占了一个5尺平方的格子，总共有6级。</p>",
             "reset": "<p>如果陷阱是通过<strong>C8</strong>区域的开关解除的，那也能由开关重新启动。</p>",
             "routine": "<p>(1动作) 陷阱会以一个单动作，对处于某级激活的楼梯上的任一生物各自使用毒针打击。因为任何有负重的台级上会不断有针刺出，所以它也可以使用流血的脚自由动作，在一个生物的回合中攻击某一级上的生物。</p>",
@@ -1778,11 +1778,11 @@
                 },
                 "Bury in Offal": {
                     "name": "用残渣埋葬 Bury in Offal",
-                    "description": "<p>残渣怪丧尸进行了抛掷残渣打击，将攻击骰的结果与从残渣怪丧尸发出的@Template[type:cone|distance:15]区域内的任何敌人的AC进行比较。这在计算多次攻击减值时被记作两次攻击。</p>\n<p>直到残渣怪丧尸移动至少10尺到达不同的空间后才能再次使用用残渣埋葬。</p>"
+                    "description": "<p>残渣怪丧尸进行了抛掷残渣打击，将攻击骰的结果与从残渣怪丧尸发出的@template[cone|distance:15]区域内的任何敌人的AC进行比较。这在计算多次攻击减值时被记作两次攻击。</p>\n<p>直到残渣怪丧尸移动至少10尺到达不同的空间后才能再次使用用残渣埋葬。</p>"
                 },
                 "Wretched Weeps": {
                     "name": "悲恸脓血症 Wretched Weeps",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:22]</p>\n<p><strong>阶段1</strong> 携带疾病但无效果 (1天)</p>\n<p><strong>阶段2</strong> 每小时@Damage[2d8[bleed]]伤害，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段3</strong> 每小时@Damage[2d8[bleed]]伤害，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:22]</p>\n<p><strong>阶段1</strong> 携带疾病但无效果 (1天)</p>\n<p><strong>阶段2</strong> 每小时@Damage[2d8[bleed]]伤害，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1} (1天)</p>\n<p><strong>阶段3</strong> 每小时@Damage[2d8[bleed]]伤害，并且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2} (1天)</p>"
                 }
             }
         },
@@ -1836,7 +1836,7 @@
                 },
                 "Suffocating Fumes": {
                     "name": "窒息烟雾 Suffocating Fumes",
-                    "description": "<p>5尺@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>进入灵光或在灵光中开始它的回合的生物必须通过@Check[type:fortitude|dc:14]检定，如果罐中畸胎附着了他则DC为@Check[type:fortitude|dc:17]。</p>\n<p>豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，大失败则额外获得1分钟的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。</p>"
+                    "description": "<p>5尺@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}</p>\n<hr />\n<p>进入灵光或在灵光中开始它的回合的生物必须通过@Check[fortitude|dc:14]检定，如果罐中畸胎附着了他则DC为@Check[fortitude|dc:17]。</p>\n<p>豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，大失败则额外获得1分钟的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。</p>"
                 },
                 "Attach": {
                     "name": "附着 Attach",
@@ -1846,7 +1846,7 @@
         },
         "Plunger Chute": {
             "name": "液压滑道 Plunger Chute",
-            "disable": "<p>@Check[type:thievery|dc:23|name:Jam the Trapdoor Shut|traits:action:disable-a-device](专家)以堵塞活板门；或通过扭转煤气灯上的一个配件关闭。</p>",
+            "disable": "<p>@Check[thievery|dc:23|name:Jam the Trapdoor Shut|traits:action:disable-a-device](专家)以堵塞活板门；或通过扭转煤气灯上的一个配件关闭。</p>",
             "hazarddescription": "<p>地板上的活板门隐藏着一个隐藏的滑道，一堵可移动的墙会把受害者推进去。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "data": {
@@ -1868,11 +1868,11 @@
         },
         "Poisoned Dart Statue": {
             "name": "Poisoned Dart Statue",
-            "disable": "<p>@Check[type:thievery|dc:34|name:Disable Trap|traits:action:disable-a-device](大师)on the control panel deactivates the trap。</p>",
+            "disable": "<p>@Check[thievery|dc:34|name:Disable Trap|traits:action:disable-a-device](大师)on the control panel deactivates the trap。</p>",
             "hazarddescription": "<p>Countless poison darts fire from holes in the statues and walls of this hall。</p>",
             "reset": "<p>The trap deactivates and resets after 1 minute。</p>",
             "routine": "<p>(1动作) The trap launches one dart against every creature in the hall as 1 action. Because it launches darts continuously, the trap can also use the Continuous Barrage free action (see below) to launch darts at each creature during that creature's turn. The trap doesn't take a multiple attack penalty。</p>",
-            "stealthdetails": "<p>(专家)or @Check[type:perception|dc:39|traits:action:seek](大师)to notice the control panel. Anyone specifically searching the name plate of Abresha Tallow-Hands locates the control panel automatically。</p>",
+            "stealthdetails": "<p>(专家)or @Check[perception|dc:39|traits:action:seek](大师)to notice the control panel. Anyone specifically searching the name plate of Abresha Tallow-Hands locates the control panel automatically。</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -1901,7 +1901,7 @@
                 },
                 "Stone Robes": {
                     "name": "石袍 Stone Robes",
-                    "description": "<p>前程者雕像突然转身，导致尽管它的长袍像石头一样坚硬，但还是像织物一样流动，伤害对手。</p>\n<p>与活化雕像相邻的生物会遭受@Damage[(2d6+6)[bludgeoning]]{2d6+6钝击伤害}（@Check[type:reflex|dc:25|basic:true]豁免；在大失败时，该生物同时被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}）。</p>"
+                    "description": "<p>前程者雕像突然转身，导致尽管它的长袍像石头一样坚硬，但还是像织物一样流动，伤害对手。</p>\n<p>与活化雕像相邻的生物会遭受@Damage[(2d6+6)[bludgeoning]]{2d6+6钝击伤害}（@Check[reflex|dc:25|basic]豁免；在大失败时，该生物同时被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}）。</p>"
                 }
             }
         },
@@ -1970,7 +1970,7 @@
         },
         "Rigged Cubby": {
             "name": "机关隔间 Rigged Cubby",
-            "disable": "<p>@Check[type:thievery|dc:20|name:Cut String|traits:action:disable-a-device]以间断绳子触发陷阱</p>",
+            "disable": "<p>@Check[thievery|dc:20|name:Cut String|traits:action:disable-a-device]以间断绳子触发陷阱</p>",
             "hazarddescription": "<p>一根隐藏的绳子连接在堆叠的石砖上，当被拉动时会导致隔间塌陷。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "data": {
@@ -1979,7 +1979,7 @@
             "items": {
                 "Collapse": {
                     "name": "塌陷 Collapse",
-                    "description": "<p><strong>触发</strong> 一个生物碰到了隔间里的镰刀；</p>\n<hr />\n<p><strong>效果</strong> 隔间上方沉重的砖块塌陷，镰刀完好无损，但对触发生物造成@Damage[(4d6+10)[bludgeoning]]{4d6+10钝击伤害}（@Check[type:reflex|dc:26|basic:true]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物碰到了隔间里的镰刀；</p>\n<hr />\n<p><strong>效果</strong> 隔间上方沉重的砖块塌陷，镰刀完好无损，但对触发生物造成@Damage[(4d6+10)[bludgeoning]]{4d6+10钝击伤害}（@Check[reflex|dc:26|basic]豁免）。</p>"
                 }
             }
         },
@@ -2002,7 +2002,7 @@
                 },
                 "Throw Shadow Blade": {
                     "name": "掷出暗影匕首 Throw Shadow Blade",
-                    "description": "<p><strong>需求</strong> 斯喀忒卡持握着一个匕首；</p>\n<hr />\n<p><strong>效果</strong> 斯喀忒卡用匕首的刃划出一道暗影沟壑，并将其挥向一个附近的敌人。斯喀忒卡以匕首进行一次远程打击，具有30尺的射程增量。</p>\n<p>如果打击命中，会造成[[/r (8d6)[cold]]]{8d6寒冷伤害}（大成功则伤害翻倍），并且目标必须成功通过@Check[type:fortitude|dc:32]豁免，否则直到其下回合结束获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败则持续[[/br 1d4 #rounds]]{1d4轮}）。</p>\n<p>当攻击结束时，匕首不再具有幽影魔法的效应。</p>"
+                    "description": "<p><strong>需求</strong> 斯喀忒卡持握着一个匕首；</p>\n<hr />\n<p><strong>效果</strong> 斯喀忒卡用匕首的刃划出一道暗影沟壑，并将其挥向一个附近的敌人。斯喀忒卡以匕首进行一次远程打击，具有30尺的射程增量。</p>\n<p>如果打击命中，会造成[[/r (8d6)[cold]]]{8d6寒冷伤害}（大成功则伤害翻倍），并且目标必须成功通过@Check[fortitude|dc:32]豁免，否则直到其下回合结束获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败则持续[[/br 1d4 #rounds]]{1d4轮}）。</p>\n<p>当攻击结束时，匕首不再具有幽影魔法的效应。</p>"
                 }
             }
         },
@@ -2060,7 +2060,7 @@
                 },
                 "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(1d4+4)[bludgeoning]]{1d4+4钝击伤害}、@Check[type:fortitude|dc:16|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(1d4+4)[bludgeoning]]{1d4+4钝击伤害}、@Check[fortitude|dc:16|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
                 "Control Body": {
                     "name": "控制尸体 Control Body",
@@ -2123,7 +2123,7 @@
                 },
                 "Overwhelming Anguish": {
                     "name": "痛苦淹没 Overwhelming Anguish",
-                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 围城碎片发射一道让人迷惑的精神能量波。15尺内的所有生物受到@Damage[4d6[mental]]伤害（@Check[type:will|dc:20|basic:true]豁免）。 </p>"
+                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 围城碎片发射一道让人迷惑的精神能量波。15尺内的所有生物受到@Damage[4d6[mental]]伤害（@Check[will|dc:20|basic]豁免）。 </p>"
                 },
                 "Rejuvenation": {
                     "name": "复生 Rejuvenation",
@@ -2185,7 +2185,7 @@
                 },
                 "Quick Stitch": {
                     "name": "快速缝纫 Quick Stitch",
-                    "description": "<p><strong>需求</strong> 锯皮缝纫师正擒拿一个生物；</p>\n<hr />\n<p><strong>效果</strong> 缝纫师把一块布缝在他的手臂、脸或腿上，这可能会造成阻碍。该生物必须尝试@Check[type:reflex|dc:26|traits:damaging-effect]豁免；如果缝纫师在过去一分钟内成功对其使用过剥皮能力，那么该生物的豁免结果向更差偏移一阶。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到[[/r (1d4)[piercing]]]{1d4穿刺伤害}。</p>\n<p><strong>失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}、@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}或@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (由缝纫师选择)。这个效果持续到该生物花费一个动作把针线扯下来，这将造成[[/r (1d6)[piercing]]]{1d6穿刺伤害}。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}、@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}或措手不及 (由缝纫师选择）。这个效果持续到该生物花费两个动作把针线扯下来，这将造成[[/r (2d6)[piercing]]]{2d6穿刺伤害}。</p>"
+                    "description": "<p><strong>需求</strong> 锯皮缝纫师正擒拿一个生物；</p>\n<hr />\n<p><strong>效果</strong> 缝纫师把一块布缝在他的手臂、脸或腿上，这可能会造成阻碍。该生物必须尝试@Check[reflex|dc:26|traits:damaging-effect]豁免；如果缝纫师在过去一分钟内成功对其使用过剥皮能力，那么该生物的豁免结果向更差偏移一阶。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到[[/r (1d4)[piercing]]]{1d4穿刺伤害}。</p>\n<p><strong>失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}、@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}或@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (由缝纫师选择)。这个效果持续到该生物花费一个动作把针线扯下来，这将造成[[/r (1d6)[piercing]]]{1d6穿刺伤害}。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}、@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}或措手不及 (由缝纫师选择）。这个效果持续到该生物花费两个动作把针线扯下来，这将造成[[/r (2d6)[piercing]]]{2d6穿刺伤害}。</p>"
                 }
             }
         },
@@ -2212,7 +2212,7 @@
                 },
                 "Skitterstitch Venom": {
                     "name": "缝皮迅兽毒液 Skitterstitch Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:23|traits:poison]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d10[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[1d10[poison]]伤害、措手不及和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2} (1轮)</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:23|traits:poison]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d10[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1} (1轮)</p>\n<p><strong>阶段2</strong> @Damage[1d10[poison]]伤害、措手不及和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2} (1轮)</p>"
                 },
                 "Stitch Skin": {
                     "name": "缝皮 Stitch Skin",
@@ -2250,7 +2250,7 @@
         },
         "Summoning Rune (Barbazu Devil)": {
             "name": "召唤符文-胡须魔 Summoning Rune (Barbazu Devil)",
-            "disable": "<p>@Check[type:perception|dc:18|name:Notice the Trap's Magic|traits:action:seek]以接近而不触发陷阱，接着@Check[type:thievery|dc:21|name:Break Summoning Circle|traits:action:disable-a-device](受训)以抹除符文；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（3环；反制DC23）以反制符文</p>",
+            "disable": "<p>@Check[perception|dc:18|name:Notice the Trap's Magic|traits:action:seek]以接近而不触发陷阱，接着@Check[thievery|dc:21|name:Break Summoning Circle|traits:action:disable-a-device](受训)以抹除符文；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（3环；反制DC23）以反制符文</p>",
             "hazarddescription": "<p>嵌入地板的召唤圈一旦探测到活着的生物，就召唤一个暴力的魔鬼。</p>",
             "reset": "<p>陷阱会在每天的黎明时重新准备好。</p>",
             "stealthdetails": "<p>(受训)</p>",
@@ -2266,7 +2266,7 @@
         },
         "Summoning Rune (Cinder Rat)": {
             "name": "召唤符文-煤渣鼠 Summoning Rune (Cinder Rat)",
-            "disable": "<p>@Check[type:acrobatics|dc:22|name:Approach Rune](受训)以接近而不触发陷阱，接着@Check[type:thievery|dc:22|name:Erase Summoning Rune|traits:action:disable-a-device](受训)以抹除符文；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（3环；反制DC20）以反制符文</p>",
+            "disable": "<p>@Check[acrobatics|dc:22|name:Approach Rune](受训)以接近而不触发陷阱，接着@Check[thievery|dc:22|name:Erase Summoning Rune|traits:action:disable-a-device](受训)以抹除符文；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（3环；反制DC20）以反制符文</p>",
             "hazarddescription": "<p>一团不可见的云状魔法探测器一旦探测到房间里活着的生物，就召唤火元素杀死这些生物。</p>",
             "reset": "<p>陷阱会在每天的黎明时重新准备好。</p>",
             "stealthdetails": "<p>(受训)</p>",
@@ -2282,7 +2282,7 @@
         },
         "Supplicant Statues": {
             "name": "Supplicant Statues",
-            "disable": "<p>@Check[type:thievery|dc:34|name:Disable Statue Rollers|traits:action:disable-a-device](大师)to disable a specific statue's rollers, or @Check[type:thievery|dc:39|name:Disable Trap (Control Panel)|traits:action:disable-a-device](大师)on the control panel in <strong>A4</strong> deactivates the whole trap. For each statue disabled, the trap loses 1 action from its routine and the DC for its predictive impediment ability decreases by 4. @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (7th level, counteract DC 32) doesn't harm the statues but removes the predictive impediment ability. Breaking the control panel prevents the trap from resetting。</p>",
+            "disable": "<p>@Check[thievery|dc:34|name:Disable Statue Rollers|traits:action:disable-a-device](大师)to disable a specific statue's rollers, or @Check[thievery|dc:39|name:Disable Trap (Control Panel)|traits:action:disable-a-device](大师)on the control panel in <strong>A4</strong> deactivates the whole trap. For each statue disabled, the trap loses 1 action from its routine and the DC for its predictive impediment ability decreases by 4. @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (7th level, counteract DC 32) doesn't harm the statues but removes the predictive impediment ability. Breaking the control panel prevents the trap from resetting。</p>",
             "hazarddescription": "<p>Six statues rapidly slide around the room on rollers, slowing down intruders and striking at them with spring-loaded sword arms。</p>",
             "reset": "<p>The trap deactivates and resets one minute after the room is empty。</p>",
             "routine": "<p>(6 actions) On the trap's initiative, each functioning statue slides up to 40 feet around the room and makes a statue shortsword Strike against an adjacent creature. The trap doesn't take a multiple attack penalty, and the statues' movements don't trigger reactions。</p>",
@@ -2324,7 +2324,7 @@
                 },
                 "Bone Drink": {
                     "name": "饮骨 Bone Drink",
-                    "description": "<p><strong>需求</strong> 一个生物被手之目擒抱或束缚；</p>\n<hr />\n<p><strong>效果</strong> 手之目对被它擒抱或束缚的生物进行一次啃咬打击。如果打击命中，目标必须通过一次@Check[type:fortitude|dc:18]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，如果目标已经陷入流失状态则状态值+1，最大达到流失4。</p>\n<p>每次成功使用该能力，手之目恢复[[/r (1d8)[healing]]]{1d8生命值}。</p>"
+                    "description": "<p><strong>需求</strong> 一个生物被手之目擒抱或束缚；</p>\n<hr />\n<p><strong>效果</strong> 手之目对被它擒抱或束缚的生物进行一次啃咬打击。如果打击命中，目标必须通过一次@Check[fortitude|dc:18]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，如果目标已经陷入流失状态则状态值+1，最大达到流失4。</p>\n<p>每次成功使用该能力，手之目恢复[[/r (1d8)[healing]]]{1d8生命值}。</p>"
                 },
                 "Burst of Speed": {
                     "name": "速度爆发 Burst of Speed",
@@ -2332,7 +2332,7 @@
                 },
                 "Terrifying Gaze": {
                     "name": "惊惧凝视 Terrifying Gaze",
-                    "description": "<p>1或2动作</p>\n<p>手之目展示手掌心的一只眼睛，用它凝视30尺内的一个生物。目标必须通过@Check[type:will|dc:21]鉴定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。如果手之目花费两个动作来展示两只掌心里的眼睛，目标如果豁免失败还会陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}。</p>\n<p>通过豁免的生物在24小时内对该能力临时免疫。</p>"
+                    "description": "<p>1或2动作</p>\n<p>手之目展示手掌心的一只眼睛，用它凝视30尺内的一个生物。目标必须通过@Check[will|dc:21]鉴定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。如果手之目花费两个动作来展示两只掌心里的眼睛，目标如果豁免失败还会陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}。</p>\n<p>通过豁免的生物在24小时内对该能力临时免疫。</p>"
                 }
             }
         },
@@ -2353,15 +2353,15 @@
                 },
                 "Impale": {
                     "name": "刺穿 Impale",
-                    "description": "<p><strong>需求</strong> 三角象擒抱一个目标；</p>\n<hr />\n<p><strong>效果</strong> 三角象用额头上的角猛击目标。目标必须成功尝试一次@Check[type:reflex|dc:27|basic:true]豁免，否则受到@Damage[(3d6+9)[piercing]]{3d6+9穿刺伤害}和@Damage[1d6[bleed]]伤害（大失败则受到@Damage[(6d6+18)[piercing]]{6d6+18穿刺伤害}）。</p>"
+                    "description": "<p><strong>需求</strong> 三角象擒抱一个目标；</p>\n<hr />\n<p><strong>效果</strong> 三角象用额头上的角猛击目标。目标必须成功尝试一次@Check[reflex|dc:27|basic]豁免，否则受到@Damage[(3d6+9)[piercing]]{3d6+9穿刺伤害}和@Damage[1d6[bleed]]伤害（大失败则受到@Damage[(6d6+18)[piercing]]{6d6+18穿刺伤害}）。</p>"
                 },
                 "Psychokinetic Trumpet": {
                     "name": "灵能尖啸 Psychokinetic Trumpet",
-                    "description": "<p>三角象对@Template[type:cone|distance:30]范围发出一阵刺耳的尖啸，造成[[/r (8d8)[mental]]]{8d8心灵伤害}（@Check[type:will|dc:27|basic:true]豁免）。豁免失败的生物还会被推离15尺（大失败则为30 尺）。</p>\n<p>如果被推离的生物撞上固体障碍，还会受到[[/r (3d6)[bludgeoning]]]{3d6钝击伤害}并且停住。</p>\n<p>三角象在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用灵能尖啸。</p>"
+                    "description": "<p>三角象对@template[cone|distance:30]范围发出一阵刺耳的尖啸，造成[[/r (8d8)[mental]]]{8d8心灵伤害}（@Check[will|dc:27|basic]豁免）。豁免失败的生物还会被推离15尺（大失败则为30 尺）。</p>\n<p>如果被推离的生物撞上固体障碍，还会受到[[/r (3d6)[bludgeoning]]]{3d6钝击伤害}并且停住。</p>\n<p>三角象在[[/br 1d4 #rounds]]{1d4轮}内无法再次使用灵能尖啸。</p>"
                 },
                 "Trample": {
                     "name": "践踏 Trample",
-                    "description": "<p>大型或更小体型，脚踩，@Check[type:reflex|dc:27|basic:true]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                    "description": "<p>大型或更小体型，脚踩，@Check[reflex|dc:27|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
                 },
                 "Grabbing Trunk": {
                     "name": "象鼻卷绕 Grabbing Trunk",
@@ -2380,7 +2380,7 @@
         },
         "The Laughing Fiend's Greeting": {
             "name": "The Laughing Fiend's Greeting",
-            "disable": "<p>@Check[type:thievery|dc:44|name:Disable Thievery] (legendary) to obscure or mar the magical runes set into the mural, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (9th level; counteract DC 42) to counteract the mural</p>",
+            "disable": "<p>@Check[thievery|dc:44|name:Disable Thievery] (legendary) to obscure or mar the magical runes set into the mural, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (9th level; counteract DC 42) to counteract the mural</p>",
             "hazarddescription": "<p>Subtle but deadly magical runes link this mural to Kharnas's master. Good- or neutral-aligned creatures who examine the mural witness the castle's drawbridge silently descend, revealing an endless darkness。</p>",
             "reset": "<p>1 week</p>",
             "stealthdetails": "<p>(legendary)</p>",
@@ -2405,7 +2405,7 @@
         },
         "The Winder": {
             "name": "The Winder",
-            "disable": "<p>@Check[type:thievery|dc:50|name:Deactivate System|traits:action:disable-a-device](大师)to deactivate the system, or @Check[type:athletics|dc:40|name:Jam Gears] (legendary) to jam the gears for 1 round</p>",
+            "disable": "<p>@Check[thievery|dc:50|name:Deactivate System|traits:action:disable-a-device](大师)to deactivate the system, or @Check[athletics|dc:40|name:Jam Gears] (legendary) to jam the gears for 1 round</p>",
             "hazarddescription": "<p>A large metallic arm, 20 feet long, is set into the floor. It rotates around the room to wind up nearby clockwork creatures。</p>",
             "reset": "<p>The Winder resets as soon as no creatures remain in the room。</p>",
             "routine": "<p>(1, 2, or 4 actions, depending on the encounter's threat level) The Winder uses each of its actions to Wind clockwork assassins in the room, starting with inactive ones。</p>",
@@ -2453,7 +2453,7 @@
                 },
                 "Subsume": {
                     "name": "纳入 Subsume",
-                    "description": "<p>泰洛奇丝用伪足举起邻近的濒死生物，将其纳入自己的血肉中。被纳入的生物的濒死状态不会增加，也不会减少。</p>\n<p>泰洛奇丝恢复30HP，还能够使用一到两个被纳入的生物的特殊能力或专长，这取决于GM的决定。</p>\n<p>靠近泰洛奇丝的生物可以通过花费2个动作尝试@Check[type:athletics|dc:29|name:Extract Subsumed Creature]检定来扯出一个被纳入的生物。</p>\n<p>成功后，被纳入的生物从泰洛奇丝中脱出，落入最近的可行空间。</p>"
+                    "description": "<p>泰洛奇丝用伪足举起邻近的濒死生物，将其纳入自己的血肉中。被纳入的生物的濒死状态不会增加，也不会减少。</p>\n<p>泰洛奇丝恢复30HP，还能够使用一到两个被纳入的生物的特殊能力或专长，这取决于GM的决定。</p>\n<p>靠近泰洛奇丝的生物可以通过花费2个动作尝试@Check[athletics|dc:29|name:Extract Subsumed Creature]检定来扯出一个被纳入的生物。</p>\n<p>成功后，被纳入的生物从泰洛奇丝中脱出，落入最近的可行空间。</p>"
                 }
             }
         },
@@ -2476,15 +2476,15 @@
                 },
                 "Shriek": {
                     "name": "尖叫 Shriek",
-                    "description": "<p>飞头蛮的尖叫如此可怕，以至于所有60尺内的非飞头蛮必须成功通过@Check[type:fortitude|dc:16]检定，否则将@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}3轮。</p>\n<p>如果瓦尔格耶离开了一个生物的视线、或远离该生物60尺、或用尖牙攻击了该生物，效果将更早结束。</p>\n<p>豁免后，一个生物对飞头蛮的尖叫免疫24小时。</p>"
+                    "description": "<p>飞头蛮的尖叫如此可怕，以至于所有60尺内的非飞头蛮必须成功通过@Check[fortitude|dc:16]检定，否则将@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}3轮。</p>\n<p>如果瓦尔格耶离开了一个生物的视线、或远离该生物60尺、或用尖牙攻击了该生物，效果将更早结束。</p>\n<p>豁免后，一个生物对飞头蛮的尖叫免疫24小时。</p>"
                 },
                 "Vargouille Transformation": {
                     "name": "飞头蛮转化 Vargouille Transformation",
-                    "description": "<p>当受害者暴露在阳光或任何3环及更高的法术制造的光下会暂停疾病的发展，直到受害者不再受到这类光照。</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:18]</p>\n<p><strong>阶段1</strong> 携带病原但没有不良效果 ([[/br 1d6 #hours]]小时)</p>\n<p><strong>阶段2</strong> 受害者的头发掉光 ([[/br 1d6 #hours]]小时)</p>\n<p><strong>阶段3</strong> 受害者的耳朵长成了坚韧的翅膀，触须在下巴和头皮上发芽，牙齿长得又长又尖 (1天)</p>\n<p><strong>阶段4</strong> 受害者的心灵剥开了原有的自我，变得邪恶而愚昧([[/br 1d6 #hours]]小时)</p>\n<p><strong>阶段5</strong> 受害者的头从身体中挣脱出来（而身体已经死亡），转变成一个新的飞头蛮。</p>"
+                    "description": "<p>当受害者暴露在阳光或任何3环及更高的法术制造的光下会暂停疾病的发展，直到受害者不再受到这类光照。</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:18]</p>\n<p><strong>阶段1</strong> 携带病原但没有不良效果 ([[/br 1d6 #hours]]小时)</p>\n<p><strong>阶段2</strong> 受害者的头发掉光 ([[/br 1d6 #hours]]小时)</p>\n<p><strong>阶段3</strong> 受害者的耳朵长成了坚韧的翅膀，触须在下巴和头皮上发芽，牙齿长得又长又尖 (1天)</p>\n<p><strong>阶段4</strong> 受害者的心灵剥开了原有的自我，变得邪恶而愚昧([[/br 1d6 #hours]]小时)</p>\n<p><strong>阶段5</strong> 受害者的头从身体中挣脱出来（而身体已经死亡），转变成一个新的飞头蛮。</p>"
                 },
                 "Vargouille Venom": {
                     "name": "飞头蛮毒素 Vargouille Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[type:fortitude|dc:18|name:Vargouile Venom]</p>\n<p><strong>阶段1</strong> 受害者受到的尖牙造成的伤害无法被魔法治疗。</p>\n<p>一旦所有的尖牙造成的伤害被非魔法地治愈，毒素就结束了。</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:18|name:Vargouile Venom]</p>\n<p><strong>阶段1</strong> 受害者受到的尖牙造成的伤害无法被魔法治疗。</p>\n<p>一旦所有的尖牙造成的伤害被非魔法地治愈，毒素就结束了。</p>"
                 }
             }
         },
@@ -2509,7 +2509,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[type:reflex|dc:23|traits:damaging-effect], @Damage[(2d8+9)[acid]]{2d8+9酸蚀伤害}，逃脱DC 23，破裂14 (金属化时为19)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:23|traits:damaging-effect], @Damage[(2d8+9)[acid]]{2d8+9酸蚀伤害}，逃脱DC 23，破裂14 (金属化时为19)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Form Tool": {
                     "name": "变成工具 Form Tool",
@@ -2570,10 +2570,10 @@
         },
         "Waxworks Onslaught Trap": {
             "name": "Waxworks Onslaught Trap",
-            "disable": "<p>@Check[type:thievery|dc:43|name:Drain Wax from a Tub|traits:action:disable-a-device](大师)to drain the wax from a tub or @Check[type:athletics|dc:45|name:Push Through Wax|traits:action:force-open](大师)to push through the wax blocking a sealed door and escape (other creatures must push their own way through, as the wax reseals)</p>",
+            "disable": "<p>@Check[thievery|dc:43|name:Drain Wax from a Tub|traits:action:disable-a-device](大师)to drain the wax from a tub or @Check[athletics|dc:45|name:Push Through Wax|traits:action:force-open](大师)to push through the wax blocking a sealed door and escape (other creatures must push their own way through, as the wax reseals)</p>",
             "hazarddescription": "<p>Four huge tubs containing congealed wax, enchanted to melt and envelop unwary intruders, each sit atop a cold fire。</p>",
             "reset": "<p>The trap deactivates and resets after 1 hour. At that time, the wax in the tubs cools and congeals, and any wax elsewhere in the room magically goes back into the tubs。</p>",
-            "routine": "<p>(4动作)The trap loses 1 action each turn per drained or destroyed tub. On each action, a different tub spews hot wax at a random creature in the room, dealing 3d12 fire damage to the target and all adjacent creatures (@Check[type:reflex|dc:35|basic:true]). On a failure or critical failure, the creature is also encased in hot wax. A creature that starts its turn encased in wax takes 8d12 fire damage and is immobilized until it Escapes the hardening wax (DC 35). Each turn it remains encased, the damage dealt by the hot wax decreases by 2d12 but the DC to Escape increases by 2 (minimum 0 damage, maximum DC 43). A creature that can't get free from the wax might suffocate。</p>",
+            "routine": "<p>(4动作)The trap loses 1 action each turn per drained or destroyed tub. On each action, a different tub spews hot wax at a random creature in the room, dealing 3d12 fire damage to the target and all adjacent creatures (@Check[reflex|dc:35|basic]). On a failure or critical failure, the creature is also encased in hot wax. A creature that starts its turn encased in wax takes 8d12 fire damage and is immobilized until it Escapes the hardening wax (DC 35). Each turn it remains encased, the damage dealt by the hot wax decreases by 2d12 but the DC to Escape increases by 2 (minimum 0 damage, maximum DC 43). A creature that can't get free from the wax might suffocate。</p>",
             "stealthdetails": "<p>(大师)</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -2644,7 +2644,7 @@
                 },
                 "Go for the Eyes": {
                     "name": "瞄准双眼 Go for the Eyes",
-                    "description": "<p>祖克蝠精以满速度飞行，在移动结束后进行一次爪抓打击。</p>\n<p>如果爪抓攻击命中，目标必须通过@Check[type:fortitude|dc:15]豁免否则@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮（大失败则目盲1分钟）。如果打击造成重击，则受害者的豁免检定结果自动下降一级。</p>"
+                    "description": "<p>祖克蝠精以满速度飞行，在移动结束后进行一次爪抓打击。</p>\n<p>如果爪抓攻击命中，目标必须通过@Check[fortitude|dc:15]豁免否则@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮（大失败则目盲1分钟）。如果打击造成重击，则受害者的豁免检定结果自动下降一级。</p>"
                 }
             }
         }

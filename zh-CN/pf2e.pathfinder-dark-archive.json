@@ -38,23 +38,23 @@
 		"Bounding Hounds": {
 			"name": "跃迁猎犬 Bounding Hounds",
 			"hp": "每只猎犬60HP",
-			"disable": "<p>@Check[type:nature|dc:36|name:Calm Hound]（专家）安抚每只猎犬，或@Check[type:occultism|dc:38|name:Banish Hound]（大师）放逐每只猎犬。</p>",
+			"disable": "<p>@Check[nature|dc:36|name:Calm Hound]（专家）安抚每只猎犬，或@Check[occultism|dc:38|name:Banish Hound]（大师）放逐每只猎犬。</p>",
 			"hazarddescription": "<p>三只魅影猎犬追捕入侵者，伤害其略过之物。</p>",
 			"reset": "<p>1小时</p>",
-			"routine": "<p>(9个动作)该危害每有一只猎犬被解决，则每轮失去三个动作。每条猎犬使用三个动作行走40尺穿越那些房间中的生物，并在移动中经过尽可能多的实体。每个被猎犬移动走穿过的生物收到[[/r (2d8 + 7)[void]]]{2d8 + 7虚能伤害}（@Check[type:reflex|dc:37|traits:damaging-effect]通过则无效）一个生物在一轮内只会受到每只猎犬的一次伤害，无论猎犬穿过他所在的空间多少次。</p>",
+			"routine": "<p>(9个动作)该危害每有一只猎犬被解决，则每轮失去三个动作。每条猎犬使用三个动作行走40尺穿越那些房间中的生物，并在移动中经过尽可能多的实体。每个被猎犬移动走穿过的生物收到[[/r (2d8 + 7)[void]]]{2d8 + 7虚能伤害}（@Check[reflex|dc:37|traits:damaging-effect]通过则无效）一个生物在一轮内只会受到每只猎犬的一次伤害，无论猎犬穿过他所在的空间多少次。</p>",
 			"data": {
                 "placeHolder": "placeHolder"
             },
 			"items":{
 				"Bay":{
 					"name": "嘶鸣 Bay",
-					"description": "<p><strong>触发</strong> 一个生物进入这片区域。</p>\n<hr />\n<p><strong>效果</strong> 猎犬们现出身形并大声嘶鸣，对猎犬30尺内的所有生物造成[[/r (3d10 + 16)[sonic]]]{3d10 + 16音波伤害}（@Check[type:fortitude|dc:33|basic:true]豁免），若失败该生物会额外获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，然后陷阱进行先攻检定。</p>"
+					"description": "<p><strong>触发</strong> 一个生物进入这片区域。</p>\n<hr />\n<p><strong>效果</strong> 猎犬们现出身形并大声嘶鸣，对猎犬30尺内的所有生物造成[[/r (3d10 + 16)[sonic]]]{3d10 + 16音波伤害}（@Check[fortitude|dc:33|basic]豁免），若失败该生物会额外获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，然后陷阱进行先攻检定。</p>"
 				}
 			}
 		},
 		"Call of the Void": {
 			"name": "虚空的呼唤 Call of the Void",
-			"disable": "<p>@Check[type:occultism|dc:34|name:Expel Magical Compulsion]或@Check[type:arcana|dc:36|name:Expel Magical Compulsion]驱逐当前岛屿以及任何与之直接相连的红绳上的魔法冲动，绳索的颜色会就此变得黯淡下去。当回声在岛上执行汲思重构行动时，其所在岛屿以及任何与之直接相连的红绳上的危害也会立刻解除。</p>",
+			"disable": "<p>@Check[occultism|dc:34|name:Expel Magical Compulsion]或@Check[arcana|dc:36|name:Expel Magical Compulsion]驱逐当前岛屿以及任何与之直接相连的红绳上的魔法冲动，绳索的颜色会就此变得黯淡下去。当回声在岛上执行汲思重构行动时，其所在岛屿以及任何与之直接相连的红绳上的危害也会立刻解除。</p>",
 			"hazarddescription": "<p>一股超自然的冲动，促使那些临近边缘之人跃入未知当中。</p>",
 			"reset": "<p>只要回声依旧存在，虚空的呼唤就不会消失。不过，只有在回声进行完他的先攻检定之后，虚空的呼唤才会启动。该危害每天都会重置。</p>",
 			"routine": "<p>(1动作) 虚空的呼唤会以所有邻近边缘以及位于红绳上的生物作为目标，牵动他们的思绪。一名在本回合中已经跌落过的生物将会免疫本次效果。</p>",
@@ -65,14 +65,14 @@
 			"items":{
 				"Leap into the Unknown":{
 					"name": "跃入未知 Leap into the Unknown",
-					"description": "<p><strong>触发</strong> 当一名生物进入到岛屿边缘的方格，或是登上一条红绳；</p>\n<hr />\n<p><strong>效果</strong> 虚空的呼唤牵动着入侵者的思绪，迫使他们从边缘处一跃而下。该生物必须通过一次成功的@Check[type:will|dc:34]豁免或@Check[type:acrobatics|dc:32|traits:action:balance]检定来@UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{保持平衡 Balance}，否则便会落入虚空。若生物跌落，其将坠落100尺，并由于思维空间的封闭循环，落回到其跌落时的位置，照常承受坠落伤害（通常是[[/r (50)[bludgeoning]]]{50钝击伤害}）。随后，虚空的呼唤进行先攻检定。</p>"
+					"description": "<p><strong>触发</strong> 当一名生物进入到岛屿边缘的方格，或是登上一条红绳；</p>\n<hr />\n<p><strong>效果</strong> 虚空的呼唤牵动着入侵者的思绪，迫使他们从边缘处一跃而下。该生物必须通过一次成功的@Check[will|dc:34]豁免或@Check[acrobatics|dc:32|traits:action:balance]检定来@UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{保持平衡 Balance}，否则便会落入虚空。若生物跌落，其将坠落100尺，并由于思维空间的封闭循环，落回到其跌落时的位置，照常承受坠落伤害（通常是[[/r (50)[bludgeoning]]]{50钝击伤害}）。随后，虚空的呼唤进行先攻检定。</p>"
 				}
 			}
 		},
 		"Clone Mirrors": {
 			"name": "克隆魔镜 Clone Mirrors",
 			"hp": "每个镜子",
-			"disable": "<p>@Check[type:thievery|dc:28|name:Reposition Mirror|traits:action:disable-a-device]（专家）复原每张镜子；@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（3环；反制DC25）反制每张魔镜中的魔法</p>",
+			"disable": "<p>@Check[thievery|dc:28|name:Reposition Mirror|traits:action:disable-a-device]（专家）复原每张镜子；@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（3环；反制DC25）反制每张魔镜中的魔法</p>",
 			"hazarddescription": "<p>两张镜面相对的魔镜在长廊中涌现海量的幻术复制体。</p>",
 			"reset": "<p>1天</p>",
 			"routine": "<p>(2个动作)该危害每有一张魔镜被解除，则每轮失去一个动作。每张魔镜用1个动作对满足触发条件的生物使用镜像涌出。该危害最多在同一时间拥有4个镜像衍体。</p>",
@@ -115,7 +115,7 @@
 		},
 		"Confounding Portal": {
 			"name": "困惑入口 Confounding Portal",
-			"disable": "<p>@Check[type:thievery|dc:17|name:Scratch Out Runes|traits:action:disable-a-device]来划去符文；@Check[type:arcana|dc:16|name:Destroy the Runes]以摧毁符文</p>",
+			"disable": "<p>@Check[thievery|dc:17|name:Scratch Out Runes|traits:action:disable-a-device]来划去符文；@Check[arcana|dc:16|name:Destroy the Runes]以摧毁符文</p>",
 			"hazarddescription": "<p>那些雕刻在门框或廊壁上的微小符文将生物困在离开房间或穿越走廊的循环中。</p>",
 			"reset": "<p>自动</p>",
 			"data": {
@@ -124,13 +124,13 @@
 			"items":{
 				"Confounding Misdirection":{
 					"name": "困惑误导 Confounding Misdirection",
-					"description": "<p><strong>触发</strong> 一个生物通过带有符文雕刻的门框或走廊</p>\n<hr />\n<p><strong>效果</strong> 该生物因幻象@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}，径直地走回他们想要离开的房间或是回到走廊的入口。对于触发者这个过程与正常行进无异，旁观者也会同样被迷惑。成功通过@Check[type:will|dc:19]豁免的生物可以抵抗这种幻觉的影响，并正常地在不受困惑的情况下离开房间或穿过走廊继续前进。</p>"
+					"description": "<p><strong>触发</strong> 一个生物通过带有符文雕刻的门框或走廊</p>\n<hr />\n<p><strong>效果</strong> 该生物因幻象@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}，径直地走回他们想要离开的房间或是回到走廊的入口。对于触发者这个过程与正常行进无异，旁观者也会同样被迷惑。成功通过@Check[will|dc:19]豁免的生物可以抵抗这种幻觉的影响，并正常地在不受困惑的情况下离开房间或穿过走廊继续前进。</p>"
 				}
 			}
 		},
 		"Constricting Hall": {
 			"name": "紧勒长廊 Constricting Hall",
-			"disable": "<p>@Check[type:thievery|dc:28|name:Stabilize Wall|traits:action:disable-a-device] (受训) 以稳固每面墙体，或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环；反制DC26）反制每面墙体。</p>",
+			"disable": "<p>@Check[thievery|dc:28|name:Stabilize Wall|traits:action:disable-a-device] (受训) 以稳固每面墙体，或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环；反制DC26）反制每面墙体。</p>",
 			"hazarddescription": "<p>当一个生物行至长廊中央时，四壁变成富有弹性的流体。</p>",
 			"reset": "<p>1小时</p>",
 			"routine": "<p>(4个动作) 如果陷阱每有一面墙体被解除，则每回合减少一个动作。每面墙体使用一个动作以猛地后撤又快速冲出，用墙体捶打通处于长廊中一个生物，若命中，目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。墙体会尽可能均匀地攻击长廊中的每个生物并且每次攻击不应用陷阱的多重攻击减值。</p>",
@@ -140,7 +140,7 @@
 			"items":{
 				"Lose Form":{
 					"name": "失形 Lose Form",
-					"description": "<p><strong>触发</strong> 一个生物到达长廊中央。</p>\n<hr />\n<p><strong>效果</strong> 长廊的墙壁失去刚性，变成富有弹性的流体。长廊变为困难地形，位于长廊的每个生物被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}，除非其成功通过一次@Check[type:reflex|dc:26]豁免。然后陷阱进行先攻检定。</p>"
+					"description": "<p><strong>触发</strong> 一个生物到达长廊中央。</p>\n<hr />\n<p><strong>效果</strong> 长廊的墙壁失去刚性，变成富有弹性的流体。长廊变为困难地形，位于长廊的每个生物被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}，除非其成功通过一次@Check[reflex|dc:26]豁免。然后陷阱进行先攻检定。</p>"
 				},
 				"URApeqv0vXz0Usnr":{
 					"name": "墙 Wall"
@@ -149,7 +149,7 @@
 		},
 		"Disorienting Illusions": {
 			"name": "迷失幻景 Disorienting Illusions",
-			"disable": "<p>@Check[type:crafting|dc:17|name:Calculate the Room's Dimensions] (trained)（受训）在幻象中计算房间实际的维度，或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（1环；反制DC17）以反制幻象</p>",
+			"disable": "<p>@Check[crafting|dc:17|name:Calculate the Room's Dimensions] (trained)（受训）在幻象中计算房间实际的维度，或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（1环；反制DC17）以反制幻象</p>",
 			"hazarddescription": "<p>笼罩着这个房间的幻象扭曲变化，使房间及其内饰看起来倾斜歪曲、杂乱无序甚至在缓慢移动。</p>",
 			"reset": "<p>1分钟</p>",
 			"data": {
@@ -158,13 +158,13 @@
 			"items":{
 				"Disorient":{
 					"name": "迷失方向 Disorient",
-					"description": "<p><strong>触发</strong> 一个生物进入房间</p>\n<hr />\n<p><strong>效果</strong> 幻象使这个房间及其陈列在1分钟内不断变形挪动、弯折扭曲。每个在房间扭曲时进入的生物必须通过@Check[type:perception|dc:17|action:seek]检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不相信幻觉，不受影响。</p>\n<p><strong>成功</strong> 目标不相信幻觉但仍能看见它们。将这个房间视为困难地形。</p>\n<p><strong>失败</strong> 目标被幻象愚弄。将这个房间视为困难地形并获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，并且只要他还停留在房间内就无法将恶心状态降低到1以下。</p>\n<p><strong>大失败</strong> 如同失败，但每次目标尝试使用移动动作时，他必须尝试一次@Check[type:flat|dc:5]检定，否则失去这个动作，如果在纯骰中出现大失败，目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+					"description": "<p><strong>触发</strong> 一个生物进入房间</p>\n<hr />\n<p><strong>效果</strong> 幻象使这个房间及其陈列在1分钟内不断变形挪动、弯折扭曲。每个在房间扭曲时进入的生物必须通过@Check[perception|dc:17|action:seek]检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不相信幻觉，不受影响。</p>\n<p><strong>成功</strong> 目标不相信幻觉但仍能看见它们。将这个房间视为困难地形。</p>\n<p><strong>失败</strong> 目标被幻象愚弄。将这个房间视为困难地形并获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，并且只要他还停留在房间内就无法将恶心状态降低到1以下。</p>\n<p><strong>大失败</strong> 如同失败，但每次目标尝试使用移动动作时，他必须尝试一次@Check[flat|dc:5]检定，否则失去这个动作，如果在纯骰中出现大失败，目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
 				}
 			}
 		},
 		"Distortion Mirror": {
 			"name": "哈哈镜 Distortion Mirror",
-			"disable": "<p>@Check[type:thievery|dc:38|name:Deface the Mirror|traits:action:disable-a-device]（大师）以污损镜面；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（7环；反制DC36）以驱散镜中的魔法或是反制其带来的转变。</p>",
+			"disable": "<p>@Check[thievery|dc:38|name:Deface the Mirror|traits:action:disable-a-device]（大师）以污损镜面；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（7环；反制DC36）以驱散镜中的魔法或是反制其带来的转变。</p>",
 			"hazarddescription": "<p>哈哈镜扭曲了观察者的镜像，痛苦地重塑他们的肉体以与镜中景象相符。</p>",
 			"reset": "<p>1天</p>",
 			"stealthdetails": "<p>（注意到镜子本身的DC为0）</p>",
@@ -174,13 +174,13 @@
 			"items":{
 				"Painful Transformation":{
 					"name": "痛苦转变 Painful Transformation",
-					"description": "<p><strong>触发</strong> 一个生物的影子出现在镜中；</p>\n<hr />\n<p><strong>效果</strong> 该生物的肉体被痛苦地挤压拉伸，重塑成镜中景象。该生物受到[[/r (6d10 + 30)[force]]]{6d10 + 30力场伤害}并必须通过@Check[type:fortitude|dc:39|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标承受一半的伤害并在1轮中获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。</p>\n<p><strong>失败</strong> 目标承受完整伤害并在4轮中获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>\n<p><strong>大失败</strong> 目标承受两倍伤害并在1分钟中获得笨拙2和力竭2，只要该生物仍处于笨拙或力竭，其速度上承受-10尺状态减值</p>\n<p>当陷阱的影响结束后，目标生物的转变结束，其身体恢复到自然状态。</p>"
+					"description": "<p><strong>触发</strong> 一个生物的影子出现在镜中；</p>\n<hr />\n<p><strong>效果</strong> 该生物的肉体被痛苦地挤压拉伸，重塑成镜中景象。该生物受到[[/r (6d10 + 30)[force]]]{6d10 + 30力场伤害}并必须通过@Check[fortitude|dc:39|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标承受一半的伤害并在1轮中获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。</p>\n<p><strong>失败</strong> 目标承受完整伤害并在4轮中获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>\n<p><strong>大失败</strong> 目标承受两倍伤害并在1分钟中获得笨拙2和力竭2，只要该生物仍处于笨拙或力竭，其速度上承受-10尺状态减值</p>\n<p>当陷阱的影响结束后，目标生物的转变结束，其身体恢复到自然状态。</p>"
 				}
 			}
 		},
 		"Entrapping Chair": {
 			"name": "诱捕椅 Entrapping Chair",
-			"disable": "<p>@Check[type:thievery|dc:23|name:Disrupt the Tracks|traits:action:disable-a-device]（专家）以拆除轨道</p>",
+			"disable": "<p>@Check[thievery|dc:23|name:Disrupt the Tracks|traits:action:disable-a-device]（专家）以拆除轨道</p>",
 			"hazarddescription": "<p>隐秘轨道上的座椅开始冲刺，将一个生物撞到椅面上并用扶手伸出的夹板囚禁他们。</p>",
 			"reset": "<p>如果椅子空置，陷阱将在2轮后重置。</p>",
 			"stealthdetails": "<p>（注意到椅子本身的DC为0）</p>",
@@ -190,23 +190,23 @@
 			"items":{
 				"Take a Seat!":{
 					"name": "请坐！ Take a Seat!",
-					"description": "<p><strong>触发</strong> 一个生物踩上轨道；</p>\n<hr />\n<p><strong>效果</strong> 座椅如同火箭般飞射出去，猛击触发危害的生物，造成[[/r (3d8 + 15)[bludgeoning]]]{3d8 + 15钝击伤害}。成功通过@Check[type:reflex|dc:22|traits:damaging-effect]豁免的生物不会收到伤害，并从座椅的路径上移动至非轨道的随机邻近格。在豁免中失败的生物将会被撞到椅面上，迅速地被扶手伸出的夹板捕获，他被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}（大失败则@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，逃脱DC26）。</p>"
+					"description": "<p><strong>触发</strong> 一个生物踩上轨道；</p>\n<hr />\n<p><strong>效果</strong> 座椅如同火箭般飞射出去，猛击触发危害的生物，造成[[/r (3d8 + 15)[bludgeoning]]]{3d8 + 15钝击伤害}。成功通过@Check[reflex|dc:22|traits:damaging-effect]豁免的生物不会收到伤害，并从座椅的路径上移动至非轨道的随机邻近格。在豁免中失败的生物将会被撞到椅面上，迅速地被扶手伸出的夹板捕获，他被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}（大失败则@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，逃脱DC26）。</p>"
 				}
 			}
 		},
 		"Exhaling Portal": {
 			"name": "吹息界门 Exhaling Portal",
-			"disable": "<p>@Check[type:thievery|dc:30|name:Scratch Out Runes|traits:action:disable-a-device] (专家) 两次以刮坏符文；@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（5环；反制DC30）反制位面传送符文；@Check[type:athletics|dc:32|name:Shut the Door]以在门已经敞开的情况下关闭它（使用运动仅能停止陷阱的运转，并不能完全解除它）</p>",
+			"disable": "<p>@Check[thievery|dc:30|name:Scratch Out Runes|traits:action:disable-a-device] (专家) 两次以刮坏符文；@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（5环；反制DC30）反制位面传送符文；@Check[athletics|dc:32|name:Shut the Door]以在门已经敞开的情况下关闭它（使用运动仅能停止陷阱的运转，并不能完全解除它）</p>",
 			"hazarddescription": "<p>雕刻于门框上的魔法符文将在门敞开后连通到气元素位面，把生物吹到邻接的走廊中。</p>",
 			"reset": "<p>在门被关上后自动复原</p>",
-			"routine": "<p> (1个动作) 陷阱使用一个动作鼓动更强大的暴风席卷走廊。每个在走廊里的生物必须通过@Check[type:fortitude|dc:32]豁免，其结果与暴风迸发相同。如果这次强制移动将造成一个生物与固体相撞、摔下楼梯或飞出窗外，该生物将收到额外的[[/r (2d10 + 11)[bludgeoning]]]{2d10 + 11钝击伤害}（或来自坠落的[[/r (20)[bludgeoning]]]{20伤害}）。</p>",
+			"routine": "<p> (1个动作) 陷阱使用一个动作鼓动更强大的暴风席卷走廊。每个在走廊里的生物必须通过@Check[fortitude|dc:32]豁免，其结果与暴风迸发相同。如果这次强制移动将造成一个生物与固体相撞、摔下楼梯或飞出窗外，该生物将收到额外的[[/r (2d10 + 11)[bludgeoning]]]{2d10 + 11钝击伤害}（或来自坠落的[[/r (20)[bludgeoning]]]{20伤害}）。</p>",
 			"data": {
                 "placeHolder": "placeHolder"
             },
 			"items":{
 				"Gust":{
 					"name": "暴风迸发 Gust",
-					"description": "<p><strong>触发</strong> 一个生物开打这扇门。</p>\n<hr />\n<p><strong>效果</strong> 只要门开着，大厅里就会充斥着强劲的风暴。一个生物必须在@Check[type:athletics|dc:32]检定中成功后才能向门移动，失败则会被击退5尺后@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>\n<p>除此之外，触发者被一阵强风轰飞并必须通过@Check[type:fortitude|dc:32]豁免、然后陷阱进行先攻检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标被推回5尺。</p>\n<p><strong>失败</strong> 目标被推回10尺。</p>\n<p><strong>大失败</strong> 目标被推回10尺并被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+					"description": "<p><strong>触发</strong> 一个生物开打这扇门。</p>\n<hr />\n<p><strong>效果</strong> 只要门开着，大厅里就会充斥着强劲的风暴。一个生物必须在@Check[athletics|dc:32]检定中成功后才能向门移动，失败则会被击退5尺后@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>\n<p>除此之外，触发者被一阵强风轰飞并必须通过@Check[fortitude|dc:32]豁免、然后陷阱进行先攻检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标被推回5尺。</p>\n<p><strong>失败</strong> 目标被推回10尺。</p>\n<p><strong>大失败</strong> 目标被推回10尺并被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
 				}
 			}
 		},
@@ -222,13 +222,13 @@
 			"items":{
 				"Drop":{
 					"name": "坠落 Drop",
-					"description": "<p><strong>触发</strong> 一个生物踏入虚假地板；</p>\n<hr />\n<p><strong>效果</strong> 生物坠入虚假地板并受到坠落伤害（一般为@Damage[20[bludgeoning]]伤害）。该生物可以进行一次@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{抓住边缘 Grab an Edge}的反应动作来避免坠落。@UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{攀爬 Climb}或抓住边缘的DC为@Check[type:athletics|dc:20|traits:action:climb]@Check[type:reflex|dc:20|traits:action:grab-an-edge]。</p>"
+					"description": "<p><strong>触发</strong> 一个生物踏入虚假地板；</p>\n<hr />\n<p><strong>效果</strong> 生物坠入虚假地板并受到坠落伤害（一般为@Damage[20[bludgeoning]]伤害）。该生物可以进行一次@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{抓住边缘 Grab an Edge}的反应动作来避免坠落。@UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{攀爬 Climb}或抓住边缘的DC为@Check[athletics|dc:20|traits:action:climb]@Check[reflex|dc:20|traits:action:grab-an-edge]。</p>"
 				}
 			}
 		},
 		"False Step Floor": {
 			"name": "虚假楼层 False Step Floor",
-			"disable": "<p>@Check[type:thievery|dc:28|name:Disrupt the Magical Energy|traits:action:disable-a-device]（受训）以破坏魔法能量；@Check[type:arcana|dc:27|name:Realign the Magic]或@Check[type:occultism|dc:27|name:Realign the Magic]（受训）以调整魔法能量</p>",
+			"disable": "<p>@Check[thievery|dc:28|name:Disrupt the Magical Energy|traits:action:disable-a-device]（受训）以破坏魔法能量；@Check[arcana|dc:27|name:Realign the Magic]或@Check[occultism|dc:27|name:Realign the Magic]（受训）以调整魔法能量</p>",
 			"hazarddescription": "<p>每当一个生物踏入房间，他会滑入地板，卷入另一维度并开始坠落，最终从天花板下出现，摔落在地板上。</p>",
 			"data": {
                 "placeHolder": "placeHolder"
@@ -256,7 +256,7 @@
 				},
 				"Destabilized Form":{
 					"name": "失衡形态 Destabilized Form",
-					"description": "<p>当回声的HP低于140时，他的形态便会开始变得不稳定，他的脸部、四肢以及躯干开始大块大块地崩裂瓦解。白色的飞蛾不断从缺口处倾泻而出，形成一个@Template[type:emanation|distance:10]范围的灵光，造成[[/r (6d6)[mental]]]{6d6心灵伤害}（@Check[type:will|dc:34|basic:true]豁免）。</p>\n<p>只要灵光持续存在，他就可以在每回合开始时，以自由动作，将身体分解成蛾群并在15尺内的另一个地点重组出现。此行动具有异能、咒法系、以及传送特征。</p>"
+					"description": "<p>当回声的HP低于140时，他的形态便会开始变得不稳定，他的脸部、四肢以及躯干开始大块大块地崩裂瓦解。白色的飞蛾不断从缺口处倾泻而出，形成一个@template[emanation|distance:10]范围的灵光，造成[[/r (6d6)[mental]]]{6d6心灵伤害}（@Check[will|dc:34|basic]豁免）。</p>\n<p>只要灵光持续存在，他就可以在每回合开始时，以自由动作，将身体分解成蛾群并在15尺内的另一个地点重组出现。此行动具有异能、咒法系、以及传送特征。</p>"
 				},
 				"Astral Spindel Implement":{
 					"name": "星界纺锤奇具 Astral Spindel Implement",
@@ -276,13 +276,13 @@
 				},
 				"Spindle's Web":{
 					"name": "纺锤之网 Spindle's Web",
-					"description": "<p>回声的纺锤越转越快，变得模糊难以看清，并朝着各个方向甩出红线。这些丝线对@Template[type:emanation|distance:30]范围内的生物造成[[/r (7d6)[slashing] + (7d6)[mental]]]{7d6挥砍伤害和7d6心灵伤害}（@Check[type:reflex|dc:34|basic:true]豁免）。若生物豁免失败，这些丝线便会唤醒其体内的思维空间心锚，根据生物所拥有心锚的不同造成不同的影响（若由于小队人数超过四人等原因，某名PC体内并没有融入心锚，则使用距离其最近的那个人的心锚来判定效果）。</p>\n<p>回声将会在[[/br 1d4 #rounds]]{1d4轮}内无法使用该能力。</p>\n<ul>\n<li><strong>灯 Lantern</strong> 灯笼用灼热的@UUID[Compendium.pf2e.spells-srd.Item.HRb2doyaLtaoCfi3]{显光尘 Revealing Light}勾勒出生物的轮廓，对其造成[[/r (2d6)[persistent,fire]]]。</li>\n<li><strong>镜 Mirror</strong> 镜面将生物映照到其它地方，将目标传送到其25尺范围内的另一处可见空间。</li>\n<li><strong>杯 Chalice</strong> 圣杯会汲取生物的生命力，并赋予回声临时生命值，数值等同于对该生物此次伤害的一半。</li>\n<li><strong>典 Tome</strong> 典籍用海量的信息挤满生物的脑海；目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</li>\n</ul>"
+					"description": "<p>回声的纺锤越转越快，变得模糊难以看清，并朝着各个方向甩出红线。这些丝线对@template[emanation|distance:30]范围内的生物造成[[/r (7d6)[slashing] + (7d6)[mental]]]{7d6挥砍伤害和7d6心灵伤害}（@Check[reflex|dc:34|basic]豁免）。若生物豁免失败，这些丝线便会唤醒其体内的思维空间心锚，根据生物所拥有心锚的不同造成不同的影响（若由于小队人数超过四人等原因，某名PC体内并没有融入心锚，则使用距离其最近的那个人的心锚来判定效果）。</p>\n<p>回声将会在[[/br 1d4 #rounds]]{1d4轮}内无法使用该能力。</p>\n<ul>\n<li><strong>灯 Lantern</strong> 灯笼用灼热的@UUID[Compendium.pf2e.spells-srd.Item.HRb2doyaLtaoCfi3]{显光尘 Revealing Light}勾勒出生物的轮廓，对其造成[[/r (2d6)[persistent,fire]]]。</li>\n<li><strong>镜 Mirror</strong> 镜面将生物映照到其它地方，将目标传送到其25尺范围内的另一处可见空间。</li>\n<li><strong>杯 Chalice</strong> 圣杯会汲取生物的生命力，并赋予回声临时生命值，数值等同于对该生物此次伤害的一半。</li>\n<li><strong>典 Tome</strong> 典籍用海量的信息挤满生物的脑海；目标获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</li>\n</ul>"
 				}
 			}
 		},
 		"Mirror Door": {
 			"name": "镜中门 Mirror Door",
-			"disable": "<p>@Check[type:thievery|dc:18|name:Open the Door|traits:action:disable-a-device]可以在看破镜影的情况下打开这扇门</p>",
+			"disable": "<p>@Check[thievery|dc:18|name:Open the Door|traits:action:disable-a-device]可以在看破镜影的情况下打开这扇门</p>",
 			"hazarddescription": "<p>墙面反射的镜像展示了一扇不存在于世间的幻影门，只有在镜影中看到它的人可以与它互动。</p>",
 			"reset": "<p>自动</p>",
 			"data": {
@@ -291,7 +291,7 @@
 			"items":{
 				"Appear":{
 					"name": "显现 Appear",
-					"description": "<p><strong>触发</strong> 一个生物通过镜面反射观察这堵墙。</p>\n<hr />\n<p><strong>效果</strong> 一扇门出现墙反射出的镜影中。只能在触发者观察镜子从而这扇门出现在镜子里的时候，它才会出现且可被互动，并且只有过@Check[type:thievery|dc:18|name:Disable the Trap|traits:action:disable-a-device]检定上成功才可以解除这个陷阱。</p>"
+					"description": "<p><strong>触发</strong> 一个生物通过镜面反射观察这堵墙。</p>\n<hr />\n<p><strong>效果</strong> 一扇门出现墙反射出的镜影中。只能在触发者观察镜子从而这扇门出现在镜子里的时候，它才会出现且可被互动，并且只有过@Check[thievery|dc:18|name:Disable the Trap|traits:action:disable-a-device]检定上成功才可以解除这个陷阱。</p>"
 				}
 			}
 		},
@@ -328,7 +328,7 @@
                 },
 				"Crystal Siphon":{
 					"name": "水晶虹吸 Crystal Siphon",
-					"description": "<p><strong>需求</strong> 幽影与目标均位于衍生出阴影的水晶40尺内，且水晶没有被遮盖或阻碍。</p>\n<hr />\n<p><strong>效果</strong> 幽影的影子触须缠绕上目标，吸出一部分目标的生命力，将其虹吸进水晶中。目标承受@Damage[4d6[void]]伤害（@Check[type:fortitude|dc:21|basic:true]豁免）。失败时，他还将陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。该力竭状态会与来自石英衍体幽影的力竭状态叠加，最高到力竭4。如果水晶虹吸增加生物的力竭状态值到3及以上，目标的影子将被拉入幽影的水晶中。</p>\n<p>当目标的影子被捕获时，他会感觉到一根@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}的系绳将自己与水晶连接，当他远离水晶超过40尺时将陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。因水晶虹吸获得的力竭状态无法在水晶被破坏前减少；如果水晶被破坏，效果立即结束。</p>"
+					"description": "<p><strong>需求</strong> 幽影与目标均位于衍生出阴影的水晶40尺内，且水晶没有被遮盖或阻碍。</p>\n<hr />\n<p><strong>效果</strong> 幽影的影子触须缠绕上目标，吸出一部分目标的生命力，将其虹吸进水晶中。目标承受@Damage[4d6[void]]伤害（@Check[fortitude|dc:21|basic]豁免）。失败时，他还将陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。该力竭状态会与来自石英衍体幽影的力竭状态叠加，最高到力竭4。如果水晶虹吸增加生物的力竭状态值到3及以上，目标的影子将被拉入幽影的水晶中。</p>\n<p>当目标的影子被捕获时，他会感觉到一根@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}的系绳将自己与水晶连接，当他远离水晶超过40尺时将陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。因水晶虹吸获得的力竭状态无法在水晶被破坏前减少；如果水晶被破坏，效果立即结束。</p>"
 				},
 				"Slink in Shadows":{
                     "name": "潜于阴影 Slink in Shadows",
@@ -338,7 +338,7 @@
 		},
 		"Reflected Desires": {
 			"name": "欲望之镜 Reflected Desires",
-			"disable": "<p>@Check[type:thievery|dc:18|name:Shroud the Mirror|traits:action:disable-a-device]（受训）在不看镜子的情况下盖住它，或@Check[type:occultism|dc:17|name:Erect Mental Barriers]（受训）搭建心灵屏障</p>",
+			"disable": "<p>@Check[thievery|dc:18|name:Shroud the Mirror|traits:action:disable-a-device]（受训）在不看镜子的情况下盖住它，或@Check[occultism|dc:17|name:Erect Mental Barriers]（受训）搭建心灵屏障</p>",
 			"hazarddescription": "<p>这面魔镜映照出注视者内心最深的欲望。</p>",
 			"reset": "<p>自动</p>",
 			"stealthdetails": "<p>（注意到镜子本身的DC为0）</p>",
@@ -348,7 +348,7 @@
 			"items":{
 				"Tempt":{
 					"name": "诱惑 Tempt",
-					"description": "<p><strong>触发</strong> 一个生物看向镜子；</p>\n<hr />\n<p><strong>效果</strong> 触发者从镜影中看到了自己正享受最渴望之物的景象，他被@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{迷魂 Fascinated}（通过@Check[type:will|dc:20]豁免则不受影响），迷魂状态将在镜子被破坏或被遮住的情况下自动结束。</p>"
+					"description": "<p><strong>触发</strong> 一个生物看向镜子；</p>\n<hr />\n<p><strong>效果</strong> 触发者从镜影中看到了自己正享受最渴望之物的景象，他被@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{迷魂 Fascinated}（通过@Check[will|dc:20]豁免则不受影响），迷魂状态将在镜子被破坏或被遮住的情况下自动结束。</p>"
 				}
 			}
 		},
@@ -369,7 +369,7 @@
 		},
 		"Shrinking Hall": {
 			"name": "渐缩走廊 Shrinking Hall",
-			"disable": "<p>@Check[type:thievery|dc:21|name:Jam the Scales|traits:action:disable-a-device]（受训）以卡住地板下面的测重器</p>",
+			"disable": "<p>@Check[thievery|dc:21|name:Jam the Scales|traits:action:disable-a-device]（受训）以卡住地板下面的测重器</p>",
 			"hazarddescription": "<p>走廊被设计成只有超小型生物才可以穿越，这使得通过走廊尽头的门是一件不可能做到的事。</p>",
 			"reset": "<p>在走廊的地板不承受重量后的10分钟后，陷阱会重置，将整条走廊复原成它原来的模样。</p>",
 			"data": {
@@ -385,7 +385,7 @@
 		"Shrouded Assailant": {
 			"name": "布裹袭击者 Shrouded Assailant",
 			"hp": "魂魄",
-			"disable": "<p>@Check[type:thievery|dc:43|name:Steal the Cloth|traits:action:disable-a-device] (大师) 在魂魄现形前偷走盖布，或@Check[type:athletics|dc:47|name:Pull the Cloth Off]在魂魄现形后扯走其披盖。</p>",
+			"disable": "<p>@Check[thievery|dc:43|name:Steal the Cloth|traits:action:disable-a-device] (大师) 在魂魄现形前偷走盖布，或@Check[athletics|dc:47|name:Pull the Cloth Off]在魂魄现形后扯走其披盖。</p>",
 			"hazarddescription": "<p>在白布盖着的镜中，一个魂魄缓缓走出，将镜上的布掀做自己的衣裳， 原先被覆盖的镜面显露出在其身后。这被布裹着的人形持续袭击活物，直到有人将其身上的布扯掉，以此放逐这个没有形体的魂魄。</p>",
 			"reset": "<p>作祟可以在镜子被布或其他物体盖上后重置。</p>",
 			"routine": "<p>(3个动作) 魂魄有三个用于快步、飞行60尺、打击的动作（任意顺序），成功的打击后目标被@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，若大成功则@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>",
@@ -395,7 +395,7 @@
 			"items":{
 				"Don Shroud":{
 					"name": "披上寿衣 Don Shroud",
-					"description": "<p><strong>触发</strong> 一个生物进入该区域。</p>\n<hr />\n<p><strong>效果</strong> 一个魂魄从镜中缓缓走出，将镜上的布掀做自己的衣裳， 原先被复盖的镜面显露出在其身后。触发者获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}除非他们在@Check[type:will|dc:38]豁免中成功。然后作祟进行先攻检定。</p>"
+					"description": "<p><strong>触发</strong> 一个生物进入该区域。</p>\n<hr />\n<p><strong>效果</strong> 一个魂魄从镜中缓缓走出，将镜上的布掀做自己的衣裳， 原先被复盖的镜面显露出在其身后。触发者获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}除非他们在@Check[will|dc:38]豁免中成功。然后作祟进行先攻检定。</p>"
 				},
 				"HOnJVrqXXtc3EGEu":{
 					"name": "帷幕之触 Shrouded Touch"
@@ -404,7 +404,7 @@
 		},
 		"Shuffling Hall": {
 			"name": "旋转大厅 Shuffling Hall",
-			"disable": "<p>@Check[type:thievery|dc:12|name:Deactivate a Plate|traits:action:disable-a-device]解除一块压力板</p>",
+			"disable": "<p>@Check[thievery|dc:12|name:Deactivate a Plate|traits:action:disable-a-device]解除一块压力板</p>",
 			"hazarddescription": "<p>四块分布于对称大厅的压力板在被踏上后时沿着中轴垂直旋转，将踏上压力板的生物送到一间邻接的无特征房间，并立刻重置大厅里的压力板和墙壁。每块压力板都会将生物倒向不同的房间。</p>",
 			"reset": "<p>自动</p>",
 			"data": {
@@ -413,13 +413,13 @@
 			"items":{
 				"Flip":{
 					"name": "转起来 Flip",
-					"description": "<p><strong>触发</strong> 一个生物踩到了压力板。</p>\n<hr />\n<p><strong>效果</strong> 整层地板与邻接着的墙壁沿着大厅的中轴垂直旋转，将触发危害的生物扔到相邻的无特征房间，并以同轴上的其他压力板、墙取代触发过的位置。生物被推入相邻房间，受到@Damage[1d8[bludgeoning]]伤害并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。成功通过@Check[type:reflex|dc:19|traits:damaging-effect]豁免的生物不受伤害并从陷阱中脱出，回到他们踏上压力板前所在的房间。</p>"
+					"description": "<p><strong>触发</strong> 一个生物踩到了压力板。</p>\n<hr />\n<p><strong>效果</strong> 整层地板与邻接着的墙壁沿着大厅的中轴垂直旋转，将触发危害的生物扔到相邻的无特征房间，并以同轴上的其他压力板、墙取代触发过的位置。生物被推入相邻房间，受到@Damage[1d8[bludgeoning]]伤害并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。成功通过@Check[reflex|dc:19|traits:damaging-effect]豁免的生物不受伤害并从陷阱中脱出，回到他们踏上压力板前所在的房间。</p>"
 				}
 			}
 		},
 		"Sigil of Deepest Fears": {
 			"name": "穷极恐惧之印 Sigil of Deepest Fears",
-			"disable": "<p>@Check[type:thievery|dc:43|name:Drain the Sigil's Power|traits:action:disable-a-device]（大师）让魔法印记的力量流失至无害；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（9环；反制DC43）反制印记</p>",
+			"disable": "<p>@Check[thievery|dc:43|name:Drain the Sigil's Power|traits:action:disable-a-device]（大师）让魔法印记的力量流失至无害；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（9环；反制DC43）反制印记</p>",
 			"hazarddescription": "<p>这魔印将让人直面他最深邃的恐惧。</p>",
 			"reset": "<p>1天</p>",
 			"stealthdetails": "<p>(大师)</p>",
@@ -429,13 +429,13 @@
 			"items":{
 				"Face Your Fear":{
 					"name": "直面你所恐惧之物 Face Your Fear",
-					"description": "<p><strong>触发</strong> 一个生物接近印记十尺内。</p>\n<hr />\n<p><strong>效果</strong> 所有印记120尺内的生物受到法术@UUID[Compendium.pf2e.spells-srd.Item.qDjeG6dxT4aEEC6J]{怪影杀手 Weird}（@Check[type:will|dc:40|traits:damaging-effect]豁免）的效果。</p>"
+					"description": "<p><strong>触发</strong> 一个生物接近印记十尺内。</p>\n<hr />\n<p><strong>效果</strong> 所有印记120尺内的生物受到法术@UUID[Compendium.pf2e.spells-srd.Item.qDjeG6dxT4aEEC6J]{怪影杀手 Weird}（@Check[will|dc:40|traits:damaging-effect]豁免）的效果。</p>"
 				}
 			}
 		},
 		"Spirit Window": {
 			"name": "魂魄囚窗 Spirit Window",
-			"disable": "<p>@Check[type:occultism|dc:48|name:Free the Spirits]（传奇）从镜中释放那些魂魄；@Check[type:religion|dc:48|name:Banish the Spirits]（传奇）以驱逐魂魄</p>",
+			"disable": "<p>@Check[occultism|dc:48|name:Free the Spirits]（传奇）从镜中释放那些魂魄；@Check[religion|dc:48|name:Banish the Spirits]（传奇）以驱逐魂魄</p>",
 			"hazarddescription": "<p>魂魄们被囚禁在窗中，随时准备伤害那些触碰到窗户的人。</p>",
 			"reset": "<p>1轮</p>",
 			"data": {
@@ -444,16 +444,16 @@
 			"items":{
 				"Siphon Soul":{
 					"name": "汲取灵魂 Siphon Soul",
-					"description": "<p><strong>触发</strong> 一个生物触碰窗户。</p>\n<hr />\n<p><strong>效果</strong> 触发危害的生物受到[[/r (8d10 + 44)[void]]]{8d10 + 44虚能伤害}（@Check[type:will|dc:42|basic:true]豁免）作为囚窗企图窃走他们灵魂的效果，如果这次伤害足以杀死目标，他的灵魂如同受到@UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{夺魂术 Seize Soul}的效果被囚于窗中。</p>"
+					"description": "<p><strong>触发</strong> 一个生物触碰窗户。</p>\n<hr />\n<p><strong>效果</strong> 触发危害的生物受到[[/r (8d10 + 44)[void]]]{8d10 + 44虚能伤害}（@Check[will|dc:42|basic]豁免）作为囚窗企图窃走他们灵魂的效果，如果这次伤害足以杀死目标，他的灵魂如同受到@UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{夺魂术 Seize Soul}的效果被囚于窗中。</p>"
 				}
 			}
 		},
 		"Thalassophobic Pool": {
 			"name": "深海恐惧之潭 Thalassophobic Pool",
-			"disable": "<p>@Check[type:diplomacy|dc:32|name:Calm the Pool] (大师)或@Check[type:deception|dc:32|name:Calm the Pool] (大师)克服恐惧并使水潭平静下来，或通过@Check[type:intimidation|dc:35|name:Scare the Pool]来让水潭对更可怖之物产生恐惧；总计成功3次才能完全解除。</p>",
+			"disable": "<p>@Check[diplomacy|dc:32|name:Calm the Pool] (大师)或@Check[deception|dc:32|name:Calm the Pool] (大师)克服恐惧并使水潭平静下来，或通过@Check[intimidation|dc:35|name:Scare the Pool]来让水潭对更可怖之物产生恐惧；总计成功3次才能完全解除。</p>",
 			"hazarddescription": "<p>水潭会吸住那些落入其中的生物，并将它们沉进无底的深渊当中。</p>",
 			"reset": "<p>陷阱会在其内没有移动的生物之后重置。</p>",
-			"routine": "<p>(3动作) 圣杯中的涌流执行的每个动作都会使得水潭的深度增加10尺。每当此状况发生时，水流就会冲击水潭中的生物，对其造成@Damage[1d6[bludgeoning]]伤害并使其下沉10尺。由于水潭“深不见底”，其中的生物可以无限向下沉落。他们必须向上@UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]{游泳 Swim}以防溺水而亡，但由于水流异常汹涌，所以运动检定的DC为@Check[type:athletics|dc:25|traits:action:swim]。深潭中的水永远不会外溢出来。每一次成功的解除检定都会使得水潭的动作数量减少1个。在水潭危害被完全解除之后，水体就会变得平静下来，游泳的运动检定DC变为@Check[type:athletics|dc:10|traits:action:swim]。</p>",
+			"routine": "<p>(3动作) 圣杯中的涌流执行的每个动作都会使得水潭的深度增加10尺。每当此状况发生时，水流就会冲击水潭中的生物，对其造成@Damage[1d6[bludgeoning]]伤害并使其下沉10尺。由于水潭“深不见底”，其中的生物可以无限向下沉落。他们必须向上@UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]{游泳 Swim}以防溺水而亡，但由于水流异常汹涌，所以运动检定的DC为@Check[athletics|dc:25|traits:action:swim]。深潭中的水永远不会外溢出来。每一次成功的解除检定都会使得水潭的动作数量减少1个。在水潭危害被完全解除之后，水体就会变得平静下来，游泳的运动检定DC变为@Check[athletics|dc:10|traits:action:swim]。</p>",
 			"stealthdetails": "<p>(受训)</p>",
 			"data": {
                 "placeHolder": "placeHolder"
@@ -477,11 +477,11 @@
 				},
 				"Dreams Unraveling":{
 					"name": "骇梦侵袭 Dreams Unraveling",
-					"description": "<p>当织者的生命值低于155点时，他的表象会部分瓦解，那斑块空隙中所泄露的乃是纯粹到极致的恐怖，足以影响现实，制造创伤。这将创造一个@Template[type:emanation|distance:10]范围的灵光，造成[[/r 3d6[mental]+3d6[slashing]]]{3d6心灵伤害和3d6挥砍伤害}，@Check[type:will|dc:36|basic:true]豁免。生物转移目光时，将对该灵光免疫。</p>"
+					"description": "<p>当织者的生命值低于155点时，他的表象会部分瓦解，那斑块空隙中所泄露的乃是纯粹到极致的恐怖，足以影响现实，制造创伤。这将创造一个@template[emanation|distance:10]范围的灵光，造成[[/r 3d6[mental]+3d6[slashing]]]{3d6心灵伤害和3d6挥砍伤害}，@Check[will|dc:36|basic]豁免。生物转移目光时，将对该灵光免疫。</p>"
 				},
 				"Nameless Nightmare":{
 					"name": "无名梦魇 Nameless Nightmare",
-					"description": "<p>织者抹去了自己的名字，成为纯粹的恐怖之物。织者免疫所有含有语言特征以及所有会施加@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened}状态的效果。作为无名者，他很难被各种现象所影响。在织者的回合结束时，他将从@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed}以及@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震撼 Stunned}状态中恢复过来，并且其摆脱持续伤害的纯骰检定DC为@Check[type:flat|dc:5]{5}。如果有人试图说出、写下或以任何其它方式描述他的名字，其尝试必定失败，并且该生物将会自动受到[[/r 10[mental]]]{10心灵伤害}。</p>"
+					"description": "<p>织者抹去了自己的名字，成为纯粹的恐怖之物。织者免疫所有含有语言特征以及所有会施加@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened}状态的效果。作为无名者，他很难被各种现象所影响。在织者的回合结束时，他将从@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}、@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed}以及@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震撼 Stunned}状态中恢复过来，并且其摆脱持续伤害的纯骰检定DC为@Check[flat|dc:5]{5}。如果有人试图说出、写下或以任何其它方式描述他的名字，其尝试必定失败，并且该生物将会自动受到[[/r 10[mental]]]{10心灵伤害}。</p>"
 				},
 				"Stitch Into the Web":{
 					"name": "缝身入网 Stitch Into the Web",
@@ -489,11 +489,11 @@
 				},
 				"Separate Astral Body":{
 					"name": "星躯抽离 Separate Astral Body",
-					"description": "<p>织者在目标的心灵中穿针引线，将其星界之躯从体内拉出。除非目标通过一次@Check[type:will|dc:36]豁免，否则其星界之躯将被剥离开来，他们的灵魂图景会出现在自身邻近范围内某一处由织者所选的空间。星界之躯免疫物理伤害，但会照常受到心灵、力场以及任何以魂魄作为直接目标的效果影响。目标的星界之躯依旧会通过一条银线与其肉身相连，银线始终可见，使得躲藏在大多数情况下成为无稽之谈。与星界之躯的分离将会重创心灵，目标在意志豁免蒙受-1状态减值，并受到[[/r 1d6[persistent,mental]]]伤害，若目标与星界之躯之间的距离超过30尺，此伤害增加到3d6。目标可以使用一个具有专注特征的单动作来移动他们的星界之躯，距离与其速度相等。当目标不再受到该能力所造成的持续心灵伤害时，星界之躯便会回到他们的体内，并结束该能力的效果。若目标携带有银器，那么初次对他们使用星躯抽离时，该能力失效，与此同时他们所携带的任何尺寸大于硬币的银器都会失去光泽——尽管这不会直接摧毁诸如武器或奇具之类的物品，但确实会让它们失去对于该能力的防护效果。 </p>"
+					"description": "<p>织者在目标的心灵中穿针引线，将其星界之躯从体内拉出。除非目标通过一次@Check[will|dc:36]豁免，否则其星界之躯将被剥离开来，他们的灵魂图景会出现在自身邻近范围内某一处由织者所选的空间。星界之躯免疫物理伤害，但会照常受到心灵、力场以及任何以魂魄作为直接目标的效果影响。目标的星界之躯依旧会通过一条银线与其肉身相连，银线始终可见，使得躲藏在大多数情况下成为无稽之谈。与星界之躯的分离将会重创心灵，目标在意志豁免蒙受-1状态减值，并受到[[/r 1d6[persistent,mental]]]伤害，若目标与星界之躯之间的距离超过30尺，此伤害增加到3d6。目标可以使用一个具有专注特征的单动作来移动他们的星界之躯，距离与其速度相等。当目标不再受到该能力所造成的持续心灵伤害时，星界之躯便会回到他们的体内，并结束该能力的效果。若目标携带有银器，那么初次对他们使用星躯抽离时，该能力失效，与此同时他们所携带的任何尺寸大于硬币的银器都会失去光泽——尽管这不会直接摧毁诸如武器或奇具之类的物品，但确实会让它们失去对于该能力的防护效果。 </p>"
 				},
 				"Sever Astral Threads":{
 					"name": "斩断星线 Sever Astral Threads",
-					"description": "<p>织者用利爪斩断生物肉体与星界之躯之间的银线。这将对织者10尺范围内所有受到星躯抽离效果影响的目标造成@Damage[16d6[mental]]伤害（@Check[type:will|dc:37|basic:true]豁免）。受此能力影响后，目标的星界之躯会猛烈地撞回到肉身之中，使得他们眼冒金星、无法视物，除非他们在之前的豁免中大成功，否则直到他们的下一个回合开始，他们都将处于目盲状态。</p>"
+					"description": "<p>织者用利爪斩断生物肉体与星界之躯之间的银线。这将对织者10尺范围内所有受到星躯抽离效果影响的目标造成@Damage[16d6[mental]]伤害（@Check[will|dc:37|basic]豁免）。受此能力影响后，目标的星界之躯会猛烈地撞回到肉身之中，使得他们眼冒金星、无法视物，除非他们在之前的豁免中大成功，否则直到他们的下一个回合开始，他们都将处于目盲状态。</p>"
 				},
 				"Stalker in Dreams":{
 					"name": "潜梦行者 Stalker in Dreams",
@@ -522,7 +522,7 @@
 				},
 				"Spray Blossoms":{
 					"name": "喷射花瓣 Spray Blossoms",
-					"description": "<p><strong>效果</strong> 月光花向@Template[type:cone|distance:30]区域射出扭曲心智的花瓣。区域内的生物受到[[/r (4d6)[mental] + (4d6)[poison]]]{4d6心灵伤害和4d6毒素伤害}（@Check[type:will|dc:26|basic:true]豁免）。失败时，他们将陷入1分钟的@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，大失败时，还将陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1轮。</p>\n<p>月光花不能在[[/br 1d4 #rounds]]{1d4轮}内再次使用喷射花瓣。</p>"
+					"description": "<p><strong>效果</strong> 月光花向@template[cone|distance:30]区域射出扭曲心智的花瓣。区域内的生物受到[[/r (4d6)[mental] + (4d6)[poison]]]{4d6心灵伤害和4d6毒素伤害}（@Check[will|dc:26|basic]豁免）。失败时，他们将陷入1分钟的@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，大失败时，还将陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1轮。</p>\n<p>月光花不能在[[/br 1d4 #rounds]]{1d4轮}内再次使用喷射花瓣。</p>"
 				},
 				"Swallow Whole":{
 					"name": "活吞 Swallow Whole",
@@ -546,11 +546,11 @@
 				},
 				"Drain Potential":{
 					"name": "汲取潜能 Drain Potential",
-					"description": "<p>来日魔试图汲取其目标的积极性，目标必须尝试一次@Check[type:fortitude|dc:31]的强韧豁免。如果目标豁免失败，它将陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}），且在1分钟内所有检定上必须掷骰两次采用较差的结果。穿戴有希望护符（hope talisman）的生物不受影响。</p>"
+					"description": "<p>来日魔试图汲取其目标的积极性，目标必须尝试一次@Check[fortitude|dc:31]的强韧豁免。如果目标豁免失败，它将陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}），且在1分钟内所有检定上必须掷骰两次采用较差的结果。穿戴有希望护符（hope talisman）的生物不受影响。</p>"
 				},
 				"Swallow Future":{
 					"name": "吞噬未来 Swallow Future",
-					"description": "<p>来日魔吸取抓住周围所有生物的未来行为。来日魔@Template[type:emanation|distance:30]范围内的所有生物受到[[/r (6d8 + 18)[mental]]]{6d8 + 18心灵伤害}，且必须尝试一次@Check[type:will|dc:39]豁免。</p>\n<p>来日魔无法在1分钟内再次使用吞噬未来。</p>\n<p>穿戴有希望护符的生物可以在看到意志豁免结果后，选择让他们的希望护符破碎来忽视此效果。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受伤害。</p>\n<p><strong>成功</strong> 生物受到一半伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>失败</strong> 生物受到全额伤害并陷入毁灭2@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 4}（可能导致其立即死亡）。</p>"
+					"description": "<p>来日魔吸取抓住周围所有生物的未来行为。来日魔@template[emanation|distance:30]范围内的所有生物受到[[/r (6d8 + 18)[mental]]]{6d8 + 18心灵伤害}，且必须尝试一次@Check[will|dc:39]豁免。</p>\n<p>来日魔无法在1分钟内再次使用吞噬未来。</p>\n<p>穿戴有希望护符的生物可以在看到意志豁免结果后，选择让他们的希望护符破碎来忽视此效果。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受伤害。</p>\n<p><strong>成功</strong> 生物受到一半伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>失败</strong> 生物受到全额伤害并陷入毁灭2@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 4}（可能导致其立即死亡）。</p>"
 				},
 				"Tomorrow's Fury":{
 					"name": "明日狂暴 Tomorrow's Fury",

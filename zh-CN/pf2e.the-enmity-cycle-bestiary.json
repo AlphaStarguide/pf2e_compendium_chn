@@ -44,7 +44,7 @@
             "items": {
                 "Cruel Performance": {
                     "name": "残酷演出 Cruel Performance",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 吟游诗人做出残酷而刻薄的评价，使人气血翻涌。30尺内的所有敌人受到@Damage[7d6[slashing]]伤害（@Check[type:fortitude|dc:24|basic:true]豁免）。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 吟游诗人做出残酷而刻薄的评价，使人气血翻涌。30尺内的所有敌人受到@Damage[7d6[slashing]]伤害（@Check[fortitude|dc:24|basic]豁免）。</p>"
                 }
             },
             "prototypeToken": {
@@ -53,7 +53,7 @@
         },
         "Clockwork Dancers": {
             "name": "发条舞者 Clockwork Dancers",
-            "disable": "<p>@Check[type:thievery|dc:25|traits:action:disable-a-device] (专家) 以关停发条机械的控制面板。无效化该陷阱需要两次成功。</p>",
+            "disable": "<p>@Check[thievery|dc:25|traits:action:disable-a-device] (专家) 以关停发条机械的控制面板。无效化该陷阱需要两次成功。</p>",
             "hazarddescription": "<p>几名类人型的发条机械挥舞着旋转的刀刃，在这片区域巡回起舞。</p>",
             "reset": "<p>该危害在4轮后停止，并在1分钟后重置。</p>",
             "routine": "<p>(1动作) 发条舞者用旋转利刃打击位于舞台上且距离廊柱10尺内的每一个生物。</p>",
@@ -73,10 +73,10 @@
         },
         "Corrupted Draft": {
             "name": "腐化蓝图 Corrupted Draft",
-            "disable": "<p>@Check[type:performance|dc:28]以反制该表演，以及@Check[type:religion|dc:28]或@Check[type:occult|dc:28]以瓦解其灵能。无效化该陷阱需要两次成功。机械脑袋可以使用激励复诵能力自动地完成上述条件。</p>",
+            "disable": "<p>@Check[performance|dc:28]以反制该表演，以及@Check[religion|dc:28]或@Check[occult|dc:28]以瓦解其灵能。无效化该陷阱需要两次成功。机械脑袋可以使用激励复诵能力自动地完成上述条件。</p>",
             "hazarddescription": "<p>不谐的音乐，舞蹈与诗篇组合在一起，营造出一种对他人深深的猜疑与不信的氛围。</p>",
             "reset": "<p>该危害在<strong>E3</strong>区域内不再存在有意识的生物后停止，并在1分钟后重置。</p>",
-            "routine": "<p>(1动作；情绪，恐惧，心灵，异能) 哀嚎的回响仍持续地反射增强，撕扯着区域内所有人并向他们的心中注入对周围人的猜疑。区域内的所有生物受到@Damage[(2d10+11)[mental]]伤害，并且必须尝试一次@Check[type:will|dc:28|traits:emotion,fear,mental,occult,damaging-effect]豁免。</p>\n<hr>\n<p><strong>大成功</strong> 该生物不受影响，并且在1分钟内临时对此效果免疫。</p>\n<p><strong>成功</strong> 该生物受到的伤害减半。</p>\n<p><strong>失败</strong> 该生物受到全部伤害，并且由于心中的焦躁与猜疑陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>大失败</strong> 该生物受到双倍伤害，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>",
+            "routine": "<p>(1动作；情绪，恐惧，心灵，异能) 哀嚎的回响仍持续地反射增强，撕扯着区域内所有人并向他们的心中注入对周围人的猜疑。区域内的所有生物受到@Damage[(2d10+11)[mental]]伤害，并且必须尝试一次@Check[will|dc:28|traits:emotion,fear,mental,occult,damaging-effect]豁免。</p>\n<hr>\n<p><strong>大成功</strong> 该生物不受影响，并且在1分钟内临时对此效果免疫。</p>\n<p><strong>成功</strong> 该生物受到的伤害减半。</p>\n<p><strong>失败</strong> 该生物受到全部伤害，并且由于心中的焦躁与猜疑陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>大失败</strong> 该生物受到双倍伤害，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>",
             "stealthdetails": "<p>(专家) 或@UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]{侦测魔法 Detect Magic}</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -84,7 +84,7 @@
             "items": {
                 "Sickening Performance": {
                     "name": "可憎表演 Sickening Performance",
-                    "description": "<p><strong>触发</strong> 两名生物进入了区域<strong>E3</strong>并且发出任意声响</p>\n<hr />\n<p><strong>效果</strong> 他们发出的声响或言语被迅速放大并扭曲为一股尖锐可怖的号哭。区域内所有生物受到@Damage[(2d10+11)[mental]]伤害（@Check[type:will|dc:28|basic:true]豁免）。随后投先攻。</p>"
+                    "description": "<p><strong>触发</strong> 两名生物进入了区域<strong>E3</strong>并且发出任意声响</p>\n<hr />\n<p><strong>效果</strong> 他们发出的声响或言语被迅速放大并扭曲为一股尖锐可怖的号哭。区域内所有生物受到@Damage[(2d10+11)[mental]]伤害（@Check[will|dc:28|basic]豁免）。随后投先攻。</p>"
                 }
             },
             "prototypeToken": {
@@ -94,7 +94,7 @@
         "Deadly Workshop": {
             "name": "死亡工坊 Deadly Workshop",
             "hp": "以摧毁链条来使陷阱失效",
-            "disable": "<p>@Check[type:thievery|dc:20|traits:action:disable-a-device] (专家) 以控制高台上的操作面板使得陷阱失效。</p>",
+            "disable": "<p>@Check[thievery|dc:20|traits:action:disable-a-device] (专家) 以控制高台上的操作面板使得陷阱失效。</p>",
             "hazarddescription": "<p>带刃的金属链条在整座工坊内部快速地摆动抽打。</p>",
             "reset": "<p>这台陷阱在1分钟后失效并重置。</p>",
             "routine": "<p>(1动作) 这台陷阱以单动作对工坊内的所有生物挥舞一次剑刃挥砍。由于数量众多的锁链挥舞，整个工坊都被视为困难地形。该陷阱不受多重攻击减值影响。</p>",
@@ -119,7 +119,7 @@
         "Entangling Shredder Trap": {
             "name": "狂乱收割机陷阱 Entangling Shredder Trap",
             "hp": "以切断带有倒钩的绳子来解除陷阱",
-            "disable": "<p>@Check[type:thievery|dc:24|traits:action:disable-a-device] (专家) 以拆除压力板。</p>",
+            "disable": "<p>@Check[thievery|dc:24|traits:action:disable-a-device] (专家) 以拆除压力板。</p>",
             "hazarddescription": "<p>几十根附有铁制倒刺的绳子嵌入墙中，一旦至少两名生物踩到地板上，它们就会弹射而出。</p>",
             "reset": "<p>手动</p>",
             "stealthdetails": "<p>(专家) 以发现隐藏在地毯下的压力板</p>",
@@ -133,7 +133,7 @@
                 },
                 "Grasping Ropes": {
                     "name": "绳索紧缚 Grasping Ropes",
-                    "description": "<p>绳索绞缚目标的四肢。目标必须尝试一次@Check[type:reflex|dc:25]豁免。</p>\n<hr />\n<p><strong>成功</strong> 目标不受影响。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，直到其切断绳索或成功通过DC25的@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}检定。</p>\n<p><strong>大失败</strong> 如同失败，但目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}。</p>"
+                    "description": "<p>绳索绞缚目标的四肢。目标必须尝试一次@Check[reflex|dc:25]豁免。</p>\n<hr />\n<p><strong>成功</strong> 目标不受影响。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，直到其切断绳索或成功通过DC25的@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}检定。</p>\n<p><strong>大失败</strong> 如同失败，但目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}。</p>"
                 },
                 "No MAP": {
                     "name": "无多重攻击减值 No MAP",
@@ -153,7 +153,7 @@
             "items": {
                 "Prayer of Oblivion": {
                     "name": "湮灭祈唤 Prayer of Oblivion",
-                    "description": "<p>牧师反复对他的神吟唱祷言，召唤空无之力；</p>\n<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> @Template[type:emanation|distance:30]{30尺}内的所有敌人受到@Damage[5d6[void]]伤害（@Check[type:will|dc:21|basic:true]豁免）。</p>"
+                    "description": "<p>牧师反复对他的神吟唱祷言，召唤空无之力；</p>\n<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> @template[emanation|distance:30]{30尺}内的所有敌人受到@Damage[5d6[void]]伤害（@Check[will|dc:21|basic]豁免）。</p>"
                 }
             },
             "prototypeToken": {
@@ -187,7 +187,7 @@
             "items": {
                 "Inspired Recitation": {
                     "name": "激励复诵 Inspired Recitation",
-                    "description": "<p>机械助手吟诵一首激励人心的诗篇，使得盟友们的身心充盈斗志与活力。@Template[type:emanation|distance:60]{60尺}内的所有盟友在豁免骰上获得+1状态价值，并且获得10点临时生命值，持续1分钟。一旦盟友从此能力中获得好处，其在10分钟内临时对激励复诵免疫。 </p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.MT5gxuuxBaN2RdYf]{效果: 激励复诵}</p>"
+                    "description": "<p>机械助手吟诵一首激励人心的诗篇，使得盟友们的身心充盈斗志与活力。@template[emanation|distance:60]{60尺}内的所有盟友在豁免骰上获得+1状态价值，并且获得10点临时生命值，持续1分钟。一旦盟友从此能力中获得好处，其在10分钟内临时对激励复诵免疫。 </p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.MT5gxuuxBaN2RdYf]{效果: 激励复诵}</p>"
                 }
             },
             "prototypeToken": {
@@ -207,7 +207,7 @@
                 },
                 "Tinker": {
                     "name": "修补匠 Tinker",
-                    "description": "<p>一组6名蹑影小魔怪能够协同工作一小时，向60尺范围内的一件物品降下诅咒。尽管此过程很漫长，但它也可以很不显眼，并且在@UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{躲藏 Hiding}时执行。蹑影小魔怪偏好在魔法物品上使用该能力。诅咒会让物品变得不可靠（进行@Check[type:flat|dc:5]检定，失败则浪费与物品交互或者启动物品的动作）、对使用物品添加奇怪的要求或者降下其他类似的诅咒。</p>"
+                    "description": "<p>一组6名蹑影小魔怪能够协同工作一小时，向60尺范围内的一件物品降下诅咒。尽管此过程很漫长，但它也可以很不显眼，并且在@UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{躲藏 Hiding}时执行。蹑影小魔怪偏好在魔法物品上使用该能力。诅咒会让物品变得不可靠（进行@Check[flat|dc:5]检定，失败则浪费与物品交互或者启动物品的动作）、对使用物品添加奇怪的要求或者降下其他类似的诅咒。</p>"
                 },
                 "Trap Tinker": {
                     "name": "陷阱修补匠 Trap Tinker",
@@ -235,11 +235,11 @@
                 },
                 "Choking Sands": {
                     "name": "黄沙窒碍 Choking Sands",
-                    "description": "<p>沙狼将身躯消散为一团急旋的黄沙。它可以行走并自由地穿越被占据的空间。任何处于这些空间的生物受到[[/r 2d10]]伤害且必须尝试一次@Check[type:reflex|dc:19|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到的伤害减半。</p>\n<p><strong>失败</strong> 目标受到全部伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>大失败</strong> 如同失败，但改为陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}。</p>"
+                    "description": "<p>沙狼将身躯消散为一团急旋的黄沙。它可以行走并自由地穿越被占据的空间。任何处于这些空间的生物受到[[/r 2d10]]伤害且必须尝试一次@Check[reflex|dc:19|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到的伤害减半。</p>\n<p><strong>失败</strong> 目标受到全部伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>大失败</strong> 如同失败，但改为陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}。</p>"
                 },
                 "Susurrating Song": {
                     "name": "耳语轻歌 Susurrating Song",
-                    "description": "<p>沙狼吟唱一首魅人心魄的短曲。30尺内除其他沙狼外的任何生物必须尝试一次@Check[type:will|dc:19]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响，且在24小时内暂时免疫耳语轻歌的效果。</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>\n<p><strong>大失败</strong> 如同失败，但目标额外陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>"
+                    "description": "<p>沙狼吟唱一首魅人心魄的短曲。30尺内除其他沙狼外的任何生物必须尝试一次@Check[will|dc:19]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响，且在24小时内暂时免疫耳语轻歌的效果。</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>\n<p><strong>大失败</strong> 如同失败，但目标额外陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>"
                 },
                 "Tremorsense": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>",
@@ -276,7 +276,7 @@
                 },
                 "Rebuild Armor": {
                     "name": "重组护甲 Rebuild Armor",
-                    "description": "<p><strong>需求</strong> 孽生废品的前一个动作对穿着一件未破损护甲的目标造成了一次成功的爪抓打击</p>\n<hr />\n<p><strong>效果</strong> 孽生废品扯破目标的护甲。目标必须尝试一次@Check[type:reflex|dc:20]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标的护甲受到@Damage[1d8[piercing]]伤害，无视护甲硬度。</p>\n<p><strong>失败</strong> 目标的护甲受到@Damage[2d8[piercing]]伤害，无视护甲硬度；如果这造成护甲破损，孽生废品可以将扯下的护甲碎片与自己融为一体，使其AC提高1（最多以此法提高至22）。</p>\n<p><strong>大失败</strong> 如同失败，但其护甲的生命值自动减少至BT，且提高的AC增加至2。</p>"
+                    "description": "<p><strong>需求</strong> 孽生废品的前一个动作对穿着一件未破损护甲的目标造成了一次成功的爪抓打击</p>\n<hr />\n<p><strong>效果</strong> 孽生废品扯破目标的护甲。目标必须尝试一次@Check[reflex|dc:20]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标的护甲受到@Damage[1d8[piercing]]伤害，无视护甲硬度。</p>\n<p><strong>失败</strong> 目标的护甲受到@Damage[2d8[piercing]]伤害，无视护甲硬度；如果这造成护甲破损，孽生废品可以将扯下的护甲碎片与自己融为一体，使其AC提高1（最多以此法提高至22）。</p>\n<p><strong>大失败</strong> 如同失败，但其护甲的生命值自动减少至BT，且提高的AC增加至2。</p>"
                 }
             },
             "prototypeToken": {
@@ -296,7 +296,7 @@
                 },
                 "Change Size": {
                     "name": "变易体型 Change Size",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 小巨灵变化一名生物的体型。这相当于一次4环级的@UUID[Compendium.pf2e.spells-srd.Item.wzctak6BxOW8xvFV]{变巨术 Enlarge}或@UUID[Compendium.pf2e.spells-srd.Item.PjhUmyKnq6K5uDby]{缩小术 Shrink}法术，但可以指定一名非自愿生物为目标（@Check[type:fortitude|dc:24]豁免使之无效）。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 小巨灵变化一名生物的体型。这相当于一次4环级的@UUID[Compendium.pf2e.spells-srd.Item.wzctak6BxOW8xvFV]{变巨术 Enlarge}或@UUID[Compendium.pf2e.spells-srd.Item.PjhUmyKnq6K5uDby]{缩小术 Shrink}法术，但可以指定一名非自愿生物为目标（@Check[fortitude|dc:24]豁免使之无效）。</p>"
                 }
             },
             "prototypeToken": {
@@ -305,10 +305,10 @@
         },
         "The Enmity Cycle": {
             "name": "敌意循环 The Enmity Cycle",
-            "disable": "<p>@Check[type:performance|dc:26]以反制该表演，以及@Check[type:religion|dc:27]或@Check[type:occult|dc:27]以瓦解其灵能。无效化该陷阱需要两次成功。</p>",
+            "disable": "<p>@Check[performance|dc:26]以反制该表演，以及@Check[religion|dc:27]或@Check[occult|dc:27]以瓦解其灵能。无效化该陷阱需要两次成功。</p>",
             "hazarddescription": "<p>不谐的音乐，舞蹈与诗篇组合在一起，营造出一种对他人深深的猜疑与不信的氛围。</p>",
             "reset": "<p><em>敌意循环</em>的再次上演需要大量筹备；这一流程通常需要花费至少1周。</p>",
-            "routine": "<p>(1动作) 演出向此处持续播撒敌意，分歧与怀疑之种。除扎莉迪外，在场的所有生物必须尝试一次@Check[type:will|dc:25]豁免。</p>\n<hr>\n<p><strong>大成功</strong> 该生物不受影响，且在1日内对此效果临时免疫。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，持续2轮。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，持续1分钟，且他们坚信这种恐惧的源头是城中的市民同伴，尤其是激化的排外心理使得他们格外仇视出身自己家乡之外的人。在1周内目标在同从苏威雅的其他城市而来的人进行的交涉技能检定上遭受-2减值，且在身处这些城市时持续陷入惊惧2。</p>\n<p><strong>大失败</strong> 如同失败，但目标在1周内成为<em>敌意循环</em>的散播源。目标将会被迫前往自己受此效果影响地点之外的另一座城市，在那里散播他们能够回忆的，这部安巴里作品中的词句。目击或听闻这一表演的人如同参与了<em>敌意循环</em>的演出，但意志豁免DC降低至@Check[type:will|dc:23]。</p>",
+            "routine": "<p>(1动作) 演出向此处持续播撒敌意，分歧与怀疑之种。除扎莉迪外，在场的所有生物必须尝试一次@Check[will|dc:25]豁免。</p>\n<hr>\n<p><strong>大成功</strong> 该生物不受影响，且在1日内对此效果临时免疫。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，持续2轮。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，持续1分钟，且他们坚信这种恐惧的源头是城中的市民同伴，尤其是激化的排外心理使得他们格外仇视出身自己家乡之外的人。在1周内目标在同从苏威雅的其他城市而来的人进行的交涉技能检定上遭受-2减值，且在身处这些城市时持续陷入惊惧2。</p>\n<p><strong>大失败</strong> 如同失败，但目标在1周内成为<em>敌意循环</em>的散播源。目标将会被迫前往自己受此效果影响地点之外的另一座城市，在那里散播他们能够回忆的，这部安巴里作品中的词句。目击或听闻这一表演的人如同参与了<em>敌意循环</em>的演出，但意志豁免DC降低至@Check[will|dc:23]。</p>",
             "stealthdetails": "<p>(专家) 或@UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]{侦测魔法 Detect Magic}</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -316,7 +316,7 @@
             "items": {
                 "Discordant Performance": {
                     "name": "不谐表演 Discordant Performance",
-                    "description": "<p><strong>触发</strong> 扎莉迪在区域<em>F2</em>花费单动作启动<strong>敌意循环</strong></p>\n<hr />\n<p><strong>效果</strong> 区域<strong>F2</strong>内除扎莉迪外的所有生物受到@Damage[(2d8+9)[mental]]伤害（@Check[type:will|dc:25|basic:true]豁免）。随后投先攻。</p>"
+                    "description": "<p><strong>触发</strong> 扎莉迪在区域<em>F2</em>花费单动作启动<strong>敌意循环</strong></p>\n<hr />\n<p><strong>效果</strong> 区域<strong>F2</strong>内除扎莉迪外的所有生物受到@Damage[(2d8+9)[mental]]伤害（@Check[will|dc:25|basic]豁免）。随后投先攻。</p>"
                 }
             },
             "prototypeToken": {
@@ -375,7 +375,7 @@
                 },
                 "Bubonic Plague": {
                     "name": "黑死病 Bubonic Plague",
-                    "description": "<p>被感染生物的疲乏状态无法移除</p>\n<p><strong>豁免检定</strong> @Check[type:fortitude|dc:24]</p>\n<hr />\n<p><strong>潜伏期</strong> 1天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和疲乏 (1天)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}、疲乏并且每[[/br 1d20 #Persistent Damage Interval]]{1d20分钟}就会受到@Damage[1d6[bleed]]伤害(1天)</p>"
+                    "description": "<p>被感染生物的疲乏状态无法移除</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:24]</p>\n<hr />\n<p><strong>潜伏期</strong> 1天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued} (1天)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和疲乏 (1天)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}、疲乏并且每[[/br 1d20 #Persistent Damage Interval]]{1d20分钟}就会受到@Damage[1d6[bleed]]伤害(1天)</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -383,11 +383,11 @@
                 },
                 "Compelled Performance": {
                     "name": "强令表演 Compelled Performance",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 扎莉迪赋予目标在表演检定上的+2状态加值，持续一周。目标必须尝试一次@Check[type:will|dc:26]豁免。</p>\n<p><strong>大成功</strong> 无后续效应。</p>\n<p><strong>成功</strong> 目标必须在其下回合中用单动作来@UUID[Compendium.pf2e.actionspf2e.Item.EEDElIyin4z60PXx]{演出 Perform}。</p>\n<p><strong>失败</strong> 目标必须在其下回合中用三动作来演出，且演出内容由扎莉迪所指定。</p>\n<p><strong>大失败</strong> 如同失败，但扎莉迪可以选择推迟该效应，并在此后一周以内的任何时间点使用反应动作使其触发。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Yb5rg3MEojIHQX8H]{效果: 强令表演}</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 扎莉迪赋予目标在表演检定上的+2状态加值，持续一周。目标必须尝试一次@Check[will|dc:26]豁免。</p>\n<p><strong>大成功</strong> 无后续效应。</p>\n<p><strong>成功</strong> 目标必须在其下回合中用单动作来@UUID[Compendium.pf2e.actionspf2e.Item.EEDElIyin4z60PXx]{演出 Perform}。</p>\n<p><strong>失败</strong> 目标必须在其下回合中用三动作来演出，且演出内容由扎莉迪所指定。</p>\n<p><strong>大失败</strong> 如同失败，但扎莉迪可以选择推迟该效应，并在此后一周以内的任何时间点使用反应动作使其触发。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Yb5rg3MEojIHQX8H]{效果: 强令表演}</p>"
                 },
                 "Tormenting Dreams": {
                     "name": "噩梦折磨 Tormenting Dreams",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 扎莉迪折磨一个100尺以内正在睡眠的生物，向他们的梦中注入惨遭爱人与友人背叛的幻象。目标受到DC@Check[type:will|dc:26]的@UUID[Compendium.pf2e.spells-srd.Item.Uqj344bezBq3ESdq]{梦魇术 Nightmare}法术效果影响。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 扎莉迪折磨一个100尺以内正在睡眠的生物，向他们的梦中注入惨遭爱人与友人背叛的幻象。目标受到DC@Check[will|dc:26]的@UUID[Compendium.pf2e.spells-srd.Item.Uqj344bezBq3ESdq]{梦魇术 Nightmare}法术效果影响。</p>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
