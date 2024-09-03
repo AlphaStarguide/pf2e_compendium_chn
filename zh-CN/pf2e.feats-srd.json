@@ -2218,7 +2218,7 @@
         },
         "Unstable Concoction": {
             "name": "不稳定调合 Unstable Concoction",
-            "description": "<p>你可以将一种易挥发的神奇液体混合到炼金消耗品中，其需要具有使用骰子的初始效果。将物品初始效果的任何骰面大小增加一级。例如。你可以将中等炽火胶造成的伤害增加到2d10，或将中等生命灵药的治疗量增加到5d8+12。因为这只影响初始效果的骰子，所以不会增加野性突变药剂的无武装攻击伤害，强酸瓶的持续伤害等。当该物品被启动时，启动它的生物必须通过一次@Check[flat|dc:10]检定，否则将受到与该物品等级相等的酸蚀伤害。</p>"
+            "description": "<p>你可以将一种易挥发的神奇液体混合到炼金消耗品中，其需要具有使用骰子的初始效果。将物品初始效果的任何骰面大小增加一级。例如。你可以将@UUID[Compendium.pf2e.equipment-srd.Item.gWr4q4HiyGhETA8H]造成的伤害增加到2d10，或将@UUID[Compendium.pf2e.equipment-srd.Item.c21stU5rhN4F2fZl]的治疗量增加到5d8+12。因为这只影响初始效果的骰子，所以不会增加野性突变药剂的无武装攻击伤害，强酸瓶的持续伤害等。当该物品被启动时，启动它的生物必须通过一次@Check[flat|dc:10]检定，否则将受到与该物品等级相等的酸蚀伤害。</p>"
         },
         "Domain Wellspring": {
             "name": "不竭领域 Domain Wellspring",
@@ -3036,7 +3036,7 @@
         },
         "Gigaton Strike": {
             "name": "亿万吨强击 Gigaton Strike",
-            "description": "<p>当你使用全力的百万吨强击时，你可以击退你的敌人。当你使用不稳定的百万吨强击成功进行打击，你的目标必须尝试一次@Check[fortitude|dc:resolve(@actor.system.proficiencies.classDCs.inventor.value)]豁免对抗你的职业DC。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响</p>\n<p><strong>成功</strong> 该生物被推离5尺</p>\n<p><strong>失败</strong> 该生物被推离10尺</p>\n<p><strong>大失败</strong> 该生物被推离20尺</p>\n<p><strong>特殊</strong> 如果你的大发明是仆从，该增益应用在它的不稳定百万吨强击上。</p>",
+            "description": "<p>当你使用全力的百万吨强击时，你可以击退你的敌人。当你使用不稳定的百万吨强击成功进行打击，你的目标必须尝试一次@Check[fortitude|against:inventor]豁免对抗你的职业DC。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响</p>\n<p><strong>成功</strong> 该生物被推离5尺</p>\n<p><strong>失败</strong> 该生物被推离10尺</p>\n<p><strong>大失败</strong> 该生物被推离20尺</p>\n<p><strong>特殊</strong> 如果你的大发明是仆从，该增益应用在它的不稳定百万吨强击上。</p>",
             "prerequisites": [
                 {
                     "value": "百万吨强击"
@@ -3797,7 +3797,7 @@
         },
         "Collateral Thrash": {
             "name": "借势重殴 Collateral Thrash",
-            "description": "<p>你将被痛殴的敌人撞向另一个敌人。当你使用重殴时，选择与@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]敌人邻接的另一个敌人。这名敌人也受到你的重殴伤害，并进行一次@Check[reflex|against:class|basic]豁免对抗你的职业DC。</p>",
+            "description": "<p>你将被痛殴的敌人撞向另一个敌人。当你使用重殴时，选择与@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]敌人邻接的另一个敌人。这名敌人也受到你的重殴伤害，并进行一次@Check[reflex|against:barbarian|basic]豁免对抗你的职业DC。</p>",
             "prerequisites": [
                 {
                     "value": "重殴"
@@ -5083,7 +5083,7 @@
         },
         "Distracting Explosion": {
             "name": "分神爆炸 Distracting Explosion",
-            "description": "<p><strong>触发</strong> 你触及内的生物使用了一个专注动作。</p>\n<hr />\n<p>你的敌人觉得你在身边的时候还能专注别的事情？你能直接让他们走神好吧！使用受益于攻势增压的武器或无武装攻击对触发的生物进行一次近战打击。该打击不计入你的多重攻击减值，你的多重攻击减值也不会应用在这次打击上。</p>\n<p><strong>不稳定功能</strong> 你全力制造一种爆炸性的干扰。在分神爆炸Distracting Explosion上加上不稳定特征。如果这次攻击命中，你打断了触发的专注动作。</p>\n<p>@Check[flat|dc:15|options:unstable-check|name:PF2E.SpecificRule.Inventor.Unstable.FlatCheck.Label]{不稳定检定}</p>\n<p><strong>特殊</strong> 如果你的大发明是一个仆从，它而非你可以使用该反应，即使仆从一般不能使用反应或者在它的回合外行动。它使用你在该回合获得的反应进行。</p>",
+            "description": "<p><strong>触发</strong> 你触及内的生物使用了一个专注动作。</p><hr /><p>你的敌人觉得你在身边的时候还能专注别的事情？你能直接让他们走神好吧！使用受益于攻势增压的武器或无武装攻击对触发的生物进行一次近战打击。该打击不计入你的多重攻击减值，你的多重攻击减值也不会应用在这次打击上。</p>\n<p><strong>不稳定功能</strong> 你全力制造一种爆炸性的干扰。在分神爆炸上加上不稳定特征。如果这次攻击命中，你打断了触发的专注动作。</p>\n<p><strong>特殊</strong> 如果你的大发明是一个仆从，它而非你可以使用该反应，即使仆从一般不能使用反应或者在它的回合外行动。它使用你在该回合获得的反应进行。</p>",
             "prerequisites": [
                 {
                     "value": "攻势增压"
@@ -5503,7 +5503,7 @@
         },
         "Animal Shape": {
             "name": "动物形态 Animal Shape",
-            "description": "<p>你可以完全控制自己的形态，并且可以变形为本源动物。你可以利用@UUID[Compendium.pf2e.actionspf2e.Item.0b3TTeQGFOiy6ykz]{变身 Change Shape}动作进入动物形态。</p>\n<p>当你获得此专长时，你可以选择以下变形法术之一：@UUID[Compendium.pf2e.spells-srd.Item.NzXpEzcZAjuDTZjK]{御空形态 Aerial Form}、@UUID[Compendium.pf2e.spells-srd.Item.wp09USMB3GIW1qbp]{动物形态 Animal Form}、@UUID[Compendium.pf2e.spells-srd.Item.KhM8MhoUgoUjBMIz]{恐龙形态 Dinosaur Form}或@UUID[Compendium.pf2e.spells-srd.Item.XI6Lzd2B5pernkPd]{巨虫形态 Insect Form}；你选定其中一种变形法术后不可更改。</p>\n<p>当处于动物形态时，你获得所选变形法术的5环施法效果，只是你总会变形成和本源动物相匹配的动物，并且如果你人形态的AC更高，则可以应用人形态的AC。</p>\n<p>如果你选择的变形法术中所列出的动物里没有你的本源动物，则你获得以下默认的数据和属性：<em>鸟类对应御空形态</em>；<em>猫对应动物形态</em>；<em>恐爪龙对应恐龙形态</em>；<em>虫类对应巨虫形态</em>（根据GM的裁定，你也可以选择一种最接近你本源动物的动物来替代上述默认选项）。</p>\n<p>你可以无限期地保持动物形态，并且在任何时候利用变形动作回到人形态或混合形态。</p>\n<p>你如果你有@UUID[Compendium.pf2e.feats-srd.Item.F6C25qZ9UNYPw7pj]{小动物形态 Critter Shape}专长，你可以选择获得4环@UUID[Compendium.pf2e.spells-srd.Item.gfPjmG6Fe6D3MFjl]{害兽形态 Pest Form}法术的效果，你可以无限期地保持小动物形态，并且可以像动物形态那样随时切换。</p>"
+            "description": "<p>你可以完全控制自己的形态，并且可以变形为本源动物。你可以利用@UUID[Compendium.pf2e.actionspf2e.Item.34E7k2YRcsOU5uyl]动作进入动物形态。</p>\n<p>当你获得此专长时，你可以选择以下变形法术之一：@UUID[Compendium.pf2e.spells-srd.Item.NzXpEzcZAjuDTZjK]、@UUID[Compendium.pf2e.spells-srd.Item.wp09USMB3GIW1qbp]、@UUID[Compendium.pf2e.spells-srd.Item.KhM8MhoUgoUjBMIz]或@UUID[Compendium.pf2e.spells-srd.Item.XI6Lzd2B5pernkPd]；你选定其中一种变形法术后不可更改。</p>\n<p>当处于动物形态时，你获得所选变形法术的5环施法效果，只是你总会变形成和本源动物相匹配的动物，并且如果你人形态的AC更高，则可以应用人形态的AC。</p>\n<p>如果你选择的变形法术中所列出的动物里没有你的本源动物，则你获得以下默认的数据和属性：<em>鸟类对应御空形态</em>；<em>猫对应动物形态</em>；<em>恐爪龙对应恐龙形态</em>；<em>虫类对应巨虫形态</em>（根据GM的裁定，你也可以选择一种最接近你本源动物的动物来替代上述默认选项）。</p>\n<p>你可以无限期地保持动物形态，并且在任何时候利用变形动作回到人形态或混合形态。</p>\n<p>你如果你有@UUID[Compendium.pf2e.feats-srd.Item.F6C25qZ9UNYPw7pj]专长，你可以选择获得4环@UUID[Compendium.pf2e.spells-srd.Item.gfPjmG6Fe6D3MFjl]法术的效果，你可以无限期地保持小动物形态，并且可以像动物形态那样随时切换。</p>"
         },
         "Animal Senses": {
             "name": "动物感官 Animal Senses",
@@ -5693,7 +5693,7 @@
         },
         "Medic Dedication": {
             "name": "医师入门 Medic Dedication",
-            "description": "<p>你的医疗熟练度变为专家。当你在@UUID[Compendium.pf2e.feats-srd.Item.wYerMk6F1RZb0Fwt]或@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]中得到成功，目标恢复的生命值数值会得到环境加值，DC20时等同于5点HP，DC30时等同于10点HP，DC40时等同于15点HP。</p>\n<p>每日1次，你能对已经由于战地医疗而获得了临时免疫的1个生物使用战地医疗。若你的医疗熟练度为大师，则可以每小时这么做1次。</p>",
+            "description": "<p>你的医疗熟练度变为专家。当你在@UUID[Compendium.pf2e.feats-srd.Item.wYerMk6F1RZb0Fwt]或@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]中得到成功，目标恢复的生命值数值会得到环境加值，DC20时等同于5点HP，DC30时等同于10点HP，DC40时等同于15点HP。</p>\n<p>每日1次，你能对已经由于战地医疗而获得了临时免疫的1个生物使用战地医疗。若你的医疗熟练度为大师，则可以每小时这么做1次。</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.XWkyCVISmVtJ0ZY3]</p>",
             "prerequisites": [
                 {
                     "value": "医疗技能熟练度为受训"
@@ -5744,7 +5744,7 @@
         },
         "Healer's Halo": {
             "name": "医者光环 Healer's Halo",
-            "description": "<p><strong>触发</strong> 你或30尺内的盟友在@UUID[Compendium.pf2e.feats-srd.Item.PGVXjbAi1Fa4uTmD]{光环 Halo}生效期间回复了生命值。</p>\n<hr />\n<p>你的光环能增幅命能。透过命能医疗效果回复生命值的生物，再额外回复[[/r 1d6[healing]]]{1d6点生命值}。承受过此能力效果的生物会在10分钟内暂时免疫此能力。</p>",
+            "description": "<p><strong>触发</strong> 你或30尺内的盟友在@UUID[Compendium.pf2e.feats-srd.Item.PGVXjbAi1Fa4uTmD]生效期间回复了生命值。</p><hr /><p>你的光环能增幅命能。透过命能医疗效果回复生命值的生物，再额外回复@Damage[1d6[healing]]生命值。承受过此能力效果的生物会在10分钟内暂时免疫此能力。</p>",
             "prerequisites": [
                 {
                     "value": "光环 Halo"
@@ -7290,7 +7290,7 @@
         },
         "Tetraelemental Assault": {
             "name": "四元素攻袭 Tetraelemental Assault",
-            "description": "<p>你的攻袭可以循环使用所有四种元素。当你启动元素攻袭时，你可以在使用启动动作时从列表中选择一种元素，然后在接下来的3个回合开始时选择不同的元素，而不需要花费动作；一旦你选择了一种元素，在这次元素攻袭期间中你就不能再选择它，这意味着你必须在4个回合内选择所有的四种元素。每次你选择一种元素，直到你的下一回合开始，你的攻击会造成额外[[/r 1d6]]指定类型的伤害，并具有该元素对应的特性。</p>",
+            "description": "<p>你的攻袭可以循环使用所有四种元素。当你启动元素攻袭时，你可以在使用启动动作时从列表中选择一种元素，然后在接下来的3个回合开始时选择不同的元素，而不需要花费动作；一旦你选择了一种元素，在这次元素攻袭期间中你就不能再选择它，这意味着你必须在4个回合内选择所有的四种元素。每次你选择一种元素，直到你的下一回合开始，你的攻击会造成额外@Damage[1d6[untyped]]指定类型的伤害，并具有该元素对应的特性。</p>",
             "prerequisites": [
                 {
                     "value": "元素攻袭"
@@ -10553,7 +10553,7 @@
         },
         "Directional Bombs": {
             "name": "定向爆破 Directional Bombs",
-            "description": "<p>你能够投掷一枚威力巨大且精准定向的炸弹，它将向着某一方向的锥形范围内爆发溅射，或许能够让你避开盟友，同时对敌人阵线爆发溅射。 当投掷一枚具有溅射特征的炼金炸弹时，取代原本影响目标所有邻接方格的溅射，你可以在一个15尺锥形区域内产生溅射，其方向由你决定，但是锥形区域的起始格必须是目标所占据的一个方格。</p><hr /><p><strong>特殊</strong> 若你有溅射拓展或是其他增加你溅射伤害范围的能力，你可以使溅射伤害变为@Template[cone|distance:20]。</p>"
+            "description": "<p>你能够投掷一枚威力巨大且精准定向的炸弹，它将向着某一方向的锥形范围内爆发溅射，或许能够让你避开盟友，同时对敌人阵线爆发溅射。 当投掷一枚具有溅射特征的炼金炸弹时，取代原本影响目标所有邻接方格的溅射，你可以在一个15尺锥形区域内产生溅射，其方向由你决定，但是锥形区域的起始格必须是目标所占据的一个方格。</p><hr /><p><strong>特殊</strong> 若你有@UUID[Compendium.pf2e.feats-srd.Item.gyVcJfZTmBytLsXq]或是其他增加你溅射伤害范围的能力，你可以使溅射伤害变为@Template[cone|distance:20]。</p>"
         },
         "Gift of the Hoard": {
             "name": "宝库赠礼 Gift of the Hoard",
@@ -11280,7 +11280,7 @@
         },
         "Hand of the Lich": {
             "name": "巫妖之手 Hand of the Lich",
-            "description": "<p>虚能增强了你的不死形态，让你真正地触摸到了生命的对立面。你获得@UUID[Compendium.pf2e.ancestryfeatures.Item.YGk41WV42aTM7CQV]{进阶不死增益 Advanced Undead Benefits}。你的拳头伤害骰从1d4变为1d6，造成虚能伤害而非钝击伤害，失去非致命特征。你的拳头获得魔法特征。</p>\n<p>当你用拳头打击对一个活着的生物造成重击时，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}直到其下回合结束，除非它成功通过一次对抗你法术DC的@Check[fortitude|dc:resolve(@actor.attributes.spellDC.value)]豁免。这是一个重击专精效果。</p>",
+            "description": "<p>虚能增强了你的不死形态，让你真正地触摸到了生命的对立面。你获得@UUID[Compendium.pf2e.ancestryfeatures.Item.YGk41WV42aTM7CQV]。你的拳头伤害骰从1d4变为1d6，造成虚能伤害而非钝击伤害，失去非致命特征。你的拳头获得魔法特征。</p>\n<p>当你用拳头打击对一个活着的生物造成重击时，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}直到其下回合结束，除非它成功通过一次对抗你法术DC的@Check[fortitude|against:spell]豁免。这是一个重击专精效果。</p>",
             "prerequisites": [
                 {
                     "value": "巫妖入门"
@@ -11415,7 +11415,7 @@
         },
         "Desiccating Inhalation": {
             "name": "干燥之吸 Desiccating Inhalation",
-            "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p>你从附近的生物身上攫取水分以治愈伤口，你对@Template[cone|distance:30]区域内生物造成@Damage[floor(@actor.level/2)d8[void]]伤害，生物可进行一次@Check[reflex|against:class|basic]豁免对抗你的职业DC。大失败时，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。若至少有一个生物受到了伤害，你回复[[/r @actor.level[healing]]]{等同你等级的生命值}。</p>\n<p>在第14级和之后每2级，伤害增加1d8。</p>",
+            "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p>你从附近的生物身上攫取水分以治愈伤口，你对@Template[cone|distance:30]区域内生物造成@Damage[floor(@actor.level/2)d8[void]]伤害，生物可进行一次@Check[reflex|against:class|basic]豁免对抗你的职业DC。大失败时，该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。若至少有一个生物受到了伤害，你回复@Damage[@actor.level[healing]]{等同你等级的生命值}。</p>\n<p>在第14级和之后每2级，伤害增加1d8。</p>",
             "prerequisites": [
                 {
                     "value": "木乃伊入门"
@@ -11779,7 +11779,7 @@
         },
         "Extend Boost": {
             "name": "延长激励 Extend Boost",
-            "description": "<p>你可以增加幻灵激励的持续时间。</p>\n<p>你学会<em>延长激励Extend Boost</em> 灵渠法术。将你聚能池中的聚能点数增加1点。</p>"
+            "description": "<p>你可以增加幻灵激励的持续时间。</p>\n<p>你学会@UUID[Compendium.pf2e.spells-srd.Item.CR8OKDbeFJoZbOCu]灵渠法术。将你聚能池中的聚能点数增加1点。</p>"
         },
         "Trailblazing Stride": {
             "name": "开拓先驱 Trailblazing Stride",
@@ -12382,7 +12382,7 @@
         },
         "Inner Fire (Monk)": {
             "name": "心火(武僧) Inner Fire (Monk)",
-            "description": "<p>当你处于燃焰架势时，你获得相当于你等级一半的寒冷与火焰抗力。同时当任意生物以无武装攻击命中你、尝试抓住或擒抱你，或以任意方式触碰到你时会受到相当于你感知调整值（最小为1）的[[/r @actor.abilities.wis.mod[fire]]]{火焰伤害}。一个生物每轮最多受到一次伤害。</p>",
+            "description": "<p>当你处于燃焰架势时，你获得相当于你等级一半的寒冷与火焰抗力。同时当任意生物以无武装攻击命中你、尝试抓住或擒抱你，或以任意方式触碰到你时会受到相当于你感知调整值（最小为1）的@Damage[@actor.abilities.wis.mod[fire]]{火焰伤害}。一个生物每轮最多受到一次伤害。</p>",
             "prerequisites": [
                 {
                     "value": "燃焰架势"
@@ -12411,7 +12411,7 @@
         },
         "Mind Projectiles": {
             "name": "心灵矢弹 Mind Projectiles",
-            "description": "<p>你学会了进一步扩展你心灵的影响，通过挥动你的心灵武器来释放弹药。你可以进行远程心灵武器攻击；这些远程攻击拥有30尺最大射程，造成[[/r 1d6]]{1d6}与你的心灵武器相同类型的伤害。你的远程心灵武器攻击获得你的心灵武器符文的所有效果，只要它们同样适用于远程武器。例如，你的武器拥有<em>+1</em>、<em>强击</em>、<em>储法</em>符文，你的远程心灵武器攻击会获得+1物品加值并造成额外的<em>强击</em>符文伤害，但它无法从<em>强击</em>符文中施放法术，因为该符文只能铭刻到近战武器上。</p>",
+            "description": "<p>你学会了进一步扩展你心灵的影响，通过挥动你的心灵武器来释放弹药。你可以进行远程心灵武器攻击；这些远程攻击拥有30尺最大射程，造成与你的心灵武器相同类型的@Damage[1d6[untyped]]伤害。你的远程心灵武器攻击获得你的心灵武器符文的所有效果，只要它们同样适用于远程武器。例如，你的武器拥有<em>+1</em>、<em>强击</em>、<em>储法</em>符文，你的远程心灵武器攻击会获得+1物品加值并造成额外的<em>强击</em>符文伤害，但它无法从<em>强击</em>符文中施放法术，因为该符文只能铭刻到近战武器上。</p>",
             "prerequisites": [
                 {
                     "value": "铸念师入门"
@@ -12420,7 +12420,7 @@
         },
         "Mind Shards": {
             "name": "心灵碎片 Mind Shards",
-            "description": "<p>随着轻轻一挥与一个念头，你将你的心灵武器引爆使其化为一股粉碎心灵的精神碎片。你集中注意并释放出对@Template[cone|distance:15]区域内的所有生物造成@Damage[3d6[mental]]伤害，使用你的职业DC或法术DC中较高的那项来对抗@Check[will|against:class-spell|basic]豁免。攻击后，你的心灵武器会自动重组，并且你无法在1分钟内再次使用本能力。心灵碎片的伤害在7级时增加1d6，之后每两级再增加1d6。</p>\n<p>[[/r (ceil(@actor.level/2)d6)[mental]]]{按等级计算的心灵伤害}</p>",
+            "description": "<p>随着轻轻一挥与一个念头，你将你的心灵武器引爆使其化为一股粉碎心灵的精神碎片。你集中注意并释放出对@Template[cone|distance:15]区域内的所有生物造成@Damage[(ceil(@actor.level/2)d6)[mental]]伤害，使用你的职业DC或法术DC中较高的那项来对抗@Check[will|against:class-spell|basic]豁免。攻击后，你的心灵武器会自动重组，并且你无法在1分钟内再次使用本能力。心灵碎片的伤害在7级时增加1d6，之后每两级再增加1d6。</p>",
             "prerequisites": [
                 {
                     "value": "铸念师入门"
@@ -12467,7 +12467,7 @@
         },
         "Psi Burst": {
             "name": "心能爆 Psi Burst",
-            "description": "<p><strong>频率</strong> 每回合一次</p>\n<hr />\n<p>你只需心念一动，便发动汹涌的心能打击一个附近的生物。选择一个30尺内的生物为目标，它受到@Damage[(ceil(@actor.level/2)d4)[bludgeoning]]伤害，豁免为@Check[reflex|dc:resolve(@actor.attributes.spellDC.value)|basic]。3级以及之后每2级，该伤害增加1d4。</p>"
+            "description": "<p><strong>频率</strong> 每回合一次</p>\n<hr />\n<p>你只需心念一动，便发动汹涌的心能打击一个附近的生物。选择一个30尺内的生物为目标，它受到@Damage[(ceil(@actor.level/2)d4)[bludgeoning]]伤害，豁免为@Check[reflex|against:spell|basic]。3级以及之后每2级，该伤害增加1d4。</p>"
         },
         "Psychic Dedication": {
             "name": "心能者入门 Psychic Dedication",
@@ -12884,7 +12884,7 @@
         },
         "Dread Marshal Stance": {
             "name": "恐怖军势 Dread Marshal Stance",
-            "description": "<p>你展现出战争残酷且无情的本质，要求你的盟友用凶猛的突击向敌人散播恐怖。</p>\n<p>当你使用本动作时，进行一次检定@Check[intimidation|dc:@self.level|roller:self]检定，对抗与你的等级相符的标准难度DC。或者，GM可以选择根据具体的情景设定合适的DC，本动作的效果取决于你获得的成功程度。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.qX62wJzDYtNxDbFv]{架势：恐怖军势}</p>\n<hr />\n<p><strong>大成功</strong> 你的战将灵光会扩展到@Template[emanation|distance:20]，并且你的和处于灵光范围内的盟友会在伤害检定上获得相当于你所持用的武器或是你的徒手击打伤害骰数的状态加值。当你或是处于你的灵光范围内的盟友的攻击动作对敌人造成了一次重击时，该敌人会获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>成功</strong> 效果如同大成功，但你的灵光不会扩展。</p>\n<p><strong>失败</strong> 你未能启动架势。</p>\n<p><strong>大失败</strong> 你未能启动架势，并且在接下来的1分钟内你不能再次尝试本动作。</p>",
+            "description": "<p>你展现出战争残酷且无情的本质，要求你的盟友用凶猛的突击向敌人散播恐怖。当你使用本动作时，进行一次@Check[intimidation|dc:@self.level|adjustment:-2|roller:self]检定，对抗与你的等级相符的简单难度DC。或者GM可以选择根据具体的情景设定合适的DC，本动作的效果取决于检定的成功度。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.qX62wJzDYtNxDbFv]</p><hr /><p><strong>成功</strong> 你的战将灵光使你和你的盟友在伤害检定上获得+1状态加值。当你或是处于你的灵光范围内的盟友的打击对敌人造成重击时，该敌人@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。如果你正持握一把能造成多于1个伤害骰的武器（通常由于强击符文），你可以将上记状态加值的数字改为你武器的伤害骰数量。</p>\n<p><strong>失败</strong> 你未能启动架势。</p>\n<p><strong>大失败</strong> 你未能启动架势，并且在接下来的1分钟内你不能再次尝试本动作。</p>",
             "prerequisites": [
                 {
                     "value": "战将入门"
@@ -13207,7 +13207,7 @@
         },
         "Mask Of Fear": {
             "name": "惧之战纹 Mask Of Fear",
-            "description": "<p><strong>触发</strong> 你在@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened}状态下开始你的回合</p>\n<p><strong>需求</strong> 你正“穿戴”着你的<em>战纹</em>.</p>\n<hr />\n<p><em>战纹</em>从你的脸上燃尽，将你内心的忧惧扫荡一空。你移除惊惧状态。<em>战纹</em>也因此被摧毁。直到你的下一次日常准备为止，你无法再使用战纹。</p>\n<hr />\n<p><strong>特殊</strong> 即使你身上有惊惧带来的其他效果阻止你使用自由动作，比如@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{逃跑 Fleeing}或@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}，只要你依然处于惊惧状态，就可以使用本自由动作。</p>",
+            "description": "<p><strong>触发</strong> 你在@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]状态下开始你的回合</p>\n<p><strong>需求</strong> 你正“穿戴”着你的<em>战纹</em></p>\n<hr />\n<p><em>战纹</em>从你的脸上燃尽，将你内心的忧惧扫荡一空。你移除惊惧状态。<em>战纹</em>也因此被摧毁。直到你的下一次日常准备为止，你无法再使用战纹。</p>\n<hr />\n<p><strong>特殊</strong> 即使你身上有惊惧带来的其他效果阻止你使用自由动作，比如@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]或@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]，只要你依然处于惊惧状态，就可以使用本自由动作。</p>",
             "prerequisites": [
                 {
                     "value": "兽人战纹"
@@ -13607,7 +13607,7 @@
         },
         "Battle Prayer": {
             "name": "战斗祈祷 Battle Prayer",
-            "description": "<p>你呼唤你的神祇，吟诵经文来伤害敌人。当你选择这个专长时，选择混乱、邪恶、善良或守序其中之一。你的选择必须和你追随的神祇的阵营相匹配。这个动作具有与所选阵营对应的特征。</p>\n<p>尝试一次@Check[religion|defense:will]检定，对抗30尺内的一个敌人的意志DC。之后该敌人将在一天内对你的神祇发起的战斗祈祷临时免疫。</p>\n<hr />\n<p><strong>大成功</strong> 你造成[[/r 2d6]]所选阵营类型的伤害，如果你在宗教技能上有传奇熟练度，改为[[/r 6d6]]伤害。</p>\n<p><strong>成功</strong> 你造成[[/r 1d6]]所选阵营类型的伤害，如果你在宗教技能上有传奇熟练度，改为[[/r 3d6]]伤害。</p>\n<p><strong>失败</strong> 无影响。</p>\n<p><strong>大失败</strong> 敌人的意志反击了你的祈祷，你在 10 分钟内不能再使用战斗祈祷。</p>",
+            "description": "<p>你呼唤你的神祇，吟诵经文来伤害敌人。当你选择这个专长时，选择混乱、邪恶、善良或守序其中之一。你的选择必须和你追随的神祇的阵营相匹配。这个动作具有与所选阵营对应的特征。</p>\n<p>尝试一次@Check[religion|defense:will]检定，对抗30尺内的一个敌人的意志DC。之后该敌人将在一天内对你的神祇发起的战斗祈祷临时免疫。</p><hr /><p><strong>大成功</strong> 你造成@Damage[2d6]所选阵营类型的伤害，如果你在宗教技能上有传奇熟练度，改为@Damage[6d6]伤害。</p>\n<p><strong>成功</strong> 你造成@Damage[1d6]所选阵营类型的伤害，如果你在宗教技能上有传奇熟练度，改为@Damage[3d6]伤害。</p>\n<p><strong>失败</strong> 无影响。</p>\n<p><strong>大失败</strong> 敌人的意志反击了你的祈祷，你在10分钟内不能再使用战斗祈祷。</p>",
             "prerequisites": [
                 {
                     "value": "宗教技能熟练度为大师"
@@ -13902,7 +13902,7 @@
         },
         "Warped Constriction": {
             "name": "扭曲紧压 Warped Constriction",
-            "description": "<p><strong>需求</strong> 你正@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}一个敌人。</p>\n<hr />\n<p>栖身你身体的实体是一个有着不可揣测目的的异类存在，当你抓住一个敌人时，从你身上展开的触手和卷须会挤压你的敌人，并用异界谬误污染它。你擒抱或束缚的敌人受到等同于你等级的钝击伤害，以及等同于你最高心智属性修正值的心灵伤害。该生物对两种类型伤害尝试一次@Check[will|against:class-spell|basic]豁免，使用你的职业DC或法术DC中较高一项。</p>\n<p>[[/r (@actor.level)[bludgeoning],(max(@actor.abilities.int.mod,@actor.abilities.wis.mod,@actor.abilities.cha.mod))[Mental]]]{按等级计算的的钝击和心灵伤害}</p>",
+            "description": "<p><strong>需求</strong> 你使一个敌人@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]。</p><hr /><p>栖身你身体的实体是一个有着不可揣测目的的异类存在，当你抓住一个敌人时，从你身上展开的触手和卷须会挤压你的敌人，并用异界谬误污染它。你擒抱或束缚的敌人受到@Damage[(@actor.level)[bludgeoning],(max(@actor.abilities.int.mod,@actor.abilities.wis.mod,@actor.abilities.cha.mod))[mental]]{等同于你等级的钝击伤害，以及等同于你最高心智属性修正值的心灵伤害}。该生物对两种类型伤害尝试一次@Check[will|against:class-spell|basic]豁免，使用你的职业DC或法术DC中较高一项。</p>",
             "prerequisites": [
                 {
                     "value": "活体容器入门"
@@ -14034,7 +14034,7 @@
         },
         "Project Persona": {
             "name": "投影伪装 Project Persona",
-            "description": "<p>在其他人绞尽脑汁往护甲上蚀刻花纹时，灵动的思维和大胆的性格使你能够在自己平平无奇的盔甲上投影出更加合适的伪装。你改变自身护甲的形状和外观，使其看起如同你想象出的普通或精致服装一般。护甲的数据不会改变。只要你保持清醒且穿戴着护甲，此效果就会一直持续下去。生物可以通过搜索或触碰你的护甲来不相信你的幻觉。该检定的DC等同于你的@Check[will|dc:resolve(@actor.saves.will.dc)]{意志DC}。</p>"
+            "description": "<p>在其他人绞尽脑汁往护甲上蚀刻花纹时，灵动的思维和大胆的性格使你能够在自己平平无奇的盔甲上投影出更加合适的伪装。你改变自身护甲的形状和外观，使其看起如同你想象出的普通或精致服装一般。护甲的数据不会改变。只要你保持清醒且穿戴着护甲，此效果就会一直持续下去。生物可以通过搜索或触碰你的护甲来不相信你的幻觉。该检定的DC等同于你的@Check[will|against:will]{意志DC}。</p>"
         },
         "Hurling Charge": {
             "name": "投掷冲锋 Hurling Charge",
@@ -14464,7 +14464,7 @@
         },
         "Persistent Boost": {
             "name": "持续性增压 Persistent Boost",
-            "description": "<p>你的大发明点燃敌人，腐蚀对手，留下箭簇或用其他方式在你的增压攻击命中后对你的敌人造成持久的持续伤害。当你或你的构装体大发明通过攻势增压伤害了一个敌人，该敌人也受到@Damage[1d8[persistent,@actor.flags.pf2e.inventor.offensiveBoost]]伤害，伤害类型与攻势增压相同。</p>",
+            "description": "<p>你的大发明点燃敌人，腐蚀对手，留下箭簇或用其他方式在你的增压攻击命中后对你的敌人造成持久的持续伤害。当你或你的构装体大发明通过攻势增压伤害了一个敌人，该敌人也受到1d8持续伤害，伤害类型与攻势增压相同。</p>",
             "prerequisites": [
                 {
                     "value": "攻势增压"
@@ -15552,7 +15552,7 @@
         },
         "Solar Rejuvenation": {
             "name": "日光恢复 Solar Rejuvenation",
-            "description": "<p>如果你白天时在户外休息了10分钟，你将恢复[[/r (@actor.abilities.con.mod * floor(@actor.level/2))[healing]]]{等于你的体质调整值×一半你等级的生命值}。在获得此增益的同时，你仍能获得任何来自@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]{治疗伤势 Treat Wounds}的治疗效果。不依赖于光合作用获取营养的莱西则需要一个适合他们的环境。例如，真菌莱西需要阴暗、潮湿的环境和一堆腐烂的植物物质。</p>"
+            "description": "<p><strong>蒿兰人</strong> 太阳的温暖和光芒赋予你生机。如果你白天在户外休息10分钟，你会恢复等于你的体质调整值×你等级的一半@Damage[(floor(@actor.level/2)*@actor.con.mod)[healing]]{生命值}。你也能在从@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]中获得治疗时享受此增益。</p>\n<p><strong>莱西</strong> 如果你白天时在户外休息了10分钟，你将恢复等于你的体质调整值×一半你等级的@Damage[(floor(@actor.level/2)*@actor.con.mod)[healing]]{生命值}。在获得此增益的同时，你仍能获得任何来自@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]的治疗效果。不依赖于光合作用获取营养的莱西则需要一个适合他们的环境。例如，真菌莱西需要阴暗、潮湿的环境和一堆腐烂的植物物质。</p>"
         },
         "Daywalker": {
             "name": "日行者 Daywalker",
@@ -16279,7 +16279,7 @@
         },
         "Strix Vengeance": {
             "name": "枭鬼回头 Strix Vengeance",
-            "description": "<p><strong>频率</strong> 每十分钟一次</p>\n<p><strong>触发</strong> 你自己遭受，或是看到枭鬼同伴遭到敌人重击的伤害。</p>\n<hr />\n<p>你致力于消灭伤害你同类的人。在你的下回合结束以前，你对触发条件的敌人进行打击时额外造成[[/r 1d6]]{+1d6伤害}。如果你使用强击武器或无武装攻击，此加值提升为[[/r 2d6]]{+2d6伤害}；果你使用高等强击武器或无武装攻击，此加值提升为[[/r 3d6]]{+3d6伤害}。</p>"
+            "description": "<p><strong>频率</strong> 每十分钟一次</p>\n<p><strong>触发</strong> 你自己遭受，或是看到枭鬼同伴遭到敌人重击的伤害。</p><hr /><p>你致力于消灭伤害你同类的人。在你的下回合结束以前，你对触发条件的敌人进行打击时额外造成1d6伤害。如果你使用强击武器或无武装攻击，此加值提升为2d6；果你使用高等强击武器或无武装攻击，此加值提升为3d6。</p>"
         },
         "Strix Lore": {
             "name": "枭鬼学识 Strix Lore",
@@ -16688,7 +16688,7 @@
         },
         "Martial Artist Dedication": {
             "name": "武道家入门 Martial Artist Dedication",
-            "description": "<p>你的拳头被锻炼成了致命的武器。你的拳头伤害骰是 [[/r 1d6]]而非 [[/r 1d4]]。你在用拳头或其它任何无武装攻击进行致命攻击时，不会如常承受-2环境减值。</p>\n<p>如果你因为职业能力而在任何武器上获得了专家或是更高的熟练等级，你在所有的无武装攻击的熟练度上也会提升到相应的等级。</p>\n<p><strong>特殊</strong> 你不能选择其他入门专长，除非你从@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.N01RLMQPaSeoHEuL]{武道家 Martial Artist}变体中获得了其他两个专长。</p>"
+            "description": "<p>你的拳头被锻炼成了致命的武器。你的拳头无武装攻击的伤害骰是1d6而非1d4。你用非致命无武装攻击进行致命攻击时，不会如常承受-2环境减值。</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.N01RLMQPaSeoHEuL]</p>"
         },
         "Macabre Virtuoso": {
             "name": "死之专家 Macabre Virtuoso",
@@ -16828,7 +16828,7 @@
         },
         "Gruesome Strike": {
             "name": "阴冷打击 Gruesome Strike",
-            "description": "<p><strong>需求</strong> 神卫反应正在令你的打击造成额外伤害</p><hr /><p>针对触发过你神卫反应的生物进行一次打击。如果命中，目标从神卫反应中承受的额外伤害变为两倍，并且目标必须成功通过一次对抗你职业DC的强韧豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。无论结果如何，目标会在24小时内免疫你的阴冷打击。</p>",
+            "description": "<p><strong>需求</strong> 神卫反应正在令你的打击造成额外伤害</p><hr /><p>针对触发过你神卫反应的生物进行一次打击。如果命中，目标从神卫反应中承受的额外伤害变为两倍，并且目标必须成功通过一次对抗你职业DC的@Check[fortitude|against:class]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。无论结果如何，目标会在24小时内免疫你的阴冷打击。</p>",
             "prerequisites": [
                 {
                     "value": "神卫反应能够令你的打击造成额外伤害（包括亵渎、罪孽和服从事业）"
@@ -17034,7 +17034,7 @@
         },
         "Replenishing Hydration": {
             "name": "水疗法 Replenishing Hydration",
-            "description": "<p>你从你周围的水中汲取生命。如果你浸泡在水中并休息10分钟，你会重新获得相当于你的[[/r (floor(@actor.level/2))*(@actor.abilities.con.mod)}[healing]]]{体质调整值×你等级的一半的生命值}。</p>"
+            "description": "<p>你从你周围的水中汲取生命。如果你浸泡在水中并休息10分钟，你会重新获得相当于你的体质调整值×你等级的一半的@Damage[((floor(@actor.level/2))*(@actor.abilities.con.mod))[healing]]{生命值}。</p>"
         },
         "Water Dancer": {
             "name": "水舞者 Water Dancer",
@@ -17218,7 +17218,7 @@
         },
         "Silencing Strike": {
             "name": "沉默打击 Silencing Strike",
-            "description": "<p>你快速打击目标的面部或口部，使其无法出声。对敌人进行一次近战打击。如果命中，该敌人必须进行@Check[fortitude|against:class]豁免对抗你的职业DC。</p><hr /><p><strong>成功</strong> 目标不受影响。</p>\n<p><strong>失败</strong> 目标头晕目眩，难以发声。目标陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，其话语变得沙哑刺耳，难以理解。其必须成功进行@Check[flat|dc:11]检定才能使用具有语言特征的动作或者施展法术，除非该法术具有晦匿特征。</p>\n<p><strong>大失败</strong> 如同失败，但该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}而非震慑1。</p>"
+            "description": "<p>你快速打击目标的面部或口部，使其无法出声。对敌人进行一次近战打击。如果命中，该敌人必须进行@Check[fortitude|against:barbarian]豁免对抗你的职业DC。</p><hr /><p><strong>成功</strong> 目标不受影响。</p>\n<p><strong>失败</strong> 目标头晕目眩，难以发声。目标陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，其话语变得沙哑刺耳，难以理解。其必须成功进行@Check[flat|dc:11]检定才能使用具有语言特征的动作或者施展法术，除非该法术具有晦匿特征。</p>\n<p><strong>大失败</strong> 如同失败，但该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}而非震慑1。</p>"
         },
         "Channel The Godmind": {
             "name": "沟通神识 Channel The Godmind",
@@ -17265,7 +17265,7 @@
         },
         "Healing Bomb": {
             "name": "治疗炸弹 Healing Bomb",
-            "description": "<p>你可以向生命灵药中添加特殊的催化剂，将其转化成针对局部的投射物。你可以投掷这瓶灵药如同其是一枚炼金炸弹一般，具有如下结果。</p>\n<p><strong>成功</strong> 目标如同饮用这瓶灵药一般获得其效果，并且任何与其邻接的生物都会从炸弹中恢复等同灵药伤害骰数的生命值（例如，次等生命灵药为恢复3生命值）。</p>\n<p><strong>失败</strong> 目标恢复等同灵药伤害骰数的生命值。</p>\n<p><strong>大失败</strong> 治疗炸弹没有生效。</p>"
+            "description": "<p>你可以向生命灵药中添加特殊的催化剂，将其转化成针对局部的投射物。你可以投掷这瓶灵药如同其是一枚炼金炸弹一般，具有如下结果。</p><hr /><p><strong>成功</strong> 目标如同饮用这瓶灵药一般获得其效果，并且任何与其邻接的生物都会从炸弹中恢复等同灵药伤害骰数的生命值（例如，次等生命灵药为恢复3生命值）。</p>\n<p><strong>失败</strong> 目标恢复等同灵药伤害骰数的生命值。</p>\n<p><strong>大失败</strong> 治疗炸弹没有生效。</p>"
         },
         "Marsh Runner": {
             "name": "沼泽行者 Marsh Runner",
@@ -17794,7 +17794,7 @@
         },
         "Deep Freeze": {
             "name": "深度冷冻 Deep Freeze",
-            "description": "<p>你用你的大发明发射一束过冻液体，伤害敌人并减慢他的速度。瞄准一个60尺内的生物。该生物承受@Damage[@actor.level[cold]]{等于你的等级的寒冷伤害}，其效果基于他的@Check[reflex|dc:resolve(@actor.system.proficiencies.classDCs.inventor.value)]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响</p>\n<p><strong>成功</strong> 目标受到一半伤害，并在速度上承受-5尺状态减值，持续1轮。</p>\n<p><strong>失败</strong> 目标承受完整伤害，并在速度上承受-10尺状态减值，持续1轮。</p>\n<p><strong>大失败</strong> 目标承受双倍伤害，陷入持续1轮的 @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并在速度上承受-15尺状态减值，持续1轮。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.BBGg5gpMmuBSo7Mi]{效果：深度冷冻}</p>\n<p><strong>不稳定功能</strong> 你的大发明喷出壮观的锥状过冻液体，这可能造成一连串的失败。在深度冷冻上加上不稳定特征。该能力影响@Template[cone|distance:60]内的所有生物而非单一生物，且造成@Damage[(2*@actor.level)[cold]|traits:unstable|options:area-damage]{两倍于你等级的寒冷伤害}，而非等于你的等级。</p>\n<p>如果你有革命性大发明职业特性，你在使用不稳定深度冷冻时可以选择@Template[cone|distance:60]或@Template[cone|distance:90]。</p>\n<p><strong>特殊</strong> 如果你的大发明是仆从，它而非你可以使用该动作。</p>"
+            "description": "<p>你用你的大发明发射一束过冻液体，伤害敌人并减慢他的速度。瞄准一个60尺内的生物。该生物承受@Damage[@actor.level[cold]]{等于你的等级的寒冷伤害}，其效果基于他的@Check[reflex|against:inventor]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响</p>\n<p><strong>成功</strong> 目标受到一半伤害，并在速度上承受-5尺状态减值，持续1轮。</p>\n<p><strong>失败</strong> 目标承受完整伤害，并在速度上承受-10尺状态减值，持续1轮。</p>\n<p><strong>大失败</strong> 目标承受双倍伤害，陷入持续1轮的@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并在速度上承受-15尺状态减值，持续1轮。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.BBGg5gpMmuBSo7Mi]</p>\n<p><strong>不稳定功能</strong> 你的大发明喷出壮观的锥状过冻液体，这可能造成一连串的失败。在深度冷冻上加上不稳定特征。该能力影响@Template[cone|distance:60]内的所有生物而非单一生物，且造成@Damage[(2*@actor.level)[cold]|traits:unstable|options:area-damage]{两倍于你等级的寒冷伤害}，而非等于你的等级。</p>\n<p>如果你有革命性大发明职业特性，你在使用不稳定深度冷冻时可以选择@Template[cone|distance:60]或@Template[cone|distance:90]。</p>\n<p><strong>特殊</strong> 如果你的大发明是仆从，它而非你可以使用该动作。</p>"
         },
         "Deep Lore": {
             "name": "深度学识 Deep Lore",
@@ -17909,7 +17909,7 @@
         },
         "Soul Warden Dedication": {
             "name": "渡魂典卫入门 Soul Warden Dedication",
-            "description": "<p>你能花费10分钟用@UUID[Compendium.pf2e.deities.Item.QZD0u1jxwz0kj8uI]{法莱斯玛 Pharasma}的圣徽——一道螺旋形的彗星，这代表着灵魂在其存续过程中所要踏上的蜿蜒道路——来装饰盾牌、披风、旗帜或者其他你所穿戴或持用的显眼物品。由此装饰的圣徽在1年的时间经过后才会褪色，但如果你再次以此圣徽装饰其他物品，那么先前装饰过的物品上的圣徽以及该物品上用来装饰的任何圣徽均会立即消失。该物品会化身为法莱斯玛的圣徽象征，当它被圣徽所装饰时可以被当做神术的法器来使用。</p>\n<p>每当有不死生物或受困的灵魂出现在距离该物体100尺范围内时，螺旋图案便会发光，在10尺半径范围内散发出昏暗的蓝光。若该生物藏匿或灵魂被藏起来了，那么它们必须成功以@Check[stealth|dc:resolve(10+@actor.attributes.perception.value)]检定对抗你的察觉DC，才能够欺骗印记，防止螺旋图案发光。</p>\n<p>此外，你能以神术内在戏法来随意施放@UUID[Compendium.pf2e.spells-srd.Item.kcelf6IHl3L9VXXg]{命能袭 Vitality Lash}。与通常情况一样，该戏法会自动升阶至你的等级的一半（向上取整）。若你还未获得施法行动，那么你变得可以使用该行动。你在神术法术攻击检定和法术DC上的熟练度为受训。你在这些法术上的关键施法属性为感知。</p>\n<p>当你至少在该变体中选取另外2个专长后，螺旋图案在发光时会在10尺半径范围内发出明亮的光（并在向外延伸的10尺内发出昏暗光芒）。那些需要生物或物体身处光亮之中的专长，在你的螺旋图案散发的光芒中也可生效，无论他们是位于光亮亦或者昏暗光照区内。</p>\n<p><strong>特殊</strong> 直至选取另外两个@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.9g14DjBZNj27goTt]{渡魂典卫 Soul Warden}变体的专长之前，你无法再选择任何其他入门专长。</p>",
+            "description": "<p>你能花费10分钟用@UUID[Compendium.pf2e.deities.Item.QZD0u1jxwz0kj8uI]的圣徽——一道螺旋形的彗星，这代表着灵魂在其存续过程中所要踏上的蜿蜒道路——来装饰盾牌、披风、旗帜或者其他你所穿戴或持用的显眼物品。由此装饰的圣徽在1年的时间经过后才会褪色，但如果你再次以此圣徽装饰其他物品，那么先前装饰过的物品上的圣徽以及该物品上用来装饰的任何圣徽均会立即消失。该物品会化身为法莱斯玛的圣徽象征，当它被圣徽所装饰时可以被当做神术的法器来使用。</p>\n<p>每当有不死生物或受困的灵魂出现在距离该物体100尺范围内时，螺旋图案便会发光，在10尺半径范围内散发出昏暗的蓝光。若该生物藏匿或灵魂被藏起来了，那么它们必须成功以@Check[stealth|against:perception]检定对抗你的察觉DC，才能够欺骗印记，防止螺旋图案发光。</p>\n<p>此外，你能以神术内在戏法来随意施放@UUID[Compendium.pf2e.spells-srd.Item.kcelf6IHl3L9VXXg]。与通常情况一样，该戏法会自动升阶至你的等级的一半（向上取整）。若你还未获得施法行动，那么你变得可以使用该行动。你在神术法术攻击检定和法术DC上的熟练度为受训。你在这些法术上的关键施法属性为感知。</p>\n<p>当你至少在该变体中选取另外2个专长后，螺旋图案在发光时会在10尺半径范围内发出明亮的光（并在向外延伸的10尺内发出昏暗光芒）。那些需要生物或物体身处光亮之中的专长，在你的螺旋图案散发的光芒中也可生效，无论他们是位于光亮亦或者昏暗光照区内。</p>\n<p><strong>特殊</strong> 直至选取另外两个@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.9g14DjBZNj27goTt]变体的专长之前，你无法再选择任何其他入门专长。</p>",
             "prerequisites": [
                 {
                     "value": "宗教或神秘技能熟练度为受训"
@@ -18091,7 +18091,7 @@
         },
         "Boulder Roll": {
             "name": "滚石冲撞 Boulder Roll",
-            "description": "<p>你的矮人体格，让你能够将敌人撞开，就像一块巨石翻滚穿过地下洞穴一样。你快步（Step）一次以进入到一个敌人所在的方格，其体型需要与你的体型相同或更小，如此做后，该敌人必须立刻移动到其正后方的空旷空间中。敌人必须进行本次移动，哪怕如此做会让其受到伤害。敌人可以尝试一次@Check[fortitude|dc:resolve(@actor.skills.athletics.dc)]豁免检定以对抗你的运动DC来阻挡你的快步。如果敌人选择尝试本次豁免，其将受到数值同于你的等级加你力量调整值的@Damage[(@actor.level + @actor.abilities.str.mod)[bludgeoning]]{钝击伤害}，除非其豁免大成功。</p>\n<p>如果该敌人无法移动进入一处空旷空间（比方说其已经被坚固物体或其它生物所包围），你的滚石冲撞无法生效。</p>",
+            "description": "<p>你的矮人体格，让你能够将敌人撞开，就像一块巨石翻滚穿过地下洞穴一样。你快步一次以进入到一个敌人所在的方格，其体型需要与你的体型相同或更小，如此做后，该敌人必须立刻移动到其正后方的空旷空间中。敌人必须进行本次移动，哪怕如此做会让其受到伤害。敌人可以尝试一次@Check[fortitude|against:athletics]豁免检定以对抗你的运动DC来阻挡你的快步。如果敌人选择尝试本次豁免，其将受到数值同于你的等级加你力量调整值的@Damage[(@actor.level + @actor.abilities.str.mod)[bludgeoning]]{钝击伤害}，除非其豁免大成功。</p>\n<p>如果该敌人无法移动进入一处空旷空间（比方说其已经被坚固物体或其它生物所包围），你的滚石冲撞无法生效。</p>",
             "prerequisites": [
                 {
                     "value": "行沙走石"
@@ -19050,7 +19050,7 @@
         },
         "Blasting Beams": {
             "name": "爆炸射线 Blasting Beams",
-            "description": "<p><strong>需求</strong> 你有一只空着的手。</p>\n<hr />\n<p>发射一道由热能或闪电构成的定向射线是最简单的投射能量的方法。你从一只手掌心里射出爆炸射线。你对30尺内的一个生物进行一次@Check[deviant|defense:ac]{攻击骰}。如果成功，你对目标造成你@Damage[(floor(@actor.level/2)d6)[@actor.flags.pf2e.deviantAbilities.dragon.damageType]]{每两个等级1d6的能量伤害}，重击时伤害翻倍。</p>\n<hr />\n<p><strong>觉醒</strong> 你的射线爆炸能穿过目标。除了对30尺内的单目标进行攻击骰之外，你还能用双动作行动来施放爆炸射线，对@Template[line|distance:60]{60尺直线范围}内所有生物造成伤害，@Check[reflex|against:class-spell|basic]。</p>\n<hr />\n<p><strong>觉醒</strong> 你可以选择从眼睛里发射更小、更快速的光束。这些射线的伤害骰是[[/r (floor(@actor.level/2)d4)]]{d4}而不是d6，具有[灵巧]特征，并且你不需要有一只空着的手。但是你的眼睛不能被遮住。</p>"
+            "description": "<p><strong>需求</strong> 你有一只空着的手。</p><hr /><p>发射一道由热能或闪电构成的定向射线是最简单的投射能量的方法。你从一只手掌心里射出爆炸射线。你对30尺内的一个生物进行一次@Check[deviant|defense:ac]{攻击骰}。如果成功，你对目标造成你@Damage[(floor(@actor.level/2)d6)[@actor.flags.pf2e.deviantAbilities.dragon.damageType]]{每两个等级1d6的能量伤害}，重击时伤害翻倍。</p><hr /><p><strong>觉醒</strong> 你的射线爆炸能穿过目标。除了对30尺内的单目标进行攻击骰之外，你还能用双动作行动来施放爆炸射线，对@Template[line|distance:60]{60尺直线范围}内所有生物造成伤害，@Check[reflex|against:class-spell|basic]。</p><hr /><p><strong>觉醒</strong> 你可以选择从眼睛里发射更小、更快速的光束。这些射线的伤害骰是@Damage[(floor(@actor.level/2)d4)[@actor.flags.pf2e.deviantAbilities.dragon.damageType]]{d4}而不是d6，具有灵巧特征，并且你不需要有一只空着的手。但是你的眼睛不能被遮住。</p>"
         },
         "Detonating Spell": {
             "name": "爆炸法术 Detonating Spell",
@@ -19058,7 +19058,7 @@
         },
         "Explosive Leap": {
             "name": "爆炸跳跃 Explosive Leap",
-            "description": "<p>你驱动你的大发明瞄准下方爆炸，将你发射到空中。你在不接触地面的情况下朝任意方向跳跃最多30尺。你必须在固体地表上着陆，否则你会在使用下一个动作后开始坠落。和使用下一个动作后开始坠落的通常效果一样，你仍然会在回合结束后开始坠落，即使你该回合没有使用更多的动作。</p>\n<p><strong>特殊</strong> 如果你的大发明是仆从，它而非你可以使用该动作。</p>\n<hr />\n<p>@Check[flat|dc:15|options:unstable-check|name:PF2E.SpecificRule.Inventor.Unstable.FlatCheck.Label]{不稳定检定}</p>"
+            "description": "<p>你驱动你的大发明瞄准下方爆炸，将你发射到空中。你在不接触地面的情况下朝任意方向跳跃最多30尺。你必须在固体地表上着陆，否则你会在使用下一个动作后开始坠落。和使用下一个动作后开始坠落的通常效果一样，你仍然会在回合结束后开始坠落，即使你该回合没有使用更多的动作。</p>\n<p><strong>特殊</strong> 如果你的大发明是仆从，它而非你可以使用该动作。</p>"
         },
         "Explosive Expert": {
             "name": "爆破专家 Explosive Expert",
@@ -19289,7 +19289,7 @@
         },
         "Scouring Rage": {
             "name": "狂暴冲激 Scouring Rage",
-            "description": "<p><strong>触发</strong> 你进入@UUID[Compendium.pf2e.actionspf2e.Item.Ah5g9pDwWF9b9VW9]</p><hr /><p>你释放怒火的同时也会迸发出一股强大的本能之力。周围20尺内的敌人受到[[/r @actor.level]]伤害（@Check[fortitude|against:barbarian|basic]豁免对抗你的职业DC），伤害类型与你狂暴期间的额外伤害相同。</p>",
+            "description": "<p><strong>触发</strong> 你进入@UUID[Compendium.pf2e.actionspf2e.Item.Ah5g9pDwWF9b9VW9]</p><hr /><p>你释放怒火的同时也会迸发出一股强大的本能之力。周围20尺内的敌人受到等于你等级的@Damage[(@actor.level)]{伤害}（@Check[fortitude|against:barbarian|basic]豁免对抗你的职业DC），伤害类型与你狂暴期间的额外伤害相同。</p>",
             "prerequisites": [
                 {
                     "value": "你的本能允许你改变来源于狂暴的额外伤害类型"
@@ -19337,7 +19337,7 @@
         },
         "Dragon Roar": {
             "name": "狂龙怒吼 Dragon Roar",
-            "description": "<p><strong>需求</strong> 处于@UUID[Compendium.pf2e.feats-srd.Item.8sy3sHwOHS4ImwvJ]中。</p><hr /><p>你发出怒吼向敌人心中灌输恐惧。@Template[emanation|distance:15]范围内所有敌人必须进行@Check[will|dc:resolve(@actor.skills.intimidation.dc)]豁免，DC使用你的威吓技能DC，失败则@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1} ，（大失败@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}）。被吼声恐惧的生物若在邻接你时开始自己的回合，该回合他无法将该恐惧值减少到1以下。</p>\n<p>你在吼后和自己下一回合结束前的第一次攻击若命中被恐惧的生物，则该次攻击伤害获得+4环境加值。</p>\n<p>在你使用狂龙怒吼后，[[/r 1d4 #rounds]]轮你无法再使用它。若你脱离狂龙架势，它的效果立刻终止。曾处于你怒吼区域内的生物获得1分钟的临时免疫。</p>",
+            "description": "<p><strong>需求</strong> 处于@UUID[Compendium.pf2e.feats-srd.Item.8sy3sHwOHS4ImwvJ]中。</p><hr /><p>你发出怒吼向敌人心中灌输恐惧。@Template[emanation|distance:15]范围内所有敌人必须进行@Check[will|against:intimidation]豁免，DC使用你的威吓技能DC，失败则@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1} ，（大失败@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}）。被吼声恐惧的生物若在邻接你时开始自己的回合，该回合他无法将该恐惧值减少到1以下。</p>\n<p>你在吼后和自己下一回合结束前的第一次攻击若命中被恐惧的生物，则该次攻击伤害获得+4环境加值。</p>\n<p>在你使用狂龙怒吼后，[[/r 1d4 #rounds]]轮你无法再使用它。若你脱离狂龙架势，它的效果立刻终止。曾处于你怒吼区域内的生物获得1分钟的临时免疫。</p>",
             "prerequisites": [
                 {
                     "value": "狂龙架势"
@@ -19380,7 +19380,7 @@
         },
         "Kobold Breath": {
             "name": "狗头人之息 Kobold Breath",
-            "description": "<p>你引导龙血典范中的力量形成一股能量冲击，吐息的形状为@Template[line|distance:30]或@Template[cone|distance:15]，造成@Damage[ceil(@actor.level/2)d4[@actor.flags.pf2e.draconicExemplar.damageType]|traits:area-damage]伤害。每个区域内的生物都必须尝试一次基础豁免检定对抗你的职业DC或法术DC（取其中较高者）。你在接下来的[[/r 1d4 #rounds]]{1d4轮}内无法再次使用该能力。</p>\n<p>在3级以及之后的每两个等级，吐息的伤害都会再增加1d4点。吐息的形状、伤害类型以及需要尝试的豁免检定都与你的@UUID[Compendium.pf2e.ancestryfeatures.Item.egpiSWBrNBb1Fmig]{龙血典范 Draconic Exemplar}相符。该能力所具有的特征与它所造成的伤害类型相关。</p>\n<hr />\n<p>@Check[fortitude|against:class-spell|basic] @Check[reflex|against:class-spell|basic]</p>"
+            "description": "<p>你引导龙血典范中的力量形成一股能量冲击，吐息的形状为@Template[line|distance:30]或@Template[cone|distance:15]，造成@Damage[ceil(@actor.level/2)d4[@actor.flags.pf2e.draconicExemplar.damageType]|traits:area-damage]伤害。每个区域内的生物都必须尝试一次基础豁免检定对抗你的职业DC或法术DC（取其中较高者）。你在接下来的[[/r 1d4 #rounds]]{1d4轮}内无法再次使用该能力。</p>\n<p>在3级以及之后的每两个等级，吐息的伤害都会再增加1d4点。吐息的形状、伤害类型以及需要尝试的豁免检定都与你的@UUID[Compendium.pf2e.ancestryfeatures.Item.egpiSWBrNBb1Fmig]{龙血典范 Draconic Exemplar}相符。该能力所具有的特征与它所造成的伤害类型相关。</p><hr /><p>@Check[fortitude|against:class-spell|basic] @Check[reflex|against:class-spell|basic]</p>"
         },
         "Kobold Lore": {
             "name": "狗头人学识 Kobold Lore",
@@ -19435,7 +19435,7 @@
         },
         "Pinpoint Poisoner": {
             "name": "狡诈毒师 Pinpoint Poisoner",
-            "description": "<p>毫无防备的目标更容易为你的毒药所害。当你对一个@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]的生物使用涂毒武器@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]成功，或是让一个措手不及的生物暴露在吸入型毒素中，那这措手不及状态还会让该生物在对抗毒素的初始豁免检定上承受-2的环境罚值。</p>"
+            "description": "<p>毫无防备的目标更容易为你的毒药所害。当你使用使用涂毒武器对一个@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]的生物打击成功，或是让一个措手不及的生物暴露在吸入型毒素中，那这措手不及状态还会让该生物在对抗毒素的初始豁免检定上承受-2的环境罚值。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.XAdhPJqssO3v4Zvw]</p>"
         },
         "Cunning Trickster Mask": {
             "name": "狡诈骗徒面具 Cunning Trickster Mask",
@@ -20653,7 +20653,7 @@
             "description": "<p>你将你追随的神祇的祝福注入水中。选择你或你触及范围内的一个盟友携带的一个轻负载的容器。直到你的下个回合结束，它会变为圣水或邪水。如果你的神祇允许圣洁祝佑，你可以选择圣水；如果你的神祇允许邪秽祝佑，你可以选择邪水；如果你的神祇允许两种祝佑，则圣水邪水皆可。这个临时效果并不能使它获得任何额外价值，也不能被用作一个法术或仪式或其他任何情况的开销。如果你在宗教技能上有大师熟练度，你可以祝佑两个容器，如果传奇则你可以祝佑三个容器。</p>",
             "prerequisites": [
                 {
-                    "value": "宗教技能熟练度为大师"
+                    "value": "宗教技能熟练度为专家"
                 },
                 {
                     "value": "必须信仰一个在祝佑条目中列出“圣洁”或“邪秽”的神祇"
@@ -22211,7 +22211,7 @@
         },
         "Haphazard Repair": {
             "name": "紧急抢修 Haphazard Repair",
-            "description": "<p>你快速修复你的大发明，而代价则是它的稳定性。你立刻@UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{修理 Repair}你的大发明。你不需要将大发明摆在平坦表面上，但你需要邻接它（包括持握或穿戴它），也如常需要拥有修理工具包。</p>\n<hr />\n<p>@Check[flat|dc:15|options:unstable-check|name:PF2E.SpecificRule.Inventor.Unstable.FlatCheck.Label]{不稳定检定}</p>\n<p>失败时，大发明会按照一种非常宏伟（但无害）的形式失灵，例如喷出大量黑烟或火花，然后大发明就无法继续使用不稳定动作。</p>\n<p>大失败时，你也会承受@Damage[(@actor.level)[@actor.flags.pf2e.inventor.explode]]{等同于你等级的火焰伤害}。</p>"
+            "description": "<p>你快速修复你的大发明，而代价则是它的稳定性。你立刻@UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]你的大发明。你不需要将大发明摆在平坦表面上，但你需要邻接它（包括持握或穿戴它），也如常需要拥有修理工具包。</p>"
         },
         "Emergency Targe": {
             "name": "紧急护盾 Emergency Targe",
@@ -22233,7 +22233,7 @@
         },
         "Constricting Hold": {
             "name": "紧握 Constricting Hold",
-            "description": "<p><strong>需求</strong> 你的幻灵有一个被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱} 或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚}的生物。</p>\n<p>你的幻灵紧紧挤压生物，对其造成等同于你的幻灵等级外加其力量调整值的[[/r (@actor.level+@actor.abilities.str.mod)[bludgeoning]]]{钝击伤害} ，其基础强韧豁免要对抗你的法术DC。</p>"
+            "description": "<p><strong>需求</strong> 你的幻灵使一个生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]的生物。</p>\n<p>你的幻灵紧紧挤压生物，对其造成等同于你的幻灵等级外加其力量调整值的@Damage[(@actor.level+@actor.abilities.str.mod)[bludgeoning]]{钝击伤害} ，其基础强韧豁免要对抗你的法术DC。</p>"
         },
         "Cling": {
             "name": "紧附 Cling",
@@ -23110,7 +23110,7 @@
         },
         "Energetic Resonance": {
             "name": "自发共振 Energetic Resonance",
-            "description": "<p><strong>触发</strong> 你将从一个法术中受到酸蚀、寒冷、电击、火焰或是音波伤害。</p>\n<p><strong>需求</strong> 你拥有一个等同于触发法术环级或者更高环级的未使用的法术位。</p>\n<hr />\n<p>你的血液与魔法的能量产生共振，从而减轻了有害法术的影响。</p>\n<p>消耗一个等同或高于触发法术环级的法术位。你对其中一种触发效果的伤害类型获得等同于消耗的法术位环级2倍的抗力。</p>"
+            "description": "<p><strong>触发</strong> 你将从一个法术中受到酸蚀、寒冷、电击、火焰或是音波伤害。</p>\n<p><strong>需求</strong> 你拥有一个等同于触发法术环级或者更高环级的未使用的法术位。</p><hr /><p>你的血液与魔法的能量产生共振，从而减轻了有害法术的影响。</p>\n<p>消耗一个等同或高于触发法术环级的法术位。你对其中一种触发效果的伤害类型获得等同于消耗的法术位环级2倍的抗力。</p>"
         },
         "Glad-Hand": {
             "name": "自来熟 Glad-Hand",
@@ -23218,7 +23218,7 @@
         },
         "Critical Debilitation": {
             "name": "致命衰弱 Critical Debilitation",
-            "description": "<p>你的衰弱在你最强大的攻击上格外有效。每当你在对一个敌人的攻击骰上大成功并且使用衰弱打击时，把下述衰弱加到你的可选范围内。</p>\n<ul>\n<li><strong>衰弱</strong> 目前需要进行@Check[fortitude|against:rogue]豁免对抗你的职业DC。<hr />\n<p><strong>大成功</strong> 目标不受影响</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，直到你下回合结束。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}，直到你下回合结束。</p>\n<p><strong>大失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}，直到你下回合结束。</p>\n</li>\n</ul>",
+            "description": "<p>你的衰弱在你最强大的攻击上格外有效。每当你在对一个敌人的攻击骰上大成功并且使用衰弱打击时，把下述衰弱加到你的可选范围内。</p>\n<ul>\n<li><p><strong>衰弱</strong> 目前需要进行@Check[fortitude|against:rogue]豁免对抗你的职业DC。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，直到你下回合结束。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}，直到你下回合结束。</p>\n<p><strong>大失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]，直到你下回合结束。</p>\n</li>\n</ul>",
             "prerequisites": [
                 {
                     "value": "衰弱打击"
@@ -24576,7 +24576,7 @@
         },
         "Eerie Proclamation": {
             "name": "诡异宣告 Eerie Proclamation",
-            "description": "<p><strong>频率</strong> 一次/小时</p>\n<p><strong>需求</strong> 你必须身处自然地形或者废弃的或者相对来说无人使用的人造地形（比如漆黑的小巷或者闹鬼的房子）之中</p>\n<hr />\n<p>你知道这个世界上有些地点不该存在——在那里，鸟儿不会歌唱，你总是觉得被监视着。你能找到这些地点，而且还能够唤醒它们。要这么做，你必须先对着自己能够看到的一片@Template[line|distance:10|width:10]{10尺边长的方形区域}打手势，以某种方式作出不详的宣告（比如，“这是片被诅咒的地方”、“那是片不详的场所”）。下一个进入该标记区域的生物必须尝试@Check[will|against:spell]豁免对抗你的法术DC（若你是德鲁伊）或者@Check[will|dc:resolve(@actor.system.proficiencies.classDCs.ranger.value)]豁免对抗你的职业DC（若你是游侠）。</p>\n<hr />\n<p><strong>成功</strong> 目标不受影响。</p>\n<p><strong>失败</strong> 受害者在被诅咒的土地上会发生可怕的事情。这取决于GM——这可能是个纯粹的‘自然’事故（也许对方会踩进了古来的捕熊陷阱），或者某种更加诡谲、奇怪的事情。目标获得一个持续2回合的状态。投掷[[/r 1d4 #Eerie Proclamation]]，按照后述表格中失败那一列来判断是何种状态。</p>\n<p><strong>大失败</strong> 同失败，但是效果惊人地可怕。使用大失败那一列来判断状态，且该状态持续1分钟。</p>\n<table><colgroup> <col style=\"width: 28px;\"> <col style=\"width: auto;\"> <col style=\"width: auto;\"> </colgroup>\n<thead>\n<tr>\n<th>d4</th>\n<th>失败</th>\n<th>大失败</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3}</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded} 1轮，之后@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}</td>\n</tr>\n</tbody>\n</table>",
+            "description": "<p><strong>频率</strong> 一次/小时</p>\n<p><strong>需求</strong> 你必须身处自然地形或者废弃的或者相对来说无人使用的人造地形（比如漆黑的小巷或者闹鬼的房子）之中</p>\n<hr />\n<p>你知道这个世界上有些地点不该存在——在那里，鸟儿不会歌唱，你总是觉得被监视着。你能找到这些地点，而且还能够唤醒它们。要这么做，你必须先对着自己能够看到的一片@Template[line|distance:10|width:10]{10尺边长的方形区域}打手势，以某种方式作出不详的宣告（比如，“这是片被诅咒的地方”、“那是片不详的场所”）。下一个进入该标记区域的生物必须尝试@Check[will|against:spell]豁免对抗你的法术DC（若你是德鲁伊）或者@Check[will|against:ranger]豁免对抗你的职业DC（若你是游侠）。</p>\n<hr />\n<p><strong>成功</strong> 目标不受影响。</p>\n<p><strong>失败</strong> 受害者在被诅咒的土地上会发生可怕的事情。这取决于GM——这可能是个纯粹的‘自然’事故（也许对方会踩进了古来的捕熊陷阱），或者某种更加诡谲、奇怪的事情。目标获得一个持续2回合的状态。投掷[[/r 1d4 #Eerie Proclamation]]，按照后述表格中失败那一列来判断是何种状态。</p>\n<p><strong>大失败</strong> 同失败，但是效果惊人地可怕。使用大失败那一列来判断状态，且该状态持续1分钟。</p>\n<table><colgroup> <col style=\"width: 28px;\"> <col style=\"width: auto;\"> <col style=\"width: auto;\"> </colgroup>\n<thead>\n<tr>\n<th>d4</th>\n<th>失败</th>\n<th>大失败</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3}</td>\n</tr>\n<tr>\n<td>2</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}</td>\n</tr>\n<tr>\n<td>3</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}</td>\n</tr>\n<tr>\n<td>4</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}</td>\n<td>@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded} 1轮，之后@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}</td>\n</tr>\n</tbody>\n</table>",
             "prerequisites": [
                 {
                     "value": "神秘技能熟练度为专家"
@@ -25242,7 +25242,7 @@
         },
         "Mega Bomb": {
             "name": "超能炸弹 Mega Bomb",
-            "description": "<p>你将一种极高爆添加剂加入一枚炸弹中，就此创造出了超能炸弹。投掷这枚超能炸弹需要一个两动作行动，而非进行一次打击。这不是一次打击，你也不需要进行攻击骰。超能炸弹会在你周围60尺范围内的一个@Template[burst|distance:30]区域内爆炸。它会如同其中每个生物都是主要目标一般对其造成伤害，这具有一次@Check[reflex|dc:resolve(@actor.system.proficiencies.classDCs.alchemist.value)|basic]豁免。一旦在豁免中失败，该生物就会承受所有只影响主要目标的额外效果（例如瓶装闪电造成的@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]）。区域内的所有目标都会如同主要目标一般受到溅射伤害，哪怕原本的溅射效果并不会影响这么大的范围。</p>",
+            "description": "<p>你将一种极高爆添加剂加入一枚炸弹中，就此创造出了超能炸弹。投掷这枚超能炸弹需要一个两动作行动，而非进行一次打击。这不是一次打击，你也不需要进行攻击骰。超能炸弹会在你周围60尺范围内的一个@Template[burst|distance:30]区域内爆炸。它会如同其中每个生物都是主要目标一般对其造成伤害，这具有一次@Check[reflex|against:alchemist|basic]豁免。一旦在豁免中失败，该生物就会承受所有只影响主要目标的额外效果（例如瓶装闪电造成的@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]）。区域内的所有目标都会如同主要目标一般受到溅射伤害，哪怕原本的溅射效果并不会影响这么大的范围。</p>",
             "prerequisites": [
                 {
                     "value": "溅射扩展"
@@ -25295,7 +25295,7 @@
         },
         "Oversized Throw": {
             "name": "越型投掷 Oversized Throw",
-            "description": "<p><strong>需求</strong> 你至少有一支手闲置。</p><hr /><p>你使出巨大的膂力，抓住附近的一块重物，比如巨石、原木、桌子、马车或土块，然后扔向你的敌人。该物品必须与你的体型相同，或者比你小一级，而且负载不能重到让你无法举起。用该物品进行一次远程打击，无论结果如何，物品都会受到它在命中目标时可造成的伤害。</p>\n<p>该物品是简易远程武器，可造成@Damage[1d10[bludgeoning]]伤害，具有20尺射程单位，投掷武器特征。若你有简易武器的@UUID[Compendium.pf2e.classfeatures.Item.9EqIasqfI8YIM3Pt]，伤害提高为@Damage[2d10[bludgeoning]]伤害，若有@UUID[Compendium.pf2e.classfeatures.Item.7JjhxMFo8DMwpGx0]，提高为@Damage[3d10[bludgeoning]]伤害。</p>"
+            "description": "<p><strong>需求</strong> 你至少有一支手闲置。</p>\n<p>你使出巨大的膂力，抓住附近的一块重物，比如巨石、原木、桌子、马车或土块，然后扔向你的敌人。该物品必须与你的体型相同，或者比你小一级，而且负载不能重到让你无法举起。用该物品进行一次远程打击，无论结果如何，物品都会受到它在命中目标时可造成的伤害。</p>\n<p>该物品是简易远程武器，可造成@Damage[1d10[bludgeoning]]伤害，具有20尺射程单位，投掷武器特征。若你有简易武器的@UUID[Compendium.pf2e.classfeatures.Item.9EqIasqfI8YIM3Pt]，伤害提高为@Damage[2d10[bludgeoning]]，若有@UUID[Compendium.pf2e.classfeatures.Item.7JjhxMFo8DMwpGx0]，伤害提高为@Damage[3d10[bludgeoning]]。</p>"
         },
         "Pivot Strike": {
             "name": "跃击 Pivot Strike",
@@ -26572,7 +26572,7 @@
         },
         "Electrify Armor": {
             "name": "通电护甲 Electrify Armor",
-            "description": "<p><strong>需求</strong> 你穿戴着你的护甲大发明。</p>\n<p>你给你的护甲通电，惩罚胆敢攻击你的敌人。1轮内，任何接触到你的生物，用近战无武装攻击或非长触及的近战武器命中你的生物，受到@Damage[1d4[electricity]|overrideTraits]伤害。如果你不再穿戴你的护甲大发明，该效果终止。</p>\n<p>如果你有革命性大发明职业特性，伤害提升至@Damage[2d4[electricity]|overrideTraits]</p>\n<p><strong>不稳定功能</strong> 你制造一种不稳定的连锁反应，数不清的火花在你的护甲上舞动。在通电护甲Electrify上加上不稳定特征。该效果持续1分钟而非1轮，伤害骰从d4提升至d12。( @Damage[1d12[electricity]] / @Damage[2d12[electricity]])</p>\n<hr />\n<p>@Check[flat|dc:15|options:unstable-check|name:PF2E.SpecificRule.Inventor.Unstable.FlatCheck.Label]{不稳定检定}</p>",
+            "description": "<p><strong>需求</strong> 你穿戴着你的护甲大发明。</p>\n<p>你给你的护甲通电，惩罚胆敢攻击你的敌人。1轮内，任何接触到你的生物，用近战无武装攻击或非长触及的近战武器命中你的生物，受到@Damage[1d4[electricity]|overrideTraits]伤害。如果你不再穿戴你的护甲大发明，该效果终止。</p>\n<p>如果你有革命性大发明职业特性，伤害提升至@Damage[2d4[electricity]|overrideTraits]</p>\n<p><strong>不稳定功能</strong> 你制造一种不稳定的连锁反应，数不清的火花在你的护甲上舞动。在通电护甲Electrify上加上不稳定特征。该效果持续1分钟而非1轮，伤害骰从d4提升至d12。( @Damage[1d12[electricity]] / @Damage[2d12[electricity]])</p>",
             "prerequisites": [
                 {
                     "value": "护甲大发明"
@@ -26765,7 +26765,7 @@
         },
         "Thrash": {
             "name": "重殴 Thrash",
-            "description": "<p><strong>需求</strong> 你正使一名敌人陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]</p><hr /><p>你不断痛殴你的敌人。一名因你而受擒或束缚的敌人承受钝击伤害，数值等同于你的力量调整值加上武器专精和狂暴给予的额外伤害，并且其进行一次对抗你职业DC的@Check[fortitude|against:class|basic]豁免。</p>"
+            "description": "<p><strong>需求</strong> 你正使一名敌人陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]</p><hr /><p>你不断痛殴你的敌人。一名因你而受擒或束缚的敌人承受钝击伤害，数值等同于你的力量调整值加上武器专精和狂暴给予的额外伤害，并且其进行一次对抗你职业DC的@Check[fortitude|against:barbarian|basic]豁免。</p>"
         },
         "Renewed Vigor": {
             "name": "重现活力 Renewed Vigor",
@@ -27118,7 +27118,7 @@
         },
         "Mirror Refuge": {
             "name": "镜中避难 Mirror Refuge",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 你在一块镜面5尺内</p>\n<hr />\n<p>你在镜后空间的起源使得你能够使用镜子当做一处藏身地，如同法术@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{融身化石 One with Stone}。你融入一面相邻的镜子。你可以听见但不能看见该空间之外，且外面的生物也不能看见和听见你。你在镜子内可以施放法术，但效果无法穿越镜子。你的镜中避难持续10分钟，除非镜子破损，这会将你驱逐并对你造成[[/r 10d6]]{10d6}伤害。你可以解消此效果。当效果结束时，你出现在与镜子相邻的空间。</p>",
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>需求</strong> 你在一块镜面5尺内</p><hr /><p>你在镜后空间的起源使得你能够使用镜子当做一处藏身地，如同法术@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]。你融入一面相邻的镜子。你可以听见但不能看见该空间之外，且外面的生物也不能看见和听见你。你在镜子内可以施放法术，但效果无法穿越镜子。你的镜中避难持续10分钟，除非镜子破损，这会将你驱逐并对你造成@Damage[10d6]伤害。你可以解消此效果。当效果结束时，你出现在与镜子相邻的空间。</p>",
             "prerequisites": [
                 {
                     "value": "诞自镜中"
@@ -27441,7 +27441,7 @@
         },
         "Ceremony of Sunlight": {
             "name": "阳光仪典 Ceremony of Sunlight",
-            "description": "<p>你已经学会如何掌握阳光中的能量，就像那些构成你身体的树木一样。你的@UUID[Compendium.pf2e.ancestryfeatures.Item.BgHrucbZ9TH92RDv]{阳光治疗 Sunlight Healing}能力每级都能增加1d8。</p>\n<p>[[/r (@actor.level)d8]]{阳光治疗 Sunlight Healing}</p>"
+            "description": "<p>你已经学会如何掌握阳光中的能量，就像那些构成你身体的树木一样。你的@UUID[Compendium.pf2e.ancestryfeatures.Item.BgHrucbZ9TH92RDv]能力每级都能增加1d8。</p>"
         },
         "Ceaseless Shadows": {
             "name": "阴影不绝 Ceaseless Shadows",
@@ -28562,7 +28562,7 @@
         },
         "Replenishing Consumption": {
             "name": "食肉再生 Replenishing Consumption",
-            "description": "<p>当你吞食尸体并满足自身的饥渴时，你还能够使身上的伤口快速治疗，当你把一大块死肉塞进喉咙时，你那坏死的蓝色肌肉几乎立即开始重新编织在一起。每10分钟一次，当你使用@UUID[Compendium.pf2e.actionspf2e.Item.1If9lLVoZdO8woVg]{啃食尸体 Consume Flesh}时，你会恢复[[/r (ceil(@actor.level/2))d6[healing]]]{每两个等级1d6点生命值}，向上取整。</p>",
+            "description": "<p>当你吞食尸体并满足自身的饥渴时，你还能够使身上的伤口快速治疗，当你把一大块死肉塞进喉咙时，你那坏死的蓝色肌肉几乎立即开始重新编织在一起。每10分钟一次，当你使用@UUID[Compendium.pf2e.actionspf2e.Item.1If9lLVoZdO8woVg]时，你会恢复@Damage[(ceil(@actor.level/2))d6[healing]]{每两个等级1d6点生命值}，向上取整。</p>",
             "prerequisites": [
                 {
                     "value": "食尸鬼入门"
@@ -29231,7 +29231,7 @@
         },
         "High-Speed Regeneration": {
             "name": "高速再生 High-Speed Regeneration",
-            "description": "<p><strong>触发</strong> 你的回合开始。</p>\n<hr />\n<p>你的伤口会在一念之间主动愈合。你恢复[[/r (2*@actor.level)[healing]]]{等于等级两倍的生命值}。当你获得这个特异能力时，GM会秘密选择一种能量类型或珍贵材料，例如火焰或寒铁。当你受到这种类型的伤害时，你的伤口会冒烟直到下个回合结束，这会阻止你使用高速再生。</p>\n<hr />\n<p><strong>觉醒</strong> 你的再生可以自动将你从死亡边缘拉回来。每天一次，你可以在生命自减少至0时使用高速再生，而不仅仅是原本的触发条件。你能避免被击昏，并且生命值保持在你恢复的数值。</p>\n<hr />\n<p><strong>觉醒</strong> 重生让你充满活力。直到你的回合结束，你的速度获得+10尺状态加值。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.tx0S0fnfZ6Q2o80H]{效果：高速再生速度加值}</p>"
+            "description": "<p><strong>触发</strong> 你的回合开始。</p><hr /><p>你的伤口会在一念之间主动愈合。你恢复@Damage[(2*@actor.level)[healing]]{等于等级两倍的生命值}。当你获得这个特异能力时，GM会秘密选择一种能量类型或珍贵材料，例如火焰或寒铁。当你受到这种类型的伤害时，你的伤口会冒烟直到下个回合结束，这会阻止你使用高速再生。</p><hr /><p><strong>觉醒</strong> 你的再生可以自动将你从死亡边缘拉回来。每天一次，你可以在生命自减少至0时使用高速再生，而不仅仅是原本的触发条件。你能避免被击昏，并且生命值保持在你恢复的数值。</p><hr /><p><strong>觉醒</strong> 重生让你充满活力。直到你的回合结束，你的速度获得+10尺状态加值。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.tx0S0fnfZ6Q2o80H]</p>"
         },
         "Barreling Charge": {
             "name": "高速冲锋 Barreling Charge",
@@ -30249,7 +30249,7 @@
             "name": "激励之息 Invigorating Breath"
         },
         "Scion of Domora Dedication": {
-            "description": "<p>你获得一位精魂向导盟友。你的魔宠成为一只精魂向导特殊魔宠。</p>\n<p><strong>特殊</strong> 你可以在只有@UUID[Compendium.pf2e.feats-srd.Item.4zaU3GlTGMNqLFS8]{魔宠大师入门 Familiar Master Dedication}但尚未选择另外两个@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.yaR8E2drX6pFUFCK]{魔宠大师 Familiar Master}变体专长的情况下选择多莫拉后裔入门专长。你在从多莫拉后裔变体或魔宠大师变体中选择两个其他专长之前，你无法选择其他变体专长。</p>",
+            "description": "<p>你获得一位精魂向导盟友。你的魔宠成为一只精魂向导特殊魔宠。</p>\n<p><strong>特殊</strong> 你可以在只有@UUID[Compendium.pf2e.feats-srd.Item.4zaU3GlTGMNqLFS8]但尚未选择另外两个@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.yaR8E2drX6pFUFCK]变体专长的情况下选择多莫拉后裔入门专长。你在从@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.J0AfK0jJgS5WxhCE]变体或魔宠大师变体中选择两个其他专长之前，你无法选择其他变体专长。</p>",
             "prerequisites": [
                 {
                     "value": "魔宠大师入门"
@@ -30697,7 +30697,7 @@
             ]
         },
         "Illusory Identity": {
-            "description": "<p>有时候，你的技能或外表不足以让被人相信你的身份，你还要有足够的证明文件。复制蓝玉蝶（Sapphire Butterfly）的方法，你学会了用魔法在你最需要的时候伪造一个新身份。在你每日准备期间，你可以选择一张空白的文件、日记、徽章或类似的通常能够显示权威的物品，然后用魔法将其绑定。你能以交互动作在脑海中勾勒出呈现给其他生物看的基本信息，例如姓名、头衔、和现有组织或代理人的关系、以及其他基本细节。更复杂的内容需要更多的时间，由GM自行决定。该生物必须尝试@Check[will|dc:resolve(@actor.skills.deception.dc.value)]豁免来对抗你的欺骗DC。这件物品只有当你拿着它的时候才会生效，如果其他人试图使用它，将显示为空白，尽管你可以在描述的细节中提及其他人。</p>\n<hr />\n<p><strong>大成功</strong> 目标看穿物品是完全空白的，并且免疫此效果直到你下次每日准备。</p>\n<p><strong>成功</strong> 目标只能看到以简单方式列出的信息，如交互动作中所描述的那样。虽然没有完全相信，但是他还是会配合，但这会让目标对你的态度降低一阶。</p>\n<p><strong>失败</strong> 目标看物品上列出了和你相关的信息，包括合适的语言、姓名、日期、签名和其他细节。</p>\n<p><strong>大失败</strong> 对方比你预想的更认可文件的权威性，会立即向你表现出应有的尊重。类似失败，但是目标对你的态度立即提升一阶。</p>",
+            "description": "<p>有时候，你的技能或外表不足以让被人相信你的身份，你还要有足够的证明文件。复制蓝玉蝶（Sapphire Butterfly）的方法，你学会了用魔法在你最需要的时候伪造一个新身份。在你每日准备期间，你可以选择一张空白的文件、日记、徽章或类似的通常能够显示权威的物品，然后用魔法将其绑定。你能以交互动作在脑海中勾勒出呈现给其他生物看的基本信息，例如姓名、头衔、和现有组织或代理人的关系、以及其他基本细节。更复杂的内容需要更多的时间，由GM自行决定。该生物必须尝试@Check[will|against:deception]豁免来对抗你的欺骗DC。这件物品只有当你拿着它的时候才会生效，如果其他人试图使用它，将显示为空白，尽管你可以在描述的细节中提及其他人。</p>\n<hr />\n<p><strong>大成功</strong> 目标看穿物品是完全空白的，并且免疫此效果直到你下次每日准备。</p>\n<p><strong>成功</strong> 目标只能看到以简单方式列出的信息，如交互动作中所描述的那样。虽然没有完全相信，但是他还是会配合，但这会让目标对你的态度降低一阶。</p>\n<p><strong>失败</strong> 目标看物品上列出了和你相关的信息，包括合适的语言、姓名、日期、签名和其他细节。</p>\n<p><strong>大失败</strong> 对方比你预想的更认可文件的权威性，会立即向你表现出应有的尊重。类似失败，但是目标对你的态度立即提升一阶。</p>",
             "name": "幻象身份 Illusory Identity",
             "prerequisites": [
                 {
@@ -31484,7 +31484,7 @@
         },
         "Hell of 1,000,000 Needles": {
             "name": "万针刑狱 Hell of 1,000,000 Needles",
-            "description": "<p>整个场景被巨量金属针填满。 针刺入500尺射程的30尺立方体区域。 该区域每个生物都会受到@Damage[13d6[piercing]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。 豁免失败的生物会被刺穿，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}直到它@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱Escapes}为止（逃脱DC是你的职业DC）；大失败的生物在被刺穿期间还会措手不及。万针刑狱一直持续到你的下个回合结束，但是你可以维持最多1分钟。再次使用该涌动会结束之前生效的。当你每轮第一次维持它时，电流在针之间交错，区域中的每个生物受到@Damage[3d12[electricity]|traits:area-damage]伤害，@Check[reflex|against:class|basic]豁免对抗你的职业DC。区域中的方格都是有害地形。生物移动穿过区域中的每个方格都会受到@Damage[6[piercing]]伤害。</p>\n<hr />\n<p><strong>升级 (20级)</strong> 直接伤害17d6，有害地形伤害为7点。</p>"
+            "description": "<p>整个场景被巨量金属针填满。 针刺入500尺射程的30尺立方体区域。 该区域每个生物都会受到@Damage[13d6[piercing]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。 豁免失败的生物会被刺穿，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]直到它@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]为止（逃脱DC是你的职业DC）；大失败的生物在被刺穿期间还会措手不及。万针刑狱一直持续到你的下个回合结束，但是你可以维持最多1分钟。再次使用该涌动会结束之前生效的。当你每轮第一次维持它时，电流在针之间交错，区域中的每个生物受到@Damage[3d12[electricity]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。区域中的方格都是有害地形。生物移动穿过区域中的每个方格都会受到@Damage[6[piercing]]伤害。</p>\n<hr />\n<p><strong>升级（20级）</strong> 直接伤害17d6，有害地形伤害为7点。</p>"
         },
         "Winter Sleet": {
             "name": "凛冬雨雪 Winter Sleet",
@@ -31504,7 +31504,7 @@
         },
         "Tree of Duality": {
             "name": "二元之树 Tree of Duality",
-            "description": "<p>一棵生命短暂的树破土而出，漂浮在由你选择的60尺内的一个未被占据的方格上。盛开的花朵和生长的真菌会释放花粉和孢子，一股旋转的气流会在树周围@Template[emanation|distance:10]区域传播开来。这棵树会持续到你的下个回合结束，你能维持最多1分钟。你同时获得以下两种效果。</p>\n<ul>\n<li><strong>净化花粉 Cleansing Pollen</strong> (治疗, 命能) 该区域内或者进入该区域的每个活着的盟友恢复3d4生命值，然后在10分钟内临时免疫二元之树的恢复效果。</li>\n<li><strong>致幻孢子 Hallucinogenic Spores</strong> (心灵) 该区域的敌人陷入目眩。离开区域的敌人依然会保持@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}，直到他的下个回合开始。</li>\n</ul>\n<hr />\n<p><strong>升级 (+2)</strong> 治疗增加1d4。</p>\n<p>[[/r (floor((max(6,@actor.level)-6)/2)+3)d4[healing]]]{根据等级计算的生命值}</p>"
+            "description": "<p>一棵生命短暂的树破土而出，漂浮在由你选择的60尺内的一个未被占据的方格上。盛开的花朵和生长的真菌会释放花粉和孢子，一股旋转的气流会在树周围@Template[emanation|distance:10]区域传播开来。这棵树会持续到你的下个回合结束，你能维持最多1分钟。你同时获得以下两种效果。</p><ul><li><strong>净化花粉 Cleansing Pollen</strong> （治疗，命能）该区域内或者进入该区域的每个活着的盟友恢复@Damage[(floor((max(6,@actor.level)-6)/2)+3)d4[healing]]生命值，然后在10分钟内临时免疫二元之树的恢复效果。</li><li><strong>致幻孢子 Hallucinogenic Spores</strong> （心灵）该区域的敌人陷入目眩。离开区域的敌人依然会保持@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]，直到他的下个回合开始。</li></ul><hr /><p><strong>升级 (+2)</strong> 治疗增加1d4。</p>"
         },
         "Kineticist Dedication": {
             "description": "<p>你的御能师职业DC和涌动攻击熟练度提升至受训。选择一个元素（从气、土、火、金、水和木中）当作为你的统御元素。你获得御能灵光和@UUID[Compendium.pf2e.actionspf2e.Item.g8QrV39TmZfkbXgE]{引导元素 Channel Elements}动作， 尽管你不能在使用该动作的同时使用@UUID[Compendium.pf2e.actionspf2e.Item.6lbr0Jnv0zMB5uGb]{元素冲击 Elemental Blast} 或架势涌动。 你也获得元素冲击涌动动作。 你的元素冲击并不能每提升4级自动获得额外伤害骰，除非你选择@UUID[Compendium.pf2e.feats-srd.Item.8VlGHrDKjlY69jFv]{强化元素冲击 Improved Elemental Blast}专长。你在自然技能上受训；如果如果你已经在自然上受训，则改为任选一项技能受训。</p>\n<hr />\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.1kRGIb5LPPKypQpN]{御能师变体 Kineticist Archetype}</p>",
@@ -32079,7 +32079,7 @@
             "description": "<p>对于生物的学院知识使你可以明锐地改变自己魔力以抵御这些生物。当你在对生物的@UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{回忆知识 Recall Knowledge}检定获得大成功时，在抵抗你对它的下次攻击或需要防御你对它施放的下个法术时，你可以利用你的知识让生物的AC 或是豁免受到 -1 环境减值。在下次其攻击你或让你尝试豁免检定以抵抗它的一项效果时，这个生物的攻击或DC也会受到相同减值。</p>\n<p>如果你和你的盟友共享这一信息，他们也会获得相同增益。如果不被使用，这项增益会在1分钟后结束。</p>"
         },
         "Bespell Strikes": {
-            "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 你最近一个动作是释放一个非戏法的法术</p><hr /><p><strong>先知</strong> 你抽取法术能量注入你握持的一件武器，或是你的一项无武装攻击，比如拳头。直到你回合结束，武器或无武装攻击造成一个额外的 1d6 力场伤害，并且如果其未拥有神术特征，则会获得此特征。如果法术造成不同类型伤害，则打击取而代之造成此类型伤害（如果法术造成多种类型伤害，则由你选择其中之一）。</p>\n<p><strong>术士</strong> 你从上一个法术中汲取残余的能量注入你所持握的一把武器或是你的一种无武装攻击中。直到你的回合结束时为止，该武器或无武装攻击造成额外1d6点力场伤害并获得奥术特征。如果你施放的法术造成其他种类的伤害，则打击取而代之造成该种类的伤害（如果法术能够造成复数种类的伤害，由你选择一种伤害类型适用）。</p>\n<p><strong>法师</strong> <span style=\"font-family:Roboto, sans-serif\">你抽取法术能量注入你握持的一件武器，或是你的一项无武装攻击，比如拳头。直到你回合结束，武器或无武装攻击造成一个额外的 1d6 力场伤害，并且如果其未拥有奥术特征，则会获得此特征。如果法术造成不同类型伤害，则打击取而代之造成此类型伤害（如果法术造成多种类型伤害，则由你选择其中之一）。</span></p>",
+            "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 你最近一个动作是释放一个非戏法的法术</p><hr /><p><strong>先知</strong> 你抽取法术能量注入你握持的一件武器，或是你的一项无武装攻击，比如拳头。直到你回合结束，武器或无武装攻击造成一个额外的1d6力场伤害，并且如果其未拥有神术特征，则会获得此特征。如果法术造成不同类型伤害，则打击取而代之造成此类型伤害（如果法术造成多种类型伤害，则由你选择其中之一）。</p>\n<p><strong>术士</strong> 你从上一个法术中汲取残余的能量注入你所持握的一把武器或是你的一种无武装攻击中。直到你的回合结束时为止，该武器或无武装攻击造成额外1d6点力场伤害并获得奥术特征。如果你施放的法术造成其他种类的伤害，则打击取而代之造成该种类的伤害（如果法术能够造成复数种类的伤害，由你选择一种伤害类型适用）。</p>\n<p><strong>法师</strong> 你抽取法术能量注入你握持的一件武器，或是你的一项无武装攻击，比如拳头。直到你回合结束，武器或无武装攻击造成一个额外的1d6力场伤害，并且如果其未拥有奥术特征，则会获得此特征。如果法术造成不同类型伤害，则打击取而代之造成此类型伤害（如果法术造成多种类型伤害，则由你选择其中之一）。</p>",
             "name": "附法打击 Bespell Strikes"
         },
         "Scroll Adept": {
@@ -33256,14 +33256,14 @@
         },
         "Portents of the Haruspex": {
             "name": "肠卜师的预示 Portents of the Haruspex",
-            "description": "<p><strong>触发</strong> 30尺内一个生物被以不会摧毁身体的方式减至0生命值。</p>\n<hr />\n<p>虽然肠卜师的占卜传统上需要器官和冗长的解释，但你已经学会了如何通过阅读生物的伤口以更简单的方式瞥见未来。对未来的瞥见可以指导下一步最好使用什么工具。掷骰[[/r 1d12]]来决定你预测的伤害类型。在你下回合结束前，你或你的盟友对一名敌人下次造成该类型的伤害时，敌人对该伤害获得等同于你等级的弱点。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>D12</th>\n<th>伤害类型</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>酸蚀</td>\n</tr>\n<tr>\n<td>2-3</td>\n<td>钝击</td>\n</tr>\n<tr>\n<td>4</td>\n<td>寒冷</td>\n</tr>\n<tr>\n<td>5</td>\n<td>电击</td>\n</tr>\n<tr>\n<td>6</td>\n<td>火焰</td>\n</tr>\n<tr>\n<td>7</td>\n<td>心灵</td>\n</tr>\n<tr>\n<td>8-9</td>\n<td>穿刺</td>\n</tr>\n<tr>\n<td>10</td>\n<td>毒素</td>\n</tr>\n<tr>\n<td>11-12</td>\n<td>挥砍</td>\n</tr>\n</tbody>\n</table>"
+            "description": "<p><strong>触发</strong> 30尺内一个生物被以不会摧毁身体的方式减至0生命值。</p><hr /><p>虽然肠卜师的占卜传统上需要器官和冗长的解释，但你已经学会了如何通过阅读生物的伤口以更简单的方式瞥见未来。对未来的瞥见可以指导下一步最好使用什么工具。掷骰[[/r 1d12]]来决定你预测的伤害类型。在你下回合结束前，你或你的盟友对一名敌人下次造成该类型的伤害时，敌人对该伤害获得等同于你等级的弱点。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.l5NDN9V3DwFYPIsD]</p><table class=\"pf2e\"><thead><tr><th>D12</th><th>伤害类型</th></tr></thead><tbody><tr><td>1</td><td>酸蚀</td></tr><tr><td>2-3</td><td>钝击</td></tr><tr><td>4</td><td>寒冷</td></tr><tr><td>5</td><td>电击</td></tr><tr><td>6</td><td>火焰</td></tr><tr><td>7</td><td>心灵</td></tr><tr><td>8-9</td><td>穿刺</td></tr><tr><td>10</td><td>毒素</td></tr><tr><td>11-12</td><td>挥砍</td></tr></tbody></table>"
         },
         "Nature Prowler": {
             "description": "<p>当开始自身的回合时，若对你的猎杀目标的猎物来说处于@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}或未发现状态的话，该生物对你来说会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，持续至你的回合结束为止。若你身处在自然环境之中，则能够以全速进行@UUID[Compendium.pf2e.actionspf2e.Item.IE2nThCmoyhQA0Jn]{避人耳目 Avoid Notice}和@UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{潜行 Sneak}。</p>",
             "name": "自然追猎者 Nature Prowler"
         },
         "Wild Witch's Armaments": {
-            "description": "<p>庇护主的力量继续增强你的天生进攻能力。你在从女巫武装选择获得任意无武装攻击上获得额外效果。如果你获得多次女巫武装专长来获得多种攻击，你获得相应的额外效果。</p>\n<ul>\n<li><strong>魔甲 Eldritch Nails</strong> 你的指甲能以猛兽的力量撕扯。如果你用连续两次指甲打击命中同一目标，该敌人在第二次打击中受到等同于你等级一半的额外挥砍伤害。</li>\n<li><strong>铁牙 Iron Teeth</strong> 像真正的掠食者一样，你的牙齿可以咬碎骨头。被你的颚打击重击的生物必须成功通过一次@Check[fortitude|against:class]豁免对抗你的职业DC，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</li>\n<li><strong>活发 Living Hair</strong> 你的部分头发会变硬，成为可以用力射出的棘刺。你获得棘刺远程无武装打击，能造成@Damage[1d4[piercing]]伤害，射程15尺。你的棘刺属于暗器武器组。</li>\n</ul>",
+            "description": "<p>庇护主的力量继续增强你的天生进攻能力。你在从女巫武装选择获得任意无武装攻击上获得额外效果。如果你获得多次女巫武装专长来获得多种攻击，你获得相应的额外效果。</p>\n<ul>\n<li><strong>魔甲 Eldritch Nails</strong> 你的指甲能以猛兽的力量撕扯。如果你用连续两次指甲打击命中同一目标，该敌人在第二次打击中受到等同于你等级一半的额外挥砍伤害。</li>\n<li><strong>铁牙 Iron Teeth</strong> 像真正的掠食者一样，你的牙齿可以咬碎骨头。被你的颚打击重击的生物必须成功通过一次@Check[fortitude|against:witch]豁免对抗你的职业DC，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</li>\n<li><strong>活发 Living Hair</strong> 你的部分头发会变硬，成为可以用力射出的棘刺。你获得棘刺远程无武装打击，能造成@Damage[1d4[piercing]]伤害，射程15尺。你的棘刺属于暗器武器组。</li>\n</ul>",
             "name": "荒野女巫武装 Wild Witch's Armaments",
             "prerequisites": [
                 {
@@ -35329,7 +35329,7 @@
             "name": "Devil in Plain Sight"
         },
         "Armament Paragon": {
-            "description": "<p>将以下性能符文添加至你祝福武器装的可选列表之中：@UUID[Compendium.pf2e.equipment-srd.Item.DCPsilr8wbPXxTUv]，@UUID[Compendium.pf2e.equipment-srd.Item.uz3JCjRvkE44jxMd]，@UUID[Compendium.pf2e.equipment-srd.Item.qUnDHEXteUQGE8yp]，@UUID[Compendium.pf2e.equipment-srd.Item.hg3IogR8ue2IWwgS]，以及@UUID[Compendium.pf2e.equipment-srd.Item.oVrVzML63VFvVfKk]。如果你拥有@UUID[Compendium.pf2e.feats-srd.Item.h5ksUZlrVGBjq6p4]专长，也将@UUID[Compendium.pf2e.equipment-srd.Item.hebf5k3cd7LO6luX]和@UUID[Compendium.pf2e.equipment-srd.Item.n8MonEa4ZBdvEovc]{添加至上述列表。</p>\n<p>此外，你能够以一个具有专注和神术特征的单动作，将你当天所选的符文改变为可选列表中的另一个。改变符文不会恢复那些只能使用有限次数的能力。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.sCxi8lOH8tWQjLh0]</p>",
+            "description": "<p>将以下性能符文添加至你祝福武器装的可选列表之中：@UUID[Compendium.pf2e.equipment-srd.Item.DCPsilr8wbPXxTUv]，@UUID[Compendium.pf2e.equipment-srd.Item.uz3JCjRvkE44jxMd]，@UUID[Compendium.pf2e.equipment-srd.Item.qUnDHEXteUQGE8yp]，@UUID[Compendium.pf2e.equipment-srd.Item.hg3IogR8ue2IWwgS]，以及@UUID[Compendium.pf2e.equipment-srd.Item.oVrVzML63VFvVfKk]。如果你拥有@UUID[Compendium.pf2e.feats-srd.Item.h5ksUZlrVGBjq6p4]专长，也将@UUID[Compendium.pf2e.equipment-srd.Item.hebf5k3cd7LO6luX]和@UUID[Compendium.pf2e.equipment-srd.Item.n8MonEa4ZBdvEovc]添加至上述列表。</p>\n<p>此外，你能够以一个具有专注和神术特征的单动作，将你当天所选的符文改变为可选列表中的另一个。改变符文不会恢复那些只能使用有限次数的能力。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.sCxi8lOH8tWQjLh0]</p>",
             "prerequisites": [
                 {
                     "value": "祝福武装"
@@ -35386,7 +35386,7 @@
             "name": "无形射击 Incorporeal Shot"
         },
         "Trial by Skyfire": {
-            "description": "<p>你用颤抖的声音呼出一场迫临的浩劫，并期望自己从中幸存。灼热的火矢从空中落在以你为中心的@Template[emanation|distance:10]范围内，在你的每个回合结束对范围内的所有生物造成@Damage[2d6[fire]|traits:area-damage]伤害（@Check[reflex|basic]豁免）；你不能将自己排除在弥漫范围之外。天火持续1分钟；尽管你不能解消它，但你可以通过一个维持动作来压制这个效果一轮。如果你@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]，火雨会被压制。如果你在天火劫持续时间内的任何一刻陷入@UUID[Compendium.pf2e.conditionitems.Item.zXZjC8HLaRoLR17U]{咒缚 Cursebound 3}或咒缚4，弥漫范围提升至@Template[emanation|distance:15]并且伤害提升到@Damage[4d6[fire]|traits:area-damage|shortLabel:true]。</p>",
+            "description": "<p>你用颤抖的声音呼出一场迫临的浩劫，并期望自己从中幸存。灼热的火矢从空中落在以你为中心的@Template[emanation|distance:10]范围内，在你的每个回合结束对范围内的所有生物造成@Damage[2d6[fire]|traits:area-damage]伤害（@Check[reflex|against:class-spell|basic]豁免）；你不能将自己排除在弥漫范围之外。天火持续1分钟；尽管你不能解消它，但你可以通过一个维持动作来压制这个效果一轮。如果你@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]，火雨会被压制。如果你在天火劫持续时间内的任何一刻陷入@UUID[Compendium.pf2e.conditionitems.Item.zXZjC8HLaRoLR17U]{咒缚 Cursebound 3}或咒缚4，弥漫范围提升至@Template[emanation|distance:15]并且伤害提升到@Damage[4d6[fire]|traits:area-damage|shortLabel:true]。</p>",
             "prerequisites": [
                 {
                     "value": "宇宙或烈焰秘示域"
@@ -35443,7 +35443,7 @@
             "name": "Path of Iron"
         },
         "Blowgun Poisoner": {
-            "description": "<p>你可以用@UUID[Compendium.pf2e.equipment-srd.Item.FPwsiGqMCNPLHmjX]来传递毒素。即使由于生物的抗力而没有实际造成伤害，你的吹箭@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]也可以施加伤口型毒素。如果你在使用淬毒飞镖的吹箭打击上大成功，那么目标对毒素的初始豁免骰出的成功度会下降一级，这是一个厄运效果。</p>\n<p>此外，如果你在@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]或@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]的情况下使用吹箭进行打击，你不会自动变为@UUID[Compendium.pf2e.conditionitems.Item.1wQY3JYyhMYeeV2G]，而是立即尝试进行@Check[stealth]检定对抗目标的察觉DC。如果你成功了，你就不会对其变为可见，而是处于藏匿。（如果你原本处于无踪，你仍然会变为藏匿而非保持无踪）。</p>",
+            "description": "<p>你可以用@UUID[Compendium.pf2e.equipment-srd.Item.FPwsiGqMCNPLHmjX]来传递毒素。即使由于生物的抗力而没有实际造成伤害，你的吹箭@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]也可以施加伤口型毒素。如果你在使用淬毒飞镖的吹箭打击上大成功，那么目标对毒素的初始豁免骰出的成功度会下降一级，这是一个厄运效果。</p>\n<p>此外，如果你在@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]或@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]的情况下使用吹箭进行打击，你不会自动变为@UUID[Compendium.pf2e.conditionitems.Item.1wQY3JYyhMYeeV2G]，而是立即尝试进行@Check[stealth|against:perception]检定对抗目标的察觉DC。如果你成功了，你就不会对其变为可见，而是处于藏匿。（如果你原本处于无踪，你仍然会变为藏匿而非保持无踪）。</p>",
             "name": "吹箭投毒者 Blowgun Poisoner"
         },
         "Explosion of Power": {
@@ -35473,7 +35473,7 @@
             "name": "瘆人呱噪 Terrifying Croak"
         },
         "Swift Guardian": {
-            "description": "<p><strong>触发</strong> 你骰先攻</p><hr /><p>当危险出现时，你快速送走你当前的活跃伙伴并唤来另外一只。你使用呼唤伙伴。新出场的动物通常会出现在和离开的那只相同的位置。GM可能会根据环境和动物的速度进行调整。如果你有@UUID[Compendium.pf2e.feats-srd.Item.Aeea44xyJqYArFun]专长，你可以将你两个活跃伙伴中的一个与一只非活跃的伙伴交换。</p>",
+            "description": "<p><strong>触发</strong> 你骰先攻</p><hr /><p>当危险出现时，你快速送走你当前的活跃伙伴并唤来另外一只。你使用@UUID[Compendium.pf2e.actionspf2e.Item.8kGpUUUSX1sB2OqQ]。新出场的动物通常会出现在和离开的那只相同的位置。GM可能会根据环境和动物的速度进行调整。如果你有@UUID[Compendium.pf2e.feats-srd.Item.Aeea44xyJqYArFun]专长，你可以将你两个活跃伙伴中的一个与一只非活跃的伙伴交换。</p>",
             "prerequisites": [
                 {
                     "value": "兽王入门"
@@ -35494,7 +35494,7 @@
             "name": "龙翼推击 Wing Buffet"
         },
         "Majestic Presence": {
-            "description": "<p>通过摆出令人印象深刻的姿态，你的存在就会压倒低等生物。20尺弥漫范围内的每个生物都必须尝试一次意志豁免，对抗你的职业DC或法术DC中的较高值。无论豁免结果如何，该生物都会临时免疫你的威严气势24小时。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 4}</p>",
+            "description": "<p>通过摆出令人印象深刻的姿态，你的存在就会压倒低等生物。@Template[emanation|distance:20]范围内的每个生物都必须尝试一次意志豁免，对抗你的职业DC或法术DC中的较高值。无论豁免结果如何，该生物都会临时免疫你的威严气势24小时。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 4}</p>",
             "name": "威严气势 Majestic Presence"
         },
         "Walk the Plank": {
@@ -35550,7 +35550,7 @@
             "name": "抱元守一 Harmonize Self"
         },
         "Fortified Elixirs": {
-            "description": "<p>你对疾病和毒药的治疗可以非常高效，即便它们往往不会持续太久。一个受到你制作的灌注解毒剂或抗生素影响的生物，可以选择重骰一次失败的强韧豁免，来对抗相应的苦难（解毒剂针对毒素，抗生素针对疾病）。该生物在重新掷骰时不会获得灵药的物品加值，而在重骰之后，灵药的持续时间立即结束。这是一个幸运效果。</p>",
+            "description": "<p>你对疾病和毒药的治疗可以非常高效，即便它们往往不会持续太久。一个受到你制作的灌注@UUID[Compendium.pf2e.equipment-srd.Item.ktjFOp3U0wQD9t0Z]或@UUID[Compendium.pf2e.equipment-srd.Item.UqinuuCWePTYGhVO]影响的生物，可以选择重骰一次失败的强韧豁免，来对抗相应的苦难（解毒剂针对毒素，抗生素针对疾病）。该生物在重新掷骰时不会获得灵药的物品加值，而在重骰之后，灵药的持续时间立即结束。这是一个幸运效果。</p>",
             "name": "强化灵药 Fortified Elixirs"
         },
         "Benefactor's Majesty": {
@@ -35833,7 +35833,7 @@
             "name": "交响血乐 Symphony of Blood"
         },
         "Primadonna": {
-            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p>The spotlight should always be on you and you alone. Attempt a @Check[performance|defense:will] check against the Will DCs of all enemies within @Template[emanation|distance:30]{30 feet} who can see or hear you. On a success, the targets focus on you and gain a +1 circumstance bonus to hit you, but they're @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all creatures other than yourself. On a critical success, the effect lasts for 3 rounds.</p>",
+            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p>The spotlight should always be on you and you alone. Attempt a @check[performance|defense:will] check against the Will DCs of all enemies within @Template[emanation|distance:30]{30 feet} who can see or hear you. On a success, the targets focus on you and gain a +1 circumstance bonus to hit you, but they're @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all creatures other than yourself. On a critical success, the effect lasts for 3 rounds.</p>",
             "prerequisites": [
                 {
                     "value": "Celebrity Dedication"
@@ -38518,7 +38518,7 @@
                     "value": "Fan Dancer Dedication"
                 },
                 {
-                    "value": "master in Performance"
+                    "value": "表演熟练度为大师"
                 }
             ]
         },
