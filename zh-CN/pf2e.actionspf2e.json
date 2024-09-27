@@ -327,7 +327,7 @@
         },
         "Destructive Vengeance": {
             "name": "毁灭复仇 Destructive Vengeance",
-            "description": "<p><strong>触发</strong> 一名身处你神卫灵光范围内的敌人对你造成伤害</p><hr /><p><strong>效果</strong> 你将敌人拖向绝路以血债血偿。你受到的伤害额外增加@Damage[(ternary(gte(@actor.level,19),6,ternary(gte(@actor.level,16),5,ternary(gte(@actor.level,12),4,ternary(gte(@actor.level,9),3,ternary(gte(@actor.level,5),2,1))))))d6]点，并且你对触发反应的敌人造成@Damage[(ternary(gte(@actor.level,19),6,ternary(gte(@actor.level,16),5,ternary(gte(@actor.level,12),4,ternary(gte(@actor.level,9),3,ternary(gte(@actor.level,5),2,1))))))d6[spirit]]伤害。你因这个反应动作而额外承受和造成的伤害在5级时提升至2d6点，9级时提升至3d6点，12级时提升至4d6点，16级时提升至5d6点，19级时提升至6d6点。</p>\n<p>此外，直到你下一回合结束，你对触发反应的生物的打击造成2点额外精魂伤害。这个额外伤害在9级时提升至4点，16级时提升至6点。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.2a6fuugiPpICe3Li]</p>"
+            "description": "<p><strong>触发</strong> 一名身处你神卫灵光范围内的敌人对你造成伤害</p><hr /><p><strong>效果</strong> 你将敌人拖向绝路以血债血偿。你受到的伤害额外增加@Damage[(ternary(gte(@actor.level,19),6,ternary(gte(@actor.level,16),5,ternary(gte(@actor.level,12),4,ternary(gte(@actor.level,9),3,ternary(gte(@actor.level,5),2,1))))))d6]点，并且你对触发反应的敌人造成@Damage[(ternary(gte(@actor.level,19),6,ternary(gte(@actor.level,16),5,ternary(gte(@actor.level,12),4,ternary(gte(@actor.level,9),3,ternary(gte(@actor.level,5),2,1))))))d6[spirit]|options:destructive-vengeance:enemy]伤害。你因这个反应动作而额外承受和造成的伤害在5级时提升至2d6点，9级时提升至3d6点，12级时提升至4d6点，16级时提升至5d6点，19级时提升至6d6点。</p>\n<p>此外，直到你下一回合结束，你对触发反应的生物的打击造成2点额外精魂伤害。这个额外伤害在9级时提升至4点，16级时提升至6点。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.2a6fuugiPpICe3Li]</p>"
         },
         "Detect Magic": {
             "name": "侦测魔法 Detect Magic",
@@ -1011,7 +1011,7 @@
         },
         "Thundering Roar": {
             "name": "雷鸣咆哮 Thundering Roar",
-            "description": "<p>该目标释放出一段强劲的声音。在10尺弥漫范围内的每个敌人承受4d8音波伤害，这有一次对抗你的法术DC的基础意志豁免。在其意志豁免中失败的生物也会@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<hr />\n<p><strong>升阶(+2)</strong> 伤害增加2d8。</p>"
+            "description": "<p>该目标释放出一段强劲的声音。在@Template[type:emanation|distance:10]范围内的每个敌人承受@Damage[4d8[sonic]|options:area-damage]伤害，这有一次对抗你的法术DC的@Check[will|basic]豁免。在其意志豁免中失败的生物也会@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>"
         },
         "Toxic Skin": {
             "name": "毒性皮肤 Toxic Skin",
@@ -1642,7 +1642,7 @@
             "name": "Erupting Spurs"
         },
         "Spit Ambient Magic": {
-            "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> Your ostilli flashes red as it regurgitates a dart of magic at a target within 30 feet. This magical dart deals @Damage[((1+floor((@actorl.level -2)/4))d6)[piercing]] damage (@Check[reflex|against:class-spell|basic] save against the higher of your class DC or spell DC). This damage increases by 1d6 at 6th level and every 4 levels thereafter.</p>",
+            "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> Your ostilli flashes red as it regurgitates a dart of magic at a target within 30 feet. This magical dart deals @Damage[((1+floor((@actor.level -2)/4))d6)[piercing]] damage (@Check[reflex|against:class-spell|basic] save against the higher of your class DC or spell DC). This damage increases by 1d6 at 6th level and every 4 levels thereafter.</p>",
             "name": "Spit Ambient Magic"
         },
         "Swirl Crimson Shroud": {
