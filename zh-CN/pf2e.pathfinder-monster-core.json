@@ -23,7 +23,7 @@
                 },
                 "Energy Drain": {
                     "name": "能量吸取 Energy Drain",
-                    "description": "<p>当收割者死神以巨镰命中目标并造成伤害，它恢复20生命值，并且目标必须通过@Check[fortitude|dc:43]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标已经陷入毁灭，则毁灭的状态值增加1（最大达到@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 3}）。</p>"
+                    "description": "<p>当收割者死神以巨镰命中目标并造成伤害，它恢复@Damage[20[healing]]生命值，并且目标必须通过@Check[fortitude|dc:43]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标已经陷入毁灭，则毁灭的状态值增加1（最大达到@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 3}）。</p>"
                 },
                 "Final Death": {
                     "name": "最终死亡 Final Death",
@@ -4869,7 +4869,7 @@
                 },
                 "Verdant Burst": {
                     "name": "翠绿爆发 Verdant Burst",
-                    "description": "<p>当真菌莱西死亡时会从它的身体爆发出一股原能能量，恢复@Template[emanation|distance:30]范围内所有真菌生物[[/r 2d8[healing]]]HP。此区域旋即长满菌苗，成为困难地形。</p>\n<p>如果该地表不适宜真菌生长，则菌苗会在24小时后枯萎。</p>"
+                    "description": "<p>当真菌莱西死亡时会从它的身体爆发出一股原能能量，恢复@Template[emanation|distance:30]范围内所有真菌生物@Damage[2d8[healing]]HP。此区域旋即长满菌苗，成为困难地形。</p>\n<p>如果该地表不适宜真菌生长，则菌苗会在24小时后枯萎。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -9517,7 +9517,7 @@
             "items": {
                 "Vulnerable to Sunlight": {
                     "name": "阳光易伤 Vulnerable to Sunlight",
-                    "description": "<p>癫儒学士若暴露于阳光下，每小时会受到[[/r 10]]点伤害。</p>"
+                    "description": "<p>癫儒学士若暴露于阳光下，每小时会受到@Damage[10]伤害。</p>"
                 },
                 "Cytillesh Stare": {
                     "name": "碧幻凝视 Cytillesh Stare",
@@ -11752,7 +11752,7 @@
                 },
                 "Focused Assault": {
                     "name": "集中攻击 Focused Assault",
-                    "description": "<p>捕蝇草用两对叶荚攻击同一目标。捕蝇草进行一次叶荚打击。一旦成功命中，捕蝇草造成一次叶荚打击的伤害，并且除了第一对叶荚外，每多一个叶荚就能造成额外@Damage[1d8[piercing]]伤害。即使攻击失败，捕蝇草仍然能造成一次叶荚伤害，但是它不能使用精通擒获能力。大失败则不造成伤害。此能力计算捕蝇草的多重攻击减值，次数等于捕蝇草的叶荚数。</p>"
+                    "description": "<p>捕蝇草用两对叶荚攻击同一目标。捕蝇草进行一次叶荚打击。一旦成功命中，捕蝇草造成一次叶荚打击的伤害，并且除了第一对叶荚外，每多一个叶荚就能造成额外1d8穿刺伤害。即使攻击失败，捕蝇草仍然能造成一次叶荚伤害，但是它不能使用精通擒获能力。大失败则不造成伤害。此能力计算捕蝇草的多重攻击减值，次数等于捕蝇草的叶荚数。</p>"
                 },
                 "Hungry Flurry": {
                     "name": "饥饿猛击 Hungry Flurry",
@@ -14532,7 +14532,7 @@
                 },
                 "Bound in Death": {
                     "name": "缚于死亡 Bound in Death",
-                    "description": "<p>墓穴果冻怪将少量自身的生物质泼洒在自身触及之内的自愿不死生物身上。目标恢复5点HP，并且其近战打击会获得墓穴诅咒的好处，持续至它的下个回合结束为止。</p>"
+                    "description": "<p>墓穴果冻怪将少量自身的生物质泼洒在自身触及之内的自愿不死生物身上。目标恢复@Damage[5[void,healing]|shortLabel]HP，并且其近战打击会获得墓穴诅咒的好处，持续至它的下个回合结束为止。</p>"
                 },
                 "Flesh-dissolving Acid": {
                     "name": "溶解皮肉 Flesh-dissolving Acid",
@@ -14770,7 +14770,7 @@
                 },
                 "Wail": {
                     "name": "哀嚎 Wail",
-                    "description": "<p>报丧女妖发出了让人心悸的@UUID[Compendium.pf2e.spells-srd.Item.FEsuyf203wTNE2et]{咒妖之嚎 Wails of the Damned}（@Check[will|dc:38|traits:void|options:damaging-effect,item:type:spell]，@Damage[8d10[void]]）。这声哀嚎会克服5环或更低环级的沉默术或类似效果。报丧女妖可以使用三动作的行动来替代哀嚎的行动，这使得她能够克服至多8环的上述效果。</p>\n<p>报丧女妖的哀嚎会在1轮内持续共鸣，在此期间进入此区域的任何生物都必须尝试一次豁免对抗该效果。同一名生物不会被同一个哀嚎影响多次。报丧女妖在[[/gmr 1d4 #Recharge Wail]]轮内无法再次进行哀嚎。</p>"
+                    "description": "<p>报丧女妖发出了让人心悸的@UUID[Compendium.pf2e.spells-srd.Item.FEsuyf203wTNE2et]（@Check[fortitude|dc:38|traits:void|options:damaging-effect,item:type:spell]，@Damage[8d10[void]]）。这声哀嚎会克服5环或更低环级的沉默术或类似效果。报丧女妖可以使用三动作的行动来替代哀嚎的行动，这使得她能够克服至多8环的上述效果。</p>\n<p>报丧女妖的哀嚎会在1轮内持续共鸣，在此期间进入此区域的任何生物都必须尝试一次豁免对抗该效果。同一名生物不会被同一个哀嚎影响多次。报丧女妖在[[/gmr 1d4 #Recharge Wail]]轮内无法再次进行哀嚎。</p>"
                 },
                 "Hears Heartbeats": {
                     "name": "洞见心跳 Hears Heartbeats",
