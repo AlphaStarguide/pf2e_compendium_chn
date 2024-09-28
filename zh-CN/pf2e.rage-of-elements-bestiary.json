@@ -1812,7 +1812,7 @@
                 },
                 "Trap Weapon": {
                     "name": "困住武器 Trap Weapon",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>触发</strong> 一个生物用近战武器命中活体岩浆</p>\n<hr />\n<p><strong>效果</strong> 活体岩浆尝试一次@Check[athletics|defense:athletics]检定对抗触发生物的运动DC。如果成功，活体岩浆将武器困于体内，将其中攻击者的手中拔离。生物可以通过交互来取回武器，但除非该生物成功通过一次@Check[athletics|dc:resolve(@actor.system.saves.fortitude.dc)]检定对抗活体岩浆的强韧DC（通常为36），否则此尝试会失败。如果活体岩浆使用了包卷，它会吸收所有被困住的武器，使之在其死亡前都无法被取回。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>触发</strong> 一个生物用近战武器命中活体岩浆</p><hr /><p><strong>效果</strong> 活体岩浆尝试一次@Check[athletics|defense:athletics]检定对抗触发生物的运动DC。如果成功，活体岩浆将武器困于体内，将其中攻击者的手中拔离。生物可以通过交互来取回武器，但除非该生物成功通过一次@Check[athletics|against:fortitude|rollerRole:target]检定对抗活体岩浆的强韧DC（通常为36），否则此尝试会失败。如果活体岩浆使用了包卷，它会吸收所有被困住的武器，使之在其死亡前都无法被取回。</p>"
                 },
                 "Launch Lava": {
                     "name": "发射熔岩 Launch Lava",
@@ -2042,7 +2042,7 @@
                 },
                 "Decomposing Toxin": {
                     "name": "分解毒素 Decomposing Toxin",
-                    "description": "<p>被潜底盘鱼的颚部打击命中的活物必须通过@Check[fortitude|dc:15]豁免，否则会变得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，并受到[[/r 1d6[poison,persistent]]]伤害（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}，并受到[[/r 2d6[poison,persistent]]]伤害）。力竭状态在持续伤害结束时消失。当前受分解毒素影响的生物不需要再次进行豁免。</p>"
+                    "description": "<p>被潜底盘鱼的颚部打击命中的活物必须通过@Check[fortitude|dc:15]豁免，否则会变得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，并受到@Damage[1d6[poison,persistent]]伤害（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}，并受到@Damage[2d6[poison,persistent]]伤害）。力竭状态在持续伤害结束时消失。当前受分解毒素影响的生物不需要再次进行豁免。</p>"
                 },
                 "Reactive Grab": {
                     "name": "反应擒获 Reactive Grab",
