@@ -131,7 +131,7 @@
             "name": "Combat Climber"
         },
         "Rising Hurricane": {
-            "description": "<p>A hurricane lifts your enemies into the air before bringing them crashing down in a bloody rain. Your hurricane appears in a cylinder that's 40 feet tall, has a 30-foot diameter, and is within 120 feet. All creatures in the area take @Damage[(floor((@actor.level -6)/3)+2)d6[bludgeoning]|traits:area-damage] damage with a @Check[fortitude|against:kineticist|basic] save against your class DC. Lift any creature that fails its save to any height you choose within the area, move it up to 5 feet in any direction, then drop it. It takes falling damage normally unless it has a fly Speed.</p>\n<hr />\n<p><strong>Level (+3)</strong> The rain damage increases by 1d6, and the cylinder's height increases by 5 feet.</p>",
+            "description": "<p>A hurricane lifts your enemies into the air before bringing them crashing down in a bloody rain. Your hurricane appears in a cylinder that's 40 feet tall, has a 30-foot diameter, and is within 120 feet. All creatures in the area take @Damage[(floor((@actor.level -6)/3)+2)d6[bludgeoning]|options:area-damage] damage with a @Check[fortitude|against:kineticist|basic|options:area-effect] save against your class DC. Lift any creature that fails its save to any height you choose within the area, move it up to 5 feet in any direction, then drop it. It takes falling damage normally unless it has a fly Speed.</p><hr /><p><strong>Level (+3)</strong> The rain damage increases by 1d6, and the cylinder's height increases by 5 feet.</p>",
             "name": "Rising Hurricane"
         },
         "Idyllkin": {
@@ -1390,7 +1390,7 @@
             "name": "Graceful Guidance"
         },
         "Weight Of Stone": {
-            "description": "<p>A packed cloud of thundering boulders descends from the sky, beating down everyone in its path. The rain of stone falls in a cylinder 20 feet in diameter and 80 feet high, and the bottom must be within 120 feet of you. Each creature in the area takes @Damage[(floor((@actor.level -6)/2)+4)d8[bludgeoning]|traits:area-damage] damage and might be pushed downward, depending on its @Check[reflex|against:class] save against your class DC.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is pushed downward 40 feet without taking falling damage. If it reaches the bottom of the cylinder or the ground, the push ends. If the creature is pushed to the ground, it can't Fly, @UUID[Compendium.pf2e.spells-srd.Item.fI20AVwOzJMHXRdo]{Levitate}, or otherwise leave the ground for 1 round.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage and the distance the creature is pushed is 80 feet.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
+            "description": "<p>A packed cloud of thundering boulders descends from the sky, beating down everyone in its path. The rain of stone falls in a cylinder 20 feet in diameter and 80 feet high, and the bottom must be within 120 feet of you. Each creature in the area takes @Damage[(floor((@actor.level -6)/2)+4)d8[bludgeoning]|options:area-damage] damage and might be pushed downward, depending on its @Check[reflex|against:kineticist|options:area-effect,damaging-effect] save against your class DC.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is pushed downward 40 feet without taking falling damage. If it reaches the bottom of the cylinder or the ground, the push ends. If the creature is pushed to the ground, it can't Fly, @UUID[Compendium.pf2e.spells-srd.Item.fI20AVwOzJMHXRdo]{Levitate}, or otherwise leave the ground for 1 round.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage and the distance the creature is pushed is 80 feet.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
             "name": "Weight Of Stone"
         },
         "Dalang's Ally": {
@@ -2660,7 +2660,7 @@
             "name": "Occult Dragonblood"
         },
         "Steel Yourself!": {
-            "description": "<p>You encourage an ally to toughen up, giving them a fighting chance. Choose one ally in your marshal's aura. The ally gains temporary Hit Points equal to your Charisma modifier and a +2 circumstance bonus to Fortitude saves. Both benefits last until the start of your next turn.</p>",
+            "description": "<p>You encourage an ally to toughen up, giving them a fighting chance. Choose one ally in your marshal's aura. The ally gains temporary Hit Points equal to your Charisma modifier and a +2 circumstance bonus to Fortitude saves. Both benefits last until the start of your next turn.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.HoNojV4S2Yb6CoZR]{Effect: Steel Yourself!}</p>",
             "prerequisites": [
                 {
                     "value": "Marshal Dedication"
@@ -3568,7 +3568,7 @@
             "name": "Fiery Retort"
         },
         "Scout's Charge": {
-            "description": "<p>You meander around unpredictably, and then ambush your opponents without warning.</p>\n<p>Choose one enemy. Stride, @UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]{Feint} against that opponent, and then make a Strike against it. For your Feint, you can attempt a Stealth check instead of the Deception check that's usually required, using the terrain around you to surprise your foe.</p>",
+            "description": "<p>You meander around unpredictably, and then ambush your opponents without warning.</p>\n<p>Choose one enemy. Stride, @UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]{Feint} against that opponent, and then make a Strike against it. For your Feint, you can attempt a [[/act feint skill=stealth]]{Stealth} check instead of the Deception check that's usually required, using the terrain around you to surprise your foe.</p>",
             "prerequisites": [
                 {
                     "value": "Scout Dedication"
@@ -4134,7 +4134,7 @@
             "name": "Ceremonial Knife"
         },
         "Irradiate": {
-            "description": "<p>You exude an aura of radiation, making everyone around you ill. All creatures in a @Template[emanation|distance:15] must succeed at a @Check[fortitude|against:class-spell] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. On a critical failure, they're also @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} for 1 minute. You're immune to your own radiation. The value of this sickened condition increases by 1 for every 5 levels you have beyond 6th.</p>\n<p><strong>Awakening</strong> You become more efficient at exuding this aura of radiation. The radius of the emanation becomes @Template[emanation|distance:60]{60 feet}.</p>\n<p><strong>Awakening</strong> Your radiation becomes more potent. Creatures in the area take an additional @Damage[(floor(@actor.level/2))d4[poison]]{1d4 poison} damage for every 2 levels you have, with a @Check[fortitude|against:class-spell|basic] save (roll this Fortitude save once and apply it to both the damage and the sickened condition).</p>",
+            "description": "<p>You exude an aura of radiation, making everyone around you ill. All creatures in a @Template[emanation|distance:15] must succeed at a @Check[fortitude|against:class-spell] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. On a critical failure, they're also @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} for 1 minute. You're immune to your own radiation. The value of this sickened condition increases by 1 for every 5 levels you have beyond 6th.</p>\n<p><strong>Awakening</strong> You become more efficient at exuding this aura of radiation. The radius of the emanation becomes @Template[emanation|distance:60]{60 feet}.</p>\n<p><strong>Awakening</strong> Your radiation becomes more potent. Creatures in the area take an additional @Damage[(floor(@actor.level/2))d4[poison]|options:area-damage]{1d4 poison} damage for every 2 levels you have, with a @Check[fortitude|against:class-spell|basic|options:area-effect] save (roll this Fortitude save once and apply it to both the damage and the sickened condition).</p>",
             "name": "Irradiate"
         },
         "Unlimited Demesne": {
@@ -4147,7 +4147,7 @@
             "name": "Unlimited Demesne"
         },
         "Self Destruct": {
-            "description": "<p><strong>Trigger</strong> Your reanimated clockwork companion is reduced to 0 Hit Points.</p>\n<p><strong>Requirements</strong> You're within 60 feet of your reanimated clockwork companion.</p><hr /><p>You've installed a self-destruct device within your construct companion, which you can trigger with a special device from up to 60 feet away. When you activate the device, your reanimated construct companion explodes, dealing @Damage[((2*@actor.level)d6)[fire]] damage per level to all creatures in a @Template[emanation|distance:30]{30-foot radius}. Creatures caught in the blast can attempt a @Check[reflex|against:class-spell] save, with a DC equal to the higher of your class DC or spell DC.</p>",
+            "description": "<p><strong>Trigger</strong> Your reanimated clockwork companion is reduced to 0 Hit Points.</p>\n<p><strong>Requirements</strong> You're within 60 feet of your reanimated clockwork companion.</p><hr /><p>You've installed a self-destruct device within your construct companion, which you can trigger with a special device from up to 60 feet away. When you activate the device, your reanimated construct companion explodes, dealing 2d6 fire damage per level (@Damage[((2*@actor.level)d6)[fire]]) to all creatures in a @Template[emanation|distance:30]{30-foot radius}. Creatures caught in the blast can attempt a @Check[reflex|against:class-spell] save, with a DC equal to the higher of your class DC or spell DC.</p>",
             "prerequisites": [
                 {
                     "value": "Clockwork Reanimator Dedication"
@@ -4348,7 +4348,7 @@
             "name": "Advanced Devotion"
         },
         "Turn the Wheel of Seasons": {
-            "description": "<p>The seasons shift rapidly. This impulse affects a cube 100 feet in each dimension within 1,000 feet. Choose the starting season. The impulse lasts for 4 rounds, proceeding to the next season at the start of each of your turns. You can't use this impulse again until the previous one ends.</p>\n<p><strong>Spring</strong> Each ally in the cube gains 20 temporary HP that last until the start of your next turn. Any dying ally rolls a recovery check, but can't get worse than a success.</p>\n<p><strong>Summer</strong> (light) Each enemy in the area is exposed to sunlight and must attempt a @Check[reflex|against:kineticist|traits:light] save against your class DC. It's unaffected on a critical success, @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the start of your next turn on a success, or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} until the start of your next turn on a failure.</p>\n<p><strong>Autumn</strong> Leaves and rain make everything in the area @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} until the start of your next turn, and a cold wind makes each enemy in the area @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the start of your next turn unless it succeeds at a @Check[fortitude|against:kineticist] save against your class DC.</p>\n<p><strong>Winter</strong> Each enemy in the aura takes @Damage[5d6[cold]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. A creature that fails its save also takes @Damage[2d6[persistent,cold]] damage.</p>",
+            "description": "<p>The seasons shift rapidly. This impulse affects a cube 100 feet in each dimension within 1,000 feet. Choose the starting season. The impulse lasts for 4 rounds, proceeding to the next season at the start of each of your turns. You can't use this impulse again until the previous one ends.</p>\n<p><strong>Spring</strong> Each ally in the cube gains 20 temporary HP that last until the start of your next turn. Any dying ally rolls a recovery check, but can't get worse than a success.</p>\n<p><strong>Summer</strong> (light) Each enemy in the area is exposed to sunlight and must attempt a @Check[reflex|against:kineticist|traits:light] save against your class DC. It's unaffected on a critical success, @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the start of your next turn on a success, or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} until the start of your next turn on a failure.</p>\n<p><strong>Autumn</strong> Leaves and rain make everything in the area @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} until the start of your next turn, and a cold wind makes each enemy in the area @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the start of your next turn unless it succeeds at a @Check[fortitude|against:kineticist] save against your class DC.</p>\n<p><strong>Winter</strong> Each enemy in the aura takes @Damage[5d6[cold]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. A creature that fails its save also takes @Damage[2d6[persistent,cold]] damage.</p>",
             "name": "Turn the Wheel of Seasons"
         },
         "Gossip Lore": {
@@ -4782,7 +4782,7 @@
             "name": "Twin Weakness"
         },
         "Rain of Razors": {
-            "description": "<p>Razor-sharp slivers of metal fall from the sky. Each creature in a @Template[burst|distance:20] within 60 feet takes @Damage[(floor((@actor.level -12)/2)+9)d6[slashing]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. The razors embed in all surfaces in the area, making them hazardous terrain for 1 minute. A creature that moves through this hazardous terrain takes @Damage[(floor((max(12,@actor.level)-12)/2)+3)[slashing]] damage for every square of the area it moves into.</p>\n<hr />\n<p><strong>Level (+2)</strong> The initial damage increases by 1d6 and the hazardous terrain damage increases by 1.</p>",
+            "description": "<p>Razor-sharp slivers of metal fall from the sky. Each creature in a @Template[burst|distance:20] within 60 feet takes @Damage[(floor((@actor.level -12)/2)+9)d6[slashing]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. The razors embed in all surfaces in the area, making them hazardous terrain for 1 minute. A creature that moves through this hazardous terrain takes @Damage[(floor((max(12,@actor.level)-12)/2)+3)[slashing]] damage for every square of the area it moves into.</p>\n<hr />\n<p><strong>Level (+2)</strong> The initial damage increases by 1d6 and the hazardous terrain damage increases by 1.</p>",
             "name": "Rain of Razors"
         },
         "Brightness Seeker": {
@@ -4799,7 +4799,7 @@
             "name": "Five-Breath Vanguard Dedication"
         },
         "Call the Swarm": {
-            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You give a shrill whistle and point, and a massive swarm of rats pours forth from the surrounding terrain to fill a @Template[burst|distance:30] within 120 feet. The rats scurry over the ground and climb up walls and surfaces, biting and clawing as they deal @Damage[6d8[piercing]] damage to all enemies in the area. The rats continue to swarm in the area for the next minute, dealing @Damage[3d8[piercing]] damage to any enemy that ends its turn in the area and transforming the area into difficult terrain (though the rats allow you and your allies to pass normally). You can Dismiss the effect.</p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You give a shrill whistle and point, and a massive swarm of rats pours forth from the surrounding terrain to fill a @Template[burst|distance:30] within 120 feet. The rats scurry over the ground and climb up walls and surfaces, biting and clawing as they deal @Damage[6d8[piercing]|options:area-damage] damage to all enemies in the area. The rats continue to swarm in the area for the next minute, dealing @Damage[3d8[piercing]|options:area-damage] damage to any enemy that ends its turn in the area and transforming the area into difficult terrain (though the rats allow you and your allies to pass normally). You can Dismiss the effect.</p>",
             "prerequisites": [
                 {
                     "value": "Ratspeak"
@@ -4925,7 +4925,7 @@
             "name": "Roll With it (Kingmaker)"
         },
         "Lightning Dash": {
-            "description": "<p>For an instant, you transform yourself into a being of pure lightning and fly forward, shocking anyone in your way. You propel yourself forward in a @Template[line|distance:30]. You can move through creatures during this movement, and this movement doesn't trigger reactions that are triggered by movement. Each creature you move through takes @Damage[(floor((@actor.level -4)/3)+2)d12[electricity]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. You return to your normal form in the final square of the line. If you're in the air, you fall unless you have a fly Speed.</p>\n<hr />\n<p><strong>Level (+3)</strong> The length of the line increases by 5 feet, and the damage increases by 1d12.</p>",
+            "description": "<p>For an instant, you transform yourself into a being of pure lightning and fly forward, shocking anyone in your way. You propel yourself forward in a @Template[line|distance:30]. You can move through creatures during this movement, and this movement doesn't trigger reactions that are triggered by movement. Each creature you move through takes @Damage[(floor((@actor.level -4)/3)+2)d12[electricity]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. You return to your normal form in the final square of the line. If you're in the air, you fall unless you have a fly Speed.</p>\n<hr />\n<p><strong>Level (+3)</strong> The length of the line increases by 5 feet, and the damage increases by 1d12.</p>",
             "name": "Lightning Dash"
         },
         "Warren Digger": {
@@ -5577,7 +5577,7 @@
             "name": "Bizarre Magic"
         },
         "Lassoing Lash": {
-            "description": "<p><strong>Requirements</strong> The target can't be more than one size larger than you.</p><hr /><p>You quickly wrap your lash around an opponent and pull them toward you. Attempt an <span data-pf2-action=\"grapple\" data-pf2-glyph=\"A\">Athletics</span> check against the Fortitude DC of a target within your lash's reach.</p><hr /><p><strong>Critical Success</strong> You pull the target to any open space adjacent to you.</p>\n<p><strong>Success</strong> You pull the target to the nearest open space adjacent to you.</p>\n<p><strong>Critical Failure</strong> You misjudge your leverage and fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p><hr /><p><strong>Special</strong> If you have the Titan Wrestler feat, you can target a creature up to two sizes larger than you, or up to three sizes larger than you if you're legendary in Athletics.</p>",
+            "description": "<p><strong>Requirements</strong> The target can't be more than one size larger than you.</p><hr /><p>You quickly wrap your lash around an opponent and pull them toward you. Attempt an [[/act grapple]] check against the Fortitude DC of a target within your lash's reach.</p><hr /><p><strong>Critical Success</strong> You pull the target to any open space adjacent to you.</p>\n<p><strong>Success</strong> You pull the target to the nearest open space adjacent to you.</p>\n<p><strong>Critical Failure</strong> You misjudge your leverage and fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p><hr /><p><strong>Special</strong> If you have the Titan Wrestler feat, you can target a creature up to two sizes larger than you, or up to three sizes larger than you if you're legendary in Athletics.</p>",
             "prerequisites": [
                 {
                     "value": "Thlipit Contestant Dedication"
@@ -6003,11 +6003,11 @@
             "name": "Cadence Call"
         },
         "The Shattered Mountain Weeps": {
-            "description": "<p>A massive sphere of rock explodes, unleashing a cataclysm of falling debris and deadly shrapnel. Its destruction falls in a @Template[burst|distance:20] within 120 feet. Creatures in the area take @Damage[9d10[bludgeoning]|traits:area-damage] damage with a @Check[fortitude|against:class|basic] save against your class DC. Those who fail are knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. For the next minute, rocks continue to fall, making the area difficult terrain and dealing @Damage[3d10[bludgeoning]] damage to any creature that ends its turn in the area. If you use this impulse again, any previous one ends.</p>\n<hr />\n<p><strong>Level (20th)</strong> The initial damage is @Damage[10d10[bludgeoning]], and the area damage is @Damage[4d10[bludgeoning]].</p>",
+            "description": "<p>A massive sphere of rock explodes, unleashing a cataclysm of falling debris and deadly shrapnel. Its destruction falls in a @Template[burst|distance:20] within 120 feet. Creatures in the area take @Damage[(ternary(gte(@actor.level,20),10,9))d10[bludgeoning]|options:area-damage] damage with a @Check[fortitude|against:kineticist|basic|options:area-effect] save against your class DC. Those who fail are knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. For the next minute, rocks continue to fall, making the area difficult terrain and dealing @Damage[(ternary(gte(@actor.level,20),4,3))d10[bludgeoning]|options:area-damage] damage to any creature that ends its turn in the area. If you use this impulse again, any previous one ends.</p><hr /><p><strong>Level (20th)</strong> The initial damage is 10d10, and the area damage is 4d10.</p>",
             "name": "The Shattered Mountain Weeps"
         },
         "Kraken's Call": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You call forth the sleeping krakens of the deep to crush your enemies. You open a dozen small portals to some lightless, watery abyss in a @Template[burst|distance:30] within 120 feet. The powerful tentacles of a kraken reach through to grab at each creature in the area. Each affected creature takes @Damage[8d6[untyped]] damage depending on its @Check[fortitude|against:class-spell] save against the higher of your class DC or spell DC. You can Sustain the call up to 1 minute. The first time you Sustain it on each subsequent turn, each creature in the area not already @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the tentacles must attempt the save.</p>\n<hr />\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature takes full damage and is grabbed by a tentacle. A creature that's still grabbed by a tentacle at the end of its turn takes @Damage[3d6[bludgeoning]] damage. The tentacles' @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC and AC are both equal to the higher of your class DC or spell DC. A creature can attack a tentacle to attempt to free the creature trapped by it; a tentacle is destroyed if it takes 30 or more damage in a single round.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage.</p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You call forth the sleeping krakens of the deep to crush your enemies. You open a dozen small portals to some lightless, watery abyss in a @Template[burst|distance:30] within 120 feet. The powerful tentacles of a kraken reach through to grab at each creature in the area. Each affected creature takes @Damage[8d6[untyped]|options:area-damage] damage depending on its @Check[fortitude|against:class-spell||options:area-effect,damaging-effect] save against the higher of your class DC or spell DC. You can Sustain the call up to 1 minute. The first time you Sustain it on each subsequent turn, each creature in the area not already @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the tentacles must attempt the save.</p><hr /><p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature takes full damage and is grabbed by a tentacle. A creature that's still grabbed by a tentacle at the end of its turn takes @Damage[3d6[bludgeoning]] damage. The tentacles' @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC and AC are both equal to the higher of your class DC or spell DC. A creature can attack a tentacle to attempt to free the creature trapped by it; a tentacle is destroyed if it takes 30 or more damage in a single round.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage.</p>",
             "name": "Kraken's Call"
         },
         "Wronged Monk's Wrath": {
@@ -7175,6 +7175,15 @@
             ],
             "name": "Silent Sting"
         },
+        "Wrath of the Hold": {
+            "description": "<p>Your tattoos carry the strength of an innumerable horde, and you can expend one use of your storied skin's Living History ability to animate your tattoos as ghostly assailants that swarm your foes. These spirits attack all foes in a @Template[type:cone|distance:30], dealing @Damage[(floor(@actor.level/2))d6[spirit]] damage. The damage increases by 1d6 at 10th level and every 2 levels thereafter. Each affected creature must attempt a @Check[type:will|against:class-spell|basic] saving throw against the higher of your class DC or spell DC.</p>",
+            "prerequisites": [
+                {
+                    "value": "Tattooed Historian Dedication"
+                }
+            ],
+            "name": "Wrath of the Hold"
+        },
         "Mobile Magical Combat": {
             "description": "<p><strong>Requirements</strong> You're wielding a melee weapon and have Cast a Spell requiring at least 1 action this turn.</p>\n<hr />\n<p>You dart around the battlefield, casting spells while you carefully make melee attacks with your weapon. Stride once. If you end your movement within melee reach of at least one enemy, you can make a melee Strike against that enemy. You can use Mobile Magical Combat while Burrowing, Climbing, Flying, or Swimming instead of Striding if you have the corresponding movement type.</p>",
             "prerequisites": [
@@ -7312,7 +7321,7 @@
             "name": "Basic Spellcasting"
         },
         "Energy Blessed": {
-            "description": "<p>Energy runs through your blood more powerfully. When you use Energy Emanation, you can create an emanation of @Template[emanation|distance:5]{5 feet}, @Template[emanation|distance:10]{10 feet}, or @Template[emanation|distance:15]{15 feet}. The damage increases to @Damage[(6+max(0,@actor.level - 9))d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|traits:area-damage], instead of 1d6 plus an additional 1d6 for every 2 levels above 1st.</p>",
+            "description": "<p>Energy runs through your blood more powerfully. When you use Energy Emanation, you can create an emanation of @Template[emanation|distance:5]{5 feet}, @Template[emanation|distance:10]{10 feet}, or @Template[emanation|distance:15]{15 feet}. The damage increases to @Damage[(6+max(0,@actor.level - 9))d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|options:area-damage], instead of 1d6 plus an additional 1d6 for every 2 levels above 1st.</p>",
             "prerequisites": [
                 {
                     "value": "elemental heart dwarf heritage"
@@ -8640,7 +8649,7 @@
             "name": "Spiteful Rake"
         },
         "Blazing Wave": {
-            "description": "<p>Flames flow out of you in a cascade, engulfing everyone in a @Template[cone|distance:30]. Each creature in the area takes @Damage[(floor((@actor.level -4)/2)+4)d6[fire]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. A creature that critically fails its save is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
+            "description": "<p>Flames flow out of you in a cascade, engulfing everyone in a @Template[cone|distance:30]. Each creature in the area takes @Damage[(floor((@actor.level -4)/2)+4)d6[fire]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. A creature that critically fails its save is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p><hr /><p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
             "name": "Blazing Wave"
         },
         "Signature Spell Expansion (Psychic)": {
@@ -9290,7 +9299,7 @@
                     "value": "Achaekek's Grip"
                 },
                 {
-                    "value": "Advanced Red Mantis Magic"
+                    "value": "Basic Red Mantis Magic"
                 }
             ],
             "name": "Vernai Training"
@@ -9897,6 +9906,15 @@
             ],
             "name": "Master Qi Spells"
         },
+        "Infused with Belkzen's Might": {
+            "description": "<p>Your tattoos immortalize the conquests of orc war leaders, such as Belkzen besieging the dwarven Sky Citadel of Koldukar. You can expend one use of your storied skin's Living History ability to channel this power into your own weapons. Until the end of your next turn, you deal additional spirit damage with weapons and unarmed attacks equal to 1 plus half the number of Tattooed Historian feats you have.</p>",
+            "prerequisites": [
+                {
+                    "value": "Tattooed Historian Dedication"
+                }
+            ],
+            "name": "Infused with Belkzen's Might"
+        },
         "Return to the Seed": {
             "description": "<p>Once per month, when you die, you can instead choose to fade away. Your corpse is swallowed by the earth, leaving behind only a seed. This seed is very fragile with an AC of 10 and only 1 Hit Point. Another creature can spend 1 minute to plant the seed in a safe space and water it. If so cared for, the next morning a tree grows from it with a single large fruit or flower bud that splits open to reveal you, alive and returned to maximum Hit Points.</p>",
             "name": "Return to the Seed"
@@ -10447,7 +10465,7 @@
             "name": "Emit Defensive Odor"
         },
         "Walk Through The Conflagration": {
-            "description": "<p>You fall through your own kinetic gate, leaving behind an effigy of flame and reappearing majestically near another fire. You instantly transport yourself, and any items you're wearing and holding, from your current space to a clear space within 120 feet you can observe that's adjacent to an open flame or a creature taking persistent fire damage. If this would bring another creature with you—even if you're carrying it in an extradimensional container—the action fails.</p>\n<p>A whorl of fire surrounds you in a @Template[emanation|distance:5] either before you depart or after you arrive. Each creature in the area takes @Damage[(floor((@actor.level -14)/3)+4)d6[fire]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC.</p>\n<hr />\n<p><strong>Level (+3)</strong> The fire damage increases by 1d6.</p>",
+            "description": "<p>You fall through your own kinetic gate, leaving behind an effigy of flame and reappearing majestically near another fire. You instantly transport yourself, and any items you're wearing and holding, from your current space to a clear space within 120 feet you can observe that's adjacent to an open flame or a creature taking persistent fire damage. If this would bring another creature with you—even if you're carrying it in an extradimensional container—the action fails.</p>\n<p>A whorl of fire surrounds you in a @Template[emanation|distance:5] either before you depart or after you arrive. Each creature in the area takes @Damage[(floor((@actor.level -14)/3)+4)d6[fire]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC.</p>\n<hr />\n<p><strong>Level (+3)</strong> The fire damage increases by 1d6.</p>",
             "name": "Walk Through The Conflagration"
         },
         "Arcane Tattoos": {
@@ -10947,7 +10965,7 @@
             "name": "Shattering Strike (Monk)"
         },
         "Ostentatious Arrival": {
-            "description": "<p>If the next action you take is to Manifest your Eidolon as a three-action activity, or to Cast a three-action summoning Spell, the creature appears in an explosion.</p>\n<p>All creatures in a @Template[emanation|distance:10] around the creature you summoned or manifested take @Damage[1d4[fire]|traits:area-damage]{1d4 fire damage per spell rank} for a summoning spell, or @Damage[floor(@actor.level/2)d4[fire]|traits:area-damage]{1d4 damage per 2 levels} for Manifesting your Eidolon.</p>\n<p>If the creature you summoned or manifested has the acid, cold, electricity, fire, sonic, or water trait, the damage is that type instead (or cold damage for the water trait). If the creature has more than one of these traits, you choose which damage type to deal.</p>",
+            "description": "<p>If the next action you take is to Manifest your Eidolon as a three-action activity, or to Cast a three-action summoning Spell, the creature appears in an explosion.</p>\n<p>All creatures in a @Template[emanation|distance:10] around the creature you summoned or manifested take @Damage[1d4[fire]|options:area-damage]{1d4 fire damage per spell rank} for a summoning spell, or @Damage[floor(@actor.level/2)d4[fire]|options:area-damage]{1d4 damage per 2 levels} for Manifesting your Eidolon.</p>\n<p>If the creature you summoned or manifested has the acid, cold, electricity, fire, sonic, or water trait, the damage is that type instead (or cold damage for the water trait). If the creature has more than one of these traits, you choose which damage type to deal.</p>",
             "name": "Ostentatious Arrival"
         },
         "Nagaji Lore": {
@@ -11123,7 +11141,7 @@
             "name": "Awakened Stride"
         },
         "Shard Strike": {
-            "description": "<p>Jagged metal shards form in the air and lash out from you. You choose shards or spines, which changes the area, damage type, and critical failure effect. Each creature in the area attempts a @Check[reflex|against:kineticist|basic] save against your class DC. Shards deal @Damage[(floor((@actor.level -1)/2)+1)d6[slashing]|traits:area-damage] damage in a @Template[cone|distance:15], and a creature that critically fails takes @Damage[(floor((@actor.level -1)/2)+1)d6[bleed]] damage. Spines deal @Damage[(floor((@actor.level -1)/2)+1)d6[piercing]|traits:area-damage] damage in a @Template[line|distance:30], and a creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} until the start of your next turn.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
+            "description": "<p>Jagged metal shards form in the air and lash out from you. You choose shards or spines, which changes the area, damage type, and critical failure effect. Each creature in the area attempts a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. Shards deal @Damage[(floor((@actor.level -1)/2)+1)d6[slashing]|options:area-damage] damage in a @Template[cone|distance:15], and a creature that critically fails takes @Damage[(floor((@actor.level -1)/2)+1)d6[bleed]] damage. Spines deal @Damage[(floor((@actor.level -1)/2)+1)d6[piercing]|options:area-damage] damage in a @Template[line|distance:30], and a creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} until the start of your next turn.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
             "name": "Shard Strike"
         },
         "Round Ears": {
@@ -12806,7 +12824,7 @@
             "name": "Supertaster"
         },
         "Steady Spellcasting (Magus)": {
-            "description": "<p>Confident in your technique, you don't easily lose your concentration when you Cast a Spell.</p>\n<p>If a reaction would disrupt your spellcasting action, attempt a @Check[flat|dc:15] check. If you succeed, your action isn't disrupted.</p>",
+            "description": "<p>Confident in your technique, you don't easily lose your concentration when you Cast a Spell.</p>\n<p>If a reaction would disrupt your spellcasting action, attempt a @Check[flat|showDC:all|dc:15] check. If you succeed, your action isn't disrupted.</p>",
             "name": "Steady Spellcasting (Magus)"
         },
         "Bat Form": {
@@ -13336,7 +13354,7 @@
             "name": "Basic Cleric Spellcasting"
         },
         "Roiling Mudslide": {
-            "description": "<p>You form water and earth into a mudslide that smashes your opponents and coats them in mud. Each creature in a @Template[cone|distance:30] takes @Damage[(floor((@actor.level -6)/4)+2)d8[bludgeoning]|traits:area-damage] damage with a @Check[fortitude|against:kineticist|basic] save against your class DC. A creature that fails is also pushed 5 feet (or 10 feet on a critical failure) and coated in mud until the end of its next turn. While coated in mud, the creature falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} at the end of its movement any time it ends a move action other than a @UUID[Compendium.pf2e.actionspf2e.Item.Tj055UcNm6UEgtCg]{Crawl} or Step. The creature can attempt an Acrobatics check or @Check[reflex|against:kineticist] save against your class DC, avoiding the fall if it succeeds.</p>\n<hr />\n<p><strong>Level (+4)</strong> The damage increases by 1d8.</p>",
+            "description": "<p>You form water and earth into a mudslide that smashes your opponents and coats them in mud. Each creature in a @Template[cone|distance:30] takes @Damage[(floor((@actor.level -6)/4)+2)d8[bludgeoning]|options:area-damage] damage with a @Check[fortitude|against:kineticist|basic|options:area-effect] save against your class DC. A creature that fails is also pushed 5 feet (or 10 feet on a critical failure) and coated in mud until the end of its next turn. While coated in mud, the creature falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} at the end of its movement any time it ends a move action other than a @UUID[Compendium.pf2e.actionspf2e.Item.Tj055UcNm6UEgtCg]{Crawl} or Step. The creature can attempt an Acrobatics check or @Check[reflex|against:kineticist] save against your class DC, avoiding the fall if it succeeds.</p>\n<hr />\n<p><strong>Level (+4)</strong> The damage increases by 1d8.</p>",
             "name": "Roiling Mudslide"
         },
         "Esteemed Visitor": {
@@ -13364,7 +13382,7 @@
             "name": "Pushing Attack"
         },
         "Call Worm Spirit": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You call forth a ghostly manifestation of the worm spirit. Choose an intersection on the ground within 60 feet; the ghostly maw of a worm emerges from the ground, attacking all creatures in a @Template[burst|distance:10]. Each creature in the area must attempt a @Check[reflex|against:class-spell] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes @Damage[(1d10+13)[bludgeoning]] damage as it is battered by the worm's body.</p>\n<p><strong>Failure</strong> The target takes @Damage[(3d10+15)[piercing]] damage as it is bitten by the worm. The target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> As failure, but the damage increases to @Damage[(6d10+30)[bludgeoning]] and the target is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<hr />\n<p><em>Note: A DC was not provided for this ability by Paizo. The button above uses the better of your class or spell DC.</em></p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You call forth a ghostly manifestation of the worm spirit. Choose an intersection on the ground within 60 feet; the ghostly maw of a worm emerges from the ground, attacking all creatures in a @Template[burst|distance:10]. Each creature in the area must attempt a @Check[reflex|against:class-spell||options:area-effect,damaging-effect] save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes @Damage[(1d10+13)[bludgeoning]|options:area-damage] damage as it is battered by the worm's body.</p>\n<p><strong>Failure</strong> The target takes @Damage[(3d10+15)[piercing]|options:area-damage] damage as it is bitten by the worm. The target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> As failure, but the damage increases to @Damage[(6d10+30)[bludgeoning]|options:area-damage] and the target is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p><hr /><p><em>Note: A DC was not provided for this ability by Paizo. The button above uses the better of your class or spell DC.</em></p>",
             "prerequisites": [
                 {
                     "value": "Worm Caller Dedication"
@@ -14104,7 +14122,7 @@
             "name": "Pitborn"
         },
         "Spinebreaker": {
-            "description": "<p><strong>Requirements</strong> You have a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}.</p>\n<hr />\n<p>You squeeze your opponent in a vicious bear hug, putting intense pressure on their nerves, joints, or other pain points. Attempt an Athletics check to Grapple the creature you have grabbed or restrained, with the following effects instead of the usual effects.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} until the end of its next turn and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for 1 minute.</p>\n<p><strong>Success</strong> The target is clumsy 1 until the end of its next turn.</p>",
+            "description": "<p><strong>Requirements</strong> You have a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}.</p><hr /><p>You squeeze your opponent in a vicious bear hug, putting intense pressure on their nerves, joints, or other pain points. Attempt an Athletics check to [[/act grapple]] a creature you have grabbed or restrained, with the following additional effects if you succeed.</p><hr /><p><strong>Critical Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} until the end of its next turn and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for 1 minute.</p>\n<p><strong>Success</strong> The target is clumsy 1 until the end of its next turn.</p>",
             "prerequisites": [
                 {
                     "value": "Wrestler Dedication"
@@ -14680,7 +14698,7 @@
             "name": "Disturbing Knowledge"
         },
         "Blazing Aura": {
-            "description": "<p><strong>Frequency</strong> once per day.</p>\n<p><strong>Trigger</strong> Your turn begins.</p>\n<hr />\n<p>You explode in flame. Enemies in a @Template[emanation|distance:20] take @Damage[7d6[fire]] damage (@Check[reflex|against:class-spell|basic] using your class DC or spell DC, whichever is higher). Allies in the area are @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 1 round and can use the additional action to Strike or Stride.</p>",
+            "description": "<p><strong>Frequency</strong> once per day.</p>\n<p><strong>Trigger</strong> Your turn begins.</p><hr /><p>You explode in flame. Enemies in a @Template[emanation|distance:20] take @Damage[7d6[fire]|options:area-damage] damage (@Check[reflex|against:class-spell|basic|options:area-effect] using your class DC or spell DC, whichever is higher). Allies in the area are @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 1 round and can use the additional action to Strike or Stride.</p>",
             "name": "Blazing Aura"
         },
         "Read Disaster": {
@@ -14734,7 +14752,7 @@
             "name": "Lethargy Poisoner"
         },
         "Megavolt": {
-            "description": "<p>You bleed off some electric power from your innovation in the shape of a damaging bolt. Creatures in a @Template[line|distance:20] from your innovation take 3d4 electricity damage, with a @Check[reflex|against:inventor|basic] against your class DC. The electricity damage increases by 1d4 at 8th level and every 2 levels thereafter. @Damage[floor(@actor.level/2)d4[electricity]|traits:area-damage]{leveled electricity damage}</p>\n<p><strong>Unstable Function</strong> You overload and supercharge the voltage even higher. Add the unstable trait to Megavolt. The area increases to a @Template[line|distance:60] and the damage increases from d4s to d12s @Damage[floor(@actor.level/2)d12[electricity]|traits:unstable,area-damage]{leveled electricity damage (d12)}. If you have the breakthrough innovation class feature, you can choose a 60-foot or @Template[line|distance:90] for the area when you use an unstable Megavolt; if you also have the revolutionary innovation class feature, you can choose a 60-foot, 90-foot, or @Template[line|distance:120].</p>\n<p><strong>Special</strong> If your innovation is a minion, it can take this action rather than you.</p>",
+            "description": "<p>You bleed off some electric power from your innovation in the shape of a damaging bolt. Creatures in a @Template[line|distance:20] from your innovation take 3d4 electricity damage, with a @Check[reflex|against:inventor|basic|options:area-effect] against your class DC. The electricity damage increases by 1d4 at 8th level and every 2 levels thereafter. @Damage[floor(@actor.level/2)d4[electricity]|options:area-damage]{leveled electricity damage}</p>\n<p><strong>Unstable Function</strong> You overload and supercharge the voltage even higher. Add the unstable trait to Megavolt. The area increases to a @Template[line|distance:60] and the damage increases from d4s to d12s @Damage[floor(@actor.level/2)d12[electricity]|traits:unstable|options:area-damage]{leveled electricity damage (d12)}. If you have the breakthrough innovation class feature, you can choose a 60-foot or @Template[line|distance:90] for the area when you use an unstable Megavolt; if you also have the revolutionary innovation class feature, you can choose a 60-foot, 90-foot, or @Template[line|distance:120].</p>\n<p><strong>Special</strong> If your innovation is a minion, it can take this action rather than you.</p>",
             "name": "Megavolt"
         },
         "Distracting Feint": {
@@ -15004,7 +15022,7 @@
             "name": "Withstand the Storm"
         },
         "Storm Spiral": {
-            "description": "<p>Dark thunderclouds swirl in a miniature storm, crisscrossed with lightning bolts; a tremendous thunderclap fills the air. The storm appears in a @Template[burst|distance:20] within 60 feet. Each creature in the area takes @Damage[(floor((@actor.level -8)/3)+3)d12[electricity], 1d10[sonic]|traits:area-damage] damage, with a @Check[reflex|against:kineticist|basic] save against your class DC. A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} until the end of its next turn (or for 1 minute on a critical failure). A creature wearing metal armor or made of metal takes a -1 circumstance penalty to its save.</p>\n<hr />\n<p><strong>Level (+3)</strong> The electricity damage increases by 1d12.</p>",
+            "description": "<p>Dark thunderclouds swirl in a miniature storm, crisscrossed with lightning bolts; a tremendous thunderclap fills the air. The storm appears in a @Template[burst|distance:20] within 60 feet. Each creature in the area takes @Damage[(floor((@actor.level -8)/3)+3)d12[electricity],1d10[sonic]|options:area-damage] damage, with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} until the end of its next turn (or for 1 minute on a critical failure). A creature wearing metal armor or made of metal takes a -1 circumstance penalty to its save.</p>\n<hr />\n<p><strong>Level (+3)</strong> The electricity damage increases by 1d12.</p>",
             "name": "Storm Spiral"
         },
         "Golden Dragon's Bounty": {
@@ -15441,7 +15459,7 @@
             "name": "Magnetic Pinions"
         },
         "Hail Of Splinters": {
-            "description": "<p>A fusillade of jagged splinters flies from you. Creatures in a @Template[cone|distance:30] take @Damage[(floor((@actor.level -1)/2)+1)d4[piercing],(floor((@actor.level -1)/2)+1)d4[persistent,bleed]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC.</p>\n<hr />\n<p><strong>Level (+2)</strong> Each type of damage increases by 1d4.</p>",
+            "description": "<p>A fusillade of jagged splinters flies from you. Creatures in a @Template[cone|distance:30] take @Damage[(floor((@actor.level -1)/2)+1)d4[piercing],(floor((@actor.level -1)/2)+1)d4[persistent,bleed]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC.</p>\n<hr />\n<p><strong>Level (+2)</strong> Each type of damage increases by 1d4.</p>",
             "name": "Hail Of Splinters"
         },
         "Harmless Doll": {
@@ -16034,7 +16052,7 @@
             "name": "Clever Shadow"
         },
         "Tumbling Lumber": {
-            "description": "<p>A slew of logs eject from the Plane of Wood and slam into your enemies. They roll in a @Template[line|distance:30|width:10]{10-foot-wide, 30-foot-long line}. Non-magical difficult terrain on any ground the logs roll over is smashed flat; greater difficult terrain remains. Each creature in the area takes @Damage[(floor((@actor.level -4)/3)+2)d8[bludgeoning]|traits:area-damage] damage and might be moved by the logs, depending on its @Check[reflex|against:kineticist] save against your class DC.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is pushed out of the line in the most direct path available.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<hr />\n<p><strong>Level (+3)</strong> The damage increases by 1d8.</p>",
+            "description": "<p>A slew of logs eject from the Plane of Wood and slam into your enemies. They roll in a @Template[line|distance:30|width:10]{10-foot-wide, 30-foot-long line}. Non-magical difficult terrain on any ground the logs roll over is smashed flat; greater difficult terrain remains. Each creature in the area takes @Damage[(floor((@actor.level -4)/3)+2)d8[bludgeoning]|options:area-damage] damage and might be moved by the logs, depending on its @Check[reflex|against:kineticist|options:area-effect,damaging-effect] save against your class DC.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is pushed out of the line in the most direct path available.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<hr />\n<p><strong>Level (+3)</strong> The damage increases by 1d8.</p>",
             "name": "Tumbling Lumber"
         },
         "Awaken Others": {
@@ -16099,7 +16117,7 @@
             "name": "Marsh Runner"
         },
         "Driving Rain": {
-            "description": "<p>Heavy drops of rain batter down, hitting like sling stones and impeding vision. Each creature in a @Template[burst|distance:15] within 120 feet takes @Damage[(floor((@actor.level -6)/2)+3)d8[bludgeoning]||traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. Until the start of your next turn, all creatures are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} while in the area, and all creatures outside the area are concealed to creatures within it.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
+            "description": "<p>Heavy drops of rain batter down, hitting like sling stones and impeding vision. Each creature in a @Template[burst|distance:15] within 120 feet takes @Damage[(floor((@actor.level -6)/2)+3)d8[bludgeoning]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. Until the start of your next turn, all creatures are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} while in the area, and all creatures outside the area are concealed to creatures within it.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
             "name": "Driving Rain"
         },
         "Incredible Luck (Halfling)": {
@@ -17212,7 +17230,7 @@
             "name": "Combine Elixirs"
         },
         "Aerial Boomerang": {
-            "description": "<p>A blade of shearing wind races away from you in a @Template[line|distance:60]. Each creature in the area takes @Damage[(floor((@actor.level -1)/2) +2)d4[slashing]|traits:area-damage] damage with a @Check[reflex|against:class|basic] save against your class DC. In the final square of the line, the boomerang whirls in place until the end of your next turn. Any creature that ends its turn in that square has to save against the boomerang.</p>\n<p>On your next turn, you can use a single action, which has the concentrate trait, to return the boomerang to you. It returns in a line from its square to your current location, with the same effect as the initial line, then the impulse ends. You must have line of effect to the boomerang and be within 60 feet of it.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d4.</p>",
+            "description": "<p>A blade of shearing wind races away from you in a @Template[line|distance:60]. Each creature in the area takes @Damage[(floor((@actor.level -1)/2) +2)d4[slashing]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. In the final square of the line, the boomerang whirls in place until the end of your next turn. Any creature that ends its turn in that square has to save against the boomerang.</p>\n<p>On your next turn, you can use a single action, which has the concentrate trait, to return the boomerang to you. It returns in a line from its square to your current location, with the same effect as the initial line, then the impulse ends. You must have line of effect to the boomerang and be within 60 feet of it.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d4.</p>",
             "name": "Aerial Boomerang"
         },
         "Sleepwalker Dedication": {
@@ -18174,7 +18192,7 @@
             "name": "Improvisational Defender"
         },
         "Combat Reading": {
-            "description": "<p>You use a performer's cold reading techniques, aura reading, and other tricks to discover your foe's strengths and weaknesses. The GM rolls a secret Occultism check for you against the Deception or Stealth DC (whichever is higher) of an enemy of your choice who is not @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from you, @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} from you, or @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected} by you, and who is engaged in combat. The GM might apply a penalty for the distance between you and the enemy. The enemy is then temporarily immune to your Combat Reading for 1 day.</p>\n<hr />\n<p><strong>Critical Success</strong> The GM chooses and tells you two of the following pieces of information about the enemy: which of the enemy's weaknesses is highest, which of the enemy's saving throws has the lowest modifier, one immunity the enemy has, or which of the enemy's resistances is highest. In the event of a tie, the GM should pick one at random.</p>\n<p><strong>Success</strong> The GM chooses one piece of information from the above list to tell you about the enemy.</p>\n<p><strong>Critical Failure</strong> The GM gives you false information (the GM makes up the information).</p>",
+            "description": "<p>You use a performer's cold reading techniques, aura reading, and other tricks to discover your foe's strengths and weaknesses. The GM rolls a secret @Check[occultism] check for you against the Deception or Stealth DC (whichever is higher) of an enemy of your choice who is not @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from you, @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} from you, or @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected} by you, and who is engaged in combat. The GM might apply a penalty for the distance between you and the enemy. The enemy is then temporarily immune to your Combat Reading for 1 day.</p><hr /><p><strong>Critical Success</strong> The GM chooses and tells you two of the following pieces of information about the enemy: which of the enemy's weaknesses is highest, which of the enemy's saving throws has the lowest modifier, one immunity the enemy has, or which of the enemy's resistances is highest. In the event of a tie, the GM should pick one at random.</p>\n<p><strong>Success</strong> The GM chooses one piece of information from the above list to tell you about the enemy.</p>\n<p><strong>Critical Failure</strong> The GM gives you false information (the GM makes up the information).</p>",
             "name": "Combat Reading"
         },
         "True Gaze": {
@@ -18479,7 +18497,7 @@
             "name": "Hunter's Defense"
         },
         "Call Ursine Ally": {
-            "description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p>You can cast a 3rd-rank @UUID[Compendium.pf2e.spells-srd.Item.4YnON9JHYqtLzccu]{Summon Animal} as an innate spell, but only to summon a @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.xxP5FJotshmUQNtY]{Black Bear}. At 10th level, the <em>summon animal</em> spell is heightened to 4th level, and you can summon a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.CJP3GGBXuGgkaj6C]{Grizzly Bear}. At 12th level, your <em>summon animal</em> innate spell is heightened to 5th level, and you can summon a @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.UqFObUjgFAlWrriA]{Polar Bear}. At 14th level, it's heightened to 6th level, and you can summon a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.b8NQkby4QV4uOqFT]{Cave Bear}.</p>",
+            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p>You can cast a 3rd-rank @UUID[Compendium.pf2e.spells-srd.Item.4YnON9JHYqtLzccu]{Summon Animal} as an innate spell, but only to summon a @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.xxP5FJotshmUQNtY]{Black Bear}. At 10th level, the <em>summon animal</em> spell is heightened to 4th level, and you can summon a @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.6K4RWus85o8iqy0t]{Grizzly Bear}. At 12th level, your <em>summon animal</em> innate spell is heightened to 5th level, and you can summon a @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.UqFObUjgFAlWrriA]{Polar Bear}. At 14th level, it's heightened to 6th level, and you can summon a @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.AZIG0COCaDBronJa]{Cave Bear}.</p>",
             "name": "Call Ursine Ally"
         },
         "Righteous Resistance": {
@@ -19269,7 +19287,7 @@
             "name": "Empathic Calm"
         },
         "Rain of Bolts": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>Throughout the day, your body produces powerful projectiles within your chassis. You fire them all at once in either a @Template[cone|distance:30]{30-foot cone} or a @Template[emanation|distance:10]{10-foot emanation}. Foes in the area take @Damage[(3 + floor(@actor.level/3))d6[piercing]] damage with a @Check[reflex|against:class-spell|basic] against the higher of your class DC or spell DC. This increases to 7d6 at 12th level, 8d6 at 15th level, and 9d6 at 18th level.</p>\n<p><strong>Enhancement</strong> The projectiles regenerate quicker, they are much more powerful, and you can refine the metallic content to harm certain creatures. You can use Rain of Bolts once per hour instead of once per day. The damage increases to @Damage[12d6[piercing]]{12d6} and each time you use the action, you can choose adamantine, cold iron, or silver. The damage from Rain of Bolts is treated as the metal you chose. At 20th level, the damage increases to @Damage[13d6[piercing]]{13d6}.</p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>Throughout the day, your body produces powerful projectiles within your chassis. You fire them all at once in either a @Template[cone|distance:30] or a @Template[emanation|distance:10]. Foes in the area take @Damage[(3 + floor(@actor.level/3))d6[piercing]|options:area-damage] damage with a @Check[reflex|against:class-spell|basic|options:area-effect] against the higher of your class DC or spell DC. This increases to 7d6 at 12th level, 8d6 at 15th level, and 9d6 at 18th level.</p>\n<p><strong>Enhancement</strong> The projectiles regenerate quicker, they are much more powerful, and you can refine the metallic content to harm certain creatures. You can use Rain of Bolts once per hour instead of once per day. The damage increases to @Damage[12d6[piercing]|options:area-damage|shortLabel] and each time you use the action, you can choose adamantine, cold iron, or silver. The damage from Rain of Bolts is treated as the metal you chose. At 20th level, the damage increases to @Damage[13d6[piercing]|options:area-damage|shortLabel].</p>",
             "prerequisites": [
                 {
                     "value": "Sharpshooter automaton"
@@ -19565,7 +19583,7 @@
             "name": "Runescarred Dedication"
         },
         "Trial by Skyfire": {
-            "description": "<p>Your lips murmur as you portend a great disaster, one you hope you survive. A rain of blazing bolts begins to fall from the heavens in a @Template[emanation|distance:10], centered on you, that deals @Damage[2d6[fire]|traits:area-damage] damage to all creatures in the emanation at the end of each of your turns (@Check[reflex|against:class-spell|basic] save); you can't exclude yourself from the emanation. The skyfire persists for 1 minute; while you can't Dismiss it, you can suppress the effect for 1 round with a Sustain action. The rain of fire is suppressed if you fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If you become @UUID[Compendium.pf2e.conditionitems.Item.zXZjC8HLaRoLR17U]{Cursebound 3} or 4 at any point during Trial by Skyfire's duration, the emanation increases to @Template[emanation|distance:15]{15 feet} and the damage increases to @Damage[4d6[fire]|traits:area-damage|shortLabel:true].</p>",
+            "description": "<p>Your lips murmur as you portend a great disaster, one you hope you survive. A rain of blazing bolts begins to fall from the heavens in a @Template[emanation|distance:10], centered on you, that deals @Damage[2d6[fire]|options:area-damage] damage to all creatures in the emanation at the end of each of your turns (@Check[reflex|against:class-spell|basic|options:area-effect] save); you can't exclude yourself from the emanation. The skyfire persists for 1 minute; while you can't Dismiss it, you can suppress the effect for 1 round with a Sustain action. The rain of fire is suppressed if you fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If you become @UUID[Compendium.pf2e.conditionitems.Item.zXZjC8HLaRoLR17U]{Cursebound 3} or 4 at any point during Trial by Skyfire's duration, the emanation increases to @Template[emanation|distance:15]{15 feet} and the damage increases to @Damage[4d6[fire]|options:area-damage|shortLabel].</p>",
             "prerequisites": [
                 {
                     "value": "cosmos or flames mystery"
@@ -19764,6 +19782,15 @@
         "Perfume Cloud": {
             "description": "<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p>You issue a cloud of your fragrance like a full-body sneeze—but one that might save your life as the powerful perfume makes your attackers' eyes sting and water. Plants and fungi are immune to this effect, but all other creatures in a @Template[emanation|distance:10] must attempt a @Check[fortitude|against:class-spell] save against your class DC or spell DC (whichever is higher) with the following results.</p>\n<hr />\n<p><strong>Critical Success</strong> No effect.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Failure</strong> The creature is dazzled and can see only 10 feet away for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round.</p>",
             "name": "Perfume Cloud"
+        },
+        "Inked Panoply": {
+            "description": "<p><strong>Trigger</strong> A creature targets you with an attack, and you can see the attacker.</p><hr /><p>Your tattoos can briefly animate and extend from your skin, granting you a spectral shield-bearer who protects you from harm. Doing so expends one use of your storied skin, granting you a +1 circumstance bonus to AC against the triggering attack. In addition, you gain resistance to mental, spirit, and void damage equal to twice your number of tattooed historian feats against the triggering attack.</p>",
+            "prerequisites": [
+                {
+                    "value": "Tattooed Historian Dedication"
+                }
+            ],
+            "name": "Inked Panoply"
         },
         "Garuda's Squall": {
             "description": "<p>Garudas' marksmanship and magic are second nature to you. Whenever you critically hit using a bow, you apply the weapon's critical specialization effect.</p>",
@@ -20011,7 +20038,7 @@
             "name": "Slip With The Breeze"
         },
         "Retch Rust": {
-            "description": "<p>You exhale tendrils formed from flakes of rusted metal. All creatures in a @Template[cone|distance:30] take @Damage[(floor((@actor.level -8)/2)+4)d10[slashing]|traits:area-damage] damage with a @Check[fortitude|against:kineticist|basic] save against your class DC. A metal creature that fails its save also takes @Damage[(floor((@actor.level -8)/2)+2)d4[persistent,slashing]] damage.</p>\n<hr />\n<p><strong>Level (+2)</strong> The cloud's slashing damage increases by 1d10 and the persistent damage increases by 1d4.</p>",
+            "description": "<p>You exhale tendrils formed from flakes of rusted metal. All creatures in a @Template[cone|distance:30] take @Damage[(floor((@actor.level -8)/2)+4)d10[slashing]|options:area-damage] damage with a @Check[fortitude|against:kineticist|basic|options:area-effect] save against your class DC. A metal creature that fails its save also takes @Damage[(floor((@actor.level -8)/2)+2)d4[persistent,slashing]] damage.</p>\n<hr />\n<p><strong>Level (+2)</strong> The cloud's slashing damage increases by 1d10 and the persistent damage increases by 1d4.</p>",
             "name": "Retch Rust"
         },
         "Mobile Swarm": {
@@ -20024,7 +20051,7 @@
             "name": "Mobile Swarm"
         },
         "Hell of 1,000,000 Needles": {
-            "description": "<p>The landscape fills with monumental filaments of metal. The needles lance into a cube 30 feet on a side within 500 feet. Each creature in the area takes @Damage[13d6[piercing]|traits:area-damage] damage, with a @Check[reflex|against:kineticist|basic] save against your class DC. Each creature that fails its save is impaled, becoming @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (the DC is your class DC); a creature that critically failed is also off-guard as long as it's impaled. The hell remains until the end of your next turn, but you can Sustain it up to 1 minute. Using this impulse again ends any previous one. The first time you Sustain it each round, lightning crisscrosses the needles. Each creature in the area takes @Damage[3d12[electricity]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. Squares in the area are hazardous terrain. A creature takes @Damage[6[piercing]] damage for every square of the area it moves through.</p>\n<hr />\n<p><strong>Level (20th)</strong> The initial damage is 17d6, and the hazardous terrain damage is 7.</p>",
+            "description": "<p>The landscape fills with monumental filaments of metal. The needles lance into a cube 30 feet on a side within 500 feet. Each creature in the area takes @Damage[(ternary(gte(@actor.level,20),17,13))d6[piercing]|options:area-damage] damage, with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. Each creature that fails its save is impaled, becoming @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (the DC is your class DC); a creature that critically failed is also off-guard as long as it's impaled. The hell remains until the end of your next turn, but you can Sustain it up to 1 minute. Using this impulse again ends any previous one. The first time you Sustain it each round, lightning crisscrosses the needles. Each creature in the area takes @Damage[3d12[electricity]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. Squares in the area are hazardous terrain. A creature takes @Damage[(ternary(gte(@actor.level,20),7,6))[piercing]] damage for every square of the area it moves through.</p><hr /><p><strong>Level (20th)</strong> The initial damage is 17d6, and the hazardous terrain damage is 7.</p>",
             "name": "Hell of 1,000,000 Needles"
         },
         "Gaze of Veracity": {
@@ -21493,7 +21520,7 @@
             "name": "Rock Runner"
         },
         "Final Form": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You embrace your monstrous blood and make it your own, screaming out to the heavens and hells alike in rage, pain, and defiance. Reality buckles and twists under your sudden power—each tiefling has a unique transformation, but it might include sulfurous flames, choruses of shrieks, or twisting, serpentine lightning. Every creature within 10 feet of you is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} and @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round unless they succeed at a @Check[fortitude|against:class-spell] save using your class DC or spell DC, whichever is higher. Your final form has the effects of @UUID[Compendium.pf2e.spells-srd.Item.hiVL8qsnTJtpouw0]{Divine Vessel} for a deity that shares an alignment with your fiendish lineage. Your final form resembles a creature from your fiendish lineage, and you remain in that form for 1 minute. While in your final form, you can cast @UUID[Compendium.pf2e.spells-srd.Item.sRfSBHWHdbIa0aGc]{Chilling Darkness}, @UUID[Compendium.pf2e.spells-srd.Item.sxQZ6yqTn0czJxVd]{Fireball}, and @UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{Lightning Bolt} as 6th-rank divine innate spells, once each per use of this feat.</p>\n<p>When you emerge from your final form, you become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3}. In addition, if you have this feat, you gain weakness 10 to good even when not in your final form, and you take good damage even if you aren't evil.</p>\n<hr />\n<p><strong>Special</strong> At the GM's discretion, the specific elements of this feat can be adjusted to better fit the tiefling's lineage—for example, a GM might decide that a particular beastbrood tiefling could cast a 6th-rank @UUID[Compendium.pf2e.spells-srd.Item.tlcrVRqW1MSKJ5IC]{Phantasmal Killer} instead of <em>fireball</em>.</p>",
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You embrace your monstrous blood and make it your own, screaming out to the heavens and hells alike in rage, pain, and defiance. Reality buckles and twists under your sudden power—each tiefling has a unique transformation, but it might include sulfurous flames, choruses of shrieks, or twisting, serpentine lightning. Every creature within 10 feet of you is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} and @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round unless they succeed at a @Check[fortitude|against:class-spell] save using your class DC or spell DC, whichever is higher. Your final form has the effects of @UUID[Compendium.pf2e.spells-srd.Item.hiVL8qsnTJtpouw0]{Divine Vessel} for a deity that shares an alignment with your fiendish lineage. Your final form resembles a creature from your fiendish lineage, and you remain in that form for 1 minute. While in your final form, you can cast @UUID[Compendium.pf2e.spells-srd.Item.sRfSBHWHdbIa0aGc]{Chilling Darkness}, @UUID[Compendium.pf2e.spells-srd.Item.sxQZ6yqTn0czJxVd]{Fireball}, and @UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{Lightning Bolt} as 6th-rank divine innate spells, once each per use of this feat.</p>\n<p>When you emerge from your final form, you become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 3}. In addition, if you have this feat, you gain weakness 10 to holy even when not in your final form.</p>\n<hr />\n<p><strong>Special</strong> At the GM's discretion, the specific elements of this feat can be adjusted to better fit the tiefling's lineage—for example, a GM might decide that a particular beastbrood tiefling could cast a 6th-rank @UUID[Compendium.pf2e.spells-srd.Item.tlcrVRqW1MSKJ5IC]{Phantasmal Killer} instead of <em>fireball</em>.</p>",
             "name": "Final Form"
         },
         "Ward Slumber": {
@@ -21899,6 +21926,15 @@
                 }
             ],
             "name": "Basic Blood Potency"
+        },
+        "Aurochs-Headed": {
+            "description": "<p>Your words and body language can subconsciously unsettle orcs, giving you an advantage when convincing them to see things your way. Many with this feat use it to travel freely between holds, warning all but the toughest orcs to waylay weaker prey. You gain a +1 circumstance bonus to skill checks to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} or @UUID[Compendium.pf2e.actionspf2e.Item.tHCqgwjtQtzNqVvd]{Coerce} creatures with the orc trait. Enemy orcs who can see you at the start of combat take a –1 penalty to initiative rolls.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Diplomacy or Intimidation"
+                }
+            ],
+            "name": "Aurochs-Headed"
         },
         "Vicious Rend": {
             "description": "<p>Your companion sinks its claws and rips. Your companions with a qualifying unarmed attack learn the Vicious Rend activity.</p>\n<p><strong>Vicious Rend</strong> <span class=\"action-glyph\">2</span> Make two claw, fist, pincer, or talon Strikes against the same target, applying the multiple attack penalty as normal. If both Strikes hit, the target takes an additional @Damage[1d6[persistent,bleed]] damage. This damage increases to 2d6 if your companion is specialized.</p>",
@@ -22434,7 +22470,7 @@
             "name": "Infiltrate Dream"
         },
         "Lava Leap": {
-            "description": "<p>You wreath yourself in molten stone and hurtle toward your enemy. @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leap} up to your Speed. At the end of your Leap, a wave of lava crashes onto all creatures in a @Template[emanation|distance:10]. Each creature in the area takes @Damage[(floor((@actor.level -4)/3)+1)d6[bludgeoning], (floor((@actor.level -4)/3)+2)d6[fire]|traits:area-damage] damage, with a @Check[reflex|against:kineticist|basic] save against your class DC.</p>\n<p>The cooling remains of the lava form a temporary protective shell around you, granting you a +2 circumstance bonus to AC until the start of your next turn.</p>\n<hr />\n<p><strong>Level (+3)</strong> Each type of damage increases by 1d6.</p>",
+            "description": "<p>You wreath yourself in molten stone and hurtle toward your enemy. @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leap} up to your Speed. At the end of your Leap, a wave of lava crashes onto all creatures in a @Template[emanation|distance:10]. Each creature in the area takes @Damage[(floor((@actor.level -4)/3)+1)d6[bludgeoning], (floor((@actor.level -4)/3)+2)d6[fire]|options:area-damage] damage, with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC.</p>\n<p>The cooling remains of the lava form a temporary protective shell around you, granting you a +2 circumstance bonus to AC until the start of your next turn.</p>\n<hr />\n<p><strong>Level (+3)</strong> Each type of damage increases by 1d6.</p>",
             "name": "Lava Leap"
         },
         "Too Angry to Die": {
@@ -22652,6 +22688,18 @@
                 }
             ],
             "name": "Malleable Form"
+        },
+        "Tattooed Historian Dedication": {
+            "description": "<p>You become trained in Diplomacy or Performance; if you are already trained in both skills, you instead become trained in a skill of your choice. You gain access to all uncommon magical tattoos with the orc trait.</p>\n<p>You gain a @UUID[Compendium.pf2e.equipment-srd.Item.OOcgMpqQzk22n6rl]{Storied Skin} for free upon gaining this feat (or another magical tattoo of 2nd level or lower if you already have storied skin). You cannot have more than one storied skin tattoo, but the frequency of its Living History ability increases by one use per minute for every three tattooed historian feats you have. For every two tattooed historian feats you have, you can invest one magical tattoo that does not count against the maximum number of items you can have invested at one time.</p>",
+            "prerequisites": [
+                {
+                    "value": "Constitution +1"
+                },
+                {
+                    "value": "trained in Belkzen Lore, Orc Lore, Orc Pantheon Lore, or (at the GM's discretion) a related Lore skill"
+                }
+            ],
+            "name": "Tattooed Historian Dedication"
         },
         "Elemental Assault": {
             "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You shroud your arms and held weapons in elemental magic. Choose one element. Until the end of your next turn, your Strikes deal an additional 1d6 damage of the indicated type and have the trait corresponding to the element: electricity for air, bludgeoning for earth, fire for fire, or cold for water.</p>",
@@ -23273,7 +23321,7 @@
             "name": "Semblance of Life"
         },
         "Ride the Tsunami": {
-            "description": "<p>Booming, crashing walls of water, enough to fill a harbor, smash out ahead of you, overwhelming all in their path. The waves move forward in your choice of a @Template[cone|distance:60] or @Template[line|distance:120]. If you're in water, you can increase these waves to a @Template[cone|distance:90] or @Template[line|distance:180]. Each creature in the area takes @Damage[10d10[bludgeoning]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. A creature that fails its save is pushed 20 feet (or 40 feet on a critical failure). Any unattended object of 1 Bulk or less in the area is pushed to the far edge of the area. The sheer mass of water extinguishes all non-magical flames in the area.</p>\n<p>As the wave crashes down, you can catch it to your destination. After the impulse deals damage, you can Swim in a straight line to any point in its area before the water disappears.</p>",
+            "description": "<p>Booming, crashing walls of water, enough to fill a harbor, smash out ahead of you, overwhelming all in their path. The waves move forward in your choice of a @Template[cone|distance:60] or @Template[line|distance:120]. If you're in water, you can increase these waves to a @Template[cone|distance:90] or @Template[line|distance:180]. Each creature in the area takes @Damage[10d10[bludgeoning]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. A creature that fails its save is pushed 20 feet (or 40 feet on a critical failure). Any unattended object of 1 Bulk or less in the area is pushed to the far edge of the area. The sheer mass of water extinguishes all non-magical flames in the area.</p>\n<p>As the wave crashes down, you can catch it to your destination. After the impulse deals damage, you can Swim in a straight line to any point in its area before the water disappears.</p>",
             "name": "Ride the Tsunami"
         },
         "Read Psychometric Resonance": {
@@ -23446,6 +23494,11 @@
         },
         "Spectral Advance": {
             "description": "<p>You gain the @UUID[Compendium.pf2e.spells-srd.Item.VNAOHrWhNYX3jKdy]{Spectral Advance} devotion spell, which lets you move to an enemy, bypassing hindrances.</p>",
+            "prerequisites": [
+                {
+                    "value": "blessed swiftness"
+                }
+            ],
             "name": "Spectral Advance"
         },
         "Demon's Hair": {
@@ -23675,7 +23728,7 @@
             "name": "Farabellus Flip"
         },
         "Sanguivolent Roots": {
-            "description": "<p>Blood-drinking vines grow from the ground in a @Template[burst|distance:15] within 120 feet. Each living enemy in the area has its blood drained, taking @Damage[(floor((@actor.level -8)/2)+3)d6[piercing]|traits:area-damage] damage with a @Check[fortitude|against:kineticist|basic] save against your class DC. Each time the vines drink blood, living creatures in the area who aren't your enemies regain HP equal to half the damage a single creature took; calculate this using the highest damage a single creature took. This is a healing vitality effect. Your enemies with void healing in the area take vitality damage in the same amount as the healing.</p>\n<p>The vines last until the end of your next turn, and you can Sustain the impulse. The first time you Sustain the impulse on subsequent turns, you can repeat the effect.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
+            "description": "<p>Blood-drinking vines grow from the ground in a @Template[burst|distance:15] within 120 feet. Each living enemy in the area has its blood drained, taking @Damage[(floor((@actor.level -8)/2)+3)d6[piercing]|options:area-damage] damage with a @Check[fortitude|against:kineticist|basic|options:area-effect] save against your class DC. Each time the vines drink blood, living creatures in the area who aren't your enemies regain HP equal to half the damage a single creature took; calculate this using the highest damage a single creature took. This is a healing vitality effect. Your enemies with void healing in the area take vitality damage in the same amount as the healing.</p>\n<p>The vines last until the end of your next turn, and you can Sustain the impulse. The first time you Sustain the impulse on subsequent turns, you can repeat the effect.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
             "name": "Sanguivolent Roots"
         },
         "Master Sorcerer Spellcasting": {
@@ -24091,7 +24144,7 @@
             "name": "Reveal Beasts"
         },
         "Kobold Breath": {
-            "description": "<p>You channel your draconic exemplar's power into a gout of energy that manifests as a @Template[line|distance:30] or a @Template[cone|distance:15], dealing @Damage[ceil(@actor.level/2)d4[@actor.flags.pf2e.draconicExemplar.damageType]|traits:area-damage] damage. Each creature in the area must attempt a basic saving throw against the higher of your class DC or spell DC. You can't use this ability again for [[/r 1d4 #rounds]]{1d4 rounds}.</p>\n<p>At 3rd level and every 2 levels thereafter, the damage increases by 1d4. The shape of the breath, the damage type, and the saving throw match those of your @UUID[Compendium.pf2e.ancestryfeatures.Item.egpiSWBrNBb1Fmig]{Draconic Exemplar}. This ability has the trait associated with the type of damage it deals.</p><hr /><p>@Check[fortitude|against:class-spell|basic] @Check[reflex|against:class-spell|basic]</p>",
+            "description": "<p>You channel your draconic exemplar's power into a gout of energy that manifests as a @Template[line|distance:30] or a @Template[cone|distance:15], dealing @Damage[ceil(@actor.level/2)d4[@actor.flags.pf2e.draconicExemplar.damageType]|options:area-damage] damage. Each creature in the area must attempt a basic saving throw against the higher of your class DC or spell DC. You can't use this ability again for [[/r 1d4 #rounds]]{1d4 rounds}.</p>\n<p>At 3rd level and every 2 levels thereafter, the damage increases by 1d4. The shape of the breath, the damage type, and the saving throw match those of your @UUID[Compendium.pf2e.ancestryfeatures.Item.egpiSWBrNBb1Fmig]{Draconic Exemplar}. This ability has the trait associated with the type of damage it deals.</p><hr /><p>@Check[fortitude|against:class-spell|basic|options:area-effect] @Check[reflex|against:class-spell|basic|options:area-effect]</p>",
             "name": "Kobold Breath"
         },
         "Inspire Imitation": {
@@ -24699,7 +24752,7 @@
             "name": "Steadying Stone"
         },
         "Call The Worm": {
-            "description": "<p>You gain @UUID[Compendium.pf2e.spells-srd.Item.4YnON9JHYqtLzccu]{Summon Animal}, heightened to 9th rank, as an innate primal spell that you can cast once per day, but can only summon a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.4h9jhODg2NwiYsPg]{Purple Worm}. At 20th level, you can summon an elite purple worm instead.</p>",
+            "description": "<p>You gain @UUID[Compendium.pf2e.spells-srd.Item.4YnON9JHYqtLzccu]{Summon Animal}, heightened to 9th rank, as an innate primal spell that you can cast once per day, but can only summon a @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.vijBriZmbUJjbJNH]{Purple Worm}. At 20th level, you can summon an elite purple worm instead.</p>",
             "prerequisites": [
                 {
                     "value": "Worm Caller Dedication"
@@ -24939,6 +24992,10 @@
         "Counter Thought": {
             "description": "<p><strong>Trigger</strong> A creature Casts a Spell with the mental trait.</p>\n<p><strong>Requirements</strong> You have an unexpended spell slot you could use to @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{Cast a Spell} with the mental trait.</p>\n<hr />\n<p>When a foe @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{Casts a Spell} that has the mental trait and you can see its manifestations, you can use your own mental magic to disrupt it. You expend one of your spell slots to counter the triggering creature's casting of a spell with the mental trait. You lose your spell slot as if you had cast the triggering spell; this spell slot must be one for which you could Cast a Spell with the mental trait. You then attempt to counteract the triggering spell.</p>",
             "name": "Counter Thought"
+        },
+        "Spell Survivor": {
+            "description": "<p>Once you've resisted an opponent's magic, anything else they throw your way becomes less effective. When you attempt a saving throw against a spell using @UUID[Compendium.pf2e.feats-srd.Item.EFhh3AenX7wtAmrs]{Orc Superstition} or @UUID[Compendium.pf2e.feats-srd.Item.VphmK5JRR35SyEhV]{Pervasive Superstition} and critically succeed, you gain resistance 1 to all damage dealt by that triggering spell's caster until the end of their next turn. At 9th level and every 4 levels thereafter, the resistance increases by 1.</p>",
+            "name": "Spell Survivor"
         },
         "Ricochet Master": {
             "description": "<p>You have an eye for angles and can find shots that others believe are impossible. When using Ricochet Shot, you can bounce your bullet off up to two solid surfaces within your weapon's first range increment instead of just one.</p>\n<p>In addition, a creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} the first time you attack it with a Ricochet Shot during an encounter.</p>",
@@ -25479,7 +25536,7 @@
             "name": "Goblin Song"
         },
         "Psi Catastrophe": {
-            "description": "<p>You stop holding your power back, unleashing it all in a catastrophic blast. All creatures in a @Template[emanation|distance:20] take @Damage[(@actor.level)d6[bludgeoning]|traits:area-damage]{1d6 bludgeoning damage per level} with a @Check[reflex|against:spell|basic]. Your psyche subsides as your power is expended.</p>",
+            "description": "<p>You stop holding your power back, unleashing it all in a catastrophic blast. All creatures in a @Template[emanation|distance:20] take @Damage[(@actor.level)d6[bludgeoning]|options:area-damage]{1d6 bludgeoning damage per level} with a @Check[reflex|against:spell|basic|options:area-effect]. Your psyche subsides as your power is expended.</p>",
             "name": "Psi Catastrophe"
         },
         "Vanara Lore": {
@@ -25578,7 +25635,7 @@
             "name": "Paragon Companion"
         },
         "Tremor": {
-            "description": "<p>You unleash a small, localized tremor in a @Template[burst|distance:10] within 30 feet. Each creature in the area takes @Damage[(ceil(@actor.level/2)d8)[bludgeoning]|traits:area-damage] damage with a @Check[fortitude|against:class|basic] save against your class DC. A creature that critically fails is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. Earth and stone in the area is difficult terrain until the start of your next turn.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
+            "description": "<p>You unleash a small, localized tremor in a @Template[burst|distance:10] within 30 feet. Each creature in the area takes @Damage[(ceil(@actor.level/2)d8)[bludgeoning]|options:area-damage] damage with a @Check[fortitude|against:kineticist|basic|options:area-effect] save against your class DC. A creature that critically fails is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. Earth and stone in the area is difficult terrain until the start of your next turn.</p><hr /><p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
             "name": "Tremor"
         },
         "Far Shot": {
@@ -26516,7 +26573,7 @@
             "name": "River Adaptation"
         },
         "Tidal Hands": {
-            "description": "<p>With an emphatic gesture, you create waves that rush out from you in the shape of your hands. You either form two @Template[cone|distance:15]s that don't overlap or you combine the hands into one @Template[cone|distance:30]. Each creature in a wave takes @Damage[(floor((@actor.level -1)/2)+1)d8[bludgeoning]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. If a creature critically fails, you also push that creature 5 feet.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
+            "description": "<p>With an emphatic gesture, you create waves that rush out from you in the shape of your hands. You either form two @Template[cone|distance:15]{15-foot cones} that don't overlap or you combine the hands into one @Template[cone|distance:30]. Each creature in a wave takes @Damage[(floor((@actor.level -1)/2)+1)d8[bludgeoning]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. If a creature critically fails, you also push that creature 5 feet.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
             "name": "Tidal Hands"
         },
         "Master Spotter (Ranger)": {
@@ -27044,7 +27101,7 @@
             "name": "Scroll Thaumaturgy"
         },
         "Sixth Pillar Mastery": {
-            "description": "<p>You align your magical and physical potential. Whenever you succeed at an unarmed Strike against an opponent, they have a -1 status penalty to saves against your spells until the start of your next turn. Whenever you cast a spell using spell slots, you gain a +1 status bonus to attack rolls with your unarmed Strikes until the start of your next turn.</p>",
+            "description": "<p>You align your magical and physical potential. Whenever you succeed at an unarmed Strike against an opponent, they have a -1 status penalty to saves against your spells until the start of your next turn. Whenever you cast a spell using spell slots, you gain a +1 status bonus to attack rolls with your unarmed Strikes until the start of your next turn.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DX6v0lcI2uA99Yjv]{Effect: Sixth Pillar Mastery}</p>",
             "prerequisites": [
                 {
                     "value": "Sixth Pillar Dedication"
@@ -27238,7 +27295,7 @@
             "name": "Iron Belly"
         },
         "Spirit's Anguish": {
-            "description": "<p><strong>Cost</strong> 1 spirit wisp or spirit remnant from your spirit dwelling</p>\n<p><strong>Requirements</strong> You are holding your spirit dwelling.</p><hr /><p>You purify a spirit by coaxing it to release its anguish in a final cathartic howl. This deals sonic damage to all creatures in a @Template[cone|distance:30], with a @Check[will|against:class-spell|basic] save against your class DC or spell DC, whichever is higher. If you expend a spirit wisp, this deals @Damage[(@actor.level)d4[sonic]|traits:area-damage]. If you expend a spirit remnant, this deals 1d6 sonic damage per level of the incorporeal undead or haunt from which you gained the remnant.</p>",
+            "description": "<p><strong>Cost</strong> 1 spirit wisp or spirit remnant from your spirit dwelling</p>\n<p><strong>Requirements</strong> You are holding your spirit dwelling.</p><hr /><p>You purify a spirit by coaxing it to release its anguish in a final cathartic howl. This deals sonic damage to all creatures in a @Template[cone|distance:30], with a @Check[will|against:class-spell|basic|options:area-effect] save against your class DC or spell DC, whichever is higher. If you expend a spirit wisp, this deals @Damage[(@actor.level)d4[sonic]|options:area-damage]. If you expend a spirit remnant, this deals 1d6 sonic damage per level of the incorporeal undead or haunt from which you gained the remnant.</p>",
             "prerequisites": [
                 {
                     "value": "Exorcist Dedication"
@@ -27254,6 +27311,15 @@
                 }
             ],
             "name": "Venomous Touch"
+        },
+        "Inscribed with Elders' Deeds": {
+            "description": "<p>Your tattoos commemorate unique exploits that (according to legends) only an orc could accomplish. During your daily preparations, you can reconfigure part of your storied skin to depict a specific orc hero, granting you a 1st-level ancestry feat with the orc trait until you prepare again; this ancestry feat cannot require any physiological feature you lack, as determined by the GM. Since this feat is temporary, you can't use it as a prerequisite for permanent character options, such as for a feat. At 13th level, you can instead gain a 5th-level ancestry feat with the orc trait.</p>",
+            "prerequisites": [
+                {
+                    "value": "Tattooed Historian Dedication"
+                }
+            ],
+            "name": "Inscribed with Elders' Deeds"
         },
         "Burn It!": {
             "description": "<p>Fire fascinates you. Your spells and alchemical items that deal fire damage gain a status bonus to damage equal to half the spell's rank or one-quarter the item's level (minimum bonus +1). You also gain a +1 status bonus to any persistent fire damage you deal.</p>",
@@ -28332,7 +28398,7 @@
             "name": "Sap Life"
         },
         "All Shall End In Flames": {
-            "description": "<p>White-hot fire consumes everything in a cataclysmic sphere of death. The fire fills your choice of a @Template[burst|distance:30] within 500 feet or a @Template[emanation|distance:30]. This deals @Damage[13d6[fire]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. Any creature dropped to 0 HP by this fire dies, reduced to a pile of ash.</p>\n<p>If you die to this impulse, you return to life at the start of your next turn in the same space. When you return, you have Hit Points equal to double your level.</p>\n<hr />\n<p><strong>Level (20th)</strong> The damage is @Damage[15d6[fire]].</p>",
+            "description": "<p>White-hot fire consumes everything in a cataclysmic sphere of death. The fire fills your choice of a @Template[burst|distance:30] within 500 feet or a @Template[emanation|distance:30]. This deals @Damage[13d6[fire]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. Any creature dropped to 0 HP by this fire dies, reduced to a pile of ash.</p>\n<p>If you die to this impulse, you return to life at the start of your next turn in the same space. When you return, you have Hit Points equal to double your level.</p>\n<hr />\n<p><strong>Level (20th)</strong> The damage is @Damage[15d6[fire]].</p>",
             "name": "All Shall End In Flames"
         },
         "Aura of Courage": {
@@ -28829,6 +28895,15 @@
                 }
             ],
             "name": "Athletic Strategist"
+        },
+        "Agent of all Holds": {
+            "description": "<p><strong>Trigger</strong> You critically fail a Diplomacy, Intimidation, or Performance check.</p><hr /><p>Orcs across Belkzen recognize you as an honored lorekeeper. You're adept at leveraging this status and showing off your tattoos to resolve conflicts, change minds, or distract others from a faux pas. You get a failure on the check, rather than a critical failure. If the triggering check was made against a creature with the orc trait, you can instead add the fortune trait to this ability and reroll the check, treating any critical failure as a failure.</p>",
+            "prerequisites": [
+                {
+                    "value": "Tattooed Historian Dedication"
+                }
+            ],
+            "name": "Agent of all Holds"
         },
         "Chain Infusion": {
             "description": "<p>The elemental matter in your blast keeps reconstituting itself to travel onward, no matter how many bodies it collides with. If your next action is an @UUID[Compendium.pf2e.actionspf2e.Item.6lbr0Jnv0zMB5uGb]{Elemental Blast} and it hits, attempt a new ranged Elemental Blast from the target against a different creature that's within the blast's range, measuring from the creature you hit. You can keep chaining the blast in this way each time you hit. Your multiple attack penalty applies normally to any blasts in the chain after the first. You can make up to five blasts total, but you can't target the same creature more than once. Roll damage only once and apply it to each creature you hit. (If you start with a melee blast, you still add your Strength to only that blast, not the successive ranged blasts.)</p>",
@@ -29572,7 +29647,7 @@
             "name": "Deimatic Display"
         },
         "Solar Detonation": {
-            "description": "<p>Blinding flames explode in a swirling sphere! The detonation fills a @Template[burst|distance:20] within 60 feet of you. Each creature in the area takes @Damage[(floor((@actor.level -8)/2)+6)d6[fire],(floor((@actor.level -8)/2)+2)d6[vitality]|traits:area-damage] damage, and can become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} depending on the result of its @Check[reflex|against:kineticist] save. The light from Solar Detonation is sunlight for creatures with a particular vulnerability to sunlight. Each creature that attempts a save becomes temporarily immune to being dazzled or blinded by Solar Detonation for 10 minutes, but not the impulse's other effects.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and is dazzled until the start of your next turn.</p>\n<p><strong>Failure</strong> The creature takes full damage and is blinded until the start of your next turn.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is blinded for 1 minute.</p>\n<hr />\n<p><strong>Level (+2)</strong> Increase the fire damage by 1d6 and the vitality damage by 1d6.</p>",
+            "description": "<p>Blinding flames explode in a swirling sphere! The detonation fills a @Template[burst|distance:20] within 60 feet of you. Each creature in the area takes @Damage[(floor((@actor.level -8)/2)+6)d6[fire],(floor((@actor.level -8)/2)+2)d6[vitality]|options:area-damage] damage, and can become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} depending on the result of its @Check[reflex|against:kineticist|options:area-effect,damaging-effect] save. The light from Solar Detonation is sunlight for creatures with a particular vulnerability to sunlight. Each creature that attempts a save becomes temporarily immune to being dazzled or blinded by Solar Detonation for 10 minutes, but not the impulse's other effects.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and is dazzled until the start of your next turn.</p>\n<p><strong>Failure</strong> The creature takes full damage and is blinded until the start of your next turn.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is blinded for 1 minute.</p>\n<hr />\n<p><strong>Level (+2)</strong> Increase the fire damage by 1d6 and the vitality damage by 1d6.</p>",
             "name": "Solar Detonation"
         },
         "Adroit Manipulation": {
@@ -29665,7 +29740,7 @@
             "name": "Bless Tonic"
         },
         "Elemental Explosion": {
-            "description": "<p><strong>Requirements</strong> You're raging, and you haven't used this ability since you last Raged.</p>\n<hr />\n<p>You unleash the energy roiling within you, exploding elemental matter in a @Template[emanation|distance:15]. Each creature in the area takes @Damage[(@actor.level)d8|traits:area-damage]{1d8 damage per level you possess}, with the same type you chose for elemental rage. Each creature in the area must attempt a @Check[reflex|against:class|basic]. Elemental Explosion gains the trait of your element.</p>",
+            "description": "<p><strong>Requirements</strong> You're raging, and you haven't used this ability since you last Raged.</p>\n<hr />\n<p>You unleash the energy roiling within you, exploding elemental matter in a @Template[emanation|distance:15]. Each creature in the area takes @Damage[(@actor.level)d8|options:area-damage]{1d8 damage per level you possess}, with the same type you chose for elemental rage. Each creature in the area must attempt a @Check[reflex|against:class|basic|options:area-effect]. Elemental Explosion gains the trait of your element.</p>",
             "prerequisites": [
                 {
                     "value": "elemental instinct"
@@ -29686,7 +29761,7 @@
             "name": "Play to the Crowd (Dandy)"
         },
         "Steady Spellcasting": {
-            "description": "<p>Confident in your technique, you don't lose spells easily. If a reaction would disrupt your spellcasting action, attempt a @Check[flat|dc:15]. If you succeed, your action isn't disrupted.</p>",
+            "description": "<p>Confident in your technique, you don't lose spells easily. If a reaction would disrupt your spellcasting action, attempt a @Check[flat|showDC:all|dc:15]. If you succeed, your action isn't disrupted.</p>",
             "name": "Steady Spellcasting"
         },
         "Parry and Riposte": {
@@ -29820,7 +29895,7 @@
             "name": "Basic Devotion"
         },
         "Ignite The Sun": {
-            "description": "<p>The fires of creation become yours to control. You create a miniature sun in a @Template[burst|distance:5] within 500 feet. A creature takes @Damage[7d6[fire]|traits:area-damage] damage any time it's in the miniature sun, with a @Check[reflex|against:kineticist|basic] save against your class DC. A creature can take this damage no more than once per round. The sun sheds bright light in a @Template[emanation|distance:500] (and dim light for another 500 feet); this is sunlight for creatures with a particular vulnerability to sunlight.</p>\n<p>The sun lasts until the end of your next turn, but you can Sustain it up to 1 minute. The first time you Sustain the impulse each round, you can choose to increase the size of the sun's burst by 5 feet, then make it Fly up to 30 feet. The sun can move through creatures, damaging them as described above.</p>\n<p>The sun continually channels fire into you and your allies. You and each of your allies within the sun's light deal an additional @Damage[1d6[fire]] damage with all Strikes, spells that deal fire damage, and impulses that deal fire damage (except for Ignite the Sun itself). These aren't cumulative with multiple suns.</p>",
+            "description": "<p>The fires of creation become yours to control. You create a miniature sun in a @Template[burst|distance:5] within 500 feet. A creature takes @Damage[7d6[fire]|options:area-damage] damage any time it's in the miniature sun, with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. A creature can take this damage no more than once per round. The sun sheds bright light in a @Template[emanation|distance:500] (and dim light for another 500 feet); this is sunlight for creatures with a particular vulnerability to sunlight.</p>\n<p>The sun lasts until the end of your next turn, but you can Sustain it up to 1 minute. The first time you Sustain the impulse each round, you can choose to increase the size of the sun's burst by 5 feet, then make it Fly up to 30 feet. The sun can move through creatures, damaging them as described above.</p>\n<p>The sun continually channels fire into you and your allies. You and each of your allies within the sun's light deal an additional @Damage[1d6[fire]] damage with all Strikes, spells that deal fire damage, and impulses that deal fire damage (except for Ignite the Sun itself). These aren't cumulative with multiple suns.</p>",
             "name": "Ignite The Sun"
         },
         "Homeward Bound": {
@@ -30316,7 +30391,7 @@
             "name": "Fortified Elixirs"
         },
         "Quill Spray": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You can launch a mass of quills at opponents. You spray quills in a @Template[cone|distance:30], dealing 5d8 piercing damage. Each creature in the area must attempt a @Check[reflex|against:class-spell|basic] saving throw against the higher of your class DC or spell DC. On a critical failure, a creature also takes 5 persistent bleed damage. At 11th level and every even level thereafter, the piercing damage increases by 1d8 and the persistent bleed damage increases by 1.</p>\n<p>@Damage[(ceil(@actor.level/2))d8[piercing]]{Leveled Piercing Damage}</p>\n<p>@Damage[(ceil(@actor.level/2))[bleed]]{Leveled Bleed Damage}</p>\n<hr />\n<p><em><strong>Note</strong> The feat does not specify the type of saving throw required. A reflex saving throw has been added, in line with Barbed Quills.</em></p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You can launch a mass of quills at opponents. You spray quills in a @Template[cone|distance:30], dealing @Damage[(ceil(@actor.level/2))d8[piercing]|options:area-damage] damage. Each creature in the area must attempt a @Check[reflex|against:class-spell|basic|options:area-effect] saving throw against the higher of your class DC or spell DC. On a critical failure, a creature also takes @Damage[(ceil(@actor.level/2))[bleed]] damage. At 11th level and every even level thereafter, the piercing damage increases by 1d8 and the persistent bleed damage increases by 1.</p><hr /><p><em><strong>Note</strong> The feat does not specify the type of saving throw required. A reflex saving throw has been added, in line with Barbed Quills.</em></p>",
             "prerequisites": [
                 {
                     "value": "quillcoat shisk or quill unarmed attack"
@@ -30668,7 +30743,7 @@
             "name": "Iruxi Armaments"
         },
         "Enervating Wail": {
-            "description": "<p>You release a terrible wail that tears at the spirits of all nearby. All living creatures in a @Template[emanation|distance:20] take @Damage[((@actor.level - 2)d6)[void]] damage with a @Check[fortitude|against:class-spell|basic] save. The damage is 4d6, plus 1d6 for every level you have beyond 6th.</p>\n<hr />\n<p><strong>Awakening</strong> Your scream echoes in the mind. You can choose to emit a silent psychic wail instead, which changes the damage type to @Damage[(@actor.level - 2)d6[mental]], changes the save to a @Check[will|against:class-spell|basic|traits:mental,deviant,magical,necromancy|overrideTraits:true] save, removes the auditory trait, and adds the mental trait.</p>\n<hr />\n<p><strong>Awakening</strong> Your wail saps your foes' strength. In addition to the normal effects, living creatures in the area are @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 round on a success (but not a critical success), enfeebled 1 for 1 minute on a failure, and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} for 1 minute on a critical failure.</p>",
+            "description": "<p>You release a terrible wail that tears at the spirits of all nearby. All living creatures in a @Template[emanation|distance:20] take @Damage[((@actor.level - 2)d6)[void]|options:area-damage] damage with a @Check[fortitude|against:class-spell|basic|options:area-effect] save. The damage is 4d6, plus 1d6 for every level you have beyond 6th.</p><hr /><p><strong>Awakening</strong> Your scream echoes in the mind. You can choose to emit a silent psychic wail instead, which changes the damage type to @Damage[(@actor.level - 2)d6[mental]|options:area-damage], changes the save to a @Check[will|against:class-spell|basic|traits:mental,deviant,magical|overrideTraits|options:area-effect] save, removes the auditory trait, and adds the mental trait.</p><hr /><p><strong>Awakening</strong> Your wail saps your foes' strength. In addition to the normal effects, living creatures in the area are @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 round on a success (but not a critical success), enfeebled 1 for 1 minute on a failure, and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} for 1 minute on a critical failure.</p>",
             "name": "Enervating Wail"
         },
         "Share Rage": {
@@ -30703,7 +30778,7 @@
             "name": "Environmental Explorer"
         },
         "Favor Of Heaven": {
-            "description": "<p>You're one of Hei Feng's chosen people and have the authority of the Celestial Court on your side. Once per day, you can cast a 6th-rank @UUID[Compendium.pf2e.spells-srd.Item.PHVHBbdHeQRfjLmE]{Spirit Blast} as a divine innate spell. In addition, you gain resistance 5 to both good and evil damage.</p>",
+            "description": "<p>You're one of Hei Feng's chosen people and have the authority of the Celestial Court on your side. Once per day, you can cast a 6th-rank @UUID[Compendium.pf2e.spells-srd.Item.PHVHBbdHeQRfjLmE]{Spirit Blast} as a divine innate spell. In addition, you gain resistance 5 to both holy and unholy.</p>",
             "name": "Favor Of Heaven"
         },
         "Impose Order (Psychic)": {
@@ -30737,7 +30812,7 @@
             "name": "Razzle-Dazzle"
         },
         "Cranial Detonation": {
-            "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> You successfully reduce one or more non-mindless enemies to 0 Hit Points with a spell.</p>\n<hr />\n<p>As your overwhelming psyche fells a creature, you use its flickering consciousness to detonate psychic energy from the creature's head. Each enemy you reduced to 0 Hit Points dies and its head explodes. Each exploding head generates a shockwave in a @Template[emanation|distance:15] around that enemy. Each creature in any of the emanations takes @Damage[10d6[bludgeoning]|traits:area-damage] damage with a @Check[reflex|against:spell|basic]. If this damage reduces an enemy to 0 Hit Points, its head also explodes, potentially damaging more creatures and potentially causing more detonations. A given creature can take damage only once from a single use of Cranial Detonation.</p>",
+            "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Trigger</strong> You successfully reduce one or more non-mindless enemies to 0 Hit Points with a spell.</p>\n<hr />\n<p>As your overwhelming psyche fells a creature, you use its flickering consciousness to detonate psychic energy from the creature's head. Each enemy you reduced to 0 Hit Points dies and its head explodes. Each exploding head generates a shockwave in a @Template[emanation|distance:15] around that enemy. Each creature in any of the emanations takes @Damage[10d6[bludgeoning]|options:area-damage] damage with a @Check[reflex|against:spell|basic|options:area-effect]. If this damage reduces an enemy to 0 Hit Points, its head also explodes, potentially damaging more creatures and potentially causing more detonations. A given creature can take damage only once from a single use of Cranial Detonation.</p>",
             "name": "Cranial Detonation"
         },
         "Command Corpse": {
@@ -30807,7 +30882,7 @@
             "name": "Alacritous Action"
         },
         "Solar Rejuvenation": {
-            "description": "<p><strong>Ghoran</strong> - The warmth and light of the sun gives you life. If you rest outdoors for 10 minutes during the day, you regain Hit Points equal to your @Damage[(floor(@actor.level/2)*@actor.con.mod)[healing]]{Constitution modifier × half your level}. You gain this benefit in addition to any healing from @UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]{Treat Wounds}.</p>\n<p><strong>Leshy</strong> - If you rest outdoors for 10 minutes during the day, you regain Hit Points equal to your @Damage[(floor(@actor.level/2)*@actor.con.mod)[healing]]{Constitution modifier × half your level}. You gain this benefit in addition to any healing from @UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]{Treat Wounds}. Leshies whose plant nourishment does not rely on photosynthesis require a similarly suitable environment. For example, fungus leshies need dark, damp environments and a pile of decaying plant matter.</p>",
+            "description": "<p><strong>Ghoran</strong> - The warmth and light of the sun gives you life. If you rest outdoors for 10 minutes during the day, you regain Hit Points equal to your @Damage[(floor(@actor.level/2)*@actor.abilities.con.mod)[healing]]{Constitution modifier × half your level}. You gain this benefit in addition to any healing from @UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]{Treat Wounds}.</p>\n<p><strong>Leshy</strong> - If you rest outdoors for 10 minutes during the day, you regain Hit Points equal to your @Damage[(floor(@actor.level/2)*@actor.abilities.con.mod)[healing]]{Constitution modifier × half your level}. You gain this benefit in addition to any healing from @UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]{Treat Wounds}. Leshies whose plant nourishment does not rely on photosynthesis require a similarly suitable environment. For example, fungus leshies need dark, damp environments and a pile of decaying plant matter.</p>",
             "name": "Solar Rejuvenation"
         },
         "Fermenting Liquors": {
@@ -32069,7 +32144,7 @@
             "name": "Qi Center"
         },
         "Dissolution's Sight": {
-            "description": "<p>Accepting your inner darkness means that no outer darkness can obscure your sight. You gain greater darkvision for 1 minute.</p>",
+            "description": "<p><strong>Frequency</strong> Once per hour</p><hr /><p>Accepting your inner darkness means that no outer darkness can obscure your sight. You gain greater darkvision for 1 minute.</p>",
             "name": "Dissolution's Sight"
         },
         "Thorough Research": {
@@ -32934,7 +33009,7 @@
             "name": "Perfect Form Control"
         },
         "Mind Shards": {
-            "description": "<p>With a swing and a thought, you detonate your mind weapon into a burst of psychic shards that shred the mind. You concentrate and unleash a @Template[cone|distance:15] that deals @Damage[(ceil(@actor.level/2)d6)[mental]] damage to all creatures in the area, with a @Check[will|against:class-spell|basic] save against the higher of your class DC or spell DC. After the attack, your mind weapon automatically re-forms, and you can't use this ability again for 1 minute. Mind Shards' damage increases by 1d6 at level 7 and every two levels thereafter.</p>",
+            "description": "<p>With a swing and a thought, you detonate your mind weapon into a burst of psychic shards that shred the mind. You concentrate and unleash a @Template[cone|distance:15] that deals @Damage[(ceil(@actor.level/2)d6)[mental]|options:area-damage] damage to all creatures in the area, with a @Check[will|against:class-spell|basic|options:area-effect] save against the higher of your class DC or spell DC. After the attack, your mind weapon automatically re-forms, and you can't use this ability again for 1 minute. Mind Shards' damage increases by 1d6 at level 7 and every two levels thereafter.</p>",
             "prerequisites": [
                 {
                     "value": "Mind Smith Dedication"
@@ -33527,7 +33602,7 @@
             "name": "Intimidating Glare"
         },
         "Scorching Column": {
-            "description": "<p>With an upward gesture, you shape a vertical column of extreme heat. The cylinder is @Template[cylinder|distance:5]{10 feet in diameter} and 30 feet high, and the bottom must be within 60 feet of you. Each creature in the area takes @Damage[(floor((@actor.level -1)/3)+1)d6[fire]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC.</p>\n<p>The flame remains briefly, making all squares in the column hazardous terrain until the end of your next turn, and you can Sustain the impulse up to 1 minute. A creature takes @Damage[(2*floor((@actor.level -1)/3)+1)[fire]] damage each time it moves into one of these squares.</p>\n<hr />\n<p><strong>Level (+3)</strong> The initial damage increases by 1d6, and the hazardous terrain damage increases by 2.</p>",
+            "description": "<p>With an upward gesture, you shape a vertical column of extreme heat. The cylinder is @Template[cylinder|distance:5]{10 feet in diameter} and 30 feet high, and the bottom must be within 60 feet of you. Each creature in the area takes @Damage[(floor((@actor.level -1)/3)+1)d6[fire]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC.</p>\n<p>The flame remains briefly, making all squares in the column hazardous terrain until the end of your next turn, and you can Sustain the impulse up to 1 minute. A creature takes @Damage[(2*floor((@actor.level -1)/3)+1)[fire]] damage each time it moves into one of these squares.</p>\n<hr />\n<p><strong>Level (+3)</strong> The initial damage increases by 1d6, and the hazardous terrain damage increases by 2.</p>",
             "name": "Scorching Column"
         },
         "Cobra Envenom": {
@@ -34246,7 +34321,7 @@
             "name": "Basic Thaumaturgy"
         },
         "Release Spores": {
-            "description": "<p>You create a miasma of spores. These spores fill a @Template[burst|distance:20] within 100 feet and remain for 1 round per level you have. All creatures within the spores become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and all creatures outside the spores become concealed to creatures within it. You can see through the spores without difficulty. You can Dismiss the spores.</p>\n<p><strong>Awakening</strong> The spores smell disgusting. Creatures in the area are @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} for as long as they remain in the area, plus 2 rounds.</p>\n<p><strong>Awakening</strong> The spores are toxic. The miasma deals @Damage[(floor(@actor.level/2))[poison]] damage per 2 levels you have to creatures in the area when you Release Spores, to creatures who begin their turn in the area, and to creatures who enter the area.</p>",
+            "description": "<p>You create a miasma of spores. These spores fill a @Template[burst|distance:20] within 100 feet and remain for 1 round per level you have. All creatures within the spores become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and all creatures outside the spores become concealed to creatures within it. You can see through the spores without difficulty. You can Dismiss the spores.</p>\n<p><strong>Awakening</strong> The spores smell disgusting. Creatures in the area are @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} for as long as they remain in the area, plus 2 rounds.</p>\n<p><strong>Awakening</strong> The spores are toxic. The miasma deals @Damage[(floor(@actor.level/2))[poison]|options:area-damage] damage per 2 levels you have to creatures in the area when you Release Spores, to creatures who begin their turn in the area, and to creatures who enter the area.</p>",
             "name": "Release Spores"
         },
         "Opening Stance": {
@@ -34515,7 +34590,7 @@
             "name": "Distracting Bites"
         },
         "Winter's Clutch": {
-            "description": "<p>Gleaming flakes of chilling snow fall in a @Template[burst|distance:10] within 60 feet. Each creature in the area takes @Damage[(floor((@actor.level -1)/2)+2)d4[cold]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. The ground in the area is covered in a snow drift, which is difficult terrain. Each square of the drift lasts until it melts, either naturally or until fire damage is dealt in that square.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d4.</p>",
+            "description": "<p>Gleaming flakes of chilling snow fall in a @Template[burst|distance:10] within 60 feet. Each creature in the area takes @Damage[(floor((@actor.level -1)/2)+2)d4[cold]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. The ground in the area is covered in a snow drift, which is difficult terrain. Each square of the drift lasts until it melts, either naturally or until fire damage is dealt in that square.</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d4.</p>",
             "name": "Winter's Clutch"
         },
         "Elemental Wrath": {
@@ -34777,7 +34852,7 @@
             "name": "Bravo's Determination"
         },
         "Call the Hurricane": {
-            "description": "<p>Massive waves spiral around you, with you as the eye of the hurricane. The waves appear in a @Template[emanation|distance:20], or a @Template[emanation|distance:30] if you're in a body of water. Each creature in the area takes @Damage[(floor((@actor.level -8)/2)+6)d8[bludgeoning]|traits:area-damage] damage with a @Check[reflex|against:kineticist|basic] save against your class DC. A creature that fails its save is battered by the waves and pushed 10 feet (or 20 feet on a critical failure).</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
+            "description": "<p>Massive waves spiral around you, with you as the eye of the hurricane. The waves appear in a @Template[emanation|distance:20], or a @Template[emanation|distance:30] if you're in a body of water. Each creature in the area takes @Damage[(floor((@actor.level -8)/2)+6)d8[bludgeoning]|options:area-damage] damage with a @Check[reflex|against:kineticist|basic|options:area-effect] save against your class DC. A creature that fails its save is battered by the waves and pushed 10 feet (or 20 feet on a critical failure).</p>\n<hr />\n<p><strong>Level (+2)</strong> The damage increases by 1d8.</p>",
             "name": "Call the Hurricane"
         },
         "Energetic Resonance": {
@@ -35072,7 +35147,7 @@
             "name": "Magitaxis"
         },
         "Come and Get Me": {
-            "description": "<p>You open yourself to attacks so you can respond in turn. Until your rage ends, you are @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}, and damage rolls against you gain a +2 circumstance bonus. If a creature hits you, that creature is off-guard to you until the end of your next turn. If you hit it before the end of your next turn, you gain temporary Hit Points equal to your Constitution modifier, or double that on a critical hit. These temporary Hit Points last until the end of your rage.</p>",
+            "description": "<p>You open yourself to attacks so you can respond in turn. Until your rage ends, you are @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}, and damage rolls against you gain a +2 circumstance bonus. If a creature hits you, that creature is off-guard to you until the end of your next turn. If you hit it before the end of your next turn, you gain temporary you gain temporary Hit Points equal to your Constitution modifier, or double that on a critical hit. These temporary Hit Points last until the end of your rage.</p>",
             "name": "Come and Get Me"
         },
         "Uplifting Winds": {
@@ -35795,7 +35870,7 @@
             "name": "Gods' Palm"
         },
         "Crimson Breath": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You gain a fire breath weapon similar to that of a crimson worm. You breathe a blast of flame in a @Template[cone|distance:30] that deals @Damage[((ceil(max(0,((@actor.level - 13)/2)))*2)+12)d6[fire]] damage to all creatures in the area (@Check[reflex|against:class-spell|basic] save). This damage increases by 2d6 at 14th level and every 2 levels thereafter.</p>\n<hr />\n<p><em>Note: A DC was not provided for this ability by Paizo. The button above uses the better of your class or spell DC.</em></p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You gain a fire breath weapon similar to that of a crimson worm. You breathe a blast of flame in a @Template[cone|distance:30] that deals @Damage[((ceil(max(0,((@actor.level - 13)/2)))*2)+12)d6[fire]|options:area-damage] damage to all creatures in the area (@Check[reflex|against:class-spell|basic|options:area-effect] save). This damage increases by 2d6 at 14th level and every 2 levels thereafter.</p><hr /><p><em>Note: A DC was not provided for this ability by Paizo. The button above uses the better of your class or spell DC.</em></p>",
             "prerequisites": [
                 {
                     "value": "Worm Caller Dedication"
@@ -35867,7 +35942,7 @@
             "name": "Wooden Palisade"
         },
         "Submission Hold": {
-            "description": "<p><strong>Requirements</strong> You have a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}.</p>\n<hr />\n<p>Your iron grip slowly saps your opponent's strength. Attempt an Athletics check to Grapple the creature you have grabbed or restrained, with the following effects instead of the usual effects.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} until the end of its next turn and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>\n<p><strong>Success</strong> The target is enfeebled 1 until the end of its next turn.</p>",
+            "description": "<p><strong>Requirements</strong> You have a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}.</p><hr /><p>Your iron grip saps your opponent's strength. Attempt an Athletics check to [[/act grapple]] the creature you have grabbed or restrained, with the following additional effects if you succeed.</p><hr /><p><strong>Critical Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} until the end of its next turn and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>\n<p><strong>Success</strong> The target is enfeebled 1 until the end of its next turn.</p>",
             "prerequisites": [
                 {
                     "value": "Wrestler Dedication"
