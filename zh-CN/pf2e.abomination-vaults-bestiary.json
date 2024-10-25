@@ -119,7 +119,7 @@
             "items": {
                 "Consume Flesh": {
                     "name": "啃食尸体 Consume Flesh",
-                    "description": "<p><strong>需求</strong> 奥格雷尔与刚死亡1小时内的生物尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 奥格雷尔吞食一大块尸体并恢复[[/r 2d6[healing]]]生命值。</p>\n<p>他从每具尸体上只能获取一次生命值恢复。</p>"
+                    "description": "<p><strong>需求</strong> 奥格雷尔与刚死亡1小时内的生物尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 奥格雷尔吞食一大块尸体并恢复@Damage[2d6[healing]]生命值。</p>\n<p>他从每具尸体上只能获取一次生命值恢复。</p>"
                 },
                 "Ghoul Fever": {
                     "name": "食尸鬼热 Ghoul Fever",
@@ -430,11 +430,11 @@
             "items": {
                 "Death Burst": {
                     "name": "死亡爆发 Death Burst",
-                    "description": "<p>20尺。当鲜血虹吸死亡时，它的尸体爆成一团20尺半径的红色的血雾。</p>\n<p>范围内的生物必须通过@Check[reflex|dc:21|traits:damaging-effect]检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[2d6[void]]伤害。</p>\n<p><strong>失败</strong> 生物受到@Damage[4d6[void]]伤害。</p>\n<p><strong>大失败</strong> 生物受到@Damage[6d6[void]]伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}，持续1小时。</p>"
+                    "description": "<p>当鲜血虹吸死亡时，它的尸体爆成一团@Template[emanation|distance:20]的红色的血雾。</p>\n<p>范围内的生物必须通过@Check[reflex|dc:21|options:area-effect,damaging-effect]检定。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[2d6[void]|options:area-damage]伤害。</p>\n<p><strong>失败</strong> 生物受到@Damage[4d6[void]|options:area-damage]伤害。</p>\n<p><strong>大失败</strong> 生物受到@Damage[6d6[void]|options:area-damage]伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}，持续1小时。</p>"
                 },
                 "Blood Drain": {
                     "name": "吸血 Blood Drain",
-                    "description": "<p><strong>需求</strong> 鲜血虹吸@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}1个生物；</p>\n<hr />\n<p><strong>效果</strong> 鲜血虹吸从擒抱的生物身上吸血。这造成[[/r 4d4]]伤害，并且可以让鲜血虹吸暂时变湿变粘，同时回复@Damage[8[healing]]生命值，任何超出上限的生命值都将转化为临时生命值，持续1分钟。</p>\n<p>被吸血的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，直到它受到任何类型的治疗为止。</p>"
+                    "description": "<p><strong>需求</strong> 鲜血虹吸@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]1个生物</p>\n<hr />\n<p><strong>效果</strong> 鲜血虹吸从擒抱的生物身上吸血。这造成@Damage[4d4[untyped]]伤害，并且可以让鲜血虹吸暂时变湿变粘，同时回复@Damage[8[healing]]生命值，任何超出上限的生命值都将转化为临时生命值，持续1分钟。</p>\n<p>被吸血的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，直到它受到任何类型的治疗为止。</p>"
                 },
                 "Tremorsense 30 feet": {
                     "name": "Tremorsense 30 feet",
@@ -747,7 +747,7 @@
                 },
                 "Claim Corpse": {
                     "name": "占据尸体 Claim Corpse",
-                    "description": "<p><strong>先决条件</strong> 尸火当前处于鬼火形态，并和一个在过去24小时内未被尸火占据的中型或小型尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 尸火和尸体融合，尸体会站立并恢复@Damage[3d6[healing]]生命值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.auJ02rr1Jr88oD3Z]{效果：占据尸体 - 血肉}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.3np7EyJ8pyrVlpie]{效果：占据尸体 - 骷髅}</p>"
+                    "description": "<p><strong>先决条件</strong> 尸火当前处于鬼火形态，并和一个在过去24小时内未被尸火占据的中型或小型尸体相邻；</p>\n<hr />\n<p><strong>效果</strong> 尸火和尸体融合，尸体会站立并恢复@Damage[3d6[healing]]生命值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.auJ02rr1Jr88oD3Z]</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.3np7EyJ8pyrVlpie]</p>"
                 },
                 "Death Light": {
                     "name": "死亡之光 Death Light",
@@ -1045,7 +1045,7 @@
                 },
                 "Feed on Despair": {
                     "name": "吞食恐惧 Feed on Despair",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 恐怖鬼火15 尺的一个敌人处于恐惧、@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained}或@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}状态；</p>\n<hr />\n<p><strong>效果</strong> 恐怖鬼火吞食生物的绝望，恐怖鬼火恢复[[/r 2d8[healing]]]生命值，对该生物造成@Damage[3d8[void]]伤害（@Check[fortitude|dc:25|basic]豁免），并且如果恐怖鬼火已经变暗，恐怖闪烁将重新激活。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 恐怖鬼火15 尺的一个敌人处于恐惧、@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]或@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]状态</p>\n<hr />\n<p><strong>效果</strong> 恐怖鬼火吞食生物的绝望，恐怖鬼火恢复@Damage[2d8[healing]]生命值，对该生物造成@Damage[3d8[void]]伤害（@Check[fortitude|dc:25|basic]豁免），并且如果恐怖鬼火已经变暗，恐怖闪烁将重新激活。</p>"
                 },
                 "Go Dark": {
                     "name": "变暗 Go Dark",
@@ -1072,7 +1072,7 @@
         "Dreshkan": {
             "name": "铁骨怪 Dreshkan",
             "allSaves": "对抗流血、死亡效果、疾病、毁灭、疲乏、麻痹、毒素和恶心状态全豁免+2状态加值",
-            "publicNotes": "<p>由于摩洛克是远古人类的后裔，没有恰当处理或匆忙地对摩洛克进行塑肉仪式往往只能产生@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.K9Hw43co8fhwmKkM]{胶化人 Grothlut}。然而，熟练的塑肉师可以梳理摩洛克的基因差异，从而创造出完全不同的生物。创造一个铁骨怪需要用金属骨架替换摩洛克的所有骨骼。这种新型骨架通常会被大幅度改造增强，例如从脊椎伸出的蜘蛛臂般的肢体，如同弹匣一样紧密严实的针刺等等。奥法电流在铁骨怪全身流淌，让它变得更为紧张和易怒。</p>\n<p>摩洛克将铁骨怪视为血肉和科技力量的完美融合，并乐于和这些生物并肩作战，他们使其为摩洛克潜能的典范。</p>\n<hr />\n<p>虽然将受害者扭曲成可怕的外观是邪恶的卓尔们最出名的消遣，但其他地下生物已经学会甚至改进了这些塑肉仪式。蠕虫一般的双尾虫怪有时会在它们位于幽暗地域的领地内对其他生物进行塑肉实验；下面两种塑肉体分别来自摩洛克和透肌魔人。</p>",
+            "publicNotes": "<p>由于摩洛克是远古人类的后裔，没有恰当处理或匆忙地对摩洛克进行塑肉仪式往往只能产生@UUID[Compendium.pf2e.pathfinder-monster-core.Actor.VCYF0NAfPKwTHkK1]。然而，熟练的塑肉师可以梳理摩洛克的基因差异，从而创造出完全不同的生物。创造一个铁骨怪需要用金属骨架替换摩洛克的所有骨骼。这种新型骨架通常会被大幅度改造增强，例如从脊椎伸出的蜘蛛臂般的肢体，如同弹匣一样紧密严实的针刺等等。奥法电流在铁骨怪全身流淌，让它变得更为紧张和易怒。</p>\n<p>摩洛克将铁骨怪视为血肉和科技力量的完美融合，并乐于和这些生物并肩作战，他们使其为摩洛克潜能的典范。</p><hr /><p>虽然将受害者扭曲成可怕的外观是邪恶的卓尔们最出名的消遣，但其他地下生物已经学会甚至改进了这些塑肉仪式。蠕虫一般的双尾虫怪有时会在它们位于幽暗地域的领地内对其他生物进行塑肉实验；下面两种塑肉体分别来自摩洛克和透肌魔人。</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -1410,7 +1410,7 @@
                 },
                 "Consume Confusion": {
                     "name": "吞食困惑 Consume Confusion",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 闪火15尺内有一个陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}的生物；</p>\n<hr />\n<p><strong>效果</strong> 闪火以生物的困惑为食，而它闪烁的身体和无序的旋转导致进一步导致目标的困惑加深。</p>\n<p>它恢复@Damage[1d4[healing]]生命值，如果目标的困惑状态值有持续时间，则持续时间额外增加1轮。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 闪火15尺内有一个陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]的生物；</p>\n<hr />\n<p><strong>效果</strong> 闪火以生物的困惑为食，而它闪烁的身体和无序的旋转导致进一步导致目标的困惑加深。</p>\n<p>它恢复@Damage[1d4[healing]]生命值，如果目标的困惑状态值有持续时间，则持续时间额外增加1轮。</p>"
                 },
                 "Flicker": {
                     "name": "闪动 Flicker",
@@ -1547,7 +1547,7 @@
                 },
                 "Feed on Fear": {
                     "name": "吞食恐惧 Feed on Fear",
-                    "description": "<p><strong>需求</strong> 鬼火15尺内的一个敌人受到恐惧效果影响或陷入@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}。</p>\n<hr />\n<p><strong>效果</strong> 鬼火以生物的恐惧为食。它恢复@Damage[2d4[healing]]生命值，并且如果它已经变暗，则会重新让自己发光。</p>\n<p>鬼火每轮只能使用一次该能力。</p>"
+                    "description": "<p><strong>需求</strong> 鬼火15尺内的一个敌人受到恐惧效果影响或陷入@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]。</p>\n<hr />\n<p><strong>效果</strong> 鬼火以生物的恐惧为食。它恢复@Damage[2d4[healing]]生命值，并且如果它已经变暗，则会重新让自己发光。</p>\n<p>鬼火每轮只能使用一次该能力。</p>"
                 },
                 "Go Dark": {
                     "name": "变暗 Go Dark",
@@ -1802,7 +1802,7 @@
                 },
                 "Wicked Bite": {
                     "name": "秽恶之啮 Wicked Bite",
-                    "description": "<p><strong>需求</strong> 库尔费的上一个动作是用它的啃咬打击命中一个生物；</p>\n<hr />\n<p><strong>效果</strong> 库尔费紧咬不放，使生物受伤部位周围的皮肤呈半透明状态。库尔费从下列两个选项中选择一个，每个选项都需要进行@Check[fortitude|dc:28]豁免。如果啃咬造成重击，该生物将同时受到两种效果，对这两种效果使用同一个豁免结果。</p>\n<ul>\n<li><strong>啜饮鲜血 Drain Blood</strong> 库尔费饮下这个生物的一点鲜血。此生物在豁免失败时陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，库尔费恢复10点HP（大失败生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，库尔费恢复20点HP）；</li>\n<li><strong>啜饮活力 Drain Vitality</strong> 库尔费抽出了此生物的一点生命精华。豁免失败则此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}），持续1小时。</li>\n</ul>"
+                    "description": "<p><strong>需求</strong> 库尔费的上一个动作是用它的啃咬打击命中一个生物；</p>\n<hr />\n<p><strong>效果</strong> 库尔费紧咬不放，使生物受伤部位周围的皮肤呈半透明状态。库尔费从下列两个选项中选择一个，每个选项都需要进行@Check[fortitude|dc:28]豁免。如果啃咬造成重击，该生物将同时受到两种效果，对这两种效果使用同一个豁免结果。</p>\n<ul>\n<li><strong>啜饮鲜血 Drain Blood</strong> 库尔费饮下这个生物的一点鲜血。此生物在豁免失败时陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，库尔费恢复@Damage[10[healing]]HP（大失败生物陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，库尔费恢复@Damage[20[healing]]HP）；</li>\n<li><strong>啜饮活力 Drain Vitality</strong> 库尔费抽出了此生物的一点生命精华。豁免失败则此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}），持续1小时。</li>\n</ul>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
@@ -2002,7 +2002,7 @@
                 },
                 "Uncanny Tinker": {
                     "name": "俺寻思 Uncanny Tinker",
-                    "description": "<p>摩洛克工程师在修理相邻的构装体或机械陷阱。他尝试一次@Check[crafting|defense:fortitude]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的两倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<p>该能力代表了在战场上的紧急处理；一旦构装体或陷阱从此能力中恢复了生命值，就不能再通过此能力受到治疗，除非它被完全@UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{修理 Repaired}。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复[[/r 8d6[healing]]]生命值并且在1分钟之内，其攻击检定有+1环境加值。同样地，摩洛克也可以选择对构装体或陷阱造成[[/r 8d6]]伤害（钝击、穿刺、挥砍或由摩洛克工程师选择的伤害类型）。</p>\n<p><strong>成功</strong> 如大成功，但目标恢复[[/r 4d6[healing]]]生命值，或摩洛克造成[[/r 4d6]]伤害。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到[[/r 3d6]]伤害（一般是钝击、穿刺或挥砍，但是GM 可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.BTSstQAn4Xlm1PWV]{效果：俺寻思}</p>"
+                    "description": "<p>摩洛克工程师在修理相邻的构装体或机械陷阱。他尝试一次@Check[crafting|defense:fortitude]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的两倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<p>该能力代表了在战场上的紧急处理；一旦构装体或陷阱从此能力中恢复了生命值，就不能再通过此能力受到治疗，除非它被完全@UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复@Damage[8d6[healing]]生命值并且在1分钟之内，其攻击检定有+1环境加值。同样地，摩洛克也可以选择对构装体或陷阱造成@Damage[8d6[untyped]]伤害（钝击、穿刺、挥砍或由摩洛克工程师选择的伤害类型）。</p>\n<p><strong>成功</strong> 如大成功，但目标恢复@Damage[4d6[healing]]生命值，或摩洛克造成@Damage[4d6[untyped]]伤害。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到@Damage[3d6[untyped]]伤害（一般是钝击、穿刺或挥砍，但是GM 可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.BTSstQAn4Xlm1PWV]</p>"
                 },
                 "Light Blindness": {
                     "name": "Light Blindness",
@@ -2066,7 +2066,7 @@
                 },
                 "Stay in the Fight": {
                     "name": "继续战斗 Stay in the Fight",
-                    "description": "<p><strong>触发</strong> 一个30尺内的盟友生物生命值减少至0；</p>\n<hr />\n<p><strong>效果</strong> 钢皮魔人将自己的一部分能力传导给盟友让其能继续作战。目标生物获得1生命值，钢皮魔人受到@Damage[2d6[mental]]伤害。</p>"
+                    "description": "<p><strong>触发</strong> 一个30尺内的盟友生物生命值减少至0；</p>\n<hr />\n<p><strong>效果</strong> 钢皮魔人将自己的一部分能力传导给盟友让其能继续作战。目标生物恢复@Damage[1[healing]]生命值，钢皮魔人受到@Damage[2d6[mental]]伤害。</p>"
                 },
                 "Fervent Command": {
                     "name": "热情命令 Fervent Command",
@@ -2967,7 +2967,7 @@
                 },
                 "Shadow Spawn": {
                     "name": "幽影衍体 Shadow Spawn",
-                    "description": "<p>当一个生物的影子被窃影（Steal Shadow）能力抽出时，幽影能将其创建成一个听命于自己的@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.XrmHgbKgcHDi4OnK]{幽影衍体 Shadow Spawn}。此幽影衍体没有窃影能力，并且永久陷入笨拙2状态。如果被窃影的生物死亡，则该衍体成为完全体、具有自主意识的幽影。如果生物从@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeeblement}状态中恢复，则影子会回到它身上，并且幽影衍体会消失。</p>"
+                    "description": "<p>当一个生物的影子被窃影（Steal Shadow）能力抽出时，幽影能将其创建成一个听命于自己的@UUID[Compendium.pf2e.pathfinder-monster-core.Actor.clzHAfegb9Rn6DOe]。此幽影衍体没有窃影能力，并且永久陷入笨拙2状态。如果被窃影的生物死亡，则该衍体成为完全体、具有自主意识的幽影。如果生物从@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]状态中恢复，则影子会回到它身上，并且幽影衍体会消失。</p>"
                 },
                 "Slink in Shadows": {
                     "name": "潜于阴影 Slink in Shadows",
@@ -3140,7 +3140,7 @@
                 },
                 "Wicked Bite": {
                     "name": "秽恶之啮 Wicked Bite",
-                    "description": "<p><strong>需求</strong> 透肌魔人最后一次动作是用它的啃咬打击命中一个生物。</p>\n<hr />\n<p><strong>效果</strong> 透肌魔人紧咬不放，使生物受伤部位周围的皮肤呈半透明状态。透肌魔人从下列两个选项中选择一个，每个选项都需要进行强韧豁免。如果啃咬造成重击，该生物将同时受到两种效果，对这两种效果使用同一个豁免结果。</p>\n<ul>\n<li><strong>啜饮鲜血 Drain Blood</strong> @Check[fortitude|dc:24] 透肌魔人饮下这个生物的一点鲜血。此生物在豁免失败时获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，透肌魔人恢复@Damage[5[healing]]生命值 (大失败生物获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，透肌魔人恢复@Damage[10[healing]]生命值)。</li>\n<li><strong>啜饮活力 Drain Vitality</strong> (死灵系) @Check[fortitude|dc:24|traits:necromancy] 透肌魔人抽出了此生物的一点生命精华。豁免失败则此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}），持续1小时。</li>\n</ul>"
+                    "description": "<p><strong>需求</strong> 透肌魔人最后一次动作是用它的啃咬打击命中一个生物。</p>\n<hr />\n<p><strong>效果</strong> 透肌魔人紧咬不放，使生物受伤部位周围的皮肤呈半透明状态。透肌魔人从下列两个选项中选择一个，每个选项都需要进行强韧豁免。如果啃咬造成重击，该生物将同时受到两种效果，对这两种效果使用同一个豁免结果。</p>\n<ul>\n<li><strong>啜饮鲜血 Drain Blood</strong> @Check[fortitude|dc:24] 透肌魔人饮下这个生物的一点鲜血。此生物在豁免失败时获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，透肌魔人恢复@Damage[5[healing]]生命值 (大失败生物获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，透肌魔人恢复@Damage[10[healing]]生命值)。</li>\n<li><strong>啜饮活力 Drain Vitality</strong> （死灵系）@Check[fortitude|dc:24|traits:necromancy] 透肌魔人抽出了此生物的一点生命精华。豁免失败则此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}），持续1小时。</li>\n</ul>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
@@ -3177,7 +3177,7 @@
                 },
                 "Wicked Bite": {
                     "name": "秽恶之啮 Wicked Bite",
-                    "description": "<p><strong>需求</strong> 透肌魔人最后一次动作是用它的啃咬打击命中一个生物。</p>\n<hr />\n<p><strong>效果</strong> 透肌魔人紧咬不放，使生物受伤部位周围的皮肤呈半透明状态。透肌魔人从下列两个选项中选择一个，每个选项都需要进行强韧豁免。如果啃咬造成重击，该生物将同时受到两种效果，对这两种效果使用同一个豁免结果。</p>\n<ul>\n<li><strong>啜饮鲜血 Drain Blood</strong> @Check[fortitude|dc:25] 透肌魔人饮下这个生物的一点鲜血。此生物在豁免失败时获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，透肌魔人恢复@Damage[10[healing]]生命值 (大失败生物获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，透肌魔人恢复@Damage[20[healing]]生命值)。</li>\n<li><strong>啜饮活力 Drain Vitality</strong> (死灵系) @Check[fortitude|dc:25|traits:necromancy] 透肌魔人抽出了此生物的一点生命精华。豁免失败则此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}），持续1小时。</li>\n</ul>"
+                    "description": "<p><strong>需求</strong> 透肌魔人最后一次动作是用它的啃咬打击命中一个生物。</p>\n<hr />\n<p><strong>效果</strong> 透肌魔人紧咬不放，使生物受伤部位周围的皮肤呈半透明状态。透肌魔人从下列两个选项中选择一个，每个选项都需要进行强韧豁免。如果啃咬造成重击，该生物将同时受到两种效果，对这两种效果使用同一个豁免结果。</p>\n<ul>\n<li><strong>啜饮鲜血 Drain Blood</strong> @Check[fortitude|dc:25] 透肌魔人饮下这个生物的一点鲜血。此生物在豁免失败时获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，透肌魔人恢复@Damage[10[healing]]生命值 (大失败生物获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}，透肌魔人恢复@Damage[20[healing]]生命值)。</li>\n<li><strong>啜饮活力 Drain Vitality</strong> （死灵系）@Check[fortitude|dc:25|traits:necromancy] 透肌魔人抽出了此生物的一点生命精华。豁免失败则此生物获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}），持续1小时。</li>\n</ul>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
@@ -3524,7 +3524,7 @@
                 },
                 "Feed on Fear": {
                     "name": "吞食恐惧 Feed on Fear",
-                    "description": "<p><strong>需求</strong> 鬼火15尺内的一个敌人受到恐惧效果影响或陷入@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{濒死 Dying}。</p>\n<hr />\n<p><strong>效果</strong> 鬼火以生物的恐惧为食。它恢复@Damage[2d4[healing]]生命值，并且如果它已经变暗，则会重新让自己发光。</p>\n<p>鬼火每轮只能使用一次该能力。</p>"
+                    "description": "<p><strong>需求</strong> 鬼火15尺内的一个敌人受到恐惧效果影响或陷入@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]。</p>\n<hr />\n<p><strong>效果</strong> 鬼火以生物的恐惧为食。它恢复@Damage[2d4[healing]]生命值，并且如果它已经变暗，则会重新让自己发光。</p>\n<p>鬼火每轮只能使用一次该能力。</p>"
                 },
                 "Go Dark": {
                     "name": "变暗 Go Dark",
@@ -4210,7 +4210,7 @@
             "items": {
                 "Instinctual Tinker": {
                     "name": "修修补补 Instinctual Tinker",
-                    "description": "<p>摩洛克尝试修理一件相邻的构装体或机械陷阱。它尝试1次@Check[crafting]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的2倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复@Damage[4d6[healing]]生命值并且在1分钟之内，攻击检定有+1环境加值。</p>\n<p><strong>成功</strong> 目标恢复@Damage[2d6[healing]]生命值。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到[[/r 2d6]]伤害（一般是钝击、穿刺或挥砍，但是GM可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TEzLEXBZzNCp6flg]{效果：修修补补(大成功)}</p>"
+                    "description": "<p>摩洛克尝试修理一件相邻的构装体或机械陷阱。它尝试1次@Check[crafting]检定，对抗该构装体或陷阱的强韧DC。如果目标的等级为摩洛克的2倍以上，摩洛克就无法得到比失败更好的结果。</p>\n<hr />\n<p><strong>大成功</strong> 目标恢复@Damage[4d6[healing]]生命值并且在1分钟之内，攻击检定有+1环境加值。</p>\n<p><strong>成功</strong> 目标恢复@Damage[2d6[healing]]生命值。</p>\n<p><strong>大失败</strong> 摩洛克弄伤它自己，受到@Damage[2d6[untyped]]伤害（一般是钝击、穿刺或挥砍，但是GM可以自由决定其他伤害类型）。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TEzLEXBZzNCp6flg]</p>"
                 },
                 "Leap Attack": {
                     "name": "跳跃攻击 Leap Attack",
