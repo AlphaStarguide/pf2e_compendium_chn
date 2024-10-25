@@ -1299,7 +1299,7 @@
         },
         "Self Destruct": {
             "name": "自毁 Self Destruct",
-            "description": "<p><strong>触发</strong> 你的赋生发条伙伴生命值减少至0。</p>\n<p><strong>需求</strong> 你和赋生发条伙伴的距离不超过60尺。</p><hr /><p>你在构装伙伴中安装了一个自毁装置，你能用一个特殊的起爆器在至多60尺远距离内引爆它。当你启动该装置时，你的赋生构装伙伴会爆炸，对@Template[emanation|distance:30]{30尺半径}内所有生物造成@Damage[((2*@actor.level)d6)[fire]]伤害。范围内的生物能尝试@Check[reflex|against:class-spell]豁免，其DC等于你的职业DC或法术DC中更高的那个。</p>",
+            "description": "<p><strong>触发</strong> 你的赋生发条伙伴生命值减少至0。</p>\n<p><strong>需求</strong> 你和赋生发条伙伴的距离不超过60尺。</p><hr /><p>你在构装伙伴中安装了一个自毁装置，你能用一个特殊的起爆器在至多60尺远距离内引爆它。当你启动该装置时，你的赋生构装伙伴会爆炸，对@Template[emanation|distance:30]{30尺半径}内所有生物造成每等级2d6火焰伤害（@Damage[((2*@actor.level)d6)[fire]]）。范围内的生物能尝试@Check[reflex|against:class-spell]豁免，其DC等于你的职业DC或法术DC中更高的那个。</p>",
             "prerequisites": [
                 {
                     "value": "发条赋生者入门"
@@ -8635,7 +8635,7 @@
         },
         "Steel Yourself!": {
             "name": "备战！ Steel Yourself!",
-            "description": "<p>你吩咐一个盟友防御好自己，准备面对接下来的激战。选择一个处于你的战将灵光范围内的盟友，这个盟友获得相当于你的魅力调整值的临时生命值，并在强韧豁免检定上获得+2环境加值。这些加值都会持续到你的下回合开始时为止。</p>",
+            "description": "<p>你吩咐一个盟友防御好自己，准备面对接下来的激战。选择一个处于你的战将灵光范围内的盟友，这个盟友获得相当于你的魅力调整值的临时生命值，并在强韧豁免检定上获得+2环境加值。这些加值都会持续到你的下回合开始时为止。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.HoNojV4S2Yb6CoZR]</p>",
             "prerequisites": [
                 {
                     "value": "战将入门"
@@ -15103,7 +15103,7 @@
         },
         "Scout's Charge": {
             "name": "斥候冲锋 Scout's Charge",
-            "description": "<p>你悄无声息地四处游走，毫无预兆地伏击对手。</p>\n<p>选择一名敌人，行走然后对该敌人使用@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]，最后再对其进行一次打击。你的此次虚招可以用隐秘检定代替正常情况下的欺骗检定，使你利用周围的地形突袭敌人。</p>",
+            "description": "<p>你悄无声息地四处游走，毫无预兆地伏击对手。</p>\n<p>选择一名敌人，行走然后对该敌人使用@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]，最后再对其进行一次打击。你的此次虚招可以用[[/act feint skill=stealth]]检定代替正常情况下的欺骗检定，使你利用周围的地形突袭敌人。</p>",
             "prerequisites": [
                 {
                     "value": "斥候入门"
@@ -22994,7 +22994,7 @@
         },
         "Energy Blessed": {
             "name": "能量祝福 Energy Blessed",
-            "description": "<p>你的血液中流淌着更强大的能量。当你使用能量扩散时，你可以创造@Template[emanation|distance:5]、@Template[emanation|distance:10]或@Template[emanation|distance:15]的扩散效果。伤害增至@Damage[(6+max(0,@actor.level - 9))d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|traits:area-damage]{6d6加上9级以后每级1d6点}，而非原本的1d6加上1级后每2级1d6点。</p>",
+            "description": "<p>你的血液中流淌着更强大的能量。当你使用能量扩散时，你可以创造@Template[emanation|distance:5]、@Template[emanation|distance:10]或@Template[emanation|distance:15]的扩散效果。伤害增至@Damage[(6+max(0,@actor.level - 9))d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|options:area-damage]{6d6加上9级以后每级1d6点}，而非原本的1d6加上1级后每2级1d6点。</p>",
             "prerequisites": [
                 {
                     "value": "元素之心矮人族裔传承"
@@ -31108,11 +31108,11 @@
         },
         "Lightning Dash": {
             "name": "闪电突进 Lightning Dash",
-            "description": "<p>电光火石之间，你变为纯粹的闪电，向前突进，电击任何拦路之人。你在@Template[line|distance:30]区域推动自己前进。你可以在此行动中穿过任何生物，并且此移动不会触发由移动动作触发的反应动作。被你穿过的每个生物都会受到@Damage[(floor((@actor.level -4)/3)+2)d12[electricity]|traits:area-damage]伤害，进行@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。你将在线形区域的最后一个方格变回正常形态。如果此时你在空中，除非你拥有飞行速度，否则你会开始坠落。</p>\n<hr />\n<p><strong>升级（+3）</strong> 线形区域长度增加5尺，伤害增加1d12。</p>"
+            "description": "<p>电光火石之间，你变为纯粹的闪电，向前突进，电击任何拦路之人。你在@Template[line|distance:30]区域推动自己前进。你可以在此行动中穿过任何生物，并且此移动不会触发由移动动作触发的反应动作。被你穿过的每个生物都会受到@Damage[(floor((@actor.level -4)/3)+2)d12[electricity]|options:area-damage]伤害，进行@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。你将在线形区域的最后一个方格变回正常形态。如果此时你在空中，除非你拥有飞行速度，否则你会开始坠落。</p>\n<hr />\n<p><strong>升级（+3）</strong> 线形区域长度增加5尺，伤害增加1d12。</p>"
         },
         "Rising Hurricane": {
             "name": "升腾飓风 Rising Hurricane",
-            "description": "<p>一场飓风将敌人举到空中，然后在暴雨中将其抛下。你的飓风出现在高40尺，30尺直径、120尺内的圆柱形空间中。该区域内所有生物都会受到@Damage[(floor((@actor.level -6)/3)+2)d6[bludgeoning]|traits:area-damage]伤害，@Check[fortitude|against:kineticist|basic]豁免对抗你的职业DC。你能将任意豁免失败的生物举起到区域中由你选择的高度，并能将其向任意方向移动最多5尺，然后丢下它。如果它没有飞行速度，就会受到坠落伤害。</p>\n<hr />\n<p><strong>升级（+3）</strong> 暴雨伤害增加1d6，圆柱体高度增加5尺。</p>"
+            "description": "<p>一场飓风将敌人举到空中，然后在暴雨中将其抛下。你的飓风出现在高40尺，30尺直径、120尺内的圆柱形空间中。该区域内所有生物都会受到@Damage[(floor((@actor.level -6)/3)+2)d6[bludgeoning]|options:area-damage]伤害，@Check[fortitude|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。你能将任意豁免失败的生物举起到区域中由你选择的高度，并能将其向任意方向移动最多5尺，然后丢下它。如果它没有飞行速度，就会受到坠落伤害。</p><hr /><p><strong>升级（+3）</strong> 暴雨伤害增加1d6，圆柱体高度增加5尺。</p>"
         },
         "Ocean's Balm": {
             "name": "大洋药膏 Ocean's Balm",
@@ -31124,7 +31124,7 @@
         },
         "Weight Of Stone": {
             "name": "磐石之重 Weight Of Stone",
-            "description": "<p>雷鸣般的石雨从天而降，将沿途所有人击落。石雨在直径20尺，高80尺的圆柱体空间内落下，其底部离你不能超过120尺。区域中的每个生物都受到@Damage[(floor((@actor.level -6)/2)+4)d8[bludgeoning]]伤害，并且有可能会被向下方推离，具体取决于@Check[reflex|against:class]豁免结果（对抗你的职业DC）。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，并且向下方推离40尺，但是不受坠落伤害。如果目标接触到圆柱体的底部，这种推离会停止。如果生物被击至地面，则它在1轮内无法飞行、@UUID[Compendium.pf2e.spells-srd.Item.fI20AVwOzJMHXRdo]{漂浮 Levitate}或采用其他方式离开地面。</p>\n<p><strong>大失败</strong> 类似失败，但是受到双倍伤害，并且生物被向下推离80尺。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d8。</p>"
+            "description": "<p>雷鸣般的石雨从天而降，将沿途所有人击落。石雨在直径20尺，高80尺的圆柱体空间内落下，其底部离你不能超过120尺。区域中的每个生物都受到@Damage[(floor((@actor.level -6)/2)+4)d8[bludgeoning]|options:area-damage]伤害，并且有可能会被向下方推离，具体取决于@Check[reflex|against:kineticist|options:area-effect,damaging-effect]豁免结果（对抗你的职业DC）。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，并且向下方推离40尺，但是不受坠落伤害。如果目标接触到圆柱体的底部，这种推离会停止。如果生物被击至地面，则它在1轮内无法飞行、@UUID[Compendium.pf2e.spells-srd.Item.fI20AVwOzJMHXRdo]或采用其他方式离开地面。</p>\n<p><strong>大失败</strong> 类似失败，但是受到双倍伤害，并且生物被向下推离80尺。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d8。</p>"
         },
         "Consume Power": {
             "name": "吞噬能量 Consume Power",
@@ -31148,7 +31148,7 @@
         },
         "Turn the Wheel of Seasons": {
             "name": "四季轮转 Turn the Wheel of Seasons",
-            "description": "<p>季节变化很快。该涌动影响1000尺射程内的100尺立方区域。选择起始季节。该涌动持续4轮，在你的每个回合开始时推进到下个季节。你在该涌动结束之前无法再次使用该涌动。</p>\n<p><strong>春季</strong> 立方区域内的每个盟友获得20临时生命值，持续到你的下个回合开始。每个濒死的盟友尝试一次复苏检定，但是如果未成功的话濒死值不会增加。</p>\n<p><strong>夏季</strong> （光亮）区域中的每个敌人暴露在阳光下，并且必须尝试@Check[reflex|against:kineticist|traits:light]豁免对抗你的职业DC。大成功不受影响，成功则@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]直到你的下个回合开始，失败则@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]直到你的下个回合开始。</p>\n<p><strong>秋季</strong> 落叶和雨水让整个区域@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，直到你的下个回合开始。并且寒风让区域内的每个敌人@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，直到你的下个回合开始，除非他成功对你的职业DC进行@Check[fortitude|against:kineticist]豁免。</p>\n<p><strong>冬季</strong> 区域中的每个敌人受到@Damage[5d6[cold]|traits:area-damage]伤害，以@Check[reflex|against:kineticist|basic]对抗你的职业DC。豁免失败的生物还会受到@Damage[2d6[persistent,cold]]伤害。</p>"
+            "description": "<p>季节变化很快。该涌动影响1000尺射程内的100尺立方区域。选择起始季节。该涌动持续4轮，在你的每个回合开始时推进到下个季节。你在该涌动结束之前无法再次使用该涌动。</p>\n<p><strong>春季</strong> 立方区域内的每个盟友获得20临时生命值，持续到你的下个回合开始。每个濒死的盟友尝试一次复苏检定，但是如果未成功的话濒死值不会增加。</p>\n<p><strong>夏季</strong> （光亮）区域中的每个敌人暴露在阳光下，并且必须尝试@Check[reflex|against:kineticist|traits:light]豁免对抗你的职业DC。大成功不受影响，成功则@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]直到你的下个回合开始，失败则@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]直到你的下个回合开始。</p>\n<p><strong>秋季</strong> 落叶和雨水让整个区域@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，直到你的下个回合开始。并且寒风让区域内的每个敌人@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，直到你的下个回合开始，除非他成功对你的职业DC进行@Check[fortitude|against:kineticist]豁免。</p>\n<p><strong>冬季</strong> 区域中的每个敌人受到@Damage[5d6[cold]|options:area-damage]伤害，以@Check[reflex|against:kineticist|basic|options:area-effect]对抗你的职业DC。豁免失败的生物还会受到@Damage[2d6[persistent,cold]]伤害。</p>"
         },
         "Volcanic Escape": {
             "name": "火山逃逸 Volcanic Escape",
@@ -31168,7 +31168,7 @@
         },
         "The Shattered Mountain Weeps": {
             "name": "破碎山脉之泣 The Shattered Mountain Weeps",
-            "description": "<p>一个巨大的石球爆炸，倾泻出雨点般的残骸和致命碎片。它在120尺射程内的@Template[burst|distance:20]范围降下毁灭。该地区的生物会受到@Damage[9d10[bludgeoning]|traits:area-damage]伤害，@Check[fortitude|against:class|basic]豁免对抗你的职业DC。豁免失败的生物会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。在接下来的一分钟内，岩石雨持续下落，让区域内变为困难地形，任何在该区域内结束回合的生物都受到@Damage[3d10[bludgeoning]]伤害。如果你再次使用该涌动，则之前的效果会结束。</p>\n<hr />\n<p><strong>升级（20级）</strong> 直接伤害@Damage[10d10[bludgeoning]]，区域伤害@Damage[4d10[bludgeoning]]。</p>"
+            "description": "<p>一个巨大的石球爆炸，倾泻出雨点般的残骸和致命碎片。它在120尺射程内的@Template[burst|distance:20]范围降下毁灭。该地区的生物会受到@Damage[(ternary(gte(@actor.level,20),10,9))d10[bludgeoning]|options:area-damage]伤害，@Check[fortitude|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。豁免失败的生物会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。在接下来的一分钟内，岩石雨持续下落，让区域内变为困难地形，任何在该区域内结束回合的生物都受到@Damage[(ternary(gte(@actor.level,20),4,3))d10[bludgeoning]|options:area-damage]伤害。如果你再次使用该涌动，则之前的效果会结束。</p><hr /><p><strong>升级（20级）</strong> 直接伤害变为10d10，区域伤害变为4d10。</p>"
         },
         "Ghosts in the Storm": {
             "name": "风暴之灵 Ghosts in the Storm",
@@ -31480,7 +31480,7 @@
         },
         "Rain of Razors": {
             "name": "刀片如雨 Rain of Razors",
-            "description": "<p>刀片状的金属雨从天上落下。60尺射程内@Template[burst|distance:20]区域内的每个生物受到@Damage[(floor((@actor.level -12)/2)+9)d6[slashing]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。刀片插满区域中所有表面，让它们变为有害地形，持续1分钟。穿过有害地形的生物，每次移动进入区域中的方格时都会受到@Damage[(floor((max(12,@actor.level)-12)/2)+3)[slashing]]伤害。</p>\n<hr />\n<p><strong>升级（+2）</strong> 直接伤害增加1d6，有害地形伤害增加1点。</p>"
+            "description": "<p>刀片状的金属雨从天上落下。60尺射程内@Template[burst|distance:20]区域内的每个生物受到@Damage[(floor((@actor.level -12)/2)+9)d6[slashing]|options:area-damage]伤害，@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。刀片插满区域中所有表面，让它们变为有害地形，持续1分钟。穿过有害地形的生物，每次移动进入区域中的方格时都会受到@Damage[(floor((max(12,@actor.level)-12)/2)+3)[slashing]]伤害。</p>\n<hr />\n<p><strong>升级（+2）</strong> 直接伤害增加1d6，有害地形伤害增加1点。</p>"
         },
         "Hell of 1,000,000 Needles": {
             "name": "万针刑狱 Hell of 1,000,000 Needles",
@@ -32562,7 +32562,7 @@
             "name": "Call Worm Spirit"
         },
         "Crimson Breath": {
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p>You gain a fire breath weapon similar to that of a crimson worm. You breathe a blast of flame in a @Template[cone|distance:30] that deals @Damage[((ceil(max(0,((@actor.level - 13)/2)))*2)+12)d6[fire]] damage to all creatures in the area (@Check[reflex|against:class-spell|basic] save). This damage increases by 2d6 at 14th level and every 2 levels thereafter.</p>\n<hr />\n<p><em>Note: A DC was not provided for this ability by Paizo. The button above uses the better of your class or spell DC.</em></p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You gain a fire breath weapon similar to that of a crimson worm. You breathe a blast of flame in a @Template[cone|distance:30] that deals @Damage[((ceil(max(0,((@actor.level - 13)/2)))*2)+12)d6[fire]|options:area-damage] damage to all creatures in the area (@Check[reflex|against:class-spell|basic|options:area-effect] save). This damage increases by 2d6 at 14th level and every 2 levels thereafter.</p><hr /><p><em>Note: A DC was not provided for this ability by Paizo. The button above uses the better of your class or spell DC.</em></p>",
             "prerequisites": [
                 {
                     "value": "Worm Caller Dedication"
@@ -33430,7 +33430,7 @@
             "name": "水手的末日 Doom of Sailors"
         },
         "Kraken's Call": {
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>你呼唤深海中沉睡的克拉肯来粉碎你的敌人。你会在120尺内的@Template[burst|distance:30]范围内打开十几个通往无光深海的小传送门。克拉肯强壮的触手会伸入其中，抓取该区域内的每个生物。每个受影响的生物都会受到@Damage[8d6[untyped]]伤害（注：没有提到伤害类型），随@Check[fortitude|against:class-spell]豁免结果变化，对抗你的职业DC或法术DC中较高者。你最多可以维持呼唤1分钟。在你第一次持续召唤后的每个回合中，该区域内尚未@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于触手的每个生物都必须尝试豁免。</p>\n<hr />\n<p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 该生物受到全部伤害并受擒于触手。回合结束时仍被触手抓住的生物会受到@Damage[3d6[bludgeoning]]伤害。触手的@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC和AC都等于你的职业DC或法术DC中的较高者。生物可以攻击触手，试图解救被其困住的生物；如果触手在一轮内受到30或更多的伤害，则会被摧毁。</p>\n<p><strong>大失败</strong> 与失败相同，但伤害加倍。</p>",
+            "description": "<p><strong>频率</strong> 每天一次</p><hr /><p>你呼唤深海中沉睡的克拉肯来粉碎你的敌人。你会在120尺内的@Template[burst|distance:30]范围内打开十几个通往无光深海的小传送门。克拉肯强壮的触手会伸入其中，抓取该区域内的每个生物。每个受影响的生物都会受到@Damage[8d6[untyped]|options:area-damage]伤害，随@Check[fortitude|against:class-spell||options:area-effect,damaging-effect]豁免结果变化，对抗你的职业DC或法术DC中较高者。你最多可以维持呼唤1分钟。在你第一次持续召唤后的每个回合中，该区域内尚未@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于触手的每个生物都必须尝试豁免。</p><hr /><p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 该生物受到全部伤害并受擒于触手。回合结束时仍被触手抓住的生物会受到@Damage[3d6[bludgeoning]]伤害。触手的@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]DC和AC都等于你的职业DC或法术DC中的较高者。生物可以攻击触手，试图解救被其困住的生物；如果触手在一轮内受到30或更多的伤害，则会被摧毁。</p>\n<p><strong>大失败</strong> 与失败相同，但伤害加倍。</p>",
             "name": "克拉肯的呼唤 Kraken's Call"
         },
         "Strong Tail": {
@@ -33758,7 +33758,7 @@
             "name": "腐烂泥浆 Rotten Slurry"
         },
         "Irradiate": {
-            "description": "<p>你散发出辐射灵光，使周围的人都生病。在@Template[emanation|distance:15]内的所有生物必须成功通过@Check[fortitude|against:class-spell]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。在大失败时，他们也会@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}1分钟。你对自身的辐射免疫。6级之后每多5级，造成的恶心状态的值增加1。</p>\n<p><strong>觉醒</strong> 你更有效地散发出这种辐射光环。灵光的半径变为@Template[emanation|distance:60]{60尺}。</p>\n<p><strong>觉醒</strong> 你的辐射变得更强大。区域内的生物额外承受@Damage[(floor(@actor.level/2))d4[poison]]{1d4毒素}伤害，@Check[fortitude|against:class-spell|basic]豁免（只进行一次强韧豁免，并将其结果应用于伤害和恶心状态）。 </p>",
+            "description": "<p>你散发出辐射灵光，使周围的人都生病。在@Template[emanation|distance:15]内的所有生物必须成功通过@Check[fortitude|against:class-spell]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。在大失败时，他们也会@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}1分钟。你对自身的辐射免疫。6级之后每多5级，造成的恶心状态的值增加1。</p>\n<p><strong>觉醒</strong> 你更有效地散发出这种辐射光环。灵光的半径变为@Template[emanation|distance:60]{60尺}。</p>\n<p><strong>觉醒</strong> 你的辐射变得更强大。区域内的生物额外承受@Damage[(floor(@actor.level/2))d4[poison]|options:area-damage]伤害，@Check[fortitude|against:class-spell|basic|options:area-effect]豁免（只进行一次强韧豁免，并将其结果应用于伤害和恶心状态）。 </p>",
             "name": "辐射 Irradiate"
         },
         "Sprout Fruit": {
@@ -34235,7 +34235,7 @@
             ]
         },
         "Lassoing Lash": {
-            "description": "<p><strong>需求</strong> 目标体型最多比你大一级。</p><hr /><p>你一扫之后紧缠敌手，将它们拉向自己。尝试一次<span data-pf2-action=\"grapple\" data-pf2-glyph=\"A\">运动</span>检定，对抗你扫击触及内一个生物的强韧DC：</p><hr /><p><strong>大成功</strong> 你将目标移动到与你相邻的任意方格。</p>\n<p><strong>成功</strong> 你将目标移动到最近的与你相邻的方格。</p>\n<p><strong>大失败</strong> 你失去平衡并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p><hr /><p><strong>特殊</strong> 如果你有巨人摔角术，你可以对体型最多比你大两级的生物尝试，且若你在运动技能上的熟练度达到传奇，则目标可以是体型最多比你大三级的生物。</p>",
+            "description": "<p><strong>需求</strong> 目标体型最多比你大一级</p><hr /><p>你一扫之后紧缠敌手，将它们拉向自己。尝试一次[[/act grapple]]检定，对抗你扫击触及内一个生物的强韧DC。</p><hr /><p><strong>大成功</strong> 你将目标移动到与你相邻的任意方格</p>\n<p><strong>成功</strong> 你将目标移动到最近的与你相邻的方格</p>\n<p><strong>大失败</strong> 你失去平衡并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]</p><hr /><p><strong>特殊</strong> 如果你有巨人摔角术，你可以对体型最多比你大两级的生物尝试，且若你在运动技能上的熟练度达到传奇，则目标可以是体型最多比你大三级的生物</p>",
             "name": "飞索套击 Lassoing Lash",
             "prerequisites": [
                 {
@@ -35160,7 +35160,7 @@
             "name": "龙之吐息（龙裔） Breath of the Dragon (Dragonblood)"
         },
         "Call the Swarm": {
-            "description": "<p><strong>频率</strong> 每天一次</p><hr /><p>你发出一声尖锐的哨音并指明一个方向，一大群老鼠将附近地点奔涌而出，挤满120尺范围内的一个@Template[burst|distance:30]区域。鼠群不仅能在地面上攒动，更能爬上墙壁和各种表面，它们不断撕咬并抓挠周围的事物，对区域内的所有敌人造成@Damage[6d8[piercing]]伤害。在接下来的一分钟内，鼠群将继续停留在这片区域中，对所有在该区域内结束其回合的敌人造成@Damage[3d8[piercing]]伤害，并将该区域变为困难地形（但老鼠们会为你以及你的盟友自动让路，允许你们如常通过）。你能够解消该效果。</p>",
+            "description": "<p><strong>频率</strong> 每天一次</p><hr /><p>你发出一声尖锐的哨音并指明一个方向，一大群老鼠将附近地点奔涌而出，挤满120尺范围内的一个@Template[burst|distance:30]区域。鼠群不仅能在地面上攒动，更能爬上墙壁和各种表面，它们不断撕咬并抓挠周围的事物，对区域内的所有敌人造成@Damage[6d8[piercing]|options:area-damage]伤害。在接下来的一分钟内，鼠群将继续停留在这片区域中，对所有在该区域内结束其回合的敌人造成@Damage[3d8[piercing]|options:area-damage]伤害，并将该区域变为困难地形（但老鼠们会为你以及你的盟友自动让路，允许你们如常通过）。你能够解消该效果。</p>",
             "prerequisites": [
                 {
                     "value": "鼠言鼠语"
