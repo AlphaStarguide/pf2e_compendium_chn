@@ -399,7 +399,7 @@
         },
         "Energy Emanation": {
             "name": "能量爆发 Energy Emanation",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成@Damage[ceil(@actor.level/2)d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|traits:area-damage]伤害（@Check[reflex|against:class-spell|basic]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>能量从你身体中爆发出来。你对所有邻接生物造成@Damage[ceil(@actor.level/2)d6[@actor.flags.pf2e.elementalHeartDwarf.damageType]|options:area-damage]伤害（@Check[reflex|against:class-spell|basic|options:area-effect]豁免，在你的职业DC和法术DC中取较高的一个）。3级和之后每2级，伤害增加1d6点。</p>"
         },
         "Energy Shot": {
             "name": "能量射击 Energy Shot",
@@ -419,7 +419,7 @@
         },
         "Explode": {
             "name": "爆炸 Explode",
-            "description": "<p>你故意解除了大发明的安全限制，让它爆炸并伤害周围的生物……并最好不要伤到大发明。爆炸对你周围@Template[emanation|distance:5]内（如果你持用或穿戴大发明）或你的大发明周围5尺弥漫范围内（如果你的大发明是仆从）的所有生物造成@Damage[max(2, @actor.level)d6[@actor.flags.pf2e.inventor.explode]|traits:area-damage]伤害，@Check[reflex|against:inventor|basic]豁免。 </p>\n<p>3级和之后的每级，你的爆炸伤害提升1d6。</p>\n<p>如果你具有突破性大发明职业特性，你在使用爆炸时可以选择5尺或@Template[emanation|distance:10]范围；如果你具有革命性大发明职业特性，你可以选择5尺，10尺或@Template[emanation|distance:15]范围。</p>"
+            "description": "<p>你故意解除了大发明的安全限制，让它爆炸并伤害周围的生物……并最好不要伤到大发明。爆炸对你周围@Template[emanation|distance:5]内（如果你持用或穿戴大发明）或你的大发明周围5尺弥漫范围内（如果你的大发明是仆从）的所有生物造成@Damage[max(2, @actor.level)d6[@actor.flags.pf2e.inventor.explode]|options:area-damage]伤害，@Check[reflex|against:inventor|basic|options:area-effect]豁免。 </p>\n<p>3级和之后的每级，你的爆炸伤害提升1d6。</p>\n<p>如果你具有突破性大发明职业特性，你在使用爆炸时可以选择5尺或@Template[emanation|distance:10]范围；如果你具有革命性大发明职业特性，你可以选择5尺，10尺或@Template[emanation|distance:15]范围。</p>"
         },
         "Feint": {
             "name": "虚招 Feint",
@@ -487,7 +487,7 @@
         },
         "Goblin Jubilee": {
             "name": "地精狂欢 Goblin Jubilee",
-            "description": "<p><strong>开销</strong> 3剂灌注试剂</p>\n<hr />\n<p><strong>效果</strong> 120尺范围内的@Template[burst|distance:20]{半径20尺爆发}区域中充满了混乱。所有此区域内的生物会承受@Damage[3d6[fire],3d6[sonic]]{3d6点火焰伤害以及3d6点音波伤害}，并且必须尝试一次强韧豁免。地精狂欢消耗3剂灌注试剂而非1剂。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}和@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{耳聋 Deafened}，持续至其下个回合结束为止，并且会承受半额伤害。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}和@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{耳聋 Deafened}，持续1分钟并承受全额伤害。</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮，陷入持续1分钟的@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}和@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{耳聋 Deafened}，并且承受双倍伤害。</p>"
+            "description": "<p><strong>开销</strong> 3剂灌注试剂</p>\n<hr />\n<p><strong>效果</strong> 120尺范围内的@Template[burst|distance:20]{半径20尺爆发}区域中充满了混乱。所有此区域内的生物会承受@Damage[3d6[fire],3d6[sonic]|options:area-damage]伤害，并且必须尝试一次@Check[fortitude|against:class-spell|options:area-damage,damaging-effect]豁免。地精狂欢消耗3剂灌注试剂而非1剂。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]和@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]，持续至其下个回合结束为止，并且会承受半额伤害。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]和@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]，持续1分钟并承受全额伤害。</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮，陷入持续1分钟的@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}和@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]，并且承受双倍伤害。</p>"
         },
         "Grab an Edge": {
             "name": "抓住边缘 Grab an Edge",
@@ -495,7 +495,7 @@
         },
         "Grapple": {
             "name": "擒拿 Grapple",
-            "description": "<p><strong>需求</strong> 你至少有一只空闲手，目标的体型不超过你一级以上。</p>\n<hr />\n<p>你试图用自己的空闲手抓住一个生物或物体。进行<span data-pf2-action=\"grapple\" data-pf2-glyph=\"A\">运动</span>检定对抗目标的强韧DC。你可以在没有空闲手的情况下擒拿已经@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}的目标。</p>\n<hr />\n<p><strong>大成功</strong> 除非你移动或者你的目标逃脱，否则你的目标在你下一回合结束前都会陷入束缚。</p>\n<p><strong>成功</strong> 除非你移动或者你的目标逃脱，否则你的目标在你下一回合结束前都会陷入受擒。</p>\n<p><strong>失败</strong> 你没能抓住目标。如果你之前已经使用擒拿使该目标陷入受擒或束缚，那么目标的上述状态也随之结束。</p>\n<p><strong>大失败</strong> 如果你之前已经使用擒拿使该目标陷入受擒或束缚，那么目标会挣脱。你的目标可以反过来擒拿住你，视为该目标成功对你使用了擒拿动作，也可以强迫你坠落且在落地时@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+            "description": "<p><strong>需求</strong> 你至少有一只空闲手，目标的体型不超过你一级以上。</p>\n<hr />\n<p>你试图用自己的空闲手抓住一个生物或物体。进行[[/act grapple]]检定对抗目标的强韧DC。你可以在没有空闲手的情况下擒拿已经@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]的目标。</p>\n<hr />\n<p><strong>大成功</strong> 除非你移动或者你的目标逃脱，否则你的目标在你下一回合结束前都会陷入束缚。</p>\n<p><strong>成功</strong> 除非你移动或者你的目标逃脱，否则你的目标在你下一回合结束前都会陷入受擒。</p>\n<p><strong>失败</strong> 你没能抓住目标。如果你之前已经使用擒拿使该目标陷入受擒或束缚，那么目标的上述状态也随之结束。</p>\n<p><strong>大失败</strong> 如果你之前已经使用擒拿使该目标陷入受擒或束缚，那么目标会挣脱。你的目标可以反过来擒拿住你，视为该目标成功对你使用了擒拿动作，也可以强迫你坠落且在落地时@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
         },
         "Grim Swagger": {
             "name": "恫疑虚喝 Grim Swagger",
@@ -1023,11 +1023,11 @@
         },
         "Treat Disease": {
             "name": "治疗疾病 Treat Disease",
-            "description": "<p><strong>需求</strong> 你手持或穿戴一套@UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]{医疗工具包 Healer's Toolkit}</p>\n<hr />\n<p>你至少花费8小时照顾一个生病的生物。进行<span data-pf2-action=\"treatDisease\">医疗</span>检定对抗疾病的DC。尝试为一个生物治疗一种疾病后，必须等到该生物下一次对抗该毒素的豁免检定之后，你才能再次进行尝试。</p>\n<hr />\n<p><strong>大成功</strong> 你为该生物下一次对抗该疾病的豁免检定提供+4环境加值。@UUID[Compendium.pf2e.equipment-effects.Item.id20P4pj7zDKeLmy]{效果：治疗疾病 (大成功))}</p>\n<p><strong>成功</strong> 你为该生物下一次对抗该疾病的豁免检定提供+2环境加值。@UUID[Compendium.pf2e.equipment-effects.Item.Ee2xfKX1yyqGIDZj]{效果：治疗疾病 (成功)}</p>\n<p><strong>大失败</strong> 你使该生物下一次对抗该毒素的豁免检定受到-2环境减值。@UUID[Compendium.pf2e.equipment-effects.Item.5oYKYXAexr0vhx84]{效果：治疗疾病 (大失败)}</p>"
+            "description": "<p><strong>需求</strong> 你手持或穿戴一套@UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]</p><hr /><p>你至少花费8小时照顾一个生病的生物。进行[[/act treat-disease]]检定对抗疾病的DC。尝试为一个生物治疗一种疾病后，必须等到该生物下一次对抗该毒素的豁免检定之后，你才能再次进行尝试。</p><hr /><p><strong>大成功</strong> 你为该生物下一次对抗该疾病的豁免检定提供+4环境加值。</p>\n<p><strong>成功</strong> 你为该生物下一次对抗该疾病的豁免检定提供+2环境加值。</p>\n<p><strong>大失败</strong> 你使该生物下一次对抗该毒素的豁免检定受到-2环境减值。</p>\n<p>@UUID[Compendium.pf2e.other-effects.Item.TGGdM7XnjQkkijK7]</p>"
         },
         "Treat Poison": {
             "name": "治疗中毒 Treat Poison",
-            "description": "<p><strong>需求</strong> 你手持或穿戴一套@UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]{医疗工具包 Healer's Toolkit}</p>\n<hr />\n<p>你治疗患者防止其体内毒素扩散。进行<span data-pf2-action=\"treatPoison\" data-pf2-glyph=\"A\">医疗</span>检定对抗毒素的DC。尝试为一个生物治疗一种中毒后，必须等到该生物下一次对抗该毒素的豁免检定之后，你才能再次进行尝试。</p>\n<hr />\n<p><strong>大成功</strong> 你为该生物下一次对抗该毒素的豁免检定提供+4环境加值。@UUID[Compendium.pf2e.equipment-effects.Item.XwCBalKJf3CiEiFa]{效果：治疗中毒 (大成功)}</p>\n<p><strong>成功</strong> 你为该生物下一次对抗该毒素的豁免检定提供+2环境加值。@UUID[Compendium.pf2e.equipment-effects.Item.XWenziR7J3mwKV4W]{效果：治疗中毒 (成功)}</p>\n<p><strong>大失败</strong> 你使该生物下一次对抗该毒素的豁免检定受到-2环境减值。@UUID[Compendium.pf2e.equipment-effects.Item.ESuBosh3t1pXEcBj]{效果：治疗中毒 (大失败)}</p>"
+            "description": "<p><strong>需求</strong> 你手持或穿戴一套@UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]</p><hr /><p>你治疗患者防止其体内毒素扩散。进行[[/act treat-poison]]检定对抗毒素的DC。尝试为一个生物治疗一种中毒后，必须等到该生物下一次对抗该毒素的豁免检定之后，你才能再次进行尝试。</p><hr /><p><strong>大成功</strong> 你为该生物下一次对抗该毒素的豁免检定提供+4环境加值。</p>\n<p><strong>成功</strong> 你为该生物下一次对抗该毒素的豁免检定提供+2环境加值。</p>\n<p><strong>大失败</strong> 你使该生物下一次对抗该毒素的豁免检定受到-2环境减值。</p>\n<p>@UUID[Compendium.pf2e.other-effects.Item.1FrAlPeNseApVrX3]</p>"
         },
         "Treat Wounds": {
             "name": "治疗伤势 Treat Wounds",
@@ -1486,7 +1486,7 @@
             "name": "避开厄运 Avoid Dire Fate"
         },
         "Decompose": {
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 虚能能量从你体内渗出，腐败@Template[emanation|distance:5]范围内的一切，致使植物和树叶衰老分解。区域内的自然困难地形被破坏，带有植物和木特征的生物受到@Damage[1d6[void]]伤害，进行@Check[fortitude|against:class-spell|basic]豁免对抗你的职业DC或法术DC，采用较高值。 </p>",
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 虚能能量从你体内渗出，腐败@Template[emanation|distance:5]范围内的一切，致使植物和树叶衰老分解。区域内的自然困难地形被破坏，带有植物和木特征的生物受到@Damage[1d6[void]|options:area-damage]伤害，进行@Check[fortitude|against:class-spell|basic|options:area-effect]豁免对抗你的职业DC或法术DC，采用较高值。 </p>",
             "name": "分解 Decompose"
         },
         "Disable a Device": {
