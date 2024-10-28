@@ -9468,7 +9468,7 @@
         },
         "Favor Of Heaven": {
             "name": "天神之爱 Favor Of Heaven",
-            "description": "<p>你是黑风的神选之人，天庭中的重要任务为你助力。每日一次，你可以释放作为神术内在法术的6级法术@UUID[Compendium.pf2e.spells-srd.Item.PHVHBbdHeQRfjLmE]{灵魂冲击 Spirit Blast}。除此以外，你还获得5点善良抗性和5点邪恶抗性。</p>"
+            "description": "<p>你是黑风的神选之人，天庭中的重要任务为你助力。每日一次，你可以释放作为神术内在法术的6级法术@UUID[Compendium.pf2e.spells-srd.Item.PHVHBbdHeQRfjLmE]。除此以外，你还获得5点圣洁抗性和5点邪秽抗性。</p>"
         },
         "Sky Master Mask": {
             "name": "天空主宰面具 Sky Master Mask",
@@ -10902,7 +10902,7 @@
         },
         "Quill Spray": {
             "name": "尖刺喷射 Quill Spray",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p>你可以向敌人发射大量尖刺。你以@Template[cone|distance:30]喷射尖刺，造成5d8穿刺伤害。在区域内的每个生物都要骰一次对抗你职业DC和法术DC中较高者的@Check[reflex|against:class-spell|basic]豁免。如果一个生物骰出大失败，那么它还要受到5点持续流血伤害。在11级和之后的每个偶数级别，该穿刺伤害提升1d8，持续流血伤害提高1。</p>\n<p>@Damage[(ceil(@actor.level/2))d8[piercing]]{按等级计算的穿刺伤害}</p>\n<p>@Damage[(ceil(@actor.level/2))[bleed]]{按等级计算的流血伤害}</p>\n<hr />\n<p><em><strong>注意</strong> 此专长并未说明豁免检定的种类，本文中添加的是反射豁免，与带刺羽尖一致。</em></p>",
+            "description": "<p><strong>频率</strong> 每天一次</p><hr /><p>你可以向敌人发射大量尖刺。你以@Template[cone|distance:30]喷射尖刺，造成@Damage[(ceil(@actor.level/2))d8[piercing]|options:area-damage]伤害。在区域内的每个生物都要骰一次对抗你职业DC和法术DC中较高者的@Check[reflex|against:class-spell|basic|options:area-effect]豁免。如果一个生物骰出大失败，那么它还要受到@Damage[(ceil(@actor.level/2))[bleed]]伤害。在11级和之后的每个偶数级别，该穿刺伤害提升1d8，持续流血伤害提高1。</p><hr /><p><em><strong>注意</strong> 此专长并未说明豁免检定的种类，本文中添加的是反射豁免，与带刺羽尖一致。</em></p>",
             "prerequisites": [
                 {
                     "value": "羽衣希斯克传承或尖刺无武装攻击"
@@ -12420,7 +12420,7 @@
         },
         "Mind Shards": {
             "name": "心灵碎片 Mind Shards",
-            "description": "<p>随着轻轻一挥与一个念头，你将你的心灵武器引爆使其化为一股粉碎心灵的精神碎片。你集中注意并释放出对@Template[cone|distance:15]区域内的所有生物造成@Damage[(ceil(@actor.level/2)d6)[mental]]伤害，使用你的职业DC或法术DC中较高的那项来对抗@Check[will|against:class-spell|basic]豁免。攻击后，你的心灵武器会自动重组，并且你无法在1分钟内再次使用本能力。心灵碎片的伤害在7级时增加1d6，之后每两级再增加1d6。</p>",
+            "description": "<p>随着轻轻一挥与一个念头，你将你的心灵武器引爆使其化为一股粉碎心灵的精神碎片。你集中注意并释放出对@Template[cone|distance:15]区域内的所有生物造成@Damage[(ceil(@actor.level/2)d6)[mental]|options:area-damage]伤害，使用你的职业DC或法术DC中较高的那项来对抗@Check[will|against:class-spell|basic|options:area-effect]豁免。攻击后，你的心灵武器会自动重组，并且你无法在1分钟内再次使用本能力。心灵碎片的伤害在7级时增加1d6，之后每两级再增加1d6。</p>",
             "prerequisites": [
                 {
                     "value": "铸念师入门"
@@ -12463,7 +12463,7 @@
         },
         "Psi Catastrophe": {
             "name": "心能灾变 Psi Catastrophe",
-            "description": "<p>你不再压抑你的力量，而是在毁灭性的爆炸中将其释放。在@Template[emanation|distance:20]{20尺弥漫}范围内的所有生物都会受到@Damage[(@actor.level)d6[bludgeoning]|traits:area-damage]{每等级1d6钝击伤害}，进行@Check[reflex|against:spell|basic]豁免。随着你的力量消耗殆尽，你的心力解放也随之终止。</p>"
+            "description": "<p>你不再压抑你的力量，而是在毁灭性的爆炸中将其释放。在@Template[emanation|distance:20]范围内的所有生物都会受到@Damage[(@actor.level)d6[bludgeoning]|options:area-damage]伤害，进行@Check[reflex|against:spell|basic|options:area-effect]豁免。随着你的力量消耗殆尽，你的心力解放也随之终止。</p>"
         },
         "Psi Burst": {
             "name": "心能爆 Psi Burst",
@@ -15552,7 +15552,7 @@
         },
         "Solar Rejuvenation": {
             "name": "日光恢复 Solar Rejuvenation",
-            "description": "<p><strong>蒿兰人</strong> 太阳的温暖和光芒赋予你生机。如果你白天在户外休息10分钟，你会恢复等于你的体质调整值×你等级的一半@Damage[(floor(@actor.level/2)*@actor.con.mod)[healing]]{生命值}。你也能在从@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]中获得治疗时享受此增益。</p>\n<p><strong>莱西</strong> 如果你白天时在户外休息了10分钟，你将恢复等于你的体质调整值×一半你等级的@Damage[(floor(@actor.level/2)*@actor.con.mod)[healing]]{生命值}。在获得此增益的同时，你仍能获得任何来自@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]的治疗效果。不依赖于光合作用获取营养的莱西则需要一个适合他们的环境。例如，真菌莱西需要阴暗、潮湿的环境和一堆腐烂的植物物质。</p>"
+            "description": "<p><strong>蒿兰人</strong> 太阳的温暖和光芒赋予你生机。如果你白天在户外休息10分钟，你会恢复@Damage[(floor(@actor.level/2)*@actor.abilities.con.mod)[healing]]{等于你的体质调整值×你等级一半的生命值}。你也能在从@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]中获得治疗时享受此增益。</p>\n<p><strong>莱西</strong> 如果你白天时在户外休息了10分钟，你将恢复@Damage[(floor(@actor.level/2)*@actor.abilities.con.mod)[healing]]{等于你的体质调整值×一半你等级的生命值}。在获得此增益的同时，你仍能获得任何来自@UUID[Compendium.pf2e.actionspf2e.Item.1kGNdIIhuglAjIp9]的治疗效果。不依赖于光合作用获取营养的莱西则需要一个适合他们的环境。例如，真菌莱西需要阴暗、潮湿的环境和一堆腐烂的植物物质。</p>"
         },
         "Daywalker": {
             "name": "日行者 Daywalker",
@@ -18623,7 +18623,7 @@
         },
         "Spirit's Anguish": {
             "name": "灵魂哀嚎 Spirit's Anguish",
-            "description": "<p><strong>开销</strong> 你魂居的一个魂火或残魂</p>\n<p><strong>需求</strong> 你握持着你的魂居</p><hr /><p>你通过哄骗灵魂进行临终哀嚎来施放其痛楚，从而净化它。这会对@Template[cone|distance:30]范围内所有生物造成音波伤害，@Check[will|against:class-spell|basic]豁免对抗你的职业DC或法术DC，取更高值。如果你消耗一缕魂火，你每等级将造成@Damage[(@actor.level)d4[sonic]|traits:area-damage]伤害。如果你消耗一楼残魂，你获取残魂来源的虚体不死生物或作祟每等级将造成1d6音波伤害。</p>",
+            "description": "<p><strong>开销</strong> 你魂居的一个魂火或残魂</p>\n<p><strong>需求</strong> 你握持着你的魂居</p><hr /><p>你通过哄骗灵魂进行临终哀嚎来施放其痛楚，从而净化它。这会对@Template[cone|distance:30]范围内所有生物造成音波伤害，@Check[will|against:class-spell|basic|options:area-effect]豁免对抗你的职业DC或法术DC，取更高值。如果你消耗一缕魂火，你每等级将造成@Damage[(@actor.level)d4[sonic]|options:area-damage]伤害。如果你消耗一楼残魂，你获取残魂来源的虚体不死生物或作祟每等级将造成1d6音波伤害。</p>",
             "prerequisites": [
                 {
                     "value": "驱魔人入门"
@@ -19380,7 +19380,7 @@
         },
         "Kobold Breath": {
             "name": "狗头人之息 Kobold Breath",
-            "description": "<p>你引导龙血典范中的力量形成一股能量冲击，吐息的形状为@Template[line|distance:30]或@Template[cone|distance:15]，造成@Damage[ceil(@actor.level/2)d4[@actor.flags.pf2e.draconicExemplar.damageType]|traits:area-damage]伤害。每个区域内的生物都必须尝试一次基础豁免检定对抗你的职业DC或法术DC（取其中较高者）。你在接下来的[[/r 1d4 #rounds]]{1d4轮}内无法再次使用该能力。</p>\n<p>在3级以及之后的每两个等级，吐息的伤害都会再增加1d4点。吐息的形状、伤害类型以及需要尝试的豁免检定都与你的@UUID[Compendium.pf2e.ancestryfeatures.Item.egpiSWBrNBb1Fmig]{龙血典范 Draconic Exemplar}相符。该能力所具有的特征与它所造成的伤害类型相关。</p><hr /><p>@Check[fortitude|against:class-spell|basic] @Check[reflex|against:class-spell|basic]</p>"
+            "description": "<p>你引导龙血典范中的力量形成一股能量冲击，吐息的形状为@Template[line|distance:30]或@Template[cone|distance:15]，造成@Damage[ceil(@actor.level/2)d4[@actor.flags.pf2e.draconicExemplar.damageType]|options:area-damage]伤害。每个区域内的生物都必须尝试一次基础豁免检定对抗你的职业DC或法术DC（取其中较高者）。你在接下来的[[/r 1d4 #rounds]]{1d4轮}内无法再次使用该能力。</p>\n<p>在3级以及之后的每两个等级，吐息的伤害都会再增加1d4点。吐息的形状、伤害类型以及需要尝试的豁免检定都与你的@UUID[Compendium.pf2e.ancestryfeatures.Item.egpiSWBrNBb1Fmig]相符。该能力所具有的特征与它所造成的伤害类型相关。</p><hr /><p>@Check[fortitude|against:class-spell|basic|options:area-effect] @Check[reflex|against:class-spell|basic|options:area-effect]</p>"
         },
         "Kobold Lore": {
             "name": "狗头人学识 Kobold Lore",
@@ -21179,7 +21179,7 @@
         },
         "Steady Spellcasting": {
             "name": "镇定施法 Steady Spellcasting",
-            "description": "<p>你对自己的施法技术充满自信，你不会轻易失去法术。如果一个反应动作会打断你的施法动作，尝试一次@Check[flat|dc:15]检定。如果成功，你的动作不会被打断。</p>"
+            "description": "<p>你对自己的施法技术充满自信，你不会轻易失去法术。如果一个反应动作会打断你的施法动作，尝试一次@Check[flat|showDC:all|dc:15]检定。如果成功，你的动作不会被打断。</p>"
         },
         "Scarecrow": {
             "name": "稻草卫士 Scarecrow",
@@ -21631,7 +21631,7 @@
         },
         "Sixth Pillar Mastery": {
             "name": "第六柱精通 Sixth Pillar Mastery",
-            "description": "<p>你的高度自律让你的身体潜能与魔法相谐调。当你在对敌人的一次无武装攻击成功时，在你的下回合开始前他们对抗你的法术的豁免收到-1状态减值。当你使用法术位施放一个法术时，你在下回合开始前无武装攻击的攻击骰获得+1状态加值。</p>",
+            "description": "<p>你的高度自律让你的身体潜能与魔法相谐调。当你在对敌人的一次无武装攻击成功时，在你的下回合开始前他们对抗你的法术的豁免收到-1状态减值。当你使用法术位施放一个法术时，你在下回合开始前无武装攻击的攻击骰获得+1状态加值。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DX6v0lcI2uA99Yjv]</p>",
             "prerequisites": [
                 {
                     "value": "第六柱入门"
@@ -24142,7 +24142,7 @@
         },
         "Enervating Wail": {
             "name": "衰弱哭嚎 Enervating Wail",
-            "description": "<p>你发出能撕裂附近所有人灵魂的恐怖哭嚎。@Template[emanation|distance:20]范围内的所有生物受到@Damage[((@actor.level - 2)d6)[void]]伤害，@Check[fortitude|against:class-spell|basic]豁免。伤害为4d6，你超过6级之后，每多一个等级，伤害就增加1d6。</p>\n<hr />\n<p><strong>觉醒</strong> 你的尖叫在脑海中回响。你可以选择发出无声的心能哭嚎，伤害变为@Damage[(@actor.level - 2)d6[mental]]，豁免变为@Check[will|against:class-spell|basic|traits:mental,deviant,magical,necromancy|overrideTraits:true]，移除[听觉]特征，添加[心灵]特征。</p>\n<hr />\n<p><strong>觉醒</strong> 你的哀号会削弱敌人的力量。除正常效果外，该区域内的生物如果豁免成功（但没有大成功）时陷入持续1轮的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，失败时陷入持续1分钟的力竭1，大失败时陷入持续1分钟的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>"
+            "description": "<p>你发出能撕裂附近所有人灵魂的恐怖哭嚎。@Template[emanation|distance:20]范围内的所有生物受到@Damage[((@actor.level - 2)d6)[void]|options:area-damage]伤害，@Check[fortitude|against:class-spell|basic|options:area-effect]豁免。伤害为4d6，你超过6级之后，每多一个等级，伤害就增加1d6。</p><hr /><p><strong>觉醒</strong> 你的尖叫在脑海中回响。你可以选择发出无声的心能哭嚎，伤害变为@Damage[(@actor.level - 2)d6[mental]|options:area-damage]，豁免变为@Check[will|against:class-spell|basic|traits:mental,deviant,magical|overrideTraits|options:area-effect]，移除[听觉]特征，添加[心灵]特征。</p><hr /><p><strong>觉醒</strong> 你的哀号会削弱敌人的力量。除正常效果外，该区域内的生物如果豁免成功（但没有大成功）时陷入持续1轮的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，失败时陷入持续1分钟的力竭1，大失败时陷入持续1分钟的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>"
         },
         "Debilitating Shot": {
             "name": "衰弱射击 Debilitating Shot",
@@ -28220,7 +28220,7 @@
         },
         "Cranial Detonation": {
             "name": "颅爆 Cranial Detonation",
-            "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>触发</strong> 你成功用法术将一个或更多的有心智敌人降到0生命值</p>\n<hr />\n<p>当你的心力压垮一个生物时，你能利用他飘渺的意识，从该生物的头内释放心能能量的爆炸。每个被你降至0生命值的敌人死亡，且它的头颅爆炸。爆炸在该敌人的@Template[emanation|distance:15]{15尺弥漫}范围内产生冲击波。弥漫范围内的每个生物都承受@Damage[10d6[bludgeoning]|traits:area-damage]伤害，适用@Check[reflex|against:spell|basic]。如果爆炸伤害将一个生物降低到0生命值，它的头也会爆炸，这可能会伤害到更多生物并引发更多颅爆。每个生物只能在一次颅爆能力的使用中受到一次伤害。</p>"
+            "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>触发</strong> 你成功用法术将一个或更多的有心智敌人降到0生命值</p>\n<hr />\n<p>当你的心力压垮一个生物时，你能利用他飘渺的意识，从该生物的头内释放心能能量的爆炸。每个被你降至0生命值的敌人死亡，且它的头颅爆炸。爆炸在该敌人的@Template[emanation|distance:15]范围内产生冲击波。弥漫范围内的每个生物都承受@Damage[10d6[bludgeoning]|options:area-damage]伤害，@Check[reflex|against:spell|basic|options:area-effect]豁免。如果爆炸伤害将一个生物降低到0生命值，它的头也会爆炸，这可能会伤害到更多生物并引发更多颅爆。每个生物只能在一次颅爆能力的使用中受到一次伤害。</p>"
         },
         "Lead the Way": {
             "name": "领军前行 Lead the Way",
@@ -31344,11 +31344,11 @@
         },
         "Ride the Tsunami": {
             "name": "驾驭海啸 Ride the Tsunami",
-            "description": "<p>你推出一道轰鸣的、足以填满一座港口的水墙，压垮经过的一切。水墙按照你选择的方式向前推进：@Template[cone|distance:60]或@Template[line|distance:120]。如果你在水中，你能将其范围增加至@Template[cone|distance:90]或@Template[line|distance:180]。区域中的每个生物受到@Damage[10d10[bludgeoning]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。豁免失败的生物还会被推离20尺（大失败推离40尺）。区域内任何负载不超过1的无人看管的物品都会被推到区域最远的边缘。大量的水会熄灭区域内的所有非魔法火焰。</p>\n<p>当海浪崩解时，你可以紧随其后前往目的地。当该涌动造成伤害之后，水消失之前，你能沿着直线游泳至区域内的任何一点。</p>"
+            "description": "<p>你推出一道轰鸣的、足以填满一座港口的水墙，压垮经过的一切。水墙按照你选择的方式向前推进：@Template[cone|distance:60]或@Template[line|distance:120]。如果你在水中，你能将其范围增加至@Template[cone|distance:90]或@Template[line|distance:180]。区域中的每个生物受到@Damage[10d10[bludgeoning]|options:area-damage]伤害，@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。豁免失败的生物还会被推离20尺（大失败推离40尺）。区域内任何负载不超过1的无人看管的物品都会被推到区域最远的边缘。大量的水会熄灭区域内的所有非魔法火焰。</p>\n<p>当海浪崩解时，你可以紧随其后前往目的地。当该涌动造成伤害之后，水消失之前，你能沿着直线游泳至区域内的任何一点。</p>"
         },
         "Sanguivolent Roots": {
             "name": "嗜血树根 Sanguivolent Roots",
-            "description": "<p>吸血藤蔓从120尺内的@Template[burst|distance:15]范围长出。该区域内的每个活着的敌人都会被吸血，受到@Damage[(floor((@actor.level -8)/2)+3)d6[piercing]|traits:area-damage]伤害，以@Check[fortitude|against:kineticist|basic]豁免对抗你的职业DC。每次藤蔓吸血时，该区域内活着的非敌对生物就会恢复相当于单个生物所受伤害一半的HP；用单个生物所受的最高伤害来计算。这是一个命能治疗效果。如果范围内的敌人拥有虚能治疗能力，还会受到和治疗量相同的命能伤害。</p>\n<p>藤蔓持续到你的下个回合结束，你可以维持该涌动。当你在接下来的每个回合中初次维持该涌动时，你可以重复上述效果。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d6。</p>"
+            "description": "<p>吸血藤蔓从120尺内的@Template[burst|distance:15]范围长出。该区域内的每个活着的敌人都会被吸血，受到@Damage[(floor((@actor.level -8)/2)+3)d6[piercing]|options:area-damage]伤害，以@Check[fortitude|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。每次藤蔓吸血时，该区域内活着的非敌对生物就会恢复相当于单个生物所受伤害一半的HP；用单个生物所受的最高伤害来计算。这是一个命能治疗效果。如果范围内的敌人拥有虚能治疗能力，还会受到和治疗量相同的命能伤害。</p>\n<p>藤蔓持续到你的下个回合结束，你可以维持该涌动。当你在接下来的每个回合中初次维持该涌动时，你可以重复上述效果。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d6。</p>"
         },
         "Armor in Earth": {
             "name": "岩土铠甲 Armor in Earth",
@@ -31368,7 +31368,7 @@
         },
         "Tidal Hands": {
             "name": "潮涌掌 Tidal Hands",
-            "description": "<p>你挥出一个有力的手势，创造出手掌形状的波浪，向前奔涌而去。你可以选择2个不重叠的@Template[cone|distance:15]波浪，或者将双手合一创造一道@Template[cone|distance:30]波浪。区域中每个生物都受到@Damage[(floor((@actor.level -1)/2)+1)d8[bludgeoning]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic] 豁免对抗你的职业DC。如果生物大失败，你还能将其推离5尺。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d8。</p>"
+            "description": "<p>你挥出一个有力的手势，创造出手掌形状的波浪，向前奔涌而去。你可以选择2个不重叠的@Template[cone|distance:15]波浪，或者将双手合一创造一道@Template[cone|distance:30]波浪。区域中每个生物都受到@Damage[(floor((@actor.level -1)/2)+1)d8[bludgeoning]|options:area-damage]伤害，@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。如果生物大失败，你还能将其推离5尺。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d8。</p>"
         },
         "Witchwood Seed": {
             "name": "巫林之种 Witchwood Seed",
@@ -31388,11 +31388,11 @@
         },
         "Solar Detonation": {
             "name": "阳光爆发 Solar Detonation",
-            "description": "<p>旋转的火球爆炸，迸发出耀眼的光芒！爆炸会在你60尺射程的@Template[burst|distance:20]区域发生。区域内每个生物都会受到@Damage[(floor((@actor.level -8)/2)+6)d6[fire],(floor((@actor.level -8)/2)+2)d6[vitality]|traits:area-damage]伤害，并且根据@Check[reflex|against:kineticist]豁免结果还可能陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}或@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}。阳光爆发的光亮对于那些拥有阳光易伤的生物来说视为阳光。每个尝试豁免的生物在10分内对阳光爆发造成的目眩或目盲状态临时免疫10分钟，但不会临时免疫该涌动的其他效果。 </p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害，目眩直到你的下个回合开始。</p>\n<p><strong>失败</strong> 生物受到全伤害，目盲直到你的下个回合开始。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，目盲1分钟。</p>\n<hr />\n<p><strong>升级（+2）</strong> 火焰伤害增加1d6，命能伤害增加1d6。</p>"
+            "description": "<p>旋转的火球爆炸，迸发出耀眼的光芒！爆炸会在你60尺射程的@Template[burst|distance:20]区域发生。区域内每个生物都会受到@Damage[(floor((@actor.level -8)/2)+6)d6[fire],(floor((@actor.level -8)/2)+2)d6[vitality]|options:area-damage]伤害，并且根据@Check[reflex|against:kineticist|options:area-effect,damaging-effect]豁免结果还可能陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]或@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]。阳光爆发的光亮对于那些拥有阳光易伤的生物来说视为阳光。每个尝试豁免的生物在10分内对阳光爆发造成的目眩或目盲状态临时免疫10分钟，但不会临时免疫该涌动的其他效果。 </p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害，目眩直到你的下个回合开始。</p>\n<p><strong>失败</strong> 生物受到全伤害，目盲直到你的下个回合开始。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，目盲1分钟。</p>\n<hr />\n<p><strong>升级（+2）</strong> 火焰伤害增加1d6，命能伤害增加1d6。</p>"
         },
         "Ignite The Sun": {
             "name": "点燃烈日 Ignite The Sun",
-            "description": "<p>创生之火为你控制。你在500尺射程内创造一个@Template[burst|distance:5]的微型太阳。任何时候在微型太阳中的生物受到@Damage[7d6[fire]|traits:area-damage]伤害，尝试@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。一个生物每轮只会承受一次该伤害。太阳在500尺弥漫范围投下明亮光（在之后的@Template[emanation|distance:500]范围投下昏暗光）；这对于那些拥有阳光易伤的生物来说视为阳光。</p>\n<p>阳光会持续到你的下个回合结束，但你可以维持它长达1分钟。当你每轮第一次维持该涌动时，你可以选择将太阳的爆发范围增加5尺，然后让它飞行最多30尺。太阳能穿过生物，同时对穿过的生物造成上述伤害。</p>\n<p>太阳会持续将火焰能量引导至你和你的盟友身上。你和每个位于太阳光照范围内的盟友，其所有的打击、造成火焰伤害的法术、以及造成火焰伤害的涌动（除了点燃烈日本身）都会造成额外@Damage[1d6[fire]]伤害。存在多个太阳不会叠加此额外伤害。</p>"
+            "description": "<p>创生之火为你控制。你在500尺射程内创造一个@Template[burst|distance:5]的微型太阳。任何时候在微型太阳中的生物受到@Damage[7d6[fire]|options:area-damage]伤害，尝试@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。一个生物每轮只会承受一次该伤害。太阳在500尺弥漫范围投下明亮光（在之后的@Template[emanation|distance:500]范围投下昏暗光）；这对于那些拥有阳光易伤的生物来说视为阳光。</p>\n<p>阳光会持续到你的下个回合结束，但你可以维持它长达1分钟。当你每轮第一次维持该涌动时，你可以选择将太阳的爆发范围增加5尺，然后让它飞行最多30尺。太阳能穿过生物，同时对穿过的生物造成上述伤害。</p>\n<p>太阳会持续将火焰能量引导至你和你的盟友身上。你和每个位于太阳光照范围内的盟友，其所有的打击、造成火焰伤害的法术、以及造成火焰伤害的涌动（除了点燃烈日本身）都会造成额外@Damage[1d6[fire]]伤害。存在多个太阳不会叠加此额外伤害。</p>"
         },
         "Burning Jet": {
             "name": "燃烧喷射 Burning Jet",
@@ -31408,7 +31408,7 @@
         },
         "Scorching Column": {
             "name": "灼热火柱 Scorching Column",
-            "description": "<p>你向上一挥手，创造一个极端灼热的垂直圆柱区域。圆柱体直径@Template[cylinder|distance:5]，高30尺，底部必须在你60尺内。区域中的每个生物都会受到@Damage[(floor((@actor.level -1)/3)+1)d6[fire]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。</p>\n<p>火焰会短暂停留，使圆柱区域内每个方格都变为有害地形，直到你的下个回合结束。你可以维持该涌动最多1分钟。生物每次进入其中一个方格时都会受到@Damage[(2*floor((@actor.level -1)/3)+1)[fire]]伤害。</p>\n<hr />\n<p><strong>升阶 (+3)</strong> 初始伤害增加1d6，有害地形伤害增加2点。</p>"
+            "description": "<p>你向上一挥手，创造一个极端灼热的垂直圆柱区域。圆柱体直径@Template[cylinder|distance:5]，高30尺，底部必须在你60尺内。区域中的每个生物都会受到@Damage[(floor((@actor.level -1)/3)+1)d6[fire]|options:area-damage]伤害，@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。</p>\n<p>火焰会短暂停留，使圆柱区域内每个方格都变为有害地形，直到你的下个回合结束。你可以维持该涌动最多1分钟。生物每次进入其中一个方格时都会受到@Damage[(2*floor((@actor.level -1)/3)+1)[fire]]伤害。</p>\n<hr />\n<p><strong>升阶 (+3)</strong> 初始伤害增加1d6，有害地形伤害增加2点。</p>"
         },
         "Magnetic Field": {
             "name": "磁场领域 Magnetic Field",
@@ -31416,7 +31416,7 @@
         },
         "Winter's Clutch": {
             "name": "寒冬之握 Winter's Clutch",
-            "description": "<p>冰冷的雪花在60尺射程的@Template[burst|distance:10]范围内落下。区域内的每个生物受到@Damage[(floor((@actor.level -1)/2)+2)d4[cold]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。区域中的地面被积雪覆盖，成为困难地形。积雪复盖的每个方格都会持续到它自然融化，或在该方格内造成火焰伤害为止。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d4。</p>"
+            "description": "<p>冰冷的雪花在60尺射程的@Template[burst|distance:10]范围内落下。区域内的每个生物受到@Damage[(floor((@actor.level -1)/2)+2)d4[cold]|options:area-damage]伤害，@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。区域中的地面被积雪覆盖，成为困难地形。积雪复盖的每个方格都会持续到它自然融化，或在该方格内造成火焰伤害为止。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d4。</p>"
         },
         "Geologic Attunement": {
             "name": "地质调谐 Geologic Attunement",
@@ -31456,7 +31456,7 @@
         },
         "Tremor": {
             "name": "弱震 Tremor",
-            "description": "<p>你在30尺射程内的@Template[burst|distance:10]范围内施放一场小小的局部地震。该区域内所有生物都受到@Damage[(ceil(@actor.level/2)d8)[bludgeoning]|traits:area-damage]伤害，@Check[fortitude|against:class|basic]豁免对抗你的职业DC。大失败的生物@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。区域内的泥土和石头造成困难地形，直到你的下个回合开始。</p>\n<hr />\n<p><strong>升级（+2）</strong> 伤害增加1d8。</p>"
+            "description": "<p>你在30尺射程内的@Template[burst|distance:10]范围内施放一场小小的局部地震。该区域内所有生物都受到@Damage[(ceil(@actor.level/2)d8)[bludgeoning]|options:area-damage]伤害，@Check[fortitude|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。大失败的生物@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。区域内的泥土和石头造成困难地形，直到你的下个回合开始。</p><hr /><p><strong>升级（+2）</strong> 伤害增加1d8。</p>"
         },
         "Rattle The Earth": {
             "name": "震撼大地 Rattle The Earth",
@@ -31472,7 +31472,7 @@
         },
         "All Shall End In Flames": {
             "name": "尽归焰烬 All Shall End In Flames",
-            "description": "<p>灾难性的死亡领域中，白热化的火焰吞噬一切。火焰填满500尺射程的@Template[burst|distance:30]范围，或@Template[emanation|distance:30]范围，由你选择。这会造成@Damage[13d6[fire]|traits:area-damage]伤害，@Check[reflex|against:kineticist|basic]豁免对抗你的职业DC。任何被火将HP降低到0点的生物都会死亡，化为一堆灰烬。</p>\n<p>如果你因为该涌动而死亡，你在下个回合开始时于原地重生。当你重生时，你拥有等级双倍的生命值。</p>\n<hr />\n<p><strong>升级（20级）</strong> 伤害@Damage[15d6[fire]]。</p>"
+            "description": "<p>灾难性的死亡领域中，白热化的火焰吞噬一切。火焰填满500尺射程的@Template[burst|distance:30]范围，或@Template[emanation|distance:30]范围，由你选择。这会造成@Damage[13d6[fire]|options:area-damage]伤害，@Check[reflex|against:kineticist|basic|options:area-effect]豁免对抗你的职业DC。任何被火将HP降低到0点的生物都会死亡，化为一堆灰烬。</p>\n<p>如果你因为该涌动而死亡，你在下个回合开始时于原地重生。当你重生时，你拥有等级双倍的生命值。</p>\n<hr />\n<p><strong>升级（20级）</strong> 伤害@Damage[15d6[fire]]。</p>"
         },
         "Flashforge": {
             "name": "瞬息熔铸 Flashforge",
@@ -31544,7 +31544,7 @@
         },
         "Elemental Explosion": {
             "name": "元素炸裂 Elemental Explosion",
-            "description": "<p><strong>需求</strong> 你处于狂暴中，且你自最近一次狂暴后没有使用过该能力。</p>\n<hr />\n<p>你施放体内翻腾的能量，在@Template[emanation|distance:15]范围内炸裂出元素物质。区域内每个生物承受你@Damage[(@actor.level)d8|traits:area-damage]{每等级1d8伤害}，具有你为元素狂暴选择的相同伤害类型。区域内每个生物必须尝试一次@Check[reflex|against:class|basic]豁免对抗你的职业DC。元素炸裂获得你元素的特征。</p>",
+            "description": "<p><strong>需求</strong> 你处于狂暴中，且你自最近一次狂暴后没有使用过该能力。</p>\n<hr />\n<p>你施放体内翻腾的能量，在@Template[emanation|distance:15]范围内炸裂出元素物质。区域内每个生物承受@Damage[(@actor.level)d8|options:area-damage]伤害，具有你为元素狂暴选择的相同伤害类型。区域内每个生物必须尝试一次@Check[reflex|against:class|basic|options:area-effect]豁免对抗你的职业DC。元素炸裂获得你元素的特征。</p>",
             "prerequisites": [
                 {
                     "value": "元素本能"
@@ -33750,7 +33750,7 @@
             "description": "<p>你培养植物来困住你的敌人。你获得了@UUID[Compendium.pf2e.spells-srd.Item.z0ffligcrkVtKZd6]{灌木监牢 Hedge Prison}教派法术。</p>"
         },
         "Release Spores": {
-            "description": "<p>你创造了一团孢子。这些孢子填充射程100尺内的一个@Template[burst|distance:20]区域，并持续轮数和你等级相同。所有在孢子内的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，所有在孢子外的生物对孢子内的生物获得隐蔽。你可以轻松看穿孢子。你可以解消孢子。</p>\n<p><strong>觉醒</strong> 孢子散发出恶臭。在区域内的生物只要留在区域内，就会@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，离开区域后再加上2轮。</p>\n<p><strong>觉醒</strong> 孢子具有毒性。你每有2级，孢子对区域内的生物造成@Damage[(floor(@actor.level/2))[poison]]伤害；这包括你施放孢子是位于范围内的生物、在区域内开始回合的生物、以及进入区域内的生物。</p>",
+            "description": "<p>你创造了一团孢子。这些孢子填充射程100尺内的一个@Template[burst|distance:20]区域，并持续轮数和你等级相同。所有在孢子内的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，所有在孢子外的生物对孢子内的生物获得隐蔽。你可以轻松看穿孢子。你可以解消孢子。</p>\n<p><strong>觉醒</strong> 孢子散发出恶臭。在区域内的生物只要留在区域内，就会@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，离开区域后再加上2轮。</p>\n<p><strong>觉醒</strong> 孢子具有毒性。你每有2级，孢子对区域内的生物造成@Damage[(floor(@actor.level/2))[poison]|options:area-damage]伤害；这包括你施放孢子是位于范围内的生物、在区域内开始回合的生物、以及进入区域内的生物。</p>",
             "name": "释放孢子 Release Spores"
         },
         "Rotten Slurry": {
@@ -36025,7 +36025,7 @@
             "name": "Calm and Centered"
         },
         "Call The Worm": {
-            "description": "<p>You gain @UUID[Compendium.pf2e.spells-srd.Item.4YnON9JHYqtLzccu]{Summon Animal}, heightened to 9th rank, as an innate primal spell that you can cast once per day, but can only summon a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.4h9jhODg2NwiYsPg]{Purple Worm}. At 20th level, you can summon an elite purple worm instead.</p>",
+            "description": "<p>You gain @UUID[Compendium.pf2e.spells-srd.Item.4YnON9JHYqtLzccu]{Summon Animal}, heightened to 9th rank, as an innate primal spell that you can cast once per day, but can only summon a @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.vijBriZmbUJjbJNH]{Purple Worm}. At 20th level, you can summon an elite purple worm instead.</p>",
             "name": "Call The Worm",
             "prerequisites": [
                 {
@@ -38827,7 +38827,7 @@
         },
         "Dissolution's Sight": {
             "name": "死影视界 Dissolution's Sight",
-            "description": "<p>接纳你心中的黑暗意味着外界的黑暗无法再蒙蔽你的视野。你在1分钟内获得高等黑暗视觉。</p>"
+            "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p>接纳你心中的黑暗意味着外界的黑暗无法再蒙蔽你的视野。你在1分钟内获得高等黑暗视觉。</p>"
         },
         "Duo Dragon Kick": {
             "prerequisites": [
