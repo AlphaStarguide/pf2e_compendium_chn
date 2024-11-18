@@ -119,7 +119,7 @@
             "description": "<p><strong>频率</strong> 每个季度一次</p>\n<p><strong>触发</strong> 你（或一名相邻的PC）将要掷骰恢复检定</p>\n<hr />\n<p><strong>效果</strong> 你不进行掷骰恢复检定而是自动取得大成功，因为你有健硕的体格，顽强的态度，或只是老好运继续让你存活下来就跟儿时一样。如果你与一名将要掷骰恢复检定的PC相邻，你可以改为用此恩惠来给予其本效果。</p>"
         },
         "Deadly Spark": {
-            "description": "<p><strong>性相</strong> 气</p>\n<p><strong>启动</strong> <span class=\"action-glyph\">2</span> 专注，操作</p>\n<hr />\n<p><strong>效果</strong> 圣物对20尺内的敌人发射一道电火花，造成@Damage[1d12[electricity]]伤害（@Check[reflex|against:class-spell|basic]豁免）。该伤害在6级时增加1d12，之后每4级增加1d12。</p>\n<p>[[/r (1+max(0,floor((@actor.level -2)/4)))d12[electricity]]]{按等级计算的电击伤害}</p>",
+            "description": "<p><strong>性相</strong> 气</p>\n<p><strong>启动</strong> <span class=\"action-glyph\">2</span> 专注，操作</p><hr /><p><strong>效果</strong> 圣物对20尺内的敌人发射一道电火花，造成@Damage[(1+max(0,floor((@actor.level -2)/4)))d12[electricity]]伤害（@Check[reflex|against:class-spell|basic]豁免）。该伤害在6级时增加1d12，之后每4级增加1d12。</p>",
             "name": "致命火花 Deadly Spark"
         },
         "Elemental Attack": {
@@ -149,6 +149,10 @@
         "Post Snipers": {
             "description": "<p>纳玛彻斯守林人都是熟练的猎手，但PC将其中的一些弓箭手从军队中抽掉出来，安置在战场中的屋顶和树上的隐蔽位置，就可以最大限度地发挥出他们的潜力。</p>\n<hr />\n<p><strong>大成功</strong> 神射手部署在了几个关键位置。泰兹尔滩战斗的每一轮结束时，尝试对任何未接战的军队进行[[/r 1d20+18 #Ranged Strike]]{+18}远程打击。神箭手每次命中造成1点伤害（重击造成2点伤害）。神箭手在泰兹尔滩战斗中最多可以进行3次额外攻击，但在任何一轮结束时都只能攻击一次。</p>\n<p><strong>成功</strong> 类似大成功，但神箭手在战斗中只能进行一次额外攻击。</p>\n<p><strong>大失败</strong> 不仅没能将神箭手派驻在具有优势的区域，而且PC从军队中抽调了太多弓箭手。在泰兹尔滩战役中，纳玛彻斯猎人进行远程攻击会受到-2减值。</p>",
             "name": "派驻神射手 Post Snipers"
+        },
+        "Rotate the Wheel": {
+            "name": "旋转轮盘 Rotate the Wheel",
+            "description": "<p>该角色花费时间旋转轮盘。这是一项耗费体力的工作，在本轮结束时，PC必须进行@Check[fortitude|dc:25]豁免。此豁免DC会随着旋转轮盘的次数而增加。旋转七圈后，这个房间的两扇双开门都会打开（24小时后自动关闭）。</p>\n<hr />\n<p><strong>大成功</strong> 轮盘旋转2圈。旋转轮盘的DC增加1点。</p>\n<p><strong>成功</strong> 轮盘旋转1圈。旋转轮盘的DC增加1点。</p>\n<p><strong>失败</strong> 该角色未能推动轮盘。旋转轮盘的DC增加2点。</p>\n<p><strong>大失败</strong> 该角色跌跌撞撞失去了对轮盘的控制，触发了耐力试炼危害。轮盘反向转动，圈数重置为0，DC重置为25。</p>"
         }
     }
 }
