@@ -218,7 +218,8 @@
             "description": "<p>你使得目标生物的视觉变得格外敏感。该生物必须尝试一次强韧豁免，并在之后临时免疫该效果 1 分钟。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p><strong>失败</strong> 该生物目眩1分钟。</p>\n<p><strong>大失败</strong> 该生物获得持续 1 分钟的@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.I0HYG0ctCLP5JRsW]{强光致盲 Light Blindness}。若该生物正暴露在明亮光照之下，其将由于未适应强光致盲而立刻陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}状态。</p>\n<hr />\n<p><strong>升阶（6环级）</strong> 你能以至多 10 个生物为目标。</p>",
             "target": "一个生物",
             "range": "30尺",
-            "time": "2"
+            "time": "2",
+            "duration": "varies"
         },
         "Fey Abeyance": {
             "name": "隔绝精类 Fey Abeyance",
@@ -1521,7 +1522,8 @@
             "name": "分担辛酸 Share Burden",
             "description": "<p><strong>触发</strong> 离你30尺内的1名盟友将对某个有害情绪效果进行豁免，且你自己不须对该效果进行豁免</p>\n<hr />\n<p>你分担了盟友的伤痛。你与你的盟友一同承受比盟友的豁免结果好1阶的效果，即使触发效果原本只会影响一个生物依然如此。</p>",
             "target": "你和触发盟友",
-            "time": "reaction"
+            "time": "reaction",
+            "range": "30 feet"
         },
         "Split Shadow": {
             "name": "分裂阴影 Split Shadow",
@@ -5914,7 +5916,8 @@
             "name": "熟能生巧 Practice Makes Perfect",
             "description": "<p><strong>触发</strong> 你或范围内的盟友在受训技能的技能检定中失败。</p>\n<hr />\n<p>目标在触发的检定上获得+2状态加值，如果目标的熟练为大师或更高，则改为+3。这个加值可以改变检定结果。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.XMBoKRRyooKnGkHk]{法术效果：熟能生巧}</p>",
             "range": "30尺",
-            "time": "reaction"
+            "time": "reaction",
+            "target": "the triggering creature"
         },
         "Entropic Wheel": {
             "name": "熵之轮转 Entropic Wheel",
@@ -6551,7 +6554,8 @@
             "name": "神疫术 Divine Plagues",
             "description": "<p>你信仰的神祇释出瘟疫。目标须进行强韧豁免。当你施放此法术时，决定这波神疫会造成笨拙、力竭或呆滞状态。</p>\n<p><strong>神疫 Divine Plague</strong> (疾病) <strong>等级</strong> 1</p>\n<p><strong>阶段 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}, @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}或@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（1轮）</p>\n<p><strong>阶段 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}和笨拙 1, 力竭 1, 或呆滞 1 (1 轮)</p>\n<p><strong>阶段 3</strong> 笨拙1, 力竭1, 或呆滞 1并且目标在治愈之前无法移除该状态 (1 天)</p>\n<hr />\n<p><strong>成功</strong> 目标不受影响</p>\n<p><strong>失败</strong> 目标感染阶段1的神疫</p>\n<p><strong>大失败</strong> 目标感染阶段2的神疫</p>\n<hr />\n<p><strong>升阶（5环级）</strong> 神疫疾病获得恶性特征，并将笨拙、力竭与呆滞的状态值提高到2。</p>",
             "range": "15尺",
-            "time": "2"
+            "time": "2",
+            "target": "1 creature"
         },
         "Mystic Beacon": {
             "name": "神秘信标 Mystic Beacon",
@@ -7616,7 +7620,8 @@
             "description": "<p>你汲取芭芭雅嘎大能的裂片，短暂地使一个物品活化。该物品会获得一种移动方式，例如长出鸡脚，并行走至多25尺到法术射程内你所指定的格子中。若你以两个动作施放此法术，则该物品还会攻击与其移动目的地相邻的格子中的一个你所指定的生物，向该生物进行一次近战法术攻击骰，命中时该生物承受3d4钝击、穿刺或挥砍伤害(依活化的物品而定)。重击时则承受2倍伤害。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 目标物品的负载上限+1，伤害+1d4。</p>",
             "target": "一件最多1B的无主物体",
             "range": "30尺",
-            "time": "1 or 2"
+            "time": "1 or 2",
+            "duration": "1 minute"
         },
         "Vision of Weakness": {
             "name": "识破弱点 Vision of Weakness",
@@ -12584,6 +12589,107 @@
             "range": "60尺",
             "duration": "1分钟",
             "time": "2"
+        },
+        "Trade Death for Life": {
+            "name": "Trade Death for Life",
+            "target": "1 creature",
+            "range": "30 feet",
+            "duration": "1 minute",
+            "description": "<p>Your patron steals life from one of your enemies to grant it to another. The target takes 1d4 void damage (basic Fortitude save). If the target takes damage, a willing creature within the hex's range gains fast healing 1 for as long as you Sustain the hex. The target takes damage only once from this spell, whether or not you Sustain it.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.oNAqqcxPjzPCJJmW]{Spell Effect: Trade Death for Life}</p><hr /><p><strong>Heightened (+1)</strong> The damage increases by 1d4 and the fast healing increases by 1.</p>",
+            "time": "2"
+        },
+        "Malediction": {
+            "time": "2",
+            "name": "Malediction",
+            "duration": "1 minute",
+            "description": "<p>You incite distress in the minds of your enemies, making it more difficult for them to defend themselves. Enemies in the area must succeed at a Will save or take a –1 status penalty to AC as long as they're in the area.</p>\n<p>Once per round on subsequent turns, you can Sustain the spell to increase the emanation's radius by 10 feet and force enemies in the area that weren't yet affected to attempt a saving throw.</p>\n<p>Malediction can counteract benediction.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.1jX8W0eyMPJ0MFKY]{Spell Effect: Malediction}</p>"
+        },
+        "Swear Oath": {
+            "duration": "until the end of your next turn",
+            "time": "1 or 2",
+            "description": "<p>You loudly and firmly state a course of action that you swear to fulfill. When you Cast this Spell, Ready a single action or free action you can use. If the action is in line with your personal edicts or the edicts presented by your religion, you can Cast this Spell as a single action.</p>\n<p>If the trigger you designate occurs and you can use the chosen action as a reaction, you gain a +1 status bonus to any attack roll or skill check required. If the trigger you designate doesn't occur, you can Sustain the spell on your next turn to regain the Focus Point spent for this spell.</p><hr /><p><strong>Heightened (5th)</strong> The status bonus is +2.</p>\n<p><strong>Heightened (9th)</strong> The status bonus is +3.</p>",
+            "name": "Swear Oath"
+        },
+        "Purging Toxins": {
+            "description": "<p>In the right dose, a scourge can become a cure. Deal poison damage equal to the spell's rank to the target, then attempt a counteract check against one disease or poison afflicting the target. The target is then temporarily immune for 24 hours. If the target is immune to poison, this spell has no effect.</p><hr /><p><strong>Heightened (5th)</strong> You can attempt counteract checks against any number of poisons or diseases afflicting the target.</p>",
+            "name": "Purging Toxins",
+            "target": "1 willing creature",
+            "range": "30 feet",
+            "time": "2"
+        },
+        "Ulcerous Canker": {
+            "description": "<p>Weeping sores open on the target as you expose it to decay, dealing 1d4 void damage and 1d4 poison damage plus @Damage[(ceil(@item.rank / 2))[bleed]]{persistent bleed} damage. The target must attempt a Fortitude save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half the initial damage and no persistent bleed damage.</p>\n<p><strong>Failure</strong> The target takes full damage.</p>\n<p><strong>Critical Failure</strong> The creature takes double initial damage and double persistent bleed damage.</p><hr /><p><strong>Heightened (+2)</strong> The void damage and poison damage each increase</p>",
+            "name": "Ulcerous Canker",
+            "target": "1 living creature",
+            "range": "30 feet",
+            "time": "2"
+        },
+        "Roar of the Dragon": {
+            "name": "Roar of the Dragon",
+            "duration": "varies",
+            "time": "2",
+            "description": "<p>You channel the might of dragons into your voice, letting out a roar that engenders respect in dragonkind but that instills fear in most other creatures. The impressive roar grants you a +2 circumstance bonus to Diplomacy checks for 10 minutes against dragons that were in the area at the time of casting.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.0s6YaL3IjqECmjab]{Spell Effect: Roar of the Dragon}</p>\n<p>Roar of the dragon affects non-dragon creatures with deep ties to dragonkind (such as a barbarian with the draconic instinct, a sorcerer with the draconic bloodline, or a member of a culture that reveres dragons) as if they had the dragon trait. The GM decides if a creature is aligned enough with dragonkind to be affected in this way. All enemies within the area other than dragons must attempt a Will save; to these enemies, roar of the dragon is a fear effect.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+        },
+        "Benediction": {
+            "description": "<p>Divine protection helps protect your companions. You and your allies gain a +1 status bonus to AC while within the emanation. Once per round on subsequent turns, you can Sustain the spell to increase the emanation's radius by 10 feet.</p>\n<p>Benediction can counteract malediction.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.GogALNdgQ7Fn5oMG]{Spell Effect: Benediction}</p>",
+            "name": "Benediction",
+            "duration": "1 minute",
+            "time": "2"
+        },
+        "Chastising Retort": {
+            "name": "Chastising Retort",
+            "target": "the triggering creature",
+            "range": "30 feet",
+            "time": "reaction",
+            "description": "<p><strong>Trigger</strong> A creature within range attempts a Deception check to @UUID[Compendium.pf2e.actionspf2e.Item.ewwCglB7XOPLUz72]{Lie} or @UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]{Feint}.</p><hr /><p>You unleash some choice words empowered with divine might. The creature takes 2d6 mental damage and must attempt a Will save.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for [[/r 1d4 #rounds]]{1d4 rounds}.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1d4 rounds.</p>\n<p>The creature can immediately choose to reveal the truth about its deception as a free action to immediately recover Hit Points equal to the mental damage it took and lose the stupefied condition from the spell. If it does, it quickly notes that its words and actions were lies, though it might need more time to explain the proper truth. If the creature used Deception to successfully Feint and it reveals the truth in this way, the target of the creature's Feint is no longer @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} due to the successful Feint.</p><hr /><p><strong>Heightened (+1)</strong> The damage increases by 2d6.</p>"
+        },
+        "Show the Path": {
+            "name": "Show the Path",
+            "target": "1 willing creature",
+            "range": "30 feet",
+            "duration": "1 minute",
+            "description": "<p>You grant the target insight on things to come, guiding them toward a fate they find most fitting and encouraging them to continue this journey. The creature rolls a d20 at the start of each of its turns. The creature can use the result of the roll instead of rolling for any check before the start of their next turn. If the creature does substitute the roll in this way, they gain a +1 status bonus to whatever check they substitute on the following turn. Repeated substitutions increase the status bonus by 1, up to a total of +2. If the creature begins their turn without having substituted a roll in the previous round, the spell ends.</p><hr /><p><strong>Heightened (7th)</strong> The status bonus can increase up to a total of +3.</p>\n<p><strong>Heightened (10th)</strong> The status bonus can increase up to a total of +4.</p>",
+            "time": "2"
+        },
+        "Accelerated Decomposition": {
+            "name": "Accelerated Decomposition",
+            "target": "1 creature",
+            "description": "<p>You speed the natural process of a creature's decline and debilitation. As its body withers, the target takes 9d6 void damage and must attempt a Fortitude save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage and is your choice of @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}, @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}, or @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 round.</p>\n<p><strong>Failure</strong> The target takes full damage and is clumsy 1, drained 1, and enfeebled 1 for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is clumsy 1, drained 1, and enfeebled 1 for 1 minute.</p><hr /><p><strong>Heightened (+1)</strong> The void damage increases by 1d6.</p>",
+            "range": "30 feet",
+            "time": "2"
+        },
+        "Share Vision": {
+            "description": "<p>Your patron temporarily links your vision with that of another, causing both of you to be able to see through each other's eyes. For the duration of the hex, the two of you share any vision-based senses (such as darkvision or low-light vision) and gain a +2 status bonus to Perception checks, but if either of you are @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} or @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled}, you both are.</p>\n<p>If you cast share vision while a previous casting of this hex is still in effect, the previous effect ends.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.eQzFYXLYPrGc9EBI]{Spell Effect: Share Vision}</p>",
+            "name": "Share Vision",
+            "target": "1 willing creature",
+            "range": "30 feet",
+            "duration": "10 minutes",
+            "time": "2"
+        },
+        "Glamorize": {
+            "name": "Glamorize",
+            "duration": "1 hour",
+            "time": "2",
+            "description": "<p>Using simple magical gestures, you alter a minor detail of your appearance (add or remove highlights to your hair color, apply or remove cosmetics, add polish or accessories to your nails, etc.) or create a small environmental effect that's confined to your person (adjust surrounding lighting to favor your good side, cause a brief wind to make your hair blow dramatically, make a small chime occur as you smile, etc.). While the spell is active, you can Sustain it to make further adjustments. The changes persist until the spell's duration ends.</p>\n<p>At the GM's discretion, such alterations might grant a +1 status bonus to certain tasks, such as Impersonate or @UUID[Compendium.pf2e.actionspf2e.Item.EEDElIyin4z60PXx]{Perform}.</p>"
+        },
+        "Entreat the Many": {
+            "description": "<p>You manifest echoes of all the spirits you've ever bonded with at once, in a spiraling cyclone of colorful forms. They deal 8d8 force damage to each enemy in the area, with a basic Fortitude save. Additionally, creatures that critically fail the save are knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p><hr /><p><strong>Heightened (+1)</strong> The damage increases by 1d8.</p>",
+            "name": "Entreat the Many",
+            "time": "2"
+        },
+        "Clouded Focus": {
+            "name": "Clouded Focus",
+            "target": "1 creature",
+            "range": "30 feet",
+            "duration": "varies",
+            "time": "2",
+            "description": "<p>You sharpen a creature's senses, though more distant objects become hazy, indistinct, or muted to it. The target gains a +1 status bonus to Perception checks attempted with any of its precise senses. Furthermore, any imprecise senses the target has are sharpened to precise senses (though they don't receive the status bonus). However, the target can't perceive anything beyond a range of 20 feet with any of its senses.</p>\n<p>The duration is determined by the target's Will save. You can allow allies to choose the outcome instead of attempting a saving throw.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is affected for 1 round.</p>\n<p><strong>Failure</strong> The target is affected for 1 minute.</p>\n<p><strong>Critical Failure</strong> As failure, but the target can't perceive anything beyond a range of 10 feet.</p><hr /><p><strong>Heightened (3rd)</strong> You can target up to 2 creatures.</p>\n<p><strong>Heightened (6th)</strong> You can target up to 4 creatures.</p>"
+        },
+        "Entreat Spirit": {
+            "name": "Entreat Spirit",
+            "duration": "1 minute",
+            "description": "<p>You invite a spirit you've bonded with to bolster your mind. You gain a +1 status bonus to an Intelligence-, Wisdom-, or Charisma-based skill of your choice. Additionally, you gain a +1 status bonus to saving throws against curse, death, emotion, and fear effects.</p><hr /><p><strong>Heightened (4th)</strong> The status bonus to the skill and your saving throws increases to +2.</p>\n<p><strong>Heightened (8th)</strong> The status bonus to the skill and your saving throws increases to +3.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Fms3IfhXqHiKAxlC]{Spell Effect: Entreat Spirit}</p>",
+            "time": "1"
         }
     }
 }
