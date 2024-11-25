@@ -137,8 +137,8 @@
         },
         "Cloak of Light": {
             "name": "圣光披风 Cloak of Light",
-            "duration": "5轮",
-            "description": "<p>你将自己笼盖于神圣光芒之中，治愈生者，驱逐不死。你在半径30尺范围内散发明亮光照，在接下来的30尺范围内散发昏暗光照。</p>\n<p>与你邻接的活体生物在开始其回合时将回复 2d4 生命值。与你邻接的不死生物在开始其回合时将受到@Damage[(floor(@item.level/2)*2)d4[vitality]]伤害。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 该治疗量增加1d4，对不死生物的伤害增加2d4。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.eRRiss7y7TsneiEu]{法术效果：圣光披风}</p>",
+            "duration": "1分钟",
+            "description": "<p>你将自己包裹在神圣的光芒中，治疗活物并驱逐死灵。你对半径30尺射程内散发出明亮光照，并向之外的30尺散发出昏暗光照。在与你相邻的位置开始自身回合的活物会恢复4d6点生命值。在与你相邻的位置开始自身回合的不死生物会承受4d6点命能伤害（基础强韧豁免）。</p><hr /><p><strong>升阶 (+2)</strong> 治疗量增加2d6点，对不死生物的伤害增加2d6点。</p>",
             "time": "2"
         },
         "Construct Mindscape": {
@@ -215,11 +215,11 @@
         },
         "Fear the Sun": {
             "name": "惧日术 Fear the Sun",
-            "description": "<p>你使得目标生物的视觉变得格外敏感。该生物必须尝试一次强韧豁免，并在之后临时免疫该效果 1 分钟。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p><strong>失败</strong> 该生物目眩1分钟。</p>\n<p><strong>大失败</strong> 该生物获得持续 1 分钟的@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.I0HYG0ctCLP5JRsW]{强光致盲 Light Blindness}。若该生物正暴露在明亮光照之下，其将由于未适应强光致盲而立刻陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}状态。</p>\n<hr />\n<p><strong>升阶（6环级）</strong> 你能以至多 10 个生物为目标。</p>",
+            "description": "<p>你让生物的视觉变得极为敏感。该生物必须尝试强韧豁免。该生物之后会临时免疫该法术1分钟。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]，持续1轮。</p>\n<p><strong>失败</strong> 生物陷入目眩，持续1分钟。</p>\n<p><strong>大失败</strong> 生物获得@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.I0HYG0ctCLP5JRsW]，持续1分钟。若该生物已经置于明亮光照之中，则会立即陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]，直至它的下个回合结束为止，因为它还没有适应刚刚获得的强光致盲。</p><hr /><p><strong>升阶 (6环)</strong> 你能以至多10个生物为目标。</p>",
             "target": "一个生物",
             "range": "30尺",
             "time": "2",
-            "duration": "varies"
+            "duration": "可变"
         },
         "Fey Abeyance": {
             "name": "隔绝精类 Fey Abeyance",
@@ -369,14 +369,14 @@
         "Moonburst": {
             "name": "月辉爆 Moonburst",
             "range": "500尺",
-            "description": "<p>强力而清寒的球状月光在区域中爆开，对该区域内的所有生物与物体造成 8d10 寒冷伤害，对不死生物还会造成额外@Damage[(@item.level+1)d10[vitality]]伤害。</p>\n<p>在计算弱点、抗力以及其它类似能力时，<em>月辉爆</em>所造成的寒冷伤害同时视作银伤害。在该区域内的每个生物都必须尝试一次反射豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物或物体不受影响。</p>\n<p><strong>成功</strong> 该生物或物体受到一半伤害。</p>\n<p><strong>失败</strong> 该生物或物体受到完整伤害。</p>\n<p><strong>大失败</strong> 该生物或物体受到完整伤害。若为生物，则其永久@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}。如果区域内有魔法黑暗效果存在，<em>月辉爆</em>会尝试反制该黑暗效果。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 该寒冷伤害增加1d10，且对不死生物的命能伤害增加1d10。</p>",
+            "description": "<p>寒冷月光构成的高能球体在区域内爆炸，对区域内的所有生物造成8d10点寒冷伤害，外加对不死生物造成额外@Damage[(@item.rank+1)d10[vitality]]伤害。在判断弱点、抗力以及类似效果时，月辉爆的寒冷伤害是银伤害。区域内的每个生物和物体都必须尝试反射豁免。</p>\n<p>在判断弱点、抗力以及类似效果时，<em>月辉爆</em>的寒冷伤害是银伤害。区域内的每个生物和物体都必须尝试反射豁免。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物承受一半伤害。</p>\n<p><strong>失败</strong> 生物承受全额伤害。</p>\n<p><strong>大失败</strong> 生物承受全额伤害并且陷入永久@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]。若球体与魔法黑暗的区域重叠，<em>月辉爆</em>会尝试反制黑暗效果。</p><hr /><p><strong>升阶 (+1)</strong> 寒冷伤害增加1d10点，对不死生物造成的命能伤害增加1d10点。</p>",
             "time": "2"
         },
         "Moonlight Ray": {
             "name": "月华银辉 Moonlight Ray",
             "target": "一个生物",
             "range": "120尺",
-            "description": "<p>你射出一道冷若冰霜的神圣月光射线。尝试一次远程法术攻击，该射线造成 5d6 寒冷伤害。若目标为魔族或不死生物，你对其额外造成@Damage[((@item.level*2)-1)d6[spirit]]伤害。</p>\n<p>在计算弱点、抗力以及其它类似能力时，<em>月华银辉</em>的寒冷伤害同时视作银伤害。</p><hr /><p><strong>大成功</strong> 目标受到双倍寒冷伤害，若其为魔族或不死生物，精魂伤害同样翻倍。</p>\n<p><strong>成功</strong> 目标受到完整伤害。</p>\n<p>如果该光线通过一个魔法黑暗区域，或者以一个受到魔法黑暗影响的生物为目标，<em>月华银辉</em>会尝试反制该黑暗。如果你需要判断光线是否通过一个黑暗区域，从你自身到法术目标划一条直线。</p><hr /><p><strong>升阶（+1）</strong> 该寒冷伤害增加2d6，对魔族和不死生物的精魂伤害增加2d6。</p>",
+            "description": "<p>你施放出冻寒月光构成的圣洁光束。作出远程法术攻击。射线造成5d6点寒冷伤害。若目标具有邪秽特征，你会造成额外5d6点精魂伤害。</p>\n<p>在判断弱点、抗力以及类似效果时，<em>月华银辉</em>的寒冷伤害是银伤害。</p><hr /><p><strong>大成功</strong> 目标承受双倍伤害。</p>\n<p><strong>成功</strong> 目标承受全额伤害。</p>\n<p>若光线穿过魔法黑暗的区域或者以魔法黑暗影响的生物为目标，<em>月华银辉</em>就会尝试反制黑暗。若你需要判定管线是否穿过了黑暗的区域，则请在自身和法术目标之间画一条线判定。</p><hr /><p><strong>升阶 (+1)</strong> 寒冷伤害增加2d6点，对邪秽生物造成的精魂伤害增加2d6点。</p>",
             "time": "2"
         },
         "Mother's Blessing": {
@@ -417,7 +417,7 @@
         },
         "Penumbral Disguise": {
             "name": "半影伪装 Penumbral Disguise",
-            "description": "<p>你将目标包裹在阴影之中，若其身处昏暗光照或黑暗环境之中，则他们在用来@UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{躲藏 Hide}的隐秘检定上获得 +1 状态加值。</p>\n<p>此外，阴影还会掩盖住该生物的种种特征，若其身处昏暗光照或黑暗环境之中，其他生物必须成功通过一次@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}动作对抗该法术的DC以辨识目标的外貌细节。举例而言，若不使用搜索动作，其他生物能够确认目标的大概形态（例如其为类人生物），但他们需要通过搜索动作来辨认出目标的精确相貌或其它有待确认的信息。</p>\n<p>具有黑暗视觉的生物能够如常辨识出目标及其特征。在明亮光照下，目标的通常相貌将被揭露。</p>\n<hr />\n<p><strong>升阶（4环级）</strong> 该状态加值为+2。当目标身处昏暗光照或黑暗环境之中时，具有黑暗视觉的生物将无法在不使用搜索动作的情况下，如常辨识出目标的具体细节。不过，具有高等黑暗视觉的生物依旧能够如常辨识出细节。</p>\n<p><strong>升阶（6环级）</strong> 同4环，但状态加值为+3，且目标身处昏暗光照或黑暗环境之中时，不具有黑暗视觉的生物甚至无法确认其大概特征，除非他们成功搜索到该生物，否则他们将只能看到一个模糊的黑影。而哪怕在搜索检定成功的情况下，他们也只是能确认目标的大概特征，只有在检定大成功的情况下他们才能辨识出更多细节。</p>\n<p><strong>升阶（8环级）</strong> 同 6环，但状态加值为+4，且目标身处昏暗光照或黑暗环境之中时，哪怕是具有高等黑暗视觉的生物也必须通过搜索动作才能辨识出具体细节。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.mAofA4oy3cRdT71K]{法术效果：半影伪装}</p>",
+            "description": "<p>You wrap the target in shadows, granting it a +1 status bonus to Stealth checks to Hide while in dim light or darkness. In addition, the shadows mask the target's features. While the target is in dim light or darkness, other creatures must succeed at a @UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{Seek} action against the spell's DC to discern details about its appearance. For example, without using Seek, other creatures can determine the target's general shape (such as humanoid), but they must Seek to determine the target's precise appearance. Creatures with darkvision can still see the target and its features normally. The target's normal appearance is revealed in bright light.</p><hr /><p><strong>Heightened (4th)</strong> The status bonus is +2. Creatures with darkvision can no longer discern details about the target while the target is in dim light or darkness without Seeking, though creatures with greater darkvision can still determine these details.</p>\n<p><strong>Heightened (6th)</strong> As 4th rank, except the status bonus is +3, and creatures without darkvision can't determine even general details about the target while the target is in dim light or darkness unless they successfully Seek the target; these creatures see a vague shadow instead. Even on a successful Seek, they only determine general features, though they can see details on a critical success.</p>\n<p><strong>Heightened (8th)</strong> As 6th rank, except the status bonus is +4, and even creatures with greater darkvision must Seek to discern details about the target while the target is in dim light or darkness.</p>",
             "target": "一个自愿生物",
             "range": "接触",
             "duration": "10分钟",
@@ -952,8 +952,8 @@
         },
         "Message Rune": {
             "name": "传讯符文 Message Rune",
-            "description": "<p>你可以记录一条5分钟长的信息，并在任何可触及的无主平面上刻上一个特殊的符文。符文的外观取决于你，但它对每个人都是可见的，它的直径不得小于2寸。你指定一个能够激活符文的生物的触发条件（核心规则305页）。在法术的持续时间内，符合触发条件的生物可以触摸符文来听到他们脑中记录的信息，就好像你在和他们心灵感应一样。你知道有人在听信息，但你不知道是谁在听。你可以解除法术。</p>",
-            "target": "一个无主的平整平面",
+            "description": "<p>你录制1条至多5分钟长的信息，并在任意无人看管的平面或触及之内的小件物体上留下特殊的符文。符文外观的性质由你决定，但每个人都能看到，且它的直径必须不小于2英寸。你还能指定触发器，其他生物必须满足触发要求才能启动符文。</p>\n<p>在法术的持续时间内，符合触发标准的生物能触摸符文并在脑海中听到你录制的信息，就好像你通过心灵感应与其交谈一般。你知道什么时候有人听到这条信息，但是你不知道谁在听。你能解消该法术。</p><hr /><p><strong>升阶 (+2)</strong> 每2个法术环级能让持续时间提升1阶，依序变为1星期、1个月、1年或无限。</p>",
+            "target": "1个无人看管的平面或1件轻负载的非魔法物体",
             "range": "接触",
             "duration": "1天",
             "time": "5分钟"
@@ -2503,7 +2503,7 @@
         },
         "Endure": {
             "name": "坚韧术 Endure",
-            "description": "<p>你鼓舞了生物的心灵，并催促它继续前进。你给予被接触的生物5点临时生命。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 临时生命增加5</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.AAypmg9Jz6Ysf02a]{法术效果：坚韧术}</p>",
+            "description": "<p>你激励着被碰触生物的心智，督促它继续前行。你赋予接触目标5点临时生命值，这持续1分钟。</p><hr /><p><strong>升阶 (+1)</strong> 临时生命值增加5点。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.AAypmg9Jz6Ysf02a]{法术效果: 坚韧术}</p>",
             "target": "一个生物",
             "range": "接触",
             "duration": "1轮",
@@ -3083,7 +3083,7 @@
         },
         "Feast of Ashes": {
             "name": "尘埃之宴 Feast of Ashes",
-            "description": "<p>你用诅咒目标，使其陷入没有食物可以满足的饥饿中。你可以解除法术。目标必须尝试强韧豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响，且暂时免疫1小时</p>\n<p><strong>成功</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued} 1轮</p>\n<p><strong>失败</strong> 这种生物立即受到饥饿的折磨，好像好几天没吃东西似的。它变得疲乏，每天受到1d4的伤害，直到它满足了饥饿才可以治愈。在法术的持续时间内，再多的进食也不能满足生物的饥饿。在法术持续时间之后，生物会受到核心规则书描述的饥饿伤害</p>\n<p><strong>大失败</strong> 和失败相同，但生物每天受到2d4点伤害，是平时饥饿的两倍</p>\n<hr />\n<p><strong>升阶（+1）</strong> 饥饿更加难以忍受，每天伤害增加1d4，大失败增加2d4</p>",
+            "description": "<p>你诅咒目标陷入如何进食都无法满足的饥饿。你能解消该法术。目标必须尝试强韧豁免。</p><hr /><p><strong>大成功</strong> 该生物不受影响并且在1小时内临时免疫该法术。</p>\n<p><strong>成功</strong> 该生物陷入持续1轮的@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。</p>\n<p><strong>失败</strong> 该生物立即赶到饥饿难忍，仿佛已经数日没有进食一般。它陷入疲乏并且每日承受1d4点伤害，直至饥饿感得到满足为止，这些伤害都无法被治愈。在法术的持续时间内，无论该生物吃多少东西，都无法满足饥饿感。</p>\n<p><strong>大失败</strong> 同失败，但是该生物每日由于饥饿承受2d4点伤害。</p><hr /><p><strong>升阶 (+1)</strong> 饥饿变得更加难以忍受，每日承受的伤害增加1d4点，大失败的伤害增加2d4点。</p>",
             "target": "一个活物",
             "range": "30尺",
             "duration": "1星期",
@@ -3091,7 +3091,7 @@
         },
         "Cup of Dust": {
             "name": "尘埃之饮 Cup of Dust",
-            "description": "<p>你诅咒目标陷入口渴，任何饮品都无法解渴。你可以解除法术。目标必须尝试一次强韧豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响，且暂时免疫1小时</p>\n<p><strong>成功</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{疲乏 Fatigued}1轮</p>\n<p><strong>失败</strong> 生物立刻口渴难忍，好像几天没喝过水。它变得疲乏，每小时受到1d4的伤害，直到它满足了口渴才可以治愈。在法术的持续时间内，再多的饮水也不能解渴</p>\n<p><strong>大失败</strong> 和失败相同，但生物每小时受到2d4点伤害，是平时口渴的两倍</p>\n<hr />\n<p><strong>升阶（+3）</strong> 口渴变得更难以忍受，每小时伤害增加1d4，大失败时增加2d4</p>",
+            "description": "<p>你诅咒目标使其口渴难忍但无法通过喝水缓解。你能解消法术。目标必须尝试强韧豁免。</p><hr /><p><strong>大成功</strong> 该生物不受影响，并且获得1小时的临时免疫。</p>\n<p><strong>成功</strong> 该生物陷入持续1轮的@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。</p>\n<p><strong>失败</strong> 该生物立即变得口渴难忍，仿佛数日没有饮水一般。它陷入疲乏并且每小时承受1d4点伤害，直至目标解渴为止，这些伤害都无法被治愈。在法术的持续时间内，无论该生物喝多少水都无法解渴。</p>\n<p><strong>大失败</strong> 同失败，但是该生物每小时承受2d4点伤害。</p><hr /><p><strong>升阶 (+3)</strong> 口渴的感觉变得更加难以忍受，每小时的伤害增加1d4点，大失败的伤害增加2d4点。</p>",
             "target": "一个活物",
             "range": "30尺",
             "duration": "1天",
@@ -3551,7 +3551,7 @@
         },
         "Acidic Burst": {
             "name": "强酸爆 Acidic Burst",
-            "description": "<p>你在自己周围制造一层酸性外壳，立即向外爆发，对该区域的每个生物造成2d6点酸蚀伤害。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 伤害提升2d6</p>",
+            "description": "<p>你在自己身边创造出腐蚀性的外壳并立即使其向外爆发，对区域内的每个生物造成2d6点酸蚀伤害并具有基础反射豁免。</p><hr /><p><strong>升阶（+1）</strong> 伤害提升2d6</p>",
             "time": "2"
         },
         "Acid Arrow": {
@@ -3694,7 +3694,7 @@
         },
         "Expeditious Excavation": {
             "name": "快速挖掘 Expeditious Excavation",
-            "description": "<p>你可以清除污垢、灰尘、砾石、沙子等（尽管不是实心石头），大小可达5尺的立方体。当施法时，任何站在地上的中型或小型生物必须尝试反射豁免或特技检定。</p>\n<hr />\n<p><strong>成功</strong> 生物不受影响，可以选择在不受伤害地平稳落入坑底或移动到其选择的相邻可用空间</p>\n<p><strong>失败</strong> 生物在其选择的相邻可用空间@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}，或者选择掉进坑里</p>\n<p><strong>大失败</strong> 生物落入法术挖出的坑中，倒地，且受到正常的坠落伤害</p>\n<hr />\n<p><strong>升阶（+2）</strong> 这个法术可以再挖一个5尺立方的土块。如果你在一个大型生物下面挖掘所有四个5尺的立方体，它必须尝试反射豁免或特技检定，如上所述</p>",
+            "description": "<p><strong>区域</strong>(持续的) 5尺边长或更小的立方体的泥土</p><hr /><p>你移走松散的泥土、粉尘、砂砾、以及类似物质（但不能是坚固的石头），大小至多为5尺的立方体。施法时站在这些泥土上的任何中型或更小的生物必须尝试反射豁免或@Check[acrobatics]检定。</p>\n<p><strong>成功</strong> 生物不受影响，并且能够选择不受伤害地降到坑中，或者根据其选择移动到最近的可用空间。</p>\n<p><strong>失败</strong> 生物根据其选择@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]至最近的可用空间内，或者如果它愿意的话也可以落入坑中。</p>\n<p><strong>大失败</strong> 生物落入法术挖掘的坑中并倒地，如常承受坠落伤害。</p><hr /><p><strong>升阶 (+2)</strong> 法术能够挖掘额外1个5尺边长的立方体的泥土。若你挖掘了大型生物脚下所有的4个5尺边长的立方体，它就必须如上文所述一般尝试反射豁免或特技检定。</p>",
             "range": "接触",
             "time": "2"
         },
@@ -4374,7 +4374,7 @@
         },
         "Animus Mine": {
             "name": "敌意地雷 Animus Mine",
-            "description": "<p>你在你的心灵中植入了一个心灵地雷，以对抗任何试图操纵你思想的人。你可以使用一个单动作，这具有专注特征，以压制地雷的效果1轮，让有人安全地对你造成一个心灵效果。你可以解除法术。</p>\n<p>第一个对你使用心灵效果的生物会触发地雷，使法术结束。地雷对触发生物造成4d8点心灵伤害，触发生物必须经过一个意志豁免。 这个法术只会对那些尝试以魔法效果入侵你的心灵的效果起效，对话之类的日常行为不会触发效果。</p>\n<hr />\n<p><strong>大成功</strong> 生物没有受到影响</p>\n<p><strong>成功</strong> 生物受到一半伤害</p>\n<p><strong>失败</strong> 生物受到全部伤害，且@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 1 Stunned 1}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，且@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 1 Stunned 1}。你不会被用于触发的心灵效果所影响。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 伤害提升2d8</p>",
+            "description": "<p>你将一枚心灵暗雷植入到自己的精神内，它会在有人尝试以魔法操控你的思维时引爆。你能通过维持法术来在1轮内压制暗雷的效果，使得某人得以安全地对你使用心灵效果。你能解消该法术。首个对你使用魔法心灵效果的生物会触发敌意暗雷，导致法术结束。敌意暗雷对触发生物造成4d8点心灵伤害，它必须尝试意志豁免。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物承受一半伤害。</p>\n<p><strong>失败</strong> 生物承受全额伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>大失败</strong> 生物承受双倍伤害并且陷入震慑1。你不会受到触发心灵效果的影响。</p><hr /><p><strong>升阶 (+1)</strong> 伤害增加2d8点。</p>",
             "duration": "1小时",
             "time": "2"
         },
@@ -6254,7 +6254,7 @@
         },
         "Fungal Hyphae": {
             "name": "真菌根系 Fungal Hyphae",
-            "description": "<p>纤细的菌丝从你的脚上长出来，伸入地面，形成一个共生的真菌网络，附着在30尺内的植物上，将你与它们的根系连接起来。你获得了一种模糊的震感，让你能感觉到任何直接接触到远处植物的东西。如果你移动，连接会断开，法术也会结束。</p>\n<hr />\n<p><strong>升阶（4环级）</strong> 你可以在一定程度上控制这一区域的植物，允许你用树枝、树根或类似坚硬的植物进行打击。你可以使用打击动作，你可以打击任何你可以用震感探测到的生物。这些是近战法术攻击，造成2d8钝击伤害加上你的施法属性修正。不寻常的植物，如带刺的藤蔓植物，可能会造成不同类型的伤害，由GM决定。除此之外，你不能通过这些植物进行任何其他攻击，也不能通过它们采取任何其他行动。</p>\n<p><strong>升阶（6环级）</strong> 和4环相同，但是你可以通过植物使用其他简单的操作动作，包括让树枝捡起一个物体或打开一扇门，但更复杂的动作，例如捡起一把锁或破坏一个陷阱，仍是不可能的。</p>",
+            "description": "<p>菌丝从你脚下生长出来并探入地下，形成共生真菌网络，它会附着在30尺内的植物根系上，并将你与其连在一起。你获得模糊的震颤感知，这允许你感知到该距离内任何直接接触到植物的事物。如果你移动，菌丝便会断裂，法术结束。</p><hr /><p><strong>升阶 (4环)</strong> 你可以较低程度地操控区域内的植物，让你能用树枝、裸露的根茎或类似的坚硬植物作出打击。要做到这点，你要使用打击动作，不过你能打击任何用震颤感知侦测到的生物。这是法术攻击，并且造成@Damage[3d8[bludgeoning]]伤害。不寻常的植物，比如带刺的藤蔓，可能会根据GM的判断造成不同类别的伤害。除了这些打击之外，你不能用这些植物作出任何其他攻击，也不能通过它们进行任何其他动作。</p>\n<p><strong>升阶 (6环)</strong> 同4环级，不过你能通过植物使用其他简单的操作动作，这包括让树枝捡起物体或者开门，不过更加复杂的动作，比如开锁或解除陷阱，仍然无法做到。</p>",
             "duration": "1分钟",
             "time": "2"
         },
@@ -7034,7 +7034,7 @@
         },
         "Liberating Command": {
             "name": "脱困指令 Liberating Command",
-            "description": "<p>你发出一声脱困呐喊，敦促一个盟友摆脱束缚他们的影响。如果目标被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}，@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，它可以立即用反应动作试图@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}。</p>",
+            "description": "<p>你发出让人解放的呼喊，敦促盟友摆脱束缚它的效果。若目标陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]、@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]、或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]状态。它能立即使用反应动作尝试@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]。</p>",
             "target": "一个生物",
             "range": "60尺",
             "time": "1"
@@ -7765,7 +7765,7 @@
         },
         "Agitate": {
             "name": "躁动术 Agitate",
-            "description": "<p>你让目标的身心进入超负荷状态，使其变得烦躁多动，在此期间，目标必须每回合至少行走（或飞行，或游泳，GM判断下也可为其他的移动方式）一次，否则该回合受到@Damage[2d8[mental]]伤害。此效果的持续时间取决于目标的意志豁免。</p>\n<hr />\n<p><strong>大成功</strong> 法术没有效果</p>\n<p><strong>成功</strong> 持续时间1轮</p>\n<p><strong>失败</strong> 持续时间2轮</p>\n<p><strong>大失败</strong> 持续时间4轮</p>\n<hr />\n<p><strong>升阶（+1）</strong> 伤害提升2d8。</p>",
+            "description": "<p>你让目标的身心都进入过载的状态，迫使其变得坐立不安且过度活跃。在持续时间内，目标每回合必须行走、飞行、或游泳至少1次，否则便会在其回合结束时承受2d8点心灵伤害。对于那些只拥有更不寻常的移动形式的生物来说，GM可以选择将这些生物的移动动作列入到上述选项内。该效果的持续时间取决于目标的意志豁免。</p><hr /><p><strong>大成功</strong> 法术没有效果。</p>\n<p><strong>成功</strong> 持续时间为1轮。</p>\n<p><strong>失败</strong> 持续时间为2轮。</p>\n<p><strong>大失败</strong> 持续时间为4轮。</p><hr /><p><strong>升阶 (+1)</strong> 伤害增加2d8点。</p>",
             "target": "一个生物",
             "range": "30尺",
             "duration": "可变",
@@ -7926,7 +7926,7 @@
         },
         "Befuddle": {
             "name": "迷惑术 Befuddle",
-            "description": "<p>你在目标的头脑中播下困惑的念头，让他们的行动和思想变得笨拙。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。</p>\n<p><strong>失败</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>\n<p><strong>大失败</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3}，@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}和@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}。</p>",
+            "description": "<p>你向目标的脑中植入困惑之种，导致它的行动和思维变得笨拙。</p><hr /><p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>\n<p><strong>大失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 3}，@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}和@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]。</p>",
             "target": "一个生物",
             "range": "30尺",
             "duration": "1轮",
@@ -8655,7 +8655,7 @@
         },
         "Anticipate Peril": {
             "name": "预知危险 Anticipate Peril",
-            "description": "<p>你赋予目标短暂的远见。目标在下次先攻骰中获得+1状态加值，之后该法术结束。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 状态加值提升1，在7级时达到最大+4。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.4ag0OHKfjROmR4Pm]{法术效果：预知危险}</p>",
+            "description": "<p>你赋予目标短暂的远见。目标的下一次先攻检定获得+1状态加值，之后法术结束。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 状态加值增加1点，最高为7环级的+4点。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.4ag0OHKfjROmR4Pm]{法术效果：预知危险}</p>",
             "target": "一个生物",
             "range": "30尺",
             "duration": "10分钟",
@@ -12600,9 +12600,9 @@
         },
         "Malediction": {
             "time": "2",
-            "name": "Malediction",
-            "duration": "1 minute",
-            "description": "<p>You incite distress in the minds of your enemies, making it more difficult for them to defend themselves. Enemies in the area must succeed at a Will save or take a –1 status penalty to AC as long as they're in the area.</p>\n<p>Once per round on subsequent turns, you can Sustain the spell to increase the emanation's radius by 10 feet and force enemies in the area that weren't yet affected to attempt a saving throw.</p>\n<p>Malediction can counteract benediction.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.1jX8W0eyMPJ0MFKY]{Spell Effect: Malediction}</p>"
+            "name": "诘难术 Malediction",
+            "duration": "1分钟",
+            "description": "<p>你煽动起敌人心中的忧虑，让其更加难以保护自身。区域内的敌人必须成功通过意志豁免，失败时只要位于区域内便会使AC承受-1状态减值。</p>\n<p>在随后的回合内，每轮1次，你能维持法术来使弥漫区域的半径增加10尺，并迫使区域内还未受影响的敌人尝试豁免检定。</p>\n<p>诘难术能反制祝佑术。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.1jX8W0eyMPJ0MFKY]{法术效果: 诘难术}</p>"
         },
         "Swear Oath": {
             "duration": "until the end of your next turn",
@@ -12631,9 +12631,9 @@
             "description": "<p>You channel the might of dragons into your voice, letting out a roar that engenders respect in dragonkind but that instills fear in most other creatures. The impressive roar grants you a +2 circumstance bonus to Diplomacy checks for 10 minutes against dragons that were in the area at the time of casting.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.0s6YaL3IjqECmjab]{Spell Effect: Roar of the Dragon}</p>\n<p>Roar of the dragon affects non-dragon creatures with deep ties to dragonkind (such as a barbarian with the draconic instinct, a sorcerer with the draconic bloodline, or a member of a culture that reveres dragons) as if they had the dragon trait. The GM decides if a creature is aligned enough with dragonkind to be affected in this way. All enemies within the area other than dragons must attempt a Will save; to these enemies, roar of the dragon is a fear effect.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
         },
         "Benediction": {
-            "description": "<p>Divine protection helps protect your companions. You and your allies gain a +1 status bonus to AC while within the emanation. Once per round on subsequent turns, you can Sustain the spell to increase the emanation's radius by 10 feet.</p>\n<p>Benediction can counteract malediction.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.GogALNdgQ7Fn5oMG]{Spell Effect: Benediction}</p>",
-            "name": "Benediction",
-            "duration": "1 minute",
+            "description": "<p>神圣的庇护帮助你保护伙伴。你和你的盟友身处弥漫区域内时，AC获得+1状态加值。在随后的回合内，每轮1次，你能维持法术来让弥漫区域的半径增加10尺。</p>\n<p>祝佑术能反制诘难术。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.GogALNdgQ7Fn5oMG]{法术效果: 祝佑术}</p>",
+            "name": "祝佑术 Benediction",
+            "duration": "1分钟",
             "time": "2"
         },
         "Chastising Retort": {
@@ -12667,10 +12667,10 @@
             "time": "2"
         },
         "Glamorize": {
-            "name": "Glamorize",
-            "duration": "1 hour",
+            "name": "美型术 Glamorize",
+            "duration": "1小时",
             "time": "2",
-            "description": "<p>Using simple magical gestures, you alter a minor detail of your appearance (add or remove highlights to your hair color, apply or remove cosmetics, add polish or accessories to your nails, etc.) or create a small environmental effect that's confined to your person (adjust surrounding lighting to favor your good side, cause a brief wind to make your hair blow dramatically, make a small chime occur as you smile, etc.). While the spell is active, you can Sustain it to make further adjustments. The changes persist until the spell's duration ends.</p>\n<p>At the GM's discretion, such alterations might grant a +1 status bonus to certain tasks, such as Impersonate or @UUID[Compendium.pf2e.actionspf2e.Item.EEDElIyin4z60PXx]{Perform}.</p>"
+            "description": "<p>使用简单的魔法姿势，你能够改变外表的微小细节（添加或移除发色中的挑染、涂抹或移除化妆品、在指甲上添加指甲油或配饰等等）或创造仅限于你个人的小型环境效果（调整周围的光照来有利于表现你更好的一面、让一阵短暂的风戏剧性地吹起你的头发、让你微笑时发出微小铃音等等）。在启动该法术后，你能维持它来进行进一步的调整。这些变化会持续至法术的持续时间结束。</p>\n<p>根据GM的判断，这些改变可能会为某些任务提供+1状态加值，比如乔装或@UUID[Compendium.pf2e.actionspf2e.Item.EEDElIyin4z60PXx]。</p>"
         },
         "Entreat the Many": {
             "description": "<p>You manifest echoes of all the spirits you've ever bonded with at once, in a spiraling cyclone of colorful forms. They deal 8d8 force damage to each enemy in the area, with a basic Fortitude save. Additionally, creatures that critically fail the save are knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p><hr /><p><strong>Heightened (+1)</strong> The damage increases by 1d8.</p>",
