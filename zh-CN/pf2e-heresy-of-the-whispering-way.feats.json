@@ -33,7 +33,7 @@
         },
         "Aura of Rot": {
             "name": "Aura of Rot",
-            "description": "<p dir=\"ltr\">You can emit an aura of pervasive, supernatural rot. This aura is a 15-foot emanation, which you can activate or deactivate as a single concentrate action. A living enemy that enters or ends its turn in the aura must attempt a @Check[fortitude|against:class-spell] check against the higher of your spell DC or class DC. Ordinary plants that remain within this aura for more than 1 round wither and begin to die, and creatures with the plant trait have a -2 circumstance penalty to the save. Further, unattended food within the aura immediately spoils.</p>\n<p dir=\"ltr\"><strong>Success</strong> The creature is unaffected and temporarily immune to your Aura of Rot for 1 minute.</p>\n<p dir=\"ltr\"><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} and can’t reduce its sickened value below 1 while in the emanation. All perishable food, drink, and potions on their person (magical or otherwise) spoil and require a @Check[flat|dc:5] to be ingested.</p>\n<p dir=\"ltr\"><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-edbad2f4-7fff-4ed3-71e5-e15437a6209c\">Special</strong> This feat gains the trait that matches your lich tradition (arcane if your lich tradition is arcane, etc).</p>",
+            "description": "<p dir=\"ltr\">You can emit an aura of pervasive, supernatural rot. This aura is a 15-foot emanation, which you can activate or deactivate as a single concentrate action. A living enemy that enters or ends its turn in the aura must attempt a @Check[type:fortitude|dc:resolve(@actor.attributes.classOrSpellDC.value)] check against the higher of your spell DC or class DC. Ordinary plants that remain within this aura for more than 1 round wither and begin to die, and creatures with the plant trait have a -2 circumstance penalty to the save. Further, unattended food within the aura immediately spoils.</p>\n<p dir=\"ltr\"><strong>Success</strong> The creature is unaffected and temporarily immune to your Aura of Rot for 1 minute.</p>\n<p dir=\"ltr\"><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} and can’t reduce its sickened value below 1 while in the emanation. All perishable food, drink, and potions on their person (magical or otherwise) spoil and require a @Check[type:flat|dc:5] to be ingested.</p>\n<p dir=\"ltr\"><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-edbad2f4-7fff-4ed3-71e5-e15437a6209c\">Special</strong> This feat gains the trait that matches your lich tradition (arcane if your lich tradition is arcane, etc).</p>",
             "prerequisites": [
                 {
                     "value": "Lich Dedication"
@@ -72,7 +72,7 @@
         },
         "Blasphemous Utterances": {
             "name": "Blasphemous Utterances",
-            "description": "<p dir=\"ltr\">You are accompanied by a constant echo of blasphemous murmurs and tainted whispers. This aura is a 15-foot emanation. Enemies within this aura have a -2 penalty to saving throws against mental effects and can’t take actions that have the concentrate trait unless they succeed at a @Check[flat|dc:8]. Failing this check wastes the action.</p>",
+            "description": "<p dir=\"ltr\">You are accompanied by a constant echo of blasphemous murmurs and tainted whispers. This aura is a 15-foot emanation. Enemies within this aura have a -2 penalty to saving throws against mental effects and can’t take actions that have the concentrate trait unless they succeed at a @Check[type:flat|dc:8]. Failing this check wastes the action.</p>",
             "prerequisites": [
                 {
                     "value": "Lich Dedication"
@@ -102,7 +102,7 @@
         },
         "Charnel Soldiers": {
             "name": "阴尸士兵 Charnel Soldiers",
-            "description": "<p><strong>先决条件</strong> 末日缪斯吟游诗人、拥有伤害源泉的牧师、骨灰教派德鲁伊、骸骨秘示域先知、不死血脉术士、拥有不死幻灵的召唤兽、墓土语者女巫、界限学派法师或默语魔道学派法师</p>\n<hr />\n<p>你训练那些不太聪明的不死生物进行基本合作。位于你周围15尺弥漫范围内的，你控制下的无心智不死仆从获得@UUID[Compendium.pf2e.actionspf2e.Item.KAVf7AmRnbCAHrkT]{反应打击 Reactive Strike}反应动作。满足需求的仆从在其回合开始时获得一个只能用来反应打击的反应动作。</p>",
+            "description": "<p>你训练那些不太聪明的不死生物进行基本合作。位于你周围15尺弥漫范围内的，你控制下的无心智不死仆从获得@UUID[Compendium.pf2e.actionspf2e.Item.KAVf7AmRnbCAHrkT]{反应打击 Reactive Strike}反应动作。满足需求的仆从在其回合开始时获得一个只能用来反应打击的反应动作。</p>",
             "prerequisites": [
                 {
                     "value": "ability to cast summon undead from spell slots or you are an ossuarite druid"
@@ -141,10 +141,10 @@
         },
         "Command Undead (HWW)": {
             "name": "命令亡灵 Command Undead (HWW)",
-            "description": "<p>你掌握了不死生物中活动的力量，并按照自己的愿望扭转它。如果下个你使用的动作是以一个<span style=\"text-decoration:underline\">不死</span>生物为目标施放一个2动作的法术，法术效果被改变。代替法术通常的效果，如果目标的等级不高于法术环级，它会被你控制。目标可以尝试一次意志豁免来抵抗被你控制。如果目标已经被某人控制，控制者也尝试一次豁免骰，该不死生物使用较好的结果。如果目标并非<span style=\"text-decoration:underline\">无心智</span>生物，此效果获得<span style=\"text-decoration:underline\">失能</span>特征。</p>\n<p><strong>大成功</strong> 目标不受影响，并临时免疫24小时。</p>\n<p><strong>成功</strong> 目标不受影响。</p>\n<p><strong>失败</strong> 该不死生物成为仆从，并且受你控制。该法术获得1分钟的持续时间，但会在你或者你的盟友攻击该不死生物时结束。</p>\n<p><strong>大失败</strong> 如同失败，但持续时间为1小时。</p>\n<p><strong>特殊</strong> 如果施放的法术为@UUID[Compendium.pf2e.spells-srd.Item.GUeRTriJkMlMlVrk]{束缚死灵 Bind Undead}，持续时间总是一天，且目标等级可以最大等于2*（法术环级-4）。</p>",
+            "description": "<p><span style=\"font-family:Arial,sans-serif\"><strong style=\"font-weight:normal\" id=\"docs-internal-guid-a539a310-7fff-a074-5545-c92cd073d132\">你掌握了不死生物中活动的力量，并按照自己的愿望扭转它。如果下个你使用的动作是以一个<span style=\"text-decoration:underline\">不死</span>生物为目标施放一个2动作的法术，法术效果被改变。代替法术通常的效果，如果目标的等级不高于法术环级，它会被你控制。目标可以尝试一次意志豁免来抵抗被你控制。如果目标已经被某人控制，控制者也尝试一次豁免骰，该不死生物使用较好的结果。若目标的等级高于你能控制的等级，你用于施法和使用此塑法的动作都被浪费，但法术并不消耗。如果目标并非<span style=\"text-decoration:underline\">无心智</span>生物，此效果获得<span style=\"text-decoration:underline\">失能</span>特征。</strong></span></p><p><strong>大成功</strong> 目标不受影响，并临时免疫24小时。</p><p><strong>成功</strong> 目标不受影响。</p><p><strong>失败</strong> 该不死生物成为仆从，并且受你控制。该法术获得1分钟的持续时间，但会在你或者你的盟友攻击该不死生物时结束。</p><p><strong>大失败</strong> 如同失败，但持续时间为1小时。</p><p><strong>特殊</strong> 如果施放的法术为@UUID[Compendium.pf2e.spells-srd.Item.GUeRTriJkMlMlVrk]，持续时间总是一天，且目标等级可以最大等于2*（法术环级-4）。</p>",
             "prerequisites": [
                 {
-                    "value": "从法术位施法的能力"
+                    "value": "从法术位施放束缚死灵的能力，或你是一个ossuarite druid"
                 }
             ]
         },
@@ -159,7 +159,7 @@
         },
         "Corrupting Gaze": {
             "name": "Corrupting Gaze",
-            "description": "<p dir=\"ltr\">You stare a creature in the eyes, causing them to wither. Select a creature that can see you within 30 feet. The target takes @Damage[(floor((@actor.level)/2))d6[void]] damage with a @Check[will|against:class-spell|traits:damaging-effect|basic] save. A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for one round (or one minute on a critical failure).</p>\n<hr />\n<p><strong id=\"docs-internal-guid-3900ead8-7fff-2e08-0adf-b987c5e29daf\">Level (+2)</strong> The void damage increases by 1d6.</p>",
+            "description": "<p dir=\"ltr\">You stare a creature in the eyes, causing them to wither. Select a creature that can see you within 30 feet. The target takes @Damage[(floor((@actor.level)/2))d6[void]] damage with a @Check[type:will|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic:true] save. A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for one round (or one minute on a critical failure).</p>\n<hr />\n<p><strong id=\"docs-internal-guid-3900ead8-7fff-2e08-0adf-b987c5e29daf\">Level (+2)</strong> The void damage increases by 1d6.</p>",
             "prerequisites": [
                 {
                     "value": "Phantasmagoria"
@@ -195,7 +195,7 @@
         },
         "Devastating Blast": {
             "name": "毁灭爆震 Devastating Blast",
-            "description": "<p dir=\"ltr\">你在@Template[cone|distance:30]范围中释放毁灭性的能量。区域中的生物承受类型和你毁灭元素相同的@Damage[(floor((@actor.level)/2))d12[@actor.flags.pf2e.graveknightArchetype.ruinous-element]]伤害，@Check[reflex|against:class-spell|traits:damaging-effect|basic]豁免对抗你的职业DC或法术DC，以较高者为准。</p>\n<p dir=\"ltr\"><strong>特殊 </strong>该专长获得与你毁灭元素相同的特征。</p>\n<hr />\n<p><strong id=\"docs-internal-guid-bccf53b2-7fff-3d95-2fd8-7d7692609698\">升级（+2）</strong> 伤害增加1d12。</p>",
+            "description": "<p dir=\"ltr\">你在 @Template[type:cone|distance:30]范围中释放毁灭性的能量。区域中的生物承受类型和你毁灭元素相同的@Damage[(floor((@actor.level)/2))d12[@actor.flags.pf2e.graveknightArchetype.ruinous-element]]伤害，@Check[type:reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic:true]豁免对抗你的职业DC或法术DC，以较高者为准。</p>\n<p dir=\"ltr\"><strong>特殊 </strong>该专长获得与你毁灭元素相同的特征。</p>\n<hr />\n<p><strong id=\"docs-internal-guid-bccf53b2-7fff-3d95-2fd8-7d7692609698\">升级（+2）</strong> 伤害增加1d12。</p>",
             "prerequisites": [
                 {
                     "value": "死墓骑士入门"
@@ -240,7 +240,7 @@
         },
         "Exemplar of Violence": {
             "name": "暴力典范 Exemplar of Violence",
-            "description": "<p>你发出战吼，刺激你的盟友实施暴力。对一个生物进行一次@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]{打击 Strike}。若命中，所有你周围@Template[emanation|distance:15]内的自愿盟友可以用一个反应动作@UUID[Compendium.pf2e.actionspf2e.Item.Bcxarzksqt9ezrs6]{行走 Stride}，但必须在敌人附近结束移动。若你重击，你可以让一个盟友进行@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]{打击 Strike}，而非行走。</p>",
+            "description": "<p>你发出战吼，刺激你的盟友实施暴力。对一个生物进行一次@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]。若命中，所有你周围@Template[type:emanation|distance:15]内的自愿盟友可以用一个反应动作@UUID[Compendium.pf2e.actionspf2e.Item.Bcxarzksqt9ezrs6]，但必须在敌人附近结束移动。若你重击，你可以让一个盟友进行@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]，而非行走。</p>",
             "prerequisites": [
                 {
                     "value": "死墓骑士入门"
@@ -315,7 +315,7 @@
         },
         "Graveknight Armor Training": {
             "name": "死墓骑士护甲训练 Graveknight Armor Training",
-            "description": "<p>护甲如同你的第二层皮肤，会随着你变强而成长。你在重甲上获得专家熟练度。在14级，你在重甲上获得大师熟练度。20级时，如果你在军用武器上有大师熟练度，你在重甲上获得传奇熟练度。</p>"
+            "description": "<p>护甲如同你的第二层皮肤，会随着你变强而成长。你在重甲上获得专家熟练度。在17级，你在重甲上获得大师熟练度。</p>"
         },
         "Graveknight Dedication": {
             "name": "死墓骑士入门 Graveknight Dedication",
@@ -343,7 +343,7 @@
         },
         "Graveknight's Shield": {
             "name": "死墓骑士之盾 Graveknight's Shield",
-            "description": "<p dir=\"ltr\">你的诅咒延伸至盾牌，或者你的护甲扭曲创造出一面盾牌。你获得神卫的@UUID[Compendium.pf2e.classfeatures.Item.QQP0mu0cyWIwNUh9]{坚盾神圣盟友 Shield Divine Ally}职业特性：选取此专长时你获得一面钢盾，或者将神圣盟友效果附加到你当前拥有的盾牌上。和你的护甲类似，你可以通过花费一周休整期将盾牌盟友上的诅咒转移到另一面盾牌上；你可以同时转移护甲和盾牌。你的盾牌在你休息时自动恢复满生命值，它只能如你的护甲般被摧毁；当你未受伤时，你可以用一个一分钟的行动让盾牌传送到你身边，只要它和你处于同一位面。</p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-b48c3bf5-7fff-0bdc-c69a-29566f9d35ff\"></strong>你获得@UUID[Compendium.pf2e.classfeatures.Item.eZNCckLzbH3GyncH]{盾牌格挡 Shield Block}专长（若你还没有的话）；若你已经有盾牌格挡专长，你转而获得@UUID[Compendium.pf2e.feats-srd.Item.pRqcm5P2ZFihSpVI]{快速盾牌格挡 Quick Shield Block}战士专长。</p>"
+            "description": "<p dir=\"ltr\">你的诅咒延伸至盾牌，或者你的护甲扭曲创造出一面盾牌。你获得神卫的@UUID[Compendium.pf2e.classfeatures.Item.QQP0mu0cyWIwNUh9]职业特性：选取此专长时你获得一面@UUID[Compendium.pf2e.equipment-srd.Item.Yr9yCuJiAlFh3QEB]，或者将祝福盾牌效果附加到你当前拥有的盾牌上。和你的护甲类似，你可以通过花费一周休整期将盾牌盟友上的诅咒转移到另一面盾牌上；你可以同时转移护甲和盾牌。你的盾牌在你休息时自动恢复满生命值，它只能如你的护甲般被摧毁；当你未受伤时，你可以用一个一分钟的行动让盾牌传送到你身边，只要它和你处于同一位面。</p>\n<p dir=\"ltr\">你获得@UUID[Compendium.pf2e.classfeatures.Item.eZNCckLzbH3GyncH]专长（若你还没有的话）；若你已经有盾牌格挡专长，你转而获得@UUID[Compendium.pf2e.feats-srd.Item.pRqcm5P2ZFihSpVI]战士专长。</p>"
         },
         "Greater Unlife": {
             "name": "Greater Unlife",
@@ -356,7 +356,7 @@
         },
         "Hand of the Lich (HWW)": {
             "name": "Hand of the Lich (HWW)",
-            "description": "<p dir=\"ltr\">Void energy intensifies your undead form and makes your very touch the antithesis of life. The damage die for your first increases to 1d6 instead of 1d4; if it was already 1d6, it increases to 1d8. It loses the nonlethal trait and becomes magical. When you Strike with it, you may have it deal void damage instead of bludgeoning damage. When attacking with it, you may use your @Check[spell-attack] modifier instead of your unarmed attack modifier; when doing so, you do not add your Strength or Dexterity to the damage. </p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-962d3021-7fff-b844-7634-604c072c12b6\"></strong>When you critically hit a living creature with your fist Strike, the creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the end of your next turn unless it succeeds at a @Check[fortitude|dc:resolve(@actor.attributes.spellDC.value)] save against your spell DC. This is a critical specialization effect.</p>",
+            "description": "<p dir=\"ltr\">Void energy intensifies your undead form and makes your very touch the antithesis of life. The damage die for your first increases to 1d6 instead of 1d4; if it was already 1d6, it increases to 1d8. It loses the nonlethal trait and becomes magical. When you Strike with it, you may have it deal void damage instead of bludgeoning damage. When attacking with it, you may use your @Check[type:spell-attack] modifier instead of your unarmed attack modifier; when doing so, you do not add your Strength or Dexterity to the damage. </p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-962d3021-7fff-b844-7634-604c072c12b6\"></strong>When you critically hit a living creature with your fist Strike, the creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the end of your next turn unless it succeeds at a @Check[type:fortitude|dc:resolve(@actor.attributes.spellDC.value)] save against your spell DC. This is a critical specialization effect.</p>",
             "prerequisites": [
                 {
                     "value": "Lich Dedication"
@@ -393,7 +393,7 @@
             "description": "<p>不死生物无法抵抗你的命令。当你使用@UUID[Compendium.pf2e-heresy-of-the-whispering-way.feats.Item.SzMM4aLhw4ChNfmd]{命令亡灵 Command Undead (WW)}时，如果不死生物的豁免成功，但是没有大成功，它会成为你的仆从1轮。如果该不死生物在豁免中失败，它会成为你的仆从10分钟。如果它大失败，它会成为你的仆从24小时。如果使用的法术是@UUID[Compendium.pf2e.spells-srd.Item.GUeRTriJkMlMlVrk]{束缚死灵 Bind Undead}且不死生物大失败，它被永久控制，就如被@UUID[Compendium.pf2e.spells-srd.Item.c3b6LdLlQDPngNIb]{唤起死灵 Create Undead}仪式复活一般。</p>",
             "prerequisites": [
                 {
-                    "value": "命令亡灵"
+                    "value": "命令亡灵 (HWW)"
                 }
             ]
         },
@@ -432,7 +432,7 @@
         },
         "Life Funnel": {
             "name": "Life Funnel",
-            "description": "<p>Your master of the hungry ghost stance allows you to almost literally draw blood from a stone. You can now regain hit points with hungry ghost stance from any creature, not just living creatures. Additionally, whenever you would regain hit points or @UUID[Compendium.pf2e-heresy-of-the-whispering-way.feats.Item.bSoieGZ2V6810mXs]{Steal Ki} from a creature, you can immediately make a saving throw against one <span style=\"text-decoration:underline\">poison</span> or <span style=\"text-decoration:underline\">disease</span> affecting you, adding a status bonus to the saving throw equal to your Wisdom modifier.</p>",
+            "description": "<p>Your master of the hungry ghost stance allows you to almost literally draw blood from a stone. You can now regain hit points with hungry ghost stance from any creature, not just living creatures. Additionally, whenever you would regain hit points or @UUID[Compendium.pf2e-heresy-of-the-whispering-way.feats.Item.bSoieGZ2V6810mXs]{Steal Qi} from a creature, you can immediately make a saving throw against one <span style=\"text-decoration:underline\"><span style=\"text-decoration:underline\">poison</span></span> or <span style=\"text-decoration:underline\"><span style=\"text-decoration:underline\">disease</span></span> affecting you, adding a status bonus to the saving throw equal to your Wisdom modifier.</p>",
             "prerequisites": [
                 {
                     "value": "Hungry Ghost Stance"
@@ -453,13 +453,13 @@
         },
         "Lord of Death": {
             "name": "Lord of Death",
-            "description": "<p dir=\"ltr\">You have managed to form a small cult around yourself, garnishing enough followers to provide a divine power to your flock, allowing them to select you as their deity when determining spells and domains. Choose:</p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">Edicts</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">Anathema</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">Areas of Concern</p>\n</li>\n</ul>\n<p dir=\"ltr\">These determine the nature of your faith. In addition, you also choose:</p>\n<ul>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">Two Divine Abilities, both of which you must be at least +2 in.</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">A divine skill, one which you are at least Trained in.</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">Two Domains, as well as the Death and Undeath domains.</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">A 1st level non-divine spell. A 4th level or lower non-divine spell, and a 7th level or lower non-divine spell</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">A chosen weapon, one which you are at least Trained in.</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">A your chosen fonts (either harm or healing and harm)</p>\n</li>\n<li dir=\"ltr\" aria-level=\"1\">\n<p dir=\"ltr\">Whether you grant sanctification, as per the Cleric ability.</p>\n</li>\n</ul>\n<p dir=\"ltr\">You grant access to those abilities as if you were a deity. You also become sanctified as per your sanctification, and can cast each of your chosen non-divine spells as a divine innate spell once per day, heightened to half your level.</p>\n<p> </p>",
+            "description": "<p>You have managed to form a small cult around yourself, garnishing enough followers to provide a divine power to your flock, allowing them to select you as their deity when determining spells and domains. Choose Edicts, Anathemas, and Areas of Concern for your deity stat block.  These determine the nature of your faith. Then, create a deity stat block using the following rules:</p><ul><li><p>Two Divine Abilities, one of which is your key attribute and the other being an attribute of your choice.</p></li><li><p>Your chosen fonts (either harm or healing and harm)</p></li><li><p>Whether you grant sanctification, as per the Cleric ability. A divine skill, selecting a skill you are Legendary in.</p></li><li><p>A chosen weapon, one which you are at least Trained in.</p></li><li><p>Two Domains of your choice, as well as the Death and Undeath domains.</p></li><li><p>A 1st level non-divine spell, a 4th level or lower non-divine spell, and a 7th level or lower non-divine spell.</p></li></ul><p>You grant access to this stat block as if you were a deity. You also become sanctified as per your sanctification, and can cast each of your chosen non-divine spells as a divine innate spell once per day, heightened to half your level.</p>",
             "prerequisites": [
                 {
                     "value": "Lich Dedication"
                 },
                 {
-                    "value": "Entourage"
+                    "value": "not Pale Herald"
                 },
                 {
                     "value": "legendary in your tradition's associated skill"
@@ -534,10 +534,10 @@
         },
         "Necromancer's Visage (HWW)": {
             "name": "Necromancer's Visage (HWW)",
-            "description": "<p><strong>Prerequisites</strong> dirge muse bard, cleric with a negative font, ossuarite druid, oracle of bones, summoner with undead eidolon, grave whisper witch, school of the boundary wizard, or school of the whispering way wizard</p>\n<hr />\n<p>Necromantic energy demonstrates your power over undead, creating a demeanor that commands their fear and respect. Undead creatures can immediately sense your Necromancer's Visage and tend to act accordingly. If you take a hostile action against an undead creature, it becomes permanently immune to your Necromancer's Visage, and your Necromancer's Visage ends. You can spend 10 minutes to restore your Necromancer's Visage, though any creatures that became permanently immune remain so. Each time an undead creature 2 or more levels lower than you attacks you, it must attempt a Will save against your spell DC. If you're also affected by sanctuary or a similar effect, only one affects the attacker (you choose which).</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is permanently immune to your Necromancer's Visage.</p>\n<p><strong>Success</strong> The creature can attempt its attack and any other attacks against you this turn.</p>\n<p><strong>Failure</strong> The creature can't attack you and wastes the action. It can't attempt further attacks against you this turn.</p>\n<p><strong>Critical Failure</strong> The creature wastes the action and can't attempt to attack you as long as your Necromancer's Visage persists.</p>\n<p><strong>Special</strong> This feat has the trait matching your spellcasting tradition.</p>",
+            "description": "<p>Necromantic energy demonstrates your power over undead, creating a demeanor that commands their fear and respect. Undead creatures can immediately sense your Necromancer's Visage and tend to act accordingly. If you take a hostile action against an undead creature, it becomes permanently immune to your Necromancer's Visage, and your Necromancer's Visage ends. You can spend 10 minutes to restore your Necromancer's Visage, though any creatures that became permanently immune remain so. Each time an undead creature 2 or more levels lower than you attacks you, it must attempt a Will save against your spell DC. If you're also affected by sanctuary or a similar effect, only one affects the attacker (you choose which).</p><hr /><p><strong>Critical Success</strong> The creature is permanently immune to your Necromancer's Visage.</p><p><strong>Success</strong> The creature can attempt its attack and any other attacks against you this turn.</p><p><strong>Failure</strong> The creature can't attack you and wastes the action. It can't attempt further attacks against you this turn.</p><p><strong>Critical Failure</strong> The creature wastes the action and can't attempt to attack you as long as your Necromancer's Visage persists.</p><p><strong>Special</strong> This feat has the trait matching your spellcasting tradition.</p>",
             "prerequisites": [
                 {
-                    "value": "ability to create or control undead"
+                    "value": "ability to cast summon undead from spell slots or you are an ossuarite druid"
                 }
             ]
         },
@@ -552,7 +552,7 @@
         },
         "Paralytic Fear": {
             "name": "麻痹之惧 Paralytic Fear",
-            "description": "<p dir=\"ltr\">当你使用掠食突袭时，取代原本的运动检定，你可以强迫生物用@Check[will|against:class-spell]豁免对抗你的职业DC或法术DC（以较高者为准）。</p>\n<p dir=\"ltr\"><strong>大成功 </strong>目标不受影响。</p>\n<p dir=\"ltr\"><strong>成功 </strong>目标因恐惧陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，直到你下回合结束。</p>\n<p dir=\"ltr\"><strong>失败 </strong>目标陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，且对抗你的饮血能力时其强韧DC受到-2环境减值，持续到你下回合结束。</p>\n<p><strong>大失败 </strong>同失败，且目标还陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>",
+            "description": "<p dir=\"ltr\">当你使用掠食突袭时，取代原本的擒拿尝试，你可以强迫生物用@Check[type:will|dc:resolve(@actor.attributes.classOrSpellDC.value)]豁免对抗你的职业DC或法术DC（以较高者为准）。</p>\n<p dir=\"ltr\"><strong>大成功 </strong>目标不受影响。</p>\n<p dir=\"ltr\"><strong>成功 </strong>目标因恐惧陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，直到你下回合结束。</p>\n<p dir=\"ltr\"><strong>失败 </strong>目标陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，且对抗你的饮血能力时其强韧DC受到-2环境减值，持续到你下回合结束。</p>\n<p><strong>大失败 </strong>同失败，且目标还陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>",
             "prerequisites": [
                 {
                     "value": "掠食突袭"
@@ -591,7 +591,7 @@
         },
         "Pillage Mind": {
             "name": "Pillage Mind",
-            "description": "<p dir=\"ltr\">Your very touch can pull memories from a creature for your perusal. Make an unarmed strike against a creature. If the strike deals damage, you pull a memory or thought from the creature’s mind. You @UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{Recall Knowledge} with a skill of your choice, using the target’s bonus with the skill instead of your own. If there’s a very specific piece of information you hope to uncover, and the creature knows that information, the creature can attempt a @Check[will|dc:resolve(@actor.attributes.spellDC.value)] save against your spell DC to keep it secret. On a critical success, the target can feed the lich faulty information. In addition, you may have your unarmed strikes deal mental damage instead of bludgeoning damage.</p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-4828baa1-7fff-0861-3c6a-6c598c3dda47\">Special</strong> This feat gains the trait that matches your lich tradition (arcane if your lich tradition is arcane, etc).</p>",
+            "description": "<p dir=\"ltr\">Your very touch can pull memories from a creature for your perusal. Make an unarmed strike against a creature. If the strike deals damage, you pull a memory or thought from the creature’s mind. You @UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{Recall Knowledge} with a skill of your choice, using the target’s bonus with the skill instead of your own. If there’s a very specific piece of information you hope to uncover, and the creature knows that information, the creature can attempt a @Check[type:will|dc:resolve(@actor.attributes.spellDC.value)] save against your spell DC to keep it secret. On a critical success, the target can feed the lich faulty information. In addition, you may have your unarmed strikes deal mental damage instead of bludgeoning damage.</p>\n<p dir=\"ltr\"><strong id=\"docs-internal-guid-4828baa1-7fff-0861-3c6a-6c598c3dda47\">Special</strong> This feat gains the trait that matches your lich tradition (arcane if your lich tradition is arcane, etc).</p>",
             "prerequisites": [
                 {
                     "value": "Hand of the Lich"
@@ -624,7 +624,7 @@
         },
         "Punishing Kick": {
             "name": "Punishing Kick",
-            "description": "<p>Your kicks launch creatures away from you. When you target the same creature with two Strikes from your Flurry of Blows, you can try to push the creature. If either Strike hits and deals damage, the target must succeed a Fortitude save against your class DC or be pushed up to 5 feet away from you (or 10 feet on a critical failure). You can then Stride after it, but you must move the same distance and in the same direction.</p>\n<p><strong>Special</strong> If you have this feat, while you are in Hungry Ghost Stance, you can instead push the target an additional 5 feet if you are Expert in Athletics, 10 feet if you are Master in Athletics, or 15 feet if you are Legendary in Athletics. This bonus is doubled on a critical failure.</p>",
+            "description": "<p>Your kicks launch creatures away from you. When you target the same creature with two Strikes from your Flurry of Blows, you can try to push the creature. If either Strike hits and deals damage, the target must succeed a Fortitude save against your class DC or be pushed up to 5 feet away from you (or 10 feet on a critical failure). You can then Stride after it, but you must move the same distance and in the same direction.</p><p><strong>Special</strong> If you have this feat, while you are in a monk stance, you can instead push the target an additional 5 feet if you are Expert in Athletics, 10 feet if you are Master in Athletics, or 15 feet if you are Legendary in Athletics. This bonus is doubled on a critical failure.</p>",
             "prerequisites": [
                 {
                     "value": "Flurry of Blows"
@@ -651,7 +651,7 @@
         },
         "Runecarved Bones": {
             "name": "Runecarved Bones",
-            "description": "<p dir=\"ltr\">Through careful modification of your @UUID[Compendium.pf2e-heresy-of-the-whispering-way.equipment.Item.v826Iow1pH7xEqo6]{Soul Cage (HWW)} (or similar object), you become capable of storing magical items within yourself without your soul cage regenerating the changes, allowing you to use them on command. You gain the following benefits:</p>\n<p dir=\"ltr\"><strong>Arm Wands </strong>You can store up to two wands in the radius and ulna of one of your arms. These wands can be used as if wielded, and cannot be disarmed. If an arm wand is overcharged, you take @Damage[20] damage if the wand is broken or @Damage[40] if it’s destroyed. You can exchange one of these wands for another wand on your person during your daily preparations.</p>\n<p dir=\"ltr\"><strong>Stored Weapon </strong>You carve several runes into the bones of your arms (typically the arm without the arm wands), allowing you to link a single weapon to it and store it in an extradimensional space. Over the course of a week (or upon first gaining this feat), you can bind a weapon that you are at least trained in to this arm. It gains the invested and magical trait if it didn’t have it already. When you would Draw or Stow a Weapon while the weapon is invested, you can instead summon this weapon to your hand or dismiss it back to its extradimensional storage. You dismiss the weapon from any distance, so long as you are on the same plane.</p>\n<p dir=\"ltr\">When making an attack with a weapon bound to you in this manner,  you may use your @Check[spell-attack] modifier instead of your weapon attack modifier; when doing so, you do not add your Strength or Dexterity to the damage. Additionally, if you have the @UUID[Compendium.pf2e-heresy-of-the-whispering-way.feats.Item.PjwVieTk1EJJNwve]{Hand of the Lich} feat, the weapon attack deals additional damage equal to half the number of dice from your fist attack (minimum 1), and you may have the weapon use your fist’s critical specialization effect instead of its own. For the purposes of any other feats such as @UUID[Compendium.pf2e-heresy-of-the-whispering-way.feats.Item.7fjW0SkbWUFimN7s]{Siphon Life}, an attack with this weapon counts as a fist attack.</p>",
+            "description": "<p dir=\"ltr\">Through careful modification of your @UUID[Compendium.pf2e-heresy-of-the-whispering-way.equipment.Item.v826Iow1pH7xEqo6]{Soul Cage (HWW)} (or similar object), you become capable of storing magical items within yourself without your soul cage regenerating the changes, allowing you to use them on command. You gain the following benefits:</p>\n<p dir=\"ltr\"><strong>Arm Wands </strong>You can store up to two wands in the radius and ulna of one of your arms. These wands can be used as if wielded, and cannot be disarmed. If an arm wand is overcharged, you take @Damage[20] damage if the wand is broken or @Damage[40] if it’s destroyed. You can exchange one of these wands for another wand on your person during your daily preparations.</p>\n<p dir=\"ltr\"><strong>Stored Weapon </strong>You carve several runes into the bones of your arms (typically the arm without the arm wands), allowing you to link a single weapon to it and store it in an extradimensional space. Over the course of a week (or upon first gaining this feat), you can bind a weapon that you are at least trained in to this arm. It gains the invested and magical trait if it didn’t have it already. When you would Draw or Stow a Weapon while the weapon is invested, you can instead summon this weapon to your hand or dismiss it back to its extradimensional storage. You dismiss the weapon from any distance, so long as you are on the same plane.</p>\n<p dir=\"ltr\">When making an attack with a weapon bound to you in this manner,  you may use your @Check[type:spell-attack] modifier instead of your weapon attack modifier; when doing so, you do not add your Strength or Dexterity to the damage. Additionally, if you have the @UUID[Compendium.pf2e-heresy-of-the-whispering-way.feats.Item.PjwVieTk1EJJNwve]{Hand of the Lich} feat, the weapon attack deals additional damage equal to half the number of dice from your fist attack (minimum 1), and you may have the weapon use your fist’s critical specialization effect instead of its own. For the purposes of any other feats such as @UUID[Compendium.pf2e-heresy-of-the-whispering-way.feats.Item.7fjW0SkbWUFimN7s]{Siphon Life}, an attack with this weapon counts as a fist attack.</p>",
             "prerequisites": [
                 {
                     "value": "Lich Dedication"
@@ -663,7 +663,7 @@
         },
         "Sacreligious Aura": {
             "name": "渎圣灵光 Sacreligious Aura",
-            "description": "<p>你在场便让附近的命能魔力告吹消失。此灵光范围为30尺弥漫。当一个灵光中的敌人尝试使用命能法术时，它必须尝试一次@Check[flat|dc:5]检定，失败则法术失败，动作被浪费。</p>",
+            "description": "<p>你在场便让附近的命能魔力告吹消失。此灵光范围为30尺弥漫。当一个灵光中的敌人尝试使用命能法术时，它必须尝试一次@Check[type:flat|dc:5]检定，失败则法术失败，动作被浪费。</p>",
             "prerequisites": [
                 {
                     "value": "死墓骑士入门"
@@ -672,16 +672,16 @@
         },
         "Sepulchral Sublimation (HWW)": {
             "name": "Sepulchral Sublimation (HWW)",
-            "description": "<p><strong>Prerequisites</strong> dirge muse bard, cleric with a negative font, ossuarite druid, oracle of bones, summoner with undead eidolon, grave whisper witch, school of the boundary wizard, or school of the whispering way wizard</p>\n<p><strong>Requirements</strong> You have at least one undead minion that you permanently control.</p>\n<hr />\n<p>You repurpose the void energy that flows through your minions at a moment's notice. Instantly destroy one undead minion within 60 feet that is permanently under your control. If your next action is to cast a necromancy spell from a spell slot, you don't expend the slot. The spell's rank must be half the destroyed minion's level or lower and the spell can't have a duration.</p>\n<p><strong>Special</strong> This feat has the trait matching your spellcasting tradition.</p>",
+            "description": "<p><strong>Requirements</strong> You have at least one undead minion that you permanently control.</p><hr /><p>You repurpose the void energy that flows through your minions at a moment's notice. Instantly destroy one undead minion within 60 feet that is permanently under your control. If your next action is to cast a necromancy spell from a spell slot, you don't expend the slot. The spell's rank must be half the destroyed minion's level or lower and the spell can't have a duration.</p><p><strong>Special</strong> This feat has the trait matching your spellcasting tradition.</p>",
             "prerequisites": [
                 {
-                    "value": "ability to permanently create or control undead"
+                    "value": "ability to cast summon undead from spell slots or you are an ossuarite druid"
                 }
             ]
         },
         "Share Trauma": {
             "name": "Share Trauma",
-            "description": "<p dir=\"ltr\">You cause a creature within 30 feet to relive the experience of your death. The target takes @Damage[(floor((@actor.level)/2))d4[mental,persistent]] damage with a @Check[will|against:class-spell|traits:damaging-effect|basic] save. On a failure, all other creatures are concealed to the target until the persistent damage ends as they are immersed in the experience of your death.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-eeb5ca91-7fff-2772-7201-785192157ea4\">Level (+2)</strong> The persistent damage increases by 1d4.</p>",
+            "description": "<p dir=\"ltr\">You cause a creature within 30 feet to relive the experience of your death. The target takes @Damage[(floor((@actor.level)/2))d4[mental,persistent]] damage with a @Check[type:will|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic:true] save. On a failure, all other creatures are concealed to the target until the persistent damage ends as they are immersed in the experience of your death.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-eeb5ca91-7fff-2772-7201-785192157ea4\">Level (+2)</strong> The persistent damage increases by 1d4.</p>",
             "prerequisites": [
                 {
                     "value": "Phantasmagoria"
@@ -744,7 +744,7 @@
         },
         "Telekinetic Assault": {
             "name": "Telekinetic Assault",
-            "description": "<p dir=\"ltr\">You cause small objects to fly about in a @Template[burst|distance:5] within 60 feet. You deal your choice of @Damage[(floor((@actor.level)/2)-1)d6] bludgeoning, slashing, or piercing damage to all creatures in the area, with a @Check[reflex|against:class-spell|traits:damaging-effect|basic] save. You can spend up to 3 actions activating this impulse; for each additional action, you create an additional 5-foot burst. Your 5-foot bursts cannot overlap.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-f16bc4a9-7fff-47c8-43ab-0f1bc38c921a\">Level (+2)</strong> The damage increases by 1d6.</p>",
+            "description": "<p dir=\"ltr\">You cause small objects to fly about in a @Template[type:burst|distance:5] within 60 feet. You deal your choice of @Damage[(floor((@actor.level)/2)-1)d6] bludgeoning, slashing, or piercing damage to all creatures in the area, with a @Check[type:reflex|dc:resolve(@actor.attributes.classOrSpellDC.value)|traits:damaging-effect|basic:true] save. You can spend up to 3 actions activating this impulse; for each additional action, you create an additional 5-foot burst. Your 5-foot bursts cannot overlap.</p>\n<hr />\n<p><strong id=\"docs-internal-guid-f16bc4a9-7fff-47c8-43ab-0f1bc38c921a\">Level (+2)</strong> The damage increases by 1d6.</p>",
             "prerequisites": [
                 {
                     "value": "Phantasmagoria"
@@ -780,10 +780,10 @@
         },
         "Undying Conviction (HWW)": {
             "name": "Undying Conviction (HWW)",
-            "description": "<p><strong>Prerequisites</strong> dirge muse bard, cleric with a negative font, ossuarite druid, oracle of bones, summoner with undead eidolon, grave whisper witch, school of the boundary wizard, or school of the whispering way wizard</p>\n<hr />\n<p>Your presence has a bolstering effect on your undead minions. Undead creatures under your control and within a @Template[emanation|distance:30] around you gain a +2 status bonus to saving throws to resist vitality damage and to Will saving throws to resist effects that would make them controlled.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.cGwFYusGTsJR3x3P]{Effect: Under Control}</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.e6mv68aarIbQ3tXL]{Effect: Undying Conviction}</p>\n<p><strong>Special</strong> This feat has the trait matching your spellcasting tradition.</p>",
+            "description": "<p>Your presence has a bolstering effect on your undead minions. Undead creatures under your control and within a @Template[type:emanation|distance:30] around you gain a +2 status bonus to saving throws to resist vitality damage and to Will saving throws to resist effects that would make them controlled.</p><p>@UUID[Compendium.pf2e.feat-effects.Item.cGwFYusGTsJR3x3P]{Effect: Under Control}</p><p>@UUID[Compendium.pf2e.feat-effects.Item.e6mv68aarIbQ3tXL]{Effect: Undying Conviction}</p><p><strong>Special</strong> This feat has the trait matching your spellcasting tradition.</p>",
             "prerequisites": [
                 {
-                    "value": "able to create or control undead"
+                    "value": "ability to cast summon undead from spell slots or you are an ossuarite druid"
                 }
             ]
         },
