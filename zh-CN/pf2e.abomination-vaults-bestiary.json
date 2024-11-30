@@ -2174,11 +2174,11 @@
             "items": {
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
-                    "description": "<p>被伤害：音波([[/r 6d6]]；范围或持续性伤害[[/r 2d6]])；被治疗：火焰(范围伤害回复[[/r 2d6]] HP)；被减速：寒冷</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<p><strong>被伤害</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</p>\n<p><strong>被治疗</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</p>\n<p><strong>被减速</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/r 2d6]]轮，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</p>\n<p><strong>法术弱点</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</p>"
+                    "description": "<p>被伤害：音波（@Damage[6d6[untyped]]；范围或持续性伤害@Damage[2d6[untyped]]）；被治疗：火焰(范围伤害回复@Damage[2d6[healing]]）；被减速：寒冷</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GolemAntimagic]</p>"
                 },
                 "Spell Reflection": {
                     "name": "法术反弹 Spell Reflection",
-                    "description": "<p><strong>触发</strong> 玻璃魔像被法术作为目标。</p>\n<hr />\n<p><strong>效果</strong> 玻璃魔像将法术反弹给施法者。它尝试1次特技检定对法术进行反制。如果成功反制该法术，效果会反噬施法者自己。</p>"
+                    "description": "<p><strong>触发</strong> 玻璃魔像被法术作为目标。</p>\n<hr />\n<p><strong>效果</strong> 玻璃魔像将法术反弹给施法者。它尝试1次@Check[acrobatics]检定对法术进行反制。如果成功反制该法术，效果会反噬施法者自己。</p>"
                 },
                 "Vulnerable to Shatter": {
                     "name": "法术弱点-粉碎音波 Vulnerable to Shatter",
@@ -2186,11 +2186,11 @@
                 },
                 "Dazzling Brilliance": {
                     "name": "炫目光辉 Dazzling Brilliance",
-                    "description": "<p>玻璃魔像发出耀眼的光辉，在@Template[emanation|distance:60]内造成明亮光照（120尺内昏暗光照）强光持续到玻璃魔像下一回合开始，并且玻璃魔像无法在[[/br 1d4 #Recharge Dazzling Brilliance]]{1d4轮}内再次使用炫目光辉。位于明亮光照范围或进入明亮光照范围内的生物都必须尝试1次@Check[will|dc:23]豁免。</p>\n<hr />\n<p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}，持续1轮。</p>\n<p><strong>大失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮，之后目眩4轮。</p>"
+                    "description": "<p>玻璃魔像发出耀眼的光辉，在@Template[emanation|distance:60]内造成明亮光照（120尺内昏暗光照）强光持续到玻璃魔像下一回合开始，并且玻璃魔像无法在[[/gmr 1d4 #Recharge Dazzling Brilliance]]{1d4轮}内再次使用炫目光辉。位于明亮光照范围或进入明亮光照范围内的生物都必须尝试1次@Check[will|dc:23]豁免。</p>\n<hr />\n<p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p><strong>大失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮，之后目眩4轮。</p>"
                 },
                 "Grim Glimmering": {
                     "name": "恐怖闪光 Grim Glimmering",
-                    "description": "<p>魔像发出一波邪恶光芒，在@Template[emanation|distance:60]范围内投下昏暗光照。光芒一直持续到魔像的下个回合开始，之后魔像在[[/br 1d4 #Recharge Grim Glimmering]]{1d4轮}内无法再次使用恐怖闪光能力。在光芒中或进入光芒范围的生物必须尝试一次@Check[will|dc:23|name:Grim Glitter|traits:damaging-effect]检定。</p>\n<p><strong>成功</strong> 生物不受影响。</p>\n<p><strong>失败</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}，并且@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮。</p>"
+                    "description": "<p>魔像发出一波邪恶光芒，在@Template[emanation|distance:60]范围内投下昏暗光照。光芒一直持续到魔像的下个回合开始，之后魔像在[[/gmr 1d4 #Recharge Grim Glimmering]]{1d4轮}内无法再次使用恐怖闪光能力。在光芒中或进入光芒范围的生物必须尝试一次@Check[will|dc:23|name:Grim Glitter|traits:damaging-effect]检定。</p>\n<p><strong>成功</strong> 生物不受影响。</p>\n<p><strong>失败</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p><strong>大失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}，并且@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮。</p>"
                 }
             },
             "prototypeToken": {
