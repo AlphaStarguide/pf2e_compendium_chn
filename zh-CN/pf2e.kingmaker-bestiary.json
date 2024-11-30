@@ -1093,7 +1093,7 @@
             "items": {
                 "Felling Blow": {
                     "name": "伐木猛击 Felling Blow",
-                    "description": "<p>柯拉斯扑向一名敌人并用自己的巨斧作出一次打击，这使他在该次打击中的触及增加5尺。若命中，目标必须成功通过@Check[fortitude|dc:19]豁免，否则就会被@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{击倒 Prone}，大失败时还会附加@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>"
+                    "description": "<p>柯拉斯扑向一名敌人并用自己的巨斧作出一次打击，这使他在该次打击中的触及增加5尺。若命中，目标必须成功通过@Check[fortitude|dc:19|options:inflicts:prone]豁免，否则就会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]，大失败时还会附加@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>"
                 }
             },
             "prototypeToken": {
@@ -7390,7 +7390,7 @@
             "items": {
                 "Golem Antimagic": {
                     "name": "魔像抗魔 Golem Antimagic",
-                    "description": "<p>被伤害：酸蚀（@Damage[9d10[untyped]]，区域效果或可持续伤害则为@Damage[2d10[untyped]]），被治疗：火焰（区域效果@Damage[2d10[healing]]），被减速：电击</p>\n<hr />\n<p>魔像免疫法术和魔法能力，魔像自身所拥有的除外。但是每种魔像都会被少数几个特定法术以特殊方式影响。这些效果在魔像的具体数据里会以缩写的方式给出，这里则是详细解释。如果列出的条目包含多种类型（例如“寒冷和水”）则这些类型的法术都能对魔像产生影响。</p>\n<ul>\n<li><strong>被伤害 Harmed By</strong> 任意该种类的魔法以该魔像为目标时，都能对该魔像造成所列伤害（该伤害无伤害类型），并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，或受到该种魔法的持续性效果影响，则受到括号内所标明的伤害值。</li>\n<li><strong>被治疗 Healed By</strong> 任意该种类的魔法以该魔像为目标时，都能解除该魔像的缓慢效果并治疗魔像相当于法术伤害一半的HP。如果魔像开始回合时位于该种类型的范围魔法效果中，则获得括号内所列的生命值。</li>\n<li><strong>被减速 Slowed By</strong> 任意该种类的魔法以该魔像为目标时，都能让魔像陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续[[/br 2d6 #rounds]]{2d6轮}，并取代原本的法术效果。如果魔像开始回合时位于该种类型的范围魔法效果中，则魔像在该轮中陷入缓慢1。</li>\n<li><strong>法术弱点 Vulnerable To</strong> 每种魔像都会有针对某一种或几种特定的法术的弱点，具体效果会描述在数据中。</li>\n</ul>"
+                    "description": "<p>被伤害：酸蚀（@Damage[9d10[untyped]]，区域效果或可持续伤害则为@Damage[2d10[untyped]]），被治疗：火焰（区域效果@Damage[2d10[healing]]），被减速：电击</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GolemAntimagic]</p>"
                 },
                 "Numerian Construct": {
                     "name": "钮梅利亚构装体 Numerian Construct",
@@ -7402,7 +7402,7 @@
                 },
                 "Vulnerable to Dispelling": {
                     "name": "法术弱点-解除 Vulnerable to Dispelling",
-                    "description": "<p>精金魔像可以作为@UUID[Compendium.pf2e.spells-srd.Item.ihbRf964JDXztcy3]和@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]的目标。</p>\n<p>如果精金魔像被作为9环级或更高环级的上述法术的目标，它的物理抗力减少到15，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（修理模式下则@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}），持续[[/br 1d4 #rounds]]{1d4轮}。在此期间，如果魔像的生命值减少为0，并且已经开启修理模式，则它被摧毁。</p>"
+                    "description": "<p>精金魔像可以作为@UUID[Compendium.pf2e.spells-srd.Item.ihbRf964JDXztcy3]和@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]的目标。</p>\n<p>如果精金魔像被作为9环级或更高环级的上述法术的目标，它的物理抗力减少到15，并且陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（修理模式下则@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}），持续[[/gmr 1d4 #rounds]]{1d4轮}。在此期间，如果魔像的生命值减少为0，并且已经开启修理模式，则它被摧毁。</p>"
                 },
                 "Destructive Strike": {
                     "name": "毁灭打击 Destructive Strike",
@@ -7418,7 +7418,7 @@
                 },
                 "Vent": {
                     "name": "喷气 Vent",
-                    "description": "<p>精金魔像对@Template[cone|distance:30]范围喷出炉心中的过热蒸汽。对范围内所有生物造成@Damage[15d6[fire]]伤害（@Check[reflex|dc:40|basic]豁免）。</p>\n<p>魔像在[[/br 1d6 #Recharge Vent]]{1d6轮}内无法再次进行喷气。</p>"
+                    "description": "<p>精金魔像对@Template[cone|distance:30]范围喷出炉心中的过热蒸汽。对范围内所有生物造成@Damage[15d6[fire]]伤害（@Check[reflex|dc:40|basic]豁免）。</p>\n<p>魔像在[[/gmr 1d6 #Recharge Vent]]{1d6轮}内无法再次进行喷气。</p>"
                 }
             },
             "publicNotes": "<p>精金魔像由几乎坚不可摧的金属制造而成，只有最强大的敌人才有机会摧毁它。制造精金魔像需要如此巨量的精金以至于制造它需要专门组建一支采矿远征队，并前往像土元素位面（Plane of Earth）或外环位面（Outer Plane）这样的遥远国度。</p>\n<hr />\n<p>传说中的魔像由基本材料精心制做，然后被魔法活化成为强大的守护者。它会完全服从于创造者的命令，哪怕在其创造者去世后的数年乃至几个世纪的岁月中都是如此。目前已知有两种可以制造魔像的方法。传统的方法为对新制造的魔像注入被收割的灵魂或精华，这种方式被认为是对那些认为灵魂神圣不可侵犯之人的侮辱，那些邪恶或无道德观念的魔像制造者会倾向于使用这样的方法。另一种不那么臭名昭著的方法是将纯净的命能引入魔像体内，人为地模拟灵魂的创造的过程。这并不能给与魔像真正的灵魂，而且这个方法通常更加昂贵且耗时。不管使用何种方法，最终得到的魔像在功能上是一样的。每种魔像都有独特的生命力量，能让它们受到某些形式的魔法影响，但是除了这些弱点之外，它们通常对魔法免疫，也很难被武器伤害。</p>\n<p>在游戏中，魔像更适合作为需要征服的敌人，而不是作为伴随玩家角色冒险的盟友。制造魔像的过程是耗时、昂贵且困难，只有极具天赋的施法者或工匠才有可能完成这种任务。虽然某些魔法典籍，例如所谓的“魔像手册”——据说可以为魔像制造者提供帮助，但大多数情况下制造魔像这样的事情应该有GM来完成。</p>\n<p>魔像的部件可以作为战利品或魔法物品回收，具体取决于不同的魔像。边栏列举了每种魔像可以被回收的部件的示例。</p>",
