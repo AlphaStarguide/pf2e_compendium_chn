@@ -1331,7 +1331,7 @@
             "name": "Additional Servings"
         },
         "Call From Death's Door": {
-            "description": "<p><strong>Trigger</strong> The dying condition of an ally you're observing would increase.</p><hr /><p>Even death halts in the face of your power. Spend a Mythic Point; the triggering ally loses the dying condition, their wounded condition doesn't increase, and they heal a number of Hit Points equal to twice your level.</p>",
+            "description": "<p><strong>Trigger</strong> The @UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{Dying} condition of an ally you're observing would increase.</p><hr /><p>Even death halts in the face of your power. Spend a Mythic Point; the triggering ally loses the dying condition, their @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded} condition doesn't increase, and they heal a number of Hit Points equal to @Damage[(2*@actor.level)[healing]]{twice your level}.</p>",
             "prerequisites": [
                 {
                     "value": "Caretaker's Calling"
@@ -14056,6 +14056,15 @@
             ],
             "name": "Eye of Ozem"
         },
+        "Scattering Shout": {
+            "description": "<p>With a flex of your mighty thews and a guttural bellow that can make ears bleed, you drive back any enemies surrounding you. Each enemy within a @Template[type:emanation|distance:10] must attempt a @Check[fortitude|against:class] saving throw against your class DC.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is pushed 5 feet away from you.</p>\n<p><strong>Failure</strong> The creature is pushed 10 feet away from you and takes @Damage[8d6[sonic]] damage.</p>\n<p><strong>Critical Failure</strong> The creature is pushed 15 feet away from you and takes @Damage[16d6[sonic]] damage.</p>",
+            "prerequisites": [
+                {
+                    "value": "Eternal Legend Dedication"
+                }
+            ],
+            "name": "Scattering Shout"
+        },
         "Basic Cathartic Spellcasting": {
             "description": "<p>You gain the @UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.DOc3Pf8wmVxanTIv#basic-spellcasting-feat]{Basic Spellcasting Feat} benefits. Each time you gain a spell slot of a new rank from this archetype, add a spell of that spell rank from your chosen tradition to your repertoire-either a common spell or another spell you've learned or discovered.</p>",
             "prerequisites": [
@@ -16377,7 +16386,7 @@
             "name": "Generation Digger"
         },
         "Become Shadow": {
-            "description": "<p>You unleash your mythic power to shroud yourself in darkness and silence to stalk your prey. When you attempt a check to Hide or @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneak}, or when you roll Stealth for initiative, you can spend a Mythic Point to become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} and to attempt the check or roll using mythic proficiency.</p>",
+            "description": "<p>You unleash your mythic power to shroud yourself in darkness and silence to stalk your prey. When you attempt a check to @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} or @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneak}, or when you roll Stealth for initiative, you can spend a Mythic Point to become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} and to attempt the check or roll using mythic proficiency.</p>",
             "name": "Become Shadow"
         },
         "Scalpel's Point": {
@@ -21320,7 +21329,7 @@
             "name": "Wash Out"
         },
         "Mythic Allies": {
-            "description": "<p>You channel mythic power through your body and into a summoned ally, temporarily reinforcing them with a shared fraction of your mythic potential. Spend a Mythic Point; the summoned creature gains a +2 status bonus to its attack rolls, a +2 status bonus to all of its defenses, and a number of additional Hit Points equal to your level that last for the duration of its summoning. The next Strike made by the summoned creature after you use this ability gains a +4 circumstance bonus to the attack roll.</p>",
+            "description": "<p>You channel mythic power through your body and into a summoned ally, temporarily reinforcing them with a shared fraction of your mythic potential. Spend a Mythic Point; the summoned creature gains a +2 status bonus to its attack rolls, a +2 status bonus to all of its defenses, and a number of additional Hit Points equal to your level that last for the duration of its summoning. The next Strike made by the summoned creature after you use this ability gains a +4 circumstance bonus to the attack roll.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.X22o74v8rk7ySnzX]{Effect: Mythic Allies}</p>",
             "prerequisites": [
                 {
                     "value": "ability to cast spells from slots"
@@ -21765,7 +21774,7 @@
             "name": "Mobile Swarm"
         },
         "Cutting Rebuke": {
-            "description": "<p>If words could kill, the poet might rule the world. Your words can. You gain the Bon Mot skill feat . You can spend a Mythic Point when rolling the Diplomacy check for @UUID[Compendium.pf2e.feats-srd.Item.0GF2j54roPFIDmXf]{Bon Mot} to attempt the check at mythic proficiency. If the check succeeds, you can also deal mental damage equal to your level to the target (double on a critical success).</p>",
+            "description": "<p>If words could kill, the poet might rule the world. Your words can. You gain the @UUID[Compendium.pf2e.feats-srd.Item.0GF2j54roPFIDmXf]{Bon Mot} skill feat. You can spend a Mythic Point when rolling the Diplomacy check for Bon Mot to attempt the check at mythic proficiency. If the check succeeds, you can also deal @Damage[(@actor.level)[mental]]{mental damage equal to your level} to the target (double on a critical success).</p>",
             "prerequisites": [
                 {
                     "value": "Demagogue's Calling or Thespian's Calling"
@@ -28752,7 +28761,7 @@
             "name": "Shadow Tempo"
         },
         "Unending Subsistence": {
-            "description": "<p>Your mythic power allows you to take a small amount of food and replicate it near endlessly. When you attempt a Society or Survival check to @UUID[Compendium.pf2e.actionspf2e.Item.49y9Ec4bDii8pcD3]{Subsist}, you can spend a Mythic Point to attempt the check at mythic proficiency. Succeeding at the check always provides enough food and shelter for you and up to a dozen other creatures. On a critical success, all creatures you obtain food and shelter for gain a +2 circumstance bonus to Fortitude saving throws for the next 24 hours.</p>",
+            "description": "<p>Your mythic power allows you to take a small amount of food and replicate it near endlessly. When you attempt a Society or Survival check to @UUID[Compendium.pf2e.actionspf2e.Item.49y9Ec4bDii8pcD3]{Subsist}, you can spend a Mythic Point to attempt the check at mythic proficiency. Succeeding at the check always provides enough food and shelter for you and up to a dozen other creatures. On a critical success, all creatures you obtain food and shelter for gain a +2 circumstance bonus to Fortitude saving throws for the next 24 hours.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.ACnP67mu97ZZMEz0]{Effect: Unending Subsistence}</p>",
             "name": "Unending Subsistence"
         },
         "Supernatural Charm": {
@@ -31236,7 +31245,7 @@
             "name": "Swift Elusion"
         },
         "Storied Companion": {
-            "description": "<p><strong>Trigger</strong> Your animal companion or pet would fail a saving throw.</p><hr /><p>Your companion is an integral part of your story, and you can expend your mythic power to protect it, defying events that would prevent it from being so. Spend a Mythic Point; your companion rerolls the triggering save at mythic proficiency and gains temporary Hit Points equal to twice your level that last for 1 minute.</p>",
+            "description": "<p><strong>Trigger</strong> Your animal companion or pet would fail a saving throw.</p><hr /><p>Your companion is an integral part of your story, and you can expend your mythic power to protect it, defying events that would prevent it from being so. Spend a Mythic Point; your companion rerolls the triggering save at mythic proficiency and gains temporary Hit Points equal to twice your level that last for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.zmow6d0PswEqLcrM]{Effect: Storied Companion}</p>",
             "prerequisites": [
                 {
                     "value": "Handler's Calling"
@@ -31320,7 +31329,7 @@
             "name": "Collapse"
         },
         "Binds That Tie": {
-            "description": "<p>You excel at assisting in capturing your foes. When you attempt a check to @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} an opponent who's already @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by an ally, you can spend a Mythic Point to attempt the check at mythic proficiency. On a success, you deal additional bludgeoning damage to the target equal to twice your Strength modifier.</p>",
+            "description": "<p>You excel at assisting in capturing your foes. When you attempt a check to @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} an opponent who's already @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by an ally, you can spend a Mythic Point to attempt the check at mythic proficiency. On a success, you deal additional bludgeoning damage to the target equal to @Damage[(2*(@actor.system.abilities.str.mod))[bludgeoning]]{twice your Strength modifier}.</p>",
             "name": "Binds That Tie"
         },
         "Skeletal Transformation": {
@@ -36902,7 +36911,7 @@
             "name": "Blind-Fight"
         },
         "Mythic Containment": {
-            "description": "<p>You infuse a receptacle, such as a normal bag, sack, or box, with mythic power, transforming it into a prison into which you can command a creature. Spend a Mythic Point, and attempt a Deception, Diplomacy, or Intimidation check at mythic proficiency against the Will DC of a creature within 30 feet to trick, convince, or command it into entering the receptacle. The receptacle can hold a creature of any size, and the creature enters the receptacle if your check is successful. The creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and has to hold its breath or start suffocating. A creature trapped in the receptacle can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape}; use the skill you used to lure the creature into the bag for the DC, and calculate the DC using mythic proficiency. The trapped creature is automatically freed after 1 minute, but you can spend an additional Mythic Point as a free action to prolong the duration of the containment for an additional minute when it would expire.</p>",
+            "description": "<p>You infuse a receptacle, such as a normal bag, sack, or box, with mythic power, transforming it into a prison into which you can command a creature. Spend a Mythic Point, and attempt a @Check[deception|against:will], @Check[diplomacy|against:will], or @Check[intimidation|against:will] check at mythic proficiency against the Will DC of a creature within 30 feet to trick, convince, or command it into entering the receptacle. The receptacle can hold a creature of any size, and the creature enters the receptacle if your check is successful. The creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and has to hold its breath or start suffocating. A creature trapped in the receptacle can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape}; use the skill you used to lure the creature into the bag for the DC, and calculate the DC using mythic proficiency. The trapped creature is automatically freed after 1 minute, but you can spend an additional Mythic Point as a free action to prolong the duration of the containment for an additional minute when it would expire.</p>",
             "prerequisites": [
                 {
                     "value": "Artisan's Calling"
@@ -37131,7 +37140,7 @@
             "name": "Unstoppable Juggernaut"
         },
         "Hands That Unweave Disaster": {
-            "description": "<p>Your hands move with uncanny sureness, dismantling danger. When you attempt an Acrobatics check to @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge}, you can spend a Mythic Point to attempt the check at mythic proficiency. You can expend a Mythic Point when attempting to Disable a Device to attempt the check at mythic proficiency. As normal when attempting a check with mythic proficiency, this allows you to attempt to Disable a Device even if the check normally requires expert or greater proficiency.</p>",
+            "description": "<p>Your hands move with uncanny sureness, dismantling danger. When you attempt an Acrobatics check to @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge}, you can spend a Mythic Point to attempt the check at mythic proficiency. You can expend a Mythic Point when attempting to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to attempt the check at mythic proficiency. As normal when attempting a check with mythic proficiency, this allows you to attempt to Disable a Device even if the check normally requires expert or greater proficiency.</p>",
             "prerequisites": [
                 {
                     "value": "Thief's Calling"
