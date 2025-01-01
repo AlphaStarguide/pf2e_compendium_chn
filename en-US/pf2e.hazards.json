@@ -324,7 +324,7 @@
             "items": {
                 "Pitfall": {
                     "name": "Pitfall",
-                    "description": "<p><strong>Trigger</strong> A creature walks onto the trapdoor.</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls in and takes falling damage (typically @Damage[10[bludgeoning]] damage). That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature walks onto the trapdoor.</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls in and takes falling damage (typically @Damage[10[bludgeoning]|options:fall-damage] damage). That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling.</p>"
                 }
             }
         },
@@ -380,7 +380,7 @@
             "items": {
                 "Profane Chant": {
                     "name": "Profane Chant",
-                    "description": "<p><strong>Trigger</strong> A creature moves within 10 feet of the section of floor from which the choir can arise</p>\n<hr />\n<p><strong>Effect</strong> The choir rises, and its song deals @Damage[(4d8+18)[mental]] damage to non-evil creatures within 30 feet of the souls' spectral forms. Affected creatures must each attempt a @Check[will|dc:24|traits:damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage. It also becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature moves within 10 feet of the section of floor from which the choir can arise</p><hr /><p><strong>Effect</strong> The choir rises, and its song deals @Damage[(4d8+18)[mental]] damage to living creatures within 30 feet of the souls' spectral forms. Affected creatures must each attempt a @Check[will|dc:24|traits:damaging-effect] save.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage. It also becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} and @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round.</p>"
                 }
             }
         },
@@ -740,7 +740,7 @@
             "items": {
                 "Pitfall": {
                     "name": "Pitfall",
-                    "description": "<p><strong>Trigger</strong> A creature walks onto the trapdoor</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls in and takes damage from the fall, reduced by 5 feet for falling into the water (typically @Damage[12[bludgeoning]] damage). A creature can @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} to avoid falling. The trapdoor then slams shut, and the hazard rolls initiative.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature walks onto the trapdoor</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls in and takes damage from the fall, reduced by 5 feet for falling into the water (typically @Damage[12[bludgeoning]|options:fall-damage] damage). A creature can @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} to avoid falling. The trapdoor then slams shut, and the hazard rolls initiative.</p>"
                 }
             }
         },
@@ -755,8 +755,8 @@
             "hp": "to destroy a channel gate (this prevents that channel from being disabled and stops the trap from resetting); <strong>Floor Hardness</strong> 18; <strong>Floor HP</strong> 72 (BT 36)",
             "disable": "<p>@Check[thievery|dc:29|name:Block a Channel|traits:action:disable-a-device] (expert) to block a channel, or @Check[thievery|dc:31|name:Release Floor Latch|traits:action:disable-a-device] (master) to release the floor latch and escape to the chamber below</p>",
             "hazarddescription": "<p>Four gated channels carved into stone allow lava to flow into a 15-foot-tall room; the floor can withdraw to allow the hardened lava to fall into a chamber beneath.</p>",
-            "routine": "<p>(4 actions) The trap loses 1 action per disabled channel each turn. On each action, a different channel spews lava, dealing 4d6 fire damage to each creature within 10 feet of the channel (@Check[reflex|dc:27|basic]), and increasing the depth of the lava in the room by 1 foot (4 feet per round if all the channels are active).</p>\n<p>A creature that starts its turn in lava takes 8d6 fire damage and is immobilized until it Escapes the hardening lava (DC 27). The creature might suffocate if covered in lava.</p>\n<p>Lava from the previous round hardens fully at the start of the trap's turn, effectively raising the floor of the room. Once the room is full of lava, the trap stops taking actions, but creatures in the room remain stuck until the floor opens and the trap resets.</p>",
-            "reset": "<p>The trap deactivates and resets after 1 hour by withdrawing the floor, cracking and dumping the hardened lava (and any creatures trapped inside) into the chamber. Creatures fall 40 feet, taking falling damage (typically 17 bludgeoning damage).</p>",
+            "routine": "<p>(4 actions) The trap loses 1 action per disabled channel each turn. On each action, a different channel spews lava, dealing @Damage[4d6[fire]] damage to each creature within 10 feet of the channel (@Check[reflex|dc:27|basic] save), and increasing the depth of the lava in the room by 1 foot (4 feet per round if all the channels are active).</p><p>A creature that starts its turn in lava takes @Damage[8d6[fire]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} the hardening lava (DC 27). The creature might suffocate if covered in lava.</p><p>Lava from the previous round hardens fully at the start of the trap's turn, effectively raising the floor of the room. Once the room is full of lava, the trap stops taking actions, but creatures in the room remain stuck until the floor opens and the trap resets.</p>",
+            "reset": "<p>The trap deactivates and resets after 1 hour by withdrawing the floor, cracking and dumping the hardened lava (and any creatures trapped inside) into the chamber. Creatures fall 40 feet, taking falling damage (typically @Damage[17[bludgeoning]|options:fall-damage] damage).</p>",
             "stealthdetails": "<p>(trained)</p>",
             "items": {
                 "Flume Activation": {
