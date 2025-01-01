@@ -5650,7 +5650,12 @@
         },
         "Chemical Contagion": {
             "name": "化学传播 Chemical Contagion",
-            "description": "<p>你的伤口毒素能在向其他生物传播。你获得毒理学家炼金术士的高等课题发现。</p>"
+            "description": "<p>你的伤口毒素能在向其他生物传播。你获得毒理学家炼金术士的高等课题发现。</p>",
+            "prerequisites": [
+                {
+                    "value": "Poisoner Dedication"
+                }
+            ]
         },
         "Chemical Purification": {
             "name": "化学提纯 Chemical Purification",
@@ -6323,7 +6328,12 @@
         },
         "Dual-Weapon Reload": {
             "name": "双持装填 Dual-Weapon Reload",
-            "description": "<p>你携带弹药的方式让你能在持握两把武器的同时进行装填。当你持用两把单手武器，每把都在不同手中时，你无需空闲手就能重新装填你正在持用的单手远程武器。</p>"
+            "description": "<p>你携带弹药的方式让你能在持握两把武器的同时进行装填。当你持用两把单手武器，每把都在不同手中时，你无需空闲手就能重新装填你正在持用的单手远程武器。</p>",
+            "prerequisites": [
+                {
+                    "value": "Gunslinger or Dual-Weapon Warrior Dedication"
+                }
+            ]
         },
         "Dual-Weapon Blitz": {
             "name": "双持闪击 Dual-Weapon Blitz",
@@ -24228,7 +24238,12 @@
         },
         "Zephyr Guard Dedication": {
             "name": "西风守卫入门 Zephyr Guard Dedication",
-            "description": "<p>作为一名西风守卫，你必须时刻警惕犯罪和城市对城市安全的威胁。你在对抗手上功夫、偷窃或隐藏物件的尝试时，察觉检定有+1环境加值。你的社群和卡塔佩什学识受训；如果你已经受训，则会提升为专家。</p>\n<p><strong>特殊</strong> 在你从@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.KORSADviZaSccs2W]{西风守卫 Zephyr Guard}变体中获得两个其他专长以前，你无法选择其他入门专长。</p>"
+            "description": "<p>作为一名西风守卫，你必须时刻警惕犯罪和城市对城市安全的威胁。你在对抗手上功夫、偷窃或隐藏物件的尝试时，察觉检定有+1环境加值。你的社群和卡塔佩什学识受训；如果你已经受训，则会提升为专家。</p>\n<p><strong>特殊</strong> 在你从@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.KORSADviZaSccs2W]{西风守卫 Zephyr Guard}变体中获得两个其他专长以前，你无法选择其他入门专长。</p>",
+            "prerequisites": [
+                {
+                    "value": "member of the Zephyr Guard"
+                }
+            ]
         },
         "Shrouded Mien": {
             "name": "覆影姿态 Shrouded Mien",
@@ -25979,6 +25994,9 @@
             "prerequisites": [
                 {
                     "value": "地狱骑士扈从入门、地狱骑士入门或地狱骑士持节士入门"
+                },
+                {
+                    "value": "Hellknight Dedication or Hellknight Signifer Dedication"
                 }
             ]
         },
@@ -30808,31 +30826,66 @@
         },
         "Experienced Harrower": {
             "description": "<p>当你执行@UUID[Compendium.pf2e.spells-srd.Item.ofAQyLtLEGnOIs3N]{哈罗牌占卜 Harrowing}仪式时，主要检定的DC永远不会比你等级的标准难度DC更高，并且仪式的开销减半。如果你使用优良哈罗牌组，仪式的开销几乎可以忽略。</p>",
-            "name": "熟练哈罗占卜师 Experienced Harrower"
+            "name": "熟练哈罗占卜师 Experienced Harrower",
+            "prerequisites": [
+                {
+                    "value": "Harrower Dedication"
+                }
+            ]
         },
         "Harrow Casting": {
             "name": "哈罗牌施法 Harrow Casting",
-            "description": "<p><strong>需求</strong> 你有激活的哈罗预兆</p>\n<hr />\n<p>在你施法之前，你从哈罗牌库里抽一张卡，将它蕴含的潜力注入你的魔法。如果你的下个动作是施法（Cast a Spell），你抽出的这张卡所属的牌组能以下列方式强化你的法术。如果你抽出的卡和你激活的哈罗预兆属于同一牌组，会进一步强化你的法术。当你使用哈罗牌施法时，尝试一次@Check[flat|dc:11]检定，如果失败，你在回合结束时失去激活的哈罗预兆。</p>\n<p><strong>锤</strong> 法术的威力增强。此效果只增强单目标敌对法术，即需要你成功进行法术攻击骰，或者需要目标进行豁免的法术。如果你命中目标，或者目标豁免失败，法术会造成和环级相同的额外力场伤害。如果你的哈罗预兆是锤牌组，此额外伤害翻倍。</p>\n<p><strong>钥</strong> 一些魔法残留会注入你的防御。直到你的下个回合开始前，你在AC和所有豁免上获得+1状态加值。如果你的哈罗预兆是钥牌组，状态加值增加到+2。</p>\n<p><strong>盾</strong> 魔法能量在生效的时候也会治愈你，你恢复2d6+法术环级的生命值。如果你的哈罗预兆是盾牌组，则你恢复4d6+2倍法术环级的生命值。</p>\n<p><strong>书</strong> 法术的法力让你突然对目标产生深刻认知。你能尝试对目标以一个自由动作进行回忆知识，使用你的法术攻击骰来进行这次检定。如果你的哈罗预兆是书牌组，你在此检定上有+2状态加值。</p>\n<p><strong>星</strong> 法术的法力会支持它所帮衬的人。该效果只能增强对自愿目标施放的单目标法术。目标恢复2d6+法术环级的生命值。如果你的哈罗预兆是星牌组，则魔法还赋予目标所有豁免+2状态加值，直到你的下个回合开始。</p>\n<p><strong>冠</strong> 法术的魔力@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]且不易发现，观察者可能只会看到你在玩牌，但也许不会意识到你还在做什么。尝试对所有观察者的察觉DC进行一次算命学识检定。如果你的检定成功对抗了某个观察者的察觉DC，该观察者不会注意到你正在施法，即便通常情况下该法术有明显的表现。这只会隐藏法术的施法动作和表现，并不能隐藏它的效果。如果你的预兆是冠牌组，你的算命学识检定有+2状态加值。</p>"
+            "description": "<p><strong>需求</strong> 你有激活的哈罗预兆</p>\n<hr />\n<p>在你施法之前，你从哈罗牌库里抽一张卡，将它蕴含的潜力注入你的魔法。如果你的下个动作是施法（Cast a Spell），你抽出的这张卡所属的牌组能以下列方式强化你的法术。如果你抽出的卡和你激活的哈罗预兆属于同一牌组，会进一步强化你的法术。当你使用哈罗牌施法时，尝试一次@Check[flat|dc:11]检定，如果失败，你在回合结束时失去激活的哈罗预兆。</p>\n<p><strong>锤</strong> 法术的威力增强。此效果只增强单目标敌对法术，即需要你成功进行法术攻击骰，或者需要目标进行豁免的法术。如果你命中目标，或者目标豁免失败，法术会造成和环级相同的额外力场伤害。如果你的哈罗预兆是锤牌组，此额外伤害翻倍。</p>\n<p><strong>钥</strong> 一些魔法残留会注入你的防御。直到你的下个回合开始前，你在AC和所有豁免上获得+1状态加值。如果你的哈罗预兆是钥牌组，状态加值增加到+2。</p>\n<p><strong>盾</strong> 魔法能量在生效的时候也会治愈你，你恢复2d6+法术环级的生命值。如果你的哈罗预兆是盾牌组，则你恢复4d6+2倍法术环级的生命值。</p>\n<p><strong>书</strong> 法术的法力让你突然对目标产生深刻认知。你能尝试对目标以一个自由动作进行回忆知识，使用你的法术攻击骰来进行这次检定。如果你的哈罗预兆是书牌组，你在此检定上有+2状态加值。</p>\n<p><strong>星</strong> 法术的法力会支持它所帮衬的人。该效果只能增强对自愿目标施放的单目标法术。目标恢复2d6+法术环级的生命值。如果你的哈罗预兆是星牌组，则魔法还赋予目标所有豁免+2状态加值，直到你的下个回合开始。</p>\n<p><strong>冠</strong> 法术的魔力@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]且不易发现，观察者可能只会看到你在玩牌，但也许不会意识到你还在做什么。尝试对所有观察者的察觉DC进行一次算命学识检定。如果你的检定成功对抗了某个观察者的察觉DC，该观察者不会注意到你正在施法，即便通常情况下该法术有明显的表现。这只会隐藏法术的施法动作和表现，并不能隐藏它的效果。如果你的预兆是冠牌组，你的算命学识检定有+2状态加值。</p>",
+            "prerequisites": [
+                {
+                    "value": "Harrower Dedication"
+                }
+            ]
         },
         "Benevolent Spirit Deck": {
             "description": "<p><strong>需求</strong> 你有激活的哈罗预兆</p>\n<hr />\n<p>你展示一副幽灵般的哈罗牌，试图保护你或盟友。选择30尺内的一个自愿目标：卡牌会空中飞过去包围该目标，保护他们不受伤害，给予目标AC+1状态加值，以及5点抗力，抗力的类型和你激活的哈罗预兆相关（见下）。当你10级时，此抗力达到10，当你15级时，此抗力达到15。只要你维持该效果，它就会一直持续，最多1分钟，或直到你不再有激活的哈罗预兆。一旦该效果结束，你失去你激活的哈罗预兆。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.rp6hA52dWVwtuu5F]{效果：哈罗预兆}</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.k8gB0eDuAlGRoeQj]{效果：仁慈鬼灵套牌}</p>\n<p><strong>锤：</strong>寒冷伤害</p>\n<p><strong>钥：</strong>火焰伤害</p>\n<p><strong>盾：</strong>毒素伤害</p>\n<p><strong>书：</strong>电击伤害</p>\n<p><strong>星：</strong>心灵伤害</p>\n<p><strong>冠：</strong>酸蚀伤害</p>",
-            "name": "仁慈鬼灵套牌 Benevolent Spirit Deck"
+            "name": "仁慈鬼灵套牌 Benevolent Spirit Deck",
+            "prerequisites": [
+                {
+                    "value": "Harrower Dedication"
+                }
+            ]
         },
         "Harrow Ritualist": {
             "description": "<p>你立即学会以下仪式中的两种：@UUID[Compendium.pf2e.spells-srd.Item.4Cntq9odgW6xMpAs]{星界投射 Astral Projection}，@UUID[Compendium.pf2e.spells-srd.Item.gsYEuWv04XTDxe91]{呼唤精魂 Call Spirit}，@UUID[Compendium.pf2e.spells-srd.Item.7DN13ILADW2N9Z1t]{通神术 Commune}，@UUID[Compendium.pf2e.spells-srd.Item.7DN13ILADW2N9Z1t]{通神术 Commune}，@UUID[Compendium.pf2e.spells-srd.Item.hp6Q64dl7xbdn4gQ]{集团记忆 Collective Memories}，或@UUID[Compendium.pf2e.spells-srd.Item.2ykmAVKrsAWcazcC]{誓缚法阵 Binding Circle}。当你执行任何仪式时，你可以将哈罗牌掺和进仪式里，对于决定仪式效果的所有检定都获得+2状态加值。你能再次选取本专长，当你如此做时，每次学会两个新仪式。</p>",
-            "name": "哈罗祭司 Harrow Ritualist"
+            "name": "哈罗祭司 Harrow Ritualist",
+            "prerequisites": [
+                {
+                    "value": "Harrower Dedication"
+                }
+            ]
         },
         "Vengeful Spirit Deck": {
             "description": "<p><strong>需求</strong> 你有激活的哈罗预兆</p>\n<hr />\n<p>你展示一副幽灵般的哈罗牌。从牌库中抽一张牌，然后选择一个60尺范围内的目标。卡牌在空中飞向目标，造成4d6点伤害，目标尝试@Check[reflex|against:class-spell|basic]豁免，对抗你的职业DC或法术DC。该伤害类型由你激活的哈罗预兆决定（使用仁慈鬼灵套牌专长里的表）：如果抽出的牌和你激活的哈罗预兆属于同一牌组，目标的豁免检定将有-2状态简直。在你10级时，伤害增加到6d6，当你15级时，伤害增加到8d6。你能持续向目标投掷卡牌，前提是你维持复仇鬼灵套牌——这需要通过花费2个动作来投掷一张牌。只要你维持，该效果就会一直持续，直到经过1分钟，或你不再有激活的哈罗预兆。一旦该效果结束，你失去你激活的哈罗预兆。</p>\n<p><strong>锤：</strong> @Damage[(ternary(gte(@actor.level,15),8,ternary(gte(@actor.level,10),6,4)))d6[cold]]</p>\n<p><strong>钥：</strong> @Damage[(ternary(gte(@actor.level,15),8,ternary(gte(@actor.level,10),6,4)))d6[fire]]</p>\n<p><strong>盾：</strong> @Damage[(ternary(gte(@actor.level,15),8,ternary(gte(@actor.level,10),6,4)))d6[poison]]</p>\n<p><strong>书：</strong> @Damage[(ternary(gte(@actor.level,15),8,ternary(gte(@actor.level,10),6,4)))d6[electricity]]</p>\n<p><strong>星：</strong> @Damage[(ternary(gte(@actor.level,15),8,ternary(gte(@actor.level,10),6,4)))d6[mental]]</p>\n<p><strong>冠：</strong> @Damage[(ternary(gte(@actor.level,15),8,ternary(gte(@actor.level,10),6,4)))d6[acid]]</p>",
-            "name": "复仇鬼灵套牌 Vengeful Spirit Deck"
+            "name": "复仇鬼灵套牌 Vengeful Spirit Deck",
+            "prerequisites": [
+                {
+                    "value": "Harrower Dedication"
+                }
+            ]
         },
         "Reading the Signs": {
             "name": "解读征兆 Reading the Signs",
-            "description": "<p>无论是从哈罗套牌，还是纸牌游戏，乃至@UUID[Compendium.pf2e.equipment-srd.Item.Gyi4IVrAVJRPJF2s]{万象无常牌 Deck of Many Things}中抽牌，你都有抽到正确牌的诀窍。当你尝试涉及抽牌或解读预言系效果的技能检定时（这也包括在对抗针对你的敌对预言系效果时尝试豁免），你有+2状态加值。当你抽一张牌来确定你的哈罗预兆时、进行哈罗施法时、执行@UUID[Compendium.pf2e.spells-srd.Item.ofAQyLtLEGnOIs3N]{哈罗牌占卜 Harrowing}仪式时，或启动一副魔法套牌时，你抽两张卡，然后选择一张作为你实际使用的牌。你甚至可以在抽一副万象无常牌时使用此能力，但每副牌只能抽一次。未被使用的牌会被洗入牌库中。</p>"
+            "description": "<p>无论是从哈罗套牌，还是纸牌游戏，乃至@UUID[Compendium.pf2e.equipment-srd.Item.Gyi4IVrAVJRPJF2s]{万象无常牌 Deck of Many Things}中抽牌，你都有抽到正确牌的诀窍。当你尝试涉及抽牌或解读预言系效果的技能检定时（这也包括在对抗针对你的敌对预言系效果时尝试豁免），你有+2状态加值。当你抽一张牌来确定你的哈罗预兆时、进行哈罗施法时、执行@UUID[Compendium.pf2e.spells-srd.Item.ofAQyLtLEGnOIs3N]{哈罗牌占卜 Harrowing}仪式时，或启动一副魔法套牌时，你抽两张卡，然后选择一张作为你实际使用的牌。你甚至可以在抽一副万象无常牌时使用此能力，但每副牌只能抽一次。未被使用的牌会被洗入牌库中。</p>",
+            "prerequisites": [
+                {
+                    "value": "Harrower Dedication"
+                }
+            ]
         },
         "Restore Omen": {
             "name": "恢复预兆 Restore Omen",
-            "description": "<p><strong>需求</strong> 你没有激活的哈罗预兆</p>\n<hr />\n<p>你花费10分钟时间，拿着哈罗套牌冥想，然后抽一张牌。这张牌所属的牌组将赋予你新的哈罗预兆。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.rp6hA52dWVwtuu5F]{效果：哈罗预兆}</p>"
+            "description": "<p><strong>需求</strong> 你没有激活的哈罗预兆</p>\n<hr />\n<p>你花费10分钟时间，拿着哈罗套牌冥想，然后抽一张牌。这张牌所属的牌组将赋予你新的哈罗预兆。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.rp6hA52dWVwtuu5F]{效果：哈罗预兆}</p>",
+            "prerequisites": [
+                {
+                    "value": "Harrower Dedication"
+                }
+            ]
         },
         "Perfect Ki Expert": {
             "description": "<p>你获得与你修行院校对应的真气法术：不灭之焰院为@UUID[Compendium.pf2e.spells-srd.Item.floDCUOSzT0F6r77]，不破之浪院为@UUID[Compendium.pf2e.spells-srd.Item.ZQk2cGBCkATO25w0]，不息之风院为@UUID[Compendium.pf2e.spells-srd.Item.ALuvl9GYawnsZZCx]，不曲之钢院则为@UUID[Compendium.pf2e.spells-srd.Item.9o5aG5025ZczjkPb]。你聚能池中的聚能点数增加1点。你在异能法术DC与异能法术攻击骰上的熟练度达到专家。</p>",
@@ -43131,6 +43184,66 @@
             ],
             "name": "Scattering Shout",
             "description": "<p>With a flex of your mighty thews and a guttural bellow that can make ears bleed, you drive back any enemies surrounding you. Each enemy within a @Template[type:emanation|distance:10] must attempt a @Check[fortitude|against:class] saving throw against your class DC.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is pushed 5 feet away from you.</p>\n<p><strong>Failure</strong> The creature is pushed 10 feet away from you and takes @Damage[8d6[sonic]] damage.</p>\n<p><strong>Critical Failure</strong> The creature is pushed 15 feet away from you and takes @Damage[16d6[sonic]] damage.</p>"
+        },
+        "Demon Hunter": {
+            "prerequisites": [
+                {
+                    "value": "expert in Religion or Demon Lore"
+                }
+            ],
+            "name": "Demon Hunter",
+            "description": "<p>The demons of Tanglebriar have long haunted your dreams, just as they have long threatened Kyonin. You have not only studied these fiendish foes well, but have trained extensively to battle the hordes of demons that serve Treerazer and are particularly adept at striking desperate melee blows against them.</p>\n<p>When you make your daily preparations, choose one kind of demon, such as succubus, omox, shemhazian, or Treerazer. For the remainder of the day, the first time you hit one of those specific demons in a round with a melee Strike, you also deal 1d6 additional spirit damage. At 13th level, the extra damage increases to 2d6 additional spirit damage, and at 17th level, the extra damage increases to 3d6 spirit damage.</p>"
+        },
+        "Political Acumen": {
+            "description": "<p>You have spent years following the political maneuvering and secret alliances of elves in Iadara. You gain a +2 circumstance bonus to Perception checks made to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive} against other elves and to your Perception DC against Lies spoken by agents of Tanglebriar.</p>",
+            "prerequisites": [
+                {
+                    "value": "trained in Perception"
+                }
+            ],
+            "name": "Political Acumen"
+        },
+        "Anchoring Arrow": {
+            "name": "Anchoring Arrow",
+            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p>You can prevent demonic foes from fleeing your wrath via teleportation. Make a bow Strike against a demon. In addition to the normal effects of the Strike, the target must attempt a @Check[will|against:class] save against your class DC.</p><hr /><p><strong>Critical Success</strong> The target avoids any additional effect.</p>\n<p><strong>Success</strong> The target takes a –5 circumstance penalty to all their movement Speeds for 1 round as arcane coils of magic meddle with their mobility.</p>\n<p><strong>Failure</strong> As success, but a –5 foot circumstance penalty for 1 minute. While the target is affected by this, Anchoring Arrow attempts to counteract any teleportation effect that would move the target, or any effect that would transport the target to a different plane. The arrow has a counteract rank of 7th and a [[/gmr 1d20+20 @Counteract]]{+20} modifier to the roll.</p>\n<p><strong>Critical Failure</strong> As failure, except a –10 foot circumstance penalty, and the duration is 10 minutes.</p>"
+        },
+        "Cold Iron Stomach": {
+            "name": "Cold Iron Stomach",
+            "description": "<p>You have steeled yourself against potent odors. Whenever you gain the @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened} condition, you reduce the value of that condition by 1; if this reduces the value to 0, you avoid becoming sickened entirely. You gain a +2 circumstance bonus to all saving throws against olfactory and poison effects created by demons or environmental hazards associated with the Outer Rifts (including all environmental hazards found in Tanglebriar).</p>"
+        },
+        "Demon Slayer": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You can deliver a melee blow to a demon that creates an explosion of holy light to try to finish the demon off. In addition to the normal damage from your melee Strike, you also inflict @Damage[10d6[spirit]] damage to the demon. The demon can resist this additional damage with a @Check[fortitude|against:class|basic] save against your class DC. If the demon is slain by this strike, it explodes in a blast of holy light that fills a @Template[type:emanation|distance:30]. All creatures in this area that have the demon trait take @Damage[10d6[spirit]] damage and must attempt a @Check[fortitude|against:class] save against your class DC.</p><hr /><p><strong>Critical Success</strong> The demon takes no damage.</p>\n<p><strong>Success</strong> The demon takes half damage.</p>\n<p><strong>Failure</strong> The demon takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Critical Failure</strong> The demon takes full damage and is permanently @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded}.</p>",
+            "name": "Demon Slayer"
+        },
+        "Shame the Sin": {
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> You critically hit a demon with a Strike.</p><hr /><p>Your conviction against the sins that all demons grow from is so strong that you can force a demon to suffer from its sins when you strike a sound blow against them. In addition to doing the normal damage for your critical hit, the demon also suffers the effects of its special vulnerability. If the demon has no special vulnerability, it instead takes an additional @Damage[1d6[mental]] damage. This increases to @Damage[2d6[mental]] damage at 13th level and to @Damage[3d6[mental]] damage at 17th level.</p>",
+            "name": "Shame the Sin"
+        },
+        "Swamp Stealth": {
+            "prerequisites": [
+                {
+                    "value": "expert in Stealth"
+                }
+            ],
+            "description": "<p><strong>Requirements</strong> You are in a swamp environment near an environmental feature that would allow you to @UUID[Compendium.pf2e.actionspf2e.Item.ust1jJSCZQUhBZIz]{Take Cover}.</p><hr /><p>In swamplands, you are particularly skilled at quickly hiding behind bits of underbrush or foliage, or moving quietly through murky water. You Take Cover and then use that cover to @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide}.</p>",
+            "name": "Swamp Stealth"
+        },
+        "Political Virtuoso": {
+            "prerequisites": [
+                {
+                    "value": "Political Acumen"
+                }
+            ],
+            "name": "Political Virtuoso",
+            "description": "<p>Your mastery of the politics of your home nation is profound. Your circumstance bonus from @UUID[Compendium.pf2e.feats-srd.Item.h3h6QWv1m3MOpx66]{Political Acumen} becomes +4 instead of +2.</p>"
+        },
+        "Traditional Ways": {
+            "name": "Traditional Ways",
+            "description": "<p>You are a fervent follower of the long-standing elven traditions established when your people returned to Kyonin. You gain a +2 circumstance bonus to Nature, Society, and Lore skill checks related to Kyonin or the elves that live there, as well as a +1 circumstance bonus to saves against enchantment effects that would force you to act against your will.</p>"
+        },
+        "Treehealer": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You can undo the effect of demonic corruption in plants. By spending 10 minutes in contact with a tree that's been corrupted by demonic presence, you can restore the tree to its original health. This does not prevent that tree from becoming corrupted again in the future. Alternatively, you can spend 10 minutes in contact with a creature with the plant trait. At the end of this time, you restore @Damage[7d8+56[healing]] Hit Points to that creature and heal half that amount of your own Hit Points. Additionally, you can attempt to counteract any one curse or disease afflicting that plant creature as if you had cast @UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction} heightened to 7th rank. Your counteract rank for this is 7, and your counteract check is equal to your Will save or your spell attack modifier, whichever is higher.</p>",
+            "name": "Treehealer"
         }
     },
     "mapping": {
