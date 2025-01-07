@@ -219,7 +219,7 @@
             "items": {
                 "Pitfall": {
                     "name": "陷坑 Pitfall",
-                    "description": "<p><strong>触发</strong> 一个生物走上活板门；</p>\n<hr />\n<p><strong>效果</strong> 触发陷阱的生物坠落到坑底并受到坠落伤害，计算坠落距离时由于底部有水所以减少5尺（一般而言是[[/r (12)[bludgeoning]]]{12钝击伤害}）。生物可以通过@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{抓住边缘 Grab an Edge}来避免坠落。活板门随即猛地关上，然后陷阱进行先攻检定。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物走上活板门</p>\n<hr />\n<p><strong>效果</strong> 触发陷阱的生物坠落到坑底并受到坠落伤害，计算坠落距离时由于底部有水所以减少5尺（一般而言是@Damage[12[bludgeoning]|options:fall-damage]伤害）。生物可以通过@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]来避免坠落。活板门随即猛地关上，然后陷阱进行先攻检定。</p>"
                 }
             },
             "prototypeToken": {
@@ -343,7 +343,7 @@
             "items": {
                 "Profane Chant": {
                     "name": "亵渎颂歌 Profane Chant",
-                    "description": "<p><strong>触发</strong> 一个生物走进幽灵唱诗班升起的地板的10尺之内；</p>\n<hr />\n<p><strong>效果</strong> 幽灵唱诗班升起，它的歌声对幽灵形态30尺内的非邪恶生物造成@Damage[(4d8+18)[mental]]{4d8+18心灵伤害}。受影响的生物每次都要尝试一次@Check[will|dc:24|traits:damaging-effect]检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物受到全伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，同时陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}，并且@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{逃跑 Fleeing}1轮。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物走进幽灵唱诗班升起的地板的10尺之内；</p><hr /><p><strong>效果</strong> 幽灵唱诗班升起，它的歌声对幽灵形态30尺内的活物造成@Damage[(4d8+18)[mental]]伤害。受影响的生物每次都要尝试一次@Check[will|dc:24|traits:damaging-effect]检定。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物受到全伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，同时陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}，并且@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]1轮。</p>"
                 }
             },
             "prototypeToken": {
@@ -489,7 +489,7 @@
             "items": {
                 "Pitfall": {
                     "name": "陷坑 Pitfall",
-                    "description": "<p><strong>触发</strong> 一个生物踩上活板门；</p>\n<hr />\n<p><strong>效果</strong> 生物坠入陷坑并受到坠落伤害（一般为@Damage[10[bludgeoning]]伤害）。该生物可以进行一次@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]的反应动作来避免坠落。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物踩上活板门；</p>\n<hr />\n<p><strong>效果</strong> 生物坠入陷坑并受到坠落伤害（一般为@Damage[10[bludgeoning]|options:fall-damage]伤害）。该生物可以进行一次@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]的反应动作来避免坠落。</p>"
                 }
             },
             "prototypeToken": {
@@ -561,8 +561,8 @@
                 "name": "Lava Flume Tube"
             },
             "disable": "<p>@Check[thievery|dc:29|name:Block a Channel|traits:action:disable-a-device] (expert) to block a channel, or @Check[thievery|dc:31|name:Release Floor Latch|traits:action:disable-a-device] (master) to release the floor latch and escape to the chamber below</p>",
-            "routine": "<p>(4 actions) The trap loses 1 action per disabled channel each turn. On each action, a different channel spews lava, dealing 4d6 fire damage to each creature within 10 feet of the channel (@Check[reflex|dc:27|basic]), and increasing the depth of the lava in the room by 1 foot (4 feet per round if all the channels are active).</p>\n<p>A creature that starts its turn in lava takes 8d6 fire damage and is immobilized until it Escapes the hardening lava (DC 27). The creature might suffocate if covered in lava.</p>\n<p>Lava from the previous round hardens fully at the start of the trap's turn, effectively raising the floor of the room. Once the room is full of lava, the trap stops taking actions, but creatures in the room remain stuck until the floor opens and the trap resets.</p>",
-            "reset": "<p>The trap deactivates and resets after 1 hour by withdrawing the floor, cracking and dumping the hardened lava (and any creatures trapped inside) into the chamber. Creatures fall 40 feet, taking falling damage (typically 17 bludgeoning damage).</p>"
+            "routine": "<p>(4 actions) The trap loses 1 action per disabled channel each turn. On each action, a different channel spews lava, dealing @Damage[4d6[fire]] damage to each creature within 10 feet of the channel (@Check[reflex|dc:27|basic] save), and increasing the depth of the lava in the room by 1 foot (4 feet per round if all the channels are active).</p><p>A creature that starts its turn in lava takes @Damage[8d6[fire]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} the hardening lava (DC 27). The creature might suffocate if covered in lava.</p><p>Lava from the previous round hardens fully at the start of the trap's turn, effectively raising the floor of the room. Once the room is full of lava, the trap stops taking actions, but creatures in the room remain stuck until the floor opens and the trap resets.</p>",
+            "reset": "<p>The trap deactivates and resets after 1 hour by withdrawing the floor, cracking and dumping the hardened lava (and any creatures trapped inside) into the chamber. Creatures fall 40 feet, taking falling damage (typically @Damage[17[bludgeoning]|options:fall-damage] damage).</p>"
         },
         "Malevolent Mannequins": {
             "name": "怨毒模特 Malevolent Mannequins",
