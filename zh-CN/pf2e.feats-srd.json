@@ -3449,7 +3449,7 @@
         },
         "Evangelize": {
             "name": "传道 Evangelize",
-            "description": "<p>你指出了一个细节，它不可辩驳地支撑了你的信仰，导致一个听众思绪万千。尝试一次交涉检定，将结果与一个能听到并理解你语言的目标的意志DC比较；之后该目标将暂时免疫1天以你追随的神祇或哲学发起的传道。一个已经同意你观点的生物不会受影响，根据GM裁定，作为辩论的结果，一个真正改变了观点支持你信仰的目标也不会受到影响。</p>\n<hr />\n<p><strong>大成功</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，持续1轮。</p>\n<p><strong>成功</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1轮。</p>\n<p><strong>失败</strong> 目标不受影响。</p>",
+            "description": "<p>你指出了一个细节，它不可辩驳地支撑了你的信仰，导致一个听众思绪万千。尝试一次@Check[diplomacy|against:will]检定，将结果与一个能听到并理解你语言的目标的意志DC比较；之后该目标将暂时免疫1天以你追随的神祇或哲学发起的传道。一个已经同意你观点的生物不会受影响，根据GM裁定，作为辩论的结果，一个真正改变了观点支持你信仰的目标也不会受到影响。</p><hr /><p><strong>大成功</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，持续1轮。</p>\n<p><strong>成功</strong> 目标获得@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1轮。</p>\n<p><strong>失败</strong> 目标不受影响。</p>",
             "prerequisites": [
                 {
                     "value": "交涉技能熟练度为大师"
@@ -5752,7 +5752,7 @@
         },
         "Heal Mount": {
             "name": "医疗坐骑 Heal Mount",
-            "description": "<p>你对坐骑的忠诚转化为汹涌的命能浪潮。</p>\n<p>当你对坐骑施展@UUID[Compendium.pf2e.spells-srd.Item.zNN9212H2FGfM7VS]时，你能够为其恢复10点生命值，外加每升高一个环级10点。</p>",
+            "description": "<p>你对坐骑的忠诚转化为汹涌的命能浪潮。</p>\n<p>当你对坐骑施展@UUID[Compendium.pf2e.spells-srd.Item.zNN9212H2FGfM7VS]时，跟通常的数值不同，法术能为其恢复10点生命值，外加每升高一个环级10点。</p>",
             "prerequisites": [
                 {
                     "value": "忠诚骏骑"
@@ -11203,7 +11203,7 @@
         },
         "Trick Magic Item": {
             "name": "巧取魔法物品 Trick Magic Item",
-            "description": "<p>你调查一件你通常情况下无法使用的魔法物品，尝试绕过限制暂时启动它。举例而言，本专长可允许战士用魔杖施法，法师用卷轴施放一个不在奥术列表中的法术。你必须了解物品被启动后的作用，否则就无法尝试巧取魔法物品。</p>\n<p>用与该物品的魔法根源相匹配的技能进行检定，若你在尝试用物品施法，则与列表中有目标法术的根源相匹配的技能进行检定。奥术相关技能为奥法，原能相关技能为自然，异能相关技能为神秘，神术相关技能为宗教，有魔法特征但没有某项根源特征的物品可用上述四个技能中的任何一个。GM根据物品等级决定DC（或许会根据具体物品和情况做出调整）。</p>\n<p>若你启动一件需要法术攻击调整值或法术DC的魔法物品，并且你没有相关的熟练度，则用你的等级作为熟练度加值，加上智力、感知或魅力中最高的调整值。若你在与物品根源相关的技能上的熟练度达到大师，改为获得受训熟练加值；若达到传奇，改为获得专家熟练加值。</p><hr /><p><strong>成功</strong> 你可以消耗当前回合的其余动作来启动该物品，如同你可以正常使用它。</p>\n<p><strong>失败</strong> 你无法使用该物品，本回合无法再尝试巧取该魔法物品，但你可以在后续回合再尝试。</p>\n<p><strong>大失败</strong> 你无法使用该物品，并且无法再尝试巧取该魔法物品，直到下次进行每日准备。</p>",
+            "description": "<p>你调查一件你通常情况下无法使用的魔法物品，尝试绕过限制暂时启动它。举例而言，本专长可允许战士用魔杖施法，法师用卷轴施放一个不在奥术列表中的法术。你必须了解物品被启动后的作用，否则就无法尝试巧取魔法物品。</p>\n<p>用与该物品的魔法根源相匹配的技能进行检定，若你在尝试用物品施法，则与列表中有目标法术的根源相匹配的技能进行检定。奥术相关技能为@Check[arcana]，原能相关技能为@Check[nature]，异能相关技能为@Check[occultism]，神术相关技能为@Check[religion]，有魔法特征但没有某项根源特征的物品可用上述四个技能中的任何一个。GM根据物品等级决定DC（或许会根据具体物品和情况做出调整）。</p>\n<p>若你启动一件需要法术攻击调整值或法术DC的魔法物品，并且你没有相关的熟练度，则用你的等级作为熟练度加值，加上智力、感知或魅力中最高的调整值。若你在与物品根源相关的技能上的熟练度达到大师，改为获得受训熟练加值；若达到传奇，改为获得专家熟练加值。</p><hr /><p><strong>成功</strong> 你可以消耗当前回合的其余动作来启动该物品，如同你可以正常使用它。</p>\n<p><strong>失败</strong> 你无法使用该物品，本回合无法再尝试巧取该魔法物品，但你可以在后续回合再尝试。</p>\n<p><strong>大失败</strong> 你无法使用该物品，并且无法再尝试巧取该魔法物品，直到下次进行每日准备。</p>",
             "prerequisites": [
                 {
                     "value": "奥法、自然、神秘或宗教技能熟练度为受训"
@@ -21801,7 +21801,7 @@
         },
         "Virtuosic Performer": {
             "name": "精湛演技 Virtuosic Performer",
-            "description": "<p>你在一个表演类型上天赋异禀。在进行某一特定类型的表演时，你获得+1环境加值。若你在表演技能上的熟练度达到大师，该加值提高到+1。从下表中的专精类型中选择一项，尝试该类型表演检定时可应用该加值。对于无法明确是否可应用专精效果的情况，交由GM决定。</p>\n<table class=\"pf2e\">\n<thead>\n<tr>\n<th>专精类型</th>\n<th>范例</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>戏剧</td>\n<td>演剧、哑剧、傀儡戏</td>\n</tr>\n<tr>\n<td>喜剧</td>\n<td>滑稽剧、笑话、打油诗</td>\n</tr>\n<tr>\n<td>舞蹈</td>\n<td>芭蕾、草裙舞、吉格舞、秧歌</td>\n</tr>\n<tr>\n<td>键盘乐器</td>\n<td>大键琴、管风琴、钢琴</td>\n</tr>\n<tr>\n<td>演说</td>\n<td>史诗、辞赋、诗歌、故事</td>\n</tr>\n<tr>\n<td>打击乐</td>\n<td>铃、鼓、锣、木琴</td>\n</tr>\n<tr>\n<td>歌唱</td>\n<td>民谣、颂歌、美声、号子</td>\n</tr>\n<tr>\n<td>弦乐</td>\n<td>胡琴、竖琴、鲁特琴、提琴</td>\n</tr>\n<tr>\n<td>管乐</td>\n<td>风笛、长笛、竖笛、小号</td>\n</tr>\n</tbody>\n</table>",
+            "description": "<p>你在一个表演类型上天赋异禀。在进行某一特定类型的表演时，你获得+1环境加值。若你在表演技能上的熟练度达到大师，该加值提高到+1。从下表中的专精类型中选择一项，尝试该类型表演检定时可应用该加值。对于无法明确是否可应用专精效果的情况，交由GM决定。</p><table class=\"pf2e remaster\"><thead><tr><th>专精类型</th><th>范例</th></tr></thead><tbody><tr><td>戏剧</td><td>演剧、哑剧、傀儡戏</td></tr><tr><td>喜剧</td><td>滑稽剧、笑话、打油诗</td></tr><tr><td>舞蹈</td><td>芭蕾、草裙舞、吉格舞、秧歌</td></tr><tr><td>键盘乐器</td><td>大键琴、管风琴、钢琴</td></tr><tr><td>演说</td><td>史诗、辞赋、诗歌、故事</td></tr><tr><td>打击乐</td><td>铃、鼓、锣、木琴</td></tr><tr><td>歌唱</td><td>民谣、颂歌、美声、号子</td></tr><tr><td>弦乐</td><td>胡琴、竖琴、鲁特琴、提琴</td></tr><tr><td>管乐</td><td>风笛、长笛、竖笛、小号</td></tr></tbody></table>",
             "prerequisites": [
                 {
                     "value": "表演技能熟练度为受训"
@@ -34202,7 +34202,7 @@
             ]
         },
         "Elver Pet": {
-            "description": "<p>阿萨鱼人和鳗鱼之间的联系比其他鱼类都要紧密。你与一条幼年鳗鱼建立起了深厚的联系，后者成为了你的宠物。通常阿萨鱼人会照顾鳗鱼直到它们长得足够大能够充当坐骑。你获得@UUID[Compendium.pf2e.feats-srd.Item.6yPrvbSDaa8glLjn]通用专长。与通常可选的宠物能力不同，你的鳗鱼具有水生能力和@UUID[Compendium.pf2e.familiar-abilities.Item.vpw2ReYdcyQBpdqn]能力，并具有针对反射豁免的@UUID[Compendium.pf2e.familiar-abilities.Item.mK3mAUWiRLZZYNdz]魔宠能力。水生能力意味着它具有水生特征，在水中呼吸而非在空气中呼吸，并且以游泳速度替代陆地速度。</p>\n<p>当你不在水生环境中时，你可以把宠物鳗鱼放在一个装满水的小球里，球体为轻量负载。</p>",
+            "description": "<p>阿萨鱼人和鳗鱼之间的联系比其他鱼类都要紧密。你与一条幼年鳗鱼建立起了深厚的联系，后者成为了你的宠物。通常阿萨鱼人会照顾鳗鱼直到它们长得足够大能够充当坐骑。你获得@UUID[Compendium.pf2e.feats-srd.Item.6yPrvbSDaa8glLjn]通用专长。与通常可选的宠物能力不同，你的鳗鱼具有水生能力和@UUID[Compendium.pf2e.familiar-abilities.Item.BXssJhTJjKrfojwG]能力，并具有针对反射豁免的@UUID[Compendium.pf2e.familiar-abilities.Item.mK3mAUWiRLZZYNdz]魔宠能力。水生能力意味着它具有水生特征，在水中呼吸而非在空气中呼吸，并且以游泳速度替代陆地速度。</p>\n<p>当你不在水生环境中时，你可以把宠物鳗鱼放在一个装满水的小球里，球体为轻量负载。</p>",
             "name": "幼鳗宠物 Elver Pet"
         },
         "Emit Defensive Odor": {
@@ -35769,7 +35769,7 @@
                     "value": "you are an Ilverani elf"
                 }
             ],
-            "description": "<p>You have carefully studied the histories, customs, and etiquette of many of the younger peoples of Golarion. You become an expert in Society. At 7th level, you become a master in Society, and at 15th level, you become legendary in Society. You can use the Society skill instead of the Diplomacy skill when you attempt to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on a non-elven intelligent humanoid creature.</p>\n<p><strong>Special</strong> You can't select another dedication feat until you've gained two other feats from the @UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.YQXGtBHVoiSYUjtl]{Twilight Speaker} archetype.</p>",
+            "description": "<p>You have carefully studied the histories, customs, and etiquette of many of the younger peoples of Golarion. You become an expert in Society. At 7th level, you become a master in Society, and at 15th level, you become legendary in Society. You can use the [[/act make-an-impression skill=society]]{Society} skill instead of the Diplomacy skill when you attempt to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on a non-elven intelligent humanoid creature.</p><hr /><p><strong>Special</strong> You can't select another dedication feat until you've gained two other feats from the @UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.YQXGtBHVoiSYUjtl]{Twilight Speaker} archetype.</p>",
             "name": "Twilight Speaker Dedication"
         },
         "Worm Sense": {
@@ -36184,7 +36184,7 @@
             "name": "神龙裂破 Godbreaker"
         },
         "Regurgitate Mutagen": {
-            "description": "<p><strong>需求</strong> 你正受到突变药剂影响</p><hr /><p>你重新引导体内的突变剂来向一名敌人喷射出一股胃酸。一名30尺内的生物会受到@Damage[(floor(@actor.level/2))d6[acid]]伤害，这具有一次对抗你职业DC的@Check[reflex|against:alchemist|basic]豁免。在豁免失败时，目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败则为@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}）。随后该突变药剂的持续时间立即结束。</p>",
+            "description": "<p><strong>需求</strong> 你正受到突变药剂影响</p><hr /><p>你重新引导体内的突变剂来向一名敌人喷射出一股胃酸。一名30尺内的生物会受到你每2级1d6酸蚀伤害（@Damage[(floor(@actor.level/2))d6[acid]]），这具有一次对抗你职业DC的@Check[reflex|against:alchemist|basic]豁免。在豁免失败时，目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败则为@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}）。随后该突变药剂的持续时间立即结束。</p>",
             "name": "突变反刍 Regurgitate Mutagen"
         },
         "Advanced Qi Spells": {
@@ -39566,7 +39566,7 @@
         },
         "Thundering Surge": {
             "name": "雷霆浪涌 Thundering Surge",
-            "description": "<p><strong>需求</strong> 你的法术浪涌灵光已启动</p><hr /><p>你的魔法爆发出额外的能量，化作雷鸣涛涛。如果你的下个动作是施放法术，尝试一次@Check[flat|dc:5]检定。</p>\n<p><strong>大成功</strong> 以法术目标为中心10尺爆发半径范围内的敌人，或法术效果范围内的敌人受到等同于你等级两倍的音波伤害（对抗你的职业DC或法术DC的基础强韧豁免，以更高者为准）。豁免失败的人还会被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>\n<p><strong>成功</strong> 以法术目标为中心10尺爆发半径范围内的敌人，或法术效果范围内的敌人受到等同于你等级的音波伤害（对抗你的职业DC或法术DC的基础强韧豁免，以更高者为准）。豁免大失败的人也会被击至倒地。</p>\n<p><strong>失败</strong> 以法术目标为中心10尺爆发半径范围内的敌人，或法术效果范围内的所有生物受到等同于你等级的音波伤害（对抗你的职业DC或法术DC的基础强韧豁免，以更高者为准）。豁免失败的人也会被击至倒地。</p>",
+            "description": "<p><strong>需求</strong> 你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光已启动</p><hr /><p>你的魔法爆发出额外的能量，化作雷鸣涛涛。如果你的下个动作是施放法术，尝试一次@Check[flat|dc:5|showDC:all]检定。</p>\n<p><strong>大成功</strong> 以法术目标为中心@Template[burst|distance:10]范围内的敌人，或法术效果范围内的敌人受到等同于你等级两倍的@Damage[(2*@actor.level)[sonic]|options:area-damage]{音波伤害}（对抗你的职业DC或法术DC的@Check[fortitude|against:class-spell|basic|options:area-effect]豁免，以更高者为准）。豁免失败的人还会被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>\n<p><strong>成功</strong> 以法术目标为中心10尺爆发半径范围内的敌人，或法术效果范围内的敌人受到等同于你等级的@Damage[(@actor.level)[sonic]|options:area-damage]{音波伤害}（对抗你的职业DC或法术DC的基础强韧豁免，以更高者为准）。豁免大失败的人也会被击至倒地。</p>\n<p><strong>失败</strong> 以法术目标为中心10尺爆发半径范围内的敌人，或法术效果范围内的所有生物受到等同于你等级的音波伤害（对抗你的职业DC或法术DC的基础强韧豁免，以更高者为准）。豁免失败的人也会被击至倒地。</p>",
             "prerequisites": [
                 {
                     "value": "汹涌法源入门"
@@ -39845,7 +39845,7 @@
                     "value": "Wildspell Dedication"
                 }
             ],
-            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> Your spellsurge aura is active.</p><hr /><p>You reabsorb the magic of your spellsurge aura to power a piece of powerful magic. Spend a Mythic Point. Your spellsurge ends. If your next action is to Cast a Spell that's at least 2 ranks lower than the highest spell slot you have, you reduce the number of actions to cast it by 1 (minimum 1 action). You then immediately regain the ability to cast that spell again (with the normal parameters) or the spell slot used.</p>",
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> Your @UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]{Spellsurge} aura is active.</p><hr /><p>You reabsorb the magic of your <em>spellsurge</em> aura to power a piece of powerful magic. Spend a Mythic Point. Your <em>spellsurge</em> ends. If your next action is to Cast a Spell that's at least 2 ranks lower than the highest spell slot you have, you reduce the number of actions to cast it by 1 (minimum 1 action). You then immediately regain the ability to cast that spell again (with the normal parameters) or the spell slot used.</p>",
             "name": "Galvanize Spell"
         },
         "Hematocritical": {
@@ -39999,7 +39999,7 @@
         },
         "Battleblooded": {
             "name": "历战之血 Battleblooded",
-            "description": "<p>你起源自那些被传说中的英灵战士所触动的人，英灵战士由战斗中死亡的强大战士的灵魂塑造而成，它们受到女武神甄选成为了诸神的神兵。你甚至可能是某个女武神在古代所诞下的后代的子孙。</p>\n<p>你的威吓熟练度为受训。若你的威吓熟练度已经达到受训（比如通过背景或职业提升熟练度），则改为自选的1项技能的熟练度达到受训。你还会获得金刚怒目技能专长。</p>"
+            "description": "<p>你起源自那些被传说中的英灵战士所触动的人，英灵战士由战斗中死亡的强大战士的灵魂塑造而成，它们受到女武神甄选成为了诸神的神兵。你甚至可能是某个女武神在古代所诞下的后代的子孙。</p>\n<p>你的威吓熟练度为受训。若你的威吓熟练度已经达到受训（比如通过背景或职业提升熟练度），则改为自选的1项技能的熟练度达到受训。你还会获得@UUID[Compendium.pf2e.feats-srd.Item.xQMz6eDgX75WX2ce]技能专长。</p>"
         },
         "Zealous Inevitability": {
             "prerequisites": [
@@ -40228,7 +40228,7 @@
                 }
             ],
             "name": "灌输法术 Imbue Spell",
-            "description": "<p><strong>触发</strong> 你最近的动作是施放法术</p><hr /><p>你把魔法能量传递给另一名盟友，使得其他人也能够施放法术。在施放法术后，你将法术的能量注入一位邻接你或处于你法术浪涌灵光中的盟友以取代法术原本的效果。你正常花费法术、法术位或聚能点。在接下来1小时内的任何时候，这个盟友能够用一个具有专注和操作特征的单动作释放法术的能量；他不需要花费任何法术位或是聚能点。法术的所有数据取决于你最初施展法术时的状况，包括任何使用的塑法专长，但此时盟友被视作施法者来满足法术的源点，并决定法术所需的任何选项。如果法术必须或可以维持，你的盟友可以花费动作维持它。你不能将自己选做这个能力的目标。如果法术在1个小时内没有被盟友施放，能量就会消散。你一次只能有一个灌输法术；这个能力的额外使用会使之前注入的法术立刻消失。</p>"
+            "description": "<p><strong>触发</strong> 你最近的动作是施放法术</p><hr /><p>你把魔法能量传递给另一名盟友，使得其他人也能够施放法术。在施放法术后，你将法术的能量注入一位邻接你或处于你@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光中的盟友以取代法术原本的效果。你正常花费法术、法术位或聚能点。在接下来1小时内的任何时候，这个盟友能够用一个具有专注和操作特征的单动作释放法术的能量；他不需要花费任何法术位或是聚能点。法术的所有数据取决于你最初施展法术时的状况，包括任何使用的塑法专长，但此时盟友被视作施法者来满足法术的源点，并决定法术所需的任何选项。如果法术必须或可以维持，你的盟友可以花费动作维持它。你不能将自己选做这个能力的目标。如果法术在1个小时内没有被盟友施放，能量就会消散。你一次只能有一个灌输法术；这个能力的额外使用会使之前注入的法术立刻消失。</p>"
         },
         "Seneschal Witch Dedication": {
             "prerequisites": [
@@ -40258,7 +40258,7 @@
         },
         "Mythic Counter": {
             "name": "神话反制 Mythic Counter",
-            "description": "<p>你可以用纯粹的魔力吞没其他人的魔法施展。当你尝试对一个法术进行反制检定，你可以花费一个神话点让这次检定应用神话熟练度。如果反制检定的目标在你的法术浪涌灵光内，反制检定中的大失败视作普通失败。</p>",
+            "description": "<p>你可以用纯粹的魔力吞没其他人的魔法施展。当你尝试对一个法术进行反制检定，你可以花费一个神话点让这次检定应用神话熟练度。如果反制检定的目标在你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光内，反制检定中的大失败视作普通失败。</p>",
             "prerequisites": [
                 {
                     "value": "汹涌法源入门"
@@ -40283,7 +40283,7 @@
             "description": "<p><strong>需求</strong> 你附灵的精魄赋予你纹章学识或黑街学识作为精魄技能。</p><hr /><p>你引导怨恨的精魂之力。对你触及范围内的一个生物进行一次近战打击。你在攻击掷骰上获得+2环境加值，并对目标造成额外@Damage[2d6[void]]伤害；如果目标为不死生物或其他具有虚能治疗的生物，该打击改为造成额外@Damage[2d6[vitality]]伤害。该能力在造成命能伤害时获得命能特征，在造成虚能伤害时获得虚能特征。</p>"
         },
         "Rapid Switch": {
-            "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 你的法术浪涌灵光已启动</p><hr /><p>你已经锻炼了自己对于法术浪涌灵光的控制，并且可以迅速切换它的效果。维持法术浪涌来为它的灵光选择一个不同的效果。</p>",
+            "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光已启动</p><hr /><p>你已经锻炼了自己对于法术<em>浪涌灵光</em>的控制，并且可以迅速切换它的效果。维持<em>法术浪涌</em>来为它的灵光选择一个不同的效果。</p>",
             "prerequisites": [
                 {
                     "value": "汹涌法源入门"
@@ -40377,7 +40377,7 @@
                 }
             ],
             "name": "燃烧浪涌 Burning Surge",
-            "description": "<p><strong>触发</strong> 一个生物在你的法术浪涌灵光中施放法术</p><hr /><p>你引起一股魔法能量的爆发，伤害那个生物和它附近的人。触发生物和所有邻接它的生物承受每环级@Damage[1d6[untyped]]的伤害（对抗你的职业DC或法术DC的@Check[will|against:class-spell|basic]豁免，以更高者为准）。伤害类型与法术造成的伤害相同（或者如果法术造成多种类型的伤害，由你选择其中的一种伤害类型）。如果法术本身不造成伤害，那么这是心灵伤害。这个效果获得造成伤害的对应特征。如果你花费一个神话点作为这个反应动作的一部分，你使用神话熟练度计算DC；你也可以选择造成酸蚀、寒冷、电击或火焰伤害来取代通常会造成的伤害类型，并且在豁免中失败的生物还会受到等同于触发生物法术环级的同类型的持续伤害。</p>"
+            "description": "<p><strong>触发</strong> 一个生物在你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光中施放法术</p><hr /><p>你引起一股魔法能量的爆发，伤害那个生物和它附近的人。触发生物和所有邻接它的生物承受每环级@Damage[1d6[untyped]]的伤害（对抗你的职业DC或法术DC的@Check[will|against:class-spell|basic]豁免，以更高者为准）。伤害类型与法术造成的伤害相同（或者如果法术造成多种类型的伤害，由你选择其中的一种伤害类型）。如果法术本身不造成伤害，那么这是心灵伤害。这个效果获得造成伤害的对应特征。如果你花费一个神话点作为这个反应动作的一部分，你使用神话熟练度计算DC；你也可以选择造成酸蚀、寒冷、电击或火焰伤害来取代通常会造成的伤害类型，并且在豁免中失败的生物还会受到等同于触发生物法术环级的同类型的持续伤害。</p>"
         },
         "Remember Their Names": {
             "name": "铭记死难者 Remember Their Names",
@@ -40437,7 +40437,7 @@
             "description": "<p><strong>频率</strong> 每10分钟一次</p>\n<p><strong>触发</strong> 一个生物用近战攻击对你造成伤害。</p>\n<p><strong>需求</strong> 你附灵的精魄赋予你战场学识或火山学识作为精魄技能。</p><hr /><p>你的精魄赋予你火焰防御。你对于触发伤害获得等同于你等级的抗力，且触发生物受到@Damage[1d6[fire],1[persistent,fire]]{1d6火焰和1持续火焰}伤害。该伤害在12级时提升为@Damage[2d6[fire],2[persistent,fire]]{2d6火焰和2持续火焰}，并在18级时提升为@Damage[3d6[fire],3[persistent,fire]]{3d6火焰和3持续火焰}。</p>"
         },
         "Spell Network": {
-            "description": "<p><strong>触发</strong> 你施展法术浪涌</p><hr /><p>你的灵光以神秘的丝缕将同伴们连结在一起。当你处于这个架势中，你法术浪涌灵光中的盟友可以将灵光中任何其他盟友所在的位置作为他们施放法术的起点，这会用其他盟友的位置计算范围和掩护效果，而不是他们自己的位置。这使得所有在你的法术灵光中的盟友生物都表现得好像它们在彼此的接触范围内，因为每个生物都在自己的接触范围内。除此之外，当你处于这个架势中，盟友施展的任何只能针对施法者自身的法术也可以转而影响你法术浪涌灵光中的任何其他盟友。</p>",
+            "description": "<p><strong>触发</strong> 你施展@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]</p><hr /><p>你的灵光以神秘的丝缕将同伴们连结在一起。当你处于这个架势中，你<em>法术浪涌</em>灵光中的盟友可以将灵光中任何其他盟友所在的位置作为他们施放法术的起点，这会用其他盟友的位置计算范围和掩护效果，而不是他们自己的位置。这使得所有在你的<em>法术浪涌</em>中的盟友生物都表现得好像它们在彼此的接触范围内，因为每个生物都在自己的接触范围内。除此之外，当你处于这个架势中，盟友施展的任何只能针对施法者自身的法术也可以转而影响你<em>法术浪涌</em>灵光中的任何其他盟友。</p>",
             "prerequisites": [
                 {
                     "value": "汹涌法源入门"
@@ -40566,7 +40566,7 @@
                 }
             ],
             "name": "充能转移 Recharging Transference",
-            "description": "<p>你可以将自己的法术拆解成原始的魔法潜力并将其转移给盟友。花费一个准备好的法术、法术位或聚能点，选择一位邻接你或处于你法术浪涌灵光中的盟友。如果你花费了一个法术或一个法术位，盟友将恢复一个已经消耗的法术或法术位，其法术环级不高于你所消耗的。如果你花费了一个聚能点，盟友恢复一个聚能点。这个专长不能让目标获得比通常情况下更多的法术位或聚能点。你不能将自己选为这个能力的目标。你每次使用这个能力时只能转移一个法术、法术位或是聚能点。</p>"
+            "description": "<p>你可以将自己的法术拆解成原始的魔法潜力并将其转移给盟友。花费一个准备好的法术、法术位或聚能点，选择一位邻接你或处于你@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光中的盟友。如果你花费了一个法术或一个法术位，盟友将恢复一个已经消耗的法术或法术位，其法术环级不高于你所消耗的。如果你花费了一个聚能点，盟友恢复一个聚能点。这个专长不能让目标获得比通常情况下更多的法术位或聚能点。你不能将自己选为这个能力的目标。你每次使用这个能力时只能转移一个法术、法术位或是聚能点。</p>"
         },
         "Faultless Defense": {
             "prerequisites": [
@@ -40628,7 +40628,7 @@
                 }
             ],
             "name": "生机浪涌 Invigorating Surge",
-            "description": "<p><strong>需求</strong> 你的法术浪涌灵光已启动</p><hr /><p>你改变了周身环绕的魔法灵光来保护自己的盟友。你给予一个处于你法术浪涌灵光内的生物等同于你等级的临时生命值。只要目标在灵光范围内，临时生命值就会持续存在。再次使用此能力会取消之前使用产生的任何临时生命值。如果你花费了一个神话点作为这个动作的一部分，你可以将临时生命值给予灵光内至多等同于你等级一半数量的生物。</p>"
+            "description": "<p><strong>需求</strong> 你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光已启动</p><hr /><p>你改变了周身环绕的魔法灵光来保护自己的盟友。你给予一个处于你<em>法术浪涌</em>灵光内的生物等同于你等级的临时生命值。只要目标在灵光范围内，临时生命值就会持续存在。再次使用此能力会取消之前使用产生的任何临时生命值。如果你花费了一个神话点作为这个动作的一部分，你可以将临时生命值给予灵光内至多等同于你等级一半数量的生物。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.iGJ6C4AUQZcSEx1W]</p>"
         },
         "Disrupt Opposed Magic": {
             "name": "裁断恶法 Disrupt Opposed Magic",
@@ -40679,7 +40679,7 @@
             "description": "<p><strong>Requirements</strong> A creature has been the target of your Ultimatum of Liberation for at least 1 minute</p><hr /><p>You have given a despot enough time to think, and now is the time for them to forfeit their control or die. Spend a Mythic Point and make a Strike at mythic proficiency against the required creature. If you succeed and deal damage, the target must succeed on a @Check[fortitude|against:class-spell] save against your class DC or spell DC (whichever is higher) or die. If the target succeeds, they are immune to this ability for 24 hours.</p>"
         },
         "Extend Surge": {
-            "description": "<p><strong>需求</strong> 你的法术浪涌灵光已启用</p><hr /><p>你可以更深入地挖掘内在魔法能量的漩涡。直到你的下一个回合开始，你的法术浪涌灵光半径范围增加到30尺。如果你花费了一个神话点作为这个动作的一部分，直到你的下一个回合开始，范围会增加到60尺，然后在剩余的法术持续时间内增加到30尺。</p>",
+            "description": "<p><strong>需求</strong> 你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光已启用</p><hr /><p>你可以更深入地挖掘内在魔法能量的漩涡。直到你的下一个回合开始，你的<em>法术浪涌</em>灵光半径范围增加到30尺。如果你花费了一个神话点作为这个动作的一部分，直到你的下一个回合开始，范围会增加到60尺，然后在剩余的法术持续时间内增加到30尺。</p>",
             "prerequisites": [
                 {
                     "value": "汹涌法源入门"
@@ -40867,7 +40867,7 @@
                 }
             ],
             "name": "神异耀斑 Mystical Flare",
-            "description": "<p><strong>需求</strong> 你的法术浪涌灵光已启动</p><hr /><p>你释放了一股魔法的洪流，让空气中充满了微小的、引入注目的光亮。所有在你法术浪涌灵光中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，所有在灵光外的生物也对里面的生物视作隐蔽。但是你可以忽略这种隐蔽。这个效果持续到你的下个回合结束，但是你可以在每轮中进行一次维持，让它的持续时间额外延长1轮。</p>"
+            "description": "<p><strong>需求</strong> 你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光已启动</p><hr /><p>你释放了一股魔法的洪流，让空气中充满了微小的、引入注目的光亮。所有在你<em>法术浪涌</em>灵光中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，所有在灵光外的生物也对里面的生物视作隐蔽。但是你可以忽略这种隐蔽。这个效果持续到你的下个回合结束，但是你可以在每轮中进行一次维持，让它的持续时间额外延长1轮。</p>"
         },
         "Haft Striker Stance": {
             "name": "长柄打击者架势 Haft Striker Stance",
@@ -41454,7 +41454,7 @@
                 }
             ],
             "name": "浪涌干扰 Surging Interference",
-            "description": "<p><strong>触发</strong> 一个生物在你的法术浪涌灵光中施放法术</p><hr /><p>你吸收别人法术施展失败时四溢的能量，用它来充能你自己的魔法。你尝试反制这个法术。如果你反制成功，你吸收四散的魔法能量，恢复一个8环级或更低的法术或法术位。如果你在反制触发法术成功时花费一个神话点，你可以转而恢复一个9环级法术或法术位。</p>"
+            "description": "<p><strong>触发</strong> 一个生物在你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光中施放法术</p><hr /><p>你吸收别人法术施展失败时四溢的能量，用它来充能你自己的魔法。你尝试反制这个法术。如果你反制成功，你吸收四散的魔法能量，恢复一个8环级或更低的法术或法术位。如果你在反制触发法术成功时花费一个神话点，你可以转而恢复一个9环级法术或法术位。</p>"
         },
         "Apparition's Quickening": {
             "name": "精魄加速 Apparition's Quickening",
@@ -41591,7 +41591,7 @@
             "name": "精魂魔宠-女巫 Spirit Familiar (Witch)"
         },
         "Mystic Life Force": {
-            "description": "<p>魔法能量维系着你，支撑你的存在远超血肉之躯的极限。只要你在一个持续的法术效果作用下或你的法术浪涌灵光中，你就不会因年老以外的原因死亡；如果你的濒死或毁灭状态值将要增加到足以杀死你的地步，它就不会增加，并且任何会立刻杀死你的效果只会让你降至0点生命值。</p>\n<p>如果你因任何原因死亡，你就会根据自己的选择转变为连结于1英里内一名盟友生物的魔法源泉。这个生物会学会具化源泉仪式法术以让你的肉身重获新生。直到你复活，每小时一次，你能以被选中的生物为中心施展法术浪涌。你依然可以为法术浪涌应用任何选项或是采取这个法术允许的行动，但你不能使用其他动作。</p>",
+            "description": "<p>魔法能量维系着你，支撑你的存在远超血肉之躯的极限。只要你在一个持续的法术效果作用下或你的@UUID[Compendium.pf2e.spells-srd.Item.XIgvCPaSy5WXStVD]灵光中，你就不会因年老以外的原因死亡；如果你的@UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]或@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]状态值将要增加到足以杀死你的地步，它就不会增加，并且任何会立刻杀死你的效果只会让你降至0点生命值。</p>\n<p>如果你因任何原因死亡，你就会根据自己的选择转变为连结于1英里内一名盟友生物的魔法源泉。这个生物会学会@UUID[Compendium.pf2e.spells-srd.Item.HBxsMKXzZM0HviEE]仪式法术以让你的肉身重获新生。直到你复活，每小时一次，你能以被选中的生物为中心施展<em>法术浪涌</em>。你依然可以为<em>法术浪涌</em>应用任何选项或是采取这个法术允许的行动，但你不能使用其他动作。</p>",
             "prerequisites": [
                 {
                     "value": "汹涌法源入门"
@@ -43216,12 +43216,12 @@
             "name": "Demon Slayer",
             "prerequisites": [
                 {
-                    "value": "Demon Hunter"
+                    "value": "恶魔猎手"
                 }
             ]
         },
         "Shame the Sin": {
-            "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> You critically hit a demon with a Strike.</p><hr /><p>Your conviction against the sins that all demons grow from is so strong that you can force a demon to suffer from its sins when you strike a sound blow against them. In addition to doing the normal damage for your critical hit, the demon also suffers the effects of its special vulnerability. If the demon has no special vulnerability, it instead takes an additional @Damage[1d6[mental]] damage. This increases to @Damage[2d6[mental]] damage at 13th level and to @Damage[3d6[mental]] damage at 17th level.</p>",
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> You critically hit a demon with a Strike.</p><hr /><p>Your conviction against the sins that all demons grow from is so strong that you can force a demon to suffer from its sins when you strike a sound blow against them. In addition to doing the normal damage for your critical hit, the demon also suffers the effects of its special vulnerability. If the demon has no special vulnerability, it instead takes an additional @Damage[(ternary(gte(@actor.level,17),3,ternary(gte(@actor.level,13),2,1)))d6[mental]] damage. This increases to 2d6 mental damage at 13th level and to 3d6 mental damage at 17th level.</p>",
             "name": "Shame the Sin"
         },
         "Swamp Stealth": {
@@ -43247,7 +43247,7 @@
             "description": "<p>You are a fervent follower of the long-standing elven traditions established when your people returned to Kyonin. You gain a +2 circumstance bonus to Nature, Society, and Lore skill checks related to Kyonin or the elves that live there, as well as a +1 circumstance bonus to saves against enchantment effects that would force you to act against your will.</p>"
         },
         "Treehealer": {
-            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You can undo the effect of demonic corruption in plants. By spending 10 minutes in contact with a tree that's been corrupted by demonic presence, you can restore the tree to its original health. This does not prevent that tree from becoming corrupted again in the future. Alternatively, you can spend 10 minutes in contact with a creature with the plant trait. At the end of this time, you restore @Damage[7d8+56[healing]] Hit Points to that creature and heal half that amount of your own Hit Points. Additionally, you can attempt to counteract any one curse or disease afflicting that plant creature as if you had cast @UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction} heightened to 7th rank. Your counteract rank for this is 7, and your counteract check is equal to your Will save or your spell attack modifier, whichever is higher.</p>",
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You can undo the effect of demonic corruption in plants. By spending 10 minutes in contact with a tree that's been corrupted by demonic presence, you can restore the tree to its original health. This does not prevent that tree from becoming corrupted again in the future. Alternatively, you can spend 10 minutes in contact with a creature with the plant trait. At the end of this time, you restore @Damage[(7d8+56)[healing]] Hit Points to that creature and heal half that amount of your own Hit Points. Additionally, you can attempt to counteract any one curse or disease afflicting that plant creature as if you had cast @UUID[Compendium.pf2e.spells-srd.Item.SUKaxVZW2TlM8lu0]{Cleanse Affliction} heightened to 7th rank. Your counteract rank for this is 7, and your counteract check is equal to your Will save or your spell attack modifier, whichever is higher.</p>",
             "name": "Treehealer"
         }
     },
