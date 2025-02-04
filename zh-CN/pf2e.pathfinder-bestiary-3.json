@@ -943,7 +943,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>龙向50尺内射出一个对@Template[burst|distance:25]范围造成@Damage[7d12[electricity]]伤害的电球(@Check[reflex|dc:33|basic]豁免)。</p>\n<p>他们不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>\n<hr />\n<p>见神圣闪电。</p>\n<p>@Damage[7d12[spirit]]伤害 (@Check[reflex|dc:33|basic|traits:divine,good,evocation|overrideTraits:true]豁免)对抗魔族。</p>\n<p>@Damage[7d12[vitality]]伤害 (@Check[reflex|dc:33|basic|traits:divine,vitality,evocation|overrideTraits:true]豁免)对抗不死生物。</p>"
+                    "description": "<p>龙向50尺内射出一个对@Template[burst|distance:25]范围造成@Damage[7d12[electricity]|options:area-damage]伤害的电球（@Check[reflex|dc:33|basic|options:area-effect]豁免）。</p>\n<p>他们不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>\n<hr />\n<p>见神圣闪电。</p>\n<p>@Damage[7d12[spirit]|options:area-damage]伤害（@Check[reflex|dc:33|basic|traits:divine,good,evocation|options:area-effect|overrideTraits:true]豁免）对抗魔族。</p>\n<p>@Damage[7d12[vitality]|options:area-damage]伤害（@Check[reflex|dc:33|basic|traits:divine,vitality,evocation|options:area-effect|overrideTraits:true]豁免）对抗不死生物。</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "盘绕狂暴 Coiling Frenzy",
@@ -1043,7 +1043,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>龙释放一道充满精神能量的吼叫，对@Template[cone|distance:40]范围造成@Damage[16d6[mental]]伤害(@Check[will|dc:36|basic]豁免)。</p>\n<p>龙不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
+                    "description": "<p>龙释放一道充满精神能量的吼叫，对@Template[cone|distance:40]范围造成@Damage[16d6[mental]|options:area-damage]伤害（@Check[will|dc:36|basic|options:area-effect]豁免）。</p>\n<p>龙不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "盘绕狂暴 Coiling Frenzy",
@@ -1612,7 +1612,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>龙向60尺内射出一个对@Template[burst|distance:30]范围造成@Damage[18d6[bludgeoning]]伤害的水球（@Check[reflex|dc:38|basic]豁免），熄灭半径内所有非魔法火焰。</p>\n<p>龙不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
+                    "description": "<p>龙向60尺内射出一个对@Template[burst|distance:30]范围造成@Damage[18d6[bludgeoning]|options:area-damage]伤害的水球（@Check[reflex|dc:38|basic|options:area-effect]豁免），熄灭半径内所有非魔法火焰。</p>\n<p>龙不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
                 },
                 "Greater Constrict": {
                     "name": "高等紧勒 Greater Constrict",
@@ -3021,11 +3021,11 @@
             "items": {
                 "Wind-Up": {
                     "name": "上发条 Wind-Up",
-                    "description": "<p>24小时, @Check[thievery|traits:action:disable-device|dc:26], 待机</p>\n<hr />\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行@UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{解除装置 Disable Device}，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+                    "description": "<p>24小时，[[/act disable-device dc=26]]{DC26贼活}，待机</p>\n<hr />\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行@UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
                 },
                 "Clockwork Wand": {
                     "name": "发条魔杖 Clockwork Wand",
-                    "description": "<p>发条法师使用发条魔杖作为引导魔法能量的焦点。这根魔杖嵌在发条法师的胸腔里，只有末端的水晶露在外面。法师可以通过交互动作来移除魔杖，或者其他人可以通过@Check[thievery|dc:31|traits:action:disable-device]检定进行@UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{解除装置 Disable a Device}来移除它。当魔杖被移除时，法条法师将不能施展除了戏法之外的任何法术。</p>\n<p>发条魔杖被移除之后，它会变成含有法条法师最后一次施放的2环级内在法术的<em>@UUID[Compendium.pf2e.equipment-srd.Item.vJZ49cgi8szuQXAD]{魔杖 Magic Wand}</em>（如果发条法师没有施放过合适的法术，则由GM随机决定）。该法术是当发条法师被创造时置入魔杖内的，并且创造者可以将其替换成相应环级的其他奥术法术。</p>"
+                    "description": "<p>发条法师使用发条魔杖作为引导魔法能量的焦点。这根魔杖嵌在发条法师的胸腔里，只有末端的水晶露在外面。法师可以通过交互动作来移除魔杖，或者其他人可以通过[[/act disable-device dc=31]]{DC31贼活}检定进行@UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]来移除它。当魔杖被移除时，法条法师将不能施展除了戏法之外的任何法术。</p>\n<p>发条魔杖被移除之后，它会变成含有法条法师最后一次施放的2环级内在法术的<em>@UUID[Compendium.pf2e.equipment-srd.Item.vJZ49cgi8szuQXAD]</em>（如果发条法师没有施放过合适的法术，则由GM随机决定）。该法术是当发条法师被创造时置入魔杖内的，并且创造者可以将其替换成相应环级的其他奥术法术。</p>"
                 },
                 "Energize Clockwork Wand": {
                     "name": "发条魔杖充能 Energize Clockwork Wand",
@@ -6287,7 +6287,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>麒麟喷出@Template[cone|distance:30]火焰，造成@Damage[8d6[fire]]伤害（@Check[reflex|dc:25|basic]豁免）。</p>\n<p>麒麟不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
+                    "description": "<p>麒麟喷出@Template[cone|distance:30]火焰，造成@Damage[8d6[fire]|options:area-damage]伤害（@Check[reflex|dc:25|basic|options:area-effect]豁免）。</p>\n<p>麒麟不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
                 },
                 "Rearing Thrust": {
                     "name": "昂身撞击 Rearing Thrust",
@@ -12697,7 +12697,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>龙向40尺内射出一个对@Template[burst|distance:20]范围造成@Damage[7d6[fire]]伤害的火球(@Check[reflex|dc:25|basic]豁免)。豁免失败的生物还将受到@Damage[1d6[persistent,fire]]伤害。</p>\n<p>龙不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
+                    "description": "<p>龙向40尺内射出一个对@Template[burst|distance:20]范围造成@Damage[7d6[fire]|options:area-damage]伤害的火球（@Check[reflex|dc:25|basic|options:area-effect]豁免）。豁免失败的生物还将受到@Damage[1d6[persistent,fire]]伤害。</p>\n<p>龙不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用吐息。</p>"
                 },
                 "Constrict": {
                     "name": "紧勒 Constrict",
