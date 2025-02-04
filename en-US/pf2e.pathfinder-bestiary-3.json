@@ -33,11 +33,11 @@
             "items": {
                 "Wind-Up": {
                     "name": "Wind-Up",
-                    "description": "<p>24 hours, @Check[thievery|traits:action:disable-a-device|dc:26], standby</p>\n<hr />\n<p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>"
+                    "description": "<p>24 hours, [[/act disable-device dc=26]]{DC 26 Thievery}, standby</p>\n<hr />\n<p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>"
                 },
                 "Clockwork Wand": {
                     "name": "Clockwork Wand",
-                    "description": "<p>The clockwork mage uses a mechanical wand as a focus to channel magical energy. This wand is built into the clockwork mage's chest, with only the crystal at the end exposed. The mage can Interact to the remove the wand, or someone else can remove it with a @Check[thievery|dc:31|traits:action:disable-a-device] check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}. The clockwork mage becomes unable to cast any spells except cantrips while the wand is removed.</p>\n<p>When removed, the clockwork wand is a <em>@UUID[Compendium.pf2e.equipment-srd.Item.vJZ49cgi8szuQXAD]{Magic Wand}</em> containing the last 2nd-rank innate spell the clockwork mage cast (the GM determines the spell randomly if it has not cast any eligible spells). The spells are placed within the wand while the mage is created, and the creator can substitute other arcane spells of the appropriate rank.</p>"
+                    "description": "<p>The clockwork mage uses a mechanical wand as a focus to channel magical energy. This wand is built into the clockwork mage's chest, with only the crystal at the end exposed. The mage can Interact to the remove the wand, or someone else can remove it with a [[/act disable-device dc=31]]{DC 31 Thievery} check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}. The clockwork mage becomes unable to cast any spells except cantrips while the wand is removed.</p>\n<p>When removed, the clockwork wand is a <em>@UUID[Compendium.pf2e.equipment-srd.Item.vJZ49cgi8szuQXAD]{Magic Wand}</em> containing the last 2nd-rank innate spell the clockwork mage cast (the GM determines the spell randomly if it has not cast any eligible spells). The spells are placed within the wand while the mage is created, and the creator can substitute other arcane spells of the appropriate rank.</p>"
                 },
                 "Energize Clockwork Wand": {
                     "name": "Energize Clockwork Wand",
@@ -117,7 +117,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[16d6[mental]] damage in a @Template[cone|distance:40] (@Check[will|dc:36|basic] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[16d6[mental]|options:area-damage] damage in a @Template[cone|distance:40] (@Check[will|dc:36|basic|options:area-effect] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -173,7 +173,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[7d12[electricity]] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:33|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[7d12[spirit]] damage (@Check[reflex|dc:33|basic|traits:divine,good,evocation|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[7d12[vitality]] damage (@Check[reflex|dc:33|basic|traits:divine,vitality,evocation|overrideTraits:true] save) against undead.</p>"
+                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[7d12[electricity]|options:area-damage] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:33|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[7d12[spirit]|options:area-damage] damage (@Check[reflex|dc:33|basic|traits:divine,good,evocation|options:area-effect|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[7d12[vitality]|options:area-damage] damage (@Check[reflex|dc:33|basic|traits:divine,vitality,evocation|options:area-effect|overrideTraits:true] save) against undead.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -536,7 +536,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:20] within 40 feet, dealing @Damage[7d6[fire]] damage (@Check[reflex|dc:25|basic] save). Creatures that fail the save also take @Damage[1d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:20] within 40 feet, dealing @Damage[7d6[fire]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save). Creatures that fail the save also take @Damage[1d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -1256,7 +1256,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The kirin breathes fire in a @Template[cone|distance:30], dealing @Damage[8d6[fire]] damage (@Check[reflex|dc:25|basic] save).</p>\n<p>The kirin can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The kirin breathes fire in a @Template[cone|distance:30], dealing @Damage[8d6[fire]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save).</p>\n<p>The kirin can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Rearing Thrust": {
                     "name": "Rearing Thrust",
@@ -1341,7 +1341,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of water that deals @Damage[18d6[bludgeoning]] damage in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:38|basic] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of water that deals @Damage[18d6[bludgeoning]|options:area-damage] damage in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:38|basic|options:area-effect] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Greater Constrict": {
                     "name": "Greater Constrict",
@@ -1397,7 +1397,7 @@
             "items": {
                 "Wind-Up": {
                     "name": "Wind-Up",
-                    "description": "<p>24 hours, @Check[thievery|traits:action:disable-a-device|dc:22], standby</p>\n<hr />\n<p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>"
+                    "description": "<p>24 hours, [[/act disable-device dc=22]]{DC 22 Thievery}, standby</p>\n<hr />\n<p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -1715,7 +1715,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[14d6[piercing]] damage in a @Template[cone|distance:40] (@Check[reflex|dc:34|basic] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[14d6[piercing]|options:area-damage] damage in a @Template[cone|distance:40] (@Check[reflex|dc:34|basic|options:area-effect] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -2416,7 +2416,7 @@
             "items": {
                 "Record Audio": {
                     "name": "Record Audio",
-                    "description": "<p>The clockwork spy records all sounds within @Template[emanation|distance:25]{25 feet} onto a small gemstone worth 1 gp embedded in its body. The clockwork spy can record up to 1 hour of sound on a single gemstone. Once it begins recording, it can't cease recording early, nor can it record onto a gemstone that already contains a recording.</p>\n<p>Some clockwork spies contain multiple gemstones to allow for a series of recordings. Since clockwork spies are not intelligent, they must be given simple commands regarding when to start recording sounds. A clockwork spy can differentiate between different kinds of creatures but not between specific individuals.</p>\n<p>The spy can start or stop playback of recorded sound by spending a single action. Removing a gemstone from or installing a gemstone into a clockwork spy requires a successful @Check[thievery|dc:14|traits:action:disable-a-device] check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}; on a failure, the gemstone is undamaged, but any recorded sounds are erased and the gemstone still can't be used to make another recording.</p>"
+                    "description": "<p>The clockwork spy records all sounds within @Template[emanation|distance:25]{25 feet} onto a small gemstone worth 1 gp embedded in its body. The clockwork spy can record up to 1 hour of sound on a single gemstone. Once it begins recording, it can't cease recording early, nor can it record onto a gemstone that already contains a recording.</p>\n<p>Some clockwork spies contain multiple gemstones to allow for a series of recordings. Since clockwork spies are not intelligent, they must be given simple commands regarding when to start recording sounds. A clockwork spy can differentiate between different kinds of creatures but not between specific individuals.</p>\n<p>The spy can start or stop playback of recorded sound by spending a single action. Removing a gemstone from or installing a gemstone into a clockwork spy requires a successful [[/act disable-device dc=14]]{DC 14 Thievery} check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}; on a failure, the gemstone is undamaged, but any recorded sounds are erased and the gemstone still can't be used to make another recording.</p>"
                 },
                 "Wind-Up": {
                     "name": "Wind-Up",
@@ -2589,7 +2589,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[5d12[electricity]] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:28|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[5d12[electricity]|options:area-damage] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:28|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -2661,7 +2661,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[9d12[electricity],2d12[sonic]]{9d12 electricity damage and 2d12 sonic damage} in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:40|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[9d12[spirit],2d12[sonic]]{9d12 spirit damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,good,evocation|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[9d12[vitality],2d12[sonic]]{9d12 vitality damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,vitality,evocation|overrideTraits:true] save) against undead.</p>"
+                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[9d12[electricity],2d12[sonic]|options:area-damage]{9d12 electricity damage and 2d12 sonic damage} in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:40|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[9d12[spirit],2d12[sonic]|options:area-damage]{9d12 spirit damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,good,evocation|options:area-effect|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[9d12[vitality],2d12[sonic]|options:area-damage]{9d12 vitality damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,vitality,evocation|options:area-effect|overrideTraits:true] save) against undead.</p>"
                 },
                 "Divine Lightning": {
                     "name": "Divine Lightning",
@@ -2718,7 +2718,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of water that deals @Damage[9d6[bludgeoning]] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:26|basic] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of water that deals @Damage[9d6[bludgeoning]|options:area-damage] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:26|basic|options:area-effect] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -2840,7 +2840,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of water that deals @Damage[18d6[bludgeoning]] damage in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:38|basic] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of water that deals @Damage[18d6[bludgeoning]|options:area-damage] damage in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:38|basic|options:area-effect] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -3219,7 +3219,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[7d12[electricity]] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:33|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[7d12[spirit]] damage (@Check[reflex|dc:33|basic|traits:divine,good,evocation|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[7d12[vitality]] damage (@Check[reflex|dc:33|basic|traits:divine,vitality,evocation|overrideTraits:true] save) against undead.</p>"
+                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[7d12[electricity]|options:area-damage] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:33|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[7d12[spirit]|options:area-damage] damage (@Check[reflex|dc:33|basic|traits:divine,good,evocation|options:area-effect|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[7d12[vitality]|options:area-damage] damage (@Check[reflex|dc:33|basic|traits:divine,vitality,evocation|options:area-effect|overrideTraits:true] save) against undead.</p>"
                 },
                 "Divine Lightning": {
                     "name": "Divine Lightning",
@@ -3385,7 +3385,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p><strong>Frequency</strong> once per day.</p>\n<hr />\n<p><strong>Effect</strong> The calikang breathes a blast of energy that deals 13d6 energy damage to creatures in a @Template[line|distance:60] (DC 28 basic Reflex save). The calikang can choose the damage type each time: acid, cold, electricity, fire, or sonic.</p>\n<p>Increase the die size to d8 if the calikang chooses electricity.</p>\n<hr />\n<ul>\n<li>@Damage[13d6[acid]] damage (@Check[reflex|dc:28|traits:acid|basic] save)</li>\n<li>@Damage[13d6[cold]] damage (@Check[reflex|dc:28|traits:cold|basic] save)</li>\n<li>@Damage[13d8[electricity]] damage (@Check[reflex|dc:28|traits:electricity|basic] save)</li>\n<li>@Damage[13d6[fire]] damage (@Check[reflex|dc:28|traits:fire|basic] save)</li>\n<li>@Damage[13d6[sonic]] damage (@Check[reflex|dc:28|traits:sonic|basic] save)</li>\n</ul>"
+                    "description": "<p><strong>Frequency</strong> once per day.</p><hr /><p><strong>Effect</strong> The calikang breathes a blast of energy that deals @Damage[13d6[@item.flags.pf2e.rulesSelections.breathWeapon]|options:area-damage] damage to creatures in a @Template[line|distance:60] (@Check[reflex|dc:28|basic|options:area-effect] save). The calikang can choose the damage type each time: acid, cold, electricity, fire, or sonic.</p>\n<p>Increase the die size to d8 if the calikang chooses electricity.</p>"
                 },
                 "Sixfold Flurry": {
                     "name": "Sixfold Flurry",
@@ -3909,7 +3909,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The zombie dragon breathes a wave of fetid viscera that deals @Damage[5d6[bludgeoning],5d6[poison]]{5d6 bludgeoning damage and 5d6 poison damage} (@Check[reflex|dc:28|basic] save). A creature that critically fails is also @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p>The zombie dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The zombie dragon breathes a wave of fetid viscera that deals @Damage[5d6[bludgeoning],5d6[poison]|options:area-damage] damage (@Check[reflex|dc:28|basic|options:area-effect] save). A creature that critically fails is also @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p>The zombie dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -4270,7 +4270,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[12d6[mental]] damage in a @Template[cone|distance:30] (@Check[will|dc:30|basic] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[12d6[mental]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[will|dc:30|basic|options:area-effect] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -4435,7 +4435,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[20d6[piercing]] damage in a @Template[cone|distance:60] (@Check[reflex|dc:41|basic] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[20d6[piercing]|options:area-damage] damage in a @Template[cone|distance:60] (@Check[reflex|dc:41|basic|options:area-effect] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -4971,7 +4971,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[20d6[piercing]] damage in a @Template[cone|distance:60] (@Check[reflex|dc:41|basic] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[20d6[piercing]|options:area-damage] damage in a @Template[cone|distance:60] (@Check[reflex|dc:41|basic|options:area-effect] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Draining Blight": {
                     "name": "Draining Blight",
@@ -5027,7 +5027,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[14d6[piercing]] damage in a @Template[cone|distance:40] (@Check[reflex|dc:34|basic] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[14d6[piercing]|options:area-damage] damage in a @Template[cone|distance:40] (@Check[reflex|dc:34|basic|options:area-effect] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Draining Blight": {
                     "name": "Draining Blight",
@@ -5084,7 +5084,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of water that deals @Damage[9d6[bludgeoning]] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:26|basic] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of water that deals @Damage[9d6[bludgeoning]|options:area-damage] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:26|basic|options:area-effect] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -5149,7 +5149,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of water that deals @Damage[13d6[bludgeoning]] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:32|basic] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of water that deals @Damage[13d6[bludgeoning]|options:area-damage] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:32|basic|options:area-effect] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Greater Constrict": {
                     "name": "Greater Constrict",
@@ -5606,7 +5606,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The house drake breathes a @Template[cone|distance:10] of silver mist. Each creature within the mist must succeed at a @Check[will|dc:16] save or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 round.</p>\n<p>The house drake can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The house drake breathes a @Template[cone|distance:10] of silver mist. Each creature within the mist must succeed at a @Check[will|dc:16|options:area-effect] save or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 round.</p>\n<p>The house drake can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Silver Strike": {
                     "name": "Silver Strike",
@@ -5711,7 +5711,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The elder wyrmwraith unleashes a burst of void energy that deals @Damage[24d6[void]] damage to all creatures in a @Template[cone|distance:90] (@Check[reflex|dc:46|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The elder wyrmwraith unleashes a burst of void energy that deals @Damage[24d6[void]|options:area-damage] damage to all creatures in a @Template[cone|distance:90] (@Check[reflex|dc:46|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Consume Souls": {
                     "name": "Consume Souls",
@@ -5831,7 +5831,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[9d12[electricity],2d12[sonic]]{9d12 electricity damage and 2d12 sonic damage} in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:40|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[9d12[spirit],2d12[sonic]]{9d12 spirit damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,good,evocation|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[9d12[vitality],2d12[sonic]]{9d12 vitality damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,vitality,evocation|overrideTraits:true] save) against undead.</p>"
+                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[9d12[electricity],2d12[sonic]|options:area-damage]{9d12 electricity damage and 2d12 sonic damage} in a @Template[burst|distance:30] within 60 feet (@Check[reflex|dc:40|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<hr />\n<p>See divine lightning.</p>\n<p>@Damage[9d12[spirit],2d12[sonic]|options:area-damage]{9d12 spirit damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,good,evocation|options:area-effect|overrideTraits:true] save) against fiends.</p>\n<p>@Damage[9d12[vitality],2d12[sonic]|options:area-damage]{9d12 vitality damage and 2d12 sonic damage} (@Check[reflex|dc:40|basic|traits:divine,vitality,evocation|options:area-effect|overrideTraits:true] save) against undead.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -6013,7 +6013,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The xiuh couatl breaths a gout of flame and lightning in an @Template[line|distance:80] that deals @Damage[5d8[electricity]] damage and @Damage[5d8[fire]] damage (@Check[reflex|dc:32|basic] save).</p>\n<p>The xiuh couatl can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The xiuh couatl breaths a gout of flame and lightning in an @Template[line|distance:80] that deals @Damage[5d8[electricity],5d8[fire]|options:area-damage] damage (@Check[reflex|dc:32|basic|options:area-effect] save).</p>\n<p>The xiuh couatl can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Greater Constrict": {
                     "name": "Greater Constrict",
@@ -6156,7 +6156,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[fire]] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[fire]|options:area-damage] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic|options:area-effect] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Dragon's Wisdom": {
                     "name": "Dragon's Wisdom",
@@ -6420,7 +6420,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The wyrmwraith unleashes a burst of void energy that deals @Damage[18d6[void]] damage to all creatures in a @Template[cone|distance:60] (@Check[reflex|dc:38|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The wyrmwraith unleashes a burst of void energy that deals @Damage[18d6[void]|options:area-damage] damage to all creatures in a @Template[cone|distance:60] (@Check[reflex|dc:38|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Divine Dispelling": {
                     "name": "Divine Dispelling",
@@ -6656,7 +6656,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[acid]] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[acid]|options:area-damage] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic|options:area-effect] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Dragon's Wisdom": {
                     "name": "Dragon's Wisdom",
@@ -6704,7 +6704,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:30] within 60 feet, dealing @Damage[14d6[fire]] damage (@Check[reflex|dc:39|basic] save). Creatures that fail the save also take @Damage[3d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:30] within 60 feet, dealing @Damage[14d6[fire]|options:area-damage] damage (@Check[reflex|dc:39|basic|options:area-effect] save). Creatures that fail the save also take @Damage[3d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -6956,7 +6956,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:25] within 50 feet, dealing @Damage[10d6[fire]] damage (@Check[reflex|dc:30|basic] save). Creatures that fail the save also take @Damage[2d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:25] within 50 feet, dealing @Damage[10d6[fire]|options:area-damage] damage (@Check[reflex|dc:30|basic|options:area-effect] save). Creatures that fail the save also take @Damage[2d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Greater Constrict": {
                     "name": "Greater Constrict",
@@ -7077,7 +7077,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[12d6[mental]] damage in a @Template[cone|distance:30] (@Check[will|dc:30|basic] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[12d6[mental]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[will|dc:30|basic|options:area-effect] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -7457,7 +7457,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[cold]] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[cold]|options:area-damage] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic|options:area-effect] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Dragon's Wisdom": {
                     "name": "Dragon's Wisdom",
@@ -8380,7 +8380,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[fire]] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[fire]|options:area-damage] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic|options:area-effect] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Dragon's Wisdom": {
                     "name": "Dragon's Wisdom",
@@ -8602,7 +8602,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[10d6[piercing]] damage in a @Template[cone|distance:30] (@Check[reflex|dc:29|basic] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[10d6[piercing]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[reflex|dc:29|basic|options:area-effect] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -8790,7 +8790,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[cold]] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The draconal breathes a blast of energy that deals @Damage[21d6[cold]|options:area-damage] damage to creatures they choose to damage in a @Template[cone|distance:60] (@Check[reflex|dc:44|basic|options:area-effect] save).</p>\n<p>They can make this effect nonlethal for selected creatures in the area or choose not to damage certain creatures at all.</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Dragon's Wisdom": {
                     "name": "Dragon's Wisdom",
@@ -9043,7 +9043,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[21d6[mental]] damage in a @Template[cone|distance:50] (@Check[will|dc:43|basic] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[21d6[mental]|options:area-damage] damage in a @Template[cone|distance:50] (@Check[will|dc:43|basic|options:area-effect] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Gleaming Armor": {
                     "name": "Gleaming Armor",
@@ -9200,7 +9200,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of water that deals @Damage[13d6[bludgeoning]] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:32|basic] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of water that deals @Damage[13d6[bludgeoning]|options:area-damage] damage in a @Template[burst|distance:25] within 50 feet (@Check[reflex|dc:32|basic|options:area-effect] save). All non-magical fire in the radius is extinguished.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -9502,7 +9502,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[5d12[electricity]] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:28|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon shoots a ball of electricity that deals @Damage[5d12[electricity]|options:area-damage] damage in a @Template[burst|distance:20] within 40 feet (@Check[reflex|dc:28|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -9771,7 +9771,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[10d6[piercing]] damage in a @Template[cone|distance:30] (@Check[reflex|dc:29|basic] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a swarm of insects that deals @Damage[10d6[piercing]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[reflex|dc:29|basic|options:area-effect] save) before dispersing.</p>\n<p>A creature that critically fails is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2} from the insects' venom; this is a poison effect.</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -9947,7 +9947,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:25] within 50 feet, dealing @Damage[10d6[fire]] damage (@Check[reflex|dc:30|basic] save). Creatures that fail the save also take @Damage[2d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:25] within 50 feet, dealing @Damage[10d6[fire]|options:area-damage] damage (@Check[reflex|dc:30|basic|options:area-effect] save). Creatures that fail the save also take @Damage[2d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -10012,7 +10012,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[16d6[mental]] damage in a @Template[cone|distance:40] (@Check[will|dc:36|basic] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[16d6[mental]|options:area-damage] damage in a @Template[cone|distance:40] (@Check[will|dc:36|basic|options:area-effect] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Gleaming Armor": {
                     "name": "Gleaming Armor",
@@ -10445,15 +10445,15 @@
             "items": {
                 "Wind-Up": {
                     "name": "Wind-Up",
-                    "description": "<p>1 week, @Check[thievery|traits:action:disable-a-device|dc:35], standby</p>\n<hr />\n<p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>"
+                    "description": "<p>1 week, [[/act disable-device dc=35]]{DC 35 Thievery}, standby</p>\n<hr />\n<p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>"
                 },
                 "Self-Destruct": {
                     "name": "Self-Destruct",
-                    "description": "<p>A clockwork dragon must use this reaction unless specifically programmed otherwise by its creator.</p>\n<p><strong>Trigger</strong> The clockwork dragon is reduced to 0 Hit Points.</p>\n<hr />\n<p><strong>Effect</strong> The dragon screeches to a stop and emits a steady, loud ticking sound. At the beginning of what would have been its next turn, the dragon explodes, dealing @Damage[12d10[piercing]] damage in a @Template[emanation|distance:40] (@Check[reflex|dc:37|basic] save).</p>\n<p>An adjacent creature can cancel the self-destruct sequence by succeeding at a @Check[thievery|dc:37|traits:action:disable-a-device] check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}.</p>"
+                    "description": "<p>A clockwork dragon must use this reaction unless specifically programmed otherwise by its creator.</p>\n<p><strong>Trigger</strong> The clockwork dragon is reduced to 0 Hit Points.</p>\n<hr />\n<p><strong>Effect</strong> The dragon screeches to a stop and emits a steady, loud ticking sound. At the beginning of what would have been its next turn, the dragon explodes, dealing @Damage[12d10[piercing]|options:area-damage] damage in a @Template[emanation|distance:40] (@Check[reflex|dc:37|basic|options:area-effect] save).</p>\n<p>An adjacent creature can cancel the self-destruct sequence by succeeding at a @Check[thievery|dc:37|traits:action:disable-a-device] check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}.</p>"
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The clockwork dragon breathes a spray of flaming oil that deals @Damage[16d6[fire]] damage in a @Template[cone|distance:40] (@Check[reflex|dc:37|basic] save).</p>\n<p>Creatures that fail their saves are covered in burning oil and take @Damage[2d6[persistent,fire]].</p>\n<p>The clockwork dragon can't use Breath Weapon again for 2 rounds.</p>"
+                    "description": "<p>The clockwork dragon breathes a spray of flaming oil that deals @Damage[16d6[fire]|options:area-damage] damage in a @Template[cone|distance:40] (@Check[reflex|dc:37|basic|options:area-effect] save).</p>\n<p>Creatures that fail their saves are covered in burning oil and take @Damage[2d6[persistent,fire]].</p>\n<p>The clockwork dragon can't use Breath Weapon again for 2 rounds.</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "Draconic Frenzy",
@@ -10578,7 +10578,7 @@
             "items": {
                 "Central Weapon": {
                     "name": "Central Weapon",
-                    "description": "<p>A swordkeeper's torso houses a single weapon of a level no higher than the swordkeeper. While the swordkeeper is operational, the chamber requires four successful @Check[thievery|dc:32|traits:action:disable-a-device] checks to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to open; on a critical failure, the backlash deals @Damage[6d6[force]] damage (@Check[reflex|dc:30|basic] save) to the creature attempting the check.</p>\n<p>If the swordkeeper is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned}, both DCs are reduced by 2.</p>\n<p>If the weapon is removed, the swordkeeper's echoblades vanish.</p>"
+                    "description": "<p>A swordkeeper's torso houses a single weapon of a level no higher than the swordkeeper. While the swordkeeper is operational, the chamber requires four successful [[/act disable-device dc=32]]{DC 32 Thievery} checks to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to open; on a critical failure, the backlash deals @Damage[6d6[force]] damage (@Check[reflex|dc:30|basic] save) to the creature attempting the check.</p>\n<p>If the swordkeeper is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned}, both DCs are reduced by 2.</p>\n<p>If the weapon is removed, the swordkeeper's echoblades vanish.</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -10662,7 +10662,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:20] within 40 feet, dealing @Damage[7d6[fire]] damage (@Check[reflex|dc:25|basic] save). Creatures that fail the save also take @Damage[1d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:20] within 40 feet, dealing @Damage[7d6[fire]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save). Creatures that fail the save also take @Damage[1d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -10878,7 +10878,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[21d6[mental]] damage in a @Template[cone|distance:50] (@Check[will|dc:43|basic] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon unleashes a roar charged with psychic energy, dealing @Damage[21d6[mental]|options:area-damage] damage in a @Template[cone|distance:50] (@Check[will|dc:43|basic|options:area-effect] save).</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Coiling Frenzy": {
                     "name": "Coiling Frenzy",
@@ -10974,7 +10974,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:30] within 60 feet, dealing @Damage[14d6[fire]] damage (@Check[reflex|dc:39|basic] save). Creatures that fail the save also take @Damage[3d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon breathes a blast of fire that explodes in a @Template[burst|distance:30] within 60 feet, dealing @Damage[14d6[fire]|options:area-damage] damage (@Check[reflex|dc:39|basic|options:area-effect] save). Creatures that fail the save also take @Damage[3d6[persistent,fire]].</p>\n<p>The dragon can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Greater Constrict": {
                     "name": "Greater Constrict",

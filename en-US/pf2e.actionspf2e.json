@@ -178,7 +178,7 @@
             "name": "Spinning Crush"
         },
         "Thundering Roar": {
-            "description": "<p>The target unleashes a powerful vocalization. Each enemy in a @Template[type:emanation|distance:10] takes @Damage[4d8[sonic]|options:area-damage] damage with a @Check[will|basic] save against your spell DC. A creature that fails its Will save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>",
+            "description": "<p>The target unleashes a powerful vocalization. Each enemy in a @Template[type:emanation|distance:10] takes @Damage[4d8[sonic]|options:area-damage] damage with a @Check[will|basic|against:spell|options:area-effect] save against your spell DC. A creature that fails its Will save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>",
             "name": "Thundering Roar"
         },
         "Flowing Spirit Strike": {
@@ -446,7 +446,7 @@
             "name": "Thermal Eruption"
         },
         "Disable a Device": {
-            "description": "<p>This action allows you to disarm a trap or another complex device. Often, a device requires numerous successes before becoming disabled, depending on its construction and complexity. A @UUID[Compendium.pf2e.equipment-srd.Item.zvLyCVD8g2PdHJAc]{Thieves' Toolkit} is helpful and sometimes even required to Disable a Device, as determined by the GM, and sometimes a device requires a higher proficiency rank in Thievery to disable it.</p>\n<p>Your <span data-pf2-action=\"disableDevice\" data-pf2-glyph=\"D\">Thievery</span> check result determines your progress.</p>\n<hr />\n<p><strong>Critical Success</strong> You disable the device, or you achieve two successes toward disabling a device requiring more than one success. You leave no trace of your tampering, and you can rearm the device later, if that type of device can be rearmed.</p>\n<p><strong>Success</strong> You disable the device, or you achieve one success toward disabling a device that requires more than one success.</p>\n<p><strong>Critical Failure</strong> You trigger the device.</p>",
+            "description": "<p>This action allows you to disarm a trap or another complex device. Often, a device requires numerous successes before becoming disabled, depending on its construction and complexity. A @UUID[Compendium.pf2e.equipment-srd.Item.zvLyCVD8g2PdHJAc]{Thieves' Toolkit} is helpful and sometimes even required to Disable a Device, as determined by the GM, and sometimes a device requires a higher proficiency rank in Thievery to disable it.</p>\n<p>Your [[/act disable-device]]{Thievery} check result determines your progress.</p><hr /><p><strong>Critical Success</strong> You disable the device, or you achieve two successes toward disabling a device requiring more than one success. You leave no trace of your tampering, and you can rearm the device later, if that type of device can be rearmed.</p>\n<p><strong>Success</strong> You disable the device, or you achieve one success toward disabling a device that requires more than one success.</p>\n<p><strong>Critical Failure</strong> You trigger the device.</p>",
             "name": "Disable a Device"
         },
         "Swift Choreography": {
@@ -814,7 +814,7 @@
             "name": "Liberating Step"
         },
         "Goblin Jubilee": {
-            "description": "<p><strong>Cost</strong> 3 batches of infused reagents</p>\n<hr />\n<p><strong>Effect</strong> Chaos fills a @Template[burst|distance:20] within 120 feet. All creatures in the area takes @Damage[3d6[fire],3d6[sonic]|options:area-damage]{3d6 fire damage and 3d6 sonic damage} and must attempt a @Check[fortitude|against:class-spell|options:area-damage,damaging-effect] save. A goblin jubilee display costs 3 batches of infused reagents, rather than 1.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} and @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} until the end of its next turn and takes half damage.</p>\n<p><strong>Failure</strong> The creature is dazzled and deafened for 1 minute and takes full damage.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round, dazzled and deafened for 1 minute, and takes double damage.</p>",
+            "description": "<p><strong>Cost</strong> 3 batches of infused reagents</p>\n<hr />\n<p><strong>Effect</strong> Chaos fills a @Template[burst|distance:20] within 120 feet. All creatures in the area takes @Damage[3d6[fire],3d6[sonic]|options:area-damage]{3d6 fire damage and 3d6 sonic damage} and must attempt a @Check[fortitude|against:class-spell|options:area-effect,damaging-effect] save. A goblin jubilee display costs 3 batches of infused reagents, rather than 1.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} and @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} until the end of its next turn and takes half damage.</p>\n<p><strong>Failure</strong> The creature is dazzled and deafened for 1 minute and takes full damage.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round, dazzled and deafened for 1 minute, and takes double damage.</p>",
             "name": "Goblin Jubilee"
         },
         "Verdant Rest": {
@@ -1134,7 +1134,7 @@
             "name": "Strike, Breathe, Rend"
         },
         "Dragon Breath": {
-            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p><strong>Effect</strong> You breathe deeply and exhale a line or cone of powerful breath, much like the dragon with which you made the pact. If the dragon had a cone-shaped breath weapon, your breath weapon is a @Template[cone|distance:30]. If they had a line-shaped breath weapon, your breath weapon is a @Template[line|distance:60]. If they had a burst-shaped breath weapon, your breath weapon is a @Template[burst|distance:10] within 60 feet. No matter the shape, it deals @Damage[(@actor.level)d6|options:area-damage]{1d6 damage per level}, of the same damage type as the dragon's Breath Weapon, with a @Check[reflex|against:class-spell|basic] save, using the higher of your class DC or spell DC. This action has the same traits as the breath weapon of the dragon you made the pact with.</p>",
+            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p><strong>Effect</strong> You breathe deeply and exhale a line or cone of powerful breath, much like the dragon with which you made the pact. If the dragon had a cone-shaped breath weapon, your breath weapon is a @Template[cone|distance:30]. If they had a line-shaped breath weapon, your breath weapon is a @Template[line|distance:60]. If they had a burst-shaped breath weapon, your breath weapon is a @Template[burst|distance:10] within 60 feet. No matter the shape, it deals @Damage[(@actor.level)d6|options:area-damage]{1d6 damage per level}, of the same damage type as the dragon's Breath Weapon, with a @Check[reflex|against:class-spell|basic|options:area-effect] save, using the higher of your class DC or spell DC. This action has the same traits as the breath weapon of the dragon you made the pact with.</p>",
             "name": "Dragon Breath"
         },
         "Barbed Quills": {
@@ -1694,7 +1694,7 @@
             "name": "Sever Four Dragonfly Wings"
         },
         "Breath Weapon (Riding Drake)": {
-            "description": "<p>The riding drake breathes a @Template[cone|distance:30] of fire, dealing @Damage[((ceil(@actor.level/2))d6)[fire]|options:area-damage]{1d6 fire damage for every 2 levels the drake has} to all creatures in the area (basic Reflex save). This uses a trained DC using the drake's Constitution modifier or an expert DC if the drake is specialized.</p>",
+            "description": "<p>The riding drake breathes a @Template[cone|distance:30] of fire, dealing @Damage[((ceil(@actor.level/2))d6)[fire]|options:area-damage]{1d6 fire damage for every 2 levels the drake has} to all creatures in the area (@Check[reflex|basic|options:area-effect] save). This uses a trained DC using the drake's Constitution modifier or an expert DC if the drake is specialized.</p>",
             "name": "Breath Weapon (Riding Drake)"
         },
         "Dueling Counter": {
@@ -1730,7 +1730,7 @@
             "name": "Hide"
         },
         "Blazing Conflagration": {
-            "description": "<p><strong>Requirements</strong> You're transformed into phoenix form by the monstrosity form spell granted by this feat</p><hr /><p><strong>Effect</strong> You dismiss phoenix form while a fiery corona erupts from you as searing light. Each creature in a @Template[type:burst|distance:10] takes @Damage[max(16,(2*(floor(@actor.level/2))))d6[fire]|options:area-damage] damage with a @Check[fortitude|against:spell|basic] save against your spell DC; creatures that critically fail are @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round. You gain 8d6 temporary Hit Points. At 18th level and again at 20th level, the burst deals an additional 2d6 fire damage, and you gain an additional 1d6 temporary Hit Points.</p>",
+            "description": "<p><strong>Requirements</strong> You're transformed into phoenix form by the monstrosity form spell granted by this feat</p><hr /><p><strong>Effect</strong> You dismiss phoenix form while a fiery corona erupts from you as searing light. Each creature in a @Template[type:burst|distance:10] takes @Damage[max(16,(2*(floor(@actor.level/2))))d6[fire]|options:area-damage] damage with a @Check[fortitude|against:spell|basic|options:area-effect] save against your spell DC; creatures that critically fail are @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round. You gain 8d6 temporary Hit Points. At 18th level and again at 20th level, the burst deals an additional 2d6 fire damage, and you gain an additional 1d6 temporary Hit Points.</p>",
             "name": "Blazing Conflagration"
         },
         "Anchor": {

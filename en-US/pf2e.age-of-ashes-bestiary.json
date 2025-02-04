@@ -1451,7 +1451,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Damurdiel's Vengeance",
-            "disable": "<p>Deception 45 (legendary) to pretend to be Erveniss and ask for forgiveness, Diplomacy 45 (legendary) to convince Damurdiel to stand down (elves who are masters in Diplomacy can attempt the check as if they were legendary instead), or Religion 40 (legendary) to call upon Calistria to calm Damurdiel's spirit.</p>",
+            "disable": "<p>@Check[deception|dc:45] (legendary) to pretend to be Erveniss and ask for forgiveness, @Check[diplomacy|dc:45] (legendary) to convince Damurdiel to stand down (elves who are masters in Diplomacy can attempt the check as if they were legendary instead), or @Check[religion|dc:40] (legendary) to call upon Calistria to calm Damurdiel's spirit.</p>",
             "hazarddescription": "<p>An elven woman wearing a robe stands in the water. She beckons anyone who enters the room to join her in the pool.</p>",
             "routine": "<p>(3 actions) The haunt attempts to Strike with the dagger.</p>",
             "reset": "<p>Damurdiel's spirit subsides once she is destroyed or if she manages to reduce a creature to 0 Hit Points. She returns after 1 minute.</p>",
@@ -2206,7 +2206,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The manifestation of Dahak breathes a blast of dragonstorm energy that deals @Damage[5d6[acid],5d6[cold],5d6[electricity],5d6[fire],5d6[poison]|options:area-damage]{5d6 acid, 5d6 cold, 5d6 electricity, 5d6 fire, and 5d6 poison damage} in a @Template[cone|distance:60] (@Check[reflex|dc:46|basic|name:Dragonstorm Breath|traits:fire,acid,cold,electricity,poison] save).</p>\n<p>It can't use Dragonstorm Breath again for [[/gmr 1d4 #Recharge Dragonstorm Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The manifestation of Dahak breathes a blast of dragonstorm energy that deals @Damage[5d6[acid],5d6[cold],5d6[electricity],5d6[fire],5d6[poison]|options:area-damage]{5d6 acid, 5d6 cold, 5d6 electricity, 5d6 fire, and 5d6 poison damage} in a @Template[cone|distance:60] (@Check[reflex|dc:46|basic|name:Dragonstorm Breath|traits:fire,acid,cold,electricity,poison|options:area-effect] save).</p>\n<p>It can't use Dragonstorm Breath again for [[/gmr 1d4 #Recharge Dragonstorm Breath]]{1d4 rounds}.</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "Draconic Frenzy",
@@ -2425,7 +2425,7 @@
             "items": {
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>Belmazog spews a gout of acid that deals @Damage[10d6[acid]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[reflex|dc:28|basic] save).</p>\n<p>Belmazog can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>Belmazog spews a gout of acid that deals @Damage[10d6[acid]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[reflex|dc:28|basic|options:area-effect] save).</p>\n<p>Belmazog can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Drowning Drone": {
                     "name": "Drowning Drone",
@@ -2878,11 +2878,11 @@
                 },
                 "Dragonstorm Breath": {
                     "name": "Dragonstorm Breath",
-                    "description": "<p>The manifestation of Dahak breathes a blast of dragonstorm energy that deals @Damage[5d6[acid],5d6[cold],5d6[electricity],5d6[fire],5d6[poison]|options:area-damage]{5d6 acid, 5d6 cold, 5d6 electricity, 5d6 fire, and 5d6 poison damage} in a @Template[cone|distance:60] (@Check[reflex|dc:48|basic|traits:fire,acid,cold,electricity,poison] save). It can't use Dragonstorm Breath again for [[/gmr 1d4 #Recharge Dragonstorm Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The manifestation of Dahak breathes a blast of dragonstorm energy that deals @Damage[5d6[acid],5d6[cold],5d6[electricity],5d6[fire],5d6[poison]|options:area-damage]{5d6 acid, 5d6 cold, 5d6 electricity, 5d6 fire, and 5d6 poison damage} in a @Template[cone|distance:60] (@Check[reflex|dc:48|basic|traits:fire,acid,cold,electricity,poison|options:area-effect] save). It can't use Dragonstorm Breath again for [[/gmr 1d4 #Recharge Dragonstorm Breath]]{1d4 rounds}.</p>"
                 },
                 "Focused Breath Weapon": {
                     "name": "Focused Breath Weapon",
-                    "description": "<p>The manifestation breathes a blast of energy that deals 12d12 damage in a @Template[line|distance:90] (@Check[reflex|dc:44|basic] save). The type of damage this Breath Weapon deals can be @Damage[12d12[acid]|options:area-damage]{acid}, @Damage[12d12[cold]|options:area-damage]{cold}, @Damage[12d12[electricity]|options:area-damage]{electricity}, @Damage[12d12[fire]|options:area-damage]{fire}, or @Damage[12d12[poison]|options:area-damage]{poison}, as chosen by the manifestation when it attacks. The manifestation can't use its focused Breath Weapon again for 2 rounds, and the next time it uses its Breath Weapon, it must deal a different type of damage than the previous usage.</p>"
+                    "description": "<p>The manifestation breathes a blast of energy that deals 12d12 damage in a @Template[line|distance:90] (@Check[reflex|dc:44|basic|options:area-effect] save). The type of damage this Breath Weapon deals can be @Damage[12d12[acid]|options:area-damage]{acid}, @Damage[12d12[cold]|options:area-damage]{cold}, @Damage[12d12[electricity]|options:area-damage]{electricity}, @Damage[12d12[fire]|options:area-damage]{fire}, or @Damage[12d12[poison]|options:area-damage]{poison}, as chosen by the manifestation when it attacks. The manifestation can't use its focused Breath Weapon again for 2 rounds, and the next time it uses its Breath Weapon, it must deal a different type of damage than the previous usage.</p>"
                 },
                 "Improved Push": {
                     "name": "Improved Push",
@@ -3370,7 +3370,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The construct breathes in one of two ways, then can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<p>- Flame (arcane, evocation, fire) A blast of flame deals @Damage[15d10[fire]] damage to all creatures in a @Template[cone|distance:60] (@Check[reflex|dc:45|basic] save). This fire damage does not harm objects or constructs.</p>\n<p>- Weakening Gas (arcane, necromancy) A cloud of gold-flecked gas forces each creature in a @Template[cone|distance:60] to attempt a @Check[fortitude|dc:45] save; the effect lasts 1 minute.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 5}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 8}.</p>"
+                    "description": "<p>The construct breathes in one of two ways, then can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<p>- Flame (arcane, evocation, fire) A blast of flame deals @Damage[15d10[fire]|options:area-damage] damage to all creatures in a @Template[cone|distance:60] (@Check[reflex|dc:45|basic|options:area-effect] save). This fire damage does not harm objects or constructs.</p>\n<p>- Weakening Gas (arcane, necromancy) A cloud of gold-flecked gas forces each creature in a @Template[cone|distance:60] to attempt a @Check[fortitude|dc:45] save; the effect lasts 1 minute.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 5}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 8}.</p>"
                 },
                 "Reverberating Revenge": {
                     "name": "Reverberating Revenge",
@@ -3943,7 +3943,7 @@
                 },
                 "Hair Barrage": {
                     "name": "Hair Barrage",
-                    "description": "<p>The tarantula flicks its legs, flinging spiky hairs in a @Template[cone|distance:15]. This deals @Damage[4d6[piercing]|traits:area-damage] damage with a @Check[reflex|dc:25|basic] save.</p>"
+                    "description": "<p>The tarantula flicks its legs, flinging spiky hairs in a @Template[cone|distance:15]. This deals @Damage[4d6[piercing]|options:area-damage] damage with a @Check[reflex|dc:25|basic|options:area-effect] save.</p>"
                 }
             }
         }
