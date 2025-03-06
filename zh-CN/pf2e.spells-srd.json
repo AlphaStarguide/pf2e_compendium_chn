@@ -98,7 +98,7 @@
         },
         "Blood Feast": {
             "name": "血腥盛宴 Blood Feast",
-            "description": "<p>你的头部垂直分裂为一张血盆大口，吞食目标的血液，造成12d6穿刺伤害，并使用你的法术攻击骰。在法术结束后，你的头部重新缝合在一起，就像它从未分裂过一样。你获得1分钟的临时HP，数值等同于目标受到的穿刺伤害的一半。</p>\n<p>如果你是一名古革巨人，则该法术将增加2d6穿刺伤害，重击时你造成的@UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续流血伤害}也会增加1d8。这个法术不会改变古革巨人的外形。</p>\n<hr />\n<p><strong>大成功</strong> 该生物受到双倍的伤害及@Damage[1d8[bleed]]。</p>\n<p><strong>成功</strong> 该生物受到完整的伤害。</p>\n<p><strong>失败</strong> 你没有命中，该生物不受到伤害。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 穿刺伤害增加2d6，重击时的@UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{持续流血伤害}增加1。</p>",
+            "description": "<p>你的头部垂直分裂为一张血盆大口，吞食目标的血液，造成12d6穿刺伤害，并使用你的法术攻击骰。在法术结束后，你的头部重新缝合在一起，就像它从未分裂过一样。你获得1分钟的临时HP，数值等同于目标受到的穿刺伤害的一半。</p>\n<p>如果你是一名古革巨人，则该法术将增加2d6穿刺伤害，重击时你造成的@UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]也会增加1d8。这个法术不会改变古革巨人的外形。</p><hr /><p><strong>大成功</strong> 该生物受到双倍的伤害及@Damage[(@item.rank - 4)d8[bleed]]伤害。</p>\n<p><strong>成功</strong> 该生物受到完整的伤害。</p>\n<p><strong>失败</strong> 你没有命中，该生物不受到伤害。</p><hr /><p><strong>升阶（+1）</strong> 穿刺伤害增加2d6，重击时的@UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]增加1。</p>",
             "target": "一个生物",
             "range": "接触",
             "time": "2"
@@ -493,7 +493,7 @@
         },
         "Scorching Blast": {
             "name": "火能爆 Scorching Blast",
-            "description": "<p>你伸出拳头，在拳头周围激起一团火焰。在你的回合结束前，你可以使用具有攻击和专注特征的单动作，用火焰冲击30尺范围内的目标。当你这样做时，尝试远程法术攻击检定。如果命中，你造成2d8火焰伤害。如果重击，受到冲击的目标会受到@Damage[(1d6+((@item.rank -1)*2))[persistent,fire]]伤害。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 基础伤害增加1d8，重击持续火焰伤害增加2点。</p>",
+            "description": "<p>你伸出拳头，在拳头周围激起一团火焰。在你的回合结束前，你可以使用具有攻击和专注特征的单动作，用火焰冲击30尺范围内的目标。当你这样做时，尝试远程法术攻击检定。如果命中，你造成2d8火焰伤害。如果重击，受到冲击的目标会受到@Damage[(1d6+((@item.rank -1)*2))[persistent,fire]]伤害。</p><hr /><p><strong>升阶（+1）</strong> 基础伤害增加1d8，重击持续火焰伤害增加2点。</p>",
             "duration": "直到你本回合结束",
             "time": "1"
         },
@@ -1435,7 +1435,7 @@
         },
         "Scouring Pulse": {
             "name": "冲刷脉冲 Scouring Pulse",
-            "description": "<p><strong>区域</strong> 10尺半径，60尺高的圆柱形</p>\n<hr />\n<p>你集中命能淹没这片区域，清理不死生物的污秽。区域内每个生物都受到6d8命能伤害，必须尝试基础反射豁免。豁免失败的生物还会受到@Damage[1d8[persistent,vitality]]伤害。受到冲刷脉冲持续命能伤害影响的生物将包裹在无温度的光晕中，它会在5尺范围内发出明亮光照，这让它无法@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}；如果生物是@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}的，那么它在受到冲刷脉冲影响时会变为隐蔽，而不是无踪。</p>\n<hr />\n<p><strong>升阶（8环级）</strong> 命能伤害增加到9d8，持续命能伤害增加到@Damage[2d8[persistent,vitality]]伤害。在移除持续命能伤害之后，生物依然笼罩在光晕中[[/r 1d4 #Rounds]]{1d4额外轮}。</p>",
+            "description": "<p><strong>区域</strong> 10尺半径，60尺高的圆柱形</p><hr /><p>你集中命能淹没这片区域，清理不死生物的污秽。区域内每个生物都受到6d8命能伤害，必须尝试基础反射豁免。豁免失败的生物还会受到@Damage[(ternary(gte(@item.level,5),1,2))d8[persistent,vitality]]伤害。受到冲刷脉冲持续命能伤害影响的生物将包裹在无温度的光晕中，它会在5尺范围内发出明亮光照，这让它无法@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]；如果生物是@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]的，那么它在受到冲刷脉冲影响时会变为隐蔽，而不是无踪。</p><hr /><p><strong>升阶（8环级）</strong> 命能伤害增加到9d8，持续命能伤害增加到2d8。在移除持续命能伤害之后，生物依然笼罩在光晕中[[/r 1d4 #Rounds]]{1d4额外轮}。</p>",
             "range": "120尺",
             "time": "2"
         },
@@ -2288,7 +2288,7 @@
             "primarycheck": "奥法或神秘（受训）",
             "secondarycasters": "最多5",
             "secondarycheck": "奥法或神秘（必须和主要检定一致）",
-            "gmnote": "<p>The DC required to successfully awaken a portal varies based on the strength and distance between its end points. For the portals found in the Abomination Vaults Adventure Path, the DC varies according to the dungeon level on which it is located. Use the @UUID[Compendium.pf2e.journals.JournalEntry.6EdFHrIwUBD1EaBS.JournalEntryPage.pBS3DUjlzVuFgapv]{DCs by Spell Rank section} of Table 10-5 to determine the DC for a portal, using the dungeon level in place of spell rank. Thus, activating the portal on the first level of the Abomination Vaults requires a successful DC 15 check, while activating the portal on the fourth level requires a successful DC 23 check.</p><p>In the Abomination Vaults, the creature conjured depends on the dungeon level where the ritual was attempted, as listed below.</p><ul><li><strong>First Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.NQ6qRvpD9DIwVxt3]{Vampiric Mist}</li><li><strong>Second Level</strong> @UUID[Compendium.pf2e.abomination-vaults-bestiary.Actor.Nkz8Z5TrEqRePGlk]{Scalathrax}</li><li><strong>Third Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.dEAneTvoPuQXZoLR]{Gibbering Mouther}</li><li><strong>Fourth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.KgJq51AeYrENo3Db]{Will-o'-Wisp}</li><li><strong>Fifth Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.SY8pvLPqc2EgP9Xj]{Soul Eater}</li><li><strong>Sixth Level</strong> @UUID[Compendium.pf2e.abomination-vaults-bestiary.Actor.ceLvlSQsYNORH8oM]{Voidglutton}</li><li><strong>Seventh Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.ZGEf08j9q4fIPDFd]{Dread Wraith}</li><li><strong>Eighth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.LN7MXD38Zs2bDoW6]{Ghost Mage}</li><li><strong>Ninth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.TwFcW5O5J1SdsYv3]{Gosreg}</li><li><strong>Tenth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.ePJcp2ADOjJYYQ5Q]{Shining Child}</li></ul>"
+            "gmnote": "<p>The DC required to successfully awaken a portal varies based on the strength and distance between its end points. For the portals found in the Abomination Vaults Adventure Path, the DC varies according to the dungeon level on which it is located. Use the @UUID[Compendium.pf2e.journals.JournalEntry.S55aqwWIzpQRFhcq.JournalEntryPage.pBS3DUjlzVuFgapv]{DCs by Spell Rank} section to determine the DC for a portal, using the dungeon level in place of spell rank. Thus, activating the portal on the first level of the Abomination Vaults requires a successful DC 15 check, while activating the portal on the fourth level requires a successful DC 23 check.</p><p>In the Abomination Vaults, the creature conjured depends on the dungeon level where the ritual was attempted, as listed below.</p><ul><li><strong>First Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.NQ6qRvpD9DIwVxt3]{Vampiric Mist}</li><li><strong>Second Level</strong> @UUID[Compendium.pf2e.abomination-vaults-bestiary.Actor.Nkz8Z5TrEqRePGlk]{Scalathrax}</li><li><strong>Third Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.dEAneTvoPuQXZoLR]{Gibbering Mouther}</li><li><strong>Fourth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.KgJq51AeYrENo3Db]{Will-o'-Wisp}</li><li><strong>Fifth Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.SY8pvLPqc2EgP9Xj]{Soul Eater}</li><li><strong>Sixth Level</strong> @UUID[Compendium.pf2e.abomination-vaults-bestiary.Actor.ceLvlSQsYNORH8oM]{Voidglutton}</li><li><strong>Seventh Level</strong> @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.ZGEf08j9q4fIPDFd]{Dread Wraith}</li><li><strong>Eighth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.LN7MXD38Zs2bDoW6]{Ghost Mage}</li><li><strong>Ninth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.TwFcW5O5J1SdsYv3]{Gosreg}</li><li><strong>Tenth Level</strong> @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.ePJcp2ADOjJYYQ5Q]{Shining Child}</li></ul>"
         },
         "Vomit Swarm": {
             "name": "喷吐虫群 Vomit Swarm",
@@ -2303,7 +2303,7 @@
         },
         "Sanguine Mist": {
             "name": "嗜血浓雾 Sanguine Mist",
-            "description": "<p>你放出一团腥臭的吸血浓雾，它汲取活物的生命力，并将其赋予你。当你施放该法术时，在该区域中的每个活物，除了你之外，承受6d6虚能伤害，这有一次基础强韧豁免。在所有区域中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，并且在云团外的所有生物对其内的生物获得隐蔽。 </p>\n<p>在后续回合中，你每轮第一次维持该法术时，在区域中的活物承受额外@Damage[(@item.rank -2)d6[void]]伤害，这有另一次基础强韧豁免。当你维持该法术时，你也会获得该回合一个生物受到的伤害一半的临时生命值；使用承受最多伤害的生物来计算这些临时生命值。你在1分钟后失去任何剩余的临时生命值。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 该初始伤害增加2d6，并且该次要伤害增加1d6。</p>",
+            "description": "<p>你放出一团腥臭的吸血浓雾，它汲取活物的生命力，并将其赋予你。当你施放该法术时，在该区域中的每个活物，除了你之外，承受6d6虚能伤害，这有一次基础强韧豁免。在所有区域中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且在云团外的所有生物对其内的生物获得隐蔽。 </p>\n<p>在后续回合中，你每轮第一次维持该法术时，在区域中的活物承受额外@Damage[(@item.rank -2)d6[void]]伤害，这有另一次基础强韧豁免。当你维持该法术时，你也会获得该回合一个生物受到的伤害一半的临时生命值；使用承受最多伤害的生物来计算这些临时生命值。你在1分钟后失去任何剩余的临时生命值。</p><hr /><p><strong>升阶（+1）</strong> 该初始伤害增加2d6，并且该次要伤害增加1d6。</p>",
             "range": "60尺",
             "time": "2",
             "duration": "1分钟"
@@ -2318,7 +2318,7 @@
         },
         "Organsight": {
             "name": "器官视域 Organsight",
-            "description": "<p>你观察目标，如同它被解剖并陈列在你面前。在持续时间中，你在对目标基于其器官的医疗检定上获得+2环境加值，但是在查看其皮肤的医疗检定上承受-2检定减值。</p>\n<p>当你施放该法术时，使用医疗尝试一次特殊的回忆知识检定，发现并辨识一个关键器官。如果你具有和该生物相关的学识技能，你可以使用该技能代替医疗。如果你成功，下一次你通过打击或法术对该目标造成穿刺或挥砍伤害，你造成4d6额外穿刺伤害。在你的每个后续回合中，你可以使用一个单动作来再次尝试该特殊回忆知识检定。该额外伤害不会累积，所以在打击或法术之前多次尝试该检定没有额外的好处。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Uj9VFXoVMH0mTTdt]{法术效果：器官视域}</p>\n<hr />\n<p><strong>升阶（+1）</strong> 该精准伤害增加 [[/r 1d6]]{1d6}。</p>",
+            "description": "<p>你观察目标，如同它被解剖并陈列在你面前。在持续时间中，你在对目标基于其器官的医疗检定上获得+2环境加值，但是在查看其皮肤的医疗检定上承受-2检定减值。</p>\n<p>当你施放该法术时，使用医疗尝试一次特殊的回忆知识检定，发现并辨识一个关键器官。如果你具有和该生物相关的学识技能，你可以使用该技能代替医疗。如果你成功，下一次你通过打击或法术对该目标造成穿刺或挥砍伤害，你造成4d6额外穿刺伤害。在你的每个后续回合中，你可以使用一个单动作来再次尝试该特殊回忆知识检定。该额外伤害不会累积，所以在打击或法术之前多次尝试该检定没有额外的好处。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Uj9VFXoVMH0mTTdt]</p><hr /><p><strong>升阶（+1）</strong> 该精准伤害增加1d6。</p>",
             "target": "一个拥有器官的活物或不死生物",
             "range": "30尺",
             "duration": "1分钟",
@@ -3352,7 +3352,7 @@
         },
         "Shadow Blast": {
             "name": "幽影爆破 Shadow Blast",
-            "description": "<p>你利用影界的幽影物质创造一团爆炸。选择酸、钝击、寒冷、电击、火焰、力场、穿刺、挥砍、音波、或者精魂伤害，然后选择@Template[cone|distance:30]，120尺内的@Template[burst|distance:15]或者@Template[line|distance:50]。该爆炸对该区域中的每个生物造成6d8你所选择类型的伤害。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 该伤害增加1d8。</p>",
+            "description": "<p>你利用影界的幽影物质创造一团爆炸。选择@Damage[(@item.rank+1)d8[acid]]{酸蚀}、@Damage[(@item.rank+1)d8[bludgeoning]]{钝击}、@Damage[(@item.rank+1)d8[cold]]{寒冷}、@Damage[(@item.rank+1)d8[electricity]]{电击}、@Damage[(@item.rank+1)d8[fire]]{火焰}、@Damage[(@item.rank+1)d8[force]]{力场}、@Damage[(@item.rank+1)d8[piercing]]{穿刺}、@Damage[(@item.rank+1)d8[slashing]]{挥砍}、@Damage[(@item.rank+1)d8[sonic]]{音波}或者@Damage[(@item.rank+1)d8[spirit]]{精魂}伤害，然后选择@Template[cone|distance:30]，120尺内的@Template[burst|distance:15]或者@Template[line|distance:50]。该爆炸对该区域中的每个生物造成6d8你所选择类型的伤害。</p><hr /><p><strong>升阶（+1）</strong> 该伤害增加1d8。</p>",
             "range": "可变",
             "time": "2"
         },
@@ -3568,7 +3568,7 @@
         },
         "Shadow Illusion": {
             "name": "影相 Shadow Illusion",
-            "description": "<p>你塑造出一个阴影构成的生物或是静态物体，但这些事物只能存在于昏暗或黑暗光照条件的区域中，并且这些幻相会在离开这些区域中时结束。如果你创造一件阴影物体，它的体积不能超过一个20尺爆发范围；如果你制造一个阴影生物，它最大不能超过超巨型体型，占据一个最大20x20尺的空间。</p>\n<p>你制造出来的生物或是物体会如同自然存在一般存在：它们会发出声音，做出动作，摸起来像是真的，不过颜色怪异地有些黯淡。</p>\n<p>如果你使用影相创造一个生物，这相当于一个同等级的法术 @UUID[Compendium.pf2e.spells-srd.Item.f8SBoXiXQjlCKqly]{幻象生物 Illusory Creature}的效果，不过该生物的攻击可以造成3d8伤害而非通常的幻象生物的伤害。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 你可以创造的物体的占地面积增加10尺，</p>\n<p>创造生物的攻击伤害额外提升[[/r 1d8]]。</p>",
+            "description": "<p>你塑造出一个阴影构成的生物或是静态物体，但这些事物只能存在于昏暗或黑暗光照条件的区域中，并且这些幻相会在离开这些区域中时结束。如果你创造一件阴影物体，它的体积不能超过一个20尺爆发范围；如果你制造一个阴影生物，它最大不能超过超巨型体型，占据一个最大20x20尺的空间。</p>\n<p>你制造出来的生物或是物体会如同自然存在一般存在：它们会发出声音，做出动作，摸起来像是真的，不过颜色怪异地有些黯淡。</p>\n<p>如果你使用影相创造一个生物，这相当于一个同等级的法术@UUID[Compendium.pf2e.spells-srd.Item.f8SBoXiXQjlCKqly]的效果，不过该生物的攻击可以造成3d8伤害而非通常的幻象生物的伤害。</p><hr /><p><strong>升阶（+2）</strong> 你可以创造的物体的占地面积增加10尺，</p>\n<p>创造生物的攻击伤害额外提升1d8。</p>",
             "range": "500尺",
             "duration": "维持",
             "time": "2"
@@ -3809,7 +3809,7 @@
         },
         "Needle of Vengeance": {
             "name": "怨念之针 Needle of Vengeance",
-            "description": "<p>每当目标敌人试图攻击庇护主特别关照的生物时，一根锯齿长针便刺入其心灵之中。指名你自己或你的一名盟友。每当目标对被指名的生物使用敌对动作时，目标便会受到@Damage[2[mental]]伤害，进行基础意志豁免。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 伤害提升@Damage[2[mental]]点。</p>",
+            "description": "<p>每当目标敌人试图攻击庇护主特别关照的生物时，一根锯齿长针便刺入其心灵之中。指名你自己或你的一名盟友。每当目标对被指名的生物使用敌对动作时，目标便会受到2点心灵伤害，进行基础意志豁免。</p><hr /><p><strong>升阶（+1）</strong> 伤害提升2点。</p>",
             "target": "1敌人",
             "range": "30尺",
             "duration": "1分钟",
@@ -5644,7 +5644,7 @@
         },
         "Quench": {
             "name": "灭火术 Quench",
-            "description": "<p>你令区域中的空气充满水气，极度潮湿。在该区域中的非魔法火焰会自动熄灭。在该区域中的火焰生物承受@Damage[4d8[untyped]]伤害（基础强韧豁免）。选择区域中的一个魔法火焰，火焰法术，或者火焰物品，并尝试反制它。如果你成功对抗一件物品，物品会在10分钟内失去其火焰特性（例如，一件 <em>+1炽焰长剑</em>会变成 <em>+1长剑</em>）。如果目标是神器或者类似的强力物品，你的反制自动失败。</p>\n<p>当你每轮第一次维持该法术的时候，你可以移动水气区域到射程内的任何位置，但如此做只会自动熄灭非魔法火焰。</p>\n<p>如果你有反制魔法反应动作，你可以使用<em>灭火术</em>来反制任何具有火焰特征的法术，而无需准备触发动作的火焰法术，或者令其在你的法术库中。</p><hr /><p><strong>升阶（+1）</strong> 对火焰生物造成的伤害增加@Damage[2d8[untyped]]</p>",
+            "description": "<p>你令区域中的空气充满水气，极度潮湿。在该区域中的非魔法火焰会自动熄灭。在该区域中的火焰生物承受4d8伤害（基础强韧豁免）。选择区域中的一个魔法火焰，火焰法术，或者火焰物品，并尝试反制它。如果你成功对抗一件物品，物品会在10分钟内失去其火焰特性（例如，一件 <em>+1炽焰长剑</em>会变成 <em>+1长剑</em>）。如果目标是神器或者类似的强力物品，你的反制自动失败。</p>\n<p>当你每轮第一次维持该法术的时候，你可以移动水气区域到射程内的任何位置，但如此做只会自动熄灭非魔法火焰。</p>\n<p>如果你有反制魔法反应动作，你可以使用<em>灭火术</em>来反制任何具有火焰特征的法术，而无需准备触发动作的火焰法术，或者令其在你的法术库中。</p><hr /><p><strong>升阶（+1）</strong> 对火焰生物造成的伤害增加2d8</p>",
             "range": "120尺",
             "duration": "维持",
             "time": "2"
@@ -6032,7 +6032,7 @@
         },
         "Coral Eruption": {
             "name": "珊瑚涌生 Coral Eruption",
-            "description": "<p><strong>区域</strong> 2个不重叠的10尺爆发范围</p>\n<p>如刀刃般锋利的珊瑚从地面钻出，将地形转变为一片危险的珊瑚礁。如果不重叠的爆发区域中心都在水下，你可以创造第三个不重叠的，中心在水下的爆发区域。当该法术施放时在区域中的生物承受6d6穿刺伤害，并且必须尝试一次基础反射豁免。在其豁免骰中大失败的生物也会受到@Damage[1d6[bleed]]。该区域变为困难地形和危险地形。穿过该区域的生物每移入一格承受@Damage[(floor(@item.rank/2)+1)[piercing]]伤害。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 该初始穿刺伤害增加3d6，该危险地形的伤害增加1。</p>",
+            "description": "<p><strong>区域</strong> 2个不重叠的10尺爆发范围</p>\n<p>如刀刃般锋利的珊瑚从地面钻出，将地形转变为一片危险的珊瑚礁。如果不重叠的爆发区域中心都在水下，你可以创造第三个不重叠的，中心在水下的爆发区域。当该法术施放时在区域中的生物承受6d6穿刺伤害，并且必须尝试一次基础反射豁免。在其豁免骰中大失败的生物也会受到@Damage[1d6[bleed]]。该区域变为困难地形和危险地形。穿过该区域的生物每移入一格承受@Damage[(floor(@item.rank/2)+1)[piercing]]伤害。</p><hr /><p><strong>升阶（+2）</strong> 该初始穿刺伤害增加3d6，该危险地形的伤害增加1。</p>",
             "range": "120尺",
             "duration": "1分钟",
             "time": "3"
@@ -6889,7 +6889,7 @@
         },
         "Tangling Creepers": {
             "name": "缠结匐蔓 Tangling Creepers",
-            "description": "<p>茂密缠绕的蔓生植物从区域中所有表面中冒出，并充实每一块水体。。在该区域中的，在地面上移动的，在藤蔓上攀爬或者游泳的生物，在其速度上承受-10尺环境减值。每轮一次，你可以维持该法术，令藤蔓从任何方格涌出。该藤蔓具有15尺触及。对目标尝试一次法术攻击骰；如果成功，该藤蔓会将目标拽入蔓生植物中，令其 @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized} ，持续1轮，或者直到该生物逃脱（对抗你的法术DC），以先发生为准。</p>",
+            "description": "<p>茂密缠绕的蔓生植物从区域中所有表面中冒出，并充实每一块水体。。在该区域中的，在地面上移动的，在藤蔓上攀爬或者游泳的生物，在其速度上承受-10尺环境减值。每轮一次，你可以维持该法术，令藤蔓从任何方格涌出。该藤蔓具有15尺触及。对目标尝试一次法术攻击骰；如果成功，该藤蔓会将目标拽入蔓生植物中，令其@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，持续1轮，或者直到该生物@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]（对抗你的法术DC），以先发生为准。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.5RiskDnSXaRI6F4n]</p>",
             "range": "500尺",
             "duration": "10分钟",
             "time": "3"
@@ -7698,7 +7698,7 @@
         },
         "Voracious Gestalt": {
             "name": "贪食完形 Voracious Gestalt",
-            "description": "<p>你创造一个强大的灵魂实体，它通过吞噬你杀死的敌人的灵魂而生长变强。当你施放该法术时，此完形对区域中你选择的所有活物造成14d6虚能伤害，这有一次基础强韧豁免。你选择的生物在该区域中结束回合时承受@Damage[6d6[void]]伤害，这有一次基础强韧豁免。</p>\n<p>在你的每个回合的结束时，如果你在该回合杀死了一个活物，或者从你上个回合的结束至此时，该完形的伤害杀死了一个生物，你将被杀死生物的灵魂加入完形中。该弥漫范围的半径增加20尺，并且灵光的伤害增加1d6。（注意，即使你在该回合杀死了数个生物，这种增长只会发生一次。）通常决定威胁等级时，GM可以判定一个生物是否构成显著威胁，并足以增强该完形；总体上，一个等级比你低不少的生物很难成为显著威胁。</p>\n<hr />\n<p><strong>升阶（10环级）</strong> 该初始伤害增加到16d6，并且灵光的伤害从@Damage[7d6[void]]伤害开始。</p>",
+            "description": "<p>你创造一个强大的灵魂实体，它通过吞噬你杀死的敌人的灵魂而生长变强。当你施放该法术时，此完形对区域中你选择的所有活物造成14d6虚能伤害，这有一次基础强韧豁免。你选择的生物在该区域中结束回合时承受@Damage[(@item.level -3)d6[void]]伤害，这有一次基础强韧豁免。</p>\n<p>在你的每个回合的结束时，如果你在该回合杀死了一个活物，或者从你上个回合的结束至此时，该完形的伤害杀死了一个生物，你将被杀死生物的灵魂加入完形中。该弥漫范围的半径增加20尺，并且灵光的伤害增加1d6。（注意，即使你在该回合杀死了数个生物，这种增长只会发生一次。）通常决定威胁等级时，GM可以判定一个生物是否构成显著威胁，并足以增强该完形；总体上，一个等级比你低不少的生物很难成为显著威胁。</p><hr /><p><strong>升阶（10环级）</strong> 该初始伤害增加到16d6，并且灵光的伤害从7d6虚能伤害开始。</p>",
             "duration": "1分钟",
             "time": "2"
         },
@@ -8783,7 +8783,7 @@
         },
         "Wyvern Sting": {
             "name": "飞龙毒刺 Wyvern Sting",
-            "description": "<p>你复现双足飞龙的钉刺。你对接触的生物造成@Damage[3d4[piercing]]伤害，并以飞龙毒折磨它。如果目标受到穿刺伤害，它还必须尝试一次强韧豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到@Damage[5d6[poison]]伤害。</p>\n<p><strong>失败</strong> 目标感染飞龙毒并达到阶段1。</p>\n<p><strong>大失败</strong> 目标感染飞龙毒并达到阶段2。</p><hr /><p><strong>飞龙毒</strong> (毒素) <strong>等级</strong> 9</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[5d6[poison]]伤害（1轮）</p>\n<p><strong>阶段2</strong> @Damage[6d6[poison]]伤害（1轮）</p>\n<p><strong>阶段3</strong> @Damage[8d6[poison]]伤害（1轮）</p>",
+            "description": "<p>你复现双足飞龙的钉刺。你对接触的生物造成3d4穿刺伤害，并以飞龙毒折磨它。如果目标受到穿刺伤害，它还必须尝试一次强韧豁免。</p><hr /><p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到@Damage[5d6[poison]]伤害。</p>\n<p><strong>失败</strong> 目标感染飞龙毒并达到阶段1。</p>\n<p><strong>大失败</strong> 目标感染飞龙毒并达到阶段2。</p><hr /><p><strong>飞龙毒</strong>（毒素）<strong>等级</strong> 9</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[5d6[poison]]伤害（1轮）</p>\n<p><strong>阶段2</strong> @Damage[6d6[poison]]伤害（1轮）</p>\n<p><strong>阶段3</strong> @Damage[8d6[poison]]伤害（1轮）</p>",
             "target": "一个生物",
             "range": "接触",
             "time": "2"
@@ -9090,7 +9090,7 @@
         },
         "Black Tentacles": {
             "name": "黑触手 Black Tentacles",
-            "description": "<p><strong>区域</strong> 邻接一个平面的20尺爆发</p>\n<hr />\n<p>无数油滑的黑触手涌出并尝试擒抱区域内的每个生物。尝试一次法术攻击骰，对抗每个生物的强韧DC。任何你成功对抗的生物都会被 @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed} ，并且承受3d6钝击伤害。当一个生物在触手中结束其回合时，如果触手还没擒抱它，触手会尝试擒抱该生物，并对任何已经被擒抱的生物造成@Damage[1d6[bludgeoning]]伤害。</p>\n<p>触手的逃脱DC等于你的法术DC。生物可以通过攻击触手来尝试脱离它的掌控。触手的AC等于你的法术DC，并且在承受12点或更多伤害时会被摧毁。即使触手被摧毁，另外的触手们也会继续在区域中不断涌出，直到持续时间结束。你可以解消该法术。</p>",
+            "description": "<p><strong>区域</strong> 邻接一个平面的20尺爆发</p><hr /><p>无数油滑的黑触手涌出并尝试擒抱区域内的每个生物。尝试一次法术攻击骰，对抗每个生物的强韧DC。任何你成功对抗的生物都会@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei] ，并且承受3d6钝击伤害。当一个生物在触手中结束其回合时，如果触手还没擒抱它，触手会尝试擒抱该生物，并对任何已经被擒抱的生物造成@Damage[1d6[bludgeoning]]伤害。</p>\n<p>触手的逃脱DC等于你的法术DC。生物可以通过攻击触手来尝试脱离它的掌控。触手的AC等于你的法术DC，并且在承受12点或更多伤害时会被摧毁。即使触手被摧毁，另外的触手们也会继续在区域中不断涌出，直到持续时间结束。你可以解消该法术。</p>",
             "range": "120尺",
             "duration": "1分钟",
             "time": "3"
@@ -9335,7 +9335,7 @@
             "time": "reaction"
         },
         "Percussive Impact": {
-            "description": "<p>你向敌人发射一个压缩的音波球。球在撞击时爆炸，释放出强烈的音波。进行一次法术攻击。如果命中，你造成@Damage[4d8[bludgeoning]]伤害外加@Damage[(1d4[splash])[sonic]]伤害。如果重击，目标还会@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{耳聋 Deafened}1轮。</p><hr /><p><strong>升阶（+2）</strong> 钝击伤害增加4d8，音波溅射伤害增加1d4，耳聋持续时间增加2轮。</p>",
+            "description": "<p>你向敌人发射一个压缩的音波球。球在撞击时爆炸，释放出强烈的音波。进行一次法术攻击。如果命中，你造成4d8钝击伤害外加1d4音波伤害。如果重击，目标还会@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]1轮。</p><hr /><p><strong>升阶（+2）</strong> 钝击伤害增加4d8，音波溅射伤害增加1d4，耳聋持续时间增加2轮。</p>",
             "name": "巨响冲击 Percussive Impact",
             "target": "一个生物",
             "range": "60尺",
@@ -9350,7 +9350,7 @@
             "time": "2"
         },
         "Rose's Thorns": {
-            "description": "<p>长着锋利尖刺的玫瑰丛在区域内的地表发芽。玫瑰对施法时区域内的生物或在区域内结束回合的生物造成@Damage[8d8[piercing]]伤害（基础反射豁免）。豁免大失败的生物还会受到@Damage[1d8[persistent,bleed]]伤害，并且被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}1轮或直到该生物@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（对抗你的法术DC），以先发生的为准。该地区是困难地形和危害地形。穿过区域的生物，每次移动进区域内的一个方格时，就会受到@Damage[5[piercing]]伤害。每当你维持此法术，爆发半径就增加5尺。</p>\n<hr />\n<p><strong>升阶（9环级）</strong> 初始伤害增加至@Damage[12d8[piercing]]，持续流血伤害增加至@Damage[2d8[persistent,bleed]]，并且危害地形的伤害增加至@Damage[8[piercing]]。</p>",
+            "description": "<p>长着锋利尖刺的玫瑰丛在区域内的地表发芽。玫瑰对施法时区域内的生物或在区域内结束回合的生物造成8d8穿刺伤害（基础反射豁免）。豁免大失败的生物还会受到@Damage[(ternary(gte(@item.rank,9),2,1))d8[persistent,bleed]]伤害，并且被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]1轮或直到该生物@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]（对抗你的法术DC），以先发生的为准。该地区是困难地形和危害地形。穿过区域的生物，每次移动进区域内的一个方格时，就会受到@Damage[(ternary(gte(@item.rank,9),8,5))[piercing]]伤害。每当你维持此法术，爆发半径就增加5尺。</p><hr /><p><strong>升阶（9环级）</strong> 初始伤害增加至12d8，持续流血伤害增加至2d8，并且危害地形的伤害增加至8。</p>",
             "name": "玫瑰荆棘 Rose's Thorns",
             "range": "120尺",
             "duration": "1分钟",
@@ -9874,7 +9874,7 @@
             "time": "1分钟"
         },
         "Ymeri's Mark": {
-            "description": "<p>你将炼狱女王的炽热印记设置在目标身上，直接灼烧此生物的本质。这个印记会发出一种只有你能感知到的热量；只要你和目标位于相同的位面，你就能感知到它所处的方向。目标陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]且无法正常降低该状态数值。</p>\n<p>你能够在法术持续时间内的任意一刻通过解消法术来引爆印记。印记会发生以目标为中心的@Template[emanation|distance:10]区域的爆炸，这回造成@Damage[5d6[fire]]伤害（基础反射豁免）。由你选择印记的目标是否会被包含在爆炸中。</p>\n<p>当你施放该法术时，目标尝试强韧豁免来判断印记的持续时间。若法术持续时间过期并不会引爆印记。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 持续时间为1分钟。</p>\n<p><strong>失败</strong> 持续时间为1周。</p>\n<p><strong>大失败</strong> 持续时间无限。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 伤害增加[[/r 2d6]]。</p>",
+            "description": "<p>你将炼狱女王的炽热印记设置在目标身上，直接灼烧此生物的本质。这个印记会发出一种只有你能感知到的热量；只要你和目标位于相同的位面，你就能感知到它所处的方向。目标陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]且无法正常降低该状态数值。</p>\n<p>你能够在法术持续时间内的任意一刻通过解消法术来引爆印记。印记会发生以目标为中心的@Template[emanation|distance:10]区域的爆炸，这回造成5d6火焰伤害（基础反射豁免）。由你选择印记的目标是否会被包含在爆炸中。</p>\n<p>当你施放该法术时，目标尝试强韧豁免来判断印记的持续时间。若法术持续时间过期并不会引爆印记。</p><hr /><p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 持续时间为1分钟。</p>\n<p><strong>失败</strong> 持续时间为1周。</p>\n<p><strong>大失败</strong> 持续时间无限。</p><hr /><p><strong>升阶（+1）</strong> 伤害增加2d6。</p>",
             "name": "伊莫利之印 Ymeri's Mark",
             "target": "一个生物",
             "range": "接触",
@@ -9882,7 +9882,7 @@
             "time": "2"
         },
         "Beheading Buzz Saw": {
-            "description": "<p>你从金元素位面抽取炽热的残渣并将其熔铸为旋转的圆盘，在圆盘的边缘上伸展出可怖的刀片。它向前旋转，其路径上的任何人都会被切断。区域内的每个生物承受5d10挥砍伤害以及4d6持续流血伤害，并尝试一次反射豁免。</p>\n<p><strong>成功</strong> 生物不受影响。</p>\n<p><strong>失败</strong> 生物承受全额伤害。</p>\n<p><strong>大失败</strong> 生物承受双倍伤害。若生物具有头部，则必须成功通过@Check[fortitude|against:spell|traits:death,incapacitation]豁免，失败就会被斩首；除了那些不需要头部也能生存的生物之外，这会杀死任何生物。对于有多个头部的生物来说，通常只有当你切下它的最后一个头部之后才会杀死它。第二次豁免具有死亡和失能特征。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 挥砍伤害增加1d10点，持续流血伤害增加1d6点。</p>",
+            "description": "<p>你从金元素位面抽取炽热的残渣并将其熔铸为旋转的圆盘，在圆盘的边缘上伸展出可怖的刀片。它向前旋转，其路径上的任何人都会被切断。区域内的每个生物承受5d10挥砍伤害以及4d6持续流血伤害，并尝试一次反射豁免。</p>\n<p><strong>成功</strong> 生物不受影响。</p>\n<p><strong>失败</strong> 生物承受全额伤害。</p>\n<p><strong>大失败</strong> 生物承受双倍伤害。若生物具有头部，则必须成功通过@Check[fortitude|against:spell|traits:death,incapacitation]豁免，失败就会被斩首；除了那些不需要头部也能生存的生物之外，这会杀死任何生物。对于有多个头部的生物来说，通常只有当你切下它的最后一个头部之后才会杀死它。第二次豁免具有死亡和失能特征。</p><hr /><p><strong>升阶（+1）</strong> 挥砍伤害增加1d10点，持续流血伤害增加1d6点。</p>",
             "name": "断头圆锯 Beheading Buzz Saw",
             "time": "2"
         },
@@ -11278,7 +11278,7 @@
             "time": "2"
         },
         "Sacred Nimbus": {
-            "description": "<p>你召唤出一团小型松软的白色雨云，漂浮在离地面10尺处，降下温暖的受祝之水。雨水在你回合结束时对区域内的魔族，不死，和具有圣洁弱点的生物造成@Damage[5d6[spirit]]伤害。当你维持法术时，你能够以15尺飞行速度移动云到法术射程内的任意位置。雨水在与任何生物或表面接触时消散，只留下一点湿度。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 伤害提升1d6。</p>",
+            "description": "<p>你召唤出一团小型松软的白色雨云，漂浮在离地面10尺处，降下温暖的受祝之水。雨水在你回合结束时对区域内的魔族，不死，和具有圣洁弱点的生物造成5d6精魂伤害。当你维持法术时，你能够以15尺飞行速度移动云到法术射程内的任意位置。雨水在与任何生物或表面接触时消散，只留下一点湿度。</p><hr /><p><strong>升阶（+1）</strong> 伤害提升1d6。</p>",
             "name": "神圣雨云 Sacred Nimbus",
             "duration": "1分钟",
             "range": "30尺",
@@ -12072,7 +12072,7 @@
             "time": "2"
         },
         "Chthonian Wrath": {
-            "description": "<p>你呼唤了来自外层裂隙某处的力量。此法术的伤害类型（一种能量伤害以及一种物理伤害）按照下表，由掷骰结果随机决定。你对区域内的每个生物造成每种伤害类型@Damage[4d6[untyped]]伤害（合计8d6的伤害）</p><hr /><p><strong>升阶（+1）</strong> 每种类型伤害增加1d6</p><h2>恶魔之怒 Chthonian Wrath</h2><table class=\"pf2e remaster\"><thead><tr><th>[[/r 1D4]]</th><th>地域</th><th>具现</th><th>伤害和类型</th></tr></thead><tbody><tr><td>1</td><td>天空</td><td>奔腾的闪电与飞扬的破片</td><td>钝击与电击</td></tr><tr><td>2</td><td>深坑</td><td>酸液与恶魔的甲壳</td><td>酸蚀与挥砍</td></tr><tr><td>3</td><td>冻土</td><td>寒冷的空气与坚冰</td><td>钝击与寒冷</td></tr><tr><td>4</td><td>火山</td><td>锋利的火山岩与岩浆</td><td>火焰与穿刺</td></tr></tbody></table>",
+            "description": "<p>你呼唤了来自外层裂隙某处的力量。此法术的伤害类型（一种能量伤害以及一种物理伤害）按照下表，由掷骰结果随机决定。你对区域内的每个生物造成每种伤害类型4d6伤害（合计8d6的伤害）</p><hr /><p><strong>升阶（+1）</strong> 每种类型伤害增加1d6</p><h2>恶魔之怒 Chthonian Wrath</h2><table class=\"pf2e remaster\"><thead><tr><th>[[/r 1D4]]</th><th>地域</th><th>具现</th><th>伤害和类型</th></tr></thead><tbody><tr><td>1</td><td>天空</td><td>奔腾的闪电与飞扬的破片</td><td>钝击与电击</td></tr><tr><td>2</td><td>深坑</td><td>酸液与恶魔的甲壳</td><td>酸蚀与挥砍</td></tr><tr><td>3</td><td>冻土</td><td>寒冷的空气与坚冰</td><td>钝击与寒冷</td></tr><tr><td>4</td><td>火山</td><td>锋利的火山岩与岩浆</td><td>火焰与穿刺</td></tr></tbody></table>",
             "name": "恶魔之怒 Chthonian Wrath",
             "time": "2"
         },
@@ -12752,13 +12752,13 @@
             "name": "Heart's Hook",
             "description": "<p>You drive two creatures toward a fated meeting. Each will be compelled toward the other, but you can elect to have one automatically succeed on its saving throw.</p><hr /><p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature must spend the first action on its next turn to approach its partner. It can't Delay or take any reactions until it has obeyed this urge.</p>\n<p><strong>Critical Failure</strong> As failure, but the target must use all its actions on its next turn.</p>",
             "target": "two creatures",
-            "range": "120 feet",
+            "range": "120尺",
             "time": "2"
         },
         "Mimic Spell": {
             "name": "Mimic Spell",
             "description": "<p><strong>Trigger</strong> A creature you're aware of within range Casts a Spell of the same tradition as <em>mimic spell</em> and of the same or lower rank.</p><hr /><p>You learn the secrets of a spell just by watching someone else cast it. Attempt to counteract the spell cast by the triggering creature. If the spell would be counteracted, you instead gain the ability to Cast that Spell without expending a slot.</p>\n<p>On your next turn, you spend the same number of actions to Cast the Spell as the triggering creature, but you choose the targets (if any) and use your spell attack modifier or spell DC as appropriate. The spell is heightened to the same rank as mimic spell. The mimicked spell is of the same tradition as the spells you normally cast.</p>\n<p>If you don't Cast the mimicked Spell by the end of your next turn, it is lost, unless you Sustain the knowledge of it. You can Sustain this knowledge for up to 1 minute, after which it is lost.</p>",
-            "range": "120 feet",
+            "range": "120尺",
             "time": "reaction"
         },
         "Threefold Limb": {
@@ -12771,15 +12771,15 @@
         "Beseech the Sphinx": {
             "name": "Beseech the Sphinx",
             "target": "1 creature other than yourself",
-            "range": "30 feet",
-            "duration": "10 minutes",
+            "range": "30尺",
+            "duration": "10分钟",
             "time": "2",
             "description": "<p>You look to the great Sphinx constellation, wisest of all cosmic guides and favored of Phimater, asking them to lend their insight to the target. Choose one skill and one type of saving throw (Fortitude, Reflex, or Will). The target gains a +1 status bonus to those skill checks and saving throws for the duration.</p><hr /><p><strong>Heightened (4th)</strong> The status bonus increases to +2.</p>\n<p><strong>Heightened (7th)</strong> The status bonus increases to +3.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.3CzDP9Bamc1aVLyh]{Spell Effect: Beseech the Sphinx}</p>"
         },
         "The Parrot's Whisper": {
             "name": "The Parrot's Whisper",
             "target": "1 creature",
-            "range": "30 feet",
+            "range": "30尺",
             "time": "2",
             "description": "<p>You call forth an echo of the gossiping parrot from the tale of the Witch and the Weaver to whisper the secrets of a creature you can see within range. The garrulous parrot is known to chatter on for some time while deciphering the information you seek. The target must attempt a Will saving throw.</p><hr /><p><strong>Critical Success</strong> The parrot chatters about various random topics for 1 round and reveals no relevant information.</p>\n<p><strong>Success</strong> The parrot tells you the target's highest weakness at the start of your next turn. In the meantime, the parrot chatters about various random topics.</p>\n<p><strong>Failure</strong> The parrot tells you the target's highest weakness immediately, but sticks around for 1 round to chatter.</p>\n<p><strong>Critical Failure</strong> The parrot tells you the target's highest weakness immediately, and you can ask the parrot one question. You might need to collaborate with the GM to narrow down the question. At the start of your next turn, the parrot answers the question truthfully.</p>"
         },
@@ -12787,7 +12787,7 @@
             "description": "<p>Your gaze falls on a creature, filled with icy vengeance or fiery wrath. The gaze deals 1d4 damage (basic Fortitude save). It deals your choice of cold damage or fire damage and gains the appropriate trait. If you already dealt damage to the creature earlier this turn, it also takes 1 persistent damage of the gaze's type (@Damage[(@item.rank)[cold,persistent]]{persistent cold damage} or @Damage[(@item.rank)[fire,persistent]]{persistent fire damage}).</p><hr /><p><strong>Heightened (+1)</strong> The initial damage increases by 1d4 and persistent damage by 1.</p>",
             "name": "Vengeful Glare",
             "target": "one creature you can see",
-            "range": "30 feet",
+            "range": "30尺",
             "time": "1"
         },
         "Trim the Blight": {
@@ -12805,21 +12805,21 @@
         "Grasping Vine": {
             "name": "Grasping Vine",
             "target": "1 unattended object of up to 8 Bulk, or Medium or smaller creature that is currently on the ground",
-            "range": "60 feet",
+            "range": "60尺",
             "duration": "1 minute (see text)",
             "time": "2",
             "description": "<p>A thick, curling vine erupts from the ground beneath you and stretches to the target, allowing you to move it around. If the target is an item, you can move it 10 feet in any direction within range when you Cast the Spell and the first time you Sustain it each round. If the target is a creature, they must attempt a Reflex save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected and the spell ends.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} until the end of your next turn unless it Escapes (the vine's @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC is equal to your spell DC) or destroys the vine (the vine has AC 15 and 10 Hit Points), at which point the spell ends.</p>\n<p><strong>Failure</strong> The target is grabbed until it Escapes or destroys the vine, at which point the spell ends. The first time each round you Sustain this spell, you can @UUID[Compendium.pf2e.actionspf2e.Item.lOE4yjUnETTdaf2T]{Reposition} the grabbed target up to 5 feet.</p>\n<p><strong>Critical Failure</strong> As failure, and you can immediately Reposition the target up to 10 feet.</p>"
         },
         "Retreat Among the Rains": {
             "name": "Retreat Among the Rains",
-            "time": "1 day",
+            "time": "1天",
             "description": "<p>Ganhil developed this ritual to emulate the epiphanies and flowing mental states he experienced during 4718's Challenge of Sky and Heaven: intense focus, emotional acceptance, dilated perceptions, and growing awareness of elemental perfection.</p>\n<p>During the casting of this ritual, your thoughts enter a mindscape whose subjective flow of time is different, allowing you to perform retraining that would take a least a week of downtime. Your physical body still requires food or shelter during this time, so the secondary caster must nourish you with milk porridge or protect you from the elements with a raised parasol or similar item.</p><hr /><p><strong>Critical Success</strong> At the end of the ritual, you can retrain a class feature, feat, or skill.</p>\n<p><strong>Success</strong> At the end of the ritual, you can retrain a feat or skill.</p>\n<p><strong>Failure</strong> At the end of the ritual, you gain the @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} condition.</p>\n<p><strong>Critical Failure</strong> As failure, and you also suffer from starvation and thirst as if you hadn't eaten for a week, taking @Damage[(10d4+7)] damage that cannot be healed until you eat and drink.</p>",
             "cost": "at least 5 drops of water from a naturally occurring source (such as rainfall, rivers, or the seas) placed on the primary caster’s face"
         },
         "Devouring Void": {
             "name": "Devouring Void",
-            "range": "120 feet",
-            "duration": "1 minute",
+            "range": "120尺",
+            "duration": "1分钟",
             "time": "3",
             "description": "<p>Countless tears in space appear in the area, like hungry mouths. When the spell is cast and the first time each round it's sustained, living creatures in its area take 7d8 void damage (basic Fortitude save). A living creature using a move action to leave the area must succeed at a @Check[reflex] save or their action is disrupted at the edge of the area.</p><hr /><p><strong>Heightened (+1)</strong> The void damage increases by 1d8.</p>"
         },
@@ -12831,8 +12831,8 @@
         "Unravel Knowledge": {
             "name": "Unravel Knowledge",
             "target": "1 creature",
-            "range": "30 feet",
-            "duration": "1 minute",
+            "range": "30尺",
+            "duration": "1分钟",
             "time": "2",
             "description": "<p>Your patron reaches into the target's mind, plucking out their past training like pulling a thread from a cloth. Choose a single action, activity, or spell you know the target can use, such as from seeing it previously or identifying the creature's capabilities with a Recall Knowledge check. You could select, for example, the Strike action, the @UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]{Disarm} action, a dragon's breath, or the @UUID[Compendium.pf2e.spells-srd.Item.o6YCGx4lycsYpww4]{Haste} spell if you were aware the target could use them. The target attempts a Will save.</p><hr /><p><strong>Success</strong> The target is unaffected.</p>\n<p><strong>Failure</strong> The target's memories of their ability grow foggy. The first time they use the chosen ability each round, they take 3d8 mental damage. This ability is less effective if you choose an ability almost anyone can use; the target takes 3d4 mental damage instead if you choose a basic action (such as Strike, Stride, or Raise a Shield) or a skill action that can be used untrained (such as @UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{Demoralize} or Hide).</p>\n<p><strong>Critical Failure</strong> As failure, and the target takes a –2 status penalty to any check or DC for the ability the first time they use it each round.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.nTISJz13lhHlc9pk]{Spell Effect: Unravel Knowledge}</p><hr /><p><strong>Heightened (+1)</strong> The damage increases by 1d8, or by 1d4 for a basic action or untrained skill action.</p>"
         },
@@ -12841,27 +12841,27 @@
             "description": "<p>You cry out for aid, and a creature near you feels compelled to throw itself in front of the threat as the ultimate expression of their love. A target that genuinely loves the caster without magical compulsion, at their player's or the GM's discretion, fails the save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The creature moves adjacent to you, moving further than its Speed if necessary as the magic compels it to exceed its limits. It takes half the damage you would have taken, while you take the rest. If you would be reduced to 0 Hit Points, you're reduced to 1 instead.</p>\n<p><strong>Failure</strong> As success, except they take the full damage. If the damage reduces them to 0 Hit Points, they immediately die; this is a death effect.</p>",
             "name": "Love's Sacrifice",
             "target": "one creature",
-            "range": "30 feet"
+            "range": "30尺"
         },
         "Censure Falsehoods": {
             "name": "Censure Falsehoods",
             "target": "1 creature",
-            "range": "30 feet",
+            "range": "30尺",
             "time": "2",
             "description": "<p>You call on your patron to reprimand a creature that has attempted a Deception or Stealth check against you or an ally within the past month. You must be aware they did so. Whenever the target speaks, toads and serpents fall from their lips. The target attempts a Fortitude saving throw. The spell lasts as long as the target remains sickened by it.</p><hr /><p><strong>Critical Success</strong> A few animals fall from their lips, but they're otherwise unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} and if they perform an action that has the auditory trait or attempt to Cast a Spell, they must succeed at a @Check[flat|dc:5], or the action is disrupted as they choke on an animal.</p>\n<p><strong>Critical Failure</strong> As failure, and if the target attempts a Deception or Stealth check, their sickened value increases by 1 (to a maximum of @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 4}).</p>"
         },
         "Chrysopoetic Curse": {
             "name": "Chrysopoetic Curse",
             "target": "one creature",
-            "range": "30 feet",
-            "duration": "1 minute",
+            "range": "30尺",
+            "duration": "1分钟",
             "description": "<p>You grant the target the gift of riches, giving them the power to turn anything they touch to gold. The target must attempt a Will save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target's skin turns their armor and clothing partially to gold. If the target is wearing any armor or clothing, they become @UUID[Compendium.pf2e.conditionitems.Item.D5mg6Tc7Jzrj6ro7]{Encumbered}.</p>\n<p><strong>Failure</strong> As success, but the curse extends to the target's held weapons and other gear. If the target is holding any weapons or other objects, they become @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 3}, and the objects' Hardness is reduced by 5.</p>\n<p><strong>Critical Failure</strong> The curse becomes even stronger, extending to the surrounding terrain. As failure, and if the creature is standing on a solid surface, the ground in their space transmutes itself into a quagmire of liquid gold. The gold is greater difficult terrain. If the creature leaves its square (or when the curse ends), any affected terrain returns to its original shape and substance and the terrain in the new square transmutes to gold.</p>\n<p>Any objects that were turned to gold return to their previous form and original shape when they leave the target's possession or the spell ends. As long as the target did not critically succeed on their saving throw, 2d6 gp worth of gold flakes and dust are left behind as the curse recedes.</p>",
             "time": "2"
         },
         "Unsettling Knowledge": {
             "name": "Unsettling Knowledge",
             "target": "1 creature",
-            "range": "30 feet",
+            "range": "30尺",
             "duration": "varies",
             "time": "1",
             "description": "<p>You share a piece of hidden knowledge with a creature that is both upsetting and intriguing. When you Cast this Spell, choose Arcana, Nature, Occultism, Religion, or Society as the focus of this knowledge. The target must attempt a Will save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} by the knowledge you shared for 1 round.</p>\n<p><strong>Failure</strong> The target is fascinated by the knowledge for 1 minute. The target can end this fascination early by attempting a skill check to Recall Knowledge to understand the knowledge using the chosen skill (using your spell DC as the DC); regardless of the result, the target becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}, but if they failed the check, they can't reduce their frightened condition below 1 for the remainder of the spell's duration.</p>\n<p><strong>Critical Failure</strong> As failure, but the target becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} if they attempt to Recall Knowledge.</p>"
@@ -13025,7 +13025,7 @@
             "description": "<p>In a moment of dire need, you call upon ancestral power to strengthen and sustain. A soothing mist gathers around the target, granting 1d8 temporary Hit Points and ending one source of persistent acid, bleed, fire, poison, or void damage affecting it. If the creature has persistent damage from more than one of these sources, you choose the one that ends.</p>\n<p>The mists linger around the target, making them @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} until the beginning of their next turn, though this obvious concealment can't be used to Hide.</p><hr /><p><strong>Heightened (+1)</strong> The temporary Hit Points increase by 1d8.</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.Ore1RvtyWdioF5QW]{Spell Effect: Halcyon Mists}</p>",
             "name": "Halcyon Mists",
             "target": "1 willing living creature",
-            "range": "30 feet",
+            "range": "30尺",
             "time": "2"
         },
         "Restore Ground": {
