@@ -213,12 +213,12 @@
             "description": "<p>你召唤死亡的力量，迅速降临并屠杀附近的敌人。对60尺内的一个敌人造成14d10虚无伤害，需进行一次基础强韧豁免。@Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true] </p><hr /><p><strong>Level (+1) </strong>The damage increases by 1d10. </p>"
         },
         "Death Curse": {
-            "name": "Death Curse",
-            "description": "<p><strong>Trigger</strong> A foe's attack or ability reduces you to 0 Hit Points.</p><hr /><p>Bringing you closer to death is dangerous for your foes. Just before slipping into @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconsciousness}, phasing out, or dying, you utter a parting death curse. The triggering creature takes @Damage[(1+@actor.level)d4[void]] damage, with a @Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true] save.</p><hr /><p><strong>Level (+1)</strong> The damage increases by 1d4.</p>"
+            "name": "死亡诅咒 Death Curse",
+            "description": "<p><strong>Trigger</strong> 敌人的攻击或能力使你的生命值降至0。</p><hr /><p>当敌人将你逼至死亡边缘时，这是危险的。在你即将陷入昏迷、脱离相位或死亡之前，你发出临别的死亡诅咒。触发该效果的生物需进行基础强韧豁免，否则会受到6d4点虚无伤害。@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconsciousness}@Damage[(1+@actor.level)d4[void]] @Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true]</p><hr /><p><strong>Level (+1)</strong> The damage increases by 1d4.</p>"
         },
         "Deathstorm": {
-            "description": "<p>You call forth a storm of utter death, sweeping through an area and killing all those within. The deathstorm fills a @Template[type:burst|distance:20] within 120 feet of you. Creatures that enter or start their turn in the area take @Damage[(ceil(@actor.level/2))d6[void]] damage. If this void damage kills the creature, it explodes in a @Template[emanation|distance:20] of void energy, dealing the same amount of damage to creatures in the area. The storm lasts until you refresh. A creature can only take void damage from Deathstorm once per round, even if it starts its turn in the area and then enters the area, or is hit by several explosions.</p><hr /><p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
-            "name": "Deathstorm"
+            "description": "<p>你召唤出一场彻底死亡的风暴，席卷一个区域并杀死其中的所有生物。死亡风暴填满你周围120尺内的一个20尺爆发区域。进入或在该区域开始其回合的生物受到9d6虚无伤害。如果此虚无伤害导致生物死亡，它会在20尺范围内爆发虚无能量，对区域内的生物造成同等伤害。风暴持续到你再次刷新。一个生物每轮只能从死亡风暴中受到一次虚无伤害，即使它在区域开始其回合后又进入该区域，或被多次爆炸击中。@Template[type:burst|distance:20] @Damage[(ceil(@actor.level/2))d6[void]] @Template[emanation|distance:20] </p><hr /><p><strong>Level (+2)</strong> The damage increases by 1d6.</p>",
+            "name": "死亡风暴 Deathstorm"
         },
         "Deathtouch": {
             "name": "Deathtouch",
@@ -1165,12 +1165,12 @@
             "description": "<p>你披上一件由耀眼光芒构成的华服，对附近的生物造成伤害，并在它们注视你时使它们目眩。你的闪耀华服对20尺范围内的所有生物造成6d4+3点火伤害，需要进行一次基础强韧豁免。@Damage[((1+@actor.level)d4+(ceil(@actor.level/2)))[fire]] @Template[type:emanation|distance:20]@Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true]</p><p>直到你下一个回合结束前，每当一个敌人试图对你进行攻击时，它在那次攻击中会处于目眩状态（目眩状态要求敌人进行常规的纯骰，但该状态不会持续到那次攻击之后）。@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} </p><hr /><p><strong>Level (+1)</strong> The damage increases by 1d4.</p><p><strong>Level (+2)</strong> The damage increases by 1.</p>"
         },
         "Death Pulse": {
-            "name": "Death Pulse",
-            "description": "<p>You pulse death energy around you, controlling the distance to limit the destruction to the surrounding environment. You deal @Damage[(1+@actor.level)d6[void]] damage, to all creatures in an emanation up to 30 feet, with a @Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true] save. Small non-creature plants in the area, such as grass and ferns, wither and die.</p><hr /><p><strong>Level (+1) </strong>The damage increases by 1d6. </p>"
+            "name": "死亡脉冲 Death Pulse",
+            "description": "<p>你脉动着死亡能量，控制着距离以将破坏限制在周围环境。你对30尺散发范围内的所有生物造成6d6虚无伤害，需进行一次DC 0基础强韧豁免。该区域内的小植物（如草和蕨类）会枯萎死亡。@Damage[(1+@actor.level)d6[void]] @Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true] </p><hr /><p><strong>Level (+1) </strong>The damage increases by 1d6. </p>"
         },
         "Deathly Chill": {
-            "name": "Deathly Chill",
-            "description": "<p>You infuse the ice and frost surrounding a foe with a harsh and deathly chill, causing it to sap away their warmth and life. Choose a foe with the frozen condition from your ice powers within 60 feet. At the end of each of its turns, the target takes a number of d10s of damage equal to its current frozen value (for instance, 5d10 at the end of its turn if it's currently frozen 5). This damage isn't persistent damage and can't be removed in the same way as persistent damage; instead, it lasts until the target is no longer frozen, at which point the effect ends.</p>\n<hr />\n<p>@UUID[Compendium.battlezoo-eldamon-pf2e.effects.Item.GxeutBq3kooYKzH1]{Frozen (Deathly Chill)}</p>"
+            "name": "死亡寒冰 Deathly Chill",
+            "description": "<p>你将死亡的严寒注入敌人周围的冰霜中，使其逐渐失去温暖和生命。选择60尺内被你的冰威能冻结的一个敌人。在目标的每个回合结束时，其根据当前冻结值受到相应数量的d10伤害（例如，若当前冻结值为5，则在回合结束时受到5d10伤害）。此伤害不是持续伤害，不能像持续伤害那样被移除；它会持续到目标不再被冻结，此时效果结束。</p>\n<hr />\n<p>@UUID[Compendium.battlezoo-eldamon-pf2e.effects.Item.GxeutBq3kooYKzH1]{Frozen (Deathly Chill)}</p>"
         },
         "Effulgent Explosion": {
             "name": "Effulgent Explosion",
