@@ -317,6 +317,10 @@
             "description": "<p><strong>Requirements</strong> Your lantern light is shining</p>\n<hr />\n<p><strong>Effect</strong> Your lenses focus your light into a searing beam. You deal @Damage[((max(5,ceil(@actor.level/2)))d4)[fire]] damage to all creatures in a @Template[line|distance:30], with a @Check[reflex|against:class-spell|basic] saving throw against the higher of your class DC or spell DC. Your lantern light then extinguishes, and you can't use this ability or use your lantern light again for [[/r 1d4 #Recharge Lantern Beam]]{1d4 rounds}. At 11th level and every two levels thereafter, the damage increases by 1d4.</p>",
             "name": "Lantern Beam"
         },
+        "Spirit Sanctification": {
+            "description": "<p><strong>Cost</strong> 1 spirit wisp</p><hr /><p><strong>Effect</strong> You immediately purify a spirit, which grants you a protective blessing before it departs. If your next action is to cast a halcyon spell, you gain a +1 status bonus to saving throws as well as resistance to void damage equal to the rank of the halcyon spell. These effects last for 1 round.</p>",
+            "name": "Spirit Sanctification"
+        },
         "Blood Feast": {
             "description": "<p>Your vampiric animal companion attacks a bleeding foe and drinks its blood. Your companion attempts a Strike against a creature currently taking persistent bleed damage. The Strike deals 2d8 additional. If the Strike hits and deals damage, your vampiric animal companion gains temporary Hit Points equal to half your level that last for up to 1 minute.</p>",
             "name": "Blood Feast"
@@ -782,7 +786,7 @@
             "name": "Avoid Notice"
         },
         "One Moment till Glory": {
-            "description": "<p>You rally your allies, carrying them from the brink of disaster to the verge of victory. Each ally in your aura can immediately attempt a new saving throw with a +2 status bonus against one ongoing negative effect or condition currently affecting them, even if that effect would not normally allow a new saving throw.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.xHbMPpYEPwI0tmcV]{Effect: One Moment till Glory}</p>",
+            "description": "<p>You rally your allies, carrying them from the brink of disaster to the verge of victory. Each ally in your aura can immediately attempt a new saving throw with a +2 status bonus against one ongoing negative effect or condition currently affecting it that required a save. Use the result of the new save to determine the outcome of the effect, unless the new save would have a worse result than the original save, in which case nothing happens. Each ally can gain this benefit against a given effect only once.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.xHbMPpYEPwI0tmcV]{Effect: One Moment till Glory}</p>",
             "name": "One Moment till Glory"
         },
         "Secure Disguises": {
@@ -810,7 +814,7 @@
             "name": "Talon Stance"
         },
         "Flash of Grandeur": {
-            "description": "<p><strong>Trigger</strong> An enemy damages your ally, and both are in your champion's aura</p><hr /><p><strong>Effect</strong> Imperious divine light flashes out from you to surround your foe. The ally gains resistance to all damage against the triggering damage equal to 2 + your level. For 1 round, the attacker is affected by @UUID[Compendium.pf2e.spells-srd.Item.0qaqksrGGDj74HXE]{Revealing Light}.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DawVHfoPKbPJsz4k]{Effect: Champion's Resistance}</p>",
+            "description": "<p><strong>Trigger</strong> An enemy damages your ally, and both are in your champion's aura</p><hr /><p><strong>Effect</strong> Imperious divine light flashes out from you to surround your foe. The ally gains resistance to all damage against the triggering damage equal to 2 + your level. Until the end of your next turn, the attacker is affected by @UUID[Compendium.pf2e.spells-srd.Item.0qaqksrGGDj74HXE]{Revealing Light}.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DawVHfoPKbPJsz4k]{Effect: Champion's Resistance}</p>",
             "name": "Flash of Grandeur"
         },
         "Psychic Defense": {
@@ -826,7 +830,7 @@
             "name": "Expel Maelstrom"
         },
         "Liberating Step": {
-            "description": "<p><strong>Trigger</strong> An enemy damages, @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{grabs}, or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{restrains} your ally, and both are in your champion's aura</p><hr /><p>You free an ally from restraint.</p>\n<p>If the trigger was an ally taking damage, the ally gains resistance to all damage against the triggering damage equal to 2 + your level.</p>\n<p>The ally can attempt to break free of effects grabbing, restraining, @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilizing}, or @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzing} them. They either attempt a new save against one such effect that allows a save, or attempt to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} from one effect as a free action.</p>\n<p>If they can move, the ally can Step as a free action, even if they didn't need to escape.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DawVHfoPKbPJsz4k]{Effect: Champion's Resistance}</p>",
+            "description": "<p><strong>Trigger</strong> An enemy damages, @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{grabs}, or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{restrains} your ally, and both are in your champion's aura</p><hr /><p>You free an ally from restraint.</p>\n<p>If the trigger was an ally taking damage, the ally gains resistance to all damage against the triggering damage equal to 2 + your level.</p>\n<p>The ally can attempt to break free of effects grabbing, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restraining}, @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilizing}, or @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzing} them. They either attempt a new save against one such effect that allows a save, or attempt to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} from one effect as a free action.</p>\n<p>If they can move, the ally can Step as a free action, even if they didn't need to escape.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.DawVHfoPKbPJsz4k]{Effect: Champion's Resistance}</p>",
             "name": "Liberating Step"
         },
         "Goblin Jubilee": {
@@ -1661,6 +1665,10 @@
             "description": "<p>You Stride to be adjacent to a foe and [[/act demoralize]] that foe. If you succeed, the foe is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} instead of frightened 1.</p>",
             "name": "Threatening Approach"
         },
+        "Tell Me More": {
+            "description": "<p><strong>Target</strong> one creature that shares a language you speak</p>\n<p><strong>Requirements</strong> You're not in combat</p><hr /><p><strong>Effect</strong> Just batting your eyes and giving someone a familiar nudge can get them talking, ready to spill the beans about everything and everyone around them. You roll twice on all rolls to influence the target and use the better result.</p>",
+            "name": "Tell Me More"
+        },
         "Erupting Spurs": {
             "description": "<p><strong>Trigger</strong> A creature takes persistent bleed damage from your bone flense spell</p><hr /><p><strong>Effect</strong> You will the bone spurs to erupt in a particularly devastating manner, dealing @Damage[6d6[piercing]] damage (basic Fortitude save) to the triggering creature instead of the persistent bleed damage from bone flense. The duration of bone flense immediately ends.</p>",
             "name": "Erupting Spurs"
@@ -1774,7 +1782,7 @@
             "name": "Detect Magic"
         },
         "Glimpse Vulnerability": {
-            "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirement</strong> You are holding your implement;</p>\n<hr />\n<p><strong>Effect</strong> You glimpse a hidden vulnerability and then strengthen it to aid you. Select a creature you can see. Until you Glimpse Vulnerability again, that target gains weakness 2 against your unarmed and weapon Strikes.</p>",
+            "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirement</strong> You are holding your implement</p><hr /><p><strong>Effect</strong> You glimpse a hidden vulnerability and then strengthen it to aid you. Select a creature you can see. Until you Glimpse Vulnerability again, that target gains weakness 2 against your unarmed and weapon Strikes.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.H35En2lHCVzOOUMf]{Effect: Glimpse Vulnerability}</p>",
             "name": "Glimpse Vulnerability"
         },
         "Take Control": {
