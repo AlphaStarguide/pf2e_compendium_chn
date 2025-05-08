@@ -273,7 +273,7 @@
                 },
                 "Strike as One": {
                     "name": "整齐划一 Strike as One",
-                    "description": "<p><span class=\"action-glyph\">A</span>到<span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 卫队对5尺内的所有生物进行近战攻击（@Check[reflex|dc:30|basic]豁免）。该伤害取决于花费的动作：</p>\n<p><span class=\"action-glyph\">A</span> @Damage[2d8[slashing]]伤害。</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+10)[slashing]]伤害。</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+13)[slashing]]伤害。</p>"
+                    "description": "<p><span class=\"action-glyph\">A</span>到<span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 卫队对@Template[emanation|distance:5]内的所有生物进行近战攻击（@Check[reflex|dc:30|basic]豁免）。该伤害取决于花费的动作：</p>\n<p><span class=\"action-glyph\">A</span> @Damage[2d8[slashing]]伤害。</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+10)[slashing]]伤害。</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+13)[slashing]]伤害。</p>"
                 },
                 "Troop Movement": {
                     "name": "部队移动 Troop Movement",
@@ -284,7 +284,7 @@
                 },
                 "Troop Defenses": {
                     "name": "部队防御 Troop Defenses",
-                    "description": "<p><strong>阈值</strong> 160 (12方格), 80 (8方格)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
+                    "description": "<p><strong>阈值</strong> 160（3部分），80（2部分）</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Reactive Strike": {
                     "name": "Reactive Strike",
@@ -2105,7 +2105,7 @@
                 },
                 "Memory Maelstrom": {
                     "name": "记忆旋涡 Memory Maelstrom",
-                    "description": "<p>树精智库尝试用漫长生命中所收集到的大量知识淹没敌人的脑海。这对@Template[emanation|distance:40]内的每个敌人造成@Damage[5d6[mental]]伤害，目标还需尝试@Check[will|dc:32|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物依然保持镇定，不受伤害，并且在1分钟内对记忆旋涡临时免疫。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}并且受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}[[/br 2d4 #Duration Confusion]]{2d4轮}，并且陷入震慑3。</p>"
+                    "description": "<p>树精智库尝试用漫长生命中所收集到的大量知识淹没敌人的脑海。这对@Template[emanation|distance:40]内的每个敌人造成@Damage[5d6[mental]|options:area-damage]伤害，目标还需尝试@Check[will|dc:32|options:area-effect,damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物依然保持镇定，不受伤害，并且在1分钟内对记忆旋涡临时免疫。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}并且受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ][[/gmr 2d4 #Confusion Duration]]{2d4轮}，并且陷入震慑3。</p>"
                 },
                 "Improved Knockdown": {
                     "name": "Improved Knockdown",
@@ -2804,7 +2804,7 @@
                 },
                 "Hurl Net": {
                     "name": "Hurl Net",
-                    "description": "<p><strong>需求</strong> The cecaelia is holding a net in two appendages.</p>\n<hr />\n<p><strong>效果</strong> The cecaelia hurls their net, attempting to hamper a foe. The cecaelia makes a ranged Strike (with a [[/r 1d20+15 #Hurl Net]]{+15} modifier) against a Medium or smaller creature within 20 feet.</p>\n<p>On a hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} and takes a -10-foot circumstance penalty to its Speeds. On a critical hit, the creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}. The DC to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape} the net is 16. A creature adjacent to the target can Interact with the net to remove it from the target.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]{效果：Hurl Net}</p>"
+                    "description": "<p><strong>Requirements</strong> The cecaelia is holding a net in two appendages.</p><hr /><p><strong>Effect</strong> The cecaelia hurls their net, attempting to hamper a foe. The cecaelia makes a ranged Strike (with a [[/r 1d20+15 #Hurl Net]]{+15} modifier) against a Medium or smaller creature within 20 feet.</p>\n<p>On a hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and takes a -10-foot circumstance penalty to its Speeds. On a critical hit, the creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}. The DC to [[/act escape dc=16]]{Escape} the net is 16. A creature adjacent to the target can Interact with the net to remove it from the target.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]{Effect: Hurl Net}</p>"
                 },
                 "Ink Cloud": {
                     "name": "Ink Cloud",
@@ -4033,7 +4033,7 @@
                 },
                 "Ectoplasmic Form": {
                     "name": "灵质形态 Ectoplasmic Form",
-                    "description": "<p>太古缚灵龙可以穿过灵界帷幕，暂时以灵质构造的实体形态现世。太古缚灵龙在[[/gmr 1d4 #Duration Physical Form]]{1d4轮}内失去它的虚体特征，在那之前它们也可以一个自由动作变回虚体形态。一旦这个能力结束，太古缚灵龙在[[/gmr 1d4 #Recharge Ectoplasmatic Form]]{1d4轮}内无法使用此能力。当它处于灵质形态，太古缚灵龙的AC增至52并获得[[/r 125 #Temporary Hit Points]]{125点临时生命值}。它失去对精准伤害的免疫和其他全部抗力。它的近战打击造成挥砍和穿刺而不是虚能伤害。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.QMcmhifNQOPguv2t]{效果：灵质形态 (实体)}</p>"
+                    "description": "<p>太古缚灵龙可以穿过灵界帷幕，暂时以灵质构造的实体形态现世。太古缚灵龙在[[/gmr 1d4 #Duration Physical Form]]{1d4轮}内失去它的虚体特征，在那之前它们也可以一个自由动作变回虚体形态。一旦这个能力结束，太古缚灵龙在[[/gmr 1d4 #Recharge Ectoplasmatic Form]]{1d4轮}内无法使用此能力。当它处于灵质形态，太古缚灵龙的AC增至52并获得125点临时生命值。它失去对精准伤害的免疫和其他全部抗力。它的近战打击造成挥砍和穿刺而不是虚能伤害。</p>"
                 },
                 "Phase Lurch": {
                     "name": "灵界蹒跚 Phase Lurch",
@@ -8173,7 +8173,7 @@
                 },
                 "Troop Defenses": {
                     "name": "部队防御 Troop Defenses",
-                    "description": "<p><strong>阙值</strong> 160 (12方格), 80 (8方格)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
+                    "description": "<p><strong>阙值</strong> 160（3部分），80（2部分）</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Blazing Admonition": {
                     "name": "炽烈警告 Blazing Admonition",
@@ -9760,7 +9760,7 @@
                 },
                 "Troop Defenses": {
                     "name": "部队防御 Troop Defenses",
-                    "description": "<p><strong>阙值</strong> 60 (12方格), 30 (8方格)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
+                    "description": "<p><strong>阙值</strong> 60（3部分），30（2部分）</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Grave Tide": {
                     "name": "亡灵之潮 Grave Tide",
@@ -9961,11 +9961,11 @@
                 },
                 "Troop Defenses": {
                     "name": "部队防御 Troop Defenses",
-                    "description": "<p><strong>阙值</strong> 120 (12方格), 60 (8方格)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
+                    "description": "<p><strong>阙值</strong> 120（3部分），60（2部分）</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Hurl Javelins!": {
                     "name": "投掷标枪！ Hurl Javelins!",
-                    "description": "<p>部队成员投出一排标枪，在部队30英尺内一点@Template[burst|distance:10]范围内的所有生物受到@Damage[(2d6+10)[piercing]]{2d6+10穿刺伤害}（@Check[reflex|dc:26|basic]豁免）。</p>\n<p>当部队方格减少到8个或更少时，伤害区域减少为@Template[burst|distance:5]。</p>"
+                    "description": "<p>部队成员投出一排标枪，在部队30英尺内一点@Template[burst|distance:10]范围内的所有生物受到@Damage[(2d6+10)[piercing]]伤害（@Check[reflex|dc:26|basic]豁免）。</p>\n<p>当部队方格减少到2部分或更少时，伤害区域减少为@Template[burst|distance:5]。</p>"
                 },
                 "Lower Spears!": {
                     "name": "架起长矛！ Lower Spears!",
@@ -12109,7 +12109,7 @@
                 },
                 "Ectoplasmic Form": {
                     "name": "灵质形态 Ectoplasmic Form",
-                    "description": "<p>一条缚灵龙可以穿过灵界帷幕，暂时以灵质构造的实体形态现世。缚灵龙在[[/gmr 1d4 #Duration Physical Form]]{1d4轮}内失去它的虚体特征，在那之前它们也可以一个自由动作变回虚体形态。一旦这个能力结束，缚灵龙在[[/gmr 1d4 #Recharge Ectoplasmatic Form]]{1d4轮}内无法使用此能力。当它处于灵质形态，缚灵龙的AC增至43并获得100点临时生命。它失去对精准伤害的免疫和全部抗力。它的近战打击造成挥砍和穿刺而不是虚能伤害。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.QMcmhifNQOPguv2t]{效果：灵质形态 (实体)}</p>"
+                    "description": "<p>一条缚灵龙可以穿过灵界帷幕，暂时以灵质构造的实体形态现世。缚灵龙在[[/gmr 1d4 #Duration Physical Form]]{1d4轮}内失去它的虚体特征，在那之前它们也可以一个自由动作变回虚体形态。一旦这个能力结束，缚灵龙在[[/gmr 1d4 #Recharge Ectoplasmatic Form]]{1d4轮}内无法使用此能力。当它处于灵质形态，缚灵龙的AC增至43并获得100点临时生命。它失去对精准伤害的免疫和全部抗力。它的近战打击造成挥砍和穿刺而不是虚能伤害。</p>"
                 },
                 "Phase Lurch": {
                     "name": "灵界蹒跚 Phase Lurch",
