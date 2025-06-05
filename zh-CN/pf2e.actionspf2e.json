@@ -1315,7 +1315,7 @@
         },
         "Thermal Eruption": {
             "name": "活化火山 Thermal Eruption",
-            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 你专注于体内的热能并将其爆发而出。@Template[emanation|distance:20]范围内所有生物进行基础反射豁免骰受到@Damage[14d6[fire]]伤害。随后，直到你的下一次每日准备，你丧失所有休眠火山专长的效果。</p>"
+            "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 你专注于体内的热能并将其爆发而出。@Template[emanation|distance:20]范围内所有生物进行基础反射豁免骰受到@Damage[14d6[fire]|options:area-damage]伤害。随后，直到你的下一次每日准备，你丧失所有休眠火山专长的效果。</p>"
         },
         "Water Transfer": {
             "name": "借水传送 Water Transfer",
@@ -1415,7 +1415,7 @@
         },
         "Telekinetic Assault": {
             "name": "念力袭击 Telekinetic Assault",
-            "description": "<p>你的幽灵宣泄着情绪风暴，让小物件和碎屑在@Template[emanation|distance:20]范围内飞舞，幽灵每拥有2个等级造成@Damage[1d6[bludgeoning]]伤害（基础反射豁免）。使用幽灵魅力调整值的受训DC ，如果幽灵被特化则改为专家DC。</p>"
+            "description": "<p>你的幽灵宣泄着情绪风暴，让小物件和碎屑在@Template[emanation|distance:20]范围内飞舞，幽灵每拥有2个等级造成@Damage[1d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|basic|options:area-effect]豁免）。使用幽灵魅力调整值的受训DC ，如果幽灵被特化则改为专家DC。</p>"
         },
         "Long-Term Rest": {
             "name": "长期休息 Long-Term Rest",
@@ -1507,7 +1507,7 @@
         },
         "Primal Howl": {
             "name": "原始嚎叫 Primal Howl",
-            "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 你的动物伙伴发出经由自然魔法赋能的尖啸或嚎叫。@Template[cone|distance:30]范围内的所有生物受到你的伙伴@Damage[(floor(@actor.level/2))d6[sonic]]{每等级1d6点音波}伤害，且有一个等同于你法术DC的@Check[fortitude|against:spell|basic]豁免。在豁免中失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，大失败则改为@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。施加该惊惧状态是一种情绪，恐惧以及心灵效应。</p>"
+            "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 你的动物伙伴发出经由自然魔法赋能的尖啸或嚎叫。@Template[cone|distance:30]范围内的所有生物受到你的伙伴每两级@Damage[(floor(@actor.level/2))d6[sonic]|options:area-damage]伤害，且有一个等同于你法术DC的@Check[fortitude|against:spell|basic|options:area-effect]豁免。在豁免中失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，大失败则改为@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。施加该惊惧状态是一种情绪，恐惧以及心灵效应。</p>"
         },
         "Inspired Stratagem": {
             "name": "启发策略 Inspired Stratagem",
@@ -1574,7 +1574,7 @@
             "name": "喷涂武器(虚能锥形) Breath Weapon (Void) (Cone)"
         },
         "Grow": {
-            "description": "<p>你可以从一个有生命的物体上生长出一件物品，这件物体大多数情况下是一株植物。你需要制作炼金物品技能专长才能生长出一件炼金物品，或是拥有制作魔导具技能专长来制作魔法物品，又或是圈套制作技能专长来制作圈套。要生长出一件物品，你必须满足以下这些条件：</p>\n<ul>\n<li>这件物品的物品等级不能高于你的人物等级。没有被列出的物品视为0级。如果你想要制作至少物品等级有9级的物品，你在手艺技能上的熟练度必须达到大师级；如果你想要制作至少物品等级有16级的物品，你在手艺技能上的熟练度必须达到传奇级。</li>\n<li>你需要拥有这件物品的配方。参见获取配方了解更多信息。</li>\n<li>你需要拥有适合生长某一件物品的工具。虽然对于植物来说一般就是栽培或园丁工具，但你也可能采用了需要一套其他类型工具的不同技术。例如说，如果你演奏音乐来催动植物的生长，你也许取而代之使用乐器。</li>\n<li>你需要提供相当于你欲制作的物品价格一半的肥料和其他魔法养料。如果你生长检定成功，你一定会消耗掉这些肥料和魔法养料。如果你在定居点中，你通常都可以花费钱财来获取你所需的魔法养料，除非这些材料过于稀有。你可以预先携带它们或者使用草药学识来收集他们，所获取数量的价值基于@UUID[Compendium.pf2e.actionspf2e.Item.QyzlsLrqM0EEwd7j]规则。</li>\n</ul>\n<p>你需要花费4天时间进行工作。在这段时间结束时，进行一个手艺（Crafting）技能检定。GM根据你欲制作的物品的物品等级，稀有度（Rarity）和其他情况决定这个检定的DC。基于物品类型的特殊性，生长物品可能比制作要更加容易，或者反之。通常来说，GM可以使用一个简单或困难的 DC 调整来反应这种情况。</p>\n<p>如果你成功的制作了物品，那么你提供的肥料和魔法养料会被消耗掉。在这个阶段，你可以选择立刻花费相当于物品剩下部分价格的生长催化剂，来即刻完成这件物品；或者，你可以花费更多的休整期天数继续培育物品。你每多花费一天，你就可以减少你完成物品所需的催化剂价格。参照赚取收入表来计算你节省的数量，使用你的手艺技能熟练等级，并使用你的人物等级替代原表的任务等级来计算。在任意休整期天数结束后，你都可以通过花费剩下部分价值的催化剂来完成物品。如果你用来生长物品的休整期天数被打断，你可以在返回后继续工作，直到完成你的工作。</p>\n<p>你也能选择让物品基本上自行生长，只会偶尔停下来管理它，然而没有你的直接照料会让它的生长更为缓慢。每当一个季节结束时，如果在其中你花费了至少一天休整期来生长物品，进行额外的手艺技能检定并减少对应数量你完成物品所需要的催化剂。</p>\n<hr />\n<p><strong>大成功</strong> 你的尝试成功了。为了完成物品，额外生长的每天所节约的材料，使用你的角色等级+1和你在手艺技能上的熟练等级计算。</p>\n<p><strong>成功</strong> 你的尝试成功了。为了完成物品，额外生长的每天所节约的材料，使用你的角色等级和你在手艺技能上的熟练等级计算。</p>\n<p><strong>失败</strong> 你没有完成物品，但你也没有浪费任何提供的原材料。如果你想要重试，你必须从头开始整个过程。</p>\n<p><strong>大失败</strong> 你没有完成成物品，而且你浪费了你提供的原材料总价格的10%。如果你想要重试，你必须从头开始整个过程。</p>",
+            "description": "<p>你可以从一个有生命的物体上生长出一件物品，这件物体大多数情况下是一株植物。你需要制作炼金物品技能专长才能生长出一件炼金物品，或是拥有制作魔导具技能专长来制作魔法物品，又或是圈套制作技能专长来制作圈套。要生长出一件物品，你必须满足以下这些条件：</p><ul><li>这件物品的物品等级不能高于你的人物等级。没有被列出的物品视为0级。如果你想要制作至少物品等级有9级的物品，你在手艺技能上的熟练度必须达到大师级；如果你想要制作至少物品等级有16级的物品，你在手艺技能上的熟练度必须达到传奇级。</li><li>你需要拥有这件物品的配方。参见获取配方了解更多信息。</li><li>你需要拥有适合生长某一件物品的工具。虽然对于植物来说一般就是栽培或园丁工具，但你也可能采用了需要一套其他类型工具的不同技术。例如说，如果你演奏音乐来催动植物的生长，你也许取而代之使用乐器。</li><li>你需要提供相当于你欲制作的物品价格一半的肥料和其他魔法养料。如果你生长检定成功，你一定会消耗掉这些肥料和魔法养料。如果你在定居点中，你通常都可以花费钱财来获取你所需的魔法养料，除非这些材料过于稀有。你可以预先携带它们或者使用草药学识来收集他们，所获取数量的价值基于@UUID[Compendium.pf2e.actionspf2e.Item.QyzlsLrqM0EEwd7j]规则。</li></ul><p>你需要花费4天时间进行工作。在这段时间结束时，进行一个手艺（Crafting）技能检定。GM根据你欲制作的物品的物品等级，稀有度（Rarity）和其他情况决定这个检定的DC。基于物品类型的特殊性，生长物品可能比制作要更加容易，或者反之。通常来说，GM可以使用一个简单或困难的 DC 调整来反应这种情况。</p>\n<p>如果你成功的制作了物品，那么你提供的肥料和魔法养料会被消耗掉。在这个阶段，你可以选择立刻花费相当于物品剩下部分价格的生长催化剂，来即刻完成这件物品；或者，你可以花费更多的休整期天数继续培育物品。你每多花费一天，你就可以减少你完成物品所需的催化剂价格。参照@UUID[Compendium.pf2e.actionspf2e.Item.QyzlsLrqM0EEwd7j]来计算你节省的数量，使用你的手艺技能熟练等级，并使用你的人物等级替代原表的任务等级来计算。在任意休整期天数结束后，你都可以通过花费剩下部分价值的催化剂来完成物品。如果你用来生长物品的休整期天数被打断，你可以在返回后继续工作，直到完成你的工作。</p>\n<p>你也能选择让物品基本上自行生长，只会偶尔停下来管理它，然而没有你的直接照料会让它的生长更为缓慢。每当一个季节结束时，如果在其中你花费了至少一天休整期来生长物品，进行额外的手艺技能检定并减少对应数量你完成物品所需要的催化剂。</p><hr /><p><strong>大成功</strong> 你的尝试成功了。为了完成物品，额外生长的每天所节约的材料，使用你的角色等级+1和你在手艺技能上的熟练等级计算。</p>\n<p><strong>成功</strong> 你的尝试成功了。为了完成物品，额外生长的每天所节约的材料，使用你的角色等级和你在手艺技能上的熟练等级计算。</p>\n<p><strong>失败</strong> 你没有完成物品，但你也没有浪费任何提供的原材料。如果你想要重试，你必须从头开始整个过程。</p>\n<p><strong>大失败</strong> 你没有完成成物品，而且你浪费了你提供的原材料总价格的10%。如果你想要重试，你必须从头开始整个过程。</p>",
             "name": "生长 Grow"
         },
         "Breath Weapon (Void) (Line)": {
@@ -1655,7 +1655,7 @@
         },
         "Lantern Beam": {
             "name": "明灯射线 Lantern Beam",
-            "description": "<p><strong>需求</strong> 你腹部的明灯正在发光</p>\n<hr />\n<p><strong>效果</strong> 你的透镜将发出的光亮聚焦为一道灼热的射线。你对@Template[line|distance:30]内的所有生物造成@Damage[((max(5,ceil(@actor.level/2)))d4)[fire]]伤害，@Check[reflex|against:class-spell|basic]豁免对抗你的职业或法术DC取高。你的明灯随后熄灭，且在[[/r 1d4 #Recharge Lantern Beam]]{1d4轮}内无法再次使用此能力或启动明灯的光照。在11级以及此后的每两级，伤害提高1d4。</p>"
+            "description": "<p><strong>需求</strong> 你腹部的明灯正在发光</p><hr /><p><strong>效果</strong> 你的透镜将发出的光亮聚焦为一道灼热的射线。你对@Template[line|distance:30]内的所有生物造成@Damage[((max(5,ceil(@actor.level/2)))d4)[fire]|options:area-damage]伤害，@Check[reflex|against:class-spell|basic|options:area-effect]豁免对抗你的职业或法术DC取高。你的明灯随后熄灭，且在[[/r 1d4 #Recharge Lantern Beam]]{1d4轮}内无法再次使用此能力或启动明灯的光照。在11级以及此后的每两级，伤害提高1d4。</p>"
         },
         "Once Bitten": {
             "description": "<p><strong>触发</strong> 有生物与你相邻且以近战无武装打击命中了你</p>\n<p><strong>需求</strong> 你已经在自己的衣服上做好用于毒害攻击者的准备</p><hr /><p><strong>效果</strong> 触发生物遭受你往服装浸入的毒素，然后此服装上的毒素变得失效。</p>",
@@ -2046,7 +2046,7 @@
             "description": "<p><strong>消耗</strong> 1剂万用制剂</p>\n<p><strong>需求</strong> 你有一只空手</p><hr /><p><strong>效果</strong> 你进行烟火表演。你可以发射普通烟火，在20尺内产生视觉或听觉信号，也可以选择以下其中一种特殊效果。烟火表演具有列出的特征，如果其开销超过1剂万用制剂，则会在其开销条目中注明。</p>\n<p><strong>彗星 Comet</strong> <span class=\"action-glyph\">1</span> （视觉）你沿着@Template[type:line|distance:60]发射一道闪光。所有位于线型区域的空间都会被明亮光照照亮，持续至你的下个回合开始为止。作为该动作的一部分，你还能够对线型区域上的单个生物作出@UUID[Compendium.pf2e.actionspf2e.Item.sn2hIy1iIJX9Vpgj]，而且你的盟友不需要听到或者理解你。</p>\n<p><strong>礼花 Flower</strong> <span class=\"action-glyph\">1</span> （视觉）你点亮了一道光环，在空中创造出能够让人联想到花朵的形状。距离你20尺范围内的每个敌人都必须尝试1次@Check[fortitude|against:class-spell|traits:visual]豁免。失败时，该敌人会@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮，大失败时他们会目眩2轮。</p>\n<p><strong>鸣响 Salute</strong> <span class=\"action-glyph\">1</span> （听觉）你创造出了一声惊人的巨响或哨声，为你的烟火表演添加了听觉成分。当你发射鸣响表演时，能够选择60尺范围内的1名@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]或@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]的盟友。若你选择的盟友被迷魂了，这强烈的响声会被该生物的迷魂状态视同为一次敌对效果（尽管该效果本身并没有任何负面影响），并自动终止大多数迷魂状态的应用。若盟友陷入了困惑，这猛烈的声响则有可能使得盟友摆脱困惑。他能够立即尝试一次纯骰检定来试着移除困惑状态，就如同该生物在受到伤害时发生的情况一般。若困惑状态自身具有特殊规则，移除了受到伤害时作出的纯骰检定或者让纯骰检定的难度提高，那么这些规则也适用于鸣响表演。</p>"
         },
         "Offer Story": {
-            "description": "<p>你与30尺内的一个生物分享你的旅行故事。你获得伊斯特拉雷的祝福，以AC和意志豁免获得+1状态加值的形式，直到你的下个回合结束。在你分享故事的生物的下个回合，他可以使用一个具有听觉，专注，语言和心灵特征的单动作，以他自己的故事作为回应，以获得相同的祝福，直到再下一个回合的结束。</p>",
+            "description": "<p>你与30尺内的一个生物分享你的旅行故事。你获得伊斯特拉雷的祝福，以AC和意志豁免获得+1状态加值的形式，直到你的下个回合结束。在你分享故事的生物的下个回合，他可以使用一个具有听觉，专注，语言和心灵特征的单动作，以他自己的故事作为回应，以获得相同的祝福，直到再下一个回合的结束。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.dzYnksinvWvfgBVt]</p>",
             "name": "提供故事 Offer Story"
         },
         "Entreat Pact": {
