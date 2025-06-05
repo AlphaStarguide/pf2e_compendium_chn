@@ -2676,7 +2676,7 @@
                 },
                 "Apocalyptic Shriek": {
                     "name": "末日尖叫 Apocalyptic Shriek",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 极巨曼德拉草发出毁灭性的尖叫。@Template[emanation|distance:30]内每个非曼德拉草生物必须尝试一次@Check[will|dc:42|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，并且受到@Damage[8d8[mental]]伤害。</p>\n<p><strong>失败</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}，并且受到@Damage[16d8[mental]]伤害。</p>\n<p><strong>大失败</strong> 该生物恶心2，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并且受到@Damage[150[mental]]伤害。只要该生物依旧处于恶心状态，这一缓慢状态值就无法减少至1点以下。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 极巨曼德拉草发出毁灭性的尖叫。@Template[emanation|distance:30]内每个非曼德拉草生物必须尝试一次@Check[will|dc:42|options:area-effect,damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，并且受到@Damage[8d8[mental]|options:area-damage]伤害。</p>\n<p><strong>失败</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}，并且受到@Damage[16d8[mental]|options:area-damage]伤害。</p>\n<p><strong>大失败</strong> 该生物恶心2，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并且受到@Damage[150[mental]|options:area-damage]伤害。只要该生物依旧处于恶心状态，这一缓慢状态值就无法减少至1点以下。</p>"
                 },
                 "Blood Drain": {
                     "name": "吸血 Blood Drain",
@@ -4118,7 +4118,7 @@
                     "description": "<p><strong>触发</strong> 第二个生物穿过大厅中点的一个魔法传感器。</p>\n<hr />\n<p><strong>Effect</strong> 大厅两端的门猛然关闭，并在陷阱生效期间上锁（如果陷阱失效或被摧毁，门会自动打开）。大门（硬度14，HP 56[28BT]）可以通过@Check[athletics|dc:40|traits:action:force-open]检定来破拆，或者通过@Check[thievery|dc:35|traits:action:pick-a-lock]检定来开锁。陷阱骰先攻。</p>"
                 }
             },
-            "disable": "<p>@Check[thievery|dc:48]（大师）可以在触发前完全解除陷阱，@Check[thievery|dc:45]（大师）可以在陷阱骰先攻后解除其中一个闪光球体，或者@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（9环；反制DC41）可以完全解除陷阱。</p>",
+            "disable": "<p>@Check[thievery|dc:48]（大师）可以在触发前完全解除陷阱，@Check[thievery|dc:45]（大师）可以在陷阱骰先攻后解除其中一个闪光球体，或者@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（9环级；反制DC41）可以完全解除陷阱。</p>",
             "reset": "<p>陷阱在没有生物作为目标后停止运作1轮，1分钟后自动重置</p>",
             "prototypeToken": {
                 "name": "球体爆破"
@@ -4620,7 +4620,7 @@
             "items": {
                 "Tear Free": {
                     "name": "脱落 Tear Free",
-                    "description": "<p><strong>触发</strong> 有生物在不知道哪个挂环被动了手脚的情况下攀爬穿过裂口</p>\n<p><strong>效果</strong> 挂环脱落，使得攀爬者跌落20尺到裂口之中，造成@Damage[10[bludgeoning]|options:fall-damage]伤害。坠落的生物能使用@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]动作来避免坠落，不过这需要成功通过@Check[flat|dc:11]检定；失败则表示该生物伸手抓住的边缘也脱落了。 </p>"
+                    "description": "<p><strong>触发</strong> 有生物在不知道哪个挂环被动了手脚的情况下攀爬穿过裂口</p>\n<p><strong>效果</strong> 挂环脱落，使得攀爬者跌落20尺到裂口之中，造成@Damage[10[bludgeoning]|options:fall-damage]伤害。坠落的生物能使用攀爬动作来避免坠落，不过这需要成功通过@Check[flat|dc:11]检定；失败则表示该生物伸手抓住的边缘也脱落了。 </p>"
                 }
             },
             "hazarddescription": "<p>松动的抓握点从岩壁上脱落，毫无戒心的攀岩者因此跌落裂口之中。</p>",
@@ -5222,7 +5222,7 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "disable": "<p>@Check[thievery|dc:37] (专家) 就可以解除@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]其中一个台阶中隐藏的铰链，让四道台阶全部固定在当前位置。</p>",
+            "disable": "<p>@Check[thievery|dc:37]（专家）就可以解除其中一个台阶中隐藏的铰链，让四道台阶全部固定在当前位置。</p>",
             "hazarddescription": "<p>台阶向下倾斜变成一道斜坡，释放所有放置在台阶上的巨石球使之滚到北边。</p>",
             "reset": "<p>陷阱会在开门24小时后释放巨石球。台阶将巨石球释放后会自动恢复原状。</p>",
             "stealthdetails": "<p>(专家)</p>",
@@ -5471,7 +5471,7 @@
                 },
                 "Lonely Dirge": {
                     "name": "孤坟挽歌 Lonely Dirge",
-                    "description": "<p>孤坟勇士的丧葬挽歌与标准的石冢尸妖的挽歌略有不同：它单调且令人不安的诵唱会迫使 50 尺范围内的活物尝试@Check[will|dc:24]豁免。孤坟勇士在[[/gmr 1d4 #rounds]]{1d4轮}内无法吟唱新的孤坟挽歌。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标因孤独带来的痛苦而陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续至它的下个回合结束。</p>\n<p><strong>失败</strong> 目标陷入呆滞1，持续1小时。</p>\n<p><strong>大失败</strong> 目标陷入呆滞1，持续24小时，而且在对抗汲取生命的豁免检定中承受-2状态减值。</p>"
+                    "description": "<p>孤坟勇士的丧葬挽歌与标准的石冢尸妖的挽歌略有不同：它单调且令人不安的诵唱会迫使@Template[emanation|distance:50]范围内的活物尝试@Check[will|dc:24]豁免。孤坟勇士在[[/gmr 1d4 #rounds]]{1d4轮}内无法吟唱新的孤坟挽歌。</p><hr /><p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标因孤独带来的痛苦而陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续至它的下个回合结束。</p>\n<p><strong>失败</strong> 目标陷入呆滞1，持续1小时。</p>\n<p><strong>大失败</strong> 目标陷入呆滞1，持续24小时，而且在对抗汲取生命的豁免检定中承受-2状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.8ecPVgMeWDxc4jI4]</p>"
                 }
             },
             "publicNotes": "<p>作为坟冢、墓地和陵墓那多疑的守护者，石冢尸妖通常诞生于死灵仪式中。对于那些无法忍受与他们的世俗财产分离的凡人来说，（将自己）转变成一个石冢尸妖那样的不朽存在是很诱人的选择。另一种几乎同样常见的情况是，那些极其贪婪和富有的皇室或者商人常常寻找受害者来转化成石冢尸妖，以永远保护他们珍贵的财富。</p>\n<p>只有在极其罕见的情况下，一个人的贪欲才能强大到足以自发地把他变成一个石冢尸妖，而不需要黑暗仪式或强大的神力的介入。在这种情况下，最终产生的尸妖会变得无与伦比的邪恶，并且极有可能拥有罕见的珍宝。</p>\n<p>作为物质财富的守卫者，石冢尸妖与那把它在创造它的仪式上所佩戴的武器有着超自然的绑定。它们可以将死灵系能量引导到它们所佩戴的武器上。用这把剑挥出的一击会将受害者的生命力吸给尸妖。</p>",
@@ -5889,7 +5889,7 @@
                 },
                 "Ogre Spider Venom": {
                     "name": "食人魔蛛毒 Ogre Spider Venom",
-                    "description": "<p><strong>豁免</strong> @Check[fortitude|dc:22]</p>\n<p><strong>最大持续时间</strong> 6 轮</p>\n<p><strong>阶段1</strong> @Damage[1d6[poison]]伤害（1轮）</p>\n<p><strong>阶段2</strong> @Damage[1d6[poison]]伤害，@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}且@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]（1轮）</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害，笨拙1且措手不及（1轮）</p>\n<p><strong>阶段4</strong> 2d6毒素伤害且@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]（1轮）</p>"
+                    "description": "<p><strong>豁免</strong> @Check[fortitude|dc:22]</p><hr /><p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d6[poison]]伤害（1轮）</p>\n<p><strong>阶段2</strong> 1d6毒素伤害，@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}且@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]（1轮）</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害，笨拙1且措手不及（1轮）</p>\n<p><strong>阶段4</strong> 2d6毒素伤害且@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]（1轮）</p>"
                 }
             },
             "publicNotes": "<p>这些可怕的生物几乎有大象那么大。他们的眼睛长在宽大的下颚上方，其布局很容易让人联想起食人魔的冷眼狞笑。食人魔觉得食人魔蛛的面孔既有趣又可爱，但是在大多数情况下，如果食人魔试图把这些蜘蛛当宠物，结果通常是死掉的食人魔和饱餐一顿的蜘蛛。</p>",
@@ -6292,7 +6292,7 @@
             "items": {
                 "Beyond the Barrier": {
                     "name": "越过屏障 Beyond the Barrier",
-                    "description": "<p><strong>触发</strong> 洞内的生物连续使用三次交互行动，穿过洞内的屏障</p>\n<hr />\n<p><strong>效果</strong> 该生物穿过传送门进入空间深处。他可以尝试@Check[reflex|dc:42]豁免来@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]，失败后它会发现这个传送门是单向的，没有返回格拉利昂的路线。该生物在每一回合开始时受到@Damage[10d6[bludgeoning]]伤害（@Check[fortitude|dc:42|basic]豁免）并开始窒息。如果没有强大的魔法，如异界传送或许愿术，即使是能在太空深处生存的生物也会永远迷失--因为虚空之洞将他们置于星系之间难以想象的巨大鸿沟中，在那里声音无法存在，他们无法施展带有言语成分的法术。</p>"
+                    "description": "<p><strong>触发</strong> 洞内的生物连续使用三次交互行动，穿过洞内的屏障</p><hr /><p><strong>效果</strong> 该生物穿过传送门进入空间深处。他可以尝试DC42的反射豁免来[[/act grab-an-edge dc=42]]，失败后它会发现这个传送门是单向的，没有返回格拉利昂的路线。该生物在每一回合开始时受到@Damage[10d6[bludgeoning]]伤害（@Check[fortitude|dc:42|basic]豁免）并开始窒息。如果没有强大的魔法，如@UUID[Compendium.pf2e.spells-srd.Item.5bTt2CvYHPvaR7QQ]或@UUID[Compendium.pf2e.spells-srd.Item.6dDtGIUerazSHIOu]，即使是能在太空深处生存的生物也会永远迷失--因为虚空之洞将他们置于星系之间难以想象的巨大鸿沟中，在那里声音无法存在，他们无法施展带有言语成分的法术。</p>"
                 }
             },
             "prototypeToken": {
