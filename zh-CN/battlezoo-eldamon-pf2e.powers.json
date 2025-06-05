@@ -793,24 +793,24 @@
             "description": "<p>你召唤出制造日月蚀的传说星体——罗睺与计都，引发突如其来的天象异变。在@Template[type:emanation|distance:200]范围内，所有光源将熄灭1分钟，即便太阳在此区域也会被遮蔽（但星球其他区域阳光依旧正常）。</p><p>蚀影范围内的敌人必须进行@Check[type:will|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)]意志豁免，效果如下。拥有高等黑暗视觉的生物可获得+2环境加值。</p><hr /> <p><strong>大成功</strong> 目标不受影响</p> <p><strong>成功</strong> 目标因光灭现象略感不安，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}</p> <p><strong>失败</strong> 目标因光灭现象严重不安，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}</p> <p><strong>大失败</strong> 目标因光灭现象陷入极度恐慌，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}</p>"
         },
         "Reap Lives": {
-            "description": "<p>You snuff out lives on the brink of death as you refresh your death powers. Each foe within @Template[type:emanation|distance:30]{30 feet} takes @Damage[(max(1,floor(@actor.level/2)))[void]]{void damage} equal to half your level (minimum 1), and then they might die, depending on their @Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)] save.</p><p>If this kills any foes, or if there are foes in the area who died since the beginning of your last turn (typically because you killed them with your previous death power), you gain a +1 status bonus on Perception checks, saving throws, and skill checks until the end of your next turn. Either way, you Refresh your powers.</p><p>@UUID[Compendium.battlezoo-eldamon-pf2e.effects.Item.aBgD16MCKAhuBf09]{Effect: Reap Lives}</p><hr /><p><strong>Critical Success</strong> The foe is unaffected.</p><p><strong>Success</strong> The foe takes full damage.</p><p><strong>Failure</strong> The foe takes full damage. After applying the damage, if the foe has 1 Hit Points, it is reduced to 0 Hit Points.</p><p><strong>Critical Failure</strong> As failure, but the foe takes double damage instead of full damage.</p>",
-            "name": "Reap Lives"
+            "description": "<p>你通过收割濒死者的生命来刷新死亡之力。@Template[type:emanation|distance:30]{30 feet} 范围内每个敌人受到相当于你等级一半（至少1点）的@Damage[(max(1,floor(@actor.level/2)))[void]]虚空伤害，并根据其@Check[type:fortitude|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)]强韧豁免决定是否死亡。</p> <p>若此技能杀死任何敌人，或范围内有自上回合开始后死亡的敌人（通常因你之前的死亡技能所致），你获得感知检定、豁免检定和技能检定+1状态加值，持续至下回合结束。无论结果如何，你都将刷新(Refresh)所有能力。</p> <p>@UUID[Compendium.battlezoo-eldamon-pf2e.effects.Item.aBgD16MCKAhuBf09]{Effect: Reap Lives}</p> <hr /> <p><strong>大成功</strong> 目标不受影响</p> <p><strong>成功</strong> 目标受到全额伤害</p> <p><strong>失败</strong> 目标受到全额伤害。若伤害结算后生命值为1点，则降至0点</p> <p><strong>大失败</strong> 效果同失败，但目标受到双倍伤害而非全额伤害</p>",
+            "name": "生命收割 Reap Lives"
         },
         "Reaping Refresh": {
-            "name": "Reaping Refresh",
-            "description": "<p>You reap what you sowed, drawing upon the wood energy to help you refresh your powers. All foes in areas with plants you sowed take @Damage[(1+@actor.level)[piercing]] damage, with a @Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true] save. You then Refresh your powers.</p><hr /><p><strong>Level (+1) </strong>The damage increases by 1.</p>"
+            "name": "收割复苏 Reaping Refresh",
+            "description": "<p>你收割先前播下的种子，汲取植物能量来恢复自身能力。所有位于你播种区域的敌人将受到@Damage[(1+@actor.level)[piercing]]伤害，并需进行@Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true]反射豁免。随后你刷新(Refresh)所有能力。</p><hr /> <p><strong>等级(+1)</strong> 伤害增加1点</p>"
         },
         "Reborn in Flames": {
-            "name": "Reborn in Flames",
-            "description": "<p>Flames consume you and you emerge from within them cleansed and with your inner fire refreshed. As you slough off your outer form, you end all persistent damage on yourself, attempt to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} from effects giving you the grabbed or immobilized condition, attempt a saving throw against the sickened condition, and attempt a saving throw against any poisons currently affecting you.</p>\n<p>If you roll a failure or critical failure on any poison saves from Reborn in Flames, instead of progressing the poison, you don't take any further effect. You Refresh your powers.</p>"
+            "name": "浴火重生 Reborn in Flames",
+            "description": "<p>烈焰将你吞噬，而你从中涅槃重生，体内火焰重获新生。当你褪去外层形态时： • 立即结束所有持续伤害 • 尝试@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{挣脱}抓取(grabbed)或禁锢(immobilized)状态 • 对恶心(sickened)状态进行豁免检定 • 对当前影响你的所有毒素进行豁免检定</p> <p>若因浴火重生进行的毒素豁免检定失败或大失败： • 毒素不会恶化阶段 • 不会承受后续效果 • 仍会刷新(Refresh)你的能力</p>"
         },
         "Rebounding Embrace": {
-            "name": "Rebounding Embrace",
-            "description": "<p>You harden your body, rebounding and bashing those who attempt to harm you. Until you refresh, adjacent creatures that hit you with a melee attack, as well as creatures that touch you or hit you with an unarmed attack, take @Damage[@actor.level[bludgeoning]] damage. If you have resistance against physical damage or a circumstance bonus to AC, this damage is increased by half your level to @Damage[(@actor.level + floor(@actor.level/2))[bludgeoning]].</p><hr /><p><strong>Level (+1)</strong> The damage increases by 1.</p>"
+            "name": "反冲之拥 Rebounding Embrace",
+            "description": "<p>你绷紧身体，反弹撞击任何试图伤害你的对象。直到你刷新前，邻近生物若以近战攻击命中你，或任何生物触碰你、以徒手攻击命中你，将受到@Damage[@actor.level[bludgeoning]]伤害。若你拥有物理伤害抗性或AC环境加值，此伤害额外增加你等级一半的数值，变为@Damage[(@actor.level + floor(@actor.level/2))[bludgeoning]]。</p><hr /><p><strong>等级 (+1)</strong> 伤害增加1点。</p>"
         },
         "Recharge": {
-            "name": "Recharge",
-            "description": "<p>You draw upon electric charge while creating a complex matrix of electrical energy to ready your powers. You become @UUID[Compendium.battlezoo-eldamon-pf2e.conditions.Bi2aHykg6CZrQCnR]{Charged}, and then you Refresh your powers.</p>"
+            "name": "充能 Recharge",
+            "description": "<p>你在构建复杂电能矩阵的同时汲取电荷，以此刷新你的能力。你变为@UUID[Compendium.battlezoo-eldamon-pf2e.conditions.Bi2aHykg6CZrQCnR]{Charged}状态，随后刷新你的能力。</p>"
         },
         "Reflect Projectiles": {
             "name": "投射物反射 Reflect Projectiles",
@@ -861,16 +861,16 @@
             "description": "<p>你化作闪电沿直线突进，形成最长120尺的雷电轨迹。轨迹范围内的生物需进行@Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true]反射豁免，否则承受@Damage[(ceil(@actor.level/2))d12[electricity]]伤害。</p> <p>闪电形态移动时仍会触发借机攻击，但除非效果能反制驭雷疾行或直接偏转闪电，否则几乎无法影响你。抵达终点后恢复原形，移动距离等同于轨迹长度。</p> <p>选择下列一项：</p> <ul> <li>获得@UUID[Compendium.battlezoo-eldamon-pf2e.conditions.Bi2aHykg6CZrQCnR]{蓄电}状态</li> <li>释放电荷使伤害提升至@Damage[(1+@actor.level)d12[electricity]]，且轨迹最大长度增至240尺</li> </ul> <hr/> <p><strong>等级+1</strong> 释放电荷的伤害增加1d12</p> <p><strong>等级+2</strong> 基础伤害增加1d12</p>"
         },
         "Rigor Mortis": {
-            "name": "Rigor Mortis",
-            "description": "<p>You unleash a rigid line of death that partially necrotizes those within, stiffening their bodies and ruining their dexterity. You deal @Damage[(1+@actor.level)d4[void]] damage to all creatures in a @Template[type:line|distance:30], with effects depending on their Fortitude save.</p><p>At 7th level, and every 4 levels thereafter, you can increase the length of the line by 5 additional feet, to a maximum of a @Template[type:line|distance:50] at 19th level.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p><p><strong>Success</strong> The creature is slightly necrotized, taking half damage, and is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} until the end of their next turn.</p><p><strong>Failure</strong> The creature takes full damage and is clumsy 1 for 1 round as its body stiffens.</p><p><strong>Critical Failure</strong> You deal double void damage, and the target is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} for 1 round and clumsy 1 for 1 minute as its body becomes as rigid as a corpse.</p><hr /><p><strong>Level (+2) </strong>The persistent damage increases by 1d4. </p>"
+            "name": "尸僵术 Rigor Mortis",
+            "description": "<p>你释放一道僵硬的死亡之线，使范围内的生物部分坏死、躯体僵硬并丧失灵巧。对@Template[type:line|distance:30]范围内的所有生物造成@Damage[(1+@actor.level)d4[void]]伤害，具体效果取决于其强韧豁免。</p> <p>7级起，每提升4个等级，你可以将射线长度增加5尺，19级时最大可达@Template[type:line|distance:50]。</p> <hr/> <p><strong>大成功</strong> 目标不受影响。</p> <p><strong>成功</strong> 目标轻微坏死，受到半数伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}状态至其下回合结束。</p> <p><strong>失败</strong> 目标受到全额伤害，且因躯体僵硬陷入笨拙1状态1轮。</p> <p><strong>大失败</strong> 造成双倍虚空伤害，目标因躯体如尸体般僵硬，陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2}状态1轮及笨拙1状态1分钟。</p> <hr/> <p><strong>等级（+2）</strong> 持续伤害增加1d4。</p>"
         },
         "Rime Nexus": {
-            "name": "Rime Nexus",
-            "description": "<p>As you redraw and refresh patterns of ice elemental energy, frozen fractals of chill ice and snowflake patterns spread across the ground, making the ground within 30 feet of you (@Template[type:emanation|distance:30]) difficult terrain until your choice of the beginning of your next turn, or the beginning of your turn after that. You Refresh your powers.</p>"
+            "name": "霜结枢纽 Rime Nexus",
+            "description": "<p>当你重构并更新冰元素能量图谱时，极寒冰晶与雪花纹路的冰霜碎形在地面蔓延，使你周围30尺范围（@Template[type:emanation|distance:30]）成为困难地形，持续至你下回合开始或下下回合开始（由你选择）。你同时刷新所有威能。</p>"
         },
         "Rock Cover": {
-            "name": "Rock Cover",
-            "description": "<p>You draw rock around yourself, refreshing your earth energy while providing yourself and your allies cover. You gain greater cover, granting you a +4 circumstance bonus to AC, Reflex saves, and Stealth, though you can't use this cover to Hide or Sneak, since the cover clearly surrounds you and your position is obvious.</p>\n<p>Additionally, you provide standard cover, rather than lesser cover, against attacks from your foes that pass through your space, and you manipulate the rock in order to provide no cover against attacks from your allies that pass through your space. All these effects last until the beginning of your next turn. You Refresh your powers.</p>"
+            "name": "岩甲护体 Rock Cover",
+            "description": "<p>你召唤岩石包裹自身，在重整地脉能量的同时为你和盟友提供掩体。你获得高等掩体，使AC、反射豁免和潜行获得+4环境加值，但因此类掩体明显环绕着你（位置暴露），无法借此进行躲藏或潜行。</p> <p>此外，当敌方攻击穿越你所在空间时，你为其提供标准掩体（而非次级掩体）；而友方攻击穿越你所在空间时，你会操控岩石使其不获得掩体加值。所有效果持续至你下回合开始。你刷新所有能力。</p>"
         },
         "Rock Shield": {
             "name": "Rock Shield",
@@ -1350,15 +1350,15 @@
         },
         "Rampart": {
             "name": "壁垒突升 Rampart",
-            "description": "<p><strong>Requirements</strong> You're standing on a solid surface.</p><hr /><p>You cause an earthen rampart to grow from your sides, in two 30-foot lines, extending out from your body in opposite directions. If you're Small or Medium, this creates a single @Template[type:line|distance:65] with yourself at the center, though the line might be longer if you're larger.</p><p>Foes in the area take @Damage[(1+@actor.level)d8[bludgeoning]] damage, with a @Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true] save. The rampart remains until either you move or until the end of your next turn, whichever comes first.</p><p>While it lasts, you gain standard cover from the rampart against attacks from all directions, and your allies gain standard cover from attacks passing through the rampart, though the rampart doesn't provide any cover to your foes. Creatures can still move through the rampart, though the rampart's squares are greater difficult terrain for your foes.</p><hr /><p><strong>Level (+1)</strong> The damage increases by 1d8.</p>"
+            "description": "<p><strong>需求</strong> 你必须站在坚实的地面上。</p><hr /><p>你从身体两侧升起两道土石壁垒，形成两条30尺长的对立延伸线。若你为小型或中型生物，这将创造一条以你为中心的@Template[type:line|distance:65]线形区域（体型更大时长度可能增加）。</p><p>区域内的敌人受到@Damage[(1+@actor.level)d8[bludgeoning]]伤害，并需进行@Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true]反射豁免。壁垒将持续存在直至你移动或下回合结束（以先发生者为准）。</p><p>存在期间： • 你获得来自壁垒的全方位标准掩蔽 • 盟友获得穿越壁垒攻击的标准掩蔽（但敌人不享受此效果） • 生物仍可穿越壁垒，但对敌人视为高等困难地形</p><hr /><p><strong>等级 (+1)</strong> 伤害增加1d8</p>"
         },
         "Puff of Smoke": {
             "name": "烟雾喷发 Puff of Smoke",
             "description": "<p><strong>触发条件</strong> 当敌人以攻击或能力锁定你为目标，且你意识到该攻击或能力时</p> <hr /> <p>你借助火焰之力，瞬间被一团烟雾笼罩而暂时隐匿身形。你获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽状态}，此状态对触发攻击或能力生效，并持续至你下回合开始。</p>"
         },
         "Reactive Chain": {
-            "name": "Reactive Chain",
-            "description": "<p><strong>Trigger</strong> A creature within 30 feet takes electricity damage, and there's a shocked foe within 30 feet of the damaged creature who didn't take electricity damage from the same effect.</p>\n<hr />\n<p>You cause electricity to arc to a shocked foe. The triggering shocked foe takes half the electricity damage the other creature took, with a @Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true] save against your power DC (regardless of whether the initial electric effect had a different DC or no saving throw at all).</p>\n<hr />\n<p><strong>Special</strong> You can discharge to trigger and use reactive chain against a foe adjacent to you who isn't shocked.</p>"
+            "name": "闪电链反应 Reactive Chain",
+            "description": "<p><strong>触发条件</strong> 30尺内一个生物受到电击伤害，且30尺内存在另一个未受同次电击伤害的[Shocked]状态敌人。</p><hr /><p>你引导电流弧击[Shocked]状态的敌人。该触发目标将承受原电击伤害的半值，并需进行@Check[type:reflex|dc:resolve(@actor.system.proficiencies.classDCs.eldamon.dc)|basic:true]反射豁免（无论原始电击效果是否具有不同DC或无需豁免）。</p><hr /><p><strong>特殊</strong> 你可通过放电触发此能力，对相邻非[Shocked]状态的敌人使用闪电链反应。</p>"
         },
         "Refreshing Field": {
             "name": "复苏力场 Refreshing Field",
