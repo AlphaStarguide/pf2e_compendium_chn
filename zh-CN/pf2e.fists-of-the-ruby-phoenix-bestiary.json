@@ -328,7 +328,7 @@
                     "name": "Rebuild"
                 },
                 "Avalanche": {
-                    "description": "<p>The desecrated guardian thrashes its body about, causing the nearby terrain to crumble and crash down on creatures in a @Template[cone|distance:60], dealing @Damage[12d10[bludgeoning]] damage (@Check[reflex|dc:42|basic] save). It can't use Avalanche again for [[/gmr 1d4 #Recharge Avalanche]]{1d4 rounds}.</p>",
+                    "description": "<p>The desecrated guardian thrashes its body about, causing the nearby terrain to crumble and crash down on creatures in a @Template[cone|distance:60], dealing @Damage[12d10[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:42|basic|options:area-effect] save). It can't use Avalanche again for [[/gmr 1d4 #Recharge Avalanche]]{1d4 rounds}.</p>",
                     "name": "Avalanche"
                 },
                 "Constrict": {
@@ -377,7 +377,7 @@
                     "description": "<p><strong>Trigger</strong> A non-evil creature is reflected in the mirror</p>\n<hr />\n<p><strong>Effect</strong> The mirror absorbs the creature into the mirror, replacing it with an evil mirror duplicate (@Check[reflex|dc:41] to avoid being absorbed into the mirror), and rolls initiative.</p>"
                 }
             },
-            "disable": "<p>@Check[thievery|dc:40|name:Retrieve a Creature] (legendary) to retrieve a creature from the other dimension within 10 minutes of the switch (possible only if their mirror duplicate is dead), @Check[thievery|dc:45|name:Disable the Mirror] (master) to permanently disable the mirror once all mirror duplicates are dead, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (8th level; counteract DC 37) to counteract the mirror for 1 minute and prevent additional replacements during that time</p>\n<p>the mirror can't be damaged while any mirror duplicate is alive</p>",
+            "disable": "<p>@Check[thievery|dc:40|name:Retrieve a Creature] (legendary) to retrieve a creature from the other dimension within 10 minutes of the switch (possible only if their mirror duplicate is dead), @Check[thievery|dc:45|name:Disable the Mirror] (master) to permanently disable the mirror once all mirror duplicates are dead, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (8th rank; counteract DC 37) to counteract the mirror for 1 minute and prevent additional replacements during that time</p>\n<p>the mirror can't be damaged while any mirror duplicate is alive</p>",
             "hazarddescription": "<p>A magic mirror replaces characters with evil mirror duplicates from another dimension.</p>",
             "stealthdetails": "<p>(master) to notice it isn't a regular mirror</p>",
             "hp": "The mirror can't be damaged while any mirror duplicate is alive",
@@ -1183,7 +1183,7 @@
             "items": {
                 "Deadly Disarm": {
                     "name": "致命卸武 Deadly Disarm",
-                    "description": "<p>灵巧战士成功的卸武检定会对目标额外造成2d6点精准伤害。</p>"
+                    "description": "<p>灵巧战士成功的[[/act disarm]]检定会对目标额外造成@Damage[(2d6[precision])[untyped]]伤害。</p>"
                 },
                 "Tumbling Attack": {
                     "name": "翻滚攻击 Tumbling Attack",
@@ -1210,7 +1210,7 @@
             "items": {
                 "Deadly Disarm": {
                     "name": "致命卸武 Deadly Disarm",
-                    "description": "<p>灵巧战士成功的卸武检定会对目标额外造成2d6点精准伤害。</p>"
+                    "description": "<p>灵巧战士成功的[[/act disarm]]检定会对目标额外造成@Damage[(2d6[precision])[untyped]]伤害。</p>"
                 },
                 "Tumbling Attack": {
                     "name": "翻滚攻击 Tumbling Attack",
@@ -1235,7 +1235,7 @@
             },
             "name": "气流裂隙 Air Rift",
             "stealthdetails": "<p>(大师) 注意到剧场中突然发生的意外</p>",
-            "disable": "<p>@Check[arcana|dc:38|name:Air Rift Arcana|traits:hazard,environmental,magical,air]（大师）用魔法将裂隙缝合；@Check[nature|dc:40|name:Air Rift Nature|traits:hazard,environmental,magical,air]或@Check[survival|dc:40|name:Air Rift Survival|traits:hazard,environmental,magical,air]（传奇）打开足够多的门窗，降低狂风的烈度；或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（反制等级7 级；反制DC34）反制气流裂隙。</p>",
+            "disable": "<p>@Check[arcana|dc:38|name:Air Rift Arcana|traits:hazard,environmental,magical,air]（大师）用魔法将裂隙缝合；@Check[nature|dc:40|name:Air Rift Nature|traits:hazard,environmental,magical,air]或@Check[survival|dc:40|name:Air Rift Survival|traits:hazard,environmental,magical,air]（传奇）打开足够多的门窗，降低狂风的烈度；或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]（反制等级7环级；反制DC34）反制气流裂隙。</p>",
             "hazarddescription": "<p>舞台上撕开了一个通往气元素位面的入口，导致咆哮的风撕裂整个剧院。</p>",
             "routine": "<p>（1 动作）风在该区域内以随机方向吹动，气流裂隙导致50尺内的生物和物品向上、下、北、南、东或西方向被吹走（投掷d6来决定具体方向）。该区域内的生物和物体必须尝试@Check[fortitude|dc:37|traits:damaging-effect,air,environmental,magical,hazard]豁免。如果一个生物撞上了另一个同样受此效果影响的物品或生物，则双方都会因为冲击而受到@Damage[(3d8+15)[bludgeoning]]伤害。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被推离10尺，但是仅受到一半的冲击伤害。</p>\n<p><strong>失败</strong> 生物被推离20尺，被击倒地，受到全额冲击伤害。</p>\n<p><strong>大失败</strong> 生物被推离40尺，被击倒，受到双倍冲击伤害。</p>",
             "items": {
@@ -1937,7 +1937,7 @@
             },
             "name": "浮动喷火器 Floating Flamethrower",
             "stealthdetails": "<p>+23（专家）或@Check[perception|dc:38|traits:action:seek]（大师）骷髅的运行轨迹</p>",
-            "disable": "<p>三次@Check[thievery|dc:40|name:Disable an Elemental Core|traits:action:disable-a-device,hazard,magical,trap,fire]（传奇）；或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（7环；反制DC 40），每次成功都能抽出或解除一个隐藏在烈焰骷髅内的元素核心：分别位于左眼、右眼和嘴部。</p>",
+            "disable": "<p>三次@Check[thievery|dc:40|name:Disable an Elemental Core|traits:action:disable-a-device,hazard,magical,trap,fire]（传奇）；或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]（7环级；反制DC40），每次成功都能抽出或解除一个隐藏在烈焰骷髅内的元素核心：分别位于左眼、右眼和嘴部。</p>",
             "hazarddescription": "<p>一个漂浮的烈焰骷髅在竞技场以环形轨道周围盘旋，向随机方向喷出烈焰。</p>",
             "routine": "<p>（3 动作）每成功解除一次，陷阱就损失一个动作。浮动喷火器使用第一个动作喷出@Template[cone|distance:15]{15尺锥形}火焰，造成@Damage[(4d6+4)[fire]]伤害（@Check[reflex|dc:40|basic]豁免），它的第二个动作是进行一次U形随机方向的飞行，它的第三个动作是再次喷出烈焰。</p>",
             "items": {
@@ -1959,7 +1959,7 @@
             },
             "name": "寒冰地砖 Freezing Floor Tiles",
             "stealthdetails": "<p>+23（专家）或@Check[perception|dc:38|traits:action:seek]（大师）注意到四个传感器</p>",
-            "disable": "<p>@Check[thievery|dc:40|name:Disable One Sensor|traits:action:disable-a-device] (传奇)或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic} (6环；反制DC38)来解除其中一个传感器</p>",
+            "disable": "<p>@Check[thievery|dc:40|name:Disable One Sensor|traits:action:disable-a-device]（传奇）或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]（6环级；反制DC38）来解除其中一个传感器</p>",
             "hazarddescription": "<p>在竞技场的每个角落有4个传感器，可以从竞技场的随机地板上中释放冰冻魔法，阻止生物前进。</p>",
             "routine": "<p>（4 动作）每成功解除一个传感器，陷阱就损失一个动作。在每个动作中，陷阱会随机让10尺见方的竞技场地砖变为寒冰。寒冰区域内的每个生物开始回合时都会受到@Damage[(2d6+2)[cold]]伤害（@Check[reflex|dc:40|basic]豁免）。豁免大失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮；如果它已经陷入缓慢，生物则被@UUID[Compendium.pf2e.conditionitems.eIcWbB5o3pP6OIMe]{禁足 Immobilized} 轮。任意数量的火焰伤害都可以移除生物的缓慢或禁足状态。在陷阱的下个回合开始时，寒冰地板会解冻。</p>",
             "items": {
@@ -3272,7 +3272,7 @@
                 },
                 "Aim as One": {
                     "name": "弓箭齐发 Aim as One",
-                    "description": "<p>部队进行一次远程齐射，射程100尺，对@Template[burst|distance:10]{10尺爆发}范围造成[[/r 3d8+13]]伤害（@Check[reflex|dc:33|basic]豁免）。如果卫队规模被缩减至8格或更小，则爆发范围减少为@Template[burst|distance:5]{5尺}。</p>"
+                    "description": "<p>部队进行一次远程齐射，射程100尺，对@Template[burst|distance:10]{10尺爆发}范围造成@Damage[(3d8+13)[untyped]|options:area-damage]伤害（@Check[reflex|dc:33|basic|options:area-effect]豁免）。如果卫队规模被缩减至8格或更小，则爆发范围减少为@Template[burst|distance:5]。</p>"
                 },
                 "Raise Shields": {
                     "name": "举起盾墙 Raise Shields",
