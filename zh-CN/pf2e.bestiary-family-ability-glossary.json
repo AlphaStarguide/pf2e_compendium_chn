@@ -146,7 +146,7 @@
             "name": "(吸血鬼,斯特里戈伊始祖)创造子嗣 Create Spawn"
         },
         "(Vampire, Strigoi) Domain of Dusk": {
-            "description": "<p>斯特里戈伊挥了挥手，从四周的阴影中唤来秽恶的毁灭：盘绕着的黑暗，阴影般的蝙蝠、老鼠、和狼猛攻@Template[emanation|distance:30]范围内的生者目标。在此范围内的活物受到@Damage[1d6[void]]伤害 + 斯特里戈伊每有2级额外1d6 虚能伤害（@Check[fortitude|dc:|basic]豁免，对抗斯特里戈伊等级的DC）。豁免失败的生物还会因黑暗而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮（或@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮，随后目眩1轮）。斯特里戈伊始祖在1分钟内无法再次使用此能力。</p>",
+            "description": "<p>斯特里戈伊挥了挥手，从四周的阴影中唤来秽恶的毁灭：盘绕着的黑暗，阴影般的蝙蝠、老鼠、和狼猛攻@Template[emanation|distance:30]范围内的生者目标。在此范围内的活物受到@Damage[1d6[void]|options:area-damage]伤害 + 斯特里戈伊每有2级额外1d6虚能伤害（@Check[fortitude|dc:|basic|options:area-effect]豁免，对抗斯特里戈伊等级的DC）。豁免失败的生物还会因黑暗而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮（或@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮，随后目眩1轮）。斯特里戈伊始祖在1分钟内无法再次使用此能力。</p>",
             "name": "(吸血鬼,斯特里戈伊)暮色之域 Domain of Dusk"
         },
         "(Vampire, Strigoi) Shadow Form": {
@@ -471,7 +471,7 @@
         },
         "(Ghost) Telekinetic Assault": {
             "name": "(幽灵)念力袭击 Telekinetic Assault",
-            "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]区域内迸发飞溅。此区域内的生物会受到@Damage[1d6[bludgeoning]]伤害 + 每2个等级1d6点钝击伤害，此能力受@Check[reflex|dc:|basic]豁免影响。</p>\n<p>DC使用幽灵等级的高法术DC。</p>"
+            "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]区域内迸发飞溅。此区域内的生物会受到@Damage[1d6[bludgeoning]|options:area-damage]伤害 + 每2个等级1d6点钝击伤害，此能力受@Check[reflex|dc:|basic|options:area-effect]豁免影响。</p>\n<p>DC使用幽灵等级的高法术DC。</p>"
         },
         "(Ghoul) Consume Flesh": {
             "name": "(食尸鬼)啃食尸体 Consume Flesh",
@@ -551,7 +551,7 @@
         },
         "(Skeleton) Bone Powder": {
             "name": "(骷髅)击骨扬灰 Bone Powder",
-            "description": "<p>当骷髅受到物理重击伤害时，其中一根骨头碎成细粉。</p>\n<p>@Template[emanation|distance:5]范围内需要呼吸的生物受到@Damage[1d6[persistent,poison]]伤害（骷髅每有6级伤害额外加1d6）。</p>"
+            "description": "<p>当骷髅受到物理重击伤害时，其中一根骨头碎成细粉。</p>\n<p>@Template[emanation|distance:5]范围内需要呼吸的生物受到@Damage[1d6[persistent,poison]|options:area-damage]伤害（骷髅每有6级伤害额外加1d6）。</p>"
         },
         "(Skeleton) Crumbling Bones": {
             "name": "(骷髅)破碎骨架 Crumbling Bones",
@@ -727,7 +727,7 @@
         },
         "(Clockwork Creature) Malfunction - Backfire": {
             "name": "(发条生物)故障-回火 Malfunction - Backfire",
-            "description": "<p>发条机械每次在它回合开始时进行一次@Check[flat|dc:5]检定。如果失败，则它会发生回火，对@Template[cone|distance:15]范围造成@Damage[2d6[fire]]伤害，包括其自身（@Check[reflex|basic|dc:0]豁免，基于其等级的标准DC），并且本轮陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>"
+            "description": "<p>发条机械每次在它回合开始时进行一次@Check[flat|dc:5]检定。如果失败，则它会发生回火，对@Template[cone|distance:15]范围造成@Damage[2d6[fire]|options:area-damage]伤害，包括其自身（@Check[reflex|basic|dc:0|options:area-effect]豁免，基于其等级的标准DC），并且本轮陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>"
         },
         "(Clockwork Creature) Malfunction - Damaged Propulsion": {
             "name": "(发条生物)故障-动力受损 Malfunction - Damaged Propulsion",
@@ -739,7 +739,7 @@
         },
         "(Clockwork Creature) Wind-Up": {
             "name": "(发条生物)上发条 Wind-Up",
-            "description": "<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个[AAA]动作进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作[R]退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+            "description": "<p>24小时，[[/act disable-device dc=0]]，准备</p><hr /><p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个[AAA]动作进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作[R]退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
         },
         "(Coven) Contribute Spell": {
             "name": "(巫团)贡献法术 Contribute Spell",
@@ -763,7 +763,7 @@
         },
         "(Cryptid, Experimental) Energy Wave": {
             "name": "(实验性神秘生物)能量波 Energy Wave",
-            "description": "<p>实验性神秘生物释放@Template[line|distance:30]能量，该能量类型是实验性神秘生物特有的（通常是电击或火焰）。该区域内的生物受到神秘生物@Damage[1d6[damagetype]]{每个等级1d6的伤害}，@Check[reflex|dc:|basic]豁免。实验性神秘生物每过[[/gmr 1d4 #Recharge Energy Wave]]{1d4轮}能使用一次此能力。该动作具有和对应伤害类型的特征。如果塑造该生物的实验是魔法实验，该动作还具有塑能系特征以及和该次实验的魔法根源相匹配的特征（奥术、神术、异能或原能）。</p>"
+            "description": "<p>实验性神秘生物释放@Template[line|distance:30]能量，该能量类型是实验性神秘生物特有的（通常是电击或火焰）。该区域内的生物受到神秘生物@Damage[1d6[damagetype]|options:area-damage]{每个等级1d6的伤害}，@Check[reflex|dc:|basic|options:area-effect]豁免。实验性神秘生物每过[[/gmr 1d4 #Recharge Energy Wave]]{1d4轮}能使用一次此能力。该动作具有和对应伤害类型的特征。如果塑造该生物的实验是魔法实验，该动作还具有塑能系特征以及和该次实验的魔法根源相匹配的特征（奥术、神术、异能或原能）。</p>"
         },
         "(Cryptid, Experimental) Operational Flaw": {
             "name": "(实验性神秘生物)调整缺陷 Operational Flaw",
@@ -775,7 +775,7 @@
         },
         "(Cryptid, Mutant) Explosive End": {
             "name": "(突变神秘生物)自爆终局 Explosive End",
-            "description": "<p>突变神秘生物的死亡揭示了最后的惊喜，它爆炸成火焰、酸蚀、一团有毒的粘液、或者某种更奇怪的东西。选择适合突变神秘生物的伤害类型。当它死亡时，它会爆炸，对@Template[emanation|distance:10]范围内所有生物造成突变神秘生物@Damage[1d6[damagetype]]{每个等级1d6的对应类型的伤害}，@Check[reflex|dc:|basic]豁免，对抗突变神秘生物等级的标准难度DC。该伤害在3级和之后的每个奇数等级额外增加1d6。</p>"
+            "description": "<p>突变神秘生物的死亡揭示了最后的惊喜，它爆炸成火焰、酸蚀、一团有毒的粘液、或者某种更奇怪的东西。选择适合突变神秘生物的伤害类型。当它死亡时，它会爆炸，对@Template[emanation|distance:10]范围内所有生物造成突变神秘生物@Damage[1d6[damagetype]|options:area-damage]{每个等级1d6的对应类型的伤害}，@Check[reflex|dc:|basic|options:area-effect]豁免，对抗突变神秘生物等级的标准难度DC。该伤害在3级和之后的每个奇数等级额外增加1d6。</p>"
         },
         "(Cryptid, Mutant) Marrowlance": {
             "name": "(突变神秘生物)骨枪 Marrowlance",
@@ -839,7 +839,7 @@
         },
         "(Divine Warden) Divine Destruction": {
             "name": "(神圣守卫)神圣毁灭 Divine Destruction",
-            "description": "<p>当神圣守卫的生命值减少至0时，它在@Template[emanation|distance:30]范围内爆发出神圣能量，造成每个等级@Damage[1d6[damageType]]伤害。此伤害可以是命能也可以是虚能，取决于其守护神的神力源泉（如果神力源泉是可选的，则在创造神圣守卫时决定），并且此能力获得和伤害类型相同的特征。范围内的每个生物都必须尝试一次@Check[will|dc:|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物受到一半伤害。</p>\n<p><strong>成功</strong> 生物受到全伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，并且受到守护神的临时诅咒。该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1日；这是一个诅咒效果，使用神圣守卫的意志DC作为其反制DC。</p>\n<p><strong>大失败</strong> 类似失败，只是生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>"
+            "description": "<p>当神圣守卫的生命值减少至0时，它在@Template[emanation|distance:30]范围内爆发出神圣能量，造成每个等级@Damage[1d6[damageType]|options:area-damage]伤害。此伤害可以是命能也可以是虚能，取决于其守护神的神力源泉（如果神力源泉是可选的，则在创造神圣守卫时决定），并且此能力获得和伤害类型相同的特征。范围内的每个生物都必须尝试一次@Check[will|dc:|options:area-effect,damaging-effect]豁免。</p><hr /><p><strong>大成功</strong> 生物受到一半伤害。</p>\n<p><strong>成功</strong> 生物受到全伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，并且受到守护神的临时诅咒。该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1日；这是一个诅咒效果，使用神圣守卫的意志DC作为其反制DC。</p>\n<p><strong>大失败</strong> 类似失败，只是生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>"
         },
         "(Divine Warden) Divine Domain Spells": {
             "name": "(神圣守卫)神术领域法术 Divine Domain Spells",
