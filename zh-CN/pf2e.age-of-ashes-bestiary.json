@@ -194,7 +194,7 @@
                 },
                 "Channel Dragonstorm": {
                     "name": "引导龙灾 Channel Dragonstorm",
-                    "description": "<p>活化龙灾向着@Template[cone|distance:30]区域引导龙灾能量。这会对锥形区域内的生物造成@Damage[3d8[acid],3d8[cold],3d8[electricity],3d8[fire],3d8[poison]]{3d8点酸蚀、3d8点寒冷、3d8点电击、3d8点火焰和3d8点毒素伤害}（@Check[reflex|dc:40|basic]豁免）。活化龙灾在[[/gmr 1d4 #Recharge Channel Dragonstorm]]{1d4轮}内无法再次使用引导龙灾。</p>"
+                    "description": "<p>活化龙灾向着@Template[cone|distance:30]区域引导龙灾能量。这会对锥形区域内的生物造成@Damage[3d8[acid],3d8[cold],3d8[electricity],3d8[fire],3d8[poison]|options:area-damage]伤害（@Check[reflex|dc:40|basic|options:area-effect]豁免）。活化龙灾在[[/gmr 1d4 #Recharge Channel Dragonstorm]]{1d4轮}内无法再次使用引导龙灾。</p>"
                 },
                 "Destructive Strikes": {
                     "name": "毁灭打击 Destructive Strikes",
@@ -1610,7 +1610,7 @@
             "items": {
                 "Death Throes": {
                     "name": "死之剧痛 Death Throes",
-                    "description": "<p>当其中一名茵诺文的助手死亡时，他的身体会在恶心的闷响中爆裂开来，迸发出有毒的内脏和毒性气体。所有位于@Template[burst|distance:20]区域内的生物必须尝试@Check[fortitude|dc:38]豁免来抵御这场毒性爆炸。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>失败</strong> 生物承受@Damage[7d8[poison]]伤害。</p>\n<p><strong>大失败</strong> 生物承受@Damage[14d8[poison],2d8[persistent,poison]]{14d8毒素伤害2d8持续毒素伤害}。</p>"
+                    "description": "<p>当其中一名茵诺文的助手死亡时，他的身体会在恶心的闷响中爆裂开来，迸发出有毒的内脏和毒性气体。所有位于@Template[burst|distance:20]区域内的生物必须尝试@Check[fortitude|dc:38|options:area-effect,damaging-effect]豁免来抵御这场毒性爆炸。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>失败</strong> 生物承受@Damage[7d8[poison]|options:area-damage]伤害。</p>\n<p><strong>大失败</strong> 生物承受@Damage[14d8[poison],2d8[persistent,poison]|options:area-damage]伤害。</p>"
                 },
                 "Fast Healing 20": {
                     "name": "快速治疗20 Fast Healing 20",
@@ -3426,7 +3426,7 @@
                     "name": "地火喷发 Volcanic Eruption"
                 },
                 "Breath Weapon": {
-                    "description": "<p>龙牧师喷出火焰对@Template[cone|distance:30]区域造成@Damage[7d6[fire]]伤害（@Check[reflex|dc:23|basic]豁免）。</p>\n<p>他在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息。</p>",
+                    "description": "<p>龙牧师喷出火焰对@Template[cone|distance:30]区域造成@Damage[7d6[fire]|options:area-damage]伤害（@Check[reflex|dc:23|basic|options:area-effect]豁免）。</p>\n<p>他在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息。</p>",
                     "name": "吐息 Breath Weapon"
                 },
                 "Twisting Tail": {
