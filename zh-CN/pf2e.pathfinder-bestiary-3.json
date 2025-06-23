@@ -2648,7 +2648,7 @@
                 },
                 "Death Blaze": {
                     "name": "Death Blaze",
-                    "description": "<p>When the vanguard dies, their body combusts in a blaze of fire and armor shrapnel.</p>\n<p>All creatures within a @Template[emanation|distance:10] take @Damage[3d6[fire],3d6[piercing]]{3d6 fire damage and 3d6 piercing damage} (@Check[reflex|dc:19|basic] save).</p>\n<p>The vanguard's armor is destroyed in the blaze, but their other gear is unaffected and left in a pile where they died.</p>"
+                    "description": "<p>When the vanguard dies, their body combusts in a blaze of fire and armor shrapnel.</p>\n<p>All creatures within a @Template[emanation|distance:10] take @Damage[3d6[fire],3d6[piercing]|options:area-damage]{3d6 fire damage and 3d6 piercing damage} (@Check[reflex|dc:19|basic|options:area-effect] save).</p>\n<p>The vanguard's armor is destroyed in the blaze, but their other gear is unaffected and left in a pile where they died.</p>"
                 },
                 "Call to Arms": {
                     "name": "Call to Arms",
@@ -4017,7 +4017,7 @@
                 },
                 "Consume Souls": {
                     "name": "吞噬灵魂 Consume Souls",
-                    "description": "<p>太古缚灵龙深深地吸一口气，尝试吸食附近生物的灵魂。@Template[cone|distance:60]内每个生物必须进行@Check[will|dc:46|traits:damaging-effect]豁免。</p>\n<p>太古缚灵龙在[[/gmr 1d4 #Recharge Consume Souls]]{1d4轮}内无法使用吞噬灵魂。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}并受到@Damage[100[void]]伤害。</p>\n<p><strong>大失败</strong> 此生物被杀。只要太古缚灵龙还活着，被杀的生物无法通过任何方式复活。</p>"
+                    "description": "<p>太古缚灵龙深深地吸一口气，尝试吸食附近生物的灵魂。@Template[cone|distance:60]内每个生物必须进行@Check[will|dc:46|options:area-effect,damaging-effect]豁免。</p>\n<p>太古缚灵龙在[[/gmr 1d4 #Recharge Consume Souls]]{1d4轮}内无法使用吞噬灵魂。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}并受到@Damage[100[void]|options:area-damage]伤害。</p>\n<p><strong>大失败</strong> 此生物被杀。只要太古缚灵龙还活着，被杀的生物无法通过任何方式复活。</p>"
                 },
                 "Divine Dispelling": {
                     "name": "驱除神术 Divine Dispelling",
@@ -5274,7 +5274,7 @@
             "items": {
                 "Break Ground": {
                     "name": "裂地 Break Ground",
-                    "description": "<p>地骸跺了跺脚，@Template[emanation|distance:30]范围内的土地破碎并泛起涟漪，喷射出锋利、交错的石质尖刺，对该区域内的生物造成@Damage[3d8[piercing]]伤害（@Check[reflex|dc:26|basic]豁免）。</p>\n<p>该区域将变为困难和有害地形，每个格子对经过它们的生物造成@Damage[3[piercing]]伤害。地骸免疫这些效果。</p>\n<p>处于@UUID[Compendium.pf2e.spells-srd.Item.Dbd5W6G8U2vzWolN]{祝圣术 Consecrate}仪式、或防护混乱或邪恶的@UUID[Compendium.pf2e.spells-srd.Item.mpGCMTldMVa0pWYs]{防护法阵 Circle of Protection}法术的作用下的土地无法被此能力影响。</p>"
+                    "description": "<p>地骸跺了跺脚，@Template[emanation|distance:30]范围内的土地破碎并泛起涟漪，喷射出锋利、交错的石质尖刺，对该区域内的生物造成@Damage[3d8[piercing]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免）。</p>\n<p>该区域将变为困难和有害地形，每个格子对经过它们的生物造成@Damage[3[piercing]]伤害。地骸免疫这些效果。</p>\n<p>处于@UUID[Compendium.pf2e.spells-srd.Item.Dbd5W6G8U2vzWolN]仪式、或防护混乱或邪恶的@UUID[Compendium.pf2e.spells-srd.Item.mpGCMTldMVa0pWYs]法术的作用下的土地无法被此能力影响。</p>"
                 },
                 "Earth Glide": {
                     "name": "潜地 Earth Glide",
@@ -10575,7 +10575,7 @@
             "items": {
                 "Death Throes": {
                     "name": "垂死挣扎 Death Throes",
-                    "description": "<p>当一只硫磺丧尸死亡时，它的身躯炸成@Template[burst|distance:30]范围的火焰，对该区域内的每个生物造成@Damage[2d10[bludgeoning],2d10[fire]]{2d10钝击伤害和2d10火焰伤害}（@Check[reflex|dc:21|basic]豁免）。</p>"
+                    "description": "<p>当一只硫磺丧尸死亡时，它的身躯炸成@Template[burst|distance:30]范围的火焰，对该区域内的每个生物造成@Damage[2d10[bludgeoning],2d10[fire]|options:area-damage]伤害（@Check[reflex|dc:21|basic|options:area-effect]豁免）。</p>"
                 },
                 "Slow": {
                     "name": "缓慢 Slow",
@@ -10652,7 +10652,7 @@
                 },
                 "Colossal Echo": {
                     "name": "Colossal Echo",
-                    "description": "<p><strong>Requirements</strong> The swordkeeper has a central weapon</p>\n<hr />\n<p><strong>Effect</strong> The swordkeeper projects a massive echoblade held in all four hands, dealing @Damage[9d8[force]] damage to all creatures in a @Template[line|distance:30] (@Check[reflex|dc:30|basic] save).</p>\n<p>It can't use Colossal Echo again for [[/gmr 1d4 #Recharge Colossal Echo]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Requirements</strong> The swordkeeper has a central weapon</p>\n<hr />\n<p><strong>Effect</strong> The swordkeeper projects a massive echoblade held in all four hands, dealing @Damage[9d8[force]|options:area-damage] damage to all creatures in a @Template[line|distance:30] (@Check[reflex|dc:30|basic|options:area-effect] save).</p>\n<p>It can't use Colossal Echo again for [[/gmr 1d4 #Recharge Colossal Echo]]{1d4 rounds}.</p>"
                 },
                 "Echoblade Flurry": {
                     "name": "Echoblade Flurry",
@@ -10846,7 +10846,7 @@
             "items": {
                 "Deluge": {
                     "name": "Deluge",
-                    "description": "<p>A creature can provoke a waterlogged tiddalik into laughing and releasing its stored water with a successful check to @Check[performance|dc:25] a joke or funny story. The tiddalik also disgorges its water automatically if it dies while waterlogged, or can voluntarily Deluge as a three-action activity that has the concentrate trait. The mass of stored water swamps a @Template[emanation|distance:10], dealing @Damage[8d6[bludgeoning]] damage to creatures in the area (@Check[reflex|dc:25|basic] save) and making the area difficult terrain for 1 day. The tiddalik can't use its spit Strike or Expel Wave until it next Drinks in Abundance.</p>"
+                    "description": "<p>A creature can provoke a waterlogged tiddalik into laughing and releasing its stored water with a successful check to @Check[performance|dc:25] a joke or funny story. The tiddalik also disgorges its water automatically if it dies while waterlogged, or can voluntarily Deluge as a three-action activity that has the concentrate trait. The mass of stored water swamps a @Template[emanation|distance:10], dealing @Damage[8d6[bludgeoning]|options:area-damage] damage to creatures in the area (@Check[reflex|dc:25|basic|options:area-effect] save) and making the area difficult terrain for 1 day. The tiddalik can't use its spit Strike or Expel Wave until it next Drinks in Abundance.</p>"
                 },
                 "Drink Abundance": {
                     "name": "Drink Abundance",
@@ -11721,7 +11721,7 @@
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
-                    "description": "<ul>\n<li><strong>人类</strong>\n<ul>\n<li><strong>近战</strong> 拳头 [[/r 1d20+10 #Fist]]{+10}/[[/r 1d20+6 #Fist]]{+6}/[[/r 1d20+2 #Fist]]{+2} (灵巧，非致命), <strong>伤害</strong> @Damage[(1d4+2)[bludgeoning]]{1d4+2钝击伤害}</li>\n<li><strong>速度</strong> 25尺</li>\n</ul>\n</li>\n<li><strong>巨蝙蝠</strong>\n<ul>\n<li><strong>速度</strong> 15尺，飞行30尺</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。</p>\n<p>类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如擒获），并且失去其任何武器打击。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul><li><p><strong>人类</strong></p><ul><li><strong>近战</strong> 拳头+10，<strong>伤害</strong> 1d4+2</li><li>没有飞行速度</li></ul></li><li><p><strong>巨蝙蝠</strong></p><ul><li><strong>速度</strong> 15尺，飞行30尺</li></ul></li></ul><hr /><p>化形生物变为其类人、混合、或动物形态。每个形态都有一种特定且可持续的外观。真化形者的自然形态是其混合形态。</p>\n<p>类人形态下，化形者使用其原始的类人体型，失去爪抓和啃咬打击，并且获得造成钝击伤害的近战拳头打击，伤害量等同于爪抓造成的挥砍伤害。</p>\n<p>在动物形态，其速度和体型变为该动物的数据，他会获得其他形态下不具有的动物的任何特殊打击效果（比如擒获），并且失去其任何武器打击。</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Curse of the Werebat": {
                     "name": "蝠化人诅咒 Curse of the Werebat",
