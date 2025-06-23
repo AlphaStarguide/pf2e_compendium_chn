@@ -1047,7 +1047,7 @@
                 },
                 "Death Blaze": {
                     "name": "Death Blaze",
-                    "description": "<p>When the vanguard dies, their body combusts in a blaze of fire and armor shrapnel.</p>\n<p>All creatures within a @Template[emanation|distance:10] take @Damage[3d6[fire],3d6[piercing]]{3d6 fire damage and 3d6 piercing damage} (@Check[reflex|dc:19|basic] save).</p>\n<p>The vanguard's armor is destroyed in the blaze, but their other gear is unaffected and left in a pile where they died.</p>"
+                    "description": "<p>When the vanguard dies, their body combusts in a blaze of fire and armor shrapnel.</p>\n<p>All creatures within a @Template[emanation|distance:10] take @Damage[3d6[fire],3d6[piercing]|options:area-damage]{3d6 fire damage and 3d6 piercing damage} (@Check[reflex|dc:19|basic|options:area-effect] save).</p>\n<p>The vanguard's armor is destroyed in the blaze, but their other gear is unaffected and left in a pile where they died.</p>"
                 },
                 "Call to Arms": {
                     "name": "Call to Arms",
@@ -1598,7 +1598,7 @@
                 },
                 "Death Throes": {
                     "name": "Death Throes",
-                    "description": "<p>When a sulfur zombie dies, its body explodes in a @Template[burst|distance:30] of fire and debris that deals @Damage[2d10[bludgeoning],2d10[fire]]{2d10 bludgeoning damage and 2d10 fire damage} to each creature in the area (@Check[reflex|dc:21|basic] save).</p>"
+                    "description": "<p>When a sulfur zombie dies, its body explodes in a @Template[burst|distance:30] of fire and debris that deals @Damage[2d10[bludgeoning],2d10[fire]|options:area-damage]{2d10 bludgeoning damage and 2d10 fire damage} to each creature in the area (@Check[reflex|dc:21|basic|options:area-effect] save).</p>"
                 },
                 "Void Healing": {
                     "name": "Void Healing",
@@ -3893,7 +3893,7 @@
                 },
                 "Break Ground": {
                     "name": "Break Ground",
-                    "description": "<p>The guecubu stomps, and the ground breaks and ripples in a @Template[emanation|distance:30], erupting in razor-sharp, crisscrossing spikes of rock that deal @Damage[3d8[piercing]] damage to creatures in the area (@Check[reflex|dc:26|basic] save).</p>\n<p>The area becomes difficult terrain and hazardous terrain, with each square dealing @Damage[3[piercing]] damage to a creature that moves through it. A guecubu is immune to these effects.</p>\n<p>Ground under the effects of a @UUID[Compendium.pf2e.spells-srd.Item.Dbd5W6G8U2vzWolN]{Consecrate} ritual or a @UUID[Compendium.pf2e.spells-srd.Item.mpGCMTldMVa0pWYs]{Circle of Protection} spell tuned against evil or chaos can't be affected by this ability.</p>"
+                    "description": "<p>The guecubu stomps, and the ground breaks and ripples in a @Template[emanation|distance:30], erupting in razor-sharp, crisscrossing spikes of rock that deal @Damage[3d8[piercing]|options:area-damage] damage to creatures in the area (@Check[reflex|dc:26|basic|options:area-effect] save).</p>\n<p>The area becomes difficult terrain and hazardous terrain, with each square dealing @Damage[3[piercing]] damage to a creature that moves through it. A guecubu is immune to these effects.</p>\n<p>Ground under the effects of a @UUID[Compendium.pf2e.spells-srd.Item.Dbd5W6G8U2vzWolN]{Consecrate} ritual or a @UUID[Compendium.pf2e.spells-srd.Item.mpGCMTldMVa0pWYs]{Circle of Protection} spell tuned against evil or chaos can't be affected by this ability.</p>"
                 },
                 "Earth Glide": {
                     "name": "Earth Glide",
@@ -5674,7 +5674,7 @@
                 },
                 "Consume Souls": {
                     "name": "Consume Souls",
-                    "description": "<p>The elder wyrmwraith inhales sharply, sucking in the souls of nearby creatures. Each creature in a @Template[cone|distance:60] must attempt a @Check[will|dc:46|traits:damaging-effect] save.</p>\n<p>The elder wyrmwraith can't Consume Souls again for [[/gmr 1d4 #Recharge Consume Souls]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>\n<p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2} and takes @Damage[100[void]] damage.</p>\n<p><strong>Critical Failure</strong> The creature is slain. As long as the wyrmwraith still exists, the slain creature can't be returned to life through any means.</p>"
+                    "description": "<p>The elder wyrmwraith inhales sharply, sucking in the souls of nearby creatures. Each creature in a @Template[cone|distance:60] must attempt a @Check[will|dc:46|options:area-effect,damaging-effect] save.</p>\n<p>The elder wyrmwraith can't Consume Souls again for [[/gmr 1d4 #Recharge Consume Souls]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>\n<p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2} and takes @Damage[100[void]|options:area-damage] damage.</p>\n<p><strong>Critical Failure</strong> The creature is slain. As long as the wyrmwraith still exists, the slain creature can't be returned to life through any means.</p>"
                 },
                 "Divine Dispelling": {
                     "name": "Divine Dispelling",
@@ -6338,7 +6338,7 @@
             "items": {
                 "Deluge": {
                     "name": "Deluge",
-                    "description": "<p>A creature can provoke a waterlogged tiddalik into laughing and releasing its stored water with a successful check to @Check[performance|dc:25] a joke or funny story. The tiddalik also disgorges its water automatically if it dies while waterlogged, or can voluntarily Deluge as a three-action activity that has the concentrate trait. The mass of stored water swamps a @Template[emanation|distance:10], dealing @Damage[8d6[bludgeoning]] damage to creatures in the area (@Check[reflex|dc:25|basic] save) and making the area difficult terrain for 1 day. The tiddalik can't use its spit Strike or Expel Wave until it next Drinks in Abundance.</p>"
+                    "description": "<p>A creature can provoke a waterlogged tiddalik into laughing and releasing its stored water with a successful check to @Check[performance|dc:25] a joke or funny story. The tiddalik also disgorges its water automatically if it dies while waterlogged, or can voluntarily Deluge as a three-action activity that has the concentrate trait. The mass of stored water swamps a @Template[emanation|distance:10], dealing @Damage[8d6[bludgeoning]|options:area-damage] damage to creatures in the area (@Check[reflex|dc:25|basic|options:area-effect] save) and making the area difficult terrain for 1 day. The tiddalik can't use its spit Strike or Expel Wave until it next Drinks in Abundance.</p>"
                 },
                 "Drink Abundance": {
                     "name": "Drink Abundance",
@@ -9624,7 +9624,7 @@
                 },
                 "Change Shape": {
                     "name": "Change Shape",
-                    "description": "<ul>\n<li><strong>Human</strong>\n<ul>\n<li><strong>Melee</strong> fist [[/r 1d20+10 #Fist]]{+10}/[[/r 1d20+6 #Fist]]{+6}/[[/r 1d20+2 #Fist]]{+2} (agile, nonlethal), <strong>Damage</strong> @Damage[(1d4+2)[bludgeoning]] damage</li>\n<li><strong>Speed</strong> 25 feet</li>\n</ul>\n</li>\n<li><strong>Giant Bat</strong>\n<ul>\n<li><strong>Speed</strong> 15 feet, fly 30 feet</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>The werecreature changes into its humanoid, hybrid, or animal shape. Each shape has a specific, persistent appearance. A true werecreature's natural form is its hybrid shape.</p>\n<p>In humanoid shape, the werecreature uses its original humanoid size, loses its jaws and claws Strikes, and gains a melee fist Strike that deals bludgeoning damage equal to the slashing damage dealt by its claw.</p>\n<p>In animal shape, its Speed and size change to that of the animal, it gains any special Strike effects of the animal that it didn't already have (such as Grab), and it loses its weapon Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul><li><p><strong>Human</strong></p><ul><li><strong>Melee</strong> fist +10 <strong>Damage</strong> 1d4+2 </li><li>no fly Speed</li></ul></li><li><p><strong>Giant Bat</strong></p><ul><li><strong>Speed</strong> 15 feet, fly 30 feet</li></ul></li></ul><hr /><p>The werecreature changes into its humanoid, hybrid, or animal shape. Each shape has a specific, persistent appearance. A true werecreature's natural form is its hybrid shape.</p>\n<p>In humanoid shape, the werecreature uses its original humanoid size, loses its jaws and claws Strikes, and gains a melee fist Strike that deals bludgeoning damage equal to the slashing damage dealt by its claw.</p>\n<p>In animal shape, its Speed and size change to that of the animal, it gains any special Strike effects of the animal that it didn't already have (such as Grab), and it loses its weapon Strikes.</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Curse of the Werebat": {
                     "name": "Curse of the Werebat",
@@ -10479,7 +10479,7 @@
                 },
                 "Colossal Echo": {
                     "name": "Colossal Echo",
-                    "description": "<p><strong>Requirements</strong> The swordkeeper has a central weapon</p>\n<hr />\n<p><strong>Effect</strong> The swordkeeper projects a massive echoblade held in all four hands, dealing @Damage[9d8[force]] damage to all creatures in a @Template[line|distance:30] (@Check[reflex|dc:30|basic] save).</p>\n<p>It can't use Colossal Echo again for [[/gmr 1d4 #Recharge Colossal Echo]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Requirements</strong> The swordkeeper has a central weapon</p>\n<hr />\n<p><strong>Effect</strong> The swordkeeper projects a massive echoblade held in all four hands, dealing @Damage[9d8[force]|options:area-damage] damage to all creatures in a @Template[line|distance:30] (@Check[reflex|dc:30|basic|options:area-effect] save).</p>\n<p>It can't use Colossal Echo again for [[/gmr 1d4 #Recharge Colossal Echo]]{1d4 rounds}.</p>"
                 },
                 "Echoblade Flurry": {
                     "name": "Echoblade Flurry",

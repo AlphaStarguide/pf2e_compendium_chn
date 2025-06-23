@@ -334,7 +334,7 @@
                 },
                 "Wild Hunt Link": {
                     "name": "Wild Hunt Link",
-                    "description": "<p>500 feet. A wild hunt archer grants wild hunt other than archers the ability to target @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} creatures with ranged Strikes without having to succeed at a @Check[flat|dc:5].</p>"
+                    "description": "<p>500 feet. A wild hunt archer grants wild hunt other than archers the ability to target @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} creatures with ranged Strikes without having to succeed at a DC 5 flat check.</p>"
                 },
                 "Constant Spells": {
                     "name": "Constant Spells",
@@ -755,7 +755,7 @@
                 },
                 "Deafening Cry": {
                     "name": "Deafening Cry",
-                    "description": "<p>The wild hunt horse gives out a thundering cry in a @Template[cone|distance:15]. Creatures in the area take @Damage[16d6[sonic]] damage (@Check[fortitude|dc:36|basic], plus @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute on a critical failure). The wild hunt horse can't use Deafening Cry again for [[/gmr 1d4 #Recharge Deafening Cry]]{1d4 rounds}.</p>"
+                    "description": "<p>The wild hunt horse gives out a thundering cry in a @Template[cone|distance:15]. Creatures in the area take @Damage[16d6[sonic]|options:area-damage] damage (@Check[fortitude|dc:36|basic|options:area-effect], plus @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute on a critical failure). The wild hunt horse can't use Deafening Cry again for [[/gmr 1d4 #Recharge Deafening Cry]]{1d4 rounds}.</p>"
                 },
                 "Focus Gaze": {
                     "name": "Focus Gaze",
@@ -783,7 +783,7 @@
                 },
                 "Death Throes": {
                     "name": "Death Throes",
-                    "description": "<p><strong>Trigger</strong> Horagnamon takes any damage or suffers a condition while Vordakai is using Familiar Farsight</p>\n<hr />\n<p><strong>Effect</strong> Horagnamon dies, then bursts into a @Template[emanation|distance:15]{30-foot-diameter} burst of feathers and seething black tendrils of smoke and energy. All creatures in this area must attempt a @Check[fortitude|dc:23|traits:damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes @Damage[3d10[void]] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[6d10[void]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[12d10[void]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}.</p>"
+                    "description": "<p><strong>Trigger</strong> Horagnamon takes any damage or suffers a condition while Vordakai is using Familiar Farsight</p>\n<hr />\n<p><strong>Effect</strong> Horagnamon dies, then bursts into a @Template[emanation|distance:15]{30-foot-diameter} burst of feathers and seething black tendrils of smoke and energy. All creatures in this area must attempt a @Check[fortitude|dc:23|options:area-effect,damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes @Damage[3d10[void]|options:area-damage] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[6d10[void]|options:area-damage] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[12d10[void]|options:area-damage] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}.</p>"
                 }
             }
         },
@@ -4140,7 +4140,7 @@
                 },
                 "Chill Breath": {
                     "name": "Chill Breath",
-                    "description": "<p>Jurgrindor breathes out a @Template[cone|distance:15] of freezing moisture that quickly condenses into ice, dealing @Damage[2d6[cold]] damage (@Check[reflex|dc:18|basic]). A creature that critically fails the save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it Escapes (DC 18). Jurgrindor can't use Chill Breath for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>Jurgrindor breathes out a @Template[cone|distance:15] of freezing moisture that quickly condenses into ice, dealing @Damage[2d6[cold]|options:area-damage] damage (@Check[reflex|dc:18|basic|options:area-effect]). A creature that critically fails the save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it [[/act escape dc=18]]{Escapes} (DC 18). Jurgrindor can't use Chill Breath for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -5166,7 +5166,7 @@
                 },
                 "Chill Breath": {
                     "name": "Chill Breath",
-                    "description": "<p>The frost giant breathes out a @Template[cone|distance:15|damaging:yes]{15-foot cone} of freezing moisture that quickly condenses into ice, dealing @Damage[7d6[cold]] damage. Each creature in the cone must attempt a @Check[reflex|dc:36|basic] save.</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and takes @Damage[2d6[cold]] damage at the end of each of its turns until it gets free (Escape DC 36).</p>\n<p>The giant can't use Chill Breath again for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The frost giant breathes out a @Template[cone|distance:15|damaging:yes]{15-foot cone} of freezing moisture that quickly condenses into ice, dealing @Damage[7d6[cold]|options:area-damage] damage. Each creature in the cone must attempt a @Check[reflex|dc:36|basic|options:area-effect] save.</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and takes @Damage[2d6[cold]] damage at the end of each of its turns until it gets free (Escape DC 36).</p>\n<p>The giant can't use Chill Breath again for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
                 },
                 "Ice Stride": {
                     "name": "Ice Stride",
@@ -6500,7 +6500,7 @@
                 },
                 "Chill Breath": {
                     "name": "Chill Breath",
-                    "description": "<p>The frost giant breathes out a @Template[cone|distance:15|damaging:yes]{15-foot cone} of freezing moisture that quickly condenses into ice, dealing @Damage[9d6[cold]] damage. Each creature in the cone must attempt a @Check[reflex|dc:41|basic] save.</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and takes @Damage[2d6[cold]] damage at the end of each of its turns until it gets free (Escape DC 41).</p>\n<p>The giant can't use Chill Breath again for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The frost giant breathes out a @Template[cone|distance:15|damaging:yes]{15-foot cone} of freezing moisture that quickly condenses into ice, dealing @Damage[9d6[cold]|options:area-damage] damage. Each creature in the cone must attempt a @Check[reflex|dc:41|basic|options:area-effect] save.</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and takes @Damage[2d6[cold]] damage at the end of each of its turns until it gets free (Escape DC 41).</p>\n<p>The giant can't use Chill Breath again for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
                 },
                 "Hatchet Onslaught": {
                     "name": "Hatchet Onslaught",
@@ -6689,7 +6689,7 @@
                 },
                 "Burble": {
                     "name": "Burble",
-                    "description": "<p>The jabberwock creates a blast of strange noises and shouted nonsense in the various languages it knows (and invariably some languages it doesn't know), creating one of two effects.</p>\n<p>The jabberwock can't Burble again for [[/gmr 1d4 #Recharge Burble]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Confusion</strong> @Template[emanation|distance:60]. Each creature in the emanation must succeed at a @Check[will|dc:44] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for [[/gmr 1d4 #Confused Duration]]{1d4 rounds}.</li>\n<li><strong>Sonic Beam</strong> The jabberwock focuses its Burbling into a @Template[line|distance:60] of sonic energy that deals @Damage[22d6[sonic]] damage to creatures in the area (@Check[reflex|dc:44|basic] save).</li>\n</ul>"
+                    "description": "<p>The jabberwock creates a blast of strange noises and shouted nonsense in the various languages it knows (and invariably some languages it doesn't know), creating one of two effects.</p>\n<p>The jabberwock can't Burble again for [[/gmr 1d4 #Recharge Burble]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Confusion</strong> @Template[emanation|distance:60]. Each creature in the emanation must succeed at a @Check[will|dc:44|options:area-effect] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for [[/gmr 1d4 #Confused Duration]]{1d4 rounds}.</li>\n<li><strong>Sonic Beam</strong> The jabberwock focuses its Burbling into a @Template[line|distance:60] of sonic energy that deals @Damage[22d6[sonic]|options:area-damage] damage to creatures in the area (@Check[reflex|dc:44|basic|options:area-effect] save).</li>\n</ul>"
                 },
                 "Jaws That Bite": {
                     "name": "Jaws That Bite",

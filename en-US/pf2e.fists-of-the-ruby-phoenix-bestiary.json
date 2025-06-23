@@ -258,7 +258,7 @@
             "items": {
                 "Breath of the Volcano": {
                     "name": "Breath of the Volcano",
-                    "description": "<p>The monk lets loose a powerful breath of air, whose effect depends on the type of energy to which the monk is attuned. The monk can't use this ability again for [[/gmr 1d4 #Recharge Breath of the Volcano]]{1d4 rounds}.</p>\n<p>Usvani exhales a miasma of acidic fumes in a @Template[emanation|distance:15]. A creature that starts its turn in the area takes @Damage[12d6[acid]] damage- and must attempt a @Check[fortitude|dc:33|traits:damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3}.</p>"
+                    "description": "<p>The monk lets loose a powerful breath of air, whose effect depends on the type of energy to which the monk is attuned. The monk can't use this ability again for [[/gmr 1d4 #Recharge Breath of the Volcano]]{1d4 rounds}.</p>\n<p>Usvani exhales a miasma of acidic fumes in a @Template[emanation|distance:15]. A creature that starts its turn in the area takes @Damage[12d6[acid]|options:area-damage] damage- and must attempt a @Check[fortitude|dc:33|options:area-effect,damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3}.</p>"
                 },
                 "Flurry of Blows": {
                     "name": "Flurry of Blows",
@@ -3139,7 +3139,7 @@
                 },
                 "Deploy Countermeasures": {
                     "name": "Deploy Countermeasures",
-                    "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Requirements</strong> Yoh is piloting the Solar Jian II</p>\n<hr />\n<p><strong>Effect</strong> While the Solar Jian II is not a combat vessel, it does have a magically renewing supply of fireworks for victory parades and the like. Yoh fires them at a @Template[burst|distance:20] within 60 feet. Creatures in the area take @Damage[3d6[fire]] damage and @Damage[3d6[sonic]] damage with a Fortitude save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Failure</strong> The target takes full damage and is dazzled for 3 rounds.</p>\n<p><strong>Critical Failure</strong> The target takes double damage, takes @Damage[3d4[persistent,fire]] damage, and is dazzled for 1 minute.</p>"
+                    "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Requirements</strong> Yoh is piloting the Solar Jian II</p>\n<hr />\n<p><strong>Effect</strong> While the Solar Jian II is not a combat vessel, it does have a magically renewing supply of fireworks for victory parades and the like. Yoh fires them at a @Template[burst|distance:20] within 60 feet. Creatures in the area take @Damage[3d6[fire],3d6[sonic]]{3d6 fire damage and 3d6 sonic damage} with a @Check[fortitude|options:area-effect,damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Failure</strong> The target takes full damage and is dazzled for 3 rounds.</p>\n<p><strong>Critical Failure</strong> The target takes double damage, takes @Damage[3d4[persistent,fire]] damage, and is dazzled for 1 minute.</p>"
                 },
                 "I'll Get You into Position!": {
                     "name": "I'll Get You into Position!",
@@ -3349,7 +3349,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>Cloudsplitter breathes fire in a @Template[cone|distance:30], dealing @Damage[18d6[fire]] damage (@Check[reflex|dc:40|basic] save). Cloudsplitter can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>Cloudsplitter breathes fire in a @Template[cone|distance:30], dealing @Damage[18d6[fire]|options:area-damage] damage (@Check[reflex|dc:40|basic|options:area-effect] save). Cloudsplitter can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Rearing Thrust": {
                     "name": "Rearing Thrust",
@@ -3702,7 +3702,7 @@
             "items": {
                 "Breath of the Glacier": {
                     "name": "Breath of the Glacier",
-                    "description": "<p>The monk lets loose a powerful breath of air, whose effect depends on the type of energy to which the monk is attuned. The monk can't use this ability again for [[/gmr 1d4 #Recharge Breath of the Glacier]]{1d4 rounds}.</p>\n<p>Pravan blows icy winds in a @Template[cone|distance:30], dealing @Damage[10d6[cold]] damage. Creatures in the area must attempt a @Check[reflex|dc:33|traits:damaging-effect] save as ice forms around them. The Speed penalty or immobilized condition caused by this ability persist until a creature either Breaks Open the ice or Escapes (DC 37 in either case), or if the creature takes at least 30 fire damage.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and takes a -5- foot status penalty to its Speeds.</p>\n<p><strong>Failure</strong> The creature takes full damage and takes a -15-foot status penalty to its Speeds.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}.</p>"
+                    "description": "<p>The monk lets loose a powerful breath of air, whose effect depends on the type of energy to which the monk is attuned. The monk can't use this ability again for [[/gmr 1d4 #Recharge Breath of the Glacier]]{1d4 rounds}.</p>\n<p>Pravan blows icy winds in a @Template[cone|distance:30], dealing @Damage[10d6[cold]|options:area-damage] damage. Creatures in the area must attempt a @Check[reflex|dc:33|options:area-effect,damaging-effect] save as ice forms around them. The Speed penalty or immobilized condition caused by this ability persist until a creature either Breaks Open the ice or Escapes (DC 37 in either case), or if the creature takes at least 30 fire damage.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage and takes a -5- foot status penalty to its Speeds.</p>\n<p><strong>Failure</strong> The creature takes full damage and takes a -15-foot status penalty to its Speeds.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}.</p>"
                 },
                 "Flurry of Blows": {
                     "name": "Flurry of Blows",
@@ -4047,7 +4047,7 @@
                 },
                 "Caustic Spray": {
                     "name": "Caustic Spray",
-                    "description": "<p>The caustic monitor spits a spray of corrosive bile that deals @Damage[5d8[acid]] damage in a @Template[cone|distance:20] (@Check[reflex|dc:32|basic] save). It can't use Caustic Spray again for [[/gmr 1d4 #Recharge Caustic Spray]]{1d4 rounds}.</p>"
+                    "description": "<p>The caustic monitor spits a spray of corrosive bile that deals @Damage[5d8[acid]|options:area-damage] damage in a @Template[cone|distance:20] (@Check[reflex|dc:32|basic|options:area-effect] save). It can't use Caustic Spray again for [[/gmr 1d4 #Recharge Caustic Spray]]{1d4 rounds}.</p>"
                 },
                 "Corrosive Flesh": {
                     "name": "Corrosive Flesh",

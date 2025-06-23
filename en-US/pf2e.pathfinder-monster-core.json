@@ -1905,7 +1905,7 @@
                 },
                 "Chill Breath": {
                     "name": "Chill Breath",
-                    "description": "<p>The frost giant breathes out a @Template[cone|distance:15] of freezing moisture that quickly condenses into ice, dealing @Damage[4d6[cold]] damage. Each creature in the cone must attempt a @Check[reflex|dc:28|basic] save. A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and takes @Damage[2d6[cold]] damage at the end of each of its turns until it gets free ([[/act escape dc=28]]).</p>\n<p>The giant can't use Chill Breath again for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The frost giant breathes out a @Template[cone|distance:15] of freezing moisture that quickly condenses into ice, dealing @Damage[4d6[cold]|options:area-damage] damage. Each creature in the cone must attempt a @Check[reflex|dc:28|basic|options:area-effect] save. A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and takes @Damage[2d6[cold]] damage at the end of each of its turns until it gets free ([[/act escape dc=28]]).</p>\n<p>The giant can't use Chill Breath again for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
                 },
                 "Ice Stride": {
                     "name": "Ice Stride",
@@ -6043,6 +6043,10 @@
                 "Pack Attack": {
                     "name": "Pack Attack",
                     "description": "<p>The werewolf's Strikes deal 1d6 extra damage to creatures within reach of at least two of the werewolf's allies.</p>"
+                },
+                "Knockdown (Animal Shape)": {
+                    "name": "Knockdown (Animal Shape)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Knockdown]</p>"
                 }
             }
         },
@@ -6542,7 +6546,7 @@
                 },
                 "Breathe Energy": {
                     "name": "Breathe Energy",
-                    "description": "<p>The mukradi breathes a blast of energy from one of its three heads; each creature in the area must attempt a @Check[reflex|dc:36|basic] save.</p>\n<p>The mukradi can't Breathe Energy again for [[/gmr 1d4 #Recharge Breathe Energy]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Acid Maw</strong> (acid) 10-foot-wide, @Template[line|distance:60] of acid dealing @Damage[16d6[acid]] damage.</li>\n<li><strong>Flame Maw</strong> (fire) @Template[cone|distance:60] of fire dealing @Damage[16d6[fire]] damage.</li>\n<li><strong>Shock Maw</strong> (electricity) @Template[line|distance:120] of electricity dealing @Damage[16d6[electricity]] damage.\n\n</li>\n</ul>"
+                    "description": "<p>The mukradi breathes a blast of energy from one of its three heads; each creature in the area must attempt a @Check[reflex|dc:36|basic|options:area-effect] save.</p>\n<p>The mukradi can't Breathe Energy again for [[/gmr 1d4 #Recharge Breathe Energy]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Acid Maw</strong> (acid) 10-foot-wide, @Template[line|distance:60] of acid dealing @Damage[16d6[acid]|options:area-damage] damage.</li>\n<li><strong>Flame Maw</strong> (fire) @Template[cone|distance:60] of fire dealing @Damage[16d6[fire]|options:area-damage] damage.</li>\n<li><strong>Shock Maw</strong> (electricity) @Template[line|distance:120] of electricity dealing @Damage[16d6[electricity]|options:area-damage] damage.\n\n</li>\n</ul>"
                 },
                 "Pull Apart": {
                     "name": "Pull Apart",
@@ -6820,7 +6824,7 @@
                 },
                 "Cast Out": {
                     "name": "Cast Out",
-                    "description": "<p>A @Template[emanation|distance:20] of spiritual energy pushes against intruders, as though trying to drive their souls away. Each creature in the area takes @Damage[8d6[spirit]] damage depending on a @Check[will|dc:29] save.</p>\n<p>The clay effigy can't Cast Out again for [[/gmr 1d4 #Recharge Cast Out]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and @Damage[3d6[persistent,spirit]] damage. The persistent damage ends if the creature moves over 60 feet from the clay effigy or the effigy is destroyed.</p>\n<p><strong>Critical Failure</strong> As failure, except the persistent damage is increased to @Damage[6d6[persistent,spirit]].</p>"
+                    "description": "<p>A @Template[emanation|distance:20] of spiritual energy pushes against intruders, as though trying to drive their souls away. Each creature in the area takes @Damage[8d6[spirit]|options:area-damage] damage depending on a @Check[will|dc:29|options:area-effect,damaging-effect] save.</p>\n<p>The clay effigy can't Cast Out again for [[/gmr 1d4 #Recharge Cast Out]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and @Damage[3d6[persistent,spirit]] damage. The persistent damage ends if the creature moves over 60 feet from the clay effigy or the effigy is destroyed.</p>\n<p><strong>Critical Failure</strong> As failure, except the persistent damage is increased to @Damage[6d6[persistent,spirit]].</p>"
                 },
                 "Heavy Stride": {
                     "name": "Heavy Stride",
@@ -8591,7 +8595,7 @@
                 },
                 "Breath Fire": {
                     "name": "Breath Fire",
-                    "description": "<p>The firewyrm breathes a @Template[cone|distance:30] of fire dealing @Damage[7d6[fire],2d8[persistent,fire]] damage to every creature within the cone (@Check[reflex|dc:28|basic] save).</p>\n<p>The firewyrm can't Breathe Fire again for [[/gmr 1d4 #Recharge Breathe Fire]]{1d4 rounds}.</p>"
+                    "description": "<p>The firewyrm breathes a @Template[cone|distance:30] of fire dealing @Damage[7d6[fire],2d8[persistent,fire]|options:area-damage] damage to every creature within the cone (@Check[reflex|dc:28|basic|options:area-effect] save).</p>\n<p>The firewyrm can't Breathe Fire again for [[/gmr 1d4 #Recharge Breathe Fire]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -8933,7 +8937,7 @@
                 },
                 "Caustic Mucus": {
                     "name": "Caustic Mucus",
-                    "description": "<p>The river drake spits a ball of caustic mucus up to a range of 50 feet that explodes in a @Template[burst|distance:10]. Creatures within the burst take @Damage[4d6[acid]] damage (@Check[reflex|dc:19|basic] save). Those that fail this save also take @Damage[1d6[persistent,acid]] damage and take a –5-foot status penalty to their Speed. This Speed reduction ends with the persistent acid damage.</p>\n<p>The river drake can't use Caustic Mucus again for [[/gmr 1d6 #Recharge Caustic Mucus]]{1d6 rounds}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TbmkcfpKIs558skY]{Effect: Caustic Mucus}</p>"
+                    "description": "<p>The river drake spits a ball of caustic mucus up to a range of 50 feet that explodes in a @Template[burst|distance:10]. Creatures within the burst take @Damage[4d6[acid]|options:area-damage] damage (@Check[reflex|dc:19|basic|options:area-effect] save). Those that fail this save also take @Damage[1d6[persistent,acid]] damage and take a –5-foot status penalty to their Speed. This Speed reduction ends with the persistent acid damage.</p>\n<p>The river drake can't use Caustic Mucus again for [[/gmr 1d6 #Recharge Caustic Mucus]]{1d6 rounds}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.TbmkcfpKIs558skY]{Effect: Caustic Mucus}</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "Draconic Frenzy",
@@ -12228,7 +12232,7 @@
                 },
                 "Despairing Shriek": {
                     "name": "Despairing Shriek",
-                    "description": "<p>The coarti lets out a terrible cry, dealing @Damage[4d6[sonic]] damage to all creatures in a @Template[emanation|distance:30] with a @Check[will|dc:25|basic] save. Holy creatures that fail this save are also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}; this added effect has the emotion, fear, and mental traits.</p>\n<p>The coarti can't use Despairing Shriek again for [[/gmr 1d4 #Recharge Despairing Shriek]]{1d4 rounds}.</p>"
+                    "description": "<p>The coarti lets out a terrible cry, dealing @Damage[4d6[sonic]|options:area-damage] damage to all creatures in a @Template[emanation|distance:30] with a @Check[will|dc:25|basic|options:area-effect] save. Holy creatures that fail this save are also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}; this added effect has the emotion, fear, and mental traits.</p>\n<p>The coarti can't use Despairing Shriek again for [[/gmr 1d4 #Recharge Despairing Shriek]]{1d4 rounds}.</p>"
                 },
                 "Wing Snap": {
                     "name": "Wing Snap",
@@ -14021,7 +14025,7 @@
                 },
                 "Change Shape": {
                     "name": "Change Shape",
-                    "description": "<ul>\n<li><strong>Human</strong>\n<ul>\n<li><strong>Melee</strong> fist +14 <strong>Damage</strong> 1d4+7</li>\n</ul>\n</li>\n<li><strong>Animal</strong>\n<ul>\n<li><strong>Speed</strong> 30 feet</li>\n<li>Wrestle</li>\n</ul>\n</li>\n</ul>\n<hr />\n<p>The werecreature changes into its humanoid, hybrid, or animal shape. Each shape has a specific, persistent appearance. A true werecreature's natural form is its hybrid shape.</p>\n<p>In humanoid shape, the werecreature uses its original humanoid size, loses its jaws and claws Strikes, and gains a melee fist Strike that deals bludgeoning damage equal to the slashing damage dealt by its claw.</p>\n<p>In animal shape, its Speed and size change to that of the animal, it gains any special Strike effects of the animal that it didn't already have (such as Grab), and it loses its weapon Strikes.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                    "description": "<ul><li><strong>Human</strong><ul><li><strong>Melee</strong> fist +14 <strong>Damage</strong> 1d4+7</li></ul></li><li><strong>Animal</strong><ul><li><strong>Speed</strong> 30 feet</li><li>Wrestle</li></ul></li></ul><hr /><p>The werecreature changes into its humanoid, hybrid, or animal shape. Each shape has a specific, persistent appearance. A true werecreature's natural form is its hybrid shape.</p>\n<p>In humanoid shape, the werecreature uses its original humanoid size, loses its jaws and claws Strikes, and gains a melee fist Strike that deals bludgeoning damage equal to the slashing damage dealt by its claw.</p>\n<p>In animal shape, its Speed and size change to that of the animal, it gains any special Strike effects of the animal that it didn't already have (such as Grab), and it loses its weapon Strikes.</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Curse of the Weretiger": {
                     "name": "Curse of the Weretiger",
