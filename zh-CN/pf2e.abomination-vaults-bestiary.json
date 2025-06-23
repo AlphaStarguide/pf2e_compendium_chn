@@ -519,7 +519,7 @@
             "items": {
                 "Bright Release": {
                     "name": "光明爆发 Bright Release",
-                    "description": "<p>当光明行者的生命值减少为0 时，他们会变为一团炽热的闪光，获得他们死亡时曾经拒绝的耀眼结局。炽热的火光对@Template[emanation|distance:20]{20尺}内的所有生物造成@Damage[10d6[fire]]伤害（@Check[reflex|dc:25|basic]豁免）。</p>\n<p>豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1分钟（大失败@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟）。</p>"
+                    "description": "<p>当光明行者的生命值减少为0 时，他们会变为一团炽热的闪光，获得他们死亡时曾经拒绝的耀眼结局。炽热的火光对@Template[emanation|distance:20]{20尺}内的所有生物造成@Damage[10d6[fire]|options:area-damage]伤害（@Check[reflex|dc:25|basic|options:area-effect]豁免）。</p>\n<p>豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1分钟（大失败@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1分钟）。</p>"
                 },
                 "Light Aura": {
                     "name": "光亮灵光 Light Aura",
@@ -563,7 +563,7 @@
                 },
                 "Death Flame": {
                     "name": "死之白焰 Death Flame",
-                    "description": "<p>卡利尼防御者死亡时，他的尸体会在白热的火焰中燃烧殆尽。所有@Template[burst|distance:20]范围内的生物都将受到@Damage[6d10[fire]]伤害（@Check[reflex|dc:26|basic]豁免）。它的装备和宝藏不会受到火焰的影响，会留在他死亡的位置。</p>"
+                    "description": "<p>卡利尼防御者死亡时，他的尸体会在白热的火焰中燃烧殆尽。所有@Template[burst|distance:20]范围内的生物都将受到@Damage[6d10[fire]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免）。它的装备和宝藏不会受到火焰的影响，会留在他死亡的位置。</p>"
                 },
                 "Black Smear Poison": {
                     "name": "黑涂毒 Black Smear Poison",
@@ -751,7 +751,7 @@
                 },
                 "Death Light": {
                     "name": "死亡之光 Death Light",
-                    "description": "<p><strong>先决条件</strong> 尸火寄宿在一具尸体中；</p>\n<hr />\n<p><strong>效果</strong> 尸火从尸体的眼睛和嘴巴对@Template[cone|distance:20]范围发射出蓝色射线。范围内所有活着的生物必须尝试一次@Check[fortitude|dc:18|traits:damaging-effect]检定。如果至少有一个生物豁免失败，尸火恢复@Damage[2d6[healing]]生命值，超过上限的部分会转化成临时生命值，持续一分钟。</p>\n<p>尸火在[[/gmr 1d4 #Recharge Death Light]]{1d4轮}内无法再次使用死亡之光。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[1d6[void]]伤害。</p>\n<p><strong>失败</strong> 生物受到@Damage[2d6[void]]伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>大失败</strong> 生物受到@Damage[4d6[void]]伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}。</p>"
+                    "description": "<p><strong>先决条件</strong> 尸火寄宿在一具尸体中；</p>\n<hr />\n<p><strong>效果</strong> 尸火从尸体的眼睛和嘴巴对@Template[cone|distance:20]范围发射出蓝色射线。范围内所有活着的生物必须尝试一次@Check[fortitude|dc:18|options:area-effect,damaging-effect]检定。如果至少有一个生物豁免失败，尸火恢复@Damage[2d6[healing]]生命值，超过上限的部分会转化成临时生命值，持续一分钟。</p>\n<p>尸火在[[/gmr 1d4 #Recharge Death Light]]{1d4轮}内无法再次使用死亡之光。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[1d6[void]|options:area-damage]伤害。</p>\n<p><strong>失败</strong> 生物受到@Damage[2d6[void]|options:area-damage]伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>大失败</strong> 生物受到@Damage[4d6[void]|options:area-damage]伤害并且陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}。</p>"
                 },
                 "Void Healing": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>",
@@ -819,7 +819,7 @@
         },
         "Daemonic Fog": {
             "name": "邪魔之雾 Daemonic Fog",
-            "disable": "<p>@Check[survival|dc:28|name:Disrupt the Fog](专家)在危害触发前扰乱雾气；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（5 环；反制DC 26）反制魔法。</p>",
+            "disable": "<p>@Check[survival|dc:28|name:Disrupt the Fog]（专家）在危害触发前扰乱雾气；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（5环级；反制DC26）反制魔法。</p>",
             "hazarddescription": "<p>雾气凝结成无数微小的、不断啃咬的生物，吞噬雾中的每个人，然后又化为雾气消失了。</p>",
             "reset": "<p>在一个小时之后，随着邪魔的污染扩散，毒雾重新充能，陷阱会重置。</p>",
             "stealthdetails": "<p>@Check[perception|dc:30|traits:action:seek] (专家)</p>",
@@ -1289,7 +1289,7 @@
             "items": {
                 "Death Shadows": {
                     "name": "死之阴影 Death Shadows",
-                    "description": "<p>当杜拉克死亡时，她的尸体会化为令人战栗的阴影爆炸。@Template[burst|distance:20]范围内的所有生物受到@Damage[8d8[cold]]伤害（@Check[reflex|dc:28|basic]豁免）。</p>\n<p>杜拉克的装备和宝藏不会受到阴影的影响，会留在她死亡的位置。</p>"
+                    "description": "<p>当杜拉克死亡时，她的尸体会化为令人战栗的阴影爆炸。@Template[burst|distance:20]范围内的所有生物受到@Damage[8d8[cold]|options:area-damage]伤害（@Check[reflex|dc:28|basic|options:area-effect]豁免）。</p>\n<p>杜拉克的装备和宝藏不会受到阴影的影响，会留在她死亡的位置。</p>"
                 },
                 "Opportune Step": {
                     "name": "适时快步 Opportune Step",
@@ -1607,7 +1607,7 @@
         },
         "Images of Powerlessness": {
             "name": "无力的幻象 Images of Powerlessness",
-            "disable": "<p>@Check[occultism|dc:32|name:Weaken the images](大师)或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（5环；反制DC26）可以削弱幻象；解除陷阱需要三次成功</p>",
+            "disable": "<p>@Check[occultism|dc:32|name:Weaken the images]（大师）或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（5环级；反制DC26）可以削弱幻象；解除陷阱需要三次成功</p>",
             "hazarddescription": "<p>在这个95尺长、15尺宽的走廊里（地图上用白色虚线标出），精神增强的幻象让生物脑海中充斥着对未来失败的担忧。</p>",
             "reset": "<p>陷阱立即重置，并且在同一个生物的回合中可以造成多次影响（生物每次结束移动时都会触发）。</p>",
             "stealthdetails": "<p>(专家)意识到幻象背后隐藏着一个魔法陷阱（注意到幻象本身的DC为0）</p>",
@@ -2206,7 +2206,7 @@
             "items": {
                 "Death Flame": {
                     "name": "死之烈焰 Death Flame",
-                    "description": "<p>当诺克斯死亡时，它的尸体会在一道强光构成的火焰中燃烧，对@Template[burst|distance:20]范围内的生物都受到@Damage[5d6[fire]]伤害（@Check[reflex|dc:21|basic]豁免）。诺克斯装备和财产都会留在他死亡的位置。</p>"
+                    "description": "<p>当诺克斯死亡时，它的尸体会在一道强光构成的火焰中燃烧，对@Template[burst|distance:20]范围内的生物都受到@Damage[5d6[fire]|options:area-damage]伤害（@Check[reflex|dc:21|basic|options:area-effect]豁免）。诺克斯装备和财产都会留在他死亡的位置。</p>"
                 },
                 "Intense Performer": {
                     "name": "热情演奏者 Intense Performer",
@@ -2280,7 +2280,7 @@
                 },
                 "Death Flame": {
                     "name": "死之白焰 Death Flame",
-                    "description": "<p>当帕德利死亡时，他的尸体会在白热的火焰中燃烧殆尽。所有@Template[burst|distance:20]范围内的生物都将受到@Damage[6d10[fire]]伤害（@Check[reflex|dc:28|basic]豁免）。</p>\n<p>帕德利的装备和宝藏不会受到火焰的影响，会留在他死亡的位置。</p>"
+                    "description": "<p>当帕德利死亡时，他的尸体会在白热的火焰中燃烧殆尽。所有@Template[burst|distance:20]范围内的生物都将受到@Damage[6d10[fire]|options:area-damage]伤害（@Check[reflex|dc:28|basic|options:area-effect]豁免）。</p>\n<p>帕德利的装备和宝藏不会受到火焰的影响，会留在他死亡的位置。</p>"
                 },
                 "Occult Ward": {
                     "name": "异能刻文 Occult Ward",
@@ -2309,7 +2309,7 @@
         },
         "Painful Suggestion Trap": {
             "name": "痛苦暗示陷阱 Painful Suggestion Trap",
-            "disable": "<p>@Check[thievery|dc:28|name:Remove Rune|traits:magical,trap](专家)在不触发的情况下移除符文；或通过@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环级，反制DC26）解消符文</p>",
+            "disable": "<p>@Check[thievery|dc:28|name:Remove Rune|traits:magical,trap]（专家）在不触发的情况下移除符文；或通过@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（4环级，反制DC26）解消符文</p>",
             "hazarddescription": "<p>肮脏的地板下隐藏着一个符文，只要有生物跨过门槛就会触发一个幽灵的幻象。</p>",
             "reset": "<p>陷阱在1小时后自动重置。</p>",
             "stealthdetails": "<p>(专家)</p>",
@@ -2328,7 +2328,7 @@
         },
         "Paralyzing Light Trap": {
             "name": "麻痹之光陷阱 Paralyzing Light Trap",
-            "disable": "<p>@Check[thievery|dc:26|name:Distort or Diffuse the Light|traits:magical,trap](大师)扭曲或让光芒散射，保持光锥完好无损但防止陷阱被触发；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环级；反制DC26）解除光芒，让房间笼罩在黑暗中。</p>",
+            "disable": "<p>@Check[thievery|dc:26|name:Distort or Diffuse the Light|traits:magical,trap]（大师）扭曲或让光芒散射，保持光锥完好无损但防止陷阱被触发；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（4环级；反制DC26）解除光芒，让房间笼罩在黑暗中。</p>",
             "hazarddescription": "<p>当一个非魔鬼的生物进入光中，光柱里蕴含的魔法会让生物保持平静，并拉响警报。</p>",
             "reset": "<p>光柱中的静滞魔法需要充能1小时，在这之后陷阱可以再次被触发。</p>",
             "routine": "<p>(1动作)房间内所有@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned}和@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}的生物受到@Damage[1d10[mental]]伤害（@Check[will|dc:26|basic|traits:magical,trap]豁免）。豁免失败的生物也会陷入麻痹，持续1轮，但时可以使用一个反应动作来对抗静滞效果；如此做的生物立即受到@Damage[5d10[mental]]伤害但不再麻痹。</p>",
