@@ -2576,7 +2576,7 @@
             "items": {
                 "Death Throes": {
                     "name": "致死剧痛 Death Throes",
-                    "description": "<p><strong>触发</strong> 霍拉格纳蒙在沃达凯使用魔宠远视时承受任何伤害或者遭受一种状态；</p>\n<hr />\n<p><strong>效果</strong> 霍拉格纳蒙死亡，之后在@Template[emanation|distance:15]范围内爆发出羽毛以及由烟雾和能量构成的翻涌黑触手。区域内的所有生物必须尝试@Check[fortitude|dc:23|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受伤害</p>\n<p><strong>成功</strong> 生物承受@Damage[3d10[void]]伤害</p>\n<p><strong>失败</strong> 生物承受@Damage[6d10[void]]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}</p>\n<p><strong>大失败</strong> 生物承受@Damage[12d10[void]]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}</p>"
+                    "description": "<p><strong>触发</strong> 霍拉格纳蒙在沃达凯使用魔宠远视时承受任何伤害或者遭受一种状态；</p>\n<hr />\n<p><strong>效果</strong> 霍拉格纳蒙死亡，之后在@Template[emanation|distance:15]范围内爆发出羽毛以及由烟雾和能量构成的翻涌黑触手。区域内的所有生物必须尝试@Check[fortitude|dc:23|options:area-effect,damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受伤害</p>\n<p><strong>成功</strong> 生物承受@Damage[3d10[void]|options:area-damage]伤害</p>\n<p><strong>失败</strong> 生物承受@Damage[6d10[void]|options:area-damage]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}</p>\n<p><strong>大失败</strong> 生物承受@Damage[12d10[void]|options:area-damage]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}</p>"
                 },
                 "Cunning": {
                     "name": "狡诈 Cunning",
@@ -2934,7 +2934,7 @@
                 },
                 "Chill Breath": {
                     "name": "冻寒吹息 Chill Breath",
-                    "description": "<p>尤格林多喷出@Template[cone|distance:15]的水汽，这些水汽会迅速凝结成寒冰，造成@Damage[2d6[cold]]伤害（@Check[reflex|dc:18|basic]豁免）。在该豁免中投掷出大失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直至该生物逃脱（DC 18）为止。尤格林多在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吹息。</p>"
+                    "description": "<p>尤格林多喷出@Template[cone|distance:15]的水汽，这些水汽会迅速凝结成寒冰，造成@Damage[2d6[cold]|options:area-damage]伤害（@Check[reflex|dc:18|basic|options:area-effect]豁免）。在该豁免中投掷出大失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直至该生物[[/act escape dc=18]]（DC18）为止。尤格林多在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吹息。</p>"
                 }
             },
             "prototypeToken": {
@@ -2974,7 +2974,7 @@
                 },
                 "Chill Breath": {
                     "name": "冻寒吐息 Chill Breath",
-                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[9d6[cold]]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:41|basic]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC41）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
+                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[9d6[cold]|options:area-damage]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:41|basic|options:area-effect]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC41）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
                 },
                 "Hatchet Onslaught": {
                     "name": "短柄斧狂袭 Hatchet Onslaught",
@@ -3028,7 +3028,7 @@
                 },
                 "Chill Breath": {
                     "name": "冻寒吐息 Chill Breath",
-                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[7d6[cold]]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:36|basic]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC36）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
+                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[7d6[cold]|options:area-damage]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:36|basic|options:area-effect]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC36）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
                 }
             },
             "publicNotes": "<p>霜巨人是冷酷无情的掠夺者，它们在荒凉、寒冷的土地上对那些胆敢靠近它们居住地的人进行劫掠。它们的氏族包括宣称一整片苔原的领土猎人，以及漫游在冰川之间寻找可征服定居点的冻土游民。霜巨人的氏族领袖是那些在战斗中最凶残的人——那些自称为首领并要求追随者绝对服从的魁梧蛮人。如果有任何霜巨人想成为首领，他们就必须向现有首领发起挑战，进行一场死斗，之后胜利者能继续领导氏族。</p>\n<p>霜巨人生活在严寒国度，它们的外表能反映出它们经历过无情的暴风雪和严寒的考验。它们经常穿着金属盔甲，盔甲上装饰着毛皮、牙齿和野兽的獠牙，挥舞着餐桌一样长的重型武器。它们的肤色从淡蓝色到岩灰色，发色则是暗白色或肮脏的黄色。</p>\n<p>典型的霜巨人高约15尺，重约2800磅。</p>\n<hr />\n<p>巨人是生活在世界偏远地区的大型类人生物。它们被分为许多不同类型。</p>",
@@ -3367,7 +3367,7 @@
                 },
                 "Burble": {
                     "name": "絮叨 Burble",
-                    "description": "<p>炸脖龙用它所知晓各种语言（而总也会包含一些它不知晓的语言）制造一道奇怪的噪音和胡言乱语，制造出两种效果中一种。</p>\n<p>在[[/gmr 1d4 #Recharge Burble]]{1d4轮}内炸脖龙不能再次使用絮叨。</p>\n<ul>\n<li><strong>困惑术 Confusion</strong> @Template[emanation|distance:60]。每个位于弥散范围内的生生物须成功通过一个@Check[will|dc:44]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]状态[[/gmr 1d4 #Confused Duration]]{1d4轮}。</li>\n<li><strong>音波射线 Sonic Beam</strong> 炸脖龙将絮叨聚集为一道@Template[line|distance:60]的音波，对区域内所有生物造成@Damage[22d6[sonic]]伤害。（@Check[reflex|dc:44|basic]豁免）。</li>\n</ul>"
+                    "description": "<p>炸脖龙用它所知晓各种语言（而总也会包含一些它不知晓的语言）制造一道奇怪的噪音和胡言乱语，制造出两种效果中一种。</p>\n<p>在[[/gmr 1d4 #Recharge Burble]]{1d4轮}内炸脖龙不能再次使用絮叨。</p>\n<ul>\n<li><strong>困惑术 Confusion</strong> @Template[emanation|distance:60]。每个位于弥散范围内的生生物须成功通过一个@Check[will|dc:44|options:area-effect]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]状态[[/gmr 1d4 #Confused Duration]]{1d4轮}。</li>\n<li><strong>音波射线 Sonic Beam</strong> 炸脖龙将絮叨聚集为一道@Template[line|distance:60]的音波，对区域内所有生物造成@Damage[22d6[sonic]|options:area-damage]伤害。（@Check[reflex|dc:44|basic|options:area-effect]豁免）。</li>\n</ul>"
                 },
                 "Jaws That Bite": {
                     "name": "咬人大颚 Jaws That Bite",
