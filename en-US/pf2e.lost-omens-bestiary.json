@@ -440,7 +440,7 @@
                 },
                 "Icy Japes": {
                     "name": "Icy Japes",
-                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing]] damage plus @Damage[1[cold]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing]] damage plus @Damage[1d4[cold]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold]] damage plus @Damage[1d4[cold]] damage</p>"
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic|options:damaging-effect] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing],1[cold]]{1d6 slashing damage plus 1 cold damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing]1d4[cold]]{2d6+2 slashing damage plus 1d4 cold damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold],[1d4[cold]]{2d6+5 cold damage plus 1d4 cold damage}</p>"
                 }
             }
         },
@@ -492,7 +492,7 @@
                 },
                 "Floodwaters": {
                     "name": "Floodwaters",
-                    "description": "<p>Waters rush forth in a @Template[line|distance:60], dealing @Damage[4d6[bludgeoning]] damage (@Check[reflex|dc:25|basic] save). Creatures that fail the save and aren't @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the imugi are pushed 10 feet away.</p>"
+                    "description": "<p>Waters rush forth in a @Template[line|distance:60], dealing @Damage[4d6[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save). Creatures that fail the save and aren't @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the imugi are pushed 10 feet away.</p>"
                 },
                 "Storm Veil": {
                     "name": "Storm Veil",
@@ -565,7 +565,7 @@
                 },
                 "Hammer Storm": {
                     "name": "Hammer Storm",
-                    "description": "<p>The Grand Defender unleashes a volley of warhammers that deal @Damage[12d8[bludgeoning]] damage in a @Template[cone|distance:50] (@Check[reflex|dc:36|basic] save). The Grand Defender can exclude any number of squares from the cone's area, preventing damage to creatures in those squares. Creatures that critically fail their save are pushed 10 feet away from the Grand Defender and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. The storm creates 24 Medium @UUID[Compendium.pf2e.equipment-srd.Item.rXt4629QSg7KDTgJ]{warhammers} that persist after the attack and can be used by creatures. The Grand Defender can't use Hammer Storm for [[/gmr 1d4 #Recharge Hammer Storm]]{1d4 rounds}.</p>"
+                    "description": "<p>The Grand Defender unleashes a volley of warhammers that deal @Damage[12d8[bludgeoning]|options:area-damage] damage in a @Template[cone|distance:50] (@Check[reflex|dc:36|basic|options:area-effect] save). The Grand Defender can exclude any number of squares from the cone's area, preventing damage to creatures in those squares. Creatures that critically fail their save are pushed 10 feet away from the Grand Defender and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. The storm creates 24 Medium @UUID[Compendium.pf2e.equipment-srd.Item.rXt4629QSg7KDTgJ]{warhammers} that persist after the attack and can be used by creatures. The Grand Defender can't use Hammer Storm for [[/gmr 1d4 #Recharge Hammer Storm]]{1d4 rounds}.</p>"
                 },
                 "Improved Knockdown": {
                     "name": "Improved Knockdown",
@@ -1324,7 +1324,7 @@
                 },
                 "Funnel": {
                     "name": "Funnel",
-                    "description": "<p>The kun inhales violently, sucking in heat and all creatures in the water in a @Template[cone|distance:60]. Creatures take @Damage[10d8[cold]] damage and must attempt a @Check[fortitude|dc:33] save. The kun can't Funnel again for [[/gmr 1d4 #Recharge Funnel]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is pulled 30 feet toward the kun.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is pulled 60 feet toward the kun.</p>"
+                    "description": "<p>The kun inhales violently, sucking in heat and all creatures in the water in a @Template[cone|distance:60]. Creatures take @Damage[10d8[cold]|options:area-damage] damage and must attempt a @Check[fortitude|dc:33|options:area-effect,damaging-effect] save. The kun can't Funnel again for [[/gmr 1d4 #Recharge Funnel]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is pulled 30 feet toward the kun.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is pulled 60 feet toward the kun.</p>"
                 },
                 "Heart of Darkness": {
                     "name": "Heart of Darkness",
@@ -1584,7 +1584,7 @@
                 },
                 "Fulminate": {
                     "name": "Fulminate",
-                    "description": "<p><strong>Requirements</strong> The Melfesh Monster has created a spore cloud, and the cloud is within range of one of the Melfesh Monster's fire abilities</p>\n<hr />\n<p><strong>Effect</strong> The Melfesh Monster targets the cloud with one of its abilities with the fire trait. The spore cloud explodes, dealing @Damage[4d10[fire]] damage and @Damage[4[persistent,fire]] damage in a @Template[burst|distance:40] originating from a single square within the cloud (@Check[reflex|dc:24|basic] save).</p>"
+                    "description": "<p><strong>Requirements</strong> The Melfesh Monster has created a spore cloud, and the cloud is within range of one of the Melfesh Monster's fire abilities</p>\n<hr />\n<p><strong>Effect</strong> The Melfesh Monster targets the cloud with one of its abilities with the fire trait. The spore cloud explodes, dealing @Damage[4d10[fire],4[persistent,fire]|options:area-damage]{4d10 fire damage and 4 persistent fire damage} in a @Template[burst|distance:40] originating from a single square within the cloud (@Check[reflex|dc:24|basic|options:area-effect] save).</p>"
                 },
                 "Spore Cloud": {
                     "name": "Spore Cloud",
@@ -2451,7 +2451,7 @@
                 },
                 "Drown in Ichor": {
                     "name": "Drown in Ichor",
-                    "description": "<p>The fleshforged dreadnought releases a wave of caustic fluid from vents in its sides. Creatures within a @Template[emanation|distance:20] take @Damage[8d6[acid]] damage (@Check[reflex|dc:40|basic]). Creatures who fail their saves also take @Damage[3d6[persistent,acid]] damage.</p>"
+                    "description": "<p>The fleshforged dreadnought releases a wave of caustic fluid from vents in its sides. Creatures within a @Template[emanation|distance:20] take @Damage[8d6[acid]|options:area-damage] damage (@Check[reflex|dc:40|basic|options:area-effect]). Creatures who fail their saves also take @Damage[3d6[persistent,acid]] damage.</p>"
                 },
                 "Trample": {
                     "name": "Trample",
@@ -2830,7 +2830,7 @@
                 },
                 "Empty Wail": {
                     "name": "Empty Wail",
-                    "description": "<p>The imperfect automaton utters a mournful cry in a @Template[cone|distance:30]. The cry deals @Damage[4d6[mental]] damage to all creatures in the area (@Check[will|dc:22] save). The imperfect automaton can't use its Empty Wail again for [[/gmr 1d4 #Recharge Empty Wail]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for [[/gmr 1d4+1 #rounds]]{1d4+1 rounds}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is stupefied 1 for 1d4+1 rounds and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
+                    "description": "<p>The imperfect automaton utters a mournful cry in a @Template[cone|distance:30]. The cry deals @Damage[4d6[mental]|options:area-damage] damage to all creatures in the area (@Check[will|dc:22|options:area-effect,damaging-effect] save). The imperfect automaton can't use its Empty Wail again for [[/gmr 1d4 #Recharge Empty Wail]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for [[/gmr 1d4+1 #rounds]]{1d4+1 rounds}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is stupefied 1 for 1d4+1 rounds and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
                 },
                 "Impassioned Strikes": {
                     "name": "Impassioned Strikes",
@@ -3206,7 +3206,7 @@
                 },
                 "Vorvorak Bile": {
                     "name": "Vorvorak Bile",
-                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:28]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> 2d8 poison and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (2 rounds)</p>\n<p><strong>Stage 2</strong> 3d8 poison and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} (2 rounds)</p>\n<p><strong>Stage 3</strong> 4d8 poison and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3} (2 rounds)</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:28]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[2d8[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (2 rounds)</p>\n<p><strong>Stage 2</strong> @Damage[3d8[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} (2 rounds)</p>\n<p><strong>Stage 3</strong> @Damage[4d8[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3} (2 rounds)</p>"
                 }
             }
         },
