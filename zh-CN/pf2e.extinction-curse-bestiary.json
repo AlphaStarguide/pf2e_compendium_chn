@@ -574,7 +574,7 @@
                 },
                 "Haunting Wail": {
                     "name": "怨魂哀号 Haunting Wail",
-                    "description": "<p>夜精发出一阵毛骨悚然的哀号。@Template[emanation|distance:30]{30尺}内的其他生物必须进行一次@Check[fortitude|dc:31|traits:damaging-effect]豁免。</p>\n<p>夜精在[[/gmr 1d4 #Recharge Haunting Wail]]{1d4轮}内不能再使用这个能力。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到@Damage[2d10[sonic]]伤害。</p>\n<p><strong>失败</strong> 目标受到@Damage[4d10[sonic]]伤害，获得10点音波弱点，维持1分钟。</p>\n<p><strong>大失败</strong> 失败的效果，而且目标会进入@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{逃跑 Fleeing}状态，维持1轮。</p>"
+                    "description": "<p>夜精发出一阵毛骨悚然的哀号。@Template[emanation|distance:30]{30尺}内的其他生物必须进行一次@Check[fortitude|dc:31|options:area-effect,damaging-effect]豁免。</p>\n<p>夜精在[[/gmr 1d4 #Recharge Haunting Wail]]{1d4轮}内不能再使用这个能力。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到@Damage[2d10[sonic]|options:area-damage]伤害。</p>\n<p><strong>失败</strong> 目标受到@Damage[4d10[sonic]|options:area-damage]伤害，获得10点音波弱点，维持1分钟。</p>\n<p><strong>大失败</strong> 失败的效果，而且目标会进入@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]状态，维持1轮。</p>"
                 }
             },
             "prototypeToken": {
@@ -919,7 +919,7 @@
                 },
                 "Gout of Acid": {
                     "name": "酸液喷吐 Gout of Acid",
-                    "description": "<p>腐蚀蜥蜴会在@Template[cone|distance:15]范围内吐出一股酸液。这个区域内的每个生物都会受到@Damage[3d6[acid]]伤害（@Check[reflex|dc:20|basic]豁免）。</p>\n<p>腐蚀蜥蜴在[[/gmr 1d4 #Recharge Gout of Acid]]{1d4轮}内不能再次使用酸液喷吐。</p>"
+                    "description": "<p>腐蚀蜥蜴会在@Template[cone|distance:15]范围内吐出一股酸液。这个区域内的每个生物都会受到@Damage[3d6[acid]|options:area-damage]伤害（@Check[reflex|dc:20|basic|options:area-effect]豁免）。</p>\n<p>腐蚀蜥蜴在[[/gmr 1d4 #Recharge Gout of Acid]]{1d4轮}内不能再次使用酸液喷吐。</p>"
                 },
                 "Lurching Charge": {
                     "name": "颠簸冲锋 Lurching Charge",
@@ -2258,7 +2258,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:43]，@Damage[10d6[void]]，逃脱DC 43，破裂45</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:43]，@Damage[10d6[void]]，[[/act escape dc=43]]，破裂45</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Tentacular Burst": {
                     "name": "触手猛击 Tentacular Burst",
@@ -2337,7 +2337,7 @@
                 },
                 "Trunk Beam": {
                     "name": "象鼻射线 Trunk Beam",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 虹彩大象从它的鼻子中射出一束长度为@Template[line|distance:30]的光波。该区域内的所有生物必须尝试@Check[fortitude|dc:22]豁免。</p>\n<p><strong>大成功</strong> 此生物不受影响。</p>\n<p><strong>成功</strong> 此生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p><strong>失败</strong> 此生物@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。</p>\n<p><strong>大失败</strong> 此生物永久目盲。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 虹彩大象从它的鼻子中射出一束长度为@Template[line|distance:30]的光波。该区域内的所有生物必须尝试@Check[fortitude|dc:22|options:area-effect]豁免。</p>\n<p><strong>大成功</strong> 此生物不受影响。</p>\n<p><strong>成功</strong> 此生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p><strong>失败</strong> 此生物@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1分钟。</p>\n<p><strong>大失败</strong> 此生物永久目盲。</p>"
                 },
                 "Grabbing Trunk": {
                     "name": "鼻卷 Grabbing Trunk",
@@ -2975,7 +2975,7 @@
                 },
                 "Grand Finale": {
                     "name": "华丽终章 Grand Finale",
-                    "description": "<p><strong>需求</strong> 缪斯魅影的戏剧灵光正在生效；</p>\n<hr />\n<p><strong>效果</strong> 缪斯魅影停止其戏剧灵光并对@Template[burst|distance:30]内的生物造成@Damage[4d8[mental]]伤害，包括它占据的生物（@Check[will|dc:22|basic]豁免）。意志豁免失败的生物将被缪斯魅影@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{迷魂 Fascinated}1分钟。</p>\n<p data-pf2-show-dc=\"gm\">戏剧魅影在[[/gmr 1d4 #Recharge Grand Finale]]{1d4轮}内不能再次使用此能力。</p>"
+                    "description": "<p><strong>需求</strong> 缪斯魅影的戏剧灵光正在生效；</p>\n<hr />\n<p><strong>效果</strong> 缪斯魅影停止其戏剧灵光并对@Template[burst|distance:30]内的生物造成@Damage[4d8[mental]|options:area-damage]伤害，包括它占据的生物（@Check[will|dc:22|basic|options:area-effect]豁免）。意志豁免失败的生物将被缪斯魅影@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]1分钟。</p>\n<p data-pf2-show-dc=\"gm\">戏剧魅影在[[/gmr 1d4 #Recharge Grand Finale]]{1d4轮}内不能再次使用此能力。</p>"
                 },
                 "Muse Possession": {
                     "name": "缪斯附体 Muse Possession",
@@ -3119,7 +3119,7 @@
                 },
                 "Fling Shards": {
                     "name": "碎片四射 Fling Shards",
-                    "description": "<p>黑曜石魔像在@Template[cone|distance:15]内射出来自它自身的如刀片般尖利的碎片。</p>\n<p>区域内的生物受到@Damage[(4d8+9)[slashing]]伤害（@Check[reflex|dc:37|basic]豁免）。</p>"
+                    "description": "<p>黑曜石魔像在@Template[cone|distance:15]内射出来自它自身的如刀片般尖利的碎片。</p>\n<p>区域内的生物受到@Damage[(4d8+9)[slashing]|options:area-damage]伤害（@Check[reflex|dc:37|basic|options:area-effect]豁免）。</p>"
                 },
                 "Shred Armor": {
                     "name": "击碎护甲 Shred Armor",
@@ -3745,7 +3745,7 @@
                 },
                 "Devastating Blast": {
                     "name": "毁灭爆震 Devastating Blast",
-                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]能量。区域内的生物受到@Damage[8d12[cold]]伤害(@Check[reflex|dc:36|basic]豁免)。</p>\n<p>死墓骑士每[[/gmr 1d4 #Recharge Devastating Blast]]{1d4轮}只能使用1次该能力。</p>"
+                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]能量。区域内的生物受到@Damage[8d12[cold]|options:area-damage]伤害（@Check[reflex|dc:36|basic|options:area-effect]豁免）。</p>\n<p>死墓骑士每[[/gmr 1d4 #Recharge Devastating Blast]]{1d4轮}只能使用1次该能力。</p>"
                 },
                 "Graveknight's Curse": {
                     "name": "死墓骑士诅咒 Graveknight's Curse",
@@ -4130,7 +4130,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:30], @Damage[4d10[bludgeoning]], 逃脱DC 26, 破裂25</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:30]，@Damage[4d10[bludgeoning]]，[[/act escape dc=26]]，破裂25</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Residual Grease": {
                     "name": "油脂残余 Residual Grease",
@@ -4301,7 +4301,7 @@
                 },
                 "Earthen Torrent": {
                     "name": "岩土激流 Earthen Torrent",
-                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<p><strong>需求</strong> 瑟赛卡站在或是靠近至少10尺立方的土壤，岩石或是其他泥土物质附近；</p>\n<hr />\n<p><strong>效果</strong> 瑟赛卡创造一道由翻滚的泥土构成的强烈波浪。@Template[cone|distance:15]内的生物将受到@Damage[10d10[bludgeoning]]伤害 (@Check[reflex|dc:34|basic]豁免；大失败时，该生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone})。</p>"
+                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<p><strong>需求</strong> 瑟赛卡站在或是靠近至少10尺立方的土壤，岩石或是其他泥土物质附近；</p>\n<hr />\n<p><strong>效果</strong> 瑟赛卡创造一道由翻滚的泥土构成的强烈波浪。@Template[cone|distance:15]内的生物将受到@Damage[10d10[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免；大失败时，该生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。</p>"
                 },
                 "Expanded Splash": {
                     "name": "溅射扩展 Expanded Splash",
@@ -5219,7 +5219,7 @@
                 },
                 "Earthen Torrent": {
                     "name": "岩土激流 Earthen Torrent",
-                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<p><strong>需求</strong> 石领主站在或是靠近至少 10 尺立方的土壤，岩石或是其他泥土物质附近；</p>\n<hr />\n<p><strong>效果</strong> 石领主创造一道由翻滚的泥土构成的强烈波浪。@Template[cone|distance:15]内的生物将受到@Damage[7d8[bludgeoning]]伤害（@Check[reflex|dc:26|basic]豁免；大失败时，该生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}）。</p>"
+                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<p><strong>需求</strong> 石领主站在或是靠近至少 10 尺立方的土壤，岩石或是其他泥土物质附近；</p>\n<hr />\n<p><strong>效果</strong> 石领主创造一道由翻滚的泥土构成的强烈波浪。@Template[cone|distance:15]内的生物将受到@Damage[7d8[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免；大失败时，该生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。</p>"
                 },
                 "Stone Throes": {
                     "name": "岩石囚笼 Stone Throes",
@@ -5286,7 +5286,7 @@
                 },
                 "Fling Wax": {
                     "name": "浇蜡 Fling Wax",
-                    "description": "<p>烛指精在@Template[line|distance:30]的范围内甩出一道灼热的蜡液。每团蜡造成@Damage[1d6[persistent,fire]]伤害。一个受影响的生物或是邻近的盟友可以花费一个交互动作将蜡刮走来移除一团蜡。烛指精在[[/gmr 1d4 #Recharge Fling Wax]]{1d4轮}内不能再使用浇蜡能力。在区域内生物必须成功进行一次@Check[reflex|dc:27|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物被淋上了[[/r 1d2+1]]{1d2+1团蜡}。</p>\n<p><strong>失败</strong> 该生物被淋上了[[/r 1d4+2]]{1d4+2团蜡}。</p>\n<p><strong>大失败</strong> 失败的效果，该生物在移除蜡团之前处于@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}状态。</p>"
+                    "description": "<p>烛指精在@Template[line|distance:30]的范围内甩出一道灼热的蜡液。每团蜡造成@Damage[1d6[persistent,fire]]伤害。一个受影响的生物或是邻近的盟友可以花费一个交互动作将蜡刮走来移除一团蜡。烛指精在[[/gmr 1d4 #Recharge Fling Wax]]{1d4轮}内不能再使用浇蜡能力。在区域内生物必须成功进行一次@Check[reflex|dc:27|options:area-effect,damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物被淋上了[[/r 1d2+1]]{1d2+1团蜡}。</p>\n<p><strong>失败</strong> 该生物被淋上了[[/r 1d4+2]]{1d4+2团蜡}。</p>\n<p><strong>大失败</strong> 失败的效果，该生物在移除蜡团之前处于@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]状态。</p>"
                 },
                 "Reactive Strike": {
                     "name": "Reactive Strike",
