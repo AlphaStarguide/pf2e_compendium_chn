@@ -58,7 +58,7 @@
                 },
                 "Forge Breath": {
                     "name": "锻炉吐息 Forge Breath",
-                    "description": "<p>被诅咒的锻炉废料呼出一团由刺鼻的煤灰、尘埃和灼热的余烬组成的烟云。这能影响@Template[cone|distance:30]区域或以被诅咒的锻炉废料为中心的@Template[burst|distance:20]区域，并持续[[/gmr 1d4 #rounds]]{1d4轮}。</p>\n<p>每个进入或在该区域开始其回合的生物将受到@Damage[12d6[fire]]伤害（@Check[reflex|dc:36|basic]豁免）。</p>\n<p>豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。烟云里的生物处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}状态，但对于被诅咒的锻炉废料来说无效。</p>\n<p>直到被诅咒的锻炉废料使用鼓起风箱之前，他无法再次使用锻炉吐息。</p>"
+                    "description": "<p>被诅咒的锻炉废料呼出一团由刺鼻的煤灰、尘埃和灼热的余烬组成的烟云。这能影响@Template[cone|distance:30]区域或以被诅咒的锻炉废料为中心的@Template[burst|distance:20]区域，并持续[[/gmr 1d4 #rounds]]{1d4轮}。</p>\n<p>每个进入或在该区域开始其回合的生物将受到@Damage[12d6[fire]|options:area-damage]伤害（@Check[reflex|dc:36|basic|options:area-effect]豁免）。</p>\n<p>豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1分钟。烟云里的生物处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态，但对于被诅咒的锻炉废料来说无效。</p>\n<p>直到被诅咒的锻炉废料使用鼓起风箱之前，他无法再次使用锻炉吐息。</p>"
                 },
                 "Inflate Bellows": {
                     "name": "鼓起风箱 Inflate Bellows",
@@ -439,7 +439,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:28|traits:damaging-effect], @Damage[2d6[slashing]]伤害，逃脱DC 28，破裂25 (仅钝击)。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:28|traits:damaging-effect], @Damage[2d6[slashing]]伤害，[[/act escape dc=28]]，破裂25（仅钝击）。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Freeze": {
                     "name": "晶化 Freeze",
@@ -1221,7 +1221,7 @@
                 },
                 "Forge Breath": {
                     "name": "锻炉吐息 Forge Breath",
-                    "description": "<p>锻炉废料呼出一团由刺鼻的煤灰、尘埃和灼热的余烬组成的烟云。影响范围为@Template[cone|distance:30]或一个@Template[burst|distance:20]，并持续[[/gmr 1d4 #rounds]]{1d4轮}。</p>\n<p>每个进入或在该区域开始其回合的生物将受到@Damage[6d6[fire]]伤害，@Check[reflex|dc:21|basic]豁免。豁免失败的生物也会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。</p>\n<p>烟云里的生物处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}状态，但对于锻炉废料可不是。</p>\n<p>直到它使用鼓起风箱前，锻炉废料不能再使用锻炉吐息。</p>"
+                    "description": "<p>锻炉废料呼出一团由刺鼻的煤灰、尘埃和灼热的余烬组成的烟云。影响范围为@Template[cone|distance:30]或一个@Template[burst|distance:20]，并持续[[/gmr 1d4 #rounds]]{1d4轮}。</p>\n<p>每个进入或在该区域开始其回合的生物将受到@Damage[6d6[fire]|options:area-damage]伤害，@Check[reflex|dc:21|basic|options:area-effect]豁免。豁免失败的生物也会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1分钟。</p>\n<p>烟云里的生物处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态，但对于锻炉废料可不是。</p>\n<p>直到它使用鼓起风箱前，锻炉废料不能再使用锻炉吐息。</p>"
                 },
                 "Inflate Bellows": {
                     "name": "鼓起风箱 Inflate Bellows",
@@ -2099,7 +2099,7 @@
                 },
                 "Explosive Breath": {
                     "name": "爆炸吐息 Explosive Breath",
-                    "description": "<p>当蒙哥卡瑞使用吐息时，他能吐出一颗会爆炸的炽焰球取代原本的锥形范围。当它如此做时，他能在60尺范围内某个方格的角上引爆火球。火球立即爆炸并对@Template[burst|distance:30]范围内所有生物造成@Damage[24d6[fire]]伤害（@Check[reflex|dc:48|basic|name:Explosive Orb|traits:fire]豁免）。豁免大失败的生物还会着火，受到@Damage[4d6[persistent,fire]]伤害。</p>"
+                    "description": "<p>当蒙哥卡瑞使用吐息时，他能吐出一颗会爆炸的炽焰球取代原本的锥形范围。当它如此做时，他能在60尺范围内某个方格的角上引爆火球。火球立即爆炸并对@Template[burst|distance:30]范围内所有生物造成@Damage[24d6[fire]|options:area-damage]伤害（@Check[reflex|dc:48|basic|name:Explosive Orb|options:area-effect|traits:fire]豁免）。豁免大失败的生物还会着火，受到@Damage[4d6[persistent,fire]]伤害。</p>"
                 },
                 "+2 Status to All Saves vs. Magic": {
                     "name": "对抗魔法的豁免获得+2状态加值 +2 Status to All Saves vs. Magic"
@@ -3137,7 +3137,7 @@
                 },
                 "Firebleed": {
                     "name": "滴焰 Firebleed",
-                    "description": "<p><strong>触发</strong> 佐坦尼受到伤害；</p>\n<hr />\n<p><strong>效果</strong> 佐坦尼的伤口喷出岩浆，对@Template[cone|distance:30]范围造成@Damage[6d8[fire],6d8[persistent,fire]]{6d8火焰和6d8持续火焰伤害}（@Check[reflex|dc:42|basic]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 佐坦尼受到伤害；</p>\n<hr />\n<p><strong>效果</strong> 佐坦尼的伤口喷出岩浆，对@Template[cone|distance:30]范围造成@Damage[6d8[fire],6d8[persistent,fire]|options:area-damage]伤害（@Check[reflex|dc:42|basic|options:area-effect]豁免）。</p>"
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
@@ -3197,7 +3197,7 @@
                 },
                 "Explosion": {
                     "name": "自爆 Explosion",
-                    "description": "<p>当佐坦尼之嗣死亡时，它会自爆，对@Template[emanation|distance:30]范围内的生物造成@Damage[15d8[fire]]伤害（@Check[reflex|dc:39|basic]豁免）。</p>"
+                    "description": "<p>当佐坦尼之嗣死亡时，它会自爆，对@Template[emanation|distance:30]范围内的生物造成@Damage[15d8[fire]|options:area-damage]伤害（@Check[reflex|dc:39|basic|options:area-effect]豁免）。</p>"
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
