@@ -464,7 +464,7 @@
                 },
                 "Frozen Feathers": {
                     "name": "冷羽 Frozen Feathers",
-                    "description": "<p>霜天雕张开翅膀疯狂拍打，在60尺锥形范围内释放一波镀冰的羽毛。范围内的所有生物都必须尝试一次@Check[reflex|dc:34|options:damaging-effect]豁免。[[/gmr 1d4 #Recharge Frozen Feathers]]{1d4轮}内霜天雕无法再使用冷羽。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[3d6[piercing]]和@Damage[5d6[cold]]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[5d6[piercing]]和@Damage[10d6[cold]]伤害。 </p>\n<p><strong>大失败</strong> 该生物受到@Damage[8d6[piercing]]伤害、@Damage[15d6[cold]]伤害，并@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}持续1分钟。</p>"
+                    "description": "<p>霜天雕张开翅膀疯狂拍打，在60尺锥形范围内释放一波镀冰的羽毛。范围内的所有生物都必须尝试一次@Check[reflex|dc:34|options:area-effect,damaging-effect]豁免。[[/gmr 1d4 #Recharge Frozen Feathers]]{1d4轮}内霜天雕无法再使用冷羽。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[3d6[piercing],5d6[cold]|options:area-damage]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[5d6[piercing],10d6[cold]|options:area-damage]伤害。 </p>\n<p><strong>大失败</strong> 该生物受到@Damage[8d6[piercing],15d6[cold]|options:area-damage]伤害，并@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}持续1分钟。</p>"
                 },
                 "Flying Strafe": {
                     "name": "飞掠 Flying Strafe",
@@ -678,7 +678,7 @@
                 },
                 "Detonate Disguise": {
                     "name": "引爆伪装 Detonate Disguise",
-                    "description": "<p><strong>需求</strong> 瓦图姆莱多正穿着唤出的伪装</p><hr /><p><strong>效果</strong> 瓦图姆莱多破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对与龙邻接的生物造成@Damage[18d6[bludgeoning]]伤害（@Check[reflex|dc:39|basic]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。任何与瓦图姆莱多位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
+                    "description": "<p><strong>需求</strong> 瓦图姆莱多正穿着唤出的伪装</p><hr /><p><strong>效果</strong> 瓦图姆莱多破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对与龙邻接的生物造成@Damage[18d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:39|basic|options:area-effect]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。任何与瓦图姆莱多位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
                 },
                 "Draconic Momentum": {
                     "name": "龙之威势 Draconic Momentum",
@@ -1026,7 +1026,7 @@
             "items": {
                 "Dragon Breath": {
                     "name": "龙息 Dragon Breath",
-                    "description": "<p>圣牙有两种吐息方式。[[/gmr 1d4 #Recharge Dragon Breath]]{1d4轮}内他无法再使用龙息。</p>\n<p><strong>刀刃龙息 Blade Breath</strong> （奥术）他在@Template[line|distance:100]范围中吐出尖锐刀刃，造成@Damage[19d6[slashing]]伤害（@Check[reflex|dc:40|basic]豁免）。此吐息制造的刀刃在本轮结束时消失。</p>\n<p><strong>熔炉龙息 Forge Breath</strong> （奥术）他吐出一团余烬和烟雾，仿佛它们来自一个巨大熔炉。每个位于@Template[cone|distance:40]范围内的生物受到@Damage[6d6[fire]]伤害和@Damage[12d6[poison]]伤害（@Check[reflex|dc:40|basic]豁免）。烟雾会萦绕至圣牙下回合结束；所有烟雾内的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，烟雾外的所有生物也对烟雾内生物隐蔽。</p>"
+                    "description": "<p>圣牙有两种吐息方式。[[/gmr 1d4 #Recharge Dragon Breath]]{1d4轮}内他无法再使用龙息。</p>\n<p><strong>刀刃龙息 Blade Breath</strong> （奥术）他在@Template[line|distance:100]范围中吐出尖锐刀刃，造成@Damage[19d6[slashing]|options:area-damage]伤害（@Check[reflex|dc:40|basic|options:area-effect]豁免）。此吐息制造的刀刃在本轮结束时消失。</p>\n<p><strong>熔炉龙息 Forge Breath</strong> （奥术）他吐出一团余烬和烟雾，仿佛它们来自一个巨大熔炉。每个位于@Template[cone|distance:40]范围内的生物受到@Damage[6d6[fire],12d6[poison]|options:area-damage]伤害（@Check[reflex|dc:40|basic|options:area-effect]豁免）。烟雾会萦绕至圣牙下回合结束；所有烟雾内的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，烟雾外的所有生物也对烟雾内生物隐蔽。</p>"
                 },
                 "+1 Status to All Saves vs. Magic": {
                     "name": "对抗魔法全豁免+1状态加值"
@@ -1162,7 +1162,7 @@
             "items": {
                 "Fire Crossbows!": {
                     "name": "发射弩箭！ Fire Crossbows!",
-                    "description": "<p>古拉姆步兵团给手中的弩装填并上弦，然后以齐射的方式进行一次远程攻击。</p>\n<p>这次齐射射程为120尺，对@Template[burst|distance:10]范围造成@Damage[6d8[piercing]]伤害（@Check[reflex|dc:31|basic]豁免）。如果部队规模缩减到8格或更小，爆发范围减少到@Template[burst|distance:5]。</p>"
+                    "description": "<p>古拉姆步兵团给手中的弩装填并上弦，然后以齐射的方式进行一次远程攻击。</p>\n<p>这次齐射射程为120尺，对@Template[burst|distance:10]范围造成@Damage[6d8[piercing]|options:area-damage]伤害（@Check[reflex|dc:31|basic|options:area-effect]豁免）。如果部队规模缩减到8格或更小，爆发范围减少到@Template[burst|distance:5]。</p>"
                 },
                 "Raise Swords!": {
                     "name": "放平长剑！ Raise Swords!",
