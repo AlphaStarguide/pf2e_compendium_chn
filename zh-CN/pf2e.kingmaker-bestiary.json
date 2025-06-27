@@ -1585,7 +1585,7 @@
                 },
                 "Fireball Breath": {
                     "name": "火球吐息 Fireball Breath",
-                    "description": "<p>焰龙兽吐出一个火球，对至多180尺远范围的@Template[burst|distance:20]区域造成影响。爆发区域内的生物会承受@Damage[9d6[fire]]伤害（@Check[reflex|dc:26|basic]豁免）。</p>\n<p>焰龙兽在[[/gmr 1d6 #Recharge Fireball Breath]]{1d6轮}内无法再次火球吐息。</p>"
+                    "description": "<p>焰龙兽吐出一个火球，对至多180尺远范围的@Template[burst|distance:20]区域造成影响。爆发区域内的生物会承受@Damage[9d6[fire]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免）。</p>\n<p>焰龙兽在[[/gmr 1d6 #Recharge Fireball Breath]]{1d6轮}内无法再次火球吐息。</p>"
                 },
                 "Speed Surge": {
                     "name": "极速爆发 Speed Surge",
@@ -1851,7 +1851,7 @@
                 },
                 "Fearsome Blizzard": {
                     "name": "可怖的暴风雪 Fearsome Blizzard",
-                    "description": "<p>费昂口中呼出一片旋风般的暴风雪，将肉体冻结，让灵魂也能感到彻骨的寒冷。所有位于费昂@Template[emanation|distance:60]内的生物必须进行@Check[fortitude|dc:33]豁免。费昂无法在[[/gmr 1d4 #Recharge Fearsome Blizzard]]{1d4轮}内重复使用可怖的暴风雪。</p>\n<hr />\n<p><strong>大成功</strong> 该生物未受到影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[5d8[cold]]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[10d8[cold]]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}；惊惧效果具有情绪、恐惧和心灵特征。</p>\n<p><strong>大失败</strong> 该生物受到@Damage[20d8[cold]]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，只要还处于惊惧状态就会同时还处于@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]状态。惊惧和逃跑效果具有情绪、恐惧和心灵特征。</p>"
+                    "description": "<p>费昂口中呼出一片旋风般的暴风雪，将肉体冻结，让灵魂也能感到彻骨的寒冷。所有位于费昂@Template[emanation|distance:60]内的生物必须进行@Check[fortitude|dc:33|options:area-effect,damaging-effect]豁免。费昂无法在[[/gmr 1d4 #Recharge Fearsome Blizzard]]{1d4轮}内重复使用可怖的暴风雪。</p>\n<hr />\n<p><strong>大成功</strong> 该生物未受到影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[5d8[cold]|options:area-damage]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[10d8[cold]|options:area-damage]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}；惊惧效果具有情绪、恐惧和心灵特征。</p>\n<p><strong>大失败</strong> 该生物受到@Damage[20d8[cold]|options:area-damage]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}，只要还处于惊惧状态就会同时还处于@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]状态。惊惧和逃跑效果具有情绪、恐惧和心灵特征。</p>"
                 }
             },
             "prototypeToken": {
@@ -2974,7 +2974,7 @@
                 },
                 "Chill Breath": {
                     "name": "冻寒吐息 Chill Breath",
-                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[9d6[cold]|options:area-damage]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:41|basic|options:area-effect]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC41）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
+                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[9d6[cold]|options:area-damage]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:41|basic|options:area-effect]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（[[/act escape dc=41]]）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
                 },
                 "Hatchet Onslaught": {
                     "name": "短柄斧狂袭 Hatchet Onslaught",
@@ -3028,7 +3028,7 @@
                 },
                 "Chill Breath": {
                     "name": "冻寒吐息 Chill Breath",
-                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[7d6[cold]|options:area-damage]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:36|basic|options:area-effect]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（脱逃DC36）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
+                    "description": "<p>霜巨人呼出@Template[cone|distance:15|damaging:yes]的寒冷水汽，瞬间凝结成冰，造成@Damage[7d6[cold]|options:area-damage]伤害。锥形范围内的每个生物都必须通过@Check[reflex|dc:36|basic|options:area-effect]豁免。</p>\n<p>豁免失败的生物同时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且它每回合结束时会受到@Damage[2d6[cold]]伤害，直到它重获自由（[[/act escape dc=36]]）。</p>\n<p>霜巨人在[[/gmr 1d4 #Recharge Chill Breath]]{1d4轮}内无法再次使用冻寒吐息。</p>"
                 }
             },
             "publicNotes": "<p>霜巨人是冷酷无情的掠夺者，它们在荒凉、寒冷的土地上对那些胆敢靠近它们居住地的人进行劫掠。它们的氏族包括宣称一整片苔原的领土猎人，以及漫游在冰川之间寻找可征服定居点的冻土游民。霜巨人的氏族领袖是那些在战斗中最凶残的人——那些自称为首领并要求追随者绝对服从的魁梧蛮人。如果有任何霜巨人想成为首领，他们就必须向现有首领发起挑战，进行一场死斗，之后胜利者能继续领导氏族。</p>\n<p>霜巨人生活在严寒国度，它们的外表能反映出它们经历过无情的暴风雪和严寒的考验。它们经常穿着金属盔甲，盔甲上装饰着毛皮、牙齿和野兽的獠牙，挥舞着餐桌一样长的重型武器。它们的肤色从淡蓝色到岩灰色，发色则是暗白色或肮脏的黄色。</p>\n<p>典型的霜巨人高约15尺，重约2800磅。</p>\n<hr />\n<p>巨人是生活在世界偏远地区的大型类人生物。它们被分为许多不同类型。</p>",
@@ -3063,7 +3063,7 @@
                 },
                 "Devastating Blast": {
                     "name": "毁灭爆震 Devastating Blast",
-                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]能量。区域内的生物受到@Damage[8d12[cold]]伤害，（@Check[reflex|dc:34|basic]豁免）。死墓骑士每[[/gmr 1d4 #Recharge Devastating Blast]]{1d4轮}只能使用1次该能力。</p>"
+                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]能量。区域内的生物受到@Damage[8d12[cold]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免）。死墓骑士每[[/gmr 1d4 #Recharge Devastating Blast]]{1d4轮}只能使用1次该能力。</p>"
                 },
                 "Graveknight's Curse": {
                     "name": "死墓骑士诅咒 Graveknight's Curse",
@@ -3188,7 +3188,7 @@
                 },
                 "Devastating Blast": {
                     "name": "毁灭爆震 Devastating Blast",
-                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]能量。区域内的生物受到@Damage[9d12[electricity]]伤害（@Check[reflex|dc:37|basic]豁免）。死墓骑士每[[/gmr 1d4 #Recharge Devastating Blast]]{1d4轮}只能使用1次该能力。</p>"
+                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]能量。区域内的生物受到@Damage[9d12[electricity]|options:area-damage]伤害（@Check[reflex|dc:37|basic|options:area-effect]豁免）。死墓骑士每[[/gmr 1d4 #Recharge Devastating Blast]]{1d4轮}只能使用1次该能力。</p>"
                 },
                 "Graveknight's Curse": {
                     "name": "死墓骑士诅咒 Graveknight's Curse",
