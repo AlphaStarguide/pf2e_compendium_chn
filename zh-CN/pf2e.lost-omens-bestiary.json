@@ -445,7 +445,7 @@
                 },
                 "Floodwaters": {
                     "name": "洪水 Floodwaters",
-                    "description": "<p>水流冲向前方@Template[line|distance:60]范围，造成@Damage[4d6[bludgeoning]]伤害（@Check[reflex|dc:25|basic]豁免）。豁免失败且未@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}于螭龙的生物被推离10尺。</p>"
+                    "description": "<p>水流冲向前方@Template[line|distance:60]范围，造成@Damage[4d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:25|basic|options:area-effect]豁免）。豁免失败且未@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于螭龙的生物被推离10尺。</p>"
                 },
                 "Storm Veil": {
                     "name": "风暴帷幕 Storm Veil",
@@ -474,7 +474,7 @@
                 },
                 "Hammer Storm": {
                     "name": "Hammer Storm",
-                    "description": "<p>The Grand Defender unleashes a volley of warhammers that deal @Damage[12d8[bludgeoning]] damage in a @Template[cone|distance:50] (@Check[reflex|dc:36|basic] save). The Grand Defender can exclude any number of squares from the cone's area, preventing damage to creatures in those squares. Creatures that critically fail their save are pushed 10 feet away from the Grand Defender and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. The storm creates 24 Medium @UUID[Compendium.pf2e.equipment-srd.Item.rXt4629QSg7KDTgJ]{warhammers} that persist after the attack and can be used by creatures. The Grand Defender can't use Hammer Storm for [[/gmr 1d4 #Recharge Hammer Storm]]{1d4 rounds}.</p>"
+                    "description": "<p>The Grand Defender unleashes a volley of warhammers that deal @Damage[12d8[bludgeoning]|options:area-damage] damage in a @Template[cone|distance:50] (@Check[reflex|dc:36|basic|options:area-effect] save). The Grand Defender can exclude any number of squares from the cone's area, preventing damage to creatures in those squares. Creatures that critically fail their save are pushed 10 feet away from the Grand Defender and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. The storm creates 24 Medium @UUID[Compendium.pf2e.equipment-srd.Item.rXt4629QSg7KDTgJ]{warhammers} that persist after the attack and can be used by creatures. The Grand Defender can't use Hammer Storm for [[/gmr 1d4 #Recharge Hammer Storm]]{1d4 rounds}.</p>"
                 },
                 "Improved Knockdown": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ImprovedKnockdown]</p>",
@@ -1134,7 +1134,7 @@
                 },
                 "Funnel": {
                     "name": "汇吸 Funnel",
-                    "description": "<p>鲲猛吸一口气，吞没@Template[cone|distance:60]范围内的生物与热量。生物受到@Damage[10d8[cold]]伤害且必须尝试一次@Check[fortitude|dc:33]豁免。鲲在[[/gmr 1d4 #Recharge Funnel]]{1d4轮}内不能再次使用汇吸。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全额伤害，并被拉向鲲30尺。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，并被拉向鲲60尺。</p>"
+                    "description": "<p>鲲猛吸一口气，吞没@Template[cone|distance:60]范围内的生物与热量。生物受到@Damage[10d8[cold]|options:area-damage]伤害且必须尝试一次@Check[fortitude|dc:33|options:area-effect,damaging-effect]豁免。鲲在[[/gmr 1d4 #Recharge Funnel]]{1d4轮}内不能再次使用汇吸。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全额伤害，并被拉向鲲30尺。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，并被拉向鲲60尺。</p>"
                 },
                 "Heart of Darkness": {
                     "name": "黑暗之心 Heart of Darkness",
@@ -1377,7 +1377,7 @@
                     "description": "<p>60 feet. A creature that enters the emanation must attempt a @Check[will|dc:21] save. Regardless of outcome, the creature is temporarily immune to terrorspores for 1 minute.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} and inhales spores that remain in its body for 1 minute.</p>\n<p><strong>Failure</strong> As success, but @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and the spores remain for 1 hour.</p>\n<p><strong>Critical Failure</strong> As success, but @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}, the spores remain for 1 hour, and the creature's frightened condition can't be reduced below 1 as long as spores remain in its body.</p>"
                 },
                 "Fulminate": {
-                    "description": "<p><strong>Requirements</strong> The Melfesh Monster has created a spore cloud, and the cloud is within range of one of the Melfesh Monster's fire abilities</p>\n<hr />\n<p><strong>Effect</strong> The Melfesh Monster targets the cloud with one of its abilities with the fire trait. The spore cloud explodes, dealing @Damage[4d10[fire]] damage and @Damage[4[persistent,fire]] damage in a @Template[burst|distance:40] originating from a single square within the cloud (@Check[reflex|dc:24|basic] save).</p>",
+                    "description": "<p><strong>Requirements</strong> The Melfesh Monster has created a spore cloud, and the cloud is within range of one of the Melfesh Monster's fire abilities</p>\n<hr />\n<p><strong>Effect</strong> The Melfesh Monster targets the cloud with one of its abilities with the fire trait. The spore cloud explodes, dealing @Damage[4d10[fire],4[persistent,fire]|options:area-damage]{4d10 fire damage and 4 persistent fire damage} in a @Template[burst|distance:40] originating from a single square within the cloud (@Check[reflex|dc:24|basic|options:area-effect] save).</p>",
                     "name": "Fulminate"
                 },
                 "Spore Cloud": {
@@ -2162,7 +2162,7 @@
                 },
                 "Drown in Ichor": {
                     "name": "Drown in Ichor",
-                    "description": "<p>The fleshforged dreadnought releases a wave of caustic fluid from vents in its sides. Creatures within a @Template[emanation|distance:20] take @Damage[8d6[acid]] damage (@Check[reflex|dc:40|basic]). Creatures who fail their saves also take @Damage[3d6[persistent,acid]] damage.</p>"
+                    "description": "<p>The fleshforged dreadnought releases a wave of caustic fluid from vents in its sides. Creatures within a @Template[emanation|distance:20] take @Damage[8d6[acid]|options:area-damage] damage (@Check[reflex|dc:40|basic|options:area-effect]). Creatures who fail their saves also take @Damage[3d6[persistent,acid]] damage.</p>"
                 }
             },
             "prototypeToken": {
@@ -2516,7 +2516,7 @@
                 },
                 "Empty Wail": {
                     "name": "空洞之嚎 Empty Wail",
-                    "description": "<p>不完美灵导械发出一声@Template[cone|distance:30]的悲痛嚎叫。嚎叫对范围内所有生物造成@Damage[4d6[mental]]伤害（@Check[will|dc:22]豁免）。[[/gmr 1d4 #Recharge Empty Wail]]{1d4轮}内不完美灵导械无法再次使用空洞之嚎。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物承受一半伤害。</p>\n<p><strong>失败</strong> 生物受到全额伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续[[/gmr 1d4+1 #rounds]]{1d4+1轮}。</p>\n<p><strong>大失败</strong> 生物承受双倍伤害，陷入呆滞1（持续1d4+1轮），并且@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>"
+                    "description": "<p>不完美灵导械发出一声@Template[cone|distance:30]的悲痛嚎叫。嚎叫对范围内所有生物造成@Damage[4d6[mental]|options:area-damage]伤害（@Check[will|dc:22|options:area-effect,damaging-effect]豁免）。[[/gmr 1d4 #Recharge Empty Wail]]{1d4轮}内不完美灵导械无法再次使用空洞之嚎。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物承受一半伤害。</p>\n<p><strong>失败</strong> 生物受到全额伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续[[/gmr 1d4+1 #rounds]]{1d4+1轮}。</p>\n<p><strong>大失败</strong> 生物承受双倍伤害，陷入呆滞1（持续1d4+1轮），并且@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>"
                 }
             }
         },
@@ -3966,7 +3966,7 @@
                 },
                 "Icy Japes": {
                     "name": "Icy Japes",
-                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing]] damage plus @Damage[1[cold]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing]] damage plus @Damage[1d4[cold]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold]] damage plus @Damage[1d4[cold]] damage</p>"
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic|options:damaging-effect] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing],1[cold]]{1d6 slashing damage plus 1 cold damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing]1d4[cold]]{2d6+2 slashing damage plus 1d4 cold damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold],[1d4[cold]]{2d6+5 cold damage plus 1d4 cold damage}</p>"
                 }
             },
             "prototypeToken": {
@@ -4188,7 +4188,7 @@
                 },
                 "Vorvorak Bile": {
                     "name": "Vorvorak Bile",
-                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:28]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> 2d8 poison and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (2 rounds)</p>\n<p><strong>Stage 2</strong> 3d8 poison and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} (2 rounds)</p>\n<p><strong>Stage 3</strong> 4d8 poison and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3} (2 rounds)</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:28]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<p><strong>Stage 1</strong> @Damage[2d8[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (2 rounds)</p>\n<p><strong>Stage 2</strong> @Damage[3d8[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} (2 rounds)</p>\n<p><strong>Stage 3</strong> @Damage[4d8[poison]] and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 3} (2 rounds)</p>"
                 },
                 "+2 status vs. fear effects": {
                     "name": "+2 status vs. fear effects"
