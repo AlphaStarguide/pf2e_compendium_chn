@@ -536,7 +536,7 @@
                 },
                 "Devastating Blast": {
                     "name": "毁灭爆震 Devastating Blast",
-                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]的能量。区域内的生物承受@Damage[11d6[cold]]伤害，这具有1次基础反射豁免，豁免DC为@Check[reflex|dc:29|basic]。</p>\n<p>死墓骑士每[[/gmr 1d4 #Rounds]]轮只能使用该能力1次。</p>"
+                    "description": "<p>死墓骑士释放出@Template[cone|distance:30]的能量。区域内的生物承受@Damage[11d6[cold]|options:area-damage]伤害，进行@Check[reflex|dc:29|basic|options:area-effect]豁免。</p>\n<p>死墓骑士每[[/gmr 1d4 #Recharge Devastating Blast]]轮只能使用该能力1次。</p>"
                 },
                 "Graveknight's Curse": {
                     "name": "死墓骑士诅咒 Graveknight's Curse",
@@ -985,7 +985,7 @@
                 },
                 "Explosion": {
                     "name": "爆炸 Explosion",
-                    "description": "<p>当火巨蟒死亡时，它会爆炸，对@Template[emanation|distance:10|traits:fire,damaging-effect]范围内的所有生物造成@Damage[6d6[fire]]伤害（@Check[reflex|dc:28|basic]豁免）。</p>"
+                    "description": "<p>当火巨蟒死亡时，它会爆炸，对@Template[emanation|distance:10]范围内的所有生物造成@Damage[6d6[fire]|options:area-damage]伤害（@Check[reflex|dc:28|basic|options:area-effect]豁免）。</p>"
                 }
             },
             "data": {
@@ -1003,7 +1003,7 @@
                 },
                 "Gale Breath": {
                     "name": "狂风吐息 Gale Breath",
-                    "description": "<p>元素飓风对@Template[cone|distance:30]范围进行气流吐息。范围内的所有生物都必须通过@Check[fortitude|dc:29]检定否则会从元素身边击飞。</p>\n<p>如果一个生物被击飞到固体物体上会停止移动并受到@Damage[10d6[bludgeoning]]伤害。</p>\n<p>元素飓风在[[/gmr 1d4 #Recharge Gale Breath]]{1d4轮}内无法再次使用狂风吐息。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被推离20尺。</p>\n<p><strong>失败</strong> 生物被推离40尺。</p>\n<p><strong>大失败</strong> 生物被推离40尺并被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                    "description": "<p>元素飓风对@Template[cone|distance:30]范围进行气流吐息。范围内的所有生物都必须通过@Check[fortitude|dc:29|options:area-effect,damaging-effect]检定否则会从元素身边击飞。</p>\n<p>如果一个生物被击飞到固体物体上会停止移动并受到@Damage[10d6[bludgeoning]|options:area-damage]伤害。</p>\n<p>元素飓风在[[/gmr 1d4 #Recharge Gale Breath]]{1d4轮}内无法再次使用狂风吐息。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被推离20尺。</p>\n<p><strong>失败</strong> 生物被推离40尺。</p>\n<p><strong>大失败</strong> 生物被推离40尺并被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
                 },
                 "Push 10 feet": {
                     "name": "推离 10 尺",
@@ -1844,7 +1844,7 @@
                     "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:38]</p>\n<hr />\n<p><strong>最大持续时间</strong> 10轮</p>\n<p><strong>阶段1</strong> @Damage[5d6[cold]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}（1轮）;</p>\n<p><strong>阶段2</strong> @Damage[7d6[cold]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}（1轮）</p>"
                 },
                 "Icemire Breath": {
-                    "description": "<p>冰雪蛇龙喷出爆发性的@Template[cone|distance:60]区域的冻寒粘液，对区域内的生物造成@Damage[15d6[cold]]伤害（@Check[reflex|dc:38|basic]豁免）。</p>\n<p>冻寒粘液会附着至它碰撞到的物体上并凝结成厚厚的冰层。豁免失败的生物会被冰层@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，除非他能成功通过检定[[/act escape dc=34]]或者有一名盟友[[/act force-open dc=34]]{破拆}冰层（两个方法的DC均为34）。在这些生物回合开始时，仍旧被冰层禁足的生物会受到@Damage[4d6[cold]]伤害。其他生物也可以通过对被冻结的生物造成合计20点火焰伤害来解放被冻结的目标。若无人处理，这些冰层会在1分钟内自行崩解。</p>\n<p>拥有火特征的生物不会被冰泥吐息困住。飞行生物被冻结则会坠落，游泳的生物被冻结则会以每轮60尺的速度向水面上浮。</p>\n<p>冰雪蛇龙在[[/gmr 1d4 #Recharge Icemire Breath]]{1d4轮}内无法再次使用冰泥吐息。</p>",
+                    "description": "<p>冰雪蛇龙喷出爆发性的@Template[cone|distance:60]区域的冻寒粘液，对区域内的生物造成@Damage[15d6[cold]|options:area-damage]伤害（@Check[reflex|dc:38|basic|options:area-effect]豁免）。</p>\n<p>冻寒粘液会附着至它碰撞到的物体上并凝结成厚厚的冰层。豁免失败的生物会被冰层@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，除非他能成功通过检定[[/act escape dc=34]]或者有一名盟友[[/act force-open dc=34]]{破拆}冰层（两个方法的DC均为34）。在这些生物回合开始时，仍旧被冰层禁足的生物会受到@Damage[4d6[cold]]伤害。其他生物也可以通过对被冻结的生物造成合计20点火焰伤害来解放被冻结的目标。若无人处理，这些冰层会在1分钟内自行崩解。</p>\n<p>拥有火特征的生物不会被冰泥吐息困住。飞行生物被冻结则会坠落，游泳的生物被冻结则会以每轮60尺的速度向水面上浮。</p>\n<p>冰雪蛇龙在[[/gmr 1d4 #Recharge Icemire Breath]]{1d4轮}内无法再次使用冰泥吐息。</p>",
                     "name": "冰泥吐息 Icemire Breath"
                 }
             }
@@ -1957,7 +1957,7 @@
                 },
                 "Freezing Mist Breath": {
                     "name": "霜雾喷吐 Freezing Mist Breath",
-                    "description": "<p>霜龙兽吐出一个液体球，在至多60尺射程远的位置爆发出半径@Template[burst|distance:20]区域的霜冻云雾。爆发区域内的生物会承受@Damage[8d6[cold]]伤害（@Check[reflex|dc:25|basic]豁免）。</p>\n<p>霜龙兽在[[/gmr 1d6 #Recharge Freezing Mist Breath]]{1d6轮}内无法再次使用霜雾喷吐，在此期间，霜雾会在区域内的所有表面上凝结成一层光滑的冰面，将该区域转化为困难地形。</p>"
+                    "description": "<p>霜龙兽吐出一个液体球，在至多60尺射程远的位置爆发出半径@Template[burst|distance:20]区域的霜冻云雾。爆发区域内的生物会承受@Damage[8d6[cold]|options:area-damage]伤害（@Check[reflex|dc:25|basic|options:area-effect]豁免）。</p>\n<p>霜龙兽在[[/gmr 1d6 #Recharge Freezing Mist Breath]]{1d6轮}内无法再次使用霜雾喷吐，在此期间，霜雾会在区域内的所有表面上凝结成一层光滑的冰面，将该区域转化为困难地形。</p>"
                 },
                 "Ice Climb": {
                     "name": "冰面穿行 Ice Climb",
@@ -3520,7 +3520,7 @@
                 },
                 "Detonate Disguise": {
                     "name": "引爆伪装 Detonate Disguise",
-                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[18d6[bludgeoning]]伤害（@Check[reflex|dc:39|basic]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
+                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[18d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:39|basic|options:area-effect]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -3870,7 +3870,7 @@
                 },
                 "Filth Wave": {
                     "name": "污物涌动 Filth Wave",
-                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 阴沟泥怪释放出一股污物，覆盖@Template[emanation|distance:20]区域内的所有生物。区域内的每个生物必须成功通过@Check[reflex|dc:17]豁免，失败则会承受@Damage[1d4[acid]]伤害并且其速度在1分钟内承受-10尺减值（大失败时，该生物还会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。</p>\n<p>生物能耗费交互动作清洁某个对象，每个动作能使得速度减值降低5尺。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Qomp2EujVCbzJb4X]{效果：污物涌动}</p>"
+                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 阴沟泥怪释放出一股污物，覆盖@Template[emanation|distance:20]区域内的所有生物。区域内的每个生物必须成功通过@Check[reflex|dc:17|options:area-effect,damaging-effect]豁免，失败则会承受@Damage[1d4[acid]|options:area-damage]伤害并且其速度在1分钟内承受-10尺减值（大失败时，该生物还会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。</p>\n<p>生物能耗费交互动作清洁某个对象，每个动作能使得速度减值降低5尺。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Qomp2EujVCbzJb4X]</p>"
                 }
             },
             "data": {
@@ -4228,7 +4228,7 @@
                 },
                 "Final Fate": {
                     "name": "终结宿命 Final Fate",
-                    "description": "<p>当猎人死亡时，它们的灵魂会在一场精魂能量的爆炸中离开身体。@Template[burst|distance:20]区域内的所有生物会承受@Damage[5d6[spirit]]伤害（@Check[will|dc:19|basic]豁免）。</p>\n<p>猎人的随身物品会堆叠在它死亡的位置。</p>"
+                    "description": "<p>当猎人死亡时，它们的灵魂会在一场精魂能量的爆炸中离开身体。@Template[burst|distance:20]区域内的所有生物会承受@Damage[5d6[spirit]|options:area-damage]伤害（@Check[will|dc:19|basic|options:area-effect]豁免）。</p>\n<p>猎人的随身物品会堆叠在它死亡的位置。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -4996,7 +4996,7 @@
                 },
                 "Explosion": {
                     "name": "爆炸 Explosion",
-                    "description": "<p>当活体野火死亡时，它会爆炸，对@Template[emanation|distance:10|traits:fire,damaging-effect]范围内的所有生物造成@Damage[3d6[fire]]伤害（@Check[reflex|dc:19|basic]豁免）。</p>"
+                    "description": "<p>当活体野火死亡时，它会爆炸，对@Template[emanation|distance:10|traits:fire,damaging-effect]范围内的所有生物造成@Damage[3d6[fire]|options:area-damage]伤害（@Check[reflex|dc:19|basic|options:area-effect]豁免）。</p>"
                 },
                 "Spreading Flames": {
                     "name": "分裂火焰 Spreading Flames",
@@ -5082,7 +5082,7 @@
                 },
                 "Dragon Breath": {
                     "name": "龙息 Dragon Breath",
-                    "description": "<p>奇美拉进行吐息，对直线或锥形范围内所有生物造成 9d6伤害（DC 26基础豁免，类型见下）。奇美拉的龙头和某种魔法根源相关，这决定了龙息的吐息范围、吐息的伤害类型以及相对应的豁免。</p>\n<p>奇美拉在[[/gmr 1d4 #Recharge Dragon Breath]]{1d4轮}内不能再次龙息。</p>\n<ul>\n<li><strong>奥术</strong> @Template[line|distance:60]，@Damage[9d6[force]]{力场} (@Check[reflex|dc:26|basic])</li>\n<li><strong>神术</strong> @Template[line|distance:60]，@Damage[9d6[spirit]]{精魂} (@Check[reflex|dc:26|basic])；该能力也可以拥有圣洁或邪秽特征</li>\n<li><strong>异能</strong> @Template[cone|distance:30]，@Damage[9d6[mental]]{mental} (@Check[will|dc:26|basic])</li>\n<li><strong>原能</strong> @Template[cone|distance:30]，@Damage[9d6[acid]]{酸蚀}、@Damage[9d6[cold]]{寒冷}、@Damage[9d6[electricity]]{电击}、@Damage[9d6[fire]]{火焰}或@Damage[9d6[sonic]]{音波} (@Check[reflex|dc:26|basic])；或@Damage[9d6[poison]]{毒素} (@Check[fortitude|dc:26|basic])\n</li>\n</ul>"
+                    "description": "<p>奇美拉进行吐息，对直线或锥形范围内所有生物造成 9d6伤害（DC 26基础豁免，类型见下）。奇美拉的龙头和某种魔法根源相关，这决定了龙息的吐息范围、吐息的伤害类型以及相对应的豁免。</p>\n<p>奇美拉在[[/gmr 1d4 #Recharge Dragon Breath]]{1d4轮}内不能再次龙息。</p>\n<ul>\n<li><strong>奥术</strong> @Template[line|distance:60]，@Damage[9d6[force]|options:area-damage]{力场}（@Check[reflex|dc:26|basic|options:area-effect]）</li>\n<li><strong>神术</strong> @Template[line|distance:60]，@Damage[9d6[spirit]|options:area-damage]{精魂}（@Check[reflex|dc:26|basic|options:area-effect]）；该能力也可以拥有圣洁或邪秽特征</li>\n<li><strong>异能</strong> @Template[cone|distance:30]，@Damage[9d6[mental]|options:area-damage]{mental}（@Check[will|dc:26|basic|options:area-effect]）</li>\n<li><strong>原能</strong> @Template[cone|distance:30]，@Damage[9d6[acid]|options:area-damage]{酸蚀}、@Damage[9d6[cold]|options:area-damage]{寒冷}、@Damage[9d6[electricity]|options:area-damage]{电击}、@Damage[9d6[fire]|options:area-damage]{火焰}或@Damage[9d6[sonic]|options:area-damage]{音波}（@Check[reflex|dc:26|basic]）；或@Damage[9d6[poison]|options:area-damage]{毒素}（@Check[fortitude|dc:26|basic|options:area-effect]）\n</li>\n</ul>"
                 }
             },
             "data": {
@@ -5233,7 +5233,7 @@
             "items": {
                 "Detonate Disguise": {
                     "name": "引爆伪装 Detonate Disguise",
-                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[18d6[bludgeoning]]伤害（@Check[reflex|dc:39|basic]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
+                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[18d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:39|basic|options:area-effect]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -5520,7 +5520,7 @@
                 },
                 "Falling Frozen Lightning": {
                     "name": "降霜雷 Falling Frozen Lightning",
-                    "description": "<p>雪鬼召唤降下一道冰冷的闪电，洁白如雪。闪电打击60尺内一处位置，将空气凝固成一团雪，充满@Template[burst|distance:20]范围，持续1分钟。</p>\n<p>雪中所有生物都进入隐蔽状态，且雪外所有生物对雪内的生物视作@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态。进入雪中或在雪中开始回合的生物受到@Damage[15[cold]]伤害，进行@Check[fortitude|dc:33|basic]豁免。</p>"
+                    "description": "<p>雪鬼召唤降下一道冰冷的闪电，洁白如雪。闪电打击60尺内一处位置，将空气凝固成一团雪，充满@Template[burst|distance:20]范围，持续1分钟。</p>\n<p>雪中所有生物都进入隐蔽状态，且雪外所有生物对雪内的生物视作@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态。进入雪中或在雪中开始回合的生物受到@Damage[15[cold]|options:area-damage]伤害，进行@Check[fortitude|dc:33|basic|options:area-effect]豁免。</p>"
                 },
                 "Icy Deflection": {
                     "name": "寒冰偏转 Icy Deflection",
@@ -6196,7 +6196,7 @@
                 },
                 "Detonate Disguise": {
                     "name": "引爆伪装 Detonate Disguise",
-                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[9d6[bludgeoning]]伤害（@Check[reflex|dc:26|basic]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
+                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[9d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>"
                 },
                 "Draconic Frenzy": {
                     "description": "<p>龙以任意顺序进行两次爪抓和一次尾扫打击。</p>",
@@ -6734,7 +6734,7 @@
                 },
                 "Destructive Croak": {
                     "name": "破灭鸣叫 Destructive Croak",
-                    "description": "<p>沼泽先知发出强力的嘶鸣，这会对@Template[emanation|distance:15]范围的非沼蜍人生物造成@Damage[4d6[sonic]]伤害（@Check[fortitude|dc:19|basic]豁免）；任何处于惊惧状态的生物都会承受额外音波伤害，伤害数值为惊惧状态值的两倍。</p>\n<p>沼泽先知在之后的[[/gmr 1d4 #Recharge use Destructive Croak]]{1d4轮}内无法再次使用破灭鸣叫。</p>"
+                    "description": "<p>沼泽先知发出强力的嘶鸣，这会对@Template[emanation|distance:15]范围的非沼蜍人生物造成@Damage[4d6[sonic]|options:area-damage]伤害（@Check[fortitude|dc:19|basic|options:area-effect]豁免）；任何处于@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]状态的生物都会承受额外音波伤害，伤害数值为惊惧状态值的两倍。</p>\n<p>沼泽先知在之后的[[/gmr 1d4 #Recharge use Destructive Croak]]{1d4轮}内无法再次使用破灭鸣叫。</p>"
                 },
                 "Swamp Passage": {
                     "name": "沼泽穿行 Swamp Passage",
@@ -7186,7 +7186,7 @@
                 },
                 "Fiery Spokes": {
                     "name": "炽热轮辐 Fiery Spokes",
-                    "description": "<p>吉里阿狂怒急旋，喷射出一片神火之雨。@Template[emanation|distance:60]范围内的所有生物都会受到@Damage[(12d6)[fire],(5d6)[spirit]]伤害，@Check[reflex|dc:37|basic]豁免。吉里阿在[[/gmr 1d4 #Recharge Fiery Spokes]]{1d4轮}内无法再次使用此能力。</p>"
+                    "description": "<p>吉里阿狂怒急旋，喷射出一片神火之雨。@Template[emanation|distance:60]范围内的所有生物都会受到@Damage[(12d6)[fire],(5d6)[spirit]|options:area-damage]伤害，@Check[reflex|dc:37|basic|options:area-effect]豁免。吉里阿在[[/gmr 1d4 #Recharge Fiery Spokes]]{1d4轮}内无法再次使用此能力。</p>"
                 },
                 "Focus Gaze": {
                     "name": "专注凝视 Focus Gaze",
@@ -8705,7 +8705,7 @@
                 },
                 "Fire Breath": {
                     "name": "火焰吐息 Fire Breath",
-                    "description": "<p>熔岩蠕虫喷出一股火焰，对@Template[cone|distance:60]区域的所有生物造成@Damage[18d6[fire]]伤害（@Check[reflex|dc:41|basic]豁免）。</p>\n<p>它在[[/gmr 1d4 #Recharge Fire Breath]]{1d4轮}内无法再次使用火焰吐息。</p>"
+                    "description": "<p>熔岩蠕虫喷出一股火焰，对@Template[cone|distance:60]区域的所有生物造成@Damage[18d6[fire]|options:area-damage]伤害（@Check[reflex|dc:41|basic|options:area-effect]豁免）。</p>\n<p>它在[[/gmr 1d4 #Recharge Fire Breath]]{1d4轮}内无法再次使用火焰吐息。</p>"
                 },
                 "Magma Worm Venom": {
                     "name": "熔岩蠕虫毒 Magma Worm Venom",
@@ -9333,7 +9333,7 @@
                 },
                 "Fireball Breath": {
                     "name": "火球吐息 Fireball Breath",
-                    "description": "<p>焰龙兽吐出一个火球，在至多180尺射程远的@Template[burst|distance:20]区域产生爆炸。爆发区域内的生物会承受@Damage[6d6[fire]]伤害（@Check[reflex|dc:22|basic]豁免）。</p>\n<p>焰龙兽在[[/gmr 1d6 #Recharge Fireball Breath]]{1d6轮}内无法再次使用火球吐息</p>"
+                    "description": "<p>焰龙兽吐出一个火球，在至多180尺射程远的@Template[burst|distance:20]区域产生爆炸。爆发区域内的生物会承受@Damage[6d6[fire]|options:area-damage]伤害（@Check[reflex|dc:22|basic|options:area-effect]豁免）。</p>\n<p>焰龙兽在[[/gmr 1d6 #Recharge Fireball Breath]]{1d6轮}内无法再次使用火球吐息</p>"
                 },
                 "Speed Surge": {
                     "name": "极速爆发 Speed Surge",
@@ -9742,7 +9742,7 @@
                 },
                 "Flaming Slash": {
                     "name": "烈焰挥斩 Flaming Slash",
-                    "description": "<p>艾斯拉横扫剑身，创造出一道@Template[cone|distance:15]范围的圣焰，造成@Damage[5d6[fire]]伤害，@Check[reflex|dc:23|basic]豁免。</p>"
+                    "description": "<p>艾斯拉横扫剑身，创造出一道@Template[cone|distance:15]范围的圣焰，造成@Damage[5d6[fire]|options:area-damage]伤害，@Check[reflex|dc:23|basic|options:area-effect]豁免。</p>"
                 }
             }
         },
@@ -9783,7 +9783,7 @@
             "publicNotes": "<p>这些怪异的猫样精类从远处看上去就好像又大又宽的山猫，但在近处观察时却好像有哪里不太对劲。他的周遭由于高温而形成了涟漪，他的双眼散发着光芒，就好像眼瞳里容纳着微小、闪烁的火焰。腐叶在篝火中闷燃的刺鼻气味依附在他们的皮毛上。然而那些有机会看到林焰猞猁捕猎或攻击猎物的目击者会指出，这些生物并非单纯的肉食动物，因为他们的行为兼具残忍和敏锐的直觉，并陶醉于自身所施加的痛苦中。</p>\n<p>林焰猞猁通常会独自狩猎，但有些时候这些狡猾且恶毒的第一世界猎手会组成称巨浪的团体来击败大型猎物。就和家猫一样，林焰猞猁并不会满足于单纯地追踪和吞食猎物，他们喜爱玩弄猎物，从爪中猎物的恐惧和痛苦中获得乐趣。由此，林焰猞猁很少会使用灰烬散布能力来规避目标的察觉，而是选择在狩猎结束之前击败他的猎物——然而，这些自私的生物希望能够活着继续享受狩猎，因此林焰猞猁通常会保留一次该能力的使用次数来以防万一。</p>\n<p>由于林焰猞猁那聪慧且恶毒的行事方式，他们会被红帽精视作称心的狩猎伙伴，红帽精会想尽办法讨好这些生物或者与其进行交易。红帽精还会在与林焰猞猁狩猎同一个猎物时相互竞争并将之视为极佳的娱乐。尽管林焰猞猁的体型足够大到可以成为红帽精的坐骑，但他们不喜欢被人骑乘，并且会抗拒此类尝试——毕竟除了鲁莽地把精类猫咪当做马来骑之外，没有啥事情能够让本应友好的林焰猞猁转而背叛它的红帽精盟友了。</p>\n<p>林焰猞猁与森林火灾有一种奇妙的亲近感。由于林焰猞猁免疫闪烁着的火焰所带来的伤害，因此他们很享受在烟雾缭绕、焚烧殆尽的林中炼狱里尽情乱跳、喵喵乱叫的感觉。他们有时甚至会使用自身那灼人的尖牙故意引燃灌木，单纯为了体验火焰之美与这种灾难必然会对其他生物造成的痛苦而已。</p>",
             "items": {
                 "Cinder Dispersal": {
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>触发</strong> 林焰猞猁由于敌对来源而承受伤害时</p>\n<hr />\n<p><strong>效果</strong> 林焰猞猁化为一团灰烬与烟雾构成的烟云，这会充满他所处的空间以及@Template[emanation|distance:20]区域。在此形态下，林焰猞猁无法被攻击，不会成为目标，也不占据空间。烟云内的任何事物都具有@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}，且任意在自身回合结束时处于烟云内的生物会承受@Damage[2d6[fire]]伤害。在林焰猞猁的回合开始时，他会恢复正常形态并出现在烟云覆盖的任意方格内。若林焰猞猁在恢复其正常形态后的第一个动作是对某个生物进行打击的话，目标视为@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}并且打击额外造成@Damage[1d6[fire]]伤害。</p>",
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>触发</strong> 林焰猞猁由于敌对来源而承受伤害时</p>\n<hr />\n<p><strong>效果</strong> 林焰猞猁化为一团灰烬与烟雾构成的烟云，这会充满他所处的空间以及@Template[emanation|distance:20]区域。在此形态下，林焰猞猁无法被攻击，不会成为目标，也不占据空间。烟云内的任何事物都具有@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，且任意在自身回合结束时处于烟云内的生物会承受@Damage[2d6[fire]|options:area-damage]伤害。在林焰猞猁的回合开始时，他会恢复正常形态并出现在烟云覆盖的任意方格内。若林焰猞猁在恢复其正常形态后的第一个动作是对某个生物进行打击的话，目标视为@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]并且打击额外造成1d6火焰伤害。</p>",
                     "name": "灰烬散布 Cinder Dispersal"
                 },
                 "Pack Attack": {
@@ -10452,7 +10452,7 @@
                     "name": "唤出伪装 Conjure Disguise"
                 },
                 "Detonate Disguise": {
-                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[13d6[bludgeoning]]伤害（@Check[reflex|dc:31|basic]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>",
+                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[13d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:31|basic|options:area-effect]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>",
                     "name": "引爆伪装 Detonate Disguise"
                 },
                 "Rushed Transformation": {
@@ -10605,7 +10605,7 @@
                     "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 龙变出一具它曾见过的类人生物的完美肉套，该类人生物的体型不大于龙本身的体型，之后龙将自己塞进去，同时为肉套生成合适的服装。整个过程需要1分钟来完成，期间龙陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。如果这一过程停止或被打断，肉套被摧毁。一旦完成，龙可以永久保持这种伪装。</p>\n<p>这种效果等同于@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.eQM5hQ1W3d1uen97]{变身 Change Shape}能力，但伪装的本质并非魔法效果，因此对于侦测魔法戏法或类似效果而言不会被识别为魔法。变形时，龙失去身体回缩能力。</p>\n<p>如果龙在穿着伪装时遭到重击，肉套被摧毁并立刻爆炸，这具有引爆伪装的效果，但生物使用比其豁免掷骰高一级的成功度。</p>"
                 },
                 "Detonate Disguise": {
-                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[13d6[bludgeoning]]伤害（@Check[reflex|dc:31|basic]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>",
+                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[13d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:31|basic|options:area-effect]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>",
                     "name": "引爆伪装 Detonate Disguise"
                 },
                 "Draconic Frenzy": {
@@ -11489,7 +11489,7 @@
             "publicNotes": "<p>胶化人是蛞蝓状的憎恶，畸肉过程中产生的怪异渣滓。虽然它们的头部和躯干依稀像类人生物，但手臂却像橡胶一样，只能笨拙地在两侧移动。当其他生物靠近时，它们会发出可怜的呻吟声，这也许是它们残存的思想在恳求从可怕的扭曲形态中解脱出来。</p>\n<p>许多畸肉师认为胶化人是一种失败的造物，因为它的转变几乎抹杀了意识。但也有人不同意这种观点，他们认为扭曲生物的思想会使其变得更加有用，因为它变得顺从且易于驱使。哈金提的教徒通常会把胶化人用作守卫，在他们的领地边缘慢慢巡逻。一旦就位，胶化人就会被用作简陋的冲击部队，被释放出来用于削弱敌军，让更多有价值的战士在之后能冲进去砍杀被胶化人爆裂的内脏和血肉恶心到的敌人。</p>\n<hr />\n<p>魔法失误，神祇诅咒和未经测试的技术都能对身体造成巨大的改变，而且在格拉利昂世界内外都很普遍。经历了如此剧烈变化的生物，面貌已经完全不似同族裔，它们被称为畸肉体。这些生物非常罕见，而它们令人不安的外表经常会引起其他人的惊恐反应。</p>\n<p>有些生物会以用畸肉仪式让战败的敌人彻底堕落为乐。虽然这种技术最初是由恶魔领主哈金提传授给凡人的，但凡人已经花了数个世纪的时间来修改和完善这种方法。畸肉工匠在不断翻滚的魔法试剂槽中折磨敌人，将他们的肉体和精神重塑成可怕的怪物。</p>",
             "items": {
                 "Disgusting Demise": {
-                    "description": "<p>当胶化人的生命值减少至0时，它的消化器官会破裂，向半径@Template[emanation|distance:30]范围内的所有生物释放出炼金酸液和毒素。区域内的每个生物必须成功通过一次@Check[fortitude|dc:19]豁免，否则会受到@Damage[2d6[acid]]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败时伤害翻倍并陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}）。</p>",
+                    "description": "<p>当胶化人的生命值减少至0时，它的消化器官会破裂，向半径@Template[emanation|distance:30]范围内的所有生物释放出炼金酸液和毒素。区域内的每个生物必须成功通过一次@Check[fortitude|dc:19|options:area-effect,damaging-effect]豁免，否则会受到@Damage[2d6[acid]|options:area-damage]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败时伤害翻倍并陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}）。</p>",
                     "name": "作呕遗赠 Disgusting Demise"
                 },
                 "Piteous Moan": {
@@ -12922,7 +12922,7 @@
                     "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 龙变出一具它曾见过的类人生物的完美肉套，该类人生物的体型不大于龙本身的体型，之后龙将自己塞进去，同时为肉套生成合适的服装。整个过程需要1分钟来完成，期间龙陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。如果这一过程停止或被打断，肉套被摧毁。一旦完成，龙可以永久保持这种伪装。</p>\n<p>这种效果等同于@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.eQM5hQ1W3d1uen97]{变身 Change Shape}能力，但伪装的本质并非魔法效果，因此对于侦测魔法戏法或类似效果而言不会被识别为魔法。变形时，龙失去身体回缩能力。</p>\n<p>如果龙在穿着伪装时遭到重击，肉套被摧毁并立刻爆炸，这具有引爆伪装的效果，但生物使用比其豁免掷骰高一级的成功度。</p>"
                 },
                 "Detonate Disguise": {
-                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[9d6[bludgeoning]]伤害（@Check[reflex|dc:26|basic]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>",
+                    "description": "<p><strong>需求</strong> 龙正穿着唤出的伪装；</p>\n<hr />\n<p><strong>效果</strong> 龙破开伪装而出，伪装被摧毁。“爆炸性”的身份揭露对@Template[emanation|distance:5]内的生物造成@Damage[9d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免）。豁免失败的生物因被伪装的碎片覆盖而@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p>任何与龙位于同一格子的生物在伪装引爆后被推进最近的空格。</p>",
                     "name": "引爆伪装 Detonate Disguise"
                 },
                 "Rushed Transformation": {
@@ -13038,7 +13038,7 @@
                     "description": "<p>蝠蝎魔扭曲的四肢和肉体翻滚和蠕动，使人失去方向和不安。@Template[emanation|distance:30]范围内的生物必须尝试@Check[will|dc:34]豁免，之后它将在1分钟内对困惑展示临时免疫。</p>\n<hr />\n<p><strong>大成功</strong> 目标生物不受影响。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1轮。</p>\n<p><strong>失败</strong> 生物陷入呆滞1和@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]，持续1分钟。</p>\n<p><strong>大失败</strong> 类似失败，但是生物在受到来自攻击或法术的伤害时不能进行从困惑状态中恢复的纯骰检定。</p>"
                 },
                 "Inhale Vitality": {
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 蝠蝎魔猛吸一口气，吸取@Template[cone|distance:50]范围内生物的生命力。范围内的生物受到@Damage[14d6[void]]伤害（@Check[fortitude|dc:34|basic]豁免）。豁免失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。</p>\n<p>如果有生物因为此行动受到伤害，蝠蝎魔获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]1轮，但只能用额外动作打击或行走。</p>",
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<hr />\n<p><strong>效果</strong> 蝠蝎魔猛吸一口气，吸取@Template[cone|distance:50]范围内生物的生命力。范围内的生物受到@Damage[14d6[void]|options:area-damage]伤害（@Check[fortitude|dc:34|basic|options:area-effect]豁免）。豁免失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。</p>\n<p>如果有生物因为此行动受到伤害，蝠蝎魔获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]1轮，但只能用额外动作打击或行走。</p>",
                     "name": "吸取活力 Inhale Vitality"
                 },
                 "Rotting Curse": {
@@ -13199,7 +13199,7 @@
                     "description": "<p><strong>触发</strong> 符文巨人使用带有奥术特征的能力或施展奥术法术。</p>\n<hr />\n<p><strong>效果</strong> 符文巨人身体上的符文爆发出魔法能量。@Template[emanation|distance:10]范围内的所有生物必须尝试一次@Check[fortitude|dc:35]检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1轮。</p>\n<p><strong>失败</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}一轮。</p>"
                 },
                 "Invoke Rune": {
-                    "description": "<p>符文巨人向身体上其中一个符文祈祷，该符文对@Template[cone|distance:30]范围喷射出火花，对范围内所有生物造成@Damage[6d12[electricity]]伤害（@Check[reflex|dc:37|basic] 豁免）。</p>\n<p>巨人在[[/gmr 1d4 #Recharge Invoke Rune]]{1d4轮}内无法再次祈祷符文。</p>\n<p>一个发光的符文副本出现在巨人持有的一件武器上，给与该武器下列可选效果之一。武器效果持续1分钟，如果巨人在武器上放置了一个新符文，则旧符文的符文立即消失并且效果结束。</p>\n<ul>\n<li><strong>毁灭符文</strong> 武器获得致命特征，重击时增加3个该武器的基础伤害骰。并且被该武器命中的生物必须通过@Check[fortitude|dc:35]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</li>\n<li><strong>火焰符文</strong> 该武器的所有攻击造成额外@Damage[3d6[fire]]伤害。</li>\n<li><strong>猛击符文</strong> 该武器命中时，巨人能击退目标10尺（重击则击退20尺）。</li>\n<li><strong>空间符文</strong> 在符文巨人的回合中，武器的触及增加至60尺。\n\n</li>\n</ul>",
+                    "description": "<p>符文巨人向身体上其中一个符文祈祷，该符文对@Template[cone|distance:30]范围喷射出火花，对范围内所有生物造成@Damage[6d12[electricity]|options:area-damage]伤害（@Check[reflex|dc:37|basic|options:area-effect]豁免）。</p>\n<p>巨人在[[/gmr 1d4 #Recharge Invoke Rune]]{1d4轮}内无法再次祈祷符文。</p>\n<p>一个发光的符文副本出现在巨人持有的一件武器上，给与该武器下列可选效果之一。武器效果持续1分钟，如果巨人在武器上放置了一个新符文，则旧符文的符文立即消失并且效果结束。</p>\n<ul>\n<li><strong>毁灭符文</strong> 武器获得致命特征，重击时增加3个该武器的基础伤害骰。并且被该武器命中的生物必须通过@Check[fortitude|dc:35]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</li>\n<li><strong>火焰符文</strong> 该武器的所有攻击造成额外@Damage[3d6[fire]]伤害。</li>\n<li><strong>猛击符文</strong> 该武器命中时，巨人能击退目标10尺（重击则击退20尺）。</li>\n<li><strong>空间符文</strong> 在符文巨人的回合中，武器的触及增加至60尺。\n\n</li>\n</ul>",
                     "name": "祈祷符文 Invoke Rune"
                 },
                 "Wide Swing": {
@@ -13440,7 +13440,7 @@
                 },
                 "Explosion": {
                     "name": "爆炸 Explosion",
-                    "description": "<p>当元素炼狱死亡时，它会爆炸，对@Template[emanation|distance:10|traits:fire,damaging-effect]范围内的所有生物造成@Damage[7d6[fire]]伤害（@Check[reflex|dc:30|basic]豁免）。</p>"
+                    "description": "<p>当元素炼狱死亡时，它会爆炸，对@Template[emanation|distance:10|traits:fire,damaging-effect]范围内的所有生物造成@Damage[7d6[fire]|options:area-damage]伤害（@Check[reflex|dc:30|basic|options:area-effect]豁免）。</p>"
                 },
                 "Intense Heat": {
                     "name": "酷热 Intense Heat",
@@ -13452,7 +13452,7 @@
                 },
                 "Inferno Leap": {
                     "name": "炼狱之跃 Inferno Leap",
-                    "description": "<p>元素炼狱高高跃起，它的水平位移和最大高度都等同于它的速度。它的酷热能力被暂时抑制直到跳跃结束。在跳跃过程中的任何时刻，元素炼狱都能对@Template[emanation|distance:30]范围喷出火焰，对范围内所有生物造成@Damage[12d6[fire]]伤害（@Check[reflex|dc:30|basic]豁免）。</p>\n<p>元素炼狱在[[/gmr 1d4 #Recharge Inferno Leap]]{1d4轮}内无法再次使用炼狱之跃能力。</p>"
+                    "description": "<p>元素炼狱高高跃起，它的水平位移和最大高度都等同于它的速度。它的酷热能力被暂时抑制直到跳跃结束。在跳跃过程中的任何时刻，元素炼狱都能对@Template[emanation|distance:30]范围喷出火焰，对范围内所有生物造成@Damage[12d6[fire]|options:area-damage]伤害（@Check[reflex|dc:30|basic|options:area-effect]豁免）。</p>\n<p>元素炼狱在[[/gmr 1d4 #Recharge Inferno Leap]]{1d4轮}内无法再次使用炼狱之跃能力。</p>"
                 }
             },
             "prototypeToken": {
@@ -13649,7 +13649,7 @@
             "publicNotes": "<p>三角龙是一种肌肉发达的四足动物，腿短而有力，脖子粗，头部周围有一个宽大的骨板褶边。虽然它们的鼻子上有一个大角，额头上各有一个，然而些恐龙是食草动物，它们只用这些突出的骨头来保护自己免受攻击，或者在与其他三角龙激烈的冲突中争夺食物和交配权。三角龙脾气暴躁，固执，不善于在战斗中退让，除非它们无可救药地处于劣势。这种生物以毫无理由地战斗到死亡而闻名遐迩。三角龙经常充当蜥蜴人、半兽人和巨人的坐骑，骑手们可以舒适地骑在三角龙带有保护性的骨褶后面。三角龙通常体长30尺，重达10吨。</p>\n<hr />\n<p>这些巨大的爬行动物是世界原始时代的遗留物，现在仍然大量存在于偏僻的荒野中，或者在幽暗地域的地下魔法洞穴中。蜥蜴人、半兽人、巨人和其他人形生物有时会把恐龙当作坐骑、守卫或猎兽。众所周知，人类和其他族裔也收集恐龙，把它们放在动物园里展出，或把它们当作异域宠物或守卫。这通常是富人或怪咖喜欢干的事情，但确实也有一些德鲁伊和其他自然的守护者能与恐龙亲密相处，甚至把它们作为动物伙伴。当恐龙在它们正常栖息地以外的地区安家时，通常可能是因为被圈养的恐龙逃进荒野造成的。</p>",
             "items": {
                 "Frill Defense": {
-                    "description": "<p><strong>触发</strong> 骑乘者被作为攻击目标</p>\n<p><strong>需求</strong> 生物必须骑乘在三角龙上</p>\n<hr />\n<p><strong>效果</strong> 三角龙用脑袋周围的骨板保护骑乘者，骑乘者对触发此能力的攻击，AC获得+2环境加值。</p>",
+                    "description": "<p><strong>触发</strong> 骑乘者被作为攻击目标</p>\n<p><strong>需求</strong> 生物必须骑乘在三角龙上</p><hr /><p><strong>效果</strong> 三角龙用脑袋周围的骨板保护骑乘者，骑乘者对触发此能力的攻击，AC获得+2环境加值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.enrTKgEzu2quCj0z]</p>",
                     "name": "骨板防护 Frill Defense"
                 },
                 "Lumbering Charge": {
@@ -14580,7 +14580,7 @@
             "items": {
                 "Elemental Field": {
                     "name": "元素场 Elemental Field",
-                    "description": "<p>元素使对半径@Template[emanation|distance:20]区域释放出强大的静电场，持续1分钟。区域内的所有方格对其他生物来说都会变为有害地形。生物每当移动进入上述的其中一个方格之内时都会承受@Damage[1[electricity]]伤害。在该区域内，生物在对抗电击法术时，豁免还会承受-1状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.f8HuM5Ar6SSHNHBx]{效果：元素场}</p>"
+                    "description": "<p>元素使对半径@Template[emanation|distance:20]区域释放出强大的静电场，持续1分钟。区域内的所有方格对其他生物来说都会变为有害地形。生物每当移动进入上述的其中一个方格之内时都会承受@Damage[1[electricity]|options:area-damage]伤害。在该区域内，生物在对抗电击法术时，豁免还会承受-1状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.f8HuM5Ar6SSHNHBx]</p>"
                 },
                 "Elf Step": {
                     "name": "精灵快步 Elf Step",
