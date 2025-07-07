@@ -25,7 +25,8 @@
             "description": "<p>你的幻灵将愤怒从自身渗出，形成了环绕自身的灵光，能点燃周围生物的怒火，让它们的防御因失控的愤怒而崩溃。你的幻灵获得一个20尺的愤怒灵光，具有灵光、情绪、惑控系、精神以及异能特征。任何灵光内生物的抗力，包括你、你的盟友、你的敌人、以及你的幻灵，都减少等同于3+幻灵体质调整值的数值。你的幻灵能够花费1个具有专注特征的单动作抑制愤怒。这会减少灵光的效果，只会影响你的幻灵。它也可以再次使用该动作重新释放完整效果的灵光。处于野蛮人狂暴，沸腾狂怒或类似可以引导愤怒的能力中的生物不受愤怒灵光的影响。</p>"
         },
         "Animal Companion": {
-            "name": "动物伙伴 Animal Companion"
+            "name": "动物伙伴 Animal Companion",
+            "description": "<p>以下是幼年动物伙伴的基础数据，为大多数角色获得的第一只动物伙伴。你依照所选择的动物种类来调整这些数据。动物伙伴在计算调整值和DC时与你一样，但有一点不同：它只能在速度和AC上获得物品加值（其AC最大物品加值为+3）。随着你等级提升，你可以依照211页所述来进阶动物伙伴从而使得它变得更强。</p><p>动物伙伴的初始数据如下。</p><ul><li><strong>等级 Level：</strong>动物伙伴等级与你相同。</li><li><strong>熟练度 Proficiencies：</strong>你的动物伙伴在无武装攻击，无甲防御，动物护甲，所有豁免，察觉，特技，和运动上受训。动物伙伴不能使用需要高等智慧的能力，如@UUID[Compendium.pf2e.actionspf2e.Item.tHCqgwjtQtzNqVvd]或解译文书，即便它在相应的技能上受训，除非它具有一种特化允许它这么做。</li><li><strong>属性调整值 Attribute Modifiers：</strong> 动物伙伴的初始属性调整值在数据表中列出。</li><li><strong>生命值 Hit Points：</strong>你的动物伙伴从其种类中获得族裔生命值，外加你每等级给予其6加上其体质调整值的生命值。</li></ul>"
         },
         "Badger Rage": {
             "name": "獾之狂暴 Badger Rage",
@@ -373,6 +374,21 @@
         },
         "Gulp Blood": {
             "description": "<p><strong>需求</strong> 水缚灵上一个动作是一次对敌人的成功啃咬攻击。</p>\n<hr />\n<p>水缚灵获得持续1轮的[[/r 2d8 #Temporary Hit Points]]{2d8}临时生命值，并且敌人受到[[/r 2d6[persistent,bleed]]]伤害。如果水缚灵具有特化，水缚灵取而代之获得[[/r 3d8 #Temporary Hit Points]]{3d8}临时生命值，并且目标受到[[/r 3d6[persistent,bleed]]]伤害。如果目标生物完全没有维持生命所需的体液，此能力可能不会生效，由GM决定。</p>"
+        },
+        "Adaptable Elemental": {
+            "description": "<p>力量 +1，敏捷 +4，体质 +3，智力 +0，感知 +1，魅力 +0；+1 AC（+4 敏捷上限）</p>"
+        },
+        "Elemental Burst": {
+            "name": "元素爆发 Elemental Burst",
+            "description": "<p><strong>频率</strong> 每10分钟一次</p>\n<hr />\n<p>你的幻灵从其身形中撕扯下一大块元素物质，并将其投掷到一群敌人身上。你的幻灵失去等同于你等级的生命值。在60尺距离内@Template[type:burst|distance:20]中的所有生物受到@Damage[(@actor.level - 1)d6]伤害，这需要进行你法术DC的基础反射豁免。你每超过7级一级就增加1d6伤害。如果你的幻灵是火元素，则伤害类型为火焰；如果你的幻灵不是火元素，则伤害类型与你幻灵的初始无武装攻击的物理伤害类型相同。元素爆发获得幻灵从元素核心获得的无武装攻击特征。</p>"
+        },
+        "Elemental Core": {
+            "name": "元素核心 Elemental Core",
+            "description": "<p>你的元素幻灵是由元素物质和凡人生命力量构成的混合物，对于能对凡人造成比元素生物更多伤害的具体效果，这种特性保护着他们。针对毒素、睡眠以及能造成@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]状态的效果，元素幻灵在豁免骰上获得+2环境加值。另外，他们的元素要素要比血肉更难以流血，所以在他们针对移除持续流血伤害的纯骰检定DC是10（在受到具体有效的援助时则为5）。为你的幻灵选择成为气、土、火、金、木或水元素。你的幻灵和他所有的无武装攻击获得对应元素的特征，并且根据你的选择，幻灵获得以下一种额外效果。</p>\n<p><strong>气 Air</strong>：你的幻灵是由气元素组成，轻如微风。你的幻灵可以在@UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]，@UUID[Compendium.pf2e.actionspf2e.Item.2HJ4yuEFY1Cast4h]，和@UUID[Compendium.pf2e.actionspf2e.Item.JUvAvruz7yRQXfz2]时跳出两倍的距离，并且不会受到坠落伤害。</p>\n<p><strong>土 Earth</strong>：你的幻灵是由土元素组成，难以强行移动。你的幻灵在对抗@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]或@UUID[Compendium.pf2e.actionspf2e.Item.ge56Lu1xXVFYUnLP]时，其强韧或反射 DC 获得 +2 环境加值。此加值也适用于尝试将他击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]的法术或效果的豁免检定。此外，如果有任何效果会迫使它们移动10尺或更多，它们只会移动一半的距离。</p>\n<p><strong>火 Fire</strong>：你的幻灵是由火元素组成，燃烧着火焰的余烬。你的幻灵获得等同于你等级一半（最低为1）数值的火焰伤害抗力和同等的寒冷伤害和水特征弱点。</p>\n<p><strong>金 Metal</strong>：你的幻灵是由金元素组成，可以转换他们的金属形态进行战斗。你的幻灵学会了如何将金属转化为不同的武器形态，幻灵的一项初始近战无武装攻击获得多用钝击、穿刺或挥砍特征。</p>\n<p><strong>水 Water</strong>：你的幻灵是由水元素组成，游弋自如。你的幻灵获得两栖特征，使它们可以在水中和空气中呼吸，并免受在水下进行钝击和挥砍无武装打击的 -2 的减值。幻灵的陆地速度降低到15 尺，并且它们的获得 25 尺游泳速度。你可以选择两栖形态专长，如专长中所述将他的陆地速度提高到 25 尺。</p>\n<p><strong>木 Wood</strong>：你的幻灵是由木元素组成，当你汇集元素能量时，它们的活化树木形态会盘曲再生。你可以选择让你的幻灵获得植物特征。每当你再聚能时，你的幻灵恢复两倍于你等级数值的生命值。</p>"
+        },
+        "Elemental Maelstrom": {
+            "name": "元素漩涡 Elemental Maelstrom",
+            "description": "<p>你的幻灵暂时化身成一团由元素物质组成的漩涡，并在敌人之间横冲直撞。你的幻灵行走。在他移动的过程中，他可以尝试打击处于他触及范围内的每一个敌人。如果一个敌人不止一次出现在你的幻灵的触及范围内，你的幻灵只能对该敌人进行一次打击。这些攻击都会计入你幻灵的多重攻击减值，但直到所有攻击结束后才会增加减值。如果你的幻灵有对应速度，他们可以使用攀爬、飞行、或游泳取代行走。</p>"
         }
     }
 }
