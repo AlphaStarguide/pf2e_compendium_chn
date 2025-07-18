@@ -2501,7 +2501,7 @@
                 },
                 "Poison Spray": {
                     "name": "毒液喷溅 Poison Spray",
-                    "description": "<p>钩舌从喉咙中喷出毒液，对@Template[line|distance:80]区域造成@Damage[15d6[poison]]伤害（@Check[reflex|dc:34|basic]豁免）。豁免失败或大失败的生物还会沾染到钩舌毒。钩舌在[[/gmr 1d4 #Recharge Poison Spray]]{1d4 轮}内无法再次使用毒液喷溅。</p>"
+                    "description": "<p>钩舌从喉咙中喷出毒液，对@Template[line|distance:80]区域造成@Damage[15d6[poison]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免）。豁免失败或大失败的生物还会沾染到钩舌毒。钩舌在[[/gmr 1d4 #Recharge Poison Spray]]{1d4 轮}内无法再次使用毒液喷溅。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -3272,7 +3272,7 @@
                 },
                 "Rip and Drag": {
                     "name": "连撕带拽 Rip and Drag",
-                    "description": "<p><strong>需求</strong> 昆达尔这一回合的上一个动作是使用他的啃咬打击伤害了一个目标</p>\n<hr />\n<p><strong>效果</strong> 昆达尔咀嚼被咬住的生物，并且尝试通过@Check[athletics|defense:fortitude]检定对抗被咬住的生物的强韧DC来压制他们。</p>\n<hr />\n<p><strong>大成功</strong> 昆达尔对目标造成@Damage[5d6[piercing]]伤害，使他们暴露在狼化人诅咒中，并且能够以他一半的速度行走。如果他的目标是中型或者更小，他将目标拖拽到一个新的邻接他的格子中。</p>\n<p><strong>成功</strong> 昆达尔对目标造成@Damage[5d6[piercing]]伤害，使他们暴露在狼化人诅咒中。他能将目标的位置改换到其原本位置5尺内的并且邻接他的格子中。</p>\n<p><strong>失败</strong> 如同成功，除了仅造成@Damage[2d6[piercing]]伤害。</p>\n<p><strong>大失败</strong> 昆达尔无法造成任何伤害。</p>"
+                    "description": "<p><strong>需求</strong> 昆达尔这一回合的上一个动作是使用他的啃咬打击伤害了一个目标</p><hr /><p><strong>效果</strong> 昆达尔咀嚼被咬住的生物，并且尝试通过@Check[athletics|defense:fortitude]检定对抗被咬住的生物的强韧DC来压制他们。</p><hr /><p><strong>大成功</strong> 昆达尔对目标造成@Damage[5d6[piercing]]伤害，使他们暴露在狼化人诅咒中，并且能够以他一半的速度行走。如果他的目标是中型或者更小，他将目标拖拽到一个新的邻接他的格子中。</p>\n<p><strong>成功</strong> 昆达尔对目标造成@Damage[5d6[piercing]]伤害，使他们暴露在狼化人诅咒中。他能将目标的位置改换到其原本位置5尺内的并且邻接他的格子中。</p>\n<p><strong>失败</strong> 如同成功，除了仅造成@Damage[2d6[piercing]]伤害。</p>\n<p><strong>大失败</strong> 昆达尔无法造成任何伤害。</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "反应打击 Reactive Strike",
@@ -5463,7 +5463,7 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当孤坟勇士用近战打击、非武装攻击或者其绑定的武器对 1 名活物造成伤害时，它会获得[[/r 5 #Temporary Hit Points]]{5点临时生命}，且该生物必须成功通过@Check[fortitude|dc:21]豁免，否则便会陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。进一步造成的伤害在豁免失败时会让流失状态值增加1点，最高达到流失4。</p>"
+                    "description": "<p>当孤坟勇士用近战打击、非武装攻击或者其绑定的武器对 1 名活物造成伤害时，它会获得5点临时生命，且该生物必须成功通过@Check[fortitude|dc:21|options:inflicts:drained]豁免，否则便会陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。进一步造成的伤害在豁免失败时会让流失状态值增加1点，最高达到流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Funereal Dirge": {
                     "name": "丧葬挽歌 Funereal Dirge",
@@ -5471,7 +5471,7 @@
                 },
                 "Lonely Dirge": {
                     "name": "孤坟挽歌 Lonely Dirge",
-                    "description": "<p>孤坟勇士的丧葬挽歌与标准的石冢尸妖的挽歌略有不同：它单调且令人不安的诵唱会迫使@Template[emanation|distance:50]范围内的活物尝试@Check[will|dc:24]豁免。孤坟勇士在[[/gmr 1d4 #rounds]]{1d4轮}内无法吟唱新的孤坟挽歌。</p><hr /><p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标因孤独带来的痛苦而陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续至它的下个回合结束。</p>\n<p><strong>失败</strong> 目标陷入呆滞1，持续1小时。</p>\n<p><strong>大失败</strong> 目标陷入呆滞1，持续24小时，而且在对抗汲取生命的豁免检定中承受-2状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.8ecPVgMeWDxc4jI4]</p>"
+                    "description": "<p>孤坟勇士的丧葬挽歌与标准的石冢尸妖的挽歌略有不同：它单调且令人不安的诵唱会迫使@Template[emanation|distance:50]范围内的活物尝试@Check[will|dc:24|options:area-effect,inflicts:stupefied]豁免。孤坟勇士在[[/gmr 1d4 #Recharge Lonely Dirge]]{1d4轮}内无法吟唱新的孤坟挽歌。</p><hr /><p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标因孤独带来的痛苦而陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续至它的下个回合结束。</p>\n<p><strong>失败</strong> 目标陷入呆滞1，持续1小时。</p>\n<p><strong>大失败</strong> 目标陷入呆滞1，持续24小时，而且在对抗汲取生命的豁免检定中承受-2状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.8ecPVgMeWDxc4jI4]</p>"
                 }
             },
             "publicNotes": "<p>作为坟冢、墓地和陵墓那多疑的守护者，石冢尸妖通常诞生于死灵仪式中。对于那些无法忍受与他们的世俗财产分离的凡人来说，（将自己）转变成一个石冢尸妖那样的不朽存在是很诱人的选择。另一种几乎同样常见的情况是，那些极其贪婪和富有的皇室或者商人常常寻找受害者来转化成石冢尸妖，以永远保护他们珍贵的财富。</p>\n<p>只有在极其罕见的情况下，一个人的贪欲才能强大到足以自发地把他变成一个石冢尸妖，而不需要黑暗仪式或强大的神力的介入。在这种情况下，最终产生的尸妖会变得无与伦比的邪恶，并且极有可能拥有罕见的珍宝。</p>\n<p>作为物质财富的守卫者，石冢尸妖与那把它在创造它的仪式上所佩戴的武器有着超自然的绑定。它们可以将死灵系能量引导到它们所佩戴的武器上。用这把剑挥出的一击会将受害者的生命力吸给尸妖。</p>",
@@ -6481,7 +6481,7 @@
                 },
                 "Mind-Numbing Breath": {
                     "name": "乱心吐息 Mind-Numbing Breath",
-                    "description": "<p>异想龙喷出一股@Template[cone|distance:40]的闪亮洋红色迷雾。因为脑海中被突然出现的虚假（通常是不愉快的）记忆所淹没，该区域内的生物必须尝试一次@Check[will|dc:38]检定，根据其豁免结果受到@Damage[10d12[mental]]伤害。异想龙在[[/gmr 1d4 #rounds]]{1d4轮}内无法再次使用乱心吐息。</p>\n<hr />\n<p><strong>大成功</strong> 闪烁的烟尘勾勒出该生物的轮廓，在1轮中无效其任何已生效的@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}效果，并且不受伤害。</p>\n<p><strong>成功</strong> 该生物受到一半伤害，并且其隐形效果被无效2轮。</p>\n<p><strong>失败</strong> 该生物受到完整伤害，@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1分钟，并且其隐形效果被无效1分钟。</p>\n<p><strong>大失败</strong> 该生物受到双倍伤害，@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮，目眩1分钟，并且其隐形效果被无效1分钟。</p>"
+                    "description": "<p>异想龙喷出一股@Template[cone|distance:40]的闪亮洋红色迷雾。因为脑海中被突然出现的虚假（通常是不愉快的）记忆所淹没，该区域内的生物必须尝试一次@Check[will|dc:38|options:area-effect,damaging-effect]检定，根据其豁免结果受到@Damage[10d12[mental]|options:area-damage]伤害。异想龙在[[/gmr 1d4 #Recharge Mind-Numbing Breath]]{1d4轮}内无法再次使用乱心吐息。</p>\n<hr />\n<p><strong>大成功</strong> 闪烁的烟尘勾勒出该生物的轮廓，在1轮中无效其任何已生效的@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]效果，并且不受伤害。</p>\n<p><strong>成功</strong> 该生物受到一半伤害，并且其隐形效果被无效2轮。</p>\n<p><strong>失败</strong> 该生物受到完整伤害，@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1分钟，并且其隐形效果被无效1分钟。</p>\n<p><strong>大失败</strong> 该生物受到双倍伤害，@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮，目眩1分钟，并且其隐形效果被无效1分钟。</p>"
                 },
                 "Reactive Strike (Fangs Only)": {
                     "description": "<p>Fangs only.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>",
@@ -6983,7 +6983,7 @@
                 },
                 "Radiant Blast": {
                     "name": "辐光爆发 Radiant Blast",
-                    "description": "<p>辐光守卫对@Template[cone|distance:50]范围释放一道耀眼的能量波，造成@Damage[10d12[force]]伤害（@Check[reflex|dc:38|basic]豁免）。辐光守卫在[[/gmr 1d4 #Recharge Radiant Blast]]{1d4轮}内无法再次使用辐光爆发。</p>"
+                    "description": "<p>辐光守卫对@Template[cone|distance:50]范围释放一道耀眼的能量波，造成@Damage[10d12[force]|options:area-damage]伤害（@Check[reflex|dc:38|basic|options:area-effect]豁免）。辐光守卫在[[/gmr 1d4 #Recharge Radiant Blast]]{1d4轮}内无法再次使用辐光爆发。</p>"
                 },
                 "Radiant Blow": {
                     "name": "辐光闪耀 Radiant Blow",
