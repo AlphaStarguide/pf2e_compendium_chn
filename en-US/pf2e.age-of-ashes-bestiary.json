@@ -154,7 +154,7 @@
                 },
                 "Weapon Supremacy": {
                     "name": "Weapon Supremacy",
-                    "description": "<p>Inizra is permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened 1}. She can use her extra action only to Strike.</p>"
+                    "description": "<p>Inizra is permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened}. She can use her extra action only to Strike.</p>"
                 }
             }
         },
@@ -765,7 +765,7 @@
                 },
                 "Resanguinate": {
                     "name": "Resanguinate",
-                    "description": "<p>The immortal ichor draws blood from the pores of living creatures around it. Any living creature within 30 feet that has blood takes [[/r {4d6}]]{4d6 damage} (@Check[fortitude|dc:33|basic] save). The immortal ichor regains HP equal to the total damage dealt. A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (or @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure).</p>"
+                    "description": "<p>The immortal ichor draws blood from the pores of living creatures around it. Any living creature within @Template[emanation|distance:30]{30 feet} that has blood takes @Damage[4d6[untyped]|options:area-damage] damage (@Check[fortitude|dc:33|basic|options:area-effect,inflicts:drained] save). The immortal ichor regains HP equal to the total damage dealt. A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (or @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure).</p>"
                 }
             }
         },
@@ -1526,7 +1526,7 @@
                 },
                 "Soul Shriek": {
                     "name": "Soul Shriek",
-                    "description": "<p>The aluum enforcer emits a keening wail in a @Template[cone|distance:15] that deals @Damage[9d6[sonic]] damage (@Check[fortitude|dc:27|basic] save). A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}, or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3} on a critical failure.</p>\n<p>The aluum can't use Soul Shriek again for [[/gmr 1d4 #Recharge Soul Shriek]]{1d4 rounds}.</p>"
+                    "description": "<p>The aluum enforcer emits a keening wail in a @Template[cone|distance:15] that deals @Damage[9d6[sonic]|options:area-damage] damage (@Check[fortitude|dc:27|basic|options:area-effect,inflicts:stunned] save). A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}, or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3} on a critical failure.</p>\n<p>The aluum can't use Soul Shriek again for [[/gmr 1d4 #Recharge Soul Shriek]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -1828,7 +1828,7 @@
                 },
                 "Necrotic Pulse": {
                     "name": "Necrotic Pulse",
-                    "description": "<p>Each creature in a @Template[emanation|distance:10] must succeed at a @Check[fortitude|dc:32] save or take @Damage[1d6[persistent,void]] damage and be @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute as their flesh and bones temporarily atrophy. The golem can't use Necrotic Pulse again for [[/gmr 1d4 #Recharge Necrotic Pulse]]{1d4 rounds}.</p>"
+                    "description": "<p>Each creature in a @Template[emanation|distance:10] must succeed at a @Check[fortitude|dc:32|options:area-effect,damaging-effect] save or take @Damage[1d6[persistent,void]|options:area-damage] damage and be @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute as their flesh and bones temporarily atrophy. The golem can't use Necrotic Pulse again for [[/gmr 1d4 #Recharge Necrotic Pulse]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -2048,7 +2048,7 @@
                 },
                 "Kobold Explosives": {
                     "name": "Kobold Explosives",
-                    "description": "<p><strong>Cost</strong> 1 batch of infused reagents.</p>\n<hr />\n<p><strong>Effect</strong> Hezle quickly cobbles together an explosive bomb and lobs it up to 30 feet. All creatures in a @Template[burst|distance:5] take @Damage[5d6[fire]] damage (@Check[reflex|dc:26|basic|traits:interact] save).</p>"
+                    "description": "<p><strong>Cost</strong> 1 batch of infused reagents.</p>\n<hr />\n<p><strong>Effect</strong> Hezle quickly cobbles together an explosive bomb and lobs it up to 30 feet. All creatures in a @Template[burst|distance:5] take @Damage[5d6[fire]|options:area-damage] damage (@Check[reflex|dc:26|basic|options:area-effect] save).</p>"
                 },
                 "Smoky Retreat": {
                     "name": "Smoky Retreat",
@@ -2155,7 +2155,7 @@
                 },
                 "Obliteration Beam": {
                     "name": "Obliteration Beam",
-                    "description": "<p><strong>Requirements</strong> The spiritbound aluum has bound a soul using its @UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{Seize Soul} innate spell</p>\n<hr />\n<p><strong>Effect</strong> The spiritbound aluum transforms the captured soul's essence into raw magical energy, channeling the spirit into a beam that deals @Damage[20d6[force]] damage in a @Template[line|distance:30] (@Check[reflex|dc:38|basic] save). The remaining fragments of the captured soul are released to the Great Beyond.</p>\n<p>The spiritbound aluum can't use Obliteration Beam again for [[/gmr 1d4 #Recharge Obliteration Beam]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Requirements</strong> The spiritbound aluum has bound a soul using its @UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{Seize Soul} innate spell</p>\n<hr />\n<p><strong>Effect</strong> The spiritbound aluum transforms the captured soul's essence into raw magical energy, channeling the spirit into a beam that deals @Damage[20d6[force]|options:area-damage] damage in a @Template[line|distance:30] (@Check[reflex|dc:38|basic|options:area-effect] save). The remaining fragments of the captured soul are released to the Great Beyond.</p>\n<p>The spiritbound aluum can't use Obliteration Beam again for [[/gmr 1d4 #Recharge Obliteration Beam]]{1d4 rounds}.</p>"
                 },
                 "Paralyzing Force": {
                     "name": "Paralyzing Force",
@@ -2167,7 +2167,7 @@
                 },
                 "Soul Shriek": {
                     "name": "Soul Shriek",
-                    "description": "<p>The aluum enforcer emits a keening wail in a @Template[cone|distance:15] that deals @Damage[16d6[sonic]] damage (@Check[fortitude|dc:27|basic] save). A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}, or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3} on a critical failure.</p>\n<p>The aluum can't use Soul Shriek again for [[/gmr 1d4 #Recharge Soul Shriek]]{1d4 rounds}.</p>"
+                    "description": "<p>The aluum enforcer emits a keening wail in a @Template[cone|distance:15] that deals @Damage[16d6[sonic]|options:area-damage] damage (@Check[fortitude|dc:27|basic|options:area-effect,inflicts:stunned] save). A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}, or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3} on a critical failure.</p>\n<p>The aluum can't use Soul Shriek again for [[/gmr 1d4 #Recharge Soul Shriek]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -2283,7 +2283,7 @@
             "items": {
                 "Magma Splash": {
                     "name": "Magma Splash",
-                    "description": "<p>Whenever the dalos takes damage from a melee Strike, magma splashes from its open wound and sticks to nearby creatures. Each creature in a @Template[emanation|distance:10] must attempt a @Check[reflex|dc:31|traits:damaging-effect] save. On a failure, the creature takes @Damage[3d6[persistent,fire]] damage as the superheated rock sticks to them and cools. The DC to end this persistent damage decreases by 5 each turn after the first as the magma cools.</p>"
+                    "description": "<p>Whenever the dalos takes damage from a melee Strike, magma splashes from its open wound and sticks to nearby creatures. Each creature in a @Template[emanation|distance:10] must attempt a @Check[reflex|dc:31|options:area-effect,damaging-effect] save. On a failure, the creature takes @Damage[3d6[persistent,fire]|options:area-damage] damage as the superheated rock sticks to them and cools. The DC to end this persistent damage decreases by 5 each turn after the first as the magma cools.</p>"
                 },
                 "Volcanic Heat": {
                     "name": "Volcanic Heat",
@@ -2299,7 +2299,7 @@
                 },
                 "Lava Bomb": {
                     "name": "Lava Bomb",
-                    "description": "<p>The dalos causes a volcanic explosion to erupt from its head, lobbing a mass of molten rock up to 100 feet. This lava bomb deals @Damage[6d8[fire],6d8[bludgeoning]]{6d8 fire damage and 6d8 bludgeoning damage} to each creature in a @Template[burst|distance:20]{20-foot radius} of its impact point, with a @Check[reflex|dc:33|basic] save.</p>\n<p>The dalos can't use Lava Bomb again for [[/gmr 1d4 #Recharge Lava Bomb]]{1d4 rounds}.</p>"
+                    "description": "<p>The dalos causes a volcanic explosion to erupt from its head, lobbing a mass of molten rock up to 100 feet. This lava bomb deals @Damage[6d8[fire],6d8[bludgeoning]|options:area-damage]{6d8 fire damage and 6d8 bludgeoning damage} to each creature in a @Template[burst|distance:20]{20-foot radius} of its impact point, with a @Check[reflex|dc:33|basic|options:area-effect] save.</p>\n<p>The dalos can't use Lava Bomb again for [[/gmr 1d4 #Recharge Lava Bomb]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -3040,7 +3040,7 @@
                 },
                 "Forge Breath": {
                     "name": "Forge Breath",
-                    "description": "<p>The forge-spurned breathes a cloud of stinging soot, ash, and glowing embers. This can affect either a @Template[cone|distance:30] or a @Template[burst|distance:20] centered on the forge-spurned and persists for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>\n<p>Each creature that moves into or starts their turn in the area takes @Damage[6d6[fire]|options:area-damage] damage, with a @Check[reflex|dc:21|basic|options:area-effect] save. A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 minute.</p>\n<p>Creatures within the cloud are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, though not from the forge-spurned.</p>\n<p>The forge-spurned can't use Forge Breath again until it has used Inflate Bellows.</p>"
+                    "description": "<p>The forge-spurned breathes a cloud of stinging soot, ash, and glowing embers. This can affect either a @Template[cone|distance:30] or a @Template[burst|distance:20] centered on the forge-spurned and persists for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>\n<p>Each creature that moves into or starts their turn in the area takes @Damage[6d6[fire]|options:area-damage] damage, with a @Check[reflex|dc:21|basic|options:area-effect,inflicts:blinded] save. A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 minute.</p>\n<p>Creatures within the cloud are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, though not from the forge-spurned.</p>\n<p>The forge-spurned can't use Forge Breath again until it has used Inflate Bellows.</p>"
                 },
                 "Inflate Bellows": {
                     "name": "Inflate Bellows",
@@ -3139,7 +3139,7 @@
             "items": {
                 "equipment-Shoddy Blunderbuss": {
                     "name": "Shoddy Blunderbuss",
-                    "description": "<p><strong>Activate</strong> <span class=\"action-glyph\">2</span></p>\n<p>The blunderbuss fires an explosive shot that deals @Damage[4d6[bludgeoning],2d10[fire]]{4d6 bludgeoning damage plus 2d10 fire damage} to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|name:Shoddy Blunderbuss Reflex Save|showDC:owner] save).</p>\n<p>When firing the blunderbuss, you must critically succeed at a @Check[crafting|dc:20|name:Shoddy Blunderbuss Crafting] or @Check[engineering|dc:20|name:Shoddy Blunderbuss Engineering Lore|showDC:owner]{Engineering Lore} check or the weapon explodes, damaging you for the same amount as the creatures in the cone and destroying itself. A successful @Check[crafting|dc:22|name:Shoddy Blunderbuss Reveal Unstable Nature|showDC:owner] check is enough to confirm the weapon's unstable nature if someone examines it beforehand.</p>\n<p>Reloading the blunderbuss takes 3 Interact actions: adding 1 dose of gunpowder, adding 1 grapeshot canister, and packing the contents.</p>"
+                    "description": "<p><strong>Activate</strong> <span class=\"action-glyph\">2</span></p>\n<p>The blunderbuss fires an explosive shot that deals @Damage[4d6[bludgeoning],2d10[fire]|options:area-damage]{4d6 bludgeoning damage plus 2d10 fire damage} to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|name:Shoddy Blunderbuss Reflex Save|options:area-effect|showDC:owner] save).</p>\n<p>When firing the blunderbuss, you must critically succeed at a @Check[crafting|dc:20|name:Shoddy Blunderbuss Crafting] or @Check[engineering-lore|dc:20|name:Shoddy Blunderbuss Engineering Lore|showDC:owner]{Engineering Lore} check or the weapon explodes, damaging you for the same amount as the creatures in the cone and destroying itself. A successful @Check[crafting|dc:22|name:Shoddy Blunderbuss Reveal Unstable Nature|showDC:owner] check is enough to confirm the weapon's unstable nature if someone examines it beforehand.</p>\n<p>Reloading the blunderbuss takes 3 Interact actions: adding 1 dose of gunpowder, adding 1 grapeshot canister, and packing the contents.</p>"
                 },
                 "equipment-Monocle": {
                     "name": "Monocle"
@@ -3160,7 +3160,7 @@
                 },
                 "Shoddy Blunderbuss": {
                     "name": "Shoddy Blunderbuss",
-                    "description": "<p>Gerhard fires an explosive shot from his blunderbuss that deals @Damage[4d6[bludgeoning],2d10[fire]]{4d6 bludgeoning damage plus 2d10 fire damage} to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic]).</p>\n<p>When firing the blunderbuss, Gerhard must succeed at a @Check[crafting|dc:20] or @Check[engineering-lore|dc:20]{Engineering Lore} check or the weapon explodes, damaging him for the same amount as the creatures in the cone and destroying itself. If someone other than Gerhard uses the weapon, they must critically succeed at the check. A successful @Check[crafting|dc:22] check is enough to confirm the weapon's unstable nature if someone examines it beforehand.</p>\n<p>Reloading the blunderbuss takes 3 Interact actions: adding 1 dose of gunpowder, adding 1 grapeshot canister, and packing the contents.</p>"
+                    "description": "<p>Gerhard fires an explosive shot from his blunderbuss that deals @Damage[4d6[bludgeoning],2d10[fire]|options:area-damage]{4d6 bludgeoning damage plus 2d10 fire damage} to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect]).</p>\n<p>When firing the blunderbuss, Gerhard must succeed at a @Check[crafting|dc:20] or @Check[engineering-lore|dc:20]{Engineering Lore} check or the weapon explodes, damaging him for the same amount as the creatures in the cone and destroying itself. If someone other than Gerhard uses the weapon, they must critically succeed at the check. A successful @Check[crafting|dc:22] check is enough to confirm the weapon's unstable nature if someone examines it beforehand.</p>\n<p>Reloading the blunderbuss takes 3 Interact actions: adding 1 dose of gunpowder, adding 1 grapeshot canister, and packing the contents.</p>"
                 },
                 "Whip Swing": {
                     "name": "Whip Swing",
@@ -3558,7 +3558,7 @@
                 },
                 "Forge Breath": {
                     "name": "Forge Breath",
-                    "description": "<p>The accursed forge-spurned breathes a cloud of stinging soot, ash, and glowing embers. This can affect either a @Template[cone|distance:30] or a @Template[burst|distance:20] centered on the accursed forge-spurned and persists for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>\n<p>Creatures that move into or start their turn in the area take @Damage[12d6[fire]|options:area-damage] damage (@Check[reflex|dc:36|basic|options:area-effect] save).</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 minute. Creatures within the cloud are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, though not from the accursed forge-spurned.</p>\n<p>The accursed forge-spurned can't use Forge Breath again until it has used Inflate Bellows.</p>"
+                    "description": "<p>The accursed forge-spurned breathes a cloud of stinging soot, ash, and glowing embers. This can affect either a @Template[cone|distance:30] or a @Template[burst|distance:20] centered on the accursed forge-spurned and persists for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>\n<p>Creatures that move into or start their turn in the area take @Damage[12d6[fire]|options:area-damage] damage (@Check[reflex|dc:36|basic|options:area-effect,inflicts:blinded] save).</p>\n<p>A creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 minute. Creatures within the cloud are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, though not from the accursed forge-spurned.</p>\n<p>The accursed forge-spurned can't use Forge Breath again until it has used Inflate Bellows.</p>"
                 },
                 "Inflate Bellows": {
                     "name": "Inflate Bellows",
@@ -3883,7 +3883,7 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When an aiudara wraith damages a living creature with its spectral hand Strike, the aiudara wraith gains 18 temporary Hit Points and the target must succeed at a @Check[fortitude|dc:40] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} as long as it is drained. Further damage dealt by the aiudara wraith's spectral hand Strikes increases the value of the drained and stupefied conditions by 1 each on a failed save, to a maximum of 10 for both.</p>"
+                    "description": "<p>When an aiudara wraith damages a living creature with its spectral hand Strike, the aiudara wraith gains 18 temporary Hit Points and the target must succeed at a @Check[fortitude|dc:40|options:inflicts:drained,inflicts:stupefied] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} as long as it is drained. Further damage dealt by the aiudara wraith's spectral hand Strikes increases the value of the drained and stupefied conditions by 1 each on a failed save, to a maximum of 10 for both.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]{Effect: Drain Life}</p>"
                 },
                 "Instantaneous Movement": {
                     "name": "Instantaneous Movement",

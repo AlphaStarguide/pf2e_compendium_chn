@@ -245,7 +245,7 @@
                 },
                 "Paralyzing Spew": {
                     "name": "Paralyzing Spew",
-                    "description": "<p>The lacedon discharges a spray of carrion vomit at a creature within 20 feet, dealing @Damage[1d6[poison]] damage with a @Check[fortitude|dc:17|basic]. A non-elf creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save to end the paralysis at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save. The lacedon can't use Paralyzing Spew again for [[/gmr 1d4 #Recharge Paralyzing Spew]]{1d4 rounds}.</p>"
+                    "description": "<p>The lacedon discharges a spray of carrion vomit at a creature within 20 feet, dealing @Damage[1d6[poison]] damage with a @Check[fortitude|dc:17|basic|options:inflicts:paralyzed]. A non-elf creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save to end the paralysis at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save. The lacedon can't use Paralyzing Spew again for [[/gmr 1d4 #Recharge Paralyzing Spew]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -475,7 +475,7 @@
                 },
                 "Sandstorm": {
                     "name": "Sandstorm",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The mummy creates a temporary sandstorm in a @Template[emanation|distance:30] that lasts for 1 minute. Creatures within the emanation take a -4 circumstance penalty to Perception checks and must succeed at a @Check[fortitude|dc:33] save or be forced to hold their breath or start suffocating. A creature within the sandstorm at the end of its turn takes @Damage[2d6[void],1d6[slashing]]{2d6 void and 1d6 slashing damage}.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The mummy creates a temporary sandstorm in a @Template[emanation|distance:30] that lasts for 1 minute. Creatures within the emanation take a –4 circumstance penalty to Perception checks and must succeed at a @Check[fortitude|dc:33|options:area-effect] save or be forced to hold their breath or start suffocating. A creature within the sandstorm at the end of its turn takes @Damage[2d6[void],1d6[slashing]|options:area-damage]{2d6 void and 1d6 slashing damage}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.f8rncEs06bqcn3LZ]{Effect: Sandstorm}</p>"
                 }
             }
         },
@@ -559,7 +559,7 @@
                 },
                 "Frightful Battle Cry": {
                     "name": "Frightful Battle Cry",
-                    "description": "<p>The last guards unleash a soul-shaking bellow in unison. All creatures in a @Template[cone|distance:60] take @Damage[7d6[sonic]|options:area-damage] damage (@Check[will|dc:42|basic|options:area-effect]). Any creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4} on a critical failure).</p>\n<p>If the troop occupies 8 or fewer squares, this area decreases to a @Template[cone|distance:30].</p>"
+                    "description": "<p>The last guards unleash a soul-shaking bellow in unison. All creatures in a @Template[cone|distance:60] take @Damage[7d6[sonic]|options:area-damage] damage (@Check[will|dc:42|basic|options:area-effect,inflicts:frightened]). Any creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4} on a critical failure).</p>\n<p>If the troop occupies 8 or fewer squares, this area decreases to a @Template[cone|distance:30].</p>"
                 },
                 "Ghostly Blades": {
                     "name": "Ghostly Blades",
@@ -567,7 +567,7 @@
                 },
                 "Spectral Charge": {
                     "name": "Spectral Charge",
-                    "description": "<p>The last guards charge, swarming through their foes. The troop Flies up to double its Speed, dealing @Damage[4d8[void]] damage to each creature whose space it moves through (@Check[reflex|dc:40|basic]). Any creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (or @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure). The troop can affect each creature only once in a single use of Spectral Charge.</p>"
+                    "description": "<p>The last guards charge, swarming through their foes. The troop Flies up to double its Speed, dealing @Damage[4d8[void]] damage to each creature whose space it moves through (@Check[reflex|dc:40|basic|options:inflicts:drained]). Any creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (or @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure). The troop can affect each creature only once in a single use of Spectral Charge.</p>"
                 },
                 "Troop Movement": {
                     "name": "Troop Movement",
@@ -946,7 +946,7 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When the hunter wight damages a living creature using an unarmed attack or their bound weapon, they gain 7 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:22] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Further damage dealt by the hunter wight's unarmed and bound weapon attacks increases the value of the drained condition by 1 on a failed save, to a maximum of drained 4.</p>"
+                    "description": "<p>When the hunter wight damages a living creature using an unarmed attack or their bound weapon, they gain 7 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:22|options:inflicts:drained] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Further damage dealt by the hunter wight's unarmed and bound weapon attacks increases the value of the drained condition by 1 on a failed save, to a maximum of drained 4.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]{Effect: Drain Life}</p>"
                 },
                 "Spawn Hunter Wight": {
                     "name": "Spawn Hunter Wight",
@@ -995,7 +995,7 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When the hunter wight damages a living creature using an unarmed attack or their bound weapon, they gain 9 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:25] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Further damage dealt by the hunter wight's unarmed and bound weapon attacks increases the value of the drained condition by 1 on a failed save, to a maximum of drained 4.</p>"
+                    "description": "<p>When the hunter wight damages a living creature using an unarmed attack or their bound weapon, they gain 9 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:25|options:inflicts:drained] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Further damage dealt by the hunter wight's unarmed and bound weapon attacks increases the value of the drained condition by 1 on a failed save, to a maximum of drained 4.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]{Effect: Drain Life}</p>"
                 },
                 "Feign Death": {
                     "name": "Feign Death",
@@ -1758,7 +1758,7 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When the hunter wight damages a living creature using an unarmed attack or their bound weapon, they gain 12 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:29] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Further damage dealt by the hunter wight's unarmed and bound weapon attacks increases the value of the drained condition by 1 on a failed save, to a maximum of drained 4.</p>"
+                    "description": "<p>When the hunter wight damages a living creature using an unarmed attack or their bound weapon, they gain 12 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:29|options:inflicts:drained] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Further damage dealt by the hunter wight's unarmed and bound weapon attacks increases the value of the drained condition by 1 on a failed save, to a maximum of drained 4.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]{Effect: Drain Life}</p>"
                 },
                 "Spawn Wight Soldier": {
                     "name": "Spawn Wight Soldier",
@@ -3406,7 +3406,7 @@
                 },
                 "Siphon Vitality": {
                     "name": "Siphon Vitality",
-                    "description": "<p>The pale sovereign siphons the life force from creatures around them. All living creatures in a @Template[emanation|distance:30] take @Damage[6d8[void]] damage (@Check[fortitude|dc:39|basic]). The pale sovereign regains HP equal to the highest damage a single creature took from this effect.</p>"
+                    "description": "<p>The pale sovereign siphons the life force from creatures around them. All living creatures in a @Template[emanation|distance:30] take @Damage[6d8[void]|options:area-damage] damage (@Check[fortitude|dc:39|basic|options:area-effect]). The pale sovereign regains HP equal to the highest damage a single creature took from this effect.</p>"
                 }
             }
         },

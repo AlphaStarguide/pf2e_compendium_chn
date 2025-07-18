@@ -333,7 +333,7 @@
                 },
                 "Petty Whispers": {
                     "name": "Petty Whispers",
-                    "description": "<p>The mocking chorus adopts the voices of its enemies, spreading lies and jeers among would-be allies and tearing apart trusted friends. Creatures in a @Template[emanation|distance:60] of the mocking chorus must attempt a @Check[will|dc:37] save. The mocking chorus can't use petty whispers again for 1 minute.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected and is temporarily immune for 1 day.</p>\n<p><strong>Success</strong> As failure, but the creature takes half damage and is not @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused}.</p>\n<p><strong>Failure</strong> The creature takes @Damage[12d10[mental]] damage and is confused for 1 minute. It can attempt a new save at the end of each of its turns to end the confusion.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[15d10[mental]] damage and is confused for 1 minute, with no save to end early.</p>"
+                    "description": "<p>The mocking chorus adopts the voices of its enemies, spreading lies and jeers among would-be allies and tearing apart trusted friends. Creatures in a @Template[emanation|distance:60] of the mocking chorus must attempt a @Check[will|dc:37|options:area-effect,damaging-effect] save. The mocking chorus can't use petty whispers again for 1 minute.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected and is temporarily immune for 1 day.</p>\n<p><strong>Success</strong> As failure, but the creature takes half damage and is not @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused}.</p>\n<p><strong>Failure</strong> The creature takes @Damage[12d10[mental]|options:area-damage] damage and is confused for 1 minute. It can attempt a new save at the end of each of its turns to end the confusion.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[15d10[mental]|options:area-damage] damage and is confused for 1 minute, with no save to end early.</p>"
                 }
             }
         },
@@ -661,7 +661,7 @@
                 },
                 "Shattering Scream": {
                     "name": "Shattering Scream",
-                    "description": "<p>The soniphak can focus its screech at a stone or rock surface within 60 feet to create an explosion in a @Template[burst|distance:15] from the point of impact. Creatures in the area take @Damage[5d6[piercing]] damage (@Check[reflex|dc:28|basic] save), and the area becomes difficult terrain due to fragments of loose stone.</p>"
+                    "description": "<p>The soniphak can focus its screech at a stone or rock surface within 60 feet to create an explosion in a @Template[burst|distance:15] from the point of impact. Creatures in the area take @Damage[5d6[piercing]|options:area-damage] damage (@Check[reflex|dc:28|basic|options:area-effect] save), and the area becomes difficult terrain due to fragments of loose stone.</p>"
                 }
             }
         },
@@ -685,7 +685,7 @@
                 },
                 "Petrify Vapor": {
                     "name": "Petrify Vapor",
-                    "description": "<p>The stony bat breathes petrifying gas in a @Template[cone|distance:15], too thin to harm creatures in the area. However, it petrifies ambient moisture, raining down a cascade of tiny stones onto any creatures in the space directly below the cone. The falling rocks deal @Damage[4d6[bludgeoning]] damage (@Check[reflex|dc:20|basic]). The stony bat can't use Petrify Vapor again for [[/gmr 1d4 #Recharge Petrify Vapor]]{1d4 rounds}.</p>"
+                    "description": "<p>The stony bat breathes petrifying gas in a @Template[cone|distance:15], too thin to harm creatures in the area. However, it petrifies ambient moisture, raining down a cascade of tiny stones onto any creatures in the space directly below the cone. The falling rocks deal @Damage[4d6[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:20|basic|options:area-effect]). The stony bat can't use Petrify Vapor again for [[/gmr 1d4 #Recharge Petrify Vapor]]{1d4 rounds}.</p>"
                 },
                 "Stone Feast": {
                     "name": "Stone Feast",
@@ -1075,7 +1075,7 @@
                 },
                 "Screaming Force": {
                     "name": "Screaming Force",
-                    "description": "<p>The cave squirrel lets out a terrible scream. Non–cave squirrel creatures within @Template[emanation|distance:30]{30 feet} must succeed at a @Check[fortitude|dc:22] save or take @Damage[2d10[sonic]] damage. On a critical failure, a creature is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute. The cave squirrel can't use Screaming Force again for [[/gmr 1d4 #Recharge Screaming Force]]{1d4 rounds}.</p>"
+                    "description": "<p>The cave squirrel lets out a terrible scream. Non–cave squirrel creatures within @Template[emanation|distance:30]{30 feet} must succeed at a @Check[fortitude|dc:22|options:area-effect,damaging-effect,inflicts:deafened] save or take @Damage[2d10[sonic]|options:area-damage] damage. On a critical failure, a creature is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute. The cave squirrel can't use Screaming Force again for [[/gmr 1d4 #Recharge Screaming Force]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -1150,7 +1150,7 @@
                 },
                 "Fish Fork": {
                     "name": "Fish Fork",
-                    "description": "<p><strong>Requirements</strong> The wereshark critically hit with a trident Strike on their most recent action this turn</p>\n<hr />\n<p><strong>Effect</strong> The wereshark digs their trident deep within their target, skewering it before taking a massive bite. The target of the Strike becomes @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 18) and takes @Damage[1d4[bleed]] damage, and the wereshark attempts a jaws Strike against it. The wereshark can't use their trident while they have a creature grabbed with it, but they can pull the trident free with a single action that has the manipulate trait.</p>"
+                    "description": "<p><strong>Requirements</strong> The wereshark critically hit with a trident Strike on their most recent action this turn</p><hr /><p><strong>Effect</strong> The wereshark digs their trident deep within their target, skewering it before taking a massive bite. The target of the Strike becomes @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} ([[/act escape dc=18]]) and takes @Damage[1d4[bleed]] damage, and the wereshark attempts a jaws Strike against it. The wereshark can't use their trident while they have a creature grabbed with it, but they can pull the trident free with a single action that has the manipulate trait.</p>"
                 },
                 "Moon Frenzy": {
                     "name": "Moon Frenzy",
@@ -1990,7 +1990,7 @@
                 },
                 "Launch Metal": {
                     "name": "Launch Metal",
-                    "description": "<p>The gecko repulses the metal attached to its body in all directions, dealing @Damage[2d6[bludgeoning]] damage (@Check[reflex|dc:17|basic] save) to all creatures in a @Template[emanation|distance:10]. The gecko can't use Launch Metal again for [[/gmr 1d4 #Recharge Launch Metal]]{1d4 rounds}.</p>"
+                    "description": "<p>The gecko repulses the metal attached to its body in all directions, dealing @Damage[2d6[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:17|basic|options:area-effect] save) to all creatures in a @Template[emanation|distance:10]. The gecko can't use Launch Metal again for [[/gmr 1d4 #Recharge Launch Metal]]{1d4 rounds}.</p>"
                 },
                 "Repel": {
                     "name": "Repel",
@@ -2225,7 +2225,7 @@
                 },
                 "Noxious Exhalation": {
                     "name": "Noxious Exhalation",
-                    "description": "<p>The tyrafdir breathes out a noxious mist from all of its mouths, spreading in a @Template[emanation|distance:20] that deals @Damage[4d10[poison]] damage to creatures within the area (@Check[reflex|dc:24|basic] save). Any creature that fails its save must attempt a @Check[will|dc:24] save or gain weakness to mental 10 and a –1 status penalty to Will saves for 24 hours. The tyrafdir can't use Noxious Exhalation again for [[/gmr 1d4 #Recharge Noxious Exhalation]]{1d4 rounds}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.G1pvduwOVRz4YFUF]{Effect: Noxious Exhalation}</p>"
+                    "description": "<p>The tyrafdir breathes out a noxious mist from all of its mouths, spreading in a @Template[emanation|distance:20] that deals @Damage[4d10[poison]|options:area-damage] damage to creatures within the area (@Check[reflex|dc:24|basic|options:area-effect] save). Any creature that fails its save must attempt a @Check[will|dc:24] save or gain weakness to mental 10 and a –1 status penalty to Will saves for 24 hours. The tyrafdir can't use Noxious Exhalation again for [[/gmr 1d4 #Recharge Noxious Exhalation]]{1d4 rounds}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.G1pvduwOVRz4YFUF]{Effect: Noxious Exhalation}</p>"
                 }
             }
         },

@@ -778,7 +778,7 @@
                 },
                 "Shrieking Scream": {
                     "name": "Shrieking Scream",
-                    "description": "<p>The clacking skull swarm emits a terrifying, painful scream that deals @Damage[10d6[sonic]] damage to all creatures in a @Template[cone|distance:30] (@Check[will|dc:29|basic] save). A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure).</p>\n<p>The swarm can't use Frightening Scream again for [[/gmr 1d4 #Recharge Shrieking Scream]]{1d4 rounds}.</p>"
+                    "description": "<p>The clacking skull swarm emits a terrifying, painful scream that deals @Damage[10d6[sonic]|options:area-damage] damage to all creatures in a @Template[cone|distance:30] (@Check[will|dc:29|basic|options:area-effect,inflicts:frightened]] save). A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure).</p>\n<p>The swarm can't use Frightening Scream again for [[/gmr 1d4 #Recharge Shrieking Scream]]{1d4 rounds}.</p>"
                 },
                 "Swarming Gnaw": {
                     "name": "Swarming Gnaw",
@@ -2300,7 +2300,7 @@
                 },
                 "Shambling Onslaught": {
                     "name": "Shambling Onslaught",
-                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">2</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The shamblers lash out at any enemies in their squares or within @Template[emanation|distance:5]{5 feet} (@Check[reflex|dc:18|basic] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d6+5)[bludgeoning]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+9)[bludgeoning]] damage</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">2</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The shamblers lash out at any enemies in their squares or within @Template[emanation|distance:5]{5 feet} (@Check[reflex|dc:18|basic|options:area-effect] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d6+5)[bludgeoning]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+9)[bludgeoning]|options:area-damage] damage</p>"
                 },
                 "Troop Movement": {
                     "name": "Troop Movement",
@@ -2424,7 +2424,7 @@
                 },
                 "Self-Destruct": {
                     "name": "Self-Destruct",
-                    "description": "<p>A clockwork spy must use this reaction unless specifically programmed otherwise by its creator.</p>\n<p><strong>Trigger</strong> The clockwork spy is reduced to 0 Hit Points.</p>\n<hr />\n<p><strong>Effect</strong> The spy thrashes around and emits a tinny scream followed by a steady ticking sound. At the beginning of what would have been its next turn, the clockwork spy explodes, dealing @Damage[1d10[piercing]] damage in a @Template[emanation|distance:5]{5-foot radius} (@Check[reflex|dc:16|basic] save). Its gemstone is destroyed, along with any information contained inside it.</p>\n<p>An adjacent creature can cancel the self-destruct sequence by succeeding at a @Check[thievery|dc:16|traits:action:disable-a-device] check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}.</p>"
+                    "description": "<p>A clockwork spy must use this reaction unless specifically programmed otherwise by its creator.</p>\n<p><strong>Trigger</strong> The clockwork spy is reduced to 0 Hit Points.</p>\n<hr />\n<p><strong>Effect</strong> The spy thrashes around and emits a tinny scream followed by a steady ticking sound. At the beginning of what would have been its next turn, the clockwork spy explodes, dealing @Damage[1d10[piercing]|options:area-damage] damage in a @Template[emanation|distance:5]{5-foot radius} (@Check[reflex|dc:16|basic|options:area-effect] save). Its gemstone is destroyed, along with any information contained inside it.</p>\n<p>An adjacent creature can cancel the self-destruct sequence by succeeding at a @Check[thievery|dc:16|traits:action:disable-a-device] check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device}.</p>"
                 }
             }
         },
@@ -2718,11 +2718,11 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When the nemhaith damages a living creature with its spirit tendril Strike, the creature must succeed at a @Check[fortitude|dc:36] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}.</p>\n<p>Further damage dealt by the nemhaith increases the condition value by 1 on a failed save, to a maximum of drained 4.</p>"
+                    "description": "<p>When the nemhaith damages a living creature with its spirit tendril Strike, the creature must succeed at a @Check[fortitude|dc:36|options:inflicts:drained] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}.</p>\n<p>Further damage dealt by the nemhaith increases the condition value by 1 on a failed save, to a maximum of drained 4.</p>"
                 },
                 "Rage of Spirits": {
                     "name": "Rage of Spirits",
-                    "description": "<p>The nemhaith's bound spirits rage and smash everything in a @Template[emanation|distance:30]. Creatures in this area take @Damage[4d6[sonic],4d6[void]]{4d6 sonic damage and 4d6 void damage} (@Check[fortitude|dc:36|basic] save).</p>"
+                    "description": "<p>The nemhaith's bound spirits rage and smash everything in a @Template[emanation|distance:30]. Creatures in this area take @Damage[4d6[sonic],4d6[void]|options:area-damage]{4d6 sonic damage and 4d6 void damage} (@Check[fortitude|dc:36|basic|options:area-effect] save).</p>"
                 },
                 "Throw Spirits": {
                     "name": "Throw Spirits",
@@ -3090,7 +3090,7 @@
                 },
                 "Prickly Burst": {
                     "name": "Prickly Burst",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The cactus leshy shoots their spines in every direction. All creatures in a @Template[emanation|distance:10] take @Damage[3d6[piercing]] damage (@Check[reflex|dc:18|basic] save).</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The cactus leshy shoots their spines in every direction. All creatures in a @Template[emanation|distance:10] take @Damage[3d6[piercing]|options:area-damage] damage (@Check[reflex|dc:18|basic|options:area-effect] save).</p>"
                 }
             }
         },
@@ -4475,7 +4475,7 @@
                 },
                 "Lower Spears!": {
                     "name": "Lower Spears!",
-                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The skeletons engage in a coordinated longspear attack against each enemy within @Template[emanation|distance:10]{10 feet} (@Check[reflex|dc:27|basic] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[2d8[piercing]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+8)[piercing]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+8)[piercing]] damage</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The skeletons engage in a coordinated longspear attack against each enemy within @Template[emanation|distance:10]{10 feet} (@Check[reflex|dc:27|basic|options:area-effect] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[2d8[piercing]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+8)[piercing]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+8)[piercing]|options:area-damage] damage</p>"
                 },
                 "Phalanx Charge": {
                     "name": "Phalanx Charge",
@@ -5224,7 +5224,7 @@
                 },
                 "Sandstorm": {
                     "name": "Sandstorm",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The aghash creates a temporary sandstorm in a @Template[emanation|distance:30] that lasts for 1 minute.</p>\n<p>Creatures within the emanation take a -4 circumstance penalty to Perception checks and must succeed at a @Check[fortitude|dc:18] save. On a failure, they're forced to hold their breath or else they start suffocating. A creature within the sandstorm at the end of its turn takes @Damage[1d6[slashing]] damage.</p>\n<p>Divs are immune to all effects of an aghash's sandstorm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.f8rncEs06bqcn3LZ]{Effect: Sandstorm}</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The aghash creates a temporary sandstorm in a @Template[emanation|distance:30] that lasts for 1 minute.</p>\n<p>Creatures within the emanation take a –4 circumstance penalty to Perception checks and must succeed at a @Check[fortitude|dc:18|options:area-effect] save. On a failure, they're forced to hold their breath or else they start suffocating. A creature within the sandstorm at the end of its turn takes @Damage[1d6[slashing]|options:area-damage] damage.</p>\n<p>Divs are immune to all effects of an aghash's sandstorm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.f8rncEs06bqcn3LZ]{Effect: Sandstorm}</p>"
                 }
             }
         },
@@ -5686,7 +5686,7 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When an elder wyrmwraith deals damage to a living creature with a spectral jaws or spectral claw Strike, the elder wyrmwraith gains [[/r 24 #Temporary Hit Points]]{24 temporary Hit Points}, and the creature must succeed at a @Check[fortitude|dc:46] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}. Further damage dealt by the elder wyrmwraith's spectral jaws or spectral claws Strikes increases the value of the drained condition by 2 on a failed save, to a maximum of drained 4.</p>"
+                    "description": "<p>When an elder wyrmwraith deals damage to a living creature with a spectral jaws or spectral claw Strike, the elder wyrmwraith gains 24 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:46|options:inflicts:drained] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}. Further damage dealt by the elder wyrmwraith's spectral jaws or spectral claws Strikes increases the value of the drained condition by 2 on a failed save, to a maximum of drained 4.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]{Effect: Drain Life}</p>"
                 },
                 "Ectoplasmic Form": {
                     "name": "Ectoplasmic Form",
@@ -5884,7 +5884,7 @@
                 },
                 "Shrieking Scream": {
                     "name": "Shrieking Scream",
-                    "description": "<p>The clacking skull swarm emits a terrifying, painful scream that deals @Damage[10d6[sonic]] damage to all creatures in a @Template[cone|distance:30] (@Check[will|dc:29|basic] save). A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure).</p>\n<p>The swarm can't use Frightening Scream again for [[/gmr 1d4 #Recharge Shrieking Scream]]{1d4 rounds}.</p>"
+                    "description": "<p>The clacking skull swarm emits a terrifying, painful scream that deals @Damage[10d6[sonic]|options:area-damage] damage to all creatures in a @Template[cone|distance:30] (@Check[will|dc:29|basic|options:area-effect,inflicts:frightened] save). A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure).</p>\n<p>The swarm can't use Frightening Scream again for [[/gmr 1d4 #Recharge Shrieking Scream]]{1d4 rounds}.</p>"
                 },
                 "Swarming Gnaw": {
                     "name": "Swarming Gnaw",
@@ -6391,7 +6391,7 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When a wyrmwraith deals damage to a living creature with a spectral jaws or spectral claw Strike, the wyrmwraith gains [[/r 18 #Temporary Hit Points]]{18 temporary Hit Points}, and the creature must succeed at a @Check[fortitude|dc:38] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}. Further damage dealt by the wyrmwraith's spectral jaws or spectral claws Strikes increases the value of the drained condition by 2 on a failed save, to a maximum of drained 4.</p>"
+                    "description": "<p>When a wyrmwraith deals damage to a living creature with a spectral jaws or spectral claw Strike, the wyrmwraith gains 18 temporary Hit Points, and the creature must succeed at a @Check[fortitude|dc:38|options:inflicts:drained] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}. Further damage dealt by the wyrmwraith's spectral jaws or spectral claws Strikes increases the value of the drained condition by 2 on a failed save, to a maximum of drained 4.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]{Effect: Drain Life}</p>"
                 },
                 "Ectoplasmic Form": {
                     "name": "Ectoplasmic Form",
@@ -6679,7 +6679,7 @@
                 },
                 "Scorch Earth": {
                     "name": "Scorch Earth",
-                    "description": "<p>The dragon plunges their body into the ground, Burrows up to their Speed, and then scorches the land within a @Template[emanation|distance:60].</p>\n<p>Creatures underground or on the surface in the area take @Damage[8d6[fire]] damage (@Check[fortitude|dc:37|basic] save), and those who critically fail become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>"
+                    "description": "<p>The dragon plunges their body into the ground, Burrows up to their Speed, and then scorches the land within a @Template[emanation|distance:60].</p>\n<p>Creatures underground or on the surface in the area take @Damage[8d6[fire]|options:area-damage] damage (@Check[fortitude|dc:37|basic|options:area-effect,inflicts:enfeebled] save), and those who critically fail become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>"
                 }
             }
         },
@@ -8061,7 +8061,7 @@
                 },
                 "Sanguine Spray": {
                     "name": "Sanguine Spray",
-                    "description": "<p>When the ouroboros takes slashing or piercing damage, or when Devour Tail ends, blood gushes from the wound in a @Template[cone|distance:15]. Each creature in the area takes @Damage[5d6[acid]] damage (@Check[reflex|dc:41|basic] save). A creature that takes any damage is exposed to the ouroboros's regenerative blood.</p>\n<p>Where the blood falls upon ground, it coagulates into magical snakes that bite at anyone who passes. This is hazardous terrain deals @Damage[17[piercing],5[poison]]{17 piercing damage and 5 poison damage} to any non-ouroboros creature that moves through the square or ends its turn there. A creature that avoids all the piercing damage doesn't take the poison damage. After 1 hour, a blood patch permanently becomes a living snake, typically an @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.iLZpGlyBWxS4Idbi]{Emperor Cobra}.</p>"
+                    "description": "<p>When the ouroboros takes slashing or piercing damage, or when Devour Tail ends, blood gushes from the wound in a @Template[cone|distance:15]. Each creature in the area takes @Damage[5d6[acid]|options:area-damage] damage (@Check[reflex|dc:41|basic|options:area-effect] save). A creature that takes any damage is exposed to the ouroboros's regenerative blood.</p>\n<p>Where the blood falls upon ground, it coagulates into magical snakes that bite at anyone who passes. This is hazardous terrain deals @Damage[17[piercing],5[poison]]{17 piercing damage and 5 poison damage} to any non-ouroboros creature that moves through the square or ends its turn there. A creature that avoids all the piercing damage doesn't take the poison damage. After 1 hour, a blood patch permanently becomes a living snake, typically an @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.iLZpGlyBWxS4Idbi]{Emperor Cobra}.</p>"
                 },
                 "Unfathomable Infinity": {
                     "name": "Unfathomable Infinity",
@@ -8261,7 +8261,7 @@
                 },
                 "Shriek": {
                     "name": "Shriek",
-                    "description": "<p>The harpy skeleton emits an unearthly, bone-chilling scream that deals @Damage[4d10[mental]] damage to all creatures in a @Template[cone|distance:30] (@Check[will|dc:26|basic] save). A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure).</p>\n<p>The harpy skeleton can't Shriek again for [[/gmr 1d4 #Recharge Shriek]]{1d4 rounds}.</p>"
+                    "description": "<p>The harpy skeleton emits an unearthly, bone-chilling scream that deals @Damage[4d10[mental]|options:area-damage] damage to all creatures in a @Template[cone|distance:30] (@Check[will|dc:26|basic|options:area-effect,inflicts:frightened] save). A creature that fails its save is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure).</p>\n<p>The harpy skeleton can't Shriek again for [[/gmr 1d4 #Recharge Shriek]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -8404,7 +8404,7 @@
                 },
                 "Drain Life": {
                     "name": "Drain Life",
-                    "description": "<p>When a tzitzimitl's claw Strike deals damages to a living creature, the tzitzimitl gains [[/r 20 #Temporary Hit Points]]{20 temporary Hit Points}, and the target must succeed at a @Check[fortitude|dc:41] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}. Further damage dealt by a tzitzimitl's Claw Strike increases the value of the drained condition by 2 on a failed save, to a maximum of drained 4.</p>"
+                    "description": "<p>When a tzitzimitl's claw Strike deals damages to a living creature, the tzitzimitl gains 20 temporary Hit Points, and the target must succeed at a @Check[fortitude|dc:41|options:inflicts:drained] save or become @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}. Further damage dealt by a tzitzimitl's Claw Strike increases the value of the drained condition by 2 on a failed save, to a maximum of drained 4.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]{Effect: Drain Life}</p>"
                 },
                 "Eclipse": {
                     "name": "Eclipse",
@@ -8654,7 +8654,7 @@
                 },
                 "Scorch": {
                     "name": "Scorch",
-                    "description": "<p>The azer shrouds their light hammer in flames and hurls it forward, dealing @Damage[2d6[fire]] damage to each creature in a @Template[line|distance:20] (@Check[reflex|dc:16|basic] save).</p>"
+                    "description": "<p>The azer shrouds their light hammer in flames and hurls it forward, dealing @Damage[2d6[fire]|options:area-damage] damage to each creature in a @Template[line|distance:20] (@Check[reflex|dc:16|basic|options:area-effect] save).</p>"
                 }
             }
         },
@@ -9228,7 +9228,7 @@
                 },
                 "Rain of Debris": {
                     "name": "Rain of Debris",
-                    "description": "<p>The sepid calls forth a hail of stone, wood, metal, and similar debris in a @Template[emanation|distance:40], dealing @Damage[10d6[bludgeoning],5d6[spirit]]{10d6 bludgeoning damage and 5d6 spirit damage}. Each creature in the area other than the sepid must attempt a @Check[reflex|dc:31|basic] saving throw.</p>\n<p>The sepid can't use Rain of Debris again for [[/gmr 1d4 #Recharge Rain of Debris]]{1d4 rounds}.</p>"
+                    "description": "<p>The sepid calls forth a hail of stone, wood, metal, and similar debris in a @Template[emanation|distance:40], dealing @Damage[10d6[bludgeoning],5d6[spirit]|options:area-damage]{10d6 bludgeoning damage and 5d6 spirit damage}. Each creature in the area other than the sepid must attempt a @Check[reflex|dc:31|basic|options:area-effect] saving throw.</p>\n<p>The sepid can't use Rain of Debris again for [[/gmr 1d4 #Recharge Rain of Debris]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -10314,11 +10314,11 @@
                 },
                 "Missile Volley": {
                     "name": "Missile Volley",
-                    "description": "<p>The nightmarchers fling a hail of spears and stones, dealing @Damage[(5d6+9)[bludgeoning]] damage or @Damage[(5d6+9)[piercing]] damage to creatures in a @Template[burst|distance:10] within 20 feet (@Check[reflex|dc:31|basic] save).</p>\n<p>When the nightmarchers are reduced to 8 or fewer squares, this decreases to a @Template[burst|distance:5].</p>"
+                    "description": "<p>The nightmarchers fling a hail of spears and stones, dealing @Damage[(5d6+9)[untyped]] damage to creatures in a @Template[burst|distance:10] within 20 feet (@Check[reflex|dc:31|basic] save).</p>\n<p>When the nightmarchers are reduced to 8 or fewer squares, this decreases to a @Template[burst|distance:5].</p>"
                 },
                 "Striking Koa": {
                     "name": "Striking Koa",
-                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The troop attacks with spears, clubs, and leiomano against enemies within @Template[emanation|distance:5]{5 feet} (@Check[reflex|dc:33|basic] save) for their choice of bludgeoning, piercing, or slashing damage depending on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d6+2)[bludgeoning]] damage, @Damage[(2d6+2)[piercing]] damage, or @Damage[(2d6+2)[slashing]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(4d6+12)[bludgeoning]] damage, @Damage[(4d6+12)[piercing]] damage, or @Damage[(4d6+12)[slashing]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(6d6+12)[bludgeoning]] damage, @Damage[(6d6+12)[piercing]] damage, or @Damage[(6d6+12)[slashing]] damage</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The troop attacks with spears, clubs, and leiomano against enemies within @Template[emanation|distance:5]{5 feet} (@Check[reflex|dc:33|basic|options:area-effect] save) for their choice of bludgeoning, piercing, or slashing damage depending on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d6+2)[untyped]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(4d6+12)[untyped]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(6d6+12)[untyped]|options:area-damage] damage</p>"
                 },
                 "Troop Movement": {
                     "name": "Troop Movement",
@@ -10390,7 +10390,7 @@
                 },
                 "Relentless": {
                     "name": "Relentless",
-                    "description": "<p>The titan is as ever-moving as ocean waves. They're permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened 1}, and the extra action can only be used to Stride, Strike, or Sustain a Spell, or as one of the actions necessary to Cast @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic}.</p>"
+                    "description": "<p>The titan is as ever-moving as ocean waves. They're permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened}, and the extra action can only be used to Stride, Strike, or Sustain a Spell, or as one of the actions necessary to Cast @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic}.</p>"
                 },
                 "Roiling Rebuke": {
                     "name": "Roiling Rebuke",
@@ -10875,7 +10875,7 @@
                 },
                 "Scorch Earth": {
                     "name": "Scorch Earth",
-                    "description": "<p>The dragon plunges their body into the ground, Burrows up to their Speed, and then scorches the land within a @Template[emanation|distance:60].</p>\n<p>Creatures underground or on the surface in the area take @Damage[8d6[fire]] damage (@Check[fortitude|dc:37|basic] save), and those who critically fail become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>"
+                    "description": "<p>The dragon plunges their body into the ground, Burrows up to their Speed, and then scorches the land within a @Template[emanation|distance:60].</p>\n<p>Creatures underground or on the surface in the area take @Damage[8d6[fire]|options:area-damage] damage (@Check[fortitude|dc:37|basic|options:area-effect,inflicts:enfeebled] save), and those who critically fail become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>"
                 }
             }
         },

@@ -286,11 +286,11 @@
                 },
                 "Solar Flare": {
                     "name": "Solar Flare",
-                    "description": "<p><strong>Trigger</strong> The bul-gae takes damage</p>\n<hr />\n<p><strong>Effect</strong> The bul-gae releases a solar flare in a @Template[emanation|distance:30]. Each creature in the area takes @Damage[6d8[fire]] damage (@Check[reflex|dc:34|basic] save). On a critical failure, a creature also takes @Damage[2d10[persistent,fire]] damage. After using this ability, the bul-gae's flames cool, and they can't use Solar Flare again until after they've used their Lunar Burst ability.</p>"
+                    "description": "<p><strong>Trigger</strong> The bul-gae takes damage</p>\n<hr />\n<p><strong>Effect</strong> The bul-gae releases a solar flare in a @Template[emanation|distance:30]. Each creature in the area takes @Damage[6d8[fire]|options:area-damage] damage (@Check[reflex|dc:34|basic|options:area-effect] save). On a critical failure, a creature also takes @Damage[2d10[persistent,fire]] damage. After using this ability, the bul-gae's flames cool, and they can't use Solar Flare again until after they've used their Lunar Burst ability.</p>"
                 },
                 "Lunar Burst": {
                     "name": "Lunar Burst",
-                    "description": "<p>The bul-gae releases a blast of otherworldly frost that deals @Damage[6d8[cold]] damage to each creature in a @Template[emanation|distance:10] (@Check[reflex|dc:34|basic] save). On a critical failure, a creature also becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} for 1 round. After using this ability, the bul-gae's flames heat up and they can't use Lunar Burst again until after they've used their Solar Flare reaction.</p>"
+                    "description": "<p>The bul-gae releases a blast of otherworldly frost that deals @Damage[6d8[cold]|options:area-damage] damage to each creature in a @Template[emanation|distance:10] (@Check[reflex|dc:34|basic|options:area-effect] save). On a critical failure, a creature also becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} for 1 round. After using this ability, the bul-gae's flames heat up and they can't use Lunar Burst again until after they've used their Solar Flare reaction.</p>"
                 },
                 "Shadow Leap": {
                     "name": "Shadow Leap",
@@ -440,7 +440,7 @@
                 },
                 "Icy Japes": {
                     "name": "Icy Japes",
-                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic|options:damaging-effect] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing],1[cold]]{1d6 slashing damage plus 1 cold damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing]1d4[cold]]{2d6+2 slashing damage plus 1d4 cold damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold],[1d4[cold]]{2d6+5 cold damage plus 1d4 cold damage}</p>"
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic|options:area-effect] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing],1[cold]|options:area-damage]{1d6 slashing damage plus 1 cold damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing],1d4[cold]|options:area-damage]{2d6+2 slashing damage plus 1d4 cold damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold],1d4[cold]|options:area-damage]{2d6+5 cold damage plus 1d4 cold damage}</p>"
                 }
             }
         },
@@ -1617,14 +1617,14 @@
                 }
             }
         },
-        "Quantium Golem (Acid)": {
+        "Quantium Golem": {
             "prototypeToken": {
-                "name": "Quantium Golem (Acid)"
+                "name": "Quantium Golem"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Quantium Golem (Acid)",
+            "name": "Quantium Golem",
             "publicNotes": "<p>The long war between Nex and Geb spawned many animate weapons, but while a citizen of Quantium might run screaming from any product of the fleshforges, they barely bat an eyelash at the ground-shaking stomp of the two titanic, deadly constructs that stride outside their city walls. Crafted by the wizard-king Nex ages ago after a devastating attack by Geb's undead forces, including the harrowing benthic reaver, the Quantium golems are meant to protect the capital in case of Nex's absence. These twin golems ceaselessly keep vigil over the city, ready to cut down any invaders that menace Quantium.</p>\n<p>Twenty feet tall and crafted from a supernaturally smooth material, the two guardians are a matched set, one of crimson and one of emerald. Wielding swords the size of giants, the guardians relentlessly destroy anything that threatens the city, particularly any undead that might invade the country from Geb. With the mythic Crux of Nex as a power supply, the golems are inexhaustible and nearly indestructible.</p>",
             "items": {
                 "Defender's Link": {
@@ -1645,7 +1645,7 @@
                 },
                 "Lambent Beam": {
                     "name": "Lambent Beam",
-                    "description": "<p>The Quantium golem's eyes take on a brilliant glow and it unleashes an arc of destruction dealing @Damage[10d6[fire],10d6[acid]]{10d6 fire damage and 10d6 acid damage} to creatures in a @Template[line|distance:120] (@Check[reflex|dc:42|basic]). The Quantium golem can't use Lambent Beam for [[/gmr 1d4 #Recharge Lambent Beam]]{1d4 rounds}.</p>"
+                    "description": "<p>The Quantium golem's eyes take on a brilliant glow and it unleashes an arc of destruction dealing @Damage[10d6[fire]|options:area-damage] damage to creatures in a @Template[line|distance:120] (@Check[reflex|dc:42|basic|options:area-effect]). The Quantium golem can't use Lambent Beam for [[/gmr 1d4 #Recharge Lambent Beam]]{1d4 rounds}.</p>"
                 },
                 "Twin Defenders": {
                     "name": "Twin Defenders",
@@ -2334,7 +2334,7 @@
             "items": {
                 "Lightning Blast": {
                     "name": "Lightning Blast",
-                    "description": "<p><strong>Trigger</strong> A creature takes a hostile action against Ebeshra, produces a visible area effect, or flies within 120 feet of Ebeshra</p>\n<hr />\n<p><strong>Effect</strong> Ebeshra unleashes a @Template[line|distance:240] of electricity toward the triggering creature. Creatures in the line take @Damage[16d8[electricity]] damage (@Check[reflex|dc:42|basic|traits:divine,electricity,environmental,evocation,kaiju,hazard] save). The electricity creates a static field in all squares that the line passed through and all adjacent squares. For 1 round, any creatures that enter a space in the static field take @Damage[4d8[electricity]] damage (@Check[reflex|dc:38|basic|name:Static Field|traits:divine,electricity,environmental,evocation,kaiju,hazard] save).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature takes a hostile action against Ebeshra, produces a visible area effect, or flies within 120 feet of Ebeshra</p>\n<hr />\n<p><strong>Effect</strong> Ebeshra unleashes a @Template[line|distance:240] of electricity toward the triggering creature. Creatures in the line take @Damage[16d8[electricity]|options:area-damage] damage (@Check[reflex|dc:42|basic|options:area-effect] save). The electricity creates a static field in all squares that the line passed through and all adjacent squares. For 1 round, any creatures that enter a space in the static field take @Damage[4d8[electricity]|options:area-damage] damage (@Check[reflex|dc:38|basic|name:Static Field|options:area-effect] save).</p>"
                 }
             }
         },
@@ -3303,7 +3303,7 @@
                 },
                 "Powder Blast": {
                     "name": "Powder Blast",
-                    "description": "<p>The clockwork cannoneer spews flames from one of its cannons, dealing @Damage[8d6[fire]] damage in a @Template[cone|distance:30] (@Check[reflex|dc:36|basic]). Those that fail the save also take @Damage[2d6[persistent,fire]] damage.</p>"
+                    "description": "<p>The clockwork cannoneer spews flames from one of its cannons, dealing @Damage[8d6[fire]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[reflex|dc:36|basic|options:area-effect]). Those that fail the save also take @Damage[2d6[persistent,fire]] damage.</p>"
                 }
             }
         },
@@ -3441,7 +3441,7 @@
                 },
                 "Horrific Speed": {
                     "name": "Horrific Speed",
-                    "description": "<p>Kothogaz is permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened 1}. It can use this extra action to Stride or Strike.</p>"
+                    "description": "<p>Kothogaz is permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened}. It can use this extra action to Stride or Strike.</p>"
                 },
                 "Noxious Aura": {
                     "name": "Noxious Aura",
@@ -3465,7 +3465,7 @@
                 },
                 "Pox the Land": {
                     "name": "Pox the Land",
-                    "description": "<p>Kothogaz raises a pustule from the ground within 120 feet, which erupts in a @Template[burst|distance:10]{10-foot radius}, 200-foot-high cylinder of cloying filth. Creatures in the area must succeed at a @Check[reflex|dc:44|basic] save or take @Damage[6d10[poison]] damage. On a failure, they can't fly for 1 round (1 minute on a critical failure); flying creatures fall safely to the ground.</p>"
+                    "description": "<p>Kothogaz raises a pustule from the ground within 120 feet, which erupts in a @Template[cylinder|distance:10]{10-foot radius}, 200-foot-high cylinder of cloying filth. Creatures in the area must succeed at a @Check[reflex|dc:44|basic|options:area-effect] save or take @Damage[6d10[poison]|options:area-damage] damage. On a failure, they can't fly for 1 round (1 minute on a critical failure); flying creatures fall safely to the ground.</p>"
                 },
                 "Suppurating Passage": {
                     "name": "Suppurating Passage",
@@ -3549,7 +3549,7 @@
                 },
                 "Light Shatter": {
                     "name": "Light Shatter",
-                    "description": "<p>The solar ibis detonates its halo, sending shards of burning light in all directions that deal @Damage[6d8[fire]] damage to all creatures in a @Template[emanation|distance:20] (@Check[reflex|dc:22|basic] save). The shards deal an extra @Damage[6d8[spirit]] damage against fiends and undead.</p>\n<p>The solar ibis can't use Light Shatter again for [[/gmr 1d4 #Recharge Light Shatter]] rounds, and its Blinding Halo is extinguished during this time. The halo is restored automatically once the 1d4 rounds have passed.</p>"
+                    "description": "<p>The solar ibis detonates its halo, sending shards of burning light in all directions that deal @Damage[6d8[fire]|options:area-damage] damage to all creatures in a @Template[emanation|distance:20] (@Check[reflex|dc:22|basic|options:area-effect] save). The shards deal an extra @Damage[6d8[spirit]|options:area-damage] damage against fiends and undead.</p>\n<p>The solar ibis can't use Light Shatter again for [[/gmr 1d4 #Recharge Light Shatter]] rounds, and its Blinding Halo is extinguished during this time. The halo is restored automatically once the 1d4 rounds have passed.</p>"
                 }
             }
         },
@@ -3852,42 +3852,6 @@
                 "Long Fall": {
                     "name": "Long Fall",
                     "description": "<p><strong>Trigger</strong> A creature steps onto the cracked earth</p>\n<hr />\n<p><strong>Effect</strong> The creature fractures the thin crust of earth and falls through. That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling, as long as it is adjacent to an edge. Otherwise it takes falling damage (typically @Damage[25[bludgeoning]|options:fall-damage] damage for a 50-foot drop). Some of these rifts eventually lead to the Darklands.</p>"
-                }
-            }
-        },
-        "Quantium Golem (Electricity)": {
-            "prototypeToken": {
-                "name": "Quantium Golem (Electricity)"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Quantium Golem (Electricity)",
-            "publicNotes": "<p>The long war between Nex and Geb spawned many animate weapons, but while a citizen of Quantium might run screaming from any product of the fleshforges, they barely bat an eyelash at the ground-shaking stomp of the two titanic, deadly constructs that stride outside their city walls. Crafted by the wizard-king Nex ages ago after a devastating attack by Geb's undead forces, including the harrowing benthic reaver, the Quantium golems are meant to protect the capital in case of Nex's absence. These twin golems ceaselessly keep vigil over the city, ready to cut down any invaders that menace Quantium.</p>\n<p>Twenty feet tall and crafted from a supernaturally smooth material, the two guardians are a matched set, one of crimson and one of emerald. Wielding swords the size of giants, the guardians relentlessly destroy anything that threatens the city, particularly any undead that might invade the country from Geb. With the mythic Crux of Nex as a power supply, the golems are inexhaustible and nearly indestructible.</p>",
-            "items": {
-                "Defender's Link": {
-                    "name": "Defender's Link",
-                    "description": "<p>Each Quantium golem automatically knows the Hit Points, conditions, afflictions, and location of the other.</p>"
-                },
-                "Golem Antimagic": {
-                    "name": "Golem Antimagic",
-                    "description": "<p>Harmed by sonic (@Damage[9d10[untyped]], @Damage[3d10[untyped]] from areas or persistent damage); healed by fire (area @Damage[3d10[healing]] HP); slowed by cold</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GolemAntimagic]</p>"
-                },
-                "Paired Reconstruction": {
-                    "name": "Paired Reconstruction",
-                    "description": "<p>When reduced to 0 HP, the Quantium golem is destroyed; however, it magically reforms 24 hours later at full HP and free of all conditions and afflictions unless its twin golem is also destroyed.</p>"
-                },
-                "Vulnerable to Banishment": {
-                    "name": "Vulnerable to Banishment",
-                    "description": "<p>Casting a @UUID[Compendium.pf2e.spells-srd.Item.bay4AfSu2iIozNNW]{Banishment} spell on a Quantium golem disrupts its connection to the Crux of Nex. If targeted by such a spell, the golem is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} and @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
-                },
-                "Lambent Beam": {
-                    "name": "Lambent Beam",
-                    "description": "<p>The Quantium golem's eyes take on a brilliant glow and it unleashes an arc of destruction dealing @Damage[10d6[fire],10d6[electricity]]{10d6 fire damage and 10d6 electricity damage} to creatures in a @Template[line|distance:120] (@Check[reflex|dc:42|basic]). The Quantium golem can't use Lambent Beam for [[/gmr 1d4 #Recharge Lambent Beam]]{1d4 rounds}.</p>"
-                },
-                "Twin Defenders": {
-                    "name": "Twin Defenders",
-                    "description": "<p>The Quantium golems were created by Nex as a matched set: one of crimson and one of emerald, each a unique entity. The crimson golem is imbued with blazing fire and crackling lightning; its eye beam and Lambent Beam abilities deal fire and electricity damage. The emerald golem is charged with caustic power and flame; its eye beam and Lambent Beam abilities deal acid and fire damage.</p>"
                 }
             }
         },
