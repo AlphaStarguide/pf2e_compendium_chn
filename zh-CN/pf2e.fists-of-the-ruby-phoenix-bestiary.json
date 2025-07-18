@@ -144,11 +144,11 @@
                     "name": "Shadow Leap"
                 },
                 "Solar Flare": {
-                    "description": "<p><strong>Trigger</strong> The bul-gae takes damage</p>\n<hr />\n<p><strong>Effect</strong> The bul-gae releases a solar flare in a @Template[emanation|distance:30]. Each creature in the area takes @Damage[6d8[fire]] damage (@Check[reflex|dc:34|basic] save). On a critical failure, a creature also takes @Damage[2d10[persistent,fire]] damage. After using this ability, the bul-gae's flames cool and they can't use Solar Flare again until after they have used Lunar Burst.</p>",
+                    "description": "<p><strong>Trigger</strong> The bul-gae takes damage</p>\n<hr />\n<p><strong>Effect</strong> The bul-gae releases a solar flare in a @Template[emanation|distance:30]. Each creature in the area takes @Damage[6d8[fire]|options:area-damage] damage (@Check[reflex|dc:34|basic|options:area-effect] save). On a critical failure, a creature also takes @Damage[2d10[persistent,fire]] damage. After using this ability, the bul-gae's flames cool and they can't use Solar Flare again until after they have used Lunar Burst.</p>",
                     "name": "Solar Flare"
                 },
                 "Lunar Burst": {
-                    "description": "<p>The bul-gae releases a blast of otherworldly frost that deals @Damage[6d8[cold]] damage to each creature in a @Template[emanation|distance:10] (@Check[reflex|dc:34|basic] save). On a critical failure, a creature also becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}. After using this ability, the bul-gae's flames heat up and they can't use Lunar Burst again until after they have used Solar Flare.</p>",
+                    "description": "<p>The bul-gae releases a blast of otherworldly frost that deals @Damage[6d8[cold]|options:area-damage] damage to each creature in a @Template[emanation|distance:10] (@Check[reflex|dc:34|basic|options:area-effect] save). On a critical failure, a creature also becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}. After using this ability, the bul-gae's flames heat up and they can't use Lunar Burst again until after they have used Solar Flare.</p>",
                     "name": "Lunar Burst"
                 },
                 "Thermal Mastery": {
@@ -296,7 +296,7 @@
                     "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The night parade dances with wild abandon, unintentionally striking nearby creatures. It deals damage to each adjacent creature (@Check[reflex|dc:41|basic] save), and any creature that fails its save is pushed 10 feet in any direction as the night parade bounces it overhead. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d10+7)[bludgeoning]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(4d10+14)[bludgeoning]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(6d10+14)[bludgeoning]] damage</p>"
                 },
                 "Seiya! Soiya!": {
-                    "description": "<p>The night parade shouts a series of energetic call-and-responses, dealing @Damage[3d10[sonic]] damage and @Damage[4d6[mental]] damage to all creatures in a @Template[burst|distance:10] within 20 feet (@Check[will|dc:41|basic] save). If the troop is reduced to 8 or fewer squares, this area decreases to a @Template[burst|distance:5].</p>",
+                    "description": "<p>The night parade shouts a series of energetic call-and-responses, dealing @Damage[3d10[sonic],4d6[mental]]{3d10 sonic damage and 4d6 mental damage} to all creatures in a @Template[burst|distance:10] within 20 feet (@Check[will|dc:41|basic|options:area-damage] save). If the troop is reduced to 8 or fewer squares, this area decreases to a @Template[burst|distance:5].</p>",
                     "name": "Seiya! Soiya!"
                 },
                 "Troop Defenses": {
@@ -819,7 +819,7 @@
                 },
                 "Radiant Blast": {
                     "name": "Radiant Blast",
-                    "description": "<p>The sanzuwu opens their mouth to produce a bead of burning energy, hurling it a point within 200 feet. The bead detonates, dealing @Damage[7d8[fire]] damage and @Damage[4d10[sonic]] damage to all creatures in a @Template[burst|distance:30] (@Check[reflex|dc:33|basic] save). Creatures that critically fail become @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round. The sanzuwu can't use Radiant Blast again for [[/gmr 1d4 #Recharge Radiant Blast]]{1d4 rounds}.</p>"
+                    "description": "<p>The sanzuwu opens their mouth to produce a bead of burning energy, hurling it a point within 200 feet. The bead detonates, dealing @Damage[7d8[fire],[4d10[sonic]|options:area-damage]{7d8 fire damage and 4d10 sonic damage} to all creatures in a @Template[burst|distance:30] (@Check[reflex|dc:33|basic|options:area-effect,inflicts:blinded] save). Creatures that critically fail become @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round. The sanzuwu can't use Radiant Blast again for [[/gmr 1d4 #Recharge Radiant Blast]]{1d4 rounds}.</p>"
                 },
                 "Scorch Earth": {
                     "name": "Scorch Earth",
@@ -2375,7 +2375,7 @@
                 },
                 "Rain of Knives": {
                     "name": "刀刃之雨 Rain of Knives",
-                    "description": "<p>花之百人众投掷出飞刀雨，对50 尺内的一个@Template[burst|distance:10]{10尺爆发}范围造成@Damage[(4d6+13)[piercing]]伤害（@Check[reflex|dc:33|basic]豁免）。当部队只剩下8 格或更少时，爆发范围缩小至@Template[burst|distance:5]{5尺爆发}。</p>"
+                    "description": "<p>花之百人众投掷出飞刀雨，对50 尺内的一个@Template[burst|distance:10]范围造成@Damage[(4d6+13)[piercing]|options:area-damage]伤害（@Check[reflex|dc:33|basic|options:area-effect]豁免）。当部队只剩下8 格或更少时，爆发范围缩小至@Template[burst|distance:5]。</p>"
                 },
                 "Run Them Over!": {
                     "name": "闯过他们! Run Them Over!",
@@ -4100,7 +4100,7 @@
                 },
                 "Sonic Screech": {
                     "name": "音波尖啸 Sonic Screech",
-                    "description": "<p>塔米坎释放一股致死性的音波尖啸，对@Template[line|distance:100]范围造成@Damage[12d6[sonic]]伤害（@Check[reflex|dc:37|basic]豁免）。它在[[/gmr 1d4 #Recharge Sonic Screech]]{1d4轮}内无法再使用音波尖啸。</p>"
+                    "description": "<p>塔米坎释放一股致死性的音波尖啸，对@Template[line|distance:100]范围造成@Damage[12d6[sonic]|options:area-damage]伤害（@Check[reflex|dc:37|basic|options:area-effect]豁免）。它在[[/gmr 1d4 #Recharge Sonic Screech]]{1d4轮}内无法再使用音波尖啸。</p>"
                 },
                 "Wailing Dive": {
                     "name": "哀鸣俯冲 Wailing Dive",
@@ -4416,7 +4416,7 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当缚灵使用幽魂之手伤害一个活着的生物时，缚灵获得[[/r 15 #Temporary Hit Points]]{15点临时生命值}，并且目标必须通过@Check[fortitude|dc:36]豁免否则获得@UUID[Compendium.pf2e.conditionitems.4D2KBtexWXa6oUMR]{流失 Drained 1}。缚灵造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>"
+                    "description": "<p>当缚灵使用幽魂之手伤害一个活着的生物时，缚灵获得15点临时生命值，并且目标必须通过@Check[fortitude|dc:36|options:inflicts:drained]豁免否则获得@UUID[Compendium.pf2e.conditionitems.4D2KBtexWXa6oUMR]{流失 Drained 1}。缚灵造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Wraith Spawn": {
                     "name": "缚灵衍体 Wraith Spawn",
