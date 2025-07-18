@@ -85,7 +85,7 @@
             "items": {
                 "Molten Demise": {
                     "name": "熔融末日 Molten Demise",
-                    "description": "<p>当黄铜堡垒被摧毁时，它的身体会爆炸，喷发出元素火焰和过热的黄铜，对@Template[emanation|distance:20]范围内的生物造成@Damage[4d6[piercing],4d6[fire]]{4d6穿刺伤害和4d6火焰伤害}（@Check[reflex|dc:34|basic]豁免）。</p>"
+                    "description": "<p>当黄铜堡垒被摧毁时，它的身体会爆炸，喷发出元素火焰和过热的黄铜，对@Template[emanation|distance:20]范围内的生物造成@Damage[4d6[piercing],4d6[fire]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免）。</p>"
                 },
                 "Breathe Smoke": {
                     "name": "喷吐烟雾 Breathe Smoke",
@@ -467,7 +467,7 @@
                 },
                 "Magnetic Storm": {
                     "name": "Magnetic Storm",
-                    "description": "<p><strong>Requirements</strong> The shuyookh's magnetic field is active</p>\n<hr />\n<p><strong>Effect</strong> The shuyookh electromagnetically flings razor-sharp metal scraps. Each creature in a @Template[emanation|distance:30] takes @Damage[8d6[slashing],3d12[electricity]] damage, with a @Check[fortitude|dc:32|basic] save.</p>\n<p>The shuyookh's magnetic field is deactivated for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Requirements</strong> The shuyookh's magnetic field is active</p>\n<hr />\n<p><strong>Effect</strong> The shuyookh electromagnetically flings razor-sharp metal scraps. Each creature in a @Template[emanation|distance:30] takes @Damage[8d6[slashing],3d12[electricity]|options:area-damage] damage, with a @Check[fortitude|dc:32|basic|options:area-effect] save.</p>\n<p>The shuyookh's magnetic field is deactivated for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
                 },
                 "Mercurial Wish": {
                     "name": "Mercurial Wish",
@@ -495,7 +495,7 @@
                 },
                 "Searing Spew": {
                     "name": "灼热喷吐 Searing Spew",
-                    "description": "<p>矿食怪从它的口中喷出一团腐蚀性、生锈的碎片云，填满一个与它相邻的、每边10尺的@Template[line|distance:10|width:10]区域。该区域内的任何生物受到@Damage[6d6[acid],6d6[slashing]]伤害（@Check[reflex|dc:30|basic]豁免）。云下的地面在1小时内为困难地形，之后碎片崩解为尘埃。</p>\n<p>矿食怪在[[/gmr 1d4 #rounds]]{1d4轮}内不能再次使用灼热喷吐，但如果矿食怪用吞噬金属对物品造成伤害，这个能力会重新充能。</p>"
+                    "description": "<p>矿食怪从它的口中喷出一团腐蚀性、生锈的碎片云，填满一个与它相邻的@Template[cube|distance:10]区域。该区域内的任何生物受到@Damage[6d6[acid],6d6[slashing]|options:area-damage]伤害（@Check[reflex|dc:30|basic|options:area-effect]豁免）。云下的地面在1小时内为困难地形，之后碎片崩解为尘埃。</p>\n<p>矿食怪在[[/gmr 1d4 #Recharge Searing Spew]]{1d4轮}内不能再次使用灼热喷吐，但如果矿食怪用吞噬金属对物品造成伤害，这个能力会重新充能。</p>"
                 },
                 "Rust Vision": {
                     "description": "<p>矿食怪无视锈蚀云带来的隐蔽状态。</p>",
@@ -720,7 +720,7 @@
                 },
                 "Shard Volley": {
                     "name": "碎片齐射 Shard Volley",
-                    "description": "<p>聚磁怪方块磁化金属碎片并射向远处，这对30尺内的@Template[burst|distance:10]范围造成@Damage[(2d6+10)[piercing]]伤害（@Check[reflex|dc:27|basic]豁免）。当部队减少到2部分或更少时，该区域减少到@Template[burst|distance:5]。 </p>"
+                    "description": "<p>聚磁怪方块磁化金属碎片并射向远处，这对30尺内的@Template[burst|distance:10]范围造成@Damage[(2d6+10)[piercing]|options:area-damage]伤害（@Check[reflex|dc:27|basic|options:area-effect]豁免）。当部队减少到2部分或更少时，该区域减少到@Template[burst|distance:5]。 </p>"
                 },
                 "Troop Movement": {
                     "name": "部队移动 Troop Movement",
@@ -969,7 +969,7 @@
                 },
                 "Self-Destruct": {
                     "name": "自毁 Self-Destruct",
-                    "description": "<p>当火矮人的生命值降至0时，他们的护甲会在其下一个回合开始时爆炸，对@Template[emanation|distance:10]范围造成@Damage[5d6[fire]]伤害（@Check[reflex|dc:19|basic]豁免）。</p>"
+                    "description": "<p>当火矮人的生命值降至0时，他们的护甲会在其下一个回合开始时爆炸，对@Template[emanation|distance:10]范围造成@Damage[5d6[fire]|options:area-damage]伤害（@Check[reflex|dc:19|basic|options:area-effect]豁免）。</p>"
                 },
                 "Blazing Rush": {
                     "name": "炽热冲锋 Blazing Rush",
@@ -1581,7 +1581,7 @@
                 },
                 "Pummeling Boulders": {
                     "name": "连打石拳 Pummeling Boulders",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 山崩军团的石拳雨点般砸向@Template[emanation|distance:5]内的每个敌人 (@Check[reflex|dc:28|basic]豁免)，伤害基于动作数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[2d8[bludgeoning]]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+8)[bludgeoning]]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+11)[bludgeoning]]伤害</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 山崩军团的石拳雨点般砸向@Template[emanation|distance:5]内的每个敌人（@Check[reflex|dc:28|basic|options:area-effect]豁免），伤害基于动作数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[2d8[bludgeoning]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+8)[bludgeoning]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+11)[bludgeoning]|options:area-damage]伤害</p>"
                 },
                 "Spinning Stones": {
                     "name": "飞旋石块 Spinning Stones",
@@ -1788,7 +1788,7 @@
                 },
                 "Lifespring Burst": {
                     "name": "生命之泉爆发 Lifespring Burst",
-                    "description": "<p>每日1次，孪生花楸木可以用他们的剑攻击地面，以双胞胎为中心释放@Template[burst|distance:30]的生命能量爆发，造成@Damage[14d6[vitality]]伤害（@Check[fortitude|dc:30|basic]豁免）；孪生花楸木免疫此效果。受这种爆发影响的地区，随着充满活力的新植物在其中疯长，变为高等困难地形。</p>"
+                    "description": "<p>每日1次，孪生花楸木可以用他们的剑攻击地面，以双胞胎为中心释放@Template[burst|distance:30]的生命能量爆发，造成@Damage[14d6[vitality]|options:area-damage]伤害（@Check[fortitude|dc:30|basic|options:area-effect]豁免）；孪生花楸木免疫此效果。受这种爆发影响的地区，随着充满活力的新植物在其中疯长，变为高等困难地形。</p>"
                 },
                 "Throw Stump": {
                     "name": "投树桩 Throw Stump",
@@ -1816,7 +1816,7 @@
                 },
                 "Launch Lava": {
                     "name": "发射熔岩 Launch Lava",
-                    "description": "<p>活体岩浆投射爆炸性的熔岩球到至多120尺。@Template[burst|distance:10]范围内的每个生物受到@Damage[7d6[fire]]伤害（@Check[reflex|dc:33|basic]豁免）。</p>"
+                    "description": "<p>活体岩浆投射爆炸性的熔岩球到至多120尺。@Template[burst|distance:10]范围内的每个生物受到@Damage[7d6[fire]|options:area-damage]伤害（@Check[reflex|dc:33|basic|options:area-effect]豁免）。</p>"
                 },
                 "Reignite": {
                     "name": "重燃 Reignite",
@@ -1872,7 +1872,7 @@
                 },
                 "Seething Flash": {
                     "name": "高温闪光 Seething Flash",
-                    "description": "<p>煤烟士兵燃起明亮的火光冲过战场，重整队列并且行走两次。在此行动结束时，一股火焰和高热从煤烟士兵身上倾泻而出，对@Template[emanation|distance:10]范围内的生物造成@Damage[4d8[fire]]伤害，@Check[reflex|dc:29|basic]豁免。大大失败的生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                    "description": "<p>煤烟士兵燃起明亮的火光冲过战场，重整队列并且行走两次。在此行动结束时，一股火焰和高热从煤烟士兵身上倾泻而出，对@Template[emanation|distance:10]范围内的生物造成@Damage[4d8[fire]|options:area-damage]伤害，@Check[reflex|dc:29|basic|options:area-effect,inflicts:prone]豁免。大大失败的生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
                 },
                 "Smoke Vision": {
                     "name": "烟雾视觉 Smoke Vision",
@@ -1956,7 +1956,7 @@
                 },
                 "Self-Destruct": {
                     "name": "自毁 Self-Destruct",
-                    "description": "<p>当火矮人的生命值降至0时，他们的护甲会在其下一个回合开始时爆炸，对@Template[emanation|distance:10] 范围造成@Damage[5d6[fire]]伤害（@Check[reflex|dc:19|basic]豁免）。 </p>"
+                    "description": "<p>当火矮人的生命值降至0时，他们的护甲会在其下一个回合开始时爆炸，对@Template[emanation|distance:10] 范围造成@Damage[5d6[fire]|options:area-damage]伤害（@Check[reflex|dc:19|basic|options:area-effect]豁免）。 </p>"
                 },
                 "Burning Touch": {
                     "name": "燃烧之触 Burning Touch",
@@ -2160,11 +2160,11 @@
                 },
                 "Seed Volley": {
                     "name": "种子齐射 Seed Volley",
-                    "description": "<p>收获战团从身体里吐出一连串坚硬种子。该齐射在120尺的@Template[burst|distance:10]范围造成@Damage[2d10[bludgeoning]]伤害（@Check[reflex|dc:23|basic]豁免）。当收获战团减少至8个或更少方格，该区域减少为@Template[burst|distance:5]。</p>"
+                    "description": "<p>收获战团从身体里吐出一连串坚硬种子。该齐射在120尺的@Template[burst|distance:10]范围造成@Damage[2d10[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:23|basic|options:area-effect]豁免）。当收获战团减少至8个或更少方格，该区域减少为@Template[burst|distance:5]。</p>"
                 },
                 "Shell Smash": {
                     "name": "硬壳猛击 Shell Smash",
-                    "description": "<p><span class=\"action-glyph\">1</span> 到 <span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 收获战团步调一致地对@Template[emanation|distance:5]内每个敌人进行近战攻击，@Check[reflex|dc:23|basic]豁免。伤害取决于动作数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d8+3)[bludgeoning]]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d8+9)[bludgeoning]]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d8+12)[bludgeoning]]伤害</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> 到 <span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 收获战团步调一致地对@Template[emanation|distance:5]内每个敌人进行近战攻击，@Check[reflex|dc:23|basic|options:area-effect]豁免。伤害取决于动作数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d8+3)[bludgeoning]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d8+9)[bludgeoning]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d8+12)[bludgeoning]|options:area-damage]伤害</p>"
                 },
                 "Troop Movement": {
                     "name": "部队移动 Troop Movement",
@@ -2264,7 +2264,7 @@
                 },
                 "Slicing Wind": {
                     "name": "切割之风 Slicing Wind",
-                    "description": "<p><strong>需求</strong> 云中画处于剑形态</p>\n<hr />\n<p><strong>效果</strong> 云中画旋转，形成一个@Template[emanation|distance:15]范围的旋风，造成@Damage[5d8[slashing]]伤害（@Check[reflex|dc:30|basic]豁免）。</p>"
+                    "description": "<p><strong>需求</strong> 云中画处于剑形态</p>\n<hr />\n<p><strong>效果</strong> 云中画旋转，形成一个@Template[emanation|distance:15]范围的旋风，造成@Damage[5d8[slashing]|options:area-damage]伤害（@Check[reflex|dc:30|basic|options:area-effect]豁免）。</p>"
                 },
                 "Swiftness": {
                     "name": "迅捷 Swiftness",
@@ -2296,7 +2296,7 @@
                 },
                 "Scream": {
                     "name": "尖叫 Scream",
-                    "description": "<p>雷音狂魔发出一声低沉、刺耳的尖叫。@Template[cone|distance:120]范围内的所有生物受到@Damage[7d12[sonic]]伤害，并需进行一次@Check[fortitude|dc:32]豁免。</p>\n<p>雷音狂魔在[[/gmr 1d4 #Recharge Scream]]{1d4轮}内不能再次尖叫。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全部伤害，@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，并在1分钟内@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{耳聋 Deafened}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}，并永久耳聋。</p>"
+                    "description": "<p>雷音狂魔发出一声低沉、刺耳的尖叫。@Template[cone|distance:120]范围内的所有生物受到@Damage[7d12[sonic]|options:area-damage]伤害，并需进行一次@Check[fortitude|dc:32|options:area-effect,damaging-effect,inflicts:deafened,inflicts:stunned]豁免。</p>\n<p>雷音狂魔在[[/gmr 1d4 #Recharge Scream]]{1d4轮}内不能再次尖叫。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全部伤害，@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，并在1分钟内@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}，并永久耳聋。</p>"
                 },
                 "Heavy": {
                     "name": "沉重 Heavy",
@@ -2325,7 +2325,7 @@
                 },
                 "Seething Flash": {
                     "name": "高温闪光 Seething Flash",
-                    "description": "<p>煤烟士兵燃起明亮的火光冲过战场，重整队列并且行走两次。在此行动结束时，一股火焰和高热从煤烟士兵身上倾泻而出，对@Template[emanation|distance:10]范围内的生物造成@Damage[4d8[fire]]伤害，@Check[reflex|dc:29|basic]豁免。大大失败的生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                    "description": "<p>煤烟士兵燃起明亮的火光冲过战场，重整队列并且行走两次。在此行动结束时，一股火焰和高热从煤烟士兵身上倾泻而出，对@Template[emanation|distance:10]范围内的生物造成@Damage[4d8[fire]|options:area-damage]伤害，@Check[reflex|dc:29|basic|options:area-effect,inflicts:prone]豁免。大大失败的生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
                 },
                 "Smoke Vision": {
                     "name": "烟雾视觉 Smoke Vision",
