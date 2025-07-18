@@ -434,11 +434,11 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当石冢尸妖对一个活着的生物使用爪或者绑定的武器打击并造成伤害时，石冢尸妖获得5点临时生命值，并且目标必须通过@Check[fortitude|dc:18]检定否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。石冢尸妖造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>"
+                    "description": "<p>当石冢尸妖对一个活着的生物使用爪或者绑定的武器打击并造成伤害时，石冢尸妖获得5点临时生命值，并且目标必须通过@Check[fortitude|dc:18|options:inflicts:drained]检定否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。石冢尸妖造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Funereal Dirge": {
                     "name": "丧葬挽歌 Funereal Dirge",
-                    "description": "<p>石冢尸妖吟颂低沉而又萦绕心头的旋律。@Template[emanation|distance:50]{50尺}范围内的生物必须进行@Check[will|dc:21]豁免。</p>\n<p>石冢尸妖在[[/gmr 1d4 #Recharge Funereal Dirge]]{1d4轮}内不能吟唱新的丧葬挽歌。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}并在汲取生命的豁免检定中受到-2惩罚。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.8ecPVgMeWDxc4jI4]{效果：丧葬挽歌}</p>"
+                    "description": "<p>石冢尸妖吟颂低沉而又萦绕心头的旋律。@Template[emanation|distance:50]{50尺}范围内的生物必须进行@Check[will|dc:21|options:area-effect,inflicts:frightened]豁免。</p>\n<p>石冢尸妖在[[/gmr 1d4 #Recharge Funereal Dirge]]{1d4轮}内不能吟唱新的丧葬挽歌。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}并在汲取生命的豁免检定中受到-2状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.8ecPVgMeWDxc4jI4]</p>"
                 },
                 "Void Healing": {
                     "name": "Void Healing",
@@ -1738,7 +1738,7 @@
                 },
                 "Noxious Sublimation": {
                     "name": "剧毒升腾 Noxious Sublimation",
-                    "description": "<p>雾凇泥每轮第一次受到火焰伤害时，一团令人作呕的腐烂毒云会向外升腾，对@Template[emanation|distance:10]范围内的所有生物造成@Damage[2d6[poison]]伤害（@Check[fortitude|dc:17|basic]豁免）。豁免失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}）。</p>"
+                    "description": "<p>雾凇泥每轮第一次受到火焰伤害时，一团令人作呕的腐烂毒云会向外升腾，对@Template[emanation|distance:10]范围内的所有生物造成@Damage[2d6[poison]|options:area-damage]伤害（@Check[fortitude|dc:17|basic|options:area-effect]豁免）。豁免失败的生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}）。</p>"
                 },
                 "Slushy Undulation": {
                     "name": "泥泞起伏 Slushy Undulation",
