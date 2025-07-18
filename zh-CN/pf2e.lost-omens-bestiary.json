@@ -253,11 +253,11 @@
                 },
                 "Solar Flare": {
                     "name": "太阳耀斑 Solar Flare",
-                    "description": "<p><strong>触发</strong> 天蚀狗受到伤害</p>\n<hr />\n<p><strong>效果</strong> 天蚀狗在@Template[emanation|distance:30]范围内施放出一道太阳耀斑。区域内每个生物受到@Damage[6d8[fire]]伤害（@Check[reflex|dc:34|basic]豁免）。大失败时，生物还将受到@Damage[2d10[persistent,fire]]伤害。在使用此能力后，天蚀狗的火焰冷却，它无法再次使用太阳耀斑，直到其使用了月爆能力。</p>"
+                    "description": "<p><strong>触发</strong> 天蚀狗受到伤害</p>\n<hr />\n<p><strong>效果</strong> 天蚀狗在@Template[emanation|distance:30]范围内施放出一道太阳耀斑。区域内每个生物受到@Damage[6d8[fire]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免）。大失败时，生物还将受到@Damage[2d10[persistent,fire]]伤害。在使用此能力后，天蚀狗的火焰冷却，它无法再次使用太阳耀斑，直到其使用了月爆能力。</p>"
                 },
                 "Lunar Burst": {
                     "name": "月爆 Lunar Burst",
-                    "description": "<p>天蚀狗释放出一道异界霜寒，对@Template[emanation|distance:10]范围内每个生物造成@Damage[6d8[cold]]伤害（@Check[reflex|dc:34|basic]豁免）。大失败时，生物还将陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}一轮。在使用此能力后，天蚀狗的火焰升温，它无法再次使用月爆，直到其使用了太阳耀斑反应动作。</p>"
+                    "description": "<p>天蚀狗释放出一道异界霜寒，对@Template[emanation|distance:10]范围内每个生物造成@Damage[6d8[cold]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免）。大失败时，生物还将陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}一轮。在使用此能力后，天蚀狗的火焰升温，它无法再次使用月爆，直到其使用了太阳耀斑反应动作。</p>"
                 },
                 "Shadow Leap": {
                     "name": "影跃 Shadow Leap",
@@ -2081,7 +2081,7 @@
             "items": {
                 "Lightning Blast": {
                     "name": "Lightning Blast",
-                    "description": "<p><strong>Trigger</strong> A creature takes a hostile action against Ebeshra, produces a visible area effect, or flies within 120 feet of Ebeshra</p>\n<hr />\n<p><strong>Effect</strong> Ebeshra unleashes a @Template[line|distance:240] of electricity toward the triggering creature. Creatures in the line take @Damage[16d8[electricity]] damage (@Check[reflex|dc:42|basic|traits:divine,electricity,environmental,evocation,kaiju,hazard] save). The electricity creates a static field in all squares that the line passed through and all adjacent squares. For 1 round, any creatures that enter a space in the static field take @Damage[4d8[electricity]] damage (@Check[reflex|dc:38|basic|name:Static Field|traits:divine,electricity,environmental,evocation,kaiju,hazard] save).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature takes a hostile action against Ebeshra, produces a visible area effect, or flies within 120 feet of Ebeshra</p>\n<hr />\n<p><strong>Effect</strong> Ebeshra unleashes a @Template[line|distance:240] of electricity toward the triggering creature. Creatures in the line take @Damage[16d8[electricity]|options:area-damage] damage (@Check[reflex|dc:42|basic|options:area-effect] save). The electricity creates a static field in all squares that the line passed through and all adjacent squares. For 1 round, any creatures that enter a space in the static field take @Damage[4d8[electricity]|options:area-damage] damage (@Check[reflex|dc:38|basic|name:Static Field|options:area-effect] save).</p>"
                 }
             }
         },
@@ -2895,7 +2895,7 @@
             "items": {
                 "Powder Blast": {
                     "name": "Powder Blast",
-                    "description": "<p>The clockwork cannoneer spews flames from one of its cannons, dealing @Damage[8d6[fire]] damage in a @Template[cone|distance:30] (@Check[reflex|dc:36|basic]). Those that fail the save also take @Damage[2d6[persistent,fire]] damage.</p>"
+                    "description": "<p>The clockwork cannoneer spews flames from one of its cannons, dealing @Damage[8d6[fire]|options:area-damage] damage in a @Template[cone|distance:30] (@Check[reflex|dc:36|basic|options:area-effect]). Those that fail the save also take @Damage[2d6[persistent,fire]] damage.</p>"
                 },
                 "Muzzleburn": {
                     "name": "Muzzleburn",
@@ -3064,7 +3064,7 @@
                 },
                 "Horrific Speed": {
                     "name": "Horrific Speed",
-                    "description": "<p>Kothogaz is permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened 1}. It can use this extra action to Stride or Strike.</p>"
+                    "description": "<p>Kothogaz is permanently @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened}. It can use this extra action to Stride or Strike.</p>"
                 },
                 "Noxious Aura": {
                     "name": "Noxious Aura",
@@ -3084,7 +3084,7 @@
                 },
                 "Pox the Land": {
                     "name": "Pox the Land",
-                    "description": "<p>Kothogaz raises a pustule from the ground within 120 feet, which erupts in a @Template[burst|distance:10]{10-foot radius}, 200-foot-high cylinder of cloying filth. Creatures in the area must succeed at a @Check[reflex|dc:44|basic] save or take @Damage[6d10[poison]] damage. On a failure, they can't fly for 1 round (1 minute on a critical failure); flying creatures fall safely to the ground.</p>"
+                    "description": "<p>Kothogaz raises a pustule from the ground within 120 feet, which erupts in a @Template[cylinder|distance:10]{10-foot radius}, 200-foot-high cylinder of cloying filth. Creatures in the area must succeed at a @Check[reflex|dc:44|basic|options:area-effect] save or take @Damage[6d10[poison]|options:area-damage] damage. On a failure, they can't fly for 1 round (1 minute on a critical failure); flying creatures fall safely to the ground.</p>"
                 },
                 "Suppurating Passage": {
                     "name": "Suppurating Passage",
@@ -3163,7 +3163,7 @@
                 },
                 "Light Shatter": {
                     "name": "Light Shatter",
-                    "description": "<p>The solar ibis detonates its halo, sending shards of burning light in all directions that deal @Damage[6d8[fire]] damage to all creatures in a @Template[emanation|distance:20] (@Check[reflex|dc:22|basic] save). The shards deal an extra @Damage[6d8[spirit]] damage against fiends and undead.</p>\n<p>The solar ibis can't use Light Shatter again for [[/gmr 1d4 #Recharge Light Shatter]] rounds, and its Blinding Halo is extinguished during this time. The halo is restored automatically once the 1d4 rounds have passed.</p>"
+                    "description": "<p>The solar ibis detonates its halo, sending shards of burning light in all directions that deal @Damage[6d8[fire]|options:area-damage] damage to all creatures in a @Template[emanation|distance:20] (@Check[reflex|dc:22|basic|options:area-effect] save). The shards deal an extra @Damage[6d8[spirit]|options:area-damage] damage against fiends and undead.</p>\n<p>The solar ibis can't use Light Shatter again for [[/gmr 1d4 #Recharge Light Shatter]] rounds, and its Blinding Halo is extinguished during this time. The halo is restored automatically once the 1d4 rounds have passed.</p>"
                 }
             },
             "publicNotes": "<p>Solar ibis are beings of light sometimes called sun birds, or \"winged luminaries\" by the more scholarly inclined. They're tasked with guarding sacred places or items, although they sometimes also protect the living from places of incredible danger. Their appearance is always preceded by numerous small purple-winged birds with a splash of yellow on their crowns; these are avatars of the ibis that nest and congregate in areas it protects. The presence of these avatars is often the only way to track these reclusive and solitary creatures. Should the solar ibis choose to appear, these little birds scatter like wild fowl. The sun bird then manifests and bathes the area in a brilliant shower of light that can blind and startle unwary and unprepared creatures in its presence.</p>\n<p>The solar ibis appears as a magnificent, large bird surrounded by a halo of brilliant light. Its black feathers shimmer with all the colors of the spectrum, casting glossy rainbows across its plumage. It has a keen sense of insight, which it uses to pass judgment as a whole on whether those before it are worthy to access what it guards. It punishes those it finds unworthy with its cleansing might.</p>\n<p>Though considered sacred by most within the Mwangi Expanse, there are still some who hunt these glorious creatures; some seek the treasures that the ibis keep, while others seek the ibis themselves, dead or alive. Some believe that the feathers of a solar ibis, when burned, create an incense that can grant holy power to those that inhale it. Others believe that its bones and feet can be ground into a powder that can destroy demons and purify the undead.</p>"
@@ -3966,7 +3966,7 @@
                 },
                 "Icy Japes": {
                     "name": "Icy Japes",
-                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic|options:damaging-effect] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing],1[cold]]{1d6 slashing damage plus 1 cold damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing]1d4[cold]]{2d6+2 slashing damage plus 1d4 cold damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold],[1d4[cold]]{2d6+5 cold damage plus 1d4 cold damage}</p>"
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The beirans descend on their prey, biting and clawing at each enemy in a @Template[type:emanation|distance:5], with a @Check[reflex|dc:17|basic|options:area-effect] save. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing],1[cold]|options:area-damage]{1d6 slashing damage plus 1 cold damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+2)[slashing],1d4[cold]|options:area-damage]{2d6+2 slashing damage plus 1d4 cold damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[cold],1d4[cold]|options:area-damage]{2d6+5 cold damage plus 1d4 cold damage}</p>"
                 }
             },
             "prototypeToken": {
