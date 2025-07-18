@@ -289,7 +289,7 @@
                 },
                 "Petty Whispers": {
                     "name": "琐碎低语 Petty Whispers",
-                    "description": "<p>齐笑魔使用敌人的声音，在可能的盟友中间散播谎言和嘲笑，撕碎朋友间的信任。齐笑魔@Template[emanation|distance:60]范围内的生物必须尝试一次@Check[will|dc:37]豁免。齐笑魔在1分钟内不能再次使用琐碎低语。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响且临时免疫1天。</p>\n<p><strong>成功</strong> 同失败，但生物受到一半伤害且不陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}。</p>\n<p><strong>失败</strong> 生物受到@Damage[12d10[mental]]伤害，且陷入困惑1分钟。它可以在每回合结束时尝试一次新的豁免来结束困惑。</p>\n<p><strong>大失败</strong> 生物受到@Damage[15d10[mental]]伤害，且陷入困惑1分钟，不能进行豁免提前结束困惑。</p>"
+                    "description": "<p>齐笑魔使用敌人的声音，在可能的盟友中间散播谎言和嘲笑，撕碎朋友间的信任。齐笑魔@Template[emanation|distance:60]范围内的生物必须尝试一次@Check[will|dc:37|options:area-effect,damaging-effect]豁免。齐笑魔在1分钟内不能再次使用琐碎低语。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响且临时免疫1天。</p>\n<p><strong>成功</strong> 同失败，但生物受到一半伤害且不陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]。</p>\n<p><strong>失败</strong> 生物受到@Damage[12d10[mental]|options:area-damage]伤害，且陷入困惑1分钟。它可以在每回合结束时尝试一次新的豁免来结束困惑。</p>\n<p><strong>大失败</strong> 生物受到@Damage[15d10[mental]|options:area-damage]伤害，且陷入困惑1分钟，不能进行豁免提前结束困惑。</p>"
                 },
                 "Hydra Regeneration": {
                     "name": "多头蛇再生 Hydra Regeneration",
@@ -558,7 +558,7 @@
                 },
                 "Shattering Scream": {
                     "name": "粉碎尖啸 Shattering Scream",
-                    "description": "<p>聆空兽能用尖啸专注于60尺射程内的一处石头或岩石的表面，从该点制造@Template[burst|distance:15]区域的爆炸。区域内的生物承受@Damage[5d6[piercing]]伤害（@Check[reflex|dc:28|basic]豁免），且该区域会由于散落的碎石变为困难地形。</p>"
+                    "description": "<p>聆空兽能用尖啸专注于60尺射程内的一处石头或岩石的表面，从该点制造@Template[burst|distance:15]区域的爆炸。区域内的生物承受@Damage[5d6[piercing]|options:area-damage]伤害（@Check[reflex|dc:28|basic|options:area-effect]豁免），且该区域会由于散落的碎石变为困难地形。</p>"
                 }
             },
             "data": {
@@ -578,7 +578,7 @@
                 },
                 "Petrify Vapor": {
                     "name": "石化水汽 Petrify Vapor",
-                    "description": "<p>石化蝙蝠喷出@Template[cone|distance:15]石化气体，这种气体太稀薄以致不会对区域内的生物造成伤害。然而，它会石化空气中的水分，使得小石块雨落在锥形范围正下方的生物上。坠落的石块造成@Damage[4d6[bludgeoning]]伤害（@Check[reflex|dc:20|basic]豁免）。石化蝙蝠在[[/gmr 1d4 #Recharge Petrify Vapor]]{1d4轮}内不能再次使用石化水汽。.</p>"
+                    "description": "<p>石化蝙蝠喷出@Template[cone|distance:15]石化气体，这种气体太稀薄以致不会对区域内的生物造成伤害。然而，它会石化空气中的水分，使得小石块雨落在锥形范围正下方的生物上。坠落的石块造成@Damage[4d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:20|basic|options:area-effect]豁免）。石化蝙蝠在[[/gmr 1d4 #Recharge Petrify Vapor]]{1d4轮}内不能再次使用石化水汽。.</p>"
                 },
                 "Stone Feast": {
                     "name": "石头盛宴 Stone Feast",
@@ -923,7 +923,7 @@
                 },
                 "Screaming Force": {
                     "name": "巨力尖叫 Screaming Force",
-                    "description": "<p>洞穴松鼠发出可怕的尖叫。@Template[emanation|distance:30]{30尺}内的非洞穴松鼠生物必须成功通过@Check[fortitude|dc:22]豁免，失败则承受@Damage[2d10[sonic]] 伤害。大失败时，该生物还会@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]1分钟。洞穴松鼠在[[/gmr 1d4 #Recharge Screaming Force]]{1d4轮}内无法再次使用巨力尖叫。</p>"
+                    "description": "<p>洞穴松鼠发出可怕的尖叫。@Template[emanation|distance:30]{30尺}内的非洞穴松鼠生物必须成功通过@Check[fortitude|dc:22|options:area-effect,damaging-effect,inflicts:deafened]豁免，失败则承受@Damage[2d10[sonic]|options:area-damage]伤害。大失败时，该生物还会@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]1分钟。洞穴松鼠在[[/gmr 1d4 #Recharge Screaming Force]]{1d4轮}内无法再次使用巨力尖叫。</p>"
                 }
             },
             "publicNotes": "<p>Taldan cave squirrels, also known as tauhotis, are a curious cousin of the much smaller common ground squirrel, found anywhere with large, grassy flatlands. The creatures burrow underground, forming cave systems tall enough for giants in astonishingly little time. Once the caves are excavated, the squirrels turn their attention toward the largest quantities of gems or metals they can find—including those in the ground floors and vaults of nearby buildings. Nothing is off-limits, and no effort is too large when these squirrels go gem hunting.</p>\n<p>Cave squirrels' desire for these precious stones and ores arises not from greed, but rather productivity. After returning to the cave system, cheek pouches full of treasure, the males deposit the stolen goods before the females, who lick and spit on the piles of gems and metals to form them into structural pillars. Given the cave squirrels' tireless work habits, these pillars can solidify in a matter of hours, easily displacing existing stone and soil. Many an Opparan groundskeeper has stepped outside after a lovely teatime to find months of work undone in a scene of utter, glittering chaos. Architects throughout history have attempted to recreate or imitate these gleaming pillars; however, they rarely succeeded, for they often lacked a certain unpredictable pragmatism the cave squirrels seem to effortlessly achieve.</p>\n<p>When threatened, cave squirrels will let out a high-pitched scream to warn their colony. They can spit out any food or building materials in their cheek pouches with deadly speeds at attackers.</p>"
@@ -952,7 +952,7 @@
                 },
                 "Fish Fork": {
                     "name": "钩鱼叉 Fish Fork",
-                    "description": "<p><strong>需求</strong> 鲨化人本回合最近的动作是使用三叉戟打击造成重击；</p>\n<hr />\n<p><strong>效果</strong> 鲨化人将三叉戟深深刺入目标体内，在对其大快朵颐之前死死插住。打击目标陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]DC 18）并承受@Damage[1d4[bleed]]伤害，然后鲨化人对其尝试一次啃咬打击。当有生物由于鲨化人的三叉戟而陷入受擒时，鲨化人无法使用它的三叉戟，但他能够以具有操作特征的单动作将三叉戟拔出。</p>"
+                    "description": "<p><strong>需求</strong> 鲨化人本回合最近的动作是使用三叉戟打击造成重击；</p><hr /><p><strong>效果</strong> 鲨化人将三叉戟深深刺入目标体内，在对其大快朵颐之前死死插住。打击目标陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]（[[/act escape dc=18]]）并承受@Damage[1d4[bleed]]伤害，然后鲨化人对其尝试一次啃咬打击。当有生物由于鲨化人的三叉戟而陷入受擒时，鲨化人无法使用它的三叉戟，但他能够以具有操作特征的单动作将三叉戟拔出。</p>"
                 },
                 "Moon Frenzy": {
                     "name": "满月狂乱 Moon Frenzy",
@@ -1761,7 +1761,7 @@
             "items": {
                 "Launch Metal": {
                     "name": "发射金属 Launch Metal",
-                    "description": "<p>壁虎将附着在其身体上的金属向各个方向排斥，对@Template[emanation|distance:10]范围的所有生物造成@Damage[2d6[bludgeoning]]伤害（@Check[reflex|dc:17|basic]豁免）。壁虎在[[/gmr 1d4 #Recharge Launch Metal]]{1d4轮}内无法再次使用发射金属。</p>"
+                    "description": "<p>壁虎将附着在其身体上的金属向各个方向排斥，对@Template[emanation|distance:10]范围的所有生物造成@Damage[2d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:17|basic|options:area-effect]豁免）。壁虎在[[/gmr 1d4 #Recharge Launch Metal]]{1d4轮}内无法再次使用发射金属。</p>"
                 },
                 "Repel": {
                     "name": "排斥 Repel",
@@ -1969,7 +1969,7 @@
                 },
                 "Noxious Exhalation": {
                     "name": "喷吐毒气 Noxious Exhalation",
-                    "description": "<p>幻头蛇从所有口中喷出毒雾，扩散至@Template[emanation|distance:20]范围，对区域内所有生物造成@Damage[4d10[poison]]伤害（@Check[reflex|dc:24|basic]豁免）。任何豁免失败的生物必须尝试一次@Check[will|dc:24]豁免，否则会获得心灵弱点10，以及意志豁免承受-1状态减值，持续24小时。幻头蛇在[[/gmr 1d4 #Recharge Noxious Exhalation]]{1d4轮}内不能再次使用喷吐毒气。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.G1pvduwOVRz4YFUF]{效果：喷吐毒气}</p>"
+                    "description": "<p>幻头蛇从所有口中喷出毒雾，扩散至@Template[emanation|distance:20]范围，对区域内所有生物造成@Damage[4d10[poison]|options:area-damage]伤害（@Check[reflex|dc:24|basic|options:area-effect]豁免）。任何豁免失败的生物必须尝试一次@Check[will|dc:24]豁免，否则会获得心灵弱点10，以及意志豁免承受-1状态减值，持续24小时。幻头蛇在[[/gmr 1d4 #Recharge Noxious Exhalation]]{1d4轮}内不能再次使用喷吐毒气。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.G1pvduwOVRz4YFUF]</p>"
                 },
                 "All-Around Vision": {
                     "name": "全域视野 All-Around Vision",
