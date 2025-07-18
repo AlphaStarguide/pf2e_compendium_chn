@@ -422,7 +422,7 @@
                 },
                 "Radiant Blast": {
                     "name": "辐光爆发 Radiant Blast",
-                    "description": "<p>辐光守卫对@Template[cone|distance:50]{50尺锥形}范围释放一道耀眼的能量波，造成@Damage[10d12[force]]伤害（@Check[reflex|dc:38|basic]豁免）。辐光守卫在[[/gmr 1d4 #Recharge Radiant Blast]]{1d4轮}内无法再次使用辐光爆发。</p>"
+                    "description": "<p>辐光守卫对@Template[cone|distance:50]范围释放一道耀眼的能量波，造成@Damage[10d12[force]|options:area-damage]伤害（@Check[reflex|dc:38|basic|options:area-effect]豁免）。辐光守卫在[[/gmr 1d4 #Recharge Radiant Blast]]{1d4轮}内无法再次使用辐光爆发。</p>"
                 },
                 "Radiant Blow": {
                     "name": "辐光闪耀 Radiant Blow",
@@ -2926,7 +2926,7 @@
                 },
                 "Shattering Ice": {
                     "name": "冰甲爆散 Shattering Ice",
-                    "description": "<p><strong>触发</strong> 一个敌人以造成物理伤害的效果命中暴雪之嗣。</p>\n<hr />\n<p><strong>效果</strong> 暴雪之嗣的一部分身体变成剃刀一样锋利的冰片向周围射出，对@Template[emanation|distance:5]范围内的敌人造成@Damage[2d6[piercing]]伤害（@Check[reflex|dc:24|basic]豁免）。豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮（大失败目盲3轮）。</p>"
+                    "description": "<p><strong>触发</strong> 一个敌人以造成物理伤害的效果命中暴雪之嗣。</p>\n<hr />\n<p><strong>效果</strong> 暴雪之嗣的一部分身体变成剃刀一样锋利的冰片向周围射出，对@Template[emanation|distance:5]范围内的敌人造成@Damage[2d6[piercing]|options:area-damage]伤害（@Check[reflex|dc:24|basic|options:area-effect,inflicts:blinded]豁免）。豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮（大失败目盲3轮）。</p>"
                 },
                 "Ice Burrow": {
                     "name": "掘冰 Ice Burrow",
@@ -3366,11 +3366,11 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当石冢尸妖对一个活着的生物使用爪或者绑定的武器打击并造成伤害时，石冢尸妖获得[[/r 5 #Temporary Hit Points]]{5临时生命值}，并且目标必须通过@Check[fortitude|dc:18]检定否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。石冢尸妖造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>"
+                    "description": "<p>当石冢尸妖对一个活着的生物使用爪或者绑定的武器打击并造成伤害时，石冢尸妖获得5点临时生命值，并且目标必须通过@Check[fortitude|dc:18|options:inflicts:drained]检定否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。石冢尸妖造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Funereal Dirge": {
                     "name": "丧葬挽歌 Funereal Dirge",
-                    "description": "<p>石冢尸妖吟颂低沉而又萦绕心头的旋律。@Template[emanation|distance:50]范围内的生物必须进行@Check[will|dc:21]豁免。</p>\n<p>石冢尸妖在[[/gmr 1d4 #Recharge Funereal Dirge]]轮内不能吟唱新的丧葬挽歌。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}并在汲取生命的豁免检定中受到-2惩罚。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.8ecPVgMeWDxc4jI4]{效果：丧葬挽歌}</p>"
+                    "description": "<p>石冢尸妖吟颂低沉而又萦绕心头的旋律。@Template[emanation|distance:50]范围内的生物必须进行@Check[will|dc:21|options:area-effect,inflicts:frightened]豁免。</p>\n<p>石冢尸妖在[[/gmr 1d4 #Recharge Funereal Dirge]]轮内不能吟唱新的丧葬挽歌。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}并在汲取生命的豁免检定中受到-2惩罚。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.8ecPVgMeWDxc4jI4]</p>"
                 },
                 "Void Healing": {
                     "name": "虚能治疗 Void Healing",
@@ -3400,7 +3400,7 @@
                 },
                 "Seed Spray": {
                     "name": "喷射种子 Seed Spray",
-                    "description": "<p>冷忆花喷射出带刺的冰冻种子，对@Template[cone|distance:15]范围内造成@Damage[1d6[piercing],4d6[cold]]{1d6穿刺伤害和4d6寒冷伤害}（@Check[reflex|dc:20|basic]豁免）。</p>\n<p>在寒或者更冷的环境里，这些种子会附着在被击中的活物上，造成@Damage[1d4[persistent,cold]]伤害。</p>\n<p>。冷忆花在[[/gmr 1d4 #Recharge Seed Spray]]{1d4轮}内无法再次使用喷射种子。</p>"
+                    "description": "<p>冷忆花喷射出带刺的冰冻种子，对@Template[cone|distance:15]范围内造成@Damage[1d6[piercing],4d6[cold]|options:area-damage]伤害（@Check[reflex|dc:20|basic|options:area-effect]豁免）。</p>\n<p>在寒或者更冷的环境里，这些种子会附着在被击中的活物上，造成@Damage[1d4[persistent,cold]]伤害。</p>\n<p>。冷忆花在[[/gmr 1d4 #Recharge Seed Spray]]{1d4轮}内无法再次使用喷射种子。</p>"
                 },
                 "Scent": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>",
@@ -4139,7 +4139,7 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当囚魂魔使用利爪伤害一个活物时，它获得10点临时生命，这个活物必须通过@Check[fortitude|dc:24]豁免，否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。囚魂魔之后对他造成的伤害在豁免失败时会使流失值加1，最高流失4。</p>"
+                    "description": "<p>当囚魂魔使用利爪伤害一个活物时，它获得10点临时生命，这个活物必须通过@Check[fortitude|dc:24|options:inflicts:drained]豁免，否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。囚魂魔之后对他造成的伤害在豁免失败时会使流失值加1，最高流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Soul Spells": {
                     "name": "灵魂法术 Soul Spells",
@@ -4337,7 +4337,7 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当惧栗缚灵使用幽魂之手伤害一个活着的生物时，惧栗缚灵获得[[/r 10 #Temporary Hit Points]]{10临时生命值}，并且目标必须通过@Check[fortitude|dc:28]检定否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。惧栗缚灵造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>"
+                    "description": "<p>当惧栗缚灵使用幽魂之手伤害一个活着的生物时，惧栗缚灵获得10点临时生命值，并且目标必须通过@Check[fortitude|dc:28|options:inflicts:drained]检定否则获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。惧栗缚灵造成的进一步伤害将使流失状态值在再次豁免失败时增加1，最多达到流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Wraith Spawn": {
                     "name": "缚灵衍体 Wraith Spawn",
@@ -4730,7 +4730,7 @@
                 },
                 "Noxious Burst": {
                     "name": "毒焰爆发 Noxious Burst",
-                    "description": "<p>邪秽之焰体内的有毒物质和翻腾的垃圾以以下三种之一的方式爆炸。邪秽之焰可以选择其中一种效果，但是不能连续两次都选择同样的效果。</p>\n<ul>\n<li><strong>炽烈射线 Fiery Beam</strong> （塑能系，火焰，原能）邪秽之焰喷射出一道@Template[line|distance:30]的火焰，造成@Damage[3d6[fire]]伤害，@Check[reflex|dc:21|basic|traits:evocation,fire,primal|overrideTraits:true]豁免。</li>\n<li><strong>破片飞散 Shrapnel Blast</strong> （塑能系，原能）邪秽之焰将锯齿状的垃圾向周围爆射，对@Template[emanation|distance:5]范围造成@Damage[2d12[piercing]]伤害，@Check[reflex|dc:21|basic|traits:evocation,primal|overrideTraits:true]豁免。</li>\n<li><strong>毒烟喷射 Toxic Fumes</strong> （塑能系，毒素，原能）邪秽之焰喷出@Template[cone|distance:15]，造成@Damage[2d6[poison]]伤害（@Check[fortitude|dc:21|basic|traits:evocation,poison,primal|overrideTraits:true]豁免）。豁免失败的生物同时陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}）。</li>\n</ul>"
+                    "description": "<p>邪秽之焰体内的有毒物质和翻腾的垃圾以以下三种之一的方式爆炸。邪秽之焰可以选择其中一种效果，但是不能连续两次都选择同样的效果。</p>\n<ul>\n<li><strong>炽烈射线 Fiery Beam</strong> （塑能系，火焰，原能）邪秽之焰喷射出一道@Template[line|distance:30]的火焰，造成@Damage[3d6[fire]|options:area-damage]伤害，@Check[reflex|dc:21|basic|options:area-effect|traits:evocation,fire,primal|overrideTraits:true]豁免。</li>\n<li><strong>破片飞散 Shrapnel Blast</strong> （塑能系，原能）邪秽之焰将锯齿状的垃圾向周围爆射，对@Template[emanation|distance:5]范围造成@Damage[2d12[piercing]|options:area-damage]伤害，@Check[reflex|dc:21|basic|options:area-effect|traits:evocation,primal|overrideTraits:true]豁免。</li>\n<li><strong>毒烟喷射 Toxic Fumes</strong> （塑能系，毒素，原能）邪秽之焰喷出@Template[cone|distance:15]，造成@Damage[2d6[poison]|options:area-damage]伤害（@Check[fortitude|dc:21|basic|options:area-effect|traits:evocation,poison,primal|overrideTraits:true]豁免）。豁免失败的生物同时陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}（大失败则陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}）。</li>\n</ul>"
                 }
             },
             "prototypeToken": {
@@ -6710,7 +6710,7 @@
             "items": {
                 "Regurgitate Gastrolith": {
                     "name": "反刍胃石 Regurgitate Gastrolith",
-                    "description": "<p>触手蟹猛烈地反刍出一团甜瓜大小的由消化酶神奇融合在一起的尖锐石块。石头和酸液会在30尺射程内撞击爆炸开，对@Template[burst|distance:20]范围内的生物造成@Damage[7d6[piercing]]伤害和@Damage[7d6[acid]]伤害（@Check[reflex|dc:33|basic]豁免）。</p>\n<p>触手蟹不能在[[/gmr 1d4 #rounds]]{1d4轮}内再次使用反刍胃石。</p>"
+                    "description": "<p>触手蟹猛烈地反刍出一团甜瓜大小的由消化酶神奇融合在一起的尖锐石块。石头和酸液会在30尺射程内撞击爆炸开，对@Template[burst|distance:20]范围内的生物造成@Damage[7d6[piercing],7d6[acid]|options:area-damage]伤害（@Check[reflex|dc:33|basic|options:area-effect]豁免）。</p>\n<p>触手蟹不能在[[/gmr 1d4 #Recharge Regurgitate Gastrolith]]{1d4轮}内再次使用反刍胃石。</p>"
                 },
                 "Stone Step": {
                     "name": "穿岩步 Stone Step",
@@ -9458,7 +9458,7 @@
                 },
                 "Shadow Scream": {
                     "name": "影界狂嚎 Shadow Scream",
-                    "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 邪刻魔张开嘴巴，释放出影界的哀号嚎叫和扭曲心灵的黑暗。这能在邪刻魔@Template[emanation|distance:30]范围内制造一团黑暗，并且周身被嚎叫声包围。拥有@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.qCCLZhnp2HhP3Ex6]{黑暗视觉 Darkvision}的生物也无法看穿这团黑暗。邪刻魔能维持影界狂嚎最多1分钟。当此能力启动时，范围中非链魔的生物，无论是进入范围还是在范围内开始回合，必须尝试@Check[will|dc:28|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响并且临时免疫24小时。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{耳聋 Deafened}1轮。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}和耳聋1轮。</p>\n<p><strong>大失败</strong> 该生物受到@Damage[20[mental]]伤害，并且陷入困惑和耳聋1轮。</p>"
+                    "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 邪刻魔张开嘴巴，释放出影界的哀号嚎叫和扭曲心灵的黑暗。这能在邪刻魔@Template[emanation|distance:30]范围内制造一团黑暗，并且周身被嚎叫声包围。拥有@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.qCCLZhnp2HhP3Ex6]{黑暗视觉 Darkvision}的生物也无法看穿这团黑暗。邪刻魔能维持影界狂嚎最多1分钟。当此能力启动时，范围中非链魔的生物，无论是进入范围还是在范围内开始回合，必须尝试@Check[will|dc:28|options:area-effect,damaging-effect,inflicts:confused,inflicts:deafened]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响并且临时免疫24小时。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]1轮。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]和耳聋1轮。</p>\n<p><strong>大失败</strong> 该生物受到@Damage[20[mental]|options:area-damage]伤害，并且陷入困惑和耳聋1轮。</p>"
                 },
                 "Regeneration 10 (Deactivated by Holy or Silver)": {
                     "name": "再生10（圣洁或银使其无效） Regeneration 10 (Deactivated by Holy or Silver)",
@@ -9664,7 +9664,7 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当冥晶怪使用颚咬对一个生物造成伤害时，冥晶怪获得5点临时生命值，并且目标生物必须通过一次@Check[fortitude|dc:25]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</p>\n<p>冥晶怪对目标生物造成更多伤害的话，如果目标生物豁免失败，则会让流失值提升1点，最多提升到流失 4。</p>"
+                    "description": "<p>当冥晶怪使用颚咬对一个生物造成伤害时，冥晶怪获得5点临时生命值，并且目标生物必须通过一次@Check[fortitude|dc:25|options:inflicts:drained]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。</p>\n<p>冥晶怪对目标生物造成更多伤害的话，如果目标生物豁免失败，则会让流失值提升1点，最多提升到流失 4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Entropic Touch": {
                     "name": "熵能触碰 Entropic Touch",
@@ -9808,7 +9808,7 @@
                 },
                 "Shadow Breath": {
                     "name": "喷吐阴影 Shadow Breath",
-                    "description": "<p>影龙兽喷出一个黑色液体构成的水球，并会爆炸变为阴冷的黑色阴影云雾。此次攻击的范围为40尺，形成半径5尺爆发区域的爆炸。在此区爆发域内的生物会承受@Damage[3d6[cold]]伤害（@Check[reflex|dc:18|basic]豁免）。爆炸的阴影还会熄灭普通的光源，比如火炬、提灯或更小的光源，同时会以+10的反制调整值尝试反制魔法光亮。</p>\n<p>影龙兽在[[/r 1d6]]轮内无法再次使用喷吐阴影。</p>"
+                    "description": "<p>影龙兽喷出一个黑色液体构成的水球，并会爆炸变为阴冷的黑色阴影云雾。此次攻击的范围为40尺，形成@Template[burst|distance:5]区域的爆炸。在此区爆发域内的生物会承受@Damage[3d6[cold]|options:area-damage]伤害（@Check[reflex|dc:18|basic|options:area-effect]豁免）。爆炸的阴影还会熄灭普通的光源，比如火炬、提灯或更小的光源，同时会以[[/r 1d20+10 #Counteract Light]]{+10}的反制调整值尝试反制魔法光亮。</p>\n<p>影龙兽在[[/gmr 1d6 #Recharge Shadow Breath]]轮内无法再次使用喷吐阴影。</p>"
                 },
                 "Speed Surge": {
                     "name": "极速爆发 Speed Surge",
@@ -9895,7 +9895,7 @@
                 },
                 "Shocking Burst": {
                     "name": "闪电爆发 Shocking Burst",
-                    "description": "<p>闪电蜥蜴蹲下，全身充满电光，然后释放电能，对@Template[emanation|distance:10]范围内的生物造成@Damage[3d8[electricity]]伤害（@Check[reflex|dc:18|basic]豁免）。</p>\n<p>闪电蜥蜴无法在1分钟之内再次使用此能力。</p>\n<p>最多能有四只闪电蜥蜴连携释放闪电爆发。在这种情况下，蜥蜴延迟电能的释放，直到有30尺内的其他闪电蜥蜴完成闪电爆发动作。连携之后的闪电爆发以每只闪电蜥蜴为圆心计算弥散范围。每有一只额外闪电蜥蜴加入连携，伤害就增加3d8，并且DC增加1（最大达到4只闪电蜥蜴，造成12d8伤害，DC 21）。</p>"
+                    "description": "<p>闪电蜥蜴蹲下，全身充满电光，然后释放电能，对@Template[emanation|distance:10]范围内的生物造成@Damage[3d8[electricity]|options:area-damage]伤害（@Check[reflex|dc:18|basic|options:area-effect]豁免）。</p>\n<p>闪电蜥蜴无法在1分钟之内再次使用此能力。</p>\n<p>最多能有四只闪电蜥蜴连携释放闪电爆发。在这种情况下，蜥蜴延迟电能的释放，直到有30尺内的其他闪电蜥蜴完成闪电爆发动作。连携之后的闪电爆发以每只闪电蜥蜴为圆心计算弥散范围。每有一只额外闪电蜥蜴加入连携，伤害就增加3d8，并且DC增加1（最大达到4只闪电蜥蜴，造成12d8伤害，DC 21）。</p>"
                 }
             },
             "prototypeToken": {
@@ -10566,7 +10566,7 @@
                 },
                 "Seed Spray": {
                     "name": "种子喷射 Seed Spray",
-                    "description": "<p>向日葵莱西对@Template[cone|distance:15]范围喷射密集的种子，对区域内的生物造成@Damage[2d6[bludgeoning]]伤害（@Check[reflex|dc:16|basic]豁免）。</p>\n<p>对@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}的生物，此伤害有+2状态加值。</p>\n<p>向日葵莱西在[[/gmr 1d4 #Recharge Seed Spray]]{1d4轮}内无法再次使用种子喷射。</p>"
+                    "description": "<p>向日葵莱西对@Template[cone|distance:15]范围喷射密集的种子，对区域内的生物造成@Damage[2d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:16|basic|options:area-effect]豁免）。</p>\n<p>对@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]的生物，此伤害有+2状态加值。</p>\n<p>向日葵莱西在[[/gmr 1d4 #Recharge Seed Spray]]{1d4轮}内无法再次使用种子喷射。</p>"
                 }
             },
             "prototypeToken": {
@@ -10896,7 +10896,7 @@
                 },
                 "Lightning Blast": {
                     "name": "闪电爆发 Lightning Blast",
-                    "description": "<p>雷鸟张开双翼，以雷鸣般的闪电爆炸攻击敌人。@Template[emanation|distance:30]范围内的所有敌人受到@Damage[6d6[electricity]]伤害和@Damage[6d6[sonic]]伤害（@Check[reflex|dc:30|basic]豁免）。雷鸟在[[/gmr 1d4 #Recharge Lightning Blast]]{1d4轮}内无法再次使用闪电爆发。</p>"
+                    "description": "<p>雷鸟张开双翼，以雷鸣般的闪电爆炸攻击敌人。@Template[emanation|distance:30]范围内的所有敌人受到@Damage[6d6[electricity],6d6[sonic]|options:area-damage]伤害（@Check[reflex|dc:30|basic|options:area-effect]豁免）。雷鸟在[[/gmr 1d4 #Recharge Lightning Blast]]{1d4轮}内无法再次使用闪电爆发。</p>"
                 },
                 "Stormflight": {
                     "name": "风暴飞行 Stormflight",
@@ -11175,7 +11175,7 @@
             "items": {
                 "Necrotic Decay": {
                     "name": "暗蚀溃烂 Necrotic Decay",
-                    "description": "<p>透肌魔人死后，它透明的肉体迅速腐烂，升华成恶臭的气体，充斥于尸体@Template[emanation|distance:5]范围内。</p>\n<p>这种气体对该区域内的生物造成@Damage[5d6[void]]伤害，因为他们的肉也开始凝固并腐烂（@Check[fortitude|dc:21|basic]豁免）。</p>"
+                    "description": "<p>透肌魔人死后，它透明的肉体迅速腐烂，升华成恶臭的气体，充斥于尸体@Template[emanation|distance:5]范围内。</p>\n<p>这种气体对该区域内的生物造成@Damage[5d6[void]|options:area-damage] 伤害，因为他们的肉也开始凝固并腐烂（@Check[fortitude|dc:21|basic|options:area-effect]豁免）。</p>"
                 },
                 "Stoke the Fervent": {
                     "name": "激发狂热 Stoke the Fervent",
@@ -11205,7 +11205,7 @@
             "items": {
                 "Necrotic Decay": {
                     "name": "暗蚀溃烂 Necrotic Decay",
-                    "description": "<p>透肌魔人死后，它透明的肉体迅速腐烂，升华成恶臭的气体，充斥于尸体@Template[emanation|distance:5]范围内。</p>\n<p>这种气体对该区域内的生物造成@Damage[3d6[void]]伤害，因为它们的肉也开始凝固并腐烂（@Check[fortitude|dc:17|basic]豁免）。</p>"
+                    "description": "<p>透肌魔人死后，它透明的肉体迅速腐烂，升华成恶臭的气体，充斥于尸体@Template[emanation|distance:5]范围内。</p>\n<p>这种气体对该区域内的生物造成@Damage[3d6[void]|options:area-damage]伤害，因为它们的肉也开始凝固并腐烂（@Check[fortitude|dc:17|basic|options:area-effect]豁免）。</p>"
                 },
                 "Ravenous Attack": {
                     "name": "贪饿打击 Ravenous Attack",
