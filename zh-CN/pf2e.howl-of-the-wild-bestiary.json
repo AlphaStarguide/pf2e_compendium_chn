@@ -68,7 +68,7 @@
                 },
                 "Spill": {
                     "name": "壶液泼洒 Spill",
-                    "description": "<p><strong>需求</strong> 飞壶兽已经围成壶状（Kettle Up）</p>\n<p><strong>触发</strong> 飞壶兽承受物理伤害或者被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]</p>\n<hr />\n<p><strong>效果</strong> 飞壶兽将皮瓣盛放的全部内容物洒出来，释放其消化液来形成酸性蒸汽云，这会对@Template[emanation|distance:20]内的所有非飞壶兽生物造成@Damage[2d8[acid]]伤害（@Check[fortitude|dc:18|basic]豁免）。若飞壶兽的壶已沸腾，伤害会增加至@Damage[4d8[acid]]。</p>"
+                    "description": "<p><strong>需求</strong> 飞壶兽已经围成壶状（Kettle Up）</p>\n<p><strong>触发</strong> 飞壶兽承受物理伤害或者被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]</p><hr /><p><strong>效果</strong> 飞壶兽将皮瓣盛放的全部内容物洒出来，释放其消化液来形成酸性蒸汽云，这会对@Template[emanation|distance:20]内的所有非飞壶兽生物造成@Damage[2d8[acid]|options:area-damage]伤害（@Check[fortitude|dc:18|basic|options:area-effect]豁免）。若飞壶兽的壶已沸腾，伤害会增加至4d8。</p>"
                 }
             },
             "prototypeToken": {
@@ -230,7 +230,7 @@
                 },
                 "Sweeping Tail": {
                     "name": "巨尾横扫 Sweeping Tail",
-                    "description": "<p>泰坦巨龙将尾巴在@Template[cone|distance:30]范围内扫动。区域内的生物受到@Damage[8d10[bludgeoning]]伤害（@Check[reflex|dc:38|basic]豁免）。泰坦巨龙扫尾的动量会让它陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}直到其下回合开始。</p>"
+                    "description": "<p>泰坦巨龙将尾巴在@Template[cone|distance:30]范围内扫动。区域内的生物受到@Damage[8d10[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:38|basic|options:area-effect]豁免）。泰坦巨龙扫尾的动量会让它陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]直到其下回合开始。</p>"
                 }
             },
             "prototypeToken": {
@@ -1007,7 +1007,7 @@
             "items": {
                 "Static Field": {
                     "name": "静电场 Static Field",
-                    "description": "<p>风暴蛇收集一片区域内的所有静电，然后向着@Template[emanation|distance:30]区域释放，这会对所有非植物生物造成@Damage[3d12[electricity]]伤害（@Check[reflex|dc:19]豁免）并赋予植物生物5点临时生命值，持续1分钟。该区域的植被的成长速度会明显比同属植物的平均生长速度快得多；在森林、田野或者其他有花的地方，这会立即将此区域变为非魔法困难地形。风暴蛇在[[/gmr 1d4 #Recharge Static Field]]{1d4轮}内无法再次使用静电场</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.MGlENdqYCAwBkyXt]</p>"
+                    "description": "<p>风暴蛇收集一片区域内的所有静电，然后向着@Template[emanation|distance:30]区域释放，这会对所有非植物生物造成@Damage[3d12[electricity]|options:area-damage]伤害（@Check[reflex|dc:19|options:area-effect,damaging-effect]豁免）并赋予植物生物5点临时生命值，持续1分钟。该区域的植被的成长速度会明显比同属植物的平均生长速度快得多；在森林、田野或者其他有花的地方，这会立即将此区域变为非魔法困难地形。风暴蛇在[[/gmr 1d4 #Recharge Static Field]]{1d4轮}内无法再次使用静电场</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.MGlENdqYCAwBkyXt]</p>"
                 },
                 "Static Shock": {
                     "name": "静电冲击 Static Shock",
@@ -1253,7 +1253,7 @@
                 },
                 "Stone-Hewing Spit": {
                     "name": "破石吐息 Stone-Hewing Spit",
-                    "description": "<p>皇冠蛇怪以巨大的力量喷出其毒液，对@Template[line|distance:240]范围内的生物造成@Damage[5d10[acid],5d8[piercing]]伤害（@Check[reflex|dc:32|basic]豁免），并使每个受伤的生物暴露于皇冠蛇怪毒液之中。该直线攻击能穿透硬度小于20的障碍物，无视其提供的任何掩蔽带来的好处。皇冠蛇怪在[[/gmr 1d4 #Recharge Stone-Hewing Spit]]{1d4轮}内不能再次使用破石吐息。</p>"
+                    "description": "<p>皇冠蛇怪以巨大的力量喷出其毒液，对@Template[line|distance:240]范围内的生物造成@Damage[5d10[acid],5d8[piercing]|options:area-damage]伤害（@Check[reflex|dc:32|basic|options:area-effect]豁免），并使每个受伤的生物暴露于皇冠蛇怪毒液之中。该直线攻击能穿透硬度小于20的障碍物，无视其提供的任何掩蔽带来的好处。皇冠蛇怪在[[/gmr 1d4 #Recharge Stone-Hewing Spit]]{1d4轮}内不能再次使用破石吐息。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -1438,7 +1438,7 @@
                 },
                 "Tempest Downdrafts": {
                     "name": "降下暴风 Tempest Downdrafts",
-                    "description": "<p><strong>触发</strong> 守望者飞行</p>\n<hr />\n<p><strong>效果</strong> 守望者扇动的翅膀会产生出强大的阵风，将较小的生物吹离航道。以守望者为中心，@Template[emanation|distance:60]范围，会充满闪电狂风，直到守望者下回合开始。生物必须成功通过@Check[reflex|dc:42]豁免才能在风中使用任意移动动作；飞行生物使用比掷骰结果差一级的成功度。大失败的生物将被吹离守望者30尺，击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}，并受到@Damage[4d6[electricity]]伤害。</p>"
+                    "description": "<p><strong>触发</strong> 守望者飞行</p>\n<hr />\n<p><strong>效果</strong> 守望者扇动的翅膀会产生出强大的阵风，将较小的生物吹离航道。以守望者为中心，@Template[emanation|distance:60]范围，会充满闪电狂风，直到守望者下回合开始。生物必须成功通过@Check[reflex|dc:42|options:area-effect,damaging-effect,inflicts:prone]豁免才能在风中使用任意移动动作；飞行生物使用比掷骰结果差一级的成功度。大失败的生物将被吹离守望者30尺，击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]，并受到@Damage[4d6[electricity]|options:area-damage]伤害。</p>"
                 },
                 "Crystal Exhalation": {
                     "name": "冰晶呼吸 Crystal Exhalation",
