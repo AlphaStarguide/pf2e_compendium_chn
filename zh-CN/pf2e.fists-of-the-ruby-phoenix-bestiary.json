@@ -296,7 +296,7 @@
                     "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The night parade dances with wild abandon, unintentionally striking nearby creatures. It deals damage to each adjacent creature (@Check[reflex|dc:41|basic] save), and any creature that fails its save is pushed 10 feet in any direction as the night parade bounces it overhead. The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d10+7)[bludgeoning]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(4d10+14)[bludgeoning]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(6d10+14)[bludgeoning]] damage</p>"
                 },
                 "Seiya! Soiya!": {
-                    "description": "<p>The night parade shouts a series of energetic call-and-responses, dealing @Damage[3d10[sonic],4d6[mental]]{3d10 sonic damage and 4d6 mental damage} to all creatures in a @Template[burst|distance:10] within 20 feet (@Check[will|dc:41|basic|options:area-damage] save). If the troop is reduced to 8 or fewer squares, this area decreases to a @Template[burst|distance:5].</p>",
+                    "description": "<p>The night parade shouts a series of energetic call-and-responses, dealing @Damage[3d10[sonic],4d6[mental]|options:area-damage]{3d10 sonic damage and 4d6 mental damage} to all creatures in a @Template[burst|distance:10] within 20 feet (@Check[will|dc:41|basic|options:area-effect] save). If the troop is reduced to 8 or fewer squares, this area decreases to a @Template[burst|distance:5].</p>",
                     "name": "Seiya! Soiya!"
                 },
                 "Troop Defenses": {
@@ -408,7 +408,7 @@
                     "name": "Tempest Tether"
                 },
                 "Thunder Drums": {
-                    "description": "<p>The peal of a kaminari's drums bring thunder and lightning. The kaminari summons four 100-foot-tall columns of lightning to strike in @Template[burst|distance:5]s within 60 feet. These columns can't overlap. Creatures in the burst take @Damage[8d12[electricity]] damage and must attempt a @Check[reflex|dc:40|traits:damaging-effect] save. The kaminari can't use Thunder Drums again for [[/gmr 1d4 #Recharge Thunder Drums]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage.</p>\n<p><strong>Failure</strong> The target takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<p><strong>Critical Failure</strong> The target takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2}.</p>",
+                    "description": "<p>The peal of a kaminari's drums bring thunder and lightning. The kaminari summons four 100-foot-tall columns of lightning to strike in @Template[burst|distance:5]s within 60 feet. These columns can't overlap. Creatures in the burst take @Damage[8d12[electricity]|options:area-damage] damage and must attempt a @Check[reflex|dc:40|options:area-effect,damaging-effect,inflicts:stunned] save. The kaminari can't use Thunder Drums again for [[/gmr 1d4 #Recharge Thunder Drums]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage.</p>\n<p><strong>Failure</strong> The target takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<p><strong>Critical Failure</strong> The target takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2}.</p>",
                     "name": "Thunder Drums"
                 }
             },
@@ -819,7 +819,7 @@
                 },
                 "Radiant Blast": {
                     "name": "Radiant Blast",
-                    "description": "<p>The sanzuwu opens their mouth to produce a bead of burning energy, hurling it a point within 200 feet. The bead detonates, dealing @Damage[7d8[fire],[4d10[sonic]|options:area-damage]{7d8 fire damage and 4d10 sonic damage} to all creatures in a @Template[burst|distance:30] (@Check[reflex|dc:33|basic|options:area-effect,inflicts:blinded] save). Creatures that critically fail become @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round. The sanzuwu can't use Radiant Blast again for [[/gmr 1d4 #Recharge Radiant Blast]]{1d4 rounds}.</p>"
+                    "description": "<p>The sanzuwu opens their mouth to produce a bead of burning energy, hurling it a point within 200 feet. The bead detonates, dealing @Damage[7d8[fire],4d10[sonic]|options:area-damage]{7d8 fire damage and 4d10 sonic damage} to all creatures in a @Template[burst|distance:30] (@Check[reflex|dc:33|basic|options:area-effect,inflicts:blinded] save). Creatures that critically fail become @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round. The sanzuwu can't use Radiant Blast again for [[/gmr 1d4 #Recharge Radiant Blast]]{1d4 rounds}.</p>"
                 },
                 "Scorch Earth": {
                     "name": "Scorch Earth",
@@ -866,7 +866,7 @@
                     "description": "<p>Hakusa absorbs vitality with each blow. She gains fast healing 10 for 1 round whenever she successfully Strikes with a melee unarmed attack.</p>"
                 },
                 "Swallows in Flight": {
-                    "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> Hakusa strikes a series of pressure points on her target's body that redirects its ki to the heart, before following up with a palm strike to the sternum. She makes a fingers Strike and a palm Strike, dealing damage as normal. If both hit, the target takes @Damage[8d10[void]] damage as its life energy escapes from its body in a shower of bird-shaped sparks. The target attempts a @Check[fortitude|dc:43] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half the void damage.</p>\n<p><strong>Failure</strong> The target takes full damage, its life energy exploding violently from its back in a @Template[cone|distance:30] originating from the target. All of Hakusa's other enemies in the cone also take the void damage (@Check[fortitude|dc:43|basic] save).</p>\n<p><strong>Critical Failure</strong> As failure, but the target takes double void damage.</p>",
+                    "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> Hakusa strikes a series of pressure points on her target's body that redirects its ki to the heart, before following up with a palm strike to the sternum. She makes a fingers Strike and a palm Strike, dealing damage as normal. If both hit, the target takes @Damage[8d10[void]] damage as its life energy escapes from its body in a shower of bird-shaped sparks. The target attempts a @Check[fortitude|dc:43] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half the void damage.</p>\n<p><strong>Failure</strong> The target takes full damage, its life energy exploding violently from its back in a @Template[cone|distance:30] originating from the target. All of Hakusa's other enemies in the cone also take the void damage (@Check[fortitude|dc:43|basic|options:area-effect] save).</p>\n<p><strong>Critical Failure</strong> As failure, but the target takes double void damage.</p>",
                     "name": "Swallows in Flight"
                 },
                 "+3 status to all saves vs. necromancy": {
@@ -1577,7 +1577,7 @@
                 },
                 "Spray Water": {
                     "name": "喷吐激流 Spray Water",
-                    "description": "<p><strong>需求</strong> 夸巴洛卡处于满溢状态。</p>\n<hr />\n<p><strong>效果</strong> 夸巴洛卡喷涂出@Template[line|distance:60]水流冲击。所有区域内生物受到@Damage[6d8[bludgeoning]]伤害 (@Check[reflex|dc:35|basic]检定)。一旦失败，生物被击@UUID[Compendium.pf2e.conditionitems.j91X7x0XSomq8d60]{倒地 Prone}并被推出5尺距离（如果大失败，则推出10尺）。</p>"
+                    "description": "<p><strong>需求</strong> 夸巴洛卡处于满溢状态。</p>\n<hr />\n<p><strong>效果</strong> 夸巴洛卡喷涂出@Template[line|distance:60]水流冲击。所有区域内生物受到@Damage[6d8[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:35|basic|options:area-effect,inflicts:prone,inflicts:forced-movement]检定）。一旦失败，生物被击@UUID[Compendium.pf2e.conditionitems.j91X7x0XSomq8d60]并被推出5尺距离（如果大失败，则推出10尺）。</p>"
                 },
                 "Greater Constrict": {
                     "name": "Greater Constrict",
@@ -1994,7 +1994,7 @@
                 },
                 "Telekinetic Assault": {
                     "name": "念力袭击 Telekinetic Assault",
-                    "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]{30尺弥漫}区域内迸发飞溅。此区域内的生物会受到@Damage[5d6[bludgeoning]]伤害 + 每2个等级1d6点钝击伤害，此能力受@Check[reflex|dc:25|basic]豁免影响。</p>"
+                    "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]{30尺弥漫}区域内迸发飞溅。此区域内的生物会受到@Damage[5d6[bludgeoning]|options:area-damage]伤害，此能力受@Check[reflex|dc:25|basic|options:area-effect]豁免影响。</p>"
                 },
                 "Void Healing": {
                     "name": "Void Healing",
@@ -2330,7 +2330,7 @@
                 },
                 "Staggering Sail": {
                     "name": "巨浪翻腾 Staggering Sail",
-                    "description": "<p><strong>需求</strong> 死墓棘龙正在水面游泳</p>\n<hr />\n<p><strong>效果</strong> 伴随海浪一阵猛冲，死墓棘龙用肢体猛击水面，形成一波巨浪，对@Template[cone|distance:30]{30尺锥形}范围内所有生物造成@Damage[8d6[bludgeoning]]伤害。每个范围内的生物必须进行@Check[reflex|dc:36|traits:damaging-effect]豁免检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到伤害减半。</p>\n<p><strong>失败</strong> 生物受到全额伤害且直到下回合结束前获得@UUID[Compendium.pf2e.conditionitems.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害且获得@UUID[Compendium.pf2e.conditionitems.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>"
+                    "description": "<p><strong>需求</strong> 死墓棘龙正在水面游泳</p>\n<hr />\n<p><strong>效果</strong> 伴随海浪一阵猛冲，死墓棘龙用肢体猛击水面，形成一波巨浪，对@Template[cone|distance:30]{30尺锥形}范围内所有生物造成@Damage[8d6[bludgeoning]|options:area-damage]伤害。每个范围内的生物必须进行@Check[reflex|dc:36|options:area-effect,damaging-effect,inflicts:slowed,inflicts:stunned]豁免检定。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到伤害减半。</p>\n<p><strong>失败</strong> 生物受到全额伤害且直到下回合结束前获得@UUID[Compendium.pf2e.conditionitems.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害且获得@UUID[Compendium.pf2e.conditionitems.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -4233,7 +4233,7 @@
                 },
                 "Tail Swipe": {
                     "name": "甩尾 Tail Swipe",
-                    "description": "<p>暴龙甩尾横扫@Template[cone|distance:15]{15尺锥形}范围，对范围内所有生物造成@Damage[(4d8+12)[bludgeoning]]伤害。范围内生物必须进行@Check[reflex|dc:34|traits:damaging-effect]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全额伤害并且@UUID[Compendium.pf2e.conditionitems.j91X7x0XSomq8d60]{倒地 Prone}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，被击退10 尺，然后倒地。</p>"
+                    "description": "<p>暴龙甩尾横扫@Template[cone|distance:15]范围，对范围内所有生物造成@Damage[(4d8+12)[bludgeoning]|options:area-damage]伤害。范围内生物必须进行@Check[reflex|dc:34|options:area-effect,damaging-effect,inflicts:prone,inflicts:forced-movement]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全额伤害并且@UUID[Compendium.pf2e.conditionitems.j91X7x0XSomq8d60]。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，被击退10 尺，然后倒地。</p>"
                 },
                 "Trample": {
                     "name": "践踏 Trample",
