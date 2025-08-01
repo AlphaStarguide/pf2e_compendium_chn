@@ -1423,7 +1423,7 @@
                 },
                 "Tusk Sweep": {
                     "name": "Tusk Sweep",
-                    "description": "<p>The anancus sweeps its long tusks back and forth, dealing @Damage[4d6[bludgeoning]] damage to all creatures in a @Template[cone|distance:15], who must make a @Check[reflex|dc:27|basic] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage.</p>\n<p><strong>Failure</strong> The target takes full damage and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<p><strong>Critical Failure</strong> The target takes double damage, is knocked prone, and is pushed 5 feet away from the anancus.</p>"
+                    "description": "<p>The anancus sweeps its long tusks back and forth, dealing @Damage[4d6[bludgeoning]|options:area-damage] damage to all creatures in a @Template[cone|distance:15], who must make a @Check[reflex|dc:27|basic|options:area-effect,inflicts:forced-movement,inflicts:prone] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage.</p>\n<p><strong>Failure</strong> The target takes full damage and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<p><strong>Critical Failure</strong> The target takes double damage, is knocked prone, and is pushed 5 feet away from the anancus.</p>"
                 }
             }
         },
@@ -1644,7 +1644,7 @@
                 },
                 "Trumpet Blast": {
                     "name": "Trumpet Blast",
-                    "description": "<p>The trumpet archon blows mightily on their horn, creating a tone of such beauty and grandeur those who hear it are paralyzed in awe. Non-archons within 100 feet must attempt a @Check[fortitude|dc:34] save.</p>\n<p>They are temporarily immune for 10 minutes.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} and off-guard as long as it's stunned.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round.</p>"
+                    "description": "<p>The trumpet archon blows mightily on their horn, creating a tone of such beauty and grandeur those who hear it are paralyzed in awe. Non-archons within @Template[emanation|distance:100]{100 feet} must attempt a @Check[fortitude|dc:34|options:area-effect,inflicts:off-guard,inflicts:paralyzed,inflicts:stunned] save.</p>\n<p>They are temporarily immune for 10 minutes.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} and off-guard as long as it's stunned.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round.</p>"
                 }
             }
         },
@@ -2324,7 +2324,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Calathgar",
-            "publicNotes": "<p>Calathgars are mysterious predatory plants that grow in the depths of the densest frozen forests, realms where icicles rarely melt from snow-cloaked trees. A calathgar's blue flowers grow from 3 to 5 feet across (with specimens as wide as 10 feet reported), while the plant itself stands just under 4 feet in height and weighs up to 50 pounds when heavy with seeds.</p>\n<p>Calathgars' psyches are alien to most sapient creatures. They have little interest in emotion, culture, or ambition, yet they have nearly flawless memories and can share experiences with other calathgars by scent (imprecise) as easily as humanoids can pass on information by speech. While calathgars themselves can't speak, they can typically be reasoned with-though like most protective parents, an incensed calathgar defending its young is rarely in a mood to listen.</p>",
+            "publicNotes": "<p>Calathgars are mysterious predatory plants that grow in the depths of the densest frozen forests, realms where icicles rarely melt from snow-cloaked trees. A calathgar's blue flowers grow from 3 to 5 feet across (with specimens as wide as 10 feet reported), while the plant itself stands just under 4 feet in height and weighs up to 50 pounds when heavy with seeds.</p>\n<p>Calathgars' psyches are alien to most sapient creatures. They have little interest in emotion, culture, or ambition, yet they have nearly flawless memories and can share experiences with other calathgars by scent (perceptible to other creatures as a vinegary odor that may reveal their presence) as easily as humanoids can pass on information by speech. While calathgars themselves can't speak, they can typically be reasoned with-though like most protective parents, an incensed calathgar defending its young is rarely in a mood to listen.</p>",
             "items": {
                 "Cold Healing": {
                     "name": "Cold Healing",
@@ -2786,7 +2786,7 @@
                 },
                 "Splintering Death": {
                     "name": "Splintering Death",
-                    "description": "<p>When the sard dies, its body explodes in a @Template[emanation|distance:30]. All creatures in the area take @Damage[10d6[electricity]] damage and @Damage[10d6[piercing]] damage (@Check[reflex|dc:43|basic] save). Any creature that takes piercing damage is also exposed to sard venom.</p>"
+                    "description": "<p>When the sard dies, its body explodes in a @Template[emanation|distance:30]. All creatures in the area take @Damage[10d6[electricity],10d6[piercing]|options:area-damage]{10d6 electricity damage and 10d6 piercing damage} (@Check[reflex|dc:43|basic|options:area-effect] save). Any creature that takes piercing damage is also exposed to sard venom.</p>"
                 },
                 "Lightning-Struck Curse": {
                     "name": "Lightning-Struck Curse",
@@ -4084,7 +4084,7 @@
                 },
                 "Spew Mud": {
                     "name": "Spew Mud",
-                    "description": "<p>The mudwretch spews a @Template[line|distance:20] of pressurized mud that deals @Damage[2d10[bludgeoning]] damage (@Check[reflex|dc:18|basic] save). On a critical failure, a creature also takes a -10-foot status penalty to its Speeds for 1 round.</p>\n<p>The mudwretch can't Spew Mud again for [[/gmr 1d4 #Recharge Spew Mud]]{1d4 rounds}.</p>"
+                    "description": "<p>The mudwretch spews a @Template[line|distance:20] of pressurized mud that deals @Damage[2d10[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:18|basic|options:area-effect] save). On a critical failure, a creature also takes a -10-foot status penalty to its Speeds for 1 round.</p>\n<p>The mudwretch can't Spew Mud again for [[/gmr 1d4 #Recharge Spew Mud]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -5095,7 +5095,7 @@
                 },
                 "Tangling Chains": {
                     "name": "Tangling Chains",
-                    "description": "<p>The thrasfyr thrashes its chains in all directions. Each creature in a @Template[emanation|distance:15] takes @Damage[18d6[bludgeoning]] damage (@Check[reflex|dc:38|basic] save); creatures that fail are @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until the start of the thrasfyr's next turn.</p>\n<p>The thrasfyr can't use Tangling Chains or make chain Strikes for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "description": "<p>The thrasfyr thrashes its chains in all directions. Each creature in a @Template[emanation|distance:15] takes @Damage[18d6[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:38|basic|options:area-effect,inflicts:immobilized] save); creatures that fail are @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until the start of the thrasfyr's next turn.</p>\n<p>The thrasfyr can't use Tangling Chains or make chain Strikes for [[/gmr 1d4 #Recharge Tangling Chains]]{1d4 rounds}.</p>"
                 },
                 "Whirling Frenzy": {
                     "name": "Whirling Frenzy",
@@ -5389,7 +5389,7 @@
                 },
                 "Thunderbolt": {
                     "name": "Thunderbolt",
-                    "description": "<p>The living thunderclap emits a bolt of lightning that crashes with deafening thunder. The living thunderclap makes a lightning bolt Strike that deals @Damage[1d12[electricity]] damage. If it hits, the target and any creatures within a @Template[emanation|distance:15] around the target take @Damage[2d6[sonic]] damage and must attempt a @Check[fortitude|dc:18|basic] save.</p>\n<p>Any creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "description": "<p>The living thunderclap emits a bolt of lightning that crashes with deafening thunder. The living thunderclap makes a lightning bolt Strike that deals @Damage[1d12[electricity]] damage. If it hits, the target and any creatures within a @Template[emanation|distance:15] around the target take @Damage[2d6[sonic]|options:area-damage] damage and must attempt a @Check[fortitude|dc:18|basic|options:area-effect,inflicts:deafened] save.</p>\n<p>Any creature that fails its save is also @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
                 },
                 "Push": {
                     "name": "Push",
@@ -6854,7 +6854,7 @@
                 },
                 "Staggering Sail": {
                     "name": "Staggering Sail",
-                    "description": "<p><strong>Requirements</strong> The spinosaurus is swimming on the surface of water</p>\n<hr />\n<p><strong>Effect</strong> With a powerful lunge to the side, the spinosaurus uses its sail to slap the surface of the water, creating a crushing wave of water that deals @Damage[6d6[bludgeoning]] damage in a 30 foot cone. Each creature in the water in the area must attempt a @Check[reflex|dc:30|traits:damaging-effect] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3}.</p>"
+                    "description": "<p><strong>Requirements</strong> The spinosaurus is swimming on the surface of water</p>\n<hr />\n<p><strong>Effect</strong> With a powerful lunge to the side, the spinosaurus uses its sail to slap the surface of the water, creating a crushing wave of water that deals @Damage[6d6[bludgeoning]|options:area-damage] damage in a @Template[cone|distance:30]. Each creature in the water in the area must attempt a @Check[reflex|dc:30|options:area-effect,damaging-effect,inflicts:slowed,inflicts:stunned] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3}.</p>"
                 },
                 "Swallow Whole": {
                     "name": "Swallow Whole",

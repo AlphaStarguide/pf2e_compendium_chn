@@ -73,7 +73,7 @@
                 },
                 "Spill": {
                     "name": "Spill",
-                    "description": "<p><strong>Requirements</strong> The flynkett is Kettled Up</p>\n<p><strong>Trigger</strong> The flynkett takes physical damage or is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p>\n<hr />\n<p><strong>Effect</strong> The flynkett spills the contents of its full skin flaps, releasing its digestive juices in a cloud of acidic vapor that deals @Damage[2d8[acid]] damage to all non-flynkett creatures within @Template[emanation|distance:20]{20 feet} (@Check[fortitude|dc:18|basic] save). If the flynkett was boiling, the damage is increased to @Damage[4d8[acid]].</p>"
+                    "description": "<p><strong>Requirements</strong> The flynkett is Kettled Up</p>\n<p><strong>Trigger</strong> The flynkett takes physical damage or is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p><hr /><p><strong>Effect</strong> The flynkett spills the contents of its full skin flaps, releasing its digestive juices in a cloud of acidic vapor that deals @Damage[2d8[acid]|options:area-damage] damage to all non-flynkett creatures within @Template[emanation|distance:20]{20 feet} (@Check[fortitude|dc:18|basic|options:area-effect] save). If the flynkett was boiling, the damage is increased to 4d8.</p>"
                 }
             }
         },
@@ -259,7 +259,7 @@
                 },
                 "Sweeping Tail": {
                     "name": "Sweeping Tail",
-                    "description": "<p>The titanosaur lashes its tail in a @Template[cone|distance:30]. Creatures in the area take @Damage[8d10[bludgeoning]] damage (@Check[reflex|dc:38|basic] save). The momentum of the titanosaur's swing then makes it @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the beginning of its next turn.</p>"
+                    "description": "<p>The titanosaur lashes its tail in a @Template[cone|distance:30]. Creatures in the area take @Damage[8d10[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:38|basic|options:area-effect] save). The momentum of the titanosaur's swing then makes it @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the beginning of its next turn.</p>"
                 },
                 "Trample": {
                     "name": "Trample",
@@ -1210,7 +1210,7 @@
                 },
                 "Static Field": {
                     "name": "Static Field",
-                    "description": "<p>The storm snake gathers all static electricity in the area before releasing it in a @Template[emanation|distance:30] that deals @Damage[3d12[electricity]] damage to all non-plant creatures (@Check[reflex|dc:19] save) and grants plant creatures 5 temporary Hit Points that last for 1 minute. Plant life in the area begins to grow significantly faster than the average for plants of their genus; in forests, fields, or otherwise floral locations, this immediately transforms the area into non-magical difficult terrain. The storm snake can't use Static field again for [[/gmr 1d4 #Recharge Static Field]]{1d4 rounds}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.MGlENdqYCAwBkyXt]{Effect: Static Field}</p>"
+                    "description": "<p>The storm snake gathers all static electricity in the area before releasing it in a @Template[emanation|distance:30] that deals @Damage[3d12[electricity]|options:area-damage] damage to all non-plant creatures (@Check[reflex|dc:19|options:area-effect,damaging-effect] save) and grants plant creatures 5 temporary Hit Points that last for 1 minute. Plant life in the area begins to grow significantly faster than the average for plants of their genus; in forests, fields, or otherwise floral locations, this immediately transforms the area into non-magical difficult terrain. The storm snake can't use Static field again for [[/gmr 1d4 #Recharge Static Field]]{1d4 rounds}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.MGlENdqYCAwBkyXt]{Effect: Static Field}</p>"
                 }
             }
         },
@@ -1444,7 +1444,7 @@
                 },
                 "Stone-Hewing Spit": {
                     "name": "Stone-Hewing Spit",
-                    "description": "<p>The royal basilisk spits its poison with immense force, dealing @Damage[5d10[acid],5d8[piercing]]{5d10 acid and 5d8 piercing} damage (@Check[reflex|dc:32|basic] save) to creatures in a @Template[line|distance:240] and exposing each creature that took damage to royal basilisk venom. The line penetrates barriers with Hardness of less than 20, ignoring any bonuses they'd provide from cover. The royal basilisk can't use Stone-Hewing Spit again for [[/gmr 1d4 #Recharge Stone-Hewing Spit]]{1d4 rounds}.</p>"
+                    "description": "<p>The royal basilisk spits its poison with immense force, dealing @Damage[5d10[acid],5d8[piercing]|options:area-damage]{5d10 acid and 5d8 piercing} damage (@Check[reflex|dc:32|basic|options:area-effect] save) to creatures in a @Template[line|distance:240] and exposing each creature that took damage to royal basilisk venom. The line penetrates barriers with Hardness of less than 20, ignoring any bonuses they'd provide from cover. The royal basilisk can't use Stone-Hewing Spit again for [[/gmr 1d4 #Recharge Stone-Hewing Spit]]{1d4 rounds}.</p>"
                 },
                 "Swallow Whole": {
                     "name": "Swallow Whole",
@@ -1648,7 +1648,7 @@
                 },
                 "Tempest Downdrafts": {
                     "name": "Tempest Downdrafts",
-                    "description": "<p><strong>Trigger</strong> The warden Flies</p>\n<hr />\n<p><strong>Effect</strong> s The warden's flapping wings generate powerful gusts that blow smaller creatures off course. A @Template[emanation|distance:60], centered on the warden, fills with lightning-pierced winds until the beginning of the warden's next turn. Creatures must succeed at a @Check[reflex|dc:42] save to take any move action within the winds; flying creatures use the outcome one degree of success worse than what they roll. Creatures who critically fail are blown 30 feet away from the warden, knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, and take @Damage[4d6[electricity]] damage.</p>"
+                    "description": "<p><strong>Trigger</strong> The warden Flies</p>\n<hr />\n<p><strong>Effects</strong> The warden's flapping wings generate powerful gusts that blow smaller creatures off course. A @Template[emanation|distance:60], centered on the warden, fills with lightning-pierced winds until the beginning of the warden's next turn. Creatures must succeed at a @Check[reflex|dc:42|options:area-effect,damaging-effect,inflicts:prone] save to take any move action within the winds; flying creatures use the outcome one degree of success worse than what they roll. Creatures who critically fail are blown 30 feet away from the warden, knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, and take @Damage[4d6[electricity]|options:area-damage] damage.</p>"
                 }
             }
         },

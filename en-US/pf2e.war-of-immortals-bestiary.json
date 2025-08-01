@@ -46,7 +46,7 @@
                 },
                 "Mythic Skill": {
                     "name": "Mythic Skill",
-                    "description": "<p><strong>Cost</strong> 1 Mythic Point</p><hr /><p><strong>Effect</strong> The Mythic Gogiteth attempts its next Athletics or Stealth skill check with a +4 bonus and is considered to have mythic proficiency for that check. This applies to one skill when this ability is gained and a second skill if the creature is 12th level or higher.</p>"
+                    "description": "<p><strong>Cost</strong> 1 Mythic Point</p><hr /><p><strong>Effect</strong> The Mythic Gogiteth attempts its next Athletics or Stealth skill check with a +4 bonus and is considered to have mythic proficiency for that check.</p>"
                 },
                 "Skittering Assault": {
                     "name": "Skittering Assault",
@@ -159,7 +159,7 @@
                 },
                 "Undying Myth": {
                     "name": "Undying Myth",
-                    "description": "<p><strong>Cost</strong> all the creature's Mythic Points</p>\n<p><strong>Trigger</strong> The creature would die and has at least 1 Mythic Point</p><hr /><p><strong>Effect</strong> When the Oliphaunt of Jandelay would die, as long as it has at least 1 Mythic Point, it immediately expends all remaining Mythic Points it has, remains standing and conscious, and recovers 50% of its maximum Hit Points.</p>"
+                    "description": "<p><strong>Cost</strong> all the creature's Mythic Points</p>\n<p><strong>Trigger</strong> The creature would die and has at least 1 Mythic Point</p><hr /><p><strong>Effect</strong> When the Oliphaunt of Jandelay would die, as long as it has at least 1 Mythic Point, it immediately expends all remaining Mythic Points it has, remains standing and conscious, and recovers @Damage[(floor(@actor.system.attributes.hp.max/2))[healing]]{50% of its maximum Hit Points}.</p>"
                 },
                 "Brutal Drag": {
                     "name": "Brutal Drag",
@@ -183,7 +183,7 @@
                 },
                 "Trumpeting Blast": {
                     "name": "Trumpeting Blast",
-                    "description": "<p>The Oliphaunt of Jandelay emits a cacophonous blast from its trunk in a @Template[type:cone|distance:120]. Each creature in the area must attempt a @Check[fortitude|dc:49] save. If the Oliphaunt spends 1 Mythic Point as part of the activity, the DC becomes 51 and the damage dice are increased to d12s. The Oliphaunt of Jandelay can't use Trumpeting Blast again for [[/gmr 1d4 #Recharge Trumpeting Blast]]{1d4 rounds}.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[7d10[sonic]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 round.</p>\n<p><strong>Failure</strong> The creature takes @Damage[14d10[sonic]] damage, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 2 rounds, and is deafened for 2 rounds.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[28d10[sonic]] damage, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} for 2 rounds, and is deafened for 4 rounds.</p>"
+                    "description": "<p>The Oliphaunt of Jandelay emits a cacophonous blast from its trunk in a @Template[type:cone|distance:120]. Each creature in the area must attempt a @Check[fortitude|dc:49|options:area-effect,damaging-effect,inflicts:deafened,inflicts:slowed] save. If the Oliphaunt spends 1 Mythic Point as part of the activity, the DC becomes 51 and the damage dice are increased to d12s. The Oliphaunt of Jandelay can't use Trumpeting Blast again for [[/gmr 1d4 #Recharge Trumpeting Blast]]{1d4 rounds}.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[7d10[sonic]|options:area-damage] damage and is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 round.</p>\n<p><strong>Failure</strong> The creature takes @Damage[14d10[sonic]|options:area-damage] damage, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 2 rounds, and is deafened for 2 rounds.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[28d10[sonic]|options:area-damage] damage, is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} for 2 rounds, and is deafened for 4 rounds.</p>"
                 }
             }
         },
@@ -501,7 +501,7 @@
                 },
                 "Undying Myth": {
                     "name": "Undying Myth",
-                    "description": "<p><strong>Cost</strong> all the creature's Mythic Points</p>\n<p><strong>Trigger</strong> Verex-That-Was would die and has at least 1 Mythic Point</p><hr /><p><strong>Effect</strong> Verex remains standing and conscious, and recovers 50% of his maximum Hit Points.</p>"
+                    "description": "<p><strong>Cost</strong> all the creature's Mythic Points</p>\n<p><strong>Trigger</strong> Verex-That-Was would die and has at least 1 Mythic Point</p><hr /><p><strong>Effect</strong> Verex remains standing and conscious, and @Damage[(floor(@actor.system.attributes.hp.max/2))[healing]]{50% of its maximum Hit Points}.</p>"
                 },
                 "Battlefield Eruption": {
                     "name": "Battlefield Eruption",
@@ -717,7 +717,7 @@
                 },
                 "Mythic Skill (Acrobatics)": {
                     "name": "Mythic Skill (Acrobatics)",
-                    "description": "<p><strong>Cost</strong> 1 Mythic Point</p><hr /><p><strong>Effect</strong> The Mythic Griffon attempts its next Acrobatics skill check with a +4 bonus and is considered to have mythic proficiency for that check. This applies to one skill when this ability is gained and a second skill if the creature is 12th level or higher.</p>"
+                    "description": "<p><strong>Cost</strong> 1 Mythic Point</p><hr /><p><strong>Effect</strong> The Mythic Griffon attempts its next Acrobatics skill check with a +4 bonus and is considered to have mythic proficiency for that check.</p>"
                 },
                 "Pounce": {
                     "name": "Pounce",
