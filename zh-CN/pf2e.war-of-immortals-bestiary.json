@@ -37,7 +37,7 @@
                 },
                 "Mythic Skill": {
                     "name": "神话技能 Mythic Skill",
-                    "description": "<p><strong>花费</strong> 1神话点</p><hr /><p><strong>效果</strong> 神话高基特斯在下一次运动或隐秘技能检定时会获得+4加值，并在该检定中被视为拥有神话熟练度。此能力应用于获得此能力时的一项技能，如果生物的等级达到12级或更高，则应用于第二项技能。</p>"
+                    "description": "<p><strong>花费</strong> 1神话点</p><hr /><p><strong>效果</strong> 神话高基特斯在下一次运动或隐秘技能检定时会获得+4加值，并在该检定中被视为拥有神话熟练度。</p>"
                 },
                 "Skittering Assault": {
                     "name": "跳跃突袭 Skittering Assault",
@@ -134,7 +134,7 @@
                 },
                 "Undying Myth": {
                     "name": "不灭神话 Undying Myth",
-                    "description": "<p><strong>花费</strong> 生物全部神话点</p>\n<p><strong>触发</strong> 生物将要死亡，并且至少拥有1神话点</p><hr /><p><strong>效果</strong> 当赞德雷巨象将要死亡时，只要它至少拥有1神话点，它就会立即消耗它所拥有的所有剩余神话点，保持站立和清醒，并恢复其最大生命值的50%。</p>"
+                    "description": "<p><strong>花费</strong> 生物全部神话点</p>\n<p><strong>触发</strong> 生物将要死亡，并且至少拥有1神话点</p><hr /><p><strong>效果</strong> 当赞德雷巨象将要死亡时，只要它至少拥有1神话点，它就会立即消耗它所拥有的所有剩余神话点，保持站立和清醒，并恢复@Damage[(floor(@actor.system.attributes.hp.max/2))[healing]]生命值。</p>"
                 },
                 "Brutal Drag": {
                     "name": "蛮力拖拽 Brutal Drag",
@@ -154,7 +154,7 @@
                 },
                 "Trumpeting Blast": {
                     "name": "吼叫音爆 Trumpeting Blast",
-                    "description": "<p>赞德雷巨象会从它的象鼻中向@Template[type:cone|distance:120]范围内发出尖锐的音爆。区域内的每个生物都必须尝试一次@Check[fortitude|dc:49]豁免。如果巨象在行动中消耗了1点神话点，DC会变成51，伤害骰也会增加到d12。赞德雷的巨象在[[/gmr 1d4 #Recharge Trumpeting Blast]]{1d4轮}内无法再次使用吼叫音爆。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[7d10[sonic]]伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]1轮。</p>\n<p><strong>失败</strong> 生物受到@Damage[14d10[sonic]]伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续2轮，以及耳聋2轮。</p>\n<p><strong>大失败</strong> 生物受到@Damage[28d10[sonic]]伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}，持续2轮，以及耳聋4轮。</p>"
+                    "description": "<p>赞德雷巨象会从它的象鼻中向@Template[type:cone|distance:120]范围内发出尖锐的音爆。区域内的每个生物都必须尝试一次@Check[fortitude|dc:49|options:area-effect,damaging-effect,inflicts:deafened,inflicts:slowed]豁免。如果巨象在行动中消耗了1点神话点，DC会变成51，伤害骰也会增加到d12。赞德雷的巨象在[[/gmr 1d4 #Recharge Trumpeting Blast]]{1d4轮}内无法再次使用吼叫音爆。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[7d10[sonic]|options:area-damage]伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]1轮。</p>\n<p><strong>失败</strong> 生物受到@Damage[14d10[sonic]|options:area-damage]伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续2轮，以及耳聋2轮。</p>\n<p><strong>大失败</strong> 生物受到@Damage[28d10[sonic]|options:area-damage]伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}，持续2轮，以及耳聋4轮。</p>"
                 },
                 "Remove a Condition": {
                     "name": "移除状态 Remove a Condition",
@@ -462,7 +462,7 @@
                 },
                 "Undying Myth": {
                     "name": "不朽神话 Undying Myth",
-                    "description": "<p><strong>花费</strong> 维瑞克斯全部神话点</p>\n<p><strong>触发</strong> 当维瑞克斯之骸将要死亡，且它至少拥有1神话点</p><hr /><p><strong>效果</strong> 维瑞克斯保持站立和清醒，并恢复其最大生命值的50%。</p>"
+                    "description": "<p><strong>花费</strong> 维瑞克斯全部神话点</p>\n<p><strong>触发</strong> 当维瑞克斯之骸将要死亡，且它至少拥有1神话点</p><hr /><p><strong>效果</strong> 维瑞克斯保持站立和清醒，并恢复@Damage[(floor(@actor.system.attributes.hp.max/2))[healing]]生命值。</p>"
                 },
                 "Battlefield Eruption": {
                     "name": "战场喷发 Battlefield Eruption",
@@ -650,7 +650,7 @@
                 },
                 "Mythic Skill (Acrobatics)": {
                     "name": "神话技能 Mythic Skill (特技)",
-                    "description": "<p><strong>花费</strong> 1神话点</p><hr /><p><strong>效果</strong> 该生物在下一次技能检定时会获得+4加值，并在该检定中被视为拥有神话熟练度。此能力应用于获得此能力时的一项技能，如果生物的等级达到12级或更高，则应用于第二项技能。 </p>"
+                    "description": "<p><strong>花费</strong> 1神话点</p><hr /><p><strong>效果</strong> 该生物在下一次技能检定时会获得+4加值，并在该检定中被视为拥有神话熟练度。 </p>"
                 },
                 "Pounce": {
                     "name": "猛扑 Pounce",
