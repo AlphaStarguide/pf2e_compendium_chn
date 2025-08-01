@@ -663,7 +663,7 @@
                 },
                 "Spew Seed Pod": {
                     "name": "喷射籽荚 Spew Seed Pod",
-                    "description": "<p>拉玛什图之花中央茎干从它的花里吐出一股籽荚，喷射的射程最大60尺，并且当籽荚炸出一片超自然酸性毒素时创造出一个@Template[burst|distance:20]区域。任何在此区域内的生物必须尝试一次@Check[reflex|dc:29]豁免。该花在[[/gmr 1d4 #Recharge Spew Seed Pod]]{1d4轮}内无法再次使用喷射籽荚。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[3d6[acid]]伤害和@Damage[3d6[poison]]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[5d6[acid]]伤害和@Damage[5d6[poison]]伤害，并且遭受开花诅咒。</p>\n<p><strong>大失败</strong> 如同失败，但是受到@Damage[10d6[acid]]伤害和@Damage[10d6[poison]]伤害，外加因爆炸的力量而被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                    "description": "<p>拉玛什图之花中央茎干从它的花里吐出一股籽荚，喷射的射程最大60尺，并且当籽荚炸出一片超自然酸性毒素时创造出一个@Template[burst|distance:20]区域。任何在此区域内的生物必须尝试一次@Check[reflex|dc:29|options:area-effect,damaging-effect,inflicts:prone]豁免。该花在[[/gmr 1d4 #Recharge Spew Seed Pod]]{1d4轮}内无法再次使用喷射籽荚。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[3d6[acid],3d6[poison]]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[5d6[acid],5d6[poison]]伤害，并且遭受开花诅咒。</p>\n<p><strong>大失败</strong> 如同失败，但是受到@Damage[10d6[acid],10d6[poison]]伤害，外加因爆炸的力量而被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
                 },
                 "Tremorsense (Precise) 30 feet": {
                     "name": "震颤感知（模糊）30尺 Tremorsense (Precise) 30 feet",
@@ -2875,7 +2875,7 @@
                 },
                 "Telekinetic Assault": {
                     "name": "念动突击 Telekinetic Assault",
-                    "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]内迸发飞溅。此区域内的生物会受到@Damage[5d6[bludgeoning]]伤害，@Check[reflex|dc:28|basic]豁免。</p>"
+                    "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]内迸发飞溅。此区域内的生物会受到@Damage[5d6[bludgeoning]|options:area-damage]伤害，@Check[reflex|dc:28|basic|options:area-effect]豁免。</p>"
                 }
             },
             "prototypeToken": {
@@ -6641,7 +6641,7 @@
                 },
                 "Summon Pack": {
                     "name": "召唤兽群 Summon Pack",
-                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>效果</strong> 随着一声嚎叫，狂猎猎犬召唤出一团雾霭，显现为几只雾状的猎犬。只要狂猎猎犬维持这一效果，这些雾状的猎犬就会在@Template[emanation|distance:20] @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.v61oEQaDdcRpaZ9X]{灵光}范围内移动、奔跑、嚎叫。虽然这些猎犬看起来是由雾霭形成的，但它们的利齿却是非常的真实，任何在此灵光范围内结束其回合的生物将会因数不胜数的啃咬而受到@Damage[6d6[piercing]]伤害（@Check[reflex|dc:31|basic]豁免）。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p>\n<p><strong>效果</strong> 随着一声嚎叫，狂猎猎犬召唤出一团雾霭，显现为几只雾状的猎犬。只要狂猎猎犬维持这一效果，这些雾状的猎犬就会在20尺灵光范围内移动、奔跑、嚎叫。虽然这些猎犬看起来是由雾霭形成的，但它们的利齿却是非常的真实，任何在此灵光范围内结束其回合的生物将会因数不胜数的啃咬而受到@Damage[6d6[piercing]]伤害（@Check[reflex|dc:31|basic|options:area-effect]豁免）。</p>"
                 },
                 "Constant Spells": {
                     "name": "常驻法术 Constant Spells",
@@ -7355,7 +7355,7 @@
                 },
                 "Telekinetic Assault": {
                     "name": "念力袭击 Telekinetic Assault",
-                    "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]内迸发飞溅。此区域内的生物会受到@Damage[9d6[bludgeoning]]伤害，@Check[reflex|dc:37|basic]豁免。</p>"
+                    "description": "<p>幽灵痛苦地尖啸并使得小物体和物体碎片在@Template[emanation|distance:30]内迸发飞溅。此区域内的生物会受到@Damage[9d6[bludgeoning]|options:area-damage]伤害，@Check[reflex|dc:37|basic|options:area-effect]豁免。</p>"
                 }
             },
             "prototypeToken": {
