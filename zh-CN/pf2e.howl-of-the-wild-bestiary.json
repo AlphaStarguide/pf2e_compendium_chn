@@ -13,7 +13,7 @@
                 },
                 "Wallow": {
                     "name": "打滚 Wallow",
-                    "description": "<p><strong>需求</strong> 磁牛处于@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]状态</p>\n<hr />\n<p><strong>效果</strong> 磁牛用长满尖刺的背部在地上滚动，至多以满速移动，犁地并碾碎路径上的任何大型或更小的生物。这会造成@Damage[4d10[piercing]]伤害，@Check[reflex|dc:24|basic]豁免；如果豁免失败，穿戴金属盔甲或由金属构成的生物会被磁牛的磁化外衣@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]DC 24）。每当被束缚的生物选择将一个金属物品或装备留在磁牛身上时，它在逃脱尝试中会获得+1环境加值。如果生物放弃了所有金属物品，则自动逃脱成功。磁牛在以这种方式束缚生物时，可以以全速移动，并将该生物带着一同移动。</p>"
+                    "description": "<p><strong>需求</strong> 磁牛处于@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]状态</p>\n<hr />\n<p><strong>效果</strong> 磁牛用长满尖刺的背部在地上滚动，至多以满速移动，犁地并碾碎路径上的任何大型或更小的生物。这会造成@Damage[4d10[piercing]]伤害，@Check[reflex|dc:24|basic]豁免；如果豁免失败，穿戴金属盔甲或由金属构成的生物会被磁牛的磁化外衣@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]（[[/act escape dc=24]]）。每当被束缚的生物选择将一个金属物品或装备留在磁牛身上时，它在逃脱尝试中会获得+1环境加值。如果生物放弃了所有金属物品，则自动逃脱成功。磁牛在以这种方式束缚生物时，可以以全速移动，并将该生物带着一同移动。</p>"
                 },
                 "Magnetized Coat": {
                     "name": "磁化外衣 Magnetized Coat",
@@ -138,7 +138,7 @@
                 },
                 "Vomit Meteorites": {
                     "name": "喷吐陨石 Vomit Meteorites",
-                    "description": "<p>星腑多头蛇摇摆整具身体，朝@Template[cone|distance:30]范围喷吐陨石块，对区域内所有生物造成@Damage[5d6[bludgeoning]]伤害（@Check[reflex|dc:25|basic]豁免）。区域内成为困难地形，持续1分钟，不过生物可以使用一个交互动作来清理一格的碎石。星腑多头蛇在[[/gmr 1d4 #Recharge Vomit Meteorites]]{1d4轮}内无法再次使用喷吐陨石。</p>"
+                    "description": "<p>星腑多头蛇摇摆整具身体，朝@Template[cone|distance:30]范围喷吐陨石块，对区域内所有生物造成@Damage[5d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:25|basic|options:area-effect]豁免）。区域内成为困难地形，持续1分钟，不过生物可以使用一个交互动作来清理一格的碎石。星腑多头蛇在[[/gmr 1d4 #Recharge Vomit Meteorites]]{1d4轮}内无法再次使用喷吐陨石。</p>"
                 }
             },
             "prototypeToken": {
@@ -1172,7 +1172,7 @@
                 },
                 "Venomous Spit": {
                     "name": "毒液喷射 Venomous Spit",
-                    "description": "<p>铜口蛇在@Template[line|distance:30]内喷射一股带电的毒液。毒液造成@Damage[8d6[electricity]]伤害（@Check[reflex|dc:22|basic]豁免），并且受到毒液伤害的生物会立即暴露在铜口蛇毒液中。铜口蛇在[[/gmr 1d4 #rounds]]{1d4轮}内无法再次使用毒液喷射。</p>"
+                    "description": "<p>铜口蛇在@Template[line|distance:30]内喷射一股带电的毒液。毒液造成@Damage[8d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:22|basic|options:area-effect]豁免），并且受到毒液伤害的生物会立即暴露在铜口蛇毒液中。铜口蛇在[[/gmr 1d4 #rounds]]{1d4轮}内无法再次使用毒液喷射。</p>"
                 },
                 "Coppermouth Venom": {
                     "name": "铜口蛇毒液 Coppermouth Venom",
@@ -1341,7 +1341,7 @@
                 },
                 "Budding Siphon": {
                     "name": "萌芽虹吸 Budding Siphon",
-                    "description": "<p>20尺。绽放守护者处于持续分解状态；为了阻止这种熵增，覆盖其鹿角的花朵不断从周围区域虹吸生命。所有进入灵光或在其范围内开始回合的生物都会受到@Damage[6d4[void]]伤害（@Check[fortitude|dc:36|basic]豁免）。在绽放守护者任何一轮开始时，只要其通过萌芽虹吸造成伤害，它会获得10点临时生命值，并且除了上回合第一个伤害的生物之外，上回合每多伤害一个生物，临时生命值就增加2点，最大达到20点生命值。</p>"
+                    "description": "<p>20尺。绽放守护者处于持续分解状态；为了阻止这种熵增，覆盖其鹿角的花朵不断从周围区域虹吸生命。所有进入灵光或在其范围内开始回合的生物都会受到@Damage[6d4[void]|options:area-damage]伤害（@Check[fortitude|dc:36|basic|options:area-effect]豁免）。在绽放守护者任何一轮开始时，只要其通过萌芽虹吸造成伤害，它会获得10点临时生命值，并且除了上回合第一个伤害的生物之外，上回合每多伤害一个生物，临时生命值就增加2点，最大达到20点生命值。</p>"
                 },
                 "Full Bloom": {
                     "name": "完全绽放 Full Bloom",
@@ -1353,7 +1353,7 @@
                 },
                 "Wail of the Forest": {
                     "name": "森林哀号 Wail of the Forest",
-                    "description": "<p><strong>需求</strong> 绽放守护者处于完全绽放中</p>\n<hr />\n<p><strong>效果</strong> 绽放守护者直面自己的死亡，使其花朵爆裂并喷洒花粉。所有@Template[cone|distance:40]范围内的生物受到@Damage[10d10[void]]伤害，尝试@Check[fortitude|dc:36]豁免。绽放守护者随后退出完全绽放，并在[[/gmr 1d4 #Recharge Full Bloom]]{1d4轮}内无法重新进入。</p>\n<hr />\n<p><strong>大成功</strong> 无效果。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled}的生物失去力竭，并获得相同层数的流逝。</p>\n<p><strong>大失败</strong> 同失败，但伤害翻倍。</p>"
+                    "description": "<p><strong>需求</strong> 绽放守护者处于完全绽放中</p>\n<hr />\n<p><strong>效果</strong> 绽放守护者直面自己的死亡，使其花朵爆裂并喷洒花粉。所有@Template[cone|distance:40]范围内的生物受到@Damage[10d10[void]|options:area-damage]伤害，尝试@Check[fortitude|dc:36|options:area-effect,damaging-effect,inflicts:drained]豁免。绽放守护者随后退出完全绽放，并在[[/gmr 1d4 #Recharge Full Bloom]]{1d4轮}内无法重新进入。</p>\n<hr />\n<p><strong>大成功</strong> 无效果。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]的生物失去力竭，并获得相同层数的流逝。</p>\n<p><strong>大失败</strong> 同失败，但伤害翻倍。</p>"
                 }
             },
             "publicNotes": "<p>绽放守护者鹿角上的瘟疫之花在月光下最为美丽，此时它们完全绽放，散发出天体般的光辉。当绽放守护者接近生命周期的末尾时，它们会在森林中进行最后一次巡逻，其古老的身体会分解融入林下植被。</p>"
@@ -1473,7 +1473,7 @@
                 },
                 "Bury Beneath Stone": {
                     "name": "葬于岩底 Bury Beneath Stone",
-                    "description": "<p><strong>需求</strong> 守望者@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒获 Grabbed}一个生物；</p><hr /><p><strong>效果</strong> 守望者尝试将受擒于其虫颚的生物楔入它下方打开的地缝中。守望者尝试一次@Check[athletics|defense:reflex]检定对抗受擒生物的反射DC。如果成功，它将该生物埋于地里。生物受到@Damage[10d10[bludgeoning]]伤害。它还将陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，且必须屏住呼吸否则将开始窒息，直到其@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]（DC 42）。如果生物在回合结束时仍然被埋葬，它受到@Damage[5d10[bludgeoning]]伤害。</p>"
+                    "description": "<p><strong>需求</strong> 守望者@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒获 Grabbed}一个生物；</p><hr /><p><strong>效果</strong> 守望者尝试将受擒于其虫颚的生物楔入它下方打开的地缝中。守望者尝试一次@Check[athletics|defense:reflex]检定对抗受擒生物的反射DC。如果成功，它将该生物埋于地里。生物受到@Damage[10d10[bludgeoning]]伤害。它还将陷入@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，且必须屏住呼吸否则将开始窒息，直到其[[/act escape dc=42]]{逃脱}。如果生物在回合结束时仍然被埋葬，它受到@Damage[5d10[bludgeoning]]伤害。</p>"
                 },
                 "Called to Depths": {
                     "name": "唤至深穴 Called to Depths",
@@ -1493,7 +1493,7 @@
                 },
                 "Obsidian Cage": {
                     "name": "黑曜石囚笼 Obsidian Cage",
-                    "description": "<p>迅速冷却的黑曜石会附着在目标身上，凝固在其肢体周围。目标必须尝试一次@Check[reflex|dc:42]豁免。失败时，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}状态直到@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}（DC 42）。大失败时，目标只要处于禁足状态便陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                    "description": "<p>迅速冷却的黑曜石会附着在目标身上，凝固在其肢体周围。目标必须尝试一次@Check[reflex|dc:42]豁免。失败时，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]状态直到[[/act escape dc=42]]{逃脱}。大失败时，目标只要处于禁足状态便陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
                 },
                 "Vibratory Excavation": {
                     "name": "振动挖掘 Vibratory Excavation",
@@ -1694,7 +1694,7 @@
                 },
                 "Unleash the Sun": {
                     "name": "释放太阳 Unleash the Sun",
-                    "description": "<p><strong>需求</strong> 日鳞巨蛇正在飞行</p>\n<hr />\n<p><strong>效果</strong> 日鳞巨蛇飞行（Fly），距离至多等同于其飞行速度，然后坠向地面，对@Template[burst|distance:60]区域内的所有生物施放触一股高热来造成@Damage[5d10[fire]]伤害，并且用鳞片绽放出的辉光来灼烧它们的眼睛。区域内的每个生物必须尝试@Check[reflex|dc:31]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响</p>\n<p><strong>成功</strong> 生物承受一半伤害</p>\n<p><strong>失败</strong> 生物承受全额伤害并且@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮</p>\n<p><strong>大失败</strong> 生物承受全额伤害，@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮，并且目眩1分钟</p>"
+                    "description": "<p><strong>需求</strong> 日鳞巨蛇正在飞行</p>\n<hr />\n<p><strong>效果</strong> 日鳞巨蛇飞行，距离至多等同于其飞行速度，然后坠向地面，对@Template[burst|distance:60]区域内的所有生物施放触一股高热来造成@Damage[5d10[fire]|options:area-damage]伤害，并且用鳞片绽放出的辉光来灼烧它们的眼睛。区域内的每个生物必须尝试@Check[reflex|dc:31|options:area-effect,damaging-effect,inflicts:blinded,inflicts:dazzled]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响</p>\n<p><strong>成功</strong> 生物承受一半伤害</p>\n<p><strong>失败</strong> 生物承受全额伤害并且@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮</p>\n<p><strong>大失败</strong> 生物承受全额伤害，@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮，并且目眩1分钟</p>"
                 },
                 "Push": {
                     "name": "推离 Push",
@@ -1810,7 +1810,7 @@
                 },
                 "Wild Empathy": {
                     "name": "荒野共情 Wild Empathy",
-                    "description": "<p>天角兽能与自然界的生物共感。天角兽可以使用交涉来对动物@UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]，并可以对它们@UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]。</p>"
+                    "description": "<p>天角兽能与自然界的生物共感。天角兽可以使用交涉来对动物[[/act make-an-impression]]，并可以对它们[[/act request]]{提出请求}。</p>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
