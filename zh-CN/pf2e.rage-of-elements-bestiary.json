@@ -20,7 +20,7 @@
                 },
                 "Stone Clutch": {
                     "name": "岩石紧抱 Stone Clutch",
-                    "description": "<p>当土巨灵推撞一个生物到岩石障碍上时，其表面会伸出石头手指握住他。目标必须成功通过一次@Check[reflex|dc:30]豁免，否则将@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于该表面（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]DC36）。</p>"
+                    "description": "<p>当土巨灵推撞一个生物到岩石障碍上时，其表面会伸出石头手指握住他。目标必须成功通过一次@Check[reflex|dc:30]豁免，否则将@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于该表面（[[/act escape dc=36]]）。</p>"
                 },
                 "Stone Crush": {
                     "name": "岩石挤压 Stone Crush",
@@ -241,7 +241,7 @@
                 },
                 "Windstorm": {
                     "name": "暴风 Windstorm",
-                    "description": "<p>呼啸疾风同时吹气，制造一阵强大的暴风。暴风在100尺射程内的@Template[burst|distance:10]范围中造成@Damage[(3d8+10)[bludgeoning]]伤害（@Check[reflex|dc:30|basic]豁免）。豁免失败的生物还会被想任意方向推离10尺（大失败则外加@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。当部队减少到2部分或更少时，爆发范围减少到@Template[burst|distance:5]，推离的距离减少到5尺。</p>"
+                    "description": "<p>呼啸疾风同时吹气，制造一阵强大的暴风。暴风在100尺射程内的@Template[burst|distance:10]范围中造成@Damage[(3d8+10)[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:30|basic|options:area-effect,inflicts:forced-movement,inflicts:prone]豁免）。豁免失败的生物还会被想任意方向推离10尺（大失败则外加@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。当部队减少到2部分或更少时，爆发范围减少到@Template[burst|distance:5]，推离的距离减少到5尺。</p>"
                 }
             },
             "data": {
@@ -925,7 +925,7 @@
                 },
                 "Stone Grip": {
                     "name": "Stone Grip",
-                    "description": "<p>Great fingers of stone arise to grasp up to two Medium or smaller creatures on the ground in the outcrop's aura. Each target must succeed at a @Check[reflex|dc:33] save or be @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the stone hand (or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical failure; @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 33). A creature grabbed or restrained by a stone hand at the end of its turn becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} or increases its existing slowed condition by 1. When a creature is unable to act due to the slowed condition from this effect, the creature is permanently @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified}.</p>"
+                    "description": "<p>Great fingers of stone arise to grasp up to two Medium or smaller creatures on the ground in the outcrop's aura. Each target must succeed at a @Check[reflex|dc:33] save or be @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the stone hand (or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical failure; [[/act escape dc=33]]). A creature grabbed or restrained by a stone hand at the end of its turn becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} or increases its existing slowed condition by 1. When a creature is unable to act due to the slowed condition from this effect, the creature is permanently @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified}.</p>"
                 }
             },
             "data": {
@@ -1180,7 +1180,7 @@
             "items": {
                 "Attach": {
                     "name": "附着 Attach",
-                    "description": "<p>晶洞跳跃至多15尺，并进行一次水晶牙打击。如果命中比它大的生物，它可以附着在该生物上。附着类似于擒获生物（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 17），但晶洞会随生物移动而不是将其固定在原地。附着期间晶洞处于@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}状态。如果晶洞在附着期间被杀死或推离，附着的生物会受到@Damage[1[bleed]]伤害。逃脱附着的晶洞或以其他方式移除晶洞不会造成流血伤害。</p>"
+                    "description": "<p>晶洞跳跃至多15尺，并进行一次水晶牙打击。如果命中比它大的生物，它可以附着在该生物上。附着类似于擒获生物（[[/act escape dc=17]]），但晶洞会随生物移动而不是将其固定在原地。附着期间晶洞处于@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]状态。如果晶洞在附着期间被杀死或推离，附着的生物会受到@Damage[1[bleed]]伤害。逃脱附着的晶洞或以其他方式移除晶洞不会造成流血伤害。</p>"
                 },
                 "Gnaw": {
                     "name": "啃噬 Gnaw",
@@ -1245,7 +1245,7 @@
                 },
                 "Bury": {
                     "name": "掩埋 Bury",
-                    "description": "<p>任何被起源岩灵的远古石块打击命中的生物都会被部分掩埋在一阵崩塌的土石中，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 34）。</p>"
+                    "description": "<p>任何被起源岩灵的远古石块打击命中的生物都会被部分掩埋在一阵崩塌的土石中，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]（[[/act escape dc=34]]）。</p>"
                 },
                 "Echo the Past": {
                     "name": "回响过往 Echo the Past",
@@ -1314,7 +1314,7 @@
             "items": {
                 "Exploding Guts": {
                     "name": "爆炸内脏 Exploding Guts",
-                    "description": "<p>当飞肠虫被重击或在强韧豁免中大失败时，它的一个器官就会爆炸。掷骰[[/gmr 1d4]]来确定效果。</p>\n<p><strong>1</strong> 被困住的有毒气体喷涌而出。飞肠虫将触发攻击或效果的源头推离10尺。</p>\n<p><strong>2</strong> 脓液喷洒向附近的生物。@Template[emanation|distance:5]范围内每个生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>3</strong> 此次伤害十分严重。飞肠虫受到@Damage[1d6[persistent,bleed]]伤害。</p>\n<p><strong>4</strong> 凝胶状的飞肠虫卵炸裂开并立即孵化。@Template[emanation|distance:5]范围内每个生物受到来自贪食幼虫的@Damage[1d6[persistent,piercing]]伤害。</p>"
+                    "description": "<p>当飞肠虫被重击或在强韧豁免中大失败时，它的一个器官就会爆炸。掷骰[[/gmr 1d4]]来确定效果。</p>\n<p><strong>1</strong> 被困住的有毒气体喷涌而出。飞肠虫将触发攻击或效果的源头推离10尺。</p>\n<p><strong>2</strong> 脓液喷洒向附近的生物。@Template[emanation|distance:5]范围内每个生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>3</strong> 此次伤害十分严重。飞肠虫受到@Damage[1d6[persistent,bleed]]伤害。</p>\n<p><strong>4</strong> 凝胶状的飞肠虫卵炸裂开并立即孵化。@Template[emanation|distance:5]范围内每个生物受到来自贪食幼虫的@Damage[1d6[persistent,piercing]|options:area-damage]伤害。</p>"
                 },
                 "Predator's Stare": {
                     "name": "掠食者的凝视 Predator's Stare",
@@ -1613,7 +1613,7 @@
                 },
                 "Envelop": {
                     "name": "覆盖 Envelop",
-                    "description": "<p><strong>需求</strong> 遮蔽气流在其回合开始时，已有一个与其体型相同或更小的目标@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于他</p>\n<hr />\n<p><strong>效果</strong> 遮蔽气流维持擒获，并在生物周围凝聚，转变为一个半固体的面纱，将生物包裹在其中。这之后的效果如同遮蔽气流@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.zU3Ovaet4xQ5Gmvy]了该生物（DC26，1d8+8钝击，@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]DC26，破裂17）。由于包卷生物是敌对行动，遮蔽气流在每轮包卷生物时都是@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]，而不是无踪。</p>"
+                    "description": "<p><strong>需求</strong> 遮蔽气流在其回合开始时，已有一个与其体型相同或更小的目标@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于他</p>\n<hr />\n<p><strong>效果</strong> 遮蔽气流维持擒获，并在生物周围凝聚，转变为一个半固体的面纱，将生物包裹在其中。这之后的效果如同遮蔽气流@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.zU3Ovaet4xQ5Gmvy]了该生物（DC26，1d8+8钝击，[[/act escape dc=26]]，破裂17）。由于包卷生物是敌对行动，遮蔽气流在每轮包卷生物时都是@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]，而不是无踪。</p>"
                 }
             },
             "data": {
@@ -1752,7 +1752,7 @@
                 },
                 "Vacuum": {
                     "name": "真空吸入 Vacuum",
-                    "description": "<p><strong>需求</strong> 寒气蛙还未包卷生物</p>\n<hr />\n<p><strong>效果</strong> 寒气蛙奋力张开其下颚，从其前方@Template[cone|distance:15]范围内吸入空气，将体型不超过大型的生物拉入其巨嘴。寒气蛙@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.zU3Ovaet4xQ5Gmvy]{包卷 Engulfs}区域内的生物（@Check[reflex|dc:27]，@Damage[(1d10+10)[cold]]伤害，@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 27，破裂 DC 25）。</p>"
+                    "description": "<p><strong>需求</strong> 寒气蛙还未包卷生物</p>\n<hr />\n<p><strong>效果</strong> 寒气蛙奋力张开其下颚，从其前方@Template[cone|distance:15]范围内吸入空气，将体型不超过大型的生物拉入其巨嘴。寒气蛙@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.zU3Ovaet4xQ5Gmvy]区域内的生物（@Check[reflex|dc:27|options:area-effect,damaging-effect]，@Damage[(1d10+10)[cold]|options:area-damage]伤害，[[/act escape dc=27]]，破裂DC25）。</p>"
                 },
                 "All-Around Vision": {
                     "name": "全域视野 All-Around Vision",
@@ -2070,7 +2070,7 @@
                 },
                 "Take Root": {
                     "name": "扎根 Take Root",
-                    "description": "<p><strong>需求</strong> 洛莫里幼苗在地面上</p>\n<hr />\n<p><strong>效果</strong> 洛莫里幼苗将自己扎入地面。距离洛莫里幼苗60尺内的@Template[burst|distance:5]范围内的地面爆发出抓握的根须，对区域内的生物造成@Damage[4d4[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:20|basic|options:area-effect,inflicts:immobilized]豁免）；如果豁免失败，生物被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到它[[/act escape dc=20]]（DC 20）。这些根须还会使区域在1分钟内变为困难地形，此后它们会分解成肥料；区域不再是困难地形，而且任何仍然被根须禁足的生物会自动逃脱。</p>"
+                    "description": "<p><strong>需求</strong> 洛莫里幼苗在地面上</p>\n<hr />\n<p><strong>效果</strong> 洛莫里幼苗将自己扎入地面。距离洛莫里幼苗60尺内的@Template[burst|distance:5]范围内的地面爆发出抓握的根须，对区域内的生物造成@Damage[4d4[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:20|basic|options:area-effect,inflicts:immobilized]豁免）；如果豁免失败，生物被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到它[[/act escape dc=20]]。这些根须还会使区域在1分钟内变为困难地形，此后它们会分解成肥料；区域不再是困难地形，而且任何仍然被根须禁足的生物会自动逃脱。</p>"
                 }
             },
             "data": {
