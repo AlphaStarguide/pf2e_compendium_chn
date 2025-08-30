@@ -1522,7 +1522,7 @@
                 },
                 "Inflating Rush": {
                     "name": "Inflating Rush",
-                    "description": "<p>The pufferfish Swims up to its Speed and then inflates. Each creature within @Template[emanation|distance:5] of its space at the end of its movement must succeed at a @Check[reflex|dc:13|options:damaging-effect] save or take @Damage[1[piercing]] damage and be exposed to pufferfish venom.</p>"
+                    "description": "<p>The pufferfish Swims up to its Speed and then inflates. Each creature within @Template[emanation|distance:5] of its space at the end of its movement must succeed at a @Check[reflex|dc:13|options:area-effect,damaging-effect] save or take @Damage[1[piercing]|options:area-damage] damage and be exposed to pufferfish venom.</p>"
                 },
                 "Pufferfish Venom": {
                     "name": "Pufferfish Venom",
@@ -3050,7 +3050,7 @@
                 },
                 "Barbed Net": {
                     "name": "Barbed Net",
-                    "description": "<p>When a levaloch hits a creature with their barbed net, the net wraps around the target, which becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} and takes a -10-foot circumstance penalty to its Speeds. If the Strike was a critical success, the target is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}.</p>\n<p>When a creature @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 22), or if the Strike misses, the net crumbles into rust.</p>\n<p>Each time a creature attempts to Escape, it takes @Damage[1d6[slashing]] damage from the net's barbs, regardless of whether the attempt succeeds.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HafP5vrdGdoqoFMo]{Effect: Barbed Net}</p>"
+                    "description": "<p>When a levaloch hits a creature with their barbed net, the net wraps around the target, which becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} and takes a -10-foot circumstance penalty to its Speeds. If the Strike was a critical success, the target is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}.</p>\n<p>When a creature [[/act escape dc=22]]{Escapes}, or if the Strike misses, the net crumbles into rust.</p>\n<p>Each time a creature attempts to Escape, it takes @Damage[1d6[slashing]] damage from the net's barbs, regardless of whether the attempt succeeds.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HafP5vrdGdoqoFMo]{Effect: Barbed Net}</p>"
                 },
                 "Forge Weapon": {
                     "name": "Forge Weapon",
@@ -3674,7 +3674,7 @@
                 },
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress bore worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.aQusm2Uh1tw00IVb]{Bore Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]] damage (@Check[reflex|dc:25|basic] save) from the splatter of caustic viscera.</p>"
+                    "description": "<p>When killed, an empress bore worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.aQusm2Uh1tw00IVb]{Bore Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of caustic viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -3901,7 +3901,7 @@
                 },
                 "Shove into Stone": {
                     "name": "Shove into Stone",
-                    "description": "<p>When the guecubu successfully @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shoves} a creature into a stone barrier, the target must succeed at a @Check[reflex|dc:26] save or become merged with the barrier, with the effects of @UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{One with Stone} until the target @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 26).</p>"
+                    "description": "<p>When the guecubu successfully @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shoves} a creature into a stone barrier, the target must succeed at a @Check[reflex|dc:26] save or become merged with the barrier, with the effects of @UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{One with Stone} until the target [[/act escape dc=26]]{Escapes}.</p>"
                 },
                 "Wrathful Misfortune": {
                     "name": "Wrathful Misfortune",
@@ -4297,7 +4297,7 @@
                 },
                 "Capture": {
                     "name": "Capture",
-                    "description": "<p><strong>Requirements</strong> Krampus has a Medium or smaller creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> Krampus attempts to stuff the grabbed creature into his basket, attempting an @Check[athletics|traits:action:shove|defense:reflex] check against the target's Reflex DC. If he succeeds, the creature is shoved into Krampus's basket and Krampus's spiked chain or claw is freed for future Strikes.</p>\n<p>The captured creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and subjected to Krampus's regression ability at the start of each round it is captured.</p>\n<p>If the victim @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 48), it climbs out of the basket. A captured creature can attack the interior of the basket, but only with unarmed attacks or weapons of light Bulk or less, against an AC of 40. If the captured creature deals 40 slashing or piercing damage, the basket is broken and all the creatures inside spill out. A creature that gets free by either Escaping or by someone breaking the basket is deposited in a square of their choosing adjacent to Krampus.</p>\n<p>The basket is an extradimensional space, so the weight of the creatures within doesn't count against Krampus's Bulk limit. Up to four Small creatures or two Medium creatures can fit in the basket at one time.</p>\n<p>Krampus can @UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{Repair} the basket as a 2-action activity that doesn't require tools. If the basket is lost or destroyed, Krampus can create a new one with 1 hour of work. The basket functions as a normal sack if used by anyone other than Krampus.</p>"
+                    "description": "<p><strong>Requirements</strong> Krampus has a Medium or smaller creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> Krampus attempts to stuff the grabbed creature into his basket, attempting an @Check[athletics|against:reflex] check against the target's Reflex DC. If he succeeds, the creature is shoved into Krampus's basket and Krampus's spiked chain or claw is freed for future Strikes.</p>\n<p>The captured creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and subjected to Krampus's regression ability at the start of each round it is captured.</p>\n<p>If the victim [[/act escape dc=48]]{Escapes}, it climbs out of the basket. A captured creature can attack the interior of the basket, but only with unarmed attacks or weapons of light Bulk or less, against an AC of 40. If the captured creature deals 40 slashing or piercing damage, the basket is broken and all the creatures inside spill out. A creature that gets free by either Escaping or by someone breaking the basket is deposited in a square of their choosing adjacent to Krampus.</p>\n<p>The basket is an extradimensional space, so the weight of the creatures within doesn't count against Krampus's Bulk limit. Up to four Small creatures or two Medium creatures can fit in the basket at one time.</p>\n<p>Krampus can @UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{Repair} the basket as a 2-action activity that doesn't require tools. If the basket is lost or destroyed, Krampus can create a new one with 1 hour of work. The basket functions as a normal sack if used by anyone other than Krampus.</p>"
                 },
                 "Punish the Naughty": {
                     "name": "Punish the Naughty",
@@ -4346,7 +4346,7 @@
                 },
                 "Chain Shot": {
                     "name": "Chain Shot",
-                    "description": "<p>The bone ship makes a special bone cannon Strike, firing a chain made of bones. A creature hit by this Strike is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the chain (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 41).</p>\n<p>The bone ship can use Interact actions to reel in a grabbed creature 50 feet per action spent, and when the ship moves, it pulls the grabbed creature along with it.</p>"
+                    "description": "<p>The bone ship makes a special bone cannon Strike, firing a chain made of bones. A creature hit by this Strike is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the chain ([[/act escape dc=41]]).</p>\n<p>The bone ship can use Interact actions to reel in a grabbed creature 50 feet per action spent, and when the ship moves, it pulls the grabbed creature along with it.</p>"
                 },
                 "Crew's Call": {
                     "name": "Crew's Call",
@@ -4769,7 +4769,7 @@
                 },
                 "Web Trap": {
                     "name": "Web Trap",
-                    "description": "<p>A creature hit by the jorogumo's web attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface, preventing the creature from moving.</p>\n<p>The DC to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} or @UUID[Compendium.pf2e.actionspf2e.Item.SjmKHgI7a5Z9JzBx]{Force Open} the web trap is 32.</p>"
+                    "description": "<p>A creature hit by the jorogumo's web attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface, preventing the creature from moving.</p>\n<p>The DC to [[/act escape dc=32]] or [[/act force-open dc=32]] the web trap is 32.</p>"
                 }
             }
         },
@@ -4789,7 +4789,7 @@
                 },
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress mage-eater worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.FHZPjbRmJCqnhdal]{Mage-Eater Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]] damage (@Check[reflex|dc:25|basic] save) from the splatter of caustic viscera.</p>"
+                    "description": "<p>When killed, an empress mage-eater worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.FHZPjbRmJCqnhdal]{Mage-Eater Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of caustic viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -5734,7 +5734,7 @@
                 },
                 "Wildfire Storm": {
                     "name": "Wildfire Storm",
-                    "description": "<p>The peri spreads their wings and spins, forming a whirlwind of flame that deals @Damage[15d6[fire]] damage in a @Template[emanation|distance:20] (@Check[reflex|dc:34|basic] save).</p>\n<p>They can't use Wildfire Storm again for [[/gmr 1d4 #Recharge Wildfire Storm]]{1d4 rounds}.</p>"
+                    "description": "<p>The peri spreads their wings and spins, forming a whirlwind of flame that deals @Damage[15d6[fire]|options:area-damage] damage in a @Template[emanation|distance:20] (@Check[reflex|dc:34|basic|options:area-effect] save).</p>\n<p>They can't use Wildfire Storm again for [[/gmr 1d4 #Recharge Wildfire Storm]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -7113,7 +7113,7 @@
                 },
                 "Vent Energy": {
                     "name": "Vent Energy",
-                    "description": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.pf2e.energyGland.type]] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HpX3bGlOkSp1PeWg]{Effect: Vent Energy}</p>"
+                    "description": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.pf2e.energyGland.type]|options:area-damage] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HpX3bGlOkSp1PeWg]{Effect: Vent Energy}</p>"
                 }
             }
         },
@@ -7262,7 +7262,7 @@
                 },
                 "Viscous Trap": {
                     "name": "Viscous Trap",
-                    "description": "<p>A creature hit by the mezlan's ooze globule takes a -15-foot circumstance penalty to all Speeds for 1 minute. On a critical hit, a target standing on a solid surface also becomes @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, while a target Flying via wings falls to the ground and becomes unable to Fly.</p>\n<p>A target can end all effects by @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escaping} (DC 32) or spending a total of 3 Interact actions to free itself.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]{Effect: Viscous Trap}</p>"
+                    "description": "<p>A creature hit by the mezlan's ooze globule takes a -15-foot circumstance penalty to all Speeds for 1 minute. On a critical hit, a target standing on a solid surface also becomes @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, while a target Flying via wings falls to the ground and becomes unable to Fly.</p>\n<p>A target can end all effects by [[/act escape dc=32]]{Escaping} or spending a total of 3 Interact actions to free itself.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]{Effect: Viscous Trap}</p>"
                 }
             }
         },
@@ -7474,7 +7474,7 @@
                 },
                 "Strike as One": {
                     "name": "Strike as One",
-                    "description": "<p><span class=\"action-glyph\">A</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The garrison makes a melee attack against each enemy in a @Template[emanation|distance:5] (@Check[reflex|dc:30|basic] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">A</span> @Damage[2d8[slashing]] damage.</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+10)[slashing]] damage.</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+13)[slashing]] damage.</p>"
+                    "description": "<p><span class=\"action-glyph\">A</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The garrison makes a melee attack against each enemy in a @Template[emanation|distance:5] (@Check[reflex|dc:30|basic|options:area-effect] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">A</span> @Damage[2d8[slashing]|options:area-damage] damage.</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+10)[slashing]|options:area-damage] damage.</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+13)[slashing]|options:area-damage] damage.</p>"
                 },
                 "Troop Movement": {
                     "name": "Troop Movement",
@@ -7635,7 +7635,7 @@
                 },
                 "Engulf": {
                     "name": "Engulf",
-                    "description": "<p>@Check[reflex|dc:28], @Damage[2d8[force],4d4[fire]]{2d8 force damage plus 4d4 fire damage}, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 28, Rupture 20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:28], @Damage[2d8[force],4d4[fire]]{2d8 force damage plus 4d4 fire damage}, [[/act escape dc=28]], Rupture 20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Unstable Magic": {
                     "name": "Unstable Magic",
@@ -7808,7 +7808,7 @@
                 },
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress ice worm violently expels the young it carries. These young erupt as an @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.IMrnOMr3GtUFKyuV]{Ice Worm Swarm} in the empress ice worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[cold]] damage (@Check[reflex|dc:25|basic] save) from the splatter of icy viscera.</p>"
+                    "description": "<p>When killed, an empress ice worm violently expels the young it carries. These young erupt as an @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.IMrnOMr3GtUFKyuV]{Ice Worm Swarm} in the empress ice worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[cold]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of icy viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -9877,7 +9877,7 @@
                 },
                 "Stick a Fork in It": {
                     "name": "Stick a Fork in It",
-                    "description": "<p>The animated silverware swarm attempts to pin a single creature.</p>\n<p>The target must attempt a @Check[reflex|dc:17] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> Silverware pins portions of the target's clothing and gear. The target takes a -10-foot circumstance penalty to its Speeds as long as it remains in the swarm's space.</p>\n<p><strong>Failure</strong> As success, and the target also can't Step until it leaves the swarm's space.</p>\n<p><strong>Critical Failure</strong> The target is thoroughly pinned by the silverware, becoming @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 17) or uses 2 Interact actions to remove all of the silverware pinning them down.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.K3r1lfbtCTf3dFhV]{Effect: Stick a Fork in It}</p>"
+                    "description": "<p>The animated silverware swarm attempts to pin a single creature.</p>\n<p>The target must attempt a @Check[reflex|dc:17] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> Silverware pins portions of the target's clothing and gear. The target takes a -10-foot circumstance penalty to its Speeds as long as it remains in the swarm's space.</p>\n<p><strong>Failure</strong> As success, and the target also can't Step until it leaves the swarm's space.</p>\n<p><strong>Critical Failure</strong> The target is thoroughly pinned by the silverware, becoming @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it [[/act escape dc=17]]{Escapes} or uses 2 Interact actions to remove all of the silverware pinning them down.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.K3r1lfbtCTf3dFhV]{Effect: Stick a Fork in It}</p>"
                 }
             }
         },
@@ -10206,7 +10206,7 @@
                 },
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress necral worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.JlFBu8zobNq3daVF]{Necral Worm Swarm} in the empress necral worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[void]] damage (@Check[reflex|dc:25|basic] save) from the splatter of undead viscera.</p>"
+                    "description": "<p>When killed, an empress necral worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.JlFBu8zobNq3daVF]{Necral Worm Swarm} in the empress necral worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[void]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of undead viscera.</p>"
                 },
                 "Void Healing": {
                     "name": "Void Healing",
@@ -10314,7 +10314,7 @@
                 },
                 "Missile Volley": {
                     "name": "Missile Volley",
-                    "description": "<p>The nightmarchers fling a hail of spears and stones, dealing @Damage[(5d6+9)[untyped]] damage to creatures in a @Template[burst|distance:10] within 20 feet (@Check[reflex|dc:31|basic] save).</p>\n<p>When the nightmarchers are reduced to 8 or fewer squares, this decreases to a @Template[burst|distance:5].</p>"
+                    "description": "<p>The nightmarchers fling a hail of spears and stones, dealing @Damage[(5d6+9)[untyped]|options:area-damage] damage to creatures in a @Template[burst|distance:10] within 20 feet (@Check[reflex|dc:31|basic|options:area-effect] save).</p>\n<p>When the nightmarchers are reduced to 8 or fewer squares, this decreases to a @Template[burst|distance:5].</p>"
                 },
                 "Striking Koa": {
                     "name": "Striking Koa",
@@ -10727,7 +10727,7 @@
                 },
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress lava worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.5bBfMpcn0PuO1jTL]{Lava Worm Swarm} in the empress lava worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[fire]] damage (@Check[reflex|dc:25|basic] save) from the splatter of fiery viscera.</p>"
+                    "description": "<p>When killed, an empress lava worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.5bBfMpcn0PuO1jTL]{Lava Worm Swarm} in the empress lava worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[fire]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of fiery viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -11089,7 +11089,7 @@
                 },
                 "Clutching Cold": {
                     "name": "Clutching Cold",
-                    "description": "<p>A creature hit by the prophet's burning cold Strike becomes @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} in a cluster of binding ice crystals (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 31).</p>"
+                    "description": "<p>A creature hit by the prophet's burning cold Strike becomes @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} in a cluster of binding ice crystals ([[/act escape dc=31]]).</p>"
                 },
                 "Curse of Darkness": {
                     "name": "Curse of Darkness",

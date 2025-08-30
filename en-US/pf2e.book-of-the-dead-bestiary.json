@@ -389,7 +389,7 @@
                 },
                 "Broken Barb": {
                     "name": "Broken Barb",
-                    "description": "<p><strong>Requirements</strong> A creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} in the nasurgeth's jaws</p>\n<hr />\n<p><strong>Effect</strong> The nasurgeth breaks a tooth off in the target, who takes @Damage[3d10[bleed]] and is no longer grabbed or restrained. If the target is adjacent to a surface, the tooth also pins it in place, making it @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 45).</p>"
+                    "description": "<p><strong>Requirements</strong> A creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} in the nasurgeth's jaws</p>\n<hr />\n<p><strong>Effect</strong> The nasurgeth breaks a tooth off in the target, who takes @Damage[3d10[bleed]] and is no longer grabbed or restrained. If the target is adjacent to a surface, the tooth also pins it in place, making it @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} ([[/act escape dc=45]]).</p>"
                 },
                 "Ravenous Void": {
                     "name": "Ravenous Void",
@@ -494,7 +494,7 @@
             "items": {
                 "Squeeze": {
                     "name": "Squeeze",
-                    "description": "<p><strong>Trigger</strong> A creature moves over the haunt's area</p>\n<hr />\n<p><strong>Effect</strong> The hand forms out of ectoplasm and squeezes the triggering creature, dealing @Damage[(3d8+14)[bludgeoning]] damage (@Check[fortitude|dc:22|basic]). On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 22).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature moves over the haunt's area</p>\n<hr />\n<p><strong>Effect</strong> The hand forms out of ectoplasm and squeezes the triggering creature, dealing @Damage[(3d8+14)[bludgeoning]] damage (@Check[fortitude|dc:22|basic]). On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} ([[/act escape dc=22]]).</p>"
                 }
             }
         },
@@ -563,7 +563,7 @@
                 },
                 "Ghostly Blades": {
                     "name": "Ghostly Blades",
-                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The last guards engage in a coordinated attack with their spectral curve blades against each enemy in a @Template[emanation|distance:5] (@Check[reflex|dc:40|basic]). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d8+2)[slashing],1d8[void]]{1d8+2 slashing and 1d8 void damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d8+14)[slashing],2d8[void]]{2d8+14 slashing and 2d8 void damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(3d8+14)[slashing],3d8[void]]{3d8+14 slashing and 3d8 void damage}</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The last guards engage in a coordinated attack with their spectral curve blades against each enemy in a @Template[emanation|distance:5] (@Check[reflex|dc:40|basic|options:area-effect]). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d8+2)[slashing],1d8[void]|options:area-damage]{1d8+2 slashing and 1d8 void damage}</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d8+14)[slashing],2d8[void]|options:area-damage]{2d8+14 slashing and 2d8 void damage}</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(3d8+14)[slashing],3d8[void]|options:area-damage]{3d8+14 slashing and 3d8 void damage}</p>"
                 },
                 "Spectral Charge": {
                     "name": "Spectral Charge",
@@ -867,7 +867,7 @@
             "items": {
                 "Mental Bind": {
                     "name": "Mental Bind",
-                    "description": "<p><strong>Trigger</strong> A creature enters the area</p>\n<hr />\n<p><strong>Effect</strong> Each creature within 30 feet becomes wrapped in heavy spectral chains forged from its own sins and regrets. Each must attempt a @Check[will|dc:25] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes a -10-foot status penalty to its Speeds for 1 round.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 25).</p>\n<p><strong>Critical Failure</strong> As failure, and the creature is overwhelmed with guilt, becoming @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 day.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature enters the area</p>\n<hr />\n<p><strong>Effect</strong> Each creature within 30 feet becomes wrapped in heavy spectral chains forged from its own sins and regrets. Each must attempt a @Check[will|dc:25] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes a -10-foot status penalty to its Speeds for 1 round.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} until it [[/act escape dc=25]]{Escapes}.</p>\n<p><strong>Critical Failure</strong> As failure, and the creature is overwhelmed with guilt, becoming @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 day.</p>"
                 }
             }
         },
@@ -964,7 +964,7 @@
             "name": "Grasping Dead",
             "disable": "<p>@Check[religion|dc:22] (trained) to ritually pray for the dead or @Check[occultism|dc:24] (trained) to exorcise the spirits' anger; two total successes are required to disable the haunt</p>",
             "hazarddescription": "<p>Hands of the buried dead rise from the ground, grabbing and tearing at creatures in the area to drag them underground.</p>",
-            "routine": "<p>(1 action) The grasping hands batter all creatures in the area, dealing @Damage[(2d6+7)[bludgeoning]] damage (@Check[reflex|dc:26|basic] save). On a critical failure, a creature is dragged partially into the earth, becoming @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 26). If already immobilized, it's fully submerged and must hold its breath to avoid suffocation.</p>",
+            "routine": "<p>(1 action) The grasping hands batter all creatures in the area, dealing @Damage[(2d6+7)[bludgeoning]] damage (@Check[reflex|dc:26|basic] save). On a critical failure, a creature is dragged partially into the earth, becoming @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it [[/act escape dc=26]]{Escapes}. If already immobilized, it's fully submerged and must hold its breath to avoid suffocation.</p>",
             "reset": "<p>The haunt deactivates 1 minute after all living creatures leave the area. After 1 hour, the haunt reactivates.</p>",
             "stealthdetails": "<p>(trained)</p>",
             "items": {
@@ -1090,7 +1090,7 @@
                 },
                 "Enshroud": {
                     "name": "Enshroud",
-                    "description": "<p><strong>Requirements</strong> The shredskin is restraining a creature</p>\n<hr />\n<p><strong>Effect</strong> The shredskin wraps itself around the @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} creature like a shirt, seizing control. The shredskin rolls an @Check[athletics|defense:fortitude] check against the creature's Fortitude DC. On a success, the creature becomes restrained until it Escapes and the shredskin can control the creature as described in Control Body. At the start of each of its turns, the shredskin can attempt to Constrict the enshrouded creature as a free action. An enshrouded creature can attempt a DC 16 Escape check to break free (DC 18 if the shredskin critically succeeded its Athletics check to Enshroud).</p>"
+                    "description": "<p><strong>Requirements</strong> The shredskin is restraining a creature</p>\n<hr />\n<p><strong>Effect</strong> The shredskin wraps itself around the @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} creature like a shirt, seizing control. The shredskin rolls an @Check[athletics|against:fortitude] check against the creature's Fortitude DC. On a success, the creature becomes restrained until it Escapes and the shredskin can control the creature as described in Control Body. At the start of each of its turns, the shredskin can attempt to Constrict the enshrouded creature as a free action. An enshrouded creature can attempt a [[/act escape dc=16]] check to break free ([[/act escape dc=18]] if the shredskin critically succeeded its Athletics check to Enshroud).</p>"
                 }
             }
         },
@@ -1128,7 +1128,7 @@
             "items": {
                 "Seep Blood": {
                     "name": "Seep Blood",
-                    "description": "<p><strong>Trigger</strong> A creature enters the area</p>\n<hr />\n<p><strong>Effect</strong> Blood seeps up from the earth, turning the area into sucking, gory mud. The area becomes difficult terrain for 1 hour. All creatures in or moving through the area must succeed at a @Check[reflex|dc:16] save, or they become @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until they can @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} (DC 16).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature enters the area</p>\n<hr />\n<p><strong>Effect</strong> Blood seeps up from the earth, turning the area into sucking, gory mud. The area becomes difficult terrain for 1 hour. All creatures in or moving through the area must succeed at a @Check[reflex|dc:16] save, or they become @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until they can [[/act escape dc=16]].</p>"
                 }
             }
         },
@@ -2278,7 +2278,7 @@
             "items": {
                 "Capture": {
                     "name": "Capture",
-                    "description": "<p><strong>Trigger</strong> A creature touches the manacles</p>\n<hr />\n<p><strong>Effect</strong> The spirit attempts to lock the manacles around the triggering creature's wrists. The triggering creature must attempt a @Check[reflex|dc:23] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The spirit loosely places manacles around the creature's wrists. Removing the manacles requires a single action.</p>\n<p><strong>Failure</strong> The spirit clamps the manacles around the creature's wrists but fails to lock them. The creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} until the manacles are removed as a 3-action activity.</p>\n<p><strong>Critical Failure</strong> The spirit clamps the manacles around the creature's wrists and locks them. The creature is off-guard and clumsy 1 until the manacles are removed (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 23, simple lock).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature touches the manacles</p>\n<hr />\n<p><strong>Effect</strong> The spirit attempts to lock the manacles around the triggering creature's wrists. The triggering creature must attempt a @Check[reflex|dc:23] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The spirit loosely places manacles around the creature's wrists. Removing the manacles requires a single action.</p>\n<p><strong>Failure</strong> The spirit clamps the manacles around the creature's wrists but fails to lock them. The creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} until the manacles are removed as a 3-action activity.</p>\n<p><strong>Critical Failure</strong> The spirit clamps the manacles around the creature's wrists and locks them. The creature is off-guard and clumsy 1 until the manacles are removed ([[/act escape dc=23]], simple lock).</p>"
                 }
             }
         },
@@ -2312,7 +2312,7 @@
             "name": "Spirit Cyclone",
             "disable": "<p>@Check[occultism|dc:30] (trained) or @Check[religion|dc:30] (trained) to weaken the haunt; three total successes in any combination are required to disable the haunt</p>",
             "hazarddescription": "<p>A cyclone of angry spirits surges around the area.</p>",
-            "routine": "<p>(3 actions) The spirit cyclone uses 3 actions to move, traveling up to 30 feet with each action and dealing @Damage[(2d10+13)[void]] damage to each creature in its path (@Check[reflex|dc:32|basic] save). A creature needs to attempt only one save during the cyclone's movement, even if the cyclone moves over its space more than once. On a critical failure, a creature is swept up into the cyclone, becoming @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 32). A creature grabbed by the cyclone moves along with the cyclone and takes @Damage[(1d10+6)[void]] damage at their beginning of its turn, and it must attempt a Reflex save against the cyclone on the cyclone's turn, no matter where the cyclone moves. A creature that successfully Escapes from the cyclone falls from a height of [[/r {1d12*5} #Falling Distance]]{1d12 x 5 feet}.</p>",
+            "routine": "<p>(3 actions) The spirit cyclone uses 3 actions to move, traveling up to 30 feet with each action and dealing @Damage[(2d10+13)[void]] damage to each creature in its path (@Check[reflex|dc:32|basic] save). A creature needs to attempt only one save during the cyclone's movement, even if the cyclone moves over its space more than once. On a critical failure, a creature is swept up into the cyclone, becoming @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} ([[/act escape dc=32]]). A creature grabbed by the cyclone moves along with the cyclone and takes @Damage[(1d10+6)[void]] damage at their beginning of its turn, and it must attempt a Reflex save against the cyclone on the cyclone's turn, no matter where the cyclone moves. A creature that successfully Escapes from the cyclone falls from a height of [[/r {1d12*5} #Falling Distance]]{1d12 x 5 feet}.</p>",
             "reset": "<p>The spirit cyclone disperses after 1 minute and resets after 1 day.</p>",
             "stealthdetails": "<p>(expert)</p>",
             "items": {

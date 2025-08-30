@@ -87,7 +87,7 @@
                 },
                 "Strike as One": {
                     "name": "Strike as One",
-                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The einherji host makes melee attacks against each enemy in a @Template[emanation|distance:5] (@Check[reflex|dc:36|basic] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d8+7)[slashing]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+14)[slashing]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+14)[slashing]] damage</p>"
+                    "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> The einherji host makes melee attacks against each enemy in a @Template[emanation|distance:5] (@Check[reflex|dc:36|basic|options:area-effect] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d8+7)[slashing]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+14)[slashing]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+14)[slashing]|options:area-damage] damage</p>"
                 },
                 "Troop Movement": {
                     "name": "Troop Movement",
@@ -363,7 +363,7 @@
                 },
                 "Wildfire Storm": {
                     "name": "Wildfire Storm",
-                    "description": "<p>Rhysaphine spreads his wings and spins, forming a whirlwind of flame that deals @Damage[19d6[fire]] damage in a @Template[emanation|distance:20] (@Check[reflex|dc:40|basic] save). He can't use Wildfire Storm again for [[/gmr 1d4 #Recharge Wildfire Storm]]{1d4 rounds}.</p>"
+                    "description": "<p>Rhysaphine spreads his wings and spins, forming a whirlwind of flame that deals @Damage[19d6[fire]|options:area-damage] damage in a @Template[emanation|distance:20] (@Check[reflex|dc:40|basic|options:area-effect] save). He can't use Wildfire Storm again for [[/gmr 1d4 #Recharge Wildfire Storm]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -602,8 +602,8 @@
                     "name": "Eat Life",
                     "description": "<p><strong>Trigger</strong> A creature within Alktherisa's reach is targeted by a spell that heals Hit Points or grants temporary Hit Points</p><hr /><p><strong>Effect</strong> Alktherisa and Omprisgor become additional targets of that spell, even if that spell normally couldn't target an additional creature.</p>"
                 },
-                "Protean Anatomy": {
-                    "name": "Protean Anatomy",
+                "Protean Anatomy 25": {
+                    "name": "Protean Anatomy 25",
                     "description": "<p>A keketar's vital organs shift and change shape and position constantly. Immediately after the keketar takes acid, electricity, or sonic damage, they gain the listed amount of resistance to that damage type. This lasts for 1 hour or until the next time the protean takes damage of one of the other types (in which case their resistance changes to match that type), whichever comes first.</p>\n<p>The keketar is immune to polymorph effects unless they're a willing target. If @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} or @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened}, the keketar automatically recovers at the end of their next turn as new sensory organs grow to replace the compromised ones.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.c6SiBB3mzV8lZUQr]{Effect: Protean Anatomy}</p>"
                 },
                 "Reactive Strike": {
@@ -749,7 +749,7 @@
                 },
                 "Bloody Mess": {
                     "name": "Bloody Mess",
-                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> Bloody Hands slashes his claws out in all directions, causing blood from all living creatures within a @Template[emanation|distance:20]{20-foot-radius} to leap out and fill the air with a fine red mist. All creatures in the area must attempt a @Check[fortitude|dc:37|options:damaging-effect] save—creatures that are already wounded take a –2 penalty to this saving throw. If more than 3 creatures fail this saving throw, the 20-foot-radius becomes so thick with bloody mist that all creatures in the area become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} until the end of Bloody Hands' next turn.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[8d6[slashing]] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[8d6[slashing]] damage, @Damage[4d6[persistent,bleed]] damage, and becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} from blood loss for 1 minute.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[12d6[persistent,bleed]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} from blood loss.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> Bloody Hands slashes his claws out in all directions, causing blood from all living creatures within a @Template[emanation|distance:20]{20-foot-radius} to leap out and fill the air with a fine red mist. All creatures in the area must attempt a @Check[fortitude|dc:37|options:area-effect,damaging-effect,inflicts:enfeebled] save—creatures that are already wounded take a –2 penalty to this saving throw. If more than 3 creatures fail this saving throw, the 20-foot-radius becomes so thick with bloody mist that all creatures in the area become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} until the end of Bloody Hands' next turn.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[8d6[slashing]|options:area-damage] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[8d6[slashing],4d6[persistent,bleed]|options:area-damage]{8d6 slashing damage, 4d6 persistent bleed damage}, and becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} from blood loss for 1 minute.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[12d6[persistent,bleed]|options:area-damage] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} from blood loss.</p>"
                 },
                 "Leaping Slam": {
                     "name": "Leaping Slam",
@@ -860,7 +860,7 @@
                 },
                 "Viscous Trap": {
                     "name": "Viscous Trap",
-                    "description": "<p>A creature hit by the mezlan's ooze globule takes a -15-foot circumstance penalty to all Speeds for 1 minute. On a critical hit, a target standing on a solid surface also becomes @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, while a target Flying via wings falls to the ground and becomes unable to Fly.</p>\n<p>A target can end all effects by @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escaping} (DC 34) or spending a total of 3 Interact actions to free itself.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]{Effect: Viscous Trap}</p>"
+                    "description": "<p>A creature hit by the mezlan's ooze globule takes a -15-foot circumstance penalty to all Speeds for 1 minute. On a critical hit, a target standing on a solid surface also becomes @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, while a target Flying via wings falls to the ground and becomes unable to Fly.</p>\n<p>A target can end all effects by [[/act escape dc=34]]{Escaping} or spending a total of 3 Interact actions to free itself.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]{Effect: Viscous Trap}</p>"
                 }
             }
         },
@@ -1109,7 +1109,7 @@
                 },
                 "Web Trap": {
                     "name": "Web Trap",
-                    "description": "<p>A creature hit by the jorogumo's web attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface, preventing the creature from moving.</p>\n<p>The DC to [[/act escape dc=32]]{Escape} or [[/act force-open dc=32]]{Force Open} the web trap is 32.</p>"
+                    "description": "<p>A creature hit by the jorogumo's web attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface, preventing the creature from moving.</p>\n<p>The DC to [[/act escape dc=32]] or [[/act force-open dc=32]] the web trap is 32.</p>"
                 }
             }
         },
@@ -1145,7 +1145,7 @@
                 },
                 "Pinning Throw": {
                     "name": "Pinning Throw",
-                    "description": "<p>The Gorumite veteran attempts a ranged Strike with their javelin, dealing @Damage[(3d6+22)[piercing]] damage. If the target is adjacent to a solid surface, they become stuck to that surface by the javelin. The target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until they @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} (DC 33). The creature doesn't become stuck if it is incorporeal, is liquid (like a water elemental or some oozes), or could otherwise escape without effort.</p>"
+                    "description": "<p>The Gorumite veteran attempts a ranged Strike with their javelin, dealing @Damage[(3d6+22)[piercing]] damage. If the target is adjacent to a solid surface, they become stuck to that surface by the javelin. The target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until they [[/act escape dc=33]]. The creature doesn't become stuck if it is incorporeal, is liquid (like a water elemental or some oozes), or could otherwise escape without effort.</p>"
                 }
             }
         },

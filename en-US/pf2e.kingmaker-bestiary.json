@@ -613,6 +613,25 @@
                 }
             }
         },
+        "Phantasmal Protagonist": {
+            "prototypeToken": {
+                "name": "Phantasmal Protagonist"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Phantasmal Protagonist",
+            "items": {
+                "Thematic Action - Ally": {
+                    "name": "Thematic Action - Ally",
+                    "description": "<p>The protagonist takes the form of a recognizable support character. Its thematic action is to grant an adjacent creature 4d4 temporary Hit Points, which last for 1 round.</p>"
+                },
+                "Thematic Action - Villain": {
+                    "name": "Thematic Action - Villain",
+                    "description": "<p>The protagonist takes the form of a notorious villain. Its thematic action is to harry and mock an adjacent target. The target must succeed at a Will save or become @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} (@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} on a critical failure) until the end of your next turn.</p>"
+                }
+            }
+        },
         "Mandragora Swarm": {
             "prototypeToken": {
                 "name": "Mandragora Swarm"
@@ -2383,7 +2402,7 @@
                 },
                 "Frightful Moan": {
                     "name": "Frightful Moan",
-                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:36] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
+                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:36|options:area-effect,inflicts:frightened] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
                 },
                 "Sneak Attack": {
                     "name": "Sneak Attack",
@@ -2800,7 +2819,7 @@
                 },
                 "Wild Empathy": {
                     "name": "Wild Empathy",
-                    "description": "<p>Nyrissa can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on and make very simple Requests of animals and plant creatures.</p>"
+                    "description": "<p>Nyrissa can use Diplomacy to [[/act make-an-impression]] on and make very simple [[/act request]]{Requests} of animals and plant creatures.</p>"
                 },
                 "Constant Spells": {
                     "name": "Constant Spells",
@@ -2938,7 +2957,7 @@
                 },
                 "Frightful Moan": {
                     "name": "Frightful Moan",
-                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:28] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
+                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:28|options:area-effect,inflicts:frightened] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
                 },
                 "Telekinetic Assault": {
                     "name": "Telekinetic Assault",
@@ -3323,7 +3342,7 @@
                 },
                 "Surge": {
                     "name": "Surge",
-                    "description": "<p>The elemental tsunami quickly expands its space to fill the area of its vortex. Creatures within the vortex's emanation take @Damage[(6d12+8)[bludgeoning]] damage (@Check[fortitude|dc:34|basic] save). A creature that fails this save is Pushed 20 feet. The elemental tsunami then retracts to its former space.</p>\n<p>A creature that takes damage is exposed to blinding sickness.</p>\n<p>The elemental tsunami can't Surge again for [[/gmr 1d4 #Recharge Surge]]{1d4 rounds}.</p>"
+                    "description": "<p>The elemental tsunami quickly expands its space to fill the area of its vortex. Creatures within the vortex's emanation take @Damage[(6d12+8)[bludgeoning]|options:area-damage] damage (@Check[fortitude|dc:34|basic|options:area-effect,inflicts:forced-movement] save). A creature that fails this save is Pushed 20 feet. The elemental tsunami then retracts to its former space.</p>\n<p>A creature that takes damage is exposed to blinding sickness.</p>\n<p>The elemental tsunami can't Surge again for [[/gmr 1d4 #Recharge Surge]]{1d4 rounds}.</p>"
                 },
                 "Push or Pull 10 feet": {
                     "name": "Push or Pull 10 feet",
@@ -4140,7 +4159,7 @@
                 },
                 "Chill Breath": {
                     "name": "Chill Breath",
-                    "description": "<p>Jurgrindor breathes out a @Template[cone|distance:15] of freezing moisture that quickly condenses into ice, dealing @Damage[2d6[cold]|options:area-damage] damage (@Check[reflex|dc:18|basic|options:area-effect]). A creature that critically fails the save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it [[/act escape dc=18]]{Escapes} (DC 18). Jurgrindor can't use Chill Breath for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>Jurgrindor breathes out a @Template[cone|distance:15] of freezing moisture that quickly condenses into ice, dealing @Damage[2d6[cold]|options:area-damage] damage (@Check[reflex|dc:18|basic|options:area-effect]). A creature that critically fails the save is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it [[/act escape dc=18]]{Escapes}. Jurgrindor can't use Chill Breath for [[/gmr 1d4 #Recharge Chill Breath]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -4838,7 +4857,7 @@
                 },
                 "Vent": {
                     "name": "Vent",
-                    "description": "<p>The golem vents a @Template[cone|distance:30] of superheated steam from its internal forge. This deals @Damage[15d6[fire]] damage to all creatures in the cone (@Check[reflex|dc:40|basic]).</p>\n<p>The golem can't use Vent again for [[/gmr 1d6 #Recharge Vent]]{1d6 rounds}.</p>"
+                    "description": "<p>The golem vents a @Template[cone|distance:30] of superheated steam from its internal forge. This deals @Damage[15d6[fire]|options:area-damage] damage to all creatures in the cone (@Check[reflex|dc:40|basic|options:area-effect]).</p>\n<p>The golem can't use Vent again for [[/gmr 1d6 #Recharge Vent]]{1d6 rounds}.</p>"
                 }
             }
         },
@@ -5111,7 +5130,7 @@
             "items": {
                 "Wild Empathy": {
                     "name": "Wild Empathy",
-                    "description": "<p>Melianse can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on aquatic or amphibious animals and make very simple Requests of them.</p>"
+                    "description": "<p>Melianse can use Diplomacy to [[/act make-an-impression]] on aquatic or amphibious animals and make very simple [[/act request]]{Requests} of them.</p>"
                 },
                 "+1 Status to All Saves vs. Magic": {
                     "name": "+1 Status to All Saves vs. Magic"
@@ -5480,7 +5499,7 @@
                 },
                 "Bonds of Iron": {
                     "name": "Bonds of Iron",
-                    "description": "<p>Once per day, an annis hag can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, the annis hag gains a +2 circumstance bonus to this check.</p>\n<p>Unlike a normal Grapple, the annis hag doesn't need to be within reach and can move as she pleases, and a successful attempt lasts until the creature [[/act escape dc=42]]{Escapes} (DC 42), causing the cage to crumble into rust.</p>\n<p>Any creature can attempt to destroy the cage by attacking it. It has an AC of 40, Hardness 20, and 80 Hit Points.</p>"
+                    "description": "<p>Once per day, an annis hag can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, the annis hag gains a +2 circumstance bonus to this check.</p>\n<p>Unlike a normal Grapple, the annis hag doesn't need to be within reach and can move as she pleases, and a successful attempt lasts until the creature [[/act escape dc=42]]{Escapes}, causing the cage to crumble into rust.</p>\n<p>Any creature can attempt to destroy the cage by attacking it. It has an AC of 40, Hardness 20, and 80 Hit Points.</p>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",
@@ -6845,7 +6864,7 @@
                 },
                 "Bonds of Iron": {
                     "name": "Bonds of Iron",
-                    "description": "<p>Once per day, a jaggerdbrier hag can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, the jaggerdbrier hag gains a +2 circumstance bonus to this check.</p>\n<p>Unlike a normal Grapple, the jaggerdbrier hag doesn't need to be within reach and can move as she pleases, and a successful attempt lasts until the creature [[/act escape dc=25]]{Escapes} (DC 25), causing the cage to crumble into rust.</p>\n<p>Any creature can attempt to destroy the cage by attacking it. It has an AC of 19, Hardness 10, and 40 Hit Points.</p>"
+                    "description": "<p>Once per day, a jaggerdbrier hag can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, the jaggerdbrier hag gains a +2 circumstance bonus to this check.</p>\n<p>Unlike a normal Grapple, the jaggerdbrier hag doesn't need to be within reach and can move as she pleases, and a successful attempt lasts until the creature [[/act escape dc=25]]{Escapes}, causing the cage to crumble into rust.</p>\n<p>Any creature can attempt to destroy the cage by attacking it. It has an AC of 19, Hardness 10, and 40 Hit Points.</p>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",

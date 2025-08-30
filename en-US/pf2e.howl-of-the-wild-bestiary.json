@@ -25,7 +25,7 @@
                 },
                 "Wallow": {
                     "name": "Wallow",
-                    "description": "<p><strong>Requirements</strong> The magnegor is @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p>\n<hr />\n<p><strong>Effect</strong> The magnegor rolls on its spine-covered back, up to its Speed, furrowing the earth and crushing any Large or smaller creatures in its path. This deals @Damage[4d10[piercing]] damage with a @Check[reflex|dc:24|basic] save; on a failed save, a creature wearing metal armor or made of metal is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by the magnegor's magnetized coat (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 24). For each metal object or piece of equipment a restrained creature chooses to leave stuck to the magnegor, it gains a +1 circumstance bonus to its attempts to Escape. A creature that relinquishes all its metal Escapes automatically. The magnegor can move at its full Speed while it has a creature restrained in this way, bringing the creature along.</p>"
+                    "description": "<p><strong>Requirements</strong> The magnegor is @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}</p>\n<hr />\n<p><strong>Effect</strong> The magnegor rolls on its spine-covered back, up to its Speed, furrowing the earth and crushing any Large or smaller creatures in its path. This deals @Damage[4d10[piercing]] damage with a @Check[reflex|dc:24|basic] save; on a failed save, a creature wearing metal armor or made of metal is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by the magnegor's magnetized coat ([[/act escape dc=24]]). For each metal object or piece of equipment a restrained creature chooses to leave stuck to the magnegor, it gains a +1 circumstance bonus to its attempts to Escape. A creature that relinquishes all its metal Escapes automatically. The magnegor can move at its full Speed while it has a creature restrained in this way, bringing the creature along.</p>"
                 }
             }
         },
@@ -167,7 +167,7 @@
                 },
                 "Vomit Meteorites": {
                     "name": "Vomit Meteorites",
-                    "description": "<p>The stargut hydra lurches its entire body, spewing forth chunks of meteorite in a @Template[cone|distance:30] that deal @Damage[5d6[bludgeoning]] damage to all creatures in the area (@Check[reflex|dc:25|basic]). The area becomes difficult terrain for 1 minute, though a creature can use an Interact action to clear one square of the rubble. The stargut hydra can't Vomit Meteorites for [[/gmr 1d4 #Recharge Vomit Meteorites]]{1d4 rounds}.</p>"
+                    "description": "<p>The stargut hydra lurches its entire body, spewing forth chunks of meteorite in a @Template[cone|distance:30] that deal @Damage[5d6[bludgeoning]|options:area-damage] damage to all creatures in the area (@Check[reflex|dc:25|basic|options:area-effect]). The area becomes difficult terrain for 1 minute, though a creature can use an Interact action to clear one square of the rubble. The stargut hydra can't Vomit Meteorites for [[/gmr 1d4 #Recharge Vomit Meteorites]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -1382,7 +1382,7 @@
                 },
                 "Venomous Spit": {
                     "name": "Venomous Spit",
-                    "description": "<p>The coppermouth unleashes a stream of electrified venom in a @Template[line|distance:30]. The venom deals @Damage[8d6[electricity]] damage (@Check[reflex|dc:22|basic]) and creatures that take damage from the venom are immediately exposed to coppermouth venom. The copper mouth can't use Venomous Spit again for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "description": "<p>The coppermouth unleashes a stream of electrified venom in a @Template[line|distance:30]. The venom deals @Damage[8d6[electricity]|options:area-damage] damage (@Check[reflex|dc:22|basic|options:area-effect]) and creatures that take damage from the venom are immediately exposed to coppermouth venom. The copper mouth can't use Venomous Spit again for [[/gmr 1d4 #Recharge Venomous Spit]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -1532,7 +1532,7 @@
                 },
                 "Budding Siphon": {
                     "name": "Budding Siphon",
-                    "description": "<p>20 feet. A blooming guardian is in a constant state of decomposition; to keep this entropy at bay, the flowers that cover their antlers continually siphon life from the surrounding area. All living creatures that enter or start their turn in the emanation take @Damage[6d4[void]] damage (@Check[fortitude|dc:36|basic] save). At the start of their turn in any round that the blooming guardian deals damage with siphoning buds, they gain 10 temporary Hit Points, plus 2 temporary Hit Points for each creature damaged beyond the first since the blooming guardian's last turn, to a maximum of 20 temporary Hit Points.</p>"
+                    "description": "<p>20 feet. A blooming guardian is in a constant state of decomposition; to keep this entropy at bay, the flowers that cover their antlers continually siphon life from the surrounding area. All living creatures that enter or start their turn in the emanation take @Damage[6d4[void]|options:area-damage] damage (@Check[fortitude|dc:36|basic|options:area-effect] save). At the start of their turn in any round that the blooming guardian deals damage with siphoning buds, they gain 10 temporary Hit Points, plus 2 temporary Hit Points for each creature damaged beyond the first since the blooming guardian's last turn, to a maximum of 20 temporary Hit Points.</p>"
                 },
                 "Full Bloom": {
                     "name": "Full Bloom",
@@ -1544,7 +1544,7 @@
                 },
                 "Wail of the Forest": {
                     "name": "Wail of the Forest",
-                    "description": "<p><strong>Requirements</strong> The blooming guardian is in Full Bloom</p>\n<hr />\n<p><strong>Effect</strong> The blooming guardian confronts their mortality, causing their flowers to burst and spray their pollen. All creatures in a @Template[cone|distance:40] take @Damage[10d10[void]] damage with a @Check[fortitude|dc:36] save. The blooming guardian then exits Full Bloom and can't enter it again for [[/gmr 1d4 #Recharge Full Bloom]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> No effect.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Creatures that are @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled} lose that condition and increase the drained condition by the same value.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage.</p>"
+                    "description": "<p><strong>Requirements</strong> The blooming guardian is in Full Bloom</p>\n<hr />\n<p><strong>Effect</strong> The blooming guardian confronts their mortality, causing their flowers to burst and spray their pollen. All creatures in a @Template[cone|distance:40] take @Damage[10d10[void]|options:area-damage] damage with a @Check[fortitude|dc:36|options:area-effect,damaging-effect,inflicts:drained] save. The blooming guardian then exits Full Bloom and can't enter it again for [[/gmr 1d4 #Recharge Full Bloom]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> No effect.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}. Creatures that are @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled} lose that condition and increase the drained condition by the same value.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage.</p>"
                 }
             }
         },
@@ -1684,7 +1684,7 @@
                 },
                 "Bury Beneath Stone": {
                     "name": "Bury Beneath Stone",
-                    "description": "<p><strong>Requirements</strong> The warden has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p><hr /><p><strong>Effect</strong> The warden attempts to wedge a creature they have grabbed in their mandibles within a crack in the earth that opens beneath them. The warden attempts an @Check[athletics|defense:reflex] check against the grabbed creature's Reflex DC. If they succeed, they bury the creature in the ground. The creature takes @Damage[10d10[bludgeoning]] damage. It is also @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and has to hold its breath or start suffocating until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 42). If the creature is still buried at the end of its turn, it takes @Damage[5d10[bludgeoning]] damage.</p>"
+                    "description": "<p><strong>Requirements</strong> The warden has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p><hr /><p><strong>Effect</strong> The warden attempts to wedge a creature they have grabbed in their mandibles within a crack in the earth that opens beneath them. The warden attempts an @Check[athletics|defense:reflex] check against the grabbed creature's Reflex DC. If they succeed, they bury the creature in the ground. The creature takes @Damage[10d10[bludgeoning]] damage. It is also @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and has to hold its breath or start suffocating until it [[/act escape dc=42]]{Escapes}. If the creature is still buried at the end of its turn, it takes @Damage[5d10[bludgeoning]] damage.</p>"
                 },
                 "Called to Depths": {
                     "name": "Called to Depths",
@@ -1696,7 +1696,7 @@
                 },
                 "Obsidian Cage": {
                     "name": "Obsidian Cage",
-                    "description": "<p>Rapidly cooling obsidian clings to the target's body and stiffens around their limbs. The target must attempt a @Check[reflex|dc:42] save. On a failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until they @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} (DC 42). On a critical failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} for as long as they remain immobilized.</p>"
+                    "description": "<p>Rapidly cooling obsidian clings to the target's body and stiffens around their limbs. The target must attempt a @Check[reflex|dc:42] save. On a failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until they [[/act escape dc=42]]. On a critical failure, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} for as long as they remain immobilized.</p>"
                 },
                 "Vibratory Excavation": {
                     "name": "Vibratory Excavation",
@@ -1891,7 +1891,7 @@
                 },
                 "Unleash the Sun": {
                     "name": "Unleash the Sun",
-                    "description": "<p><strong>Requirements</strong> The sunscale serpent is flying</p>\n<hr />\n<p><strong>Effect</strong> The sunscale serpent Flies up to its fly Speed, then crashes to the ground, releasing a wave of heat dealing @Damage[5d10[fire]] damage to all creatures within a @Template[burst|distance:60] and searing their eyes with the erupting glory of its scales. Each creature in the area must attempt a @Check[reflex|dc:31] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature takes full damage, is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round, and dazzled for 1 minute.</p>"
+                    "description": "<p><strong>Requirements</strong> The sunscale serpent is flying</p>\n<hr />\n<p><strong>Effect</strong> The sunscale serpent Flies up to its fly Speed, then crashes to the ground, releasing a wave of heat dealing @Damage[5d10[fire]|options:area-damage] damage to all creatures within a @Template[burst|distance:60] and searing their eyes with the erupting glory of its scales. Each creature in the area must attempt a @Check[reflex|dc:31|options:area-effect,damaging-effect,inflicts:blinded,inflicts:dazzled] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature takes full damage, is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round, and dazzled for 1 minute.</p>"
                 },
                 "Push": {
                     "name": "Push",
@@ -2034,7 +2034,7 @@
             "items": {
                 "Wild Empathy": {
                     "name": "Wild Empathy",
-                    "description": "<p>The alicorn has an empathic connection to the creatures of the natural world that. The alicorn can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on animals and to make very simple @UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]{Requests} of them.</p>"
+                    "description": "<p>The alicorn has an empathic connection to the creatures of the natural world that. The alicorn can use Diplomacy to [[/act make-an-impression]] on animals and to make very simple [[/act request]]{Requests} of them.</p>"
                 },
                 "At-Will Spells": {
                     "name": "At-Will Spells",

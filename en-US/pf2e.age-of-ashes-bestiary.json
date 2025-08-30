@@ -206,7 +206,7 @@
                 },
                 "Frightful Moan": {
                     "name": "Frightful Moan",
-                    "description": "<p>Candlaron's echo laments its fate, forcing each living creature within 30 feet to attempt a @Check[will|dc:44] save.</p>\nOn a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to the echo's frightful moan for 1 minute."
+                    "description": "<p>Candlaron's echo laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:44|options:area-effect,inflicts:frightened] save.</p>\nOn a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to the echo's frightful moan for 1 minute."
                 },
                 "Telekinetic Assault": {
                     "name": "Telekinetic Assault",
@@ -239,7 +239,7 @@
                 },
                 "Collapse Ceiling": {
                     "name": "Collapse Ceiling",
-                    "description": "<p>The ruin collapses up to three 10-foot by 10-foot sections of its ceiling. The ruin takes [[/r {10}]]{10 damage} per section it collapses, and it can't collapse the same section until it has been repaired.</p>\n<p>Each creature in one of these areas takes @Damage[8d10[bludgeoning]] damage with a @Check[reflex|dc:35|basic] save. On a failed save, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} under the rubble until it Escapes (DC 33).</p>"
+                    "description": "<p>The ruin collapses up to three @Template[square|distance:10]{10-foot by 10-foot} sections of its ceiling. The ruin takes @Damage[10[untyped]] damage per section it collapses, and it can't collapse the same section until it has been repaired.</p>\n<p>Each creature in one of these areas takes @Damage[8d10[bludgeoning]|options:area-damage] damage with a @Check[reflex|dc:35|basic|options:area-effect,inflicts:restrained] save. On a failed save, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} under the rubble until it [[/act escape dc=33]]{Escapes}.</p>"
                 },
                 "Pervasive Attacks": {
                     "name": "Pervasive Attacks",
@@ -399,7 +399,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>Racharak breathes flames that deals @Damage[9d6[fire]|options:area-damage] damage to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic] save).</p>\n<p>She can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}</p>"
+                    "description": "<p>Racharak breathes flames that deals @Damage[9d6[fire]|options:area-damage] damage to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save).</p>\n<p>She can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "Draconic Frenzy",
@@ -450,7 +450,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>Mengkare breathes in one of two ways. He can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Flame</strong> (arcane,evocation,fire); Mengkare breathes a blast of flame in a @Template[cone|distance:80] that deals @Damage[24d6[fire]|options:area-damage] damage (@Check[reflex|dc:46|basic|name:Breath Weapon (Flame)] save).</li>\n<li><strong>Weakening Gas</strong> (arcane,necromancy); The dragon breathes a blast of weakening gas. Each creature within a @Template[cone|distance:30] must succeed at a @Check[fortitude|dc:46|name:Breath Weapon (Weakening Gas)] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 4} for 1 minute (or @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 5} on a critical failure).</li>\n</ul>"
+                    "description": "<p>Mengkare breathes in one of two ways. He can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Flame</strong> (arcane,evocation,fire); Mengkare breathes a blast of flame in a @Template[cone|distance:80] that deals @Damage[24d6[fire]|options:area-damage] damage (@Check[reflex|dc:46|basic|name:Breath Weapon (Flame)|traits:arcane,evocation,fire|options:area-effect] save).</li>\n<li><strong>Weakening Gas</strong> (arcane,necromancy); The dragon breathes a blast of weakening gas. Each creature within a @Template[cone|distance:30] must succeed at a @Check[fortitude|dc:46|name:Breath Weapon (Weakening Gas)|traits:arcane,necromancy|options:area-effect,inflicts:enfeebled] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 4} for 1 minute (or @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 5} on a critical failure).</li>\n</ul>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",
@@ -1065,7 +1065,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>Veshumirix breathes a blast of magma that deals @Damage[9d6[fire],4d12[bludgeoning]|options:area-damage]{9d6 fire damage and 4d12 bludgeoning damage} in a @Template[cone|distance:60] (@Check[reflex|dc:42|basic] save).</p>\n<p>He can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>Veshumirix breathes a blast of magma that deals @Damage[9d6[fire],4d12[bludgeoning]|options:area-damage]{9d6 fire damage and 4d12 bludgeoning damage} in a @Template[cone|distance:60] (@Check[reflex|dc:42|basic|options:area-effect] save).</p>\n<p>He can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "Draconic Frenzy",
@@ -1305,7 +1305,7 @@
                 },
                 "Body Slam": {
                     "name": "Body Slam",
-                    "description": "<p><strong>Requirements</strong> More than one enemy is adjacent to the grauladon.</p>\n<hr />\n<p><strong>Effect</strong> The grauladon swings its tail at each adjacent enemy and attempts to <span data-pf2-action=\"trip\" data-pf2-glyph=\"A\">Trip</span> each creature adjacent to it. It rolls only a single Athletics check and compares the result to the Fortitude DC of each target.</p>"
+                    "description": "<p><strong>Requirements</strong> More than one enemy is adjacent to the grauladon.</p>\n<hr />\n<p><strong>Effect</strong> The grauladon swings its tail at each adjacent enemy and attempts to [[/act trip]] each creature adjacent to it. It rolls only a single Athletics check and compares the result to the Fortitude DC of each target.</p>"
                 },
                 "Deep Breath": {
                     "name": "Deep Breath",
@@ -1581,7 +1581,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The Xotanispawn sprays a @Template[cone|distance:60] of magma that deals @Damage[10d10[fire],2d6[persistent,fire]|options:area-damage]{10d10 fire damage and 2d6 persistent fire damage} to all creatures in the area (@Check[reflex|dc:39|basic] save).</p>\n<p>The Xotanispawn can't use its Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The Xotanispawn sprays a @Template[cone|distance:60] of magma that deals @Damage[10d10[fire],2d6[persistent,fire]|options:area-damage]{10d10 fire damage and 2d6 persistent fire damage} to all creatures in the area (@Check[reflex|dc:39|basic|options:area-effect] save).</p>\n<p>The Xotanispawn can't use its Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Heat Surge": {
                     "name": "Heat Surge",
@@ -2588,7 +2588,7 @@
                 },
                 "Bonds of Iron": {
                     "name": "Bonds of Iron",
-                    "description": "<p>Once per day, Rusty Mae can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, Rusty Mae gains a +2 circumstance bonus to this check. Unlike a normal Grapple, Rusty Mae doesn't need to be within reach and can move as she pleases, and a successful attempt lasts until the creature [[/act escape dc=29]]{Escapes} (DC 29), causing the cage to crumble into rust. Any creature can attempt to destroy the cage by attacking it. It has an AC of 25, Hardness 14, and 56 Hit Points.</p>"
+                    "description": "<p>Once per day, Rusty Mae can cause a cage built of cold iron fingernails to spring out of nothingness at a range of up to 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, Rusty Mae gains a +2 circumstance bonus to this check. Unlike a normal Grapple, Rusty Mae doesn't need to be within reach and can move as she pleases, and a successful attempt lasts until the creature [[/act escape dc=29]]{Escapes}, causing the cage to crumble into rust. Any creature can attempt to destroy the cage by attacking it. It has an AC of 25, Hardness 14, and 56 Hit Points.</p>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",
@@ -2795,7 +2795,7 @@
                 },
                 "Darting Shot": {
                     "name": "Darting Shot",
-                    "description": "<p>The Scarlet Triad boss <span data-pf2-action=\"feint\" data-pf2-glyph=\"A\">Feints</span> a target, Strides up to their Speed, and makes a Strike with their shortbow in any order. They can Feint any target within 30 feet when using this ability.</p>"
+                    "description": "<p>The Scarlet Triad boss [[/act feint]]{Feints} a target, Strides up to their Speed, and makes a Strike with their shortbow in any order. They can Feint any target within 30 feet when using this ability.</p>"
                 },
                 "Sneak Attack": {
                     "name": "Sneak Attack",
@@ -2917,7 +2917,7 @@
                 },
                 "Volcanic Eruption": {
                     "name": "Volcanic Eruption",
-                    "description": "<p><strong>Requirement</strong> The priest is standing on the ground.</p>\n<hr />\n<p><strong>Effect</strong> The priest slams his fists into the ground, causing fire to erupt from the earth. Each non-worshipper of Dahak standing on the ground in a @Template[emanation|distance:15] must succeed at a @Check[reflex|dc:25|traits:damaging-effect] save or fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} and take @Damage[1d6[bludgeoning],2d6[fire]]{1d6 bludgeoning damage and 2d6 fire damage}.</p>"
+                    "description": "<p><strong>Requirement</strong> The priest is standing on the ground.</p>\n<hr />\n<p><strong>Effect</strong> The priest slams his fists into the ground, causing fire to erupt from the earth. Each non-worshipper of Dahak standing on the ground in a @Template[emanation|distance:15] must succeed at a @Check[reflex|dc:25|options:area-effect,damaging-effect,inflicts:prone] save or fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} and take @Damage[1d6[bludgeoning],2d6[fire]|options:area-damage]{1d6 bludgeoning damage and 2d6 fire damage}.</p>"
                 }
             }
         },
@@ -2937,7 +2937,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The spawn breathes flames that deals @Damage[9d6[fire]|options:area-damage] damage to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}</p>"
+                    "description": "<p>The spawn breathes flames that deals @Damage[9d6[fire]|options:area-damage] damage to all creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save).</p>\n<p>They can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "Draconic Frenzy",
@@ -3096,9 +3096,9 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Town Hall Fire",
-            "disable": "<p>Eliminating the hazard requires dousing the flames. Water typically clears a 5-foot square if the amount is small (such as that from @UUID[Compendium.pf2e.spells-srd.Item.WzLKjSw6hsBhuklC]{Create Water} or @UUID[Compendium.pf2e.spells-srd.Item.jfVCuOpzC6mUrf6f]{Hydraulic Push}). Larger amounts of water, such as a full bucket, typically douse a @Template[line|distance:10|width:10]{10-foot-by-10-foot area} (or 4 squares in some other shape). Throwing a bucket of water on flames requires an Interact action. A waterskin doesn't contain enough water to put out even 1 square of fire. Cold can also put out fire, but only if the cold can affect an area; cold is usually less effective than water, so a @UUID[Compendium.pf2e.equipment-srd.Item.EpxmUtLpCkE8R6KJ]{Frost Vial} typically puts out 1 square of fire, and @UUID[Compendium.pf2e.spells-srd.Item.gYjPm7YwGtEa1oxh]{Ray of Frost} is ineffective.</p>\n<p>Fountain Circle, located outside town hall, has several working water pumps. These are far enough away that it's impractical for a PC to bring water back and forth. However, a PC might instruct the more steely nerved spectators to create a bucket brigade. It takes 15 spectators (which can include those rescued by councilors as well as by PCs) to set this up, and 2 rounds for the townspeople to line up and begin pumping water from Fountain Circle. As of the 3rd round, there is a bucket of water available for the PCs to use at the chamber's southern entrance at the beginning of each PC's turn. Members of a bucket brigade are lined up outside the chamber, and don't take damage from smoke inhalation.</p>\n<p>If a PC does want to carry the water, it's 150 feet from the chamber's southern door to a pump, so it 6 actions are usually needed to reach the pumps or return. Filling a bucket requires an Interact action.</p>\n<p>Other methods might also help control the fire, as you determine. For example, the PCs might be able to find something to barricade the fire with to control its path, or use a cloak to beat out some of the fire.</p>",
-            "hazarddescription": "<p>A fire engulfs the western door and a @Template[line|distance:10|width:10]{10-foot-by-10-foot area} immediately east of it, then spreads on each of its turns.</p>",
-            "routine": "<p>On its turn, the fire spreads into a number of additional squares equal to half the number of squares the fire currently occupies, with a minimum of 1 square. You determine the squares the fire spreads into-typically those with the most flammable materials. Any creature that ends its turn next to the flames takes @Damage[1d6[fire]] damage, and any creature within the flames takes @Damage[4d6[fire]] damage. Both of these have a @Check[reflex|dc:17|basic|traits:complex,environmental,fire,hazard] save. A creature can take damage from flames only once per round. (For simplicity, track damage only for the NPCs and their allies, not for the spectators; Turn 5 and Turn 7 have instructions regarding the spectators' health).</p>\n<p>The fire has an additional effect on each of its turns after the first.</p>\n<p><strong>Turn 2</strong> The chamber's northern door flies open and flames burst through, igniting the @Template[line|distance:10|width:10]{10-foot-by-10-foot area} in front of the door. All fires spread on subsequent turns, at the same rate listed above. Any fires that join together become one fire for this purpose.</p>\n<p><strong>Turn 4+</strong> Creatures in the room take [[/r 1d6 #Smoke Inhalation Damage]]{1d6 damage} from smoke inhalation at the ends of their turns. Anyone who uses an Interact action to tie a wet rag around their nose and mouth (or uses another creative solution) halves the damage.</p>\n<p><strong>Turn 5</strong> Spectators still inside the room fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} from burns and smoke inhalation.</p>\n<p><strong>Turn 7</strong> Spectators still in the room die.</p>",
+            "disable": "<p>Eliminating the hazard requires dousing the flames. Water typically clears a 5-foot square if the amount is small (such as that from @UUID[Compendium.pf2e.spells-srd.Item.WzLKjSw6hsBhuklC]{Create Water} or @UUID[Compendium.pf2e.spells-srd.Item.jfVCuOpzC6mUrf6f]{Hydraulic Push}). Larger amounts of water, such as a full bucket, typically douse a @Template[square|distance:10]{10-foot-by-10-foot area} (or 4 squares in some other shape). Throwing a bucket of water on flames requires an Interact action. A waterskin doesn't contain enough water to put out even 1 square of fire. Cold can also put out fire, but only if the cold can affect an area; cold is usually less effective than water, so a @UUID[Compendium.pf2e.equipment-srd.Item.EpxmUtLpCkE8R6KJ]{Frost Vial} typically puts out 1 square of fire, and @UUID[Compendium.pf2e.spells-srd.Item.gYjPm7YwGtEa1oxh]{Ray of Frost} is ineffective.</p>\n<p>Fountain Circle, located outside town hall, has several working water pumps. These are far enough away that it's impractical for a PC to bring water back and forth. However, a PC might instruct the more steely nerved spectators to create a bucket brigade. It takes 15 spectators (which can include those rescued by councilors as well as by PCs) to set this up, and 2 rounds for the townspeople to line up and begin pumping water from Fountain Circle. As of the 3rd round, there is a bucket of water available for the PCs to use at the chamber's southern entrance at the beginning of each PC's turn. Members of a bucket brigade are lined up outside the chamber, and don't take damage from smoke inhalation.</p>\n<p>If a PC does want to carry the water, it's 150 feet from the chamber's southern door to a pump, so it 6 actions are usually needed to reach the pumps or return. Filling a bucket requires an Interact action.</p>\n<p>Other methods might also help control the fire, as you determine. For example, the PCs might be able to find something to barricade the fire with to control its path, or use a cloak to beat out some of the fire.</p>",
+            "hazarddescription": "<p>A fire engulfs the western door and a @Template[square|distance:10]{10-foot-by-10-foot area} immediately east of it, then spreads on each of its turns.</p>",
+            "routine": "<p>On its turn, the fire spreads into a number of additional squares equal to half the number of squares the fire currently occupies, with a minimum of 1 square. You determine the squares the fire spreads into-typically those with the most flammable materials. Any creature that ends its turn next to the flames takes @Damage[1d6[fire]] damage, and any creature within the flames takes @Damage[4d6[fire]] damage. Both of these have a @Check[reflex|dc:17|basic|traits:complex,environmental,fire,hazard] save. A creature can take damage from flames only once per round. (For simplicity, track damage only for the NPCs and their allies, not for the spectators; Turn 5 and Turn 7 have instructions regarding the spectators' health).</p>\n<p>The fire has an additional effect on each of its turns after the first.</p>\n<p><strong>Turn 2</strong> The chamber's northern door flies open and flames burst through, igniting the @Template[square|distance:10]{10-foot-by-10-foot area} in front of the door. All fires spread on subsequent turns, at the same rate listed above. Any fires that join together become one fire for this purpose.</p>\n<p><strong>Turn 4+</strong> Creatures in the room take @Damage[1d6[untyped]] damage from smoke inhalation at the ends of their turns. Anyone who uses an Interact action to tie a wet rag around their nose and mouth (or uses another creative solution) halves the damage.</p>\n<p><strong>Turn 5</strong> Spectators still inside the room fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} from burns and smoke inhalation.</p>\n<p><strong>Turn 7</strong> Spectators still in the room die.</p>",
             "stealthdetails": "<p>Initiative modifier is [[/r 1d20+5 #Initiative]]{+5}</p>",
             "items": {}
         },
@@ -3338,7 +3338,7 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>Xotani breathes a blast of flame that deals @Damage[18d6[fire],4d6[persistent,fire]|options:area-damage]{18d6 fire damage plus 4d6 persistent fire damage} to all creatures in a @Template[cone|distance:70] (@Check[reflex|dc:42|basic] save).</p>\n<p>It can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>Xotani breathes a blast of flame that deals @Damage[18d6[fire],4d6[persistent,fire]|options:area-damage]{18d6 fire damage plus 4d6 persistent fire damage} to all creatures in a @Template[cone|distance:70] (@Check[reflex|dc:42|basic|options:area-effect] save).</p>\n<p>It can't use Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Swallow Whole": {
                     "name": "Swallow Whole",
@@ -3525,7 +3525,7 @@
                 },
                 "Dimensional Tether": {
                     "name": "Dimensional Tether",
-                    "description": "<p>A creature hit by a vazgorlu's web Strike is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface until it Escapes (DC 42). As long as it remains immobilized by the web, the web attempts to counteract any effect that would move the webbed creature to another plane, with a counteract rank of 10 and using the vazgorlu's [[/r 1d20+38 #Dimensional Tether Counteract]]{Arcana} skill to attempt the counteract check.</p>"
+                    "description": "<p>A creature hit by a vazgorlu's web Strike is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface until it [[/act escape dc=42]]{Escapes}. As long as it remains immobilized by the web, the web attempts to counteract any effect that would move the webbed creature to another plane, with a counteract rank of 10 and using the vazgorlu's [[/r 1d20+38 #Dimensional Tether Counteract]]{Arcana} skill to attempt the counteract check.</p>"
                 },
                 "Redirect Portal": {
                     "name": "Redirect Portal",
@@ -3627,7 +3627,7 @@
                 },
                 "Engulf": {
                     "name": "Engulf",
-                    "description": "<p>@Check[reflex|dc:22|traits:damaging-effect] save, @Damage[2d6[acid]], @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 24, Rupture 10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:22|traits:damaging-effect] save, @Damage[2d6[acid]], [[/act escape dc=24]], Rupture 10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Entangling Residue": {
                     "name": "Entangling Residue",

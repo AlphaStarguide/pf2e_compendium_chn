@@ -95,7 +95,7 @@
                 },
                 "Spray Webbing": {
                     "name": "Spray Webbing",
-                    "description": "<p><strong>Trigger</strong> A creature steps on the pressure plate adjacent to the sticky greeter</p>\n<hr />\n<p><strong>Effect</strong> The sticky greeter lurches as its abdomen snaps forward, opens, and sprays the triggering creature with thick sheets of alchemical webbing. At the same time, the sticky greeter emits a high-pitched whistling sound. The creature must make a @Check[reflex|dc:26] save or become @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and held in place, or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical failure until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 22) or the webbing binding it is destroyed.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature steps on the pressure plate adjacent to the sticky greeter</p>\n<hr />\n<p><strong>Effect</strong> The sticky greeter lurches as its abdomen snaps forward, opens, and sprays the triggering creature with thick sheets of alchemical webbing. At the same time, the sticky greeter emits a high-pitched whistling sound. The creature must make a @Check[reflex|dc:26] save or become @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and held in place, or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical failure until it [[/act escape dc=22]]{Escapes} or the webbing binding it is destroyed.</p>"
                 }
             }
         },
@@ -155,7 +155,7 @@
                 },
                 "Web Trap": {
                     "name": "Web Trap",
-                    "description": "<p>A creature hit by a drider's web attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface (@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 28).</p>"
+                    "description": "<p>A creature hit by a drider's web attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface ([[/act escape dc=28]]).</p>"
                 }
             }
         },
@@ -223,7 +223,7 @@
                 },
                 "Frightful Moan": {
                     "name": "Frightful Moan",
-                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:29] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
+                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:29|options:area-effect,inflicts:frightened] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
                 },
                 "Telekinetic Assault": {
                     "name": "Telekinetic Assault",
@@ -589,7 +589,7 @@
                 },
                 "Whistle Up Cursed Flames": {
                     "name": "Whistle Up Cursed Flames",
-                    "description": "<p>Minargul whistles a high-pitched shrill note, breathing out a blast of fire and foul-smelling smoke as she does so. All creatures in a @Template[cone|distance:15] must attempt a @Check[reflex|dc:24] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[3d6[fire]] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[6d6[fire]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} by the agonizing pain of the burns.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[6d6[fire]] damage and is cursed. The burns caused by the fire linger, and the charred flesh remains blistered. The cursed creature takes a –1 status penalty to all checks from the constant pain. Healing doesn't alter the appearance of the burns or lessen the penalty, but removing the curse does.</p>"
+                    "description": "<p>Minargul whistles a high-pitched shrill note, breathing out a blast of fire and foul-smelling smoke as she does so. All creatures in a @Template[cone|distance:15] must attempt a @Check[reflex|dc:24|options:area-effect,damaging-effect,inflicts:sickened] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[3d6[fire]|options:area-damage] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[6d6[fire]|options:area-damage] damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} by the agonizing pain of the burns.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[6d6[fire]|options:area-damage] damage and is cursed. The burns caused by the fire linger, and the charred flesh remains blistered. The cursed creature takes a –1 status penalty to all checks from the constant pain. Healing doesn't alter the appearance of the burns or lessen the penalty, but removing the curse does.</p>"
                 }
             }
         },
@@ -675,7 +675,7 @@
                 },
                 "Shove into Stone": {
                     "name": "Shove into Stone",
-                    "description": "<p>When the shaitan Pushes a creature into a stone barrier, the target must succeed at a @Check[reflex|dc:22] save or become merged with the barrier (as @UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{One with Stone}). The victim can attempt to Escape (DC 28).</p>"
+                    "description": "<p>When the shaitan Pushes a creature into a stone barrier, the target must succeed at a @Check[reflex|dc:22] save or become merged with the barrier (as @UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{One with Stone}). The victim can attempt to [[/act escape dc=28]].</p>"
                 },
                 "Push 10 feet": {
                     "name": "Push 10 feet",

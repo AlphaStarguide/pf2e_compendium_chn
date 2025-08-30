@@ -736,7 +736,7 @@
                 },
                 "Infest Environs": {
                     "name": "Infest Environs",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> The terotricus is in a swamp or forested area</p>\n<hr />\n<p><strong>Effect</strong> The terotricus drains nutrients from nearby trees and undergrowth while simultaneously infesting them with fungal growth. All non-magical plant life (though not plant creatures) within a @Template[emanation|distance:60] withers and sprouts foul mold and slimy mushrooms, removing any cover and concealment provided by trees and undergrowth. In addition, the terotricus regains @Damage[200[healing]]{200 Hit Points} (this is a healing vitality effect).</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> The terotricus is in a swamp or forested area</p><hr /><p><strong>Effect</strong> The terotricus drains nutrients from nearby trees and undergrowth while simultaneously infesting them with fungal growth. All non-magical plant life (though not plant creatures) within a @Template[emanation|distance:60] withers and sprouts foul mold and slimy mushrooms, removing any cover and concealment provided by trees and undergrowth. In addition, the terotricus regains @Damage[200[healing,vitality]]{200 Hit Points} (this is a healing vitality effect).</p>"
                 },
                 "Spore Blight": {
                     "name": "Spore Blight",
@@ -744,7 +744,7 @@
                 },
                 "Sticky Spores": {
                     "name": "Sticky Spores",
-                    "description": "<p>A creature hit by a terotricus's spores takes a –10-foot status penalty to all its Speeds for 1 minute. If the Strike was a critical hit, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it [[/act escape dc=40]]{Escapes (DC 40)}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.g4CRjb2zS1pkVDbk]{Effect: Sticky Spores}</p>"
+                    "description": "<p>A creature hit by a terotricus's spores takes a –10-foot status penalty to all its Speeds for 1 minute. If the Strike was a critical hit, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} until it [[/act escape dc=40]]{Escapes}.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.g4CRjb2zS1pkVDbk]{Effect: Sticky Spores}</p>"
                 },
                 "Improved Push 20 feet": {
                     "name": "Improved Push 20 feet",
@@ -1310,7 +1310,7 @@
                 },
                 "Wasp Larva": {
                     "name": "Wasp Larva",
-                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:21]</p>\n<hr />\n<p><strong>Stage 1</strong> carrier with no ill effect ([[/gmr 1d6 #days]]{1d6 days})</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} ([[/br 1d3 #days]]{1d3 days})</p>\n<p><strong>Stage 3</strong> [[/r {5d6}]]{5d6 damage}, larva emerges (disease ends)</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:21]</p>\n<hr />\n<p><strong>Stage 1</strong> carrier with no ill effect ([[/gmr 1d6 #days]]{1d6 days})</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} ([[/gmr 1d4 #days]]{1d4 days})</p>\n<p><strong>Stage 3</strong> @Damage[5d6[untyped]] damage, larva emerges (disease ends)</p>"
                 }
             }
         },
@@ -1673,7 +1673,7 @@
                 },
                 "Barbed Maw": {
                     "name": "Barbed Maw",
-                    "description": "<p><strong>Trigger</strong> The grikkitog hits a creature with a jaws Strike</p>\n<hr />\n<p><strong>Effect</strong> The grikkitog sinks its barbed teeth into the target, which must succeed at a @Check[reflex|dc:34] save or be @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}. While immobilized, the victim takes @Damage[3d8[persistent,bleed]] damage and the grikkitog feeds upon its flesh. The creature is immobilized until the grikkitog ends the effect as a free action or the target succeeds at a DC 38 check to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape}.</p>\n<p>The grikkitog can immobilize any number of creatures with these maws.</p>"
+                    "description": "<p><strong>Trigger</strong> The grikkitog hits a creature with a jaws Strike</p>\n<hr />\n<p><strong>Effect</strong> The grikkitog sinks its barbed teeth into the target, which must succeed at a @Check[reflex|dc:34|options:inflicts:immobilized] save or be @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}. While immobilized, the victim takes @Damage[3d8[persistent,bleed]] damage and the grikkitog feeds upon its flesh. The creature is immobilized until the grikkitog ends the effect as a free action or the target succeeds at a DC 38 check to [[/act escape dc=38]].</p>\n<p>The grikkitog can immobilize any number of creatures with these maws.</p>"
                 },
                 "Earth Glide": {
                     "name": "Earth Glide",
@@ -2399,7 +2399,7 @@
                 },
                 "Web Trap": {
                     "name": "Web Trap",
-                    "description": "<p>A creature hit by the hunting spider's web Strike is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface until it [[/act escape dc=17]]{Escapes (DC 17)}.</p>"
+                    "description": "<p>A creature hit by the hunting spider's web Strike is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} and stuck to the nearest surface until it [[/act escape dc=17]]{Escapes}.</p>"
                 }
             }
         },
@@ -3793,8 +3793,8 @@
                     "name": "Fast Healing 1",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
                 },
-                "Protean Anatomy": {
-                    "name": "Protean Anatomy",
+                "Protean Anatomy 5": {
+                    "name": "Protean Anatomy 5",
                     "description": "<p>A voidworm's vital organs shift and change shape and position constantly. Immediately after the voidworm takes acid, electricity, or sonic damage, they gains the listed amount of resistance to that damage type. This lasts for 1 hour or until the next time the voidworm takes damage of one of the other types (in which case its resistance changes to match that type), whichever comes first.</p>\n<p>The voidworm is immune to polymorph effects unless it is a willing target. If @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} or @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened}, the voidworm automatically recovers at the end of its next turn as new sensory organs grow to replace the compromised ones.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.c6SiBB3mzV8lZUQr]{Effect: Protean Anatomy}</p>"
                 },
                 "Change Shape": {
@@ -4078,7 +4078,7 @@
             "items": {
                 "Entropy Sense": {
                     "name": "Entropy Sense",
-                    "description": "<p>An azureti can anticipate the most likely presence of a creature through a supernatural insight into chaotic probabilities and chance. This grants them the ability to sense creatures within the listed range. @UUID[Compendium.pf2e.spells-srd.Item.EoKBlgf6Smt8opaU]{Veil of Privacy} prevents a creature from being detected via entropy sense automatically (without a counteract check).</p>"
+                    "description": "<p>An azuretzi can anticipate the most likely presence of a creature through a supernatural insight into chaotic probabilities and chance. This grants them the ability to sense creatures within the listed range. @UUID[Compendium.pf2e.spells-srd.Item.EoKBlgf6Smt8opaU]{Veil of Privacy} prevents a creature from being detected via entropy sense automatically (without a counteract check).</p>"
                 },
                 "Constant Spells": {
                     "name": "Constant Spells",
@@ -4091,9 +4091,9 @@
                     "name": "Fast Healing 2",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
                 },
-                "Protean Anatomy": {
-                    "name": "Protean Anatomy",
-                    "description": "<p>An azureti's vital organs shift and change shape and position constantly. Immediately after the azureti takes acid, electricity, or sonic damage, they gain the listed amount of resistance to that damage type. This lasts for 1 hour or until the next time the protean takes damage of one of the other types (in which case their resistance changes to match that type), whichever comes first.</p>\n<p>The azureti is immune to polymorph effects unless they're a willing target. If @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} or @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened}, the azureti automatically recovers at the end of their next turn as new sensory organs grow to replace the compromised ones.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.c6SiBB3mzV8lZUQr]{Effect: Protean Anatomy}</p>"
+                "Protean Anatomy 8": {
+                    "name": "Protean Anatomy 8",
+                    "description": "<p>An azuretzi's vital organs shift and change shape and position constantly. Immediately after the azuretzi takes acid, electricity, or sonic damage, they gain the listed amount of resistance to that damage type. This lasts for 1 hour or until the next time the protean takes damage of one of the other types (in which case their resistance changes to match that type), whichever comes first.</p>\n<p>The azuretzi is immune to polymorph effects unless they're a willing target. If @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} or @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened}, the azuretzi automatically recovers at the end of their next turn as new sensory organs grow to replace the compromised ones.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.c6SiBB3mzV8lZUQr]{Effect: Protean Anatomy}</p>"
                 },
                 "Spell Pilfer": {
                     "name": "Spell Pilfer",
@@ -4443,7 +4443,7 @@
                 },
                 "Winter Breath": {
                     "name": "Winter Breath",
-                    "description": "<p>The witchwarg breathes a cloud of frost in a @Template[cone|distance:15] that deals @Damage[5d8[cold]] damage (@Check[reflex|dc:23|basic] save).</p>\n<p>The witchwarg can't use Winter Breath again for [[/gmr 1d4 #Recharge Winter Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The witchwarg breathes a cloud of frost in a @Template[cone|distance:15] that deals @Damage[5d8[cold]|options:area-damage] damage (@Check[reflex|dc:23|basic|options:area-effect] save).</p>\n<p>The witchwarg can't use Winter Breath again for [[/gmr 1d4 #Recharge Winter Breath]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -5019,7 +5019,7 @@
                 },
                 "Dread Gaze": {
                     "name": "Dread Gaze",
-                    "description": "<p>The hag gazes upon a creature, afflicting it with a gnawing sense of impending doom, with a result depending on its @Check[will|dc:20] save. The target doesn't need to be able to see the sea hag.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is frightened 1 and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round. If the target was dying, it remains @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} for 1 day. At the end of the day, it must attempt a @Check[fortitude|dc:20] save; if it fails, it dies.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and slowed 1 for 1 minute.</p>"
+                    "description": "<p>The hag gazes upon a creature, afflicting it with a gnawing sense of impending doom, with a result depending on its @Check[will|dc:20] save. The target doesn't need to be able to see the sea hag.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is frightened 1 and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round. If the target was @UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{Dying}, it remains @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} for 1 day. At the end of the day, it must attempt a @Check[fortitude|dc:20] save against the same DC; if it fails, it dies.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and slowed 1 for 1 minute.</p>"
                 }
             }
         },
@@ -6336,7 +6336,7 @@
                 },
                 "Slime Trap": {
                     "name": "Slime Trap",
-                    "description": "<p>A creature hit by an omox's slime ball must succeed at a @Check[reflex|dc:32] save or take a –10-foot circumstance penalty to its Speeds for 1 minute or until it [[/act escape dc=35]]{Escapes (DC 35)}. On a critical failure, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for the same duration.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.XSAmMuMgMvdjdpHc]{Effect: Slime Trap}</p>"
+                    "description": "<p>A creature hit by an omox's slime ball must succeed at a @Check[reflex|dc:32] save or take a –10-foot circumstance penalty to its Speeds for 1 minute or until it [[/act escape dc=35]]{Escapes}. On a critical failure, the creature is also @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for the same duration.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.XSAmMuMgMvdjdpHc]{Effect: Slime Trap}</p>"
                 },
                 "Smother": {
                     "name": "Smother",
@@ -7939,7 +7939,7 @@
                 },
                 "Bonds of Iron": {
                     "name": "Bonds of Iron",
-                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The hag causes a cage built of cold iron fingernails to spring out of nothingness around one creature within 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, the iron hag gains a +2 circumstance bonus to this check.</p>\n<p>On a success, the creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the magical fingernails (or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical success). If the creature successfully [[/act escape dc=24]]{Escapes} (DC 24), the cage crumbles into rust.</p>\n<p>Any creature can attempt to destroy the cage by attacking it. It has an AC of 19, Hardness 10, and 40 Hit Points.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The hag causes a cage built of cold iron fingernails to spring out of nothingness around one creature within 30 feet, attempting an Athletics check to [[/act grapple]] against the target's Fortitude DC; if the target has a weakness to cold iron, the iron hag gains a +2 circumstance bonus to this check.</p>\n<p>On a success, the creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the magical fingernails (or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical success). If the creature successfully [[/act escape dc=24]]{Escapes}, the cage crumbles into rust.</p>\n<p>Any creature can attempt to destroy the cage by attacking it. It has an AC of 19, Hardness 10, and 40 Hit Points.</p>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",
@@ -8070,7 +8070,7 @@
                 },
                 "Frightful Moan": {
                     "name": "Frightful Moan",
-                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:29] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
+                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:29|options:area-effect,inflicts:frightened] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
                 },
                 "Telekinetic Assault": {
                     "name": "Telekinetic Assault",
@@ -8761,7 +8761,7 @@
                 },
                 "Frightful Moan": {
                     "name": "Frightful Moan",
-                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:21] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
+                    "description": "<p>The ghost laments its fate, forcing each living creature within @Template[emanation|distance:30]{30 feet} to attempt a @Check[will|dc:21|options:area-effect,inflicts:frightened] save. On a failure, a creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (or @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} on a critical failure). On a success, a creature is temporarily immune to this ghost's frightful moan for 1 minute.</p>"
                 }
             }
         },
@@ -8853,7 +8853,7 @@
                 },
                 "Boulder Roll": {
                     "name": "Boulder Roll",
-                    "description": "<p>The stonecaster conjures a rolling boulder that deals @Damage[5d6[bludgeoning]] damage to each creature in a @Template[line|distance:60] with a @Check[reflex|dc:21|basic] save.</p>\n<p>The stonecaster can't use Boulder Roll again for [[/gmr 1d4 #Recharge Boulder Roll]]{1d4 rounds}.</p>"
+                    "description": "<p>The stonecaster conjures a rolling boulder that deals @Damage[5d6[bludgeoning]|options:area-damage] damage to each creature in a @Template[line|distance:60] with a @Check[reflex|dc:21|basic|options:area-effect] save.</p>\n<p>The stonecaster can't use Boulder Roll again for [[/gmr 1d4 #Recharge Boulder Roll]]{1d4 rounds}.</p>"
                 },
                 "Dwarven Doughtiness": {
                     "name": "Dwarven Doughtiness",
@@ -9183,7 +9183,7 @@
                 },
                 "Wings of Flame": {
                     "name": "Wings of Flame",
-                    "description": "<p>The ifrit grows flaming wings from their back. They gain a fly Speed of 35 feet for 1 minute. The flames also create an aura in a @Template[emanation|distance:5] around the ifrit.</p>\n<p>Any creature that ends its turn in the aura takes @Damage[2d6[fire]] damage with a @Check[reflex|dc:25|basic] save.</p>"
+                    "description": "<p>The ifrit grows flaming wings from their back. They gain a fly Speed of 35 feet for 1 minute. The flames also create an aura in a 5-foot emanation around the ifrit.</p>\n<p>Any creature that ends its turn in the aura takes @Damage[2d6[fire]|options:area-damage] damage with a @Check[reflex|dc:25|basic|options:area-effect] save.</p>"
                 }
             }
         },
@@ -10410,7 +10410,7 @@
                 },
                 "Surge": {
                     "name": "Surge",
-                    "description": "<p>The elemental tsunami momentarily expands to fill the area of its vortex. Creatures within the aura take @Damage[(5d12+6)[bludgeoning]] damage with a @Check[fortitude|dc:31|basic] save. A creature that fails this save is pushed 20 feet.</p>\n<p>The elemental tsunami then shrinks to its normal space and can't Surge again for [[/gmr 1d4 #Recharge Surge]]{1d4 rounds}.</p>"
+                    "description": "<p>The elemental tsunami momentarily expands to fill the area of its vortex. Creatures within the aura take @Damage[(5d12+6)[bludgeoning]|options:area-damage] damage with a @Check[fortitude|dc:31|basic|options:area-effect,inflicts:forced-movement] save. A creature that fails this save is pushed 20 feet.</p>\n<p>The elemental tsunami then shrinks to its normal space and can't Surge again for [[/gmr 1d4 #Recharge Surge]]{1d4 rounds}.</p>"
                 },
                 "Push or Pull 10 feet": {
                     "name": "Push or Pull 10 feet",
@@ -10620,7 +10620,7 @@
                 },
                 "Veil of Sand": {
                     "name": "Veil of Sand",
-                    "description": "<p>Sand whirls around the mummy pharaoh in a @Template[emanation|distance:5] until the beginning of their next turn. Creatures inside the sand are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to those outside it and any living creature ending its turn within the sand takes @Damage[4d6[slashing]] damage with a @Check[fortitude|dc:28|basic] save</p>\n<p>Veil of Sand ends if the mummy takes damage from their water weakness.</p>"
+                    "description": "<p>Sand whirls around the mummy pharaoh in a 5-foot emanation until the beginning of their next turn. Creatures inside the sand are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to those outside it and any living creature ending its turn within the sand takes @Damage[4d6[slashing]|options:area-damage] damage with a @Check[fortitude|dc:28|basic|options:area-effect] save</p>\n<p>Veil of Sand ends if the mummy takes damage from their water weakness.</p>"
                 }
             }
         },
@@ -12565,7 +12565,7 @@
                 },
                 "Spit Mucus": {
                     "name": "Spit Mucus",
-                    "description": "<p>A creature hit by the zecui's spit attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} by the larva-infested mucus and stuck to the nearest surface until it [[/act escape dc=25]]{Escapes (DC 25)}. While that creature is immobilized, it is exposed to zecui larvae at the end of each of its turns.</p>"
+                    "description": "<p>A creature hit by the zecui's spit attack is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} by the larva-infested mucus and stuck to the nearest surface until it [[/act escape dc=25]]{Escapes}. While that creature is immobilized, it is exposed to zecui larvae at the end of each of its turns.</p>"
                 },
                 "Zecui Larvae": {
                     "name": "Zecui Larvae",
@@ -14304,8 +14304,8 @@
                     "name": "Fast Healing 10",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
                 },
-                "Protean Anatomy": {
-                    "name": "Protean Anatomy",
+                "Protean Anatomy 25": {
+                    "name": "Protean Anatomy 25",
                     "description": "<p>A keketar's vital organs shift and change shape and position constantly. Immediately after the keketar takes acid, electricity, or sonic damage, they gain the listed amount of resistance to that damage type. This lasts for 1 hour or until the next time the protean takes damage of one of the other types (in which case their resistance changes to match that type), whichever comes first.</p>\n<p>The keketar is immune to polymorph effects unless they're a willing target. If @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} or @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened}, the keketar automatically recovers at the end of their next turn as new sensory organs grow to replace the compromised ones.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.c6SiBB3mzV8lZUQr]{Effect: Protean Anatomy}</p>"
                 },
                 "Reactive Strike": {
@@ -14382,7 +14382,7 @@
                 },
                 "Wind Strike": {
                     "name": "Wind Strike",
-                    "description": "<p>The cloud giant Strikes a creature with their ranseur, surrounded in a roar of rushing air. On a hit, the target takes an additional 4d8 bludgeoning damage and is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute. Whether or not the Strike hits, each non-cloud giant within a @Template[emanation|distance:20], including the target of the Strike, is buffeted by roaring winds and must attempt a @Check[fortitude|dc:30] saving throw.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[2d8[sonic]] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[4d8[sonic]] damage and is deafened until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage and also knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+                    "description": "<p>The cloud giant Strikes a creature with their ranseur, surrounded in a roar of rushing air. On a hit, the target takes an additional 4d8 bludgeoning damage and is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute. Whether or not the Strike hits, each non-cloud giant within a @Template[emanation|distance:20], including the target of the Strike, is buffeted by roaring winds and must attempt a @Check[fortitude|dc:30|options:area-effect,damaging-effect,inflicts:deafened,inflicts:prone] saving throw.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[2d8[sonic]|options:area-damage] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[4d8[sonic]|options:area-damage] damage and is deafened until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> As failure, but double damage and also knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
                 }
             }
         },
@@ -14540,7 +14540,7 @@
                 },
                 "Splintered Ground": {
                     "name": "Splintered Ground",
-                    "description": "<p>The skulltaker causes splintered bones to erupt from all solid surfaces in a @Template[emanation|distance:100], except for surfaces of worked stone. A creature moving through the bones takes @Damage[10[piercing],10[void]]{10 piercing damage and 10 void damage} for every 5 feet of movement.</p>\n<p>The first time each round a creature takes piercing damage from these splintered bones, it must succeed at a @Check[reflex|dc:40] save or take a –10-foot circumstance penalty to all Speeds for 10 minutes, or a –15-foot circumstance penalty for 24 hours on a critical failure.</p>\n<p>The bones remain in place until the skulltaker uses this action again or the bones are manually removed, which takes 10 minutes for each 5-foot square.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.86uYNsVXzYWxqLTV]{Effect: Splintered Ground}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.hc7kR6quUE9ryRyj]{Effect: Splintered Ground (Critical Failure)}</p>"
+                    "description": "<p>The skulltaker causes splintered bones to erupt from all solid surfaces in a @Template[emanation|distance:100], except for surfaces of worked stone. A creature moving through the bones takes @Damage[10[piercing],10[void]|options:area-damage]{10 piercing damage and 10 void damage} for every 5 feet of movement.</p>\n<p>The first time each round a creature takes piercing damage from these splintered bones, it must succeed at a @Check[reflex|dc:40|options:area-effect,damaging-effect] save or take a –10-foot circumstance penalty to all Speeds for 10 minutes, or a –15-foot circumstance penalty for 24 hours on a critical failure.</p>\n<p>The bones remain in place until the skulltaker uses this action again or the bones are manually removed, which takes 10 minutes for each 5-foot square.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.86uYNsVXzYWxqLTV]{Effect: Splintered Ground}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.hc7kR6quUE9ryRyj]{Effect: Splintered Ground (Critical Failure)}</p>"
                 },
                 "Vitality Drain": {
                     "name": "Vitality Drain",

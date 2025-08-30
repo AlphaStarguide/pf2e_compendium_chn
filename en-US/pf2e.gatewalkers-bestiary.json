@@ -345,7 +345,6 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Protosoul",
-            "publicNotes": "<p>Though many spellcasters can harness the forces of magic in a consistent manner, such power can't always be controlled, especially in the hands of reckless researchers, megalomaniacal villains, or untested novices. When magical accidents result in large-scale property damage and the loss of life, these forces sometimes take on lives of their own, forming a dangerous amalgamation of ongoing magical energy known as a roiling incant.</p>\n<p>A roiling incant's appearance depends on the type of magic it sprang forth from, though it always carries with it an echo of the destruction it has caused. A fiery evocation roiling incant might look like a storm of burning ashes echoing with the sounds of crackling timber, while a necromancy roiling incant could be mistaken for ghostly tendrils puppeteering shambling corpses. No matter what it looks like, a roiling incant roams mindlessly, attacking everything it encounters, heedless of further carnage it causes.</p>",
             "hp": "void healing",
             "items": {
                 "Void Healing": {
@@ -354,7 +353,7 @@
                 },
                 "Unstable Magic": {
                     "name": "Unstable Magic",
-                    "description": "<p>The protosoul takes @Damage[10[force]|options:area-damage] damage as it releases a burst of uncontained void energy in a @Template[type:emanation|distance:30]. Creatures in the area take @Damage[5d8[void]|options:area-damage] damage (@Check[fortitude|dc:30|basic] save).</p>"
+                    "description": "<p>The protosoul takes @Damage[10[force]|options:area-damage] damage as it releases a burst of uncontained void energy in a @Template[type:emanation|distance:30]. Creatures in the area take @Damage[5d8[void]|options:area-damage] damage (@Check[fortitude|dc:30|basic|options:area-effect] save).</p>"
                 }
             }
         },
@@ -1404,7 +1403,7 @@
                 },
                 "Wild Empathy": {
                     "name": "Wild Empathy",
-                    "description": "<p>The naiad can use Diplomacy to @UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{Make an Impression} on and make very simple @UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]{Requests} of animals.</p>"
+                    "description": "<p>The naiad can use Diplomacy to [[/act make-an-impression]] on and make very simple [[/act request]]{Requests} of animals.</p>"
                 },
                 "Constant Spells": {
                     "name": "Constant Spells",
@@ -1545,33 +1544,24 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Demontangle",
-            "publicNotes": "<p>Amorphous blobs of yammering mouths and oozing, fleshy sludge, gibbering mouthers are among the strangest creatures found either aboveground or below. Perpetually ravenous, these aberrations are always seeking their next meals, ever eating but never sated. With a nominal intelligence, gibbering mouthers can understand and even speak Aklo, but they do so in an intelligible manner only rarely. Instead, their innumerable mouths constantly jabber and babble in a stream of sound that disrupts the thought patterns of other creatures in the area.</p>\n<p>Where, how, and why gibbering mouthers originated are questions without answers. They share certain similarities with the much more powerful shoggoths, leading to theories that the two creatures share an origin; less charitable scholars have suggested that the gibbering mouther is instead a mortal's attempt to create something akin to a shoggoth-though the question of why remains unanswered. Still others believe gibbering mouthers were sent to the world by the gods as a punishment for some forgotten but surely terrible transgression. Gibbering mouthers themselves have little to say on the matter-at least, not in any sort of sense. Scholars have wasted countless hours in attempts to make sense of gibbering mouthers' noises-studies that put researchers into danger and give results that are contradictory and confusing at best.</p>\n<p>Whatever their origin, gibbering mouthers range the entirety of Golarion. Sightings have been recorded in dungeons below ancient cities and ruins as well as many regions of the deeper Darklands layers of Sekamina and Orv. They are somewhat less common in the upper region of Nar-Voth, perhaps due to the prevalence of settlements that don't tolerate gibbering mouthers' presence.</p>",
-            "blurb": "CE variant gibbering mouther",
-            "ac": "all-around vision",
+            "publicNotes": "<p>Since the Worldwound opened over a century ago, countless demons have been slaughtered on the streets of Domora. Their remains sometimes coalesce into further unholy terrors, among the most gruesome examples of which are a trio of large, quivering tangles of knotted demon tongues. These “demontangles” haunt the city’s streets day and night, slithering across the ruins in search of mortals to corrupt, destroy, and consume.</p><hr /><p>The tide washes ashore all manner of detritus, from harmless seaweed and shells to the rotting corpses of massive aquatic creatures. The globster is often mistaken for such, and this assumption isn't entirely incorrect—these mindless, oozing masses are composed of decaying sea creatures, half-digested and merged into a revolting, reeking heap of blubbery sludge.</p>\n<p>Though mindless, globsters are predators that seek out living quarry. They often huddle on the seafloor, where their own fetid mass attracts scavengers who swiftly become the ooze's next meal. When the tides wash these monsters ashore, they simply shift to hunting land-bound prey. Coastal communities usually notice the smell of a washed-up globster long before they see it. Those sent to investigate often mistake a globster for the carcass of a beached whale before discovering the presumed corpse is very much alive and hungry.</p>\n<p>Sages once believed globsters were undead, undulating wads of rotting flesh driven to feed, but though mindless, they are very much alive. They are attracted to waterside refuse dumps and floating garbage scows and are dimly aware enough to congregate where food is plentiful.</p>\n<p>Since they consist of so much blubber and oily tissue, globsters can be collected for lamp oil, grease, cooking fat, and more. The goo that remains when they decompose works for this purpose, if one can stand the smell. The firmer fat deteriorates quickly, but many an impromptu goblin beach barbecue has deep-fried slabs of it as a delicacy.</p>\n<p>Globsters consume living creatures but digest only a portion of them. The undigested dross accumulates within the globster as it becomes more and more bloated. They carry this fetid mass within their squelching bodies until instinct or injury provokes them to vomit forth a new globster to help devour everything nearby. A globster with enough dross to create a new globster automatically does so as a free action triggered upon taking damage. Treat any encounter with such a globster as though it were against two level 5 creatures, instead of just one. As far as scholars know, this is the only way these creatures can create more of their kind.</p>",
+            "blurb": "Variant globster",
             "items": {
-                "All-Around Vision": {
-                    "name": "All-Around Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AllAroundVision]</p>"
+                "Stench": {
+                    "name": "Stench",
+                    "description": "<p>30 feet, @Check[fortitude|dc:19]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
-                "Gibbering": {
-                    "name": "Gibbering",
-                    "description": "<p>60 feet. Each creature that begins its turn within 60 feet of a gibbering mouther must attempt a @Check[will|dc:19] save. On a failure, they are @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round. On a success, they are temporarily immune for 1 minute.</p>"
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[(1d8+6)[bludgeoning]], @Check[fortitude|dc:22|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
-                "Reactive Gnaw": {
-                    "name": "Reactive Gnaw",
-                    "description": "<p><strong>Trigger</strong> An adjacent creature deals the gibbering mouther slashing damage.</p>\n<hr />\n<p><strong>Effect</strong> The gibbering mouther's wound opens into another maw. It makes a jaws Strike against the triggering creature.</p>"
+                "Nauseating Slap": {
+                    "name": "Nauseating Slap",
+                    "description": "<p>A living creature struck by a demontangle's tendril must attempt a @Check[fortitude|dc:19] save. On a failure, the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. If the creature is already sickened, the condition value increases by 1, to a maximum of sickened 4.</p>\n<p>Once a creature succeeds at its saving throw, it is temporarily immune for 24 hours.</p>"
                 },
-                "Burn Eyes": {
-                    "name": "Burn Eyes",
-                    "description": "<p>A creature that takes damage from a gibbering mouther's spittle must succeed at a @Check[fortitude|dc:22] save or be @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round (or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round on a critical failure).</p>"
-                },
-                "Engulf": {
-                    "name": "Engulf",
-                    "description": "<p>@Check[reflex|dc:22|traits:damaging-effect], @Damage[3d8[piercing]], [[/act escape dc=22]], Rupture 8</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
-                },
-                "Ground Manipulation": {
-                    "name": "Ground Manipulation",
-                    "description": "<p>The gibbering mouther causes stone and earth under its body to grow soft and muddy, remaining so for 1 minute after the mouther moves off the location. A gibbering mouther can move through these areas with ease, but other creatures treat them as difficult terrain.</p>"
+                "Saturated": {
+                    "name": "Saturated",
+                    "description": "<p>A demontangle can survive for 1 hour out of the water, after which it risks drowning and suffocation.</p>"
                 }
             }
         },
@@ -2275,7 +2265,7 @@
                 },
                 "Shove into Ice": {
                     "name": "Shove into Ice",
-                    "description": "<p>When the blackfrost guecubu successfully @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shoves} a creature into an ice or frozen earth barrier, the target must succeed at a @Check[reflex|dc:26] save or become merged with the barrier, with the effects of @UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{One with Stone} until the target escapes (DC 26).</p>"
+                    "description": "<p>When the blackfrost guecubu successfully [[/act shove]]{Shoves} a creature into an ice or frozen earth barrier, the target must succeed at a @Check[reflex|dc:26] save or become merged with the barrier, with the effects of @UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{One with Stone} until the target [[/act escape dc=26]]{Escapes}.</p>"
                 },
                 "Tundra Glide": {
                     "name": "Tundra Glide",
