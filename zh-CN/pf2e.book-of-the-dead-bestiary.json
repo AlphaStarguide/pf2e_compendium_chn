@@ -129,7 +129,7 @@
             "items": {
                 "Seep Blood": {
                     "name": "渗血 Seep Blood",
-                    "description": "<p><strong>触发</strong> 生物进入作祟区域；</p>\n<hr />\n<p><strong>效果</strong> B血从土里不断渗出，将区域变为血淋淋的泥潭。区域变为困难地形，持续1小时。在区域内的生物或尝试穿越区域的生物必须尝试@Check[reflex|dc:16]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，直到@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}（DC 16）。</p>"
+                    "description": "<p><strong>触发</strong> 生物进入作祟区域；</p>\n<hr />\n<p><strong>效果</strong> 血从土里不断渗出，将区域变为血淋淋的泥潭。区域变为困难地形，持续1小时。在区域内的生物或尝试穿越区域的生物必须尝试@Check[reflex|dc:16]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到[[/act escape dc=16]]。</p>"
                 }
             },
             "prototypeToken": {
@@ -599,7 +599,7 @@
             "items": {
                 "Squeeze": {
                     "name": "挤压 Squeeze",
-                    "description": "<p><strong>触发</strong> 一个生物经过作祟所在区域；</p>\n<hr />\n<p><strong>效果</strong> 一个有灵质构成的手掌出现，并攥紧触发的PC，造成@Damage[(3d8+14)[bludgeoning]]伤害（@Check[fortitude|dc:22|basic]豁免）。如果失败，生物被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 22）。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物经过作祟所在区域</p>\n<hr />\n<p><strong>效果</strong> 一个有灵质构成的手掌出现，并攥紧触发的PC，造成@Damage[(3d8+14)[bludgeoning]]伤害（@Check[fortitude|dc:22|basic]豁免）。如果失败，生物被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]（[[/act escape dc=22]]）。</p>"
                 }
             },
             "prototypeToken": {
@@ -1165,7 +1165,7 @@
             "disable": "<p>@Check[religion|dc:22]（受训）做法事来抵挡死者；@Check[occultism|dc:24]（受训）驱逐愤怒的鬼魂；总共两次成功才能成功解除作祟。</p>",
             "hazarddescription": "<p>被埋葬的死者纷纷从地面中伸出手来，抓住并拉扯区域内的生者，并将他们拖往地下。</p>",
             "reset": "<p>在所有活物都离开区域1分钟后，作祟会停止。在1小时后，作祟会重置。</p>",
-            "routine": "<p>（1个动作）贪婪的手攻击区域内所有生物，造成@Damage[(2d6+7)[bludgeoning]]伤害（@Check[reflex|dc:26|basic]豁免）。如果大失败，生物还会被部分拖入地下，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}直到@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC 26）。如果该生物已经陷入禁足，则会被活埋，必须屏住呼吸才能避免窒息。</p>",
+            "routine": "<p>（1个动作）贪婪的手攻击区域内所有生物，造成@Damage[(2d6+7)[bludgeoning]]伤害（@Check[reflex|dc:26|basic]豁免）。如果大失败，生物还会被部分拖入地下，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]直到[[/act escape dc=26]]。如果该生物已经陷入禁足，则会被活埋，必须屏住呼吸才能避免窒息。</p>",
             "stealthdetails": "<p>(受训)</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -1683,7 +1683,7 @@
                 },
                 "Ghostly Blades": {
                     "name": "幽灵之刃 Ghostly Blades",
-                    "description": "<p><span class=\"action-glyph\">1</span> 到 <span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 终末守卫用它们的鬼魅般的曲刃协同攻击距离@Template[emanation|distance:5]内的每个敌人（@Check[reflex|dc:40|basic]豁免）。伤害取决于使用动作的数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d8+2)[slashing],1d8[void]]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d8+14)[slashing],2d8[void]]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(3d8+14)[slashing],3d8[void]]伤害</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> 到 <span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 终末守卫用它们的鬼魅般的曲刃协同攻击距离@Template[emanation|distance:5]内的每个敌人（@Check[reflex|dc:40|basic|options:area-effect]豁免）。伤害取决于使用动作的数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(1d8+2)[slashing],1d8[void]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d8+14)[slashing],2d8[void]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(3d8+14)[slashing],3d8[void]|options:area-damage]伤害</p>"
                 },
                 "Spectral Charge": {
                     "name": "鬼灵冲锋 Spectral Charge",
@@ -1887,7 +1887,7 @@
                 },
                 "Broken Barb": {
                     "name": "断齿 Broken Barb",
-                    "description": "<p><strong>需求</strong> 纳瑟爵斯的巨颚正@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}着一个生物；</p>\n<hr />\n<p><strong>效果</strong> 纳瑟爵斯折断一颗牙齿，将它留给目标，目标受到@Damage[3d10[bleed]]伤害并不再被擒抱或束缚。若目标邻接一个表面，这颗断牙还会把他钉在此地，令目标处于@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}状态（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 45）。</p>"
+                    "description": "<p><strong>需求</strong> 纳瑟爵斯的巨颚正@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]着一个生物</p>\n<hr />\n<p><strong>效果</strong> 纳瑟爵斯折断一颗牙齿，将它留给目标，目标受到@Damage[3d10[bleed]]伤害并不再被擒抱或束缚。若目标邻接一个表面，这颗断牙还会把他钉在此地，令目标处于@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]状态（[[/act escape dc=45]]）。</p>"
                 },
                 "Ravenous Void": {
                     "name": "贪饿虚空 Ravenous Void",
@@ -2095,7 +2095,7 @@
             "items": {
                 "Capture": {
                     "name": "俘获 Capture",
-                    "description": "<p><strong>触发</strong> 一个生物触碰到镣铐；</p>\n<hr />\n<p><strong>效果</strong> 鬼魂尝试用镣铐铐住生物的手腕。触发的生物必须尝试@Check[reflex|dc:23]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 鬼魂松散地将镣铐铐在生物的手腕上。解开镣铐只需要一个动作。</p>\n<p><strong>失败</strong> 鬼魂将镣铐铐在生物的手腕上，很难挣脱。该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，直到它以3动作行动解开镣铐。</p>\n<p><strong>大失败</strong> 鬼魂将镣铐铐在生物的手腕上。该生物陷入措手不及和笨拙1，直到镣铐被移除（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 23，简单锁）。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物触碰到镣铐；</p>\n<hr />\n<p><strong>效果</strong> 鬼魂尝试用镣铐铐住生物的手腕。触发的生物必须尝试@Check[reflex|dc:23]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 鬼魂松散地将镣铐铐在生物的手腕上。解开镣铐只需要一个动作。</p>\n<p><strong>失败</strong> 鬼魂将镣铐铐在生物的手腕上，很难挣脱。该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，直到它以3动作行动解开镣铐。</p>\n<p><strong>大失败</strong> 鬼魂将镣铐铐在生物的手腕上。该生物陷入措手不及和笨拙1，直到镣铐被移除（[[/act escape dc=23]]，简单锁）。</p>"
                 }
             },
             "prototypeToken": {
@@ -2569,7 +2569,7 @@
                 },
                 "Enshroud": {
                     "name": "包裹 Enshroud",
-                    "description": "<p><strong>需求</strong> 破碎魔皮正束缚着一个生物；</p>\n<hr />\n<p><strong>效果</strong> 破碎魔皮试图压住目标，像衬衫一样把自己包在生物周围。破碎魔皮以@Check[athletics|defense:fortitude]检定对抗目标的强韧 DC。成功后，目标生物被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，破碎魔皮像控制尸体一样控制目标生物。在它的回合开始时，破碎魔皮可以以一个自由动作紧勒被包裹的生物。被包裹的生物可以尝试DC16的逃脱检定以挣脱（如果破碎魔皮在包裹的运动检定中大成功，则改为DC18）。</p>"
+                    "description": "<p><strong>需求</strong> 破碎魔皮正束缚着一个生物；</p>\n<hr />\n<p><strong>效果</strong> 破碎魔皮试图压住目标，像衬衫一样把自己包在生物周围。破碎魔皮以@Check[athletics|against:fortitude]检定对抗目标的强韧 DC。成功后，目标生物被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，破碎魔皮像控制尸体一样控制目标生物。在它的回合开始时，破碎魔皮可以以一个自由动作紧勒被包裹的生物。被包裹的生物可以尝试[[/act escape dc=16]]检定以挣脱（如果破碎魔皮在包裹的运动检定中大成功，则改为[[/act escape dc=18]]）。</p>"
                 },
                 "Void Healing": {
                     "name": "虚能治疗 Void Healing",
@@ -2797,7 +2797,7 @@
             "disable": "<p>@Check[occultism|dc:30]或@Check[religion|dc:30] （受训）削弱作祟的能量；在任何组合中成功3次才能解除作祟</p>",
             "hazarddescription": "<p>愤怒的鬼魂形成的旋风在该地区肆虐。</p>",
             "reset": "<p>鬼灵旋风将在触发的1分钟后解除，并且在1日后重置。</p>",
-            "routine": "<p>（3 个动作）鬼灵旋风用3个动作移动，每个动作最多移动30尺，并且对途径的每个生物造成@Damage[(2d10+13)[void]]{2d10+13虚能伤害}（@Check[reflex|dc:32|basic]豁免）。每个生物在鬼灵旋风移动期间只需进行一次豁免，即便旋风多次经过它。如果豁免大失败，生物将被卷进旋风，陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 32）。一个被旋风擒抱的生物在它的回合开始时受到@Damage[(1d10+6)[void]]{1d10+6额外虚能伤害}，并且它必须在旋风的回合中继续尝试反射豁免，无论旋风是否移动。脱逃成功的生物将从[[/r (1d12*5} #Falling Distance]]{1d12 x 5尺}的高度坠落地面。</p>",
+            "routine": "<p>（3 个动作）鬼灵旋风用3个动作移动，每个动作最多移动30尺，并且对途径的每个生物造成@Damage[(2d10+13)[void]]伤害（@Check[reflex|dc:32|basic]豁免）。每个生物在鬼灵旋风移动期间只需进行一次豁免，即便旋风多次经过它。如果豁免大失败，生物将被卷进旋风，陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]（[[/act escape dc=32]]）。一个被旋风擒抱的生物在它的回合开始时受到@Damage[(1d10+6)[void]]伤害，并且它必须在旋风的回合中继续尝试反射豁免，无论旋风是否移动。脱逃成功的生物将从[[/r (1d12*5} #Falling Distance]]{1d12 x 5尺}的高度坠落地面。</p>",
             "stealthdetails": "<p>(专家)</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -3412,7 +3412,7 @@
             "items": {
                 "Mental Bind": {
                     "name": "心灵枷锁 Mental Bind",
-                    "description": "<p><strong>触发</strong> 一个生物进入作祟区域；</p>\n<hr />\n<p><strong>效果</strong> 30尺内的每个生物都将被沉重的灵质锁链包围，这些锁链由它们自身的罪孽和悔恨铸成。每个生物都必须尝试@Check[will|dc:25]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物的速度受到-10尺状态减值，持续1轮。</p>\n<p><strong>失败</strong> 生物被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，直到@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC 25）。</p>\n<p><strong>大失败</strong> 类似失败，但是生物被负罪感压倒，还陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，持续1日。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物进入作祟区域；</p>\n<hr />\n<p><strong>效果</strong> 30尺内的每个生物都将被沉重的灵质锁链包围，这些锁链由它们自身的罪孽和悔恨铸成。每个生物都必须尝试@Check[will|dc:25]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物的速度受到-10尺状态减值，持续1轮。</p>\n<p><strong>失败</strong> 生物被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，直到[[/act escape dc=25]]。</p>\n<p><strong>大失败</strong> 类似失败，但是生物被负罪感压倒，还陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，持续1日。</p>"
                 }
             },
             "prototypeToken": {
