@@ -394,7 +394,7 @@
                 },
                 "Frightful Moan": {
                     "name": "骇人悲叹 Frightful Moan",
-                    "description": "<p>坎德莱恩的回响为自身的命运而哀悼，迫使30尺内的每个活物尝试一次@Check[will|dc:44]豁免。</p>\n<p>豁免失败时，该生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}（大失败则为@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}）。豁免成功时，该生物会在1分钟内临时免疫骇人悲叹。</p>"
+                    "description": "<p>坎德莱恩的回响为自身的命运而哀悼，迫使@Template[emanation|distance:30]内的每个活物尝试一次@Check[will|dc:44|options:area-effect,inflicts:frightened]豁免。</p>\n<p>豁免失败时，该生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}（大失败则为@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}）。豁免成功时，该生物会在1分钟内临时免疫骇人悲叹。</p>"
                 },
                 "Telekinetic Assault": {
                     "name": "念力袭击 Telekinetic Assault",
@@ -1312,7 +1312,7 @@
                 },
                 "Body Slam": {
                     "name": "猛力摆尾 Body Slam",
-                    "description": "<p><strong>需求</strong> 与垢鳄龙相邻的敌人多于1名。</p>\n<hr />\n<p><strong>效果</strong> 垢鳄龙对每个相邻的敌人摆动尾巴，并且对每个与自身相邻的生物尝试<span data-pf2-action=\"trip\" data-pf2-glyph=\"A\">摔绊</span> 。此能力仅需要投掷单次运动检定，并将其结果与每个目标的强韧DC进行比较。</p>"
+                    "description": "<p><strong>需求</strong> 与垢鳄龙相邻的敌人多于1名。</p>\n<hr />\n<p><strong>效果</strong> 垢鳄龙对每个相邻的敌人摆动尾巴，并且对每个与自身相邻的生物尝试[[/act trip]]。此能力仅需要投掷单次运动检定，并将其结果与每个目标的强韧DC进行比较。</p>"
                 },
                 "Deep Breath": {
                     "name": "深呼吸 Deep Breath",
@@ -1930,7 +1930,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:22|traits:damaging-effect]豁免，@Damage[2d6[acid]]伤害, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape} DC 24，破裂10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:22|traits:damaging-effect]豁免，@Damage[2d6[acid]]伤害，[[/act escape dc=24]]，破裂10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Entangling Residue": {
                     "name": "缠裹残液 Entangling Residue",
@@ -2083,7 +2083,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>蒙哥卡瑞从两种方式中选择一种吐息。他在经过[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}之前无法再次使用吐息。</p>\n<ul>\n<li><strong>烈焰 Flame</strong>（奥术，塑能系，火焰） 龙喷出一片烈焰，对@Template[cone|distance:80]区域内的生物造成@Damage[24d6[fire]|options:area-damage]伤害（@Check[reflex|dc:46|basic|name:Breath Weapon (Flame)]豁免）。</li>\n<li><strong>衰弱气体 Weakening Gas</strong>（奥术，死灵系） 龙喷出一片能使人衰弱的气体。每个处于@Template[cone|distance:30]区域内的生物必须成功通过一次@Check[fortitude|dc:46|name:Breath Weapon (Weakening Gas)]检定，否则将会在1分钟内@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 4}（在大失败时则为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 5}）。</li>\n</ul>"
+                    "description": "<p>蒙哥卡瑞从两种方式中选择一种吐息。他在经过[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}之前无法再次使用吐息。</p>\n<ul>\n<li><strong>烈焰 Flame</strong>（奥术，塑能系，火焰） 龙喷出一片烈焰，对@Template[cone|distance:80]区域内的生物造成@Damage[24d6[fire]|options:area-damage]伤害（@Check[reflex|dc:46|basic|name:Breath Weapon (Flame)|traits:arcane,evocation,fire|options:area-effect]豁免）。</li>\n<li><strong>衰弱气体 Weakening Gas</strong>（奥术，死灵系） 龙喷出一片能使人衰弱的气体。每个处于@Template[cone|distance:30]区域内的生物必须成功通过一次@Check[fortitude|dc:46|name:Breath Weapon (Weakening Gas)|traits:arcane,necromancy|options:area-effect,inflicts:enfeebled]检定，否则将会在1分钟内@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 4}（在大失败时则为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 5}）。</li>\n</ul>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -2233,7 +2233,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>拉查拉克喷吐火焰，对@Template[cone|distance:30]区域内的所有生物造成@Damage[9d6[fire]|options:area-damage]伤害（@Check[reflex|dc:26|basic]豁免）。</p>\n<p>她在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用喷吐武器。</p>"
+                    "description": "<p>拉查拉克喷吐火焰，对@Template[cone|distance:30]区域内的所有生物造成@Damage[9d6[fire]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免）。</p>\n<p>她在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用喷吐武器。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -2384,7 +2384,7 @@
                 },
                 "Darting Shot": {
                     "name": "冲刺射击 Darting Shot",
-                    "description": "<p>红三一头目以任意顺序作出后续动作：对一个目标进行<span data-pf2-action=\"feint\" data-pf2-glyph=\"A\">虚招</span>、行走至多等同于其速度的距离、以及用他的短弓做出一次打击。他在使用此能力时，能够对30尺内的任意目标进行虚招。</p>"
+                    "description": "<p>红三一头目以任意顺序作出后续动作：对一个目标进行[[/act feint]]、行走至多等同于其速度的距离、以及用他的短弓做出一次打击。他在使用此能力时，能够对30尺内的任意目标进行虚招。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -2512,7 +2512,7 @@
                 },
                 "Collapse Ceiling": {
                     "name": "穹顶坍塌 Collapse Ceiling",
-                    "description": "<p>废墟坍塌至多三个10×10尺大小的属于它的天花板。每坍塌一个部分废墟会受到[[/r (10}]]{10伤害}，并且在修复之前不能坍塌相同的部分。</p>\n<p>这些区域中的每个生物受到@Damage[8d10[bludgeoning]]{8d10钝击伤害}，@Check[reflex|dc:35|basic]豁免。豁免失败的生物还会被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}在瓦砾下直到他成功使用逃脱动作（DC 33）。</p>"
+                    "description": "<p>废墟坍塌至多三个@Template[square|distance:10]大小的属于它的天花板。每坍塌一个部分废墟会受到@Damage[10[untyped]]伤害，并且在修复之前不能坍塌相同的部分。</p>\n<p>这些区域中的每个生物受到@Damage[8d10[bludgeoning]|options:area-damage]伤害，@Check[reflex|dc:35|basic|options:area-effect,inflicts:restrained]豁免。豁免失败的生物还会被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]在瓦砾下直到他成功使用[[/act escape dc=33]]动作。</p>"
                 },
                 "Pervasive Attacks": {
                     "name": "广域打击 Pervasive Attacks",
@@ -2777,9 +2777,9 @@
         },
         "Town Hall Fire": {
             "name": "镇公所火灾 Town Hall Fire",
-            "disable": "<p>消除危害需要熄灭火焰。若水量较少，如@UUID[Compendium.pf2e.spells-srd.Item.WzLKjSw6hsBhuklC]{造水术 Create Water}或@UUID[Compendium.pf2e.spells-srd.Item.jfVCuOpzC6mUrf6f]{水流冲击 Hydraulic Push}的水量，则通常可以浇灭5 尺方格的空间。大量的水，如一桶装满的水，通常可以浇灭@Template[line|distance:10|width:10]{10*10尺区域}（或4个方格构成的其他形状）。将一桶水泼向火焰需要一个交互动作。一个水袋内的水甚至无法浇灭一个5尺方格的火焰。寒冷效果也可以熄灭火焰，但仅限于此效果能影响一片区域的情况时；在灭火时，寒冷通常没有水有效，因此@UUID[Compendium.pf2e.equipment-srd.Item.EpxmUtLpCkE8R6KJ]{霜冻瓶 Frost Vial}能熄灭5尺方格的火焰，而@UUID[Compendium.pf2e.spells-srd.Item.gYjPm7YwGtEa1oxh]{冰冻射线 Ray of Frost}无法灭火。</p>\n<p>位于镇公所外的纪念圆台有数个可以使用的水泵，但议事厅与水泵间的距离使得让PC来回取水灭火的做法变得不切实际。然而，PC可以指示其他意志坚定且鼓起勇气的观众组成一条传递水桶的长队。这需要15名观众（由议员或PC 们救援的观众也包含在内）排成队列，从镇民开始列队到开始从纪念圆台的水泵取水需要两轮时间。自第3轮起，便有一个装满的水桶在议事厅南部入口处，可供每名PC回合开始时取用。传桶队伍的成员在议事厅外排成一队，不会因为吸入烟尘而受到伤害。</p>\n<p>若有PC想要自行取水，那么从议事厅南门到水泵的距离为150尺，因此抵达水泵或者返回议事厅通常会需要6个动作。装满水桶需要一个交互动作。</p>\n<p>根据你的判断，其他方法也可以用于控制火势。举例说明：PC们可以找到一些东西来通过控制火焰的路径来隔绝火焰，或者使用披风扑灭部分火焰。</p>",
-            "hazarddescription": "<p>火焰吞噬了西门以及与其相邻的东侧@Template[line|distance:10|width:10]{10*10尺区域}，之后的每个回合它都会向周边蔓延。</p>",
-            "routine": "<p>轮到火灾的回合时，火势会向外蔓延，蔓延的方格数量等同于当前已经占据方格数量的一半，最低为1格。由你来判断火势蔓延的方向——通常来说是那些含有易燃材料的区域。任何生物若在其回合结束时与火焰相邻的话，则会承受@Damage[1d6[fire]]伤害，位于火焰之内的则要承受@Damage[4d6[fire]]伤害。上述伤害均需要作出@Check[reflex|dc:17|basic|traits:complex,environmental,fire,hazard]豁免。每名生物每轮仅会因火灾而承受一次伤害。（为方便起见，仅在NPC及其盟友身上追踪受伤情况，而不用记录观众的情况；第5回合和第7回合的段落内有关于观众健康情况的说明）。</p>\n<p>火灾自第1回合起，之后每次轮到火灾的回合都会产生额外效果。</p>\n<p><strong>第2回合</strong> 议事厅的北门突然打开，火焰冲了进来，引燃了门前@Template[line|distance:10|width:10]{10*10尺区域}。所有火焰都会在后续的回合内按照上文所述的速率蔓延。在判断蔓延速率时，不同的火焰区域连接在一起后便会并为一片火焰。</p>\n<p><strong>第4回合及之后</strong> 房间内的生物在回合结束时会因为吸入烟尘而承受[[/r 1d6 #Smoke Inhalation Damage]]{1d6伤害}。任何使用一个交互动作用湿布捂住口鼻（或使用其他创造性解决方案）的生物能使吸入烟尘造成的伤害减半。</p>\n<p><strong>第5回合</strong> 仍然位于室内的观众会因为燃烧和浓烟而@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}。</p>\n<p><strong>第7回合</strong> 仍然位于室内的观众会死亡。</p>",
+            "disable": "<p>消除危害需要熄灭火焰。若水量较少，如@UUID[Compendium.pf2e.spells-srd.Item.WzLKjSw6hsBhuklC]或@UUID[Compendium.pf2e.spells-srd.Item.jfVCuOpzC6mUrf6f]的水量，则通常可以浇灭5 尺方格的空间。大量的水，如一桶装满的水，通常可以浇灭@Template[square|distance:10]区域（或4个方格构成的其他形状）。将一桶水泼向火焰需要一个交互动作。一个水袋内的水甚至无法浇灭一个5尺方格的火焰。寒冷效果也可以熄灭火焰，但仅限于此效果能影响一片区域的情况时；在灭火时，寒冷通常没有水有效，因此@UUID[Compendium.pf2e.equipment-srd.Item.EpxmUtLpCkE8R6KJ]能熄灭5尺方格的火焰，而@UUID[Compendium.pf2e.spells-srd.Item.gYjPm7YwGtEa1oxh]无法灭火。</p>\n<p>位于镇公所外的纪念圆台有数个可以使用的水泵，但议事厅与水泵间的距离使得让PC来回取水灭火的做法变得不切实际。然而，PC可以指示其他意志坚定且鼓起勇气的观众组成一条传递水桶的长队。这需要15名观众（由议员或PC 们救援的观众也包含在内）排成队列，从镇民开始列队到开始从纪念圆台的水泵取水需要两轮时间。自第3轮起，便有一个装满的水桶在议事厅南部入口处，可供每名PC回合开始时取用。传桶队伍的成员在议事厅外排成一队，不会因为吸入烟尘而受到伤害。</p>\n<p>若有PC想要自行取水，那么从议事厅南门到水泵的距离为150尺，因此抵达水泵或者返回议事厅通常会需要6个动作。装满水桶需要一个交互动作。</p>\n<p>根据你的判断，其他方法也可以用于控制火势。举例说明：PC们可以找到一些东西来通过控制火焰的路径来隔绝火焰，或者使用披风扑灭部分火焰。</p>",
+            "hazarddescription": "<p>火焰吞噬了西门以及与其相邻的东侧@Template[square|distance:10]区域，之后的每个回合它都会向周边蔓延。</p>",
+            "routine": "<p>轮到火灾的回合时，火势会向外蔓延，蔓延的方格数量等同于当前已经占据方格数量的一半，最低为1格。由你来判断火势蔓延的方向——通常来说是那些含有易燃材料的区域。任何生物若在其回合结束时与火焰相邻的话，则会承受@Damage[1d6[fire]]伤害，位于火焰之内的则要承受@Damage[4d6[fire]]伤害。上述伤害均需要作出@Check[reflex|dc:17|basic|traits:complex,environmental,fire,hazard]豁免。每名生物每轮仅会因火灾而承受一次伤害。（为方便起见，仅在NPC及其盟友身上追踪受伤情况，而不用记录观众的情况；第5回合和第7回合的段落内有关于观众健康情况的说明）。</p>\n<p>火灾自第1回合起，之后每次轮到火灾的回合都会产生额外效果。</p>\n<p><strong>第2回合</strong> 议事厅的北门突然打开，火焰冲了进来，引燃了门前@Template[square|distance:10]区域。所有火焰都会在后续的回合内按照上文所述的速率蔓延。在判断蔓延速率时，不同的火焰区域连接在一起后便会并为一片火焰。</p>\n<p><strong>第4回合及之后</strong> 房间内的生物在回合结束时会因为吸入烟尘而承受@Damage[1d6[untyped]]伤害。任何使用一个交互动作用湿布捂住口鼻（或使用其他创造性解决方案）的生物能使吸入烟尘造成的伤害减半。</p>\n<p><strong>第5回合</strong> 仍然位于室内的观众会因为燃烧和浓烟而@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]。</p>\n<p><strong>第7回合</strong> 仍然位于室内的观众会死亡。</p>",
             "stealthdetails": "<p>先攻调整[[/r 1d20+5 #Initiative]]{+5}</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -2849,7 +2849,7 @@
                 },
                 "Dimensional Tether": {
                     "name": "次元拴绳 Dimensional Tether",
-                    "description": "<p>被瓦兹戈卢的黏网打击命中的生物处于@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}并被粘到最近的表面上直至他逃脱（DC 42）。只要它仍然被黏网固定，黏网就会尝试反制任何将网住的生物移到另一个位面的效果，反制等级为10，并使用瓦兹戈卢的[[/r 1d20+38 #Dimensional Tether Counteract]]{奥法}技能加值来进行反制检定。</p>"
+                    "description": "<p>被瓦兹戈卢的黏网打击命中的生物处于@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]并被粘到最近的表面上直至他[[/act escape dc=42]]。只要它仍然被黏网固定，黏网就会尝试反制任何将网住的生物移到另一个位面的效果，反制等级为10，并使用瓦兹戈卢的[[/r 1d20+38 #Dimensional Tether Counteract]]{奥法}技能加值来进行反制检定。</p>"
                 },
                 "Redirect Portal": {
                     "name": "重定向传送门 Redirect Portal",
@@ -2884,7 +2884,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>维什米瑞克斯喷出一股熔岩流，对@Template[cone|distance:60]区域造成@Damage[9d6[fire],4d12[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:42|basic]豁免）。</p>\n<p>它在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息。</p>"
+                    "description": "<p>维什米瑞克斯喷出一股熔岩流，对@Template[cone|distance:60]区域造成@Damage[9d6[fire],4d12[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:42|basic|options:area-effect]豁免）。</p>\n<p>它在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -3157,7 +3157,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>佐坦尼呼出一阵烈焰，对@Template[cone|distance:70]范围内的所有生物造成@Damage[18d6[fire],4d6[persistent,fire]|options:area-damage]伤害（@Check[reflex|dc:42|basic]豁免）。</p>\n<p>它在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用此能力。</p>"
+                    "description": "<p>佐坦尼呼出一阵烈焰，对@Template[cone|distance:70]范围内的所有生物造成@Damage[18d6[fire],4d6[persistent,fire]|options:area-damage]伤害（@Check[reflex|dc:42|basic|options:area-effect]豁免）。</p>\n<p>它在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用此能力。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -3209,7 +3209,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>佐坦尼之嗣喷射出覆盖@Template[cone|distance:60]范围的岩浆，对该区域内的生物造成@Damage[10d10[fire],2d6[persistent,fire]|options:area-damage]伤害（@Check[reflex|dc:39|basic]豁免）。</p>\n<p>佐坦尼之嗣在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息武器。</p>"
+                    "description": "<p>佐坦尼之嗣喷射出覆盖@Template[cone|distance:60]范围的岩浆，对该区域内的生物造成@Damage[10d10[fire],2d6[persistent,fire]|options:area-damage]伤害（@Check[reflex|dc:39|basic|options:area-effect]豁免）。</p>\n<p>佐坦尼之嗣在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息武器。</p>"
                 },
                 "Heat Surge": {
                     "name": "热能激增 Heat Surge",
@@ -3422,7 +3422,7 @@
                     "name": "暴怒尖啸 Shrieking Frenzy"
                 },
                 "Volcanic Eruption": {
-                    "description": "<p><strong>需求</strong> 龙牧师站在地面上</p>\n<hr />\n<p><strong>效果</strong> 龙牧师用他的拳头猛击地面，让火焰从地面上喷发出来。每个位于@Template[emanation|distance:15]区域内、站在地上且不是达哈克信徒的生物都必须成功通过@Check[reflex|dc:25|traits:damaging-effect]豁免，失败则会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}并承受@Damage[1d6[bludgeoning],2d6[fire]]伤害。</p>",
+                    "description": "<p><strong>需求</strong> 龙牧师站在地面上</p>\n<hr />\n<p><strong>效果</strong> 龙牧师用他的拳头猛击地面，让火焰从地面上喷发出来。每个位于@Template[emanation|distance:15]区域内、站在地上且不是达哈克信徒的生物都必须成功通过@Check[reflex|dc:25|options:area-effect,damaging-effect,inflicts:prone]豁免，失败则会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]并承受@Damage[1d6[bludgeoning],2d6[fire]|options:area-damage]伤害。</p>",
                     "name": "地火喷发 Volcanic Eruption"
                 },
                 "Breath Weapon": {
@@ -3851,7 +3851,7 @@
                     "description": "<p>拉斯蒂·梅能变化成任意中型女性类人生物。这不会改变她的速度或它打击的攻击加值和伤害加值，但是能改变她打击的伤害类型（例如钝击）。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 },
                 "Bonds of Iron": {
-                    "description": "<p>每日一次，拉斯蒂·梅从最多30尺远的虚空中召唤一个寒铁囚笼，她尝试一次运动检定对抗目标的强韧DC来[[/act grapple]]；如果目标有寒铁弱点，拉斯蒂·梅该次检定有+2环境加值。和一般擒抱不同的是，拉斯蒂·梅擒抱的目标不需要在其触及范围内，并且自身可以随意移动。囚笼一直持续直到目标生物成功[[/act escape dc=29]]（DC29）并且牢笼化为尘土。任何生物能尝试通过攻击破坏该囚笼。该囚笼的AC25，硬度14，有56点生命值。</p>",
+                    "description": "<p>每日一次，拉斯蒂·梅从最多30尺远的虚空中召唤一个寒铁囚笼，她尝试一次运动检定对抗目标的强韧DC来[[/act grapple]]；如果目标有寒铁弱点，拉斯蒂·梅该次检定有+2环境加值。和一般擒抱不同的是，拉斯蒂·梅擒抱的目标不需要在其触及范围内，并且自身可以随意移动。囚笼一直持续直到目标生物成功[[/act escape dc=29]]并且牢笼化为尘土。任何生物能尝试通过攻击破坏该囚笼。该囚笼的AC25，硬度14，有56点生命值。</p>",
                     "name": "钢铁囚笼 Bonds of Iron"
                 },
                 "Rust": {
