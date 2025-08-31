@@ -58,7 +58,7 @@
                 },
                 "Strike as One": {
                     "name": "整齐划一 Strike as One",
-                    "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 英灵战士群集对每个@Template[emanation|distance:5]内的敌人进行一次近战打击（@Check[reflex|dc:36|basic]豁免）。伤害取决于消耗的动作。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d8+7)[slashing]]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+14)[slashing]]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+14)[slashing]]伤害</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 英灵战士群集对每个@Template[emanation|distance:5]内的敌人进行一次近战打击（@Check[reflex|dc:36|basic|options:area-effect]豁免）。伤害取决于消耗的动作。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d8+7)[slashing]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+14)[slashing]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+14)[slashing]|options:area-damage]伤害</p>"
                 },
                 "Troop Movement": {
                     "name": "部队移动 Troop Movement",
@@ -330,7 +330,7 @@
                 },
                 "Wildfire Storm": {
                     "name": "野火风暴 Wildfire Storm",
-                    "description": "<p>瑞萨菲展开翅膀旋转，生成一股火焰旋风，在@Template[emanation|distance:20]范围内造成@Damage[19d6[fire]]伤害（@Check[reflex|dc:40|basic]豁免）。他[[/gmr 1d4 #Recharge Wildfire Storm]]{1d4轮}内无法再次使用野火风暴。</p>"
+                    "description": "<p>瑞萨菲展开翅膀旋转，生成一股火焰旋风，在@Template[emanation|distance:20]范围内造成@Damage[19d6[fire]|options:area-damage]伤害（@Check[reflex|dc:40|basic|options:area-effect]豁免）。他[[/gmr 1d4 #Recharge Wildfire Storm]]{1d4轮}内无法再次使用野火风暴。</p>"
                 },
                 "Smoke Vision": {
                     "name": "烟雾视觉",
@@ -646,7 +646,7 @@
             "items": {
                 "Bloody Mess": {
                     "name": "血腥混乱 Bloody Mess",
-                    "description": "<p><strong>频率</strong> 每天一次</p><hr /><p><strong>效果</strong> B血手向四面八方挥出利爪，让@Template[emanation|distance:20]{20尺半径}内所有活物喷出鲜血，空气中弥漫着细密的红色血雾。区域内的所有生物都必须尝试一次@Check[fortitude|dc:37|options:damaging-effect]豁免——已经陷入受伤状态的生物在豁免中承受-2减值。如果多于3个生物在豁免中失败，20尺半径范围内的血雾变得非常厚重，所有范围内生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，直到血手下回合结束为止。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[8d6[slashing]]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[8d6[slashing]]伤害，@Damage[4d6[persistent,bleed]]伤害，且因失血陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，持续1分钟。</p>\n<p><strong>大失败</strong> 该生物受到@Damage[12d6[persistent,bleed]]伤害，且因失血陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>"
+                    "description": "<p><strong>频率</strong> 每天一次</p><hr /><p><strong>效果</strong> B血手向四面八方挥出利爪，让@Template[emanation|distance:20]{20尺半径}内所有活物喷出鲜血，空气中弥漫着细密的红色血雾。区域内的所有生物都必须尝试一次@Check[fortitude|dc:37|options:area-effect,damaging-effect,inflicts:enfeebled]豁免——已经陷入受伤状态的生物在豁免中承受-2减值。如果多于3个生物在豁免中失败，20尺半径范围内的血雾变得非常厚重，所有范围内生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，直到血手下回合结束为止。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物受到@Damage[8d6[slashing]|options:area-damage]伤害。</p>\n<p><strong>失败</strong> 该生物受到@Damage[8d6[slashing],4d6[persistent,bleed]|options:area-damage]伤害，且因失血陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}，持续1分钟。</p>\n<p><strong>大失败</strong> 该生物受到@Damage[12d6[persistent,bleed]|options:area-damage]伤害，且因失血陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。</p>"
                 },
                 "+1 Status to All Saves vs. Magic": {
                     "name": "对抗魔法全豁免+1状态加值"
@@ -758,7 +758,7 @@
                 },
                 "Viscous Trap": {
                     "name": "粘液陷阱 Viscous Trap",
-                    "description": "<p>被拟形泥灵的软泥粘球击中的生物所有速度收到-15尺环境减值，持续1分钟。重击时，站在固体表面的目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，若目标正用翅膀飞行则坠落地面并无法飞行。</p>\n<p>目标可以通过@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]（DC 34），或使用总计3个交互动作让自己恢复自由来结束所有效果。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]{效果：粘液陷阱}</p>"
+                    "description": "<p>被拟形泥灵的软泥粘球击中的生物所有速度收到-15尺环境减值，持续1分钟。重击时，站在固体表面的目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，若目标正用翅膀飞行则坠落地面并无法飞行。</p>\n<p>目标可以通过[[/act escape dc=34]]{逃脱}，或使用总计3个交互动作让自己恢复自由来结束所有效果。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]</p>"
                 }
             },
             "publicNotes": "<p>拟形泥灵是一种诡异的变形者，通过已被忘却的仪式，将一种特殊智慧生物的灵魂注入以魔法制造的泥怪，便诞生出拟形泥灵——它们是许久以前作为间谍和渗透者被创造出来的。拟形泥灵早已活得比创造者更久，如今它们常常在古代文明——它们曾作为凡人所服务的文明——的废墟中独自生活。</p>",
@@ -1005,7 +1005,7 @@
                 },
                 "Pinning Throw": {
                     "name": "固定投掷 Pinning Throw",
-                    "description": "<p>古拉姆老兵尝试用标枪进行一次远程打击，造成@Damage[(3d6+22)[piercing]]伤害。若目标与一个固体表面邻接，TA被标枪钉在该表面上。目标陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]（DC 33）。若该生物为虚体、液态（比如水元素或一部分泥怪）或其他可以不费吹灰之力逃脱的形态，则不会被固定。</p>"
+                    "description": "<p>古拉姆老兵尝试用标枪进行一次远程打击，造成@Damage[(3d6+22)[piercing]]伤害。若目标与一个固体表面邻接，TA被标枪钉在该表面上。目标陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到[[/act escape dc=33]]。若该生物为虚体、液态（比如水元素或一部分泥怪）或其他可以不费吹灰之力逃脱的形态，则不会被固定。</p>"
                 },
                 "Reactive Strike": {
                     "name": "反应打击 Reactive Strike",
