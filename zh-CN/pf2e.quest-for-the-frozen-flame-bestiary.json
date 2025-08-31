@@ -52,7 +52,7 @@
                 },
                 "Tighten Grip": {
                     "name": "紧抓 Tighten Grip",
-                    "description": "<p><strong>触发</strong> 被深渊扭曲的树木使用枝条打击对一个生物造成重击；</p>\n<hr />\n<p><strong>效果</strong> 树把枝条缠绕在触发生物身上，将其@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒抱 Grabbing}（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC21）。</p>"
+                    "description": "<p><strong>触发</strong> 被深渊扭曲的树木使用枝条打击对一个生物造成重击</p>\n<hr />\n<p><strong>效果</strong> 树把枝条缠绕在触发生物身上，将其@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]（[[/act escape dc=21]]）。</p>"
                 }
             },
             "data": {
@@ -810,7 +810,7 @@
         "Forest Fire": {
             "name": "森林大火 Forest Fire",
             "disable": "<p>在临近的方格通过@Check[athletics|dc:22|name:Smother a square|traits:hazard,complex,environmental,fire]、@Check[nature|dc:22|name:Smother a square|traits:hazard,complex,environmental,fire]或@Check[survival|dc:22|name:Smother a square|traits:hazard,complex,environmental,fire]检定可以扑灭5尺方格内的火焰；每次尝试都是一个交互动作。在火焰上浇水可以自动扑灭一个或更多方格里的火焰，无需检定。少量的水一般可以扑灭5尺方格内的火焰（例如造水术或水流冲击）。大量的水（例如一整桶水）可以扑灭10尺×10尺的区域（或其他形状的4个方格）。朝火焰上泼一桶水视作一个交互动作。水袋的存水量太小，连1方格的火都扑不灭。寒冷也可以扑灭火焰，但必须是能够影响一片区域的寒冷；寒冷的效果不如水，所以寒霜瓶只能扑灭1格的火焰，冰冻射线则没有效果。</p>",
-            "hazarddescription": "<p>一处@Template[line|distance:10|width:10]{10尺×10尺}的篝火每轮都向周围的森林蔓延。</p>",
+            "hazarddescription": "<p>一处@Template[square|distance:10]的篝火每轮都向周围的森林蔓延。</p>",
             "routine": "<p>在火焰的回合，它会向外蔓延，蔓延的格数等于火焰如今占据格数的一半（最少1格）。你来决定火焰蔓延到哪个方格里。任何在火焰旁边结束回合的生物都要受到@Damage[(2d8+5)[fire]]伤害，在火焰内结束回合则为@Damage[(4d8+10)[fire]]伤害（两种情况均为@Check[reflex|dc:25|traits:hazard,complex,environmental,fire|basic]豁免）。一个生物每轮只能被森林大火伤害一次。</p>",
             "items": {
                 "Stoke Flames": {
@@ -835,7 +835,7 @@
                 },
                 "Wild Empathy": {
                     "name": "野性认同 Wild Empathy",
-                    "description": "<p>水泽仙女可以用交涉来对动物@UUID[Compendium.pf2e.actionspf2e.Item.OX4fy22hQgUHDr0q]{建立印象 Make an Impression}并向它们进行一些非常简单的@UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]{提出请求 Requests}。</p>"
+                    "description": "<p>水泽仙女可以用交涉来对动物[[/act make-an-impression]]并向它们进行一些非常简单的[[/act request]]。</p>"
                 },
                 "Water Dependent": {
                     "name": "水泽依存 Water Dependent",
@@ -1292,7 +1292,7 @@
                 },
                 "Wingbeat": {
                     "name": "振翅 Wingbeat",
-                    "description": "<p>卡拉卡鸦人以雷霆之势扇动翅膀@Template[emanation|distance:15]范围内的生物受到@Damage[5d6[sonic]]伤害（@Check[fortitude|dc:21|basic]豁免）。如果豁免失败，生物还会被推离卡拉卡鸦人5尺。</p>\n<p>卡拉卡鸦人在[[/gmr 1d4 #Recharge Wingbeat]]{1d4轮}内无法使用该能力。</p>"
+                    "description": "<p>卡拉卡鸦人以雷霆之势扇动翅膀@Template[emanation|distance:15]范围内的生物受到@Damage[5d6[sonic]|options:area-damage]伤害（@Check[fortitude|dc:21|basic|options:area-effect,inflicts:forced-movement]豁免）。如果豁免失败，生物还会被推离卡拉卡鸦人5尺。</p>\n<p>卡拉卡鸦人在[[/gmr 1d4 #Recharge Wingbeat]]{1d4轮}内无法使用该能力。</p>"
                 },
                 "Constant Spells": {
                     "name": "常驻法术 Constant Spells",
@@ -1648,7 +1648,7 @@
                 },
                 "Worm Chill": {
                     "name": "蠕虫之寒 Worm Chill",
-                    "description": "<p>5尺。进入灵光范围或在灵光范围内开始回合的生物受到@Damage[3d6[cold]]伤害（@Check[reflex|dc:29|basic]豁免）。</p>"
+                    "description": "<p>5尺。进入灵光范围或在灵光范围内开始回合的生物受到@Damage[3d6[cold]|options:area-damage]伤害（@Check[reflex|dc:29|basic|options:area-effect]豁免）。</p>"
                 },
                 "Worm Trill": {
                     "name": "蠕虫颤音 Worm Trill",
@@ -2022,7 +2022,7 @@
                 },
                 "Engulf": {
                     "name": "Engulf",
-                    "description": "<p>@Check[reflex|dc:29|traits:damaging-effect], @Damage[6d6[bludgeoning]], @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} DC 29, Rupture 17</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:29|traits:damaging-effect], @Damage[6d6[bludgeoning]], [[/act escape dc=29]], Rupture 17</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 }
             },
             "data": {
@@ -2073,7 +2073,7 @@
                 },
                 "Vomit Tar": {
                     "name": "呕吐焦油 Vomit Tar",
-                    "description": "<p>焦油丧尸吐出一团黏糊的焦油，范围为@Template[cone|distance:15]，造成@Damage[7d6[bludgeoning]]伤害（@Check[reflex|dc:28|basic]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，获得火焰弱点5。两个状态都于3轮后或焦油被擦掉（需要3个交互动作）后解除。焦油丧尸在[[/gmr 1d4 #Recharge Vomit Tar]]{1d4轮}内无法再次呕吐焦油。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.4X4wCxkxr9rJdoT1]</p>"
+                    "description": "<p>焦油丧尸吐出一团黏糊的焦油，范围为@Template[cone|distance:15]，造成@Damage[7d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:28|basic|options:area-effect,inflicts:slowed]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，获得火焰弱点5。两个状态都于3轮后或焦油被擦掉（需要3个交互动作）后解除。焦油丧尸在[[/gmr 1d4 #Recharge Vomit Tar]]{1d4轮}内无法再次呕吐焦油。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.4X4wCxkxr9rJdoT1]</p>"
                 },
                 "Void Healing": {
                     "name": "Void Healing",
@@ -2102,7 +2102,7 @@
                 },
                 "Vomit Tar": {
                     "name": "呕吐焦油 Vomit Tar",
-                    "description": "<p>焦油丧尸吐出一团黏糊的焦油，范围为@Template[cone|distance:15]，造成@Damage[6d6[bludgeoning]]伤害（@Check[reflex|dc:25|basic]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，获得火焰弱点5。两个状态都于3轮后或焦油被擦掉（需要3个交互动作）后解除。焦油丧尸在[[/gmr 1d4 #Recharge Vomit Tar]]{1d4轮}内无法再次呕吐焦油。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.4X4wCxkxr9rJdoT1]</p>"
+                    "description": "<p>焦油丧尸吐出一团黏糊的焦油，范围为@Template[cone|distance:15]，造成@Damage[6d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:25|basic|options:area-effect,inflicts:slowed]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，获得火焰弱点5。两个状态都于3轮后或焦油被擦掉（需要3个交互动作）后解除。焦油丧尸在[[/gmr 1d4 #Recharge Vomit Tar]]{1d4轮}内无法再次呕吐焦油。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.4X4wCxkxr9rJdoT1]</p>"
                 },
                 "Void Healing": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>",
@@ -2127,7 +2127,7 @@
                 },
                 "Vomit Tar": {
                     "name": "呕吐焦油 Vomit Tar",
-                    "description": "<p>焦油丧尸吐出一团黏糊的焦油，范围为@Template[cone|distance:15]，造成@Damage[5d6[bludgeoning]]伤害（@Check[reflex|dc:24|basic]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，获得火焰弱点5。两个状态都于3轮后或焦油被擦掉（需要3个交互动作）后解除。焦油丧尸在[[/gmr 1d4 #Recharge Vomit Tar]]{1d4轮}内无法再次呕吐焦油。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.4X4wCxkxr9rJdoT1]</p>"
+                    "description": "<p>焦油丧尸吐出一团黏糊的焦油，范围为@Template[cone|distance:15]，造成@Damage[5d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:24|basic|options:area-effect,inflicts:slowed]豁免）。豁免失败的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，获得火焰弱点5。两个状态都于3轮后或焦油被擦掉（需要3个交互动作）后解除。焦油丧尸在[[/gmr 1d4 #Recharge Vomit Tar]]{1d4轮}内无法再次呕吐焦油。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.4X4wCxkxr9rJdoT1]</p>"
                 },
                 "Void Healing": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>",
