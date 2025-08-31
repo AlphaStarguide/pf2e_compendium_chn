@@ -273,7 +273,7 @@
                 },
                 "Strike as One": {
                     "name": "整齐划一 Strike as One",
-                    "description": "<p><span class=\"action-glyph\">A</span>到<span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 卫队对@Template[emanation|distance:5]内的所有生物进行近战攻击（@Check[reflex|dc:30|basic]豁免）。该伤害取决于花费的动作：</p>\n<p><span class=\"action-glyph\">A</span> @Damage[2d8[slashing]]伤害。</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+10)[slashing]]伤害。</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+13)[slashing]]伤害。</p>"
+                    "description": "<p><span class=\"action-glyph\">A</span>到<span class=\"action-glyph\">3</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 卫队对@Template[emanation|distance:5]内的所有生物进行近战攻击（@Check[reflex|dc:30|basic|options:area-effect]豁免）。该伤害取决于花费的动作：</p>\n<p><span class=\"action-glyph\">A</span> @Damage[2d8[slashing]|options:area-damage]伤害。</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+10)[slashing]|options:area-damage]伤害。</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(4d8+13)[slashing]|options:area-damage]伤害。</p>"
                 },
                 "Troop Movement": {
                     "name": "部队移动 Troop Movement",
@@ -2028,7 +2028,7 @@
                 },
                 "Stick a Fork in It": {
                     "name": "餐叉穿刺 Stick a Fork in It",
-                    "description": "<p>活化银器群尝试钉住一个单独的生物。</p>\n<p>该生物必须尝试@Check[reflex|dc:17]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 活化银器群的一部分钉住了目标的衣服和装备。只要目标依然位于活化银器群占据的空间，目标的速度就受到-10尺环境减值。</p>\n<p><strong>失败</strong> 类似成功，但只要目标依然位于活化银器群占据的空间，就无法进行快步。</p>\n<p><strong>大失败</strong> 目标彻底被钉在原地，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，直到目标@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC 17），或花费2个交互动作拔掉所有钉在身上的银器。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.K3r1lfbtCTf3dFhV]{效果：餐叉穿刺}</p>"
+                    "description": "<p>活化银器群尝试钉住一个单独的生物。</p>\n<p>该生物必须尝试@Check[reflex|dc:17]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 活化银器群的一部分钉住了目标的衣服和装备。只要目标依然位于活化银器群占据的空间，目标的速度就受到-10尺环境减值。</p>\n<p><strong>失败</strong> 类似成功，但只要目标依然位于活化银器群占据的空间，就无法进行快步。</p>\n<p><strong>大失败</strong> 目标彻底被钉在原地，陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到目标[[/act escape dc=17]]，或花费2个交互动作拔掉所有钉在身上的银器。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.K3r1lfbtCTf3dFhV]</p>"
                 }
             },
             "data": {
@@ -2426,7 +2426,7 @@
                 },
                 "Chain Shot": {
                     "name": "锁链射击 Chain Shot",
-                    "description": "<p>骸骨战舰进行一次特殊的打击，射出一条由白骨制成的锁链。被这个打击命中的生物被锁链@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC41）。</p>\n<p>骸骨战舰可以使用交互动作将一个被擒抱的生物拉近，每个动作拉近50尺；当船移动时，它拖着被擒抱的生物一起走。</p>"
+                    "description": "<p>骸骨战舰进行一次特殊的打击，射出一条由白骨制成的锁链。被这个打击命中的生物被锁链@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]（[[/act escape dc=41]]）。</p>\n<p>骸骨战舰可以使用交互动作将一个被擒抱的生物拉近，每个动作拉近50尺；当船移动时，它拖着被擒抱的生物一起走。</p>"
                 },
                 "Crew's Call": {
                     "name": "船员的呼唤 Crew's Call",
@@ -4095,7 +4095,7 @@
             "items": {
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress bore worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.aQusm2Uh1tw00IVb]{Bore Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]] damage (@Check[reflex|dc:25|basic] save) from the splatter of caustic viscera.</p>"
+                    "description": "<p>When killed, an empress bore worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.aQusm2Uh1tw00IVb]{Bore Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of caustic viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -4127,7 +4127,7 @@
             "items": {
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress ice worm violently expels the young it carries. These young erupt as an @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.IMrnOMr3GtUFKyuV]{Ice Worm Swarm} in the empress ice worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[cold]] damage (@Check[reflex|dc:25|basic] save) from the splatter of icy viscera.</p>"
+                    "description": "<p>When killed, an empress ice worm violently expels the young it carries. These young erupt as an @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.IMrnOMr3GtUFKyuV]{Ice Worm Swarm} in the empress ice worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[cold]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of icy viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -4159,7 +4159,7 @@
             "items": {
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress lava worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.5bBfMpcn0PuO1jTL]{Lava Worm Swarm} in the empress lava worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[fire]] damage (@Check[reflex|dc:25|basic] save) from the splatter of fiery viscera.</p>"
+                    "description": "<p>When killed, an empress lava worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.5bBfMpcn0PuO1jTL]{Lava Worm Swarm} in the empress lava worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[fire]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of fiery viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -4191,7 +4191,7 @@
             "items": {
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress mage-eater worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.FHZPjbRmJCqnhdal]{Mage-Eater Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]] damage (@Check[reflex|dc:25|basic] save) from the splatter of caustic viscera.</p>"
+                    "description": "<p>When killed, an empress mage-eater worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.FHZPjbRmJCqnhdal]{Mage-Eater Worm Swarm} in the empress bore worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[acid]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of caustic viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -4223,7 +4223,7 @@
             "items": {
                 "Viviparous Birth": {
                     "name": "Viviparous Birth",
-                    "description": "<p>When killed, an empress necral worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.JlFBu8zobNq3daVF]{Necral Worm Swarm} in the empress necral worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[void]] damage (@Check[reflex|dc:25|basic] save) from the splatter of undead viscera.</p>"
+                    "description": "<p>When killed, an empress necral worm violently expels the young it carries. These young erupt as a @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.JlFBu8zobNq3daVF]{Necral Worm Swarm} in the empress necral worm's space.</p>\n<p>In addition, every creature within @Template[emanation|distance:20]{20 feet} takes @Damage[5d10[void]|options:area-damage] damage (@Check[reflex|dc:25|basic|options:area-effect] save) from the splatter of undead viscera.</p>"
                 },
                 "Borer": {
                     "name": "Borer",
@@ -5282,7 +5282,7 @@
                 },
                 "Shove into Stone": {
                     "name": "推敌入石 Shove into Stone",
-                    "description": "<p>当地骸成功将一个生物@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shoves}到石质障碍上时，被推的目标必须通过@Check[reflex|dc:26]豁免否则会被融入该障碍，效果等同于@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]{融身化石 One with Stone}，直到目标 @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}(DC26)。</p>"
+                    "description": "<p>当地骸成功将一个生物@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]到石质障碍上时，被推的目标必须通过@Check[reflex|dc:26]豁免否则会被融入该障碍，效果等同于@UUID[Compendium.pf2e.spells-srd.Item.vh1RpbWfqdNC4L3P]，直到目标[[/act escape dc=26]]。</p>"
                 },
                 "Wrathful Misfortune": {
                     "name": "忿怒降厄 Wrathful Misfortune",
@@ -5372,7 +5372,7 @@
                 },
                 "Vent Energy": {
                     "name": "Vent Energy",
-                    "description": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.pf2e.energyGland.type]] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HpX3bGlOkSp1PeWg]{Effect: Vent Energy}</p>"
+                    "description": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.pf2e.energyGland.type]|options:area-damage] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HpX3bGlOkSp1PeWg]{Effect: Vent Energy}</p>"
                 }
             },
             "data": {
@@ -6084,7 +6084,7 @@
                 },
                 "Web Trap": {
                     "name": "蛛网捕获 Web Trap",
-                    "description": "<p>被女郎蜘蛛蛛网攻击命中的生物将会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]并被固定在最近的表面上，让它动弹不得。</p>\n<p>@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]或@UUID[Compendium.pf2e.actionspf2e.Item.SjmKHgI7a5Z9JzBx]蛛网的DC为32。</p>"
+                    "description": "<p>被女郎蜘蛛蛛网攻击命中的生物将会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]并被固定在最近的表面上，让它动弹不得。</p>\n<p>[[/act escape dc=32]]或[[/act force-open dc=32]]蛛网的DC为32。</p>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
@@ -6485,7 +6485,7 @@
                 },
                 "Capture": {
                     "name": "擒获 Capture",
-                    "description": "<p><strong>需求</strong> 坎普斯@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}一个中型或更小体型的生物。</p>\n<hr />\n<p><strong>效果</strong> 坎普斯尝试把擒获的生物塞进篮子里，尝试一次@Check[athletics|traits:action:shove]检定对抗目标的反射DC。如果成功，该生物被装进坎普斯的篮子里后，坎普斯的刺链和爪抓攻击就对于之后的打击可用。</p>\n<p>被擒获的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并在其被擒获后每轮开始时受到坎普斯衰退能力影响。</p>\n<p>如果受害者@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC 48），就能从篮子里爬出来。被擒获的生物可以攻击篮子内部，但是只能使用无武装攻击或轻负载以下的武器，对抗40的AC。如果被擒获的生物造成了40点挥砍或穿刺伤害，篮子就损坏了，内部所有生物都回掉出来。逃脱或因他人打碎篮子而获得自由的生物会被放置在坎普斯周围内自己选择的方格上。</p>\n<p>篮子是一个异次元空间，所以内部生物的重量不会计入坎普斯的负载限制。至多四个小体型生物或两个中体型生物可以同时被装在篮子中。</p>\n<p>坎普斯可以无需修理用具用一个[AA]动作来@UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{修理 Repair}篮子。如果篮子丢失或被破坏，坎普斯可以花费1小时来制作一个新的。篮子被坎普斯以外的人使用就只能表现为一个普通的口袋。</p>"
+                    "description": "<p><strong>需求</strong> 坎普斯@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]一个中型或更小体型的生物。</p>\n<hr />\n<p><strong>效果</strong> 坎普斯尝试把擒获的生物塞进篮子里，尝试一次@Check[athletics|against:reflex]检定对抗目标的反射DC。如果成功，该生物被装进坎普斯的篮子里后，坎普斯的刺链和爪抓攻击就对于之后的打击可用。</p>\n<p>被擒获的生物陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]，@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，并在其被擒获后每轮开始时受到坎普斯衰退能力影响。</p>\n<p>如果受害者[[/act escape dc=48]]，就能从篮子里爬出来。被擒获的生物可以攻击篮子内部，但是只能使用无武装攻击或轻负载以下的武器，对抗40的AC。如果被擒获的生物造成了40点挥砍或穿刺伤害，篮子就损坏了，内部所有生物都回掉出来。逃脱或因他人打碎篮子而获得自由的生物会被放置在坎普斯周围内自己选择的方格上。</p>\n<p>篮子是一个异次元空间，所以内部生物的重量不会计入坎普斯的负载限制。至多四个小体型生物或两个中体型生物可以同时被装在篮子中。</p>\n<p>坎普斯可以无需修理用具用一个[AA]动作来@UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]篮子。如果篮子丢失或被破坏，坎普斯可以花费1小时来制作一个新的。篮子被坎普斯以外的人使用就只能表现为一个普通的口袋。</p>"
                 },
                 "Punish the Naughty": {
                     "name": "惩罚淘气 Punish the Naughty",
@@ -6822,7 +6822,7 @@
                 },
                 "Barbed Net": {
                     "name": "Barbed Net",
-                    "description": "<p>When a levaloch hits a creature with their barbed net, the net wraps around the target, which becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} and takes a -10-foot circumstance penalty to its Speeds. If the Strike was a critical success, the target is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}.</p>\n<p>When a creature @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes} (DC 22), or if the Strike misses, the net crumbles into rust.</p>\n<p>Each time a creature attempts to Escape, it takes @Damage[1d6[slashing]] damage from the net's barbs, regardless of whether the attempt succeeds.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HafP5vrdGdoqoFMo]{Effect: Barbed Net}</p>"
+                    "description": "<p>When a levaloch hits a creature with their barbed net, the net wraps around the target, which becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} and takes a -10-foot circumstance penalty to its Speeds. If the Strike was a critical success, the target is also @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}.</p>\n<p>When a creature [[/act escape dc=22]]{Escapes}, or if the Strike misses, the net crumbles into rust.</p>\n<p>Each time a creature attempts to Escape, it takes @Damage[1d6[slashing]] damage from the net's barbs, regardless of whether the attempt succeeds.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HafP5vrdGdoqoFMo]{Effect: Barbed Net}</p>"
                 }
             },
             "data": {
@@ -7499,7 +7499,7 @@
                 },
                 "Viscous Trap": {
                     "name": "粘液陷阱 Viscous Trap",
-                    "description": "<p>被拟形泥灵的软泥粘球击中的生物所有速度收到-15尺环境减值，持续1分钟。重击时，站在固体表面的目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，若目标正用翅膀飞行则坠落地面并无法飞行。</p>\n<p>目标可以通过@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]（DC 32），或使用总计3个交互动作让自己恢复自由来结束所有效果。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]{效果：粘液陷阱}</p>"
+                    "description": "<p>被拟形泥灵的软泥粘球击中的生物所有速度收到-15尺环境减值，持续1分钟。重击时，站在固体表面的目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，若目标正用翅膀飞行则坠落地面并无法飞行。</p>\n<p>目标可以通过[[/act escape dc=32]]，或使用总计3个交互动作让自己恢复自由来结束所有效果。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.iWLAcND0iyW4NUZm]</p>"
                 },
                 "+1 Status to All Saves vs. Magic": {
                     "name": "对魔法的豁免+1状态加值"
@@ -8181,7 +8181,7 @@
                 },
                 "Missile Volley": {
                     "name": "矛石投射 Missile Volley",
-                    "description": "<p>夜行众灵投掷出矛和石块，射程20尺，对@Template[burst|distance:10]范围内的所有生物造成@Damage[(5d6+9)[untyped]]伤害（@Check[reflex|dc:31|basic]豁免）。</p>\n<p>如果夜行众灵的规模缩减到8格或更小，爆发范围减少到@Template[burst|distance:5]。</p>"
+                    "description": "<p>夜行众灵投掷出矛和石块，射程20尺，对@Template[burst|distance:10]范围内的所有生物造成@Damage[(5d6+9)[untyped]|options:area-damage]伤害（@Check[reflex|dc:31|basic|options:area-effect]豁免）。</p>\n<p>如果夜行众灵的规模缩减到8格或更小，爆发范围减少到@Template[burst|distance:5]。</p>"
                 },
                 "Striking Koa": {
                     "name": "神木突袭 Striking Koa",
@@ -8648,7 +8648,7 @@
                 },
                 "Clutching Cold": {
                     "name": "冻人寒意 Clutching Cold",
-                    "description": "<p>被先知的灼烧之寒打击命中的生物被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}于一团凝结的冰霜结晶中（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 31）。</p>"
+                    "description": "<p>被先知的灼烧之寒打击命中的生物被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]于一团凝结的冰霜结晶中（[[/act escape dc=31]]）。</p>"
                 },
                 "Curse of Darkness": {
                     "name": "黑暗诅咒 Curse of Darkness",
@@ -8856,7 +8856,7 @@
                 },
                 "Wildfire Storm": {
                     "name": "野火风暴 Wildfire Storm",
-                    "description": "<p>佩里天族展开翅膀旋转，生成一股火焰旋风，在@Template[emanation|distance:20]范围内造成@Damage[15d6[fire]]伤害（@Check[reflex|dc:34|basic]豁免）。</p>\n<p>他们[[/gmr 1d4 #Recharge Wildfire Storm]]{1d4轮}内无法再次使用野火风暴。</p>"
+                    "description": "<p>佩里天族展开翅膀旋转，生成一股火焰旋风，在@Template[emanation|distance:20]范围内造成@Damage[15d6[fire]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免）。</p>\n<p>他们[[/gmr 1d4 #Recharge Wildfire Storm]]{1d4轮}内无法再次使用野火风暴。</p>"
                 },
                 "At-Will Spells": {
                     "name": "随意施法 At-Will Spells",
@@ -9103,7 +9103,7 @@
                 },
                 "Inflating Rush": {
                     "name": "充气冲刺 Inflating Rush",
-                    "description": "<p>河豚最多以满速游泳，然后身体鼓起。当它行动结束时，占据空间@Template[emanation|distance:5]内的所有生物必须通过@Check[reflex|dc:13|options:damaging-effect]豁免，否则受到@Damage[1[piercing]]伤害，并且暴露在河豚毒液的影响下。</p>"
+                    "description": "<p>河豚最多以满速游泳，然后身体鼓起。当它行动结束时，占据空间@Template[emanation|distance:5]内的所有生物必须通过@Check[reflex|dc:13|options:area-effect,damaging-effect]豁免，否则受到@Damage[1[piercing]|options:area-damage]伤害，并且暴露在河豚毒液的影响下。</p>"
                 },
                 "Pufferfish Venom": {
                     "name": "河豚毒液 Pufferfish Venom",
@@ -9342,7 +9342,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:28], @Damage[2d8[force],4d4[fire]]{2d8力场伤害和4d4火焰伤害}, @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape} DC 28, 破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:28], @Damage[2d8[force],4d4[fire]]伤害，[[/act escape dc=28]]，破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Unstable Magic": {
                     "name": "不稳定的魔法 Unstable Magic",
