@@ -508,7 +508,7 @@
                 },
                 "Venom Spray": {
                     "name": "毒液喷雾 Venom Spray",
-                    "description": "<p>撼沙避日蛛喷出一道@Template[cone|distance:30]{30尺锥形}范围的毒雾。此范围内的每个生物都会受到@Damage[10d6[poison]]伤害伤害（@Check[fortitude|dc:39|basic]豁免）。豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}[[/gmr 1d6 #rounds]]{1d6轮}（大失败则永久目盲）。</p>\n<p>撼沙避日蛛在[[/gmr 1d4 #Recharge Venom Spray]]{1d4轮}内无法再次使用毒液喷雾能力。</p>"
+                    "description": "<p>撼沙避日蛛喷出一道@Template[cone|distance:30]范围的毒雾。此范围内的每个生物都会受到@Damage[10d6[poison]|options:area-damage]伤害（@Check[fortitude|dc:39|basic|options:area-effect,inflicts:blinded]豁免）。豁免失败的生物还会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2][[/gmr 1d6 #rounds]]{1d6轮}（大失败则永久目盲）。</p>\n<p>撼沙避日蛛在[[/gmr 1d4 #Recharge Venom Spray]]{1d4轮}内无法再次使用毒液喷雾能力。</p>"
                 },
                 "Tremorsense 30 feet": {
                     "name": "Tremorsense 30 feet",
@@ -3231,7 +3231,7 @@
                 },
                 "Whirlwind Blast": {
                     "name": "旋风冲击 Whirlwind Blast",
-                    "description": "<p>巴拉尼在@Template[line|distance:20]范围内生成一股席卷狂风，造成@Damage[7d6[bludgeoning]]伤害（@Check[reflex|dc:24|basic]豁免）。他在[[/gmr 1d4 #Recharge Whirlwind Blast]]{1d4轮}内无法再使用此能力。</p>"
+                    "description": "<p>巴拉尼在@Template[line|distance:20]范围内生成一股席卷狂风，造成@Damage[7d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:24|basic|options:area-effect]豁免）。他在[[/gmr 1d4 #Recharge Whirlwind Blast]]{1d4轮}内无法再使用此能力。</p>"
                 },
                 "Wind Form": {
                     "name": "疾风形态 Wind Form",
@@ -4374,7 +4374,7 @@
                 },
                 "Web Trap": {
                     "name": "网捕 Web Trap",
-                    "description": "<p>被梦蜘蛛蛛网攻击的生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，并且会被困在最近的地表，直到它@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC 16）。</p>"
+                    "description": "<p>被梦蜘蛛蛛网攻击的生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，并且会被困在最近的地表，直到它[[/act escape dc=16]]。</p>"
                 }
             },
             "prototypeToken": {
@@ -6076,7 +6076,7 @@
                 },
                 "Impaling Barb": {
                     "name": "尖刺突击 Impaling Barb",
-                    "description": "<p>尖刺魔进行一次尖刺打击，然后以半速移动且不会触发反应动作。如果打击命中，尖刺魔用其中一根倒刺刺穿目标，并在离开时折断倒刺。这能对目标造成额外2d8穿刺伤害，并把它钉在相邻的地表，让目标陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}状态（@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]DC29）。</p>"
+                    "description": "<p>尖刺魔进行一次尖刺打击，然后以半速移动且不会触发反应动作。如果打击命中，尖刺魔用其中一根倒刺刺穿目标，并在离开时折断倒刺。这能对目标造成额外2d8穿刺伤害，并把它钉在相邻的地表，让目标陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]状态（[[/act escape dc=29]]）。</p>"
                 },
                 "Warden of Erebus": {
                     "name": "厄瑞波斯守卫者 Warden of Erebus",
@@ -6854,7 +6854,7 @@
                 },
                 "Whiffling": {
                     "name": "风压 Whiffling",
-                    "description": "<p><strong>触发</strong> 炸脖龙飞行或进行翼拍打击。</p>\n<hr />\n<p><strong>效果</strong> 炸脖龙的翅膀猛烈扇动，在@Template[emanation|distance:30]范围内产生强风。这些风从炸脖龙处向外吹动，会一直持续到炸脖龙的下个回合开始。在此期间，任何形式的飞行都需要成功通过一个<span data-pf2-action=\"maneuverInFlight\" data-pf2-dc=\"43\" data-pf2-glyph=\"A\" data-pf2-show-dc=\"gm\">特技</span>检定来进行@UUID[Compendium.pf2e.actionspf2e.Item.Qf1ylAbdVi1rkc8M]{空中机动 Maneuver in Flight}，而飞向炸脖龙的生物视作穿越高等困难地形。弥散范围的地面生物接近炸脖龙需要成功通过一个@Check[athletics|dc:43|name:Approach Jabberwock]检定。</p>"
+                    "description": "<p><strong>触发</strong> 炸脖龙飞行或进行翼拍打击。</p>\n<hr />\n<p><strong>效果</strong> 炸脖龙的翅膀猛烈扇动，在@Template[emanation|distance:30]范围内产生强风。这些风从炸脖龙处向外吹动，会一直持续到炸脖龙的下个回合开始。在此期间，任何形式的飞行都需要成功通过一个[[/act maneuver-in-flight dc=43]]{特技}检定来进行@UUID[Compendium.pf2e.actionspf2e.Item.Qf1ylAbdVi1rkc8M]，而飞向炸脖龙的生物视作穿越高等困难地形。弥散范围的地面生物接近炸脖龙需要成功通过一个@Check[athletics|dc:43|name:Approach Jabberwock]检定。</p>"
                 },
                 "Improved Knockdown": {
                     "name": "精通击倒 Improved Knockdown",
@@ -7004,7 +7004,7 @@
                 },
                 "Hair Snare": {
                     "name": "毛发陷阱 Hair Snare",
-                    "description": "<p>考芮精让自己的一道纠缠的长条毛发离开身体，蜿蜒爬出缠绕一个邻近的生物。该生物必须尝试@Check[reflex|dc:21]豁免。</p>\n<p>考芮精[[/gmr 1d4 #rounds]]{1d4轮}内无法再使用毛发陷阱。</p>\n<hr />\n<p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 毛发缠绕住该生物，一切速度承受-10尺环境减值，直到其成功逃脱（DC21）或直到考芮精再次使用毛发陷阱（此时上一条陷阱掉在地上，不再处于活化状态）。</p>\n<p><strong>大失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，直到其成功逃脱（DC 21）或直到考芮精再次使用毛发陷阱。</p>"
+                    "description": "<p>考芮精让自己的一道纠缠的长条毛发离开身体，蜿蜒爬出缠绕一个邻近的生物。该生物必须尝试@Check[reflex|dc:21|options:inflicts:immobilized]豁免。</p>\n<p>考芮精[[/gmr 1d4 #rounds]]{1d4轮}内无法再使用毛发陷阱。</p><hr /><p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 毛发缠绕住该生物，一切速度承受-10尺环境减值，直到其成功[[/act escape dc=21]]或直到考芮精再次使用毛发陷阱（此时上一条陷阱掉在地上，不再处于活化状态）。</p>\n<p><strong>大失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到其成功逃脱（DC 21）或直到考芮精再次使用毛发陷阱。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LYxKPQYeiD4S5tQP]</p>"
                 },
                 "Otherworldly Laugh": {
                     "name": "异界笑声 Otherworldly Laugh",
@@ -7119,7 +7119,7 @@
                 },
                 "Volcanic Eruption": {
                     "name": "火山喷发 Volcanic Eruption",
-                    "description": "<p>熔山魔背部的火山喷薄而出，向@Template[emanation|distance:30]范围射出熔岩炸弹，造成@Damage[12d12[fire]]伤害。</p>\n<p>区域内每个生物都必须尝试一次@Check[reflex|dc:46|traits:damaging-effect]豁免。熔岩球会迅速冷却成沉重的石头，使该区域对于熔山魔以外者变为高等困难地形。</p>\n<p>熔山魔不能在[[/gmr 1d4 #rounds]]{1d4轮}内再次使用火山喷发。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半的伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.D5mg6Tc7Jzrj6ro7]状态1轮。</p>\n<p><strong>失败</strong> 生物受到全额伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]状态（[[/act escape dc=46]]）。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，并被包裹在熔岩形成的石壳中。生物陷入束缚状态（[[/act escape dc=46]]），无法呼吸，受到@Damage[3d12[persistent,fire]]伤害，且除非重获自由不能摆脱持续火焰伤害。</p>"
+                    "description": "<p>熔山魔背部的火山喷薄而出，向@Template[emanation|distance:30]范围射出熔岩炸弹，造成@Damage[12d12[fire]|options:area-damage]伤害。</p>\n<p>区域内每个生物都必须尝试一次@Check[reflex|dc:46|options:area-effect,damaging-effect,inflicts:encumbered,inflicts:immobilized]豁免。熔岩球会迅速冷却成沉重的石头，使该区域对于熔山魔以外者变为高等困难地形。</p>\n<p>熔山魔不能在[[/gmr 1d4 #Recharge Volcanic Eruption]]{1d4轮}内再次使用火山喷发。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半的伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.D5mg6Tc7Jzrj6ro7]状态1轮。</p>\n<p><strong>失败</strong> 生物受到全额伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]状态（[[/act escape dc=46]]）。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，并被包裹在熔岩形成的石壳中。生物陷入束缚状态（[[/act escape dc=46]]），无法呼吸，受到@Damage[3d12[persistent,fire]]伤害，且除非重获自由不能摆脱持续火焰伤害。</p>"
                 },
                 "Reactive Strike": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>",
