@@ -1,0 +1,679 @@
+{
+    "label": "pf2e.one-shot-bestiary",
+    "entries": {
+        "Grazing Deer": {
+            "prototypeToken": {
+                "name": "Grazing Deer"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Grazing Deer",
+            "hp": "(if the grazing deer take this much damage, they aren't killed, but they do flee into the woods and don't return)",
+            "disable": "<p>@Check[diplomacy|dc:17|name:Befriend the Deer]{Diplomacy (with Wild Empathy)} to befriend the deer and convince them that leshys aren't for nibbling, or @Check[intimidation|dc:20|name:Scare the Deer Away]{Intimidation} to scare away the deer.</p>",
+            "hazarddescription": "<p>A herd of deer exits the woods to investigate the delicious-looking leshys.</p>",
+            "routine": "<p>(2 actions) The grazing deer takes one action to move about, and then one action to eagerly nibble at a randomly chosen PC. A character who spends three actions on their turn to Stride can avoid being nibbled by the grazing deer during the hazard's next turn. If all of the PCs do so, attempt a @Check[flat|dc:5|name:Escape the Deer]-on a success, the party escapes the deer and can proceed onward to Petalbrook, but they become delayed as a result of having to flee the pack of ravenous deer.</p>",
+            "stealthdetails": "<p>(expert)</p>",
+            "items": {
+                "Approach and Taste": {
+                    "name": "Approach and Taste",
+                    "description": "<p><strong>Trigger</strong> The PCs emerge from the forest's edge</p>\n<hr />\n<p><strong>Effect</strong> A deer approaches the party and attempts a nibble Strike against a randomly determined PC. The grazing deer rolls initiative.</p>"
+                }
+            }
+        },
+        "Meliosa's Leshy": {
+            "prototypeToken": {
+                "name": "Meliosa's Leshy"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Meliosa's Leshy",
+            "items": {
+                "Verdant Burst": {
+                    "name": "Verdant Burst",
+                    "description": "<p>When a leshy dies, a burst of primal energy explodes from its body, restoring @Damage[2d8[healing]] Hit Points to each plant creature within a @Template[emanation|distance:30]. This area is filled with plants of the same type as the leshy, becoming difficult terrain. If the terrain isn't a viable environment for these plants, they wither after 24 hours.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The leshy transforms into a Small plant. This ability otherwise uses the effects of @UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{One with Plants}.</p>"
+                }
+            }
+        },
+        "Scented Candle Homunculus": {
+            "prototypeToken": {
+                "name": "Scented Candle Homunculus"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Scented Candle Homunculus",
+            "blurb": "Variant homunculus",
+            "items": {
+                "Master Link": {
+                    "name": "Master Link",
+                    "description": "<p>A homunculus can't speak, but it is telepathically linked to its creator. It can share information back and forth, including its master's knowledge and everything the homunculus hears. The range of this link is 1,500 feet. The homunculus adopts the same alignment as its creator and is utterly faithful. If the homunculus is destroyed, the master takes @Damage[2d10[mental]] damage. If the master is slain, the homunculus becomes mindless, claims its current location as its lair, and instinctively attacks anyone who comes near.</p>"
+                },
+                "Perfume Aura": {
+                    "name": "Perfume Aura",
+                    "description": "<p>5 feet. The scented candle homunculus's fragrance of lavender is overwhelmingly intense. Any creature other than the homunculus's master who enters the aura must attempt a @Check[fortitude|dc:15] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is temporarily immune to the homunculus's aura for 24 hours.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 round and sickened 1.</p>"
+                },
+                "Dunk in Wax": {
+                    "name": "Dunk in Wax",
+                    "description": "<p>A scented candle homunculus who is adjacent to the large wax cauldron can dunk itself in wax, healing @Damage[2d6[healing]] damage.</p>"
+                }
+            }
+        },
+        "Hail of Darts": {
+            "prototypeToken": {
+                "name": "Hail of Darts"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Hail of Darts",
+            "disable": "<p>@Check[thievery|dc:25|traits:hazard,trap,mechanical]{Thievery (expert)} on the floor tile or wall socket</p>",
+            "hazarddescription": "<p>An array of spring-loaded, ceiling-mounted darts are primed to fire down into the hallway when triggered by a pressure plate.</p>",
+            "stealthdetails": "<p>(expert)</p>",
+            "items": {
+                "Darts": {
+                    "name": "Darts",
+                    "description": "<p><strong>Trigger</strong> Pressure is applied to the floor tile</p>\n<hr />\n<p><strong>Effect</strong> The trap shoots darts, making an attack against each creature in a @Template[line|distance:30] centered on the floor tile.</p>"
+                },
+                "Old Giant Wasp Venom": {
+                    "name": "Old Giant Wasp Venom",
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:22]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<hr />\n<p><strong>Stage 1</strong> @Damage[2d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[3d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[4d6[poison]] damage and clumsy 2 (1 round).</p>"
+                }
+            }
+        },
+        "Meliosa's Leshy (Mint Leshy)": {
+            "prototypeToken": {
+                "name": "Meliosa's Leshy (Mint Leshy)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Meliosa's Leshy (Mint Leshy)",
+            "items": {
+                "Verdant Burst": {
+                    "name": "Verdant Burst",
+                    "description": "<p>When a leshy dies, a burst of primal energy explodes from its body, restoring @Damage[2d8[healing]] Hit Points to each plant creature within a @Template[emanation|distance:30]. This area is filled with plants of the same type as the leshy, becoming difficult terrain. If the terrain isn't a viable environment for these plants, they wither after 24 hours.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The leshy transforms into a Small plant. This ability otherwise uses the effects of @UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{One with Plants}.</p>"
+                },
+                "Engulf": {
+                    "name": "Engulf",
+                    "description": "<p>@Check[reflex|dc:18], @Damage[1d6[bludgeoning],1d6[poison]]{1d6 bludgeoning plus 1d6 poison damage}, [[/act escape dc=18]], Rupture 6</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                }
+            }
+        },
+        "Princess Sunset": {
+            "prototypeToken": {
+                "name": "Princess Sunset"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Princess Sunset",
+            "ac": "AC 13 when broken",
+            "items": {
+                "Construct Armor (Hardness 5)": {
+                    "name": "Construct Armor (Hardness 5)",
+                    "description": "<p>Like normal objects, an animated rocking horse has Hardness. This Hardness reduces any damage it takes by an amount equal to the Hardness. Once the animated rocking horse is reduced to less than half its Hit Points, or immediately upon being damaged by a critical hit, its construct armor breaks and its Armor Class is reduced to 13.</p>"
+                },
+                "Trample": {
+                    "name": "Trample",
+                    "description": "<p>Princess Sunset Strides up to double its Speed and can move through the spaces of creatures of size Small or smaller, Trampling each creature whose space it enters. Princess Sunset can attempt to Trample the same creature only once in a single use of Trample. The monster deals the damage of the headbutt Strike, but trampled creatures can attempt a basic Reflex save at @Check[reflex|dc:14|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Trample]</p>"
+                }
+            }
+        },
+        "Hidden Spiked Pit": {
+            "prototypeToken": {
+                "name": "Hidden Spiked Pit"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Hidden Spiked Pit",
+            "disable": "<p>@Check[thievery|dc:18] (trained) to remove the trapdoor</p>",
+            "hazarddescription": "<p>A wooden trapdoor covers a pit that's 10 feet square and 20 feet deep. Knives are arrayed at the bottom of the trap, impaling anyone who falls on them.</p>",
+            "reset": "<p>Creatures can still fall into the trap, but the trapdoor must be reset manually for the trap to become @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} again.</p>",
+            "stealthdetails": "<p>(trained) or DC 0 if the trapdoor is disabled or broken</p>",
+            "items": {
+                "Pitfall": {
+                    "name": "Pitfall",
+                    "description": "<p><strong>Trigger</strong> A creature walks onto the trapdoor</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls in and takes falling damage (@Damage[10[bludgeoning]|options:fall-damage] damage) as well as @Damage[2d6[piercing]] damage from falling on to the knives. That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling.</p>"
+                }
+            }
+        },
+        "Meliosa's Leshy (Minkaian Honeysuckle Leshy)": {
+            "prototypeToken": {
+                "name": "Meliosa's Leshy (Minkaian Honeysuckle Leshy)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Meliosa's Leshy (Minkaian Honeysuckle Leshy)",
+            "items": {
+                "Agile Leshy": {
+                    "name": "Agile Leshy",
+                    "description": "<p>The honeysuckle leshy gains a +1 status bonus to Reflex and Fortitude saves and DCs against trip and forced movement.</p>"
+                },
+                "Verdant Burst": {
+                    "name": "Verdant Burst",
+                    "description": "<p>When a leshy dies, a burst of primal energy explodes from its body, restoring @Damage[2d8[healing]] Hit Points to each plant creature within a @Template[emanation|distance:30]. This area is filled with plants of the same type as the leshy, becoming difficult terrain. If the terrain isn't a viable environment for these plants, they wither after 24 hours.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The leshy transforms into a Small plant. This ability otherwise uses the effects of @UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{One with Plants}.</p>"
+                }
+            }
+        },
+        "Poisoned Lock (Lionlodge)": {
+            "prototypeToken": {
+                "name": "Poisoned Lock (Lionlodge)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Poisoned Lock (Lionlodge)",
+            "disable": "<p>@Check[thievery|dc:23|name:Disable Thievery] (expert) on the spring mechanism.</p>",
+            "hazarddescription": "<p>A spring-loaded, poisoned needle is hidden near the drawer's keyhole. Disabling or breaking the trap does not disable or break the lock.</p>",
+            "stealthdetails": "<p>(expert)</p>",
+            "items": {
+                "Spring": {
+                    "name": "Spring",
+                    "description": "<p><strong>Trigger</strong> A creature tries to unlock or @UUID[Compendium.pf2e.actionspf2e.Item.2EE4aF4SZpYf0R6H]{Pick the Lock}</p>\n<hr />\n<p><strong>Effect</strong> The needle extends to attack the triggering creature.</p>"
+                },
+                "Enhanced Hunting Spider Venom": {
+                    "name": "Enhanced Hunting Spider Venom",
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:23|basic]</p>\n<p><strong>Maximum Duration</strong> 6 rounds</p>\n<hr />\n<p><strong>Stage 1</strong> @Damage[1d10[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[1d12[poison]] damage, @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}, and off-guard (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[poison]] damage, @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2}, and off-guard (1 round).</p>\n<hr />\n<p><strong>Note</strong> The clumsy condition caused by this venom persists for 24 hours before fading.</p>"
+                }
+            }
+        },
+        "Bad Vibrations": {
+            "prototypeToken": {
+                "name": "Bad Vibrations"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Bad Vibrations",
+            "hp": "HP per crystal",
+            "disable": "<p>@Check[thievery|dc:17] (trained) or @Check[occultism|dc:17] (trained) to disrupt the magic enchanting one of the crystals, or @Check[performance|dc:20] (trained) by a character who can cast @UUID[Compendium.pf2e.spells-srd.Item.WILXkjU5Yq3yw10r]{Counter Performance} to use sound to redirect the noise back into the crystal, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (2nd rank, DC 18) to counteract a crystal.</span></p>",
+            "hazarddescription": "<p>The three larger crystals on the table begin to vibrate and emit a swiftly growing peal of sound.</p>",
+            "routine": "<p>(3 actions) The hazard loses 1 action for each crystal that's disabled or destroyed. On each of the trap's actions, one of the crystals fires a blast of sound at a single Small or larger creature in the room. The target is randomly determined and takes @Damage[1d8[sonic]] damage (@Check[fortitude|dc:20|basic]); a target who critically fails this save is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute. At the end of the hazard's routine, attempt a @Check[flat|dc:10|name:Destroy a Crystal]. On a success, one of the crystals shatters and is destroyed.</p>",
+            "stealthdetails": "<p>(expert)</p>",
+            "items": {
+                "Shrill Chime": {
+                    "name": "Shrill Chime",
+                    "description": "<p><strong>Trigger</strong> A creature other than Darius or one of his homonculi approaches within 5 feet of the table or attempts to Interact with the crystals in any way other than to attempt to disable the hazard.</p>\n<hr />\n<p><strong>Effect</strong> The three large crystals on the table begin vibrating and humming. The hazard rolls initiative.</p>"
+                }
+            }
+        },
+        "Splitsoul Object": {
+            "prototypeToken": {
+                "name": "Splitsoul Object"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Splitsoul Object",
+            "items": {}
+        },
+        "Taxidermic Dog": {
+            "prototypeToken": {
+                "name": "Taxidermic Dog"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Taxidermic Dog",
+            "items": {
+                "Pack Attack": {
+                    "name": "Pack Attack",
+                    "description": "<p>A taxidermic dog's Strikes deal 1d4 extra damage to creatures within the reach of the taxidermic dog's two allies.</p>"
+                }
+            }
+        },
+        "Vilm": {
+            "prototypeToken": {
+                "name": "Vilm"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Vilm",
+            "blurb": "Variant jinkin ripclaw",
+            "items": {
+                "equipment-Pincer Claw": {
+                    "name": "Pincer Claw"
+                },
+                "Rip Flesh": {
+                    "name": "Rip Flesh",
+                    "description": "<p><strong>Requirements</strong> A jinkin has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} with their pincer claw</p>\n<hr />\n<p><strong>Effect</strong> The jinkin forcefully pulls the pincer claw out of the creature, ripping flesh and cackling in sadistic glee. The creature takes @Damage[1d8[piercing]] damage and is no longer grabbed.</p>"
+                },
+                "Sneak Attack": {
+                    "name": "Sneak Attack",
+                    "description": "<p>The jinkin deals 1d6 extra precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
+                },
+                "Tinker": {
+                    "name": "Tinker",
+                    "description": "<p>A group of six jinkins can work together for an hour to imbue an item with a curse at a range of 60 feet. While this process is lengthy, it's also unobtrusive and can be performed while @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hiding}. Jinkins prefer to use this ability on magic items. The curse makes the item unreliable (@Check[flat|dc:5] or waste any action to Interact with or Activate the item), adds a bizarre requirement to use the item, or imparts some other curse of a similar caliber.</p>"
+                }
+            }
+        },
+        "Auldegrund Grimcarver": {
+            "prototypeToken": {
+                "name": "Auldegrund Grimcarver"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Auldegrund Grimcarver",
+            "items": {
+                "equipment-Infernal Contract": {
+                    "name": "Infernal Contract",
+                    "description": "<p>Auldegrund's infernal contract with Alocer.</p>"
+                },
+                "equipment-Lionlodge Key Ring": {
+                    "name": "Lionlodge Key Ring",
+                    "description": "<p>Key ring for every door in Lionlodge.</p>"
+                },
+                "Invoke Alocer": {
+                    "name": "Invoke Alocer",
+                    "description": "<p><strong>Trigger</strong> Auldegrund is reduced to 60 or fewer Hit Points</p>\n<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Auldegrund calls out, in Infernal, \"Give me the strength to slay these foes in your name, almighty Alocer!\" As he does so, his skin darkens to red, diabolic horns jut from his brow, a flaming lion-like mane appears around his head, burning wings burst from his shoulders, and his weapons ignite with black fire.</p>\n<p>He immediately heals @Damage[(3d6+7)[healing]] Hit Points, gains a fly speed of 25 feet, and deals an additional @Damage[1d6[fire]] damage with his melee and ranged Strikes.</p>\n<p>This is a risky gambit, though, for Alocer is not patient. At the end of each of Auldegrund's turns, he must attempt a @Check[flat|dc:11|name:End Invoke Alocer] (the DC of this flat check increases by 1 each round). On a failure, Alocer grows disappointed that Auldegrund has not defeated his foes and the effects of Invoke Alocer end immediately. This deals @Damage[(3d6+7)] damage to Auldegrund, removes his fly speed and additional fire damage to weapon Strikes, and causes Auldegrund to become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3}.</p>"
+                },
+                "Cruel Shot": {
+                    "name": "Cruel Shot",
+                    "description": "<p>Auldegrund takes time to line up a shot with his bow and smiles cruelly as he makes a ranged Strike with it.</p>\n<p>If he hits, he deals 2d6 precision damage and 1d6 bleed damage. Even if he misses, he still deals [[/r 2d6]] damage from the glancing blow. Only on a critical miss does his cruel shot deal no damage.</p>"
+                }
+            }
+        },
+        "Precarious Pile": {
+            "prototypeToken": {
+                "name": "Precarious Pile"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Precarious Pile",
+            "disable": "<p>@Check[thievery|dc:15|name:Excavate Safe Path|traits:action:disable-a-device] to carefully excavate a path through the wall without upsetting its balance</p>\n<p>@Check[athletics|dc:17|name:Hold Up Unstable Portions] to hold up any unstable portions</p>",
+            "hazarddescription": "<p>This dangerously unsteady pile of miscellaneous goods stands 7 feet high and 10 feet wide</span></p>",
+            "items": {
+                "Collapse": {
+                    "name": "Collapse",
+                    "description": "<p><strong>Trigger</strong> A creature attempts to climb or remove an object from the wall or the wall suffers a forceful impact</p>\n<hr />\n<p><strong>Effect</strong> The wall collapses, dealing @Damage[2d8[bludgeoning]] damage to creatures on it or within 10 feet of it. A creature that succeeds at a @Check[reflex|dc:18|traits:damaging-effect] save takes half damage and rolls out of the way in a random direction. On a critical success, they take no damage and can choose the direction.</p>"
+                }
+            }
+        },
+        "Simulacrum": {
+            "prototypeToken": {
+                "name": "Simulacrum"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Simulacrum",
+            "items": {
+                "equipment-Key Ring": {
+                    "name": "Key Ring"
+                }
+            }
+        },
+        "Darius": {
+            "prototypeToken": {
+                "name": "Darius"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Darius",
+            "blurb": "Male human alchemist",
+            "items": {
+                "equipment-Key to Basement": {
+                    "name": "Key to Basement",
+                    "description": "<p>The Key to the Basement</p>"
+                },
+                "equipment-Improvised Wax Sprayer": {
+                    "name": "Improvised Wax Sprayer"
+                },
+                "Metabolize Mutagen": {
+                    "name": "Metabolize Mutagen",
+                    "description": "<p>Darius metabolizes the power of an active mutagen to regain @Damage[2d6[healing]] Hit Points. If he does so (or if he's confronted by a stealthy party before he's had a chance to drink a mutagen), he loses his jaws and claw unarmed attacks, his bonus on Athletics checks decreases by 2, his AC increases by 1, and his Reflex save bonus increases by 2.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.wE4S9lwOhtaRAm9n]{Effect: Active Mutagen}</p>"
+                },
+                "Crystaline Mutation": {
+                    "name": "Crystaline Mutation",
+                    "description": "<p>When Darius drinks any mutagen, his teeth and fingernails grow sharp crystalline edges.</p>"
+                },
+                "Spray Hot Wax": {
+                    "name": "Spray Hot Wax",
+                    "description": "<p>Darius sprays hot wax from his improvised wax sprayer in a @Template[cone|distance:15]. All creatures in the area must attempt a @Check[reflex|dc:20|options:area-effect,damaging-effect] save. Scented candle homonoculi in the area take no damage, instead healing @Damage[2d6[healing]] damage. After using the hot wax cannon, Darius can't use it again until he takes two Interact actions while adjacent to the cauldron of bubbling wax to reload the sprayer.</p><hr /><p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes @Damage[2d6[fire]|options:area-damage] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[3d6[fire],1d6[persistent,fire]|options:area-damage]{3d6 fire damage plus 1d6 persistent fire damage}.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[5d6[fire],2d6[persistent,fire]|options:area-damage]{5d6 fire damage plus 2d6 persistent fire damage}.</p>"
+                }
+            }
+        },
+        "Lawn Crawfish": {
+            "prototypeToken": {
+                "name": "Lawn Crawfish"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Lawn Crawfish",
+            "publicNotes": "<p>Reefclaws are aquatic monsters that resemble huge shrimp or lobsters. As one might expect from its name, a reefclaw's oversized claws are powerful weapons with their vicelike grip and the ability to inject potent venom into unfortunate prey.</p>\n<p>While reefclaws can't speak, they are intelligent enough to understand the local language of humanoids near their hunting grounds. The creatures sometimes listen to conversations, either to gain intelligence on the best place to ambush aquatic or land-dwelling prey, or merely for entertainment value-reefclaws are particularly fond of listening to people with high-pitched voices. Reefclaws are usually solitary hunters, but small swarms of female reefclaws have been known to gather around a single male for mating purposes or together for the communal raising of their broods. In the latter case, the females will perform widespread hunts in order to bring back a large enough bounty to feed their young. Such hunting parties are extremely dangerous-they've been known to tip over small flshing boats and attack those who fall overboard.</p>\n<p>Once a reefclaw has decided upon a course of action, it follows through even if doing so spells its own end. More than one reefclaw survivor has said that the creature released its bone-crushing grasp only after its brains were leaking from its broken skull, and even then the reefclaw was able to perform a terrible last slash as part of its dying breath. During mating season, female reefclaws are often a little more pragmatic and release their prey before endangering themselves and their offspring.</p>\n<p>Despite their intelligence and the accompanying moral quandaries, reefclaws frequently find their way onto the dinner plates of land-dwelling hunters such as humans and hobgoblins. According to those who have a taste for reefclaw flesh, the meat is either delectably sweet or slightly tangy (in the case of warm-water reefclaws). Most civilized people who know of reefclaws' intellect find the act of eating them distasteful, but this does not dissuade unscrupulous nobles in coastal regions, for whom reefclaw meat is a delicacy well worth the expense. Likewise, fisherfolk whose focus is on the bottom line of their ledgers are more than willing to hunt the dangerous creatures-or, even better, hire out the task to naive adventurers.</p>",
+            "items": {
+                "Death Frenzy": {
+                    "name": "Death Frenzy",
+                    "description": "<p><strong>Trigger</strong> The reefclaw is reduced to 0 Hit Points.</p>\n<hr />\n<p><strong>Effect</strong> The reefclaw makes a claw Strike before dying.</p>"
+                },
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[1d6[bludgeoning]], @Check[fortitude|dc:17|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                },
+                "Crawfish Venom": {
+                    "name": "Crawfish Venom",
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:17]</p>\n<p><strong>Maximum Duration</strong> 4 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (1 round)</p>\n<p><strong>Stage 2</strong> @Damage[1d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} (1 round).</p>"
+                }
+            }
+        },
+        "Cultist of Alocer": {
+            "prototypeToken": {
+                "name": "Cultist of Alocer"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Cultist of Alocer",
+            "items": {}
+        },
+        "Giant Pirate Skeleton": {
+            "prototypeToken": {
+                "name": "Giant Pirate Skeleton"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Giant Pirate Skeleton",
+            "hp": "void healing",
+            "items": {
+                "Easily Distracted": {
+                    "name": "Easily Distracted",
+                    "description": "<p>The giant pirate skeleton's poor vision makes it easily distracted by creatures that flank it. Whenever it has the off-guard condition from being flanked, increase the penalty to its AC to -4.</p>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Focused Assault": {
+                    "name": "Focused Assault",
+                    "description": "<p>The giant pirate skeleton makes two Strikes with its claw against one foe. The multiple attack penalty doesn't increase until after both attacks are resolved.</p>\n<p>The giant pirate skeleton doesn't use this ability if there is more than one creature within its reach that it can see.</p>"
+                },
+                "Impaling Hook": {
+                    "name": "Impaling Hook",
+                    "description": "<p>A creature critically hit by the giant pirate skeleton's gaff hook is impaled upon it.</p>\n<p>The creature is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the giant pirate skeleton and whenever the giant pirate skeleton maintains the grab, the creature takes @Damage[(1d10+10)[piercing]] damage from the agonizing wound.</p>"
+                }
+            }
+        },
+        "Kelorbeyan Guard": {
+            "prototypeToken": {
+                "name": "Kelorbeyan Guard"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Kelorbeyan Guard",
+            "items": {
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Combat Grab": {
+                    "name": "Combat Grab",
+                    "description": "<p><strong>Requirements</strong> The Kelorbeyan guard has one hand free, and their target is in reach of that hand</p>\n<hr />\n<p><strong>Effect</strong> The guard makes a melee Strike while keeping one hand free. If the Strike hits, they grab the target using their free hand. The creature remains @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} until the end of the guard's next turn or until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes}, whichever comes first.</p>"
+                }
+            }
+        },
+        "Pairaka (One-Shot #4)": {
+            "prototypeToken": {
+                "name": "Pairaka (One-Shot #4)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Pairaka (One-Shot #4)",
+            "publicNotes": "<p>Some fiends want to tear down the multiverse; others dedicate themselves to creating chaos and carnage, or to rule over realms with an iron fist. Divs strive toward a different, if equally reprehensible, goal-they seek to thwart and ruin the schemes and works of mortal beings.</p>\n<p>Long ago, divs were once genies bound to serve ancient mortal empires lost to the passage of eons. In the beginning, these genies were masters of creation, working alongside gracious mortal partners to create works of subtle design and powerful magical potential. What started as a collaboration with mortals soon morphed into abuse, disrespect, and even slavery and bondage. Eventually, these genies rebelled, but in doing so, they came under the sway of a nihilistic demigod known as Ahriman. Their new master twisted their form and granted them the power to avenge themselves upon their mortal overlords, leading to the birth of the first divs.</p>\n<p>Since that first wave of corruption, new divs arise from the spirits of the most wicked and hateful genies who die on the Material Plane, or those truly betrayed by mortals and overcome through their desire for vengeance. Upon such a death, instead of returning to the Elemental Planes, these genies' spirits are trapped in the dread orbit of Abaddon, where Ahriman reshapes them as divs and hoists them back to the world to wreak vengeance upon mortals.</p>\n<hr />\n<p>Often charming, sometimes even seductive, pairakas worm their way into mortal relationships, subtly destroying the ties of friendship and love through emotional and physical corruption and plague. Pairakas appear as beautiful, blue-skinned humanoids spotted with large rashes and boils, but they rarely take on their true forms. Instead, they adopt shapes that attract just enough attention for them to worm their way into the confidences of those they wish to torment and corrupt.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "items": {
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Hatred of Red": {
+                    "name": "Hatred of Red",
+                    "description": "<p>Pairakas hate the color red. They won't wear the color or willingly enter any place painted red. Given a choice, they'll attack a creature wearing red first.</p>\n<p>If barred from expressing their displeasure toward the color by force or some magical effect, they take @Damage[2d6[mental]] damage at the end of their turn.</p>"
+                },
+                "Bubonic Plague": {
+                    "name": "Bubonic Plague",
+                    "description": "<p>A creature can't remove the fatigued condition while infected</p>\n<p><strong>Saving Throw</strong> @Check[fortitude|dc:23]</p>\n<hr />\n<p><strong>Onset</strong> 1 day</p>\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} (1 day)</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} and fatigued (1 day)</p>\n<p><strong>Stage 3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 3}, fatigued, and take @Damage[1d6[bleed]] every [[/br 1d20 #Minutes]]{1d20 minutes} (1 day)</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The pairaka can take the appearance of any Small or Medium humanoid or animal. This doesn't change their Speed or their attack and damage modifiers with the Strikes, but it might change the damage type their strikes deal.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
+                },
+                "Tormenting Dreams": {
+                    "name": "Tormenting Dreams",
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> The pairaka torments a sleeping creature within 100 feet with visions of betrayals by loved ones and friends. The target must attempt a @Check[will|dc:25] save, with the effects of the @UUID[Compendium.pf2e.spells-srd.Item.Uqj344bezBq3ESdq]{Nightmare} spell.</p>"
+                }
+            }
+        },
+        "Doatara the Poisoner": {
+            "prototypeToken": {
+                "name": "Doatara the Poisoner"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Doatara the Poisoner",
+            "items": {
+                "Reckless Toxin": {
+                    "name": "Reckless Toxin",
+                    "description": "<p><strong>Trigger</strong> A creature critically fails a melee Strike against Doatara</p>\n<p><strong>Requirements</strong> The triggering creature is affected by a poison</p>\n<hr />\n<p><strong>Effect</strong> The poison makes it difficult to distinguish friend from foe. The triggering creature makes a melee Strike against another creature of Doatara's choice within its reach. The triggering creature's multiple attack penalty doesn't apply to this Strike.</p>"
+                },
+                "Blackfingers's Blessing": {
+                    "name": "Blackfingers's Blessing",
+                    "description": "<p>Doatara deals an extra 2d6 poison damage when she deals piercing or slashing damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
+                },
+                "Quick Bomber": {
+                    "name": "Quick Bomber",
+                    "description": "<p>Doatara Interacts to draw a bomb, then Strikes with it.</p>"
+                },
+                "Toxic Flourish": {
+                    "name": "Toxic Flourish",
+                    "description": "<p><strong>Requirements</strong> Doatara has one hand free</p>\n<hr />\n<p><strong>Effect</strong> Doatara Interacts to draw an injury poison, applies that poison to one piercing or slashing weapon she's wielding, and then Strikes.</p>"
+                }
+            }
+        },
+        "Doatara the Priest": {
+            "prototypeToken": {
+                "name": "Doatara the Priest"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Doatara the Priest",
+            "items": {
+                "Channel Smite": {
+                    "name": "Channel Smite",
+                    "description": "<p><strong>Requirements</strong> Doatara expends a @UUID[Compendium.pf2e.spells-srd.Item.wdA52JJnsuQWeyqz]{Harm} spell</p>\n<hr />\n<p><strong>Effect</strong> Doatara makes a melee Strike and adds the <em>harm</em> spell's void damage to the Strike's damage.</p>"
+                },
+                "Poison Weapon": {
+                    "name": "Poison Weapon",
+                    "description": "<p><strong>Requirements</strong> Doatara is wielding a piercing or slashing weapon</p>\n<hr />\n<p><strong>Effect</strong> Doatara Interacts to draw an injury poison and applies the poison to the required weapon. If her next attack with that weapon before the end of her next turn hits and deals damage, it applies the effects of the poison. If she critically fails the attack roll, the poison is wasted as normal.</p>"
+                }
+            }
+        },
+        "Boreal Rage Trap": {
+            "prototypeToken": {
+                "name": "Boreal Rage Trap"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Boreal Rage Trap",
+            "disable": "<p>@Check[thievery|dc:22|traits:cold,evocation,magical,trap,hazard]{Thievery (expert)} on the owlbear's base</p>",
+            "hazarddescription": "<p>A stuffed owlbear twists toward intruders and breathes a gust of frigid air.</p>",
+            "reset": "<p>10 minutes</p>",
+            "stealthdetails": "<p>(expert)</p>",
+            "items": {
+                "Exhale": {
+                    "name": "Exhale",
+                    "description": "<p><strong>Trigger</strong> A creature enters either of the marked areas, or a creature remains in the room for 1 minute</p>\n<hr />\n<p><strong>Effect</strong> The trap breathes cold that envelops a @Template[burst|distance:15]{15-foot burst} centered on the triggering creature's square. This deals @Damage[(4d8+18)[cold]] damage (@Check[reflex|dc:24|basic|traits:cold,evocation,magical,trap,hazard] save), and a creature that critically fails the save becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} for 10 minutes due to frostbite.</p>"
+                }
+            }
+        },
+        "Jinkin Ripclaw": {
+            "prototypeToken": {
+                "name": "Jinkin Ripclaw"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Jinkin Ripclaw",
+            "items": {
+                "equipment-Pincer Claw": {
+                    "name": "Pincer Claw"
+                },
+                "Rip Flesh": {
+                    "name": "Rip Flesh",
+                    "description": "<p><strong>Requirements</strong> A jinkin has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} with their pincer claw</p>\n<hr />\n<p><strong>Effect</strong> The jinkin forcefully pulls the pincer claw out of the creature, ripping flesh and cackling in sadistic glee. The creature takes @Damage[1d8[piercing]] damage and is no longer grabbed.</p>"
+                },
+                "Sneak Attack": {
+                    "name": "Sneak Attack",
+                    "description": "<p>The jinkin deals 1d6 extra precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
+                },
+                "Tinker": {
+                    "name": "Tinker",
+                    "description": "<p>A group of six jinkins can work together for an hour to imbue an item with a curse at a range of 60 feet. While this process is lengthy, it's also unobtrusive and can be performed while @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hiding}. Jinkins prefer to use this ability on magic items. The curse makes the item unreliable (@Check[flat|dc:5] or waste any action to Interact with or Activate the item), adds a bizarre requirement to use the item, or imparts some other curse of a similar caliber.</p>"
+                }
+            }
+        },
+        "Meliosa's Leshy (Golden Bamboo Leshy)": {
+            "prototypeToken": {
+                "name": "Meliosa's Leshy (Golden Bamboo Leshy)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Meliosa's Leshy (Golden Bamboo Leshy)",
+            "items": {
+                "Verdant Burst": {
+                    "name": "Verdant Burst",
+                    "description": "<p>When a leshy dies, a burst of primal energy explodes from its body, restoring @Damage[2d8[healing]] Hit Points to each plant creature within a @Template[emanation|distance:30]. This area is filled with plants of the same type as the leshy, becoming difficult terrain. If the terrain isn't a viable environment for these plants, they wither after 24 hours.</p>"
+                },
+                "Bend Back": {
+                    "name": "Bend Back",
+                    "description": "<p>The golden bamboo leshy uses an action to bend itself back, ready to whip forward, increasing its reach with its fists to 10 feet. After the golden bamboo Strikes with its fist, it's no longer Bent Back.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The leshy transforms into a Small plant. This ability otherwise uses the effects of @UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{One with Plants}.</p>"
+                },
+                "Coiled Opportunity": {
+                    "name": "Coiled Opportunity",
+                    "description": "<p>As @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.hFtNbo1LKYCoDy2O]{Attack of Opportunity}, but the golden bamboo leshy can use this reaction only if it's Bent Back.</p>"
+                }
+            }
+        },
+        "Carl The Cobbler": {
+            "prototypeToken": {
+                "name": "Carl The Cobbler"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Carl The Cobbler",
+            "publicNotes": "<p>Redcaps are sadistic and capricious fey who thrill in bloodletting and murder. While they are most famous for appearing as wizened, bearded men, redcap women are no less fearsome or cruel. Redcaps are ultimately craven bullies, cowed by anything more powerful than themselves, a trait that leads them to fear and despise the symbols of good deities. Many fairy tales explain how the redcaps draw power from dipping the hats for which they are named in fresh blood. Just as iconic to these cruel little fey are their iron-clad boots, and the clanging sound of their metal soles clanking on stone floors is both discordant and disconcerting-especially to those who recognize the sound for what it is. Redcaps typically stand only 3 feet tall, with hunched frames, pointed ears, crooked teeth, and long, white, tangled hair.</p>",
+            "hp": "fast healing 10",
+            "blurb": "Variant redcap",
+            "items": {
+                "equipment-Iron Boots": {
+                    "name": "Iron Boots"
+                },
+                "equipment-Red Cap": {
+                    "name": "Red Cap"
+                },
+                "Red Cap": {
+                    "name": "Red Cap",
+                    "description": "<p>A redcap's woolen hat is dyed with the blood of its victims. If the redcap loses its cap, it no longer benefits from fast healing and takes a -4 status penalty to its damage rolls. It can create a new cap in 10 minutes, but that cap doesn't grant its powers until the redcap has turned it red with Blood Soak. A cap has no benefit for creatures other than the redcap who made it.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.s5mS7CyE0oOYlecv]{Effect: Lost Red Cap}</p>"
+                },
+                "Fast Healing 10": {
+                    "name": "Fast Healing 10",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Divine Revulsion": {
+                    "name": "Divine Revulsion",
+                    "description": "<p>If a redcap sees a creature brandish a religious symbol of a good deity (which requires an interact action by that creature) or use one to cast a divine spell, the redcap must attempt a @Check[will|dc:19] save. It then becomes temporarily immune to all brandished religious symbols for 10 minutes.</p>\n<hr />\n<p><strong>Critical Success</strong> The redcap is unaffected</p>\n<p><strong>Success</strong> The redcap is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}</p>\n<p><strong>Failure</strong> The redcap gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition for 1 round and is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4}</p>"
+                },
+                "Blood Soak": {
+                    "name": "Blood Soak",
+                    "description": "<p>The redcap dips its cap in the blood of a slain foe. The foe must have died in the last minute, and the redcap must have helped kill it. The redcap gains a +4 status bonus to damage rolls for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.wPIGBcpCqCWgrCiq]{Effect: Blood Soak}</p>"
+                },
+                "Deadly Cleave": {
+                    "name": "Deadly Cleave",
+                    "description": "<p><strong>Trigger</strong> The redcap reduces a creature to 0 Hit Points with a scythe Strike.</p>\n<hr />\n<p><strong>Effect</strong> The redcap makes another scythe Strike against a different creature, using the same multiple attack penalty as the scythe Strike that triggered this reaction. This counts toward its multiple attack penalty.</p>"
+                },
+                "Stomp": {
+                    "name": "Stomp",
+                    "description": "<p>The redcap Strides up to half its Speed and makes a boot Strike at any point during that movement. If the boot Strike hits a @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} creature, it deals an extra @Damage[2d6[bleed]].</p>"
+                }
+            }
+        },
+        "Meliosa's Leshy (Wisteria Leshy)": {
+            "prototypeToken": {
+                "name": "Meliosa's Leshy (Wisteria Leshy)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Meliosa's Leshy (Wisteria Leshy)",
+            "items": {
+                "Verdant Burst": {
+                    "name": "Verdant Burst",
+                    "description": "<p>When a leshy dies, a burst of primal energy explodes from its body, restoring @Damage[2d8[healing]] Hit Points to each plant creature within a @Template[emanation|distance:30]. This area is filled with plants of the same type as the leshy, becoming difficult terrain. If the terrain isn't a viable environment for these plants, they wither after 24 hours.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>The leshy transforms into a Small plant. This ability otherwise uses the effects of @UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{One with Plants}.</p>"
+                },
+                "Constrict": {
+                    "name": "Constrict",
+                    "description": "<p>@Damage[(1d6+4)[bludgeoning]], @Check[fortitude|dc:18|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                }
+            }
+        },
+        "Soulbound Guardian": {
+            "prototypeToken": {
+                "name": "Soulbound Guardian"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Soulbound Guardian",
+            "items": {
+                "Personality Fragments": {
+                    "name": "Personality Fragments",
+                    "description": "<p>A soulbound guardian shares fragments of its donor soul's personality, though none of that creature's memories. This causes a soulbound guardian to match a strong personality trait of its donor soul. Because of its soul sliver, a soulbound guardian is not immune to spirit as most constructs are.</p>"
+                },
+                "Mannequin": {
+                    "name": "Mannequin",
+                    "description": "<p>Until the next time it acts, the soulbound guardian appears to be a harmless mannequin. It has an automatic result of 30 on Deception checks and DCs to pass as a mannequin.</p>"
+                },
+                "Splitsoul": {
+                    "name": "Splitsoul",
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The soulbound guardian lends some of the energy animating it to other inanimate objects in the area. Three Small items or pieces of furniture within 60 feet come to life for 1 minute. These objects have the minion trait, though all the objects can act when the soulbound guardian uses a single action to issue them commands. The soulbound guardian can also issue commands to each object as part of using this ability.</p>\n<p>Each object animated in this way has a Speed of 20 feet and can make an unarmed melee Strike at +11 that deals @Damage[(1d6+3)[bludgeoning]] damage. In addition, each object has an AC of 16, a Hardness of 3, and 14 Hit Points.</p>"
+                }
+            }
+        }
+    }
+}
