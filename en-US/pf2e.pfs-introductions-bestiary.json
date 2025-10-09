@@ -1,0 +1,299 @@
+{
+    "label": "pf2e.pfs-introductions-bestiary",
+    "entries": {
+        "Befuddled Thoughts": {
+            "prototypeToken": {
+                "name": "Befuddled Thoughts"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Befuddled Thoughts",
+            "disable": "<p>@Check[religion|dc:20|name:Exorcise Spirit|traits:complex,haunt] (trained) to exorcise the spirit, @Check[religion|dc:21|name:Sever Spiritual Connection|traits:complex,haunt] or @Check[occultism|dc:21|name:Sever Spiritual Connection|traits:complex,haunt] (trained) to sever the connection between <em>Hunger's Call</em> and the temple, or @Check[athletics|dc:21|name:Crack the Wall|traits:complex,haunt] to crack the wall in several places; three total successes are required to disable the haunt.</p>",
+            "hazarddescription": "<p>The fanged skull rune begins speaking in sweet, honeyed tones about eternal life.</p>",
+            "routine": "<p>(3 actions) A pulsing red ball of energy flies from the wall and explodes in negative energy in the room. Anyone in the room takes @Damage[(1d10+4)[void]] damage (@Check[reflex|dc:20|basic|name:Avoid the Energy|traits:complex,haunt,void] save).</p>",
+            "reset": "<p>The mosaic ceases its routine 2 rounds after all living creatures are out of sight of the stairs. After 6 hours the haunt is ready to trigger again.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Hunger's Possession": {
+                    "name": "Hunger's Possession",
+                    "description": "<p><strong>Trigger</strong> A living creature bearing <em>Hunger's Call</em> moves within 30 feet of the exit stairs</p>\n<hr />\n<p><strong>Effect</strong> The creature's mind becomes hazy and foggy as an unseen voice says to drop the relic and walk away. The creature must attempt a @Check[will|dc:20|name:Resist Hunger's Possession|traits:haunt,complex] save, and the haunt then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Failure</strong> The target is dazzled for 1 minute.</p>\n<p><strong>Critical Failure</strong> The target loses control of their mind and on their next round must set <em>Hunger's Call</em> on the floor and move their speed in a direction away from the relic; this causes the relic to teleport itself back to area D1. If they have any actions remaining, the target loses those actions. At the end of their turn, the target regains control of their mind.</p>"
+                }
+            }
+        },
+        "Ghoul (PFS Intro 2)": {
+            "prototypeToken": {
+                "name": "Ghoul (PFS Intro 2)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ghoul (PFS Intro 2)",
+            "publicNotes": "<p>Ghouls are ravenous undead who haunt graveyards and eat corpses.</p>\n<hr />\n<p>Few creatures are more ubiquitous to sinister locations such as lonely graveyards and ruined crypts than the flesh-eating undead known as ghouls.</p>",
+            "hp": "void healing",
+            "items": {
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Consume Flesh": {
+                    "name": "Consume Flesh",
+                    "description": "<p><strong>Requirements</strong> The ghoul is adjacent to the corpse of a creature that died within the last hour.</p>\n<hr />\n<p><strong>Effect</strong> The ghoul devours a chunk of the corpse and regains @Damage[1d6[healing]] Hit Points.</p>\n<p>It can regain Hit Points from any given corpse only once.</p>"
+                },
+                "Ghoul Fever": {
+                    "name": "Ghoul Fever",
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:15]</p>\n<hr />\n<p><strong>Stage 1</strong> carrier with no ill effect (1 day)</p>\n<p><strong>Stage 2</strong> @Damage[3d8[void]] damage and regains half as many Hit Points from all healing (1 day)</p>\n<p><strong>Stage 3</strong> as stage 2 (1 day)</p>\n<p><strong>Stage 4</strong> @Damage[3d8[void]] damage and gains no benefit from healing (1 day)</p>\n<p><strong>Stage 5</strong> as stage 4 (1 day)</p>\n<p><strong>Stage 6</strong> dead, and rises as a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.LHHgGSs0ELCR4CYK]{Ghoul} the next midnight.</p>"
+                },
+                "Paralysis": {
+                    "name": "Paralysis",
+                    "description": "<p>Any living, non-elf creature hit by a ghoul's attack must succeed at a @Check[fortitude|dc:15] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>"
+                },
+                "Swift Leap": {
+                    "name": "Swift Leap",
+                    "description": "<p>The ghoul jumps up to half its Speed. This movement doesn't trigger reactions.</p>"
+                }
+            }
+        },
+        "Swampy Quicksand": {
+            "prototypeToken": {
+                "name": "Swampy Quicksand"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Swampy Quicksand",
+            "disable": "<p>@Check[survival|dc:16|name:Disturb Surface|traits:environmental] (trained) to disturb the surface</p>",
+            "hazarddescription": "<p>A 15-foot-wide patch of water and sand attempts to submerge creatures that step onto it.</p>",
+            "routine": "<p>(1 action) On its initiative, the quicksand pulls down each creature within it. A creature that was submerged up to its waist becomes submerged up to its neck, and a creature that was submerged up to its neck is pulled under and has to hold its breath to avoid suffocation.</p>\n<p>A creature in the quicksand can attempt a @Check[athletics|dc:18|name:Swim out of Quicksand|traits:action:swim,environmental] check to Swim to either raise itself by one step if it's submerged to its neck or worse, or to move 5 feet if it's submerged only up to its waist. On a critical failure, the creature is pulled down one step. A creature that Swims out of the quicksand escapes the hazard and is prone in a space adjacent to the quicksand patch. Other creatures can Aid the creature, typically by using a rope or similar aid, or attempt to pull the creature out with their own @Check[athletics|dc:18|name:Aid Another Creature in Quicksand] check, with the same results as if the creature attempted the check.</p>",
+            "reset": "<p>The hazard still submerges anyone who walks in, but the surface doesn't become hidden again until it settles over the course of 24 hours.</p>",
+            "stealthdetails": "<p>(trained), or DC 0 and no minimum proficiency if the surface is disturbed.</p>",
+            "items": {
+                "Submerge": {
+                    "name": "Submerge",
+                    "description": "<p><strong>Trigger</strong> A Huge or smaller creature walks onto the quicksand</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature sinks into the quicksand up to its waist. The quicksand rolls initiative if it hasn't already.</p>"
+                }
+            }
+        },
+        "Spite of the Righteous": {
+            "prototypeToken": {
+                "name": "Spite of the Righteous"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Spite of the Righteous",
+            "disable": "<p>@Check[religion|dc:20|name:Exorcise Spirit|traits:complex,haunt] (trained) to exorcise the spirit, @Check[religion|dc:21|name:Sever Spiritual Connection|traits:complex,haunt] or @Check[occultism|dc:21|name:Sever Spiritual Connection|traits:complex,haunt] (trained) to sever the connection between <em>Hunger's Call</em> and the temple, or @Check[thievery|dc:21|name:Scratch Eyes out of the Mural|traits:complex,haunt] (trained) to scratch the eyes out of the mural; three total successes are required to disable the haunt.</p>",
+            "hazarddescription": "<p>The image of a ghostly warrior her holy symbol dripping blood and pulsing with negative energy, steps from the wall and seeks to kill any living creature.</p>",
+            "routine": "<p>(3 actions) The warrior's blade sweeps through the bodies of any living creature within sight of the exit stairs, and they each take @Damage[(1d10+4)[slashing]] damage (@Check[fortitude|dc:20|basic|name:Avoid the Warrior's Blade|traits:complex,haunt,slashing] save). Undead creatures in the area gain 5 temporary hit points.</p>",
+            "reset": "<p>The spectral warrior returns to the wall and ceases 2 rounds after all living creatures are out of sight of the stairs. After 6 hours the haunt is ready to trigger again.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Racing Blood": {
+                    "name": "Racing Blood",
+                    "description": "<p><strong>Trigger</strong> A living creature bearing <em>Hunger's Call</em> moves within 30 feet of the exit stairs</p>\n<hr />\n<p><strong>Effect</strong> Blood pounds in the targe's body as their heart races uncontrollably. The creature must attempt a @Check[will|dc:20|name:Resist Racing Blood|traits:complex] save, and the haunt then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2}.</p>\n<p><strong>Critical Failure</strong> As failure, and the target's move speed is reduced by 10 for 1 minute.</p>"
+                }
+            }
+        },
+        "Cheerful Tune": {
+            "prototypeToken": {
+                "name": "Cheerful Tune"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Cheerful Tune",
+            "disable": "<p>@Check[religion|dc:20|name:Exorcise Spirits|traits:complex,haunt] (trained) to exorcise the spirits, or @Check[intimidation|dc:21|name:Take a Break|traits:complex,haunt] to convince the spirits it is time to take a break; three total successes are required to disable the haunt.</p>",
+            "hazarddescription": "<p>A cheerful, wordless tune fills the room, compelling everyone to get to work.</p>",
+            "routine": "<p>(3 actions) Ghostly workers appear in the room and begin abrading, scrubbing, and splashing cleaning chemicals on anyone in the area. Each creature in the room takes @Damage[(1d4+2)[slashing]] and @Damage[(1d4+2)[acid]] damage (@Check[reflex|dc:20|basic|name:Avoid Workers|traits:haunt,complex] save; roll once for both).</p>",
+            "reset": "<p>The ghostly workers cease their routine 2 rounds after all living creatures leave the room and reset after 6 hours.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Nose to the Grindstone": {
+                    "name": "Nose to the Grindstone",
+                    "description": "<p><strong>Trigger</strong> A living creature approaches within 10 feet of the smiling face in the center of the north wall</p>\n<hr />\n<p><strong>Effect</strong> The whistling rises in volume to a painful pitch and deals @Damage[(1d8+4)[sonic]] damage. The affected creature must attempt a @Check[will|dc:20|traits:damaging-effect] save, and the haunt then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The target takes no damage.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} for 1 minute.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage, is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}, and is deafened for 2 minutes.</p>"
+                }
+            }
+        },
+        "Swamp Ooze": {
+            "prototypeToken": {
+                "name": "Swamp Ooze"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Swamp Ooze",
+            "publicNotes": "<p>These amorphous masses of sewage and other detritus make their way through filthy culverts beneath cities large and small.</p>\n<hr />\n<p>Slimes, molds, and other oozes can be found in dank dungeons and shadowed forests. While not necessarily evil, some grow to enormous sizes and have insatiable appetites.</p>",
+            "items": {
+                "Motion Sense 60 feet": {
+                    "name": "Motion Sense 60 feet",
+                    "description": "<p>A swamp ooze can sense nearby motion through vibration and air movement.</p>"
+                },
+                "Swamp Wave": {
+                    "name": "Swamp Wave",
+                    "description": "<p><strong>Frequency</strong> once per minute</p>\n<hr />\n<p><strong>Effect</strong> The swamp ooze unleashes a wave of swamp muck filled with sharp debris, covering all creatures within a @Template[emanation|distance:20]. Each creature in the area must succeed at a @Check[reflex|dc:17|options:area-effect,damaging-effect] save or take @Damage[1d4[piercing]|options:area-damage] damage and take a –10-foot penalty to its Speeds for 1 minute (on a critical failure, the creature also falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}).</p>\n<p>A creature can spend an Interact action to clean someone off, decreasing the Speed penalty by 5 feet with each action.</p>"
+                }
+            }
+        },
+        "Sun-Scorched Shadow Drake": {
+            "prototypeToken": {
+                "name": "Sun-Scorched Shadow Drake"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Sun-Scorched Shadow Drake",
+            "publicNotes": "<p>Shadow drakes are typically among the smallest and least powerful of their species. Most stand as tall and long as house cats and have charcoal-colored scales and membranous wings just translucent enough to pass for shadows. Attracted to shiny materials, they employ deception, teamwork, and even rudimentary traps to create opportunities to make off with ill-gotten gains. Shadow drakes have a particular fascination and admiration for umbral dragons-a notable exception to the norm for drakes and dragons.</p>",
+            "items": {
+                "Light Blindness": {
+                    "name": "Light Blindness",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.LightBlindness]</p>"
+                },
+                "Shadow Blend": {
+                    "name": "Shadow Blend",
+                    "description": "<p>The shadow drake's form shifts and blends reflexively with surrounding shadows. A shadow drake gains an additional reaction each round, but it can use this reaction only for Shadow Evade.</p>"
+                },
+                "Shadow Evade": {
+                    "name": "Shadow Evade",
+                    "description": "<p><strong>Trigger</strong> A creature attacks the shadow drake while it is in an area of dim light</p>\n<hr />\n<p><strong>Effect</strong> The shadow drake further obscures its position. The attacker must succeed at a @Check[flat|dc:11] check in order to affect the shadow drake, as if the drake were @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} for the triggering attack.</p>"
+                },
+                "Draconic Frenzy": {
+                    "name": "Draconic Frenzy",
+                    "description": "<p>The shadow drake makes one jaws Strike and two tail Strikes in any order.</p>"
+                },
+                "Shadow Breath": {
+                    "name": "Shadow Breath",
+                    "description": "<p>A shadow drake spits a ball of black liquid that explodes into a cloud of frigid black shadow. This attack has a range of 40 feet and explodes in a @Template[burst|distance:5]{5-foot-radius burst}. Creatures within the burst take @Damage[2d6[cold]|options:area-damage] damage (@Check[reflex|dc:16|basic|options:area-effect] save). The explosion of shadow also snuffs out mundane light sources the size of a torch, lantern, or smaller, and attempts to counteract magical light with a [[/r 1d20+8 #Counteract Light]]{+8} counteract modifier.</p>\n<p>The shadow drake can't use Shadow Breath again for [[/gmr 1d6 #Recharge Shadow Breath]] rounds.</p>"
+                },
+                "Speed Surge": {
+                    "name": "Speed Surge",
+                    "description": "<p><strong>Frequency</strong> three times per day</p>\n<hr />\n<p><strong>Effect</strong> The shadow drake Strides or Flies twice.</p>"
+                }
+            }
+        },
+        "Blood Hunger": {
+            "prototypeToken": {
+                "name": "Blood Hunger"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Blood Hunger",
+            "disable": "<p>@Check[religion|dc:20|name:Exorcise Spirit|traits:complex,haunt] (trained) to exorcise the spirit, @Check[religion|dc:21|name:Sever Spiritual Connection|traits:complex,haunt] or @Check[occultism|dc:21|name:Sever Spiritual Connection|traits:complex,haunt] (trained) to sever the connection between <em>Hunger's Call</em> and the temple, or @Check[crafting|dc:21|name:Break up the Mural|traits:complex,haunt] (trained) to break up the pattern of the mural; three total successes are required to disable the haunt.</p>",
+            "hazarddescription": "<p>Blood flows from the fanged skull rune as if it were an open wound.</p>",
+            "routine": "<p>(3 actions) The bloody mosaic blasts shards of colored glass at anyone within 10 feet of the eastern wall, and they each take @Damage[1d10[slashing]] damage plus @Damage[1[bleed]] damage (@Check[reflex|dc:20|basic|name:Avoid the Glass Shards|traits:complex,haunt,slashing] save; critical success negates the bleed damage).</p>",
+            "reset": "<p>The mosaic ceases its routine 2 rounds after all living creatures are out of sight of the stairs. After 6 hours the haunt is ready to trigger again.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Hunger's Possession": {
+                    "name": "Hunger's Possession",
+                    "description": "<p><strong>Trigger</strong> A living creature bearing <em>Hunger's Call</em> moves within 30 feet of the exit stairs</p>\n<hr />\n<p><strong>Effect</strong> Whispering voices fill the triggering creature's mind with a compulsion for blood of the living. The creature must attempt a @Check[will|dc:20|name:Resist Hunger's Possession|traits:mental,occult,haunt,complex] save, and the haunt then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}.</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2}.</p>\n<p><strong>Critical Failure</strong> The target loses control of their mind and on their next round must move to the nearest ally and make an unarmed bite attack. The ally is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against this attack. The bite deals @Damage[1d4[piercing]] damage and a critical hit deals an additional @Damage[1[bleed]] damage. At the end of their turn, the target regains control of their mind.</p>"
+                }
+            }
+        },
+        "Ancient Summoning Rune": {
+            "prototypeToken": {
+                "name": "Ancient Summoning Rune"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ancient Summoning Rune",
+            "disable": "<p>@Check[acrobatics|dc:15|name:Approach the Rune|traits:magical,trap] to approach without triggering the trap followed by @Check[thievery|dc:17|name:Erase the Rune|traits:action:disable-a-device,magical,trap] (trained) to erase the rune, or @Check[athletics|dc:19|name:Remove Stones|traits:magical,trap] to remove enough stones from the pillar to disrupt the magic, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (1st rank; counteract DC 15) to counteract the rune.</p>",
+            "hazarddescription": "<p>A cloud of invisible magical sensors in a 10-foot radius surrounds the central column of the room.</p>",
+            "reset": "<p>The trap resets each day at dawn.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Summon Weak Monster": {
+                    "name": "Summon Weak Monster",
+                    "description": "<p><strong>Trigger</strong> A creature enters the cloud of magical sensors</p>\n<hr />\n<p><strong>Effect</strong> The trap summons one of the creatures previously encountered in area B with the weak adjustment. The creature rolls initiative and remains for 7 rounds, after which the spell ends and the creature disappears. The summoned creature also disappears if a creature disables the trap before the duration expires. The summoned creature can use 3 actions each round and can use reactions, unlike most summoned creatures.</p>"
+                }
+            }
+        },
+        "Rain In Cloudy Day": {
+            "prototypeToken": {
+                "name": "Rain In Cloudy Day"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Rain In Cloudy Day",
+            "items": {
+                "Verdant Burst": {
+                    "name": "Verdant Burst",
+                    "description": "<p>When Rain in Cloudy Day dies, a burst of primal energy explodes from his body, restoring @Damage[2d8[healing]] Hit Points to each plant creature in a @Template[emanation|distance:30]. This area is filled with fungi, becoming difficult terrain. If the terrain is not a viable environment for this fungus, it withers after 24 hours.</p>"
+                },
+                "Change Shape": {
+                    "name": "Change Shape",
+                    "description": "<p>Rain in Cloudy Day transforms into a Small giant mushroom or patch of fungi. This ability otherwise uses the effects of @UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]{One with Plants}.</p>"
+                },
+                "Spore Cloud": {
+                    "name": "Spore Cloud",
+                    "description": "<p>Rain in Cloudy Day can unleash a cloud of spores that irritates the eyes and throats of nonfungi creatures in a @Template[emanation|distance:15]. Each creature must succeed at a @Check[fortitude|dc:16|options:area-effect,damaging-effect] save or take @Damage[1[persistent,poison]|options:area-damage] damage. A creature has its vision reduced as long as the persistent damage continues and can see only within 20 feet (10 feet on a critical failure).</p>"
+                },
+                "Spores": {
+                    "name": "Spores",
+                    "description": "<p>A creature that takes damage from Rain in Cloudy Day's spore pod Strike must attempt a saving throw with the same DC and effect as his Spore Cloud ability.</p>"
+                }
+            }
+        },
+        "Spiked Pit": {
+            "prototypeToken": {
+                "name": "Spiked Pit"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Spiked Pit",
+            "disable": "<p>@Check[thievery|dc:14|name:Remove Trap Door|traits:mechanical,trap] to remove the trapdoor</p>",
+            "hazarddescription": "<p>A wooden trapdoor covers a pit that's 10 feet square and 20 feet deep. Sharp spikes line the bottom of the pit.</p>",
+            "reset": "<p>Creatures can still fall into the trap, but the trapdoor must be reset manually for the trap to become hidden again.</p>",
+            "stealthdetails": "<p>(trained, or 0 if the trapdoor is disabled or broken)</p>",
+            "items": {
+                "Pitfall": {
+                    "name": "Pitfall",
+                    "description": "<p><strong>Trigger</strong> A creature walks onto the trapdoor</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls in and takes @Damage[10[bludgeoning]|options:fall-damage] damage plus @Damage[2d6[piercing]] damage from sharp implements at the bottom of the pit. That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling.</p>"
+                }
+            }
+        },
+        "Encouraging Supervision": {
+            "prototypeToken": {
+                "name": "Encouraging Supervision"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Encouraging Supervision",
+            "disable": "<p>@Check[deception|dc:20|name:Fake a Smile|traits:complex,haunt] to fake a cheerful, positive attitude, or @Check[crafting|dc:21|name:Show Skill at a Task|traits:complex,haunt] (trained) to show skill at a task; three successful checks are required to disable the haunt.</p>",
+            "hazarddescription": "<p>The face of the Azlanti supervisor on the wall animates and begins scolding those in the room for their poor attitudes at work.</p>",
+            "routine": "<p>(3 actions) The supervisor's voice fills the room and compels everyone within to start smiling. Each creature in the room takes @Damage[(1d8+4)[mental]] damage and must attempt a @Check[will|dc:20|name:Try Not to Smile too Hard|traits:complex,haunt] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target takes no damage.</p>\n<p><strong>Success</strong> The target takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage.</p>\n<p><strong>Critical Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1}.</p>",
+            "reset": "<p>The ghostly voice ceases its routine 2 rounds after all living creatures leave the room and resets after 6 hours.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Smile! Smile!": {
+                    "name": "Smile! Smile!",
+                    "description": "<p><strong>Trigger</strong> A living creature approaches within 10 feet of the smiling face in the center of the north wall</p>\n<hr />\n<p><strong>Effect</strong> The face shouts in Azlanti at the creature to put a smile on their face and get back to work. The creature takes @Damage[(1d8+4)[mental]] damage and must attempt a @Check[will|dc:20|name:Resist Loud Yelling|traits:complex,haunt] save. The haunt then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The target takes no damage.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage.</p>\n<p><strong>Critical Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
+                }
+            }
+        },
+        "Cleaning Agents": {
+            "prototypeToken": {
+                "name": "Cleaning Agents"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Cleaning Agents",
+            "disable": "<p>@Check[engineering-lore|dc:20|name:Disable Control Panel|traits:mechanical,complex]{Engineering Lore} (trained) or @Check[thievery|dc:20|name:Disable Control Panel|traits:mechanical,complex] (trained) to deactivate the control panel, or @Check[athletics|dc:21|name:Plug the Spouts|traits:mechanical,complex] or @Check[acrobatics|dc:21|name:Plug the Spouts|traits:mechanical,complex] to plug the spouts that release the chemicals; three successes are required to disable the trap.</p>",
+            "hazarddescription": "<p>Solvents and detergents spray from the ceiling and run down the walls where they combine in dangerous ways.</p>",
+            "routine": "<p>(3 actions) The trap fills the room with a cloud of caustic vapor and deals @Damage[(2d6+2)[acid]] damage to all creatures in the area (@Check[fortitude|dc:20|basic|name:Cleaning Agent|traits:acid]).</p>",
+            "reset": "<p>The trap deactivates after 1 minute and resets in 1 hour.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Decontamination Spray": {
+                    "name": "Decontamination Spray",
+                    "description": "<p><strong>Trigger</strong> A creature enters the room.</p>\n<hr />\n<p><strong>Effect</strong> The trap sprays cleaning chemicals at the triggering creature dealing @Damage[(1d8+4)[acid]] damage. The creature must attempt a @Check[reflex|dc:20|traits:acid,damaging-effect] save, and the trap then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes half damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blind} for 1 round.</p>"
+                }
+            }
+        }
+    }
+}
