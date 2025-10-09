@@ -1,0 +1,592 @@
+{
+    "label": "pf2e.pathfinder-dark-archive",
+    "entries": {
+        "Call of the Void": {
+            "prototypeToken": {
+                "name": "Call of the Void"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Call of the Void",
+            "disable": "<p>@Check[occultism|dc:34|name:Expel Magical Compulsion] or @Check[arcana|dc:36|name:Expel Magical Compulsion] to expel the magical compulsion from the current island and from any of the red ropes directly attached to it, darkening the rope in color. The Echo also automatically disables the hazard from any island he's standing on, and any of the red ropes directly attached to it, when he Reconstitutes from Thought on that island.</p>",
+            "hazarddescription": "<p>A supernatural compulsion to leap into the unknown exerts itself on anyone who approaches the ledge.</p>",
+            "routine": "<p>(1 action) The call targets all creatures adjacent to a ledge or on one of the red ropes and tugs at their minds. A creature who has already fallen this round is immune.</p>",
+            "reset": "<p>The call of the void persists as long as the Echo exists, though it doesn't activate until the Echo has rolled initiative. The hazard resets each day.</p>",
+            "stealthdetails": "<p>(expert) to notice a slight tugging feeling</p>",
+            "items": {
+                "Leap into the Unknown": {
+                    "name": "Leap into the Unknown",
+                    "description": "<p><strong>Trigger</strong> A creature enters a square adjacent to the ledge of an island or steps onto one of the red ropes</p>\n<hr />\n<p><strong>Effect</strong> The call of the void tugs at the mind of intruders, compelling them to leap off the ledge. The creature must succeed at a @Check[will|dc:34] save or @Check[acrobatics|dc:32|traits:action:balance] check to @UUID[Compendium.pf2e.actionspf2e.Item.M76ycLAqHoAgbcej]{Balance} or else drop off the ledge. If the creature falls off, it drops 100 feet, loops through the closed space of the mindscape, and lands in the square it fell from, taking falling damage as normal (usually @Damage[50[bludgeoning]|options:fall-damage] damage). The call of the void then rolls initiative.</p>"
+                }
+            }
+        },
+        "Cocoon of Lucid Potential": {
+            "prototypeToken": {
+                "name": "Cocoon of Lucid Potential"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Cocoon of Lucid Potential",
+            "items": {
+                "Anchored in Silk": {
+                    "name": "Anchored in Silk",
+                    "description": "<p>The cocoon is incapable of movement beyond slight wriggling in place. It has no Speed and can't move or be moved, even through means such as teleportation, as the Weaver's threads tether it in place physically and astrally. The cocoon casts any spells psychically, substituting verbal and somatic components for expressions of pure unbridled will and removing the manipulate trait from its Cast a Spell action.</p>"
+                },
+                "Give of Oneself": {
+                    "name": "Give of Oneself",
+                    "description": "<p><strong>Trigger</strong> The Weaver would be reduced to 0 Hit Points</p>\n<hr />\n<p><strong>Effect</strong> The cocoon's vitality is linked to the Weaver's. It loses [[/r 30]] Hit Points, restoring @Damage[15[healing]] Hit Points to the Weaver. It can use this ability even if it would otherwise be unable to act.</p>"
+                },
+                "In There Somewhere": {
+                    "name": "In There Somewhere",
+                    "description": "<p>Killia's individuality still rests within the cocoon, yet trying to resist assimilation. If a PC succeeds at a @Check[diplomacy|dc:32] check on the cocoon, the cocoon takes @Damage[5d6[mental]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} as Killia's consciousness fights the Weaver. The cocoon can't be affected in this way more than once per turn.</p>"
+                },
+                "Of Same Essence": {
+                    "name": "Of Same Essence",
+                    "description": "<p>The cocoon and the Weaver share the same essence. Its spells never affect the Weaver if they would harm him, and the Weaver can ignore the any of the cocoon's active spell effects if he desires (such as @UUID[Compendium.pf2e.spells-srd.Item.tSosbMsftXcRaQgT]{Sea of Thought}).</p>"
+                }
+            }
+        },
+        "Entrapping Chair": {
+            "prototypeToken": {
+                "name": "Entrapping Chair"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Entrapping Chair",
+            "disable": "<p>@Check[thievery|dc:23|name:Disrupt the Tracks|traits:action:disable-a-device] (expert) to disrupt the tracks</p>",
+            "hazarddescription": "<p>A chair on concealed tracks surges forward, knocking a creature into the chair's seat and trapping them in place with clamping armrests.</p>",
+            "reset": "<p>The trap resets automatically over 2 rounds if the chair is unoccupied.</p>",
+            "stealthdetails": "<p>(0 to notice the chair)</p>",
+            "items": {
+                "Take a Seat!": {
+                    "name": "Take a Seat!",
+                    "description": "<p><strong>Trigger</strong> A creature steps on the track</p><hr /><p><strong>Effect</strong> The chair rockets forward along the track and slams into the triggering creature, dealing @Damage[(3d8 + 15)[bludgeoning]] damage. A creature who succeeds at a @Check[reflex|dc:22|traits:damaging-effect] save takes no damage and moves out of the chair's path into a random adjacent square not containing the track. A creature who fails this saving throw is knocked into the chair's seat and immediately captured by the armrests, becoming @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} (@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical failure; [[/act escape dc=26]]).</p>"
+                }
+            }
+        },
+        "False Step Floor": {
+            "prototypeToken": {
+                "name": "False Step Floor"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "False Step Floor",
+            "disable": "<p>@Check[thievery|dc:28|name:Disrupt the Magical Energy|traits:action:disable-a-device] (trained) to disrupt the magical energy, or @Check[arcana|dc:27|name:Realign the Magic] or @Check[occultism|dc:27|name:Realign the Magic] (trained) to realign the magical energy</p>",
+            "hazarddescription": "<p>Each time a creature enters the room, it slips through the floor, tumbles through an interdimensional void, and falls back into the room through the ceiling, landing on the floor.</p>",
+            "items": {
+                "False Step": {
+                    "name": "False Step",
+                    "description": "<p><strong>Trigger</strong> A creature enters the room and steps onto the floor</p>\n<p><strong>Effect</strong> The creature slips through the floor; it tumbles through an interdimensional void before falling back into the room through the ceiling and landing on the floor. The triggering creature takes @Damage[40[bludgeoning]|options:fall-damage] damage from the fall. That creature can try to @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} (DC 24) to avoid falling.</p>"
+                }
+            }
+        },
+        "Reflected Desires": {
+            "prototypeToken": {
+                "name": "Reflected Desires"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Reflected Desires",
+            "disable": "<p>@Check[thievery|dc:18|name:Shroud the Mirror|traits:action:disable-a-device] (trained) to shroud the mirror without looking at it, or @Check[occultism|dc:17|name:Erect Mental Barriers] (trained) to erect mental barriers</p>",
+            "hazarddescription": "<p>This mirror reflects the viewer's deepest desires.</p>",
+            "reset": "<p>Automatic</p>",
+            "stealthdetails": "<p>(0 to notice the mirror)</p>",
+            "items": {
+                "Tempt": {
+                    "name": "Tempt",
+                    "description": "<p><strong>Trigger</strong> A creature looks into the mirror</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature sees themselves enjoying their deepest desires in the mirror's reflection, becoming @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} (@Check[will|dc:20] negates). This fascination ends automatically when the mirror is broken or covered up.</p>"
+                }
+            }
+        },
+        "The Morrowkin": {
+            "prototypeToken": {
+                "name": "The Morrowkin"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "The Morrowkin",
+            "items": {
+                "Disgusted by Food": {
+                    "name": "Disgusted by Food",
+                    "description": "<p>The morrowkin eats dreams and potential, not food. A creature that spends an action to brandish food at the morrowkin automatically makes the creature @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (or increases its sickened value by 1, to a maximum of sickened 6), decreasing the morrowkin's AC, attack rolls, saves, skills, and ability DCs accordingly, as normal for the sickened condition. The morrowkin can't retch to reduce its sickened condition.</p>"
+                },
+                "Endless": {
+                    "name": "Endless",
+                    "description": "<p>If reduced to 0 Hit Points or incapacitated for more than a few rounds, the morrowkin vanishes. In 1 minute, it reappears refreshed completely as if the previous battle never happened, with full HP, with all effects on it cleared, and with its Swallow Future ability ready to use again.</p>"
+                },
+                "Drain Potential": {
+                    "name": "Drain Potential",
+                    "description": "<p>The morrowkin tries to drain the motivation from its target, who must attempt a @Check[fortitude|dc:31] save. If the target fails, it is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} (@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2} on a critical failure) and must roll twice and use the worse result on all checks for 1 minute. Creatures wearing a hope talisman are unaffected.</p>"
+                },
+                "Swallow Future": {
+                    "name": "Swallow Future",
+                    "description": "<p>The morrowkin inhales and draws forth the future deeds of all creatures around it. All creatures within a @Template[emanation|distance:30] of the morrowkin take @Damage[(6d8 + 18)[mental]|options:area-damage] damage and must attempt a @Check[will|dc:39|options:area-effect,damaging-effect,inflicts:doomed] save.</p>\n<p>The morrowkin can't Swallow Future again for 1 minute.</p>\n<p>Creatures wearing hope talismans can choose to let their hope talisman break in order to ignore the effect after seeing the result of their Will save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 4} (likely causing it to die immediately).</p>"
+                },
+                "Tomorrow's Fury": {
+                    "name": "Tomorrow's Fury",
+                    "description": "<p>The morrowkin makes claw attacks against any number of targets within reach. The claw attacks count against the morrowkin's multiple attack penalty, but don't apply the penalty until after all attacks have been made.</p>"
+                }
+            }
+        },
+        "Sigil of Deepest Fears": {
+            "prototypeToken": {
+                "name": "Sigil of Deepest Fears"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Sigil of Deepest Fears",
+            "disable": "<p>@Check[thievery|dc:43|name:Drain the Sigil's Power|traits:action:disable-a-device] (master) to drain the sigil's power harmlessly, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (9th rank; counteract DC 42) to counteract the sigil</p>",
+            "hazarddescription": "<p>An arcane sigil forces creatures to confront their greatest fear.</p>",
+            "reset": "<p>1 day</p>",
+            "stealthdetails": "<p>(master)</p>",
+            "items": {
+                "Face Your Fear": {
+                    "name": "Face Your Fear",
+                    "description": "<p><strong>Trigger</strong> A creature moves within 10 feet of the sigil</p>\n<hr />\n<p><strong>Effect</strong> All creatures within 120 feet of the sigil are affected by a @UUID[Compendium.pf2e.spells-srd.Item.qDjeG6dxT4aEEC6J]{Weird} spell (@Check[will|dc:40|traits:damaging-effect] save).</p>"
+                }
+            }
+        },
+        "Mirror Door": {
+            "prototypeToken": {
+                "name": "Mirror Door"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Mirror Door",
+            "disable": "<p>@Check[thievery|dc:18|name:Open the Door|traits:action:disable-a-device] to open the door while viewing the reflection</p>",
+            "hazarddescription": "<p>The reflection of a wall shows a phantom door where none exists. This door can only be manipulated while viewed through the mirror's reflection.</p>",
+            "reset": "<p>Automatic</p>",
+            "items": {
+                "Appear": {
+                    "name": "Appear",
+                    "description": "<p><strong>Trigger</strong> A creature views the wall through a mirror's reflection</p>\n<hr />\n<p><strong>Effect</strong> A door appears in the mirror's reflection of the wall. The triggering creature can open and manipulate this door only as long as they view it through the mirror and only by succeeding at a @Check[thievery|dc:18|name:Disable the Trap|traits:action:disable-a-device] check to disable the trap.</p>"
+                }
+            }
+        },
+        "Confounding Portal": {
+            "prototypeToken": {
+                "name": "Confounding Portal"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Confounding Portal",
+            "disable": "<p>@Check[thievery|dc:17|name:Scratch Out Runes|traits:action:disable-a-device] to scratch out the runes, or @Check[arcana|dc:16|name:Destroy the Runes] to destroy the runes</p>",
+            "hazarddescription": "<p>Tiny runes carved around a doorframe or on a hall's walls surreptitiously confound creatures into circling the room or hallway they attempted to exit or pass through.</p>",
+            "reset": "<p>Automatic</p>",
+            "items": {
+                "Confounding Misdirection": {
+                    "name": "Confounding Misdirection",
+                    "description": "<p><strong>Trigger</strong> A creature passes through the rune-carved doorway or hallway</p>\n<hr />\n<p><strong>Effect</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} by the illusions and directed back into the room they attempted to exit through another doorway or back to the hallway's beginning. This feels no different to the triggering creature than walking through the doorway or hallway, and onlookers are similarly befuddled. A creature who succeeds at a @Check[will|dc:19] save resists this illusion and exits the room or proceeds down the hall without being misdirected.</p>"
+                }
+            }
+        },
+        "Shrinking Hall": {
+            "prototypeToken": {
+                "name": "Shrinking Hall"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shrinking Hall",
+            "disable": "<p>@Check[thievery|dc:21|name:Jam the Scales|traits:action:disable-a-device] (trained) to jam the scales built into the floor</p>",
+            "hazarddescription": "<p>This hallway is designed to shrink as creatures traverse it, making access to the door at the hall's end impossible.</p>",
+            "reset": "<p>After 10 minutes without weight being placed on this hall's floor, this trap resets, returning the hall to its original size.</p>",
+            "items": {
+                "Shrink": {
+                    "name": "Shrink",
+                    "description": "<p><strong>Trigger</strong> 100 pounds of weight or more is placed on the hallway's floor</p>\n<hr />\n<p><strong>Effect</strong> The hall's last 40 feet of walls angle inward, causing the hall to shrink and contract down, reaching 6 inches in height and width at the hall's far end and completely blocking access to the hall's exit door for anything but a Tiny creature Squeezing.</p>"
+                }
+            }
+        },
+        "Spirit Window": {
+            "prototypeToken": {
+                "name": "Spirit Window"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Spirit Window",
+            "disable": "<p>@Check[occultism|dc:48|name:Free the Spirits] (legendary) to free the spirits from the mirror, or @Check[religion|dc:48|name:Banish the Spirits] (legendary) to banish the spirits</p>",
+            "hazarddescription": "<p>Spirits trapped inside a haunted window harm those who touch the window.</p>",
+            "reset": "<p>1 round</p>",
+            "items": {
+                "Siphon Soul": {
+                    "name": "Siphon Soul",
+                    "description": "<p><strong>Trigger</strong> A creature touches the window</p><hr /><p><strong>Effect</strong> The triggering creature takes @Damage[(8d10 + 44)[void]] damage (@Check[will|dc:42|basic]) as the window attempts to steal their soul. If this damage would kill the target, its soul is trapped inside the window with the effects of @UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{Seize Soul}.</p>"
+                }
+            }
+        },
+        "Reflection": {
+            "prototypeToken": {
+                "name": "Reflection"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Reflection",
+            "items": {
+                "Reflection Routine": {
+                    "name": "Reflection Routine",
+                    "description": "<p>Each reflection has 2 actions which it uses to Step, Stride, or Strike (in any combination). Reflections can act on the same turn they're created.</p>"
+                }
+            }
+        },
+        "False Floor": {
+            "prototypeToken": {
+                "name": "False Floor"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "False Floor",
+            "disable": "<p>Succeeding on a Perception check against the Stealth DC of 21 (including the check to find the trap) disbelieves the illusory floor, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (2nd rank; counteract DC 18) to dispel the illusory floor; <em>dispel magic</em> (2nd level; counteract DC 20) to dispel the magical silence</p>",
+            "hazarddescription": "<p>The floor in this chamber is an illusion, which conceals a 40-foot drop to the true floor below. Additionally, the area beneath the floor is magically silenced-no sound is audible within nor does sound leave this space.</p>",
+            "reset": "<p>Automatic</p>",
+            "stealthdetails": "<p>(trained; or 0 if the illusory floor is dispelled)</p>",
+            "items": {
+                "Drop": {
+                    "name": "Drop",
+                    "description": "<p><strong>Trigger</strong> A creature walks onto the illusory floor</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls through the illusory floor and takes falling damage (typically @Damage[20[bludgeoning]|options:fall-damage] damage). That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling. The DC to @UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{Climb} the walls (@Check[athletics|dc:20|traits:action:climb]) or Grab an Edge is @Check[reflex|dc:20|traits:action:grab-an-edge].</p>"
+                }
+            }
+        },
+        "Clone Mirrors": {
+            "prototypeToken": {
+                "name": "Clone Mirrors"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Clone Mirrors",
+            "hp": "per mirror",
+            "disable": "<p>@Check[thievery|dc:28|name:Reposition Mirror|traits:action:disable-a-device] (expert) to reposition each mirror, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (3rd rank; counteract DC 25) to counteract each mirror</p>",
+            "hazarddescription": "<p>Two opposing mirrors spawn illusory duplicates of creatures in the hall in an unending tide.</p>",
+            "routine": "<p>(2 actions) This trap loses 1 action for each mirror disabled. Each mirror uses 1 action to Spawn a Reflection of a creature reflected in the mirror. The hazard can have a maximum of four reflections spawned at once.</p>",
+            "reset": "<p>1 day</p>",
+            "items": {
+                "Spawn Reflection": {
+                    "name": "Spawn Reflection",
+                    "description": "<p><strong>Trigger</strong> A creature is reflected in the mirror</p>\n<hr />\n<p><strong>Effect</strong> The mirror creates a @UUID[Compendium.pf2e.pathfinder-dark-archive.Actor.ICdVjs6JEs0YAefl]{Reflection} of the triggering creature, which Steps out of the mirror and into the hall. The trap then rolls initiative.</p>"
+                }
+            }
+        },
+        "Distortion Mirror": {
+            "prototypeToken": {
+                "name": "Distortion Mirror"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Distortion Mirror",
+            "disable": "<p>@Check[thievery|dc:38|name:Deface the Mirror|traits:action:disable-a-device] (master) to deface the mirror's pane, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 36) to dispel the mirror or counteract the transformation</p>",
+            "hazarddescription": "<p>Fun-house mirrors distort a viewer's reflection, painfully reshaping their body to match what appears in the reflected images.</p>",
+            "reset": "<p>1 day</p>",
+            "stealthdetails": "<p>0 to notice the mirror</p>",
+            "items": {
+                "Painful Transformation": {
+                    "name": "Painful Transformation",
+                    "description": "<p><strong>Trigger</strong> A creature is reflected in the mirror</p><hr /><p><strong>Effect</strong> The triggering creature's body is painfully squished, stretched, and distorted to match their reflection. The creature takes @Damage[(6d10 + 30)[force]] damage and must attempt a @Check[fortitude|dc:39|traits:damaging-effect] save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 round.</p>\n<p><strong>Failure</strong> The target takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} for 4 rounds.</p>\n<p><strong>Critical Failure</strong> The target takes double damage and is clumsy 2 and enfeebled 2 for 1 minute. As long as the creature is clumsy or enfeebled, it additionally takes a –10-foot status penalty to its Speeds.</p>\n<p>When the effects of this trap end, the triggering creature's transformation ends, and its body reverts to its natural form.</p>"
+                }
+            }
+        },
+        "Shuffling Hall": {
+            "prototypeToken": {
+                "name": "Shuffling Hall"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shuffling Hall",
+            "disable": "<p>@Check[thievery|dc:12|name:Deactivate a Plate|traits:action:disable-a-device] to deactivate one pressure plate</p>",
+            "hazarddescription": "<p>Four pressure plates along this mirrored hall rotate vertically when stepped on, sending a creature on the pressure plate tipping into an adjacent featureless room while simultaneously replacing the pressure plate and walls in the hall. Each pressure plate dumps creatures into a different room.</p>",
+            "reset": "<p>Automatic</p>",
+            "items": {
+                "Flip": {
+                    "name": "Flip",
+                    "description": "<p><strong>Trigger</strong> A creature steps on a pressure plate</p>\n<hr />\n<p><strong>Effect</strong> The floor and adjoining wall rotate up and over on a central axle, tipping the triggering creature into an adjacent featureless room and simultaneously replacing the pressure plate and wall with another set on the same axle. The triggering creature is pushed into an adjoining room, takes @Damage[1d8[bludgeoning]] damage, and lands @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. A creature who succeeds at a @Check[reflex|dc:19|traits:damaging-effect] save takes no damage and rolls out of the way of the trap, returning to the space they were in before stepping on the pressure plate.</p>"
+                }
+            }
+        },
+        "Bounding Hounds": {
+            "prototypeToken": {
+                "name": "Bounding Hounds"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Bounding Hounds",
+            "hp": "60 HP per hound",
+            "disable": "<p>@Check[nature|dc:36|name:Calm Hound] (expert) to calm each hound, or @Check[occultism|dc:38|name:Banish Hound] (master) to banish each hound</p>",
+            "hazarddescription": "<p>Three phantom hounds chase down intruders, damaging any they pass through.</p>",
+            "routine": "<p>(9 actions) The trap loses 3 actions each round for each hound disabled. Each hound uses three actions to Stride 40 feet after creatures in the room, passing through corporeal creatures during this movement if possible. Each creature the hound moves through during its movement takes @Damage[(2d8 + 7)[void]] damage (@Check[reflex|dc:37|traits:damaging-effect] negates). A creature can only be damaged by each hound once each round, no matter how many times the hound moves through their space.</p>",
+            "reset": "<p>1 hour</p>",
+            "items": {
+                "Bay": {
+                    "name": "Bay",
+                    "description": "<p><strong>Trigger</strong> A creature enters the area</p><hr /><p><strong>Effect</strong> The hounds manifest and bay loudly, dealing @Damage[(3d10 + 16)[sonic]] damage to all creatures within 30 feet of the hounds (@Check[fortitude|dc:33|basic]). On a failed check, a creature is additionally @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}. The trap then rolls initiative.</p>"
+                }
+            }
+        },
+        "Exhaling Portal": {
+            "prototypeToken": {
+                "name": "Exhaling Portal"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Exhaling Portal",
+            "disable": "<p>@Check[thievery|dc:30|name:Scratch Out Runes|traits:action:disable-a-device] (expert) twice to scratch out the runes, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (5th rank; counteract DC 30) to counteract the planar runes; @Check[athletics|dc:32|name:Shut the Door] to shut the door if it's open (using Athletics only stops the trap, it doesn't fully disable it)</p>",
+            "hazarddescription": "<p>Magic runes carved into a doorframe connect a door to the Plane of Air when opened, blowing creatures down the connecting hall.</p>",
+            "routine": "<p>(1 action) The trap uses 1 action to blow powerful winds down the hall. Each creature in the hall must attempt a @Check[fortitude|dc:32] save with the same results as Gust. If this forced movement would cause a creature to collide with a solid object or fall downstairs or out a window, that creature takes an additional @Damage[(2d10 + 11)[bludgeoning]] damage (or @Damage[20[bludgeoning]|options:fall-damage] damage due to a fall).</p>",
+            "reset": "<p>Automatic after the door is shut</p>",
+            "items": {
+                "Gust": {
+                    "name": "Gust",
+                    "description": "<p><strong>Trigger</strong> A creature opens the door</p>\n<hr />\n<p><strong>Effect</strong> The hall is buffeted by powerful winds for as long as the door remains open. A creature must succeed at a @Check[athletics|dc:32] check to move toward the door. A creature who fails at this check is pushed back 5 feet and falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>\n<p>Additionally, the triggering creature is blasted by a powerful gust of wind and must attempt a @Check[fortitude|dc:32] save. The trap then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is pushed back 5 feet.</p>\n<p><strong>Failure</strong> The creature is pushed back 10 feet.</p>\n<p><strong>Critical Failure</strong> The creature is pushed back 10 feet and knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+                }
+            }
+        },
+        "Verdure's Moonflower": {
+            "prototypeToken": {
+                "name": "Verdure's Moonflower"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Verdure's Moonflower",
+            "publicNotes": "<p>These enormous plants have thick, knotted trunks festooned with fanged blossoms. A gaping mouth sits at the top of the trunk, capable of swallowing most creatures smaller than the moonflower whole. Moonflowers can move slowly on their powerful roots or use them to attack, but usually they dig them deeply into the surrounding ground and remain stationary to await prey.</p>\n<p>Though moonflowers can't speak in the conventional sense, they communicate telepathically with other moonflowers. Explorers who encounter a single moonflower can thus be assured that any other moonflowers in the vicinity will be prepared for them. Those who manage to intercept a moonflower's telepathic communications are assaulted by visions of dreadful, primeval jungles ruled over by titanic plant life. Whether this is some vision of the past or a dream of the future shared by all moonflowers is unknown.</p>\n<p>Moonflowers are alien life-forms from a long-dead planet, but their proliferation throughout the galaxy has been ensured through the machinations of the Dominion of the Black, a sinister, alien organization from the dark places between the stars.</p>",
+            "hp": "fast healing 10",
+            "items": {
+                "Fast Healing 10": {
+                    "name": "Fast Healing 10",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Pod Prison": {
+                    "name": "Pod Prison",
+                    "description": "<p><strong>Trigger</strong> The moonflower has swallowed a creature</p>\n<hr />\n<p><strong>Effect</strong> The swallowed creature is wrapped in a tight cocoon and extruded from the moonflower's body into an adjacent square. The creature continues to be Swallowed Whole. It can't use Acrobatics to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} a pod, but other creatures can attempt to Rupture the pod. The cocooned creature takes half damage from any damage dealt to the cocoon. Once the cocoon is Ruptured, it deflates and decays.</p>"
+                },
+                "Pod Spawn": {
+                    "name": "Pod Spawn",
+                    "description": "<p>Should a Small or larger creature die within a pod prison, the pod transforms into an adult moonflower with full Hit Points after [[/gmr 1d4 #Moonflower Transformation]]{1d4 hours} of growth.</p>\n<p>The newly formed moonflower has its own consciousness, but some aspect of its trunk or blossoms resembles the creature that died within. The dead creature's equipment remains inside the new moonflower and can be retrieved if the moonflower is slain.</p>"
+                },
+                "Spray Blossoms": {
+                    "name": "Spray Blossoms",
+                    "description": "<p><strong>Effect</strong> The moonflower expels mindwarping petals in a @Template[cone|distance:30]. Creatures in the area take @Damage[4d6[mental],4d6[poison]|options:area-damage]{4d6 mental damage and 4d6 poison damage} (@Check[will|dc:26|basic|options:area-effect,inflicts:confused,inflicts:stupefied]). On a failure, they are @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 minute, and on a critical failure, they are also @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round.</p>\n<p>The moonflower can't Spray Blossoms again for [[/gmr 1d4 #Recharge Spray Blossoms]]{1d4 rounds}.</p>"
+                },
+                "Swallow Whole": {
+                    "name": "Swallow Whole",
+                    "description": "<p>Large, @Damage[(2d10+10)[bludgeoning],2d6[acid]]{2d10 + 10 bludgeoning and 2d6 acid}, Rupture 21</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                }
+            }
+        },
+        "Quartz-Spawned Shadow": {
+            "prototypeToken": {
+                "name": "Quartz-Spawned Shadow"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Quartz-Spawned Shadow",
+            "publicNotes": "<p>The mysterious undead known as shadows lurk in dark places and feed on those who stray too far from the light. Those who parley with shadows, typically by keeping them at bay with a glowing weapon, may learn great secrets, for they are ideal spies.</p>",
+            "items": {
+                "Light Vulnerability": {
+                    "name": "Light Vulnerability",
+                    "description": "<p>An object shedding magical light (such as from the @UUID[Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4]{Light} spell) is treated as magical when used to attack the shadow.</p>"
+                },
+                "Crystal Siphon": {
+                    "name": "Crystal Siphon",
+                    "description": "<p><strong>Requirements</strong> The shadow and the target are both within 40 feet of the crystal that spawned the shadow, and the crystal isn't covered or obstructed</p>\n<hr />\n<p><strong>Effect</strong> Shadows in the shape of tendrils curl around the target, drawing out a portion of the target's vitality and siphoning it into the crystal. The target takes @Damage[4d6[void]] damage (@Check[fortitude|dc:21|basic]). On a failure, they are also @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1}. This enfeebled condition is cumulative with other enfeebled conditions from quartz-spawned shadows, to a maximum of enfeebled 4. If Crystal Siphon increases the creature's enfeebled value to 3 or more, the target's shadow is pulled entirely into the shadow's crystal.</p>\n<p>While the target's shadow is trapped, they feel an @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{Invisible} tether linking them to the crystal, and they become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} whenever they are more than 40 feet away from it. The enfeebled condition from Crystal Siphon can't be reduced until the crystal is broken; if the crystal is broken, the effect immediately ends.</p>"
+                },
+                "Slink in Shadows": {
+                    "name": "Slink in Shadows",
+                    "description": "<p>The shadow can @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} or end its @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneak} in a creature's or object's shadow.</p>"
+                }
+            }
+        },
+        "Disorienting Illusions": {
+            "prototypeToken": {
+                "name": "Disorienting Illusions"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Disorienting Illusions",
+            "disable": "<p>@Check[crafting|dc:17|name:Calculate the Room's Dimensions] (trained) to calculate the room's dimensions despite the illusions, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (1st rank; counteract DC 17) to counteract the illusions</p>",
+            "hazarddescription": "<p>Illusions cloaking this chamber cause it to appear distorted and constantly shifting, with the room and all its contents appearing tilted, irregular, and in motion.</p>",
+            "reset": "<p>1 minute</p>",
+            "items": {
+                "Disorient": {
+                    "name": "Disorient",
+                    "description": "<p><strong>Trigger</strong> A creature enters the room</p>\n<hr />\n<p><strong>Effect</strong> Illusions cause the appearance of the room and the objects inside it to constantly warp, shift, bend, and distort for 1 minute. Each creature in the room while it's distorting must attempt a @Check[perception|dc:17] check.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature disbelieves the illusions and is unaffected.</p>\n<p><strong>Success</strong> The creature disbelieves the illusions but still sees them. It treats the room as difficult terrain.</p>\n<p><strong>Failure</strong> The creature is fooled by the illusions. It treats the room as difficult terrain and becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. As long as it remains in the room, it can't reduce its sickened value below 1.</p>\n<p><strong>Critical Failure</strong> As failure, but each time the creature Archive attempts a move action, it must succeed at a @Check[flat|dc:5] or they lose the action, and on a critical failure, it also falls @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+                }
+            }
+        },
+        "The Weaver in Dreams": {
+            "prototypeToken": {
+                "name": "The Weaver in Dreams"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "The Weaver in Dreams",
+            "items": {
+                "Dreams Unraveling": {
+                    "name": "Dreams Unraveling",
+                    "description": "<p>When the Weaver has fewer than 155 Hit Points, his form partially unravels, revealing patches of pure horror acute enough to leave physical wounds. This creates a 10-foot emanation that deals @Damage[3d6[mental],3d6[slashing]|options:area-damage]{3d6 mental damage and 3d6 slashing damage}, with a @Check[will|dc:36|basic|options:area-effect]. A creature @UUID[Compendium.pf2e.actionspf2e.Item.UWdRX1VelipCzrCg]{Averting its Gaze} is immune to the aura.</p>"
+                },
+                "Nameless Nightmare": {
+                    "name": "Nameless Nightmare",
+                    "description": "<p>The Weaver has torn off his own name to become a being of fear. He is immune to linguistic effects and any effect that would impose the @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened} condition. Without a name, he is difficult for phenomena to affect; the Weaver recovers from the @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed}, and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned} conditions at the end of his turn, and his flat check to clear persistent damage is @Check[flat|dc:5]{5}. If anyone utters, writes, or otherwise attempts to record his name, that creature automatically takes @Damage[10[mental]] damage and the attempt fails.</p>"
+                },
+                "Stitch Into the Web": {
+                    "name": "Stitch Into the Web",
+                    "description": "<p><strong>Trigger</strong> The Weaver is moved against his will, or a creature attempts to leave a square within 20 feet of him by any means, including teleportation</p>\n<hr />\n<p><strong>Effect</strong> The Weaver's silk stitches a body in place to prevent movement. The creature stops moving and the action is disrupted. The disruption doesn't affect astral bodies.</p>"
+                },
+                "Separate Astral Body": {
+                    "name": "Separate Astral Body",
+                    "description": "<p>The Weaver buries a silk thread in the target's psyche and tugs, wrenching the target's astral form out of their body. Unless the target succeeds at a @Check[will|dc:36] save, their astral form is pulled out, causing a ghostly image of them to appear in an adjacent space of the Weaver's choosing. An astral body is immune to physical damage but affected normally by mental effects, force effects, and effects that directly target the spirit. The target remains connected to their physical body by a silver cord, which is always visible and possibly foils attempts to Hide. Separation from one's astral body takes a toll on the psyche, imposing a -1 status penalty to Will saves and dealing @Damage[1d6[persistent,mental]] damage for as long as the body is separated; this increases to 3d6 if the target is ever more than 30 feet from its astral body. The target can use a single action, which has the concentrate trait, to move their astral body an amount equal to their Speed. When the target stops taking persistent mental damage from this ability, the astral body snaps back to the physical body, ending the effect. If a target is carrying silver, then the first time this ability is used on them, the ability fails and any silver they're carrying larger than a coin tarnishes-while this doesn't outright destroy items like weapons or thaumaturge implements, it does prevent them from protecting against this ability more than once.</p>"
+                },
+                "Sever Astral Threads": {
+                    "name": "Sever Astral Threads",
+                    "description": "<p>The Weaver uses a claw to cut the silver cord connecting a creature's astral and physical bodies. This deals @Damage[16d6[mental]] damage to any target affected by Separate Astral Body whose physical or astral body is within 10 feet of the Weaver (@Check[will|dc:37|basic]). After being targeted by this ability, the astral body slams violently back into the target's physical body, causing the target's vision to swim and blinding them until the start of their next turn unless they critically succeeded at their saving throw.</p>"
+                },
+                "Stalker in Dreams": {
+                    "name": "Stalker in Dreams",
+                    "description": "<p><strong>Trigger</strong> The Weaver becomes @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to all creatures within 60 feet or is not observed by any creatures within 60 feet</p>\n<hr />\n<p><strong>Effect</strong> The Weaver's presence on the Material Plane is connected to others' perception of him, and when that perception falters, he can skitter to a new location. The Weaver teleports to an unoccupied space within 60 feet not within line of sight of any creatures within 60 feet. If the Weaver became concealed or unobserved as part of a movement action he was taking, he can resume its movement after teleporting. A creature who Averts its Gaze from the Weaver is not observing him.</p>"
+                },
+                "String Astral Body": {
+                    "name": "String Astral Body",
+                    "description": "<p>The Weaver attaches strings to a creature's astral body to move it. He forcefully moves an exposed astral body within reach of his astral silk Strike up to 20 feet, with no saving throw.</p>"
+                }
+            }
+        },
+        "Constricting Hall": {
+            "prototypeToken": {
+                "name": "Constricting Hall"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Constricting Hall",
+            "disable": "<p>@Check[thievery|dc:28|name:Stabilize Wall|traits:action:disable-a-device] (trained) to stabilize each wall, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (4th rank; counteract DC 26) to counteract each wall</p>",
+            "hazarddescription": "<p>A hall's four walls become fluid and elastic when a creature reaches the hall's midpoint.</p>",
+            "routine": "<p>(4 actions) This trap loses 1 action each round for each wall that has been disabled. Each wall uses 1 action to slam back and forth rapidly, pummeling one creature in the hall with a wall Strike. On a hit, the target is additionally knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. The walls distribute the attacks as evenly as possible among creatures in the hall, and the Strikes don't apply the trap's multiple attack penalty.</p>",
+            "reset": "<p>1 hour</p>",
+            "items": {
+                "Lose Form": {
+                    "name": "Lose Form",
+                    "description": "<p><strong>Trigger</strong> A creature reaches the hall's midpoint</p>\n<hr />\n<p><strong>Effect</strong> The hall's walls lose their rigidity, becoming fluid and elastic. The hall becomes difficult terrain, and each creature in the hall is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} unless they succeed at a @Check[reflex|dc:26] save. The trap then rolls initiative.</p>"
+                }
+            }
+        },
+        "Mother Mitera": {
+            "prototypeToken": {
+                "name": "Mother Mitera"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Mother Mitera",
+            "hp": "crystal vitality link",
+            "items": {
+                "Crystal Vitality Link": {
+                    "name": "Crystal Vitality Link",
+                    "description": "<p>The power of the island links Mitera's vitality to her followers. As long as any of the three quartz formations are intact, whenever Mitera takes damage, any of her followers within 10 miles lose the same amount of Hit Points.</p>"
+                },
+                "Ascension is Near": {
+                    "name": "Ascension is Near",
+                    "description": "<p><strong>Frequency</strong> once per ascension ritual</p>\n<hr />\n<p><strong>Effect</strong> Mitera activates the moonflower link with her followers. Any followers within @Template[emanation|distance:30]{30 feet} who failed their saving throw against the moonflower tea become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. Anyone who critically failed and did not receive an antidote explodes (this is about half of Mitera's congregation if the PCs didn't successfully administer the antidote). If anyone's body explodes, Mitera gains 30 temporary Hit Points and is @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 3 rounds; she can use this additional action each round only for Strike and Stride actions.</p>"
+                }
+            }
+        },
+        "Shrouded Assailant": {
+            "prototypeToken": {
+                "name": "Shrouded Assailant"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shrouded Assailant",
+            "hp": "spirit",
+            "disable": "<p>@Check[thievery|dc:43|name:Steal the Cloth|traits:action:disable-a-device] (master) to steal the cloth before the spirit manifests, or @Check[athletics|dc:47|name:Pull the Cloth Off] to pull the cloth off the spirit after it manifests</p>",
+            "hazarddescription": "<p>A spirit steps out of a covered mirror, pulling off and becoming shrouded in the cloth, which reveals the mirror. The shrouded figure attacks the living until the cloth is yanked off, which banishes the formless spirit.</p>",
+            "routine": "<p>(3 actions) The spirit uses 3 actions to Step, fly 60 feet, or Strike, in any order. On a successful Strike the spirit's target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}, and on a critical success, the target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>",
+            "reset": "<p>The haunt can be reset if the mirror is covered in a cloth or shroud.</p>",
+            "items": {
+                "Don Shroud": {
+                    "name": "Don Shroud",
+                    "description": "<p><strong>Trigger</strong> A creature enters the area</p>\n<hr />\n<p><strong>Effect</strong> The spirit steps out of the mirror, wearing the cloth as a shroud and revealing the mirror. The triggering creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 3} unless they succeed at a @Check[will|dc:38] save. The haunt then rolls initiative.</p>"
+                }
+            }
+        },
+        "K. H. W.'s Echo": {
+            "prototypeToken": {
+                "name": "K. H. W.'s Echo"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "K. H. W.'s Echo",
+            "hp": "destabilized form",
+            "items": {
+                "Attack of Opportunity (Special)": {
+                    "name": "Attack of Opportunity (Special)",
+                    "description": "<p>The Echo has reach 15 for the purpose of determining when Attack of Opportunity triggers and when making Attacks of Opportunity.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Destabilized Form": {
+                    "name": "Destabilized Form",
+                    "description": "<p>When the Echo has fewer than 140 Hit Points, his form destabilizes, large chunks disintegrating from his face, limbs, and torso. White moths constantly stream from the missing spaces, creating a @Template[emanation|distance:10] that deals @Damage[6d6[mental]|options:area-damage] damage with a @Check[will|dc:34|basic|options:area-effect].</p>\n<p>As long as the aura persists, he can dissolve into moths and re-form at another location within 15 feet as a free action at the beginning of each of his turns; this has the occult, conjuration, and teleportation traits.</p>"
+                },
+                "Astral Spindel Implement": {
+                    "name": "Astral Spindel Implement",
+                    "description": "<p>The Echo carries a drop spindle that constantly spins red astral thread, which is both his thaumaturgic implement and weapon. If his <em>rope dart</em> is lost or broken, he can re-form it with an Interact action. If he critically succeeds at a <em>rope dart</em> Strike, overwhelming thoughts and figments flow down the thread into the target's mind. The target becomes @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round.</p>"
+                },
+                "Astral Thread Control": {
+                    "name": "Astral Thread Control",
+                    "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirements</strong> The Echo's previous action was a successful thrown rope dart Strike</p>\n<hr />\n<p><strong>Effect</strong> The Echo flicks his wrist and makes a follow-up thrown rope dart Strike at a different target within 30 feet of the first target, using the same multiple attack penalty as his previous Strike. Regardless of whether his attack hits, he then retrieves the weapon.</p>"
+                },
+                "Contingency Oathday-Nine-Rova": {
+                    "name": "Contingency Oathday-Nine-Rova",
+                    "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> The Echo's turn begins and he's stunned, slowed, @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused}, @UUID[Compendium.pf2e.conditionitems.Item.9qGBRpbX9NEwtAAr]{Controlled}, @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, or otherwise can't act</p>\n<hr />\n<p><strong>Effect</strong> The Echo has set up numerous contingencies in the event he's compromised. Talismans on his body shatter, counteracting the triggering effect. The Echo can use this free action even if he can't act.</p>"
+                },
+                "Reconstitute from Thought": {
+                    "name": "Reconstitute from Thought",
+                    "description": "<p><strong>Requirements</strong> The Echo is standing on one of the eight large islands of the map, and the island hasn't darkened</p><hr /><p><strong>Effect</strong> The Echo throws his rope dart into the island and uses it to absorb mental essence from the mindscape, repairing himself. He regains @Damage[45[healing]] Hit Points and the island turns a desaturated gray for 1 day, preventing future absorption and disabling the @UUID[Compendium.pf2e.pathfinder-dark-archive.Actor.0AdtolhMWrPlzVZY]{Call of the Void} hazard on that island.</p>"
+                },
+                "Spindle's Web": {
+                    "name": "Spindle's Web",
+                    "description": "<p>The Echo's spindle revolves faster and faster until it's a blur, lashing red threads in every direction. The threads deal @Damage[7d6[slashing],7d6[mental]|options:area-damage]{7d6 slashing damage and 7d6 mental damage} to all creatures in a @Template[emanation|distance:30], with a @Check[reflex|dc:34|basic|options:area-effect]. If a creature fails its save, the threads awaken the mindscape an</p>\n<p>chor within it, affecting it differently based on which anchor that creature used to gain access to the center of the mindscape. (If there is a PC who didn't absorb a mindscape anchor, for instance because there are more than four PCs in the party, then use the anchor of the PC closest to them.)</p>\n<p>The Echo then can't use Spindle's Web for [[/gmr 1d4 #Recharge Spindle's Web]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Lantern</strong> The lantern outlines the creature with searing @UUID[Compendium.pf2e.spells-srd.Item.HRb2doyaLtaoCfi3]{Faerie Fire} that deals @Damage[2d6[persistent,fire]] damage.</li>\n<li><strong>Mirror</strong> The mirror reflects the creature to another location, teleporting them to a clear space within 25 feet of their current location.</li>\n<li><strong>Chalice</strong> The chalice drains life force, granting the Echo temporary HP equal to half the damage dealt.</li>\n<li><strong>Tome</strong> The tome floods the creature's mind with information; the target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</li>\n</ul>"
+                }
+            }
+        },
+        "Thalassophobic Pool": {
+            "prototypeToken": {
+                "name": "Thalassophobic Pool"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Thalassophobic Pool",
+            "disable": "<p>@Check[diplomacy|dc:32|name:Calm the Pool] (master) or @Check[deception|dc:32|name:Calm the Pool] (master) to quell the fear and calm the pool or @Check[intimidation|dc:35|name:Scare the Pool] to give the pool something worse to fear; three successes required.</p>",
+            "hazarddescription": "<p>The pool sucks in creatures that fall into it, making them sink into its endless depths.</p>",
+            "routine": "<p>(3 actions) Water from the chalice increases the depth of the water by 10 feet for each action. Each time this happens, creatures in the pool are pushed 10 feet down and take @Damage[1d6[bludgeoning]] damage. As the pool has no bottom, creatures in it can fall down indefinitely; they must @UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]{Swim} up to avoid drowning, but the water is especially choppy, so the Athletics DC is @Check[athletics|dc:25|traits:action:swim]. The pool never overflows. Each successful check to Disable reduces the pool's actions by 1, and once the pool is completely Disabled, the water becomes still and the Athletics DC to Swim becomes @Check[athletics|dc:10|traits:action:swim].</p>",
+            "reset": "<p>The trap resets once there are no moving creatures in it.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Downpour": {
+                    "name": "Downpour",
+                    "description": "<p><strong>Trigger</strong> A creature falls into the pool</p>\n<hr />\n<p><strong>Effect</strong> More water pours forth from the chalice. Creatures in the pool become @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}, and they can't decrease their clumsy condition so long as they remain in the pool. The trap then rolls initiative.</p>"
+                }
+            }
+        }
+    }
+}
