@@ -63,7 +63,7 @@
             "items": {
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>阿基里达在@Template[line|distance:30]范围喷出绿色的黏稠酸液，造成[[/r (5d6)[acid]]]{5d6酸蚀伤害}（@Check[reflex|dc:20|basic]豁免）。</p>\n<p>阿基里达在[[/gmr 1d4 #Breath Weapon Cooldown]]{1d4轮}后才能再次吐息。</p>"
+                    "description": "<p>阿基里达在@Template[line|distance:30]范围喷出绿色的黏稠酸液，造成@Damage[5d6[acid]|options:area-damage]伤害（@Check[reflex|dc:20|basic|options:area-effect]豁免）。</p>\n<p>阿基里达在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}后才能再次吐息。</p>"
                 },
                 "Frantic Scramble": {
                     "name": "疯狂抓挠 Frantic Scramble",
@@ -117,7 +117,7 @@
             "items": {
                 "Deny Advantage": {
                     "name": "否决优势 Deny Advantage",
-                    "description": "<p>穆格兰在面对等级不超过8级、且对自己@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}、@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}、夹击或使用突然袭击能力的敌人时，不会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                    "description": "<p>穆格兰在面对等级不超过8级、且对自己@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]、@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]、夹击或使用突然袭击能力的敌人时，不会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
                 },
                 "Evasion": {
                     "name": "反射闪避 Evasion",
@@ -125,11 +125,11 @@
                 },
                 "Exploit Blunder": {
                     "name": "利用失误 Exploit Blunder",
-                    "description": "<p><strong>触发</strong> 穆格兰30尺内的生物打击穆格兰时大失败；</p>\n<hr />\n<p><strong>效果</strong> 穆格兰冷笑一声，抢占优势。他使用决斗手枪或手杖枪对触发的生物进行一次远程打击。该生物对穆格兰的攻击（包括本次攻击）@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，直到其下一回合开始。该攻击不计入穆格兰的多重攻击减值，并且他的多重攻击减值也不适用于该次攻击。</p>"
+                    "description": "<p><strong>触发</strong> 穆格兰30尺内的生物打击穆格兰时大失败</p>\n<hr />\n<p><strong>效果</strong> 穆格兰冷笑一声，抢占优势。他使用决斗手枪或手杖枪对触发的生物进行一次远程打击。该生物对穆格兰的攻击（包括本次攻击）@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]，直到其下一回合开始。该攻击不计入穆格兰的多重攻击减值，并且他的多重攻击减值也不适用于该次攻击。</p>"
                 },
                 "Slippery Dodge": {
                     "name": "灵巧闪避 Slippery Dodge",
-                    "description": "<p><strong>触发</strong> 穆格兰被打击命中，但是如果AC有+2环境加值的话攻击会失手；</p>\n<hr />\n<p><strong>效果</strong> 穆格兰的AC获得+2环境加值，导致触发的攻击失手。</p>"
+                    "description": "<p><strong>触发</strong> 穆格兰被打击命中，但是如果AC有+2环境加值的话攻击会失手</p>\n<hr />\n<p><strong>效果</strong> 穆格兰的AC获得+2环境加值，导致触发的攻击失手。</p>"
                 },
                 "Quick Draw": {
                     "name": "即时备战 Quick Draw",
@@ -390,7 +390,7 @@
                 },
                 "Quenchable Death Throes": {
                     "name": "可熄灭的死前挣扎 Quenchable Death Throes",
-                    "description": "<p>当化学丧尸死亡时，它的身体会在@Template[burst|distance:30]区域内爆炸，火焰和碎片对区域内的生物造成[[/r 2d10[bludgeoning]+2d10[fire]]]{2d10钝击和2d10火焰伤害}（@Check[reflex|dc:21|basic]豁免）。如果化学丧尸在死前被水浸泡（例如用一桶水浇它或用@UUID[Compendium.pf2e.spells-srd.Item.jfVCuOpzC6mUrf6f]{水流冲击 Hydraulic Push}之类的法术击中它），化学物质就会被中和，该能力就不会触发。</p>"
+                    "description": "<p>当化学丧尸死亡时，它的身体会在@Template[burst|distance:30]区域内爆炸，火焰和碎片对区域内的生物造成@Damage[2d10[bludgeoning],2d10[fire]|options:area-damage]伤害（@Check[reflex|dc:21|basic|options:area-effect]豁免）。如果化学丧尸在死前被水浸泡（例如用一桶水浇它或用@UUID[Compendium.pf2e.spells-srd.Item.jfVCuOpzC6mUrf6f]之类的法术击中它），化学物质就会被中和，该能力就不会触发。</p>"
                 },
                 "Slow": {
                     "name": "缓慢 Slow",
@@ -398,7 +398,7 @@
                 },
                 "Blinding Sulfur": {
                     "name": "灼目硫烟 Blinding Sulfur",
-                    "description": "<p>硫磺丧尸燃起腐烂躯体内的火焰。被硫磺丧尸第一次打击命中的生物必须进行@Check[fortitude|dc:22]豁免。若失败，该生物@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮，大失败则为1分钟。</p>"
+                    "description": "<p>硫磺丧尸燃起腐烂躯体内的火焰。被硫磺丧尸第一次打击命中的生物必须进行@Check[fortitude|dc:22]豁免。若失败，该生物@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮，大失败则为1分钟。</p>"
                 },
                 "Void Healing": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>",
@@ -423,11 +423,11 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>嵌合体蝎尾狮的蓝龙头喷出@Template[line|distance:60]闪电，对区域内的所有生物造成[[/r (8d6)[electricity]]]{8d6电击伤害}（@Check[reflex|dc:25|basic]豁免）。</p>\n<p>嵌合体蝎尾狮在[[/gmr 1d4 #Breath Weapon Cooldown]]{1d4轮}内无法再次使用吐息。</p>"
+                    "description": "<p>嵌合体蝎尾狮的蓝龙头喷出@Template[line|distance:60]闪电，对区域内的所有生物造成@Damage[8d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:25|basic|options:area-effect]豁免）。</p>\n<p>嵌合体蝎尾狮在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用吐息。</p>"
                 },
                 "Spike Volley": {
                     "name": "钉刺齐射 Spike Volley",
-                    "description": "<p>蝎尾狮能从尾巴上射出两根钉刺，目标可以是两个不同的生物也可以是同一个生物。如果蝎尾狮以两个不同的生物为目标，这些生物的间距必须在20尺以内，并且蝎尾狮分别对他们进行一次打击；该行动计算多重攻击减值时只算作一次，并且在两次打击完成后生效。如果蝎尾狮针对同一目标发射两根钉刺，它只会进行一次打击，如果攻击命中，它只能造成单个钉刺的伤害，但是目标会被钉在原地，获得@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}。目标可以（以一个单动作）尝试一次@Check[athletics|dc:25]检定来拔出钉刺。</p>\n<p>蝎尾狮在24小时内最多能射出12根钉刺。</p>"
+                    "description": "<p>蝎尾狮能从尾巴上射出两根钉刺，目标可以是两个不同的生物也可以是同一个生物。如果蝎尾狮以两个不同的生物为目标，这些生物的间距必须在20尺以内，并且蝎尾狮分别对他们进行一次打击；该行动计算多重攻击减值时只算作一次，并且在两次打击完成后生效。如果蝎尾狮针对同一目标发射两根钉刺，它只会进行一次打击，如果攻击命中，它只能造成单个钉刺的伤害，但是目标会被钉在原地，获得@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]。目标可以（以一个单动作）尝试一次@Check[athletics|dc:25]检定来拔出钉刺。</p>\n<p>蝎尾狮在24小时内最多能射出12根钉刺。</p>"
                 },
                 "Three-Headed Strike": {
                     "name": "三头同击 Three-Headed Strike",
@@ -523,7 +523,7 @@
                 },
                 "Wind-Up": {
                     "name": "上发条 Wind-Up",
-                    "description": "<p>24小时，@Check[thievery|dc:26|traits:action:disable-a-device]，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+                    "description": "<p>24小时，[[/act disable-device dc=26]]{DC26贼活}，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
                 },
                 "Firearms Critical Specialization": {
                     "name": "火器重击专精 Firearms Critical Specialization",
@@ -531,11 +531,11 @@
                 },
                 "Pirate's Feint": {
                     "name": "海盗的虚招 Pirate's Feint",
-                    "description": "<p>发条海盗进行@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]{虚招 Feints}。如果目标变得对发条海盗的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，那么它同样也会对发条海盗的远程攻击措手不及。</p>"
+                    "description": "<p>发条海盗进行@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]。如果目标变得对发条海盗的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]，那么它同样也会对发条海盗的远程攻击措手不及。</p>"
                 },
                 "Refill Tank": {
                     "name": "重新注水 Refill Tank",
-                    "description": "<p><strong>需求</strong> 发条海盗15尺内有一个至少包含100加仑水的水源；</p>\n<hr />\n<p><strong>效果</strong> 发条海盗伸出一根管子，将水吸入，以装满自己的水箱。</p>"
+                    "description": "<p><strong>需求</strong> 发条海盗15尺内有一个至少包含100加仑水的水源</p>\n<hr />\n<p><strong>效果</strong> 发条海盗伸出一根管子，将水吸入，以装满自己的水箱。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -543,11 +543,11 @@
                 },
                 "Water Jet": {
                     "name": "水流喷射 Water Jet",
-                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水；</p>\n<hr />\n<p><strong>效果</strong> 发条海盗射出一条细而猛的水流，对@Template[line|distance:60]上的所有生物和无主物品造成[[/r (10d6)[bludgeoning]]]{10d6钝击伤害}（@Check[fortitude|dc:28|basic]豁免；无主物品豁免自动失败）。豁免失败的生物和物品同样会被击倒并击退5尺（大失败则击退10尺）。这会导致发条海盗的水箱变空。</p>"
+                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水</p>\n<hr />\n<p><strong>效果</strong> 发条海盗射出一条细而猛的水流，对@Template[line|distance:60]上的所有生物和无主物品造成@Damage[10d6[bludgeoning]|options:area-damage]伤害（@Check[fortitude|dc:28|basic|options:area-effect,inflicts:forced-movement]豁免；无主物品豁免自动失败）。豁免失败的生物和物品同样会被击倒并击退5尺（大失败则击退10尺）。这会导致发条海盗的水箱变空。</p>"
                 },
                 "Water Jump": {
                     "name": "水流推进 Water Jump",
-                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水；</p>\n<hr />\n<p><strong>效果</strong> 发条海盗依靠水流喷射让自己在空中推进，跳跃60尺距离。这会导致发条海盗的水箱变空。</p>"
+                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水</p>\n<hr />\n<p><strong>效果</strong> 发条海盗依靠水流喷射让自己在空中推进，跳跃60尺距离。这会导致发条海盗的水箱变空。</p>"
                 }
             },
             "data": {
@@ -566,11 +566,11 @@
                 },
                 "Wind-Up": {
                     "name": "上发条 Wind-Up",
-                    "description": "<p>24小时，@Check[thievery|dc:20|traits:action:disable-a-device]，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+                    "description": "<p>24小时，[[/act disable-device dc=20]]{DC20贼活}，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
                 },
                 "Furnace Belch": {
                     "name": "熔炉喷气 Furnace Belch",
-                    "description": "<p>发条清扫机喷出一阵包含灼热灰烬的烟雾，对@Template[cone|distance:15]范围造成@Damage[6d6[fire]]伤害（@Check[reflex|dc:22|basic]豁免）。发条清扫机在[[/gmr 1d4 #Furnace Belch Recharge]]{1d4轮}内无法再次使用熔炉喷气。</p>"
+                    "description": "<p>发条清扫机喷出一阵包含灼热灰烬的烟雾，对@Template[cone|distance:15]范围造成@Damage[6d6[fire]|options:area-damage]伤害（@Check[reflex|dc:22|basic|options:area-effect]豁免）。发条清扫机在[[/gmr 1d4 #Recharge Furnace Belch]]{1d4轮}内无法再次使用熔炉喷气。</p>"
                 }
             },
             "prototypeToken": {
@@ -663,7 +663,7 @@
             "items": {
                 "Wind-Up": {
                     "name": "上发条 Wind-Up",
-                    "description": "<p>24小时，@Check[thievery|dc:24|traits:action:disable-a-device]，待机</p>\n<hr />\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+                    "description": "<p>24小时，[[/act disable-device dc=24]]{DC24贼活}，待机</p>\n<hr />\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
                 },
                 "Integrated Weapons": {
                     "name": "内置武器 Integrated Weapons",
@@ -715,7 +715,7 @@
             "items": {
                 "Wind-Up": {
                     "name": "上发条 Wind-Up",
-                    "description": "<p>48小时, @Check[thievery|dc:14|traits:action:disable-a-device]检定，待机</p>\n<hr />\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+                    "description": "<p>48小时，[[/act disable-device dc=14]]{DC14贼活}检定，待机</p>\n<hr />\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
                 },
                 "Salvage Ammunition": {
                     "name": "捡拾弹药 Salvage Ammunition",
@@ -801,7 +801,7 @@
                 },
                 "Troop Defenses": {
                     "name": "部队防御 Troop Defenses",
-                    "description": "<p><strong>阙值</strong> 160 (12方格), 80 (8方格)</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
+                    "description": "<p><strong>阙值</strong> 160（12方格），80（8方格）</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.TroopDefenses]</p>"
                 },
                 "Grave Tide": {
                     "name": "亡灵之潮 Grave Tide",
@@ -809,7 +809,7 @@
                 },
                 "Shambling Onslaught": {
                     "name": "蹒跚猛攻 Shambling Onslaught",
-                    "description": "<p><span class=\"action-glyph\">1</span> 到 <span class=\"action-glyph\">2</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 蹒跚丧尸大肆攻击在它们占据的格子内或5尺内的敌人（@Check[reflex|dc:25|basic]豁免）。伤害取决于动作数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(3d6+9)[bludgeoning]]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+13)[bludgeoning]]伤害</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span>到<span class=\"action-glyph\">2</span></p>\n<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 蹒跚丧尸大肆攻击在它们占据的格子内或5尺内的敌人（@Check[reflex|dc:25|basic|options:area-effect]豁免）。伤害取决于动作数量。</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(3d6+9)[bludgeoning]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(3d8+13)[bludgeoning]|options:area-damage]伤害</p>"
                 },
                 "Troop Movement": {
                     "name": "部队移动 Troop Movement",
@@ -991,7 +991,7 @@
                 },
                 "Gallop": {
                     "name": "疾驰 Gallop",
-                    "description": "<p><strong>需求</strong> 囚魂战甲处于四足形态；</p>\n<hr />\n<p><strong>效果</strong> 囚魂战甲行走两次。它在这两次行走中速度有+10尺环境加值。</p>"
+                    "description": "<p><strong>需求</strong> 囚魂战甲处于四足形态</p>\n<hr />\n<p><strong>效果</strong> 囚魂战甲行走两次。它在这两次行走中速度有+10尺环境加值。</p>"
                 },
                 "Shift Form": {
                     "name": "切换形态 Shift Form",
@@ -999,7 +999,7 @@
                 },
                 "Smog Cloud": {
                     "name": "雾霾 Smog Cloud",
-                    "description": "<p>囚魂战甲在@Template[emanation|distance:10]范围内释放出一团雾霾。雾霾持续存在3 轮，但不会跟随囚魂战甲一起移动。雾霾中的所有人生物都获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{隐蔽 Concealed}。在雾霾中开始回合的生物必须尝试@Check[fortitude|dc:18]豁免（必须呼吸并且没有屏住呼吸的生物在豁免中有-2减值）。</p>\n<hr />\n<p><strong>大成功</strong> 没有效果并且临时免疫1小时。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>大失败</strong> 生物陷入恶心2和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>"
+                    "description": "<p>囚魂战甲在@Template[emanation|distance:10]范围内释放出一团雾霾。雾霾持续存在3轮，但不会跟随囚魂战甲一起移动。雾霾中的所有人生物都获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]。在雾霾中开始回合的生物必须尝试@Check[fortitude|dc:18]豁免（必须呼吸并且没有屏住呼吸的生物在豁免中有-2减值）。</p>\n<hr />\n<p><strong>大成功</strong> 没有效果并且临时免疫1小时。</p>\n<p><strong>成功</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>\n<p><strong>大失败</strong> 生物陷入恶心2和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。</p>"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -1038,7 +1038,7 @@
         },
         "Disgorged Zombie": {
             "name": "被吐出的丧尸 Disgorged Zombie",
-            "hp": "闪电充能, 虚能治疗",
+            "hp": "闪电充能，虚能治疗",
             "publicNotes": "<p>电激丧尸是丑陋的不死生物，全身被大量螺栓和电线复盖。大部分电激丧尸背后都有两个大线圈，用来吸收和投射电能。如果不加控制的话，电激丧尸通常会游荡到很远的地方，寻找发明家的实验室或闪电风暴来获取能量。在紧要关头，生物体内的自然电流也可以满足他们的需求。</p>",
             "blurb": "变体带电丧尸",
             "items": {
@@ -1077,7 +1077,7 @@
             "items": {
                 "Deny Advantage": {
                     "name": "否决优势 Deny Advantage",
-                    "description": "<p>帮派头目面对7级或7级以下的、且@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}、@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}、进行夹击或使用突袭打击的生物时，不会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}状态。</p>"
+                    "description": "<p>帮派头目面对7级或7级以下的、且@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]、@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]、进行夹击或使用突袭打击的生物时，不会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]状态。</p>"
                 },
                 "Evasion": {
                     "name": "反射闪避 Evasion",
@@ -1089,7 +1089,7 @@
                 },
                 "Surprise Attack": {
                     "name": "突袭打击 Surprise Attack",
-                    "description": "<p>在战斗的第一轮中，如果帮派头目以欺骗或隐秘进行先攻检定，尚未行动的生物都会对帮派头目@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                    "description": "<p>在战斗的第一轮中，如果帮派头目以欺骗或隐秘进行先攻检定，尚未行动的生物都会对帮派头目@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
                 },
                 "Brutal Rally": {
                     "name": "残忍激励 Brutal Rally",
@@ -1097,11 +1097,11 @@
                 },
                 "Gang Up": {
                     "name": "伙同帮众 Gang Up",
-                    "description": "<p>任何敌人如果同时位于帮派首领和其盟友的近战触及范围内，都会视同被夹击，对帮派首领的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                    "description": "<p>任何敌人如果同时位于帮派首领和其盟友的近战触及范围内，都会视同被夹击，对帮派首领的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
                 },
                 "Quick Draw": {
                     "name": "即时备战 Quick Draw",
-                    "description": "<p>帮派头目能以一个@UUID[Compendium.pf2e.actionspf2e.Item.pvQ5rY2zrtPI614F]{交互 Interacts}动作拔出武器并进行一次打击。</p>"
+                    "description": "<p>帮派头目能以一个@UUID[Compendium.pf2e.actionspf2e.Item.pvQ5rY2zrtPI614F]动作拔出武器并进行一次打击。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -1136,9 +1136,9 @@
         },
         "Falling Portcullis Trap": {
             "name": "吊闸陷阱 Falling Portcullis Trap",
-            "disable": "<p>@Check[thievery|dc:27|traits:action:disable-a-device](专家)解除压力板，@Check[athletics|dc:27]或@Check[engineering-lore|dc:27]卡住铁闸门的下落轨道</p>",
+            "disable": "<p>@Check[thievery|dc:27|traits:action:disable-a-device]（专家）解除压力板，@Check[athletics|dc:27]或@Check[engineering-lore|dc:27]卡住铁闸门的下落轨道</p>",
             "hazarddescription": "<p>当压力板被触发时，铁栅栏从上方落下。</p>",
-            "stealthdetails": "<p>(专家)注意到铁吊闸下落的凹槽；@Check[perception|dc:28|traits:action:seek](专家)注意到地面上突起的压力板。</p>",
+            "stealthdetails": "<p>（专家）注意到铁吊闸下落的凹槽；@Check[perception|dc:28|traits:action:seek]（专家）注意到地面上突起的压力板。</p>",
             "items": {
                 "Slam Shut": {
                     "name": "猛然关门 Slam Shut",
@@ -1204,7 +1204,7 @@
             "items": {
                 "Shot of Opportunity": {
                     "name": "借机射击 Shot of Opportunity",
-                    "description": "<p><strong>需求</strong> 镀金枪手手中有一把已装填的火器</p>\n<p><strong>触发</strong> 一个30尺内的生物使用操作动作、移动动作或进行远程攻击；</p>\n<hr />\n<p><strong>效果</strong> 镀金枪手对触发的生物精心过一次远程打击。如果攻击造成重击，并且触发的动作为操作动作，镀金枪手能打断该动作。此打击不计算镀金枪手的多重攻击减值，并且多重攻击减值也不适用于此打击。</p>"
+                    "description": "<p><strong>需求</strong> 镀金枪手手中有一把已装填的火器</p>\n<p><strong>触发</strong> 一个30尺内的生物使用操作动作、移动动作或进行远程攻击</p>\n<hr />\n<p><strong>效果</strong> 镀金枪手对触发的生物精心过一次远程打击。如果攻击造成重击，并且触发的动作为操作动作，镀金枪手能打断该动作。此打击不计算镀金枪手的多重攻击减值，并且多重攻击减值也不适用于此打击。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -1264,15 +1264,15 @@
                 },
                 "Wind-Up": {
                     "name": "上发条 Wind-Up",
-                    "description": "<p>24小时，@Check[thievery|dc:26|traits:action:disable-a-device]，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+                    "description": "<p>24小时，[[/act disable-device dc=26]]{DC26贼活}，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
                 },
                 "Spell Reflection": {
                     "name": "法术反射 Spell Reflection",
-                    "description": "<p><strong>触发</strong> 玻璃海盗被一个法术作为目标；</p>\n<hr />\n<p><strong>效果</strong> 玻璃海盗调整它的反射性魔法表面，将魔法反射给施法者。它尝试反制法术，但是进行一次运动检定。如果成功反制，法术被反弹给施法者。</p>"
+                    "description": "<p><strong>触发</strong> 玻璃海盗被一个法术作为目标</p>\n<hr />\n<p><strong>效果</strong> 玻璃海盗调整它的反射性魔法表面，将魔法反射给施法者。它尝试反制法术，但是进行一次运动检定。如果成功反制，法术被反弹给施法者。</p>"
                 },
                 "Vulnerable to Shatter": {
                     "name": "法术弱点-粉碎音波 Vulnerable to Shatter",
-                    "description": "<p>玻璃海盗会受到@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]{粉碎音波 Shatter}法术影响，就像无主物品那样。</p>"
+                    "description": "<p>玻璃海盗会受到@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]法术影响，就像无主物品那样。</p>"
                 },
                 "Firearms Critical Specialization": {
                     "name": "火器重击专精 Firearms Critical Specialization",
@@ -1280,11 +1280,11 @@
                 },
                 "Pirate's Feint": {
                     "name": "海盗的虚招 Pirate's Feint",
-                    "description": "<p>发条海盗进行@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]{虚招 Feints}。如果目标变得对发条海盗的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}，那么它同样也会对发条海盗的远程攻击措手不及。</p>"
+                    "description": "<p>发条海盗进行@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]。如果目标变得对发条海盗的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]，那么它同样也会对发条海盗的远程攻击措手不及。</p>"
                 },
                 "Refill Tank": {
                     "name": "重新注水 Refill Tank",
-                    "description": "<p><strong>需求</strong> 发条海盗15尺内有一个至少包含100加仑水的水源；</p>\n<hr />\n<p><strong>效果</strong> 发条海盗伸出一根管子，将水吸入，以装满自己的水箱。</p>"
+                    "description": "<p><strong>需求</strong> 发条海盗15尺内有一个至少包含100加仑水的水源</p>\n<hr />\n<p><strong>效果</strong> 发条海盗伸出一根管子，将水吸入，以装满自己的水箱。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -1292,11 +1292,11 @@
                 },
                 "Water Jet": {
                     "name": "水流喷射 Water Jet",
-                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水；</p>\n<hr />\n<p><strong>效果</strong> 发条海盗射出一条细而猛的水流，对@Template[line|distance:60]上的所有生物和无主物品造成[[/r (10d6)[bludgeoning]]]{10d6钝击伤害}（@Check[fortitude|dc:28|basic]豁免；无主物品豁免自动失败）。豁免失败的生物和物品同样会被击倒并击退5尺（大失败则击退10尺）。这会导致发条海盗的水箱变空。</p>"
+                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水</p>\n<hr />\n<p><strong>效果</strong> 发条海盗射出一条细而猛的水流，对@Template[line|distance:60]上的所有生物和无主物品造成@Damage[10d6[bludgeoning]|options:area-damage]伤害（@Check[fortitude|dc:28|basic|options:area-effect,inflicts:forced-movement]豁免；无主物品豁免自动失败）。豁免失败的生物和物品同样会被击倒并击退5尺（大失败则击退10尺）。这会导致发条海盗的水箱变空。</p>"
                 },
                 "Water Jump": {
                     "name": "水流推进 Water Jump",
-                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水；</p>\n<hr />\n<p><strong>效果</strong> 发条海盗依靠水流喷射让自己在空中推进，跳跃60尺距离。这会导致发条海盗的水箱变空。</p>"
+                    "description": "<p><strong>需求</strong> 发条海盗的水箱装满水</p>\n<hr />\n<p><strong>效果</strong> 发条海盗依靠水流喷射让自己在空中推进，跳跃60尺距离。这会导致发条海盗的水箱变空。</p>"
                 }
             },
             "prototypeToken": {
@@ -1312,7 +1312,7 @@
             "items": {
                 "Wind-Up": {
                     "name": "上发条 Wind-Up",
-                    "description": "<p>24小时，@Check[thievery|dc:29|traits:action:disable-a-device]，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
+                    "description": "<p>24小时，[[/act disable-device dc=19]]{DC19贼活}，待机</p>\n<p>要让发条机械运转，必须由另一个生物用一把独特的钥匙给它上发条。这需要1分钟时间。一旦上紧发条，它们能在列出的时间内活动，通常为24小时，时间耗尽之后它们就无法察觉周围的环境且无法行动，直到再次被上紧发条。一些发条机械的能力在使用时需要以减少活动时间为代价。它们消耗的活动时间不能超过当前剩余的活动时间，一旦活动时间为0，它们就会立即关机。如果不清楚发条机械上一次上发条是什么时候，大多数发条机械的管理员都会在早上8点上发条。</p>\n<p>有些发条机械在上发条能力中列出了“待机”条目，它们可以通过一个3动作行动进入待机模式。在待机模式下，它的活动时间不会减少，但它可以感知周围环境（察觉检定有-2减值）。它无法行动，只有一个例外：当它感知到一个生物时，能以一个反应动作退出待机模式（并且如果状况合适，则进行先攻检定）。</p>\n<p>一个生物可以尝试对上了发条的发条机械进行解除装置，解除DC在上发条能力中列出。每次成功的尝试都能减少发条机械1小时活动时间。这对于处于待机模式中的发条机械也能正常生效。</p>"
                 },
                 "Spell Reflection": {
                     "name": "法术反弹 Spell Reflection",
@@ -1320,7 +1320,7 @@
                 },
                 "Vulnerable to Shatter": {
                     "name": "法术弱点-粉碎音波 Vulnerable to Shatter",
-                    "description": "<p>玻璃大象可以像无主的物品那样受到@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]{粉碎音波 Shatter}法术的影响。</p>"
+                    "description": "<p>玻璃大象可以像无主的物品那样受到@UUID[Compendium.pf2e.spells-srd.Item.1xbFBQDRs0hT5xZ9]法术的影响。</p>"
                 },
                 "Dual Tusks": {
                     "name": "双牙戳刺 Dual Tusks",
@@ -1332,7 +1332,7 @@
                 },
                 "Grabbing Trunk": {
                     "name": "鼻卷 Grabbing Trunk",
-                    "description": "<p>体型不超过中型的生物，被玻璃大象的象鼻攻击命中后会被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}。大象可以带着被擒抱的生物一起移动。</p>"
+                    "description": "<p>体型不超过中型的生物，被玻璃大象的象鼻攻击命中后会@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]。大象可以带着被擒抱的生物一起移动。</p>"
                 }
             },
             "prototypeToken": {
@@ -1353,11 +1353,11 @@
                 },
                 "Blinding Sand": {
                     "name": "迷眼沙尘 Blinding Sand",
-                    "description": "<p>当黄沙哨兵以拳击打击造成重击时，目标还会陷入@Compendium[pf2e.conditionitems.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮。</p>"
+                    "description": "<p>当黄沙哨兵以拳击打击造成重击时，目标还会陷入@Compendium[pf2e.conditionitems.XgEqL1kFApUbl5Z2]1轮。</p>"
                 },
                 "Earth Glide": {
                     "name": "潜地 Earth Glide",
-                    "description": "<p>黄沙哨兵可以在任何泥土或岩石中钻洞。当它这样做时，它以@Compendium[pf2e.actionspf2e.H6v1VgowHaKHnVlG]{掘地 Burrow}速度满速移动，且不留下隧道或任何它经过的痕迹。</p>"
+                    "description": "<p>黄沙哨兵可以在任何泥土或岩石中钻洞。当它这样做时，它以@Compendium[pf2e.actionspf2e.H6v1VgowHaKHnVlG]速度满速移动，且不留下隧道或任何它经过的痕迹。</p>"
                 },
                 "Tremorsense 60 feet": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>",
@@ -1515,7 +1515,7 @@
             "items": {
                 "Deny Advantage": {
                     "name": "否决优势 Deny Advantage",
-                    "description": "<p>帮派头目面对7级或7级以下的、且@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}、@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}、进行夹击或使用突袭打击的生物时，不会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}状态。</p>"
+                    "description": "<p>帮派头目面对7级或7级以下的、且@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]、@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]、进行夹击或使用突袭打击的生物时，不会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]状态。</p>"
                 },
                 "Evasion": {
                     "name": "反射闪避 Evasion",
@@ -1523,11 +1523,11 @@
                 },
                 "Nimble Dodge": {
                     "name": "灵巧躲避 Nimble Dodge",
-                    "description": "<p data-visibility=\"gm\"><strong>触发</strong> 帮派头目是近战或远程攻击的目标，且帮派头目可以看见攻击者；</p>\n<hr />\n<p><strong>效果</strong> 帮派头目对触发条件的攻击，在AC上获得+2环境加值。</p>"
+                    "description": "<p data-visibility=\"gm\"><strong>触发</strong> 帮派头目是近战或远程攻击的目标，且帮派头目可以看见攻击者</p>\n<hr />\n<p><strong>效果</strong> 帮派头目对触发条件的攻击，在AC上获得+2环境加值。</p>"
                 },
                 "Surprise Attack": {
                     "name": "突袭打击 Surprise Attack",
-                    "description": "<p>在战斗的第一轮中，如果帮派头目以欺骗或隐秘进行先攻检定，尚未行动的生物都会对帮派头目@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                    "description": "<p>在战斗的第一轮中，如果帮派头目以欺骗或隐秘进行先攻检定，尚未行动的生物都会对帮派头目@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
                 },
                 "Brutal Rally": {
                     "name": "残忍激励 Brutal Rally",
@@ -1535,11 +1535,11 @@
                 },
                 "Gang Up": {
                     "name": "伙同帮众 Gang Up",
-                    "description": "<p>任何敌人如果同时位于帮派首领和其盟友的近战触及范围内，都会视同被夹击，对帮派首领的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}。</p>"
+                    "description": "<p>任何敌人如果同时位于帮派首领和其盟友的近战触及范围内，都会视同被夹击，对帮派首领的近战攻击@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
                 },
                 "Quick Draw": {
                     "name": "即时备战 Quick Draw",
-                    "description": "<p>帮派头目能以一个@UUID[Compendium.pf2e.actionspf2e.Item.pvQ5rY2zrtPI614F]{交互 Interacts}动作拔出武器并进行一次打击。</p>"
+                    "description": "<p>帮派头目能以一个@UUID[Compendium.pf2e.actionspf2e.Item.pvQ5rY2zrtPI614F]动作拔出武器并进行一次打击。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -1605,15 +1605,15 @@
             "items": {
                 "Constrict": {
                     "name": "紧勒 Constrict",
-                    "description": "<p>@Damage[(1d8+8)[bludgeoning]]{1d8+8钝击} @Check[fortitude|dc:22|basic]</p>\n<hr />\n<p><em>注意: Paizo并未提供此能力的DC。此处的DC是根据GMG设置的按生物等级计算的适中DC。</em></p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
+                    "description": "<p>@Damage[(1d8+8)[bludgeoning]]，@Check[fortitude|dc:22|basic]</p>\n<hr />\n<p><em>注意: Paizo并未提供此能力的DC。此处的DC是根据GMG设置的按生物等级计算的适中DC。</em></p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
                 },
                 "I Venom": {
                     "name": "“我”之毒液 I Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:25]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（1轮）</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]伤害，力竭1和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}（1轮）</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和措手不及（1轮）</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:25]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（1轮）</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]伤害，力竭1和@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]（1轮）</p>\n<p><strong>阶段3</strong> @Damage[2d6[poison]]伤害、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和措手不及（1轮）</p>"
                 },
                 "Writhing Arms": {
                     "name": "翻腾触手 Writhing Arms",
-                    "description": "<p>“我”用不同的触手最多进行四次打击，每次针对不同目标。每次攻击计算它的多重攻击减值，但多重攻击减值在所有攻击都结束后才增加。如果“我”随后使用@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{擒获 Grab}动作，它能擒获任意数量的被翻腾触手击中的生物。</p>"
+                    "description": "<p>“我”用不同的触手最多进行四次打击，每次针对不同目标。每次攻击计算它的多重攻击减值，但多重攻击减值在所有攻击都结束后才增加。如果“我”随后使用@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]动作，它能擒获任意数量的被翻腾触手击中的生物。</p>"
                 },
                 "Tremorsense (Imprecise) 30 feet": {
                     "name": "Tremorsense (Imprecise) 30 feet",
@@ -1775,15 +1775,15 @@
         },
         "Lonely Machine Spirit": {
             "name": "孤单的机魂 Lonely Machine Spirit",
-            "disable": "<p>@Check[religion|dc:22|name:Eject the animating spirit|traits:hazard,haunt,complex](受训)或@Check[engineering|dc:20|name:Eject the animating spirit|traits:hazard,haunt,complex]工程学识(受训)放逐炼金引擎中的机魂。作为技能检定的一部分，如果生物说出这艘船的名字“鹰身女妖之吻”，则有+2环境加值。或如果生物说出船长“菲拉·温德斯洛”的名字，则有+4环境加值。作祟会一直保持活动，除非机魂被放逐，或作祟被摧毁，或30尺内没有任何活物。</p>",
+            "disable": "<p>@Check[religion|dc:22|name:Eject the animating spirit|traits:hazard,haunt,complex]（受训）或@Check[engineering|dc:20|name:Eject the animating spirit|traits:hazard,haunt,complex]工程学识（受训）放逐炼金引擎中的机魂。作为技能检定的一部分，如果生物说出这艘船的名字“鹰身女妖之吻”，则有+2环境加值。或如果生物说出船长“菲拉·温德斯洛”的名字，则有+4环境加值。作祟会一直保持活动，除非机魂被放逐，或作祟被摧毁，或30尺内没有任何活物。</p>",
             "hazarddescription": "<p>炼金术引擎喷出幽灵般的烟雾，发动机发出刺耳的齿轮摩擦声，仿佛活过来一般。</p>",
             "reset": "<p>作祟停止活动，并在1小时后重置。</p>",
-            "routine": "<p>(2动作)孤单的机魂使用喷烟能力，或对30尺内的两个生物进行红热齿轮打击。</p>",
-            "stealthdetails": "<p>(受训)</p>",
+            "routine": "<p>（2动作）孤单的机魂使用喷烟能力，或对30尺内的两个生物进行红热齿轮打击。</p>",
+            "stealthdetails": "<p>（受训）</p>",
             "items": {
                 "Painful Whistle": {
                     "name": "痛苦汽笛 Painful Whistle",
-                    "description": "<p><strong>触发</strong> 一个活物接近引擎10尺范围内（在地图上以T标出）；</p>\n<hr />\n<p><strong>效果</strong> 引擎发出一阵响亮的汽笛声，30尺内所有生物受到@Damage[2d6[sonic]]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（@Check[fortitude|dc:20|basic|traits:hazard,haunt,complex]豁免，成功不受震慑）。然后孤单的机魂投掷先攻。</p>"
+                    "description": "<p><strong>触发</strong> 一个活物接近引擎10尺范围内（在地图上以T标出）</p>\n<hr />\n<p><strong>效果</strong> 引擎发出一阵响亮的汽笛声，30尺内所有生物受到@Damage[2d6[sonic]]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（@Check[fortitude|dc:20|basic|traits:hazard,haunt,complex]豁免，成功不受震慑）。然后孤单的机魂投掷先攻。</p>"
                 },
                 "Belch Smoke": {
                     "name": "喷烟 Belch Smoke",
@@ -1808,7 +1808,7 @@
             "items": {
                 "Explode": {
                     "name": "爆炸 Explode",
-                    "description": "<p><strong>触发</strong> 一个生物踩上玻璃瓶或玻璃瓶破损；</p>\n<hr />\n<p><strong>效果</strong> 玻璃瓶破损，对所在空间内的所有生物造成[[/r (2d8)[fire]]]{2d8火焰伤害}，外加[[/r (2)[persistent,fire]]]持续火焰伤害和[[/r (2)[splash,fire]]]{2火焰溅射伤害}（@Check[reflex|dc:18|basic|traits:hazard,mechanical,trap]豁免）。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物踩上玻璃瓶或玻璃瓶破损</p>\n<hr />\n<p><strong>效果</strong> 玻璃瓶破损，对所在空间内的所有生物造成@Damage[2d8[fire],2[persistent,fire],(2[splash])[fire]]伤害（@Check[reflex|dc:18|basic|traits:hazard,mechanical,trap]豁免）。</p>"
                 }
             },
             "prototypeToken": {
@@ -2037,7 +2037,7 @@
             "items": {
                 "Blaze of Glory": {
                     "name": "烈火闪光 Blaze of Glory",
-                    "description": "<p><strong>触发</strong> 爆桶朋克受到火焰伤害；</p>\n<p>爆桶朋克对造成火焰伤害的生物@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]。此次挫败士气失去听觉特征，获得视觉特征，并且即便目标生物听不懂爆桶朋克的语言，爆桶朋克也不会遭受减值。即便触发的伤害被减少至0，爆桶朋克依然能使用此反应动作。</p>"
+                    "description": "<p><strong>触发</strong> 爆桶朋克受到火焰伤害</p>\n<p>爆桶朋克对造成火焰伤害的生物@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]。此次挫败士气失去听觉特征，获得视觉特征，并且即便目标生物听不懂爆桶朋克的语言，爆桶朋克也不会遭受减值。即便触发的伤害被减少至0，爆桶朋克依然能使用此反应动作。</p>"
                 },
                 "Bombing Run": {
                     "name": "边跑边炸 Bombing Run",
@@ -2190,15 +2190,15 @@
         },
         "Repeater Crossbow Trap": {
             "name": "连发弩陷阱 Repeater Crossbow Trap",
-            "disable": "<p>@Check[thievery|dc:20|name:Disengage the reloading mechanism|traits:hazard,complex,mechanical,trap](专家)或@Check[crafting|dc:20|name:Disengage the reloading mechanism|traits:hazard,complex,mechanical,trap](受训)拆除装填机构；陷阱还能通过<strong>F2</strong>区域的开关关闭。</p>",
+            "disable": "<p>@Check[thievery|dc:20|name:Disengage the reloading mechanism|traits:hazard,complex,mechanical,trap]（专家）或@Check[crafting|dc:20|name:Disengage the reloading mechanism|traits:hazard,complex,mechanical,trap]（受训）拆除装填机构；陷阱还能通过<strong>F2</strong>区域的开关关闭。</p>",
             "hazarddescription": "<p>走廊地板上的压力板被踩到，导致天花板上有一片镶板垂了下来。装在钢盒里的<em>+1强击重弩</em>会向走廊里的任何生物发射弩矢。</p>",
             "reset": "<p>陷阱在射完5发弹药之后停止；之后它必须靠人工重新装填。</p>",
-            "routine": "<p>(3动作)连发弩陷阱用两个动作装填，然后打击走廊里的一个随机生物。</p>",
-            "stealthdetails": "<p>(受训)</p>",
+            "routine": "<p>（3动作）连发弩陷阱用两个动作装填，然后打击走廊里的一个随机生物。</p>",
+            "stealthdetails": "<p>（受训）</p>",
             "items": {
                 "Auto-Bolter": {
                     "name": "自动弩机 Auto-Bolter",
-                    "description": "<p><strong>触发</strong> 一个至少重25磅的生物或物品压走廊南部末端的压力板上；</p>\n<hr />\n<p><strong>效果</strong> 一把装在钢盒子里的<em>+1强击重弩</em>从天花板里伸出来，向走廊上的随机生物开火。然后陷阱投掷先攻。</p>"
+                    "description": "<p><strong>触发</strong> 一个至少重25磅的生物或物品压走廊南部末端的压力板上</p>\n<hr />\n<p><strong>效果</strong> 一把装在钢盒子里的<em>+1强击重弩</em>从天花板里伸出来，向走廊上的随机生物开火。然后陷阱投掷先攻。</p>"
                 }
             },
             "prototypeToken": {
@@ -2216,7 +2216,7 @@
             "items": {
                 "Dirt Breath": {
                     "name": "泥球吐息 Dirt Breath",
-                    "description": "<p>草原龙兽吐出一个泥球，然后爆炸成岩石和泥浆雨。此攻击射程30尺，爆炸为@Template[burst|distance:5]范围。爆发范围内的生物受到[[/r (3d6)[bludgeoning]]]{3d6钝击伤害}（@Check[reflex|dc:16|basic]豁免）。区域内的植物类生物如果成功豁免则不受伤害；无论豁免结果如何，每天一次，植物类生物可以在区域内花10分钟时间吸收泥土里的养分，恢复[[/r 1d8 #Hit points]]生命值。草原龙兽在[[/gmr 1d6 #Breath weapon cooldown]]{1d6轮}内无法再次使用泥球吐息。</p>"
+                    "description": "<p>草原龙兽吐出一个泥球，然后爆炸成岩石和泥浆雨。此攻击射程30尺，爆炸为@Template[burst|distance:5]范围。爆发范围内的生物受到@Damage[3d6[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:16|basic|options:area-effect]豁免）。区域内的植物类生物如果成功豁免则不受伤害；无论豁免结果如何，每天一次，植物类生物可以在区域内花10分钟时间吸收泥土里的养分，恢复@Damage[1d8[healing]]生命值。草原龙兽在[[/gmr 1d6 #Recharge Dirt Breath]]{1d6轮}内无法再次使用泥球吐息。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -2228,7 +2228,7 @@
                 },
                 "Whipping Wing": {
                     "name": "翅膀抽打 Whipping Wing",
-                    "description": "<p>萝克丝对触及范围内的敌人进行一次打击。如果造成重击，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}，直到目标的下个回合结束。</p>"
+                    "description": "<p>萝克丝对触及范围内的敌人进行一次打击。如果造成重击，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]，直到目标的下个回合结束。</p>"
                 },
                 "Tremorsense (Imprecise) 30 feet": {
                     "name": "Tremorsense (Imprecise) 30 feet",
@@ -2252,7 +2252,7 @@
                 },
                 "Corrode Weapon": {
                     "name": "侵蚀武器 Corrode Weapon",
-                    "description": "<p><strong>触发</strong> 锈蚀泥怪被一把近战武器命中；</p>\n<hr />\n<p><strong>效果</strong> 锈蚀泥怪对该物品造成@Damage[2d6[acid]]伤害，无视其硬度。</p>"
+                    "description": "<p><strong>触发</strong> 锈蚀泥怪被一把近战武器命中</p>\n<hr />\n<p><strong>效果</strong> 锈蚀泥怪对该物品造成@Damage[2d6[acid]]伤害，无视其硬度。</p>"
                 },
                 "Metal Resistance": {
                     "name": "金属抗力 Metal Resistance",
@@ -2264,7 +2264,7 @@
                 },
                 "Tetanus": {
                     "name": "破伤风 Tetanus",
-                    "description": "<p>破伤风是一种通过伤口创面引起的感染，它会造成僵硬和肌肉痉挛，其强度甚至可能导致骨折，并让患者最终死亡。</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:14]</p>\n<p><strong>潜伏期</strong> 10天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1} （1周）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}并且无法说话（1天）</p>\n<p><strong>阶段3</strong> 因肌肉痉挛而陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}（1天）</p>\n<p><strong>阶段4</strong> 死亡</p>"
+                    "description": "<p>破伤风是一种通过伤口创面引起的感染，它会造成僵硬和肌肉痉挛，其强度甚至可能导致骨折，并让患者最终死亡。</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:14]</p>\n<p><strong>潜伏期</strong> 10天</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1} （1周）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}并且无法说话（1天）</p>\n<p><strong>阶段3</strong> 因肌肉痉挛而陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]（1天）</p>\n<p><strong>阶段4</strong> 死亡</p>"
                 }
             },
             "prototypeToken": {
@@ -2280,11 +2280,11 @@
             "items": {
                 "Quickest Draw": {
                     "name": "最速备战 Quickest Draw",
-                    "description": "<p><strong>需求</strong> 沙科萨意识到有至少一个敌人存在，且她没有@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard}；</p>\n<p><strong>触发</strong> 沙科萨投掷先攻；</p>\n<hr />\n<p><strong>效果</strong> 沙科萨对她意识到的敌人进行两次近战打击，或拔出手枪进行一次远程打击。</p>"
+                    "description": "<p><strong>需求</strong> 沙科萨意识到有至少一个敌人存在，且她没有@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]</p>\n<p><strong>触发</strong> 沙科萨投掷先攻</p>\n<hr />\n<p><strong>效果</strong> 沙科萨对她意识到的敌人进行两次近战打击，或拔出手枪进行一次远程打击。</p>"
                 },
                 "Concussive Fist": {
                     "name": "震荡拳 Concussive Fist",
-                    "description": "<p>被沙科萨指虎命中的活物必须尝试@Check[fortitude|dc:23]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响且在接下来的24小时内临时免疫。</p>\n<p><strong>成功</strong> 生物不受影响。</p>\n<p><strong>失败</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1轮。</p>\n<p><strong>大失败</strong> 生物困惑1轮并且@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}。</p>"
+                    "description": "<p>被沙科萨指虎命中的活物必须尝试@Check[fortitude|dc:23]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响且在接下来的24小时内临时免疫。</p>\n<p><strong>成功</strong> 生物不受影响。</p>\n<p><strong>失败</strong> 生物@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]1轮。</p>\n<p><strong>大失败</strong> 生物困惑1轮并且@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
                 },
                 "Golden Bullets": {
                     "name": "镀金子弹 Golden Bullets",
@@ -2296,7 +2296,7 @@
                 },
                 "Reload Trick": {
                     "name": "装填花招 Reload Trick",
-                    "description": "<p><strong>需求</strong> 沙科萨60尺内没有敌人，并且她的决斗手枪已经上膛；</p>\n<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 沙科萨进行两次决斗手枪打击，每次射击完之后都重新装填。</p>"
+                    "description": "<p><strong>需求</strong> 沙科萨60尺内没有敌人，并且她的决斗手枪已经上膛</p>\n<p><strong>频率</strong> 每分钟一次</p>\n<hr />\n<p><strong>效果</strong> 沙科萨进行两次决斗手枪打击，每次射击完之后都重新装填。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -2315,7 +2315,7 @@
             "publicNotes": "<p>吓人石棺最初是由盖布的死灵法师在对抗奈克斯的战争中被创造的，这是一种邪恶的构装体，可以直接从被永远封闭在其核心中的不死木乃伊身上汲取力量。这种死灵术能量浸染了整个构装体，使得它能用石腿奔跑，用活化的触手攻击敌人，并利用被囚禁的木乃伊的心智让自己获取智慧和魔法力量。</p>",
             "items": {
                 "Magic Sense (Imprecise) 30 feet": {
-                    "name": "魔法感知(模糊) 30尺",
+                    "name": "魔法感知（模糊）30尺",
                     "description": "<p>吓人石棺能模糊感官的方式自动探测30尺内的魔法物品和法术效果。</p>"
                 },
                 "Despair": {
@@ -2324,7 +2324,7 @@
                 },
                 "Disgorge Mummy": {
                     "name": "放出木乃伊 Disgorge Mummy",
-                    "description": "<p>如果吓人石棺的因为受到任何伤害（除了命能）导致HP减少至0，它的石棺会破碎，其内部束缚的木乃伊会爬出来。这是一只弱化的@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.E5RDV3n7GnjAspQ5]{木乃伊卫士 Mummy Guardian}；如果木乃伊守卫独自生存1个月，它失去弱化调整。如果吓人石棺的因为受到任何命能伤害导致HP减少至0，它的石棺会破碎，内部的木乃伊也会化为尘土。</p>"
+                    "description": "<p>如果吓人石棺的因为受到任何伤害（除了命能）导致HP减少至0，它的石棺会破碎，其内部束缚的木乃伊会爬出来。这是一只弱化的@UUID[Compendium.pf2e.pathfinder-bestiary.Actor.E5RDV3n7GnjAspQ5]；如果木乃伊守卫独自生存1个月，它失去弱化调整。如果吓人石棺的因为受到任何命能伤害导致HP减少至0，它的石棺会破碎，内部的木乃伊也会化为尘土。</p>"
                 },
                 "Vulnerable to Positive Energy": {
                     "name": "命能易伤 Vulnerable to Positive Energy",
@@ -2352,12 +2352,12 @@
         },
         "Second Kiss Engine": {
             "name": "二度之吻引擎 Second Kiss Engine",
-            "disable": "<p>@Check[thievery|dc:28|name:Disable the engine|traits:action:disable-a-device](专家)解除引擎；或@Check[engineering-lore|dc:26|name:Disengage the drive shaft]卸下引擎的主轴。无论哪种方法，在解除危害的同时都会导致引擎熄火，飞艇失去动力。</p>",
+            "disable": "<p>@Check[thievery|dc:28|name:Disable the engine|traits:action:disable-a-device]（专家）解除引擎；或@Check[engineering-lore|dc:26|name:Disengage the drive shaft]卸下引擎的主轴。无论哪种方法，在解除危害的同时都会导致引擎熄火，飞艇失去动力。</p>",
             "hazarddescription": "<p>暴露在外的发条部件高速旋转。</p>",
             "items": {
                 "Spinning Gears": {
                     "name": "高速齿轮 Spinning Gears",
-                    "description": "<p><strong>触发</strong> 一个生物行走至发动机舱；</p>\n<hr />\n<p><strong>效果</strong> 生物的衣服或四肢被卷进高速旋转的齿轮和主轴中。生物必须尝试@Check[reflex|dc:24]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[(2d8+9)[bludgeoning]]{2d8+9钝击伤害}。</p>\n<p><strong>失败</strong> 生物受到@Damage[(4d8+18)[bludgeoning]]{4d8+18钝击伤害}。</p>\n<p><strong>大失败</strong> 生物的衣服被卷进发条里。生物受到@Damage[(4d8+18)[bludgeoning]]{4d8+18钝击伤害}，并且被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{束缚 Restrained}，直到生物@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC 24）。生物每轮都会受到@Damage[(2d8+9)[bludgeoning]]{2d8+9钝击伤害}，因为高速旋转的转轴不断将生物往里面卷。穿着衣服的生物可以选择脱掉衣服，这会让脱逃自动成功；脱掉的衣服将被摧毁。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物行走至发动机舱</p>\n<hr />\n<p><strong>效果</strong> 生物的衣服或四肢被卷进高速旋转的齿轮和主轴中。生物必须尝试@Check[reflex|dc:24]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到@Damage[(2d8+9)[bludgeoning]]伤害。</p>\n<p><strong>失败</strong> 生物受到@Damage[(4d8+18)[bludgeoning]]伤害。</p>\n<p><strong>大失败</strong> 生物的衣服被卷进发条里。生物受到@Damage[(4d8+18)[bludgeoning]]伤害，并且@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，直到生物[[/act escape dc=24]]{逃脱}。生物每轮都会受到@Damage[(2d8+9)[bludgeoning]]伤害，因为高速旋转的转轴不断将生物往里面卷。穿着衣服的生物可以选择脱掉衣服，这会让脱逃自动成功；脱掉的衣服将被摧毁。</p>"
                 }
             },
             "prototypeToken": {
@@ -2369,7 +2369,7 @@
         },
         "Shock Zombie": {
             "name": "电激丧尸 Shock Zombie",
-            "hp": "闪电充能, 虚能治疗",
+            "hp": "闪电充能，虚能治疗",
             "publicNotes": "<p>电激丧尸是丑陋的不死生物，全身被大量螺栓和电线复盖。大部分电激丧尸背后都有两个大线圈，用来吸收和投射电能。如果不加控制的话，电激丧尸通常会游荡到很远的地方，寻找发明家的实验室或闪电风暴来获取能量。在紧要关头，生物体内的自然电流也可以满足他们的需求。</p>",
             "items": {
                 "Electricity Absorption": {
@@ -2669,19 +2669,19 @@
         },
         "Subduing Gas Chamber": {
             "name": "毒气卧室 Subduing Gas Chamber",
-            "disable": "<p>@Check[thievery|dc:26|name:Disconnect the wire|traits:hazard,complex,mechanical,trap](受训)断开连接配重的电线，防止其下落；或@Check[crafting|dc:20|name:Create a counteragent|traits:hazard,complex,mechanical,trap,alchemical,action:craft]（炼金手艺）制造一种对抗催眠气体的药剂</p>",
+            "disable": "<p>@Check[thievery|dc:26|name:Disconnect the wire|traits:hazard,complex,mechanical,trap]（受训）断开连接配重的电线，防止其下落；或@Check[crafting|dc:20|name:Create a counteragent|traits:hazard,complex,mechanical,trap,alchemical,action:craft]（炼金手艺）制造一种对抗催眠气体的药剂</p>",
             "hazarddescription": "<p>书桌抽屉里的一个机械传感器施放墙壁上的一个配重，把门砰地关上，同时打开床铺下的储罐，让气体充满这个密闭的房间，发出嘶嘶的声音。</p>",
             "reset": "<p>气体必须由人工重新装填。</p>",
-            "routine": "<p>(1动作)每一轮轮到陷阱行动时，陷阱会向房间内注入更多催眠气体。房间内任何需要呼吸的生物都暴露在毒素影邵马的人造人 响下。如果一个生物在第一轮先于陷阱行动，它可以选择屏住呼吸来推迟吸入毒药——在陷阱第一轮之后屏住呼吸没有效果，因为生物肺部的空气已经被毒气污染了。陷阱在气体耗尽之前能工作一分钟，气体在接下来的1分钟内会迅速衰减。打开相邻的房门可以减少气体衰变所需的剩余时间，但也会让该房间内的生物同样暴露在毒气中。</p>",
-            "stealthdetails": "<p>(专家)</p>",
+            "routine": "<p>（1动作）每一轮轮到陷阱行动时，陷阱会向房间内注入更多催眠气体。房间内任何需要呼吸的生物都暴露在毒素影邵马的人造人 响下。如果一个生物在第一轮先于陷阱行动，它可以选择屏住呼吸来推迟吸入毒药——在陷阱第一轮之后屏住呼吸没有效果，因为生物肺部的空气已经被毒气污染了。陷阱在气体耗尽之前能工作一分钟，气体在接下来的1分钟内会迅速衰减。打开相邻的房门可以减少气体衰变所需的剩余时间，但也会让该房间内的生物同样暴露在毒气中。</p>",
+            "stealthdetails": "<p>（专家）</p>",
             "items": {
                 "Slam Door": {
                     "name": "砰然关门 Slam Door",
-                    "description": "<p><strong>触发</strong> 一个生物在没有按住桌子下面施放按钮的情况下打开了书桌抽屉；</p>\n<hr />\n<p><strong>效果</strong> 房间的木门砰的一声关上并上锁，然后陷阱投掷先攻。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物在没有按住桌子下面施放按钮的情况下打开了书桌抽屉</p>\n<hr />\n<p><strong>效果</strong> 房间的木门砰的一声关上并上锁，然后陷阱投掷先攻。</p>"
                 },
                 "Sleeping Gas": {
                     "name": "催眠气体 Sleeping Gas",
-                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:22|traits:hazard,complex,mechanical,trap]</p>\n<p><strong>最大持续时间</strong> 4小时</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（1轮）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{失去意识 Unconscious}，且不能通过察觉检定醒来（1轮）</p>\n<p><strong>阶段3</strong> 失去意识，且不能通过察觉检定醒来 (1小时)</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:22|traits:hazard,complex,mechanical,trap]</p>\n<p><strong>最大持续时间</strong> 4小时</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（1轮）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]，且不能通过察觉检定醒来（1轮）</p>\n<p><strong>阶段3</strong> 失去意识，且不能通过察觉检定醒来（1小时）</p>"
                 }
             },
             "prototypeToken": {
@@ -2810,15 +2810,15 @@
         },
         "Volatile Reagents": {
             "name": "不稳定的试剂 Volatile Reagents",
-            "disable": "<p>Three @Check[acrobatics|dc:20|name:Sort and separate the ingredients|traits:alchemical,hazard,complex,environmental]或@Check[crafting|dc:20|name:Sort and separate the ingredients|traits:alchemical,hazard,complex,environmental]将装有挥发性试剂的瓶子分门别类地放好。</p>",
+            "disable": "<p>三次@Check[acrobatics|dc:20|name:Sort and separate the ingredients|traits:alchemical,hazard,complex,environmental]或@Check[crafting|dc:20|name:Sort and separate the ingredients|traits:alchemical,hazard,complex,environmental]将装有挥发性试剂的瓶子分门别类地放好。</p>",
             "hazarddescription": "<p>药水瓶、蒸馏器具和各种烈性试剂混合在一起时意外产生了剧烈的爆炸。</p>",
             "reset": "<p>实验室里有足够多的材料，在耗尽之前，危害最多能持续1分钟。或者，一旦小滑头缩小到正常大小，危害就会被重置。</p>",
-            "routine": "<p>(1动作)盖特比实验室内一块随机10 尺方格发生爆炸，对区域内的生物和物体造成[[/r 2d6]]伤害(@Check[reflex|dc:18|basic|traits:alchemical,hazard,complex,environmental])。伤害类型每轮随机决定：酸蚀、寒冷、电击、火焰、挥砍或音波。</p>",
-            "stealthdetails": "<p>(受训)</p>",
+            "routine": "<p>（1动作）盖特比实验室内一块随机10 尺方格发生爆炸，对区域内的生物和物体造成[[/r 2d6]]伤害(@Check[reflex|dc:18|basic|traits:alchemical,hazard,complex,environmental])。伤害类型每轮随机决定：酸蚀、寒冷、电击、火焰、挥砍或音波。</p>",
+            "stealthdetails": "<p>（受训）</p>",
             "items": {
                 "Explosive Catalyst": {
                     "name": "爆炸性试剂 Explosive Catalyst",
-                    "description": "<p><strong>触发</strong> 小滑头喝下盖特比的生长液；</p>\n<hr />\n<p><strong>效果</strong> 巨大的蜥蜴在炼金台上横冲直撞，导致试剂混合在一起。然后危害投掷先攻。</p>"
+                    "description": "<p><strong>触发</strong> 小滑头喝下盖特比的生长液</p>\n<hr />\n<p><strong>效果</strong> 巨大的蜥蜴在炼金台上横冲直撞，导致试剂混合在一起。然后危害投掷先攻。</p>"
                 }
             },
             "prototypeToken": {
@@ -2861,7 +2861,7 @@
                 },
                 "Monstrous Yeast": {
                     "name": "可怕酵母 Monstrous Yeast",
-                    "description": "<p>当一个感染可怕酵母的生物受到寒冷伤害时，它可以立即尝试一次新的豁免，并且该次豁免有+2环境加值。该次豁免失败不会推进疾病的阶段；</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:16]</p>\n<p><strong>潜伏期</strong> 1轮</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{措手不及 Off-Guard} (1小时)</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}和措手不及 (1小时)</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和措手不及（1天）</p>"
+                    "description": "<p>当一个感染可怕酵母的生物受到寒冷伤害时，它可以立即尝试一次新的豁免，并且该次豁免有+2环境加值。该次豁免失败不会推进疾病的阶段</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:16]</p>\n<p><strong>潜伏期</strong> 1轮</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]（1小时）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}和措手不及（1小时）</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和措手不及（1天）</p>"
                 }
             },
             "prototypeToken": {
