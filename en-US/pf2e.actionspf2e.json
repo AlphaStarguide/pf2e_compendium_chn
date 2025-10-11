@@ -13,6 +13,10 @@
             "description": "<p>Your eidolon channels its anger into a furious attack. It makes a melee Strike. This counts as two attacks when calculating your multiple attack penalty. If this Strike hits, your eidolon deals an extra die of weapon damage and gains a +1 circumstance bonus to the damage roll.</p>\n<p>If you're at least 10th level, increase this to two extra dice with a +2 circumstance bonus, and if you're at least 18th level, increase it to three extra dice with a +3 circumstance bonus.</p>",
             "name": "Furious Strike"
         },
+        "Restore the Moment": {
+            "description": "<p><strong>Trigger</strong> Your turn begins</p><hr /><p><strong>Effect</strong> Spend a Mythic Point. Take the same actions in the same order, using the same die roll results to resolve those actions, as you did in the preserved moment, and apply modifiers to those rolls as they currently exist (not as they were when you recorded the loop), but at mythic proficiency. The exact details of how you accomplish your restored actions can change—you need not move in the exact same pattern or distance with a repeated Stride, for example, nor must you make a repeated Strike against the same foe you attacked in the first set of actions, but you do need to use the same type of movement when you Stride, and you do need to use the same type of weapon to Strike. If at any point during your turn you are unable to take the next action in the loop, your turn ends and you become @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. For example, if you restored the above example against the firewyrm in a round where you were fighting an ogre and you weren't able to attempt a Strike with a longsword against the ogre as your second action, you would become stunned 1. Likewise, if at the end of your turn there was nothing for you to try to Climb, you would become stunned 1. You can preserve and restore a Cast a Spell action, but if you don't cast the same spell when you Restore the Moment, you become stunned 1 (you can Cast the Spell at a different rank, though).</p>",
+            "name": "Restore the Moment"
+        },
         "Dazzle Seeker": {
             "description": "<p><strong>Trigger</strong> A creature attempts a flat check to target you due to you being @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} from it</p>\n<hr />\n<p><strong>Effect</strong> You flash your bright scales in the creature's eyes, making it hard for them to pinpoint your exact location. The creature must roll the flat check twice and take the worse result.</p>",
             "name": "Dazzle Seeker"
@@ -261,9 +265,17 @@
             "description": "<p>You spend 1 minute calling for a different animal companion, switching your active companion for another of your animal companions.</p>",
             "name": "Call Companion"
         },
+        "Enter Runewell": {
+            "description": "<p>10 minutes. You and up to 6 willing creatures you're touching are instantly transported into your <em>runewell</em>, regardless of any distance between you and your anima focus.</p>",
+            "name": "Enter Runewell"
+        },
         "Only You and I": {
             "description": "<p>You draw your foe into a fated conflict—one you know you'll win. Choose an enemy within your reach. Until the end of your next turn, that enemy gains a +2 circumstance bonus to attack rolls it makes against you, but it must attempt a @Check[will|against:exemplar] save against your class DC whenever it tries to move away from you, Strike a target other than you, or Cast a Spell that doesn't include you as a target. On a failure, the action or actions related to the failed attempt is disrupted. Whenever the enemy misses you with a Strike while this effect is active, you heal @Damage[(1d8+5)[healing]] Hit Points.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.ZdPLjPFwp9JuVRFf]{Effect: Only You and I}</p>",
             "name": "Only You and I"
+        },
+        "Instant Recovery": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> Spend a Mythic Point. You regain Hit Points equal to your Constitution modifier (minimum 1) × your level and remove the @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} condition. If you're suffering from any recurring affliction such as poison or disease, attempt a saving throw against the affliction at mythic proficiency to see if you reduce the affliction's stage. This saving throw cannot increase your affliction's stage, nor does it change the affliction's maximum duration.</p>",
+            "name": "Instant Recovery"
         },
         "Call on Ancient Blood": {
             "description": "<p><strong>Trigger</strong> You attempt a saving throw against a magical effect, but you haven't rolled yet</p>\n<hr />\n<p>Your ancestors' innate resistance to magic surges before slowly ebbing down. You gain a +1 circumstance bonus to saving throws on the triggering save and other saves against magical effects until the end of this turn.</p>",
@@ -312,6 +324,10 @@
         "Delay": {
             "description": "<p><strong>Trigger</strong> Your turn begins.</p>\n<hr />\n<p>You wait for the right moment to act. The rest of your turn doesn't happen yet. Instead, you're removed from the initiative order. You can return to the initiative order as a free action triggered by the end of any other creature's turn. This permanently changes your initiative to the new position. You can't use reactions until you return to the initiative order. If you Delay an entire round without returning to the initiative order, the actions from the Delayed turn are lost, your initiative doesn't change, and your next turn occurs at your original position in the initiative order.</p>\n<p>When you Delay, any @UUID[Compendium.pf2e.conditionitems.Item.lDVqvLKA6eF3Df60]{Persistent Damage} or other negative effects that normally occur at the start or end of your turn occur immediately when you use the Delay action. Any beneficial effects that would end at any point during your turn also end. The GM might determine that other effects end when you Delay as well. Essentially, you can't Delay to avoid negative consequences that would happen on your turn or to extend beneficial effects that would end on your turn.</p>",
             "name": "Delay"
+        },
+        "Call Warshard Weapon": {
+            "description": "<p><strong>Requirements</strong> You are not holding your warshard weapon, and you have a hand or hands free to be able to wield your warshard weapon</p><hr /><p><strong>Effect</strong> Your warshard weapon teleports into your hand, as long as you and your warshard weapon are on the same planet. At 15th level, you need only be on the same plane as your warshard weapon to call it, and at 18th level, you can call your warshard weapon across any distance. If your warshard weapon is in the possession of a mythic creature that's higher level than you or placed in an area where teleportation magic doesn't function, attempt a @Check[flat|dc:16]. On a success, your warshard weapon still teleports to your hand.</p>",
+            "name": "Call Warshard Weapon"
         },
         "Quick-Tempered": {
             "description": "<p><strong>Trigger</strong> You roll initiative.</p>\n<p><strong>Requirements</strong> You are not @UUID[Compendium.pf2e.conditionitems.Item.D5mg6Tc7Jzrj6ro7]{Encumbered} or wearing heavy armor.</p><hr /><p>So long as you are able to move freely, your fury is instinctive and instantaneous. You @UUID[Compendium.pf2e.actionspf2e.Item.Ah5g9pDwWF9b9VW9]{Rage}.</p>",
@@ -444,6 +460,10 @@
         "Opportunistic Accusation": {
             "description": "<p><strong>Trigger</strong> A demon you're aware of within 30 feet of you suffers from its sin vulnerability or critical fails at a saving throw against a mental effect</p><hr /><p>You make a quick cutting remark against the demon that takes advantage of the fiend's momentary disadvantage. The demon must attempt a @Check[will|against:class] save against your class DC.</p><hr /><p><strong>Critical Success</strong> The demon is unaffected and likely to focus its attention on you in combat from this point forward.</p>\n<p><strong>Success</strong> The demon takes @Damage[2d6[mental]] damage.</p>\n<p><strong>Failure</strong> The demon takes @Damage[4d6[mental]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of its next turn.</p>\n<p><strong>Critical Failure</strong> As failure, but the off-guard condition lasts until the end of the next round. The demon also takes @Damage[2d6[persistent,mental]] damage.</p>",
             "name": "Opportunistic Accusation"
+        },
+        "Share Death's Promises": {
+            "description": "<p><strong>Trigger</strong> Your turn begins</p>\n<p><strong>Requirements</strong> You are gaining a bonus to damage from Let Death Be My Weapon</p><hr /><p><strong>Effect</strong> Spend a Mythic Point. You gain a status bonus to damage equal to double the bonus you're receiving from Let Death Be My Weapon that lasts for 1 minute. During this time, this status bonus doesn't decrease or increase if the value of your doomed, dying, or wounded condition decreases or increases.</p>",
+            "name": "Share Death's Promises"
         },
         "A Challenge for Heroes": {
             "description": "<p>You declare an enemy within 60 feet to be a heroic test. For 1 minute, that enemy deals an additional 10 spirit damage to you with each successful Strike or spell it targets you with.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.pUXV4sks4p9Jc8Wb]{Effect: A Challenge for Heroes (Enemy)}</p>\n<p>Whenever that enemy deals spirit damage to you, each ally who has the enemy in melee reach can attempt a @UUID[Compendium.pf2e.actionspf2e.Item.KAVf7AmRnbCAHrkT]{Reactive Strike} against it, even if the ally doesn't normally have that reaction. If an ally successfully slays the enemy with a Reactive Strike due to this effect, that ally immediately gains temporary Hit Points equal to your level, which persist for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.Fky50BHCHmRTnHas]{Effect: A Challenge for Heroes (Ally)}</p>",
@@ -745,9 +765,17 @@
             "description": "<p>You duck into a safe position or minimize your profile while reloading to make your next attack. Either @UUID[Compendium.pf2e.actionspf2e.Item.ust1jJSCZQUhBZIz]{Take Cover} or attempt to @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide}, then Interact to reload. As normal, you must meet the requirements to Take Cover or Hide; you must be @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, benefiting from cover, or near a feature that allows you to Take Cover, and you need to be benefiting from cover or @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to a creature to Hide from that creature.</p>",
             "name": "Covered Reload"
         },
+        "Sidestep Through Time": {
+            "description": "<p><strong>Trigger</strong> You are about to attempt a Reflex saving throw against an area effect</p><hr /><p><strong>Effect</strong> You slip through time to avoid a dangerous outcome. Teleport up to 10 feet in any direction. If this would take you outside of the area's effect, you don't need to attempt the Reflex save against it. You are then @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} for 1 round.</p>",
+            "name": "Sidestep Through Time"
+        },
         "Trip": {
             "description": "<p><strong>Requirements</strong> You have at least one hand free. Your target can't be more than one size larger than you.</p><hr /><p>You try to knock a creature to the ground. Attempt an [[/act trip]]{Athletics} check against the target's Reflex DC.</p><hr /><p><strong>Critical Success</strong> The target falls, lands @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, and takes @Damage[1d6[bludgeoning]] damage.</p>\n<p><strong>Success</strong> The target falls and lands prone.</p>\n<p><strong>Critical Failure</strong> You lose your balance, fall, and land prone.</p>",
             "name": "Trip"
+        },
+        "Call to Hand": {
+            "description": "<p>With a simple flourish of your hand, you cause your autonomous spear or polearm to teleport into your grip, provided you're on the same plane as your weapon. If you're level 20, you can call to hand your weapon regardless of where it's located. If your weapon is wielded by a mythic creature that's higher level than you, you must spend a Mythic Point to Call to Hand the weapon, otherwise this action fails—you know why it failed, but you don't learn who has control of your weapon.</p>",
+            "name": "Call to Hand"
         },
         "Executioner's Volley": {
             "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>You command your squadmates to act as a lethal firing squad. You and each squadmate within the aura of your commander's banner can attempt a ranged Strike as a reaction against a single target you choose; combine the damage from all attacks for the purpose of resistances and weaknesses. If the designated target is a living creature, these attacks gain the death trait. If the designated target dies as a result of this tactic, all other enemies within the affected area of your commander's banner must succeed at a @Check[will|against:commander|options:inflicts:frightened|traits:emotion,fear,mental] save against your class DC or be @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}; this is an emotion, fear, and mental effect.</p><hr /><p><strong>Special</strong> If one of your squadmates knows or has prepared a cantrip with a range of 30 feet or more that deals damage and requires 2 or fewer actions to cast, they can cast it targeting the designated enemy instead of taking the other actions normally granted by this tactic, gaining all other listed benefits.</p>",
@@ -840,6 +868,10 @@
         "Rejoin in Flight": {
             "description": "<p>You throw your weapon ikons to either side of a creature, and they seek each other out, converging on the target. Make two thrown Strikes against a target within the first range increment of both your weapon ikons. This counts as two attacks toward your multiple attack penalty, but the penalty doesn't increase until after you've made both attacks. The target is flanked for both attacks (typically making it @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against both attacks). If both Strikes hit, the target also takes an additional die of weapon damage. The weapons then return to your hand.</p>",
             "name": "Rejoin in Flight"
+        },
+        "Hunt Runelord": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You designate one of the seven schools of Thassilonian magic—envy, gluttony, greed, lust, pride, sloth, or wrath—and focus your need for revenge against those who serve these ideals. You do not need to be able to see a creature that serves these ideals to make this designation. The designation lasts until your next daily preparations.</p>\n<p>You gain a +2 circumstance bonus to Perception checks when you [[/act seek]] a creature that serves these ideals (including an actual runelord, a wizard who follows that school of Thassilonian magic, or any creature you know or suspect serves the interests of that school's particular sin—subject to GM's approval), and a +2 circumstance bonus to Intimidation checks made to [[/act demoralize]] such creatures. Your Strikes also deal 1d4 extra precision to these creatures when they're @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened}.</p>",
+            "name": "Hunt Runelord"
         },
         "Cram": {
             "description": "<p><strong>Requirements</strong> You are an initiate, attendant, or conversant, and your branch level for either your primary or secondary branch is 2 or more levels below the limit.</p>\n<hr />\n<p>Realizing that you're falling behind in your studies, you cram more than you probably should. You Study twice, each in a branch that satisfies the activity requirements. However, the extra studying comes at a price. Until the next time you take the Study downtime activity, you're particularly tired from all the extra hours cramming; at the start of each day of adventuring, you must succeed at a @Check[flat|dc:8] check or be @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} for that day.</p>",
@@ -1261,6 +1293,10 @@
             "description": "<p><strong>Frequency</strong> once per 10 minutes</p><hr /><p>You know that a thousand small bites can fell a large foe just as surely a single well-placed hit. Designate a creature within the aura of your commander's banner and signal all squadmates; for 1 minute, each time they attack that creature and deal damage to it of a type the creature resists, they ignore an amount of that creature's resistance equal to your level.</p>",
             "name": "Piranha Assault"
         },
+        "Weaponsight": {
+            "description": "<p>Close your eyes and concentrate on your warshard weapon. You perceive the world as if you were observing it from your weapon rather than your own eyes. You can see in all directions simultaneously and therefore can't be flanked. If you're not holding your weapon, this ability fails if your warshard weapon is on a different plane than you. If you spend a Mythic Point as part of this action, you attempt saving throws against visual effects at mythic proficiency while observing through your warshard weapon. You can observe through your weapon for up to 1 minute or until you open your eyes as a free action, whichever comes first.</p>",
+            "name": "Weaponsight"
+        },
         "Break Them Down": {
             "description": "<p>Your foes are but dross from which you carve and shoot your legend. Make a melee Strike and then a ranged Strike with a combination weapon, both against the same enemy; you don't need to change modes to do so. If the melee Strike hits, you gain a +1 circumstance bonus to the attack roll with the ranged Strike. Each attack counts toward your multiple attack penalty, but your multiple attack penalty doesn't increase until you've made both attacks. If both Strikes hit, you deal an additional @Damage[2d6[bleed]] damage to the enemy, and they're @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until this persistent bleed damage ends.</p>",
             "name": "Break Them Down"
@@ -1497,6 +1533,10 @@
             "description": "<p>By using your perfect pitch, you can amplify your voice to cause magical auditory effects to reach further. If your next action this round is to Cast a Spell or use an action that creates an auditory effect with a range, increase that range by 30 feet.</p>",
             "name": "Pitch-Perfect Projection"
         },
+        "Draw From the Pages": {
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> you are holding your spellbook</p><hr /><p><strong>Effect</strong> Spend a Mythic Point, and then Cast a Spell directly from your spellbook. The spell you cast must be one that takes one or two actions to cast, and it's automatically heightened to a rank equal to half your level. Use mythic proficiency to determine any attack rolls or spell DCs.</p>",
+            "name": "Draw From the Pages"
+        },
         "Nudging Whisper": {
             "description": "<p>You lace your words with echoes of your ancestors' magic. If your next action is to @UUID[Compendium.pf2e.actionspf2e.Item.DCb62iCBrJXy0Ik6]{Request}, you gain the effects of the @UUID[Compendium.pf2e.feats-srd.Item.KIK2Eza9TK47MEb2]{Shameless Request} feat, and if your next action is to @UUID[Compendium.pf2e.actionspf2e.Item.ewwCglB7XOPLUz72]{Lie}, you gain the effects of the @UUID[Compendium.pf2e.feats-srd.Item.6Z4e3B9vePYpibcy]{Confabulator} feat. If you critically fail at either check, the target and anyone who witnessed you fail becomes immune to your Nudging Whisper for one day, though this doesn't necessarily let them know that you attempted to charm them.</p>",
             "name": "Nudging Whisper"
@@ -1516,6 +1556,10 @@
         "Toxic Touch": {
             "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> Your most recent action was to @UUID[Compendium.pf2e.actionspf2e.Item.21WIfSu7Xd7uKqV8]{Tumble Through}, and you successfully moved through an enemy's space</p>\n<hr />\n<p><strong>Effect</strong> Make a melee unarmed Strike against the enemy whose space you moved through. On a hit, the target takes @Damage[1d6[persistent,poison]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (or takes @Damage[2d6[persistent,poison]] and is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical hit).</p>",
             "name": "Toxic Touch"
+        },
+        "Runelord's Response": {
+            "description": "<p><strong>Trigger</strong> A creature deals damage to you with a spell</p><hr /><p><strong>Effect</strong> You gain a measure of revenge immediately by twisting the magic used by the triggering creature. Spend a Mythic Point. The triggering creature takes @Damage[6d8[force]] damage, with a @Check[will|against:class-spell|basic] saving throw against either your class DC or spell DC using mythic proficiency, whichever is higher. At 14th level, and every 2 levels thereafter, this damage increases by 1d8.</p>",
+            "name": "Runelord's Response"
         },
         "Reclaim Destiny": {
             "description": "<p><strong>Frequency</strong> once per day;</p>\n<p><strong>Trigger</strong> You are about to attempt a check and are affected by a fortune or misfortune effect that modifies the triggering check;</p>\n<p><strong>Effect</strong> You break the influence over your fortunes and claim a stable hold over your fate. You ignore the fortune or misfortune effect and can roll the triggering roll normally.</p>",
@@ -2010,7 +2054,7 @@
             "name": "Launch Fireworks"
         },
         "Mobbing Assault": {
-            "description": "<p><strong>Requirements</strong> Your horde has been raised</p><hr /><p><strong>Effect</strong> Each enemy in a @Template[type:emanation|distance:5] around your horde takes @Damage[(ternary(gte(@actor.level,18),8,ternary(gte(@actor.level,14),6,ternary(gte(@actor.level,10),4,2))))d6[bludgeoning]|options:area-damage] damage (if your horde is zombies) or @Damage[(ternary(gte(@actor.level,18),8,ternary(gte(@actor.level,14),6,ternary(gte(@actor.level,10),4,2))))d6[slashing]|options:area-damage] damage (if your horde is skeletons) with a basic @Check[reflex|against:spell|options:area-effect] save against your spell DC. At 10th level and every 4 levels thereafter, the damage increases by 2d6.</p>",
+            "description": "<p><strong>Requirements</strong> Your horde has been raised</p><hr /><p><strong>Effect</strong> Each enemy in a @Template[type:emanation|distance:5] around your horde takes @Damage[(ternary(gte(@actor.level,18),8,ternary(gte(@actor.level,14),6,ternary(gte(@actor.level,10),4,2))))d6[bludgeoning]|options:area-damage] damage (if your horde is zombies) or @Damage[(ternary(gte(@actor.level,18),8,ternary(gte(@actor.level,14),6,ternary(gte(@actor.level,10),4,2))))d6[slashing]|options:area-damage] damage (if your horde is skeletons) with a @Check[reflex|against:spell|basic|options:area-effect] save against your spell DC. At 10th level and every 4 levels thereafter, the damage increases by 2d6.</p>",
             "name": "Mobbing Assault"
         },
         "Host Spirit": {
@@ -2040,6 +2084,10 @@
         "Burn out of Time": {
             "description": "<p>An impossible amount of energy blazes in a sphere above you before compressing itself into your weapon. Strike one creature. The Strike deals an additional 3d8 spirit damage and 3d8 void damage. If the creature is reduced to 0 Hit Points, it's immediately killed and reduced to ash, not in the present, but in the recent past, erasing the consequences of their recent actions.</p>\n<p>If a creature died within the last round as a result of the incinerated target's actions, that creature is returned to life with @Damage[5d8[healing]] Hit Points at the location that it died as its death is retroactively undone.</p>",
             "name": "Burn out of Time"
+        },
+        "Flash of Memory": {
+            "description": "<p>Spend a Mythic Point and attempt an Incarnation Lore check at mythic proficiency to @UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{Recall Knowledge} in place of making any other Lore check (other than Incarnation Lore).</p>",
+            "name": "Flash of Memory"
         },
         "Sanguine Revitalization": {
             "description": "<p><strong>Frequency</strong> once per day</p><hr /><p>Your squad is rejuvenated by the arterial spray of your enemies. Choose a creature within the aura of your commander's banner and signal all squadmates within the aura who are wielding a piercing or slashing melee weapon, or who have a piercing or slashing melee unarmed attack. Those allies can Stride up to half their Speed as a free action. If they end this movement within reach of the designated target, they can Strike the target with the required weapon or unarmed attack as a reaction.</p>\n<p>Once all Strikes are completed, if the target took damage and is not immune to bleed damage, it must succeed at a @Check[fortitude|against:commander|options:damaging-effect,inflicts:bleed] saving throw against your class DC or take @Damage[10[persistent,bleed]]{10 points of persistent bleed} damage. The target takes a circumstance penalty on their save equal to the number of successful Strikes made as part of this tactic (up to a maximum –4 circumstance penalty).</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.kJndFOHNBH8SR5IM]{Effect: Sanguine Revitalization}</p>\n<p>Your squadmates are energized by the display of your enemy's imminent defeat; each squadmate in a @Template[type:emanation|distance:20] is healed for @Damage[10d6[healing]] Hit Points.</p>",
