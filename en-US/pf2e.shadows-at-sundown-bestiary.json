@@ -1,0 +1,546 @@
+{
+    "label": "pf2e.shadows-at-sundown-bestiary",
+    "entries": {
+        "Aliriel": {
+            "prototypeToken": {
+                "name": "Aliriel"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Aliriel",
+            "hp": "coffin restoration, fast healing 15, void healing",
+            "blurb": "Female human strigoi necromancer",
+            "items": {
+                "Fast Healing 15": {
+                    "name": "Fast Healing 15",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Coffin Restoration": {
+                    "name": "Coffin Restoration",
+                    "description": "<p>Unlike other undead, a vampire isn't destroyed at 0 HP. Instead, it falls @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If its body rests in its coffin for 1 hour, the vampire gains 1 HP, after which its fast healing begins to function normally.</p>"
+                },
+                "Domain of Dusk": {
+                    "name": "Domain of Dusk",
+                    "description": "<p>With a wave of its hand, the strigoi calls fourth vile ruination from the surrounding shadows, causing coils of darkness and shadowy bats, rats, and wolves to lash out at living targets in a @Template[emanation|distance:30]. Living creatures in this area take @Damage[8d6[void]|options:area-damage] damage (@Check[fortitude|dc:34|basic|options:area-effect] save against the DC of the strigoi's level). A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round (or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round and then dazzled for 1 round)</p>"
+                },
+                "Shadow Escape": {
+                    "name": "Shadow Escape",
+                    "description": "<p><strong>Trigger</strong> The strigoi is reduced to 0 HP</p>\n<hr />\n<p><strong>Effect</strong> The strigoi uses Shadow Form. It can take move actions to move toward its coffin even though it's at 0 HP. While at 0 HP in this form, the strigoi is unaffected by further damage. Once the strigoi reaches its coffin, or if it hasn't done so within 2 hours, it automatically returns to its physical form, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}.</p>"
+                },
+                "Shadow Form": {
+                    "name": "Shadow Form",
+                    "description": "<p>The strigoi reverts to pure shadow and absorbs its body and its gear into the darkness, or it shifts back to its physical form. In shadow form, the strigoi gains a climb Speed equal to its land Speed and can move through any gap that isn't airtight. However, it can only move along solid surfaces that aren't highly reflective, not liquid or mirrored surfaces. If the surface it's on is destroyed, the strigoi returns to physical form and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. The strigoi loses fast healing while in shadow form but can remain in shadow form indefinitely.</p>\n<p>A strigoi that is exposed to sunlight while in shadow form becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and must attempt a @Check[flat|dc:16] at the end of each of its turns. If it fails this flat check, it is destroyed, the shadow vanishing with a blood-curdling wail.</p>"
+                },
+                "Slip Into Shadows": {
+                    "name": "Slip Into Shadows",
+                    "description": "<p><strong>Trigger</strong> Aliriel succeeds at a save against an effect that is not a darkness or light effect</p>\n<hr />\n<p><strong>Effect</strong> Aliriel disappears into shadows at the last moment, critically succeeding at the save instead.</p>"
+                },
+                "Strigoi Weaknesses": {
+                    "name": "Strigoi Weaknesses",
+                    "description": "<p>All strigoi possess the following weaknesses:</p>\n<ul>\n<li><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, it gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until it ends an action beyond 10 feet. After 1 round of being exposed to the subject of its revulsion, a strigoi can attempt a @Check[will|dc:25] save as a single action, which has the concentrate trait. On a success, it overcomes its revulsions for [[/gmr 1d6 #Overcome Revulsions Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}.</li>\n<li><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. It appears to be dead: it doesn't breathe, its body temperature matches its surroundings, and it doesn't react to pain or other stimuli. A successful @Check[perception|against:reflex] check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by its \"dead\" body shifts and moves slightly, its edges twisting and active. Spells like @UUID[Compendium.pf2e.spells-srd.Item.QnTtGCAvdWRU4spv]{Detect Alignment}, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally, and could reveal the truth without needing a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses its resistance to physical damage. If the strigoi takes enough damage that it would be reduced to 0 Hit Points, its body quickly decomposes, and the strigoi is destroyed.</li>\n<li><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided it approaches no closer than 10 feet to the liquid's surface. If forced into running water against its will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as it remains in the water. At the end of any turn in which the strigoi remains in running water, it must succeed at a @Check[flat|dc:5] or be destroyed.</li>\n</ul>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Create Spawn": {
+                    "name": "Create Spawn",
+                    "description": "<p>If a creature dies after being reduced to 0 HP by Drink Essence or Domain of Dusk, the vampire can turn this victim into a vampire by donating some of its own blood to the victim and burying the victim in earth for 3 nights.</p>\n<p>If the new vampire is lower level than its creator, it is under the creator's control. If a vampire controls too many spawn at once (as determined by the GM), strong-willed spawn can free themselves by succeeding at a @Check[will|against:will|name:Escape Thralldom] saving throw against the vampire's Will DC.</p>\n<p>A victim that is 8th level or higher becomes a strigoi servant, while a lower-level victim instead becomes a moroi vampire</p>"
+                },
+                "Dominate": {
+                    "name": "Dominate",
+                    "description": "<p>The vampire can cast @UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate} at will as a divine innate spell. Casting it requires staring into the target's eyes, giving the spell the visual trait (@Check[will|dc:34]). A creature that succeeds is temporarily immune to that vampire's Dominate for 24 hours.</p>\n<p>Fully destroying the vampire ends the domination, but merely reducing the vampire to 0 HP is insufficient to break the spell.</p>"
+                },
+                "Drink Essence": {
+                    "name": "Drink Essence",
+                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the strigoi's reach</p>\n<hr />\n<p><strong>Effect</strong> The strigoi progenitor sinks their fangs into the targeted creature to drink its blood and draw out its vital essence. This requires an @Check[athletics|defense:fortitude] check against the creature's Fortitude DC if the creature is grabbed and is automatic for any of the other conditions. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}, and the strigoi regains @Damage[21[healing]] HP, gaining any excess HP as temporary Hit Points. Drinking Essence from a creature that's already drained or stupefied doesn't restore any HP, but increases either the creature's drained condition value or its stupefied condition value by 1 (whichever value is lesser is increased; if both values are equal, then the strigoi chooses which condition to increase the value of).</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a successful @Check[medicine|dc:20] check and sufficient blood or a blood donor, reduces the drained value by 1 after 10 minutes.</p>\n<p>A victim's stupefied condition decreases by 1 per day after performing daily preparations. If the daily preparations are done in full sunlight, the stupefied condition is removed entirely.</p>"
+                },
+                "Thassilonian Necromancer": {
+                    "name": "Thassilonian Necromancer",
+                    "description": "<p>Aliriel cannot cast abjuration or enchantment spells.</p>"
+                }
+            }
+        },
+        "Ileosa's Fifth Manifestation": {
+            "prototypeToken": {
+                "name": "Ileosa's Fifth Manifestation"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ileosa's Fifth Manifestation",
+            "disable": "<p>@Check[religion|dc:33|name:Exorcise the Manifestation] (expert) to exorcise the manifestation, or @Check[intimidation|dc:36|name:Stand your ground] (trained) to stand one's ground without showing fear.</p>",
+            "hazarddescription": "<p>Mist coils from the ground, perhaps through a sewer grate or from cracks along a basement foundation, quickly forming into the ghostly image of Queen Ileosa.</p>",
+            "stealthdetails": "<p>(master)</p>",
+            "items": {
+                "Queen's Laugh": {
+                    "name": "Queen's Laugh",
+                    "description": "<p><strong>Trigger</strong> A living creature moves within 10 feet of where the manifestation will appear</p>\n<hr />\n<p><strong>Effect</strong> Ileosa laughs, becoming more substantial as bloody, spectral bodies appear to pile under her feet. Each living creature within @Template[emanation|distance:30]{30 feet} of the area must attempt a @Check[will|dc:30] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes @Damage[5d10[mental]] damage as false memories of being tormented and persecuted under Ileosa's rule tear through their mind.</p>\n<p><strong>Failure</strong> As above, but the creature takes @Damage[10d10[mental]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} until the next sunrise from the overwhelming nature of the false memories.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} instead. In addition, the creature continues to see dead, bloody bodies crawling from the ground during times of stress, causing them to treat all ground as difficult terrain during combat. This hallucination persists as long as the character remains stupefied from the hazard.</p>"
+                }
+            }
+        },
+        "Bishop Keppira D'Bear": {
+            "prototypeToken": {
+                "name": "Bishop Keppira D'Bear"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Bishop Keppira D'Bear",
+            "hp": "coffin restoration, fast healing 10, void healing",
+            "blurb": "Female strigoi",
+            "items": {
+                "Fast Healing 10": {
+                    "name": "Fast Healing 10",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Coffin Restoration": {
+                    "name": "Coffin Restoration",
+                    "description": "<p>Unlike other undead, a vampire isn't destroyed at 0 HP. Instead, it falls @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If its body rests in its coffin for 1 hour, the vampire gains 1 HP, after which its fast healing begins to function normally.</p>"
+                },
+                "Shadow Form": {
+                    "name": "Shadow Form",
+                    "description": "<p>The strigoi reverts to pure shadow and absorbs its body and its gear into the darkness, or it shifts back to its physical form. In shadow form, the strigoi gains a climb Speed equal to its land Speed and can move through any gap that isn't airtight. However, it can only move along solid surfaces that aren't highly reflective, not liquid or mirrored surfaces. If the surface it's on is destroyed, the strigoi returns to physical form and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. The strigoi loses fast healing while in shadow form but can remain in shadow form indefinitely.</p>\n<p>A strigoi that is exposed to sunlight while in shadow form becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and must attempt a @Check[flat|dc:16] at the end of each of its turns. If it fails this flat check, it is destroyed, the shadow vanishing with a blood-curdling wail.</p>"
+                },
+                "Strigoi Weaknesses": {
+                    "name": "Strigoi Weaknesses",
+                    "description": "<p>All strigoi possess the following weaknesses:</p>\n<ul>\n<li><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, it gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until it ends an action beyond 10 feet. After 1 round of being exposed to the subject of its revulsion, a strigoi can attempt a @Check[will|dc:25] save as a single action, which has the concentrate trait. On a success, it overcomes its revulsions for [[/gmr 1d6 #Overcome Revulsions Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}.</li>\n<li><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. It appears to be dead: it doesn't breathe, its body temperature matches its surroundings, and it doesn't react to pain or other stimuli. A successful @Check[perception|against:reflex] check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by its \"dead\" body shifts and moves slightly, its edges twisting and active. Spells like @UUID[Compendium.pf2e.spells-srd.Item.QnTtGCAvdWRU4spv]{Detect Alignment}, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally, and could reveal the truth without needing a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses its resistance to physical damage. If the strigoi takes enough damage that it would be reduced to 0 Hit Points, its body quickly decomposes, and the strigoi is destroyed.</li>\n<li><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided it approaches no closer than 10 feet to the liquid's surface. If forced into running water against its will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as it remains in the water. At the end of any turn in which the strigoi remains in running water, it must succeed at a @Check[flat|dc:5] or be destroyed.</li>\n</ul>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Blasphemous Invocation": {
+                    "name": "Blasphemous Invocation",
+                    "description": "<p>While Bishop Keppira D'Bear lost her spellcasting abilities and other clerical powers upon being transformed into a strigoi, Urgathoa is pleased with the development and granted the fallen bishop a boon. In time, and if she's allowed to continue her undeath, the bishop may well regain many of her spellcasting powers as a cleric of Urgathoa, but until that time she can draw upon this connection to the goddess of undeath to utter a blasphemous invocation. When she does so, shadows within a @Template[emanation|distance:20] from Bishop Keppira twist, writhe, and animate before lashing out. All living creatures in the area must attempt a @Check[fortitude|dc:30|options:area-effect,damaging-effect] save. Bishop Keppira cannot use Blasphemous Invocation again for [[/gmr 1d4 #Recharge Blasphemous Invocation]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[5d6[void]|options:area-damage] damage.</p>\n<p><strong>Failure</strong> The creature takes @Damage[10d6[void]|options:area-damage] damage and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} as their own shadows animate and pull against them.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[20d6[void]|options:area-damage] damage and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} as their own shadows animate and pull against them.</p>"
+                },
+                "Drink Essence": {
+                    "name": "Drink Essence",
+                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the strigoi's reach</p>\n<hr />\n<p><strong>Effect</strong> The strigoi sinks their fangs into the targeted creature to drink its blood and draw out its vital essence. This requires an @Check[athletics|defense:fortitude] check against the creature's Fortitude DC if the creature is grabbed and is automatic for any of the other conditions. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1}, and the strigoi regains @Damage[15[healing]] HP, gaining any excess HP as temporary Hit Points. Drinking Essence from a creature that's already drained or stupefied doesn't restore any HP, but increases either the creature's drained condition value or its stupefied condition value by 1 (whichever value is lesser is increased; if both values are equal, then the strigoi chooses which condition to increase the value of).</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a successful @Check[medicine|dc:20] check and sufficient blood or a blood donor, reduces the drained value by 1 after 10 minutes.</p>\n<p>A victim's stupefied condition decreases by 1 per day after performing daily preparations. If the daily preparations are done in full sunlight, the stupefied condition is removed entirely.</p>"
+                }
+            }
+        },
+        "Scarlet Walker": {
+            "prototypeToken": {
+                "name": "Scarlet Walker"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Scarlet Walker",
+            "allSaves": "+1 status to all saves vs. magic",
+            "items": {
+                "Bloodsense 60 feet": {
+                    "name": "Bloodsense 60 feet",
+                    "description": "<p>The scarlet walker can sense living creatures with blood in their veins, as well as undead that feed on blood (such as vampires).</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Blood-Draining Gaze": {
+                    "name": "Blood-Draining Gaze",
+                    "description": "<p>20 feet. When a living, non-scarlet walker creature ends its turn in the aura, it must attempt a @Check[fortitude|dc:29] save to prevent thin streams of blood from streaming from its eyes and into the eyeless pits in the scarlet walker's face. On a failed save, the victim becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} on a critical failure) and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain.</p>"
+                },
+                "No Breath": {
+                    "name": "No Breath",
+                    "description": "<p>The scarlet walker doesn't breathe and is immune to effects that require breathing (such as an inhaled poison).</p>"
+                },
+                "Eerie Flexibility": {
+                    "name": "Eerie Flexibility",
+                    "description": "<p>The scarlet walker can fit through tight spaces as if it were a Medium creature. While Squeezing, it can move at its full Speed.</p>"
+                },
+                "Paralysis": {
+                    "name": "Paralysis",
+                    "description": "<p>Any living, non-scarlet walker creature hit by a scarlet walker's tentacle Strike must attempt a @Check[fortitude|dc:29] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round, and is then slowed 1 for 1 round after recovering.</p>\n<p><strong>Critical Failure</strong> As failure, but the paralysis doesn't automatically end after 1 round. The creature can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>\n<hr />\n<p><em>Note: A DC was not provided for this ability by Paizo. The DC present here is a moderate DC for the creature level according to the Gamemastery Guide creature building Tables.</em></p>"
+                }
+            }
+        },
+        "Profane Ghoul": {
+            "prototypeToken": {
+                "name": "Profane Ghoul"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Profane Ghoul",
+            "hp": "void healing",
+            "blurb": "Variant ghoul",
+            "items": {
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Ghoul Fever": {
+                    "name": "Ghoul Fever",
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:29]</p>\n<hr />\n<p><strong>Stage 1</strong> carrier with no ill effect (1 day)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[void]] damage and regains half as many Hit Points from all healing (1 day)</p>\n<p><strong>Stage 3</strong> as stage 2 (1 day)</p>\n<p><strong>Stage 4</strong> @Damage[2d6[void]] damage and gains no benefit from healing (1 day)</p>\n<p><strong>Stage 5</strong> as stage 4 (1 day)</p>\n<p><strong>Stage 6</strong> dead, and rises as a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.LHHgGSs0ELCR4CYK]{Ghoul} the next midnight.</p>"
+                },
+                "Profane Paralysis": {
+                    "name": "Profane Paralysis",
+                    "description": "<p>Any living, non-elf creature hit by the profane ghoul's attack must attempt a @Check[fortitude|dc:29] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>"
+                },
+                "Profane Whispers": {
+                    "name": "Profane Whispers",
+                    "description": "<p>The ghoul whispers profane secrets of undeath. Living creatures within @Template[emanation|distance:10]{10 feet} of the ghoul take @Damage[2d8[persistent,mental]|options:area-damage] damage. Those with ghoul fever must also succeed at a @Check[will|dc:29|options:area-effect] save or have the disease advance one step. The profane ghoul can't use Profane Whispers again for 24 hours.</p>"
+                },
+                "Scuttle": {
+                    "name": "Scuttle",
+                    "description": "<p>The profane ghoul crawls on all fours, moving up to half its Speed. This movement doesn't trigger reactions.</p>"
+                }
+            }
+        },
+        "Brooding Fvalthahalia": {
+            "prototypeToken": {
+                "name": "Brooding Fvalthahalia"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Brooding Fvalthahalia",
+            "disable": "<p>@Check[thievery|dc:40|name:Adjust the model] (master) to adjust the model so its attention is focused inward, @Check[occultism|dc:37|name:Discharge the energy] (expert) to cause the accumulated psychic energy to discharge harmlessly, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 32). A character who sneaks through the room with a @Check[stealth|dc:32|name:Avoid the hazard] (expert) check avoids triggering the hazard, but this does not disable it.</p>",
+            "hazarddescription": "<p>Tiny black flames mirror living creatures' movements in the city above as scraps of shadow patrol the streets-flames that notice intruders in their \"sky\" below and reach out to the intruders \"above\" with a deafening violence that incidentally alerts several of the vault's denizens to the intruders' presence.</p>",
+            "reset": "<p>1 hour</p>",
+            "stealthdetails": "<p>(master)</p>",
+            "items": {
+                "Call of Fvalthahalia": {
+                    "name": "Call of Fvalthahalia",
+                    "description": "<p><strong>Trigger</strong> A creature without supernatural ties to the Shadow Plane enters the room (creatures like fetchlings or divine spellcasters who worship Zon-Kuthon represent two examples of creatures who won't trigger this hazard)</p>\n<hr />\n<p><strong>Effect</strong> The flickering dark flames on the city's streets flare up and the sound of an entire city populace screaming an alarm fills the room. All creatures in area <strong>C1</strong> take @Damage[18d6[sonic]] damage (@Check[fortitude|dc:33|basic]), and all strigoi from Aliriel's Vault immediately know intruders have been spotted in this room. Any strigoi in area <strong>C2</strong> quickly investigate and attack the PCs on sight.</p>"
+                }
+            }
+        },
+        "Ileosa's Sixth Manifestation": {
+            "prototypeToken": {
+                "name": "Ileosa's Sixth Manifestation"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ileosa's Sixth Manifestation",
+            "disable": "<p>@Check[religion|dc:37|name:Reverse the ritual's power] (expert) or @Check[occultism|dc:40|name:Reverse the ritual's power] (trained) to reverse the ritual's power.</p>",
+            "hazarddescription": "<p>Ileosa manifests as a crimson ghost and reaches out as if to receive a gift from the ritual's primary caster.</p>",
+            "stealthdetails": "<p>(expert)</p>",
+            "items": {
+                "Queen's Laugh": {
+                    "name": "Queen's Laugh",
+                    "description": "<p><strong>Trigger</strong> Someone attempts to contact Ileosa with call spirit and achieves any result other than a critical success to cast the ritual</p>\n<hr />\n<p><strong>Effect</strong> Ileosa closes her fingers and attempts to pull the primary caster's heart from their chest. The primary caster must attempt a @Check[fortitude|dc:33] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature feels Ileosa's hand grip and tug at their heart; they take @Damage[25[void]] damage, and then the manifestation vanishes.</p>\n<p><strong>Failure</strong> As success, but the creature takes @Damage[50[void]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} as they momentarily see their heart appear in Ileosa's hand before the manifestation vanishes.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[75[void]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2}. If this reduces the target to 0 Hit Points, the target dies instantly. For a brief moment, the victim's heart appears in Ileosa's hand before the manifestation vanishes. If the victim is slain by this hazard, their heart drops to the ground with a splat, pulsing its final beats after the manifestation vanishes.</p>"
+                }
+            }
+        },
+        "Lorthact": {
+            "prototypeToken": {
+                "name": "Lorthact"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Lorthact",
+            "items": {
+                "Divination Immunity": {
+                    "name": "Divination Immunity",
+                    "description": "<p>As a side effect of existing slightly outside the normal time stream, Lorthact is difficult to detect via divination spells and abilities. These effects function as though Lorthact and items he carries are not present, and those specifically targeting him, such as scrying, fail entirely unless the source of the divination is a higher level than Lorthact-in which case they succeed only if the caster succeeds at a @Check[flat|dc:16|traits:secret]{secret flat check}.</p>"
+                },
+                "Arcane Absorption": {
+                    "name": "Arcane Absorption",
+                    "description": "<p><strong>Requirements</strong> Any creature adjacent to Lorthact is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied}, capable of casting prepared arcane spells, and is either @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing</p>\n<hr />\n<p><strong>Effect</strong> Lorthact attempts to drain a 1st- through 8th-rank prepared spell from the target, who can resist with a successful @Check[will|dc:37] saving throw. On a failure or against a willing target, the prepared arcane spell is transferred from that creature as if it were cast, and Lorthact immediately prepares that spell in the same rank slot. If he already had a spell prepared in that slot, the previously prepared spell is lost. That creature is then immune to Arcane Absorption for 24 hours.</p>"
+                },
+                "Arcane Spellcaster": {
+                    "name": "Arcane Spellcaster",
+                    "description": "<p>As long as Lorthact has one arcane spell prepared in this way, all arcane spells are on his spell list, which allows him to activate items such as scrolls, wands, and staves. He can recharge his staff of power as a prepared spellcaster by using his arcane spell slots. He has one spell slot to prepare arcane spells of each level from 1st to 8th, and can prepare any Common arcane spell in these slots during his daily preparations. The spells listed above represent those he most typically prepares, but given time, he can adjust this selection as needed for the task at hand.</p>"
+                },
+                "Scholastic Masquerade": {
+                    "name": "Scholastic Masquerade",
+                    "description": "<p>Lorthact takes on the appearance of Volshyenek Ornelos or reverts to his true form. In Volshyenek's form, he loses his fly Speed and claw Strikes, doesn't inflict additional mental damage with his Strikes, and reduces his AC to 34. He gains a +4 status bonus on Deception checks to appear human in this guise.</p>"
+                },
+                "Staff of Power": {
+                    "name": "Staff of Power",
+                    "description": "<p>Lorthact's staff of power is tipped with a pair of metal tines that grant the weapon the versatile piercing trait.</p>"
+                },
+                "Thought Theft": {
+                    "name": "Thought Theft",
+                    "description": "<p>Any creature that takes mental damage from Lorthact's claws or staff must succeed at a @Check[will|dc:37] save or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} on a critical failure). Further mental damage dealt by Lorthact increases the value of the stupefied condition by 1 on a failed save to a maximum of stupefied 4. Whenever Lorthact causes a creature to become stupefied in this way, he absorbs some of those thoughts and gains a +1 status bonus on all Will saving throws and Intelligence-, Wisdom-, or Charisma-based skill checks until the end of his next turn.</p>"
+                }
+            }
+        },
+        "Yniesse Zenderholm": {
+            "prototypeToken": {
+                "name": "Yniesse Zenderholm"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Yniesse Zenderholm",
+            "items": {
+                "Attack of Opportunity": {
+                    "name": "Attack of Opportunity",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Erinyes Fury": {
+                    "name": "Erinyes Fury",
+                    "description": "<p><strong>Requirements</strong> The Erinyes Company agent is suffering from persistent damage</p>\n<hr />\n<p><strong>Effect</strong> The agent makes a Strike. If it hits, it deals an additional 1d6 points of persistent damage; the type of this extra damage is the same as the persistent damage from which they're suffering. The agent can choose to instead have this persistent damage be spirit damage. This counts as two attacks when calculating their multiple attack penalty.</p>"
+                }
+            }
+        },
+        "Abridan Ashau": {
+            "prototypeToken": {
+                "name": "Abridan Ashau"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Abridan Ashau",
+            "blurb": "Male human ex-cleric",
+            "items": {
+                "equipment-Key Ring": {
+                    "name": "Key Ring",
+                    "description": "<p>Contains keys that unlock all doors in the cathedral.</p>"
+                },
+                "False Faith": {
+                    "name": "False Faith",
+                    "description": "<p>Abridan is an ex-cleric. While he's lost the magical abilities that come from his connection to Pharasma, he can still use the <em>major staff of healing</em> or any of his scrolls by tricking the item. Since he can't cast spells, he can't recharge his staff, and uses its remaining charges only as a last resort.</p>"
+                },
+                "Marked by Urgathoa": {
+                    "name": "Marked by Urgathoa",
+                    "description": "<p><strong>Trigger</strong> Abridan dies before he's had a chance to atone for his blasphemies or has become an actual cleric of Urgathoa</p>\n<hr />\n<p><strong>Effect</strong> Urgathoa watched Abridan's fall from grace, and if he dies before he finishes his conversion, her disappointment causes his body to decay as if he had been dead for a week. This process also causes all living creatures within @Template[emanation|distance:30]{30 feet} to take @Damage[11d6[void]|options:area-damage] damage (@Check[fortitude|dc:33|basic|options:area-effect]). If steps are not thereafter taken to prevent his soul from returning (such as by casting @UUID[Compendium.pf2e.spells-srd.Item.xRgU9rrhmGAgG4Rc]{Peaceful Rest} on the partially decayed corpse), Abridan rises as a <em>@UUID[Compendium.pf2e.pathfinder-monster-core.Actor.IrssIkWkW6fsbHJL]{Dybbuk}</em> on the site of his death a minute after the next sundown and seeks revenge on the PCs for killing him.</p>"
+                },
+                "Trick Item": {
+                    "name": "Trick Item",
+                    "description": "<p>Abridan attempts to trick his staff or a scroll by attempting a Religion check against the item's Trick DC.</p>\n<hr />\n<p><strong>Success</strong> For the rest of his turn, Abridan can spend actions to activate the staff or scroll as if he could normally use it.</p>\n<p><strong>Failure</strong> Abridan can't use the item or try to trick it again this turn, but can try again on subsequent turns.</p>\n<p><strong>Critical Failure</strong> Abridan can't use the item, and can't try to trick it again until his next daily preparation at sunrise.</p>\n<hr />\n<p>The trick DCs for Abridan's items are as follows:</p>\n<ul>\n<li><strong>Major Staff of Healing</strong> @Check[religion|dc:30]</li>\n<li><strong>Scroll of Blindness</strong> @Check[religion|dc:20]</li>\n<li><strong>Scroll of Crisis of Faith</strong> @Check[religion|dc:20]</li>\n<li><strong>Scroll of Heal</strong> @Check[religion|dc:26]</li>\n<li><strong>Scroll of Flame Strike</strong> @Check[religion|dc:26]</li>\n<li><strong>Scroll of Sound Burst</strong> @Check[religion|dc:23]</li>\n</ul>"
+                }
+            }
+        },
+        "Strigoi Servant": {
+            "prototypeToken": {
+                "name": "Strigoi Servant"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Strigoi Servant",
+            "publicNotes": "<p>The oldest of all vampires are the strigoi. They predate ancient nosferatus and view moroi as infantile children, yet their own origins are so far lost to the ravages of time that few today have heard of them and fewer still know their true nature. Many of the oldest tales about vampires trace back to the strigoi, and nearly every other vampire carries traits that ultimately have their roots in these powerful, ancient creatures.</p>\n<p>Strigoi, in their true form, are bodiless creatures native to the Shadow Plane that are incapable of interacting with the physical world, existing only as pure forces of malevolence. When this malevolence is invited into a physical body by method of ancient rituals, though, a strigoi becomes much more dangerous. This requirement-that a living creature perform a rite of their own free will to draw the strigoi into their soul-may well be the source of a moroi's compulsion not to enter a home without first being invited.</p>\n<p>Some myths point to Urgathoa as the source of the ritual that allowed spellcasters to become strigoi, while others suggest the method was spread by the cult of Zura. Whatever the source, this long-lost ritual was no gateway to power, but instead a trap that allowed the strigoi to inhabit the shadows and souls of once-living hosts. In so doing, they found a way to exist in the world of flesh and blood. The presence of a strigoi within the shadow of a living host causes sickness and swift death, after which the strigoi bonds with the host's soul and becomes one with the body. Thus did the first of their kind invade the world of the living, and thus did the first vampires walk the night.</p>",
+            "hp": "coffin restoration, fast healing 10, void healing",
+            "items": {
+                "Fast Healing 10": {
+                    "name": "Fast Healing 10",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Coffin Restoration": {
+                    "name": "Coffin Restoration",
+                    "description": "<p>Unlike other undead, a vampire isn't destroyed at 0 HP. Instead, it falls @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If its body rests in its coffin for 1 hour, the vampire gains 1 HP, after which its fast healing begins to function normally.</p>"
+                },
+                "Shadow Form": {
+                    "name": "Shadow Form",
+                    "description": "<p>The strigoi reverts to pure shadow and absorbs its body and its gear into the darkness, or it shifts back to its physical form. In shadow form, the strigoi gains a climb Speed equal to its land Speed and can move through any gap that isn't airtight. However, it can only move along solid surfaces that aren't highly reflective, not liquid or mirrored surfaces. If the surface it's on is destroyed, the strigoi returns to physical form and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. The strigoi loses fast healing while in shadow form but can remain in shadow form indefinitely.</p>\n<p>A strigoi that is exposed to sunlight while in shadow form becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and must attempt a @Check[flat|dc:16] at the end of each of its turns. If it fails this flat check, it is destroyed, the shadow vanishing with a blood-curdling wail.</p>"
+                },
+                "Strigoi Weaknesses": {
+                    "name": "Strigoi Weaknesses",
+                    "description": "<p>All strigoi possess the following weaknesses:</p>\n<ul>\n<li><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, it gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until it ends an action beyond 10 feet. After 1 round of being exposed to the subject of its revulsion, a strigoi can attempt a @Check[will|dc:25] save as a single action, which has the concentrate trait. On a success, it overcomes its revulsions for [[/gmr 1d6 #Overcome Revulsions Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}.</li>\n<li><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. It appears to be dead: it doesn't breathe, its body temperature matches its surroundings, and it doesn't react to pain or other stimuli. A successful @Check[perception|against:reflex] check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by its \"dead\" body shifts and moves slightly, its edges twisting and active. Spells like @UUID[Compendium.pf2e.spells-srd.Item.QnTtGCAvdWRU4spv]{Detect Alignment}, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally, and could reveal the truth without needing a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses its resistance to physical damage. If the strigoi takes enough damage that it would be reduced to 0 Hit Points, its body quickly decomposes, and the strigoi is destroyed.</li>\n<li><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided it approaches no closer than 10 feet to the liquid's surface. If forced into running water against its will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as it remains in the water. At the end of any turn in which the strigoi remains in running water, it must succeed at a @Check[flat|dc:5] or be destroyed.</li>\n</ul>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Drink Essence": {
+                    "name": "Drink Essence",
+                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the strigoi's reach</p>\n<hr />\n<p><strong>Effect</strong> The strigoi sinks their fangs into the targeted creature to drink its blood and draw out its vital essence. This requires an @Check[athletics|defense:fortitude] check against the creature's Fortitude DC if the creature is grabbed and is automatic for any of the other conditions. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1}, and the strigoi regains @Damage[13[healing]] HP, gaining any excess HP as temporary Hit Points. Drinking Essence from a creature that's already drained or stupefied doesn't restore any HP, but increases either the creature's drained condition value or its stupefied condition value by 1 (whichever value is lesser is increased; if both values are equal, then the strigoi chooses which condition to increase the value of).</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a successful @Check[medicine|dc:20] check and sufficient blood or a blood donor, reduces the drained value by 1 after 10 minutes.</p>\n<p>A victim's stupefied condition decreases by 1 per day after performing daily preparations. If the daily preparations are done in full sunlight, the stupefied condition is removed entirely.</p>"
+                },
+                "Sneak Attack": {
+                    "name": "Sneak Attack",
+                    "description": "<p>The strigoi servant deals 1d6 extra precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
+                }
+            }
+        },
+        "Ibrique": {
+            "prototypeToken": {
+                "name": "Ibrique"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ibrique",
+            "blurb": "Female variant dero ghoul",
+            "items": {
+                "Vulnerable to Sunlight": {
+                    "name": "Vulnerable to Sunlight",
+                    "description": "<p>Ibrique takes [[/r 20]] damage for each hour she is exposed to sunlight.</p>"
+                },
+                "Cytillesh Stare": {
+                    "name": "Cytillesh Stare",
+                    "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> Ibrique focuses her gaze on a creature she can see within 30 feet. The target is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round and must succeed at a @Check[will|dc:33] save or be @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round.</p>"
+                },
+                "Ghoul Fever": {
+                    "name": "Ghoul Fever",
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:33]</p>\n<hr />\n<p><strong>Stage 1</strong> carrier with no ill effect (1 day)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[void]] damage and regains half as many Hit Points from all healing (1 day)</p>\n<p><strong>Stage 3</strong> as stage 2 (1 day)</p>\n<p><strong>Stage 4</strong> @Damage[2d6[void]] damage and gains no benefit from healing (1 day)</p>\n<p><strong>Stage 5</strong> as stage 4 (1 day)</p>\n<p><strong>Stage 6</strong> dead, and rises as a @UUID[Compendium.pf2e.pathfinder-bestiary.Actor.LHHgGSs0ELCR4CYK]{Ghoul} the next midnight.</p>"
+                },
+                "Profane Paralysis": {
+                    "name": "Profane Paralysis",
+                    "description": "<p>Any living, non-elf creature hit by Ibrique's attack must attempt a @Check[fortitude|dc:33] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>"
+                }
+            }
+        },
+        "Acolyte of Pharasma": {
+            "prototypeToken": {
+                "name": "Acolyte of Pharasma"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Acolyte of Pharasma",
+            "blurb": "Cleric of Pharasma",
+            "items": {}
+        },
+        "Ileosa's Shell": {
+            "prototypeToken": {
+                "name": "Ileosa's Shell"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ileosa's Shell",
+            "hp": "void healing",
+            "items": {
+                "Escape From Hell": {
+                    "name": "Escape From Hell",
+                    "description": "<p>When Ileosa's shell is reduced to 0 HP, the hollow corpse immediately melts into a pool of blood, at the center of which lies her still-beating heart. A moment later, a crimson ghostly shape-Queen Ileosa's soul-rises from the heart. After the soul shrieks in relief at escaping from Hell, it rises through the ceiling and vanishes while the heart dies and rots. All creatures within @Template[emanation|distance:30]{30 feet} of the shell when this occurs must attempt a @Check[will|dc:30] save.</p>\n<hr />\n<p><strong>Critical Success</strong> A living creature becomes invigorated and elated by the sense of freedom from Hell, and becomes @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 1 minute. The creature can use the extra action each round only for Strike and Stride actions. An undead creature gains no benefit.</p>\n<p><strong>Success</strong> As success, but the creature can use the extra action only for Stride actions.</p>\n<p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Critical Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Blood Feast": {
+                    "name": "Blood Feast",
+                    "description": "<p>When a creature takes damage from a fangs Strike, the creature must succeed at a @Check[fortitude|dc:33] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (enfeebled 1 and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} on a critical failure). The shell becomes @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 1 round, and can use the extra action only for fangs Strike actions against a creature that is taking persistent bleed damage. Further damage dealt by the shell increases the enfeebled condition by 1 on a failed save, to a maximum of enfeebled 4.</p>"
+                }
+            }
+        },
+        "Loreavor": {
+            "prototypeToken": {
+                "name": "Loreavor"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Loreavor",
+            "publicNotes": "<p>Rarely, when an ioton leeches a particularly secretive thought, it can choke to death on the secret, only to be born from its previous body into that of a loreavor: an ennosite whose existence is shaped around the consumption of secrets and artistry.</p>\n<p>Loreavors sip at secrets throughout their lives and are instinctively drawn to obscure information. Their hunger places them firmly at odds with scholars and historians alike. Living victims lose memories; written texts become blank books. Loreavors' favorite sites are ruins and ancient libraries, but they can also survive on banal secrets of everyday life as well. While the creatures are secretive, typically staying out of sight and fleeing danger, they become aggressive when their favored food sources are threatened.</p>\n<p>A loreavor appears as a 3-foot-long, pale, wormlike creature with dozens of half-formed faces growing from its segmented body. Trapped in an area without secrets to eat, a loreavor won't starve and can live for years.</p>",
+            "items": {
+                "Thoughtsense (Imprecise) 60 feet": {
+                    "name": "Thoughtsense (Imprecise) 60 feet",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Thoughtsense]</p>"
+                },
+                "Constant Spells": {
+                    "name": "Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Reconstruct Spell": {
+                    "name": "Reconstruct Spell",
+                    "description": "<p><strong>Trigger</strong> A creature within 30 feet attempts and fails to @UUID[Compendium.pf2e.actionspf2e.Item.aBQ8ajvEBByv45yz]{Cast a Spell} while stupefied</p>\n<hr />\n<p><strong>Effect</strong> The loreavor gains use of the failed spell as an occult innate spell. It can cast that spell once; if the spell is of a higher level than half the loreavor's level (5th level or higher for most loreavors), the loreavor must succeed at a flat check with a DC equal to 5 + the rank of the spell it is attempting to cast; on a failure, the spell fails, and the loreavor becomes @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 minute. If the spell isn't cast within 24 hours, or if the loreavor uses Reconstruct Spell again before casting the spell, the spell is lost. No more than one loreavor can reconstruct a given spell this way.</p>"
+                },
+                "Redact": {
+                    "name": "Redact",
+                    "description": "<p>By spending an hour in contact with a non-magical document or piece of artwork no larger than 1 Bulk, a loreavor can consume either a few words from the text or render the artistry of the work more mundane. Doing so heals the loreavor of @Damage[4d8[healing]] HP. Words fade from the text, leaving an obvious blank space behind, while artwork is reduced in worth by 10% of its original value. A loreavor can consume incidental text in this manner from a spellbook but cannot consume actual spells recorded in the book. The loreavor can't use Redact for 24 hours.</p>"
+                },
+                "Search Memory": {
+                    "name": "Search Memory",
+                    "description": "<p>When the loreavor damages a creature with its touch Strike, the creature must succeed at a @Check[will|dc:28] save or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1}, or @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} on a critical failure.</p>"
+                }
+            }
+        },
+        "Strigoi Progenitor": {
+            "prototypeToken": {
+                "name": "Strigoi Progenitor"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Strigoi Progenitor",
+            "publicNotes": "<p>The most powerful strigoi are those intentionally summoned into the bodies of willing hosts in times long past. As the rites to do so are lost to time, very few strigoi progenitors exist today. Those who do trace their lives back well over ten thousand years ago to Thassilon, Azlant, or similar ancient empires. A strigoi progenitor may appear to possess the vitality of the living, yet closer inspection reveals sharp fangs, the faintest smell of decay, and the strange and unsettling shifting of their shadow. In life, this example strigoi progenitor was a powerful oracle and advisor in Runelord Sorshen's nation of Eurythnia.</p>\n<hr />\n<p>The oldest of all vampires are the strigoi. They predate ancient nosferatus and view moroi as infantile children, yet their own origins are so far lost to the ravages of time that few today have heard of them and fewer still know their true nature. Many of the oldest tales about vampires trace back to the strigoi, and nearly every other vampire carries traits that ultimately have their roots in these powerful, ancient creatures.</p>\n<p>Strigoi, in their true form, are bodiless creatures native to the Shadow Plane that are incapable of interacting with the physical world, existing only as pure forces of malevolence. When this malevolence is invited into a physical body by method of ancient rituals, though, a strigoi becomes much more dangerous. This requirement-that a living creature perform a rite of their own free will to draw the strigoi into their soul-may well be the source of a moroi's compulsion not to enter a home without first being invited.</p>\n<p>Some myths point to Urgathoa as the source of the ritual that allowed spellcasters to become strigoi, while others suggest the method was spread by the cult of Zura. Whatever the source, this long-lost ritual was no gateway to power, but instead a trap that allowed the strigoi to inhabit the shadows and souls of once-living hosts. In so doing, they found a way to exist in the world of flesh and blood. The presence of a strigoi within the shadow of a living host causes sickness and swift death, after which the strigoi bonds with the host's soul and becomes one with the body. Thus did the first of their kind invade the world of the living, and thus did the first vampires walk the night.</p>",
+            "hp": "coffin restoration, fast healing 10, void healing",
+            "items": {
+                "Fast Healing 10": {
+                    "name": "Fast Healing 10",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Coffin Restoration": {
+                    "name": "Coffin Restoration",
+                    "description": "<p>Unlike other undead, a vampire isn't destroyed at 0 HP. Instead, it falls @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If its body rests in its coffin for 1 hour, the vampire gains 1 HP, after which its fast healing begins to function normally.</p>"
+                },
+                "Domain of Dusk": {
+                    "name": "Domain of Dusk",
+                    "description": "<p>With a wave of its hand, the strigoi calls fourth vile ruination from the surrounding shadows, causing coils of darkness and shadowy bats, rats, and wolves to lash out at living targets in a @Template[emanation|distance:30]. Living creatures in this area take @Damage[7d6[void]|options:area-damage] damage (@Check[fortitude|dc:31|basic|options:area-effect] save against the DC of the strigoi's level). A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round (or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round and then dazzled for 1 round)</p>"
+                },
+                "Shadow Escape": {
+                    "name": "Shadow Escape",
+                    "description": "<p><strong>Trigger</strong> The strigoi is reduced to 0 HP</p>\n<hr />\n<p><strong>Effect</strong> The strigoi uses Shadow Form. It can take move actions to move toward its coffin even though it's at 0 HP. While at 0 HP in this form, the strigoi is unaffected by further damage. Once the strigoi reaches its coffin, or if it hasn't done so within 2 hours, it automatically returns to its physical form, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}.</p>"
+                },
+                "Shadow Form": {
+                    "name": "Shadow Form",
+                    "description": "<p>The strigoi reverts to pure shadow and absorbs its body and its gear into the darkness, or it shifts back to its physical form. In shadow form, the strigoi gains a climb Speed equal to its land Speed and can move through any gap that isn't airtight. However, it can only move along solid surfaces that aren't highly reflective, not liquid or mirrored surfaces. If the surface it's on is destroyed, the strigoi returns to physical form and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. The strigoi loses fast healing while in shadow form but can remain in shadow form indefinitely.</p>\n<p>A strigoi that is exposed to sunlight while in shadow form becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and must attempt a @Check[flat|dc:16] at the end of each of its turns. If it fails this flat check, it is destroyed, the shadow vanishing with a blood-curdling wail.</p>"
+                },
+                "Strigoi Weaknesses": {
+                    "name": "Strigoi Weaknesses",
+                    "description": "<p>All strigoi possess the following weaknesses:</p>\n<ul>\n<li><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, it gains the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until it ends an action beyond 10 feet. After 1 round of being exposed to the subject of its revulsion, a strigoi can attempt a @Check[will|dc:25] save as a single action, which has the concentrate trait. On a success, it overcomes its revulsions for [[/gmr 1d6 #Overcome Revulsions Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}.</li>\n<li><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. It appears to be dead: it doesn't breathe, its body temperature matches its surroundings, and it doesn't react to pain or other stimuli. A successful @Check[perception|against:reflex] check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by its \"dead\" body shifts and moves slightly, its edges twisting and active. Spells like @UUID[Compendium.pf2e.spells-srd.Item.QnTtGCAvdWRU4spv]{Detect Alignment}, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally, and could reveal the truth without needing a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses its resistance to physical damage. If the strigoi takes enough damage that it would be reduced to 0 Hit Points, its body quickly decomposes, and the strigoi is destroyed.</li>\n<li><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided it approaches no closer than 10 feet to the liquid's surface. If forced into running water against its will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as it remains in the water. At the end of any turn in which the strigoi remains in running water, it must succeed at a @Check[flat|dc:5] or be destroyed.</li>\n</ul>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Create Spawn": {
+                    "name": "Create Spawn",
+                    "description": "<p>If a creature dies after being reduced to 0 HP by Drink Essence or Domain of Dusk, the vampire can turn this victim into a vampire by donating some of its own blood to the victim and burying the victim in earth for 3 nights.</p>\n<p>If the new vampire is lower level than its creator, it is under the creator's control. If a vampire controls too many spawn at once (as determined by the GM), strong-willed spawn can free themselves by succeeding at a @Check[will|against:will|name:Escape Thralldom] saving throw against the vampire's Will DC.</p>\n<p>A victim that is 8th level or higher becomes a strigoi servant, while a lower-level victim instead becomes a moroi vampire</p>"
+                },
+                "Dominate": {
+                    "name": "Dominate",
+                    "description": "<p>The vampire can cast @UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate} at will as a divine innate spell. Casting it requires staring into the target's eyes, giving the spell the visual trait (@Check[will|dc:33]). A creature that succeeds is temporarily immune to that vampire's Dominate for 24 hours.</p>\n<p>Fully destroying the vampire ends the domination, but merely reducing the vampire to 0 HP is insufficient to break the spell.</p>"
+                },
+                "Drink Essence": {
+                    "name": "Drink Essence",
+                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the strigoi's reach</p>\n<hr />\n<p><strong>Effect</strong> The strigoi progenitor sinks their fangs into the targeted creature to drink its blood and draw out its vital essence. This requires an @Check[athletics|defense:fortitude] check against the creature's Fortitude DC if the creature is grabbed and is automatic for any of the other conditions. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}, and the strigoi regains @Damage[18[healing]] HP, gaining any excess HP as temporary Hit Points. Drinking Essence from a creature that's already drained or stupefied doesn't restore any HP, but increases either the creature's drained condition value or its stupefied condition value by 1 (whichever value is lesser is increased; if both values are equal, then the strigoi chooses which condition to increase the value of).</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a successful @Check[medicine|dc:20] check and sufficient blood or a blood donor, reduces the drained value by 1 after 10 minutes.</p>\n<p>A victim's stupefied condition decreases by 1 per day after performing daily preparations. If the daily preparations are done in full sunlight, the stupefied condition is removed entirely.</p>"
+                },
+                "Oracle Mystery": {
+                    "name": "Oracle Mystery",
+                    "description": "<p>@UUID[Compendium.pf2e.classfeatures.Item.tZBb3Kh4nJcNoUFI]{Lore}</p>"
+                }
+            }
+        },
+        "Life Draining Thunder": {
+            "prototypeToken": {
+                "name": "Life Draining Thunder"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Life Draining Thunder",
+            "disable": "<p>@Check[thievery|dc:35|name:Destroy the key rune] (master) to destroy the key rune, @Check[arcana|dc:37|name:Discharge the runes] (master) to harmlessly discharge the runes, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 31) to counteract the trap</p>",
+            "hazarddescription": "<p>Thassilonian runes set with onyx erupt with negative energy and thunderous roars at the presence of a living creature.</p>",
+            "stealthdetails": "<p>(expert)</p>",
+            "items": {
+                "Thunderous Lifedrain": {
+                    "name": "Thunderous Lifedrain",
+                    "description": "<p><strong>Trigger</strong> A living creature approaches within 5 feet of either double door</p>\n<hr />\n<p><strong>Effect</strong> All living creatures in the room take @Damage[9d6[void]] damage and @Damage[9d6[sonic]] damage (@Check[reflex|dc:33|basic]).</p>"
+                }
+            }
+        },
+        "Paradox Engine": {
+            "prototypeToken": {
+                "name": "Paradox Engine"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Paradox Engine",
+            "disable": "<p>@Check[thievery|dc:41] (expert) to feel the subtle vibrations when moving a rune to shift into the right position, or @Check[Thassilon Lore|dc:33] (expert) or @Check[society|dc:38] (master) while being able to read Thassilonian to work out the anagram puzzle using traditional means, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 34)</p>",
+            "hazarddescription": "<p>All six sides of this adamantine-reinforced box are covered with Thassilonian runes. Touching a rune allows one to exchange its position with another.</p>",
+            "routine": "<p>(3 actions) The slicing shadows congeal into the form of what appears to be the upper half of a skeletal, cowled humanoid: an @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.ZOrG61DZ9aiv8poK]{Owb Prophet}. This owb prophet is a creation of the paradox engine and does not have a forsaken patron. While the owb prophet is active, the paradox engine no longer uses its Slicing Shadows reaction; instead, the owb prophet focuses its attacks on creatures that attempt to damage or deactivate the engine. If the owb prophet is destroyed, the paradox engine's disable DCs and Hardness are reduced by 5. It thereafter functions as a simple hazard with the Slicing Shadows reaction, and resets after 1 round.</p>",
+            "reset": "<p>The paradox engine deactivates 1 minute, and its owb prophet returns to its interior after all creatures leave the area, but resets immediately thereafter.</p>",
+            "items": {
+                "Slicing Shadows": {
+                    "name": "Slicing Shadows",
+                    "description": "<p><strong>Trigger</strong> The paradox engine is damaged, or a creature fails a check to disable it</p>\n<hr />\n<p><strong>Effect</strong> Slats on the sides of the box open to release beams of razor-sharp freezing darkness that swipe throughout area <strong>C5</strong> and extend 10 feet south into area <strong>C4</strong>; all creatures in this area who lack the Shadow trait take @Damage[5d6[slashing]] damage and @Damage[5d6[cold]] damage (@Check[reflex|dc:34|basic]).</p>"
+                }
+            }
+        }
+    }
+}
