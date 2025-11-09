@@ -3969,15 +3969,15 @@
             "items": {
                 "Combustible": {
                     "name": "易燃 Combustible",
-                    "description": "<p>罐中畸胎第一次受到火焰伤害时，它的烟雾会燃烧，对其窒息烟雾灵光内的所有其他生物造成@Damage[5[fire]]伤害。</p>"
+                    "description": "<p>罐中畸胎第一次受到火焰伤害时，它的烟雾会燃烧，对其窒息烟雾灵光内的所有其他生物造成@Damage[5[fire]|options:area-damage]伤害。</p>"
                 },
                 "Suffocating Fumes": {
                     "name": "窒息烟雾 Suffocating Fumes",
-                    "description": "<p>5尺。进入灵光或在灵光中开始它的回合的生物必须通过@Check[fortitude|dc:14]检定，如果罐中畸胎附着了他则DC为@Check[fortitude|dc:17]。</p>\n<p>豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，大失败则额外获得1分钟的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。</p>"
+                    "description": "<p>5尺。进入灵光或在灵光中开始它的回合的生物必须通过@Check[fortitude|dc:14|options:area-effect,inflicts:sickened,inflicts:enfeebled]检定，如果罐中畸胎附着了他则DC为@Check[fortitude|dc:17|options:area-effect,inflicts:sickened,inflicts:enfeebled]。</p>\n<p>豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，大失败则额外获得1分钟的@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}。</p>"
                 },
                 "Attach": {
                     "name": "附着 Attach",
-                    "description": "<p>当一个罐中畸胎击中一个比自己大的目标时，它会用古怪的排泄物黏附在那个生物身上。这类似于擒抱了这个生物，但罐中畸胎不会造成措手不及，且它会跟随目标一起移动，而不是把目标困在原地。</p>\n<p>在附着时，罐中畸胎在它的每个回合都会自动对目标造成下颚打击所能造成的伤害。它也在挣扎，只要不被抓住或限制，AC就能获得+2环境加值。</p>"
+                    "description": "<p>当一个罐中畸胎击中一个比自己大的目标时，它会用古怪的排泄物黏附在那个生物身上。这类似于擒抱了这个生物，但罐中畸胎不会造成@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]，且它会跟随目标一起移动，而不是把目标困在原地。</p>\n<p>在附着时，罐中畸胎在它的每个回合都会自动对目标造成下颚打击所能造成的伤害。它也在挣扎，只要不被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，AC就能获得+2环境加值。</p>"
                 }
             },
             "prototypeToken": {
@@ -5010,7 +5010,7 @@
                 },
                 "Psychokinetic Trumpet": {
                     "name": "灵能尖啸 Psychokinetic Trumpet",
-                    "description": "<p>三角象对@Template[cone|distance:30]范围发出一阵刺耳的尖啸，造成@Damage[8d8[mental]|options:area-damage]伤害（@Check[will|dc:27|basic]豁免）。豁免失败的生物还会被推离15尺（大失败则为30尺）。</p>\n<p>如果被推离的生物撞上固体障碍，还会受到@Damage[3d6[bludgeoning]]伤害并且停住。</p>\n<p>三角象在[[/gmr 1d4 #Recharge Psychokinetic Trumpet]]{1d4轮}内无法再次使用灵能尖啸。</p>"
+                    "description": "<p>三角象对@Template[cone|distance:30]范围发出一阵刺耳的尖啸，造成@Damage[8d8[mental]|options:area-damage]伤害（@Check[will|dc:27|basic|options:area-effect,forced-movement]豁免）。豁免失败的生物还会被推离15尺（大失败则为30尺）。</p>\n<p>如果被推离的生物撞上固体障碍，还会受到@Damage[3d6[bludgeoning]]伤害并且停住。</p>\n<p>三角象在[[/gmr 1d4 #Recharge Psychokinetic Trumpet]]{1d4轮}内无法再次使用灵能尖啸。</p>"
                 },
                 "Trample": {
                     "name": "践踏 Trample",
