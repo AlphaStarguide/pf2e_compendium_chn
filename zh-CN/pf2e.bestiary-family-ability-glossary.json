@@ -126,7 +126,7 @@
             "name": "(吸血鬼,基础)吸血鬼弱点 Vampire Weaknesses"
         },
         "(Vampire, Nosferatu Overlord) Paralytic Fear": {
-            "description": "<p><strong>需求</strong> 诺斯费拉图霸主最后一个动作是成功的利爪打击</p>\n<hr />\n<p><strong>效果</strong> 诺斯费拉图将打击的目标拉近，用恐惧冻结他的心智。目标必须进行@Check[will|dc:]豁免，DC使用诺斯费拉图的等级对应的适中DC。</p>\n<hr />\n<p><strong>大成功</strong> 此目标不受影响。</p>\n<p><strong>成功</strong> 此目标因恐惧而@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]直至诺斯费拉图的下个回合结束</p>\n<p><strong>失败</strong> 此目标被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]且在抵抗诺斯费拉图吸血能力DC时的强韧豁免上获得-2环境减值，直至诺斯费拉图下个回合结束。</p>\n<p><strong>大失败</strong> 如同失败，目标还获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>",
+            "description": "<p><strong>需求</strong> 诺斯费拉图霸主最后一个动作是成功的利爪打击</p><hr /><p><strong>效果</strong> 诺斯费拉图将打击的目标拉近，用恐惧冻结他的心智。目标必须进行@Check[will|dc:|options:inflicts:frightened,inflicts:immobilized,inflicts:restrained]豁免，DC使用诺斯费拉图的等级对应的适中DC。</p><hr /><p><strong>大成功</strong> 此目标不受影响。</p>\n<p><strong>成功</strong> 此目标因恐惧而@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]直至诺斯费拉图的下个回合结束</p>\n<p><strong>失败</strong> 此目标被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]且在抵抗诺斯费拉图吸血能力DC时的强韧豁免上获得-2环境减值，直至诺斯费拉图下个回合结束。</p>\n<p><strong>大失败</strong> 如同失败，目标还获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>",
             "name": "(吸血鬼,诺斯费拉图霸主)惊惶爪 Paralytic Fear"
         },
         "(Vampire, Nosferatu) Change Shape": {
@@ -219,7 +219,7 @@
         },
         "(Vampire, Nosferatu) Drink Blood": {
             "name": "(吸血鬼,诺斯费拉图)吸血 Drink Blood",
-            "description": "<p><strong>需求</strong> 诺斯费拉图的最后一个动作是一次成功的尖牙打击</p>\n<hr />\n<p><strong>效果</strong> 诺斯费拉图将尖牙刺入那个生物的体内来吸他的血。它需要进行一次@Check[athletics|defense:fortitude]检定对抗那个生物的强韧DC。成功后那个生物获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，诺斯费拉图恢复数量等同于它最大HP10%的HP，任何溢出的生命值都变成临时生命。从一个已经流失的生物身上吸血不会让诺斯费拉图获得生命值，但是会让这个生物的流失值加1。诺斯费拉图同样可以饮下保存于容器中的血来维生，但是它不会从中恢复HP。</p>\n<p>受害者的流失值每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[medicine|dc:20]检定进行一次输血，并在10分钟后减少1点流失值。</p>"
+            "description": "<p><strong>需求</strong> 诺斯费拉图的最后一个动作是一次成功的尖牙打击</p>\n<hr />\n<p><strong>效果</strong> 诺斯费拉图将尖牙刺入那个生物的体内来吸他的血。它需要进行一次@Check[athletics|against:fortitude]检定对抗那个生物的强韧DC。成功后那个生物获得@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，诺斯费拉图恢复数量等同于它最大HP10%的HP，任何溢出的生命值都变成临时生命。从一个已经流失的生物身上吸血不会让诺斯费拉图获得生命值，但是会让这个生物的流失值加1，达到@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 5}时会杀死受害者。诺斯费拉图同样可以饮下保存于容器中的血来维生，但是它不会从中恢复HP。</p>\n<p>受害者的流失值每周减少1点。在拥有足够的血液或是一名献血者的情况下，可以通过一次@Check[medicine|dc:20]检定进行一次输血，并在10分钟后减少1点流失值。</p>"
         },
         "(Vampire, Nosferatu) Nosferatu Vulnerabilities": {
             "name": "(吸血鬼,诺斯费拉图)诺斯费拉图弱点 Nosferatu Vulnerabilities",
@@ -227,7 +227,7 @@
         },
         "(Vampire, Nosferatu) Plagued Coffin Restoration": {
             "name": "(吸血鬼,诺斯费拉图)寝于疫土之棺 Plagued Coffin Restoration",
-            "description": "<p>与其他不死生物不同，诺斯费拉图不会在HP为0时被摧毁。取而代的是，它的身体崩解成大量的老鼠，这群各自独立的老鼠朝着各个方向逃跑，以期能返回它们的棺材。哪怕只有一只老鼠抵达棺材，诺斯费拉图也能开始恢复。诺斯费拉图通过在死于疫病之人的墓土中休息来恢复它们的力量。如果它的身体在填满了土的棺木中休息1小时，则诺斯费拉图将获得1点生命值，紧接着它的快速治疗（Fast Healing）能力开始正常生效。但如果棺材里没有装着疫亡者的墓土的话，它就需要在棺木里休息1天才会获得1点生命值并重获它的快速治疗能力。</p>"
+            "description": "<p>与其他不死生物不同，诺斯费拉图不会在HP为0时被摧毁。取而代的是，它的身体崩解成大量的老鼠，这群各自独立的老鼠朝着各个方向逃跑，以期能返回它们的棺材。哪怕只有一只老鼠抵达棺材，诺斯费拉图也能开始恢复。诺斯费拉图通过在死于疫病之人的墓土中休息来恢复它们的力量。如果它的身体在填满了土的棺木中休息1小时，则诺斯费拉图将获得1点生命值，紧接着它的快速治疗能力开始正常生效。但如果棺材里没有装着疫亡者的墓土的话，它就需要在棺木里休息1天才会获得1点生命值并重获它的快速治疗能力。</p>"
         },
         "(Vampire, Strigoi Progenitor) Drink Essence": {
             "name": "(吸血鬼,斯特里戈伊始祖)吸吮精华 Drink Essence",
@@ -303,7 +303,7 @@
         },
         "(Vampire, Nosferatu Overlord) Air of Sickness": {
             "name": "(吸血鬼,诺斯费拉图霸主)呕逆瘴气 Air of Sickness",
-            "description": "<p>30尺。在此灵光内开始他们的回合的生物必须进行@Check[fortitude|dc:]豁免，DC使用诺斯费拉图的等级对应的适中DC。豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}且在1小时内抵抗疾病和移除恶心的骰点获得-2状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.XSXMGb5h4Um6YXiT]{效果：呕逆瘴气}</p>"
+            "description": "<p>30尺。在此灵光内开始他们的回合的生物必须进行@Check[fortitude|dc:|options:inflicts:sickened]豁免，DC使用诺斯费拉图的等级对应的适中DC。豁免失败的生物获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}且在1小时内抵抗疾病和移除恶心的骰点获得-2状态减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.XSXMGb5h4Um6YXiT]</p>"
         },
         "(Vampire, Nosferatu Thrall) Fast Healing": {
             "name": "(吸血鬼,诺斯费拉图血奴)快速治疗 Fast Healing",
@@ -311,11 +311,11 @@
         },
         "(Vampire, Nosferatu Thrall) Mindbound": {
             "name": "(吸血鬼,诺斯费拉图血奴)心灵束缚 Mindbound",
-            "description": "<p>诺斯费拉图主人对它们的血奴的思维进行了有效的控制。如果奴隶主之外的人将血奴选做了一个会给予他们@UUID[Compendium.pf2e.conditionitems.Item.9qGBRpbX9NEwtAAr]状态的效果的目标时，血奴的主人在骰反制(counteract)检定对抗时的反制检定调整值为支配DC-10。</p>"
+            "description": "<p>诺斯费拉图主人对它们的血奴的思维进行了有效的控制。如果奴隶主之外的人将血奴选做了一个会给予他们@UUID[Compendium.pf2e.conditionitems.Item.9qGBRpbX9NEwtAAr]状态的效果的目标时，血奴的主人在骰反制检定对抗时的反制检定调整值为支配DC-10。</p>"
         },
         "(Vampire, Nosferatu Thrall) Mortal Shield": {
             "name": "(吸血鬼,诺斯费拉图血奴)人肉护盾 Mortal Shield",
-            "description": "<p><strong>触发</strong> 血奴的主人将要受到打击或法术攻击的伤害，并且位与于血奴相邻的方格</p>\n<hr />\n<p><strong>效果</strong> 血奴扑向主人的身前，承受一半的伤害（分摊的伤害量采用原始造伤数值计算，分摊时不计任何弱点或抗性），血奴的主人承受任何剩下的伤害，（接下来）如常应用任何弱点和抗性。</p>"
+            "description": "<p><strong>触发</strong> 血奴的主人将要受到打击或法术攻击的伤害，并且位与于血奴相邻的方格</p><hr /><p><strong>效果</strong> 血奴扑向主人的身前，承受一半的伤害（分摊的伤害量采用原始造伤数值计算，分摊时不计任何弱点或抗性），血奴的主人承受任何剩下的伤害，（接下来）如常应用任何弱点和抗性。</p>"
         },
         "(Vampire, Nosferatu Thrall) Rally": {
             "name": "(吸血鬼,诺斯费拉图血奴)集结 Rally",
@@ -839,7 +839,7 @@
         },
         "(Divine Warden) Divine Destruction": {
             "name": "(神圣守卫)神圣毁灭 Divine Destruction",
-            "description": "<p>当神圣守卫的生命值减少至0时，它在@Template[emanation|distance:30]范围内爆发出神圣能量，造成每个等级@Damage[1d6[damageType]|options:area-damage]伤害。此伤害可以是命能也可以是虚能，取决于其守护神的神力源泉（如果神力源泉是可选的，则在创造神圣守卫时决定），并且此能力获得和伤害类型相同的特征。范围内的每个生物都必须尝试一次@Check[will|dc:|options:area-effect,damaging-effect]豁免。</p><hr /><p><strong>大成功</strong> 生物受到一半伤害。</p>\n<p><strong>成功</strong> 生物受到全伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，并且受到守护神的临时诅咒。该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1日；这是一个诅咒效果，使用神圣守卫的意志DC作为其反制DC。</p>\n<p><strong>大失败</strong> 类似失败，只是生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>"
+            "description": "<p>当神圣守卫的生命值减少至0时，它在@Template[type:emanation|distance:30]范围内爆发出神圣能量，造成每个等级@Damage[1d6[spirit]|options:area-damage]伤害。范围内的每个生物都必须尝试一次@Check[will|dc:0]豁免。</p><hr /><p><strong>大成功</strong> 生物受到一半伤害。</p>\n<p><strong>成功</strong> 生物受到全伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，并且受到守护神的临时诅咒。该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1日；这是一个诅咒效果，使用神圣守卫的意志DC作为其反制DC。</p>\n<p><strong>大失败</strong> 类似失败，只是生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}和@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}。</p>"
         },
         "(Divine Warden) Divine Domain Spells": {
             "name": "(神圣守卫)神术领域法术 Divine Domain Spells",
@@ -854,7 +854,7 @@
             "description": "<p>神圣守卫无法攻击那些公开穿戴或展示其守护神圣徽的生物，除非该生物先对神圣守护者做出敌对动作。如果神圣守卫具有智慧，它也可能会对那些它认为信仰不够虔诚或仅仅是穿戴圣徽来骗自己的生物发动攻击（通常是通过一次察觉检定来进行@UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{察言观色 Sense Motive}动作）。</p>"
         },
         "(Divine Warden) Faithful Weapon": {
-            "description": "<p>神圣守卫总是持握着守护神祇的偏好武器。如果该武器为远程武器，神圣守卫每次进行远程攻击的时候会自动生成弹药。如果神圣守卫的等级达到4级以上，当神圣守卫持握着偏好武器时，该武器自动获得<em>@UUID[Compendium.pf2e.equipment-srd.Item.DxCuJKynlnMQZHgp]{强击 Striking}</em>符文；12级以上则为<em>@UUID[Compendium.pf2e.equipment-srd.Item.KCQRFvUgbyclvOGi]{高等强击 Greater Striking}</em>符文，19级以上则为 <em>@UUID[Compendium.pf2e.equipment-srd.Item.woxl2FrrgAcJDu0t]{上等强击 Major Striking}</em>符文。</p>",
+            "description": "<p>神圣守卫总是持握着守护神祇的偏好武器。如果该武器为远程武器，神圣守卫每次进行远程攻击的时候会自动生成弹药。如果神圣守卫的等级达到4级以上，当神圣守卫持握着偏好武器时，该武器自动获得<em>强击</em>符文；12级以上则为<em>高等强击</em>符文，19级以上则为 <em>上等强击</em>符文。</p>",
             "name": "(神圣守卫)信仰武器 Faithful Weapon"
         },
         "(Divine Warden) Instrument of Faith": {
