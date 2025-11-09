@@ -999,15 +999,15 @@
             "items": {
                 "Combustible": {
                     "name": "Combustible",
-                    "description": "<p>The first time each round that a pickled punk takes fire damage, its fumes combust, dealing @Damage[5[fire]] damage to all other creatures within the area of its Suffocating Fumes aura.</p>"
+                    "description": "<p>The first time each round that a pickled punk takes fire damage, its fumes combust, dealing @Damage[5[fire]|options:area-damage] damage to all other creatures within the area of its Suffocating Fumes aura.</p>"
                 },
                 "Suffocating Fumes": {
                     "name": "Suffocating Fumes",
-                    "description": "<p>5 feet. A creature that enters or begins its turn within the aura must attempt a @Check[fortitude|dc:14] save, or @Check[fortitude|dc:17] if the pickled punk is attached to the creature.</p>\n<p>On a failed save, the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, and on a critical failure, it's also @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>"
+                    "description": "<p>5 feet. A creature that enters or begins its turn within the aura must attempt a @Check[fortitude|dc:14|options:area-effect,inflicts:sickened,inflicts:enfeebled] save, or @Check[fortitude|dc:17|options:area-effect,inflicts:sickened,inflicts:enfeebled] if the pickled punk is attached to the creature.</p>\n<p>On a failed save, the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, and on a critical failure, it's also @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute.</p>"
                 },
                 "Attach": {
                     "name": "Attach",
-                    "description": "<p>When a pickled punk hits a target larger than itself, it uses bizarre excretions to adhere to that creature. This is similar to Grabbing the creature, but the pickled punk is not off-guard, and it moves with that creature rather than holding it in place.</p>\n<p>Each turn while attached, the pickled punk automatically deals the damage from its jaws Strike to the creature to which it's attached. It also wriggles about, gaining a +2 circumstance bonus to AC as long as it's not also grabbed or restrained.</p>"
+                    "description": "<p>When a pickled punk hits a target larger than itself, it uses bizarre excretions to adhere to that creature. This is similar to Grabbing the creature, but the pickled punk is not @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard}, and it moves with that creature rather than holding it in place.</p>\n<p>Each turn while attached, the pickled punk automatically deals the damage from its jaws Strike to the creature to which it's attached. It also wriggles about, gaining a +2 circumstance bonus to AC as long as it's not also @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}.</p>"
                 }
             }
         },
@@ -1034,7 +1034,7 @@
                 },
                 "Psychokinetic Trumpet": {
                     "name": "Psychokinetic Trumpet",
-                    "description": "<p>The teraphant lets out a loud trumpet that deals @Damage[8d8[mental]|options:area-damage] damage (@Check[will|dc:27|basic|options:area-effect,inflicts:forced-movement] save) in a @Template[cone|distance:30]. A creature that fails its save is also pushed 15 feet (30 feet on a critical failure).</p>\n<p>If a pushed creatures strikes a solid barrier, it takes @Damage[3d6[bludgeoning]] damage and stops.</p>\n<p>The teraphant can't use Psychokinetic Trumpet again for [[/gmr 1d4 #Recharge Psychokinetic Trumpet]]{1d4 rounds}.</p>"
+                    "description": "<p>The teraphant lets out a loud trumpet that deals @Damage[8d8[mental]|options:area-damage] damage (@Check[will|dc:27|basic|options:area-effect,forced-movement] save) in a @Template[cone|distance:30]. A creature that fails its save is also pushed 15 feet (30 feet on a critical failure).</p>\n<p>If a pushed creatures strikes a solid barrier, it takes @Damage[3d6[bludgeoning]] damage and stops.</p>\n<p>The teraphant can't use Psychokinetic Trumpet again for [[/gmr 1d4 #Recharge Psychokinetic Trumpet]]{1d4 rounds}.</p>"
                 },
                 "Trample": {
                     "name": "Trample",
@@ -1245,7 +1245,7 @@
                     "name": "+2 Resilient Hellknight Plate",
                     "description": "<p>Few armors in the Inner Sea region are as memorable as the iconic Hellknight plate. While each order has its own flourishes, Hellknight plate is instantly recognizable to any who know of the Hellknights. Hellknights go to extreme measures to punish non-Hellknights who get their hands on Hellknight plate, and the reward is not usually worth the risk, since for non-Hellknights, the armor is functionally similar to @UUID[Compendium.pf2e.equipment-srd.Item.Gq1cZWSKOtJhKd2p]{Full Plate}.</p>"
                 },
-                "equipment-Bolts": {
+                "Bolts": {
                     "name": "Bolts",
                     "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
                 },
@@ -1575,7 +1575,7 @@
                     "name": "Chain Mail",
                     "description": "<p>A suit of chain mail consists of several pieces of armor composed of small metal rings linked together in a protective mesh. It typically includes a chain shirt, leggings, a pair of arms, and a coif, collectively protecting most of the body.</p>"
                 },
-                "equipment-Arrows": {
+                "Arrows": {
                     "name": "Arrows",
                     "description": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
                 },
@@ -1926,7 +1926,7 @@
                     "name": "Chain Mail",
                     "description": "<p>A suit of chain mail consists of several pieces of armor composed of small metal rings linked together in a protective mesh. It typically includes a chain shirt, leggings, a pair of arms, and a coif, collectively protecting most of the body.</p>"
                 },
-                "equipment-Arrows": {
+                "Arrows": {
                     "name": "Arrows",
                     "description": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
                 },
@@ -2798,7 +2798,7 @@
                     "name": "Breastplate",
                     "description": "<p>Though referred to as a breastplate, this type of armor consists of several pieces of plate or half-plate armor that protect the torso, chest, neck, and sometimes the hips and lower legs. It strategically grants some of the protection of plate while allowing greater flexibility and speed.</p>"
                 },
-                "equipment-Sling Bullets": {
+                "Sling Bullets": {
                     "name": "Sling Bullets",
                     "description": "<p>These are small metal balls, typically either iron or lead, designed to be used as ammunition in slings.</p>"
                 },
@@ -3157,11 +3157,11 @@
                     "name": "Religious Symbol (norgorber)",
                     "description": "<p>This piece of wood or silver is emblazoned with an image representing a deity. Some divine spellcasters, such as clerics, can use a religious symbol of their deity as a divine focus to use certain abilities and cast some spells. A religious symbol must be held in one hand to use it.</p>"
                 },
-                "equipment-Arrows": {
+                "Arrows": {
                     "name": "Arrows",
                     "description": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
                 },
-                "equipment-Arrows With Shadow Essence": {
+                "Arrows With Shadow Essence": {
                     "name": "Arrows With Shadow Essence",
                     "description": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>\n<p>Infused with @UUID[Compendium.pf2e.equipment-srd.Item.Wjkw0lEUOhypYvzo]{Shadow Essence}</p>"
                 },
@@ -3599,7 +3599,7 @@
                 "equipment-Garrote Bolts": {
                     "name": "Garrote Bolts"
                 },
-                "equipment-Bolts": {
+                "Bolts": {
                     "name": "Bolts",
                     "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
                 },
@@ -4071,7 +4071,7 @@
                 "equipment-Tinted Goggles": {
                     "name": "Tinted Goggles"
                 },
-                "equipment-Bolts": {
+                "Bolts": {
                     "name": "Bolts",
                     "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
                 },
@@ -4303,7 +4303,7 @@
                 "equipment-Tinted Goggles": {
                     "name": "Tinted Goggles"
                 },
-                "equipment-Bolts": {
+                "Bolts": {
                     "name": "Bolts",
                     "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
                 },
@@ -5277,7 +5277,7 @@
                 "equipment-Badge": {
                     "name": "Badge"
                 },
-                "equipment-Arrows": {
+                "Arrows": {
                     "name": "Arrows",
                     "description": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
                 },
