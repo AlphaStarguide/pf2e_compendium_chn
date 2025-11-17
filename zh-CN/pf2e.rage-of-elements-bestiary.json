@@ -143,6 +143,10 @@
                 "Breathe Shrapnel": {
                     "name": "霰弹吐息 Breathe Shrapnel",
                     "description": "<p>金魔蝠喷出@Template[cone|distance:15]金属碎片，对区域中每个生物造成@Damage[(2d4)[slashing],(1d4)[bleed]|options:area-damage]伤害（@Check[reflex|dc:17|basic|options:area-effect]豁免）。</p>\n<p>金魔蝠在[[/gmr 1d4 #Recharge Breathe Shrapnel]]{1d4轮}内无法使用霰弹吐息。</p>"
+                },
+                "Fast Healing 2 (While Touching Metal)": {
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>",
+                    "name": "快速治疗 Fast Healing 2（当接触金属时）"
                 }
             },
             "data": {
@@ -193,6 +197,9 @@
                 "Swiftness": {
                     "name": "Swiftness",
                     "description": "<p>The anemos's movement doesn't trigger reactions.</p>"
+                },
+                "Regeneration 15 (Deactivated by Earthbane)": {
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
                 }
             },
             "data": {
@@ -461,32 +468,44 @@
             }
         },
         "Zuhra Shuyookh": {
-            "name": "Zuhra Shuyookh",
-            "publicNotes": "<p>The most powerful zuhras draw followers and elemental metal with overwhelming force of personality and literal magnetism. When called upon to conduct wish rituals, they use their long isolation from the other planes as an excuse to misinterpret requests outlandishly, claiming linguistic differences.</p>\n<hr />\n<p>Zuhras, the genies of the elemental Plane of Metal, are bold and imposing, fond of being the center of attention and drawing a crowd with flashy performances, displays of skill, and tales of their personal victories. Despite their large personalities, their long-term relationships tend to be cool and somewhat distant; zuhras often make alliances but rarely form friendships, and the trust required for deeper relationships is rarer still. The few mortals who've gotten to know a zuhra often describe them as bombastic but emotionally aloof.</p>\n<p>Since the reconnection with other planes, zuhras have sought out and formed bonds with other genies. They find their jabali cousins to be capable smithing partners, if a bit staid and dull. Zuhras rarely pay non-genie elementals any more than a passing glance, finding even the intelligent ones uninteresting to communicate with or hard to relate to.</p>",
+            "name": "金巨灵长老 Zuhra Shuyookh",
+            "publicNotes": "<p>最强大的金巨灵以压倒性的人格魅力和字面意思的磁力吸引着追随者和金元素。当被召唤来进行许愿仪式时，他们会以长期与其他位面隔绝为借口，对请求进行离奇的曲解，声称是语言上的差异。</p>\n<hr />\n<p>金巨灵，是金元素位面的巨灵，他们大胆而巍然，以华丽的表演，技艺的展现，以及个人勇武的故事吸引众人的目光。尽管他们个性张扬，但他们的长期关系往往冷漠，甚至有些疏远；金巨灵经常结成同盟，但很少建立友谊，而更深层次关系所需的信任更是少之又少。少数了解金巨灵的凡人通常会说他们热情奔放，但感情淡漠。</p>\n<p>自从与其他位面重新建立联系后，金巨灵就开始寻求与其他巨灵建立联系。他们认为土巨灵表亲是能干的铁匠伙伴，虽然有些呆板无趣。金巨灵很少对非巨灵元素多看一眼，即便是有智慧的元素，他们也觉得与之交流毫无趣味，或很难与之相处。</p>",
             "languages": "Truespeech",
             "items": {
                 "Magnetic Field": {
-                    "name": "Magnetic Field",
-                    "description": "<p>10 feet.</p>\n<p>All squares in the aura are difficult terrain for creatures wearing metal armor or made of metal. Strikes with metallic weapons made by or against creatures in this aura take a –2 status penalty to the attack roll. Zuhras ignore these effects.</p>"
+                    "name": "磁场 Magnetic Field",
+                    "description": "<p>10尺。</p>\n<p>灵光范围内所有方格对穿戴金属护甲或以金属构成的生物视作困难地形。灵光范围内生物使用金属武器进行的打击，或使用金属武器打击灵光范围内的生物，攻击掷骰受到–2状态减值。金巨灵忽略此效果。</p>"
                 },
                 "Magnetic Reposition": {
-                    "name": "Magnetic Reposition",
-                    "description": "<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The shuyookh targets any number of creatures affected by their magnetic field, and moves each target 10 feet in a direction the zuhra chooses. Each target can resist being moved if it succeeds at a @Check[fortitude|dc:32] save.</p>"
+                    "name": "磁力移位 Magnetic Reposition",
+                    "description": "<p><strong>频率</strong> 每轮一次；</p>\n<hr />\n<p><strong>效果</strong> 长老以任意数量受到磁场影响的生物为目标，使每个目标以金巨灵选择的方向移动10尺。每个目标如果成功通过一次@Check[fortitude|dc:32]豁免可以抵抗被移动。</p>"
                 },
                 "Magnetic Storm": {
-                    "name": "Magnetic Storm",
+                    "name": "磁力风暴 Magnetic Storm",
                     "description": "<p><strong>Requirements</strong> The shuyookh's magnetic field is active</p>\n<hr />\n<p><strong>Effect</strong> The shuyookh electromagnetically flings razor-sharp metal scraps. Each creature in a @Template[emanation|distance:30] takes @Damage[8d6[slashing],3d12[electricity]|options:area-damage] damage, with a @Check[fortitude|dc:32|basic|options:area-effect] save.</p>\n<p>The shuyookh's magnetic field is deactivated for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
                 },
                 "Mercurial Wish": {
                     "name": "Mercurial Wish",
                     "description": "<p><strong>Frequency</strong> three times per year</p>\n<hr />\n<p><strong>Effect</strong> The shuyookh conducts a @UUID[Compendium.pf2e.spells-srd.Item.6dDtGIUerazSHIOu]{Wish} ritual for the benefit of a mortal, requiring no cost or secondary casters. The shuyookh's result is a success if they succeed at a @Check[flat|dc:5] or a failure if not. The shuyookh attempts to fulfill the wish in a way that creates an unstable or impermanent benefit.</p>"
+                },
+                "Constant Spells": {
+                    "name": "常驻法术 Constant Spells",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
+                },
+                "Conductive Redirection": {
+                    "description": "<p><strong>触发</strong> 金巨灵被造成电击伤害的攻击，法术或效果命中；</p>\n<hr />\n<p><strong>效果</strong> 金巨灵让电流传导过身体，如常受到伤害，然后朝30尺内一个其所能看见的目标重新射出一道电束。金巨灵进行一次远程攻击掷骰，使用[[/r 1d20+27 #Conductive Redirection]]{+27}调整值对抗目标的DC。如果命中或重击，目标受到等同于触发效果全额伤害的电击伤害。 </p>",
+                    "name": "重导电流 Conductive Redirection"
+                },
+                "Change Shape": {
+                    "name": "变身 Change Shape",
+                    "description": "<p> 金巨灵变形成为一个小型或中型金元素或动物。这不会影响金巨灵的数据，但会改变其打击的伤害类型。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
                 }
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
             "prototypeToken": {
-                "name": "Zuhra Shuyookh"
+                "name": "金巨灵长老"
             }
         },
         "Oregorger": {
