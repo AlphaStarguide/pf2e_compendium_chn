@@ -1016,11 +1016,15 @@
                 },
                 "equipment-Sack With 5 Rocks": {
                     "name": "装了 5 块石头的麻袋 Sack With 5 Rocks"
+                },
+                "Sack With 5 Rocks": {
+                    "name": "装了5块石头的麻袋 Sack With 5 Rocks"
                 }
             },
             "prototypeToken": {
                 "name": "龙灾火巨人"
-            }
+            },
+            "blurb": "变体火巨人"
         },
         "Duergar Slave Lord": {
             "name": "灰矮人猎奴领主 Duergar Slave Lord",
@@ -1926,7 +1930,8 @@
                     "name": "对魔法的豁免获得+1状态加值 +1 Status to All Saves vs. Magic"
                 },
                 "Attack of Opportunity (Jaws Only)": {
-                    "name": "反应打击 Reactive Strike（仅啃咬）"
+                    "name": "反应打击 Reactive Strike（仅啃咬）",
+                    "description": "<p>仅限啃咬</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 }
             },
             "allSaves": "对魔法的豁免获得+1状态加值",
@@ -2089,7 +2094,8 @@
                     "name": "精通推离 Improved Push"
                 },
                 "Attack of Opportunity (Jaws Only)": {
-                    "name": "反应打击 Reactive Strike（仅啃咬）"
+                    "name": "反应打击 Reactive Strike（仅啃咬）",
+                    "description": "<p>仅限啃咬</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 }
             },
             "allSaves": "对抗魔法的豁免+2状态加值",
@@ -2151,7 +2157,8 @@
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Scent]</p>"
                 },
                 "Attack of Opportunity (Jaws only)": {
-                    "name": "反应打击 Reactive Strike（仅爪抓）"
+                    "name": "反应打击 Reactive Strike（仅啃咬）",
+                    "description": "<p>仅限啃咬</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
                 }
             },
             "allSaves": "对抗魔法的豁免+2状态加值",
@@ -4222,7 +4229,34 @@
         "Spawn of Dahak": {
             "data": {
                 "placeHolder": "placeHolder"
-            }
+            },
+            "items": {
+                "Tail Swipe": {
+                    "description": "<p><strong>触发</strong> 有生物在达哈克之嗣的尾扫触及范围内使用移动动作，或者在一次移动动作的过程中离开自己所在的方格。</p>\n<hr />\n<p><strong>效果</strong> 达哈克之嗣对该生物作出一次尾扫打击，但此次打击要承受-2减值。若命中，她会打断该生物的动作。</p>",
+                    "name": "尾扫 Tail Swipe"
+                },
+                "Breath Weapon": {
+                    "description": "<p>达哈克之嗣喷吐火焰，对@Template[cone|distance:30]区域内的所有生物造成@Damage[9d6[fire]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免）。</p>\n<p>他在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用喷吐武器。</p>",
+                    "name": "喷吐武器 Breath Weapon"
+                },
+                "Draconic Frenzy": {
+                    "name": "龙之狂怒 Draconic Frenzy",
+                    "description": "<p>达哈克之嗣以任意顺序作出两次爪抓打击和一次啃咬打击。</p>"
+                },
+                "Shrieking Frenzy": {
+                    "name": "暴怒尖啸 Shrieking Frenzy",
+                    "description": "<p><strong>触发</strong> 达哈克之嗣的回合开始</p>\n<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 达哈克之嗣获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened}状态，直到它的下一回合结束，并且他可以用此额外动作打击或行走。在狂怒生效期间，由于达哈克之嗣不断大声嚎叫，因此无法说话，隐秘检定也会自动失败。</p>"
+                },
+                "Thrown Weapon Mastery": {
+                    "name": "投掷武器精通 Thrown Weapon Mastery",
+                    "description": "<p>达哈克之嗣的投掷武器获得“致命D6”特征。此外，如果达哈克之嗣投掷一件临时武器，既不会因此受到-2减值，也不会因为投掷一件具有非致命特征的临时武器来造成致命伤害而受到减值。</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "达哈克之嗣"
+            },
+            "name": "达哈克之嗣 Spawn of Dahak",
+            "blurb": "变体拉查拉克"
         }
     }
 }
