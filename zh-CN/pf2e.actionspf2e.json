@@ -2348,6 +2348,50 @@
         "Summon Sloth": {
             "description": "<p><strong>频率</strong> 每日一次</p><hr /><p><strong>效果</strong> 消耗1点神话点。你召唤七名懒惰符文领主——希莉尔（Xirie）、伊瑟里厄斯（Ilthyrius）、阿泽菈德妮（Azeradni）、扎莱特（Zalelet）、克伦利斯（Krenlith）、伊瓦瑞娜（Ivarinna）或库恩（Krune）——中一位的精魂，让其进入30尺内一处未被占据的空间。盟友能穿过这些精魂占据的空间，但这些精魂占据的空间对你的敌人来说是高等困难地形。</p>\n<p>在接下来的1分钟内，你能使用具有专注特征的双动作行动召唤另一名符文领主精魂进入30尺内的不同空间，至多为七个精魂。当你身处距离傲慢符文领主赞多古尔120尺的范围内时，则能以单动作召唤额外的精魂（而非原本的双动作行动）。每次你的回合结束时，每个精魂都会按照你的选择向着距其120尺内的不同敌人发射奥术能量（若没有敌人在射程内则什么都不做），造成@Damage[(2d4+2)[force]]伤害。1分钟后，所有精魂都会消失。</p>",
             "name": "召唤怠惰 Summon Sloth"
+        },
+        "Haunting Visage": {
+            "name": "Haunting Visage",
+            "description": "<p><strong>Requirements</strong> Your eidolon is condensed.</p><hr /><p>Your eidolon suddenly shifts itself into a terrifying shape of its choosing, rather than a simple mound, by closely controlling the positioning of its component bodies. The eidolon attempts to [[/act demoralize]] a creature within 15 feet; this Demoralize attempt loses the auditory trait, gains the visual trait, and the eidolon doesn't take a –4 circumstance penalty to the check if they don't share a language with their target. On a success or critical success, the target is additionally @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} for 1 round.</p>"
+        },
+        "Winged Leap": {
+            "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> Your dragon companion Flies. If it doesn't normally have a fly Speed, it gains a fly Speed of 25 feet for this movement. If it isn't on solid ground at the end of this movement, it falls.</p>",
+            "name": "Winged Leap"
+        },
+        "Redistribute": {
+            "description": "<p><strong>Frequency</strong> once per 10 minutes</p>\n<p><strong>Trigger</strong> An enemy's Strike against your eidolon is a critical hit.</p><hr /><p>Your eidolon rearranges its component bodies in response to a powerful blow, mitigating the worst of the damage they would have taken. The triggering critical hit becomes a hit. Your eidolon immediately switches forms, from condensed to dispersed or from dispersed to condensed.</p>",
+            "name": "Redistribute"
+        },
+        "Draconic Salvation": {
+            "name": "Draconic Salvation",
+            "description": "<p><strong>Trigger</strong> You critically fail a saving throw against an effect with the same tradition trait as your draconic benefactor (for instance, a divine spell if your benefactor is a diabolic dragon)</p>\n<p><strong>Requirements</strong> Your spectral dragon is in your space</p><hr /><p><strong>Effect</strong> You improve your saving throw result by one degree of success, and Channel Draconic Essence ends.</p>"
+        },
+        "Acrid Barrage": {
+            "name": "Acrid Barrage",
+            "description": "<p><strong>Frequency</strong> once per round</p><hr /><p><strong>Effect</strong> Each enemy in your aura takes @Damage[ternary(gte(@actor.level, 18), 7, ternary(gte(@actor.level, 15), 6, 5))d6[acid]] damage and @Damage[2d6[persistent,acid]] damage with a @Check[reflex|against:class-spell|basic] save against your class DC or spell DC, whichever is higher. The initial damage increases to 6d6 at 15th level and 7d6 at 18th level.</p>"
+        },
+        "Bounce Away": {
+            "name": "Bounce Away",
+            "description": "<p><strong>Frequency</strong> once per 10 minutes</p>\n<p><strong>Trigger</strong> A melee Strike hits you and deals bludgeoning damage</p><hr /><p><strong>Effect</strong> You gain resistance equal to your level to bludgeoning damage from the triggering Strike, then Stride up to half your Speed. You can Fly instead of Striding if you have a fly Speed.</p>"
+        },
+        "Swarming Assault": {
+            "name": "Swarming Assault",
+            "description": "<p><strong>Requirements</strong> Your eidolon is dispersed.</p><hr /><p>Your eidolon swarms over each creature occupying its space, biting, pecking, clawing, or making similar attacks with its component bodies. It deals @Damage[(ceil(@actor.level / 2))d6|options:area-damage] damage to each creature in the area, with a @Check[reflex|basic|options:area-effect] save against your spell DC. You choose each time your eidolon uses Swarming Assault whether it deals piercing or slashing damage. Your eidolon then can't use Swarming Assault again for the next [[/r 1d4 #Recharge Swarming Assault]]{1d4 rounds}.</p>\n<p>At 3rd level and every 2 levels thereafter, the damage increases by 1d6.</p>"
+        },
+        "Sickening Assault": {
+            "name": "Sickening Assault",
+            "description": "<p><strong>Frequency</strong> once per minute</p>\n<p><strong>Requirements</strong> Your eidolon is dispersed.</p><hr /><p>Your eidolon focuses on inflicting the most damage possible on its foes. If your eidolon's next action is to use @UUID[Compendium.pf2e.actionspf2e.Item.Wukpm200zHDuS85V]{Swarming Assault}, the number of damage dice of the Swarming Assault are doubled. Additionally, creatures that fail their Reflex save against that Swarming Assault are @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 4} on a critical failure).</p>"
+        },
+        "Channel Draconic Essence": {
+            "description": "<p><strong>Requirements</strong> You aren't channeling draconic essence and you're holding or wearing your draconic gift</p><hr /><p><strong>Effect</strong> You call down a portion of the magical essence of your draconic benefactor. A Medium spectral dragon that looks like your benefactor appears in any square within 30 feet. This spectral dragon can't be targeted by any attacks or spells and has no Hit Points, saving throws, or skills. It can occupy the same space as creatures and objects. While your spectral dragon is in your space, you gain a +1 status bonus to saves against sleep and paralysis.</p>\n<p>Channel Draconic Essence lasts until you Channel Draconic Essence again, you Dismiss the effect, the encounter ends, you fall @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or the spectral dragon is farther than 120 feet from you, whichever comes first.</p>",
+            "name": "Channel Draconic Essence"
+        },
+        "Fortify Focus": {
+            "description": "<p><strong>Requirements</strong> You are touching your designated companion, and their focus pool isn't full</p><hr /><p><strong>Effect</strong> Your companion regains 1 Focus Point.</p>",
+            "name": "Fortify Focus"
+        },
+        "Dragon's Protection": {
+            "description": "<p><strong>Trigger</strong> An enemy you can see would reduce this spell's target to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon intercepts, preventing the spell's target from being knocked out; the spell's target remains at 1 Hit Point. As the dragon disappears, it flies over the triggering enemy and releases its retributive breath, dealing @Damage[5d4[spirit]] damage to it with a @Check[reflex|basic] save.</p>",
+            "name": "Dragon's Protection"
         }
     },
     "folders": {
