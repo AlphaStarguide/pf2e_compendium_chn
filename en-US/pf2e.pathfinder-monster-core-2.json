@@ -2315,7 +2315,7 @@
                 },
                 "Mechanical Vulnerability": {
                     "name": "Mechanical Vulnerability",
-                    "description": "<p>A creature with expert proficiency in Thievery can attempt a check to @UUID[Compendium.pf2e.actionspf2e.Item.cYdz2grcOcRt4jk6]{Disable a Device} to damage a dig-widget. The DC is 22, and each success deals 20 damage.</p>"
+                    "description": "<p>A creature with expert proficiency in Thievery can attempt a check to [[/act disable-device dc=22]] to damage a dig-widget. The DC is 22, and each success deals @Damage[20[untyped]] damage.</p>"
                 },
                 "Fastening Leap": {
                     "name": "Fastening Leap",
@@ -2985,12 +2985,9 @@
                     "name": "Status Sight",
                     "description": "<p>The requiem dragon automatically knows the Hit Points of all creatures they can see.</p>"
                 },
-                "+2 Status to All Saves vs. Divine": {
-                    "name": "+2 Status to All Saves vs. Divine"
-                },
                 "Soul Anchor": {
                     "name": "Soul Anchor",
-                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>"
+                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.k8bmDh3nWi2FUyz5]{Effect: Soul Anchor}</p>"
                 },
                 "Withhold Death": {
                     "name": "Withhold Death",
@@ -3014,7 +3011,7 @@
                 },
                 "Soul Shield": {
                     "name": "Soul Shield",
-                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of share life except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 10 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of @UUID[Compendium.pf2e.spells-srd.Item.d7Lwx6KAs47MtF0q]{Share Life} except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 10 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
                 }
             }
         },
@@ -5384,22 +5381,23 @@
             },
             "name": "Vermlek",
             "publicNotes": "<p>Vermleks, also called worm demons, manifest from the souls of mortals who desecrated the dead, such as grave robbers or necromancers. These fiends take their violations to a new extreme, using their demonic powers to horrifically core their living victims and don the flesh husk that remains.</p>\n<p>In their natural form, a vermlek resembles an oversized pinkish worm with four long tails that end in writhing fibrils. Their mouth splits into four segments like a profane tulip lined with rows of dozens of pointed teeth. However, these fiends are often encountered only after they have crawled into the body of a dead humanoid and made the hollowed-out flesh their temporary host. Vermleks use their powers of deception and disguise to infiltrate mortal settlements and influence unwitting acquaintances of the bodies they wear. Particularly intelligent or conniving vermleks might even reach stations of real power within the ranks of an army or government, at which point exposure of their true form can wreak havoc among the populace they have so thoroughly duped.</p>",
+            "ac": "(19 while Inhabiting a Body)",
             "items": {
                 "Recoil from Wasted Opportunities": {
                     "name": "Recoil from Wasted Opportunities",
-                    "description": "<p>Vermleks can't stand the sight of a good meal presented and then swiftly taken away. Whenever a dying creature within sight of the vermlek has its dying condition removed, the vermlek takes @Damage[1d6[mental]] damage.</p>"
+                    "description": "<p>Vermleks can't stand the sight of a good meal presented and then swiftly taken away. Whenever a @UUID[Compendium.pf2e.conditionitems.Item.yZRUzMqrMmfLu0V1]{Dying} creature within sight of the vermlek has its dying condition removed, the vermlek takes @Damage[1d6[mental]] damage.</p>"
                 },
                 "Abandon Body": {
                     "name": "Abandon Body",
-                    "description": "<p><strong>Requirements</strong> The vermlek is Inhabiting a Body</p><hr /><p><strong>Effect</strong> The vermlek crawls out of the body they are inhabiting, devouring much of the body's remaining flesh and regaining 10 Hit Points in the process. The corpse they leave behind is little more than a husk.</p>"
+                    "description": "<p><strong>Requirements</strong> The vermlek is Inhabiting a Body</p><hr /><p><strong>Effect</strong> The vermlek crawls out of the body they are inhabiting, devouring much of the body's remaining flesh and regaining @Damage[10[healing]] Hit Points in the process. The corpse they leave behind is little more than a husk.</p>"
                 },
                 "Inhabit Body": {
                     "name": "Inhabit Body",
-                    "description": "<p><strong>Requirements</strong> The vermlek isn't already Inhabiting a Body</p><hr /><p><strong>Effect</strong> The vermlek crawls into the body of an adjacent Medium humanoid that has been dead for no more than 1 week, consuming the bulk of the victim's skeleton and internal organs as they do so and cramming themself into the cavity. As long as they Inhabit a Body, the vermlek loses their bite attack, can wield weapons like a humanoid, gains a +3 circumstance bonus to AC, and gains a +3 circumstance bonus to Deception checks to Impersonate the creature they are inhabiting.</p>"
+                    "description": "<p><strong>Requirements</strong> The vermlek isn't already Inhabiting a Body</p><hr /><p><strong>Effect</strong> The vermlek crawls into the body of an adjacent Medium humanoid that has been dead for no more than 1 week, consuming the bulk of the victim's skeleton and internal organs as they do so and cramming themself into the cavity. As long as they Inhabit a Body, the vermlek loses their bite attack, can wield weapons like a humanoid, gains a +3 circumstance bonus to AC, and gains a +3 circumstance bonus to Deception checks to [[/act impersonate options=impersonate-inhabited-creature]] the creature they are inhabiting.</p>"
                 },
                 "Unsettling Movement": {
                     "name": "Unsettling Movement",
-                    "description": "<p>Whenever the vermlek Abandons a Body or Inhabits a Body, all creatures within 30 feet who can see the vermlek must succeed at a @Check[will|dc:19] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}. On a critical failure, the creature is frightened 1 and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. Regardless of the result, creatures are immune to the same vermlek's unsettling movement for 24 hours.</p>"
+                    "description": "<p>Whenever the vermlek Abandons a Body or Inhabits a Body, all creatures within @Template[emanation|distance:30]{30 feet} who can see the vermlek must succeed at a @Check[will|dc:19|options:inflicts:frightened,inflicts:sickened] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}. On a critical failure, the creature is frightened 1 and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. Regardless of the result, creatures are immune to the same vermlek's unsettling movement for 24 hours.</p>"
                 }
             }
         },
@@ -6385,12 +6383,9 @@
                     "name": "Status Sight",
                     "description": "<p>The requiem dragon automatically knows the Hit Points of all creatures they can see.</p>"
                 },
-                "+2 Status to All Saves vs. Divine": {
-                    "name": "+2 Status to All Saves vs. Divine"
-                },
                 "Soul Anchor": {
                     "name": "Soul Anchor",
-                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>"
+                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.k8bmDh3nWi2FUyz5]{Effect: Soul Anchor}</p>"
                 },
                 "Withhold Death": {
                     "name": "Withhold Death",
@@ -6406,7 +6401,7 @@
                 },
                 "Soul Shield": {
                     "name": "Soul Shield",
-                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of share life except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 10 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of @UUID[Compendium.pf2e.spells-srd.Item.d7Lwx6KAs47MtF0q]{Share Life} except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 10 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
                 }
             }
         },
@@ -7432,12 +7427,9 @@
                     "name": "Status Sight",
                     "description": "<p>The requiem dragon automatically knows the Hit Points of all creatures they can see.</p>"
                 },
-                "+2 Status to All Saves vs. Divine": {
-                    "name": "+2 Status to All Saves vs. Divine"
-                },
                 "Soul Anchor": {
                     "name": "Soul Anchor",
-                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>"
+                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.k8bmDh3nWi2FUyz5]{Effect: Soul Anchor}</p>"
                 },
                 "Withhold Death": {
                     "name": "Withhold Death",
@@ -7457,7 +7449,7 @@
                 },
                 "Soul Shield": {
                     "name": "Soul Shield",
-                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of share life except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 5 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of @UUID[Compendium.pf2e.spells-srd.Item.d7Lwx6KAs47MtF0q]{Share Life} except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 5 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
                 }
             }
         },
@@ -9298,7 +9290,7 @@
             "items": {
                 "Gatekeeper Aura": {
                     "name": "Gatekeeper Aura",
-                    "description": "<p>60 feet. A creature that uses a teleportation ability within the aura's emanation or enters it via a teleportation ability must succeed a @Check[will|dc:38] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} and have its destination changed to a point of the radiant warden's choosing within the aura. On a successful save, the creature arrives as intended but is still sickened 1.</p>"
+                    "description": "<p>60 feet. A creature that uses a teleportation ability within the aura's emanation or enters it via a teleportation ability must succeed a @Check[will|dc:38|options:area-effect,inflicts:sickened] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} and have its destination changed to a point of the radiant warden's choosing within the aura. On a successful save, the creature arrives as intended but is still sickened 1.</p>"
                 },
                 "Orrery": {
                     "name": "Orrery",
@@ -9306,11 +9298,11 @@
                 },
                 "Radiant Blast": {
                     "name": "Radiant Blast",
-                    "description": "<p>The radiant warden releases a @Template[type:cone|distance:50] of bright energy that deals @Damage[10d12[force]|options:area-damage] damage (@Check[reflex|dc:38|basic] save). The radiant warden can't use Radiant Blast for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "description": "<p>The radiant warden releases a @Template[type:cone|distance:50] of bright energy that deals @Damage[10d12[force]|options:area-damage] damage (@Check[reflex|dc:38|basic|options:area-effect] save). The radiant warden can't use Radiant Blast for [[/gmr 1d4 #Recharge Radiant Blast]]{1d4 rounds}.</p>"
                 },
                 "Radiant Blow": {
                     "name": "Radiant Blow",
-                    "description": "<p>When a creature is hit by the radiant warden's hammer Strike, a flash of radiant energy attempts to anchor the creature in place. The creature must attempt a @Check[will|dc:38] save; on a failure, the creature can't use any teleportation effects for 1 minute. On a critical failure, the creature is also permanently @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded}.</p>"
+                    "description": "<p>When a creature is hit by the radiant warden's hammer Strike, a flash of radiant energy attempts to anchor the creature in place. The creature must attempt a @Check[will|dc:38|options:inflicts:blinded] save; on a failure, the creature can't use any teleportation effects for 1 minute. On a critical failure, the creature is also permanently @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded}.</p>"
                 }
             }
         },
@@ -10080,6 +10072,7 @@
             },
             "name": "Requiem Dragon (Young, Spellcaster)",
             "publicNotes": "<p>Requiem dragons are stewards of the River of Souls and the process through which souls reach their final destination in the afterlife. The safe journey of a soul is of utmost importance to a requiem dragon, and some will follow individual souls from their first entry into the river through to their judgment in the Boneyard and eventually to their ultimate resting place. Most requiem dragons tie themselves to specific planes and shepherd any souls bound to that plane, leading to dragons linked to places like Heaven or Hell, though these dragons never swear true allegiance to these planes. Requiem dragons fill their lairs along the River of Souls—patchworks of somber architecture rescued from other planes—with invaluable records and mementos of great accomplishments.</p>",
+            "allSaves": "+2 status to all saves vs. divine",
             "items": {
                 "Soul Journey": {
                     "name": "Soul Journey",
@@ -10094,7 +10087,7 @@
                 },
                 "Soul Anchor": {
                     "name": "Soul Anchor",
-                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>"
+                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.k8bmDh3nWi2FUyz5]{Effect: Soul Anchor}</p>"
                 },
                 "Withhold Death": {
                     "name": "Withhold Death",
@@ -10821,7 +10814,7 @@
                 },
                 "Demolish Veil": {
                     "name": "Demolish Veil",
-                    "description": "<p><strong>Trigger</strong> The titan casts @UUID[Compendium.pf2e.spells-srd.Item.5bTt2CvYHPvaR7QQ]{Interplanar Teleport}</p><hr /><p><strong>Effect</strong> The titan arrives in a storm of shattered planar barriers. This has the effects of a 10th-rank @UUID[Compendium.pf2e.spells-srd.Item.yLJROsQtyrPIKcDx]{Wrathful Storm}.</p>"
+                    "description": "<p><strong>Frequency</strong> once per month</p>\n<p><strong>Trigger</strong> The titan casts @UUID[Compendium.pf2e.spells-srd.Item.5bTt2CvYHPvaR7QQ]{Interplanar Teleport}</p><hr /><p><strong>Effect</strong> The titan arrives in a storm of shattered planar barriers. This has the effects of a 10th-rank @UUID[Compendium.pf2e.spells-srd.Item.yLJROsQtyrPIKcDx]{Wrathful Storm}.</p>"
                 },
                 "Hundred-Dimension Grasp": {
                     "name": "Hundred-Dimension Grasp",
@@ -10833,7 +10826,7 @@
                 },
                 "Send Beyond": {
                     "name": "Send Beyond",
-                    "description": "<p><strong>Requirements</strong> The titan has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}</p><hr /><p><strong>Effect</strong> The titan thrusts the creature into a nightmare realm full of lightless hands and eyes. This has the effects of @UUID[Compendium.pf2e.spells-srd.Item.Oj1PJBMQD9vuwCv7]{Quandary} (DC 48). The titan can't use Send Beyond for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Requirements</strong> The titan has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}</p><hr /><p><strong>Effect</strong> The titan thrusts the creature into a nightmare realm full of lightless hands and eyes. This has the effects of @UUID[Compendium.pf2e.spells-srd.Item.Oj1PJBMQD9vuwCv7]{Quandary} (DC 48). The titan can't use Send Beyond for [[/gmr 1d4 #Recharge Send Beyond]]{1d4 rounds}.</p>"
                 },
                 "Shape Emptiness": {
                     "name": "Shape Emptiness",
@@ -10867,7 +10860,7 @@
                 },
                 "Canceling Rune": {
                     "name": "Canceling Rune",
-                    "description": "<p><strong>Trigger</strong> The dragon is the target of a spell that requires a saving throw</p><hr /><p><strong>Effect</strong> The dragon attempts to unmake the spell's foundational runes. They attempt to counteract the spell (counteract rank 10th, counteract modifier [[/r 1d20+26 #Counteract]]{+33}). If successful, the dragon is unaffected by the spell; other subjects are affected by the spell normally. The dragon can't use Canceling Rune again for [[/gmr 1d4 #Recharge Canceling Rune]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Trigger</strong> The dragon is the target of a spell that requires a saving throw</p><hr /><p><strong>Effect</strong> The dragon attempts to unmake the spell's foundational runes. They attempt to counteract the spell (counteract rank 10th, counteract modifier [[/r 1d20+33 #Counteract]]{+33}). If successful, the dragon is unaffected by the spell; other subjects are affected by the spell normally. The dragon can't use Canceling Rune again for [[/gmr 1d4 #Recharge Canceling Rune]]{1d4 rounds}.</p>"
                 },
                 "Retributive Rune": {
                     "name": "Retributive Rune",
@@ -11552,7 +11545,7 @@
                 },
                 "Canceling Rune": {
                     "name": "Canceling Rune",
-                    "description": "<p><strong>Trigger</strong> The dragon is the target of a spell that requires a saving throw</p><hr /><p><strong>Effect</strong> The dragon attempts to unmake the spell's foundational runes. They attempt to counteract the spell (counteract rank 10th, counteract modifier [[/r 1d20+26 #Counteract]]{+33}). If successful, the dragon is unaffected by the spell; other subjects are affected by the spell normally. The dragon can't use Canceling Rune again for [[/gmr 1d4 #Recharge Canceling Rune]]{1d4 rounds}.</p>"
+                    "description": "<p><strong>Trigger</strong> The dragon is the target of a spell that requires a saving throw</p><hr /><p><strong>Effect</strong> The dragon attempts to unmake the spell's foundational runes. They attempt to counteract the spell (counteract rank 10th, counteract modifier [[/r 1d20+33 #Counteract]]{+33}). If successful, the dragon is unaffected by the spell; other subjects are affected by the spell normally. The dragon can't use Canceling Rune again for [[/gmr 1d4 #Recharge Canceling Rune]]{1d4 rounds}.</p>"
                 },
                 "Retributive Rune": {
                     "name": "Retributive Rune",
@@ -12580,12 +12573,9 @@
                     "name": "Status Sight",
                     "description": "<p>The requiem dragon automatically knows the Hit Points of all creatures they can see.</p>"
                 },
-                "+2 Status to All Saves vs. Divine": {
-                    "name": "+2 Status to All Saves vs. Divine"
-                },
                 "Soul Anchor": {
                     "name": "Soul Anchor",
-                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>"
+                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.k8bmDh3nWi2FUyz5]{Effect: Soul Anchor}</p>"
                 },
                 "Withhold Death": {
                     "name": "Withhold Death",
@@ -12597,7 +12587,7 @@
                 },
                 "Soul Shield": {
                     "name": "Soul Shield",
-                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of share life except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 5 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The requiem dragon uses their life essence to create a shield of spiritual energy around a creature within 60 feet. The shield creates a link between the dragon and the creature with the effects of @UUID[Compendium.pf2e.spells-srd.Item.d7Lwx6KAs47MtF0q]{Share Life} except that the effect doesn't end regardless of distance and remains for 1 hour. In addition, the creature gains resistance 5 to physical and spirit damage that applies to the half of damage it receives. The dragon can Dismiss the effect.</p>"
                 }
             }
         },
@@ -12745,7 +12735,7 @@
             "items": {
                 "Cloak in Embers": {
                     "name": "Cloak in Embers",
-                    "description": "<p><strong>Trigger</strong> An adjacent ally is targeted by an effect that deals fire damage</p><hr /><p><strong>Effect</strong> The ember fox drapes itself across its ally, granting the ally fire resistance 10 against the incoming attack.</p>"
+                    "description": "<p><strong>Trigger</strong> An adjacent ally is targeted by an effect that deals fire damage</p><hr /><p><strong>Effect</strong> The ember fox drapes itself across its ally, granting the ally fire resistance 10 against the incoming attack.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.ZAEn7KA7Vdb1ruIr]{Effect: Cloak in Embers}</p>"
                 }
             }
         },
@@ -13422,6 +13412,7 @@
             },
             "name": "Requiem Dragon (Young)",
             "publicNotes": "<p>Requiem dragons are stewards of the River of Souls and the process through which souls reach their final destination in the afterlife. The safe journey of a soul is of utmost importance to a requiem dragon, and some will follow individual souls from their first entry into the river through to their judgment in the Boneyard and eventually to their ultimate resting place. Most requiem dragons tie themselves to specific planes and shepherd any souls bound to that plane, leading to dragons linked to places like Heaven or Hell, though these dragons never swear true allegiance to these planes. Requiem dragons fill their lairs along the River of Souls—patchworks of somber architecture rescued from other planes—with invaluable records and mementos of great accomplishments.</p>",
+            "allSaves": "+2 status to all saves vs. divine",
             "items": {
                 "Soul Journey": {
                     "name": "Soul Journey",
@@ -13436,7 +13427,7 @@
                 },
                 "Soul Anchor": {
                     "name": "Soul Anchor",
-                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>"
+                    "description": "<p>A creature within 60 feet would drop to 0 Hit Points</p><hr /><p><strong>Effect</strong> The dragon anchors the triggering creature's soul to its body. The creature remains at 1 Hit Point, becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}, and gains fast healing equal to the dragon's level for 1 minute. The creature becomes temporarily immune to further Soul Anchor usages for 24 hours.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.k8bmDh3nWi2FUyz5]{Effect: Soul Anchor}</p>"
                 },
                 "Withhold Death": {
                     "name": "Withhold Death",
@@ -13838,7 +13829,7 @@
                 },
                 "Reconstitution": {
                     "name": "Reconstitution",
-                    "description": "<p>When the lion reaches 0 Hit Points, its spirit dissipates. If its bonded vessel is intact, the lion re-forms in this vessel after [[/br 2d4 #Reconstitution]]{2d4 days}, fully healed. If the vessel is broken, it must first be @UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{Repaired}, after which the lion reforms in [[/br 3d4 #Reconstitution]]{3d4 days}.</p>"
+                    "description": "<p>When the lion reaches 0 Hit Points, its spirit dissipates. If its bonded vessel is intact, the lion re-forms in this vessel after [[/gmr 2d4 #Reconstitution]]{2d4 days}, fully healed. If the vessel is broken, it must first be @UUID[Compendium.pf2e.actionspf2e.Item.bT3skovyLUtP22ME]{Repaired}, after which the lion reforms in [[/gmr 3d4 #Reconstitution]]{3d4 days}.</p>"
                 },
                 "Ferocious Roar": {
                     "name": "Ferocious Roar",
