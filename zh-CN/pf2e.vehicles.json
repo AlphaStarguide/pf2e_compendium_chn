@@ -152,7 +152,13 @@
             "name": "驿马车 Carriage",
             "crew": "驾驶员*1",
             "pilotingCheck": "驾驶学识(DC 16)或自然(DC 18~DC 26，取决于拖曳生物)",
-            "speed": "拖曳生物中速度最慢者（以两个大型生物拖曳）"
+            "speed": "拖曳生物中速度最慢者（以两个大型生物拖曳）",
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "prototypeToken": {
+                "name": "驿马车"
+            }
         },
         "Cart": {
             "name": "二轮拖车 Cart",
@@ -161,7 +167,7 @@
             "speed": "拖曳生物的速度（以一个大型生物拖曳）"
         },
         "Cauldron of Flying": {
-            "name": "Cauldron of Flying",
+            "name": "飞行坩埚 Cauldron of Flying",
             "description": "<p>A large cooking pot 4 feet high and 5 feet in diameter, bulging slightly in the middle and flaring at the top.</p>",
             "crew": "驾驶员*1",
             "pilotingCheck": "奥法(DC 24), 神秘(DC 20)，或驾驶学识(DC 22)",
@@ -217,7 +223,7 @@
             }
         },
         "Clockwork Bumblebee": {
-            "name": "Clockwork Bumblebee",
+            "name": "发条大黄蜂 Clockwork Bumblebee",
             "description": "<p>This whimsical vehicle carries a small number of passengers and crew. It's capable of short bursts of flight, but the weight of the clockwork mechanisms prevents sustained use. The驾驶员，crew, and passenger all ride on the back, straddling the hull on built-in saddles.</p>",
             "crew": "驾驶员*1，组员*2",
             "pilotingCheck": "手艺(DC 28)或驾驶学识(DC 26)",
@@ -319,7 +325,7 @@
             "items": {
                 "Flash": {
                     "name": "闪光 Flash",
-                    "description": "<p>驾驶员让载具超载，使其发出灿烂的光芒。任何位于其发光灵光的明亮光照范围内的生物，必须通过@Check[fortitude|dc:19|name:Avoid flash]豁免检定，否则@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1分钟。萤火虫的光芒会暗淡10分钟，其发光能力被减少为10尺昏暗光照，在此期间无法使用闪光能力。如果萤火虫处于破损状态，闪光将无法使用。</p>"
+                    "description": "<p>驾驶员让载具超载，使其发出灿烂的光芒。任何位于其发光灵光的明亮光照范围内的生物，必须通过@Check[fortitude|dc:19|name:Avoid flash]豁免检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1分钟。萤火虫的光芒会黯淡10分钟，其发光能力被减少为10尺昏暗光照，在此期间无法使用闪光能力。如果萤火虫处于破损状态，闪光将无法使用。</p>"
                 },
                 "Glow": {
                     "name": "发光 Glow",
@@ -329,6 +335,13 @@
                     "name": "悬浮 Hover",
                     "description": "<p>这个飞行器采用快速旋转的螺旋桨升空，让它能在1尺高的空中悬浮。它无法飞得更高，当飞行员停止魔法或载具破损时，它会下降1尺并落在地面。</p>"
                 }
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "hazarddescription": "<p>萤火虫融合了魔法和科技，利用魔法和磁悬浮原理在地面上方滑翔。虽然萤火虫更像一个四方盒子，而非昆虫的形状，但它的名字来源于驱动它的魔法电能所发出的持续不断的光芒，以及载具两侧伸出的稳定磁铁，其位置看起来像和昆虫的翅膀大致相同。</p>",
+            "prototypeToken": {
+                "name": "萤火虫"
             }
         },
         "Firework Pogo": {
@@ -425,6 +438,12 @@
                     "name": "沙上滑行 Sand Skimmer",
                     "description": "<p>沙船在沙子、水和流沙上都可以同样轻松地航行，但它无法穿过硬的地面。</p>"
                 }
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "prototypeToken": {
+                "name": "沙船"
             }
         },
         "Sand Diver": {
@@ -448,7 +467,10 @@
             "name": "Sandsailer",
             "crew": "驾驶员*1，组员*2",
             "pilotingCheck": "运动(DC 39), 驾驶学识(DC 34), 航海学识(DC 34)，或自然(DC 39)",
-            "speed": "80尺(风力)"
+            "speed": "80尺(风力)",
+            "data": {
+                "placeHolder": "placeHolder"
+            }
         },
         "Second Kiss": {
             "name": "二度之吻 Second Kiss",
@@ -675,6 +697,140 @@
             "crew": "驾驶员*1",
             "pilotingCheck": "奥法（DC 33），自然（DC 33到41，取决于拉车的生物），或驾驶学识（DC 31）",
             "speed": "由拉车生物中飞行速度最慢的决定（拉车生物可以是六个大型生物、两个超大型生物或一个巨型生物）"
+        },
+        "Siege Barge": {
+            "prototypeToken": {
+                "name": "攻城驳船"
+            },
+            "speed": "由拖曳生物中最慢的决定（由4只大型生物拖曳）",
+            "hazarddescription": "<p>此特种驳船专为围攻沿河及海岸要塞、敌军营地面设计。除运载两具超大型攻城武器及其操作组外，还配备多种石弹与其他攻城弹药。</p>",
+            "items": {
+                "Weapon Mounts": {
+                    "description": "<p>该载具配备2个武器安装位。购入时，这些武器安装位为空置状态。安装或拆卸武器需花费1天，通过@Check[crafting|dc:39]检定，以及一件适合的武器。这些武器安装位可以装备体型不超过超大型的远程攻城武器。</p>",
+                    "name": "武器安装 Weapon Mounts"
+                },
+                "Space": {
+                    "name": "占据空间 Space",
+                    "description": "<p>60尺长，30尺宽，20尺高</p>"
+                },
+                "Sluggish": {
+                    "name": "笨重 Sluggish",
+                    "description": "<p>此载具必须每移动等同于体长2倍的距离后才能转向90度一次。</p>"
+                }
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "攻城驳船 Siege Barge",
+            "crew": "1驾驶员，4组员",
+            "pilotingCheck": "自然（DC 41~46 取决于拖曳的生物）或航海学识（DC 39）"
+        },
+        "Mobile Command Post": {
+            "items": {
+                "Space": {
+                    "name": "占据空间 Space",
+                    "description": "<p>90尺长，50尺宽，20尺高</p>"
+                },
+                "Sluggish": {
+                    "description": "<p>此载具必须每移动等同于体长2倍的距离后才能转向90度一次。</p>",
+                    "name": "笨重 Sluggish"
+                }
+            },
+            "hazarddescription": "<p>此多功能载具形同一座小型移动营地，配备防护屏障、厨房、睡眠舱及隔间办公室，所有单元均架设于覆甲木梁之上。梁下装有由铁板构成封闭式链轨的齿轮与车轮系统，使指挥所可全地形通行（虽速度缓慢）。抵达定位后链轨可收起，让载具基座直接放置于地面，同时利用侧方链轨结构提供额外防护。</p>",
+            "prototypeToken": {
+                "name": "机动指挥所"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "机动指挥所 Mobile Command Post",
+            "speed": "20尺（发条，魔法）",
+            "crew": "1驾驶员，9组员",
+            "pilotingCheck": "奥法（DC 37），手艺（DC 37）或驱动学识（DC 35）"
+        },
+        "Steam Turtle": {
+            "hazarddescription": "<p>这艘重装甲水上载具形似被钢板覆盖的巨型海龟，专为抢滩登陆与突袭港口设施而设计。在瘫痪敌方防御工事后，它会伸出长型跳板，供部队登陆部署。</p>",
+            "items": {
+                "Release Steam": {
+                    "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 需由两名组员在其各自回合中执行一次3动作行动，在载具周围释放出大量蒸汽，对@Template[type:emanation|distance:10]范围内的每个生物造成@Damage[11d6[fire]|options:area-damage]伤害（@Check[reflex|dc:35|basic]豁免）。若载具破损，该释放机制失效。</p>",
+                    "name": "释放蒸汽 Release Steam"
+                },
+                "Space": {
+                    "name": "占据空间 Space",
+                    "description": "<p>80尺长，50尺宽，40尺高</p>"
+                },
+                "Sluggish": {
+                    "name": "笨重 Sluggish",
+                    "description": "<p>此载具必须每移动等同于体长2倍的距离后才能转向90度一次。</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "蒸汽海龟"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "蒸汽海龟 Steam Turtle",
+            "speed": "游泳30尺（炼金）",
+            "crew": "1驾驶员，3组员",
+            "pilotingCheck": "手艺（DC 37）或航海学识（DC 35）"
+        },
+        "Sky Chariot (Light)": {
+            "pilotingCheck": "奥法（DC 25），自然（DC 25到33，取决于拖曳生物），或驾驶学识（DC 23）",
+            "prototypeToken": {
+                "name": "轻型御天战车"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "轻型御天战车 Sky Chariot (Light)",
+            "speed": "由拖曳生物中飞行速度最慢的决定（由2大型生物或1超大型生物拖曳）",
+            "crew": "1驾驶员"
+        },
+        "Sled": {
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "雪橇 Sled",
+            "pilotingCheck": "驱车学识（DC 14）或自然（DC 16到24，取决于拖曳生物）",
+            "speed": "由拖曳生物中速度最慢的决定（由2中型生物或4小型生物拖曳）",
+            "crew": "1驾驶员",
+            "items": {
+                "Ice Traverser": {
+                    "name": "滑冰 Ice Traverser",
+                    "description": "<p>冰与雪对雪橇不是困难地形，其他所有地形对雪橇是困难地形。</p>"
+                },
+                "Sluggish": {
+                    "name": "笨重 Sluggish",
+                    "description": "<p>此载具必须每移动等同于体长2倍的距离后才能转向90度一次。</p>"
+                }
+            },
+            "prototypeToken": {
+                "name": "雪橇"
+            }
+        },
+        "Sand Racer": {
+            "crew": "1驾驶员",
+            "name": "沙地赛车 Sand Racer",
+            "speed": "90尺（煞油）",
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "prototypeToken": {
+                "name": "沙地赛车"
+            }
+        },
+        "Chariot (Heavy)": {
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "重型战车 Chariot (Heavy)",
+            "speed": "由拖曳生物中速度最慢的决定（由2大型生物拖曳）",
+            "crew": "1驾驶员",
+            "pilotingCheck": "驱车学识（DC 18）或自然（DC 20到28，取决于拖曳生物）",
+            "prototypeToken": {
+                "name": "重型战车"
+            }
         }
     }
 }
