@@ -151,7 +151,7 @@
         "Carriage": {
             "name": "驿马车 Carriage",
             "crew": "驾驶员*1",
-            "pilotingCheck": "驾驶学识(DC 16)或自然(DC 18~DC 26，取决于拖曳生物)",
+            "pilotingCheck": "驱车学识（DC 16）或自然（DC 18~DC 26，取决于拖曳生物）",
             "speed": "拖曳生物中速度最慢者（以两个大型生物拖曳）",
             "data": {
                 "placeHolder": "placeHolder"
@@ -201,7 +201,7 @@
             "name": "发条钻孔机 Clockwork Borer",
             "description": "<p>发条钻孔机实际上是个巨大的金属钻头，附着在一个大型的轮式车辆上。其内部的发条齿轮能移动钻机并驱动钻头，让它快速穿过松软的物质，甚至能以较慢的速度钻穿坚硬的岩石。</p>",
             "crew": "驾驶员*1",
-            "pilotingCheck": "驾驶学识(DC 26)或手艺(DC 28)",
+            "pilotingCheck": "驱车学识（DC 26）或手艺（DC 28）",
             "speed": "20尺，掘地10尺(发条)",
             "items": {
                 "Adamantine Drill": {
@@ -226,7 +226,7 @@
             "name": "发条大黄蜂 Clockwork Bumblebee",
             "description": "<p>This whimsical vehicle carries a small number of passengers and crew. It's capable of short bursts of flight, but the weight of the clockwork mechanisms prevents sustained use. The驾驶员，crew, and passenger all ride on the back, straddling the hull on built-in saddles.</p>",
             "crew": "驾驶员*1，组员*2",
-            "pilotingCheck": "手艺(DC 28)或驾驶学识(DC 26)",
+            "pilotingCheck": "手艺（DC 28）或驱车学识（DC 26）",
             "speed": "飞行30尺(发条)"
         },
         "Clockwork Castle": {
@@ -530,7 +530,7 @@
             "name": "神速机 Speedster",
             "description": "<p>神速机是一种轻便的流线型的混合了发条和蒸汽动力的炼金底盘，外观大致为马或者其他为速度而生的生物。神速机是一种告诉移动的载具，可以在短时间内通过快速施放储存的蒸汽压力来进行加速。</p>",
             "crew": "驾驶员*1",
-            "pilotingCheck": "驾驶学识(DC 27)或手艺(DC 29)",
+            "pilotingCheck": "驱车学识（DC 27）或手艺（DC 29）",
             "speed": "50尺(炼金、发条)",
             "items": {
                 "Speed Boost": {
@@ -638,7 +638,7 @@
             "name": "冯托斯的金桥 Vonthos's Golden Bridge",
             "description": "<p>这个奇怪的载具由法师冯托斯制造，作为他参加艾巴萨罗姆的星石试炼时所进行的努力准备的一部分，这件载具被认为是魔法和科技结合的奇迹。冯托斯的金桥是一个由王座制成的飞行球体，周围环绕着镶嵌着黄金和宝石的发条环，上面被注入了强力的自适应防护法术，因此赋予它独特的能力。</p>",
             "crew": "驾驶员*1",
-            "pilotingCheck": "驾驶学识(DC 36)或奥法(DC 38)",
+            "pilotingCheck": "驱车学识（DC 36）或奥法（DC 38）",
             "speed": "飞行40尺(发条、魔法)",
             "items": {
                 "Captivating Wealth": {
@@ -752,7 +752,7 @@
             "name": "机动指挥所 Mobile Command Post",
             "speed": "20尺（发条，魔法）",
             "crew": "1驾驶员，9组员",
-            "pilotingCheck": "奥法（DC 37），手艺（DC 37）或驱动学识（DC 35）"
+            "pilotingCheck": "奥法（DC 37），手艺（DC 37）或驱车学识（DC 35）"
         },
         "Steam Turtle": {
             "hazarddescription": "<p>这艘重装甲水上载具形似被钢板覆盖的巨型海龟，专为抢滩登陆与突袭港口设施而设计。在瘫痪敌方防御工事后，它会伸出长型跳板，供部队登陆部署。</p>",
@@ -824,7 +824,22 @@
             },
             "prototypeToken": {
                 "name": "沙地赛车"
-            }
+            },
+            "items": {
+                "Burning Exhaust": {
+                    "description": "<p>尝试一次双动作驾驶检定来驾驶沙地赛车。</p>\n<hr />\n<p><strong>大成功</strong> 沙地赛车加速，且能够正常转向。选择至多两个在沙地赛车开始移动前相邻的生物。两个生物因沙地赛车灼烧的废气均受到@Damage[6d6[fire]] 伤害（@Check[reflex|dc:30|basic]豁免）。</p>\n<p><strong>成功</strong> 同大成功，但只能选择一个生物。</p>\n<p><strong>失败</strong> 同成功，但生物在反射豁免上获得+4环境加值，并且沙地赛车在直线上移动其速度的距离。</p>\n<p><strong>大失败</strong> 你不能用灼烧排气轰炸任何生物。沙地赛车在直线上移动其速度的距离并陷入失控。</p>",
+                    "name": "灼烧排气 Burning Exhaust"
+                },
+                "Speed Boost": {
+                    "description": "<p><strong>频率</strong> 每10分钟一次</p><hr /><p><strong>效果</strong> 驾驶员按下扳机将煞油直接注入到沙地赛车的引擎中，以短暂提升其速度。持续1轮，沙地赛车的速度提升至180尺，对沙地赛车的所有驾驶检定获得鲁莽特征，驾驶员在应对特殊挑战的特技或驾驶检定上获得+2环境加值。加力提速非常低效，会消耗一整天的燃料量。</p>",
+                    "name": "加力提速 Speed Boost"
+                },
+                "Exploratory Kit": {
+                    "name": "探险工具包 Exploratory Kit",
+                    "description": "<p>沙地赛车是为帮助在阿基顿的沙地荒漠上长距离探险而打造的，能够储存供一名中型生物14天消耗的@UUID[Compendium.pf2e.equipment-srd.Item.L9ZV076913otGtiB]{口粮 Rations}与燃料。它还拥有一个小的储存隔间用于存放一套@UUID[Compendium.pf2e.equipment-srd.Item.vLGDUFrg4yGzpTQX]{修理工具包 Repair Kit}以及脆弱机械部件的替换零件。</p>"
+                }
+            },
+            "pilotingCheck": "驱车学识（DC 30），手艺（DC 35）或奥法（DC 36）"
         },
         "Chariot (Heavy)": {
             "data": {
@@ -837,6 +852,15 @@
             "prototypeToken": {
                 "name": "重型战车"
             }
+        },
+        "Necro Roamer": {
+            "pilotingCheck": "奥法（DC 36）或驱车学识（DC 34）"
+        },
+        "Armored Sleigh": {
+            "pilotingCheck": "驱车学识（DC 36）或自然（DC 38~DC 46，取决于拖曳的生物）"
+        },
+        "Caisson": {
+            "pilotingCheck": "驱车学识（DC 19）或手艺（DC 21）"
         }
     }
 }
