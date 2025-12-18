@@ -1,0 +1,66 @@
+name: Generate Babele light index
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-light-index-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    # 避免死循环，不响应机器人自己的提交
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Generate labels.json / titles.json
+        env:
+          SCRIPT_PATH: tools/generate-light-index.mjs
+          # 修改此处：支持多行，填入你的翻译文件所在目录
+          INPUT_DIRS: |
+            zh-CN
+        run: |
+          set -euo pipefail
+          if [ ! -f "$SCRIPT_PATH" ]; then
+            echo "Error: Script not found at $SCRIPT_PATH"
+            exit 1
+          fi
+          
+          # 逐行读取目录并运行生成脚本
+          while IFS= read -r dir; do
+            [ -z "$dir" ] && continue
+            if [ ! -d "$dir" ]; then
+              echo "Warning: Input dir not found: $dir"
+              continue
+            fi
+            echo "Processing: $dir"
+            node "$SCRIPT_PATH" --input "$dir" --include-folders
+          done <<< "$INPUT_DIRS"
+
+      - name: Commit changes
+        run: |
+          set -euo pipefail
+          # 检查是否有文件变动
+          if git diff --quiet; then
+            echo "No changes detected."
+            exit 0
+          fi
+          
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: regenerate light index [skip ci]"
+          git push
