@@ -6,7 +6,7 @@ on:
 
 env:
   ZIP_FILENAME: "pf2e_compendium_chn"
-  PACKAGE_CONTENT: "module.json babele.js compendium/ npc/"
+  PACKAGE_CONTENT: "module.json babele.js babele-ondemand-patch.js compendium/ npc/"
   PACKAGE_ID: 1807
 
 
@@ -51,4 +51,5 @@ jobs:
         artifacts: './module.json, ./${{env.ZIP_FILENAME}}.zip'
         tag: ${{ github.event.release.tag_name }}
         body: ${{ github.event.release.body }}
+
 
