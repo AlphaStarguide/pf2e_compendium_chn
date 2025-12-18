@@ -4,20 +4,65 @@ on:
   release:
     types: [ published ]
 
+permissions:
+  contents: write
+
 env:
   ZIP_FILENAME: "pf2e_compendium_chn"
   PACKAGE_CONTENT: "module.json babele.js babele-ondemand-patch.js compendium/ npc/"
   PACKAGE_ID: 1807
 
-
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v4
+      with:
+        # 必须拉取最新代码以确保能 push 回去
+        fetch-depth: 0
 
-    # Substitute the Manifest and Download URLs in the module.json
-    - name: Substitute Manifest and Download Links For Versioned Ones
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: "20"
+
+    # 1. 生成最新索引
+    - name: Generate Babele Index
+      env:
+        SCRIPT_PATH: tools/generate-light-index.mjs
+        INPUT_DIRS: |
+          zh-CN
+      run: |
+        set -euo pipefail
+        if [ ! -f "$SCRIPT_PATH" ]; then
+          echo "Error: Script not found at $SCRIPT_PATH"
+          exit 1
+        fi
+        while IFS= read -r dir; do
+          [ -z "$dir" ] && continue
+          if [ ! -d "$dir" ]; then continue; fi
+          echo "Processing: $dir"
+          node "$SCRIPT_PATH" --input "$dir" --include-folders
+        done <<< "$INPUT_DIRS"
+
+    # 2. 将更新后的索引推送回仓库 (保持仓库与 Release 同步)
+    - name: Push updated index to repository
+      run: |
+        set -euo pipefail
+        git config user.name "github-actions[bot]"
+        git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+        
+        git add -A
+        if git diff --cached --quiet; then
+          echo "No changes to index detected, skipping git push."
+        else
+          git commit -m "chore: regenerate index for release ${{ github.event.release.tag_name }} [skip ci]"
+          git push origin main
+        fi
+
+    # 3. 替换 module.json 中的版本和链接
+    - name: Substitute Manifest and Download Links
       id: sub_manifest_link_version
       uses: microsoft/variable-substitution@v1
       with:
@@ -29,17 +74,21 @@ jobs:
         download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/${{env.ZIP_FILENAME}}.zip
         changelog: https://github.com/${{github.repository}}/releases/tag/${{github.event.release.tag_name}}
 
-    # Rename and remove files
+    # 4. 整理文件 (删除冗余并移动目录)
+    # 注意：此时生成的索引文件已经在 zh-CN 目录中，随后被移动到 compendium
     - name: Tidy files
       id: tidy-files
-      run: rm zh-CN/___.json && mv zh-CN compendium
+      run: |
+        # 即使文件不存在也不报错
+        rm -f zh-CN/___.json 
+        mv zh-CN compendium
 
-    # Create a zip file with all files required by the module to add to the release
+    # 5. 打包 Artifact
     - name: Create Artifact
       id: build-zip
       run: zip -r $ZIP_FILENAME.zip $PACKAGE_CONTENT
 
-    # Create a release for this specific version
+    # 6. 上传文件到 Release
     - name: Update Release with Files
       id: create_version_release
       uses: ncipollo/release-action@v1
@@ -51,5 +100,3 @@ jobs:
         artifacts: './module.json, ./${{env.ZIP_FILENAME}}.zip'
         tag: ${{ github.event.release.tag_name }}
         body: ${{ github.event.release.body }}
-
-
