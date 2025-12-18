@@ -46,7 +46,7 @@ jobs:
           node "$SCRIPT_PATH" --input "$dir" --include-folders
         done <<< "$INPUT_DIRS"
 
-    # 2. 将更新后的索引推送回仓库 (保持仓库与 Release 同步)
+    # 2. 将更新后的索引推送回仓库
     - name: Push updated index to repository
       run: |
         set -euo pipefail
@@ -58,7 +58,10 @@ jobs:
           echo "No changes to index detected, skipping git push."
         else
           git commit -m "chore: regenerate index for release ${{ github.event.release.tag_name }} [skip ci]"
-          git push origin main
+          
+          # 【关键修改】：推送当前 HEAD 到远程的目标分支
+          # github.event.release.target_commitish 通常就是 'main' 或当时发布时选择的分支
+          git push origin HEAD:${{ github.event.release.target_commitish }}
         fi
 
     # 3. 替换 module.json 中的版本和链接
@@ -100,3 +103,4 @@ jobs:
         artifacts: './module.json, ./${{env.ZIP_FILENAME}}.zip'
         tag: ${{ github.event.release.tag_name }}
         body: ${{ github.event.release.body }}
+
