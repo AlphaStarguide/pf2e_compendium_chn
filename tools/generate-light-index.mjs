@@ -75,6 +75,17 @@ function extractTitlesFromEntries(entries, { deep } = { deep: false }) {
   const titles = {};
   if (!entries) return titles;
 
+  const assignTitle = (key, value) => {
+    if (typeof key !== "string" || !key.trim()) return;
+    if (typeof value !== "string" || !value.trim()) return;
+    titles[key] = value;
+  };
+
+  const addIdAliases = (node, value, fallbackKey) => {
+    const idKey = typeof node?._id === "string" ? node._id : (typeof node?.id === "string" ? node.id : null);
+    if (idKey && idKey !== fallbackKey) assignTitle(idKey, value);
+  };
+
   const scanNestedTitles = (node) => {
     if (!deep) return;
     if (!node) return;
@@ -87,7 +98,8 @@ function extractTitlesFromEntries(entries, { deep } = { deep: false }) {
     for (const [k, v] of Object.entries(node)) {
       if (v && typeof v === "object") {
         if (typeof v.name === "string" && v.name.trim()) {
-          titles[k] = v.name;
+          assignTitle(k, v.name);
+          addIdAliases(v, v.name, k);
         }
         scanNestedTitles(v);
       }
@@ -97,10 +109,12 @@ function extractTitlesFromEntries(entries, { deep } = { deep: false }) {
   if (Array.isArray(entries)) {
     for (const row of entries) {
       if (!row || typeof row !== "object") continue;
-      const originalKey = typeof row.id === "string" ? row.id : (typeof row._id === "string" ? row._id : null);
       const translated = typeof row.name === "string" ? row.name : null;
-      if (originalKey && translated && translated.trim()) {
-        titles[originalKey] = translated;
+      if (translated && translated.trim()) {
+        const idKey = typeof row.id === "string" ? row.id : null;
+        const underscoreIdKey = typeof row._id === "string" ? row._id : null;
+        if (idKey) assignTitle(idKey, translated);
+        if (underscoreIdKey && underscoreIdKey !== idKey) assignTitle(underscoreIdKey, translated);
       }
       scanNestedTitles(row);
     }
@@ -110,13 +124,14 @@ function extractTitlesFromEntries(entries, { deep } = { deep: false }) {
   if (typeof entries === "object") {
     for (const [k, v] of Object.entries(entries)) {
       if (typeof v === "string") {
-        if (v.trim()) titles[k] = v;
+        assignTitle(k, v);
         continue;
       }
       if (v && typeof v === "object") {
         const translated = typeof v.name === "string" ? v.name : null;
         if (translated && translated.trim()) {
-          titles[k] = translated;
+          assignTitle(k, translated);
+          addIdAliases(v, translated, k);
         }
         scanNestedTitles(v);
       }
