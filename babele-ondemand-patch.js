@@ -114,6 +114,9 @@ function tryPatchBabele(babele) {
   if (!state.original.translatePackFolders && typeof babele.translatePackFolders === "function") {
     state.original.translatePackFolders = babele.translatePackFolders.bind(babele);
   }
+  if (!state.original.translateActor && typeof babele.translateActor === "function") {
+    state.original.translateActor = babele.translateActor.bind(babele);
+  }
 
   state.packTranslationUrls = state.packTranslationUrls ?? new Map();
   state.packTranslationsLoading = state.packTranslationsLoading ?? new Map();
@@ -151,6 +154,12 @@ function tryPatchBabele(babele) {
   };
 
   babele.ensurePackTranslationsLoaded = async (collection) => ensurePackTranslationsLoaded(babele, state, collection);
+
+  babele.translateActor = (actor) => {
+    if (!actor) return state.original.translateActor?.(actor);
+    const dialog = new PatchedOnDemandTranslateDialog(actor);
+    dialog.render(true);
+  };
 
   babele.init = async () => {
     if (!isOnDemandMode()) {
@@ -206,6 +215,97 @@ function tryPatchBabele(babele) {
   });
 
   patched = true;
+}
+
+function getSourcePackId(itemData) {
+  const sourceId = itemData?.flags?.core?.sourceId || itemData?._stats?.compendiumSource;
+  const ref = sourceId ? foundry.utils.parseUuid(sourceId) : null;
+  return ref?.collection ?? null;
+}
+
+class PatchedOnDemandTranslateDialog extends Dialog {
+  constructor(actor) {
+    super(
+      {
+        title: game.i18n.localize("BABELE.TranslateActorTitle"),
+        content:
+          `<p>${game.i18n.localize("BABELE.TranslateActorHint")}</p>` +
+          `<textarea rows="10" cols="50" id="actor-translate-log" style="font-family: Courier, monospace"></textarea>`,
+        buttons: {
+          translate: {
+            icon: '<i class="fas fa-globe"></i>',
+            label: game.i18n.localize("BABELE.TranslateActorBtn"),
+            callback: async () => {
+              const area = $("#actor-translate-log");
+              area.append(`start...\n`);
+              const items = actor.items.contents.length;
+              let translated = 0;
+              let untranslated = 0;
+
+              const packIds = new Set();
+              for (let idx = 0; idx < items; idx++) {
+                const item = actor.items.contents[idx];
+                const data = item?.toObject?.();
+                const packId = getSourcePackId(data);
+                if (packId) packIds.add(packId);
+              }
+
+              if (packIds.size && typeof game.babele?.ensurePackTranslationsLoaded === "function") {
+                for (const packId of packIds) {
+                  try {
+                    await game.babele.ensurePackTranslationsLoaded(packId);
+                  } catch {
+                  }
+                }
+              }
+
+              const updates = [];
+              for (let idx = 0; idx < items; idx++) {
+                const item = actor.items.contents[idx];
+                const data = item.toObject();
+
+                const sourcePackId = getSourcePackId(data);
+                let pack = sourcePackId ? game.babele?.packs?.get?.(sourcePackId) : null;
+                if (!pack || !pack.translated || !pack.hasTranslation(data)) {
+                  pack = game.babele?.packs?.find?.((p) => p.translated && p.hasTranslation(data));
+                }
+
+                if (pack) {
+                  const translatedData = pack.translate(data, true);
+                  updates.push(foundry.utils.mergeObject(translatedData, { _id: item.id }));
+                  area.append(`${data.name.padEnd(68, ".")}ok\n`);
+                  translated++;
+                } else {
+                  area.append(`${data.name.padEnd(61, ".")}not found\n`);
+                  untranslated++;
+                }
+              }
+
+              if (updates.length) {
+                area.append(`Updating...\n`);
+                await actor.updateEmbeddedDocuments("Item", updates);
+              }
+
+              area.append(
+                `\nDone. tot items: ${items}, tot translated: ${translated}, tot untranslated: ${untranslated}  \n                      \n`,
+              );
+            },
+          },
+        },
+        default: "translate",
+      },
+      { width: 600 },
+    );
+  }
+
+  submit(button) {
+    try {
+      button.callback();
+    } catch (err) {
+      ui.notifications.error(err);
+      throw new Error(err);
+    }
+  }
 }
 
 async function initOnDemand(babele, state) {
@@ -443,12 +543,18 @@ function translateIndexTitles(state, index, packId) {
   const titles = state.titleIndex?.[packId]?.titles;
   if (!titles || !index) return index;
 
-  const applyEntry = (entry) => {
+  const applyEntry = (entry, keyFromIndex = null) => {
     if (!entry) return;
     if (entry.translated || entry?.flags?.babele?.translated) return;
 
-    const key = entry.originalName ?? entry.name;
-    const translatedName = titles[key];
+    const keyCandidates = [keyFromIndex, entry._id, entry.originalName, entry.name].filter(
+      (v) => typeof v === "string" && v.length,
+    );
+    let translatedName = null;
+    for (const k of keyCandidates) {
+      translatedName = titles[k];
+      if (typeof translatedName === "string" && translatedName.length) break;
+    }
     if (typeof translatedName !== "string" || !translatedName.length) return;
 
     entry.originalName = entry.originalName ?? entry.name;
@@ -465,7 +571,7 @@ function translateIndexTitles(state, index, packId) {
   };
 
   for (const raw of index) {
-    if (Array.isArray(raw)) applyEntry(raw[1]);
+    if (Array.isArray(raw)) applyEntry(raw[1], raw[0]);
     else applyEntry(raw);
   }
   return index;
@@ -500,6 +606,17 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
     if (!metadata) return;
 
     babele.packs.set(packId, new TranslatedCompendium(metadata, translation));
+    const storedTranslation = foundry.utils.mergeObject(translation, { collection: packId });
+    if (Array.isArray(babele.translations)) {
+      const idx = babele.translations.findIndex((t) => t?.collection === packId);
+      if (idx >= 0) {
+        babele.translations[idx] = storedTranslation;
+      } else {
+        babele.translations.push(storedTranslation);
+      }
+    } else {
+      babele.translations = [storedTranslation];
+    }
 
     if (metadata.type === "Adventure" && translation.entries) {
       const entries = translation.entries;
