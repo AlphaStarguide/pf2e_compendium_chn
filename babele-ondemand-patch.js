@@ -10,6 +10,29 @@ const LOADING_MODES = {
   ONDEMAND: "ondemand",
 };
 
+const NPC_TRANSLATOR_CONVERTERS = new Set([
+  "npc-portrait-path",
+  "npc-token-translation",
+  "npc-data-translation",
+  "npc-item-translation",
+]);
+
+const NPC_TRANSLATOR_DEP_PACKS = [
+  "pf2e.spells-srd",
+  "pf2e.bestiary-ability-glossary-srd",
+  "pf2e.conditionitems",
+  "pf2e.actionspf2e",
+  "pf2e.feats-srd",
+  "pf2e.classfeatures",
+  "pf2e.ancestryfeatures",
+  "pf2e.ancestries",
+  "pf2e.heritages",
+  "pf2e.classes",
+  "pf2e.backgrounds",
+  "pf2e.deities",
+  "pf2e.equipment-srd",
+];
+
 let capturedBabele = null;
 let patched = false;
 
@@ -117,6 +140,12 @@ function tryPatchBabele(babele) {
   if (!state.original.translateActor && typeof babele.translateActor === "function") {
     state.original.translateActor = babele.translateActor.bind(babele);
   }
+  if (!state.original.registerConverters && typeof babele.registerConverters === "function") {
+    state.original.registerConverters = babele.registerConverters.bind(babele);
+  }
+  if (!state.original.registerMapping && typeof babele.registerMapping === "function") {
+    state.original.registerMapping = babele.registerMapping.bind(babele);
+  }
 
   state.packTranslationUrls = state.packTranslationUrls ?? new Map();
   state.packTranslationsLoading = state.packTranslationsLoading ?? new Map();
@@ -125,6 +154,9 @@ function tryPatchBabele(babele) {
   state.titleIndex = state.titleIndex ?? null;
   state.translationFilesCache = state.translationFilesCache ?? null;
   state.mappingFilesCache = state.mappingFilesCache ?? null;
+  state.packMissingConverters = state.packMissingConverters ?? new Map();
+  state.npcDepsLoaded = !!state.npcDepsLoaded;
+  state.npcDepsLoading = state.npcDepsLoading ?? null;
 
   babele.isFullMode = () => !isOnDemandMode();
   babele.translateIndexTitles = (index, pack) => translateIndexTitles(state, index, pack);
@@ -151,6 +183,24 @@ function tryPatchBabele(babele) {
     if (!game.user?.isGM) return;
     const ti = await babele.loadTitleIndex();
     await game.settings.set(BABEL_NAMESPACE, SETTING_TITLE_INDEX, ti);
+  };
+
+  babele.registerConverters = (converters = {}) => {
+    const result = state.original.registerConverters?.(converters);
+    if (!isOnDemandMode()) return result;
+    const names = Object.keys(converters ?? {});
+    if (!names.length) return result;
+    void refreshPacksForConverters(babele, state, names);
+    return result;
+  };
+
+  babele.registerMapping = (mapping) => {
+    const result = state.original.registerMapping?.(mapping);
+    if (!isOnDemandMode()) return result;
+    if (mapping && typeof mapping === "object") {
+      void refreshPacksForMapping(babele, state, mapping);
+    }
+    return result;
   };
 
   babele.ensurePackTranslationsLoaded = async (collection) => ensurePackTranslationsLoaded(babele, state, collection);
@@ -577,6 +627,43 @@ function translateIndexTitles(state, index, packId) {
   return index;
 }
 
+function mappingUsesConverters(mapping, targetConverters) {
+  if (!mapping || typeof mapping !== "object") return false;
+  for (const value of Object.values(mapping)) {
+    if (!value || typeof value !== "object") continue;
+    const converter = value.converter;
+    if (typeof converter === "string" && targetConverters.has(converter)) return true;
+    if (mappingUsesConverters(value, targetConverters)) return true;
+  }
+  return false;
+}
+
+async function ensureNpcDependenciesLoaded(babele, state, currentPackId) {
+  if (!state || state.npcDepsLoaded) return;
+  if (state.npcDepsLoading) {
+    await state.npcDepsLoading;
+    return;
+  }
+
+  const loader = (async () => {
+    for (const packId of NPC_TRANSLATOR_DEP_PACKS) {
+      if (packId === currentPackId) continue;
+      try {
+        await ensurePackTranslationsLoaded(babele, state, packId);
+      } catch {
+      }
+    }
+    state.npcDepsLoaded = true;
+  })();
+
+  state.npcDepsLoading = loader;
+  try {
+    await loader;
+  } finally {
+    state.npcDepsLoading = null;
+  }
+}
+
 async function ensurePackTranslationsLoaded(babele, state, collection) {
   const packId = normalizePackId(collection);
   if (!packId) return;
@@ -604,6 +691,15 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
     const { TranslatedCompendium } = await import("/modules/babele/script/translated-compendium.js");
     const metadata = (game.data?.packs ?? []).find((m) => babele.getCollection(m) === packId);
     if (!metadata) return;
+
+    if (!state.npcDepsLoaded && !state.npcDepsLoading) {
+      const needsNpcDeps = mappingUsesConverters(translation.mapping, NPC_TRANSLATOR_CONVERTERS);
+      if (needsNpcDeps) {
+        await ensureNpcDependenciesLoaded(babele, state, packId);
+      }
+    }
+
+    trackMissingConverters(babele, state, packId, metadata, translation);
 
     babele.packs.set(packId, new TranslatedCompendium(metadata, translation));
     const storedTranslation = foundry.utils.mergeObject(translation, { collection: packId });
@@ -703,6 +799,101 @@ async function loadTranslationFromUrls(urls) {
   }
 
   return translation;
+}
+
+function getMergedMapping(babele, metadata, translation) {
+  const base = babele.constructor?.DEFAULT_MAPPINGS?.[metadata?.type] ?? {};
+  const extra = translation?.mapping ?? {};
+  return foundry.utils.mergeObject(base, extra, { inplace: false });
+}
+
+function collectMissingConverters(babele, mapping) {
+  const missing = new Set();
+  if (!mapping || typeof mapping !== "object") return missing;
+  for (const value of Object.values(mapping)) {
+    if (!value || typeof value !== "object") continue;
+    const converter = value.converter;
+    if (typeof converter !== "string" || !converter.length) continue;
+    if (!babele?.converters?.[converter]) missing.add(converter);
+  }
+  return missing;
+}
+
+function trackMissingConverters(babele, state, packId, metadata, translation) {
+  try {
+    const merged = getMergedMapping(babele, metadata, translation);
+    const missing = collectMissingConverters(babele, merged);
+    if (missing.size) state.packMissingConverters.set(packId, missing);
+    else state.packMissingConverters.delete(packId);
+  } catch {
+  }
+}
+
+function getPackMetadata(babele, packId) {
+  return (game.data?.packs ?? []).find((m) => babele.getCollection(m) === packId);
+}
+
+async function rebuildTranslatedPack(babele, state, packId, translation) {
+  const metadata = getPackMetadata(babele, packId);
+  if (!metadata) return false;
+  const { TranslatedCompendium } = await import("/modules/babele/script/translated-compendium.js");
+  babele.packs.set(packId, new TranslatedCompendium(metadata, translation));
+
+  if (metadata.type === "Adventure" && translation.entries) {
+    const entries = translation.entries;
+    Object.values(Array.isArray(entries) ? entries : entries || {}).forEach((adventure) =>
+      babele.packs.set(
+        `${packId}-items`,
+        new TranslatedCompendium(
+          { type: "Item" },
+          {
+            mapping: translation.mapping ? translation.mapping["items"] ?? {} : {},
+            entries: adventure.items ?? {},
+          },
+        ),
+      ),
+    );
+  }
+
+  if (state) {
+    trackMissingConverters(babele, state, packId, metadata, translation);
+  }
+  return true;
+}
+
+async function refreshPacksForConverters(babele, state, converterNames) {
+  if (!state.packMissingConverters?.size) return;
+  const targets = new Set(converterNames ?? []);
+  if (!targets.size) return;
+
+  for (const [packId, missing] of state.packMissingConverters.entries()) {
+    const needsRefresh = Array.from(missing ?? []).some((name) => targets.has(name));
+    if (!needsRefresh) continue;
+    const translation = babele.translations?.find?.((t) => t?.collection === packId);
+    if (!translation) continue;
+    try {
+      await rebuildTranslatedPack(babele, state, packId, translation);
+      state.packMissingConverters.delete(packId);
+    } catch {
+    }
+  }
+}
+
+async function refreshPacksForMapping(babele, state, mapping) {
+  const types = Object.keys(mapping ?? {});
+  if (!types.length) return;
+  const typeSet = new Set(types);
+
+  for (const packId of babele.packs?.keys?.() ?? []) {
+    const metadata = getPackMetadata(babele, packId);
+    if (!metadata || !typeSet.has(metadata.type)) continue;
+    const translation = babele.translations?.find?.((t) => t?.collection === packId);
+    if (!translation) continue;
+    try {
+      await rebuildTranslatedPack(babele, state, packId, translation);
+    } catch {
+    }
+  }
 }
 
 function registerWrappers() {
