@@ -77,7 +77,7 @@ jobs:
         download: https://github.com/${{github.repository}}/releases/download/${{github.event.release.tag_name}}/${{env.ZIP_FILENAME}}.zip
         changelog: https://github.com/${{github.repository}}/releases/tag/${{github.event.release.tag_name}}
 
-    # 4. 整理文件 (删除冗余并移动目录)
+    # 4. 整理文件 （删除冗余并移动目录）
     # 注意：此时生成的索引文件已经在 zh-CN 目录中，随后被移动到 compendium
     - name: Tidy files
       id: tidy-files
