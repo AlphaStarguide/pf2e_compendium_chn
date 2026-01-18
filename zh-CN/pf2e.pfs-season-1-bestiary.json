@@ -2101,7 +2101,7 @@
             "items": {
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>该血肉熔炉渣油喷出火焰，对@Template[cone|distance:15]范围内所有生物造成@Damage[4d6[fire]]伤害（@Check[reflex|dc:15|basic]豁免）。</p>\n<p>该血肉熔炉渣油在[[/gmr 1d4 #rounds]]{1d4轮}中无法再次使用其喷吐武器。</p>"
+                    "description": "<p>该血肉熔炉渣油喷出火焰，对@Template[cone|distance:15]范围内所有生物造成@Damage[4d6[fire]]伤害（@Check[reflex|dc:15|basic]豁免）。</p>\n<p>该血肉熔炉渣油在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}中无法再次使用其喷吐武器。</p>"
                 }
             },
             "prototypeToken": {
@@ -2185,7 +2185,7 @@
             "items": {
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>该血肉熔炉原型喷出火焰，对@Template[cone|distance:15]范围内所有生物造成@Damage[6d6[fire]]伤害（@Check[reflex|dc:22|basic]豁免）。</p>\n<p>该血肉熔炉原型在[[/gmr 1d4 #rounds]]{1d4轮}中无法再次使用其喷吐武器。</p>"
+                    "description": "<p>该血肉熔炉原型喷出火焰，对@Template[cone|distance:15]范围内所有生物造成@Damage[6d6[fire]]伤害（@Check[reflex|dc:22|basic]豁免）。</p>\n<p>该血肉熔炉原型在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}中无法再次使用其喷吐武器。</p>"
                 }
             },
             "prototypeToken": {
@@ -2450,9 +2450,9 @@
         },
         "Grasping Limbs (3-4)": {
             "name": "Grasping Limbs (3-4)",
-            "disable": "<p>@Check[thievery|dc:18|name:Immobilize Limbs] （受训）或@Check[engineering-lore|dc:16|name:Immobilize Limbs]{Engineering Lore} or @Check[azlant-lore|dc:16|name:Immobilize Limbs]{Azlant Lore} twice to immobilize the limbs, or @Check[deception|dc:18|name:Trick Limbs]{ Deception} twice to trick the limbs into grasping each other。</p>",
+            "disable": "<p>@Check[thievery|dc:18|name:Immobilize Limbs] (trained) or @Check[engineering-lore|dc:16|name:Immobilize Limbs]{Engineering Lore} or @Check[azlant-lore|dc:16|name:Immobilize Limbs]{Azlant Lore} twice to immobilize the limbs, or @Check[deception|dc:18|name:Trick Limbs]{Deception} twice to trick the limbs into grasping each other.</p>",
             "hazarddescription": "<p>The limbs of smashed constructs line the bottom of the fissure, beneath the water. They desperately grab anything that gets too close。</p>",
-            "routine": "<p>（2动作） The grasping limbs try to Grapple all creatures in the water (Athletics [[/r 1d20 +9 #Athletics]]{+9}). They then tighten around all creatures they have grabbed or restrained, dealing @Damage[1d8[bludgeoning]]{1d8 bludgeoning damage }(@Check[fortitude|dc:17|basic|name:Grasping Limbs])。</p>",
+            "routine": "<p>(2 actions) The grasping limbs try to Grapple all creatures in the water (Athletics [[/r 1d20 +9 #Athletics]]{+9}). They then tighten around all creatures they have grabbed or restrained, dealing @Damage[1d8[bludgeoning]] damage (@Check[fortitude|dc:17|basic|name:Grasping Limbs]).</p>",
             "stealthdetails": "<p>（受训）; @Check[perception|dc:20|traits:action:seek]（受训）to notice the construct limbs at the bottom of the pit。</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -2469,7 +2469,7 @@
         },
         "Grasping Limbs (5-6)": {
             "name": "Grasping Limbs (5-6)",
-            "disable": "<p>@Check[thievery|dc:21|name:Immobilize Limbs] （受训）或@Check[engineering-lore|dc:19|name:Immobilize Limbs]{Engineering Lore} or @Check[azlant-lore|dc:19|name:Immobilize Limbs]{Azlant Lore} twice to immobilize the limbs, or @Check[deception|dc:18|name:Trick Limbs]{ Deception} twice to trick the limbs into grasping each other。</p>",
+            "disable": "<p>@Check[thievery|dc:21|name:Immobilize Limbs] (trained) or @Check[engineering-lore|dc:19|name:Immobilize Limbs]{Engineering Lore} or @Check[azlant-lore|dc:19|name:Immobilize Limbs]{Azlant Lore} twice to immobilize the limbs, or @Check[deception|dc:18|name:Trick Limbs]{Deception} twice to trick the limbs into grasping each other.</p>",
             "hazarddescription": "<p>The limbs of smashed constructs line the bottom of the fissure, beneath the water. They desperately grab anything that gets too close。</p>",
             "routine": "<p>（2动作） The grasping limbs try to Grapple all creatures in the water (Athletics [[/r 1d20 +12 #Athletics]]{+12}). They then tighten around all creatures they have grabbed or restrained, dealing @Damage[2d8[bludgeoning]]伤害 (@Check[fortitude|dc:20|basic|name:Grasping Limbs])。</p>",
             "stealthdetails": "<p>（受训）; @Check[perception|dc:23|traits:action:seek]（专家）to notice the construct limbs at the bottom of the pit。</p>",
@@ -2582,7 +2582,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>高等钢魔蝠喷出一片碎铁渣，对@Template[cone|distance:15]区域内的生物造成@Damage[3d6[slashing]]伤害（@Check[reflex|dc:19|basic]豁免）。在豁免中失败的生物还会受到@Damage[1d6[bleed]]伤害。高等钢魔蝠必须间隔[[/gmr 1d4 #rounds]]{1d4轮}才能再次使用喷吐。</p>"
+                    "description": "<p>高等钢魔蝠喷出一片碎铁渣，对@Template[cone|distance:15]区域内的生物造成@Damage[3d6[slashing]]伤害（@Check[reflex|dc:19|basic]豁免）。在豁免中失败的生物还会受到@Damage[1d6[bleed]]伤害。高等钢魔蝠必须间隔[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}才能再次使用喷吐。</p>"
                 },
                 "Tremorsense (Imprecise) 30 feet": {
                     "name": "Tremorsense (Imprecise) 30 feet",
@@ -3422,7 +3422,7 @@
             },
             "items": {
                 "Swarming Bites": {
-                    "description": "<p>Each enemy in the swarm's space takes @Damage[1d8[piercing]] damage (@Check[reflex|dc:20|basic]) and @Damage[1d4[bleed]].</p>",
+                    "description": "<p>Each enemy in the swarm's space takes @Damage[1d8[piercing]|options:area-damage] damage (@Check[reflex|dc:20|basic|options:area-effect] save) and @Damage[1d4[bleed]|options:area-damage].</p>",
                     "name": "Swarming Bites"
                 }
             }
@@ -6119,7 +6119,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>钢魔蝠喷出一片碎铁渣，对@Template[cone|distance:15]区域内的生物造成@Damage[2d4[slashing]]伤害（@Check[reflex|dc:17|basic]豁免）。在豁免中失败的生物还会受到@Damage[1d6[bleed]]伤害。钢魔蝠必须间隔[[/gmr 1d4 #rounds]]{1d4轮}才能再次使用喷吐。</p>"
+                    "description": "<p>钢魔蝠喷出一片碎铁渣，对@Template[cone|distance:15]区域内的生物造成@Damage[2d4[slashing]]伤害（@Check[reflex|dc:17|basic]豁免）。在豁免中失败的生物还会受到@Damage[1d6[bleed]]伤害。钢魔蝠必须间隔 [[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}才能再次使用喷吐。</p>"
                 },
                 "Tremorsense (Imprecise) 30 feet": {
                     "name": "Tremorsense (Imprecise) 30 feet",
@@ -6806,7 +6806,7 @@
             "items": {
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>该仆役邪魔喷出@Template[cone|distance:30]火焰。在锥形范围内的生物承受@Damage[6d6[fire]]伤害（@Check[reflex|dc:22|basic]豁免）。</p>\n<p>该仆役邪魔以及在豁免中失败的生物会着火，承受[[/r 1d6[persistent,fire]]]伤害。</p>\n<p>该吐息在[[/gmr 1d4 #rounds]]{1d4轮}内无法再次使用。</p>"
+                    "description": "<p>该仆役邪魔喷出@Template[cone|distance:30]火焰。在锥形范围内的生物承受@Damage[6d6[fire]|options:area-damage]伤害（@Check[reflex|dc:22|basic|options:area-effect]豁免）。</p>\n<p>该仆役邪魔以及在豁免中失败的生物会着火，承受@Damage[1d6[persistent,fire]]伤害。</p>\n<p>该吐息在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用。</p>"
                 },
                 "Drawn to Service": {
                     "name": "乐于侍奉 Drawn to Service",
@@ -6896,7 +6896,7 @@
             "items": {
                 "Swarming Bites": {
                     "name": "Swarming Bites",
-                    "description": "<p>Each enemy in the spider swarm's space takes @Damage[(1d4-1)[piercing]] damage with a @Check[reflex|dc:13|basic] save. A creature that fails its save is exposed to spider swarm venom.</p>"
+                    "description": "<p>Each enemy in the spider swarm's space takes @Damage[(1d4-1)[piercing]|options:area-damage] damage with a @Check[reflex|dc:13|basic|options:area-effect] save. A creature that fails its save is exposed to spider swarm venom.</p>"
                 },
                 "Tremorsense (Imprecise) 30 feet (Creatures Touching its Web)": {
                     "name": "Tremorsense (Imprecise) 30 feet (Creatures Touching its Web)",
@@ -7051,7 +7051,7 @@
             "items": {
                 "Swarming Bites": {
                     "name": "虫群噬咬 Swarming Bites",
-                    "description": "<p>集群范围内的每个敌人受到@Damage[1d8[piercing]]伤害（@Check[reflex|dc:20|basic]豁免）和[[/r 1[persistent,bleed]]]伤害。觅血群获得等同伤害值的临时生命值。被吸血的生物流失1，直到它得到治疗。</p>"
+                    "description": "<p>集群范围内的每个敌人受到@Damage[1d8[piercing]|options:area-damage]伤害（@Check[reflex|dc:20|basic|options:area-effect,inflicts:drained]豁免）和@Damage[1[bleed]|options:area-damage]伤害。觅血群获得等同伤害值的临时生命值。被吸血的生物@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，直到它得到治疗。</p>"
                 }
             },
             "prototypeToken": {
