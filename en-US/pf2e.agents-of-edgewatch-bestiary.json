@@ -704,7 +704,7 @@
                 },
                 "Swarming Bites": {
                     "name": "Swarming Bites",
-                    "description": "<p>Each enemy in the swarm's space takes @Damage[3d6[piercing]] damage (@Check[reflex|dc:24|basic]) save plus exposure to marrow rot.</p>"
+                    "description": "<p>Each enemy in the swarm's space takes @Damage[3d6[piercing]|options:area-damage] damage (@Check[reflex|dc:24|basic|options:area-effect]) save plus exposure to marrow rot.</p>"
                 }
             }
         },
@@ -3227,33 +3227,6 @@
                 }
             }
         },
-        "Sordesdaemon": {
-            "prototypeToken": {
-                "name": "Sordesdaemon"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Sordesdaemon",
-            "allSaves": "+1 status to all saves vs. magic",
-            "items": {
-                "+1 Status to All Saves vs. Magic": {
-                    "name": "+1 Status to All Saves vs. Magic"
-                },
-                "Miasma of Pollution": {
-                    "name": "Miasma of Pollution",
-                    "description": "<p>30 feet. Creatures in the aura can't reduce the value of the sickened condition.</p>\n<p>A creature that enters the aura or begins its turn in it must succeed at a @Check[fortitude|dc:34] save or be @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} (plus @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} as long as it is sickened on a critical failure).</p>\n<p>A creature that succeeds at its save is temporarily immune for 1 minute.</p>\n<p>Creatures made of water (such as water elementals) and plant creatures use an outcome one degree of success worse than the result of their save.</p>"
-                },
-                "Pollution Infusion": {
-                    "name": "Pollution Infusion",
-                    "description": "<p>Non-fiend creatures adjacent to the afflicted creature take a -1 circumstance penalty to saving throws against disease</p>\n<p><strong>Saving Throw</strong> @Check[fortitude|dc:36]</p>\n<p><strong>Stage 1</strong> @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 2</strong> @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} (1 day)</p>\n<p><strong>Stage 3</strong> @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 day)</p>\n<p><strong>Stage 4</strong> @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2} and @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} (1 week)</p>\n<p><strong>Stage 5</strong> dead.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.gORyINQLvplfthlm]{Effect: Pollution Infusion}</p>"
-                },
-                "Retch of Foulness": {
-                    "name": "Retch of Foulness",
-                    "description": "<p>The sordesdaemon exhales a spray of sewage that deals @Damage[8d6[acid],8d6[poison]|options:area-damage]{8d6 acid damage and 8d6 poison damage} in a @Template[cone|distance:30] (@Check[fortitude|dc:40|basic|options:area-effect] save).</p>\n<p>It can't use Retch of Foulness again for [[/gmr 1d4 #Recharge Retch of Foulness]]{1d4 rounds}.</p>"
-                }
-            }
-        },
         "Antaro Boldblade": {
             "prototypeToken": {
                 "name": "Antaro Boldblade"
@@ -3821,66 +3794,6 @@
                 "Summon Elementals": {
                     "name": "Summon Elementals",
                     "description": "<p><strong>Trigger</strong> A living creature enters the room</p><hr /><p><strong>Effect</strong> Two rounds after a creature enters the room, the room's door slams shut and locks (two [[/act pick-a-lock dc=20]]{Thievery} checks to pick), and two @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.xN5J9S485LxFZMkL]{Cinder Rat} fire elementals emerge from the floor.</p>\n<p>The elementals roll initiative and remain for [[/gmr 3d6 #rounds]]{3d6 rounds}, after which the spell ends and the creatures disappear. The elementals also disappear if someone disables the trap before the duration expires.</p>\n<p>The summoned elementals can use 3 actions each round and can use reactions, unlike most summoned creatures.</p>"
-                }
-            }
-        },
-        "Izfiitar": {
-            "prototypeToken": {
-                "name": "Izfiitar"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Izfiitar",
-            "allSaves": "+1 status to all saves vs. magic",
-            "hp": "fast healing 20",
-            "items": {
-                "Entropy Sense (Imprecise) 120 feet": {
-                    "name": "Entropy Sense (Imprecise) 120 feet",
-                    "description": "<p>A Izfiitar can anticipate the most likely location of a creature through their supernatural insight into the forces of chaotic probabilities and chance. This grants the izflitar the ability to sense creatures within the listed range.</p>\n<p>The izflitar's entropy sense doesn't detect creatures under the effects of @UUID[Compendium.pf2e.spells-srd.Item.EoKBlgf6Smt8opaU]{Veil of Privacy} or that are otherwise shielded from divinations and predictions.</p>"
-                },
-                "Constant Spells": {
-                    "name": "Constant Spells",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>"
-                },
-                "+1 Status to All Saves vs. Magic": {
-                    "name": "+1 Status to All Saves vs. Magic"
-                },
-                "Fast Healing 20": {
-                    "name": "Fast Healing 20",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
-                },
-                "Kiss of the Speakers": {
-                    "name": "Kiss of the Speakers",
-                    "description": "<p>The izfiitar continuously tinkers with the myriad possibilities in which it can move or manipulate magic.</p>\n<p>The izfiitar is always @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} and can use the extra action only to Cast a Spell, Step, or Stride.</p>"
-                },
-                "Prescient Revision": {
-                    "name": "Prescient Revision",
-                    "description": "<p><strong>Trigger</strong> The izfiitar fails a check</p>\n<hr />\n<p><strong>Effect</strong> The izfiitar rerolls the triggering check and takes the better result.</p>\n<p>For [[/gmr 1d4 #rounds]]{1d4 rounds}, it loses the effects of Kiss of the Speakers and can't use Reshape Reality.</p>"
-                },
-                "Protean Anatomy 25": {
-                    "name": "Protean Anatomy 25",
-                    "description": "<p>A izfiitar's vital organs shift and change shape and position constantly. Immediately after the izfiitar takes acid, electricity, or sonic damage, it gains the listed amount of resistance to that damage type. This lasts for 1 hour or until the next time the protean takes damage of one of the other types (in which case its resistance changes to match that type), whichever comes first.</p>\n<p>The izfiitar is immune to polymorph effects unless it is a willing target. If @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} or @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened}, the izfiitar automatically recovers at the end of its next turn as new sensory organs grow to replace the compromised ones.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.c6SiBB3mzV8lZUQr]{Effect: Protean Anatomy}</p>"
-                },
-                "Change Shape": {
-                    "name": "Change Shape",
-                    "description": "<p>The izfiitar takes the appearance of any Huge or smaller creature. This doesn't change its Speed or its attack and damage bonuses with its Strikes, but might change the damage type its Strikes deal.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>"
-                },
-                "Constrict": {
-                    "name": "Constrict",
-                    "description": "<p>@Damage[(2d8+17)[bludgeoning]] damage, @Check[fortitude|dc:44|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Constrict]</p>"
-                },
-                "Greater Warpwave Strike": {
-                    "name": "Greater Warpwave Strike",
-                    "description": "<p>Any creature struck and damaged by an izfiitar's jaws or claw Strike must succeed at a @Check[fortitude|dc:42] save or be subject to a particularly powerful @UUID[Compendium.pf2e.rollable-tables.RollTable.yRZwPolTnRdnz42V]{Warpwave}.</p>\n<p>Roll twice and apply both affects, rerolling any duplicates.</p>"
-                },
-                "Reshape Reality": {
-                    "name": "Reshape Reality",
-                    "description": "<p>When the izfiitar casts @UUID[Compendium.pf2e.spells-srd.Item.HBJPsonQnWcC3qdX]{Mirage}, it infuses the illusion with quasi-real substance. Creatures that do not disbelieve the illusion treat structures and terrain created through the spell as though they were real, ascending illusory stairs, becoming trapped by illusory quicksand, and so on.</p>"
-                },
-                "Storm of Claws": {
-                    "name": "Storm of Claws",
-                    "description": "<p>The izfiitar makes up to six claw Strikes, each against a different target.</p>"
                 }
             }
         },
@@ -5575,7 +5488,7 @@
                 },
                 "Burst of Speed": {
                     "name": "Burst of Speed",
-                    "description": "<p>The tenome Strides twice, Steps twice, or Steps and Strides (in either order).</p>\n<p>It cannot use Burst of Speed again for [[/gmr 1d4 #rounds]]{1d4 rounds}.</p>"
+                    "description": "<p>The tenome Strides twice, Steps twice, or Steps and Strides (in either order).</p>\n<p>It cannot use Burst of Speed again for [[/gmr 1d4 #Recharge Burst of Speed]]{1d4 rounds}.</p>"
                 },
                 "Terrifying Gaze": {
                     "name": "Terrifying Gaze",
