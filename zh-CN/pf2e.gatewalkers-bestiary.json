@@ -961,7 +961,7 @@
                 },
                 "Frightening Bellow": {
                     "name": "惧怖恐嚎 Frightening Bellow",
-                    "description": "<p><strong>需求</strong> 水瘤精未用颚咬使一名生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]</p>\n<hr />\n<p><strong>效果</strong> 水瘤精从喉管深处释放出一阵咆哮使其敌人震慑奔逃。60尺内每个非水瘤精生物必须尝试一个@Check[will|dc:20]豁免，随后其在24小时内临时对该头水瘤精的惧怖恐嚎效果免疫。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 该生物陷入惊惧2且在陷入惊惧期间会持续尝试逃跑。</p>"
+                    "description": "<p><strong>需求</strong> 水瘤精未用颚咬使一名生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]</p>\n<hr />\n<p><strong>效果</strong> 水瘤精从喉管深处释放出一阵咆哮使其敌人震慑奔逃。60尺内每个非水瘤精生物必须尝试一个@Check[will|dc:20|options:inflicts:frightened,inflicts:fleeing]豁免，随后其在24小时内临时对该头水瘤精的惧怖恐嚎效果免疫。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 该生物陷入惊惧2且在陷入惊惧期间会持续尝试@UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]。</p>"
                 }
             },
             "data": {
@@ -1263,7 +1263,7 @@
                 },
                 "Swarming Bites": {
                     "name": "虫群啃咬 Swarming Bites",
-                    "description": "<p>每名处于集群空间内的敌人受到@Damage[5d6[piercing]]伤害（@Check[reflex|dc:23|basic]豁免）。在该豁免中失败的生物还会受到@Damage[1d4[bleed]]伤害并且在受到流血伤害期间陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}。</p>"
+                    "description": "<p>每名处于集群空间内的敌人受到@Damage[5d6[piercing]|options:area-damage]伤害（@Check[reflex|dc:23|basic|options:area-effect,inflicts:clumsy]豁免）。在该豁免中失败的生物还会受到@Damage[1d4[bleed]]伤害并且在受到流血伤害期间陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}。</p>"
                 }
             },
             "publicNotes": "<p>当一头巨大的生物，譬如恐龙或巨人在肤甲虫的栖息地死亡时，这些勤劳的食腐虫就会聚成集群。</p><hr /><p>肤甲虫可以在各种足以维持生命的环境中找到，从苦寒干旱的苔原到茂密潮湿的雨林无处不在。他们使用自己关节复杂的下颚以外科手术式的精准从新死的生物身上剥下皮肉。尽管肤甲虫会吃掉自己掠取的大多数生物质，但它们也会留下大块的皮肤，并用类似蚁醛的唾液分泌物来用其包覆剩余的血肉。肤甲虫会将这些包起的血肉滚成球，储藏在树根或石底以备不时之需。肤甲虫活动的迹象包括被剥去皮肤的骷髅与其贮藏中唾液的独特气味。</p><h2>Umasi Beetle Masters</h2><p>Though best known for flaying carrion, skin beetles can also heal gravely wounded individuals. Skin beetles can graft preserved flesh onto a dying animal or humanoid. The end result isn't pretty, but it sometimes works. From the perspective of the healed, the blessing can be mixed, as the beetle's surgery often transforms the subject into a patchwork aberration called an @UUID[Compendium.pf2e.pathfinder-bestiary-3.Actor.mupW1Mgec250lQiZ]{Umasi}.</p>\n<p>Umasi created by skin beetles sometimes develop supernatural connections to their insectoid saviors. Such umasi can command skin beetles to harvest more flesh to keep their decaying bodies intact.</p>",
@@ -2112,7 +2112,7 @@
                 },
                 "Poison Stock": {
                     "name": "Poison Stock",
-                    "description": "<p>When the cabinet hits a creature with its poison bottle Strike, roll [[/gmr 1d4]] to determine what kind of poison splashes onto the struck creature:</p>\n<ol>\n<li>nerve poison (@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1})</li>\n<li>weakening poison (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1})</li>\n<li>noxious poison (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1})</li>\n<li>clouded mind poison (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1}).</li>\n</ol>\n<p>The target must attempt a @Check[fortitude|dc:24|traits:poison] save.</p>\n<hr />\n<p><strong>大成功</strong> The creature is unafected.</p>\n<p><strong>成功</strong> The creature takes @Damage[1d6[poison]].</p>\n<p><strong>失败</strong> The creature takes @Damage[2d6[poison]] and is aficted with the rolled poison's associated condition until the end of its next turn.</p>\n<p><strong>大失败</strong> The creature takes @Damage[2d6[poison]] and is aficted with the rolled poison's associated condition for [[/gmr 1d4+1 #Rounds]] rounds.</p>"
+                    "description": "<p>When the cabinet hits a creature with its poison bottle Strike, roll [[/gmr 1d4]] to determine what kind of poison splashes onto the struck creature:</p>\n<ol>\n<li>nerve poison (@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1})</li>\n<li>weakening poison (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1})</li>\n<li>noxious poison (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1})</li>\n<li>clouded mind poison (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1}).</li>\n</ol>\n<p>The target must attempt a @Check[fortitude|dc:24|traits:poison] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[1d6[poison]].</p>\n<p><strong>Failure</strong> The creature takes @Damage[2d6[poison]] and is afflicted with the rolled poison's associated condition until the end of its next turn.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[2d6[poison]] and is afflicted with the rolled poison's associated condition for [[/gmr 1d4+1 #Rounds]] rounds.</p>"
                 },
                 "Darkvision": {
                     "name": "Darkvision",
@@ -2414,11 +2414,11 @@
             "items": {
                 "Manifest Dream Guardians": {
                     "name": "Manifest Dream Guardians",
-                    "description": "<p><strong>触发</strong> The door is opened</p>\n<hr />\n<p><strong>效果</strong> A group of four @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Y9SDbANT1DWI1DKU]{Animate Dreams} manifest in the area just beyond the door. These four animate dreams each appear as vaguely whale-shaped but human-sized masses of tendrils. They swim through the air and attack the intruders at once, fighting to the death and pursuing any who flee the temple.</p>"
+                    "description": "<p><strong>Trigger</strong> The door is opened</p>\n<hr />\n<p><strong>Effect</strong> A group of four @UUID[Compendium.pf2e.gatewalkers-bestiary.Actor.l64HY5lbpITe0WHZ]{Animate Dreams} manifest in the area just beyond the door. These four animate dreams each appear as vaguely whale-shaped but human-sized masses of tendrils. They swim through the air and attack the intruders at once, fighting to the death and pursuing any who flee the temple.</p>"
                 }
             },
             "disable": "<p>@Check[occultism|dc:30] (expert) to concentrate on the eldritch energies and diffuse them through meditation, @Check[thievery|dc:35] (master) to scratch warding runes along the door's hinges and block dreams from manifesting, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (6th rank; counteract DC 30) to counteract the trap</p>",
-            "hazarddescription": "<p>Eerie shapes manifest within the doorway as it's opened, conjuring a group of four @UUID[Compendium.pf2e.pathfinder-bestiary-2.Actor.Y9SDbANT1DWI1DKU]{Animate Dreams} into being.</p>",
+            "hazarddescription": "<p>Eerie shapes manifest within the doorway as it's opened, conjuring a group of four @UUID[Compendium.pf2e.pathfinder-monster-core-2.Actor.r3PNRpEir4BVjnCC]{Animate Dreams} into being.</p>",
             "prototypeToken": {
                 "name": "Dream-Poisoned Door"
             }
