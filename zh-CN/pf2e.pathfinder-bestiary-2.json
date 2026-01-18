@@ -305,7 +305,7 @@
                 },
                 "Swarming Bites": {
                     "name": "集群噬咬 Swarming Bites",
-                    "description": "<p>在蜱虫群占据空间内的每个敌人都受到@Damage[3d6[piercing]]伤害（@Check[reflex|dc:28|basic]豁免），外加附着，并暴露在蜱虫热疫的影响下。</p>"
+                    "description": "<p>在蜱虫群占据空间内的每个敌人都受到@Damage[3d6[piercing]|options:area-damage]伤害（@Check[reflex|dc:28|basic|options:area-effect]豁免），外加附着，并暴露在蜱虫热疫的影响下。</p>"
                 },
                 "Tick Fever": {
                     "name": "蜱虫热疫 Tick Fever",
@@ -7004,7 +7004,7 @@
                 },
                 "Hair Snare": {
                     "name": "毛发陷阱 Hair Snare",
-                    "description": "<p>考芮精让自己的一道纠缠的长条毛发离开身体，蜿蜒爬出缠绕一个邻近的生物。该生物必须尝试@Check[reflex|dc:21|options:inflicts:immobilized]豁免。</p>\n<p>考芮精[[/gmr 1d4 #rounds]]{1d4轮}内无法再使用毛发陷阱。</p><hr /><p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 毛发缠绕住该生物，一切速度承受-10尺环境减值，直到其成功[[/act escape dc=21]]或直到考芮精再次使用毛发陷阱（此时上一条陷阱掉在地上，不再处于活化状态）。</p>\n<p><strong>大失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到其成功逃脱（DC 21）或直到考芮精再次使用毛发陷阱。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LYxKPQYeiD4S5tQP]</p>"
+                    "description": "<p>考芮精让自己的一道纠缠的长条毛发离开身体，蜿蜒爬出缠绕一个邻近的生物。该生物必须尝试@Check[reflex|dc:21|options:inflicts:immobilized]豁免。</p>\n<p>考芮精[[/gmr 1d4 #Recharge Hair Snare]]{1d4轮}内无法再使用毛发陷阱。</p><hr /><p><strong>成功</strong> 该生物不受影响。</p>\n<p><strong>失败</strong> 毛发缠绕住该生物，一切速度承受-10尺环境减值，直到其成功[[/act escape dc=21]]或直到考芮精再次使用毛发陷阱（此时上一条陷阱掉在地上，不再处于活化状态）。</p>\n<p><strong>大失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到其成功逃脱（DC 21）或直到考芮精再次使用毛发陷阱。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LYxKPQYeiD4S5tQP]</p>"
                 },
                 "Otherworldly Laugh": {
                     "name": "异界笑声 Otherworldly Laugh",
@@ -7239,7 +7239,7 @@
                 },
                 "Lunar Naga Venom": {
                     "name": "明月娜迦毒液 Lunar Naga Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:24]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（1轮）</p>\n<p><strong>阶段2</strong> 如阶段1（1轮）</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}（1轮）)</p>\n<p><strong>阶段4</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]（1轮）。一旦一个生物因为明月娜迦的毒液而失去意识，他们会保持睡眠[[/r 1d8 #hours]]小时，除非被唤醒。</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:24]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（1轮）</p>\n<p><strong>阶段2</strong> 如阶段1（1轮）</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}（1轮）)</p>\n<p><strong>阶段4</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]（1轮）。一旦一个生物因为明月娜迦的毒液而失去意识，他们会保持睡眠[[/gmr 1d8 #hours]]{1d8小时}，除非被唤醒。</p>"
                 }
             },
             "prototypeToken": {
@@ -8443,7 +8443,7 @@
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
-                    "description": "<p>佩鲁达喷出一股烈焰，对@Template[line|distance:60]范围造成@Damage[7d10[fire]|options:area-damage]伤害（@Check[reflex|dc:29|basic|options:area-effect]豁免）。</p>\n<p>佩鲁达在[[/gmr 1d4 #Recharge their Breath Weapon]]{1d4轮}内无法再次使用喷吐武器。</p>"
+                    "description": "<p>佩鲁达喷出一股烈焰，对@Template[line|distance:60]范围造成@Damage[7d10[fire]|options:area-damage]伤害（@Check[reflex|dc:29|basic|options:area-effect]豁免）。</p>\n<p>佩鲁达在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内无法再次使用喷吐武器。</p>"
                 },
                 "Peluda Venom": {
                     "name": "佩鲁达毒 Peluda Venom",
@@ -12761,7 +12761,7 @@
                 },
                 "Forest Step": {
                     "name": "穿林步 Forest Step",
-                    "description": "<p><strong>频率</strong> 每天三次</p><hr /><p><strong>效果</strong> 佐莫克传送自己，这类似5环级@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]{次元门 Dimension Door}法术，但起点和终点都必须在森林地形中。在传送期间，佐莫克恢复@Damage[10d10[healing]]生命值。被佐莫克活吞的生物会被留在原地。</p>\n<p>佐莫克在[[/gmr 1d6+1 #rounds]]{1d6+1轮}内无法再次使用穿林步。</p>"
+                    "description": "<p><strong>频率</strong> 每天三次</p><hr /><p><strong>效果</strong> 佐莫克传送自己，这类似5环级@UUID[Compendium.pf2e.spells-srd.Item.VlNcjmYyu95vOUe8]法术，但起点和终点都必须在森林地形中。在传送期间，佐莫克恢复@Damage[10d10[healing]]生命值。被佐莫克活吞的生物会被留在原地。</p>\n<p>佐莫克在[[/gmr 1d6+1 #Recharge Forest Step]]{1d6+1轮}内无法再次使用穿林步。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
