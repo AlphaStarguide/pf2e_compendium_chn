@@ -252,35 +252,35 @@
         },
         "Covetous Corridor": {
             "prototypeToken": {
-                "name": "Covetous Corridor"
+                "name": "垂涎长廊"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Covetous Corridor",
-            "hazarddescription": "<p>Statues depicting the runelords of envy steal magic from intruders.</p>",
-            "reset": "<p>The hazard resets automatically if not disabled.</p>",
-            "stealthdetails": "<p>(master)</p>",
+            "name": "垂涎长廊 Covetous Corridor",
+            "hazarddescription": "<p>嫉妒符文领主们的雕像会从闯入者身上窃取魔法。</p>",
+            "reset": "<p>如果未被解除，危害会自动重置。</p>",
+            "stealthdetails": "<p>(大师)</p>",
             "items": {
                 "Covet Magic": {
-                    "name": "Covet Magic",
-                    "description": "<p><strong>Trigger</strong> A magic item or active spell effect enters the corridor</p><hr /><p><strong>Effect</strong> A randomly determined statue uses the hazard's @UUID[Compendium.pf2e.actionspf2e.Item.RDXXE7wMrSPCLv5k]{Steal} Magic action. The hazard then rolls initiative.</p>"
+                    "name": "垂涎魔法 Covet Magic",
+                    "description": "<p><strong>触发</strong> 魔法物品或活跃的法术效果进入长廊</p><hr /><p><strong>效果</strong> 随机选取一座雕像，使用危害的 @UUID[Compendium.pf2e.actionspf2e.Item.RDXXE7wMrSPCLv5k]魔法动作。随后危害骰先攻。</p>"
                 },
                 "Steal Magic": {
-                    "name": "Steal Magic",
-                    "description": "<p>Roll a [[/gmr d10]] to determine which statue activates, rerolling a result of 10 or any result that would indicate a disabled statue or a statue that is already charged. The indicated statue casts @UUID[Compendium.pf2e.spells-srd.Item.kUSShxXzY1sPtJA0]{Detonate Magic} with a [[/gmr 1d20+32 #Counteract]]{+32} bonus to its counteract check. The spell targets the closest magic item within 120 feet, prioritizing the highest-ranking magic item and targeting spell effects only if no magic item is within range. On a success or critical success, the statue gathers the dispersed energy into its implement, charging it.</p>\n<p>While the statue's implement remains charged, any creature who is at least an expert in @Check[arcana|dc:44], @Check[nature|dc:44], @Check[occultism|dc:44], or @Check[religion|dc:44] can use a 2-action activity with the concentrate trait to attempt a DC 44 check using that skill. On a success or critical success, they return the magic to its original source, causing it to reactivate. Removing an implement from its statue prevents the statue from using Transfer Magic but doesn't prevent a creature from restoring the charge to its source.</p>"
+                    "name": "窃取魔法 Steal Magic",
+                    "description": "<p>掷 [[/gmr d10]] 确定哪座雕像被启动，若掷出 10 或结果指向已被解除或已充能的雕像，则重新掷骰。被指定的雕像施放 @UUID[Compendium.pf2e.spells-srd.Item.kUSShxXzY1sPtJA0]，其反制检定加值为 [[/gmr 1d20+32 #Counteract]]{+32} 。该法术以 120 尺内最近的魔法物品为目标，优先选择环级最高的魔法物品，若范围内没有魔法物品，则仅以法术效果为目标。若检定成功或大成功，雕像将分散的能量聚集到其魔法器具中，为其充能。</p>\n<p>只要雕像的魔法器具保持充能状态，任何在 @Check[arcana|dc:44]、@Check[nature|dc:44]、@Check[occultism|dc:44] 或 @Check[religion|dc:44] 技能上至少具有专家熟练度的生物都可以进行一个具有专注特征的双动作行动，尝试使用该技能进行 DC 44 的检定。若检定成功或未成功，他们将魔法恢复到其原始来源，使其重新激活。从雕像上取下魔法器具可防止雕像使用转移魔法，但不会阻止生物将充能恢复到其来源。</p>"
                 },
                 "Transfer Magic": {
-                    "name": "Transfer Magic",
-                    "description": "<p><strong>Requirements</strong> The implements of at least three runelord statues are charged</p><hr /><p><strong>Effect</strong> Three statues with charged implements transfer their charges to the Belimarius statue. While the Belimarius statue holds at least one charge, a creature can transfer charges from its implement as described in Steal Magic, except the DC of the skill check increases to DC 46; success returns the stolen magic to the appropriate items.</p>\n<p>@Check[arcana|dc:46], @Check[nature|dc:46], @Check[occultism|dc:46], or @Check[religion|dc:46]</p>"
+                    "name": "转移魔法 Transfer Magic",
+                    "description": "<p><strong>需求</strong> 至少有三座符文领主雕像的魔法器具被充能</p><hr /><p><strong>效果</strong> 三座魔法器具已被充能的雕像将它们的充能转移到贝利玛留斯雕像上。只要贝利玛留斯雕像至少拥有一个充能，生物就可以按照窃取魔法中描述的方式从其魔法器具中转移充能，但技能检定 DC 增加到 46；成功就会将窃取的魔法恢复到相应的物品中。</p>\n<p>@Check[arcana|dc:46]、@Check[nature|dc:46]、@Check[occultism|dc:46] 或 @Check[religion|dc:46]</p>"
                 },
                 "Empower Barrier": {
-                    "name": "Empower Barrier",
-                    "description": "<p><strong>Requirements</strong> The hazard starts its turn, and the Belimarius statue holds at least one charge</p><hr /><p><strong>Effect</strong> The Belimarius statue transfers all charges from its implement into the force barrier separating the corridor from area <strong>B3</strong>. For every charge the statue transfers, the force barrier gains 10 temporary Hit Points that last for 1 hour. (If the force barrier has been destroyed, the statue instead expends the first charge to cast a 6th-rank @UUID[Compendium.pf2e.spells-srd.Item.7Iela4GgVeO3LfAo]{Wall of Force}, with any remaining charges granting the barrier temporary Hit Points.) Charges transferred to the force barrier are lost forever and can't be returned to items they were stolen from.</p>"
+                    "name": "强化屏障 Empower Barrier",
+                    "description": "<p><strong>需求</strong> 危害开始其回合，且贝利玛留斯雕像至少拥有一个充能</p><hr /><p><strong>效果</strong> 贝利玛留斯雕像将其魔法器具中的所有充能转移到分隔长廊与区域 <strong>B3</strong> 的力场屏障上。每转移一个充能，力场屏障获得 10 点临时生命值，持续 1 小时。（如果力场屏障已被摧毁，雕像则消耗第一个充能施放 6 环 @UUID[Compendium.pf2e.spells-srd.Item.7Iela4GgVeO3LfAo]，剩余充能为屏障提供临时生命值。）转移到力场屏障上的充能将永久消失，无法恢复到其被窃取的物品中。</p>"
                 }
             },
-            "disable": "<p>@Check[arcana|dc:45] (master) to unweave the magic surrounding a statue, @Check[athletics|dc:48] (expert) to wrest a statue's implement from its hands, @Check[thievery|dc:48] (expert) to slip an implement free, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (9th rank; counteract DC 36) to counteract the magic that empowers the statue. Increase the DCs to disable the Belimarius statue by 2. Each statue must be disabled or counteracted separately, and disabling the Belimarius statue or all nine other statues permanently disables the hazard.</p>",
-            "routine": "<p>(4 actions) The hazard uses @UUID[Compendium.pf2e.actionspf2e.Item.RDXXE7wMrSPCLv5k]{Steal} Magic twice. Once the implements of at least three runelord statues are charged, the hazard uses its next available action to Transfer Magic. If the hazard starts its turn with the Belimarius statue charged, the hazard uses its reaction to Empower Barrier. A disabled runelord statue can't use Steal Magic. If the Belimarius statue is disabled, the hazard can't use Transfer Magic or Empower Barrier.</p>"
+            "disable": "<p>@Check[arcana|dc:45]（大师）解开环绕雕像的魔法；@Check[athletics|dc:48]（专家）从雕像手中拿走魔法器具；@Check[thievery|dc:48]（专家）检定偷偷取下魔法器具；或施放 @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（9环；反制DC36）来反制赋予雕像力量的魔法。解除贝利玛留斯雕像的DC增加2。每座雕像必须分别解除或反制，解除贝利玛留斯雕像或所有其他九座雕像将解除这一危害。</p>",
+            "routine": "<p>(4 动作) 危害使用两次 @UUID[Compendium.pf2e.actionspf2e.Item.RDXXE7wMrSPCLv5k]魔法。一旦至少有三座符文领主雕像的魔法器具被充能，危害就会使用下一个可用动作进行转移魔法。如果在危害的回合开始时贝利玛留斯雕像已被充能，则危害使用其反应来强化屏障。被解除的符文领主雕像无法使用窃取魔法。如果贝利玛留斯雕像被解除，危害无法使用转移魔法或强化屏障。</p>"
         },
         "Elder Shantak": {
             "blurb": "Variant shantak",
