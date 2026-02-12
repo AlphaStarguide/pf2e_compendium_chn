@@ -420,7 +420,7 @@
                 },
                 "Cursed Gaze": {
                     "name": "Cursed Gaze",
-                    "description": "<p>The aghash fixes their gaze on one creature they can see within 20 feet. The creature must attempt a @Check[will|dc:21|traits:damaging-effect,inflicts:frightened,inflicts:stunned] save.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[2d6[mental]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature takes @Damage[4d6[mental]] damage and becomes either @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} (the aghash's choice).</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[8d6[mental]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2}.</p>"
+                    "description": "<p>The aghash fixes their gaze on one creature they can see within 20 feet. The creature must attempt a @Check[will|dc:21|options:damaging-effect,inflicts:frightened,inflicts:stunned] save.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes @Damage[2d6[mental]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature takes @Damage[4d6[mental]] damage and becomes either @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} or @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} (the aghash's choice).</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[8d6[mental]] damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 2}.</p>"
                 },
                 "Sandstorm": {
                     "name": "Sandstorm",
@@ -2762,15 +2762,15 @@
             "items": {
                 "Cloak of High Tide": {
                     "name": "满潮斗篷 Cloak of High Tide",
-                    "description": "<p>10尺。</p>\n<p>水元素魔法在潮汐巨人的身上起伏、流淌进他们的身躯中。在战斗中，每当潮汐巨人的回合开始，若他的满潮斗篷没有启动，则会自行启动；反之，若他的满潮斗篷已经启动，则其效果会结束。除了潮汐巨人之外的任何生物在他的回合进入启动了的满潮斗篷的范围中时，会获得5HP；这是一个治疗效果，且一个生物1轮只能从此效果中获益一次。当它启动时，斗篷看起来像是一道从潮汐巨人肩膀与后背中冒出的魔法海沫。当潮汐巨人不处于战斗中时，斗篷不会启动。</p>"
+                    "description": "<p>10尺。</p>\n<p>水元素魔法在潮汐巨人的身上起伏、流淌进他们的身躯中。在战斗中，每当潮汐巨人的回合开始，若他的满潮斗篷没有启动，则会自行启动；反之，若他的满潮斗篷已经启动，则其效果会结束。除了潮汐巨人之外的任何生物在他的回合进入启动了的满潮斗篷的范围中时，会获得@Damage[5[healing,vitality]|shortLabel]；这是一个治疗效果，且一个生物1轮只能从此效果中获益一次。当它启动时，斗篷看起来像是一道从潮汐巨人肩膀与后背中冒出的魔法海沫。当潮汐巨人不处于战斗中时，斗篷不会启动。</p>"
                 },
                 "Blood Tide": {
                     "name": "血潮 Blood Tide",
-                    "description": "<p>潮汐巨人游泳，若满潮斗篷正在启动则游泳两次。潮汐巨人向前伸出他的三叉戟，捅向所有游经的敌人，所有位于巨人移动路径10尺内的敌人受到@Damage[2d8[piercing]]伤害和@Damage[2d6[persistent,bleed]]伤害（@Check[reflex|dc:24|basic]豁免）。在一次血潮中，被选为目标的生物只会被影响一次。</p>"
+                    "description": "<p>潮汐巨人游泳，若满潮斗篷正在启动则游泳两次。潮汐巨人向前伸出他的三叉戟，捅向所有游经的敌人，所有位于巨人移动路径10尺内的敌人受到@Damage[2d8[piercing],2d6[bleed]]伤害（@Check[reflex|dc:24|basic]豁免）。在一次血潮中，被选为目标的生物只会被影响一次。</p>"
                 },
                 "Tine and Tide": {
                     "name": "潮尖 Tine and Tide",
-                    "description": "<p>潮汐巨人的三叉戟中迸发出一股水波，影响@Template[type:cone|distance:15]或100尺距离内的@Template[type:burst|distance:5]范围。若潮汐巨人的满潮斗篷正启动着，范围则增加到@Template[type:cone|distance:30]或@Template[type:burst|distance:10]。范围内的所有生物受到@Damage[9d8[bludgeoning]|options:area-damage]伤害，@Check[reflex|dc:33|basic]豁免。</p>"
+                    "description": "<p>潮汐巨人的三叉戟中迸发出一股水波，影响@Template[type:cone|distance:15]或100尺距离内的@Template[type:burst|distance:5]范围。若潮汐巨人的满潮斗篷正启动着，范围则增加到@Template[type:cone|distance:30]或@Template[type:burst|distance:10]。范围内的所有生物受到@Damage[9d8[bludgeoning]|options:area-damage]伤害，@Check[reflex|dc:33|basic|options:area-effect]豁免。</p>"
                 }
             },
             "prototypeToken": {
@@ -10854,7 +10854,7 @@
             "items": {
                 "Natural Camouflage": {
                     "name": "Natural Camouflage",
-                    "description": "<p>A tatzlwyrm's green, gray, and brown scales provide it natural camouflage. In areas of dense undergrowth, a tatzlwyrm can move at its full Speed when Sneaking, and it gains a +4 circumstance bonus to Hide.</p>"
+                    "description": "<p>A tatzlwyrm's green, gray, and brown scales provide it natural camouflage. In areas of dense undergrowth, a tatzlwyrm can move at its full Speed when [[/act sneak]]{Sneaking}, and it gains a +4 circumstance bonus to [[/act hide options=natural-camouflage]].</p>"
                 },
                 "Poison Gasp": {
                     "name": "Poison Gasp",
@@ -14023,23 +14023,23 @@
             "items": {
                 "Gray Aura": {
                     "name": "Gray Aura",
-                    "description": "<p>15 feet. The bodach is always surrounded by a pall of gloomy gray, like the air before it rains. A non-fey or non-hag creature entering the aura or beginning their turn in the aura must succeed at a @Check[will|dc:21] save or become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round (@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} on a critical failure). A creature who succeeds is temporarily immune to the aura for 1 minute.</p>"
+                    "description": "<p>15 feet. The bodach is always surrounded by a pall of gloomy gray, like the air before it rains. A non-fey or non-hag creature entering the aura or beginning their turn in the aura must succeed at a @Check[will|dc:21|options:area-effect,inflicts:slowed] save or become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round (@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} on a critical failure). A creature who succeeds is temporarily immune to the aura for 1 minute.</p>"
                 },
                 "Implacable Curse": {
                     "name": "Implacable Curse",
-                    "description": "<p>The bodach makes a staf Strike. If it hits, it deals an additional @Damage[2d8[spirit]] damage, and the target must attempt a save against either Mumbletongue or Stumblefoot (the bodach's choice).</p>"
+                    "description": "<p>The bodach makes a staff Strike. If it hits, it deals an additional 2d8 spirit damage, and the target must attempt a save against either Mumbletongue or Stumblefoot (the bodach's choice).</p>"
                 },
                 "Mumbletongue": {
                     "name": "Mumbletongue",
-                    "description": "<p>The bodach mumbles a string of half-comprehensible nonsense, cursing creatures within a @Template[type:emanation|distance:10]. Each creature in the area must succeed at a @Check[will|dc:24] save or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 minute (stupefed 2 on a critical failure).</p>"
+                    "description": "<p>The bodach mumbles a string of half-comprehensible nonsense, cursing creatures within a @Template[type:emanation|distance:10]. Each creature in the area must succeed at a @Check[will|dc:24|options:area-effect,inflicts:stupefied] save or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 minute (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} on a critical failure).</p>"
                 },
                 "Stumblefoot": {
                     "name": "Stumblefoot",
-                    "description": "<p>The bodach stares unblinkingly at its foes, cursing creatures within a @Template[type:cone|distance:15]. Each creature in the area must succeed at a @Check[fortitude|dc:24] save or become @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute (@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} on a critical failure).</p>"
+                    "description": "<p>The bodach stares unblinkingly at its foes, cursing creatures within a @Template[type:cone|distance:15]. Each creature in the area must succeed at a @Check[fortitude|dc:24|options:area-effect,inflicts:clumsy,inflicts:enfeebled] save or become @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1} and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 minute (@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2} and @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} on a critical failure).</p>"
                 },
                 "Unstoppable": {
                     "name": "Unstoppable",
-                    "description": "<p>A bodach reduces any penalty it takes to its Speed by 5 feet (to a minimum of 0 feet). A bodach can ft into tight spaces as if it were a Small creature. It can move at its full Speed while Squeezing.</p>"
+                    "description": "<p>A bodach reduces any penalty it takes to its Speed by 5 feet (to a minimum of 0 feet). A bodach can fit into tight spaces as if it were a Small creature. It can move at its full Speed while @UUID[Compendium.pf2e.actionspf2e.Item.kMcV8e5EZUxa6evt]{Squeezing}.</p>"
                 }
             }
         },
