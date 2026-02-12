@@ -48,6 +48,39 @@
                 }
             }
         },
+        "Amalgamite": {
+            "prototypeToken": {
+                "name": "Amalgamite"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Amalgamite",
+            "publicNotes": "<p>Teleportation magic can prove a difficult undertaking, even for experienced spellcasters. It requires precise calculation and timing, knowledge of the intended destination, and meticulous control over surging conjuration magics. A mistake in even the most minute element of such a spell can lead to disastrous results for those involved. When a particularly powerful spellcaster makes an error of this kind, either through arrogance or simple misjudgment, they might transform into an amalgamite.</p>\n<p>A mass of flesh and misaligned limbs, an amalgamite is the warped body of a former spellcaster, sometimes joined with another version of itself to incorporate additional limbs or other irregularities. They're still alive, but they have become aberrants mentally and physically, with only the vaguest memories of their previous existence, which makes them a dangerous and bewildering foe. Their weird, warped anatomy constantly shifts and regrows, allowing the creatures to shrug off physical blows save those that pierce through its flesh and into its core being.</p>\n<p>The magical residue of an amalgamite's creation radiates from it, seeping into and destabilizing any living beings that get too close. Infected creatures then further spread the amalgamite's aura among larger groups of allies and foes alike. The amalgamite uses this power to manipulate and confuse their enemies, whom they can teleport into traps, force into confrontations with other enemies, or draw close into striking range with their own odd appendages.</p>",
+            "hp": "Regeneration 10 (deactivated by piercing)",
+            "items": {
+                "Regeneration 10 (Deactivated by Piercing)": {
+                    "name": "Regeneration 10 (Deactivated by Piercing)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Destabilizing Field": {
+                    "name": "Destabilizing Field",
+                    "description": "<p>40 feet. A creature that begins its turn within the area feels its body begin to stretch and must succeed at a @Check[fortitude|dc:33] save or become destabilized. A destabilized creature emits a 10-foot destabilizing field aura and becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. The destabilization ends when the creature is no longer sickened. A creature that succeeds at its saving throw against the aura is temporarily immune to all destabilizing fields for 1 minute.</p>"
+                },
+                "Displace": {
+                    "name": "Displace",
+                    "description": "<p><strong>Trigger</strong> The amalgamite is hit by a Strike</p><hr /><p><strong>Effect</strong> The amalgamite Relocates or Transposes themself with another creature. If the amalgamite successfully changes location, they and any Transposed creature take half damage from the triggering Strike.</p>"
+                },
+                "Relocate": {
+                    "name": "Relocate",
+                    "description": "<p>The amalgamite teleports into an unoccupied space they can see within 50 feet.</p>"
+                },
+                "Transpose": {
+                    "name": "Transpose",
+                    "description": "<p>The amalgamite teleports up to two destabilized creatures within 50 feet that they can see. They can either move a single creature to an unoccupied space or swap the positions of two creatures of the same size. If the amalgamite swaps two creatures, they can choose their self as one target. An unwilling creature can attempt a @Check[will|dc:33] save. If either target succeeds at this saving throw, both are unaffected.</p>"
+                }
+            }
+        },
         "Entrapping Chair": {
             "prototypeToken": {
                 "name": "Entrapping Chair"
@@ -63,7 +96,7 @@
             "items": {
                 "Take a Seat!": {
                     "name": "Take a Seat!",
-                    "description": "<p><strong>Trigger</strong> A creature steps on the track</p><hr /><p><strong>Effect</strong> The chair rockets forward along the track and slams into the triggering creature, dealing @Damage[(3d8 + 15)[bludgeoning]] damage. A creature who succeeds at a @Check[reflex|dc:22|traits:damaging-effect] save takes no damage and moves out of the chair's path into a random adjacent square not containing the track. A creature who fails this saving throw is knocked into the chair's seat and immediately captured by the armrests, becoming @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} (@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical failure; [[/act escape dc=26]]).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature steps on the track</p><hr /><p><strong>Effect</strong> The chair rockets forward along the track and slams into the triggering creature, dealing @Damage[(3d8 + 15)[bludgeoning]] damage. A creature who succeeds at a @Check[reflex|dc:22|traits:damaging-effect] save takes no damage and moves out of the chair's path into a random adjacent square not containing the track. A creature who fails this saving throw is knocked into the chair's seat and captured by the armrests, becoming @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} (@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} on a critical failure; [[/act escape dc=26]]).</p>"
                 }
             }
         },
@@ -77,10 +110,32 @@
             "name": "False Step Floor",
             "disable": "<p>@Check[thievery|dc:28|name:Disrupt the Magical Energy|traits:action:disable-a-device] (trained) to disrupt the magical energy, or @Check[arcana|dc:27|name:Realign the Magic] or @Check[occultism|dc:27|name:Realign the Magic] (trained) to realign the magical energy</p>",
             "hazarddescription": "<p>Each time a creature enters the room, it slips through the floor, tumbles through an interdimensional void, and falls back into the room through the ceiling, landing on the floor.</p>",
+            "reset": "<p>The trap resets after 1 round.</p>",
             "items": {
                 "False Step": {
                     "name": "False Step",
-                    "description": "<p><strong>Trigger</strong> A creature enters the room and steps onto the floor</p>\n<p><strong>Effect</strong> The creature slips through the floor; it tumbles through an interdimensional void before falling back into the room through the ceiling and landing on the floor. The triggering creature takes @Damage[40[bludgeoning]|options:fall-damage] damage from the fall. That creature can try to @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} (DC 24) to avoid falling.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature enters the room and steps onto the floor</p>\n<p><strong>Effect</strong> The creature slips through the floor; it tumbles through an interdimensional void before falling back into the room through the ceiling and landing on the floor. The triggering creature takes @Damage[40[bludgeoning]|options:fall-damage] damage from the fall. That creature can try to [[/act grab-an-edge dc=24]] to avoid falling.</p>"
+                }
+            }
+        },
+        "Darkside Mirror": {
+            "prototypeToken": {
+                "name": "Darkside Mirror"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Darkside Mirror",
+            "hp": "The mirror can't be damaged while any mirror duplicate is alive",
+            "disable": "<p>@Check[thievery|dc:34] (legendary) to retrieve a creature from the other dimension within 10 minutes of the switch (possible only if their mirror duplicate is dead), @Check[thievery|dc:39] (master) to permanently disable the mirror once all mirror duplicates are dead, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 32) to counteract the mirror for 1 minute and prevent additional replacements during that time.</p>",
+            "hazarddescription": "<p>A magic mirror replaces characters with malicious mirror duplicates from another dimension.</p>",
+            "routine": "<p>(1 action) The mirror absorbs another reflected creature and replaces it with a mirror duplicate. A mirror duplicate attacks on their own initiative, using the same statistics as the original creature, but they hate all other non-duplicate creatures. A mirror duplicate can spend 3 actions in contact with the mirror to return to their original dimension and release the duplicated creature.</p>",
+            "reset": "<p>The mirror is always ready to absorb creatures into the other dimension. Ten minutes after a creature is sucked into the mirror, if an ally doesn't rescue the creature, it reaches the other dimension. In the mirror dimension, it counts as a mirror duplicate. These dimensions are alternate realities, not planes, so even spells like @UUID[Compendium.pf2e.spells-srd.Item.5bTt2CvYHPvaR7QQ]{Interplanar Teleport}<em> </em>can't reach them.</p>",
+            "stealthdetails": "<p>(master) to notice it isn't a regular mirror</p>",
+            "items": {
+                "Reflection of Malice": {
+                    "name": "Reflection of Malice",
+                    "description": "<p><strong>Trigger</strong> A creature is reflected in the mirror</p><hr /><p><strong>Effect</strong> The mirror absorbs the creature, replacing it with a malicious mirror duplicate (@Check[reflex|dc:34] to avoid being absorbed into the mirror), and rolls initiative.</p>"
                 }
             }
         },
@@ -94,12 +149,12 @@
             "name": "Reflected Desires",
             "disable": "<p>@Check[thievery|dc:18|name:Shroud the Mirror|traits:action:disable-a-device] (trained) to shroud the mirror without looking at it, or @Check[occultism|dc:17|name:Erect Mental Barriers] (trained) to erect mental barriers</p>",
             "hazarddescription": "<p>This mirror reflects the viewer's deepest desires.</p>",
-            "reset": "<p>Automatic</p>",
+            "reset": "<p>The trap resets after 1 round.</p>",
             "stealthdetails": "<p>(0 to notice the mirror)</p>",
             "items": {
                 "Tempt": {
                     "name": "Tempt",
-                    "description": "<p><strong>Trigger</strong> A creature looks into the mirror</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature sees themselves enjoying their deepest desires in the mirror's reflection, becoming @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} (@Check[will|dc:20] negates). This fascination ends automatically when the mirror is broken or covered up.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature looks into the mirror</p><hr /><p><strong>Effect</strong> The triggering creature sees themselves enjoying their deepest desires in the mirror's reflection, becoming @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} (@Check[will|dc:20|options:inflicts:fascinated] negates). This fascination ends automatically when the mirror is broken or covered up.</p>"
                 }
             }
         },
@@ -126,7 +181,7 @@
                 },
                 "Swallow Future": {
                     "name": "Swallow Future",
-                    "description": "<p>The morrowkin inhales and draws forth the future deeds of all creatures around it. All creatures within a @Template[emanation|distance:30] of the morrowkin take @Damage[(6d8 + 18)[mental]|options:area-damage] damage and must attempt a @Check[will|dc:39|options:area-effect,damaging-effect,inflicts:doomed] save.</p>\n<p>The morrowkin can't Swallow Future again for 1 minute.</p>\n<p>Creatures wearing hope talismans can choose to let their hope talisman break in order to ignore the effect after seeing the result of their Will save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 4} (likely causing it to die immediately).</p>"
+                    "description": "<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> The morrowkin inhales and draws forth the future deeds of all creatures around it. All creatures within a @Template[type:emanation|distance:30] of the morrowkin take @Damage[(6d8+18)[mental]|options:area-damage] damage depending on their @Check[will|dc:39] save. Creatures wearing hope talismans can choose to let their hope talisman break in order to ignore the effect after seeing the result of their Will save.</p><hr /><p><strong>Critical Success</strong> The creature takes no damage.</p>\n<p><strong>Success</strong> The creature takes half damage and is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>\n<p><strong>Failure</strong> The creature takes full damage and is @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes double damage and becomes @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 4} (likely causing it to die immediately).</p>"
                 },
                 "Tomorrow's Fury": {
                     "name": "Tomorrow's Fury",
@@ -144,12 +199,12 @@
             "name": "Sigil of Deepest Fears",
             "disable": "<p>@Check[thievery|dc:43|name:Drain the Sigil's Power|traits:action:disable-a-device] (master) to drain the sigil's power harmlessly, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (9th rank; counteract DC 42) to counteract the sigil</p>",
             "hazarddescription": "<p>An arcane sigil forces creatures to confront their greatest fear.</p>",
-            "reset": "<p>1 day</p>",
+            "reset": "<p>The trap resets after 1 day.</p>",
             "stealthdetails": "<p>(master)</p>",
             "items": {
                 "Face Your Fear": {
                     "name": "Face Your Fear",
-                    "description": "<p><strong>Trigger</strong> A creature moves within 10 feet of the sigil</p>\n<hr />\n<p><strong>Effect</strong> All creatures within 120 feet of the sigil are affected by a @UUID[Compendium.pf2e.spells-srd.Item.qDjeG6dxT4aEEC6J]{Weird} spell (@Check[will|dc:40|traits:damaging-effect] save).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature moves within 10 feet of the sigil</p><hr /><p><strong>Effect</strong> All creatures within 120 feet of the sigil are affected by a @UUID[Compendium.pf2e.spells-srd.Item.MJx7DmjsWYzDZ3a4]{Phantasmagoria} spell (@Check[will|dc:40|options:area-effect,damaging-effect] save).</p>"
                 }
             }
         },
@@ -163,7 +218,7 @@
             "name": "Mirror Door",
             "disable": "<p>@Check[thievery|dc:18|name:Open the Door|traits:action:disable-a-device] to open the door while viewing the reflection</p>",
             "hazarddescription": "<p>The reflection of a wall shows a phantom door where none exists. This door can only be manipulated while viewed through the mirror's reflection.</p>",
-            "reset": "<p>Automatic</p>",
+            "reset": "<p>The trap resets when the door is shut.</p>",
             "items": {
                 "Appear": {
                     "name": "Appear",
@@ -181,7 +236,7 @@
             "name": "Confounding Portal",
             "disable": "<p>@Check[thievery|dc:17|name:Scratch Out Runes|traits:action:disable-a-device] to scratch out the runes, or @Check[arcana|dc:16|name:Destroy the Runes] to destroy the runes</p>",
             "hazarddescription": "<p>Tiny runes carved around a doorframe or on a hall's walls surreptitiously confound creatures into circling the room or hallway they attempted to exit or pass through.</p>",
-            "reset": "<p>Automatic</p>",
+            "reset": "<p>The trap resets after 1 round.</p>",
             "items": {
                 "Confounding Misdirection": {
                     "name": "Confounding Misdirection",
@@ -215,13 +270,14 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Spirit Window",
+            "hp": "Hardness 35 (window)",
             "disable": "<p>@Check[occultism|dc:48|name:Free the Spirits] (legendary) to free the spirits from the mirror, or @Check[religion|dc:48|name:Banish the Spirits] (legendary) to banish the spirits</p>",
             "hazarddescription": "<p>Spirits trapped inside a haunted window harm those who touch the window.</p>",
-            "reset": "<p>1 round</p>",
+            "reset": "<p>The trap resets after 1 round.</p>",
             "items": {
                 "Siphon Soul": {
                     "name": "Siphon Soul",
-                    "description": "<p><strong>Trigger</strong> A creature touches the window</p><hr /><p><strong>Effect</strong> The triggering creature takes @Damage[(8d10 + 44)[void]] damage (@Check[will|dc:42|basic]) as the window attempts to steal their soul. If this damage would kill the target, its soul is trapped inside the window with the effects of @UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{Seize Soul}.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature touches the window</p><hr /><p><strong>Effect</strong> The triggering creature takes @Damage[(8d10+44)[void]] damage with a @Check[will|dc:42|basic] save as the window attempts to steal their soul. If this damage would kill the target, the target's soul is trapped inside the window with the effects of @UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]{Seize Soul}.</p>"
                 }
             }
         },
@@ -248,14 +304,14 @@
                 "placeHolder": "placeHolder"
             },
             "name": "False Floor",
-            "disable": "<p>Succeeding on a Perception check against the Stealth DC of 21 (including the check to find the trap) disbelieves the illusory floor, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (2nd rank; counteract DC 18) to dispel the illusory floor; <em>dispel magic</em> (2nd level; counteract DC 20) to dispel the magical silence</p>",
+            "disable": "<p>Succeeding on a @Check[perception|dc:21] check against the Stealth DC of 21 (including the check to find the trap) disbelieves the illusory floor, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (2nd rank; counteract DC 18) to dispel the illusory floor; <em>dispel magic</em> (2nd rank; counteract DC 20) to dispel the magical silence</p>",
             "hazarddescription": "<p>The floor in this chamber is an illusion, which conceals a 40-foot drop to the true floor below. Additionally, the area beneath the floor is magically silenced-no sound is audible within nor does sound leave this space.</p>",
-            "reset": "<p>Automatic</p>",
+            "reset": "<p>The trap resets after 1 round.</p>",
             "stealthdetails": "<p>(trained; or 0 if the illusory floor is dispelled)</p>",
             "items": {
                 "Drop": {
                     "name": "Drop",
-                    "description": "<p><strong>Trigger</strong> A creature walks onto the illusory floor</p>\n<hr />\n<p><strong>Effect</strong> The triggering creature falls through the illusory floor and takes falling damage (typically @Damage[20[bludgeoning]|options:fall-damage] damage). That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling. The DC to @UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{Climb} the walls (@Check[athletics|dc:20|traits:action:climb]) or Grab an Edge is @Check[reflex|dc:20|traits:action:grab-an-edge].</p>"
+                    "description": "<p><strong>Trigger</strong> A creature walks onto the illusory floor</p><hr /><p><strong>Effect</strong> The triggering creature falls through the illusory floor and takes falling damage (typically @Damage[20[bludgeoning]|options:fall-damage] damage). That creature can use the @UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]{Grab an Edge} reaction to avoid falling. The DC to [[/act climb dc=20]] the walls or [[/act grab-an-edge dc=20]] is 20.</p>"
                 }
             }
         },
@@ -269,9 +325,9 @@
             "name": "Clone Mirrors",
             "hp": "per mirror",
             "disable": "<p>@Check[thievery|dc:28|name:Reposition Mirror|traits:action:disable-a-device] (expert) to reposition each mirror, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (3rd rank; counteract DC 25) to counteract each mirror</p>",
-            "hazarddescription": "<p>Two opposing mirrors spawn illusory duplicates of creatures in the hall in an unending tide.</p>",
-            "routine": "<p>(2 actions) This trap loses 1 action for each mirror disabled. Each mirror uses 1 action to Spawn a Reflection of a creature reflected in the mirror. The hazard can have a maximum of four reflections spawned at once.</p>",
-            "reset": "<p>1 day</p>",
+            "hazarddescription": "<p>Two opposing mirrors spawn endless illusory duplicates of creatures in the hall.</p>",
+            "routine": "<p>(2 actions) This trap loses 1 action for each mirror disabled. Each mirror uses 1 action to Spawn a @UUID[Compendium.pf2e.pathfinder-dark-archive.Actor.ICdVjs6JEs0YAefl]{Reflection} of a creature reflected in the mirror. The hazard can have a maximum of four reflections spawned at once.</p>",
+            "reset": "<p>The trap resets after 1 day.</p>",
             "items": {
                 "Spawn Reflection": {
                     "name": "Spawn Reflection",
@@ -289,7 +345,7 @@
             "name": "Distortion Mirror",
             "disable": "<p>@Check[thievery|dc:38|name:Deface the Mirror|traits:action:disable-a-device] (master) to deface the mirror's pane, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 36) to dispel the mirror or counteract the transformation</p>",
             "hazarddescription": "<p>Fun-house mirrors distort a viewer's reflection, painfully reshaping their body to match what appears in the reflected images.</p>",
-            "reset": "<p>1 day</p>",
+            "reset": "<p>The trap resets after 1 day.</p>",
             "stealthdetails": "<p>0 to notice the mirror</p>",
             "items": {
                 "Painful Transformation": {
@@ -308,7 +364,7 @@
             "name": "Shuffling Hall",
             "disable": "<p>@Check[thievery|dc:12|name:Deactivate a Plate|traits:action:disable-a-device] to deactivate one pressure plate</p>",
             "hazarddescription": "<p>Four pressure plates along this mirrored hall rotate vertically when stepped on, sending a creature on the pressure plate tipping into an adjacent featureless room while simultaneously replacing the pressure plate and walls in the hall. Each pressure plate dumps creatures into a different room.</p>",
-            "reset": "<p>Automatic</p>",
+            "reset": "<p>The trap resets after 1 round.</p>",
             "items": {
                 "Flip": {
                     "name": "Flip",
@@ -336,6 +392,65 @@
                 }
             }
         },
+        "Spectral Fang Paleohemoth": {
+            "prototypeToken": {
+                "name": "Spectral Fang Paleohemoth"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Spectral Fang Paleohemoth",
+            "publicNotes": "<p>Paleohemoths are typically made from the fossilized bones of dinosaurs and other ancient megafauna, though some crafters stretch the definition and instead use magically petrified bones of dragons or even giants. Not bound to any specific model, paleohemoths are crafted to be as terrifying as possible instead of models of anatomic accuracy. As such, most paleohemoths are nightmarish saurian amalgams whose massive arms end with the complete skulls of apex predators like tyrannosauruses, their bite enhanced to petrify flesh.</p>\n<p>Intact fossilized bones are difficult components to scrounge, much less whole skeletons. An alternate way to obtain them is to hire expert hunters or adventurers to seek out live dinosaurs, bring back the bones, and use magic to turn them to stone. Of course, some purists prefer genuine fossilized bones and are willing to pay the price for their acquisition. Either way, opportunities await enterprising souls with the proper tools and several <em>spacious pouches</em>.</p>\n<p>The magic that animates paleohemoths grants them a form of modular flexibility, letting them trade mobility for extended reach through the rapid rearrangement of their limbs. This often involves bones moving from the legs in order to extend the arms. While this does lead to a somewhat silly anatomy, it is nonetheless effective. This ability also lets them appear like a jumbled mass of bones at rest, making them likely to be mistaken for decor rather than guardians.</p>\n<p>The reasons for creating such constructs vary. While they're often associated with guarding evil geniuses in deep, dark dungeons, they have great uses elsewhere. More elegant versions may be used to protect the private collections of upper-class collectors. Thuvia makes great use of paleohemoths in their construct arenas. While they weren't initially permitted to fight, an exploited loophole has made them a popular addition to the arenas ever since.</p>",
+            "items": {
+                "Fossilization": {
+                    "name": "Fossilization",
+                    "description": "<p>The first time each round a creature takes damage from the paleohemoth's jaws, the target must attempt a @Check[fortitude|dc:32] save. If it fails and has not already been slowed by this ability, it becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute.</p>\n<p>If the creature was already slowed by this ability, a failed save causes it to be @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified} permanently.</p>"
+                },
+                "Incomplete": {
+                    "name": "Incomplete",
+                    "description": "<p>The spectral fang paleohemoth is missing part of its body, making it Large instead of Huge and reducing the reach of its jaws Strike to 10 feet.</p>"
+                },
+                "Reassemble": {
+                    "name": "Reassemble",
+                    "description": "<p>The paleohemoth reorganizes its bones, increasing its reach to 25 feet and reducing its Speed to 15 feet. It can revert to its original form by taking this action again.</p>"
+                }
+            }
+        },
+        "Kuchisake-Onna": {
+            "prototypeToken": {
+                "name": "Kuchisake-Onna"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Kuchisake-Onna",
+            "publicNotes": "<p>A kuchisake-onna, or slit-mouthed woman, is a tall, masked figure who moves with an eerie grace. These horrors are infamous for trapping hapless mortals and asking them, \"Am I pretty?\" A \"no\" response leads to a gruesome death wrought by the silver scissors the kuchisake-onna carries. A \"yes\" prompts them to remove their mask, revealing the scars and cuts running from ear to ear, giving the impression of a terrible, ever-present grin. They then open their mouth to reveal sharp, needle-like teeth and ask another question: \"Even now?\" A \"no\" leads to the same gory death, while a \"yes\" prompts them to use their silver scissors and make the same cuts on the target's face while repeating: \"Then I will make you like me.\"</p>\n<p>There are a handful of methods to weasel out of this otherwise no-win scenario. Answering noncommittally, saying the kuchisake-onna looks \"okay,\" or throwing several small, countable objects like rice or candy often provides enough time to run while the monster is distracted. Few are foolish enough to attack the kuchisake-onna, and those that live to tell the tale speak of a flashing flurry of scissor blades that match even a swordmaster's prowess.</p>",
+            "items": {
+                "equipment-Silver Scissors": {
+                    "name": "Silver Scissors"
+                },
+                "Compulsive Counting": {
+                    "name": "Compulsive Counting",
+                    "description": "<p>When numerous small items are scattered before the kuchisake-onna, they compulsively begins to count them. The kuchisake-onna becomes @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all creatures for [[/gmr 1d4 #Duration Off-Guard]]{1d4 rounds}.</p>"
+                },
+                "Am I Pretty?": {
+                    "name": "Am I Pretty?",
+                    "description": "<p>The kuchisake-onna asks a single adjacent target, \"Am I pretty?\" The target must attempt a @Check[will|dc:35|traits:mental] save. If it fails, it is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} for 1 round, and if it critically fails, it is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round, though still able to respond to the question; this is a mental effect.</p>\n<p>If the target responds \"No\", the kuchisake-onna makes two silver scissors Strikes against the target. If the target responds \"Yes\", the kuchisake-onna makes no Strikes this turn and must use Even Now? as their next action (waiting until the first action of their next turn, if necessary). If the target otherwise responds in a confusing or noncommittal manner, the kuchisake-onna becomes @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all creatures for 1 round but can otherwise act normally.</p>"
+                },
+                "Even Now?": {
+                    "name": "Even Now?",
+                    "description": "<p><strong>Requirements</strong> An adjacent creature previously targeted by Am I Pretty? answered \"Yes\"</p>\n<hr />\n<p><strong>Effect</strong> The kuchisake-onna takes off their mask, revealing their slit face and asking, \"Even now?\" The target must attempt a @Check[will|dc:35|traits:mental] save.</p>\n<p>If it fails, it is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} for 1 round, and if it critically fails, it is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round, though still able to respond to the question; this is a mental effect.</p>\n<p>Whether the target responds \"Yes\" or \"No\", the kuchisake-onna makes two silver scissors Strikes against the target.</p>"
+                },
+                "Lingering Enmity": {
+                    "name": "Lingering Enmity",
+                    "description": "<p>The kuchisake-onna's silver scissors Strikes are manifestations of the toxic malice that created them and vanish when the kuchisake-onna is destroyed.</p>\n<p>When the kuchisake-onna has less than half their maximum Hit Points remaining, this concentrated enmity begins to leak out and make their attacks more vicious. Their silver scissors Strikes deal 6d6 persistent bleed damage.</p>\n<hr />\n<p><em>Note: Due to a later published errata this persistent damage is doubled on a critical hit. Due to the high damage potential for this creature's level that interaction may not be intended.</em></p>"
+                },
+                "Rend": {
+                    "name": "Rend",
+                    "description": "<p>Silver Scissors</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
+                }
+            }
+        },
         "Exhaling Portal": {
             "prototypeToken": {
                 "name": "Exhaling Portal"
@@ -347,7 +462,7 @@
             "disable": "<p>@Check[thievery|dc:30|name:Scratch Out Runes|traits:action:disable-a-device] (expert) twice to scratch out the runes, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (5th rank; counteract DC 30) to counteract the planar runes; @Check[athletics|dc:32|name:Shut the Door] to shut the door if it's open (using Athletics only stops the trap, it doesn't fully disable it)</p>",
             "hazarddescription": "<p>Magic runes carved into a doorframe connect a door to the Plane of Air when opened, blowing creatures down the connecting hall.</p>",
             "routine": "<p>(1 action) The trap uses 1 action to blow powerful winds down the hall. Each creature in the hall must attempt a @Check[fortitude|dc:32] save with the same results as Gust. If this forced movement would cause a creature to collide with a solid object or fall downstairs or out a window, that creature takes an additional @Damage[(2d10 + 11)[bludgeoning]] damage (or @Damage[20[bludgeoning]|options:fall-damage] damage due to a fall).</p>",
-            "reset": "<p>Automatic after the door is shut</p>",
+            "reset": "<p>The trap resets when the door is shut.</p>",
             "items": {
                 "Gust": {
                     "name": "Gust",
@@ -372,19 +487,19 @@
                 },
                 "Pod Prison": {
                     "name": "Pod Prison",
-                    "description": "<p><strong>Trigger</strong> The moonflower has swallowed a creature</p>\n<hr />\n<p><strong>Effect</strong> The swallowed creature is wrapped in a tight cocoon and extruded from the moonflower's body into an adjacent square. The creature continues to be Swallowed Whole. It can't use Acrobatics to @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escape} a pod, but other creatures can attempt to Rupture the pod. The cocooned creature takes half damage from any damage dealt to the cocoon. Once the cocoon is Ruptured, it deflates and decays.</p>"
+                    "description": "<p><strong>Requirements</strong> A creature is swallowed by the moonflower</p><hr /><p><strong>Effect</strong> The moonflower wraps the swallowed creature in a cocoon and extrudes it into an adjacent square. The creature continues to be Swallowed Whole and takes half damage from any damage dealt to the cocoon. Once the cocoon is Ruptured, it deflates and decays.</p>"
                 },
                 "Pod Spawn": {
                     "name": "Pod Spawn",
-                    "description": "<p>Should a Small or larger creature die within a pod prison, the pod transforms into an adult moonflower with full Hit Points after [[/gmr 1d4 #Moonflower Transformation]]{1d4 hours} of growth.</p>\n<p>The newly formed moonflower has its own consciousness, but some aspect of its trunk or blossoms resembles the creature that died within. The dead creature's equipment remains inside the new moonflower and can be retrieved if the moonflower is slain.</p>"
+                    "description": "<p>If a Small or larger creature dies within a pod prison, the pod transforms into an adult moonflower with full Hit Points after [[/gmr 1d4 #hours]]{1d4 hours} of growth. The dead creature's equipment remains inside the new moonflower and can be retrieved if the moonflower is slain.</p>"
                 },
                 "Spray Blossoms": {
                     "name": "Spray Blossoms",
-                    "description": "<p><strong>Effect</strong> The moonflower expels mindwarping petals in a @Template[cone|distance:30]. Creatures in the area take @Damage[4d6[mental],4d6[poison]|options:area-damage]{4d6 mental damage and 4d6 poison damage} (@Check[will|dc:26|basic|options:area-effect,inflicts:confused,inflicts:stupefied]). On a failure, they are @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 minute, and on a critical failure, they are also @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round.</p>\n<p>The moonflower can't Spray Blossoms again for [[/gmr 1d4 #Recharge Spray Blossoms]]{1d4 rounds}.</p>"
+                    "description": "<p>The moonflower expels mind-warping petals in a @Template[type:cone|distance:30]. Creatures in the area take @Damage[4d6[mental]|options:area-damage] damage and @Damage[4d6[poison]|options:area-damage] damage (@Check[will|dc:26|basic] save). A creature that fails is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 minute, and @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round if it got a critical failure. The moonflower can't Spray Blossoms again for [[/gmr 1d4 #Recharge Spray Blossoms]]{1d4 rounds}.</p>"
                 },
                 "Swallow Whole": {
                     "name": "Swallow Whole",
-                    "description": "<p>Large, @Damage[(2d10+10)[bludgeoning],2d6[acid]]{2d10 + 10 bludgeoning and 2d6 acid}, Rupture 21</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                    "description": "<p>Large, @Damage[(2d10+10)[bludgeoning],2d6[acid]]{2d10 + 10 bludgeoning and 2d6 acid}, Rupture 21</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 }
             }
         },
@@ -421,8 +536,8 @@
             },
             "name": "Disorienting Illusions",
             "disable": "<p>@Check[crafting|dc:17|name:Calculate the Room's Dimensions] (trained) to calculate the room's dimensions despite the illusions, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (1st rank; counteract DC 17) to counteract the illusions</p>",
-            "hazarddescription": "<p>Illusions cloaking this chamber cause it to appear distorted and constantly shifting, with the room and all its contents appearing tilted, irregular, and in motion.</p>",
-            "reset": "<p>1 minute</p>",
+            "hazarddescription": "<p>Illusions cloaking this chamber cause its walls and all its contents to appear tilted, irregular, and in motion.</p>",
+            "reset": "<p>The trap resets after 1 minute.</p>",
             "items": {
                 "Disorient": {
                     "name": "Disorient",
@@ -457,11 +572,11 @@
                 },
                 "Sever Astral Threads": {
                     "name": "Sever Astral Threads",
-                    "description": "<p>The Weaver uses a claw to cut the silver cord connecting a creature's astral and physical bodies. This deals @Damage[16d6[mental]] damage to any target affected by Separate Astral Body whose physical or astral body is within 10 feet of the Weaver (@Check[will|dc:37|basic]). After being targeted by this ability, the astral body slams violently back into the target's physical body, causing the target's vision to swim and blinding them until the start of their next turn unless they critically succeeded at their saving throw.</p>"
+                    "description": "<p>The Weaver uses a claw to cut the silver cord connecting a creature's astral and physical bodies. This deals @Damage[16d6[mental]] damage to any target affected by Separate Astral Body whose physical or astral body is within 10 feet of the Weaver (@Check[will|dc:37|basic]). After being targeted by this ability, the astral body slams violently back into the target's physical body, causing the target's vision to swim and @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{blinding} them until the start of their next turn unless they critically succeeded at their saving throw.</p>"
                 },
                 "Stalker in Dreams": {
                     "name": "Stalker in Dreams",
-                    "description": "<p><strong>Trigger</strong> The Weaver becomes @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to all creatures within 60 feet or is not observed by any creatures within 60 feet</p>\n<hr />\n<p><strong>Effect</strong> The Weaver's presence on the Material Plane is connected to others' perception of him, and when that perception falters, he can skitter to a new location. The Weaver teleports to an unoccupied space within 60 feet not within line of sight of any creatures within 60 feet. If the Weaver became concealed or unobserved as part of a movement action he was taking, he can resume its movement after teleporting. A creature who Averts its Gaze from the Weaver is not observing him.</p>"
+                    "description": "<p><strong>Trigger</strong> The Weaver becomes @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to all creatures within 60 feet or is not observed by any creatures within 60 feet</p><hr /><p><strong>Effect</strong> The Weaver's presence in the Universe is connected to others' perception of him, and when that perception falters, he can skitter to a new location. The Weaver teleports to an unoccupied space within 60 feet not within line of sight of any creatures within 60 feet. If the Weaver became concealed or unobserved as part of a movement action he was taking, he can resume its movement after teleporting. A creature who Averts its Gaze from the Weaver is not observing him.</p>"
                 },
                 "String Astral Body": {
                     "name": "String Astral Body",
@@ -480,7 +595,7 @@
             "disable": "<p>@Check[thievery|dc:28|name:Stabilize Wall|traits:action:disable-a-device] (trained) to stabilize each wall, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (4th rank; counteract DC 26) to counteract each wall</p>",
             "hazarddescription": "<p>A hall's four walls become fluid and elastic when a creature reaches the hall's midpoint.</p>",
             "routine": "<p>(4 actions) This trap loses 1 action each round for each wall that has been disabled. Each wall uses 1 action to slam back and forth rapidly, pummeling one creature in the hall with a wall Strike. On a hit, the target is additionally knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. The walls distribute the attacks as evenly as possible among creatures in the hall, and the Strikes don't apply the trap's multiple attack penalty.</p>",
-            "reset": "<p>1 hour</p>",
+            "reset": "<p>The trap resets after 1 hour.</p>",
             "items": {
                 "Lose Form": {
                     "name": "Lose Form",
@@ -500,11 +615,11 @@
             "items": {
                 "Crystal Vitality Link": {
                     "name": "Crystal Vitality Link",
-                    "description": "<p>The power of the island links Mitera's vitality to her followers. As long as any of the three quartz formations are intact, whenever Mitera takes damage, any of her followers within 10 miles lose the same amount of Hit Points.</p>"
+                    "description": "<p>The power of the island links Mitera's vitality to her followers. As long as any of the three quartz formations are intact, whenever Mitera takes damage, any of her followers within 10 miles lose the same amount of HP.</p>"
                 },
                 "Ascension is Near": {
                     "name": "Ascension is Near",
-                    "description": "<p><strong>Frequency</strong> once per ascension ritual</p>\n<hr />\n<p><strong>Effect</strong> Mitera activates the moonflower link with her followers. Any followers within @Template[emanation|distance:30]{30 feet} who failed their saving throw against the moonflower tea become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. Anyone who critically failed and did not receive an antidote explodes (this is about half of Mitera's congregation if the PCs didn't successfully administer the antidote). If anyone's body explodes, Mitera gains 30 temporary Hit Points and is @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 3 rounds; she can use this additional action each round only for Strike and Stride actions.</p>"
+                    "description": "<p><strong>Frequency</strong> once per ascension ritual</p><hr /><p><strong>Effect</strong> Mitera activates the moonflower link with her followers. Any followers within @Template[emanation|distance:30]{30 feet} who failed their saving throw against the moonflower tea become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. Anyone who critically failed and did not receive an antidote explodes (this is about half of Mitera's congregation if the PCs didn't successfully administer the antidote). If anyone's body explodes, Mitera gains 30 temporary HP and is @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} for 3 rounds; she can use this additional action each round only for Strike and Stride actions.</p>"
                 }
             }
         },
@@ -520,7 +635,7 @@
             "disable": "<p>@Check[thievery|dc:43|name:Steal the Cloth|traits:action:disable-a-device] (master) to steal the cloth before the spirit manifests, or @Check[athletics|dc:47|name:Pull the Cloth Off] to pull the cloth off the spirit after it manifests</p>",
             "hazarddescription": "<p>A spirit steps out of a covered mirror, pulling off and becoming shrouded in the cloth, which reveals the mirror. The shrouded figure attacks the living until the cloth is yanked off, which banishes the formless spirit.</p>",
             "routine": "<p>(3 actions) The spirit uses 3 actions to Step, fly 60 feet, or Strike, in any order. On a successful Strike the spirit's target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}, and on a critical success, the target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>",
-            "reset": "<p>The haunt can be reset if the mirror is covered in a cloth or shroud.</p>",
+            "reset": "<p>The haunt is reset when the mirror is covered again.</p>",
             "items": {
                 "Don Shroud": {
                     "name": "Don Shroud",
@@ -538,13 +653,13 @@
             "name": "K. H. W.'s Echo",
             "hp": "destabilized form",
             "items": {
-                "Attack of Opportunity (Special)": {
-                    "name": "Attack of Opportunity (Special)",
-                    "description": "<p>The Echo has reach 15 for the purpose of determining when Attack of Opportunity triggers and when making Attacks of Opportunity.</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
-                },
                 "Destabilized Form": {
                     "name": "Destabilized Form",
-                    "description": "<p>When the Echo has fewer than 140 Hit Points, his form destabilizes, large chunks disintegrating from his face, limbs, and torso. White moths constantly stream from the missing spaces, creating a @Template[emanation|distance:10] that deals @Damage[6d6[mental]|options:area-damage] damage with a @Check[will|dc:34|basic|options:area-effect].</p>\n<p>As long as the aura persists, he can dissolve into moths and re-form at another location within 15 feet as a free action at the beginning of each of his turns; this has the occult, conjuration, and teleportation traits.</p>"
+                    "description": "<p>When the Echo has fewer than 140 Hit Points, his form destabilizes, large chunks disintegrating from his face, limbs, and torso. White moths constantly stream from the missing spaces, creating a @Template[emanation|distance:10] that deals @Damage[6d6[mental]|options:area-damage] damage with a @Check[will|dc:34|basic|options:area-effect].</p>\n<p>As long as the aura persists, he can dissolve into moths and re-form at another location within 15 feet as a free action at the beginning of each of his turns; this has the occult and teleportation traits.</p>"
+                },
+                "Reactive Strike (Special)": {
+                    "name": "Reactive Strike (Special)",
+                    "description": "<p>The Echo has reach 15 for the purpose of determining when Reactive Strike triggers and when making Reactive Strikes.</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
                 },
                 "Astral Spindel Implement": {
                     "name": "Astral Spindel Implement",
@@ -564,19 +679,19 @@
                 },
                 "Spindle's Web": {
                     "name": "Spindle's Web",
-                    "description": "<p>The Echo's spindle revolves faster and faster until it's a blur, lashing red threads in every direction. The threads deal @Damage[7d6[slashing],7d6[mental]|options:area-damage]{7d6 slashing damage and 7d6 mental damage} to all creatures in a @Template[emanation|distance:30], with a @Check[reflex|dc:34|basic|options:area-effect]. If a creature fails its save, the threads awaken the mindscape an</p>\n<p>chor within it, affecting it differently based on which anchor that creature used to gain access to the center of the mindscape. (If there is a PC who didn't absorb a mindscape anchor, for instance because there are more than four PCs in the party, then use the anchor of the PC closest to them.)</p>\n<p>The Echo then can't use Spindle's Web for [[/gmr 1d4 #Recharge Spindle's Web]]{1d4 rounds}.</p>\n<ul>\n<li><strong>Lantern</strong> The lantern outlines the creature with searing @UUID[Compendium.pf2e.spells-srd.Item.HRb2doyaLtaoCfi3]{Faerie Fire} that deals @Damage[2d6[persistent,fire]] damage.</li>\n<li><strong>Mirror</strong> The mirror reflects the creature to another location, teleporting them to a clear space within 25 feet of their current location.</li>\n<li><strong>Chalice</strong> The chalice drains life force, granting the Echo temporary HP equal to half the damage dealt.</li>\n<li><strong>Tome</strong> The tome floods the creature's mind with information; the target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</li>\n</ul>"
+                    "description": "<p>The Echo's spindle revolves faster and faster until it's a blur, lashing red threads in every direction. The threads deal @Damage[7d6[slashing],7d6[mental]|options:area-damage]{7d6 slashing damage and 7d6 mental damage} to all creatures in a @Template[emanation|distance:30], with a @Check[reflex|dc:34|basic|options:area-effect]. If a creature fails its save, the threads awaken the mindscape anchor within it, affecting it differently based on which anchor that creature used to gain access to the center of the mindscape. (If there is a PC who didn't absorb a mindscape anchor, for instance because there are more than four PCs in the party, then use the anchor of the PC closest to them.)</p>\n<p>The Echo then can't use Spindle's Web for [[/gmr 1d4 #Recharge Spindle's Web]]{1d4 rounds}.</p><ul><li><strong>Lantern</strong> The lantern outlines the creature with searing @UUID[Compendium.pf2e.spells-srd.Item.0qaqksrGGDj74HXE]{Revealing Light} that deals @Damage[2d6[persistent,fire]] damage.</li><li><strong>Mirror</strong> The mirror reflects the creature to another location, teleporting them to a clear space within 25 feet of their current location.</li><li><strong>Chalice</strong> The chalice drains life force, granting the Echo temporary HP equal to half the damage dealt.</li><li><strong>Tome</strong> The tome floods the creature's mind with information; the target is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</li></ul>"
                 }
             }
         },
-        "Thalassophobic Pool": {
+        "Thalassophobia Pool": {
             "prototypeToken": {
-                "name": "Thalassophobic Pool"
+                "name": "Thalassophobia Pool"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Thalassophobic Pool",
-            "disable": "<p>@Check[diplomacy|dc:32|name:Calm the Pool] (master) or @Check[deception|dc:32|name:Calm the Pool] (master) to quell the fear and calm the pool or @Check[intimidation|dc:35|name:Scare the Pool] to give the pool something worse to fear; three successes required.</p>",
+            "name": "Thalassophobia Pool",
+            "disable": "<p>@Check[diplomacy|dc:32|name:Calm the Pool] (master) to quell the fear and calm the pool or @Check[intimidation|dc:35|name:Scare the Pool] to give the pool something worse to fear; three successes required.</p>",
             "hazarddescription": "<p>The pool sucks in creatures that fall into it, making them sink into its endless depths.</p>",
             "routine": "<p>(3 actions) Water from the chalice increases the depth of the water by 10 feet for each action. Each time this happens, creatures in the pool are pushed 10 feet down and take @Damage[1d6[bludgeoning]] damage. As the pool has no bottom, creatures in it can fall down indefinitely; they must @UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]{Swim} up to avoid drowning, but the water is especially choppy, so the Athletics DC is @Check[athletics|dc:25|traits:action:swim]. The pool never overflows. Each successful check to Disable reduces the pool's actions by 1, and once the pool is completely Disabled, the water becomes still and the Athletics DC to Swim becomes @Check[athletics|dc:10|traits:action:swim].</p>",
             "reset": "<p>The trap resets once there are no moving creatures in it.</p>",
