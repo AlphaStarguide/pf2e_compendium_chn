@@ -275,7 +275,8 @@
             },
             "prototypeToken": {
                 "name": "虚假楼层"
-            }
+            },
+            "reset": "<p>The trap resets after 1 round.</p>"
         },
         "K. H. W.'s Echo": {
             "name": "档案孤员的回声 K. H. W.'s Echo",
@@ -318,6 +319,10 @@
                 "Attack of Opportunity (Special)": {
                     "name": "反应打击 Reactive Strike（特殊）",
                     "description": "<p>当判定触发与进行反应打击的条件时，回声视为具有15尺触及。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.AttackOfOpportunity]</p>"
+                },
+                "Reactive Strike (Special)": {
+                    "name": "Reactive Strike (Special)",
+                    "description": "<p>The Echo has reach 15 for the purpose of determining when Reactive Strike triggers and when making Reactive Strikes.</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
                 }
             },
             "prototypeToken": {
@@ -520,7 +525,8 @@
             },
             "prototypeToken": {
                 "name": "魂魄囚窗"
-            }
+            },
+            "hp": "Hardness 35 (window)"
         },
         "Thalassophobic Pool": {
             "name": "深海恐惧之潭 Thalassophobic Pool",
@@ -647,6 +653,139 @@
             },
             "prototypeToken": {
                 "name": "来日魔"
+            }
+        },
+        "Amalgamite": {
+            "prototypeToken": {
+                "name": "Amalgamite"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Amalgamite",
+            "publicNotes": "<p>Teleportation magic can prove a difficult undertaking, even for experienced spellcasters. It requires precise calculation and timing, knowledge of the intended destination, and meticulous control over surging conjuration magics. A mistake in even the most minute element of such a spell can lead to disastrous results for those involved. When a particularly powerful spellcaster makes an error of this kind, either through arrogance or simple misjudgment, they might transform into an amalgamite.</p>\n<p>A mass of flesh and misaligned limbs, an amalgamite is the warped body of a former spellcaster, sometimes joined with another version of itself to incorporate additional limbs or other irregularities. They're still alive, but they have become aberrants mentally and physically, with only the vaguest memories of their previous existence, which makes them a dangerous and bewildering foe. Their weird, warped anatomy constantly shifts and regrows, allowing the creatures to shrug off physical blows save those that pierce through its flesh and into its core being.</p>\n<p>The magical residue of an amalgamite's creation radiates from it, seeping into and destabilizing any living beings that get too close. Infected creatures then further spread the amalgamite's aura among larger groups of allies and foes alike. The amalgamite uses this power to manipulate and confuse their enemies, whom they can teleport into traps, force into confrontations with other enemies, or draw close into striking range with their own odd appendages.</p>",
+            "hp": "Regeneration 10 (deactivated by piercing)",
+            "items": {
+                "Regeneration 10 (Deactivated by Piercing)": {
+                    "name": "Regeneration 10 (Deactivated by Piercing)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>"
+                },
+                "Destabilizing Field": {
+                    "name": "Destabilizing Field",
+                    "description": "<p>40 feet. A creature that begins its turn within the area feels its body begin to stretch and must succeed at a @Check[fortitude|dc:33] save or become destabilized. A destabilized creature emits a 10-foot destabilizing field aura and becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. The destabilization ends when the creature is no longer sickened. A creature that succeeds at its saving throw against the aura is temporarily immune to all destabilizing fields for 1 minute.</p>"
+                },
+                "Displace": {
+                    "name": "Displace",
+                    "description": "<p><strong>Trigger</strong> The amalgamite is hit by a Strike</p><hr /><p><strong>Effect</strong> The amalgamite Relocates or Transposes themself with another creature. If the amalgamite successfully changes location, they and any Transposed creature take half damage from the triggering Strike.</p>"
+                },
+                "Relocate": {
+                    "name": "Relocate",
+                    "description": "<p>The amalgamite teleports into an unoccupied space they can see within 50 feet.</p>"
+                },
+                "Transpose": {
+                    "name": "Transpose",
+                    "description": "<p>The amalgamite teleports up to two destabilized creatures within 50 feet that they can see. They can either move a single creature to an unoccupied space or swap the positions of two creatures of the same size. If the amalgamite swaps two creatures, they can choose their self as one target. An unwilling creature can attempt a @Check[will|dc:33] save. If either target succeeds at this saving throw, both are unaffected.</p>"
+                }
+            }
+        },
+        "Darkside Mirror": {
+            "prototypeToken": {
+                "name": "Darkside Mirror"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Darkside Mirror",
+            "hp": "The mirror can't be damaged while any mirror duplicate is alive",
+            "disable": "<p>@Check[thievery|dc:34] (legendary) to retrieve a creature from the other dimension within 10 minutes of the switch (possible only if their mirror duplicate is dead), @Check[thievery|dc:39] (master) to permanently disable the mirror once all mirror duplicates are dead, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (7th rank; counteract DC 32) to counteract the mirror for 1 minute and prevent additional replacements during that time.</p>",
+            "hazarddescription": "<p>A magic mirror replaces characters with malicious mirror duplicates from another dimension.</p>",
+            "routine": "<p>(1 action) The mirror absorbs another reflected creature and replaces it with a mirror duplicate. A mirror duplicate attacks on their own initiative, using the same statistics as the original creature, but they hate all other non-duplicate creatures. A mirror duplicate can spend 3 actions in contact with the mirror to return to their original dimension and release the duplicated creature.</p>",
+            "reset": "<p>The mirror is always ready to absorb creatures into the other dimension. Ten minutes after a creature is sucked into the mirror, if an ally doesn't rescue the creature, it reaches the other dimension. In the mirror dimension, it counts as a mirror duplicate. These dimensions are alternate realities, not planes, so even spells like @UUID[Compendium.pf2e.spells-srd.Item.5bTt2CvYHPvaR7QQ]{Interplanar Teleport}<em> </em>can't reach them.</p>",
+            "stealthdetails": "<p>(master) to notice it isn't a regular mirror</p>",
+            "items": {
+                "Reflection of Malice": {
+                    "name": "Reflection of Malice",
+                    "description": "<p><strong>Trigger</strong> A creature is reflected in the mirror</p><hr /><p><strong>Effect</strong> The mirror absorbs the creature, replacing it with a malicious mirror duplicate (@Check[reflex|dc:34] to avoid being absorbed into the mirror), and rolls initiative.</p>"
+                }
+            }
+        },
+        "Spectral Fang Paleohemoth": {
+            "prototypeToken": {
+                "name": "Spectral Fang Paleohemoth"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Spectral Fang Paleohemoth",
+            "publicNotes": "<p>Paleohemoths are typically made from the fossilized bones of dinosaurs and other ancient megafauna, though some crafters stretch the definition and instead use magically petrified bones of dragons or even giants. Not bound to any specific model, paleohemoths are crafted to be as terrifying as possible instead of models of anatomic accuracy. As such, most paleohemoths are nightmarish saurian amalgams whose massive arms end with the complete skulls of apex predators like tyrannosauruses, their bite enhanced to petrify flesh.</p>\n<p>Intact fossilized bones are difficult components to scrounge, much less whole skeletons. An alternate way to obtain them is to hire expert hunters or adventurers to seek out live dinosaurs, bring back the bones, and use magic to turn them to stone. Of course, some purists prefer genuine fossilized bones and are willing to pay the price for their acquisition. Either way, opportunities await enterprising souls with the proper tools and several <em>spacious pouches</em>.</p>\n<p>The magic that animates paleohemoths grants them a form of modular flexibility, letting them trade mobility for extended reach through the rapid rearrangement of their limbs. This often involves bones moving from the legs in order to extend the arms. While this does lead to a somewhat silly anatomy, it is nonetheless effective. This ability also lets them appear like a jumbled mass of bones at rest, making them likely to be mistaken for decor rather than guardians.</p>\n<p>The reasons for creating such constructs vary. While they're often associated with guarding evil geniuses in deep, dark dungeons, they have great uses elsewhere. More elegant versions may be used to protect the private collections of upper-class collectors. Thuvia makes great use of paleohemoths in their construct arenas. While they weren't initially permitted to fight, an exploited loophole has made them a popular addition to the arenas ever since.</p>",
+            "items": {
+                "Fossilization": {
+                    "name": "Fossilization",
+                    "description": "<p>The first time each round a creature takes damage from the paleohemoth's jaws, the target must attempt a @Check[fortitude|dc:32] save. If it fails and has not already been slowed by this ability, it becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute.</p>\n<p>If the creature was already slowed by this ability, a failed save causes it to be @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified} permanently.</p>"
+                },
+                "Incomplete": {
+                    "name": "Incomplete",
+                    "description": "<p>The spectral fang paleohemoth is missing part of its body, making it Large instead of Huge and reducing the reach of its jaws Strike to 10 feet.</p>"
+                },
+                "Reassemble": {
+                    "name": "Reassemble",
+                    "description": "<p>The paleohemoth reorganizes its bones, increasing its reach to 25 feet and reducing its Speed to 15 feet. It can revert to its original form by taking this action again.</p>"
+                }
+            }
+        },
+        "Kuchisake-Onna": {
+            "prototypeToken": {
+                "name": "Kuchisake-Onna"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Kuchisake-Onna",
+            "publicNotes": "<p>A kuchisake-onna, or slit-mouthed woman, is a tall, masked figure who moves with an eerie grace. These horrors are infamous for trapping hapless mortals and asking them, \"Am I pretty?\" A \"no\" response leads to a gruesome death wrought by the silver scissors the kuchisake-onna carries. A \"yes\" prompts them to remove their mask, revealing the scars and cuts running from ear to ear, giving the impression of a terrible, ever-present grin. They then open their mouth to reveal sharp, needle-like teeth and ask another question: \"Even now?\" A \"no\" leads to the same gory death, while a \"yes\" prompts them to use their silver scissors and make the same cuts on the target's face while repeating: \"Then I will make you like me.\"</p>\n<p>There are a handful of methods to weasel out of this otherwise no-win scenario. Answering noncommittally, saying the kuchisake-onna looks \"okay,\" or throwing several small, countable objects like rice or candy often provides enough time to run while the monster is distracted. Few are foolish enough to attack the kuchisake-onna, and those that live to tell the tale speak of a flashing flurry of scissor blades that match even a swordmaster's prowess.</p>",
+            "items": {
+                "equipment-Silver Scissors": {
+                    "name": "Silver Scissors"
+                },
+                "Compulsive Counting": {
+                    "name": "Compulsive Counting",
+                    "description": "<p>When numerous small items are scattered before the kuchisake-onna, they compulsively begins to count them. The kuchisake-onna becomes @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all creatures for [[/gmr 1d4 #Duration Off-Guard]]{1d4 rounds}.</p>"
+                },
+                "Am I Pretty?": {
+                    "name": "Am I Pretty?",
+                    "description": "<p>The kuchisake-onna asks a single adjacent target, \"Am I pretty?\" The target must attempt a @Check[will|dc:35|traits:mental] save. If it fails, it is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} for 1 round, and if it critically fails, it is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round, though still able to respond to the question; this is a mental effect.</p>\n<p>If the target responds \"No\", the kuchisake-onna makes two silver scissors Strikes against the target. If the target responds \"Yes\", the kuchisake-onna makes no Strikes this turn and must use Even Now? as their next action (waiting until the first action of their next turn, if necessary). If the target otherwise responds in a confusing or noncommittal manner, the kuchisake-onna becomes @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to all creatures for 1 round but can otherwise act normally.</p>"
+                },
+                "Even Now?": {
+                    "name": "Even Now?",
+                    "description": "<p><strong>Requirements</strong> An adjacent creature previously targeted by Am I Pretty? answered \"Yes\"</p>\n<hr />\n<p><strong>Effect</strong> The kuchisake-onna takes off their mask, revealing their slit face and asking, \"Even now?\" The target must attempt a @Check[will|dc:35|traits:mental] save.</p>\n<p>If it fails, it is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized} for 1 round, and if it critically fails, it is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round, though still able to respond to the question; this is a mental effect.</p>\n<p>Whether the target responds \"Yes\" or \"No\", the kuchisake-onna makes two silver scissors Strikes against the target.</p>"
+                },
+                "Lingering Enmity": {
+                    "name": "Lingering Enmity",
+                    "description": "<p>The kuchisake-onna's silver scissors Strikes are manifestations of the toxic malice that created them and vanish when the kuchisake-onna is destroyed.</p>\n<p>When the kuchisake-onna has less than half their maximum Hit Points remaining, this concentrated enmity begins to leak out and make their attacks more vicious. Their silver scissors Strikes deal 6d6 persistent bleed damage.</p>\n<hr />\n<p><em>Note: Due to a later published errata this persistent damage is doubled on a critical hit. Due to the high damage potential for this creature's level that interaction may not be intended.</em></p>"
+                },
+                "Rend": {
+                    "name": "Rend",
+                    "description": "<p>Silver Scissors</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Rend]</p>"
+                }
+            }
+        },
+        "Thalassophobia Pool": {
+            "prototypeToken": {
+                "name": "Thalassophobia Pool"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Thalassophobia Pool",
+            "disable": "<p>@Check[diplomacy|dc:32|name:Calm the Pool] (master) to quell the fear and calm the pool or @Check[intimidation|dc:35|name:Scare the Pool] to give the pool something worse to fear; three successes required.</p>",
+            "hazarddescription": "<p>The pool sucks in creatures that fall into it, making them sink into its endless depths.</p>",
+            "routine": "<p>(3 actions) Water from the chalice increases the depth of the water by 10 feet for each action. Each time this happens, creatures in the pool are pushed 10 feet down and take @Damage[1d6[bludgeoning]] damage. As the pool has no bottom, creatures in it can fall down indefinitely; they must @UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]{Swim} up to avoid drowning, but the water is especially choppy, so the Athletics DC is @Check[athletics|dc:25|traits:action:swim]. The pool never overflows. Each successful check to Disable reduces the pool's actions by 1, and once the pool is completely Disabled, the water becomes still and the Athletics DC to Swim becomes @Check[athletics|dc:10|traits:action:swim].</p>",
+            "reset": "<p>The trap resets once there are no moving creatures in it.</p>",
+            "stealthdetails": "<p>(trained)</p>",
+            "items": {
+                "Downpour": {
+                    "name": "Downpour",
+                    "description": "<p><strong>Trigger</strong> A creature falls into the pool</p>\n<hr />\n<p><strong>Effect</strong> More water pours forth from the chalice. Creatures in the pool become @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}, and they can't decrease their clumsy condition so long as they remain in the pool. The trap then rolls initiative.</p>"
+                }
             }
         }
     }
