@@ -130,7 +130,7 @@
             "name": "困惑入口 Confounding Portal",
             "disable": "<p>@Check[thievery|dc:17|name:Scratch Out Runes|traits:action:disable-a-device]来划去符文；@Check[arcana|dc:16|name:Destroy the Runes]以摧毁符文</p>",
             "hazarddescription": "<p>那些雕刻在门框或廊壁上的微小符文将生物困在离开房间或穿越走廊的循环中。</p>",
-            "reset": "<p>自动</p>",
+            "reset": "<p>陷阱在1轮后重置。</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -215,7 +215,7 @@
             "items": {
                 "Take a Seat!": {
                     "name": "请坐！ Take a Seat!",
-                    "description": "<p><strong>触发</strong> 一个生物踩上轨道</p><hr /><p><strong>效果</strong> 座椅如同火箭般飞射出去，猛击触发危害的生物，造成@Damage[(3d8 + 15)[bludgeoning]]伤害。成功通过@Check[reflex|dc:22|traits:damaging-effect]豁免的生物不会收到伤害，并从座椅的路径上移动至非轨道的随机邻近格。在豁免中失败的生物将会被撞到椅面上，迅速地被扶手伸出的夹板捕获，他被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]（大失败则@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，逃脱DC26）。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物踩上轨道</p><hr /><p><strong>效果</strong> 座椅如同火箭般飞射出去，猛击触发危害的生物，造成@Damage[(3d8 + 15)[bludgeoning]]伤害。成功通过@Check[reflex|dc:22|traits:damaging-effect]豁免的生物不会收到伤害，并从座椅的路径上移动至非轨道的随机邻近格。在豁免中失败的生物将会被撞到椅面上，被扶手伸出的夹板捕获，他被@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]（大失败则@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，逃脱DC26）。</p>"
                 }
             },
             "prototypeToken": {
@@ -243,9 +243,9 @@
         },
         "False Floor": {
             "name": "虚假地板 False Floor",
-            "disable": "<p>通过察觉检定对抗DC21的隐秘（已经通过寻找陷阱检定）以不相信这片虚假的地板或通过解除魔法（2环级；反制DC18）以反制地板的幻影；<em>@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]</em>（2环级；反制DC20）以反制魔法沉默</p>",
+            "disable": "<p>通过@Check[perception|dc:21]检定对抗DC21的隐秘（已经通过寻找陷阱检定）以不相信这片虚假的地板或通过解除魔法（2环级；反制DC18）以反制地板的幻影；<em>@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]</em>（2环级；反制DC20）以反制魔法沉默</p>",
             "hazarddescription": "<p>房间里的地板由幻象构成，其下是40尺深的真实地板。除此之外，这片区域还被魔法沉默所笼罩——在房间里面听不到任何声音，也没有声音可以传出这片空间。</p>",
-            "reset": "<p>自动</p>",
+            "reset": "<p>陷阱在一轮后重置。</p>",
             "stealthdetails": "<p>（受训；地板的幻象被解除后DC为0）</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -270,7 +270,7 @@
             "items": {
                 "False Step": {
                     "name": "坠落 False Step",
-                    "description": "<p><strong>触发</strong> 一个生物进入房间并踏上地板</p>\n<p><strong>效果</strong> 生物滑入地板，卷入另一维度并开始坠落，最终从天花板下出现，摔落在地板上。触发危害的生物受到来自坠落的@Damage[40[bludgeoning]|options:fall-damage]伤害。该生物可以进行一次@UUID[Compendium.pf2e.actionspf2e.Item.3yoajuKjwHZ9ApUY]（DC24）的反应动作来避免坠落。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物进入房间并踏上地板</p>\n<p><strong>效果</strong> 生物滑入地板，卷入另一维度并开始坠落，最终从天花板下出现，摔落在地板上。触发危害的生物受到来自坠落的@Damage[40[bludgeoning]|options:fall-damage]伤害。该生物可以进行一次[[/act grab-an-edge dc=24]]反应动作来避免坠落。</p>"
                 }
             },
             "prototypeToken": {
@@ -333,7 +333,7 @@
             "name": "镜中门 Mirror Door",
             "disable": "<p>@Check[thievery|dc:18|name:Open the Door|traits:action:disable-a-device]可以在看破镜影的情况下打开这扇门</p>",
             "hazarddescription": "<p>墙面反射的镜像展示了一扇不存在于世间的幻影门，只有在镜影中看到它的人可以与它互动。</p>",
-            "reset": "<p>自动</p>",
+            "reset": "<p>陷阱会在门关上时重置。</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -398,7 +398,7 @@
             "name": "欲望之镜 Reflected Desires",
             "disable": "<p>@Check[thievery|dc:18|name:Shroud the Mirror|traits:action:disable-a-device]（受训）在不看镜子的情况下盖住它，或@Check[occultism|dc:17|name:Erect Mental Barriers]（受训）搭建心灵屏障</p>",
             "hazarddescription": "<p>这面魔镜映照出注视者内心最深的欲望。</p>",
-            "reset": "<p>自动</p>",
+            "reset": "<p>陷阱在1轮后重置。</p>",
             "stealthdetails": "<p>（注意到镜子本身的DC为0）</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -406,7 +406,7 @@
             "items": {
                 "Tempt": {
                     "name": "诱惑 Tempt",
-                    "description": "<p><strong>触发</strong> 一个生物看向镜子</p>\n<hr />\n<p><strong>效果</strong> 触发者从镜影中看到了自己正享受最渴望之物的景象，他被@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]（通过@Check[will|dc:20]豁免则不受影响），迷魂状态将在镜子被破坏或被遮住的情况下自动结束。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物看向镜子</p><hr /><p><strong>效果</strong> 触发者从镜影中看到了自己正享受最渴望之物的景象，他被@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]（通过@Check[will|dc:20|options:inflicts:fascinated]豁免则不受影响），迷魂状态将在镜子被破坏或被遮住的情况下自动结束。</p>"
                 }
             },
             "prototypeToken": {
@@ -494,7 +494,7 @@
             "name": "穷极恐惧之印 Sigil of Deepest Fears",
             "disable": "<p>@Check[thievery|dc:43|name:Drain the Sigil's Power|traits:action:disable-a-device]（大师）让魔法印记的力量流失至无害；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（9环级；反制DC43）反制印记</p>",
             "hazarddescription": "<p>这魔印将让人直面他最深邃的恐惧。</p>",
-            "reset": "<p>1天</p>",
+            "reset": "<p>陷阱在1天后重置。</p>",
             "stealthdetails": "<p>（大师）</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -502,7 +502,7 @@
             "items": {
                 "Face Your Fear": {
                     "name": "直面你所恐惧之物 Face Your Fear",
-                    "description": "<p><strong>触发</strong> 一个生物接近印记十尺内。</p>\n<hr />\n<p><strong>效果</strong> 所有印记120尺内的生物受到法术@UUID[Compendium.pf2e.spells-srd.Item.qDjeG6dxT4aEEC6J]（@Check[will|dc:40|traits:damaging-effect]豁免）的效果。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物接近印记十尺内</p><hr /><p><strong>效果</strong> 所有印记120尺内的生物受到@UUID[Compendium.pf2e.spells-srd.Item.MJx7DmjsWYzDZ3a4]（@Check[will|dc:40|options:area-effect,damaging-effect]豁免）的效果。</p>"
                 }
             },
             "prototypeToken": {
@@ -513,14 +513,14 @@
             "name": "魂魄囚窗 Spirit Window",
             "disable": "<p>@Check[occultism|dc:48|name:Free the Spirits]（传奇）从镜中释放那些魂魄；@Check[religion|dc:48|name:Banish the Spirits]（传奇）以驱逐魂魄</p>",
             "hazarddescription": "<p>魂魄们被囚禁在窗中，随时准备伤害那些触碰到窗户的人。</p>",
-            "reset": "<p>1轮</p>",
+            "reset": "<p>陷阱在1轮后重置。</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
             "items": {
                 "Siphon Soul": {
                     "name": "汲取灵魂 Siphon Soul",
-                    "description": "<p><strong>触发</strong> 一个生物触碰窗户</p><hr /><p><strong>效果</strong> 触发危害的生物受到@Damage[(8d10 + 44)[void]]伤害（@Check[will|dc:42|basic]豁免）作为囚窗企图窃走他们灵魂的效果，如果这次伤害足以杀死目标，他的灵魂如同受到@UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]的效果被囚于窗中。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物触碰窗户</p><hr /><p><strong>效果</strong> 触发危害的生物受到@Damage[(8d10+44)[void]]伤害（@Check[will|dc:42|basic]豁免）作为囚窗企图窃走他们灵魂的效果，如果这次伤害足以杀死目标，他的灵魂如同受到@UUID[Compendium.pf2e.spells-srd.Item.GYmXvS9NJ7QwfWGg]的效果被囚于窗中。</p>"
                 }
             },
             "prototypeToken": {
@@ -644,7 +644,7 @@
                 },
                 "Swallow Future": {
                     "name": "吞噬未来 Swallow Future",
-                    "description": "<p>来日魔吸取抓住周围所有生物的未来行为。来日魔@Template[emanation|distance:30]范围内的所有生物受到@Damage[(6d8 + 18)[mental]|options:area-damage]伤害，且必须尝试一次@Check[will|dc:39|options:area-effect,damaging-effect,inflicts:doomed]豁免。</p>\n<p>来日魔无法在1分钟内再次使用吞噬未来。</p>\n<p>穿戴有希望护符的生物可以在看到意志豁免结果后，选择让他们的希望护符破碎来忽视此效果。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受伤害。</p>\n<p><strong>成功</strong> 生物受到一半伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>失败</strong> 生物受到全额伤害并陷入毁灭2@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 4}（可能导致其立即死亡）。</p>"
+                    "description": "<p><strong>频率</strong> 每分钟一次</p><hr /><p><strong>效果</strong> 来日魔吸取抓住周围所有生物的未来行为。来日魔@Template[type:emanation|distance:30]范围内的所有生物受到@Damage[(6d8+18)[mental]|options:area-damage]伤害，且必须尝试一次@Check[will|dc:39]豁免。穿戴有希望护符的生物可以在看到意志豁免结果后，选择让他们的希望护符破碎来忽视此效果。</p><hr /><p><strong>大成功</strong> 生物不受伤害。</p>\n<p><strong>成功</strong> 生物受到一半伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>失败</strong> 生物受到全额伤害并陷入毁灭2@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 2}。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 4}（可能导致其立即死亡）。</p>"
                 },
                 "Tomorrow's Fury": {
                     "name": "明日狂暴 Tomorrow's Fury",
