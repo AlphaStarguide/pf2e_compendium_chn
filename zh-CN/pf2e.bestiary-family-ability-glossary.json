@@ -759,7 +759,7 @@
         },
         "(Cryptid, Experimental) Clobber": {
             "name": "（实验性神秘生物）痛击 Clobber",
-            "description": "<p>实验性神秘生物打击一个生物。如果命中，生物被击退5尺（重击击退10尺）并且@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。如果这导致生物撞上一个固体物件，该生物受到额外1d10伤害。如果实验性神秘生物至少有5级，此打击造成一个额外武器伤害骰的伤害，如果实验性神秘生物至少有15级，此打击造成2个额外武器伤害骰的伤害。</p>"
+            "description": "<p>实验性神秘生物打击一个生物。如果命中，生物被击退5尺（重击击退10尺）并且@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。如果这导致生物撞上一个固体物件，该生物受到额外1d10无类型伤害。如果实验性神秘生物至少有5级，此打击造成一个额外武器伤害骰的伤害，如果实验性神秘生物至少有15级，此打击造成2个额外武器伤害骰的伤害。</p>"
         },
         "(Cryptid, Experimental) Energy Wave": {
             "name": "（实验性神秘生物）能量波 Energy Wave",
@@ -767,15 +767,15 @@
         },
         "(Cryptid, Experimental) Operational Flaw": {
             "name": "（实验性神秘生物）调整缺陷 Operational Flaw",
-            "description": "<p>实验性神秘生物的构造中存在缺陷，这可以通过成功的察觉检定，用@UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{搜索 Seek}对抗生物等级的困难DC来判别。如果攻击者成功判别了实验性神秘生物的缺陷，则实验性神秘生物将获得等同于它等级数值的弱点。</p>"
+            "description": "<p>实验性神秘生物的构造中存在缺陷，这可以通过成功的察觉检定，用[[/act seek]]对抗生物等级的困难DC来判别。如果攻击者成功判别了实验性神秘生物的缺陷，则实验性神秘生物将获得等同于它等级数值的弱点。</p>"
         },
         "(Cryptid, Experimental) Power Surge": {
             "name": "（实验性神秘生物）力量涌动 Power Surge",
-            "description": "<p>实验性神秘生物利用其强化机能来增强其攻击。它尝试一次@Check[flat|dc:5]检定。如果成功，实验性神秘生物的打击造成额外1d6伤害，直到它的回合结束。如果失败，实验性神秘生物自己反而受到上述数值的伤害。力量涌动的伤害类型和特征与能量波能力相同。如果实验性神秘生物不低于9级，则额外伤害增加到2d6，如果不低于15级则额外伤害增加到3d6，如果不低于18级则额外伤害增加到4d6。</p>"
+            "description": "<p>实验性神秘生物利用其强化机能来增强其攻击。它尝试一次@Check[flat|dc:5]检定。如果成功，实验性神秘生物的打击造成额外1d6伤害，直到它的回合结束。如果失败，实验性神秘生物自己反而受到上述数值的伤害。力量涌动的伤害类型和特征与能量波能力相同。</p>\n<p>如果实验性神秘生物不低于9级，则额外伤害增加到2d6，如果不低于15级则额外伤害增加到3d6，如果不低于18级则额外伤害增加到4d6。</p>"
         },
         "(Cryptid, Mutant) Explosive End": {
             "name": "（突变神秘生物）自爆终局 Explosive End",
-            "description": "<p>突变神秘生物的死亡揭示了最后的惊喜，它爆炸成火焰、酸蚀、一团有毒的粘液、或者某种更奇怪的东西。选择适合突变神秘生物的伤害类型。当它死亡时，它会爆炸，对@Template[emanation|distance:10]范围内所有生物造成突变神秘生物@Damage[1d6[damagetype]|options:area-damage]{每个等级1d6的对应类型的伤害}，@Check[reflex|dc:|basic|options:area-effect]豁免，对抗突变神秘生物等级的标准难度DC。该伤害在3级和之后的每个奇数等级额外增加1d6。</p>"
+            "description": "<p>突变神秘生物的死亡揭示了最后的惊喜，它爆炸成火焰、酸蚀、一团有毒的粘液、或者某种更奇怪的东西。选择适合突变神秘生物的伤害类型。当它死亡时，它会爆炸，对@Template[type:emanation|distance:10]范围内所有生物造成突变神秘生物@Damage[1d6[untyped]|options:area-damage]所选类型伤害，基础反射豁免，对抗突变神秘生物等级的标准难度DC。该伤害在3级和之后的每个奇数等级额外增加1d6。</p>"
         },
         "(Cryptid, Mutant) Marrowlance": {
             "name": "（突变神秘生物）骨枪 Marrowlance",
@@ -787,7 +787,7 @@
         },
         "(Cryptid, Mutant) Unusual Bane": {
             "name": "（突变神秘生物）罕见灾厄 Unusual Bane",
-            "description": "<p>突变神秘生物针对某种特定灾厄获得某种罕见弱点——例如厌恶藏红花或孩子们的笑声。每轮当生物第一次进入它灾厄15尺范围内或与它的灾厄互动时（例如跨过一排藏红花或听到孩子们的笑声），它会受到和其等级数值相同的心灵伤害，并且必须尝试对它等级的困难DC进行@Check[will|dc:]豁免。如果失败，他陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}）。</p>"
+            "description": "<p>突变神秘生物针对某种特定灾厄获得某种罕见弱点——例如厌恶藏红花或孩子们的笑声。每轮当生物第一次进入它灾厄15尺范围内或与它的灾厄互动时（例如跨过一排藏红花或听到孩子们的笑声），它会受到和其等级数值相同的心灵伤害，并且必须尝试对它等级的困难DC进行意志豁免。如果失败，他陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}）。</p>"
         },
         "(Cryptid, Primeval) Broken Arsenal": {
             "name": "（史前神秘生物）破碎军械 Broken Arsenal",
@@ -882,11 +882,11 @@
         },
         "(Secret Society) Not Today!": {
             "name": "（秘密结社成员）不是今天！ Not Today!",
-            "description": "<p><strong>频率</strong> 每日一次</p>\n<p><strong>触发</strong> 秘密结社成员的生命值减少至0</p>\n<hr />\n<p><strong>效果</strong> 伺机帮他们脱身的同伴、巧妙的装置、偶然的咒语还是其他方式，秘密结社成员总有逃生计划。秘密结社成员的生命值不会减少至0，而是保持在1生命值。他们还获得等同于其等级的临时生命值，然后行走两次。如果他们有适当的移动方式，也可以选择@UUID[Compendium.pf2e.actionspf2e.Item.H6v1VgowHaKHnVlG]{掘地 Burrow}、@UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]、飞行或游泳。</p>"
+            "description": "<p><strong>频率</strong> 每日一次</p>\n<p><strong>触发</strong> 秘密结社成员的生命值减少至0</p><hr /><p><strong>效果</strong> 伺机帮他们脱身的同伴、巧妙的装置、偶然的咒语还是其他方式，秘密结社成员总有逃生计划。秘密结社成员的生命值不会减少至0，而是保持在1生命值。他们还获得等同于其等级的临时生命值，然后行走两次。如果他们有适当的移动方式，也可以选择掘地、攀爬、飞行或游泳。</p>"
         },
         "(Secret Society) Prepared Diversion": {
             "name": "（秘密结社成员）准备分心 Prepared Diversion",
-            "description": "<p><strong>频率</strong> 每小时一次</p>\n<hr />\n<p><strong>效果</strong> 效果秘密结社成员在各个地方都有同伴，随时准备分散注意力以帮助他们躲避视线或快速伏击他们的敌人。秘密结社成员要么进行一次@UUID[Compendium.pf2e.actionspf2e.Item.GkmbTGfg8KcgynOA]{分神 Create a Diversion}，要么进行一次@UUID[Compendium.pf2e.actionspf2e.Item.QNAVeNKtHA0EUw4X]{虚招 Feint}。如果它尝试分神，该次分神不含有听觉、语言或操作特征（因为其他人帮他进行了一次分神），并且已经被社团成员分神的生物不会在该次分神的察觉DC上有+4环境加值。如果它尝试虚招，它不需要处于目标的近战触及范围内，并且虚招带来的奖励对近战和远程攻击都适用。</p>"
+            "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 效果秘密结社成员在各个地方都有同伴，随时准备分散注意力以帮助他们躲避视线或快速伏击他们的敌人。秘密结社成员要么进行一次[[/act create-a-diversion]]，要么进行一次[[/act feint]]。如果它尝试分神，该次分神不含有听觉、语言或操作特征（因为其他人帮他进行了一次分神），并且已经被社团成员分神的生物不会在该次分神的察觉DC上有+4环境加值。如果它尝试虚招，它不需要处于目标的近战触及范围内，并且虚招带来的奖励对近战和远程攻击都适用。</p>"
         },
         "(Secret Society) Prepared Trap": {
             "name": "（秘密结社成员）准备陷阱 Prepared Trap",
@@ -894,7 +894,7 @@
         },
         "(Secret Society) Shibboleth": {
             "name": "（秘密结社成员）口令 Shibboleth",
-            "description": "<p>秘密结社成员可以使用编码语言与秘密结社的其他成员进行交流，这种编码语言似乎无足轻重，以至于大多数旁观者都不会注意到。一个专门关注对话的生物，例如@UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{察言观色 Sense Motive}中的生物，可以尝试对秘密结社成员的欺骗DC进行秘密的察觉检定，以注意到这些对话似乎含有某种隐藏信息，之后它可以尝试针对同样的DC进行社团检定，如果成功，它能了解到消息的大概主题；在大成功时，它能了解到准确的信息。</p>"
+            "description": "<p>秘密结社成员可以使用编码语言与秘密结社的其他成员进行交流，这种编码语言似乎无足轻重，以至于大多数旁观者都不会注意到。一个专门关注对话的生物，例如[[/act sense-motive]]中的生物，可以尝试对秘密结社成员的欺骗DC进行秘密的察觉检定，以注意到这些对话似乎含有某种隐藏信息，之后它可以尝试针对同样的DC进行社团检定，如果成功，它能了解到消息的大概主题；在大成功时，它能了解到准确的信息。</p>"
         },
         "(Secret Society) Skill Savvy": {
             "name": "（秘密结社成员）精通技巧 Skill Savvy",
