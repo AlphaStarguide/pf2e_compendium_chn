@@ -33,6 +33,9 @@ const NPC_TRANSLATOR_DEP_PACKS = [
   "pf2e.equipment-srd",
 ];
 
+const ACTOR_IMPORT_DEBUG_DEFAULT = false;
+const ACTOR_IMPORT_INTERNAL_OPTION = "__babeleOnDemandActorImportTranslate";
+
 let capturedBabele = null;
 let patched = false;
 
@@ -64,6 +67,7 @@ Hooks.once("ready", () => {
   if (!patched && game.babele) {
     tryPatchBabele(game.babele);
   }
+  registerDebugConsoleApi();
 });
 
 function registerSettingsIfMissing() {
@@ -157,12 +161,17 @@ function tryPatchBabele(babele) {
   state.packMissingConverters = state.packMissingConverters ?? new Map();
   state.npcDepsLoaded = !!state.npcDepsLoaded;
   state.npcDepsLoading = state.npcDepsLoading ?? null;
+  state.actorImportHookRegistered = !!state.actorImportHookRegistered;
+  state.actorNamePackLookup = state.actorNamePackLookup ?? null;
+  state.actorNamePackLookupSource = state.actorNamePackLookupSource ?? null;
 
   babele.isFullMode = () => !isOnDemandMode();
   babele.translateIndexTitles = (index, pack) => translateIndexTitles(state, index, pack);
   babele.applyLabels = (labels = null) => applyLabels(babele, labels ?? state.labels);
   babele.applyTitleIndex = (titleIndex = null) => {
     state.titleIndex = titleIndex ?? state.titleIndex ?? {};
+    state.actorNamePackLookup = null;
+    state.actorNamePackLookupSource = null;
   };
 
   babele.loadLabels = async () => {
@@ -264,6 +273,27 @@ function tryPatchBabele(babele) {
     }
   });
 
+  if (!state.actorImportHookRegistered && game.system?.id === "pf2e") {
+    Hooks.on("preCreateActor", (actor, data, _options, userId) => {
+      autoTranslateImportedActorInPreCreate(actor, data, userId);
+    });
+    Hooks.on("createActor", (actor, _options, userId) => {
+      void autoTranslateImportedActorAfterCreate(actor, userId);
+    });
+    Hooks.on("preUpdateActor", (actor, change, options, userId) => {
+      if (options?.[ACTOR_IMPORT_INTERNAL_OPTION]) return;
+      autoTranslateImportedActorInPreUpdate(actor, change, userId);
+    });
+    Hooks.on("updateActor", (actor, _change, options, userId) => {
+      if (options?.[ACTOR_IMPORT_INTERNAL_OPTION]) return;
+      void autoTranslateImportedActorAfterUpdate(actor, userId);
+    });
+    state.actorImportHookRegistered = true;
+    debugActorImport("已注册Actor导入翻译Hooks", {
+      hooks: ["preCreateActor", "createActor", "preUpdateActor", "updateActor"],
+    });
+  }
+
   patched = true;
 }
 
@@ -271,6 +301,503 @@ function getSourcePackId(itemData) {
   const sourceId = itemData?.flags?.core?.sourceId || itemData?._stats?.compendiumSource;
   const ref = sourceId ? foundry.utils.parseUuid(sourceId) : null;
   return ref?.collection ?? null;
+}
+
+function getActorSourcePackId(actorOrData) {
+  const sourceId = actorOrData?.flags?.core?.sourceId || actorOrData?._stats?.compendiumSource;
+  const ref = sourceId ? foundry.utils.parseUuid(sourceId) : null;
+  return ref?.collection ?? null;
+}
+
+function shouldRunActorImportAutoTranslate(_babele) {
+  if (game.system?.id !== "pf2e") return false;
+  return true;
+}
+
+function registerDebugConsoleApi() {
+  const root = globalThis;
+  root.BabeleOnDemandPatchDebug = root.BabeleOnDemandPatchDebug ?? {};
+  if (typeof root.BabeleOnDemandPatchDebug.actorImport !== "boolean") {
+    root.BabeleOnDemandPatchDebug.actorImport = ACTOR_IMPORT_DEBUG_DEFAULT;
+  }
+
+  game.babeleOnDemandPatch = game.babeleOnDemandPatch ?? {};
+  game.babeleOnDemandPatch.getActorImportDebug = () => !!root.BabeleOnDemandPatchDebug.actorImport;
+  game.babeleOnDemandPatch.setActorImportDebug = (enabled) => {
+    root.BabeleOnDemandPatchDebug.actorImport = !!enabled;
+    return root.BabeleOnDemandPatchDebug.actorImport;
+  };
+}
+
+function debugActorImport(message, data = null) {
+  if (!globalThis?.BabeleOnDemandPatchDebug?.actorImport) return;
+  if (game.system?.id !== "pf2e") return;
+  try {
+    if (data !== null) console.info(`[${PATCH_ID}] [ActorImport] ${message}`, data);
+    else console.info(`[${PATCH_ID}] [ActorImport] ${message}`);
+  } catch {
+  }
+}
+
+function normalizeActorNameForLookup(name) {
+  if (typeof name !== "string") return null;
+  const normalized = name.replace(/\s+/g, " ").trim().toLowerCase();
+  return normalized.length ? normalized : null;
+}
+
+function collectActorNameLookupEntries(name) {
+  const entries = new Map();
+  const normalized = normalizeActorNameForLookup(name);
+  if (!normalized) return [];
+
+  const add = (key, score) => {
+    if (typeof key !== "string" || !key.length) return;
+    const prev = entries.get(key) ?? Number.NEGATIVE_INFINITY;
+    if (score > prev) entries.set(key, score);
+  };
+
+  add(normalized, 120);
+
+  const noParens = normalized.replace(/\s*[\(\（][^\)\）]*[\)\）]\s*$/g, "").trim();
+  if (noParens && noParens !== normalized) add(noParens, 110);
+
+  const latinTail = normalized.match(/[a-z][a-z0-9' -]*$/);
+  if (latinTail?.[0]) add(latinTail[0].trim(), 100);
+
+  const latinParts = normalized.match(/[a-z][a-z0-9' -]*/g) ?? [];
+  for (const part of latinParts) {
+    const key = part.trim();
+    if (key) add(key, 70);
+  }
+
+  for (const part of normalized.split(/[\/｜|]/g)) {
+    const key = normalizeActorNameForLookup(part);
+    if (key) add(key, 60);
+  }
+
+  return Array.from(entries.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([key, score]) => ({ key, score }));
+}
+
+function getActorNamePackLookup(babele, state) {
+  if (!state) return new Map();
+  if (state.actorNamePackLookup && state.actorNamePackLookupSource === state.titleIndex) {
+    return state.actorNamePackLookup;
+  }
+
+  const lookup = new Map();
+  const index = state.titleIndex ?? {};
+
+  for (const [packId, data] of Object.entries(index)) {
+    const metadata = getPackMetadata(babele, packId);
+    if (!metadata || metadata.type !== "Actor") continue;
+
+    const titles = data?.titles;
+    if (!titles || typeof titles !== "object") continue;
+
+    const names = new Set([...Object.keys(titles), ...Object.values(titles)]);
+    for (const name of names) {
+      const entries = collectActorNameLookupEntries(name);
+      for (const { key } of entries) {
+        if (!lookup.has(key)) lookup.set(key, new Set());
+        lookup.get(key).add(packId);
+      }
+    }
+  }
+
+  state.actorNamePackLookup = lookup;
+  state.actorNamePackLookupSource = state.titleIndex;
+  return lookup;
+}
+
+function resolveActorCandidatePackIds(babele, state, actorData) {
+  const packScores = new Map();
+
+  const sourcePackId = getActorSourcePackId(actorData);
+  if (sourcePackId) {
+    packScores.set(sourcePackId, 10_000);
+  }
+
+  const actorName = actorData?.name;
+  const entries = collectActorNameLookupEntries(actorName);
+  if (!entries.length) {
+    return Array.from(packScores.keys());
+  }
+
+  const lookup = getActorNamePackLookup(babele, state);
+  for (const { key, score } of entries) {
+    const matched = lookup.get(key);
+    if (!matched?.size) continue;
+    for (const packId of matched) {
+      const prev = packScores.get(packId) ?? Number.NEGATIVE_INFINITY;
+      if (score > prev) packScores.set(packId, score);
+    }
+  }
+
+  const sorted = Array.from(packScores.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+    .map(([packId]) => packId);
+  debugActorImport("候选包解析完成", {
+    actorName: actorData?.name ?? null,
+    sourceId: actorData?.flags?.core?.sourceId || actorData?._stats?.compendiumSource || null,
+    candidates: sorted,
+  });
+  return sorted;
+}
+
+function packHasActorTranslation(pack, source) {
+  if (!pack || typeof pack.hasTranslation !== "function") return true;
+  try {
+    return !!pack.hasTranslation(source);
+  } catch {
+    return true;
+  }
+}
+
+function getActorSourceRef(actorData) {
+  const sourceId = actorData?.flags?.core?.sourceId || actorData?._stats?.compendiumSource;
+  if (!sourceId) return null;
+  try {
+    return foundry.utils.parseUuid(sourceId);
+  } catch {
+    return null;
+  }
+}
+
+function mergeActorSourceWithChange(actor, change) {
+  const base = typeof actor?.toObject === "function" ? actor.toObject() : {};
+  try {
+    return foundry.utils.mergeObject(base, change ?? {}, { inplace: false });
+  } catch {
+    return base;
+  }
+}
+
+function getActorSourceDocumentId(actorData) {
+  const ref = getActorSourceRef(actorData);
+  return ref?.documentId ?? ref?.id ?? null;
+}
+
+function getActorSourceDocumentName(actorData) {
+  const ref = getActorSourceRef(actorData);
+  const packId = ref?.collection;
+  const docId = ref?.documentId ?? ref?.id;
+  if (!packId || !docId) return null;
+
+  try {
+    const pack = game.packs?.get?.(packId);
+    const name = pack?.index?.get?.(docId)?.name;
+    return typeof name === "string" && name.trim() ? name : null;
+  } catch {
+    return null;
+  }
+}
+
+function buildActorTranslationProbes(source) {
+  const probes = [];
+  const seen = new Set();
+
+  const pushProbe = (probe) => {
+    if (!probe || typeof probe !== "object") return;
+    const key = `${probe._id ?? ""}::${probe.name ?? ""}`;
+    if (seen.has(key)) return;
+    seen.add(key);
+    probes.push(probe);
+  };
+
+  pushProbe(source);
+
+  const sourceDocId = getActorSourceDocumentId(source);
+  if (typeof sourceDocId === "string" && sourceDocId.length) {
+    const byId =
+      foundry.utils?.deepClone && typeof foundry.utils.deepClone === "function"
+        ? foundry.utils.deepClone(source)
+        : JSON.parse(JSON.stringify(source));
+    byId._id = sourceDocId;
+    pushProbe(byId);
+
+    const sourceDocName = getActorSourceDocumentName(source);
+    if (typeof sourceDocName === "string" && sourceDocName.length) {
+      const byIdAndName =
+        foundry.utils?.deepClone && typeof foundry.utils.deepClone === "function"
+          ? foundry.utils.deepClone(byId)
+          : JSON.parse(JSON.stringify(byId));
+      byIdAndName.name = sourceDocName;
+      pushProbe(byIdAndName);
+    }
+  }
+
+  return probes;
+}
+
+function isMeaningfulActorTranslation(source, translated) {
+  if (!translated || typeof translated !== "object") return false;
+  if (translated?.flags?.babele?.translated || translated?.translated === true) return true;
+
+  try {
+    const diff = foundry.utils?.diffObject?.(source, translated);
+    if (!diff || typeof diff !== "object") return false;
+    const keys = Object.keys(diff).filter((k) => !["_id", "_stats", "sort"].includes(k));
+    return keys.length > 0;
+  } catch {
+    return true;
+  }
+}
+
+function tryTranslateActorFromPack(babele, packId, source) {
+  const pack = babele.packs?.get?.(packId);
+  const probes = buildActorTranslationProbes(source);
+  if (!probes.length) return null;
+
+  debugActorImport("开始尝试pack翻译", {
+    packId,
+    actorName: source?.name ?? null,
+    probeCount: probes.length,
+  });
+
+  for (const probe of probes) {
+    if (!packHasActorTranslation(pack, probe)) continue;
+    try {
+      const translated = babele.translate(packId, probe);
+      if (!isMeaningfulActorTranslation(probe, translated)) continue;
+      debugActorImport("pack翻译命中", {
+        packId,
+        probeId: probe?._id ?? null,
+        probeName: probe?.name ?? null,
+      });
+      return translated;
+    } catch {
+    }
+  }
+
+  debugActorImport("pack翻译未命中", {
+    packId,
+    actorName: source?.name ?? null,
+  });
+  return null;
+}
+
+function autoTranslateImportedActorInPreCreate(actor, data, userId) {
+  if (!isOnDemandMode()) return;
+  if (!actor || actor.pack) return;
+  if (typeof userId === "string" && userId !== game.userId) return;
+
+  const babele = game.babele;
+  const state = babele?.__ondemandPatch;
+  if (!babele || !state || !babele.initialized) return;
+  if (!shouldRunActorImportAutoTranslate(babele)) return;
+
+  const source = typeof actor?.toObject === "function" ? actor.toObject() : data;
+  if (!source || source?.flags?.babele?.translated) return;
+
+  debugActorImport("preCreate触发", {
+    actorId: actor?.id ?? actor?._id ?? null,
+    actorName: source?.name ?? null,
+    sourceId: source?.flags?.core?.sourceId || source?._stats?.compendiumSource || null,
+  });
+
+  const candidates = resolveActorCandidatePackIds(babele, state, source);
+  if (!candidates.length || typeof babele.translate !== "function") return;
+
+  for (const packId of candidates) {
+    if (!babele.isTranslated?.(packId)) continue;
+    const translated = tryTranslateActorFromPack(babele, packId, source);
+    if (!translated) continue;
+    actor.updateSource(translated);
+    debugActorImport("preCreate应用翻译成功", {
+      actorId: actor?.id ?? actor?._id ?? null,
+      actorName: source?.name ?? null,
+      packId,
+    });
+    return;
+  }
+
+  debugActorImport("preCreate未应用翻译", {
+    actorId: actor?.id ?? actor?._id ?? null,
+    actorName: source?.name ?? null,
+  });
+}
+
+function autoTranslateImportedActorInPreUpdate(actor, change, userId) {
+  if (!isOnDemandMode()) return;
+  if (!actor || actor.pack) return;
+  if (typeof userId === "string" && userId !== game.userId) return;
+
+  const babele = game.babele;
+  const state = babele?.__ondemandPatch;
+  if (!babele || !state || !babele.initialized) return;
+  if (!shouldRunActorImportAutoTranslate(babele)) return;
+
+  const source = mergeActorSourceWithChange(actor, change);
+  if (!source || source?.flags?.babele?.translated) return;
+  if (!getActorSourcePackId(source)) return;
+
+  debugActorImport("preUpdate触发", {
+    actorId: actor?.id ?? actor?._id ?? null,
+    actorName: source?.name ?? null,
+    sourceId: source?.flags?.core?.sourceId || source?._stats?.compendiumSource || null,
+  });
+
+  const candidates = resolveActorCandidatePackIds(babele, state, source);
+  if (!candidates.length || typeof babele.translate !== "function") return;
+
+  for (const packId of candidates) {
+    if (!babele.isTranslated?.(packId)) continue;
+    const translated = tryTranslateActorFromPack(babele, packId, source);
+    if (!translated) continue;
+    actor.updateSource(translated);
+    debugActorImport("preUpdate应用翻译成功", {
+      actorId: actor?.id ?? actor?._id ?? null,
+      actorName: source?.name ?? null,
+      packId,
+    });
+    return;
+  }
+}
+
+async function autoTranslateImportedActorAfterCreate(actor, userId) {
+  if (!isOnDemandMode()) return;
+  if (!actor || actor.pack) return;
+  if (typeof userId === "string" && userId !== game.userId) return;
+
+  const babele = game.babele;
+  const state = babele?.__ondemandPatch;
+  if (!babele || !state) return;
+  if (!shouldRunActorImportAutoTranslate(babele)) return;
+
+  const source = typeof actor?.toObject === "function" ? actor.toObject() : null;
+  if (!source || source?.flags?.babele?.translated) return;
+
+  debugActorImport("create后兜底触发", {
+    actorId: actor?.id ?? actor?._id ?? null,
+    actorName: source?.name ?? null,
+    sourceId: source?.flags?.core?.sourceId || source?._stats?.compendiumSource || null,
+  });
+
+  try {
+    if (!babele.initialized) {
+      await babele.init();
+    }
+  } catch {
+    return;
+  }
+
+  const candidates = resolveActorCandidatePackIds(babele, state, source);
+  if (!candidates.length || typeof babele.translate !== "function") return;
+
+  for (const packId of candidates) {
+    try {
+      await babele.ensurePackTranslationsLoaded?.(packId);
+    } catch {
+      debugActorImport("pack翻译加载失败", { packId, actorName: source?.name ?? null });
+      continue;
+    }
+    if (!babele.isTranslated?.(packId)) continue;
+
+    const translated = tryTranslateActorFromPack(babele, packId, source);
+    if (!translated) continue;
+    await applyTranslatedActorToWorldActor(actor, translated);
+    debugActorImport("create后兜底应用翻译成功", {
+      actorId: actor?.id ?? actor?._id ?? null,
+      actorName: source?.name ?? null,
+      packId,
+    });
+    return;
+  }
+
+  debugActorImport("create后兜底未命中翻译", {
+    actorId: actor?.id ?? actor?._id ?? null,
+    actorName: source?.name ?? null,
+  });
+}
+
+async function autoTranslateImportedActorAfterUpdate(actor, userId) {
+  if (!isOnDemandMode()) return;
+  if (!actor || actor.pack) return;
+  if (typeof userId === "string" && userId !== game.userId) return;
+
+  const babele = game.babele;
+  const state = babele?.__ondemandPatch;
+  if (!babele || !state) return;
+  if (!shouldRunActorImportAutoTranslate(babele)) return;
+
+  const source = typeof actor?.toObject === "function" ? actor.toObject() : null;
+  if (!source || source?.flags?.babele?.translated) return;
+  if (!getActorSourcePackId(source)) return;
+
+  debugActorImport("update后兜底触发", {
+    actorId: actor?.id ?? actor?._id ?? null,
+    actorName: source?.name ?? null,
+    sourceId: source?.flags?.core?.sourceId || source?._stats?.compendiumSource || null,
+  });
+
+  try {
+    if (!babele.initialized) {
+      await babele.init();
+    }
+  } catch {
+    return;
+  }
+
+  const candidates = resolveActorCandidatePackIds(babele, state, source);
+  if (!candidates.length || typeof babele.translate !== "function") return;
+
+  for (const packId of candidates) {
+    try {
+      await babele.ensurePackTranslationsLoaded?.(packId);
+    } catch {
+      continue;
+    }
+    if (!babele.isTranslated?.(packId)) continue;
+
+    const translated = tryTranslateActorFromPack(babele, packId, source);
+    if (!translated) continue;
+    await applyTranslatedActorToWorldActor(actor, translated);
+    debugActorImport("update后兜底应用翻译成功", {
+      actorId: actor?.id ?? actor?._id ?? null,
+      actorName: source?.name ?? null,
+      packId,
+    });
+    return;
+  }
+}
+
+async function applyTranslatedActorToWorldActor(actor, translated) {
+  const payload =
+    foundry.utils?.deepClone && typeof foundry.utils.deepClone === "function"
+      ? foundry.utils.deepClone(translated)
+      : JSON.parse(JSON.stringify(translated));
+  if (!payload || typeof payload !== "object") return;
+
+  delete payload._id;
+
+  const items = Array.isArray(payload.items) ? payload.items : [];
+  const effects = Array.isArray(payload.effects) ? payload.effects : [];
+  delete payload.items;
+  delete payload.effects;
+
+  if (Object.keys(payload).length) {
+    await actor.update(payload, { diff: false, [ACTOR_IMPORT_INTERNAL_OPTION]: true });
+  }
+
+  const itemUpdates = items.filter((item) => typeof item?._id === "string" && !!actor.items.get(item._id));
+  if (itemUpdates.length) {
+    await actor.updateEmbeddedDocuments("Item", itemUpdates, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
+  }
+
+  const effectUpdates = effects.filter((effect) => typeof effect?._id === "string" && !!actor.effects.get(effect._id));
+  if (effectUpdates.length) {
+    await actor.updateEmbeddedDocuments("ActiveEffect", effectUpdates, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
+  }
+
+  debugActorImport("已写回世界Actor翻译", {
+    actorId: actor?.id ?? actor?._id ?? null,
+    actorName: actor?.name ?? null,
+    rootUpdated: Object.keys(payload).length,
+    itemUpdates: itemUpdates.length,
+    effectUpdates: effectUpdates.length,
+  });
 }
 
 class PatchedOnDemandTranslateDialog extends Dialog {
@@ -488,11 +1015,25 @@ function buildPackTranslationUrlIndex(babele, files) {
   for (const metadata of game.data?.packs ?? []) {
     if (!babele.supported?.(metadata)) continue;
     const collection = babele.getCollection(metadata);
-    const fileName = encodeURI(`${collection}.json`);
-    const urls = (files ?? []).filter((f) => f?.split?.("/").pop?.().split?.("\\").pop?.() === fileName);
+    const encodedCollection = encodeURI(collection);
+    const exactFileName = `${encodedCollection}.json`;
+    const urls = (files ?? []).filter((f) => {
+      const baseName = f?.split?.("/").pop?.().split?.("\\").pop?.();
+      if (baseName === exactFileName) return true;
+      if (typeof baseName !== "string") return false;
+      return baseName.startsWith(`${encodedCollection}.`) && baseName.endsWith(".json");
+    });
     if (urls.length) index.set(collection, urls);
   }
   return index;
+}
+
+function buildDirectPackTranslationUrls(babele, packId) {
+  const fileName = `${encodeURI(packId)}.json`;
+  return getTranslationDirectories(babele).map((dir) => {
+    const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
+    return `${base}/${fileName}`;
+  });
 }
 
 async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
@@ -682,11 +1223,32 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
       state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
     }
 
-    const urls = state.packTranslationUrls.get(packId);
-    if (!urls?.length) return;
+    let urls = state.packTranslationUrls.get(packId);
+    debugActorImport("尝试加载pack翻译", {
+      packId,
+      hasIndexedUrls: !!urls?.length,
+      indexedUrlCount: urls?.length ?? 0,
+    });
+    let translation = urls?.length ? await loadTranslationFromUrls(urls) : null;
 
-    const translation = await loadTranslationFromUrls(urls);
-    if (!translation) return;
+    if (!translation) {
+      const directUrls = buildDirectPackTranslationUrls(babele, packId);
+      const directTranslation = await loadTranslationFromUrls(directUrls);
+      if (directTranslation) {
+        urls = directUrls;
+        translation = directTranslation;
+        state.packTranslationUrls.set(packId, urls);
+        debugActorImport("pack翻译通过目录直探加载成功", {
+          packId,
+          urls,
+        });
+      }
+    }
+
+    if (!translation) {
+      debugActorImport("pack翻译加载失败（未找到可用json）", { packId });
+      return;
+    }
 
     const { TranslatedCompendium } = await import("/modules/babele/script/translated-compendium.js");
     const metadata = (game.data?.packs ?? []).find((m) => babele.getCollection(m) === packId);
