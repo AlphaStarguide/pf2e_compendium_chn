@@ -1743,7 +1743,7 @@
         },
         "Awaken Entropy": {
             "name": "唤起熵力 Awaken Entropy",
-            "description": "<p>盛者必衰，生者必灭，即便是宇宙本身亦定然在某天迎来宁静的终焉。你唤起宇宙中的熵力定律，加速一个区域内的时间——让其中的血肉腐败、草木凋零、岩石崩碎。在区域内开始其回合的所有生物都必须成功通过一次基础强韧检定，否则受到8d6虚能伤害，若其通常不会受到虚能伤害，例如构装生物或者不死生物，则受到8d6力场伤害。即便是邪魔这种没有寿限的生命也会被熵力所影响。你在接下来的每个回合，第一次维持法术的时候，这个熵力区域就会随着持续时间变得更强。其爆发半径会增加10尺（最高40尺），并且它的伤害骰也会上升一级（从d6到d8，再到d10，最终到d12）。</p><hr /><p><strong>升阶（+1）</strong> 该伤害增加1d6。</p>",
+            "description": "<p>盛者必衰，生者必灭，即便是宇宙本身亦定然在某天迎来宁静的终焉。你唤起宇宙中的熵力定律，加速一个区域内的时间——让其中的血肉腐败、草木凋零、岩石崩碎。在区域内开始其回合的所有生物受到8d6虚能伤害，基础强韧豁免。若其通常不会受到虚能伤害，例如构装生物或者不死生物，则受到8d6力场伤害。即便是邪魔这种没有寿限的生命也会被熵力所影响。</p>\n<p>你在接下来的每个回合，第一次维持法术的时候，这个熵力区域就会随着持续时间变得更强。其爆发半径会增加10尺（最高40尺），并且它的伤害骰也会上升一级（从d6到@Damage[(2+@item.rank)d8[void]|shortLabel]，再到@Damage[(2+@item.rank)d10[void]|shortLabel]，最终到@Damage[(2+@item.rank)d12[void]|shortLabel]）。</p><hr /><p><strong>升阶（+1）</strong> 该伤害增加1d6。</p>",
             "duration": "1分钟"
         },
         "Invoke Spirits": {
@@ -1924,7 +1924,7 @@
         },
         "Falling Sky": {
             "name": "坠天术 Falling Sky",
-            "description": "<p>超乎寻常的念力砸穿该区域，将其中的生物击倒在地。该区域内的所有飞行生物都会下降到法术区域的底部，造成双倍的坠落伤害，也就是如果坠落60尺的话，最多受到60点坠落伤害。即使法术区域完全在空中并且他们没有撞到地面也会受到这种坠落伤害，因为它们会以极快的速度撞击法术区域的底部。位于地面上并且处于法术范围内的生物，包括被强制拉往地面的飞行生物，都必须进行强韧豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响，如果它在飞行，即使受到坠落伤害也不会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>\n<p><strong>成功</strong> 该生物被击倒地。</p>\n<p><strong>失败</strong> 该生物被击倒地并@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}。</p>\n<p><strong>大失败</strong> 该生物被击倒地并@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix] 1轮。</p>"
+            "description": "<p><strong>区域</strong> 60尺高，30尺半径的圆柱体</p><hr /><p>超乎寻常的念力砸穿该区域，将其中的生物击倒在地。该区域内的所有飞行生物都会下降到法术区域的底部，造成双倍的坠落伤害，也就是如果坠落60尺的话，最多受到60点坠落伤害。即使法术区域完全在空中并且他们没有撞到地面也会受到这种坠落伤害，因为它们会以极快的速度撞击法术区域的底部。位于地面上并且处于法术范围内的生物，包括被强制拉往地面的飞行生物，都必须进行强韧豁免。</p><hr /><p><strong>大成功</strong> 该生物不受影响，如果它在飞行，即使受到坠落伤害也不会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>\n<p><strong>成功</strong> 该生物被击倒地。</p>\n<p><strong>失败</strong> 该生物被击倒地并@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 2}。</p>\n<p><strong>大失败</strong> 该生物被击倒地并震慑1轮。</p>"
         },
         "Pulse of the City": {
             "name": "城市脉动 Pulse of the City",
@@ -2477,7 +2477,7 @@
         },
         "Imaginary Weapon": {
             "name": "幻想兵器 Imaginary Weapon",
-            "description": "<p>你创造出一把力场简易武器。进行法术攻击检定对抗目标AC。如果命中，你造成2d8钝击或挥砍伤害（由你决定）。在大成功时，你造成双倍伤害并可以选择引爆手中的武器将目标推离10尺。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 伤害增加1d8。</p>",
+            "description": "<p>你创造出一把力场简易武器，猛然挥出，其轨迹追随你的手掌。进行法术攻击检定对抗目标AC。如果命中，你造成2d6力场伤害。在大成功时，你造成双倍伤害并可以选择引爆手中的武器将目标推离10尺。</p><hr /><p><strong>升阶（+1）</strong> 伤害增加1d6</p>",
             "target": "一个生物"
         },
         "Hallucinatory Terrain": {
@@ -2568,7 +2568,7 @@
         },
         "Shadow Blast": {
             "name": "幽影爆破 Shadow Blast",
-            "description": "<p>你利用影界的幽影物质创造一团爆炸。选择@Damage[(@item.rank+1)d8[acid]]{酸蚀}、@Damage[(@item.rank+1)d8[bludgeoning]]{钝击}、@Damage[(@item.rank+1)d8[cold]]{寒冷}、@Damage[(@item.rank+1)d8[electricity]]{电击}、@Damage[(@item.rank+1)d8[fire]]{火焰}、@Damage[(@item.rank+1)d8[force]]{力场}、@Damage[(@item.rank+1)d8[piercing]]{穿刺}、@Damage[(@item.rank+1)d8[slashing]]{挥砍}、@Damage[(@item.rank+1)d8[sonic]]{音波}或者@Damage[(@item.rank+1)d8[spirit]]{精魂}伤害，然后选择@Template[cone|distance:30]，120尺内的@Template[burst|distance:15]或者@Template[line|distance:50]。该爆炸对该区域中的每个生物造成6d8你所选择类型的伤害。</p><hr /><p><strong>升阶（+1）</strong> 该伤害增加1d8。</p>"
+            "description": "<p><strong>区域</strong> 可变</p>\n<p><strong>防御</strong> @Check[reflex|basic|options:area-effect]或@Check[will|basic|options:area-effect]（由目标选择）</p><hr /><p>你利用影界的幽影物质创造一团爆炸。选择@Damage[(@item.rank+1)d8[acid]|options:area-damage]，@Damage[(@item.rank+1)d8[bludgeoning]|options:area-damage]，@Damage[(@item.rank+1)d8[cold]|options:area-damage]，@Damage[(@item.rank+1)d8[electricity]|options:area-damage]，@Damage[(@item.rank+1)d8[fire]|options:area-damage]，@Damage[(@item.rank+1)d8[force]|options:area-damage]，@Damage[(@item.rank+1)d8[piercing]|options:area-damage]，@Damage[(@item.rank+1)d8[slashing]|options:area-damage]，@Damage[(@item.rank+1)d8[sonic]|options:area-damage]或@Damage[(@item.rank+1)d8[spirit]|options:area-damage]伤害，然后选择@Template[cone|distance:30]，120内的@Template[burst|distance:15]或@Template[line|distance:50]。该爆炸对该区域中的每个生物造成6d8伤害你所选择类型的伤害。</p><hr /><p><strong>升阶（+1）</strong> 伤害增加1d8</p>"
         },
         "Phantom Prison": {
             "name": "阴影监牢 Phantom Prison",
@@ -2868,7 +2868,7 @@
         },
         "Telekinetic Rend": {
             "name": "念动撕裂 Telekinetic Rend",
-            "description": "<p>你的心灵在附近的空间中制造出激烈的运动轴线。你对区域内的所有生物造成你选择的1d6钝击伤害或1d6挥砍伤害，这是一个基础强韧豁免。一个体型大到处在复数区域中的生物只受到一次伤害。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 伤害提升1d6</p>",
+            "description": "<p>你的心灵在附近的空间中制造出激烈的运动轴线，可以随心所欲地粉碎或斩断目标。你对区域内的所有生物造成你选择的1d6点钝击或1d6点挥砍伤害，这是一个基础强韧豁免。一个体型大到处在复数区域中的生物只受到一次伤害。</p><hr /><p><strong>升阶（+2）</strong> 伤害提升1d6</p>",
             "target": "2个不重叠的5尺爆发区域"
         },
         "Telekinetic Haul": {
@@ -2889,7 +2889,7 @@
         },
         "Sea of Thought": {
             "name": "思维之海 Sea of Thought",
-            "description": "<p>你用一股半凝固的思想洪流覆盖该区域，大约有脚踝高。该地区成为困难地形，类似于浅沼泽。每一轮在该区域开始其回合的生物都必须进行一次强韧豁免，以对抗不断变化的思想浪潮。如果失败，它的速度会受到-10尺的环境环境减值，直到它离开该区域；如果大失败，它还会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 法术区域半径增加 5 英尺。</p>",
+            "description": "<p>你用一股半凝固的思想洪流覆盖该区域，大约有脚踝高。该地区成为困难地形，类似于浅沼泽。每一轮在该区域开始其回合的生物都必须进行一次强韧豁免，以对抗不断变化的思想浪潮。如果失败，它的速度会受到-10尺的环境环境减值，直到它离开该区域；如果大失败，它还会@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p><hr /><p><strong>升阶（+1）</strong> 法术区域半径增加 5 英尺。</p>",
             "duration": "1分钟"
         },
         "Mind Games": {
@@ -3411,7 +3411,7 @@
         },
         "Disappearance": {
             "name": "无影无踪 Disappearance",
-            "description": "<p>你遮蔽了其他生物对一个生物的感知。目标为@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}，不仅仅是视觉，而是所有感官，令目标对于无论使用什么精确或者模糊感官的观察者而言，均视为 @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}。生物仍然可以通过搜索，寻找被拨开的尘土，寻找声谱中的空当，或者通过其他方式来发现一个无法被其他方式发现的生物。</p>",
+            "description": "<p>你遮蔽了其他生物对一个生物的感知。目标变为@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]，不仅仅是视觉，对于无论使用什么精确或者模糊感官的观察者而言，均视为隐形。生物仍然可以通过各种感官来搜索，寻找被拨开的尘土，寻找声谱中的空当，或者通过其他方式来发现一个无法被其他方式发现的生物。</p>",
             "target": "一个生物",
             "duration": "10分钟"
         },
@@ -3459,12 +3459,12 @@
         },
         "Time Beacon": {
             "name": "时间信标 Time Beacon",
-            "description": "<p>你为了防止出现问题而创造了一个能够及时返回的信标。你只能在自己的回合内施放<em>时间信标</em>。在你施放<em>时间信标</em>后，仔细记录本回合内发生的所有事情。在你的回合结束时，你能选择将时间倒退回刚刚施放完<em>时间信标</em>的时刻，移除该时点之后你的回合内的所有效果。</p>\n<p>在你的回合内发生的诅咒、陷阱和其他有害效果如果足够强大的话，可能会阻止你返回信标的时点。若你在自己的回合内施放<em>时间信标</em>之后被任何有害效果影响的话，为了返回信标的时点，<em>时间信标</em>会尝试反制检定对抗上述每个效果。若它在任意检定中失败的话，你就无法返回。在返回至<em>时间信标</em>的时点后，法术结束。</p>",
+            "description": "<p>你为了防止出现问题而创造了一个能够及时返回的信标。你只能在自己的回合内施放<em>时间信标</em>。在你施放<em>时间信标</em>后，仔细记录本回合内发生的所有事情。在你的回合结束时，你能选择将时间倒退回刚刚施放完<em>时间信标</em>的时刻，移除该时点之后你的回合内的所有效果。在你的回合内发生的诅咒、陷阱和其他有害效果如果足够强大的话，可能会阻止你返回信标的时点。若你在自己的回合内施放<em>时间信标</em>之后被任何有害效果影响的话，为了返回信标的时点，<em>时间信标</em>会尝试反制检定对抗上述每个效果。若它在任意检定中失败的话，你就无法返回。在返回至时间信标的时点后，法术结束。</p>",
             "duration": "直到你本回合结束"
         },
         "Quicken Time": {
             "name": "时间加速 Quicken Time",
-            "description": "<p>你加速一处区域的时间流，拉动它，直到时间流变得灵活多变。所有在该区域开始自己回合的生物获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]状态，且只能使用此额外动作行走或打击。遗憾的是，加速时间比缓滞时间更难以操控，此效果也是十分不稳定，在不同的时间速度中保持精准会十分困难；即区域内的生物对区域外的生物而言视为@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，反之亦然。</p>",
+            "description": "<p>你加速一处区域的时间流，拉动它，直到时间流变得灵活多变。所有在该区域开始自己回合的生物获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]状态，直至其回合结束，且只能使用此额外动作行走或打击。遗憾的是，加速时间比缓滞时间更难以操控，此效果也是十分不稳定，在不同的时间速度中保持精准会十分困难；即区域内的生物对区域外的生物而言视为@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，反之亦然。</p>",
             "duration": "1分钟"
         },
         "Time Pocket": {
@@ -4098,7 +4098,7 @@
         },
         "Foresee the Path": {
             "name": "洞见行程 Foresee the Path",
-            "description": "<p>你可以瞥见未来一瞬的情况，了解敌人的行动方式，使你的盟友更容易打断它的行动。进行@Check[perception]{察觉检定}对抗目标敌人的意志DC或欺骗DC，以较高者为准。GM也可以判断不同的DC更合适，假如这项DC会更高；例如，使用一个军官的战争学识DC。然后，目标将在1分钟内暂时免疫。</p>\n<hr />\n<p><strong>大成功</strong> 目标盟友获得一个反应，使其能够对目标敌人进行近战@UUID[Compendium.pf2e.actionspf2e.Item.VjxZFuUXrCU94MWR]{打击 Strike}，如果敌人离开盟友触及范围内的一个方格，则触发该反应。如果该盟友已经有一个能力可以让它用反应进行近战攻击，如反应打击，则该盟友可以放弃获得临时反应，而是让他用反应进行的的近战攻击获得+2状态加值。</p>\n<p><strong>成功</strong> 与大成功一样，但如果盟友放弃临时反应，其获得的状态加成是+1。</p>\n<p><strong>失败</strong> 法术没有效果。</p>",
+            "description": "<p>你可以瞥见未来一瞬的情况，了解敌人的行动方式，使你的盟友更容易打断它的行动。进行@Check[perception]检定对抗目标敌人的意志DC或欺骗DC，以较高者为准。GM也可以判断不同的DC更合适，假如这项DC会更高；例如，使用一个军官的战争学识DC。然后，目标将在1分钟内暂时免疫。</p><hr /><p><strong>大成功</strong> 目标盟友获得一个反应，使其能够对目标敌人进行近战打击，如果敌人离开盟友触及范围内的一个方格，则触发该反应。如果该盟友已经有一个能力可以让它用反应进行近战攻击，如反应打击，则该盟友可以放弃获得临时反应，而是让他用反应进行的的近战攻击获得+2状态加值。</p>\n<p><strong>成功</strong> 与大成功一样，但如果盟友放弃临时反应，其获得的状态加成是+1。</p>\n<p><strong>失败</strong> 法术没有效果。</p>",
             "target": "1盟友和1敌人",
             "duration": "1分钟"
         },
@@ -4349,7 +4349,7 @@
         },
         "Implement of Destruction": {
             "name": "灭绝武装 Implement of Destruction",
-            "description": "<p>你郑重宣布目标武器会给敌人带来死亡，给目标敌人植入对武器的非理性恐惧。这回荡在敌人的脑海中，形成一种若隐若现的无所不在的恐惧感。该效果基于目标敌人的意志豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标敌人不受影响。</p>\n<p><strong>成功</strong> 目标武器在法术持续时间结束前第一次击中目标敌人时造成额外@Damage[2d6[mental]]伤害。</p>\n<p><strong>失败</strong> 目标武器对目标敌人造成额外@Damage[2d6[persistent,mental]]伤害。如果敌人被该武器重击，只要心灵伤害没有结束，它还陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>大失败</strong> 目标武器对目标敌人造成额外@Damage[4d6[persistent,mental]]伤害。如果敌人被武器重击，只要心灵伤害没有结束，它还陷入毁灭1。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 成功时增加1d6心灵伤害，失败时增加1d6持续心灵伤害，大失败时增加2d6持续心灵伤害。</p>",
+            "description": "<p>你郑重宣布目标武器会给敌人带来死亡，给目标敌人植入对武器的非理性恐惧。这回荡在敌人的脑海中，形成一种若隐若现的无所不在的恐惧感。该效果基于目标敌人的意志豁免。</p><hr /><p><strong>大成功</strong> 目标敌人不受影响。</p>\n<p><strong>成功</strong> 目标武器在法术持续时间结束前第一次击中目标敌人时造成额外@Damage[2d6[mental]]伤害。</p>\n<p><strong>失败</strong> 目标武器对目标敌人造成额外@Damage[2d6[persistent,mental]]伤害。如果敌人被该武器重击，只要心灵伤害没有结束，它还陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}。</p>\n<p><strong>大失败</strong> 目标武器对目标敌人造成额外@Damage[4d6[persistent,mental]]伤害。如果敌人被武器重击，只要心灵伤害没有结束，它还陷入毁灭1。</p><hr /><p><strong>升阶（+2）</strong> 成功时增加1d6心灵伤害，失败时增加1d6持续心灵伤害，大失败时增加2d6持续心灵伤害。</p>",
             "target": "一个敌人，以及一把无主、或由你和自愿盟友持握的武器",
             "duration": "1分钟"
         },
@@ -4384,7 +4384,7 @@
         },
         "Etheric Shards": {
             "name": "灵质刺阵 Etheric Shards",
-            "description": "<p>你伸出手，在整个地区撒播下闪闪发光的力场碎片，由意志和灵质塑形成的超凡铁蒺藜。该地区是困难地形，即使对于飞行或虚体生物也是如此。任何穿过该区域的生物每经过一个方格就会受到 1d4 的穿刺伤害，在它们穿过该区域的每个移动动作结束时进行一次基础反射豁免以对抗该伤害。</p>\n<hr />\n<p><strong>升阶（+2）</strong> 法术区域增加 5 尺，穿刺伤害增加 1。</p>",
+            "description": "<p>你伸出手，在整个地区撒播下闪闪发光的力场碎片，由意志和灵质塑形成的超凡铁蒺藜。该地区是困难地形，即使对于飞行或虚体生物也是如此。任何穿过该区域的生物每经过一个方格就会受到1d4的穿刺伤害，在它们穿过该区域的每个移动动作结束时进行一次基础反射豁免以对抗该伤害。</p><hr /><p><strong>升阶（+2）</strong> 法术区域增加5尺，穿刺伤害增加1。</p>",
             "duration": "1分钟"
         },
         "Ectoplasmic Expulsion": {
@@ -5962,12 +5962,12 @@
         },
         "Tesseract Tunnel": {
             "name": "超维隧道 Tesseract Tunnel",
-            "description": "<p>你从一点移到另一点，并在空间中撕开一条隧道。你在你当前的空间创造一个传送门，然后进行@UUID[Compendium.pf2e.actionspf2e.Item.Bcxarzksqt9ezrs6]{行走 Stride}动作，在你行走结束的空间创造另一个传送门。直到你的下一回合开始，任何进入第一个传送门的生物都可以立即将自己传送到出口的传送门，作为其移动动作的一部分，这将为其移动增加传送的特性。</p>\n<p>你一次只能打开一个<em>超维隧道</em>；创造另一个会导致第一个立即关闭。如果你有相应的移动类型，你可以在@UUID[Compendium.pf2e.actionspf2e.Item.H6v1VgowHaKHnVlG]{掘地 Burrowing}、@UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]{攀爬 Climbing}、@UUID[Compendium.pf2e.actionspf2e.Item.cS9nfDRGD83bNU1p]{飞行 Flying}或@UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]{游泳 Swimming}时使用<em>超维隧道</em>。</p>",
+            "description": "<p>你从一点移到另一点，并在空间中撕开一条隧道。你在你当前的空间创造一个传送门，然后@UUID[Compendium.pf2e.actionspf2e.Item.Bcxarzksqt9ezrs6]，在你行走结束的位置创造另一个传送门。直到你的下一回合开始，任何进入第一个传送门的生物都可以立即将自己传送到出口的传送门，作为其移动动作的一部分，这将为其移动增加传送的特性。</p>\n<p>你一次只能打开一个<em>超维隧道</em>；创造另一个会导致第一个立即关闭。如果你有相应的移动类型，你可以在@UUID[Compendium.pf2e.actionspf2e.Item.H6v1VgowHaKHnVlG]、@UUID[Compendium.pf2e.actionspf2e.Item.pprgrYQ1QnIDGZiy]、@UUID[Compendium.pf2e.actionspf2e.Item.cS9nfDRGD83bNU1p]或@UUID[Compendium.pf2e.actionspf2e.Item.c8TGiZ48ygoSPofx]时使用<em>超维隧道</em>。</p>",
             "duration": "1分钟"
         },
         "Warp Step": {
             "name": "跃迁步 Warp Step",
-            "description": "<p>当你行走时，脚下的大地开始扭曲——你的脚步伸展，距离缩小，一切都在向你逐渐靠近。你的速度获得+5尺状态加值，直到你的回合结束。然后你行走两次。如果你有相应的移动类型，你可以使用跃迁步进行掘地、攀爬、飞行或游泳，而不只是行走。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.9Tl9jGUKoj0wS73d]{法术效果：跃迁步}</p>"
+            "description": "<p>当你行走时，脚下的大地开始扭曲——你的脚步伸展，距离缩小，一切都在向你逐渐靠近。你的速度获得+5尺状态加值，直到你的回合结束。然后你行走两次。如果你有相应的移动类型，你可以使用跃迁步进行掘地、攀爬、飞行或游泳，而不只是行走。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.9Tl9jGUKoj0wS73d]</p>"
         },
         "Jump": {
             "name": "跳跃术 Jump",
@@ -6187,7 +6187,7 @@
         },
         "Oblivious Expulsion": {
             "name": "遗忘革除 Oblivious Expulsion",
-            "description": "<p>切断与异教成员的联系会招来危险，预示着组织秘密的败露，无论秘密是在保护信徒还是让他们可以暗中行动。许多异教都会用刀刃来结束与某位任性成员的联系，但也有一些异教会选择既保守秘密，又保留被革除成员的性命。一次遗忘革除可以移除异教的知识，但由于太过费时，异教通常只会在那些最受人尊敬却又必须被革除的成员身上使用它——或是异教希望安插进社团中的潜伏特工，以供以后启用。</p>\n<p>除非目标自愿或被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，否则施放此仪式非常困难。接受此仪式的非自愿生物，可以尝试一次意志豁免来无效仪式效果。仪式的效果取决于你的神秘检定结果。</p>\n<hr />\n<p><strong>大成功</strong> 仪式从目标里移除了所有有关异教活动，实践和秘密的全部记忆。目标只会记得较大社群普通公民所能知晓的事情，通常就是毫不知情或是很少一些毫无细节的流言。该法术很难被侦测：侦测魔法或类似效果必须比遗忘革除高一个环级才能侦测到它。你可以解消该法术。在施法期间，你可以选择给予次要施法者解消它的能力。你也可以选择设置一个会导致法术解消的关键短语或事件。当目标目睹该短语或事件时，法术立即结束。</p>\n<p><strong>成功</strong> 同大成功，除了该法术并不会让侦测魔法难以侦测。</p>\n<p><strong>失败</strong> 仪式失败。</p>\n<p><strong>大失败</strong> 仪式失败，且目标临时免疫该仪式一个月。</p>",
+            "description": "<p>切断与异教成员的联系会招来危险，预示着组织秘密的败露，无论秘密是在保护信徒还是让他们可以暗中行动。许多异教都会用刀刃来结束与某位任性成员的联系，但也有一些异教会选择既保守秘密，又保留被革除成员的性命。一次遗忘革除可以移除异教的知识，但由于太过费时，异教通常只会在那些最受人尊敬却又必须被革除的成员身上使用它——或是异教希望安插进社团中的潜伏特工，以供以后启用。</p>\n<p>除非目标自愿或被@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]，否则施放此仪式非常困难。接受此仪式的非自愿生物，可以尝试一次意志豁免来无效仪式效果。仪式的效果取决于你的神秘检定结果。</p><hr /><p><strong>大成功</strong> 仪式从目标里移除了所有有关异教活动，实践和秘密的全部记忆。目标只会记得较大社群普通公民所能知晓的事情，通常就是毫不知情或是很少一些毫无细节的流言。该法术很难被侦测：@UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]或类似效果必须比<em>遗忘革除</em>高一个环级才能侦测到它。你可以解消该法术。在施法期间，你可以选择给予次要施法者解消它的能力。你也可以选择设置一个会导致法术解消的关键短语或事件。当目标目睹该短语或事件时，法术立即结束。</p>\n<p><strong>成功</strong> 同大成功，除了该法术并不会让<em>侦测魔法</em>难以侦测。</p>\n<p><strong>失败</strong> 仪式失败。</p>\n<p><strong>大失败</strong> 仪式失败，且目标临时免疫该仪式一个月。</p>",
             "target": "1个生物",
             "duration": "无限",
             "cost": "总价值150 gp的熏香",
@@ -8383,7 +8383,7 @@
             "duration": "10分钟"
         },
         "Vanishing Tracks": {
-            "description": "<p>你令留下的痕迹模糊不清。追踪你的检定DC获得+4状态加值，或者等于你的法术DC，取较高DC。</p>\n<hr />\n<p><strong>升阶（2环级）</strong> 该持续时间增加到8小时。</p>\n<p><strong>升阶（4环级）</strong> 该持续时间增加到8小时。该法术射程为20尺，并且具有20尺弥漫区域，影响该区域中至多10个由你选择的生物。</p>",
+            "description": "<p>你令留下的痕迹模糊不清。追踪你的检定DC获得+4状态加值，或者等于你的法术DC，取较高DC。</p><hr /><p><strong>升阶（2环级）</strong> 该持续时间增加到8小时。</p>\n<p><strong>升阶（4环级）</strong> 该持续时间增加到8小时。该法术射程为20尺，最多能以10个生物为目标。</p>",
             "name": "行踪销迹 Vanishing Tracks",
             "duration": "1小时"
         },
@@ -8457,7 +8457,7 @@
             "duration": "10分钟"
         },
         "Sound Body": {
-            "description": "<p>你送出一股治愈的能量以恢复目标的躯体。尝试反制目标上的任一个由你选择的造成下列状态的效果：@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}、@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}、@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled}或@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened}。如果你未能反制该效果，但是如果其反制等级再低2的话你会成功，则改为压制该目标直到你的下个回合结束。在被压制时，该效果的持续时间不会减少。</p>\n<p>该法术不会反制或者压制属于目标的诅咒、疾病或者属于正常情况一部分的状态。</p>\n<hr />\n<p><strong>升阶（4环级）</strong> 增加@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained}和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]到此状态列表中。</p>\n<p><strong>升阶（8环级）</strong> 增加@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]到此状态列表中。</p>",
+            "description": "<p>你送出一股治愈的能量以恢复目标的躯体。尝试反制目标上的任一个由你选择的造成下列状态的效果：@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]、@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]、@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]或@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]。如果你未能反制该效果，但是如果其反制等级再低2的话你会成功，则改为压制该目标直到你的下个回合结束。在被压制时，该效果的持续时间不会减少。</p>\n<p>该法术不会反制或者压制属于目标的诅咒、疾病或者属于正常情况一部分的状态。</p><hr /><p><strong>升阶（4环级）</strong> 增加@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]到状态列表中。</p>\n<p><strong>升阶（6环级）</strong> 同4环级，额外增加@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]到状态列表中。</p>\n<p><strong>升阶（8环级）</strong> 同4环级，额外增加石化和@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]到状态列表中。</p>",
             "name": "身健体康 Sound Body",
             "target": "一个自愿生物"
         },
@@ -8671,7 +8671,7 @@
             "name": "生命花开 Life's Fresh Bloom"
         },
         "Sacred Nimbus": {
-            "description": "<p>你召唤出一团小型松软的白色雨云，漂浮在离地面10尺处，降下温暖的受祝之水。雨水在你回合结束时对区域内的魔族，不死，和具有圣洁弱点的生物造成5d6精魂伤害。当你维持法术时，你能够以15尺飞行速度移动云到法术射程内的任意位置。雨水在与任何生物或表面接触时消散，只留下一点湿度。</p><hr /><p><strong>升阶（+1）</strong> 伤害提升1d6。</p>",
+            "description": "<p>你召唤出一团小型松软的白色雨云，漂浮在离地面10尺处，降下温暖的受祝之水。雨水在你回合结束时对区域内的魔族，不死，和具有精魂弱点的生物造成5d6精魂伤害。当你维持法术时，你能够以15尺飞行速度移动云到法术射程内的任意位置。雨水在与任何生物或表面接触时消散，只留下一点湿度。</p><hr /><p><strong>升阶（+1）</strong> 伤害提升1d6。</p>",
             "name": "神圣雨云 Sacred Nimbus",
             "duration": "1分钟"
         },
@@ -8692,7 +8692,7 @@
             "name": "镜墙术 Wall Of Mirrors"
         },
         "Gnaw at the Moon": {
-            "description": "<p>据说在死于文业王的嫉妒黑手后，月夜的月亮尸首在天庭哀悼期间无人看守；这给了一只卑微的母鼠机会来啃食月亮的肉，饮下神血，这是她登神为老鼠婆最初的一步。食月，是神门受压迫者之中一种不起眼的民间魔法仪式，让你可以向老鼠婆的大胆和难以置信的登神致敬。</p>\n<p>这种仪式只能在可以看到月亮高悬于夜空的晚上举行；你不能在一个完全没有月亮的夜晚，室内或地下举行此仪式。在满月夜举行此仪式可以减少2点仪式的技能检定DC。你在平坦的表面（比如放在地面上的桌子或托盘）上摆放月饼和茶杯，持续忽视这份食物和饮料，然后在欣赏和赞美月亮的同时称赞夜晚的美丽。</p>\n<p>在成功的仪式结束时，月饼上会出现咬痕，一些茶水消失了，仿佛在无人看到的情况下被人喝了一小口。据推测，仪式和祭品会引起老鼠婆的注意，她派遣一些啮齿动物孩子来吃喝贡品，并给予偷来的月光祝福。对月亮的热情赞颂据说是为了避免月夜对庆祝他被谋杀的事件感到不满；毕竟，老故事都在警告不要冒犯月亮，以免它割伤你的耳朵作为报复……</p>\n<hr />\n<p><strong>大成功</strong> 该目标获得黑暗视觉。</p>\n<p><strong>成功</strong> 该目标获得昏暗视觉。</p>\n<p><strong>失败</strong> 仪式无效果。</p>\n<p><strong>大失败</strong> 你和目标均陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，持续24小时。你的耳朵感到被割伤和擦伤，因为你的耳垂上布满交错的小伤口。</p>",
+            "description": "<p>据说在死于文业王的嫉妒黑手后，月夜的月亮尸首在天庭哀悼期间无人看守；这给了一只卑微的母鼠机会来啃食月亮的肉，饮下神血，这是她登神为老鼠婆最初的一步。食月，是神门受压迫者之中一种不起眼的民间魔法仪式，让你可以向老鼠婆的大胆和难以置信的登神致敬。</p>\n<p>这种仪式只能在可以看到月亮高悬于夜空的晚上举行；你不能在一个完全没有月亮的夜晚，室内或地下举行此仪式。在满月夜举行此仪式可以减少2点仪式的技能检定DC。你在平坦的表面（比如放在地面上的桌子或托盘）上摆放月饼和茶杯，持续忽视这份食物和饮料，然后在欣赏和赞美月亮的同时称赞夜晚的美丽。</p>\n<p>在成功的仪式结束时，月饼上会出现咬痕，一些茶水消失了，仿佛在无人看到的情况下被人喝了一小口。据推测，仪式和祭品会引起老鼠婆的注意，她派遣一些啮齿动物孩子来吃喝贡品，并给予偷来的月光祝福。对月亮的热情赞颂据说是为了避免月夜对庆祝他被谋杀的事件感到不满；毕竟，老故事都在警告不要冒犯月亮，以免它割伤你的耳朵作为报复……</p><hr /><p><strong>大成功</strong> 该目标获得黑暗视觉。</p>\n<p><strong>成功</strong> 该目标获得昏暗视觉。</p>\n<p><strong>失败</strong> 仪式无效果。</p>\n<p><strong>大失败</strong> 你和目标均陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}，持续24小时。你的耳朵感到被割伤和擦伤，因为你的耳垂上布满交错的小伤口。</p>",
             "name": "食月 Gnaw at the Moon",
             "target": "你和次要施法者",
             "duration": "8小时",
@@ -8704,10 +8704,10 @@
             "target": "鬼打墙",
             "cost": "价值60 gp的米粒和熏香",
             "duration": "1年",
-            "gmnote": "<p>你研究了所谓柳岸镇诅咒的本质，揭示了一种可能打开通路穿越镇子西边那可怕鬼打墙的办法。借由开始神圣的仪式，然后采用善解的生命与转世轮回本质理论，以及来自邹斗（Zoudou）笔记里的见解，你创造出一种魔法仪式能够安抚作祟于这片迷瘴的愤怒精魂，允许其他生物通过以进入地区外。这个仪式不太能完全保护你免受墙内幽灵或邪恶精魂的伤害，一旦你开启墙，你和你的盟友可能需要面对额外的危险，然后你们才能离开进入另一侧。此外，仪式必须在渐亏至次月新月期间举行（相当于每个月的下半月）。</p><hr /><p><strong>大成功</strong> 仪式成功，且在你穿越鬼打墙时提供额外的保护。当穿越鬼打墙时，你和仪式的次要施法者在AC和豁免检定上获得+2状态加值。</p><p>@UUID[Compendium.pf2e.spell-effects.Item.lGU4GIF2GUn21zFa]{法术效果：洞开鬼打墙（大成功）}</p><p><strong>成功</strong> 仪式成功。</p><p><strong>失败</strong> 仪式失败。</p><p><strong>大失败</strong> 仪式彻底失败，两个困在墙内的@UUID[Compendium.pf2e.season-of-ghosts-bestiary.Actor.aWoT0eOTpr7Ugexm]{幽灵 Ghosts} 挣脱出来并展开攻击。将这些幽灵视作平民幽灵，除了他们的幽灵之手攻击造成心灵伤害而非虚能伤害。</p>"
+            "gmnote": "<p>你研究了所谓柳岸镇诅咒的本质，揭示了一种可能打开通路穿越镇子西边那可怕鬼打墙的办法。借由开始神圣的仪式，然后采用善解的生命与转世轮回本质理论，以及来自邹斗（Zoudou）笔记里的见解，你创造出一种魔法仪式能够安抚作祟于这片迷瘴的愤怒精魂，允许其他生物通过以进入地区外。</p><p>这个仪式不太能完全保护你免受墙内幽灵或邪恶精魂的伤害，一旦你开启墙，你和你的盟友可能需要面对额外的危险，然后你们才能离开进入另一侧。此外，仪式必须在渐亏至次月新月期间举行（相当于每个月的下半月）。</p><hr /><p><strong>大成功</strong> 仪式成功，且在你穿越鬼打墙时提供额外的保护。当穿越鬼打墙时，你和仪式的次要施法者在AC和豁免检定上获得+2状态加值。</p><p>@UUID[Compendium.pf2e.spell-effects.lGU4GIF2GUn21zFa]{法术效果：洞开鬼打墙（大成功）}</p><p><strong>成功</strong> 仪式成功。</p><p><strong>失败</strong> 仪式失败。</p><p><strong>大失败</strong> 仪式彻底失败，两个困在墙内的幽灵挣脱出来并展开攻击。将这些幽灵视作@UUID[Compendium.pf2e.pathfinder-monster-core.N98ug9jQHqeFoK1N]，除了他们的幽灵之手攻击造成心灵伤害而非虚能伤害。</p>"
         },
         "Winter's Breath": {
-            "description": "<p>冬季寒冷潮湿的月份是与朋友和家人一起享用一壶热茶的绝妙时机。仪式名中的“息”指的是从刚煮好的茶杯中飘来，端在手中吸入的蒸汽。虽然仪式叫这个名字，但它可以在任何季节施放，不过除非它在冬天施放，否则成功施放<em>冬之息</em>的DC增加2（或在夏季施放此仪式时增加4）。</p>\n<p>当你施放此仪式时，你会召唤出一座魔法亭子，包含有一顶鲜艳帐篷或一片由大量鲜艳旗帜装饰的区域。两种情况下，仪式都将为施法者创造出足够多的茶和茶具，可以招待至多6名客人（包含施法者）。在仪式期间，所有客人必须彬彬有礼，举止端庄。由<em>冬之息</em>创造的茶总是美味的，但茶和参加茶会的效果取决于魔法的成功度。在茶会结束时，仪式才会完成，你和次要施法者如常尝试检定。如果茶会在任意时间点被中断，茶就会消失，仪式被打断。</p>\n<hr />\n<p><strong>大成功</strong> 茶会是件真正的乐事。茶水为每位客人施放@UUID[Compendium.pf2e.spells-srd.Item.SnaLVgxZ9ryUFmUr]与@UUID[Compendium.pf2e.spells-srd.Item.5esP2GVzvxWsMgaX]。每位客人在接下来12小时内还将获得10点临时生命值，以及对抗情绪效果的豁免上+1状态加值。</p>\n<p><strong>成功</strong> 同大成功，除了每位客人必须从两种法术中选择一种施放给他们，他们也不会在豁免上获得状态加值。</p>\n<p><strong>失败</strong> 茶水在嘴里留下一种苦涩不愉快的味道，不会提供任何增益。</p>\n<p><strong>大失败</strong> 茶水非但没能让人精神振奋，心情愉悦，反而令人失望沮丧。你和客人陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}，且在12小时内该状态值不能降低。</p>\n<hr />\n<p><strong>升阶（5环级）</strong> <em>@UUID[Compendium.pf2e.spells-srd.Item.SnaLVgxZ9ryUFmUr]</em>和<em>@UUID[Compendium.pf2e.spells-srd.Item.5esP2GVzvxWsMgaX]</em>法术升阶至4环级，授予的临时生命值提高4。</p>\n<p><strong>升阶（7环级）</strong> <em>@UUID[Compendium.pf2e.spells-srd.Item.SnaLVgxZ9ryUFmUr]</em>和<em>@UUID[Compendium.pf2e.spells-srd.Item.5esP2GVzvxWsMgaX]</em>法术升阶至6环级，授予的临时生命值提高8。</p>",
+            "description": "<p>冬季寒冷潮湿的月份是与朋友和家人一起享用一壶热茶的绝妙时机。仪式名中的“息”指的是从刚煮好的茶杯中飘来，端在手中吸入的蒸汽。虽然仪式叫这个名字，但它可以在任何季节施放，不过除非它在冬天施放，否则成功施放<em>冬之息</em>的DC增加2（或在夏季施放此仪式时增加4）。</p>\n<p>当你施放此仪式时，你会召唤出一座魔法亭子，包含有一顶鲜艳帐篷或一片由大量鲜艳旗帜装饰的区域。两种情况下，仪式都将为施法者创造出足够多的茶和茶具，可以招待至多6名客人（包含施法者）。在仪式期间，所有客人必须彬彬有礼，举止端庄。由<em>冬之息</em>创造的茶总是美味的，但茶和参加茶会的效果取决于魔法的成功度。在茶会结束时，仪式才会完成，你和次要施法者如常尝试检定。如果茶会在任意时间点被中断，茶就会消失，仪式被打断。</p><hr /><p><strong>大成功</strong> 茶会是件真正的乐事。茶水根据<em>冬之息</em>的等级为每位客人施放同环级的@UUID[Compendium.pf2e.spells-srd.Item.EfFMLVbmkBWmzoLF]，@UUID[Compendium.pf2e.spells-srd.Item.5esP2GVzvxWsMgaX]，@UUID[Compendium.pf2e.spells-srd.Item.Et8RSCLx8w7uOLvo]和@UUID[Compendium.pf2e.spells-srd.Item.BCuHKrDeJ4eq53M6]。每位客人在接下来12小时内还将获得10点临时生命值，以及对抗情绪效果的豁免上+1状态加值。</p>\n<p><strong>成功</strong> 同大成功，除了每位客人必须从五种法术中选择一种施放给他们，他们也不会在豁免上获得状态加值。</p>\n<p><strong>失败</strong> 茶水在嘴里留下一种苦涩不愉快的味道，不会提供任何增益。</p>\n<p><strong>大失败</strong> 茶水非但没能让人精神振奋，心情愉悦，反而令人失望沮丧。你和客人陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}，且在12小时内该状态值不能降低。</p><hr /><p><strong>升阶（+1）</strong> 成功和大成功提供的法术效果环级+1，临时生命值+2</p>",
             "name": "冬之息 Winter's Breath",
             "cost": "15 gp"
         },
@@ -8730,11 +8730,11 @@
         "Last Night's Vigil": {
             "target": "1个你所爱的生物",
             "name": "终夜守夜 Last Night's Vigil",
-            "description": "<p>在模糊的民间传说中，春季的第一天，秘密之母游荡在天夏将她的健康祝福赐予虚弱年老者。这些故事中说冬季女神会经常被真诚相爱，彼此尊重的爱人，朋友，或家人所吸引。终夜守夜是一个受到这些故事启发的民间仪式，为那些希望女神的秘密赠礼不是给自己而是给其所爱之人提供一个喘息的机会。</p>\n<p>这个简单的仪式只能于夜晚，在你所爱之人，以及生病，受伤或有其他不适的人们面前举行。你必须保持彻夜清醒，点燃线香来引导女神的道路。如果你在室内，你应该保持一扇门或窗微微半开，以接受她的神圣存在。如果是在冬夜里举行，仪式的技能检定DC减少1；如果是在冬季临近春季的最后一夜举行，DC改为减少2。</p>\n<p>如果仪式成功，你会在雪落声与马尾的拍打声中顷刻入眠。当你片刻之后醒来时，你所爱之人会对你微笑，身体有希望变得更健康。</p>\n<hr />\n<p><strong>大成功</strong> 目标生命值完全恢复，且他所承受的所有等级等于或低于仪式等级两倍的疾病阶段减少1。如果这会将疾病的阶段降至1以下，它会治愈该苦难。</p>\n<p><strong>成功</strong> 目标生命值完全恢复，且他所承受的一种等级等于或低于仪式等级两倍的疾病阶段减少1。如果这会将疾病的阶段降至1以下，它会治愈该苦难。</p>\n<p><strong>失败</strong> 仪式无效果。</p>\n<p><strong>大失败</strong> 你在接下来24小时内陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]状态。</p>\n<hr />\n<p><strong>升阶（4环级）</strong> 你可以在举行仪式时选择它是影响诅咒还是疾病。</p>\n<p><strong>升阶（6环级）</strong> 你可以同时影响诅咒和疾病。</p>",
+            "description": "<p>鲜为人知的民间传说记载，春季的第一天，秘密之母会游历天夏各地，向长者赐下健康的祝福。而终夜守夜便是一项受此类传说启发而诞生的民间仪式。</p>\n<p>这个简单的仪式只能于夜晚，在你所爱之人，以及生病，受伤或有其他不适的人们面前举行。你必须保持彻夜清醒，点燃线香来引导女神的道路。如果你在室内，你应该保持一扇门或窗微微半开，以接受她的神圣存在。如果是在冬夜里举行，仪式的技能检定DC减少1；如果是在冬季临近春季的最后一夜举行，DC改为减少2。</p>\n<p>如果仪式成功，你会在雪落声与马尾的拍打声中顷刻入眠。当你片刻之后醒来时，你所爱之人会对你微笑，身体有希望变得更健康。</p><hr /><p><strong>大成功</strong> 目标生命值完全恢复，且他所承受的所有等级等于或低于仪式等级两倍的疾病阶段减少1。如果这会将疾病的阶段降至1以下，它会治愈该苦难。</p>\n<p><strong>成功</strong> 目标生命值完全恢复，且他所承受的一种等级等于或低于仪式等级两倍的疾病阶段减少1。如果这会将疾病的阶段降至1以下，它会治愈该苦难。</p>\n<p><strong>失败</strong> 仪式无效果。</p>\n<p><strong>大失败</strong> 你在接下来24小时内陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]状态。</p><hr /><p><strong>升阶（4环级）</strong> 你可以在举行仪式时选择它是影响诅咒还是疾病。</p>\n<p><strong>升阶（6环级）</strong> 你可以同时影响诅咒和疾病。</p>",
             "cost": "价值10 gp的稀有线香"
         },
         "Regale the Lost Ones": {
-            "description": "<p>秋季较短的白天预示着作祟的增加，这种情况只会在冬天那寒冷黑暗的夜里加剧。随着秋季接近尾声，一些神门的村庄会雇佣或组建天夏戏剧团来借由仪式招待迷失者，在此他们表演来自文学经典和历史事件的戏剧，包括演出，音乐，杂技和武术。</p>\n<p>这些仪式具有双重目的；它们不仅给生者带来欢乐，还会娱乐和安抚“失者”——对幽灵或其他精魂的委婉说话——并尝试减少来自此类实体攻击的可能性。在秋季举行此仪式会让仪式的技能检定DC减少2。</p>\n<p>如果仪式成功，知性不死生物和其他精魂会变得不那么敌对，让村民可以专注于处理无心智的不死生物和其他更多物理威胁。这个仪式每个聚居地每年只能尝试一次；在同一个聚居地尝试额外的<em>招待失者</em>会自动取得大失败结果。</p>\n<hr />\n<p><strong>大成功</strong> 聚居地中3级及以下等级的作祟和不死生物变得更容易被击败。聚居地中所有受影响的作祟解除DC减少2，且聚居地内所有受影响的不死生物在开始战斗时陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。如果PC们在本部冒险中举行此仪式，他们会获得3希望点。</p>\n<p><strong>成功</strong> 聚居地中3级及以下等级的作祟变得更容易被注意和击败。聚居地中所有受影响的作祟解除DC减少1。如果PC们在本部冒险中举行此仪式，他们会获得1希望点。</p>\n<p><strong>失败</strong> 仪式无效果。</p>\n<p><strong>大失败</strong> 聚居地内3级及以下等级的作祟和不死生物变得更难被注意和击败。聚居地中所有受影响的作祟解除DC增加2，且聚居地内所有受影响的不死生物获得精英调整。如果PC们在本部冒险中举行此仪式，他们会失去3希望点。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 受影响的作祟和不死生物等级提升2。</p>",
+            "description": "<p>秋季较短的白天预示着作祟的增加，这种情况只会在冬天那寒冷黑暗的夜里加剧。随着秋季接近尾声，一些神门的村庄会雇佣或组建天夏戏剧团来借由仪式<em>招待迷失者</em>，在此他们表演来自文学经典和历史事件的戏剧，包括演出，音乐，杂技和武术。</p>\n<p>这些仪式具有双重目的；它们不仅给生者带来欢乐，还会娱乐和安抚“失者”——对幽灵或其他精魂的委婉说话——并尝试减少来自此类实体攻击的可能性。在秋季举行此仪式会让仪式的技能检定DC减少2。</p>\n<p>如果仪式成功，知性不死生物和其他精魂会变得不那么敌对，让村民可以专注于处理无心智的不死生物和其他更多物理威胁。这个仪式每个聚居地每年只能尝试一次；在同一个聚居地尝试额外的<em>招待失者</em>会自动取得大失败结果。</p><hr /><p><strong>大成功</strong> 聚居地中3级及以下等级的作祟和不死生物变得更容易被击败。聚居地中所有受影响的作祟解除DC减少2，且聚居地内所有受影响的不死生物在开始战斗时陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。如果PC们在第二幕或第三幕中举行此仪式，他们会获得3希望点。</p>\n<p><strong>成功</strong> 聚居地中3级及以下等级的作祟变得更容易被注意和击败。聚居地中所有受影响的作祟解除DC减少1。如果PC们在第二幕或第三幕中举行此仪式，他们会获得1希望点。</p>\n<p><strong>失败</strong> 仪式无效果。</p>\n<p><strong>大失败</strong> 聚居地内3级及以下等级的作祟和不死生物变得更难被注意和击败。聚居地中所有受影响的作祟解除DC增加2，且聚居地内所有受影响的不死生物获得精英调整。如果PC们在第二幕或第三幕中举行此仪式，他们会失去3希望点。</p><hr /><p><strong>升阶（+1）</strong> 受影响的作祟和不死生物等级提升2。</p>",
             "name": "招待失者 Regale the Lost Ones",
             "target": "一处等级等于或低于仪式等级两倍的聚居地",
             "duration": "1年",
@@ -9136,7 +9136,7 @@
         "Cycle of Retribution": {
             "name": "报应轮回 Cycle of Retribution",
             "target": "1个生物",
-            "description": "<p>暴力是如何产生更多暴力的理解填充进你目标的脑海中，致使其在尝试暴力动作时会承受心灵上的痛苦。目标必须尝试一次意志豁免。</p>\n<hr />\n<p><strong>大成功</strong> 该目标不受影响。</p>\n<p><strong>成功</strong> 该目标下次进行敌对动作时，受到1d4点心灵伤害；随后法术持续时间结束。</p>\n<p><strong>失败</strong> 该目标每轮第一次进行敌对动作时，受到1d4点心灵伤害。</p>\n<p><strong>大失败</strong> 该目标每次进行敌对动作时，受到1d4点心灵伤害。</p>\n<hr />\n<p><strong>升阶（+1）</strong> 心灵伤害增加1d4。</p>",
+            "description": "<p>暴力是如何产生更多暴力的理解填充进你目标的脑海中，致使其在尝试暴力动作时会承受心灵上的痛苦。目标必须尝试一次意志豁免。</p><hr /><p><strong>大成功</strong> 该目标不受影响。</p>\n<p><strong>成功</strong> 该目标下次进行敌对动作时，受到1d4点心灵伤害；随后法术持续时间结束。</p>\n<p><strong>失败</strong> 该目标每轮第一次进行敌对动作时，受到1d4点心灵伤害。</p>\n<p><strong>大失败</strong> 该目标每次进行敌对动作时，受到1d4点心灵伤害。</p><hr /><p><strong>升阶（+1）</strong> 心灵伤害增加1d4。</p>",
             "duration": "1分钟"
         },
         "Seed of Mercy": {
@@ -9869,7 +9869,7 @@
             "description": "<p>你的庇护主会进入目标的脑海，像从布条上抽丝一样抽出他们过去所受的训练。选择一个你知道目标可以使用的动作、行动或法术，比如以前见过的，或者通过回忆知识检查确定该生物拥有的能力。例如，你可以选择打击动作、@UUID[Compendium.pf2e.actionspf2e.Item.Dt6B1slsBy8ipJu9]动作、龙息或@UUID[Compendium.pf2e.spells-srd.Item.o6YCGx4lycsYpww4]法术，只要你知道目标可以使用它们的话。目标会尝试一次意志豁免。</p><hr /><p><strong>成功</strong> 生物不受影响。</p>\n<p><strong>失败</strong> 目标对其能力的记忆会变得模糊不清。每轮第一次使用所选能力时，他会受到3d8心灵伤害。如果你选择的是几乎所有人都能使用的能力，那么此能力的效果就会降低；如果你选择的是基本动作（如打击，行走或举起盾牌）或未受训即可使用的技能动作（如@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]或躲藏），目标会改为受到3d4心灵伤害。</p>\n<p><strong>大失败</strong> 同失败，并且目标在每轮首次使用该能力时，该能力的任何检定或DC会承受-2状态减值。</p>\n<p>@UUID[Compendium.pf2e.spell-effects.Item.nTISJz13lhHlc9pk]</p><hr /><p><strong>升阶（+1）</strong> 伤害增加1d8，如果是技能动作或未受训技能动作的话则为1d4</p>"
         },
         "Love's Sacrifice": {
-            "description": "<p>你大声呼救，你附近的生物就会受到蛊惑，为了表达他们的爱而扑到威胁面前。在没有魔法蛊惑的情况下，如果目标真心爱着施法者，由玩家或GM决定，豁免失败。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 该生物会移动到与你相邻，必要时会超过他的速度，因为魔法会迫使他超越自己的极限。他承受你原本承受伤害一半的伤害，而你承受剩下的伤害。如果你的生命值会降至0，那么你的生命值会降至1。</p>\n<p><strong>失败</strong> 同成功，除了他会承受额外伤害。如果伤害会将他降至0生命值，他立即死亡；这是一个死亡效果。</p><hr /><p><em>PFS备注：</em> 这个法术只能在GM允许下才能对友方NPC施放，或在某玩家允许下对该玩家的角色施放。</p>",
+            "description": "<p><strong>触发</strong> 你即将承受会使你HP降为0的伤害</p><hr /><p>你大声呼救，你附近的生物就会受到蛊惑，为了表达他们的爱而扑到威胁面前。在没有魔法蛊惑的情况下，如果目标真心爱着施法者，由玩家或GM决定，豁免失败。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 该生物会移动到与你相邻，必要时会超过他的速度，因为魔法会迫使他超越自己的极限。他承受你原本承受伤害一半的伤害，而你承受剩下的伤害。如果你的生命值会降至0，那么你的生命值会降至1。</p>\n<p><strong>失败</strong> 同成功，除了他会承受额外伤害。如果伤害会将他降至0生命值，他立即死亡；这是一个死亡效果。</p><hr /><p><em>PFS备注：</em> 这个法术只能在GM允许下才能对友方NPC施放，或在某玩家允许下对该玩家的角色施放。</p>",
             "name": "爱之牺牲 Love's Sacrifice",
             "target": "一个生物"
         },
