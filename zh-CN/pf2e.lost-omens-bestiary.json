@@ -4308,7 +4308,7 @@
         "Crystal Dragon (Adult)": {
             "items": {
                 "Lustrous Lunge": {
-                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其20尺内的生物都需要通过一个@Check[fortitude|dc:27|inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>",
+                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其@Template[emanation|distance:20]内的生物都需要通过一个@Check[fortitude|dc:27|options:area-effect,inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>",
                     "name": "璀璨突进 Lustrous Lunge"
                 },
                 "Ornamental Breath": {
@@ -4324,7 +4324,7 @@
                 },
                 "Shielding Stone": {
                     "name": "护身石壁 Shielding Stone",
-                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准掩蔽。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[6d6[bludgeoning]]伤害（@Check[reflex|dc:27|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
+                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准@UUID[Compendium.pf2e.other-effects.Item.I9lfZUiCwMiGogVi]。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[6d6[bludgeoning]]伤害（@Check[reflex|dc:27|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -4451,11 +4451,11 @@
                 },
                 "Dragonmist": {
                     "name": "龙之弥雾 Dragonmist",
-                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过造风术或其他类似方式）。一头青年云龙最多可同时维持3团龙之弥雾生效。</p>"
+                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过@UUID[Compendium.pf2e.spells-srd.Item.g8QqHpv2CWDwmIm1]或其他类似方式）。一头青年云龙最多可同时维持3团龙之弥雾生效。</p>"
                 },
                 "Thundercloud Breath": {
                     "name": "雷云吐息 Thundercloud Breath",
-                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:40]范围内造成@Damage[11d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:29|basic]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>"
+                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:40]范围内造成@Damage[11d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:29|basic|options:area-effect]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>"
                 },
                 "Draconic Momentum": {
                     "name": "龙之威势 Draconic Momentum",
@@ -5892,7 +5892,7 @@
                 },
                 "Shapes in the Fog": {
                     "name": "雾中之形 Shapes in the Fog",
-                    "description": "<p>凭云龙对其元素的掌握，在雾中塑造形体与影像简直易如反掌。所有处于龙之弥雾内或临近龙之弥雾的生物必须尝试一次@Check[will|dc:41]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]1轮（若大失败，还另外获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}）。</p>"
+                    "description": "<p>凭云龙对其元素的掌握，在雾中塑造形体与影像简直易如反掌。所有处于龙之弥雾内或临近龙之弥雾的生物必须尝试一次@Check[will|dc:41|options:inflicts:off-guard,inflicts:frightened]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]1轮（若大失败，还另外获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}）。</p>"
                 },
                 "+1 Status to All Saves vs. Magic": {
                     "name": "对魔法的全豁免+1状态加值 +1 Status to All Saves vs. Magic"
@@ -5911,11 +5911,11 @@
                 },
                 "Dragonmist": {
                     "name": "龙之弥雾 Dragonmist",
-                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过造风术或其他类似方式）。一头古云龙最多可同时维持5团龙之弥雾生效。</p>"
+                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过@UUID[Compendium.pf2e.spells-srd.Item.g8QqHpv2CWDwmIm1]或其他类似方式）。一头古云龙最多可同时维持5团龙之弥雾生效。</p>"
                 },
                 "Thundercloud Breath": {
                     "name": "雷云吐息 Thundercloud Breath",
-                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:60]范围内造成@Damage[20d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:41|basic]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>\n<p>雷云持续存在[[/gmr 1d4 #rounds]]{1d4轮}，和龙之弥雾有同样的效果。</p>"
+                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:60]范围内造成@Damage[20d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:41|basic|options:area-effect]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>\n<p>雷云持续存在[[/gmr 1d4 #rounds]]{1d4轮}，和龙之弥雾有同样的效果。</p>"
                 }
             },
             "prototypeToken": {
@@ -12754,7 +12754,7 @@
             },
             "items": {
                 "Thundercloud Breath": {
-                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:40]范围内造成@Damage[11d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:29|basic]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>",
+                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:40]范围内造成@Damage[11d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:29|basic|options:area-effect]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>",
                     "name": "雷云吐息 Thundercloud Breath"
                 },
                 "Mist Vision": {
@@ -12767,7 +12767,7 @@
                 },
                 "Dragonmist": {
                     "name": "龙之弥雾 Dragonmist",
-                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过造风术或其他类似方式）。一头青年云龙最多可同时维持3团龙之弥雾生效。</p>"
+                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过@UUID[Compendium.pf2e.spells-srd.Item.g8QqHpv2CWDwmIm1]或其他类似方式）。一头青年云龙最多可同时维持3团龙之弥雾生效。</p>"
                 }
             },
             "name": "青年云龙施法者 Cloud Dragon (Young, Spellcaster)"
@@ -13488,7 +13488,7 @@
             "items": {
                 "Thundercloud Breath": {
                     "name": "雷云吐息 Thundercloud Breath",
-                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:50]范围内造成@Damage[15d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:34|basic]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>"
+                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:50]范围内造成@Damage[15d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:34|basic|options:area-effect]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>"
                 },
                 "Mist Vision": {
                     "name": "雾中视界 Mist Vision",
@@ -13750,7 +13750,7 @@
         "Crystal Dragon (Adult, Spellcaster)": {
             "items": {
                 "Lustrous Lunge": {
-                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其20尺内的生物都需要通过一个@Check[fortitude|dc:27|inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>",
+                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其@Template[emanation|distance:20]内的生物都需要通过一个@Check[fortitude|dc:27|options:area-effect,inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>",
                     "name": "璀璨突进 Lustrous Lunge"
                 },
                 "Ornamental Breath": {
@@ -13766,7 +13766,7 @@
                 },
                 "Shielding Stone": {
                     "name": "护身石壁 Shielding Stone",
-                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准掩蔽。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[6d6[bludgeoning]]伤害（@Check[reflex|dc:27|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
+                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准@UUID[Compendium.pf2e.other-effects.Item.I9lfZUiCwMiGogVi]。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[6d6[bludgeoning]]伤害（@Check[reflex|dc:27|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
                 }
             },
             "prototypeToken": {
@@ -13798,7 +13798,7 @@
                 },
                 "Shielding Stone": {
                     "name": "护身石壁 Shielding Stone",
-                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准掩蔽。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[9d6[bludgeoning]]伤害（@Check[reflex|dc:38|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
+                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准@UUID[Compendium.pf2e.other-effects.Item.I9lfZUiCwMiGogVi]。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[9d6[bludgeoning]]伤害（@Check[reflex|dc:38|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
                 },
                 "Shimmering Armor": {
                     "description": "<p>当水晶龙受到任何造成物理伤害的攻击且造成重击时，他的体表鳞片炸裂，释放出锋利的裂片。于@Template[type:emanation|distance:15]区域内的全部生物受到@Damage[16d8[piercing]|options:area-damage]伤害（@Check[reflex|dc:38|basic|options:area-effect]豁免）</p>",
@@ -13806,7 +13806,7 @@
                 },
                 "Crystallize": {
                     "name": "结晶化 Crystallize",
-                    "description": "<p>水晶龙的爪抓会嵌入晶体碎片，使受打击的目标的血肉逐渐水晶化。目标需通过@Check[fortitude|dc:38|options:inflicts:petrified,inflicts:slowed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}），持续1分钟。后续对抗晶化的豁免失败会增加缓慢状态值。当生物因结晶化导致动作数降低为0时，该生物石化，并化为水晶而非普通石头。</p>"
+                    "description": "<p>水晶龙的爪抓会嵌入晶体碎片，使受打击的目标的血肉逐渐水晶化。目标需通过@Check[fortitude|dc:38|options:inflicts:petrified,inflicts:slowed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}），持续1分钟。后续对抗晶化的豁免失败会增加缓慢状态值。当生物因结晶化导致动作数降低为0时，该生物@UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]，并化为水晶而非普通石头。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -13818,7 +13818,7 @@
                 },
                 "Lustrous Lunge": {
                     "name": "璀璨突进 Lustrous Lunge",
-                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其20尺内的生物都需要通过一个@Check[fortitude|dc:38|inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>"
+                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其@Template[emanation|distance:20]内的生物都需要通过一个@Check[fortitude|dc:38|options:area-effect,inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>"
                 }
             },
             "prototypeToken": {
@@ -14518,12 +14518,12 @@
                     "description": "<p><strong>触发</strong> 云龙投掷先攻</p><hr /><p><strong>效果</strong> 云龙操控其元素就像呼吸一样简单。云龙使用2次龙之弥雾。</p>"
                 },
                 "Shapes in the Fog": {
-                    "description": "<p>凭云龙对其元素的掌握，在雾中塑造形体与影像简直易如反掌。所有处于龙之弥雾内或临近龙之弥雾的生物必须尝试一次@Check[will|dc:41]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]1轮（若大失败，还另外获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}）。</p>",
+                    "description": "<p>凭云龙对其元素的掌握，在雾中塑造形体与影像简直易如反掌。所有处于龙之弥雾内或临近龙之弥雾的生物必须尝试一次@Check[will|dc:41|options:inflicts:off-guard,inflicts:frightened]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]1轮（若大失败，还另外获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}）。</p>",
                     "name": "雾中之形 Shapes in the Fog"
                 },
                 "Thundercloud Breath": {
                     "name": "雷云吐息 Thundercloud Breath",
-                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:60]范围内造成@Damage[20d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:41|basic]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>\n<p>雷云持续存在[[/gmr 1d4 #rounds]]{1d4轮}，和龙之弥雾有同样的效果。</p>"
+                    "description": "<p>云龙喷吐雷云，在@Template[type:cone|distance:60]范围内造成@Damage[20d6[electricity]|options:area-damage]伤害（@Check[reflex|dc:41|basic|options:area-effect]豁免）。[[/gmr 1d4 #Recharge Thundercloud Breath]]{1d4轮}内云龙无法再使用雷云吐息。</p>\n<p>雷云持续存在[[/gmr 1d4 #rounds]]{1d4轮}，和龙之弥雾有同样的效果。</p>"
                 },
                 "Mist Vision": {
                     "name": "雾中视界 Mist Vision",
@@ -14546,7 +14546,7 @@
                 },
                 "Dragonmist": {
                     "name": "龙之弥雾 Dragonmist",
-                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过造风术或其他类似方式）。一头古云龙最多可同时维持5团龙之弥雾生效。</p>"
+                    "description": "<p>云龙在120尺范围内召唤出一团@Template[type:burst|distance:20]的骤起迷雾。迷雾中的所有生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，并且迷雾外的所有生物对迷雾内生物同样视为隐蔽。云龙可以再次使用此动作解消迷雾——任何其他试图移除龙之弥雾的人则必须通过一次成功的反制检定（通过@UUID[Compendium.pf2e.spells-srd.Item.g8QqHpv2CWDwmIm1]或其他类似方式）。一头古云龙最多可同时维持5团龙之弥雾生效。</p>"
                 },
                 "Mist Step": {
                     "name": "与雾同行 Mist Step",
@@ -14578,7 +14578,7 @@
                 },
                 "Shielding Stone": {
                     "name": "护身石壁 Shielding Stone",
-                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准掩蔽。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[9d6[bludgeoning]]伤害（@Check[reflex|dc:38|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
+                    "description": "<p><strong>触发</strong> 当某位距离该水晶龙至少10尺的生物以他为目标发起一次攻击时</p>\n<p><strong>需求</strong> 水晶龙位于地面之上，且自身与攻击者之间至少有一格未被占据的方格</p><hr /><p><strong>效果</strong> 水晶龙于自身与攻击者之间一未被占据的方格上召唤一块薄石板。水晶龙对触发的攻击获得标准@UUID[Compendium.pf2e.other-effects.Item.I9lfZUiCwMiGogVi]。石板将会坠落砸向首个进入该方格的非水晶龙生物，造成@Damage[9d6[bludgeoning]]伤害（@Check[reflex|dc:38|basic]豁免），否则石板将在1轮后自行崩解，不造成任何伤害。</p>"
                 },
                 "Shimmering Armor": {
                     "name": "流光护甲 Shimmering Armor",
@@ -14586,7 +14586,7 @@
                 },
                 "Crystallize": {
                     "name": "结晶化 Crystallize",
-                    "description": "<p>水晶龙的爪抓会嵌入晶体碎片，使受打击的目标的血肉逐渐水晶化。目标需通过@Check[fortitude|dc:38|options:inflicts:petrified,inflicts:slowed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}），持续1分钟。后续对抗晶化的豁免失败会增加缓慢状态值。当生物因结晶化导致动作数降低为0时，该生物石化，并化为水晶而非普通石头。</p>"
+                    "description": "<p>水晶龙的爪抓会嵌入晶体碎片，使受打击的目标的血肉逐渐水晶化。目标需通过@Check[fortitude|dc:38|options:inflicts:petrified,inflicts:slowed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}），持续1分钟。后续对抗晶化的豁免失败会增加缓慢状态值。当生物因结晶化导致动作数降低为0时，该生物@UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]，并化为水晶而非普通石头。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -14598,7 +14598,7 @@
                 },
                 "Lustrous Lunge": {
                     "name": "璀璨突进 Lustrous Lunge",
-                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其20尺内的生物都需要通过一个@Check[fortitude|dc:38|inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>"
+                    "description": "<p>水晶龙摆出令其体表在光线下闪耀炫目光芒的姿势。任何位于其@Template[emanation|distance:20]内的生物都需要通过一个@Check[fortitude|dc:38|options:area-effect,inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]状态1轮。</p>"
                 },
                 "Ornamental Breath": {
                     "name": "饰彩吐息 Ornamental Breath",
