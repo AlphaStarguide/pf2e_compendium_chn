@@ -44,11 +44,11 @@
             },
             "items": {
                 "Invoke Alocer": {
-                    "description": "<p><strong>触发</strong> 奥尔德格伦的生命值降低到60以下</p>\n<p><strong>频率</strong> 每日一次</p>\n<hr />\n<p><strong>效果</strong> 奥尔德格伦用炼狱语喊道：“全能的阿洛瑟赐予我力量，以你的名义杀死这些敌人！”</p>\n<p>之后他会立刻治疗@Damage[(3d6+7)[healing]]生命值，获得25尺的飞行速度，并且近战和远程打击额外造成@Damage[1d6[fire]]伤害。</p>\n<p>不过，这么做是要承担风险的，因为阿洛瑟并没有什么耐心。每当奥尔德格伦的回合结束时，他都必须进行@Check[flat|dc:11|name:End Invoke Alocer]检定（该纯骰检定的DC每轮增加1点）。如果失败，阿洛瑟就会对奥尔德格伦没能击败他的敌人感到失望，呼唤阿洛瑟的效果会立刻结束。此时奥尔德格伦会受到@Damage[(3d6+7)]伤害，飞行速度和武器打击的额外火焰伤害也会消失，并且导致奥尔德格伦陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}。</p>",
+                    "description": "<p><strong>触发</strong> 奥尔德格伦的生命值降低到60以下</p>\n<p><strong>频率</strong> 每日一次</p><hr /><p><strong>效果</strong> 奥尔德格伦用炼狱语喊道：“全能的阿洛瑟赐予我力量，以你的名义杀死这些敌人！”</p>\n<p>之后他会立刻治疗@Damage[(3d6+7)[healing]]生命值，获得25尺的飞行速度，并且近战和远程打击额外造成1d6火焰伤害。</p>\n<p>不过，这么做是要承担风险的，因为阿洛瑟并没有什么耐心。每当奥尔德格伦的回合结束时，他都必须进行@Check[flat|dc:11|name:End Invoke Alocer]检定（该纯骰检定的DC每轮增加1点）。如果失败，阿洛瑟就会对奥尔德格伦没能击败他的敌人感到失望，呼唤阿洛瑟的效果会立刻结束。此时奥尔德格伦会受到@Damage[(3d6+7)[untyped]] 伤害，飞行速度和武器打击的额外火焰伤害也会消失，并且导致奥尔德格伦陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 3}。</p>",
                     "name": "呼唤阿洛瑟 Invoke Alocer"
                 },
                 "Cruel Shot": {
-                    "description": "<p>奥尔德格伦花时间瞄准，并且残忍地微笑着用弓进行远程打击。</p>\n<p>如果命中，他将造成2d6精准伤害和1d6流血伤害。即便他未能命中，也会由于掠袭而过的箭矢造成[[/r 2d6]]伤害。残忍射击只有大失败时才不会造成任何伤害。</p>",
+                    "description": "<p>奥尔德格伦花时间瞄准，并且残忍地微笑着用弓进行远程打击。</p>\n<p>如果命中，他将造成2d6精准伤害和1d6流血伤害。即便他未能命中，也会由于掠袭而过的箭矢造成@Damage[2d6[untyped]]伤害。残忍射击只有大失败时才不会造成任何伤害。</p>",
                     "name": "残忍射击 Cruel Shot"
                 },
                 "equipment-Infernal Contract": {
@@ -816,7 +816,7 @@
                 },
                 "Frightful Presence": {
                     "name": "Frightful Presence",
-                    "description": "<p>90 feet @Check[will|dc:30]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:30|options:area-effect,inflicts:frightened]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Resilient Form": {
                     "name": "Resilient Form",
