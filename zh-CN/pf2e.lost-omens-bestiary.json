@@ -49,7 +49,7 @@
                 },
                 "Flap Wings": {
                     "name": "振翅 Flap Wings",
-                    "description": "<p>鹏拍打翅膀，创造出一股强大的寒气，将敌人推开。鹏10尺内的每个生物受到4d6钝击和@Damage[4d6[cold]]伤害（@Check[reflex|dc:32|basic]豁免）。豁免失败的生物会被推离10尺；大失败则被推离20尺并被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
+                    "description": "<p>鹏拍打翅膀，创造出一股强大的寒气，将敌人推开。鹏@Template[emanation|distance:10]内的每个生物受到@Damage[4d6[bludgeoning],4d6[cold]|options:area-damage]伤害（@Check[reflex|dc:32|basic|options:area-effect,forced-movement,inflicts:prone]豁免）。豁免失败的生物会被推离10尺；大失败则被推离20尺并被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>"
                 },
                 "At-Will Spells": {
                     "name": "随意法术 At-Will Spells",
@@ -2477,7 +2477,7 @@
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
-                    "description": "<p>中型，@Damage[(3d6+6)[bludgeoning]], 破裂 [20]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                    "description": "<p>中型，@Damage[(3d6+6)[bludgeoning]]，破裂值20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 },
                 "Goldsense (Precise) 120 feet": {
                     "name": "Goldsense (Precise) 120 feet",
@@ -4631,7 +4631,7 @@
                 },
                 "Force Pulse": {
                     "name": "Force Pulse",
-                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p>The dragon emits pulses of energy that radiates outward in a @Template[type:emanation|distance:25], dealing @Damage[(3d8+3)[force]|options:area-damage] damage (@Check[reflex|dc:42|basic] save).</p>\n<p>For each action spent, a new pulse of energy is created and each subsequent pulse after the first is 5 feet larger than the previous one.</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p><hr /><p>The dragon emits pulses of energy that radiates outward in a @Template[type:emanation|distance:25], dealing @Damage[(3d8+3)[force]|options:area-damage] damage (@Check[reflex|dc:42|basic|options:area-effect] save).</p>\n<p>For each action spent, a new pulse of energy is created and each subsequent pulse after the first is 5 feet larger than the previous one.</p>"
                 },
                 "Scattershot": {
                     "name": "Scattershot",
@@ -4639,7 +4639,7 @@
                 },
                 "Unstoppable Onslaught": {
                     "name": "Unstoppable Onslaught",
-                    "description": "<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> The barrage archdragon transforms into pure energy and surges across the battlefield. They Fly up to their Speed, and during this movement they have resistance 30 to all damage (except spirit damage). At any point during this movement, the dragon can make up to two claw Strikes; each of these Strikes deals an additional @Damage[(3d8+3)[force]] damage.</p>"
+                    "description": "<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> The barrage archdragon transforms into pure energy and surges across the battlefield. They Fly up to their Speed, and during this movement they have resistance 30 to all damage (except spirit damage). At any point during this movement, the dragon can make up to two claw Strikes; each of these Strikes deals an additional 3d8+3 force damage.</p>"
                 },
                 "Pushing Pulse": {
                     "name": "Pushing Pulse",
@@ -4663,7 +4663,7 @@
             "items": {
                 "Hide in Shadows": {
                     "name": "Hide in Shadows",
-                    "description": "<p>The dragon can Hide in dim light even if they don't have cover.</p>"
+                    "description": "<p>The dragon can [[/act hide]] in dim light even if they don't have cover.</p>"
                 },
                 "Umbral Pall": {
                     "name": "Umbral Pall",
@@ -4671,7 +4671,7 @@
                 },
                 "Tenebrous Breath": {
                     "name": "Tenebrous Breath",
-                    "description": "<p>The umbral dragon exhales in one of two ways. They can't use Tenebrous Breath again for [[/gmr 1d4 #Recharge Tenebrous Breath]]{1d4 rounds}.</p><ul><li><strong>Darkness</strong> (occult, void) The dragon breathes a blast of darkness that deals @Damage[16d6[void]|options:area-damage] damage in a @Template[type:cone|distance:40] (@Check[reflex|dc:36|basic|traits:occult,void] save). Undead creatures take @Damage[16d6[force]|options:area-damage]{force} damage instead of void damage.</li><li><p><strong>Shadows</strong> (occult, shadow) The dragon breathes a blast of shadows in a @Template[type:cone|distance:40]. Each creature within the cone must attempt a @Check[fortitude|dc:36|traits:occult,shadow] save.</p>\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} for 1 round.</p>\n<p><strong>Failure</strong> The creature is enfeebled 2 for 1 minute.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} for 1 minute and @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round.</p></li></ul>"
+                    "description": "<p>The umbral dragon exhales in one of two ways. They can't use Tenebrous Breath again for [[/gmr 1d4 #Recharge Tenebrous Breath]]{1d4 rounds}.</p><ul><li><strong>Darkness</strong> (occult, void) The dragon breathes a blast of darkness that deals @Damage[16d6[void]|options:area-damage] damage in a @Template[type:cone|distance:40] (@Check[reflex|dc:36|basic|traits:occult,void] save). Undead creatures take @Damage[16d6[force]|options:area-damage]{force} damage instead of void damage.</li><li><p><strong>Shadows</strong> (occult, shadow) The dragon breathes a blast of shadows in a @Template[type:cone|distance:40]. Each creature within the cone must attempt a @Check[fortitude|dc:36|options:inflicts:enfeebled,inflicts:blinded|traits:occult,shadow] save.</p>\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} for 1 round.</p>\n<p><strong>Failure</strong> The creature is enfeebled 2 for 1 minute.</p>\n<p><strong>Critical Failure</strong> The creature is enfeebled 2 for 1 minute and @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round.</p></li></ul>"
                 },
                 "Pin Shadow": {
                     "description": "<p><strong>Trigger</strong> A creature within reach of the dragon's claw uses a move action or leaves a square during a move action it's using</p>\n<p><strong>Requirements</strong> The triggering creature is in bright light or dim light and has a shadow</p><hr /><p><strong>Effect</strong> The dragon makes a claw Strike against the triggering creature. On a hit, the trigger creature also has its shadow pinned in place, restricting its movement. The creature treats the area of the dragon's aura as difficult terrain until it uses an Interact action to unpin its shadow. If the area was already difficult terrain, the creature treats it as greater difficult terrain.</p>",
@@ -4686,7 +4686,7 @@
                 },
                 "Devour Undead": {
                     "name": "Devour Undead",
-                    "description": "<p>The dragon's jaws Strikes have the benefit of a ghost touch property rune and deal an additional 5d6 force damage to undead.</p>"
+                    "description": "<p>The dragon's jaws Strikes have the benefit of a @UUID[Compendium.pf2e.equipment-srd.Item.JQdwHECogcTzdd8R]{Ghost Touch} property rune and deal an additional 5d6 force damage to undead.</p>"
                 },
                 "+2 to All Saves vs. Shadow": {
                     "name": "+2 to All Saves vs. Shadow"
@@ -4711,7 +4711,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>90尺，@Check[will|dc:27]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:27|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Word of Caution": {
                     "name": "谨慎之言 Word of Caution",
@@ -4804,7 +4804,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>90尺，@Check[will|dc:44]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:44|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Wing Deflection": {
                     "name": "双翼偏斜 Wing Deflection",
@@ -4856,7 +4856,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>90尺，@Check[will|dc:32]。具有动物，真菌和植物特征的生物在豁免时承受-2环境减值。</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:32|options:area-effect,inflicts:frightened]。具有动物，真菌和植物特征的生物在豁免时承受-2环境减值。</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Greater Constrict": {
                     "description": "<p>@Damage[(3d8+7)[bludgeoning]]，@Check[fortitude|dc:34|basic]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>",
@@ -4924,7 +4924,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>90尺，@Check[will|dc:43]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:43|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Impaling Charge": {
                     "name": "穿刺突袭 Impaling Charge",
@@ -5007,7 +5007,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>90尺，@Check[will|dc:33]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:33|options:area-effect,inflicts:frightened]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Word of Wisdom": {
                     "name": "智慧之言 Word of Wisdom",
@@ -5061,7 +5061,7 @@
                 },
                 "Apocalyptic Roar": {
                     "name": "天启咆哮 Apocalyptic Roar",
-                    "description": "<p><strong>频率</strong> 每日一次</p><hr /><p><strong>效果</strong> 至古执裁龙召唤其全部的神性力量。120尺距离内@Template[type:burst|distance:30]范围的所有生物受到@Damage[9d8[sonic]|options:area-damage]伤害附加@Damage[6d12[spirit]|options:area-damage]伤害（@Check[will|dc:44|basic]豁免）。</p>"
+                    "description": "<p><strong>频率</strong> 每日一次</p><hr /><p><strong>效果</strong> 至古执裁龙召唤其全部的神性力量。120尺距离内@Template[type:burst|distance:30]范围的所有生物受到@Damage[9d8[sonic],6d12[spirit]|options:area-damage]伤害（@Check[will|dc:44|basic]豁免）。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -5069,7 +5069,7 @@
                 },
                 "Divine Utterance": {
                     "name": "神之宣告 Divine Utterance",
-                    "description": "<p>执裁龙的尖啸道出神言的真理，在一个@Template[type:cone|distance:60]范围内造成@Damage[17d8[sonic]|options:area-damage]伤害（@Check[reflex|dc:44|basic]豁免）。它在[[/gmr 1d4 #Recharge Divine Utterance]]{1d4轮}内不能再次使用神之宣告。</p>"
+                    "description": "<p>执裁龙的尖啸道出神言的真理，在一个@Template[type:cone|distance:60]范围内造成@Damage[17d8[sonic]|options:area-damage]伤害（@Check[reflex|dc:44|basic|options:area-effect]豁免）。它在[[/gmr 1d4 #Recharge Divine Utterance]]{1d4轮}内不能再次使用神之宣告。</p>"
                 }
             },
             "prototypeToken": {
@@ -5130,7 +5130,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>90尺，@Check[will|dc:45]。具有动物，真菌和植物特征的生物在豁免时承受-2环境减值。</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:45|options:area-effect,inflicts:frightened]。具有动物，真菌和植物特征的生物在豁免时承受-2环境减值。</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Forest Shape": {
                     "description": "<p>当施放@UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]时，森龙可以变成体型和年龄与他们自身相同的树木，使用其自己的AC。</p>",
@@ -5444,7 +5444,7 @@
                 },
                 "Diplomatic Solution": {
                     "name": "外交解决 Diplomatic Solution",
-                    "description": "<p><strong>触发</strong> 低语龙进行先攻检定</p><hr /><p><strong>效果</strong> 低语龙将其视线内60尺范围内的所有敌人作为目标，施放环级等于低语龙等级一半（向上取整）的安定心神（@Check[will|dc:42]豁免）。低语龙无需维持此效果，但如果低语龙对受到影响的生物采取任何敌对行动，则对所有生物终止该效果。 </p>"
+                    "description": "<p><strong>触发</strong> 低语龙进行先攻检定</p><hr /><p><strong>效果</strong> 低语龙将其视线内@Template[emanation|distance:60]范围内的所有敌人作为目标，施放环级等于低语龙等级一半（向上取整）的@UUID[Compendium.pf2e.spells-srd.Item.b515AZlB0sridKSq]（@Check[will|dc:42]豁免）。低语龙无需维持此效果，但如果低语龙对受到影响的生物采取任何敌对行动，则对所有生物终止该效果。 </p>"
                 },
                 "Steal Knowledge": {
                     "name": "窃取知识 Steal Knowledge",
@@ -10415,7 +10415,7 @@
                 },
                 "Frightful Presence": {
                     "name": "恐怖威压 Frightful Presence",
-                    "description": "<p>90尺，@Check[will|dc:36]</p>\n<p>如果豁免大失败，直到其下一回合开始前该生物陷入麻痹</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
+                    "description": "<p>90尺，@Check[will|dc:36|options:area-effect,inflicts:frightened,inflicts:paralyzed]</p>\n<p>如果豁免大失败，直到其下一回合开始前该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.FrightfulPresence]</p>"
                 },
                 "Sunlight Powerlessness": {
                     "name": "阳光失能 Sunlight Powerlessness",
@@ -12462,7 +12462,7 @@
                 },
                 "Diplomatic Solution": {
                     "name": "外交解决 Diplomatic Solution",
-                    "description": "<p><strong>触发</strong> 低语龙进行先攻检定</p><hr /><p><strong>效果</strong> 低语龙将其视线内60尺范围内的所有敌人作为目标，施放环级等于低语龙等级一半（向上取整）的安定心神（@Check[will|dc:42]豁免）。低语龙无需维持此效果，但如果低语龙对受到影响的生物采取任何敌对行动，则对所有生物终止该效果。 </p>"
+                    "description": "<p><strong>触发</strong> 低语龙进行先攻检定</p><hr /><p><strong>效果</strong> 低语龙将其视线内@Template[emanation|distance:60]范围内的所有敌人作为目标，施放环级等于低语龙等级一半（向上取整）的@UUID[Compendium.pf2e.spells-srd.Item.b515AZlB0sridKSq]（@Check[will|dc:42]豁免）。低语龙无需维持此效果，但如果低语龙对受到影响的生物采取任何敌对行动，则对所有生物终止该效果。 </p>"
                 },
                 "Distracting Whisper": {
                     "name": "干扰低语 Distracting Whisper",
@@ -14729,7 +14729,7 @@
                 },
                 "Divine Utterance": {
                     "name": "神之宣告 Divine Utterance",
-                    "description": "<p>执裁龙的尖啸道出神言的真理，在一个@Template[type:cone|distance:30]范围内造成@Damage[8d8[sonic]|options:area-damage]伤害（@Check[reflex|dc:28|basic]豁免）。它在[[/gmr 1d4 #Recharge Divine Utterance]]{1d4轮}内不能再次使用神之宣告。</p>"
+                    "description": "<p>执裁龙的尖啸道出神言的真理，在一个@Template[type:cone|distance:30]范围内造成@Damage[8d8[sonic]|options:area-damage]伤害（@Check[reflex|dc:28|basic|options:area-effect]豁免）。它在[[/gmr 1d4 #Recharge Divine Utterance]]{1d4轮}内不能再次使用神之宣告。</p>"
                 }
             },
             "allSaves": "+2 status to all saves vs. divine"
