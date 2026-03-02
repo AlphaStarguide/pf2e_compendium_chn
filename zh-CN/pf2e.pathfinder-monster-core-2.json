@@ -3730,7 +3730,7 @@
                 },
                 "Merciless Thrust": {
                     "name": "残忍猛戳 Merciless Thrust",
-                    "description": "<p>当狱战魔以三叉戟打击命中陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]、@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]状态的敌人时，打击造成额外[[/r 2d6]]伤害。</p>"
+                    "description": "<p>当狱战魔以三叉戟打击命中陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]、@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]、@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]状态的敌人时，打击造成额外2d6伤害。</p>"
                 }
             },
             "prototypeToken": {
@@ -5843,7 +5843,7 @@
                 },
                 "Flowing Hair": {
                     "name": "Flowing Hair",
-                    "description": "<p>The rusalka attempts an Athletics check against the Fortitude save of each creature they have @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by their tresses. The rusalka moves each creature they succeed against up to 10 feet and each creature they critically succeed against up to 20 feet. This movement must all be within reach of its tresses.</p>"
+                    "description": "<p>The rusalka attempts an @Check[athletics|against:fortitude|options:forced-movement] check against the Fortitude DC of each creature they have @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} by their tresses. The rusalka moves each creature they succeed against up to 10 feet and each creature they critically succeed against up to 20 feet. This movement must all be within reach of its tresses.</p>"
                 },
                 "Constant Spells": {
                     "name": "常驻法术 Constant Spells",
@@ -8428,7 +8428,7 @@
             "items": {
                 "Head Bowl": {
                     "name": "Head Bowl",
-                    "description": "<p>The depression atop a kappa's head is filled with water. Spilling, evaporating, or otherwise removing all the water from the top of a kappa's head reduces all their Speeds to 5 feet until the basin is again filled with water. A kappa who becomes @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} must succeed at a @Check[reflex|dc:15] save or spill their water, and a kappa who becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} automatically spills their water.</p>\n<p>If a kappa is grappled, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, or stunned, another creature can attempt to spill the water from their bowl by spending a single action, which has the attack and manipulate traits, to attempt an Athletics check against the kappa's Fortitude DC. On a success, the creature spills the kappa's water.</p>"
+                    "description": "<p>The depression atop a kappa's head is filled with water. Spilling, evaporating, or otherwise removing all the water from the top of a kappa's head reduces all their Speeds to 5 feet until the basin is again filled with water. A kappa who becomes @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} must succeed at a @Check[reflex|dc:15] save or spill their water, and a kappa who becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} automatically spills their water.</p>\n<p>If a kappa is @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, or stunned, another creature can attempt to spill the water from their bowl by spending a single action, which has the attack and manipulate traits, to attempt an Athletics check against the kappa's Fortitude DC. On a success, the creature spills the kappa's water.</p>"
                 },
                 "Pull Arm": {
                     "name": "Pull Arm",
@@ -10710,7 +10710,7 @@
                 },
                 "Vent Energy": {
                     "name": "Vent Energy",
-                    "description": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.pf2e.energyGland.type]|options:area-damage] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HpX3bGlOkSp1PeWg]{Effect: Vent Energy}</p>"
+                    "description": "<p>The hadrinnex purges the energy in its energy gland for an external discharge.</p>\n<p>It either blasts the energy to deal @Damage[7d6[@actor.flags.system.energyGland.type]|options:area-damage] damage to creatures in a @Template[cone|distance:30] (@Check[reflex|dc:26|basic|options:area-effect] save), or directs the energy to its weapon arms, making its weapon arm Strikes deal an extra 2d6 energy damage for 1 minute.</p>\n<p>Either one expends the damage type stored in the hadrinnex's energy gland, as described below.</p>\n<p>After the energy is vented, the energy gland goes dormant. The hadrinnex loses its energy resistance and can't use energy ray until it uses Rapid Evolution to reconfigure its energy gland again. Directing energy to its weapon arms again removes any previous energy boost to its weapon arm.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.HpX3bGlOkSp1PeWg]{Effect: Vent Energy}</p>"
                 }
             }
         },
