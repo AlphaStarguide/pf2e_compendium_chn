@@ -411,7 +411,7 @@
         },
         "(Nymph Queen) Nymph's Beauty": {
             "name": "（宁芙仙后）宁芙之美 Nymph's Beauty",
-            "description": "<p>30尺。</p>\n<hr />\n<p>[Nymph Effect]</p>\n<hr />\n<p>在灵光范围内开始其回合的生物必须成功通过一次@Check[will|dc:0]豁免，否则将遭受到宁芙仙后条目中所描述的效果。</p>"
+            "description": "<p>30尺。[宁芙效果]</p>\n<hr />\n<p>在灵光范围内开始其回合的生物必须成功通过一次@Check[will|dc:0]豁免，否则将遭受到宁芙仙后条目中所描述的效果。</p>"
         },
         "(Nymph Queen) Tied to the Land": {
             "name": "（宁芙仙后）大地纽带 Tied to the Land",
@@ -914,7 +914,7 @@
         },
         "(Siabrae) Miasma": {
             "name": "（秽岩恶鬼）瘴疠 Miasma",
-            "description": "<p>20尺。@Check[fortitude|dc:]{DC等于秽岩恶鬼的法术DC-4}</p>\n<hr />\n<p>进入灵光或在灵光范围内开始回合的生物豁免失败时获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}（大失败获得恶心4）。动物、精类、植物若是投出失败，则会得到大失败的结果。不论豁免结果如何，该生物都临时免疫本灵光1分钟。</p>"
+            "description": "<p>20尺。@Check[fortitude|dc:|options:area-effect,inflicts:sickened]{DC等于秽岩恶鬼的法术DC-4}</p>\n<hr />\n<p>进入灵光或在灵光范围内开始回合的生物豁免失败时获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}（大失败获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 4}）。动物、精类、植物若是投出失败，则会得到大失败的结果。不论豁免结果如何，该生物都临时免疫本灵光1分钟。</p>"
         },
         "(Siabrae) Rejuvenation": {
             "name": "（秽岩恶鬼）复生 Rejuvenation",
@@ -986,7 +986,7 @@
         },
         "(Bulwark) Serpentstone Breath": {
             "name": "（石垒像）蛇石吐息 (Bulwark）Serpentstone Breath",
-            "description": "<p>石垒像喷出60尺锥形的绿色气体。区域内每个生物必须尝试一场@Check[fortitude|dc:34]豁免。石垒像不能在[[/gmr 1d4 #Recharge Serpentstone Breath]]{1d4轮}内再次使用蛇石吐息。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物的身体变硬，使其陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 生物陷入石化1分钟。它能够在其每回合结束时尝试一次新的豁免。</p>\n<p><strong>大失败</strong> 生物永久陷入石化。</p>"
+            "description": "<p>石垒像喷出@Template[cone|distance:60]的绿色气体。区域内每个生物必须尝试一次@Check[fortitude|dc:34|options:area-effect,inflicts:slowed,inflicts:petrified]豁免。石垒像不能在[[/gmr 1d4 #Recharge Serpentstone Breath]]{1d4轮}内再次使用蛇石吐息。</p><hr /><p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物的身体变硬，使其陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 生物陷入@UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]1分钟。它能够在其每回合结束时尝试一次新的豁免。</p>\n<p><strong>大失败</strong> 生物永久陷入石化。</p>"
         },
         "(Ghoul) Ghoul Whispers": {
             "description": "<p><strong>需求</strong> 一个@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]或@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]的生物正处于食尸鬼的触及内</p><hr /><p><strong>效果</strong> 食尸鬼在生物耳畔低语着黑暗的念头与卑劣的渴望。该生物必须进行豁免来对抗禁忌渴望诅咒。</p>\n<p><strong>禁忌渴望 Forbidden Cravings</strong> （诅咒）被此诅咒的恶心状态影响时，生物仍然可以吃喝</p>\n<p><strong>豁免骰</strong> @Check[will|dc:|traits:curse]，使用食尸鬼等级的高法术DC</p>\n<p><strong>阶段1</strong> 携带诅咒但没有不良效果（1日）</p>\n<p><strong>阶段2</strong> @Damage[2d6[void]]伤害，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}直至他吃下生肉（1日）</p>\n<p><strong>阶段3</strong> 如同阶段2</p>\n<p><strong>阶段4</strong> 同阶段2，除非该生物在过去24小时内吃过生肉，那样他会转而受到@Damage[4d6[void]]伤害且获得@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}直至他吃下生肉（1日）</p>\n<p><strong>阶段5</strong> 如果该生物在过去24小时内吃过生肉，他死亡并复活为食尸鬼，否则诅咒退回阶段4</p>",
