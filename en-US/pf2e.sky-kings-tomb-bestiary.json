@@ -215,7 +215,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Enraged Polar Bear Spirit",
-            "disable": "<p>@Check[nature|dc:26] (expert) to calm the spirit, @Check[intimidate|dc:30] (master) to cow the spirit, or @Check[religion|dc:30] (expert) to contain the spiritual corruption (each successful check reduces its number of actions by 1)</p>",
+            "disable": "<p>@Check[nature|dc:26] (expert) to calm the spirit, @Check[intimidation|dc:30] (master) to cow the spirit, or @Check[religion|dc:30] (expert) to contain the spiritual corruption (each successful check reduces its number of actions by 1)</p>",
             "hazarddescription": "<p>The ghostly spirit of a polar bear stands on its hind legs and roars.</p>",
             "routine": "<p>(3 actions) The bear moves around the room at an alarming speed, seemingly teleporting, and Strikes a random creature with its spiritual claws.</p>",
             "reset": "<p>The bear spirit calms after no creatures are in the room for 1 minute but is ready to lash out again after 10 minutes.</p>",
@@ -1047,7 +1047,7 @@
             "items": {
                 "Stench": {
                     "name": "Stench",
-                    "description": "<p>30 feet. A creature that enters the area must attempt a @Check[fortitude|dc:21] save. On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, and on a critical failure, the creature also takes a –5 status penalty to its Speeds for 1 round. While within the aura, the creature takes a –2 circumstance penalty to saves to recover from the sickened condition. A creature that succeeds at its save is temporarily immune to all xulgaths stenches for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uB3CVn3momZO9h0L]{Effect: Xulgath Stench}</p>"
+                    "description": "<p>30 feet. A creature that enters the area must attempt a @Check[fortitude|dc:21|options:area-effect,inflicts:sickened] save. On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, and on a critical failure, the creature also takes a –5 status penalty to its Speeds for 1 round. While within the aura, the creature takes a –2 circumstance penalty to saves to recover from the sickened condition. A creature that succeeds at its save is temporarily immune to all xulgaths stenches for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uB3CVn3momZO9h0L]{Effect: Xulgath Stench}</p>"
                 },
                 "Troop Defenses": {
                     "name": "Troop Defenses",
@@ -1055,11 +1055,11 @@
                 },
                 "Fang and Claw": {
                     "name": "Fang and Claw",
-                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The xulgath ravening lashes out at enemies within 5 feet (@Check[reflex|dc:21|basic] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing]] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(1d6+5)[slashing]] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[slashing]] damage</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">3</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The xulgath ravening lashes out at enemies within 5 feet (@Check[reflex|dc:21|basic|options:area-effect] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[1d6[slashing]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(1d6+5)[slashing]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">3</span> @Damage[(2d6+5)[slashing]|options:area-damage] damage</p>"
                 },
                 "Infected Wounds": {
                     "name": "Infected Wounds",
-                    "description": "<p>The xulgaths' Fang and Claw deals an additional @Damage[1d6[poison]] damage to any creature sickened by a xulgath's stench.</p>"
+                    "description": "<p>The xulgaths' Fang and Claw deals an additional 1d6 poison damage to any creature sickened by a xulgath's stench.</p>"
                 },
                 "Sharpened Advance": {
                     "name": "Sharpened Advance",
@@ -1067,7 +1067,7 @@
                 },
                 "Troop Movement": {
                     "name": "Troop Movement",
-                    "description": "<p>Whenever a troop Strides, it first Forms Up as a free action to condense into a 20-foot-by–20- foot area (minus any missing squares), then moves up to its Speed. This works just like a Gargantuan creature moving; for instance, if any square of the troop enters difficult terrain, the extra movement cost applies to the whole troop.</p>"
+                    "description": "<p>Whenever a troop Strides, it first Forms Up as a free action to condense into a 20-foot-by-20-foot area (minus any missing squares), then moves up to its Speed. This works just like a Gargantuan creature moving; for instance, if any square of the troop enters difficult terrain, the extra movement cost applies to the whole troop.</p>"
                 }
             }
         },
@@ -2019,7 +2019,7 @@
             "items": {
                 "Stench": {
                     "name": "Stench",
-                    "description": "<p>30 feet. A creature that enters the area must attempt a @Check[fortitude|dc:21] save. On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, and on a critical failure, the creature also takes a –5 status penalty to its Speeds for 1 round. While within the aura, the creature takes a –2 circumstance penalty to saves to recover from the sickened condition. A creature that succeeds at its save is temporarily immune to all xulgaths stenches for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uB3CVn3momZO9h0L]{Effect: Xulgath Stench}</p>"
+                    "description": "<p>30 feet. A creature that enters the area must attempt a @Check[fortitude|dc:21|options:area-effect,inflicts:sickened] save. On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, and on a critical failure, the creature also takes a –5 status penalty to its Speeds for 1 round. While within the aura, the creature takes a –2 circumstance penalty to saves to recover from the sickened condition. A creature that succeeds at its save is temporarily immune to all xulgaths stenches for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.uB3CVn3momZO9h0L]{Effect: Xulgath Stench}</p>"
                 },
                 "+2 Status To Saves Vs. Petrifying Gaze": {
                     "name": "+2 Status To Saves Vs. Petrifying Gaze"
@@ -2719,11 +2719,11 @@
                 },
                 "Intense Heat": {
                     "name": "Intense Heat",
-                    "description": "<p>10 feet. @Damage[7d6[fire]] damage @Check[reflex|dc:28|basic]</p>"
+                    "description": "<p>10 feet. @Damage[7d6[fire]|options:area-damage] damage @Check[reflex|dc:28|basic|options:area-effect]</p>"
                 },
                 "Blue Flames": {
                     "name": "Blue Flames",
-                    "description": "<p>When the elemental inferno scores a critical hit, its body surges with blue flames, increasing the damage of its intense heat and Inferno Leap by @Damage[3d6[fire]]{3d6} until the start of its next turn.</p>"
+                    "description": "<p>When the elemental inferno scores a critical hit, its body surges with blue flames, increasing the damage of its intense heat and Inferno Leap by 3d6 until the start of its next turn.</p>"
                 },
                 "Inferno Leap": {
                     "name": "Inferno Leap",
@@ -2998,11 +2998,11 @@
                 },
                 "Petrifying Glance": {
                     "name": "Petrifying Glance",
-                    "description": "<p>30 feet. <strong>Trigger</strong> A creature within 30 feet that the basilisk can see starts its turn.</p>\n<hr />\n<p><strong>Effect</strong> The target must attempt a @Check[fortitude|dc:20] save. If it fails, it's @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute as its body slowly stiffens.</p>"
+                    "description": "<p>30 feet.</p>\n<p><strong>Trigger</strong> A creature within 30 feet that the basilisk can see starts its turn.</p><hr /><p><strong>Effect</strong> The target must attempt a @Check[fortitude|dc:20] save. If it fails, it's @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute as its body slowly stiffens.</p>"
                 },
                 "Petrifying Gaze": {
                     "name": "Petrifying Gaze",
-                    "description": "<p>The basilisk stares at a creature it can see within 30 feet. That creature must attempt a @Check[fortitude|dc:22] save. If it fails and has not already been slowed by Petrifying Glance or this ability, it becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}. If the creature was already slowed by this ability or Petrifying Glance, a failed save causes the creature to be @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified} permanently.</p>\n<p>A creature petrified in this manner that is coated (not just splashed) with fresh basilisk blood (taken from a basilisk that has been dead no longer than 1 hour) is instantly restored to flesh.</p>\n<p>A single basilisk contains enough blood to coat [[/br 1d3 #Medium Creatures]]{1d3 Medium creatures} in this manner.</p>"
+                    "description": "<p>The basilisk stares at a creature it can see within 30 feet. That creature must attempt a @Check[fortitude|dc:22|options:inflicts:slowed,inflicts:petrified] save. If it fails and has not already been slowed by Petrifying Glance or this ability, it becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}. If the creature was already slowed by this ability or Petrifying Glance, a failed save causes the creature to be @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified} permanently.</p>\n<p>A creature petrified in this manner that is coated (not just splashed) with fresh basilisk blood (taken from a basilisk that has been dead no longer than 1 hour) is instantly restored to flesh.</p>\n<p>A single basilisk contains enough blood to coat [[/gmr 1d3 #Medium Creatures]]{1d3 Medium creatures} in this manner.</p>"
                 }
             }
         }
