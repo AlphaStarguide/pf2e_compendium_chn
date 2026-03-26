@@ -300,7 +300,7 @@
                     "name": "隐于污秽 Hide in Filth"
                 },
                 "Stench": {
-                    "description": "<p>30尺，@Check[fortitude|dc:19]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>",
+                    "description": "<p>30尺，@Check[fortitude|dc:19|options:area-effect,inflicts:sickened,inflicts:slowed]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>",
                     "name": "恶臭 Stench"
                 },
                 "Wretched Weeps": {
@@ -788,7 +788,7 @@
                 },
                 "Shroud of Flame": {
                     "name": "烈焰护身 Shroud of Flame",
-                    "description": "<p>20尺。@Damage[4d6[fire]]伤害，@Check[reflex|dc:37|basic]豁免。</p>\n<p>当此灵光启动时，一个相邻生物如果以近战攻击命中凤凰，或用其他方式接触凤凰则受到@Damage[2d6[fire]]伤害。凤凰能用一个具有专注特征的单动作启动或关闭此灵光。</p>"
+                    "description": "<p>20尺。@Damage[4d6[fire]|options:area-damage]伤害，@Check[reflex|dc:37|basic|options:area-effect]豁免。</p>\n<p>当此灵光启动时，一个相邻生物如果以近战攻击命中凤凰，或用其他方式接触凤凰则受到@Damage[2d6[fire]]伤害。凤凰能用一个具有专注特征的单动作启动或关闭此灵光。</p>"
                 },
                 "Flaming Strafe": {
                     "name": "炽焰飞掠 Flaming Strafe",
@@ -852,7 +852,7 @@
             "items": {
                 "Calcification": {
                     "name": "钙化 Calcification",
-                    "description": "<p>鸡蛇兽的喙能把血肉变成石头。目标必须成功通过@Check[fortitude|dc:20]检定否则@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}）。目标更多次对此能力豁免失败会累加缓慢状态的状态值。一旦目标生物的可用动作减少为0，则目标被@UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]。如果生物未被石化，那么在生物针对钙化豁免失败的1分钟之后，缓慢状态结束。</p>\n<p>被石化之后每过24小时，受害者可以尝试通过@Check[fortitude|dc:20]检定来恢复。一旦成功，解除石化状态，但是在接下来的24小时内获得缓慢1。如果大成功，则解除石化且不受缓慢。如果失败，则继续被石化，24小时之后再次进行尝试。如果大失败，则永久石化，被害者无法再尝试任何豁免。</p>"
+                    "description": "<p>鸡蛇兽的喙能把血肉变成石头。目标必须成功通过@Check[fortitude|dc:20|inflicts:slowed,inflicts:petrified]检定否则@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（大失败@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}）。目标更多次对此能力豁免失败会累加缓慢状态的状态值。一旦目标生物的可用动作减少为0，则目标被@UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]。如果生物未被石化，那么在生物针对钙化豁免失败的1分钟之后，缓慢状态结束。</p>\n<p>被石化之后每过24小时，受害者可以尝试通过@Check[fortitude|dc:20]检定来恢复。一旦成功，解除石化状态，但是在接下来的24小时内获得缓慢1。如果大成功，则解除石化且不受缓慢。如果失败，则继续被石化，24小时之后再次进行尝试。如果大失败，则永久石化，被害者无法再尝试任何豁免。</p>"
                 }
             },
             "prototypeToken": {
@@ -932,7 +932,7 @@
                 },
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>10尺，@Check[fortitude|dc:15]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>10尺，@Check[fortitude|dc:15|options:area-effect,inflicts:sickened,inflicts:slowed]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
                 "Swift Leap": {
                     "name": "迅捷跳跃 Swift Leap",
@@ -972,7 +972,7 @@
             "publicNotes": "<p>火巨蟒生活在遍布岩浆的火元素位面。这些奇特的环境通常与人类世界的火山有关，使火巨蟒能够接触到各种各样的猎物。</p>\n<hr />\n<p>火元素是灼热的火元素位面的破坏性的具现。虽然大多数火元素都很高兴能有机会在远离自己家园位面的地方体验新种类的火焰，但即使是最为他人着想的火元素也会对类人生物及其财产造成危害。</p>",
             "items": {
                 "Intense Heat": {
-                    "description": "<p>10尺。@Damage[4d6[fire]]伤害，@Check[reflex|dc:25|basic]</p>",
+                    "description": "<p>10尺。@Damage[4d6[fire]|options:area-damage]伤害，@Check[reflex|dc:25|basic|options:area-effect]</p>",
                     "name": "酷热 Intense Heat"
                 },
                 "Breath Fire": {
@@ -1041,7 +1041,7 @@
                 },
                 "Petrifying Gaze": {
                     "name": "石化凝视 Petrifying Gaze",
-                    "description": "<p>蛇怪瞪视它30尺内的一个能被它看见的生物。目标必须通过@Check[fortitude|dc:22]检定，如果失败且没有被石化瞥视能力及本能力影响，则获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。如果目标已经被石化瞥视或此能力影响过，则目标被永久石化。</p>\n<p>通过这种方式被石化的生物，可以通过往表面涂满新鲜的蛇怪血（从死亡不超过1小时的蛇怪身体里提取）可以立即恢复肉身。一只蛇怪的血足够使[[/r 1d4 #中型生物]]只中型生物恢复肉身。</p>"
+                    "description": "<p>蛇怪瞪视它30尺内的一个能被它看见的生物。目标必须通过@Check[fortitude|dc:22|options:inflicts:slowed,inflicts:petrified]检定，如果失败且没有被石化瞥视能力及本能力影响，则获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}。如果目标已经被石化瞥视或此能力影响过，则目标被永久@UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]。</p>\n<p>通过这种方式被石化的生物，可以通过往表面涂满新鲜的蛇怪血（从死亡不超过1小时的蛇怪身体里提取）可以立即恢复肉身。一只蛇怪的血足够使[[/gmr 1d4 #中型生物]]只中型生物恢复肉身。</p>"
                 }
             },
             "name": "蛇怪 Basilisk"
@@ -1728,7 +1728,7 @@
                 },
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>30尺，@Check[fortitude|dc:28]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>30尺，@Check[fortitude|dc:28|options:area-effect,inflicts:sickened,inflicts:slowed]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
                 "Wretched Weeps": {
                     "description": "<p><strong>豁免骰</strong> @Check[fortitude|dc:26]</p>\n<hr />\n<p><strong>阶段1</strong> 携带疾病但无效果（1天）</p>\n<p><strong>阶段2</strong> @Damage[2d4[bleed]]每小时且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（1天）</p>\n<p><strong>阶段3</strong> @Damage[2d6[bleed]]每小时且@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}（1天）</p>",
@@ -3680,7 +3680,7 @@
             "items": {
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>30尺，@Check[fortitude|dc:19]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>30尺，@Check[fortitude|dc:19|options:area-effect,inflicts:sickened,inflicts:slowed]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
                 "Weakening Strike": {
                     "name": "削弱打击 Weakening Strike",
@@ -4343,7 +4343,7 @@
             "publicNotes": "<p>这些传说中的野兽像巨大的蛇，背上长有长长的鳍刺。大海蛇性情乖戾、领地意识强烈，能轻易弄翻船只，而且大多数在饥饿时或受到威胁时都会毫不犹豫地这么做。关于受害的船长们的故事比比皆是，他们中的很多人一生都在追捕这些弄沉了他们的爱船、让他们丢掉饭碗的难以追踪的怪物。这种追捕只能依赖于各种谣传或对这种动物的一瞥，因为确实很少有生物能在大海蛇造成的灾难中幸存下来。</p>\n<p>虽然许多渔民传说中把大海蛇描述成神祇指派的海洋守护者，亦或是魔鬼或恶魔的代理者。事实上是，大海蛇只是非常巨大的野兽，具有难以被魔法侦测的技巧而已。</p>",
             "items": {
                 "Undetectable": {
-                    "description": "<p>大海蛇能自动对任何针对它的带有侦测(Detection)、揭示(Revelation)或探知(Scrying)特征的效果进行反制，并且使用@Check[stealth]调整值作为其反制调整值。</p>",
+                    "description": "<p>大海蛇能自动对任何针对它的带有侦测、揭示或探知特征的效果进行反制，并且使用@Check[stealth]调整值作为其反制调整值。</p>",
                     "name": "难以侦测 Undetectable"
                 },
                 "Capsize": {
@@ -6351,7 +6351,7 @@
                 },
                 "Miasma": {
                     "name": "瘴气 Miasma",
-                    "description": "<p>20尺。</p>\n<p>龙使用毒气龙息后，一团气体毒云从它身上向外弥漫，持续1轮。任何在瘴气中结束回合的生物受到@Damage[4d6[poison]]伤害（@Check[fortitude|dc:37|basic]豁免）。</p>\n<p>瘴气中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态，并视其他生物为隐蔽状态。智角龙可以看穿这种隐蔽。</p>"
+                    "description": "<p>20尺。</p>\n<p>智角龙使用毒气龙息后，一团气体毒云从它身上向外弥漫，持续1轮。任何在瘴气中结束回合的生物受到@Damage[4d6[poison]|options:area-damage]伤害（@Check[fortitude|dc:37|basic|options:area-effect]豁免）。</p>\n<p>瘴气中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态，并视其他生物为隐蔽状态。智角龙可以看穿这种隐蔽。</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "龙之狂怒 Draconic Frenzy",
@@ -7288,7 +7288,7 @@
                 },
                 "Nymph's Beauty": {
                     "name": "宁芙之美 Nymph's Beauty",
-                    "description": "<p>30尺。</p>\n<hr />\n<p>豁免失败时，该目标因为敬畏而被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]1分钟。</p>\n<hr />\n<p>在灵光范围内开始其回合的生物必须成功通过一次@Check[will|dc:30]豁免，否则将遭受到宁芙仙后条目中所描述的效果。</p>"
+                    "description": "<p>30尺。豁免失败时，该目标因为敬畏而被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]1分钟。</p>\n<hr />\n<p>在灵光范围内开始其回合的生物必须成功通过一次@Check[will|dc:30|options:area-effect,inflicts:immobilized]豁免，否则将遭受到宁芙仙后条目中所描述的效果。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -7515,7 +7515,7 @@
                 },
                 "Nymph's Beauty": {
                     "name": "宁芙之美 Nymph's Beauty",
-                    "description": "<p>30尺。</p>\n<hr />\n<p>豁免失败时陷入震慑1，且接下来24小时内，每当于水泽仙后30尺内开始其回合时获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，且即使其在之后的回合中无法看见水泽仙后时也会受影响。</p>\n<hr />\n<p>在灵光范围内开始其回合的生物必须成功通过一次@Check[will|dc:23]豁免，否则将遭受到宁芙仙后条目中所描述的效果。</p>"
+                    "description": "<p>30尺。豁免失败时陷入震慑1，且接下来24小时内，每当于水泽仙后30尺内开始其回合时获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}，且即使其在之后的回合中无法看见水泽仙后时也会受影响。</p>\n<hr />\n<p>在灵光范围内开始其回合的生物必须成功通过一次@Check[will|dc:23|options:area-effect,inflicts:stunned]豁免，否则将遭受到宁芙仙后条目中所描述的效果。</p>"
                 },
                 "Change Shape": {
                     "name": "变身 Change Shape",
@@ -7579,7 +7579,7 @@
                 },
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>30尺，@Check[fortitude|dc:19]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>30尺，@Check[fortitude|dc:19|options:area-effect,inflicts:sickened,inflicts:slowed]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
                 "Nauseating Slap": {
                     "name": "作呕拍击 Nauseating Slap",
@@ -8003,10 +8003,10 @@
                 },
                 "Petrifying Gaze": {
                     "name": "石化凝视 Petrifying Gaze",
-                    "description": "<p>30尺。</p>\n<p>当有生物在灵光射程内结束自己的回合时，它必须尝试@Check[fortitude|dc:25]豁免。若生物豁免失败，则会陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1分钟。</p>\n<p>美杜莎能通过使用单动作来关闭或开启该灵光，该动作具有专注特征。</p>"
+                    "description": "<p>30尺。</p>\n<p>当有生物在灵光射程内结束自己的回合时，它必须尝试@Check[fortitude|dc:25|options:area-effect,inflicts:slowed]豁免。若生物豁免失败，则会陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1分钟。</p>\n<p>美杜莎能通过使用单动作来关闭或开启该灵光，该动作具有专注特征。</p>"
                 },
                 "Focus Gaze": {
-                    "description": "<p>美杜莎将目光聚焦在30尺内的一个她能看到的生物身上。目标必须立即尝试@Check[fortitude|dc:25]豁免对抗美杜莎的石化凝视。</p>\n<p>若该生物在尝试豁免之前已经由于石化凝视而陷入缓慢，则该次豁免失败将会使其永久石化。在尝试豁免后，该生物会临时免疫石化凝视，持续至美杜莎的下个回合开始为止。</p>",
+                    "description": "<p>美杜莎将目光聚焦在30尺内的一个她能看到的生物身上。目标必须立即尝试@Check[fortitude|dc:25|options:inflicts:slowed,inflicts:petrified]豁免对抗美杜莎的石化凝视。</p>\n<p>若该生物在尝试豁免之前已经由于石化凝视而陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]，则该次豁免失败将会使其永久@UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]。在尝试豁免后，该生物会临时免疫石化凝视，持续至美杜莎的下个回合开始为止。</p>",
                     "name": "集中凝视 Focus Gaze"
                 },
                 "Serpent Venom": {
@@ -8379,7 +8379,7 @@
                 },
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>10尺，@Check[fortitude|dc:14]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>10尺，@Check[fortitude|dc:14|options:area-effect,inflicts:sickened,inflicts:slowed]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
                 "Grave Knowledge": {
                     "name": "坟墓知识 Grave Knowledge",
@@ -10960,7 +10960,7 @@
                 },
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>30尺，@Check[fortitude|dc:21]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>30尺，@Check[fortitude|dc:21|options:area-effect,inflicts:sickened,inflicts:slowed]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
                 "Hungry Winds": {
                     "name": "饥饿之风 Hungry Winds",
@@ -13477,11 +13477,11 @@
                 },
                 "Intense Heat": {
                     "name": "酷热 Intense Heat",
-                    "description": "<p>10尺。@Damage[7d6[fire]]伤害，@Check[reflex|dc:28|basic]</p>"
+                    "description": "<p>10尺。@Damage[7d6[fire]|options:area-damage]伤害，@Check[reflex|dc:28|basic|options:area-effect]</p>"
                 },
                 "Blue Flames": {
                     "name": "蓝火 Blue Flames",
-                    "description": "<p>当元素炼狱造成重击时，它的身体涌出蓝色的火焰，直到它的下回合开始，它的酷热能力和炼狱之跃能力都能增加@Damage[3d6[fire]]伤害。</p>"
+                    "description": "<p>当元素炼狱造成重击时，它的身体涌出蓝色的火焰，直到它的下回合开始，它的酷热能力和炼狱之跃能力都能增加3d6火焰伤害。</p>"
                 },
                 "Inferno Leap": {
                     "name": "炼狱之跃 Inferno Leap",
@@ -14040,7 +14040,7 @@
             "items": {
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>30尺，@Check[fortitude|dc:16]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>30尺，@Check[fortitude|dc:16|options:area-effect,inflicts:sickened,inflicts:slowed]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 }
             },
             "publicNotes": "<p>地蜥人战士以愤怒与残忍作为手段，他们时刻准备着下一场战斗。他们从战斗中领取奖励——这包括从被击败的敌人身上搜刮的武器和物品，以及从俘虏肉体上割下的可怕战利品进行装饰——这些奖励十分受这些恶毒爬虫的喜爱，而那些在护甲和鳞片上布置最多装饰品的勇士则可以获得同族的最高敬意（或恐惧）。</p>\n<hr />\n<p>这些形似爬行类的类人生物生活在幽暗地域的最顶层，地蜥人（许多地表居民会将他们称为战蜥人）会在入侵者踏入他们的势力范围时立刻发动攻击。他们生活在被称为“帮伙”的简单家族式社区中，为了生存而与幽暗地域的其他敌对群体和好斗居民战斗。地蜥人偶尔会袭击地表的居民点，这种行为通常是在残忍、嗜血的首领的命令下发生，而这些首领自身又通常被更为强大的生物所奴役，比如娜迦或恶魔。一名典型的地蜥人通常会有灰色、暗灰色或灰白的鳞片，长长的尾巴以及顺着整个脊柱的骨质突起物。地蜥人一般有5尺高，150磅重。</p>\n<p>尽管现在的地蜥人十分野蛮且分散在各处，但他们曾是主物质世界中最早崛起的智能类人生物之一，统治着疆域遍及幽暗地域的庞大帝国。时至今日，能够保存至这个时代的只剩下某些较大洞穴中的石质金字塔废墟和破碎城市。一部分地蜥人仍旧生活在这些废墟中，崇拜着祖先的成就；有一部分地蜥人将这些地区视为禁地，任由幽暗地域的虫豸们肆虐其中。智者们无法就古地蜥人文明衰落的原因得出统一的结论。有些人认为这是与蛇人长年战争的败果，而有的人则认为是恶魔崇拜从内部腐蚀了这个文明。</p>\n<p>当然，许多地蜥人聚居地在今天仍旧信奉恶魔，他们向这些来自外层裂隙的恶魔以及其他可怖生物效忠并献上活祭。地蜥人秘术师偶尔会呼唤并束缚次级恶魔来帮助群体，但过于深入研究神秘学的地蜥人很可能会召唤过于强大的魔族，最终将这些地蜥人撕成碎片或者篡夺了聚居地的控制权。</p>"
@@ -14199,7 +14199,7 @@
                 },
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>30尺，@Check[fortitude|dc:27]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
+                    "description": "<p>30尺，@Check[fortitude|dc:27|options:area-effect,inflicts:sickened,inflicts:slowed]豁免</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Stench]</p>"
                 },
                 "Amnesia Venom": {
                     "name": "失忆毒液 Amnesia Venom",
@@ -14331,7 +14331,7 @@
                 },
                 "Miasma": {
                     "name": "瘴气 Miasma",
-                    "description": "<p>20尺。</p>\n<p>龙使用毒气龙息后，一团气体毒云从它身上向外弥漫，持续1轮。任何在瘴气中结束回合的生物受到@Damage[4d6[poison]]伤害（@Check[fortitude|dc:37|basic]豁免）。</p>\n<p>瘴气中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态，并视其他生物为隐蔽状态。智角龙可以看穿这种隐蔽。</p>"
+                    "description": "<p>20尺。</p>\n<p>龙使用毒气龙息后，一团气体毒云从它身上向外弥漫，持续1轮。任何在瘴气中结束回合的生物受到@Damage[4d6[poison]|options:area-damage]伤害（@Check[fortitude|dc:37|basic|options:area-effect]豁免）。</p>\n<p>瘴气中的生物获得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]状态，并视其他生物为隐蔽状态。智角龙可以看穿这种隐蔽。</p>"
                 },
                 "Twisting Tail": {
                     "name": "长尾扭转 Twisting Tail",
