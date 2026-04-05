@@ -111,7 +111,7 @@
                 },
                 "Glorious Visage": {
                     "name": "Glorious Visage",
-                    "description": "<p>The asura sanctifes themselves as either holy or unholy, gaining the trait corresponding to their choice and losing the opposing trait; their strikes, spells, and abilities also gain the trait corresponding to their choice. The asura also gains weakness 10 to the opposing sanctifcation and loses any weakness to its chosen sanctifcation. The choice is permanent until the asura uses this ability to change their sanctifcation.</p>"
+                    "description": "<p>The asura sanctifies themselves as either holy or unholy, gaining the trait corresponding to their choice and losing the opposing trait; their strikes, spells, and abilities also gain the trait corresponding to their choice. The asura also gains weakness 10 to the opposing sanctification and loses any weakness to its chosen sanctification. The choice is permanent until the asura uses this ability to change their sanctification.</p>"
                 },
                 "Slither": {
                     "name": "Slither",
@@ -133,9 +133,9 @@
             "name": "Shade (Outer Rifts)",
             "publicNotes": "<p>The larvae appear as maggot-like grubs with the face the shade had in life.</p><hr /><p>When a mortal dies, their soul travels to the Boneyard in the Outer Planes where they're judged by Pharasma, the goddess of the dead. Once judged, their soul is sent on to their final reward or punishment and, in the process, transformed into a creature known as a shade. This transformation grants the soul a new body, one whose shape is determined by the prevailing philosophical forces of the plane to which they're sent. A shade's memories from their former life usually fade, reduced to a few hazy fragments akin to half-remembered dreams. Regardless of the shade's size, power, or nature in life, they're a Medium creature in their afterlife.</p>\n<p>Existence as a shade can last for eons but isn't necessarily eternal. Deities, powerful denizens of the Great Beyond, or even the Outer Planes can further alter a shade's nature by either reducing them into raw quintessence, spiritual essence that's then used to expand a plane's physical manifestation, or by transforming them into a new form of supernatural life such as a celestial, monitor, or fiend. Should a shade die, their body breaks down in a process akin to decay, their form reverting to the elements that make up their plane. This represents the true end of a soul's journey—their life essence reuniting with the heart of the Great Beyond to be recycled into Creation's Forge, fueling the creation of new souls.</p>",
             "items": {
-                "Planar Incarnation - Abyss (The Larvae)": {
-                    "name": "Planar Incarnation - Abyss (The Larvae)",
-                    "description": "<p>All shades are formed from and personify the nature of the plane on which they manifest, and their statistics are adjusted as summarized below. They also gain any trait associated with creatures from their plane.</p>\n<p><strong>Abyss (The Larvae)</strong> The larvae appear as maggot-like grubs with the face the shade had in life.</p><ul><li><strong>Sanctification</strong> unholy</li><li><strong>Language</strong> Cthonian</li><li><strong>Additional Ability</strong> immune to disease and poison</li><li><strong>Melee</strong> jaws +7, <strong>Damage</strong> 1d8+2 piercing</li></ul>"
+                "Planar Incarnation - Outer Rifts (The Larvae)": {
+                    "name": "Planar Incarnation - Outer Rifts (The Larvae)",
+                    "description": "<p>All shades are formed from and personify the nature of the plane on which they manifest, and their statistics are adjusted as summarized below. They also gain any trait associated with creatures from their plane.</p>\n<p><strong>Outer Rifts (The Larvae)</strong> The larvae appear as maggot-like grubs with the face the shade had in life.</p><ul><li><strong>Sanctification</strong> unholy</li><li><strong>Language</strong> Chthonian</li><li><strong>Additional Ability</strong> immune to disease and poison</li><li><strong>Melee</strong> jaws +7, <strong>Damage</strong> 1d8+2 piercing</li></ul>"
                 }
             }
         },
@@ -2955,11 +2955,11 @@
                 },
                 "Whispering Wounds": {
                     "name": "Whispering Wounds",
-                    "description": "<p>30 feet. When a creature ends its turn in the aura, it hears the wounds on the ostiarius's body whisper obscene truths. The creature must succeed at a @Check[will|dc:21|options:inflicts:sickened] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>"
+                    "description": "<p>30 feet. When a creature ends its turn in the aura, it hears the wounds on the ostiarius's body whisper obscene truths. The creature must succeed at a @Check[will|dc:21|options:area-effect,inflicts:sickened] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>"
                 },
                 "Compel Courage": {
                     "name": "Compel Courage",
-                    "description": "<p>The ostiarius inspires their willing allies and themself by whispering words of courage from their wounds. The ostiarius and their allies in a @Template[type:emanation|distance:50] gain a +1 status bonus to attack rolls, damage rolls, and saves against fear effects. The ostiarius can Sustain Compel Courage. Non-velstracs who accept this compelled courage find bleeding wounds opening on their own bodies to whisper in thanks. They take 1 persistent bleed damage and can't attempt a flat check to end this damage as long as they're compelled.</p>"
+                    "description": "<p>The ostiarius inspires their willing allies and themself by whispering words of courage from their wounds. The ostiarius and their allies in a @Template[type:emanation|distance:50] gain a +1 status bonus to attack rolls, damage rolls, and saves against fear effects. The ostiarius can Sustain Compel Courage. Non-velstracs who accept this compelled courage find bleeding wounds opening on their own bodies to whisper in thanks. They take @Damage[1[bleed]] damage and can't attempt a flat check to end this damage as long as they're compelled.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.VfEM4AXrlPC3tgHX]{Effect: Compel Courage}</p>"
                 },
                 "Focus Gaze": {
                     "name": "Focus Gaze",
@@ -3453,14 +3453,18 @@
             },
             "name": "Lacridaemon",
             "publicNotes": "<p>Souls who die from neglect or exposure due to becoming lost, trapped in small spaces, or otherwise being far from help can transform into lacridaemons. These weaker daemons are full of despair and typically lash out against anyone they see, believing them to have intentionally abandoned the lacridaemon to their fate. Many lacridaemons are born from the souls of wicked mortals who push others away and thus suffer lonely deaths. Exiled, corrupt nobles and violent criminals left to rot in solitary prisons are common among their ranks.</p>\n<p>Lacridaemons tend to resemble humanoids with smooth, gray skin, a strange tail, and vicious claws. They each have patches of frost across their flesh, representing their ultimately cold and lonely ends. These patches appear on every lacridaemon even if their deaths weren't due to exposure to cold, as is the case for souls who perished alone from thirst in the desert.</p>\n<p>Even in their fiendish state, lacridaemons can't help but consider themselves alone. It's not uncommon to find groups of lacridaemons where each daemon acts independently, as if the others weren't there. They tend to sit alone in dark corners reminiscent of the places of they died, sobbing loudly, but once they become aware of the presence of non-fiends, they are quick to attack, believing these creatures to be the same ones who abandoned them in life. A lacridaemon's supernatural abilities allow the fiend to subject others to a fate similar to the their own death, making it difficult to escape danger and find help.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
             "items": {
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
                 "Steal Bearings": {
                     "name": "Steal Bearings",
-                    "description": "<p><strong>Trigger</strong> A creature within 30 feet Strides</p><hr /><p><strong>Effect</strong> The lacridaemon attempts to redirect the triggering creature so it eventually becomes as lost as the lacridaemon. The triggering creature attempts a @Check[will|dc:17] save. Regardless of the result, the creature becomes temporarily immune to all attempts to @UUID[Compendium.pf2e.actionspf2e.Item.RDXXE7wMrSPCLv5k]{Steal} Bearings for 1 minute.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature treats all squares as difficult terrain for its Stride.</p>\n<p><strong>Critical Failure</strong> As failure, except that the lacridaemon determines where the target moves during the Stride, though it can't move it into hazardous terrain or a place it can't stand.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature within 30 feet Strides</p><hr /><p><strong>Effect</strong> The lacridaemon attempts to redirect the triggering creature so it eventually becomes as lost as the lacridaemon. The triggering creature attempts a @Check[will|dc:17] save. Regardless of the result, the creature becomes temporarily immune to all attempts to Steal Bearings for 1 minute.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature treats all squares as difficult terrain for its Stride.</p>\n<p><strong>Critical Failure</strong> As failure, except that the lacridaemon determines where the target moves during the Stride, though it can't move it into hazardous terrain or a place it can't stand.</p>"
                 },
                 "Weeping Aura": {
                     "name": "Weeping Aura",
-                    "description": "<p>60 feet. The sounds of crying constantly surround a lacridaemon. A creature that first enters the area must attempt a @Check[will|dc:17] save as the sounds cause major disorientation. On a failure, the creature takes a –2 status penalty to Survival checks to Sense Direction (–4 on a critical failure) for 1 day. After attempting the save, the creature is temporarily immune to the lacridaemon's weeping aura for 1 day. The penalties from multiple weeping auras can increase up to a cumulative total of –10.</p>"
+                    "description": "<p>60 feet. The sounds of crying constantly surround a lacridaemon. A creature that first enters the area must attempt a @Check[will|dc:17] save as the sounds cause major disorientation. On a failure, the creature takes a –2 status penalty to Survival checks to Sense Direction (–4 on a critical failure) for 1 day. After attempting the save, the creature is temporarily immune to the lacridaemon's weeping aura for 1 day. The penalties from multiple weeping auras can increase up to a cumulative total of –10.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NRH7Eo6F5YYtUf4g]{Effect: Weeping Aura}</p>"
                 },
                 "Lacridaemon Venom": {
                     "name": "Lacridaemon Venom",
@@ -3468,7 +3472,7 @@
                 },
                 "Venomous Spray": {
                     "name": "Venomous Spray",
-                    "description": "<p>The lacridaemon's begins to weep, spraying its venom-filled tears at all creatures within 30 feet. The creatures are immediately exposed to lacridaemon venom. Other lacridaemons are immune to this venom.</p>"
+                    "description": "<p>The lacridaemon's begins to weep, spraying its venom-filled tears at all creatures within @Template[emanation|distance:30]{30 feet}. The creatures are immediately exposed to lacridaemon venom. Other lacridaemons are immune to this venom.</p>"
                 }
             }
         },
@@ -4451,11 +4455,11 @@
                 },
                 "Incessant Yammering": {
                     "name": "Incessant Yammering",
-                    "description": "<p>15 feet.</p>\n<p>A gobmob snake's heads constantly bicker and snipe at one another, annoying and distracting anyone nearby. Each non-goblin creature that begins its turn in the aura must attempt a @Check[will|dc:21|options:area-effect] save. On a failure, it takes a –1 status penalty to Perception checks and Will saves for 1 round. On a success, it is temporarily immune for 1 minute.</p>"
+                    "description": "<p>15 feet.</p>\n<p>A gobmob snake's heads constantly bicker and snipe at one another, annoying and distracting anyone nearby. Each non-goblin creature that begins its turn in the aura must attempt a @Check[will|dc:21|options:area-effect] save. On a failure, it takes a –1 status penalty to Perception checks and Will saves for 1 round. On a success, it is temporarily immune for 1 minute.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.abxVJdBjmotub57z]{Effect: Incessant Yammering}</p>"
                 },
                 "Infighting": {
                     "name": "Infighting",
-                    "description": "<p>Whenever a gobmob snake critically fails at an attack roll or skill check, it must succeed at a @Check[flat|dc:5] or become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} as its heads argue over which of them is to blame. An enemy can provoke an argument by attempting a @Check[deception|dc:20] check as a single action with the auditory, concentrate, linguistic, and mental traits.</p>"
+                    "description": "<p>Whenever a gobmob snake critically fails at an attack roll or skill check, it must succeed at a @Check[flat|dc:5] or become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} as its heads argue over which of them is to blame. An enemy can provoke an argument by attempting a @Check[deception|dc:20|traits:auditory,concentrate,linguistic,mental] check as a single action with the auditory, concentrate, linguistic, and mental traits.</p>"
                 },
                 "Coil": {
                     "name": "Coil",
@@ -4463,7 +4467,7 @@
                 },
                 "Goblin Breath": {
                     "name": "Goblin Breath",
-                    "description": "<p>The gobmob snake belches a cloud of nauseating vapor in a @Template[type:cone|distance:15]. Non-goblin creatures within the cloud must succeed at a @Check[fortitude|dc:20] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. On a critical failure, a creature is also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for as long as it is sickened. Creatures that successfully save are immune for 24 hours. The gobmob snake can't use Goblin Breath again for [[/gmr 1d4 #Recharge Goblin Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The gobmob snake belches a cloud of nauseating vapor in a @Template[type:cone|distance:15]. Non-goblin creatures within the cloud must succeed at a @Check[fortitude|dc:20|options:area-effect,inflicts:sickened,inflicts:slowed] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. On a critical failure, a creature is also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for as long as it is sickened. Creatures that successfully save are immune for 24 hours. The gobmob snake can't use Goblin Breath again for [[/gmr 1d4 #Recharge Goblin Breath]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -4682,7 +4686,7 @@
                 },
                 "Glorious Visage": {
                     "name": "Glorious Visage",
-                    "description": "<p>The asura sanctifes themselves as either holy or unholy, gaining the trait corresponding to their choice and losing the opposing trait; their strikes, spells, and abilities also gain the trait corresponding to their choice. The asura also gains weakness 5 to the opposing sanctifcation and loses any weakness to its chosen sanctifcation. The choice is permanent until the asura uses this ability to change their sanctifcation.</p>"
+                    "description": "<p>The asura sanctifies themselves as either holy or unholy, gaining the trait corresponding to their choice and losing the opposing trait; their strikes, spells, and abilities also gain the trait corresponding to their choice. The asura also gains weakness 5 to the opposing sanctification and loses any weakness to its chosen sanctification. The choice is permanent until the asura uses this ability to change their sanctification.</p>"
                 },
                 "Wound Thief": {
                     "name": "Wound Thief",
@@ -5585,7 +5589,7 @@
             "items": {
                 "Planar Incarnation - Dead Vault (The Caged)": {
                     "name": "Planar Incarnation - Dead Vault (The Caged)",
-                    "description": "<p>All shades are formed from and personify the nature of the plane on which they manifest, and their statistics are adjusted as summarized below. They also gain any trait associated with creatures from their plane.</p>\n<p><strong>Dead Vault (The Caged)</strong> The caged are sent to Rovagug's prison plane, and appear as chained versions of their mortal bodies, save that their faces are hideous insectile visages.</p><ul><li><strong>Sanctification</strong> unholy</li><li><strong>Language</strong> Cthonian</li><li><strong>Additional Ability</strong> @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.3JOi2cMcGhT3eze1]{Rend} bite;</li><li><strong>Melee</strong> bite +7, <strong>Damage</strong> 1d8+2 piercing</li></ul>"
+                    "description": "<p>All shades are formed from and personify the nature of the plane on which they manifest, and their statistics are adjusted as summarized below. They also gain any trait associated with creatures from their plane.</p>\n<p><strong>Dead Vault (The Caged)</strong> The caged are sent to Rovagug's prison plane, and appear as chained versions of their mortal bodies, save that their faces are hideous insectile visages.</p><ul><li><strong>Sanctification</strong> unholy</li><li><strong>Language</strong> Chthonian</li><li><strong>Additional Ability</strong> @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.3JOi2cMcGhT3eze1]{Rend} bite;</li><li><strong>Melee</strong> bite +7, <strong>Damage</strong> 1d8+2 piercing</li></ul>"
                 },
                 "Rend": {
                     "name": "Rend",
@@ -5956,6 +5960,8 @@
             },
             "name": "Kadamel",
             "publicNotes": "<p>Fiends spread corruption to places across the planes—every place they can reach. Kadamels guard the most crucial pathways and holy sanctums. They hold a patient vigil, never distracted from their task. Most crucially, they watch over planar portals, barring passage to all but the most powerful fends. When encountered, these archons speak and react little. They rarely even move or react, though they readily accept any assistance in defeating fendish invaders. Even this, they accept with only an ominous nod.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "ac": "all-around vision",
             "items": {
                 "Stone Shield": {
                     "name": "Stone Shield",
@@ -5978,11 +5984,11 @@
                 },
                 "Calcifying Cloud": {
                     "name": "Calcifying Cloud",
-                    "description": "<p><strong>Requirements</strong> The kadamel hit with a stone axe Strike during its most recent action</p><hr /><p><strong>Effect</strong> The kadamel's axe explodes into calcifying powder. The creature the axe hit and each non-archon creature in a @Template[type:emanation|distance:5] must succeed at a @Check[fortitude|dc:38] save or become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute. If the creature was already slowed by one of the kadamel's abilities, a failed save causes it to be petrifed permanently.</p>"
+                    "description": "<p><strong>Requirements</strong> The kadamel hit with a stone axe Strike during its most recent action</p><hr /><p><strong>Effect</strong> The kadamel's axe explodes into calcifying powder. The creature the axe hit and each non-archon creature in a @Template[type:emanation|distance:5] must succeed at a @Check[fortitude|dc:38|options:area-effect,inflicts:slowed,inflicts:petrified] save or become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute. If the creature was already slowed by one of the kadamel's abilities, a failed save causes it to be @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Petrified} permanently.</p>"
                 },
                 "Guardian Glyph": {
                     "name": "Guardian Glyph",
-                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The kadamel alters the inscriptions on their body to store an 8th-rank spell, choosing from divine decree, divine immolation, divine wrath, or planar seal. While storing the spell, the kadamel chooses an area they're guarding, typically a room containing a planar portal. When an intruder enters the area, the spell is cast automatically and expended. If the spell is targeted, it targets the triggering creature, and if it has an area, the area is centered on the triggering creature. Noticing the glyph requires a successful @Check[perception|dc:38] check. The glyph has an unlimited duration and ends if the kadamel uses this ability again or Dismisses the glyph.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The kadamel alters the inscriptions on their body to store an 8th-rank spell, choosing from @UUID[Compendium.pf2e.spells-srd.Item.sX2o0HH4RjJDAZ8C]{Divine Decree}, @UUID[Compendium.pf2e.spells-srd.Item.A16eFTRh82xIjMu8]{Divine Immolation}, @UUID[Compendium.pf2e.spells-srd.Item.hVU9msO9yGkxKZ3J]{Divine Wrath}, or @UUID[Compendium.pf2e.spells-srd.Item.XZE4BawIlTf88Yl9]{Planar Seal}. While storing the spell, the kadamel chooses an area they're guarding, typically a room containing a planar portal. When an intruder enters the area, the spell is cast automatically and expended. If the spell is targeted, it targets the triggering creature, and if it has an area, the area is centered on the triggering creature. Noticing the glyph requires a successful @Check[perception|dc:38] check. The glyph has an unlimited duration and ends if the kadamel uses this ability again or Dismisses the glyph.</p>"
                 },
                 "Re-Arm": {
                     "name": "Re-Arm",
@@ -10003,7 +10009,7 @@
                 },
                 "Goblin Breath": {
                     "name": "Goblin Breath",
-                    "description": "<p>The goblin snake belches a cloud of nauseating vapor in a @Template[type:cone|distance:15]. Non-goblin creatures within the cloud must succeed at a @Check[fortitude|dc:16] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. On a critical failure, a creature is also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for as long as it is sickened. Creatures that successfully save are immune for 24 hours. The goblin snake can't use Goblin Breath again for [[/gmr 1d4 #Recharge Goblin Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The goblin snake belches a cloud of nauseating vapor in a @Template[type:cone|distance:15]. Non-goblin creatures within the cloud must succeed at a @Check[fortitude|dc:16|options:area-effect,inflicts:sickened,inflicts:slowed] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}. On a critical failure, a creature is also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for as long as it is sickened. Creatures that successfully save are immune for 24 hours. The goblin snake can't use Goblin Breath again for [[/gmr 1d4 #Recharge Goblin Breath]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -10641,7 +10647,7 @@
                 },
                 "Beckoning Call": {
                     "name": "Beckoning Call",
-                    "description": "<p>The rusalka cries out a compelling invitation. Each non-fey creature within a @Template[type:emanation|distance:300] must attempt a @Check[will|dc:29] save. The effect lasts for 1 round, but if the rusalka uses Beckoning Call again on subsequent rounds, the duration extends by 1 round for all affected creatures. Once a creature succeeds at any save against Beckoning Call, that creature is temporarily immune for 24 hours.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} and must spend each of its actions to move closer to the rusalka, avoiding obvious dangers. If a beckoned creature is adjacent to the rusalka, it stays still and doesn't act. If attacked by the rusalka, the creature is freed from captivation at the end of the rusalka's turn.</p>\n<p><strong>Critical Failure</strong> As failure, but if attacked by the rusalka, the creature can attempt a new save only at the start of its next turn, rather than being freed at the end of the rusalka's turn.</p>"
+                    "description": "<p>The rusalka cries out a compelling invitation. Each non-fey creature within a @Template[type:emanation|distance:300] must attempt a @Check[will|dc:29|options:area-effect,inflicts:fascinated] save. The effect lasts for 1 round, but if the rusalka uses Beckoning Call again on subsequent rounds, the duration extends by 1 round for all affected creatures. Once a creature succeeds at any save against Beckoning Call, that creature is temporarily immune for 24 hours.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]{Fascinated} and must spend each of its actions to move closer to the rusalka, avoiding obvious dangers. If a beckoned creature is adjacent to the rusalka, it stays still and doesn't act. If attacked by the rusalka, the creature is freed from captivation at the end of the rusalka's turn.</p>\n<p><strong>Critical Failure</strong> As failure, but if attacked by the rusalka, the creature can attempt a new save only at the start of its next turn, rather than being freed at the end of the rusalka's turn.</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -10657,7 +10663,7 @@
                 },
                 "Shameful Touch": {
                     "name": "Shameful Touch",
-                    "description": "<p>The rusalka touches a creature within 5 feet using their hand, stirring up memories of regret and shame. The target must attempt a @Check[will|dc:35] save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Failure</strong> The creature is sickened 1 and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<p><strong>Critical Failure</strong> The creature is sickened 1, stunned 1, and it must use its first action on its next turn to Strike itself, automatically hitting.</p>"
+                    "description": "<p>The rusalka touches a creature within 5 feet using their hand, stirring up memories of regret and shame. The target must attempt a @Check[will|dc:35|options:inflicts:sickened,inflicts:stunned] save.</p><hr /><p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>\n<p><strong>Failure</strong> The creature is sickened 1 and @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>\n<p><strong>Critical Failure</strong> The creature is sickened 1, stunned 1, and it must use its first action on its next turn to Strike itself, automatically hitting.</p>"
                 }
             }
         },
