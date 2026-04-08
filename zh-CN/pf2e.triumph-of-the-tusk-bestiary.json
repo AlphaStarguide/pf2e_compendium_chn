@@ -548,181 +548,181 @@
             },
             "name": "牲畜践踏 Trampling Livestock",
             "disable": "<p>@Check[religion|dc:28] 来驱除动物的精魂, 或 @Check[nature|dc:26] 或 @Check[stabling-lore|dc:24] 来安抚它们</p>",
-            "hazarddescription": "<p>Several ghostly mammoths arise from the floorboards, pawing at the ground in terror before stampeding toward the door.</p>",
+            "hazarddescription": "<p>几头幽灵猛犸象从地板下冒了出来，惊恐地用蹄子刨着地面，随后朝着门口狂奔而去。</p>",
             "reset": "<p>1日</p>",
-            "stealthdetails": "<p>(trained)</p>",
+            "stealthdetails": "<p>(受训)</p>",
             "items": {
                 "Sudden Stampede": {
-                    "name": "Sudden Stampede",
-                    "description": "<p><strong>Trigger</strong> The door to the stable opens</p><hr /><p><strong>Effect</strong> The mammoth spirits activate in panic, materializing into physical forms as they stampede toward the door to escape. All creatures standing within 20 feet of the door take @Damage[(4d10+26)[force]] damage (@Check[reflex|dc:28|basic] save).</p>"
+                    "name": "突然奔逃 Sudden Stampede",
+                    "description": "<p><strong>触发</strong> 兽栏的门打开</p><hr /><p><strong>Effect</strong> 猛犸象的灵魂惊慌失措，化为实体形态，朝着门口狂奔以求逃脱。所有位于门边20 尺范围内的生物承受 @Damage[(4d10+26)[force]] 伤害(@Check[reflex|dc:28|basic] 豁免)。</p>"
                 }
             }
         },
         "Skeletal Drummer": {
             "prototypeToken": {
-                "name": "Skeletal Drummer"
+                "name": "骷髅鼓手"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Skeletal Drummer",
-            "publicNotes": "<p>To some, music is more than a hobby-it's an obsession. Every musician who lived and died for their craft runs the risk of returning as a fiddling bones, as do musicians who died before completing their magnum opus or receiving the accolades they believe they deserved. Driven to prove themselves even in undeath, fiddling bones often challenge famous performers to music duels.</p>",
-            "hp": "void healing",
-            "blurb": "Variant fiddling bones",
+            "name": "骷髅鼓手 Skeletal Drummer",
+            "publicNotes": "<p>对一些人来说，音乐远不止是一种爱好，更是让他们走火入魔的迷魂汤。每个为了音乐而生也为之而死的音乐家，都有可能以拨弦亡骨的形态归来，尤其是那些在完成自己的巨作或获得自认为应得的赞誉之前就去世的音乐家。哪怕身为不死之躯也竭力想要证明自己，拨弦亡骨经常向知名演奏家挑起音乐决斗。</p>",
+            "hp": "虚能治疗",
+            "blurb": "变体拨弦亡骨 Variant fiddling bones",
             "items": {
                 "Rhapsodic Flourish": {
-                    "name": "Rhapsodic Flourish",
-                    "description": "<p><strong>Trigger</strong> The skeletal drummer would roll a saving throw against an auditory or sonic effect</p><hr /><p><strong>Effect</strong> The skeletal drummer performs a refrain that deflects sonic vibrations. They roll a @Check[performance] check in place of the triggering saving throw. Sonic feedback rebounds from the effect, dealing @Damage[1d6[sonic]] damage to the source of the triggering effect if the Performance check succeeded or @Damage[2d6[sonic]] damage to the skeletal drummer on a failure.</p>"
+                    "name": "华丽狂想曲 Rhapsodic Flourish",
+                    "description": "<p><strong>触发</strong> 骷髅鼓手需要对一个听觉或音波效果进行一次豁免检定</p><hr /><p><strong>效果</strong> 骷髅鼓手演奏一段副歌，能抵消声波振动。他以一次 @Check[performance] 检定代替触发效果的豁免检定。如果表演检定成功，声波反馈会反弹至触发效果的来源，对其造成 @Damage[1d6[sonic]] 伤害；若失败，则对骷髅鼓手造成 @Damage[2d6[sonic]] 点音波伤害。</p>"
                 },
                 "Void Healing": {
-                    "name": "Void Healing",
+                    "name": "虚能治疗 Void Healing",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
                 },
                 "Destructive Finale": {
-                    "name": "Destructive Finale",
-                    "description": "<p><strong>Requirements</strong> March to War is in effect</p><hr /><p><strong>Effect</strong> The skeletal drummer performs a boisterous finale. They choose a @Template[type:cone|distance:30] or @Template[type:emanation|distance:15], and they deal @Damage[4d6[sonic]|options:area-damage] damage to all creatures in that area (@Check[reflex|dc:21|basic|options:area-effect] save). March to War immediately ends, and the skeletal drummer can't use March to War or Destructive Finale for [[/gmr 1d4 #Recharge Destructive Finale]]{1d4 rounds}.</p>"
+                    "name": "毁灭终曲 Destructive Finale",
+                    "description": "<p><strong>需求</strong> 向战进军能力正在生效 </p><hr /><p><strong>效果</strong> 骷髅鼓手敲响喧闹的终曲。它选择 @Template[type:cone|distance:30] 或 @Template[type:emanation|distance:15], 范围，对该区域内的所有生物造成 @Damage[4d6[sonic]|options:area-damage] 伤害（@Check[reflex|dc:21|basic|options:area-effect] 豁免)。 向战进军立即结束，并且骷髅鼓手在[[/gmr 1d4 #Recharge Destructive Finale]] 回合内不能使用向战进军或毁灭终曲能力。 </p>"
                 },
                 "March to War": {
-                    "name": "March to War",
-                    "description": "<p>The skeletal drummer plays a regular beat that compels others to march. Each creature in a @Template[type:emanation|distance:30] must attempt a @Check[will|dc:19] save. Undead are immune. The effect lasts until the end of the skeletal drummer's next turn, but the skeletal drummer can Sustain the effect on all affected creatures that remain within the emanation.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected and is temporarily immune for 1 hour.</p>\n<p><strong>Success</strong> The creature can't use actions with the move trait except to march, which uses the Stride action to move up to half the creature's Speed. If the creature has other Speeds, it can also march using those modes of travel.</p>\n<p><strong>Failure</strong> As success, and the creature must spend at least 1 action each turn marching.</p>"
+                    "name": "向战进军 March to War",
+                    "description": "<p>骷髅鼓手手敲奏出有节奏的鼓点，迫使他人随之行进。 @Template[type:emanation|distance:30] 范围内的所有生物必须进行一次 @Check[will|dc:19] 豁免，骷髅鼓手对此免疫。该效果持续到骷髅鼓手的下一个回合结束，但骷髅鼓手可以在所有受影响且滞留在弥漫范围内的生物上维持该效果。</p><hr /><p><strong>大成功</strong> 此生物不受影响且临时免疫此效果1小时。</p>\n<p><strong>成功</strong> 该生物无法使用具有移动特征的动作，除非是用于行军。行军在此处意味着该生物使用行走动作移动至多半速。如果该生物有其他速度，他也可以使用这些移动方式来行军。</p>\n<p><strong>失败</strong> 如同成功，且生物每轮必须使用至少一个动作来行军。</p>"
                 }
             }
         },
         "Bull Stampede": {
             "prototypeToken": {
-                "name": "Bull Stampede"
+                "name": "公牛奔踏"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Bull Stampede",
-            "disable": "<p>Four @Check[athletics|dc:27], @Check[intimidation|dc:27], @Check[nature|dc:27] (expert), or @Check[survival|dc:27] (expert) checks to guide the herd, find it paths through Stockside, or keep it in line.</p>",
-            "hazarddescription": "<p>Agitated aurochs trample through the streets.</p>",
-            "routine": "<p>(1 action) The stampede advances, trampling everything in its path. Each creature attempting to control the stampede must attempt a @Check[reflex|dc:30] save or be caught up in the stampede, taking @Damage[(2d12+15)[bludgeoning]] damage; a creature who succeeded at a skill check to disable the hazard this round has a +1 circumstance bonus to the Reflex save.</p><hr><p><strong>Critical Success</strong> The creature takes no damage.</p><p><strong>Success</strong> The creature takes half damage.</p><p><strong>Failure</strong> The creature takes full damage.</p><p><strong>Critical Failure</strong> The creature takes double damage and cannot attempt to disable the hazard next round, as they must spend it extricating themselves from the stampede.</p>",
-            "stealthdetails": "<p>(trained) to anticipate the herd's movements</p>",
+            "name": "公牛奔踏 Bull Stampede",
+            "disable": "<p>4次 @Check[athletics|dc:27], @Check[intimidation|dc:27], @Check[nature|dc:27] （专家）, 或 @Check[survival|dc:27] (专家) 检定以引导牛群、为其在货栈区找到路径或使其保持秩序。</p>",
+            "hazarddescription": "<p>狂躁的野牛群在街道上横冲直撞。 </p>",
+            "routine": "<p>(1 动作) 牛群向前推进，将沿途的一切都踩踏在脚下。每个试图控制牛群的生物必须进行一次 @Check[reflex|dc:30] 豁免，否则就会被卷入牛群的踩踏，受到@Damage[(2d12+15)[bludgeoning]] 伤害；本轮成功进行技能检定以解除此危害的生物在反射豁免上有+1 的环境加值。</p><hr><p><strong>大成功</strong> 该生物不受伤害。</p><p><strong>成功</strong> 该生物受到的伤害减半。</p><p><strong>失败</strong> 该生物受到全额伤害。</p><p><strong>大失败</strong> 该生物受到双倍伤害，并且下一轮无法尝试解除危害，因为他们必须花时间从踩踏中脱身。</p>",
+            "stealthdetails": "<p>(受训) 以预测兽群的动向 </p>",
             "items": {
                 "Rampage": {
-                    "name": "Rampage",
-                    "description": "<p><strong>Trigger</strong> A creature frees the bulls from the stable</p><hr /><p><strong>Effect</strong> The hazard rolls initiative as the bulls stampede.</p>"
+                    "name": "狂暴 Rampage",
+                    "description": "<p><strong>触发</strong> 一个生物将公牛从牛棚中放出</p><hr /><p><strong>效果</strong> 公牛群开始狂奔，危害进行先攻检定。</p>"
                 }
             }
         },
         "Orc Rampager": {
             "prototypeToken": {
-                "name": "Orc Rampager"
+                "name": "兽人狂怒者"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Orc Rampager",
-            "publicNotes": "<p>Fueled by bloodlust in battle, orc rampagers are fearsome combatants. They often serve as the elite shock troops of an orc hold. They train to move quickly through enemy ranks, striking all around them to disrupt their foe's defenses. The speed and fury of a group of orc rampagers working together is terrifying to behold.</p><hr /><p>The orcs of Belkzen are survivors to the core. Shaped by the unforgiving landscape, they're experts at managing resources and making do with scarcity. Aside from the relative peace from late spring through early summer during the Flood Truce, Belkzen's orc holds are nearly always at odds with each other, though these conflicts rarely rise to the level of war. Instead, there are raids for supplies, skirmishes to establish borders or retake lost territory, and feuds over personal slights. Outsiders who travel in Belkzen often become embroiled in these conflicts; sometimes they even trigger the fights themselves.</p>\n<p>The members of a given hold are often quite spread out, rather than centralized, so communication and coordination is sporadic. Even the Empty Hand orcs of Urgir rarely stay in the city all year long. At the very least, they travel a few miles to the Flood Road when the aurochs arrive, and they may wander even further afield when the mood strikes.</p><h2>Orc Faith</h2><p>With so many sudden disruptions to the orc pantheon, the faithful find themselves in a confusing time of change. Fervent worshippers of Lanishra, Sezelrian, and Zagresh don't particularly like the new deities who have usurped their old gods. Some of these zealots desperately cling to their old faiths, and many still hold a sliver of their fallen deity's power, further adding to the confusion.</p><h2>Salvage</h2><p>Orcs are experts at repurposing materials for their own use. Belkzen doesn't have rich soil or abundant deposits of valuable metals and minerals. Instead, orc crafters rely on salvage from battles or trade with outsiders for their raw materials. It's common for a basic tool, such as a knife or cooking pot, to be very old yet kept in perfect working condition. Even when a tool breaks, orc crafters find ways to reuse as much of it as they can manage.</p>",
+            "name": "兽人狂怒者 Orc Rampager",
+            "publicNotes": "<p>在战斗中因杀戮欲望而狂暴的兽人狂怒者是令人畏惧的战士。他们常常作为兽人氏族的精锐突击部队。他们训练自己在敌阵中快速穿梭，四面出击，以扰乱敌人的防御。一群协同作战的兽人狂怒者的速度和狂暴令人胆寒。</p><hr /><p>贝尔克赞的兽人骨子里就是生存者。在严酷环境的磨砺下，他们精于资源管理，善于在匮乏中求生存。除了春末夏初洪水盟约休战期的相对和平，贝尔克赞的兽人氏族几乎总是相互争斗，不过这些冲突很少升级为战争。取而代之的是为获取物资而进行的突袭、为划定边界或夺回失地而发生的冲突，以及因个人恩怨而引发的争斗。在贝尔克赞旅行的外来者常常卷入这些纷争之中，有时甚至会成为冲突的导火索。</p>\n<p>一个特定氏族的成员通常分布得很散，而非集中在一起，所以交流和协调是断断续续的。就连乌尔吉尔的空手氏族兽人也很少整年都待在城里。至少，当野牛到来时，他们会前往洪淹大道几英里之外的地方，而当兴致来了，他们甚至会走得更远。</p><h2>兽人信仰</h2><p>兽人诸神体系遭受如此多突如其来的冲击，信徒们发现自己正处于一个令人困惑的变革时期。兰尼什拉、塞泽里安和扎格雷什的狂热信徒们对取代他们旧神的新神并不买账。其中一些狂热分子仍紧紧依附于旧信仰，而且许多人仍保有其旧神的一丝力量，这更增添了混乱。 </p><h2>回收利用</h2><p>兽人善于将材料重新利用。贝尔克赞没有肥沃的土壤，也没有丰富的贵重金属和矿产资源。因此，兽人的工匠们依靠从战斗中获取的战利品或与外界的贸易来获取原材料。一把普通的刀具或一口煮锅，即便年代久远，仍能保持良好的使用状态也是很常见的。即便工具损坏了，兽人的工匠们也会想方设法尽可能多地加以利用。</p>",
             "items": {
                 "Ferocity": {
-                    "name": "Ferocity",
+                    "name": "凶猛 Ferocity",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Ferocity]</p>"
                 },
                 "Reactive Strike": {
-                    "name": "Reactive Strike",
+                    "name": "反应打击 Reactive Strike",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
                 },
                 "Rampaging Strikes": {
-                    "name": "Rampaging Strikes",
-                    "description": "<p>The orc rampager Strides and makes two melee Strikes at any point during that movement. Each Strike must target a different creature. The attacks count toward the rampager's multiple attack penalty, but the penalty doesn't increase until after Rampaging Strikes is complete.</p>"
+                    "name": "狂怒打击 Rampaging Strikes",
+                    "description": "<p> 兽人狂怒者进行一次移动，并在移动过程中的任意时刻进行两次近战攻击。每次攻击的目标必须是不同的生物。这些攻击计入狂怒者的多重攻击减值，但减值不会增加，直到狂怒打击完成之后。</p>"
                 }
             }
         },
         "Tyrant's Orders": {
             "prototypeToken": {
-                "name": "Tyrant's Orders"
+                "name": "暴君的命令 Tyrant's Orders"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Tyrant's Orders",
-            "disable": "<p>@Check[deception|dc:28] (expert) or @Check[performance|dc:28] (expert) to feign joining the fray, or @Check[religion|dc:30] (master) to ward Yagrekash away; three total successes in any combination are required to disable the haunt</p>",
-            "hazarddescription": "<p>Yagrekash appears to berate weak soldiers for not doing their part.</p>",
-            "reset": "<p>The haunt deactivates 1 minute after all creatures leave the area of Fort Whiteskull but resets immediately. Tyrant's orders resets 1 day after being disabled if the ancestor storm isn't put to rest.</p>",
-            "stealthdetails": "<p>(expert) or @UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]{Detect Magic}</p>",
+            "name": "暴君的命令 Tyrant's Orders",
+            "disable": "<p>@Check[deception|dc:28] （专家）或@Check[performance|dc:28] （专家） 来装作加入了战斗, 或 @Check[religion|dc:30] （大师） 驱离亚格雷卡什; 成功通过三次任意组合的技能才能解除作祟。</p>",
+            "hazarddescription": "<p>亚格雷卡什似乎在斥责那些不思进取的士兵，指责他们没有尽到自己的职责。</p>",
+            "reset": "<p>当所有生物离开白骨堡垒的区域1 分钟后，作祟就会失效，但会立即重置。如果祖灵风暴未被平息，暴君的命令在被禁用1 天后会重置。</p>",
+            "stealthdetails": "<p>(专家) 或 @UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]</p>",
             "items": {
                 "Command of the Legion": {
-                    "name": "Command of the Legion",
-                    "description": "<p><strong>Trigger</strong> A PC critically fails a skill check to navigate the ancestor storm</p><hr /><p><strong>Effect</strong> Yagrekash barks orders at the PCs to join the battle. All PCs must attempt a @Check[will|dc:27] save; orc and dromaar PCs take a –1 penalty.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} for 1 minute.</p>\n<p><strong>Failure</strong> The creature is compelled to join the Umbra Legion in battle, taking @Damage[(2d12+13)[mental]] damage.</p>\n<p><strong>Critical Failure</strong> As failure, but the damage is doubled.</p>"
+                    "name": "军团之令 Command of the Legion",
+                    "description": "<p><strong>触发</strong>玩家角色在穿越祖灵风暴的技能检定中大失败</p><hr /><p><strong>效果</strong> 亚格雷卡什向玩家角色们下达命令，让他们加入战斗。所有玩家角色必须进行一次 @Check[will|dc:27] 豁免；兽人和半兽人玩家角色-1减值 。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}，持续1分钟。</p>\n<p><strong>失败</strong> 该生物被迫加入暗影军团作战，承受 @Damage[(2d12+13)[mental]] 伤害。</p>\n<p><strong>大失败</strong> 如同失败，但伤害加倍。</p>"
                 }
             }
         },
         "Old Herok": {
             "prototypeToken": {
-                "name": "Old Herok"
+                "name": "老赫罗克"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Old Herok",
-            "publicNotes": "<p>Legendary creatures lurking in remote lakes, water orms always find their way into the tavern tales of lakeside communities. To some travelers, every lake of respectable size seems to be surrounded by towns full of fishers claiming to have spotted a water orm. These elusive creatures inhabit lakes mainly in cool and gloomy regions. Some claim that water orms are an offshoot of sea serpents and linnorms, but no credible link between these creatures has been found.</p>\n<p>Water orms have many features that sea serpents do not, such as the ability to understand the rudiments of language. Their natural inclination to avoid contact and remain hidden often remains at odds with their equally compelling curiosity about those they might spy upon the shores of their lakes. Water orm sightings usually occur when they can't help but to rise up to the surface to take a peek at someone particularly unusual on the beach or floating on the water's surface.</p>\n<p>These creatures are extremely long-lived and can go for decades, or even centuries, with very little to eat. This allows water orms to subsist in lakes without surfacing for many years, even in bodies of fresh water without ample food sources. Water orms might lie in a silty lake bed for years, their elusiveness only contributing to their mythical reputation. When a pet or child goes missing near a lake, rumors might hold that the local water orm is responsible, leading to folk tales that caution residents against venturing out alone near the water.</p>\n<p>While most water orms are described as serpentine or long-necked reptiles, others look similar to bizarrely elongated seals or whales, impossibly large sea horses, or long-necked creatures with paddles resembling those of elasmosauruses.</p>",
-            "blurb": "Variant water orm",
+            "name": "老赫罗克 Old Herok",
+            "publicNotes": "<p>名为湖怪的传说生物潜伏于偏远的湖泊中，他们总是能以某种方式成为湖畔社区的酒馆传说。对一些旅行者来说，每座规模较大的湖泊似乎都会被城镇环绕，且镇上到处都是声称目击过湖怪的渔民。这些难以琢磨的生物主要栖息在湖泊中凉爽幽暗的地区。有些人声称湖怪是海蛇和蛇龙的某种分支，但在人们已经发现的这些生物之间并未找到足够让人信服的联系。</p>\n<p>湖怪具有许多海蛇不具备的特征，比如能够理解简单的语言。他们避免与外界产生接触且时刻隐藏自身的本性有时会与同样强烈的好奇心产生冲突，想要窥视湖畔的人们。当湖怪没能忍耐住，想要浮上湖面窥探位于湖岸边或者漂浮在水面上的不同寻常的某人（或某物）时，人们就会目击到湖怪。</p>\n<p>这些生物的寿命极长，可以活数十年或者甚至数个世纪，而且食量很小。这使得湖怪可以在不浮上水面的前提下在湖泊中存活多年，即便身处缺乏充足食物来源的淡水水体中也是如此。湖怪可能会在湖床的淤泥中躺上数年，湖怪那难以捉摸的秉性只会让他们那传说中的名声变得更大。当有宠物或儿童在湖泊附近失踪时，就会有传闻说是被本地湖怪抓走了，进而产生民间传说警告居民们不要独自在湖水旁边探险。</p>\n<p>大多数湖怪被描绘为蛇形或者颈部很长的爬行动物，但也有一部分看起来像是拉长了的怪异海豹或鲸鱼、大得不可思议的海马、或者颈部很长且生长着类似板龙（elasmosauruses）的桨状器官。</p>",
+            "blurb": "变体湖怪 Variant water orm",
             "items": {
                 "Slow Metabolism": {
-                    "name": "Slow Metabolism",
-                    "description": "<p>A water orm can go for 10 years without feeding. Beyond this limit, the water orm's hunger causes it to become @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, but doesn't otherwise impact its lifespan. A water orm that's slowed as a result of starvation can remove this condition by using Swallow Whole to gulp down a meal.</p>"
+                    "name": "代谢缓慢 Slow Metabolism",
+                    "description": "<p>湖怪可以在不进食的情况下存活10年。超出此限制后，湖怪的饥饿就会让他陷入 @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，但这并不会影响他的寿命。由于饥饿而陷入缓慢的湖怪可以通过使用活吞进食来移除该状态。</p>"
                 },
                 "Undetectable": {
-                    "name": "Undetectable",
-                    "description": "<p>A water orm automatically tries to counteract any detection, revelation, or scrying divination attempted against it, using its Stealth modifier for the counteract check.</p>"
+                    "name": "难以侦测 Undetectable",
+                    "description": "<p>湖怪会自动反制任何对他进行的侦测（detection）、揭示（revelation）或探知（scrying）的预言尝试，使用他的隐秘调整值来进行反制检定。</p>"
                 },
                 "Quicksand Adaptation": {
-                    "name": "Quicksand Adaptation",
-                    "description": "<p>Old Herok is immune to the effects of quicksand.</p>"
+                    "name": "流沙适应 Quicksand Adaptation",
+                    "description": "<p>老赫洛克免疫流沙的影响。</p>"
                 },
                 "Sand Skim": {
-                    "name": "Sand Skim",
-                    "description": "<p>Old Herok can disintegrate into a coiled mass of sand rippling beneath the surface of quicksand. While in this form, he automatically succeeds at Athletics checks to swim and gains a +4 circumstance bonus to Stealth checks in quicksand. If a creature enters his space while in this form, he can revert to his normal form and attempt to Grab the creature as a reaction. Old Herok can remain in this form for 8 hours and can return to his normal form using a single action which has the concentrate trait.</p>"
+                    "name": "沙地滑行 Sand Skim",
+                    "description": "<p>老赫罗克能够化为一团盘绕的沙子，在流沙表面下潜行。处于这种形态时，他在流沙中游泳的运动检定自动成功，并且隐秘检定获得+4的环境加值。如果生物进入他的空间，他可以立即恢复原状并以反应动作尝试擒获该生物。老赫罗克能保持这种形态8小时，可使用具有专注特征的单动作来恢复成正常的形态。</p>"
                 },
                 "Swallow Whole": {
-                    "name": "Swallow Whole",
-                    "description": "<p>Large, @Damage[(2d8+8)[bludgeoning]] damage, Rupture 22</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                    "name": "活吞 Swallow Whole",
+                    "description": "<p>大型, @Damage[(2d8+8)[bludgeoning]] 伤害，破裂值 22</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
                 }
             }
         },
         "Ankhrav Hive Mother": {
             "prototypeToken": {
-                "name": "Ankhrav Hive Mother"
+                "name": "掘地虫巢母"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Ankhrav Hive Mother",
-            "publicNotes": "<p>Ankhrav hive mothers are fearsome predators that one can easily distinguish from the typical ankhrav not only by their greater size, but the presence of a large pair of razor-sharp, mantis-like arms.</p>\n<hr />\n<p>Ankhravs are immense, burrowing, and insectile predators, considered by inhabitants of the rural areas of the world to be an all-too-common plague.</p>",
+            "name": "掘地虫巢母 Ankhrav Hive Mother",
+            "publicNotes": "<p>掘地虫巢母是一种可怕的掠食者，人们可以很容易地将其与普通的掘地虫区分开来，不仅因为它们更大的体型，还因为它们有一对锋利的、象螳螂一样的巨大前肢。</p>\n<hr />\n<p>掘地虫是巨大的、穴居的节肢类捕食者，在乡村地区常被当地居民当做一种常见的天灾。</p>",
             "items": {
                 "Tremorsense (Imprecise) 90 feet": {
-                    "name": "Tremorsense (Imprecise) 90 feet",
+                    "name": "震颤感知（模糊感官）90 尺 Tremorsense (Imprecise) 90 feet",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>"
                 },
                 "Reactive Strike": {
-                    "name": "Reactive Strike",
+                    "name": "反应打击 Reactive Strike",
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ReactiveStrike]</p>"
                 },
                 "Armor-Rending Bite": {
-                    "name": "Armor-Rending Bite",
-                    "description": "<p>The hive mother makes a mandibles Strike; if the Strike hits, the target's armor takes the damage and the acid damage bypasses the armor's Hardness.</p>"
+                    "name": "裂甲噬咬 Armor-Rending Bite",
+                    "description": "<p>巢母进行1次虫颚打击，一旦打击命中，可以对目标的护甲造成酸蚀伤害，并且该酸蚀伤害无视目标护甲的硬度。</p>"
                 },
                 "Frenzy Pheromone": {
-                    "name": "Frenzy Pheromone",
-                    "description": "<p>The hive mother unleashes a pheromone that causes all other ankhravs within a @Template[emanation|distance:100] to become @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened 1} until the start of the hive mother's next turn, and they can use the extra action only for Burrow, Stride, or Strike actions.</p>\n<p>The hive mother can't unleash the pheromone again for [[/gmr 1d4 #Recharge Frenzy Pheromone]]{1d4 rounds}.</p>"
+                    "name": "狂暴信息素 Frenzy Pheromone",
+                    "description": "<p>巢母释放一种信息素，使得 @Template[emanation|distance:100] 范围内其他掘地虫获得 @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened 1}，持续到巢母下轮行动开始为止。该额外动作仅仅可以用来掘进、移动、或打击。</p>\n<p>巢母在 [[/gmr 1d4 #Recharge Frenzy Pheromone]]轮内无法再次释放信息素。</p>"
                 },
                 "Spray Acid": {
-                    "name": "Spray Acid",
-                    "description": "<p>The hive mother spews acid in a @Template[cone|distance:60], dealing @Damage[8d6[acid],1d6[persistent,acid]|options:area-damage]{8d6 acid damage and 1d6 persistent acid damage} (@Check[reflex|dc:26|basic|options:area-effect] save).</p>\n<p>It can't spew acid again for [[/gmr 1d4 #Recharge Spray Acid]]{1d4 rounds}.</p>"
+                    "name": "喷射酸液 Spray Acid",
+                    "description": "<p>巢母对 @Template[cone|distance:60]范围喷射酸蚀，造成 @Damage[8d6[acid],1d6[persistent,acid]|options:area-damage]{8d6酸蚀伤害和1d6持续酸蚀伤害 8d6 acid damage and 1d6 persistent acid damage} (@Check[reflex|dc:26|basic|options:area-effect] 豁免)。</p>\n<p>巢母在 [[/gmr 1d4 #Recharge Spray Acid]]轮内无法再次喷射酸液。</p>"
                 }
             }
         },
         "Magical Forge": {
             "prototypeToken": {
-                "name": "Magical Forge"
+                "name": "魔法熔炉"
             },
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "name": "Magical Forge",
+            "name": "魔法熔炉 Magical Forge",
             "publicNotes": "<p>This huge forge or oven is animated to protect a workspace or kitchen, travel alongside its owner, or both.</p>\n<hr />\n<p>Many animated objects have useful functions but become dangers when uncontrolled.</p>",
             "blurb": "Weak animated furnace",
             "ac": "(24 when broken); construct armor",
