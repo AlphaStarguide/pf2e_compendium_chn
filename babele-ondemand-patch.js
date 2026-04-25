@@ -85,7 +85,7 @@ function registerSettingsIfMissing() {
         [LOADING_MODES.FULL]: "Full (traditional)",
         [LOADING_MODES.ONDEMAND]: "On-demand (fast startup)",
       },
-      default: LOADING_MODES.ONDEMAND,
+      default: LOADING_MODES.FULL,
       onChange: () => window.location.reload(),
     });
   }
