@@ -1,7 +1,14 @@
 {
     "label": "Clerics+ Feats",
     "mapping": {
-        "prerequisites": "system.prerequisites.value"
+        "prerequisites": {
+            "path": "system.prerequisites.value",
+            "converter": "structured",
+            "cardinality": "many",
+            "mapping": {
+                "value": "value"
+            }
+        }
     },
     "entries": {
         "Arise to Sainthood": {

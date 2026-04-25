@@ -1,7 +1,14 @@
 {
     "label": "Impossible Lands+ Feats",
     "mapping": {
-        "prerequisites": "system.prerequisites.value"
+        "prerequisites": {
+            "path": "system.prerequisites.value",
+            "converter": "structured",
+            "cardinality": "many",
+            "mapping": {
+                "value": "value"
+            }
+        }
     },
     "entries": {
         "A Soul's Truth": {

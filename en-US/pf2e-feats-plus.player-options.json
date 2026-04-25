@@ -1,7 +1,14 @@
 {
     "label": "Player Options",
     "mapping": {
-        "prerequisites": "system.prerequisites.value"
+        "prerequisites": {
+            "path": "system.prerequisites.value",
+            "converter": "structured",
+            "cardinality": "many",
+            "mapping": {
+                "value": "value"
+            }
+        }
     },
     "entries": {
         "A Home in Every Port+": {

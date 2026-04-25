@@ -1,7 +1,14 @@
 {
     "label": "魔战士+专长 Feats",
     "mapping": {
-        "prerequisites": "system.prerequisites.value"
+        "prerequisites": {
+            "path": "system.prerequisites.value",
+            "converter": "structured",
+            "cardinality": "many",
+            "mapping": {
+                "value": "value"
+            }
+        }
     },
     "entries": {
         "Ablative Barrier Block": {

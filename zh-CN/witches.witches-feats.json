@@ -262,6 +262,13 @@
     },
     "label": "女巫+专长 Witches+ Feats",
     "mapping": {
-        "prerequisites": "system.prerequisites.value"
+        "prerequisites": {
+            "path": "system.prerequisites.value",
+            "converter": "structured",
+            "cardinality": "many",
+            "mapping": {
+                "value": "value"
+            }
+        }
     }
 }
