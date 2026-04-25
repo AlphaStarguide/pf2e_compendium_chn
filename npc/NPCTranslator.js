@@ -561,7 +561,8 @@ class Dictionary {
             }
         }
 
-        let translation = game.babele.packs.get(compendium).translate(data);
+        // Babele 2.8.0 dropped `babele.packs` in favor of the public translate(pack, data) facade.
+        let translation = game.babele.translate(compendium, data);
         if (translation.name.search("/") != -1)
             translation.name = translation.name.substring(0, translation.name.search("/"));
 
