@@ -1,4 +1,13 @@
-import {CompendiumMapping} from "../../babele/script/compendium-mapping.js";
+import {DocumentMapping} from "../../babele/script/mapping/document-mapping.js";
+
+// Babele 2.8.0 renamed CompendiumMapping → DocumentMapping and now requires
+// {identityExtractors, converterRegistry} from the running Babele facade.
+function buildItemMapping(definition) {
+    return new DocumentMapping("Item", definition, {
+        identityExtractors: game.babele.identityExtractorRegistry(),
+        converterRegistry: game.babele.converterRegistry,
+    });
+}
 
 // Register token setting
 Hooks.once("init", () => {
@@ -281,7 +290,7 @@ class NPCTranslator {
                 }
                 let translated = false;
                 if (translations) {
-                    let dynamicMapping = new CompendiumMapping("Item", this.dict.itemMapping);
+                    let dynamicMapping = buildItemMapping(this.dict.itemMapping);
 
                     let translation;
                     if (Array.isArray(translations)) {
@@ -293,7 +302,7 @@ class NPCTranslator {
                         let slug = this.sluggify(entry.name.replace("strike-", ""));
                         translated = true;
                         let translatedData = dynamicMapping.map(entry, translation);
-                        arr[index] = mergeObject(entry, mergeObject(translatedData, { translated: true }));
+                        arr[index] = foundry.utils.mergeObject(entry, foundry.utils.mergeObject(translatedData, { translated: true }));
                         if (!entry.system.slug) entry.system.slug = slug;
                     }
                 }
@@ -328,7 +337,7 @@ class NPCTranslator {
                 // Use manual added translations from json
                 let translated = false;
                 if (translations) {
-                    let dynamicMapping = new CompendiumMapping("Item", this.dict.itemMapping);
+                    let dynamicMapping = buildItemMapping(this.dict.itemMapping);
 
                     let translation;
                     if (Array.isArray(translations)) {
@@ -339,7 +348,7 @@ class NPCTranslator {
                     if (translation) {
                         translated = true;
                         let translatedData = dynamicMapping.map(entry, translation);
-                        arr[index] = mergeObject(entry, mergeObject(translatedData, { translated: true }));
+                        arr[index] = foundry.utils.mergeObject(entry, foundry.utils.mergeObject(translatedData, { translated: true }));
                     }
                 }
 
@@ -552,7 +561,8 @@ class Dictionary {
             }
         }
 
-        let translation = game.babele.packs.get(compendium).translate(data);
+        // Babele 2.8.0 dropped `babele.packs` in favor of the public translate(pack, data) facade.
+        let translation = game.babele.translate(compendium, data);
         if (translation.name.search("/") != -1)
             translation.name = translation.name.substring(0, translation.name.search("/"));
 
@@ -598,7 +608,7 @@ class Dictionary {
 
         // Use a translation provided in the localized actor data
         if (typeof translations != "undefined" && Object.keys(translations).includes(`equipment-${item.name}`)) {
-            let dynamicMapping = new CompendiumMapping("Item", itemMapping);
+            let dynamicMapping = buildItemMapping(itemMapping);
 
             let translation;
             if (Array.isArray(translations)) {
@@ -608,7 +618,7 @@ class Dictionary {
             }
             if (translation) {
                 let translatedData = dynamicMapping.map(item, translation);
-                translatedItem = mergeObject(item, mergeObject(translatedData, { translated: true }));
+                translatedItem = foundry.utils.mergeObject(item, foundry.utils.mergeObject(translatedData, { translated: true }));
             }
             // Translate non-compendium items and items with altered names
         } else if (Object.keys(this.translations.Item).includes(item.name.toLowerCase())) {
