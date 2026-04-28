@@ -1,6 +1,7 @@
 const PATCH_ID = detectHostPackageId() ?? "babele-ondemand-patch";
 
 const BABEL_NAMESPACE = "babele";
+const PATCH_NAMESPACE = PATCH_ID;
 const SETTING_LOADING_MODE = "loadingMode";
 const SETTING_LABELS = "labels";
 const SETTING_TITLE_INDEX = "titleIndex";
@@ -39,6 +40,99 @@ const ACTOR_IMPORT_INTERNAL_OPTION = "__babeleOnDemandActorImportTranslate";
 let capturedBabele = null;
 let patched = false;
 
+logPatch("module script loaded", { url: import.meta.url, patchId: PATCH_ID });
+
+function logPatch(message, data = null) {
+  try {
+    if (data !== null) console.info(`[${PATCH_ID}] ${message}`, data);
+    else console.info(`[${PATCH_ID}] ${message}`);
+  } catch {
+  }
+}
+
+function detectBabeleApiLevel(babele) {
+  if (!babele) return "unknown";
+  const hasModernFacade =
+    typeof babele.mappedCompendiumFor === "function" ||
+    typeof babele.translatedCompendiumFor === "function" ||
+    !!babele.documentMappings ||
+    !!babele.converterRegistry ||
+    typeof babele.identityExtractorRegistry === "function";
+  if (hasModernFacade) return "modern";
+  return "legacy";
+}
+
+function isMappingFileName(fileName) {
+  const name = getBaseName(fileName).toLowerCase();
+  return name === "mappings.json" || name === "mapping.json";
+}
+
+function orderTranslationSources({ system = [], modules = [], configured = [] } = {}) {
+  return [...system, ...modules, ...configured].filter((value) => typeof value === "string" && value.length);
+}
+
+function sortMappingFilesByDirectoryPreference(files = []) {
+  return [...files].sort((a, b) => {
+    const dirA = getDirName(a);
+    const dirB = getDirName(b);
+    if (dirA !== dirB) return dirA.localeCompare(dirB);
+    const nameA = getBaseName(a).toLowerCase();
+    const nameB = getBaseName(b).toLowerCase();
+    if (nameA === nameB) return 0;
+    if (nameA === "mappings.json") return -1;
+    if (nameB === "mappings.json") return 1;
+    return nameA.localeCompare(nameB);
+  });
+}
+
+function mergeTranslationPayloads(payloads) {
+  let translation = null;
+  for (const payload of (payloads ?? []).filter(Boolean)) {
+    if (!translation) {
+      translation = foundry.utils?.deepClone ? foundry.utils.deepClone(payload) : JSON.parse(JSON.stringify(payload));
+      continue;
+    }
+
+    translation.label = payload.label ?? translation.label;
+
+    if (payload.entries) {
+      if (Array.isArray(translation.entries) || Array.isArray(payload.entries)) {
+        const a = Array.isArray(translation.entries) ? translation.entries : [];
+        const b = Array.isArray(payload.entries) ? payload.entries : [];
+        translation.entries = a.concat(b);
+      } else {
+        translation.entries = { ...(translation.entries ?? {}), ...payload.entries };
+      }
+    }
+
+    if (payload.mapping) translation.mapping = { ...(translation.mapping ?? {}), ...payload.mapping };
+    if (payload.folders) translation.folders = { ...(translation.folders ?? {}), ...payload.folders };
+
+    if (payload.types) {
+      const a = Array.isArray(translation.types) ? translation.types : [];
+      const b = Array.isArray(payload.types) ? payload.types : [];
+      translation.types = Array.from(new Set(a.concat(b)));
+    }
+
+    if (payload.reference) {
+      const a = translation.reference ? (Array.isArray(translation.reference) ? translation.reference : [translation.reference]) : [];
+      const b = Array.isArray(payload.reference) ? payload.reference : [payload.reference];
+      translation.reference = Array.from(new Set(a.concat(b)));
+    }
+  }
+  return translation;
+}
+
+function getBaseName(fileName) {
+  return String(fileName ?? "").split("/").pop().split("\\").pop();
+}
+
+function getDirName(fileName) {
+  const value = String(fileName ?? "");
+  const slash = Math.max(value.lastIndexOf("/"), value.lastIndexOf("\\"));
+  return slash >= 0 ? value.slice(0, slash) : "";
+}
+
 function detectHostPackageId() {
   try {
     const url = new URL(import.meta.url);
@@ -51,11 +145,15 @@ function detectHostPackageId() {
 }
 
 Hooks.on("babele.init", (babele) => {
+  logPatch("babele.init hook received");
   capturedBabele = babele;
+  tryPatchBabele(babele);
 });
 
 Hooks.once("init", () => {
+  logPatch("init hook: registering settings and wrappers");
   registerSettingsIfMissing();
+  registerSettingsUiEnhancements();
   registerWrappers();
 
   if (capturedBabele) {
@@ -64,6 +162,7 @@ Hooks.once("init", () => {
 });
 
 Hooks.once("ready", () => {
+  logPatch("ready hook", { patched, hasBabele: !!game.babele });
   if (!patched && game.babele) {
     tryPatchBabele(game.babele);
   }
@@ -74,20 +173,28 @@ function registerSettingsIfMissing() {
   const settings = game.settings?.settings;
   if (!settings) return;
 
+  registerPatchLoadingModeMigrationSettingIfMissing(settings);
+
   if (!settings.has(`${BABEL_NAMESPACE}.${SETTING_LOADING_MODE}`)) {
     game.settings.register(BABEL_NAMESPACE, SETTING_LOADING_MODE, {
-      name: "Loading Mode",
-      hint: "Full loads all translations at startup. On-demand loads only labels/titles at startup and fetches full pack translations when documents are opened.",
+      name: "Babele 加载模式",
+      hint: "全量模式使用 Babele 原生启动加载；轻量模式只启动加载 labels/titles，并在打开具体合集包文档时按需加载完整翻译。",
       type: String,
       scope: "world",
       config: true,
       choices: {
-        [LOADING_MODES.FULL]: "Full (traditional)",
-        [LOADING_MODES.ONDEMAND]: "On-demand (fast startup)",
+        [LOADING_MODES.FULL]: "全量模式（原生加载）",
+        [LOADING_MODES.ONDEMAND]: "轻量模式（按需加载）",
       },
-      default: LOADING_MODES.FULL,
-      onChange: () => window.location.reload(),
+      default: getPatchLoadingModeSetting() ?? LOADING_MODES.ONDEMAND,
+      onChange: (value) => {
+        syncPatchLoadingModeSetting(value);
+        window.location.reload();
+      },
     });
+    logPatch("registered visible Babele loading mode setting", { namespace: BABEL_NAMESPACE });
+  } else {
+    logPatch("Babele loading mode setting already registered", { namespace: BABEL_NAMESPACE });
   }
 
   if (!settings.has(`${BABEL_NAMESPACE}.${SETTING_LABELS}`)) {
@@ -109,21 +216,137 @@ function registerSettingsIfMissing() {
   }
 }
 
-function isOnDemandMode() {
+function registerPatchLoadingModeMigrationSettingIfMissing(settings) {
+  if (settings.has(`${PATCH_NAMESPACE}.${SETTING_LOADING_MODE}`)) return;
+  game.settings.register(PATCH_NAMESPACE, SETTING_LOADING_MODE, {
+    type: String,
+    scope: "world",
+    config: false,
+    choices: {
+      [LOADING_MODES.FULL]: "Full (traditional)",
+      [LOADING_MODES.ONDEMAND]: "On-demand (fast startup)",
+    },
+    default: LOADING_MODES.ONDEMAND,
+  });
+}
+
+function getPatchLoadingModeSetting() {
   try {
-    const mode = game.settings?.get?.(BABEL_NAMESPACE, SETTING_LOADING_MODE);
-    return mode === LOADING_MODES.ONDEMAND;
+    const mode = game.settings?.get?.(PATCH_NAMESPACE, SETTING_LOADING_MODE);
+    return isValidLoadingMode(mode) ? mode : null;
   } catch {
-    return false;
+    return null;
   }
 }
 
+function getLoadingModeSetting() {
+  try {
+    const mode = game.settings?.get?.(BABEL_NAMESPACE, SETTING_LOADING_MODE);
+    if (isValidLoadingMode(mode)) return mode;
+  } catch {
+  }
+
+  return getPatchLoadingModeSetting() ?? LOADING_MODES.ONDEMAND;
+}
+
+function syncPatchLoadingModeSetting(value) {
+  if (!isValidLoadingMode(value)) return;
+  try {
+    if (game.settings?.get?.(PATCH_NAMESPACE, SETTING_LOADING_MODE) !== value) {
+      void game.settings?.set?.(PATCH_NAMESPACE, SETTING_LOADING_MODE, value);
+    }
+  } catch {
+  }
+}
+
+function isValidLoadingMode(value) {
+  return value === LOADING_MODES.FULL || value === LOADING_MODES.ONDEMAND;
+}
+
+function registerSettingsUiEnhancements() {
+  Hooks.on("renderSettingsConfig", (_app, html) => {
+    try {
+      enhanceLoadingModeSettingControl(html);
+    } catch {
+    }
+  });
+}
+
+function enhanceLoadingModeSettingControl(html) {
+  const root = html?.[0] ?? html?.element?.[0] ?? html?.element ?? html;
+  if (!root?.querySelector) return;
+
+  const select = root.querySelector(`select[name="${BABEL_NAMESPACE}.${SETTING_LOADING_MODE}"]`);
+  if (!select) {
+    logPatch("settings UI rendered but loading mode select was not found");
+    return;
+  }
+
+  const formGroup = select.closest?.(".form-group") ?? select.parentElement;
+  if (!formGroup || formGroup.dataset.babeleOndemandModeEnhanced) return;
+  formGroup.dataset.babeleOndemandModeEnhanced = "true";
+
+  select.style.display = "none";
+
+  const buttonGroup = document.createElement("div");
+  buttonGroup.className = "babele-ondemand-mode-toggle";
+  buttonGroup.style.display = "flex";
+  buttonGroup.style.gap = "0.5rem";
+  buttonGroup.style.flexWrap = "wrap";
+
+  const buttons = [
+    { mode: LOADING_MODES.FULL, label: "全量模式", title: "启动时由 Babele 原生加载全部翻译文件。" },
+    { mode: LOADING_MODES.ONDEMAND, label: "轻量模式", title: "启动只加载轻量索引，打开文档时按需加载完整翻译。" },
+  ].map(({ mode, label, title }) => {
+    const button = document.createElement("button");
+    button.type = "button";
+    button.dataset.mode = mode;
+    button.textContent = label;
+    button.title = title;
+    button.style.flex = "1 1 8rem";
+    button.addEventListener("click", () => {
+      select.value = mode;
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+      refreshLoadingModeButtons(buttonGroup, select.value);
+    });
+    buttonGroup.appendChild(button);
+    return button;
+  });
+
+  const fields = select.closest?.(".form-fields") ?? select.parentElement;
+  fields?.insertBefore?.(buttonGroup, select);
+  refreshLoadingModeButtons(buttonGroup, select.value);
+  logPatch("settings UI loading mode control enhanced", { value: select.value });
+
+  if (!buttons.length) buttonGroup.remove();
+}
+
+function refreshLoadingModeButtons(buttonGroup, value) {
+  for (const button of buttonGroup.querySelectorAll("button[data-mode]")) {
+    const active = button.dataset.mode === value;
+    button.classList.toggle("active", active);
+    button.style.border = active ? "2px solid var(--color-border-highlight, #9f9275)" : "";
+    button.style.fontWeight = active ? "700" : "";
+  }
+}
+
+function isOnDemandMode() {
+  return getLoadingModeSetting() === LOADING_MODES.ONDEMAND;
+}
+
 function tryPatchBabele(babele) {
-  if (patched) return;
-  if (!babele) return;
+  if (patched) {
+    logPatch("tryPatchBabele skipped: already patched");
+    return;
+  }
+  if (!babele) {
+    logPatch("tryPatchBabele skipped: game.babele is not available");
+    return;
+  }
 
   const stateKey = "__ondemandPatch";
   if (babele[stateKey]?.patched) {
+    logPatch("tryPatchBabele skipped: existing patch state found");
     patched = true;
     return;
   }
@@ -150,7 +373,16 @@ function tryPatchBabele(babele) {
   if (!state.original.registerMapping && typeof babele.registerMapping === "function") {
     state.original.registerMapping = babele.registerMapping.bind(babele);
   }
+  if (!state.original.register && typeof babele.register === "function") {
+    state.original.register = babele.register.bind(babele);
+  }
+  if (!state.original.ensurePackTranslationsLoaded && typeof babele.ensurePackTranslationsLoaded === "function") {
+    state.original.ensurePackTranslationsLoaded = babele.ensurePackTranslationsLoaded.bind(babele);
+  }
 
+  state.apiLevel = detectBabeleApiLevel(babele);
+  logPatch("patching Babele facade", { apiLevel: state.apiLevel });
+  state.registeredModules = state.registeredModules ?? [];
   state.packTranslationUrls = state.packTranslationUrls ?? new Map();
   state.packTranslationsLoading = state.packTranslationsLoading ?? new Map();
   state.globalMappingsLoaded = !!state.globalMappingsLoaded;
@@ -164,6 +396,9 @@ function tryPatchBabele(babele) {
   state.actorImportHookRegistered = !!state.actorImportHookRegistered;
   state.actorNamePackLookup = state.actorNamePackLookup ?? null;
   state.actorNamePackLookupSource = state.actorNamePackLookupSource ?? null;
+  state.compatPacks = state.compatPacks ?? new foundry.utils.Collection();
+  state.modernLoadedTranslations = state.modernLoadedTranslations ?? new Map();
+  state.modernInjectionWarnings = state.modernInjectionWarnings ?? new Set();
 
   babele.isFullMode = () => !isOnDemandMode();
   babele.translateIndexTitles = (index, pack) => translateIndexTitles(state, index, pack);
@@ -194,9 +429,22 @@ function tryPatchBabele(babele) {
     await game.settings.set(BABEL_NAMESPACE, SETTING_TITLE_INDEX, ti);
   };
 
+  if (state.original.register) {
+    babele.register = (module) => {
+      recordTranslationModuleRegistration(state, module);
+      return state.original.register(module);
+    };
+  }
+
   babele.registerConverters = (converters = {}) => {
     const result = state.original.registerConverters?.(converters);
     if (!isOnDemandMode()) return result;
+    if (isModernBabele(state) && babele.initialized) {
+      console.warn(
+        `[${PATCH_ID}] registerConverters was called after initialization in modern Babele mode; reload the world to rebuild Babele runtime state.`,
+      );
+      return result;
+    }
     const names = Object.keys(converters ?? {});
     if (!names.length) return result;
     void refreshPacksForConverters(babele, state, names);
@@ -206,6 +454,12 @@ function tryPatchBabele(babele) {
   babele.registerMapping = (mapping) => {
     const result = state.original.registerMapping?.(mapping);
     if (!isOnDemandMode()) return result;
+    if (isModernBabele(state) && babele.initialized) {
+      console.warn(
+        `[${PATCH_ID}] registerMapping was called after initialization in modern Babele mode; reload the world to rebuild Babele runtime state.`,
+      );
+      return result;
+    }
     if (mapping && typeof mapping === "object") {
       void refreshPacksForMapping(babele, state, mapping);
     }
@@ -224,9 +478,10 @@ function tryPatchBabele(babele) {
     if (!isOnDemandMode()) {
       return state.original.init?.();
     }
-    if (babele.initialized) return;
+    if (babele.initialized) return true;
 
     await initOnDemand(babele, state);
+    return true;
   };
 
   babele.translateIndex = (index, pack) => {
@@ -237,7 +492,7 @@ function tryPatchBabele(babele) {
     const packId = normalizePackId(pack);
     if (!packId) return index;
 
-    if (babele.isTranslated?.(packId)) {
+    if (isPackTranslationLoadedCompat(babele, state, packId) || babele.isTranslated?.(packId)) {
       return state.original.translateIndex?.(index, packId) ?? index;
     }
     return babele.translateIndexTitles(index, packId);
@@ -546,7 +801,8 @@ function isMeaningfulActorTranslation(source, translated) {
 }
 
 function tryTranslateActorFromPack(babele, packId, source) {
-  const pack = babele.packs?.get?.(packId);
+  const state = babele?.__ondemandPatch;
+  const pack = getTranslatedPackCompat(babele, state, packId);
   const probes = buildActorTranslationProbes(source);
   if (!probes.length) return null;
 
@@ -557,9 +813,9 @@ function tryTranslateActorFromPack(babele, packId, source) {
   });
 
   for (const probe of probes) {
-    if (!packHasActorTranslation(pack, probe)) continue;
+    if (pack && !packHasActorTranslation(pack, probe)) continue;
     try {
-      const translated = babele.translate(packId, probe);
+      const translated = translateDataCompat(babele, state, packId, probe);
       if (!isMeaningfulActorTranslation(probe, translated)) continue;
       debugActorImport("pack翻译命中", {
         packId,
@@ -601,7 +857,7 @@ function autoTranslateImportedActorInPreCreate(actor, data, userId) {
   if (!candidates.length || typeof babele.translate !== "function") return;
 
   for (const packId of candidates) {
-    if (!babele.isTranslated?.(packId)) continue;
+    if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
     const translated = tryTranslateActorFromPack(babele, packId, source);
     if (!translated) continue;
     actor.updateSource(translated);
@@ -643,7 +899,7 @@ function autoTranslateImportedActorInPreUpdate(actor, change, userId) {
   if (!candidates.length || typeof babele.translate !== "function") return;
 
   for (const packId of candidates) {
-    if (!babele.isTranslated?.(packId)) continue;
+    if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
     const translated = tryTranslateActorFromPack(babele, packId, source);
     if (!translated) continue;
     actor.updateSource(translated);
@@ -693,7 +949,7 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
       debugActorImport("pack翻译加载失败", { packId, actorName: source?.name ?? null });
       continue;
     }
-    if (!babele.isTranslated?.(packId)) continue;
+    if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 
     const translated = tryTranslateActorFromPack(babele, packId, source);
     if (!translated) continue;
@@ -749,7 +1005,7 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId) {
     } catch {
       continue;
     }
-    if (!babele.isTranslated?.(packId)) continue;
+    if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 
     const translated = tryTranslateActorFromPack(babele, packId, source);
     if (!translated) continue;
@@ -842,13 +1098,26 @@ class PatchedOnDemandTranslateDialog extends Dialog {
                 const data = item.toObject();
 
                 const sourcePackId = getSourcePackId(data);
-                let pack = sourcePackId ? game.babele?.packs?.get?.(sourcePackId) : null;
-                if (!pack || !pack.translated || !pack.hasTranslation(data)) {
-                  pack = game.babele?.packs?.find?.((p) => p.translated && p.hasTranslation(data));
+                const babele = game.babele;
+                const state = babele?.__ondemandPatch;
+                let translatedData = null;
+
+                if (sourcePackId) {
+                  try {
+                    await babele?.ensurePackTranslationsLoaded?.(sourcePackId);
+                    if (isPackTranslationLoadedCompat(babele, state, sourcePackId) || babele?.isTranslated?.(sourcePackId)) {
+                      translatedData = translateDataCompat(babele, state, sourcePackId, data, true);
+                    }
+                  } catch {
+                  }
                 }
 
-                if (pack) {
-                  const translatedData = pack.translate(data, true);
+                if (!translatedData && !isModernBabele(state)) {
+                  const pack = findLegacyTranslatedPackForData(game.babele, data);
+                  if (pack) translatedData = pack.translate(data, true);
+                }
+
+                if (translatedData) {
                   updates.push(foundry.utils.mergeObject(translatedData, { _id: item.id }));
                   area.append(`${data.name.padEnd(68, ".")}ok\n`);
                   translated++;
@@ -886,9 +1155,11 @@ class PatchedOnDemandTranslateDialog extends Dialog {
 }
 
 async function initOnDemand(babele, state) {
-  babele.packs = new foundry.utils.Collection();
+  if (!isModernBabele(state)) {
+    babele.packs = new foundry.utils.Collection();
+    babele.translations = [];
+  }
   babele.folders = game.data?.folders;
-  babele.translations = [];
 
   await loadGlobalMappingsOnce(babele, state);
 
@@ -921,32 +1192,159 @@ function normalizePackId(pack) {
   return null;
 }
 
-function getTranslationDirectories(babele) {
-  const lang = game.settings.get("core", "language");
-  const directory = game.settings.get(BABEL_NAMESPACE, "directory");
-  const dirs = (babele.modules ?? [])
-    .filter((m) => m?.lang === lang)
-    .map((m) => `modules/${m.module}/${m.dir}`);
-
-  if (directory && directory.trim && directory.trim()) {
-    dirs.push(`${directory}/${lang}`);
-  }
-  if (babele.systemTranslationsDir) {
-    dirs.push(`systems/${game.system.id}/${babele.systemTranslationsDir}/${lang}`);
-  }
-  return dirs;
+function isModernBabele(state) {
+  return state?.apiLevel === "modern";
 }
 
-function getMappingDirectories(babele) {
+function recordTranslationModuleRegistration(state, module) {
+  if (!state || !module || typeof module !== "object") return;
+  const moduleId = module.module;
+  if (typeof moduleId !== "string" || !moduleId.length) return;
+
+  const dirs = normalizeTranslationModuleDirs(module);
+  if (!dirs.length) return;
+
+  const registration = {
+    module: moduleId,
+    dirs,
+    lang: typeof module.lang === "string" && module.lang.length ? module.lang : null,
+  };
+  const key = JSON.stringify(registration);
+  if (state.registeredModules.some((m) => JSON.stringify(m) === key)) return;
+  state.registeredModules.push(registration);
+}
+
+function normalizeTranslationModuleDirs(module) {
+  const rawDirs = Array.isArray(module?.dirs) ? module.dirs : [module?.dir];
+  return rawDirs.filter((dir) => typeof dir === "string" && dir.trim()).map((dir) => dir.trim());
+}
+
+function getRegisteredTranslationModules(babele, state) {
+  const modules = [];
+  const push = (module) => {
+    if (!module || typeof module !== "object") return;
+    const moduleId = module.module;
+    if (typeof moduleId !== "string" || !moduleId.length) return;
+    const dirs = normalizeTranslationModuleDirs(module);
+    if (!dirs.length) return;
+    modules.push({
+      module: moduleId,
+      dirs,
+      lang: typeof module.lang === "string" && module.lang.length ? module.lang : null,
+    });
+  };
+
+  for (const module of babele?.modules ?? []) push(module);
+  for (const module of state?.registeredModules ?? []) push(module);
+
+  const seen = new Set();
+  return modules.filter((module) => {
+    const key = JSON.stringify(module);
+    if (seen.has(key)) return false;
+    seen.add(key);
+    return true;
+  });
+}
+
+function collectionFromMetadata(babele, metadata) {
+  if (!metadata) return null;
+  if (typeof metadata.collection === "string") return metadata.collection;
+  if (typeof metadata.id === "string") return metadata.id;
+
+  if (typeof babele?.getCollection === "function") {
+    try {
+      const collection = babele.getCollection(metadata);
+      if (typeof collection === "string" && collection.length) return collection;
+    } catch {
+    }
+  }
+
+  if (typeof metadata.packageName === "string" && typeof metadata.name === "string") {
+    const collectionPrefix = metadata.packageType === "world" ? "world" : metadata.packageName;
+    return `${collectionPrefix}.${metadata.name}`;
+  }
+
+  return null;
+}
+
+function metadataSupportedByBabele(babele, metadata) {
+  if (!metadata) return false;
+
+  if (typeof babele?.supported === "function") {
+    try {
+      return !!babele.supported(metadata);
+    } catch {
+    }
+  }
+
+  if (typeof babele?.documentMappings?.supports === "function") {
+    return !!babele.documentMappings.supports(metadata.type);
+  }
+
+  return !!babele?.constructor?.DEFAULT_MAPPINGS?.[metadata.type];
+}
+
+function getTranslatedPackCompat(babele, state, packId) {
+  if (!babele || !packId) return null;
+  if (isModernBabele(state) && typeof babele.translatedCompendiumFor === "function") {
+    return babele.translatedCompendiumFor(packId) ?? state?.compatPacks?.get?.(packId) ?? null;
+  }
+  return babele.packs?.get?.(packId) ?? state?.compatPacks?.get?.(packId) ?? null;
+}
+
+function findLegacyTranslatedPackForData(babele, data) {
+  return babele?.packs?.find?.((p) => p.translated && p.hasTranslation(data)) ?? null;
+}
+
+function isPackTranslationLoadedCompat(babele, state, packId) {
+  if (!babele || !packId) return false;
+  if (isModernBabele(state) && typeof babele.translatedCompendiumFor === "function") {
+    return !!babele.translatedCompendiumFor(packId) || !!state?.compatPacks?.get?.(packId)?.translated;
+  }
+  return !!babele.packs?.get?.(packId)?.translated || !!state?.compatPacks?.get?.(packId)?.translated;
+}
+
+function translateDataCompat(babele, state, packId, data, translationsOnly = false) {
+  if (!babele || typeof babele.translate !== "function") return data;
+  let translated = babele.translate(packId, data, translationsOnly);
+  if (state?.compatPacks?.get?.(packId)?.translated && !isMeaningfulActorTranslation(data, translated)) {
+    translated = state.compatPacks.get(packId).translate(data, translationsOnly);
+  }
+  if (
+    isModernBabele(state) &&
+    state?.modernLoadedTranslations?.has?.(packId) &&
+    !isMeaningfulActorTranslation(data, translated) &&
+    !state.modernInjectionWarnings.has(packId)
+  ) {
+    state.modernInjectionWarnings.add(packId);
+    console.warn(
+      `[${PATCH_ID}] Translation payload for ${packId} was loaded, but Babele modern facade did not expose an injection path. Verify Babele 2.8 adapter implementation.`,
+    );
+  }
+  return translated;
+}
+
+function getTranslationDirectories(babele, state = babele?.__ondemandPatch) {
+  const lang = game.settings.get("core", "language");
   const directory = game.settings.get(BABEL_NAMESPACE, "directory");
-  const dirs = (babele.modules ?? []).map((m) => `modules/${m.module}/${m.dir}`);
-  if (directory && directory.trim && directory.trim()) {
-    dirs.push(`${directory}`);
-  }
-  if (babele.systemTranslationsDir) {
-    dirs.push(`systems/${game.system.id}/${babele.systemTranslationsDir}`);
-  }
-  return dirs;
+  const system = babele.systemTranslationsDir
+    ? [`systems/${game.system.id}/${babele.systemTranslationsDir}/${lang}`]
+    : [];
+  const modules = getRegisteredTranslationModules(babele, state)
+    .filter((m) => !m.lang || m.lang === lang)
+    .flatMap((m) => m.dirs.map((dir) => `modules/${m.module}/${dir}`));
+  const configured = directory && directory.trim && directory.trim() ? [`${directory}/${lang}`] : [];
+  return orderTranslationSources({ system, modules, configured });
+}
+
+function getMappingDirectories(babele, state = babele?.__ondemandPatch) {
+  const directory = game.settings.get(BABEL_NAMESPACE, "directory");
+  const system = babele.systemTranslationsDir ? [`systems/${game.system.id}/${babele.systemTranslationsDir}`] : [];
+  const modules = getRegisteredTranslationModules(babele, state).flatMap((m) =>
+    m.dirs.map((dir) => `modules/${m.module}/${dir}`),
+  );
+  const configured = directory && directory.trim && directory.trim() ? [directory] : [];
+  return orderTranslationSources({ system, modules, configured });
 }
 
 async function getTranslationFiles(babele, state) {
@@ -956,7 +1354,7 @@ async function getTranslationFiles(babele, state) {
     return game.settings.get(BABEL_NAMESPACE, "translationFiles") ?? [];
   }
 
-  const dirs = getTranslationDirectories(babele);
+  const dirs = getTranslationDirectories(babele, state);
   const files = [];
   for (const dir of dirs) {
     try {
@@ -976,19 +1374,19 @@ async function getMappingFiles(babele, state) {
     return game.settings.get(BABEL_NAMESPACE, "mappingFiles") ?? [];
   }
 
-  const dirs = getMappingDirectories(babele);
+  const dirs = getMappingDirectories(babele, state);
   const files = [];
   for (const dir of dirs) {
     try {
       const result = await foundry.applications.apps.FilePicker.browse("data", dir);
       for (const f of result.files ?? []) {
-        if (typeof f === "string" && f.endsWith("/mapping.json")) files.push(f);
+        if (typeof f === "string" && isMappingFileName(f)) files.push(f);
       }
     } catch {
     }
   }
-  state.mappingFilesCache = files;
-  return files;
+  state.mappingFilesCache = sortMappingFilesByDirectoryPreference(files);
+  return state.mappingFilesCache;
 }
 
 async function loadGlobalMappingsOnce(babele, state) {
@@ -1013,8 +1411,9 @@ async function loadGlobalMappingsOnce(babele, state) {
 function buildPackTranslationUrlIndex(babele, files) {
   const index = new Map();
   for (const metadata of game.data?.packs ?? []) {
-    if (!babele.supported?.(metadata)) continue;
-    const collection = babele.getCollection(metadata);
+    if (!metadataSupportedByBabele(babele, metadata)) continue;
+    const collection = collectionFromMetadata(babele, metadata);
+    if (!collection) continue;
     const encodedCollection = encodeURI(collection);
     const exactFileName = `${encodedCollection}.json`;
     const urls = (files ?? []).filter((f) => {
@@ -1028,12 +1427,126 @@ function buildPackTranslationUrlIndex(babele, files) {
   return index;
 }
 
-function buildDirectPackTranslationUrls(babele, packId) {
+function buildDirectPackTranslationUrls(babele, packId, state = babele?.__ondemandPatch) {
   const fileName = `${encodeURI(packId)}.json`;
-  return getTranslationDirectories(babele).map((dir) => {
+  return getTranslationDirectories(babele, state).map((dir) => {
     const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
     return `${base}/${fileName}`;
   });
+}
+
+async function importLegacyTranslatedCompendium() {
+  try {
+    const module = await import("/modules/babele/script/translated-compendium.js");
+    return module.TranslatedCompendium ?? null;
+  } catch {
+    return null;
+  }
+}
+
+async function importModernMappedCompendium() {
+  try {
+    const module = await import("/modules/babele/script/compendium/mapped-compendium.js");
+    return module.MappedCompendium ?? null;
+  } catch {
+    return null;
+  }
+}
+
+function ensureModernMappedCompendiumRegistry(babele) {
+  if (!babele) return null;
+  if (babele.mappedCompendiums?.get && babele.mappedCompendiums?.translated && babele.mappedCompendiums?.translate) {
+    if (!babele.mappedCompendiums.packs) {
+      babele.mappedCompendiums.packs = new foundry.utils.Collection();
+    }
+    return babele.mappedCompendiums;
+  }
+
+  const packs = babele.mappedCompendiums?.packs ?? new foundry.utils.Collection();
+  babele.mappedCompendiums = {
+    packs,
+    get(pack) {
+      return this.packs.get(pack) ?? null;
+    },
+    translated(pack) {
+      const compendium = this.get(pack);
+      return compendium?.translated ? compendium : null;
+    },
+    translateIndex(index, pack) {
+      return this.translated(pack)?.translateIndex(index) ?? index;
+    },
+    translate(pack, data, translationsOnly) {
+      return this.translated(pack)?.translate(data, translationsOnly) ?? data;
+    },
+    translateField(pack, field, data) {
+      return this.get(pack)?.translateField(field, data) ?? null;
+    },
+    extract(pack, data, options = {}) {
+      return this.get(pack)?.extract(data, options);
+    },
+    extractField(pack, field, data) {
+      return this.get(pack)?.extractField(field, data);
+    },
+    values() {
+      return this.packs.values();
+    },
+    matching(predicate) {
+      return [...this.values()].filter(predicate);
+    },
+  };
+
+  return babele.mappedCompendiums;
+}
+
+async function createModernMappedPackCompat(babele, metadata, translation) {
+  if (!babele?.documentMappings || !metadataSupportedByBabele(babele, metadata)) return null;
+
+  const MappedCompendium = await importModernMappedCompendium();
+  if (!MappedCompendium) return null;
+
+  return new MappedCompendium(metadata, translation, {
+    translationStrategies: babele.translationMatchStrategies?.() ?? [],
+    documentMappings: babele.documentMappings,
+  });
+}
+
+function publishTranslatedPackCompat(babele, state, packId, translatedPack) {
+  if (!translatedPack || !packId) return;
+  state.compatPacks.set(packId, translatedPack);
+
+  if (isModernBabele(state)) {
+    const registry = ensureModernMappedCompendiumRegistry(babele);
+    registry?.packs?.set?.(packId, translatedPack);
+    return;
+  }
+
+  babele.packs?.set?.(packId, translatedPack);
+}
+
+async function createTranslatedPackCompat(babele, state, metadata, translation) {
+  if (!metadata || !translation) return null;
+
+  const LegacyTranslatedCompendium = await importLegacyTranslatedCompendium();
+  if (LegacyTranslatedCompendium) {
+    return new LegacyTranslatedCompendium(metadata, translation);
+  }
+
+  if (isModernBabele(state)) {
+    const mappedPack = await createModernMappedPackCompat(babele, metadata, translation);
+    if (mappedPack) return mappedPack;
+
+    const collection = getPackMetadataCollection(babele, metadata);
+    if (!state.modernInjectionWarnings.has(collection)) {
+      state.modernInjectionWarnings.add(collection);
+      console.warn(`[${PATCH_ID}] Unable to create a Babele 2.8 mapped compendium adapter for ${collection}.`);
+    }
+  }
+
+  return null;
+}
+
+function getPackMetadataCollection(babele, metadata) {
+  return collectionFromMetadata(babele, metadata) ?? `${metadata?.packageName ?? "unknown"}.${metadata?.name ?? "unknown"}`;
 }
 
 async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
@@ -1042,19 +1555,22 @@ async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
   const folderFiles = (files ?? []).filter((f) => typeof f === "string" && f.endsWith(`${suffix}.json`));
   if (!folderFiles.length) return;
 
-  const { TranslatedCompendium } = await import("/modules/babele/script/translated-compendium.js");
-
   for (const file of folderFiles) {
     const baseName = file.split("/").pop().split("\\").pop();
     const [packageName, name] = baseName.split(".");
     const collection = `${packageName}.${name}`;
-    if (babele.packs.get(collection)?.translated) continue;
+    if (isPackTranslationLoadedCompat(babele, state, collection)) continue;
 
     const translation = await loadTranslationFromUrls([file]);
     if (!translation) continue;
 
     const metadata = { packageType: "system", type: "Folder", packageName, name };
-    babele.packs.set(collection, new TranslatedCompendium(metadata, translation));
+    const translatedPack = await createTranslatedPackCompat(babele, state, metadata, translation);
+    if (translatedPack) {
+      publishTranslatedPackCompat(babele, state, collection, translatedPack);
+    } else if (isModernBabele(state)) {
+      state.modernLoadedTranslations.set(collection, foundry.utils.mergeObject(translation, { collection }));
+    }
   }
 }
 
@@ -1116,7 +1632,7 @@ function applyLabels(babele, labels) {
 
   try {
     for (const metadata of game.data?.packs ?? []) {
-      const collection = babele.getCollection(metadata);
+      const collection = collectionFromMetadata(babele, metadata);
       if (labels[collection]) metadata.label = labels[collection];
     }
   } catch {
@@ -1168,6 +1684,13 @@ function translateIndexTitles(state, index, packId) {
   return index;
 }
 
+function reconstructDocumentCompat(documentClass, source, packId) {
+  if (typeof documentClass?.fromSource === "function") {
+    return documentClass.fromSource(source, { pack: packId });
+  }
+  return new documentClass(source, { pack: packId });
+}
+
 function mappingUsesConverters(mapping, targetConverters) {
   if (!mapping || typeof mapping !== "object") return false;
   for (const value of Object.values(mapping)) {
@@ -1209,7 +1732,12 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
   const packId = normalizePackId(collection);
   if (!packId) return;
 
-  if (babele.packs?.get?.(packId)?.translated) return;
+  if (isModernBabele(state) && state.original.ensurePackTranslationsLoaded) {
+    await state.original.ensurePackTranslationsLoaded(packId);
+    if (isPackTranslationLoadedCompat(babele, state, packId) || babele.isTranslated?.(packId)) return;
+  }
+
+  if (isPackTranslationLoadedCompat(babele, state, packId)) return;
 
   const pending = state.packTranslationsLoading.get(packId);
   if (pending) {
@@ -1232,7 +1760,7 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
     let translation = urls?.length ? await loadTranslationFromUrls(urls) : null;
 
     if (!translation) {
-      const directUrls = buildDirectPackTranslationUrls(babele, packId);
+      const directUrls = buildDirectPackTranslationUrls(babele, packId, state);
       const directTranslation = await loadTranslationFromUrls(directUrls);
       if (directTranslation) {
         urls = directUrls;
@@ -1250,8 +1778,7 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
       return;
     }
 
-    const { TranslatedCompendium } = await import("/modules/babele/script/translated-compendium.js");
-    const metadata = (game.data?.packs ?? []).find((m) => babele.getCollection(m) === packId);
+    const metadata = getPackMetadata(babele, packId);
     if (!metadata) return;
 
     if (!state.npcDepsLoaded && !state.npcDepsLoading) {
@@ -1263,33 +1790,37 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
 
     trackMissingConverters(babele, state, packId, metadata, translation);
 
-    babele.packs.set(packId, new TranslatedCompendium(metadata, translation));
     const storedTranslation = foundry.utils.mergeObject(translation, { collection: packId });
-    if (Array.isArray(babele.translations)) {
+    const translatedPack = await createTranslatedPackCompat(babele, state, metadata, translation);
+    if (translatedPack) {
+      publishTranslatedPackCompat(babele, state, packId, translatedPack);
+    } else if (isModernBabele(state)) {
+      state.modernLoadedTranslations.set(packId, storedTranslation);
+    }
+
+    if (!isModernBabele(state) && Array.isArray(babele.translations)) {
       const idx = babele.translations.findIndex((t) => t?.collection === packId);
       if (idx >= 0) {
         babele.translations[idx] = storedTranslation;
       } else {
         babele.translations.push(storedTranslation);
       }
-    } else {
+    } else if (!isModernBabele(state)) {
       babele.translations = [storedTranslation];
     }
 
-    if (metadata.type === "Adventure" && translation.entries) {
+    if (!isModernBabele(state) && metadata.type === "Adventure" && translation.entries) {
       const entries = translation.entries;
-      Object.values(Array.isArray(entries) ? entries : entries || {}).forEach((adventure) =>
-        babele.packs.set(
-          `${packId}-items`,
-          new TranslatedCompendium(
-            { type: "Item" },
-            {
-              mapping: translation.mapping ? translation.mapping["items"] ?? {} : {},
-              entries: adventure.items ?? {},
-            },
-          ),
-        ),
-      );
+      for (const adventure of Object.values(Array.isArray(entries) ? entries : entries || {})) {
+        const embeddedTranslation = {
+          mapping: translation.mapping ? translation.mapping["items"] ?? {} : {},
+          entries: adventure.items ?? {},
+        };
+        const embeddedPack = await createTranslatedPackCompat(babele, state, { type: "Item" }, embeddedTranslation);
+        if (embeddedPack) {
+          publishTranslatedPackCompat(babele, state, `${packId}-items`, embeddedPack);
+        }
+      }
     }
 
     if (translation.reference) {
@@ -1320,50 +1851,15 @@ async function loadTranslationFromUrls(urls) {
     }),
   );
 
-  let translation = null;
-  for (const t of translations.filter(Boolean)) {
-    if (!translation) {
-      translation = t;
-      continue;
-    }
-
-    translation.label = t.label ?? translation.label;
-
-    if (t.entries) {
-      if (Array.isArray(translation.entries) || Array.isArray(t.entries)) {
-        const a = Array.isArray(translation.entries) ? translation.entries : [];
-        const b = Array.isArray(t.entries) ? t.entries : [];
-        translation.entries = a.concat(b);
-      } else {
-        translation.entries = { ...(translation.entries ?? {}), ...(t.entries ?? {}) };
-      }
-    }
-
-    if (t.mapping) {
-      translation.mapping = { ...(translation.mapping ?? {}), ...(t.mapping ?? {}) };
-    }
-
-    if (t.folders) {
-      translation.folders = { ...(translation.folders ?? {}), ...(t.folders ?? {}) };
-    }
-
-    if (t.types) {
-      const a = Array.isArray(translation.types) ? translation.types : [];
-      const b = Array.isArray(t.types) ? t.types : [];
-      translation.types = Array.from(new Set(a.concat(b)));
-    }
-
-    if (t.reference) {
-      const a = translation.reference ? (Array.isArray(translation.reference) ? translation.reference : [translation.reference]) : [];
-      const b = Array.isArray(t.reference) ? t.reference : [t.reference];
-      translation.reference = Array.from(new Set(a.concat(b)));
-    }
-  }
-
-  return translation;
+  return mergeTranslationPayloads(translations);
 }
 
 function getMergedMapping(babele, metadata, translation) {
+  if (babele?.documentMappings && metadata?.type) {
+    const base = babele.documentMappings.hierarchyFor?.(metadata.type)?.mappingFor?.({ type: metadata.type })?.definition ?? {};
+    const extra = translation?.mapping ?? {};
+    return foundry.utils.mergeObject(base, extra, { inplace: false });
+  }
   const base = babele.constructor?.DEFAULT_MAPPINGS?.[metadata?.type] ?? {};
   const extra = translation?.mapping ?? {};
   return foundry.utils.mergeObject(base, extra, { inplace: false });
@@ -1382,6 +1878,7 @@ function collectMissingConverters(babele, mapping) {
 }
 
 function trackMissingConverters(babele, state, packId, metadata, translation) {
+  if (isModernBabele(state)) return;
   try {
     const merged = getMergedMapping(babele, metadata, translation);
     const missing = collectMissingConverters(babele, merged);
@@ -1392,29 +1889,34 @@ function trackMissingConverters(babele, state, packId, metadata, translation) {
 }
 
 function getPackMetadata(babele, packId) {
-  return (game.data?.packs ?? []).find((m) => babele.getCollection(m) === packId);
+  return (game.data?.packs ?? []).find((m) => collectionFromMetadata(babele, m) === packId);
 }
 
 async function rebuildTranslatedPack(babele, state, packId, translation) {
   const metadata = getPackMetadata(babele, packId);
   if (!metadata) return false;
-  const { TranslatedCompendium } = await import("/modules/babele/script/translated-compendium.js");
-  babele.packs.set(packId, new TranslatedCompendium(metadata, translation));
+  if (isModernBabele(state)) return false;
+
+  const translatedPack = await createTranslatedPackCompat(babele, state, metadata, translation);
+  if (!translatedPack) return false;
+  publishTranslatedPackCompat(babele, state, packId, translatedPack);
 
   if (metadata.type === "Adventure" && translation.entries) {
     const entries = translation.entries;
-    Object.values(Array.isArray(entries) ? entries : entries || {}).forEach((adventure) =>
-      babele.packs.set(
-        `${packId}-items`,
-        new TranslatedCompendium(
-          { type: "Item" },
-          {
-            mapping: translation.mapping ? translation.mapping["items"] ?? {} : {},
-            entries: adventure.items ?? {},
-          },
-        ),
-      ),
-    );
+    for (const adventure of Object.values(Array.isArray(entries) ? entries : entries || {})) {
+      const embeddedPack = await createTranslatedPackCompat(
+        babele,
+        state,
+        { type: "Item" },
+        {
+          mapping: translation.mapping ? translation.mapping["items"] ?? {} : {},
+          entries: adventure.items ?? {},
+        },
+      );
+      if (embeddedPack) {
+        publishTranslatedPackCompat(babele, state, `${packId}-items`, embeddedPack);
+      }
+    }
   }
 
   if (state) {
@@ -1505,7 +2007,7 @@ function registerWrappers() {
         return result;
       }
 
-      if (!babele.isTranslated?.(packId)) return result;
+      if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) return result;
 
       const documentClass = args?.[0];
       if (!documentClass || !Array.isArray(result)) return result;
@@ -1513,7 +2015,7 @@ function registerWrappers() {
       try {
         return result.map((doc) => {
           const source = typeof doc?.toObject === "function" ? doc.toObject() : doc;
-          return new documentClass(babele.translate(packId, source), { pack: packId });
+          return reconstructDocumentCompat(documentClass, translateDataCompat(babele, state, packId, source), packId);
         });
       } catch {
         return result;
