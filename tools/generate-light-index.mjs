@@ -62,6 +62,20 @@ function decodeCollectionKey(stem) {
   }
 }
 
+function isMappingFileName(fileName) {
+  const name = String(fileName ?? "").split("/").pop().split("\\").pop().toLowerCase();
+  return name === "mappings.json" || name === "mapping.json";
+}
+
+function shouldSkipLightIndexFile(fileName, includeFolders = false) {
+  const name = String(fileName ?? "").split("/").pop().split("\\").pop().toLowerCase();
+  if (name === "labels.json") return true;
+  if (name === "titles.json") return true;
+  if (isMappingFileName(name)) return true;
+  if (!includeFolders && name.endsWith("_packs-folders.json")) return true;
+  return false;
+}
+
 function upsertNested(obj, key, factory) {
   if (!obj[key]) obj[key] = factory();
   return obj[key];
@@ -162,10 +176,7 @@ async function main() {
   for (const file of files) {
     if (!isJsonFile(file)) continue;
     const name = path.basename(file).toLowerCase();
-    if (name === "labels.json") continue;
-    if (name === "titles.json") continue;
-    if (name === "mapping.json") continue;
-    if (!args.includeFolders && name.endsWith("_packs-folders.json")) continue;
+    if (shouldSkipLightIndexFile(name, args.includeFolders)) continue;
 
     let json;
     try {
