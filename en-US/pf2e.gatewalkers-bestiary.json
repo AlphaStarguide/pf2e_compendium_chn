@@ -279,16 +279,13 @@
             "name": "Haunted Aiudara",
             "disable": "<p>@Check[religion|dc:25] (trained) to exorcise one of the wraiths or @Check[occultism|dc:25] (expert) to erase one of the wraith's astral sigils; three successful checks are required to disable the haunt</p>",
             "hazarddescription": "<p>The spiritual imprints of long-dead explorers haunt this <em>aiudara</em>, manifesting as a trio of astral wraiths who guard the gateway jealously.</p>",
-            "routine": "<p>(3 actions; conjuration, divine, teleportation) With spectral claws, the aiudara wraiths hurl trespassers through time and space. Each of the three wraiths has 1 action which it can use to make a forceful hand Strike against a creature within 60 feet. The haunt loses 1 action for each successful check to disable the haunt.</p>\n<p>When the haunt rolls a critical hit to Strike a creature, the creature is instantly shunted to an empty space within 30 feet. The haunt chooses which space the creature is transported to.</p>",
+            "routine": "<p>(3 actions; conjuration, divine, teleportation) With spectral claws, the aiudara wraiths hurl trespassers through time and space. Each of the three wraiths has 1 action which it can use to make a forceful hand Strike against a creature within 60 feet. The haunt loses 1 action for each successful check to disable the haunt.</p><p>When the haunt rolls a critical hit to Strike a creature, the creature is instantly shunted to an empty space within 30 feet. The haunt chooses which space the creature is transported to.</p>",
             "reset": "<p>The aiudara wraiths disperse after 1 minute, but the haunt resets after 24 hours.</p>",
+            "stealthdetails": "<p>(expert)</p>",
             "items": {
                 "Forceful Screech": {
                     "name": "Forceful Screech",
-                    "description": "<p><strong>Trigger</strong> A creature comes within 30 feet of the aiudara</p>\n<hr />\n<p><strong>Effect</strong> Three aiudara wraiths screech in unison and manifest to protect the arch. Each creature within 30 feet must attempt a @Check[will|dc:27] save. The haunt rolls initiative.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature takes @Damage[(2d8+9)[force]].</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[(4d8+9)[force]] and is @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued}.</p>"
-                },
-                "No MAP": {
-                    "name": "No MAP",
-                    "description": "<p>No multiple attack penalty on forceful hand strikes.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature comes within 30 feet of the <em>aiudara</em></p><hr /><p><strong>Effect</strong> Three aiudara wraiths screech in unison and manifest to protect the arch. Each creature within @Template[emanation|distance:30]{30 feet} must attempt a @Check[will|dc:27|options:area-effect,damaging-effect,inflicts:fatigued] save. The haunt rolls initiative.</p>\n<p><strong>Success</strong> The creature is unaffected.</p>\n<p><strong>Failure</strong> The creature takes @Damage[(2d8+9)[force]] damage.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[(4d8+9)[force]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued}.</p>"
                 }
             }
         },
@@ -1257,11 +1254,7 @@
                 },
                 "Violent Deluge": {
                     "name": "Violent Deluge",
-                    "description": "<p><strong>Trigger</strong> The water tank is broken or destroyed</p><hr /><p><strong>Effect</strong> A torrent of water bursts from the shattered tank, dealing @Damage[3d8[bludgeoning]|options:area-damage] to each creature within @Template[emanation|distance:15]{15 feet} (@Check[reflex|dc:22|basic|options:area-effect] save). The trap is then disabled.</p>"
-                },
-                "No MAP": {
-                    "name": "No MAP",
-                    "description": "<p>No multiple attack penalty applies to Water Jet strikes</p>"
+                    "description": "<p><strong>Trigger</strong> The water tank is broken or destroyed</p><hr /><p><strong>Effect</strong> A torrent of water bursts from the shattered tank, dealing @Damage[3d8[bludgeoning]|options:area-damage] damage to each creature within @Template[emanation|distance:15]{15 feet} (@Check[reflex|dc:22|basic|options:area-effect] save). The trap is then disabled.</p>"
                 }
             }
         },
@@ -1882,7 +1875,7 @@
                 },
                 "Frostbite": {
                     "name": "Frostbite",
-                    "description": "<p>A creature that takes persistent cold damage from the trap's frost jet Strike must attempt a @Check[fortitude|dc:18] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature isn't affected and is immune to this frostbite effect for 24 hours.</p>\n<p><strong>Success</strong> The creature isn't affected.</p>\n<p><strong>Failure</strong> The creature can't stop shivering and becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}.</p>\n<p><strong>Critical Failure</strong> As failure, and the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued}.</p>"
+                    "description": "<p>A creature that takes persistent cold damage from the trap's frost jet Strike must attempt a @Check[fortitude|dc:18|options:inflicts:clumsy,inflicts:fatigued] save.</p><hr /><p><strong>Critical Success</strong> The creature isn't affected and is immune to this frostbite effect for 24 hours.</p>\n<p><strong>Success</strong> The creature isn't affected.</p>\n<p><strong>Failure</strong> The creature can't stop shivering and becomes @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 1}.</p>\n<p><strong>Critical Failure</strong> As failure, and the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued}.</p>"
                 }
             }
         },

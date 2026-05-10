@@ -1,6 +1,27 @@
 {
     "label": "pf2e.menace-under-otari-bestiary",
     "entries": {
+        "Shulzara": {
+            "prototypeToken": {
+                "name": "Shulzara"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shulzara",
+            "publicNotes": "<p>Hags are malevolent predators who use magic and manipulation to lure children and young adults into their clutches. They seek out targets who are unhappy, innocent, or otherwise vulnerable, preying on their weaknesses before snatching them up. A sea hag has the upper half of a humanoid and the lower half of an octopus, with translucent skin and glowing lights visible beneath their flesh.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "blurb": "variant sea hag",
+            "items": {
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Slithering Steps": {
+                    "name": "Slithering Steps",
+                    "description": "<p>Shulzara is not affected by difficult terrain due to water.</p>"
+                }
+            }
+        },
         "Viper (BB)": {
             "prototypeToken": {
                 "name": "Viper (BB)"
@@ -18,6 +39,22 @@
                 "Viper Venom": {
                     "name": "Viper Venom",
                     "description": "<p>A target damaged by the viper's fangs must succeed at a @Check[fortitude|dc:16] save or take @Damage[1d10[poison]] damage.</p>"
+                }
+            }
+        },
+        "Falling Shelves": {
+            "prototypeToken": {
+                "name": "Falling Shelves"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Falling Shelves",
+            "disable": "<p>A hero must succeed at a @Check[athletics|dc:18] or @Check[thievery|dc:18] check to prevent the shelves from collapsing.</p>",
+            "items": {
+                "Topple Over": {
+                    "name": "Topple Over",
+                    "description": "<p>When a creature attempts to touch the shelves or take anything from them, they collapse, sending debris throughout the room. The trap makes one melee Strike against each creature in the room.</p>"
                 }
             }
         },
@@ -58,7 +95,7 @@
             "items": {
                 "Slam Shut": {
                     "name": "Slam Shut",
-                    "description": "<p>When pressure is placed on any floor tile, the door falls, closing off the hallway. The stone slab deals @Damage[3d8[bludgeoning]] damage to anyone beneath or adjacent to the slab when it drops and pushes them out of its space in a random direction. A creature that succeeds at a @Check[reflex|dc:17|traits:damaging-effect,hazard] save takes no damage and rolls out of the way in a random direction. On a critical success, they roll out of the way and can choose which direction.</p>\n<p>Lifting the fallen slab requires a successful @Check[athletics|dc:25|traits:hazard] check. Hitting the floor panels triggers the trap. The slab uses the same AC and saves as the trap, but it has Hardness 12, HP 48 (BT 24).</p>"
+                    "description": "<p>When pressure is placed on a floor tile, the door falls, closing off the hallway. The stone slab deals @Damage[3d8[bludgeoning]] damage to anyone beneath or adjacent to the slab when it drops and pushes them out of its space in a random direction. A creature that succeeds at a @Check[reflex|dc:17|options:damaging-effect] save takes no damage and rolls out of the way in a random direction. On a critical success, they roll out of the way and can choose which direction. Lifting the fallen slab requires a successful @Check[athletics|dc:25] check. Hitting the floor panels triggers the trap. The slab uses the same AC and saves as the trap, but it has Hardness 12, HP 48 (BT 24).</p>"
                 }
             }
         },
@@ -74,7 +111,67 @@
             "items": {
                 "Stench": {
                     "name": "Stench",
-                    "description": "<p>A creature that comes within @Template[emanation|distance:30] of the xulgath and can smell the xulgath must attempt a @Check[fortitude|dc:16] save. On a failure, the creature takes a -1 status penalty to all checks and DCs until it uses an action to retch. A creature that succeeds at its save isn't affected by any xulgaths' stenches for 1 minute <em>(Use @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1})</em>.</p>"
+                    "description": "<p>A creature that comes within 30 feet of the xulgath and can smell the xulgath must attempt a @Check[fortitude|dc:16|options:inflicts:sickened] save. On a failure, the creature takes a –1 status penalty to all checks and DCs until it uses an action to retch (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}). A creature that succeeds at its save isn't affected by any xulgaths' stenches for 1 minute.</p>"
+                }
+            }
+        },
+        "Twigjack (BB)": {
+            "prototypeToken": {
+                "name": "Twigjack (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Twigjack (BB)",
+            "publicNotes": "<p>\"True\" twigjacks, as they consider themselves, are found in wild forests alongside the fey they idolize.</p>\n<hr />\n<p>Maladjusted forest denizens, twigjacks form from the cruel and prankish combination of fey and the very woods in which they reside. A twigjack's body is made up of prickly brambles woven with vines. Shaggy, mossy growth, not unlike hair, tops a twigjack's head. Its mouth is just a canyon of splintered and broken sticks bisecting its face. Leaves and sprigs of new growth randomly sprout from the creature's body. Many dense forests on Golarion have at least a handful of twigjacks living in the undergrowth.</p>\n<p>While truculent and violent, twigjacks care deeply for what they consider to be their forests. These creatures harass outsiders who delve deep into their wooded domains, forcing back even the most determined explorers, foresters, and travelers, especially when those intruders cut roads through the forest. However, they are not terribly territorial when it comes to other forest creatures. When sylvan creatures, especially fey, rally against an outside threat, twigjacks in the area eagerly arrive to fight, even if they were not invited.</p>",
+            "items": {
+                "Bramble Jump": {
+                    "name": "Bramble Jump",
+                    "description": "<p>When the twigjack is in undergrowth, it can instantly teleport to a square of undergrowth within 60 feet. This movement doesn't trigger reactions.</p>"
+                },
+                "Splinter Spray": {
+                    "name": "Splinter Spray",
+                    "description": "<p>The twigjack sprays a barrage of splinters and brambles from its body that deals @Damage[4d6[piercing]|options:area-damage] damage in a @Template[type:cone|distance:15]. Each creature in the area must attempt a @Check[reflex|dc:20|basic|options:area-effect] save. The twigjack can't use Splinter Spray again for [[/gmr 1d4 #Recharge Splinter Spray]]{1d4 rounds}.</p>"
+                }
+            }
+        },
+        "Severed Head (BB)": {
+            "prototypeToken": {
+                "name": "Severed Head (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Severed Head (BB)",
+            "publicNotes": "<p>Severed heads are the reanimated heads of decapitation victims. These mindless undead fly through the air or roll around to attack their prey. In addition to attacking the living like other undead, severed heads can sometimes be drawn to things important to them in life. Scholars argue that this is likely due to particularly powerful thoughts that can break through momentarily in what's left of a severed head's mind. Unfortunately, their mindless state prevents them from recognizing their goal, and they remain violent even after encountering what they seek.</p>",
+            "items": {
+                "Gnash": {
+                    "name": "Gnash",
+                    "description": "<p>When the severed head succeeds at its jaws Strike, it can use this action immediately after to make a second jaws Strike at the same target as it violently shakes itself, trying to rip away a mouthful of flesh. On a success, the target takes an additional 1d4 slashing damage and 1 persistent bleed damage.</p>"
+                }
+            }
+        },
+        "Shadow Priest": {
+            "prototypeToken": {
+                "name": "Shadow Priest"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Priest",
+            "publicNotes": "<p>Sometimes, followers of unholy deities will transform into shadows upon their death, a gift from their wicked patrons.</p>",
+            "items": {
+                "Incorporeal": {
+                    "name": "Incorporeal",
+                    "description": "<p>The shadow priest has no body and can pass through physical objects, though they can't end their turn inside one. Most checks that use Strength and require a body, such as @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} and @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove}, don't work against the shadow priest, and the shadow priest can't use them.</p>"
+                },
+                "Light Vulnerability": {
+                    "name": "Light Vulnerability",
+                    "description": "<p>Attacks against the shadow priest are treated as magical if the shadow priest or the weapon being used against them is in light.</p>"
+                },
+                "Shadow Veil": {
+                    "name": "Shadow Veil",
+                    "description": "<p>If the shadow priest is targeted by a melee attack, they can use their reaction to gain a +2 circumstance bonus to AC against the triggering attack.</p>"
                 }
             }
         },
@@ -91,11 +188,7 @@
             "items": {
                 "Falling Scythes": {
                     "name": "Falling Scythes",
-                    "description": "<p>When the trip wire is pulled or severed, both blades swing down, each one attacking all creatures under the ceiling grooves with a Scythe attack. The trap makes a Scythe melee attack with each blade. There's no multiple attack penalty on these attacks.</p>"
-                },
-                "No MAP": {
-                    "name": "No MAP",
-                    "description": "<p>The Scythe Strikes do not apply a MAP.</p>"
+                    "description": "<p>When the trip wire is pulled or severed, both blades swing down, each one attacking all creatures under the ceiling grooves. The trap makes a melee attack with each blade with +17 to each attack roll. There's no multiple attack penalty on these attacks. On a hit, a blade deals 2d12+4 slashing damage. On a critical hit, the damage is doubled plus 6 extra damage.</p>"
                 }
             }
         },
@@ -111,11 +204,11 @@
             "items": {
                 "Stench": {
                     "name": "Stench",
-                    "description": "<p>A creature that comes within @Template[emanation|distance:30] of the xulgath and can smell the xulgath must attempt a @Check[fortitude|dc:19] save. On a failure, the creature takes a -1 status penalty to all checks and DCs until it uses an action to retch. A creature that succeeds at its save isn't affected by any xulgaths' stenches for 1 minute <em>(Use @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1})</em>.</p>"
+                    "description": "<p>A creature that comes @Template[emanation|distance:30]{within 30} feet of the xulgath and can smell the xulgath must attempt a @Check[fortitude|dc:19|options:inflicts:sickened] save. On a failure, the creature takes a –1 status penalty to all checks and DCs until it uses an action to retch (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}). A creature that succeeds at its save isn't affected by any xulgaths' stenches for 1 minute.</p>"
                 },
                 "Swipe": {
                     "name": "Swipe",
-                    "description": "<p>The xulgath boss makes two Strikes with their greataxe against two adjacent foes, both of whom are within their reach, with a +1 circumstance bonus. The second attack uses the same multiple attack penalty as the first, but attacks the xulgath boss makes after this take a -10 multiple attack penalty (or a -8 multiple attack penalty for its claw).</p>"
+                    "description": "<p>The xulgath leader makes two Strikes with their greataxe against two adjacent foes, both of whom are within their reach, with a +1 circumstance bonus. The second attack uses the same multiple attack penalty as the first, but attacks the xulgath boss makes after this take a –10 multiple attack penalty (or a –8 multiple attack penalty for its claw).</p>"
                 }
             }
         },
@@ -143,11 +236,23 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Bugbear Prowler (BB)",
-            "publicNotes": "<p>These stealthy and cruel creatures delight in spreading fear and tormenting their victims. Bugbears are the monsters lurking in the closet and hiding under the bed. Preying on remote farmsteads, bugbears reveal their presence with thumps in the night or creaking boards, inspiring dread, suspicion, and fear in those they torment.</p>",
+            "publicNotes": "<p>These stealthy and cruel creatures delight in spreading fear and tormenting their victims. Bugbears are the monsters lurking in the closet and hiding under the bed. Preying on remote farmsteads, bugbears reveal their presence with thumps in the night or creaking boards.</p>",
             "items": {
+                "equipment-Javelin": {
+                    "name": "Javelin",
+                    "description": "<p>This thin spear is well balanced for throwing but is not designed for melee use.</p>"
+                },
+                "equipment-Longsword": {
+                    "name": "Longsword",
+                    "description": "<p>Longswords, also known as arming swords, can be one-edged or two-edged swords. Their blades are heavy and they're between 3 and 4 feet in length.</p>"
+                },
+                "equipment-Leather Armor": {
+                    "name": "Leather Armor",
+                    "description": "<p>A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.</p>"
+                },
                 "Bushwhack": {
                     "name": "Bushwhack",
-                    "description": "<p>The bugbear prowler Strides up to 10 feet and attempts to @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} a creature that can't see them and doesn't know where they are. If the bugbear succeeds, they also deal damage from their fist Strike to that creature.</p>"
+                    "description": "<p>The bugbear prowler Strides up to 10 feet and attempts to [[/act grapple]] a creature that can't see them and doesn't know where they are. If the bugbear succeeds, they also deal damage from their fist Strike to that creature.</p>"
                 },
                 "Mauler": {
                     "name": "Mauler",
@@ -219,7 +324,7 @@
                 },
                 "Giant Spider Venom": {
                     "name": "Giant Spider Venom",
-                    "description": "<p>A target damaged by the spider's fangs must succeed at a @Check[fortitude|dc:16] save or take @Damage[1d10[poison]] damage and gain the @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} condition for 1 round.</p>"
+                    "description": "<p>A target damaged by the spider's fangs must succeed at a @Check[fortitude|dc:16|options:damaging-effect,inflicts:off-guard] save or take @Damage[1d10[poison]] damage and gain the @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} condition for 1 round.</p>"
                 },
                 "Web Trap": {
                     "name": "Web Trap",
@@ -310,19 +415,19 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Giant Viper (BB)",
-            "publicNotes": "<p>Snakes come in an array of forms, from jungle-dwelling constrictors that wrap around their prey to venomous vipers with deadly bites. Regardless, all snakes consume their prey whole by unhinging their jaws and using powerful muscles to move the food down their throats and into their stomachs.</p>\n<p>The giant viper's fangs, nearly as long as daggers, easily inspire fear. The venom injected by a giant viper can cause severe blood clotting and inflict tremendous damage.</p>",
+            "publicNotes": "<p>Snakes come in an array of forms, from jungle-dwelling constrictors that wrap around their prey to venomous vipers with deadly bites. Regardless, all snakes consume prey whole by stretching their lower jaw and using powerful muscles to move the food down their throats and into their stomachs.</p>\n<p>The giant viper's fangs, nearly as long as daggers, easily inspire fear. The venom injected by a giant viper can cause severe blood clotting and inflict tremendous damage.</p>",
             "items": {
                 "Coiled Opportunity": {
                     "name": "Coiled Opportunity",
-                    "description": "<p>If the giant viper is coiled and a creature moves into or through a square adjacent to it, the giant viper can use its reaction to make a fangs Strike against that creature.</p>"
+                    "description": "<p>If the giant viper is Coiled and a creature moves into or through a square adjacent to it, the giant viper can use its reaction to make a fangs Strike against that creature.</p>"
                 },
                 "Coil": {
                     "name": "Coil",
-                    "description": "<p>The giant viper uses an action to coil itself. While coiled, it can target a creature up to 10 feet away with its fangs Strike. After the giant viper Strikes with its fangs, it becomes uncoiled.</p>"
+                    "description": "<p>The giant viper uses an action to coil itself. While coiled, it can target a creature up to 10 feet away with its fangs Strike. After the giant viper Strikes with its fangs, it becomes uncoiled</p>"
                 },
                 "Giant Viper Venom": {
                     "name": "Giant Viper Venom",
-                    "description": "<p>A target damaged by the snake's fangs must succeed at a @Check[fortitude|dc:17] save or take @Damage[1d8[poison]] damage.</p>"
+                    "description": "<p>A target damaged by the snake's fangs must succeed at a @Check[fortitude|dc:17|options:damaging-effect] save or take @Damage[1d8[poison]] damage.</p>"
                 }
             }
         },
@@ -347,6 +452,38 @@
                 }
             }
         },
+        "Bugbear Tormentor (BB)": {
+            "prototypeToken": {
+                "name": "Bugbear Tormentor (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Bugbear Tormentor (BB)",
+            "publicNotes": "<p>The bugbear tormentor seeks to bully their prey as much through psychological intimidation as through physical harm.</p>",
+            "items": {
+                "equipment-Dagger": {
+                    "name": "Dagger",
+                    "description": "<p>This small, bladed weapon is held in one hand and used to stab a creature in close combat. It can also be thrown.</p>"
+                },
+                "equipment-Sickle": {
+                    "name": "Sickle",
+                    "description": "<p>Originally a farming tool used for reaping grain, this one-handed weapon has a short wooden handle ending in a curved blade, sometimes sharpened on both sides.</p>"
+                },
+                "equipment-Chain Shirt": {
+                    "name": "Chain Shirt",
+                    "description": "<p>Sometimes called a hauberk, this is a long shirt constructed of the same metal rings as chain mail. However, it is much lighter than chain mail and protects only the torso, upper arms, and upper legs of its wearer.</p>"
+                },
+                "Sneak Attack": {
+                    "name": "Sneak Attack",
+                    "description": "<p>The bugbear tormentor's Strikes deal 1d6 extra precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
+                },
+                "Twin Feint": {
+                    "name": "Twin Feint",
+                    "description": "<p>The bugbear tormentor makes a dazzling series of attacks with two weapons, using the first attack to throw their foe @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against a second attack at a different angle. They make one Strike with each of their two melee weapons, both against the same target. The target is automatically off-guard against the second attack. The bugbear tormentor applies their multiple attack penalty to these Strikes normally.</p>"
+                }
+            }
+        },
         "Hidden Pit (BB)": {
             "prototypeToken": {
                 "name": "Hidden Pit (BB)"
@@ -361,7 +498,7 @@
             "items": {
                 "Pitfall": {
                     "name": "Pitfall",
-                    "description": "<p>If a creature walks onto the trapdoor, that creature falls in unless it succeeds at a @Check[reflex|dc:16] save to grab hold of the edge. The pit is 20 feet deep, dealing @Damage[10[bludgeoning]|options:fall-damage] damage to anyone who falls to the bottom.</p>"
+                    "description": "<p>If a creature walks onto the trap door, that creature falls in unless it succeeds at a [[/act grab-an-edge dc=16]]{Reflex} save to grab hold of the edge. The pit is 20 feet deep, dealing @Damage[10[bludgeoning]|options:fall-damage] damage to anyone who falls to the bottom.</p>"
                 }
             }
         },
@@ -393,7 +530,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Wolf (BB)",
-            "publicNotes": "<p>Wolves roam forests, hills, and other wild lands, where they live and hunt in packs. Contrary to popular belief, these packs aren't led by the strongest in the group, but typically consist of a mated pair, their pups, and juvenile offspring from previous mating seasons. Offspring generally leave their parents' pack upon reaching maturity, at which point they seek out mates of their own to form their own packs elsewhere. Wolves don't typically view humanoids as prey animals, but extraordinary circumstances can lead wolves to attack people, especially in winter months and other situations where traditional prey (such as deer and elk) are scarce.</p>",
+            "publicNotes": "<p>Wolves roam forests, hills, and other wild lands where they live and hunt in packs. Contrary to popular belief, these packs aren't led by the strongest in the group, but typically consist of a mated pair, their pups, and juvenile offspring from previous mating seasons. Offspring generally leave their parents' pack upon reaching maturity, at which point they seek out mates of their own to form their own packs elsewhere. Wolves don't typically view humanoids as prey animals, but extraordinary circumstances can lead wolves to attack people, especially in winter months and other situations where traditional prey (such as deer and elk) are scarce.</p>",
             "items": {
                 "Pack Attack": {
                     "name": "Pack Attack",
@@ -466,7 +603,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Gargoyle (BB)",
-            "publicNotes": "<p>Gargoyles are monstrous hunters made entirely of stone. They look like decorative statues and use this as camouflage to hide in plain sight in cities during the day and descend upon unlucky pedestrians at night. Their most common form is that of a horned humanoid with batlike wings, but individual gargoyles vary a great deal, with some appearing more or less humanoid and others resembling something else entirely.</p>\n<p>Gargoyles tend to be lone hunters, though sometimes they band into groups called wings for protection or sport.</p>",
+            "publicNotes": "<p>Gargoyles are monstrous hunters made entirely of stone. They look like decorative statues and use this as camouflage to hide in plain sight in cities during the day and descend upon unlucky pedestrians at night. Their most common form is that of a horned humanoid with batlike wings, but individual gargoyles vary greatly, with some appearing more or less humanoid and others resembling something else entirely. Gargoyles tend to be lone hunters, though sometimes they band into groups called wings.</p>",
             "items": {
                 "Clawed Feet": {
                     "name": "Clawed Feet",
@@ -490,11 +627,61 @@
             "items": {
                 "Final Spite": {
                     "name": "Final Spite",
-                    "description": "<p>When the wight is reduced to 0 Hit Points, it can use its reaction to make a Strike before being destroyed. It doesn't gain any Hit Points from corrupting spite on this Strike.</p>"
+                    "description": "<p>When the wight is reduced to 0 Hit Points, they can use their reaction to make a Strike before being destroyed. They don't gain any Hit Points from corrupting spite on this Strike.</p>"
                 },
                 "Corrupting Spite": {
                     "name": "Corrupting Spite",
-                    "description": "<p>When the wight deals damage to a living creature with its claw or dagger Strike, the wight regains @Damage[2[void,healing]|shortLabel] Hit Points and the target must succeed at a @Check[fortitude|dc:17] save or take 2 damage that can't be healed. The wight can use corrupting spite multiple times, but a single creature can't take more than 8 unhealable damage.</p>\n<p>Each full night of rest heals 2 of the unhealable damage, and a full day of bed rest increases the recovery to 4 of the unhealable damage.</p>"
+                    "description": "<p>When the wight deals damage to a living creature with their claw or dagger Strike, the wight regains @Damage[2[healing]] Hit Points and the target must succeed at a @Check[fortitude|dc:17|options:damaging-effect] save or take @Damage[2] damage that can't be healed. The wight can use corrupting spite multiple times, but a single creature can't take more than 8 unhealable damage. Each full night of rest heals 2 of the unhealable damage, and a full day of bed rest increases the recovery of the unhealable damage to 4.</p>"
+                }
+            }
+        },
+        "Shadow Walls": {
+            "prototypeToken": {
+                "name": "Shadow Walls"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Walls",
+            "hp": "Wall HP 15",
+            "disable": "<p>@Check[arcana|dc:20], @Check[nature|dc:20], @Check[occultism|dc:20], or @Check[religion|dc:20] on each of the shadow walls (disabling three of the four walls ends the hazard), or activating the orrery with the <em>unlit star</em> as noted in \"The Orrery of Light.\"</p>",
+            "routine": "<p>Each turn, the walls use 1 action. Roll a [[/gmr 1d10 #Routine Result]]{d10} and look up the result on the following list to determine which action the walls uses that round.</p><p><strong>1–4 Single Target</strong> The walls lash out at a random hero in the room. Roll a [[/gmr 1d4 #Random Hero]]{d4} and count to the number you rolled, starting with the player on your left, to determine which hero gets attacked. The shadow lash is a ranged Strike with +10 to hit. On a hit, it deals @Damage[2d6[void]] damage (doubled on a critical hit as normal).</p><p><strong>5–7 Wall Barrage</strong> The shadow arms lunge out from their respective wall, assaulting any one near an active wall. This hits any creature within 10 feet of an active wall (within 10 feet of a shadow hand on the map), dealing @Damage[2d6[void]|options:area-damage] damage. Each hero must attempt a @Check[reflex|dc:15|basic|options:area-effect] save, taking no damage on a critical success, half damage on a success, full damage on a failure, and double damage on a critical failure.</p><p><strong>8–9 Split Assault</strong> The shadows lash out against one half of the room. Roll [[/gmr 1d20 #Even Western Half, Odd Eastern Half]]{any die}. If the result is even, they assault the western half; otherwise, they assault the eastern half. This deals @Damage[2d6[void]|options:area-damage] damage to each creature in that half of the room, and each hero must attempt a @Check[reflex|dc:15|basic|options:area-effect] save.</p><p><strong>10 Overwhelming Assault</strong> Like the split assault attack, but it targets everyone in the room.</p>",
+            "items": {}
+        },
+        "Umbral Gnome Warrior (BB)": {
+            "prototypeToken": {
+                "name": "Umbral Gnome Warrior (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Umbral Gnome Warrior (BB)",
+            "publicNotes": "<p>Umbral gnome warriors are quick to charge into battle, but focus on defending their kin and their homes over more aggressive tactics when a choice is available. These warriors tend to work in groups and use their shields to intercept attacks.</p>",
+            "ac": "(20 with shield raised)",
+            "items": {
+                "equipment-Heavy Crossbow": {
+                    "name": "Heavy Crossbow",
+                    "description": "<p>This large crossbow is harder to load and more substantial than a regular crossbow, but it packs a greater punch.</p>"
+                },
+                "equipment-Spear": {
+                    "name": "Spear",
+                    "description": "<p>A long metal shaft ending with a metal spike, a spear can be used one-handed as a melee weapon and can be thrown.</p>"
+                },
+                "Steel Shield": {
+                    "name": "Steel Shield",
+                    "description": "<p>Like wooden shields, steel shields come in a variety of shapes and sizes. Though more expensive than wooden shields, they are much more durable.</p><table class=\"pf2e remaster\"><thead><tr><th>Hardness</th><th>HP</th><th>BT</th></tr></thead><tbody><tr><td>5</td><td>20</td><td>10</td></tr></tbody></table>"
+                },
+                "equipment-Studded Leather Armor": {
+                    "name": "Studded Leather Armor",
+                    "description": "<p>This leather armor is reinforced with metal studs and sometimes small metal plates, providing most of the flexibility of leather armor with more robust protection.</p>"
+                },
+                "Bolts": {
+                    "name": "Bolts",
+                    "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
+                },
+                "Raise a Shield": {
+                    "name": "Raise a Shield",
+                    "description": "<p>The umbral gnome warrior lifts up their shield to get a +2 circumstance bonus to AC until the start of their next turn.</p>"
                 }
             }
         },
@@ -522,11 +709,63 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Goblin Warrior (BB)",
-            "publicNotes": "<p>The frontline fighters of goblin tribes prefer to fight in large groups-especially when they can outnumber their foes by at least three to one. One doesn't need intense training or great toughness to become a goblin warrior. Anyone can aspire to this role, or be drafted into it during an emergency.</p>\n<p>Goblin warriors delight in wreaking havoc. They think nothing of slaughtering livestock, stealing infants, or burning down buildings purely for momentary delight. They revel in playing malicious tricks on taller humanoids, whom they call \"longshanks.\" What the goblins lack in consistency, long-term planning, and good sense, they make up for in sheer bravery and commitment.</p>",
+            "publicNotes": "<p>The frontline fighters of goblin tribes prefer to fight in large groups—especially when they can outnumber their foes by at least three to one. One doesn't need intense training or great toughness to become a goblin warrior. Anyone can aspire to this role, or be drafted into it during an emergency.</p>\n<p>Goblin warriors delight in wreaking havoc. They think nothing of slaughtering livestock, stealing infants, or burning down buildings purely for momentary delight. They revel in playing malicious tricks on taller humanoids, whom they call \"longshanks.\" What the goblins lack in consistency, long-term planning, and good sense, they make up for in sheer bravery and commitment.</p>",
             "items": {
                 "Goblin Scuttle": {
                     "name": "Goblin Scuttle",
                     "description": "<p>If a goblin ally ends a move action adjacent to the goblin warrior, the warrior can use their reaction to Step.</p>"
+                }
+            }
+        },
+        "Ferrous Butterfly (BB)": {
+            "prototypeToken": {
+                "name": "Ferrous Butterfly (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ferrous Butterfly (BB)",
+            "publicNotes": "<p>Beautiful but deadly, the ferrous butterfly is a turkey-sized insectile creature bristling with dozens of gleaming, razor-edged blades. Considered harmless by most denizens of the Plane of Metal, they nonetheless pose a significant threat to organic creatures, whose iron-rich blood they find irresistible. The wing blades of these butterflies tend to break off during feeding and regrow naturally. These scales are reminiscent of jagged scraps of metal and can serve as surprisingly effective makeshift weapon.</p>",
+            "items": {
+                "A Thousand Cuts": {
+                    "name": "A Thousand Cuts",
+                    "description": "<p>A ferrous butterfly's knifelike wings cause terrible lacerations that continue to bleed. Any creature with persistent bleed damage from a ferrous butterfly's wing attack has weakness 2 to slashing damage until the bleeding is stopped.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Eecbbol29eIP3zvf]{Effect: A Thousand Cuts}</p>"
+                },
+                "Swoop": {
+                    "name": "Swoop",
+                    "description": "<p>The ferrous butterfly Flies up to its Speed and makes a wing Strike at any point during that movement.</p>"
+                }
+            }
+        },
+        "Umbral Gnome Rockwarden (BB)": {
+            "prototypeToken": {
+                "name": "Umbral Gnome Rockwarden (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Umbral Gnome Rockwarden (BB)",
+            "publicNotes": "<p>A notable subgroup of gnomes called umbral gnomes typically have gray or brown skin with a stony texture, and thin, pale hair or bald pates. Umbral gnomes are most numerous in the Darklands, where they go by the name drathnelar. While they are not as sinister or ruthless as other Darklands denizens, those who seek their aid should remember that they don't welcome strangers with open arms.</p>\n<p>Umbral gnome rockwardens follow druidic teachings and commune with the natural elemental influences and denizens of the Darklands.</p>",
+            "items": {
+                "equipment-Sling": {
+                    "name": "Sling",
+                    "description": "<p>Little more than a leather cup attached to a pair of straps, a sling can be used to fling smooth stones or sling bullets at a range.</p>"
+                },
+                "equipment-Scythe": {
+                    "name": "Scythe",
+                    "description": "<p>Derived from a farming tool used to mow down long grains and cereals, this weapon has a long wooden shaft with protruding handles, capped with a curved blade set at a right angle.</p>"
+                },
+                "equipment-Hide Armor": {
+                    "name": "Hide Armor",
+                    "description": "<p>A mix of furs, sturdy hide, and sometimes molded boiled leather, this armor provides protection due to its layers of leather, though its bulkiness slows the wearer down and decreases mobility.</p>"
+                },
+                "equipment-Primal Symbol": {
+                    "name": "Primal Symbol",
+                    "description": "<p>Primal spellcasters, especially druids, often wear adornments of natural materials to symbolize their connection to nature, such as rings of woven plants, tokens made from animal parts, or other symbols related to a druidic order or nature philosophy.</p>"
+                },
+                "Sling Bullets": {
+                    "name": "Sling Bullets",
+                    "description": "<p>These are small metal balls, typically either iron or lead, designed to be used as ammunition in slings.</p>"
                 }
             }
         },
@@ -563,7 +802,7 @@
                 },
                 "Easily Misled": {
                     "name": "Easily Misled",
-                    "description": "<p>The forest troll gets a -4 circumstance penalty to their Perception DC against deception checks.</p>"
+                    "description": "<p>The forest troll gets a –4 circumstance penalty to their Perception DC against deception checks.</p>"
                 },
                 "Rend": {
                     "name": "Rend",
@@ -579,7 +818,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Giant Rat (BB)",
-            "publicNotes": "<p>Giant rats are enormous versions of the common vermin. They're typically found in abundant numbers, but since they can't fit in the nooks where ordinary rats typically hide, they're much easier to locate and exterminate. In fact, finding and slaying a giant rat is a rite of passage for many an adventurer. Such tasks get tiresome quickly, so many veterans subcontract extermination to new adventurers.</p>\n<p>Giant rats mostly live in sewers where they can scavenge from the streets above, but some families of giant rats live in more remote locations, such as dank caves, forests, or hills. Rats are incredibly adept survivors and can be found nearly anywhere in the world, though they tend to favor temperate or warm climates as opposed to cold regions.</p>\n<p>Although their bite alone isn't lethal except to the very weak, some giant rats carry a dangerous disease common to rodents around the world-a pestilence more than capable of ravaging rural communities. The rats are merely carriers with no risk of succumbing to the disease themselves.</p>",
+            "publicNotes": "<p>Giant rats are enormous versions of the common vermin. They're typically found in abundant numbers, but since they can't fit in the nooks where ordinary rats typically hide, they're much easier to locate and exterminate. In fact, finding and slaying a giant rat is a rite of passage for many an adventurer. Such tasks get tiresome quickly, so many veterans subcontract extermination to new adventurers.</p>\n<p>Giant rats mostly live in sewers where they can scavenge from the streets above, but some families of giant rats live in more remote locations, such as dank caves, forests, or hills. Rats are incredibly adept survivors and can be found nearly anywhere in the world, though they tend to favor temperate or warm climates as opposed to cold regions.</p>\n<p>Although their bite alone isn't lethal except to the very weak, some giant rats carry a dangerous disease common to rodents around the world—a pestilence more than capable of ravaging rural communities. The rats are merely carriers with no risk of succumbing to the disease themselves.</p>",
             "items": {}
         },
         "Ghoul Stalker (BB)": {
@@ -594,7 +833,7 @@
             "items": {
                 "Stench": {
                     "name": "Stench",
-                    "description": "<p>A creature that comes within 10 feet of the ghoul and can smell the ghoul must attempt a @Check[fortitude|dc:14] save. On a failure, the creature takes a -1 status penalty to all checks and DCs until it uses an action to retch (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}). A creature that succeeds at its save isn't affected by any ghoul's stench for 1 minute.</p>"
+                    "description": "<p>A creature that comes within 10 feet of the ghoul and can smell the ghoul must attempt a @Check[fortitude|dc:14|options:area-effect,inflicts:sickened] save. On a failure, the creature takes a –1 status penalty to all checks and DCs until it uses an action to retch (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}). A creature that succeeds at its save isn't affected by any ghoul's stench for 1 minute.</p>"
                 },
                 "Consume Flesh": {
                     "name": "Consume Flesh",
@@ -607,6 +846,26 @@
                 "Swift Leap": {
                     "name": "Swift Leap",
                     "description": "<p>The ghoul jumps up to half its Speed. This movement doesn't trigger reactions.</p>"
+                }
+            }
+        },
+        "Shadow Twigjack": {
+            "prototypeToken": {
+                "name": "Shadow Twigjack"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Twigjack",
+            "publicNotes": "<p>\"True\" twigjacks, as they consider themselves, are found in wild forests alongside the fey they idolize.</p>\n<hr />\n<p>Maladjusted forest denizens, twigjacks form from the cruel and prankish combination of fey and the very woods in which they reside. A twigjack's body is made up of prickly brambles woven with vines. Shaggy, mossy growth, not unlike hair, tops a twigjack's head. Its mouth is just a canyon of splintered and broken sticks bisecting its face. Leaves and sprigs of new growth randomly sprout from the creature's body. Many dense forests on Golarion have at least a handful of twigjacks living in the undergrowth.</p>\n<p>While truculent and violent, twigjacks care deeply for what they consider to be their forests. These creatures harass outsiders who delve deep into their wooded domains, forcing back even the most determined explorers, foresters, and travelers, especially when those intruders cut roads through the forest. However, they are not terribly territorial when it comes to other forest creatures. When sylvan creatures, especially fey, rally against an outside threat, twigjacks in the area eagerly arrive to fight, even if they were not invited.</p>",
+            "items": {
+                "Bramble Jump": {
+                    "name": "Bramble Jump",
+                    "description": "<p>When the twigjack is in undergrowth, it can instantly teleport to a square of undergrowth within 60 feet. This movement doesn't trigger reactions.</p>"
+                },
+                "Splinter Spray": {
+                    "name": "Splinter Spray",
+                    "description": "<p>The twigjack sprays a barrage of splinters and brambles from its body that deals @Damage[3d6[piercing]|options:area-damage] damage in a @Template[type:cone|distance:15]. Each creature in the area must attempt a @Check[reflex|dc:18|basic|options:area-effect] save. The twigjack can't use Splinter Spray again for [[/gmr 1d4 #Recharge Splinter Spray]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -655,15 +914,15 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Leopard (BB)",
-            "publicNotes": "<p>Leopards range from the iconic yellow with black spots to black panthers and white-furred, black-spotted snow leopards. Few predators can match their talent for stalking and stealth.</p>",
+            "publicNotes": "<p>Leopards range from the iconic yellow with black spots to black panthers and white-furred snow leopards. Few predators can match their talent for stalking and stealth.</p>",
             "items": {
                 "Maul": {
                     "name": "Maul",
-                    "description": "<p>The leopard makes two claw Strikes against a creature it has @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}. The second attack uses the same multiple attack penalty as the first, but later attacks that turn take a -10 multiple attack penalty (or -8 for its claws).</p>"
+                    "description": "<p>The leopard makes two claw Strikes against a creature it has @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}. The second attack uses the same multiple attack penalty as the first, but later attacks that turn take a –10 multiple attack penalty (or –8 for its claws).</p>"
                 },
                 "Pounce": {
                     "name": "Pounce",
-                    "description": "<p>The leopard Strides and makes a Strike at the end of that movement. If the leopard successfully used @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} before this action, the target has the @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} condition against this Strike.</p>"
+                    "description": "<p>The leopard Strides and makes a Strike at the end of that movement. If the leopard successfully used [[/act hide]] before this action, the target has the @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} condition against this Strike.</p>"
                 },
                 "Sneak Attack": {
                     "name": "Sneak Attack",
@@ -695,8 +954,12 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Goblin Igniter (BB)",
-            "publicNotes": "<p>Goblins find fire totally fascinating. It makes light. It's great for cooking. It's a fun toy! Some goblins take their people's admiration of fire a little bit too far and into the realm of deadly obsession.</p>\n<p>Goblins who turn their attentions to magic so they can learn to make fire from nothing are known as goblin igniters. These flame fanatics can be a great boon to a band of goblin raiders eager to torch their enemies and wreak havoc. More often, however, their presence is a double-edged sword. In the heat of the moment, goblin igniters sometimes lose sight of their goals and simply set fire to anything that will burn-including their own allies!</p>",
+            "publicNotes": "<p>Goblins find fire totally fascinating. It makes light. It's great for cooking. It's a fun toy! Some goblins take their people's admiration of fire a little bit too far and into the realm of deadly obsession.</p>\n<p>Goblins who turn their attention to magic so they can learn to make fire from nothing are known as goblin igniters. These flame fanatics can be a great boon to a band of goblin raiders eager to torch their enemies and wreak havoc. More often, however, their presence is a double-edged sword. In the heat of the moment, goblin igniters sometimes lose sight of their goals and simply set fire to anything that will burn—including their own allies!</p>",
             "items": {
+                "equipment-Torch": {
+                    "name": "Torch",
+                    "description": "<p>A torch sheds bright light in a 20-foot radius (and dim light to the next 20 feet) for 1 hour. It can be used as an improvised weapon that deals 1d4 bludgeoning damage plus 1 fire damage.</p>"
+                },
                 "Goblin Scuttle": {
                     "name": "Goblin Scuttle",
                     "description": "<p>If a goblin ally ends a move action adjacent to the goblin igniter, the igniter can use their reaction to Step.</p>"
@@ -715,11 +978,11 @@
             "items": {
                 "Giant Ant Venom": {
                     "name": "Giant Ant Venom",
-                    "description": "<p>A target that takes piercing damage from the giant ant's stinger Strike must succeed at a @Check[fortitude|dc:18|traits:damaging-effect] save or take @Damage[1d10[poison]] damage.</p>"
+                    "description": "<p>A target that takes piercing damage from the giant ant's stinger Strike must succeed at a @Check[fortitude|dc:18|options:damaging-effect] save or take @Damage[1d10[poison]] damage.</p>"
                 },
                 "Haul Away": {
                     "name": "Haul Away",
-                    "description": "<p>If the giant ant has a creature grabbed or restrained with its mandibles, it can spend this action to Stride up to its speed, carrying the creature with it. At the end of the Stride, place the creature in any open square adjacent to the giant ant.</p>"
+                    "description": "<p>If the giant ant has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} or @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} with its mandibles, it can spend this action to Stride up to its speed, carrying the creature with it. At the end of the Stride, place the creature in any open square adjacent to the giant ant.</p>"
                 }
             }
         },
@@ -731,7 +994,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Basilisk (BB)",
-            "publicNotes": "<p>A basilisk is an eight-legged reptile that can turn creatures to stone just by looking at them.</p>",
+            "publicNotes": "<p>A basilisk is a reptile that can turn creatures to stone just by looking at them.</p>",
             "items": {
                 "Petrifying Glance": {
                     "name": "Petrifying Glance",
@@ -739,7 +1002,7 @@
                 },
                 "Petrifying Gaze": {
                     "name": "Petrifying Gaze",
-                    "description": "<p>The basilisk stares at a creature it can see within 30 feet. If the creature can see the basilisk, that creature must attempt a @Check[fortitude|dc:22|options:inflicts:slowed,inflicts:petrified] save.</p>\n<p>If it fails and hasn't already gained the slowed condition from Petrifying Glance or this ability, it gains the @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} condition. If the creature fails this save when it already has the slowed condition from this ability or Petrifying Glance, the creature is permanently turned to @UUID[Compendium.pf2e.conditionitems.Item.dTwPJuKgBQCMxixg]{Stone}.</p>\n<p>A creature petrified in this manner that is coated with fresh basilisk blood is instantly restored to flesh. A single basilisk contains enough blood to coat up to 2 creatures in this manner.</p>"
+                    "description": "<p>The basilisk stares at a creature it can see within 30 feet. If the creature can see the basilisk, that creature must attempt a @Check[fortitude|dc:22|options:inflicts:slowed,inflicts:petrified] save. If it fails and hasn't already gained the slowed condition from Petrifying Glance or this ability, it gains the @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} condition. If the creature fails this save when it already has the slowed condition from this ability or Petrifying Glance, the creature is permanently turned to stone.</p>\n<p>A creature petrified in this manner that is coated with fresh basilisk blood is instantly restored to flesh. A single basilisk contains enough blood to coat up to 2 creatures in this manner.</p>"
                 }
             }
         },
@@ -759,11 +1022,11 @@
                 },
                 "Incorporeal": {
                     "name": "Incorporeal",
-                    "description": "<p>A ghost has no body and can pass through physical objects, though it can't end its turn inside one. Most checks that use Strength and require a body, such as @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} and @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove}, don't work against a ghost, and a ghost can't attempt such checks.</p>"
+                    "description": "<p>A ghost has no body and can pass through physical objects, though it can't end its turn inside one. Most checks that use Strength and require a body, such as @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple}, don't work against a ghost, and a ghost can't attempt such checks.</p>"
                 },
                 "Rejuvenation": {
                     "name": "Rejuvenation",
-                    "description": "<p>Setting right the injustice that led to the ghost's death allows it to move on to the afterlife. Otherwise, when destroyed, the ghost re-forms after [[/br 2d4 #Rejuvenation]]{2d4 days} within the location it's bound to, fully healed.</p>"
+                    "description": "<p>Setting right the injustice that led to the ghost's death allows it to move on to the afterlife. Otherwise, when destroyed, the ghost re-forms after [[/gmr 2d4 #days]]{2d4 days} within the location it's bound to, fully healed.</p>"
                 },
                 "Frightful Moan": {
                     "name": "Frightful Moan",
@@ -779,11 +1042,11 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Giant Centipede (BB)",
-            "publicNotes": "<p>Centipedes are relatively common arthropods that live, hunt, and scavenge amid dung and detritus. Scurrying about with surprising speed on the scores of legs attached to their long, segmented bodies, centipedes strike with poisoned mandibles.</p>\n<p>Most giant centipedes (known as sewer centipedes when found in cities) nest in small groups but hunt alone. Attempts to domesticate giant centipedes to use as guardians or pets generally end poorly, but some goblin and kobold societies have developed effective methods of utilizing these vermin as guardians. Some societies roast and eat centipedes, often with pungent peppers, as a savory delicacy, although care must be taken in preparing the meal to avoid contaminating the flesh with the creature's venom.</p>",
+            "publicNotes": "<p>Centipedes are relatively common arthropods that live, hunt, and scavenge amid dung and detritus. Scurrying about with surprising speed on the scores of legs attached to their long, segmented bodies, centipedes strike with poisoned mandibles.</p>\n<p>Most giant centipedes (known as sewer centipedes when found in cities) nest in small groups but hunt alone. Attempts to domesticate giant centipedes for use as guardians or pets generally end poorly, but some goblin and kobold societies have developed effective methods of utilizing these vermin as guardians. Some societies roast and eat centipedes, often with pungent peppers, as a savory delicacy. Care must be taken in preparing the meal, though, to avoid contaminating the flesh with the creature's venom.</p>",
             "items": {
                 "Giant Centipede Venom": {
                     "name": "Giant Centipede Venom",
-                    "description": "<p>A target that takes piercing damage from the centipede's mandibles Strike must succeed at a @Check[fortitude|dc:14] save or take @Damage[1d6[poison]] damage.</p>"
+                    "description": "<p>A target that takes piercing damage from the centipede's mandibles Strike must succeed at a @Check[fortitude|dc:14|options:damaging-effect] save or take @Damage[1d6[poison]] damage.</p>"
                 }
             }
         },
@@ -795,12 +1058,31 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Hobgoblin Soldier (BB)",
-            "publicNotes": "<p>Hobgoblins are singularly devoted to war, and their entire civilization is built upon fostering and maintaining conflict while simultaneously proving their superiority in battle. Highly organized, they work efficiently and effectively in groups, whether that group is a small raiding party, a roving war band, or a fully regimented army. Physically, hobgoblins stand about as tall as humans and have gray, ashen skin.</p>",
+            "publicNotes": "<p>Hobgoblins are devoted to war, and their entire civilization is built upon fostering and maintaining conflict while proving their battle superiority. Highly organized, they work efficiently in groups, whether that group is a small raiding party, a roving war band, or a fully regimented army. Physically, hobgoblins stand about as tall as humans and have gray, ashen skin.</p>",
             "ac": "(20 with shield raised)",
             "items": {
                 "Formation": {
                     "name": "Formation",
                     "description": "<p>When they're adjacent to at least two other allies, the hobgoblin soldier gains a +1 circumstance bonus to AC and saving throws.</p>"
+                },
+                "Raise a Shield": {
+                    "name": "Raise a Shield",
+                    "description": "<p>The hobgoblin soldier lifts up their shield to get a +2 circumstance bonus to AC until the start of their next turn</p>"
+                }
+            }
+        },
+        "Shadow Gargoyle": {
+            "prototypeToken": {
+                "name": "Shadow Gargoyle"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Gargoyle",
+            "items": {
+                "Clawed Feet": {
+                    "name": "Clawed Feet",
+                    "description": "<p>If the gargoyle is flying and a creature moves into an adjacent square below them, the gargoyle can use their reaction to make a claw Strike against that creature.</p>"
                 }
             }
         },
@@ -832,15 +1114,43 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Orc Commander (BB)",
-            "publicNotes": "<p>When orcs raid, the strongest is chosen as the leader. Bonds of blood are especially strong among orcs, and the mightiest orc holds are typically made up of siblings who have chosen a strong commander to protect their kinfolk.</p>",
+            "publicNotes": "<p>When orcs raid, the strongest is chosen as the leader. Bonds of blood are especially strong among orcs and the mightiest orc holds are typically made up of siblings who have chosen a strong commander to protect their kinfolk.</p>",
             "items": {
                 "Ferocity": {
                     "name": "Ferocity",
-                    "description": "<p>When the orc is reduced to 0 Hit Points, they can use their reaction to remain conscious with 1 Hit Point, but they gain the wounded 1 condition (or increases the wounded value by 1 if they already have that condition). The orc can't use this ability at wounded 3.</p>"
+                    "description": "<p>When the orc is reduced to 0 Hit Points, they can use their reaction to remain conscious with 1 Hit Point, but they gain the @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded 1} condition (or increases the wounded value by 1 if they already have that condition). The orc can't use this ability at wounded 3.</p>"
                 },
                 "Battle Cry": {
                     "name": "Battle Cry",
-                    "description": "<p>Bellowing mightily, the commander gives themself and all orc allies within @Template[emanation|distance:60]{60 feet} who can hear them a +1 status bonus to attack and damage rolls until the start of the orc commander's next turn.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Yqq4AkZ9lrm4CcID]{Effect: Battle Cry}</p>"
+                    "description": "<p>Bellowing mightily, the commander gives themself and all orc allies within 60 feet who can hear them a +1 status bonus to attack rolls and damage rolls until the start of the orc commander's next turn.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Yqq4AkZ9lrm4CcID]{Effect: Battle Cry}</p>"
+                }
+            }
+        },
+        "Umbral Gnome Scout (BB)": {
+            "prototypeToken": {
+                "name": "Umbral Gnome Scout (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Umbral Gnome Scout (BB)",
+            "publicNotes": "<p>Umbral gnome scouts patrol the tunnels that lead into their settlements. They make use of the darkness of these tunnels to hide from any would-be trespassers. While umbral gnome scouts prefer to use their stealth for reconnaissance, they aren't afraid to strike from the shadows to deal with threats. They are adept at moving between areas of darkness for hit-and-run tactics.</p>",
+            "items": {
+                "equipment-Sling": {
+                    "name": "Sling",
+                    "description": "<p>Little more than a leather cup attached to a pair of straps, a sling can be used to fling smooth stones or sling bullets at a range.</p>"
+                },
+                "equipment-Sickle": {
+                    "name": "Sickle",
+                    "description": "<p>Originally a farming tool used for reaping grain, this one-handed weapon has a short wooden handle ending in a curved blade, sometimes sharpened on both sides.</p>"
+                },
+                "Sling Bullets": {
+                    "name": "Sling Bullets",
+                    "description": "<p>These are small metal balls, typically either iron or lead, designed to be used as ammunition in slings.</p>"
+                },
+                "Hidden Movement": {
+                    "name": "Hidden Movement",
+                    "description": "<p>If the umbral gnome scout starts their turn @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected} or @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} to a creature, that creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against the umbral gnome scout's attacks until the end of the turn.</p>"
                 }
             }
         },
@@ -877,6 +1187,54 @@
                 }
             }
         },
+        "Water Scamp (BB)": {
+            "prototypeToken": {
+                "name": "Water Scamp (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Water Scamp (BB)",
+            "publicNotes": "<p>Elemental scamps are bat-like critters marked by elemental powers. Water scamps are marked apart from other scamps by sleek fur that traps a layer of water next to their skin. Although they can fly like their kin and conjure enough water to never dry out, water scamps leave the water only when they must.</p>",
+            "hp": "fast healing 2 (while underwater)",
+            "items": {
+                "Fast Healing 2 (While Underwater)": {
+                    "name": "Fast Healing 2 (While Underwater)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Acid Breath": {
+                    "name": "Acid Breath",
+                    "description": "<p>The water scamp breathes acid that deals @Damage[2d6[acid]|options:area-damage] damage in a @Template[type:cone|distance:15]. Each creature in the area must attempt a @Check[reflex|dc:17|basic|options:area-effect] save. The water scamp can't use Acid Breath again for [[/gmr 1d4 #Recharge Acid Breath]]{1d4 rounds}.</p>"
+                },
+                "Drench": {
+                    "name": "Drench",
+                    "description": "<p>The water scamp shakes out a seemingly endless supply of water from its fur to put out all non-magical fires within 5 feet.</p>"
+                }
+            }
+        },
+        "String Slime (BB)": {
+            "prototypeToken": {
+                "name": "String Slime (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "String Slime (BB)",
+            "items": {
+                "Motion Sense": {
+                    "name": "Motion Sense",
+                    "description": "<p>A string slime can feel nearby motion through vibration and air movement.</p>"
+                },
+                "Split": {
+                    "name": "Split",
+                    "description": "<p>Whenever a string slime would take slashing damage (if it weren't immune) and has at least 10 Hit Points, it splits into two identical slimes with half the original's Hit Points. One string slime is in the same space as the original, and the other appears in an adjacent unoccupied space. If no adjacent space is unoccupied, move smaller creatures and objects out of the way to make a space or the split is canceled at the GM's discretion.</p>"
+                },
+                "Tag Team": {
+                    "name": "Tag Team",
+                    "description": "<p>The slime arcs acidic protoplasm to another string slime within 30 feet along a straight line. Each creature in that line takes @Damage[3d6[acid]] damage with a @Check[reflex|dc:16|basic|options:area-effect,inflicts:prone] save. A creature that fails its save is also knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+                }
+            }
+        },
         "Kobold Mage (Black, BB)": {
             "prototypeToken": {
                 "name": "Kobold Mage (Black, BB)"
@@ -890,6 +1248,46 @@
                 "Scamper": {
                     "name": "Scamper",
                     "description": "<p>If the kobold is adjacent to at least one enemy, the kobold Strides up to 30 feet and gains a +2 circumstance bonus to AC against reactions triggered by this movement. The kobold must end this movement in a space that's not adjacent to any enemy.</p>"
+                }
+            }
+        },
+        "Hobgoblin Archer (BB)": {
+            "prototypeToken": {
+                "name": "Hobgoblin Archer (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Hobgoblin Archer (BB)",
+            "publicNotes": "<p>Bands of hobgoblin soldiers typically have at least one archer among their ranks. In smaller groups, the hobgoblin archer also serves as that band's captain. These archers generally command these groups from a distance or higher ground and they make use of their keen senses to watch for strategic openings.</p>",
+            "items": {
+                "equipment-Crossbow": {
+                    "name": "Crossbow",
+                    "description": "<p>This ranged weapon has a bow-like assembly mounted on a handled frame called a tiller. The tiller has a mechanism to lock the bowstring in place, attached to a trigger mechanism that releases the tension and launches a bolt.</p>"
+                },
+                "equipment-Shortsword": {
+                    "name": "Shortsword",
+                    "description": "<p>These blades come in a variety of shapes and styles, but they are typically 2 feet long.</p>"
+                },
+                "equipment-Scale Mail": {
+                    "name": "Scale Mail",
+                    "description": "<p>Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.</p>"
+                },
+                "Bolts": {
+                    "name": "Bolts",
+                    "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
+                },
+                "Formation": {
+                    "name": "Formation",
+                    "description": "<p>When they're adjacent to at least two other allies, the hobgoblin archer gains a +1 circumstance bonus to AC and saving throws.</p>"
+                },
+                "Crossbow Precision": {
+                    "name": "Crossbow Precision",
+                    "description": "<p>The first time the archer hits with a crossbow attack in a round, they deal 1d8 extra precision damage.</p>"
+                },
+                "Running Reload": {
+                    "name": "Running Reload",
+                    "description": "<p>The archer Strides, Steps, or @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneaks}, then Interacts to reload.</p>"
                 }
             }
         },
@@ -925,11 +1323,11 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Hell Hound (BB)",
-            "publicNotes": "<p>Temperamental and quick to aggressive behavior, hell hounds are fiendish canines from a hellish plane. They're skilled hunters and can breathe supernatural gouts of flame from their maws. A hell hound's appearance leaves no doubts as to its infernal origins-flesh the color of burning pitch, teeth as sharp as any fiend's pitchfork, and a shroud of ever-burning hellfire are all trademark features. Though they can't speak, they understand Diabolic, the language of Hell.</p>",
+            "publicNotes": "<p>Temperamental and quick to aggressive behavior, hell hounds are fiendish canines from a hellish plane. They're skilled hunters and can breathe gouts of flame from their maws. A hell hound's appearance leaves no doubts as to its infernal origins—flesh the color of burning pitch, teeth as sharp as any fiend's pitchfork, and a shroud of ever-burning hellfire are all trademark features. Though they can't speak, they understand Diabolic, the language of Hell.</p>",
             "items": {
                 "Hellfire Breath": {
                     "name": "Hellfire Breath",
-                    "description": "<p>The hell hound breathes flames that deal @Damage[4d6[fire]|options:area-damage] damage to all creatures in a @Template[cone|distance:15]. Each affected creature must attempt a @Check[reflex|dc:19|basic|options:area-effect] save.</p>\n<p>The hell hound can't use Breath Weapon again for [[/gmr 1d4 #Recharge Hellfire Breath]]{1d4 rounds}. If the hell hound would take fire damage or is the target of a fire effect, its Hellfire Breath recharges.</p>"
+                    "description": "<p>The hell hound breathes flames that deal @Damage[4d6[fire]|options:area-damage] damage to all creatures in a @Template[type:cone|distance:15]. Each affected creature must attempt a @Check[reflex|dc:19|basic|options:area-effect] save.</p>\n<p>The hell hound can't use Hellfire Breath again for [[/gmr 1d4 #Recharge Hellfire Breath]]{1d4 rounds}. If the hell hound would take fire damage or is the target of a fire effect, its Hellfire Breath recharges.</p>"
                 },
                 "Pack Attack": {
                     "name": "Pack Attack",
@@ -945,8 +1343,24 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Goblin Commando (BB)",
-            "publicNotes": "<p>Most goblin communities teeter in a state of barely controlled disarray-a collective of creatures operating largely on gut instinct rarely follows any clear direction. Even goblin leaders tend to be impulsive, irresponsible, and generally just not that good at actually leading.</p>\n<p>In theory, goblin commandos lead goblin raids. In practice, goblin commandos rarely continue to lead their comrades once a battle has begun. Most shirk their responsibilities in favor of wading into the fray and claiming glory from their kin.</p>",
+            "publicNotes": "<p>Most goblin communities teeter in a state of barely controlled disarray—a collective of creatures operating largely on gut instinct rarely follows any clear direction. Even goblin leaders tend to be impulsive, irresponsible, and generally just not that good at actually leading.</p>\n<p>In theory, goblin commandos lead goblin raids. In practice, goblin commandos rarely continue to lead their comrades once a battle has begun. Most shirk their responsibilities in favor of wading into the fray and claiming glory from their kin.</p>",
             "items": {
+                "equipment-Greatsword": {
+                    "name": "Greatsword",
+                    "description": "<p>This immense two-handed sword is nearly as tall as its wielder. Its lower blade is often somewhat dulled to allow it to be gripped for extra leverage in close-quarter fights.</p>"
+                },
+                "equipment-Shortbow": {
+                    "name": "Shortbow",
+                    "description": "<p>This smaller bow is made of a single piece of wood and favored by skirmishers and cavalry.</p>"
+                },
+                "equipment-Leather Armor": {
+                    "name": "Leather Armor",
+                    "description": "<p>A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.</p>"
+                },
+                "Arrows": {
+                    "name": "Arrows",
+                    "description": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
+                },
                 "Goblin Scuttle": {
                     "name": "Goblin Scuttle",
                     "description": "<p>If a goblin ally ends a move action adjacent to the goblin commando, the commando can use their reaction to Step.</p>"
@@ -1037,6 +1451,46 @@
                 }
             }
         },
+        "Giant Fly (BB)": {
+            "prototypeToken": {
+                "name": "Giant Fly (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Giant Fly (BB)",
+            "publicNotes": "<p>This massive fly's twitching limbs seem to never stop moving as it constantly cleans itself and scoops anything edible into its mouth parts. While primarily carrion eaters, giant flies sometimes prey on livestock or other animals too slow to get away. Left to their own devices, these flies will lay dozens of eggs within the mostly-eaten carcasses. These eggs soon hatch into enormous maggots that begin the cycle of scavenging anew.</p>",
+            "items": {
+                "Avoid the Swat": {
+                    "name": "Avoid the Swat",
+                    "description": "<p><strong>Trigger</strong> The giant fly is targeted with a melee or ranged attack by an attacker it can see</p><hr /><p><strong>Effect</strong> The giant fly gains a +2 circumstance bonus to AC against the triggering attack. If the attack misses, the giant insect can Fly up to its fly Speed.</p>"
+                },
+                "Fly Pox": {
+                    "name": "Fly Pox",
+                    "description": "<p>A giant fly could carry any disease, but most transmit an infection called fly pox with their bite. A character who is critically hit by a giant fly's mandibles must succeed at a @Check[fortitude|dc:16|options:inflicts:enfeebled] saving throw or be @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 day.</p>"
+                }
+            }
+        },
+        "Crawling Hand (BB)": {
+            "prototypeToken": {
+                "name": "Crawling Hand (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Crawling Hand (BB)",
+            "publicNotes": "<p>Crawling hands form when severed appendages are endowed with a crude sentience by necromantic energies that turn them into tireless killers.</p>",
+            "items": {
+                "Lifesense": {
+                    "name": "Lifesense",
+                    "description": "<p>A crawling hand can sense the vital essence of living and undead creatures within 30 feet. This sense can distinguish between the vitality energy animating living creatures and the void energy animating undead creatures, much as sight distinguishes color. However, a crawling hand can't see, so effects that depend on vision or seeing don't work on it.</p>"
+                },
+                "Throat Grab": {
+                    "name": "Throat Grab",
+                    "description": "<p>When the crawling hand succeeds at its claw Strike against a Medium or smaller creature, it can use this action immediately after to attempt to [[/act grapple]] the target. This Grapple doesn't apply or count toward the crawling hand's multiple attack penalty. A creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} this way has difficulty speaking and must spend an extra action to perform any action that requires speaking, including casting spells.</p>"
+                }
+            }
+        },
         "Skeleton Guard (BB)": {
             "prototypeToken": {
                 "name": "Skeleton Guard (BB)"
@@ -1048,6 +1502,26 @@
             "publicNotes": "<p>Made from bones held together by foul necromancy, skeletons can often be found haunting old dungeons and patrolling forgotten cemeteries. Many evil masterminds prefer to keep eternally vigilant undead as minions to avoid the upkeep required to feed and satisfy the psychological needs of living guardians.</p>\n<p>Simple skeleton guards remain the most common skeletal minions. These skeletons are mindless, meaning they can't truly reason but can execute their basic guard duties of watching out for and attacking intruders. A group of several skeletons defending the same location usually consists of melee fighters and archers who shoot arrows from afar.</p>",
             "items": {}
         },
+        "Shadow Bat": {
+            "prototypeToken": {
+                "name": "Shadow Bat"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Bat",
+            "publicNotes": "<p>The shadowy magical energies related to some wicked deities, evil forces, or the shadowy plane of existence called the Netherworld sometimes manifest in the form of corrupted living creatures. The shadow bat has the physique of a giant bat made of shadows with the magical ability to create powerful gusts of wind.</p>",
+            "items": {
+                "Echolocation": {
+                    "name": "Echolocation",
+                    "description": "<p>The bat can \"see\" using its hearing at the listed range, allowing it to function just as well in darkness.</p>"
+                },
+                "Screeching Gust": {
+                    "name": "Screeching Gust",
+                    "description": "<p>The shadow bat flaps its wings and lets out a mighty screech, creating a cone of tearing winds and piercing sound. All creatures in a @Template[type:cone|distance:15] take @Damage[3d6[sonic]|options:area-damage] damage, with a @Check[reflex|dc:16|basic|options:area-effect,forced-movement] saving throw. Creatures that fail are pushed backwards 10 feet by the wind.</p>\n<p>Using its wings in this way exhausts the shadow bat, causing it to fall harmlessly to the ground immediately after using this ability and preventing it from taking flight or using Screeching Gust again for [[/gmr 1d4 #Recharge Screeching Gust]]{1d4 rounds}.</p>"
+                }
+            }
+        },
         "Ogre Warrior (BB)": {
             "prototypeToken": {
                 "name": "Ogre Warrior (BB)"
@@ -1056,7 +1530,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Ogre Warrior (BB)",
-            "publicNotes": "<p>Ogres embody cruelty and brutish, amoral violence. Standing 10 feet tall and densely muscled, ogres are as strong as they are cruel. They typically enjoy remorseless violence in all of its forms. Although they prefer to vent their violent urges on smaller humanoids-the smaller, the better-ogres promise a horrifying fate for anyone unlucky enough to fall within their meaty grasp.</p>\n<p>Always eager for mayhem and murder, ogre warriors are quick to turn on their kin when there's a shortage of smaller folk to torment, so those who lead ogres do their best to keep them constantly distracted with new opportunities for raids and ruin. An ogre's deficits in both patience and intelligence make them easy to trick, giving cunning captives many ways to get the better of them.</p>",
+            "publicNotes": "<p>Ogres embody cruel greed and brutish, amoral violence. Standing 10 feet tall and densely muscled, ogres are as strong as they are vicious. They typically enjoy remorseless violence in all of its forms. Although they prefer to vent their violent urges on smaller humanoids—the smaller, the better—ogres promise a horrifying fate for anyone unlucky enough to fall within their meaty grasp.</p>\n<p>Always eager for mayhem and murder, ogre warriors are quick to turn on their kin when there's a shortage of smaller folk to torment, so those who lead ogres do their best to keep them constantly distracted with new opportunities for raids and ruin. An ogre's deficits in both patience and intelligence make them easy to trick, giving cunning captives many ways to get the better of them.</p>",
             "items": {}
         },
         "Harpy (BB)": {
@@ -1071,11 +1545,31 @@
             "items": {
                 "Stench": {
                     "name": "Stench",
-                    "description": "<p>A creature that comes within 30 feet of the harpy and can smell the harpy must attempt a @Check[fortitude|dc:21] save. On a failure, the creature takes a -1 status penalty to all checks and DCs until it uses an action to retch. A creature that succeeds at its save isn't affected by any harpy's stenches for 1 minute.</p>"
+                    "description": "<p>A creature that comes within 30 feet of the harpy and can smell the harpy must attempt a @Check[fortitude|dc:21|options:area-effect,inflicts:sickened] save. On a failure, the creature takes a –1 status penalty to all checks and DCs until it uses an action to retch (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}). A creature that succeeds at its save isn't affected by any harpy's stenches for 1 minute.</p>"
                 },
                 "Hungry Winds": {
                     "name": "Hungry Winds",
-                    "description": "<p>The harpy uses the wind to pull its prey closer. A target within 20 feet must succeed at a @Check[fortitude|dc:21] save or be pulled adjacent to the harpy. The harpy then makes a jaws strike against the target. If the target is pulled into the air and cannot fly, it falls as normal.</p>"
+                    "description": "<p>The harpy uses the wind to pull its prey closer. A target within 20 feet must succeed at a @Check[fortitude|dc:21|options:forced-movement] save or be pulled adjacent to the harpy. The harpy then makes a jaws strike against the target. If the target is pulled into the air and cannot fly, it falls as normal.</p>"
+                }
+            }
+        },
+        "Sea Hag (BB)": {
+            "prototypeToken": {
+                "name": "Sea Hag (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Sea Hag (BB)",
+            "publicNotes": "<p>Hags are malevolent predators who use magic and manipulation to lure children and young adults into their clutches. They seek out targets who are unhappy, innocent, or otherwise vulnerable, preying on their weaknesses before snatching them up. A sea hag has the upper half of a humanoid and the lower half of an octopus, with translucent skin and glowing lights visible beneath their flesh.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "items": {
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Dread Gaze": {
+                    "name": "Dread Gaze",
+                    "description": "<p>The hag gazes upon a creature, afflicting it with a gnawing sense of impending doom, with a result depending on its @Check[will|dc:20|options:inflicts:frightened,inflicts:slowed] save. The target doesn't need to be able to see the sea hag.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is frightened 1 and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and slowed 1 for 1 minute.</p>"
                 }
             }
         },
@@ -1100,7 +1594,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Orc Veteran (BB)",
-            "publicNotes": "<p>The typical orc trooper is a violent combatant familiar to many adventurers. Orc warriors fight for their holds, for riches, and-perhaps most of all-for glory. Proving their own strength improves their station within their orc hold, so battle is a crucial part of life for any orc who aspires to one day lead or go down in history.</p>",
+            "publicNotes": "<p>The typical orc trooper is a violent combatant familiar to many adventurers. Orc warriors fight for their holds, for riches, and—perhaps most of all—for glory. Proving their own strength improves their station within their orc hold, so battle is a crucial part of life for any orc who aspires to one day lead or go down in history.</p>",
             "items": {
                 "Ferocity": {
                     "name": "Ferocity",
@@ -1137,15 +1631,15 @@
             "items": {
                 "Perfect Orienteering": {
                     "name": "Perfect Orienteering",
-                    "description": "<p>A minotaur automatically critically succeeds on Survival checks to @UUID[Compendium.pf2e.actionspf2e.Item.fJImDBQfqfjKJOhk]{Sense Direction} or @UUID[Compendium.pf2e.actionspf2e.Item.EA5vuSgJfiHH7plD]{Track}.</p>"
+                    "description": "<p>A minotaur automatically critically succeeds on Survival checks to [[/act sense-direction]] or [[/act track]]</p>"
                 },
                 "Axe Swipe": {
                     "name": "Axe Swipe",
-                    "description": "<p>The minotaur makes two Strikes with its greataxe against two adjacent enemies, both of whom are within its reach. The second attack uses the same multiple attack penalty as the first, but attacks it makes after this take a -10 multiple attack penalty.</p>"
+                    "description": "<p>The minotaur makes two Strikes with their greataxe against two adjacent enemies, both of whom are within their reach. The second attack uses the same multiple attack penalty as the first, but attacks they make after this take a –10 multiple attack penalty.</p>"
                 },
                 "Powerful Charge": {
                     "name": "Powerful Charge",
-                    "description": "<p>The minotaur Strides twice, then makes a horn Strike. If the moved at least 20 feet from their starting position, the Strike's damage is increased to 2d8+10 piercing.</p>"
+                    "description": "<p>The minotaur Strides twice, then makes a horn Strike. If they moved at least 20 feet from their starting position, the Strike's damage is increased to 2d8+10.</p>"
                 }
             }
         },
@@ -1167,17 +1661,13 @@
                     "name": "Light Vulnerability",
                     "description": "<p>Attacks against the shadow are treated as magical if the shadow or the weapon being used is in light.</p>"
                 },
-                "Shadow Spawn": {
-                    "name": "Shadow Spawn",
-                    "description": "<p>When a creature's shadow is pulled free by Steal Shadow, it becomes a @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.clzHAfegb9Rn6DOe]{Shadow Spawn} under the command of the shadow that created it. This shadow spawn doesn't have Steal Shadow and is perpetually and incurably @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{Clumsy 2}. If the creature the shadow spawn was pulled from dies, the shadow spawn becomes a full-fledged, autonomous shadow. If the creature recovers from its @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeeblement}, its shadow returns to it and the shadow spawn is extinguished.</p>"
-                },
                 "Slink in Shadows": {
                     "name": "Slink in Shadows",
                     "description": "<p>The shadow can @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} or end its @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneak} in a creature's or object's shadow.</p>"
                 },
                 "Steal Shadow": {
                     "name": "Steal Shadow",
-                    "description": "<p>If the shadow hit a living creature with a Strike on its previous action, it can use this action to pull at the target's shadow, imposing a -1 status penalty to Athletics and to attack rolls and damage rolls that use Strength. The penalty increases each time a shadow uses this ability to a maximum of -4. The penalty decreases by 1 every hour.</p>"
+                    "description": "<p>If the shadow hits a living creature with a Strike on its previous action, it can use this action to pull at the target's shadow, imposing a –1 status penalty to Athletics and to attack rolls and damage rolls that use Strength (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1}). The penalty increases each time a shadow uses this ability to a maximum of –4. The penalty decreases by 1 every hour.</p>"
                 }
             }
         },
@@ -1212,7 +1702,7 @@
             "items": {
                 "Twisting Tail": {
                     "name": "Twisting Tail",
-                    "description": "<p>When a creature within 10 feet uses a move action or leaves a square during a move action it's using, the dragon can use their reaction to make a tail Strike at the creature with a -2 penalty. If it hits, the creature stops moving in the square it was in when the dragon used this reaction.</p>"
+                    "description": "<p>When a creature within 10 feet uses a move action or leaves a square during a move action it's using, the dragon can use their reaction to make a tail Strike at the creature with a –2 penalty. If it hits, the creature stops moving in the square it was in when the dragon used this reaction.</p>"
                 },
                 "Draconic Frenzy": {
                     "name": "Draconic Frenzy",
@@ -1224,7 +1714,7 @@
                 },
                 "Poison Breath": {
                     "name": "Poison Breath",
-                    "description": "<p>The dragon breathes a toxic cloud that deals @Damage[5d6[poison]|options:area-damage] damage in a @Template[cone|distance:30]. Each creature in the area must attempt a @Check[reflex|dc:21|basic|options:area-effect] save.</p>\n<p>The dragon can't use their Poison Breath again for [[/gmr 1d4 #Recharge Poison Breath]]{1d4 rounds}.</p>"
+                    "description": "<p>The dragon breathes a toxic cloud that deals @Damage[5d6[poison]|options:area-damage] damage in a @Template[type:cone|distance:30]. Each creature in the area must attempt a @Check[reflex|dc:21|basic|options:area-effect] save. The dragon can't use Poison Breath again for [[/gmr 1d4 #Recharge Poison Breath]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -1268,7 +1758,7 @@
                 },
                 "Shred": {
                     "name": "Shred",
-                    "description": "<p>If the warg has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, it can spend one action to shred them with its teeth. The creature takes @Damage[1d6[slashing]] damage and can make a @Check[fortitude|dc:18|basic] save.</p>"
+                    "description": "<p>If the warg has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, they can spend one action to shred it with their teeth. The creature takes @Damage[1d6[slashing]] damage and can attempt a @Check[fortitude|dc:18|basic] save.</p>"
                 }
             }
         },
@@ -1332,6 +1822,30 @@
                 }
             }
         },
+        "Magnetic Skink": {
+            "prototypeToken": {
+                "name": "Magnetic Skink"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Magnetic Skink",
+            "publicNotes": "<p>The scales of these large lizards are magnetic, drawing scraps of metal to their bodies. In addition to eating insects and other small prey, magnetic skinks also feed on small amounts of metal, so they're known to reside near settlements with access to these materials.</p>",
+            "items": {
+                "Uncanny Climber": {
+                    "name": "Uncanny Climber",
+                    "description": "<p>A magnetic skink's feet allow it to climb virtually any surface, no matter how slick or sheer. If a skink attempts an Athletics check to [[/act climb]] and critically fails, it gets a failure instead.</p>"
+                },
+                "Launch Metal": {
+                    "name": "Launch Metal",
+                    "description": "<p>The skink repulses the metal attached to its body in all directions, dealing @Damage[2d6[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:15|basic|options:area-effect] save) to all creatures adjacent to the skink. The skink can't use Launch Metal again for [[/gmr 1d4 #Recharge Launch Metal]]{1d4 rounds}.</p>"
+                },
+                "Unsteadying Magnetism": {
+                    "name": "Unsteadying Magnetism",
+                    "description": "<p>The skink amplifies its magnetic field and tries to pull the metal away from a creature within 20 feet. If that creature is wearing metal armor or holding a metal item, they must attempt a @Check[fortitude|dc:15] save. On a failure, that creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of the skink's next turn.</p>"
+                }
+            }
+        },
         "Orc Scrapper (BB)": {
             "prototypeToken": {
                 "name": "Orc Scrapper (BB)"
@@ -1340,11 +1854,35 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Orc Scrapper (BB)",
-            "publicNotes": "<p>Orcs are proud, strong humanoids that live by the rule that might makes right. They amass in warbands both large and small, conquering territory and robbing those unlucky enough to cross their path. Countless small settlements, outposts, and forts have fallen at the hands of orc raiders, whose sheer destructiveness leaves an indelible mark on the lands they conquer. The furious and undisciplined rankand-file scrappers make up the bulk of an orc warband.</p>",
+            "publicNotes": "<p>Orcs are proud, strong humanoids that live by the rule that might makes right. They amass in warbands both large and small, conquering territory and robbing those unlucky enough to cross their path. Countless small settlements, outposts, and forts have fallen at the hands of orc raiders, whose sheer destructiveness leaves an indelible mark on the lands they conquer. The furious and undisciplined rank-and-file scrappers make up the bulk of an orc warband.</p>",
             "items": {
                 "Ferocity": {
                     "name": "Ferocity",
-                    "description": "<p>When the orc is reduced to 0 Hit Points, they can use their reaction to remain conscious with 1 Hit Point, but they gain the wounded 1 condition (or increases the wounded value by 1 if they already have that condition). The orc can't use this ability at wounded 3.</p>"
+                    "description": "<p>When the orc is reduced to 0 Hit Points, they can use their reaction to remain conscious with 1 Hit Point, but they gain the @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded 1} condition (or increases the wounded value by 1 if they already have that condition). The orc can't use this ability at wounded 3.</p>"
+                }
+            }
+        },
+        "Lukahn": {
+            "prototypeToken": {
+                "name": "Lukahn"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Lukahn",
+            "blurb": "variant shadow priest",
+            "items": {
+                "Incorporeal": {
+                    "name": "Incorporeal",
+                    "description": "<p>Lukahn has no body and can pass through physical objects, though he can't end his turn inside one. Most checks that use Strength and require a body, such as @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} and @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove}, don't work against Lukahn, and he can't use them.</p>"
+                },
+                "Light Vulnerability": {
+                    "name": "Light Vulnerability",
+                    "description": "<p>Attacks against Lukahn are treated as magical if he or the weapon being used against him is in light.</p>"
+                },
+                "Shadow Veil": {
+                    "name": "Shadow Veil",
+                    "description": "<p><strong>Trigger</strong> Lukahn is targeted by a melee attack</p><hr /><p><strong>Effect</strong> Lukahn gains a +2 circumstance bonus to AC against the triggering attack.</p>"
                 }
             }
         },

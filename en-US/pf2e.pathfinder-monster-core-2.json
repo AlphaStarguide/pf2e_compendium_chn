@@ -95,7 +95,7 @@
                 },
                 "Encircling Aura": {
                     "name": "Encircling Aura",
-                    "description": "<p>50 feet. A garadasura exudes a 50-foot aura whenever it remains motionless for at least 1 round. If the garadasura has the holy trait, all allied creatures within the area gain a +1 status bonus to AC and saving throws. If the garadasura has the unholy trait, all unallied creatures that enter this area must succeed at a @Check[will|dc:30] save or spend their next action to move toward the garadasura's location. If the garadasura moves, the efect ends for all currently affected creatures.</p>"
+                    "description": "<p>50 feet. A garadasura exudes a 50-foot aura whenever it remains motionless for at least 1 round. If the garadasura has the holy trait, all allied creatures within the area gain a +1 status bonus to AC and saving throws. If the garadasura has the unholy trait, all unallied creatures that enter this area must succeed at a @Check[will|dc:30|options:area-effect,forced-movement] save or spend their next action to move toward the garadasura's location. If the garadasura moves, the efect ends for all currently affected creatures.</p>"
                 },
                 "Reactive Strike": {
                     "name": "Reactive Strike",
@@ -408,11 +408,11 @@
                 },
                 "Humble Bow": {
                     "name": "Humble Bow",
-                    "description": "<p>A creature hit by one of the okenevem's Strikes is compelled to bow down in reverence. It must succeed at a @Check[will|dc:36] save or fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If the creature Stands before the end of its next turn, it takes @Damage[3d8[mental]] damage. If the creature succeeds, it's temporarily immune for 1 minute.</p>"
+                    "description": "<p>A creature hit by one of the okenevem's Strikes is compelled to bow down in reverence. It must succeed at a @Check[will|dc:36|options:inflicts:prone] save or fall @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. If the creature Stands before the end of its next turn, it takes @Damage[3d8[mental]] damage. If the creature succeeds, it's temporarily immune for 1 minute.</p>"
                 },
                 "Sublime Vision": {
                     "name": "Sublime Vision",
-                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The okenevem casts the overwhelming presence spell, except instead of aggrandizing themself, the okenevem summons a vision of Heaven within 100 feet, and the target must humble themself in self-refection rather than pay tribute.</p>"
+                    "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> The okenevem casts the @UUID[Compendium.pf2e.spells-srd.Item.fkDeKktdmbeplYRY]{Overwhelming Presence} spell, except instead of aggrandizing themself, the okenevem summons a vision of Heaven within 100 feet, and the target must humble themself in self-refection rather than pay tribute.</p>"
                 }
             }
         },
@@ -1788,11 +1788,11 @@
             "items": {
                 "Heat of the Forge": {
                     "name": "Heat of the Forge",
-                    "description": "<p>10 feet. A munsahir's skin radiates heat like forge fire. A creature that starts its turn in the area must succeed at a @Check[fortitude|dc:16] save or become @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} while it remains in the area. Creatures immune to environmental heat effects or with any fire resistance are immune.</p>"
+                    "description": "<p>10 feet. A munsahir's skin radiates heat like forge fire. A creature that starts its turn in the area must succeed at a @Check[fortitude|dc:16|options:area-effect,inflicts:fatigued] save or become @UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]{Fatigued} while it remains in the area. Creatures immune to environmental heat effects or with any fire resistance are immune.</p>"
                 },
                 "Burning Touch": {
                     "name": "Burning Touch",
-                    "description": "<p>The munsahir's Strikes deal an extra @Damage[1d6[fire]] damage (included above). When the munsahir successfully performs a @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple}, @UUID[Compendium.pf2e.actionspf2e.Item.lOE4yjUnETTdaf2T]{Reposition}, or @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove}, they also deal @Damage[1d6[fire]] damage to their target.</p>"
+                    "description": "<p>The munsahir's Strikes deal an extra 1d6 fire damage (included above). When the munsahir successfully performs a @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple}, @UUID[Compendium.pf2e.actionspf2e.Item.lOE4yjUnETTdaf2T]{Reposition}, or @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove}, they also deal @Damage[1d6[fire]] damage to their target.</p>"
                 },
                 "Scorch": {
                     "name": "Scorch",
@@ -2697,14 +2697,6 @@
                     "name": "Feast on Fear",
                     "description": "<p><strong>Trigger</strong> The skaveling deals damage to a frightened creature with a fangs Strike</p><hr /><p><strong>Effect</strong> The skaveling draws power from the fear infusing a creature's flesh. The frightened creature must attempt a @Check[fortitude|dc:22] saving throw.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature takes a –5-foot status penalty to its Speed, and the skaveling gains a +5-foot status bonus to their Speeds until the end of their next turn.</p>\n<p><strong>Failure</strong> The creature takes a –10-foot status penalty to its Speed, and the skaveling gains a +10-foot status bonus to their Speeds until the end of their next turn.</p>\n<p><strong>Critical Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}, and the skaveling can immediately Fly, Step, or Stride as a free action; this movement doesn't trigger reactions.</p>"
                 },
-                "Ghoul Fever": {
-                    "name": "Ghoul Fever",
-                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:22]</p>\n<p><strong>Stage 1</strong> carrier with no ill effect (1 day)</p>\n<p><strong>Stage 2</strong> @Damage[2d6[void]] damage and regains half as many Hit Points from all healing (1 day)</p>\n<p><strong>Stage 3</strong> as stage 2 (1 day)</p>\n<p><strong>Stage 4</strong> @Damage[2d6[void]] damage and gains no benefit from healing (1 day)</p>\n<p><strong>Stage 5</strong> as stage 4 (1 day)</p>\n<p><strong>Stage 6</strong> dead, and rises as a ghoul the next midnight</p>"
-                },
-                "Paralysis": {
-                    "name": "Paralysis",
-                    "description": "<p>Any creature hit by the skaveling's Strikes must attempt a @Check[fortitude|dc:22] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each save.</p>"
-                },
                 "Swift Dart": {
                     "name": "Swift Dart",
                     "description": "<p>The skaveling Flies up to half their Speed. This movement doesn't trigger reactions.</p>"
@@ -2751,7 +2743,7 @@
                 },
                 "Rasping Tongues": {
                     "name": "Rasping Tongues",
-                    "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirements</strong> The kithangian has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} in one or both pincers</p>\n<hr />\n<p><strong>Effect</strong> Barbed tongues slither out of the faces in the kithangian's pincers. The tongues burrow into grabbed creatures and inject their minds with haunting psychic screams. Each grabbed creature takes @Damage[2d8[piercing],2d8[mental]]{2d8 piercing and 2d8 mental}. A creature can try to resist the mental damage by attempting a @Check[will|dc:25|basic].</p>"
+                    "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirements</strong> The kithangian has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} in one or both pincers</p>\n<hr />\n<p><strong>Effect</strong> Barbed tongues slither out of the faces in the kithangian's pincers. The tongues burrow into grabbed creatures and inject their minds with haunting psychic screams. Each grabbed creature takes @Damage[2d8[piercing],2d8[mental]] damage. A creature can try to resist the mental damage by attempting a @Check[will|dc:25|basic].</p>"
                 }
             }
         },
@@ -7017,7 +7009,7 @@
                 },
                 "Impossible Stature": {
                     "name": "Impossible Stature",
-                    "description": "<p>100 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:46] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
+                    "description": "<p>100 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:46|options:area-effect] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
                 },
                 "Relentless": {
                     "name": "Relentless",
@@ -7116,10 +7108,6 @@
             "name": "Tennin",
             "publicNotes": "<p>Celestial artisans and elegant dancers called tennins serve as Nirvana's attendants, where they weave the gods' marvelous, seamless garments from clouds and frost and entertain the courts with skyward dances, their footsteps lighter than dew. During catastrophic wars and disasters, tennins descend from Nirvana to mend what is broken and soothe those who suffer. The realm of Nirvana often promotes the virtuous souls of dutiful craftspeople and dedicated musicians to the ranks of the brocade angels so they might use their talents to bring beauty and kindness to a Universe overwhelmed by war.</p>\n<p>It feels like there have always been too few tennins to attend to the needs of an entire world. Tragically, their numbers are dwindling in the wake of Gorum's death, which has sparked and renewed numerous conficts. Many angels have fallen or lost their way amid the discord.</p>",
             "items": {
-                "equipment-Flawless Celestial Shawl": {
-                    "name": "Flawless Celestial Shawl",
-                    "description": "<p>Each fawless celestial shawl functions only for a specifc tennin and is the culmination of their immortal cultivation. The sash is made of celestial silken threads stronger than adamantine yet lighter than gossamer. The tennin can draw thread from the fawless celestial shawl to serve as a sterling artisan's toolkit and workshop to Craft. The sash can be used to work with precious materials of any grade. On any Crafting check the tennin attempts using the shawl, they use the outcome one degree of success better than the result of their roll.</p><hr /><p><strong>Activation—Reweave</strong> <span class=\"action-glyph\">3</span> The tennin uses the sash to Repair an item. This Repair activity loses the exploration trait.</p>"
-                },
                 "Spell Effect: Unfettered Movement": {
                     "name": "Spell Effect: Unfettered Movement",
                     "description": "<p>Granted by @UUID[Compendium.pf2e.spells-srd.Item.aqRYNoSvxsVfqglH]{Unfettered Movement}</p>\n<p>You ignore circumstance penalties to your Speed.</p>"
@@ -7130,7 +7118,7 @@
                 },
                 "Flawless Celestial Shawl": {
                     "name": "Flawless Celestial Shawl",
-                    "description": "<p>Each tennin has a unique fawless celestial shawl. A tennin without their fawless celestial shawl can't use their fly Speed or cast divine innate spells.</p>"
+                    "description": "<p>Each tennin has a unique <em>flawless celestial shawl</em>. A tennin without their <em>flawless celestial shawl</em> can't use their fly Speed or cast divine innate spells.</p>"
                 },
                 "Secrets of Immortality": {
                     "name": "Secrets of Immortality",
@@ -7142,7 +7130,7 @@
                 },
                 "Dancer Across the Heavens": {
                     "name": "Dancer Across the Heavens",
-                    "description": "<p>The tennin can Step into difcult terrain and can use either their land or fy Speed to Step. Also, when the tennin attempts a Performance check to [[/act perform variant=dance]]{dance}, they can Step or Stride as a free action.</p>"
+                    "description": "<p>The tennin can Step into difficult terrain and can use either their land or fly Speed to Step. Also, when the tennin attempts a Performance check to [[/act perform variant=dance]]{dance}, they can Step or Stride as a free action.</p>"
                 }
             }
         },
@@ -7275,7 +7263,7 @@
                 },
                 "Mask of Power": {
                     "name": "Mask of Power",
-                    "description": "<p>A doprillu's unique wooden mask is the source of its power.</p>\n<p>A doprillu deprived of its mask loses its regeneration and its immunity to Enfeebled and @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed}, and it immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1}. The Enfeebled value increases by 1 at the start of each of the doprillu's turns, to a maximum of Enfeebled 4. If the mask is put back on, the doprillu immediately regains its abilities and loses the Enfeebled condition.</p>\n<p>A creature can pull off the mask with a successful <span data-pf2-action=\"forceOpen\" data-pf2-dc=\"34\" data-pf2-glyph=\"A\" data-pf2-label=\"Mask of Power DC\" data-pf2-show-dc=\"gm\">Athletics</span> check to @UUID[Compendium.pf2e.actionspf2e.Item.SjmKHgI7a5Z9JzBx]{Force Open}.</p>"
+                    "description": "<p>A doprillu's unique wooden mask is the source of its power.</p>\n<p>A doprillu deprived of its mask loses its regeneration and its immunity to Enfeebled and @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed}, and it immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1}. The Enfeebled value increases by 1 at the start of each of the doprillu's turns, to a maximum of Enfeebled 4. If the mask is put back on, the doprillu immediately regains its abilities and loses the Enfeebled condition.</p>\n<p>A creature can pull off the mask with a successful Athletics check to [[/act force-open dc=34]].</p>"
                 },
                 "Volcanic Veins": {
                     "name": "Volcanic Veins",
@@ -7765,7 +7753,7 @@
                 },
                 "Pounding Smash": {
                     "name": "Pounding Smash",
-                    "description": "<p>Regardless of whether the Strike hits or misses, the ambush copse's melee Strikes create a 5-foot-square of difcult terrain in the target's space.</p>"
+                    "description": "<p>Regardless of whether the Strike hits or misses, the ambush copse's melee Strikes create a 5-foot-square of difficult terrain in the target's space.</p>"
                 },
                 "Pulverizing Barrage": {
                     "name": "Pulverizing Barrage",
@@ -9446,7 +9434,7 @@
                 },
                 "Mark Target": {
                     "name": "Mark Target",
-                    "description": "<p>The venator releases a ball of light at a target within 60 feet, lighting it up with a magical aura that's constantly visible to the venator. The target can avoid becoming marked with a successful @Check[reflex|dc:30] save. While marked, the target fnds it difcult to deal with the venator and their allies. The target takes a –1 status penalty to all attacks against the venator and other aeons, as well as to saving throws against efects from the venator and other aeons. The venator can Sustain this efect to designate up to 5 other creatures as trusted allies, causing the target to take the same penalties against these allies. The venator can Dismiss the mark. Otherwise, it fades away naturally after 1 day.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.2TlbtDHEGcFG8NPF]{Effect: Venator's Mark}</p>"
+                    "description": "<p>The venator releases a ball of light at a target within 60 feet, lighting it up with a magical aura that's constantly visible to the venator. The target can avoid becoming marked with a successful @Check[reflex|dc:30] save. While marked, the target finds it difficult to deal with the venator and their allies. The target takes a –1 status penalty to all attacks against the venator and other aeons, as well as to saving throws against efects from the venator and other aeons. The venator can Sustain this efect to designate up to 5 other creatures as trusted allies, causing the target to take the same penalties against these allies. The venator can Dismiss the mark. Otherwise, it fades away naturally after 1 day.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.2TlbtDHEGcFG8NPF]{Effect: Venator's Mark}</p>"
                 },
                 "Overloaded Arc": {
                     "name": "Overloaded Arc",
@@ -10258,7 +10246,7 @@
                 },
                 "Impossible Stature": {
                     "name": "Impossible Stature",
-                    "description": "<p>100 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:44] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
+                    "description": "<p>100 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:44|options:area-effect] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
                 },
                 "Titanic Grasp": {
                     "name": "Titanic Grasp",
@@ -10587,7 +10575,7 @@
                 },
                 "Staggering Servitude": {
                     "name": "Staggering Servitude",
-                    "description": "<p>30 feet. When a creature ends its turn in the aura, it sees a vision of the sacristan groveling in pitiable servitude. The creature must succeed at a @Check[will|dc:27|options:inflicts:stunned] save or become @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
+                    "description": "<p>30 feet. When a creature ends its turn in the aura, it sees a vision of the sacristan groveling in pitiable servitude. The creature must succeed at a @Check[will|dc:27|options:area-effect,inflicts:stunned] save or become @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}.</p>"
                 },
                 "Focus Gaze": {
                     "name": "Focus Gaze",
@@ -10812,7 +10800,7 @@
                 },
                 "Impossible Stature": {
                     "name": "Impossible Stature",
-                    "description": "<p>120 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:48] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
+                    "description": "<p>120 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:48|options:area-effect] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
                 },
                 "Reactive Strike": {
                     "name": "Reactive Strike",
@@ -12293,7 +12281,7 @@
                 },
                 "Impossible Stature": {
                     "name": "Impossible Stature",
-                    "description": "<p>100 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:47] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
+                    "description": "<p>100 feet. Titans warp perception and distance around them to seem even larger and more imposing. A creature that enters or begins its turn within the emanation must succeed at a @Check[will|dc:47|options:area-effect] save or its movement toward the titan is movement over difficult terrain (greater difficult terrain on a critical failure) for 1 round.</p>"
                 },
                 "Reactive Strike": {
                     "name": "Reactive Strike",
@@ -14092,7 +14080,7 @@
                 },
                 "Paralytic Perfection": {
                     "name": "Paralytic Perfection",
-                    "description": "<p>30 feet. When a creature ends its turn in the aura, it feels compelled to offer pieces of its own flesh to the eremite. The creature must succeed at a @Check[will|dc:40|options:inflicts:paralyzed] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round.</p>"
+                    "description": "<p>30 feet. When a creature ends its turn in the aura, it feels compelled to offer pieces of its own flesh to the eremite. The creature must succeed at a @Check[will|dc:40|options:area-effect,inflicts:paralyzed] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round.</p>"
                 },
                 "Evisceration": {
                     "name": "Evisceration",

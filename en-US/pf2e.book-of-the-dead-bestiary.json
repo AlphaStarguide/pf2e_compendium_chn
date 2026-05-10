@@ -72,7 +72,7 @@
                 },
                 "Waves of Sorrow": {
                     "name": "Waves of Sorrow",
-                    "description": "<p>30 feet. When a creature ends its turn in the obrousian's waves of sorrow aura, the creature is overwhelmed by the sorrow that suffuses the obrousian's being. The creature must succeed at a @Check[will|dc:33] saving throw or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round.</p>"
+                    "description": "<p>30 feet. When a creature ends its turn in the obrousian's waves of sorrow aura, the creature is overwhelmed by the sorrow that suffuses the obrousian's being. The creature must succeed at a @Check[will|dc:33|options:area-effect,inflicts:paralyzed] saving throw or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed} for 1 round.</p>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",
@@ -1069,13 +1069,13 @@
             "hp": "per aurochs skull",
             "disable": "<p>@Check[nature|dc:36] (master) to calm one of the four aurochs or @Check[religion|dc:40] (trained) to exorcise them</p>",
             "hazarddescription": "<p>Four massive skulls of aurochs, enormous wild cattle, rise into the air, each trailing its ghostly body behind it.</p>",
-            "routine": "<p>(4 actions) For each aurochs skull disabled or destroyed, the haunt has 1 fewer action. On each action, a different aurochs moves up to 60 feet and attempts a horn Strike against a different living creature. A creature critically hit by a horn Strike also takes @Damage[2d6[bleed]] and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>",
+            "routine": "<p>(4 actions) For each aurochs skull disabled or destroyed, the haunt has 1 fewer action. On each action, a different aurochs moves up to 60 feet and attempts a horn Strike against a different living creature. A creature critically hit by a horn Strike also takes 2d6 persistent bleed damage and is knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>",
             "reset": "<p>The haunt deactivates 1 minute after all living creatures leave the area or after all four aurochs skulls are destroyed. After 1 hour, if at least one aurochs skull remains, the haunt reactivates.</p>",
             "stealthdetails": "<p>(master)</p>",
             "items": {
                 "Defend Territory": {
                     "name": "Defend Territory",
-                    "description": "<p><strong>Trigger</strong> A creature approaches within 10 feet of an aurochs skull</p>\n<hr />\n<p><strong>Effect</strong> The skulls rise into the air, form ghostly bodies, and bellow in rage. Each creature within @Template[emanation|distance:60]{60 feet} of an aurochs skull must attempt a @Check[will|dc:36] saving throw. The haunt then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature takes @Damage[(1d12+6)[mental]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[(2d12+12)[mental]] damage and is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4}.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature approaches within 10 feet of an aurochs skull</p>\n<hr />\n<p><strong>Effect</strong> The skulls rise into the air, form ghostly bodies, and bellow in rage. Each creature within @Template[emanation|distance:60]{60 feet} of an aurochs skull must attempt a @Check[will|dc:36|options:area-effect,damaging-effect,inflicts:frightened] saving throw. The haunt then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature takes @Damage[(1d12+6)[mental]|options:area-damage] damage and is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}.</p>\n<p><strong>Critical Failure</strong> The creature takes @Damage[(2d12+12)[mental]|options:area-damage] damage and is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4}.</p>"
                 }
             }
         },
@@ -2054,7 +2054,7 @@
                 },
                 "Paralysis": {
                     "name": "Paralysis",
-                    "description": "<p>Any living, non-elf creature hit by a priest's jaws or claws Strike must succeed at a @Check[fortitude|dc:20] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>"
+                    "description": "<p>Any living, non-elf creature hit by a priest's jaws or claws Strike must succeed at a @Check[fortitude|dc:20|options:inflicts:paralyzed] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>"
                 },
                 "Swift Leap": {
                     "name": "Swift Leap",
