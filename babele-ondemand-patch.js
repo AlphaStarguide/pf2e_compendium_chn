@@ -410,11 +410,11 @@ function tryPatchBabele(babele) {
   };
 
   babele.loadLabels = async () => {
-    state.labels = await loadLabels(babele);
+    state.labels = await loadLabels(babele, state, files);
     return state.labels;
   };
   babele.loadTitleIndex = async () => {
-    state.titleIndex = await loadTitleIndex(babele);
+    state.titleIndex = await loadTitleIndex(babele, state, files);
     return state.titleIndex;
   };
 
@@ -1169,13 +1169,13 @@ async function initOnDemand(babele, state) {
   await ensureSpecialFolderTranslationsLoaded(babele, state, files);
 
   try {
-    state.labels = await loadLabels(babele);
+    state.labels = await loadLabels(babele, state, files);
     babele.applyLabels?.(state.labels);
   } catch {
   }
 
   try {
-    state.titleIndex = await loadTitleIndex(babele);
+    state.titleIndex = await loadTitleIndex(babele, state, files);
   } catch {
     state.titleIndex = {};
   }
@@ -1593,14 +1593,30 @@ async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
   }
 }
 
-async function loadLabels(babele) {
+async function loadLabels(babele, state = babele?.__ondemandPatch, files = null) {
   const fromSettings = game.settings.get(BABEL_NAMESPACE, SETTING_LABELS) ?? {};
   const result = { ...(typeof fromSettings === "object" && !Array.isArray(fromSettings) ? fromSettings : {}) };
 
   const tryFetch = game.user?.hasPermission?.("FILES_BROWSE") || Object.keys(result).length === 0;
   if (!tryFetch) return result;
 
-  const dirs = getTranslationDirectories(babele);
+  const discoveredFiles = files ?? (game.user?.hasPermission?.("FILES_BROWSE") ? await getTranslationFiles(babele, state) : []);
+  const labelFiles = (discoveredFiles ?? []).filter((file) => typeof file === "string" && file.endsWith("/labels.json"));
+
+  if (labelFiles.length) {
+    for (const url of labelFiles) {
+      try {
+        const r = await fetch(url);
+        if (!r.ok) continue;
+        const json = await r.json();
+        if (json && typeof json === "object") Object.assign(result, json);
+      } catch {
+      }
+    }
+    return result;
+  }
+
+  const dirs = getTranslationDirectories(babele, state);
   for (const dir of dirs) {
     const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
     const url = `${base}/labels.json`;
@@ -1615,7 +1631,7 @@ async function loadLabels(babele) {
   return result;
 }
 
-async function loadTitleIndex(babele) {
+async function loadTitleIndex(babele, state = babele?.__ondemandPatch, files = null) {
   const fromSettings = game.settings.get(BABEL_NAMESPACE, SETTING_TITLE_INDEX) ?? {};
   const index =
     typeof fromSettings === "object" && !Array.isArray(fromSettings)
@@ -1625,21 +1641,39 @@ async function loadTitleIndex(babele) {
   const tryFetch = game.user?.hasPermission?.("FILES_BROWSE") || Object.keys(index).length === 0;
   if (!tryFetch) return index;
 
-  const dirs = getTranslationDirectories(babele);
+  const mergeTitleIndex = (json) => {
+    if (!json || typeof json !== "object" || Array.isArray(json)) return;
+    for (const [collection, data] of Object.entries(json)) {
+      if (!data || typeof data !== "object") continue;
+      if (!index[collection]) index[collection] = { titles: {}, folders: {} };
+      if (data.titles && typeof data.titles === "object") Object.assign(index[collection].titles, data.titles);
+      if (data.folders && typeof data.folders === "object") Object.assign(index[collection].folders, data.folders);
+    }
+  };
+
+  const discoveredFiles = files ?? (game.user?.hasPermission?.("FILES_BROWSE") ? await getTranslationFiles(babele, state) : []);
+  const titleFiles = (discoveredFiles ?? []).filter((file) => typeof file === "string" && file.endsWith("/titles.json"));
+
+  if (titleFiles.length) {
+    for (const url of titleFiles) {
+      try {
+        const r = await fetch(url);
+        if (!r.ok) continue;
+        mergeTitleIndex(await r.json());
+      } catch {
+      }
+    }
+    return index;
+  }
+
+  const dirs = getTranslationDirectories(babele, state);
   for (const dir of dirs) {
     const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
     const url = `${base}/titles.json`;
     try {
       const r = await fetch(url);
       if (!r.ok) continue;
-      const json = await r.json();
-      if (!json || typeof json !== "object" || Array.isArray(json)) continue;
-      for (const [collection, data] of Object.entries(json)) {
-        if (!data || typeof data !== "object") continue;
-        if (!index[collection]) index[collection] = { titles: {}, folders: {} };
-        if (data.titles && typeof data.titles === "object") Object.assign(index[collection].titles, data.titles);
-        if (data.folders && typeof data.folders === "object") Object.assign(index[collection].folders, data.folders);
-      }
+      mergeTitleIndex(await r.json());
     } catch {
     }
   }
