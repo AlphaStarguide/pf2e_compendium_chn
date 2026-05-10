@@ -2,14 +2,14 @@ Hooks.once("babele.init", (babele) => {
   if (!babele) return;
 
   const MODULE_ID = "pf2e_compendium_chn";
-  const TRANSLATION_DIR = "zh-CN";
-
+  const TRANSLATION_DIRS = ["compendium", "zh-CN"];
   const languages = ["cn", "zh-CN", "zh_Hans", "zh-Hans"];
+
   for (const lang of languages) {
     babele.register({
       module: MODULE_ID,
       lang,
-      dir: TRANSLATION_DIR,
+      dirs: TRANSLATION_DIRS,
     });
   }
 
