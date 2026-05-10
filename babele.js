@@ -6,11 +6,13 @@ Hooks.once("babele.init", (babele) => {
   const languages = ["cn", "zh-CN", "zh_Hans", "zh-Hans"];
 
   for (const lang of languages) {
-    babele.register({
-      module: MODULE_ID,
-      lang,
-      dirs: TRANSLATION_DIRS,
-    });
+    for (const dir of TRANSLATION_DIRS) {
+      babele.register({
+        module: MODULE_ID,
+        lang,
+        dir,
+      });
+    }
   }
 
   babele.registerConverters({
