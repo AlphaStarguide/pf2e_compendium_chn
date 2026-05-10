@@ -399,6 +399,9 @@ function tryPatchBabele(babele) {
   state.compatPacks = state.compatPacks ?? new foundry.utils.Collection();
   state.modernLoadedTranslations = state.modernLoadedTranslations ?? new Map();
   state.modernInjectionWarnings = state.modernInjectionWarnings ?? new Set();
+  state.quickInsertTitleBridgeRegistered = !!state.quickInsertTitleBridgeRegistered;
+
+  registerQuickInsertTitleBridge(state);
 
   babele.isFullMode = () => !isOnDemandMode();
   babele.translateIndexTitles = (index, pack) => translateIndexTitles(state, index, pack);
@@ -582,6 +585,181 @@ function registerDebugConsoleApi() {
     root.BabeleOnDemandPatchDebug.actorImport = !!enabled;
     return root.BabeleOnDemandPatchDebug.actorImport;
   };
+
+  game.pf2eCompendiumChn = game.pf2eCompendiumChn ?? {};
+  game.pf2eCompendiumChn.getTitle = (packId, originalName) => {
+    const state = game.babele?.__ondemandPatch;
+    return getTranslatedTitleFromIndex(state, packId, originalName);
+  };
+  game.pf2eCompendiumChn.translateQuickInsertIndex = async (quickInsert = globalThis.QuickInsert) =>
+    translateQuickInsertIndexTitles(quickInsert);
+}
+
+
+function registerQuickInsertTitleBridge(state) {
+  if (!state || state.quickInsertTitleBridgeRegistered) return;
+  state.quickInsertTitleBridgeRegistered = true;
+
+  Hooks.on("QuickInsert:IndexCompleted", (quickInsert) => {
+    void translateQuickInsertIndexTitles(quickInsert);
+  });
+
+  Hooks.once("ready", () => {
+    setTimeout(() => {
+      const quickInsert = globalThis.QuickInsert;
+      if (quickInsert?.hasIndex) void translateQuickInsertIndexTitles(quickInsert);
+    }, 0);
+  });
+}
+
+async function ensureTitleIndexForExternalConsumers() {
+  const babele = game.babele;
+  if (!babele) return null;
+
+  try {
+    if (!babele.initialized && typeof babele.init === "function") await babele.init();
+  } catch {
+  }
+
+  const state = babele.__ondemandPatch;
+  if (!state) return null;
+
+  try {
+    if (!state.titleIndex && typeof babele.loadTitleIndex === "function") {
+      state.titleIndex = await babele.loadTitleIndex();
+    }
+  } catch {
+  }
+
+  return state;
+}
+
+function getTranslatedTitleFromIndex(state, packId, originalName) {
+  if (!state || typeof packId !== "string" || typeof originalName !== "string") return null;
+  const titles = state.titleIndex?.[packId]?.titles;
+  if (!titles || typeof titles !== "object") return null;
+
+  const candidates = collectQuickInsertTitleCandidates(originalName);
+  for (const candidate of candidates) {
+    const translated = titles[candidate];
+    if (typeof translated === "string" && translated.length) return translated;
+  }
+  return null;
+}
+
+function collectQuickInsertTitleCandidates(name) {
+  const candidates = [];
+  const add = (value) => {
+    if (typeof value !== "string") return;
+    const trimmed = value.replace(/\s+/g, " ").trim();
+    if (trimmed && !candidates.includes(trimmed)) candidates.push(trimmed);
+  };
+
+  add(name);
+
+  // Quick Insert may represent embedded journal pages as "page @ parent".
+  // Add both sides as candidates so the parent journal title can still be localized.
+  const parts = String(name ?? "").split(" @ ");
+  if (parts.length >= 2) {
+    add(parts[0]);
+    add(parts.slice(1).join(" @ "));
+  }
+
+  // If a title has already been localized as "中文 English", the English tail can
+  // still be useful as a lookup key when the index is refreshed more than once.
+  const latinTail = String(name ?? "").match(/[A-Za-z][A-Za-z0-9'’.,:;!?()\[\] -]*$/)?.[0];
+  add(latinTail);
+
+  return candidates;
+}
+
+function shouldAppendOriginalTitle(translatedName, originalName) {
+  if (typeof translatedName !== "string" || typeof originalName !== "string") return false;
+  const original = originalName.replace(/\s+/g, " ").trim();
+  if (!original || !/[A-Za-z]/.test(original)) return false;
+  return !translatedName.toLowerCase().includes(original.toLowerCase());
+}
+
+function buildQuickInsertDisplayName(translatedName, originalName) {
+  if (shouldAppendOriginalTitle(translatedName, originalName)) return `${translatedName} ${originalName}`;
+  return translatedName;
+}
+
+function getQuickInsertIndexedItems(quickInsert) {
+  const raw = quickInsert?.searchLib?.index?.everything;
+  if (!Array.isArray(raw)) return [];
+
+  return raw
+    .map((entry) => entry?.item ?? entry)
+    .filter((item) => item && typeof item === "object" && typeof item.uuid === "string");
+}
+
+function getQuickInsertPackId(item) {
+  if (typeof item?.package === "string" && item.package.length) return item.package;
+  const match = String(item?.uuid ?? "").match(/^Compendium\.([^\.]+\.[^\.]+)\./);
+  return match?.[1] ?? null;
+}
+
+function getQuickInsertOriginalName(item) {
+  const flagName = item?.flags?.babele?.originalName;
+  if (typeof flagName === "string" && flagName.length) return flagName;
+
+  const stored = item?.originalName;
+  if (typeof stored === "string" && stored.length) return stored;
+
+  if (typeof item?.name === "string" && item.name.length) return item.name;
+  return null;
+}
+
+function applyQuickInsertTitleToItem(state, item) {
+  const packId = getQuickInsertPackId(item);
+  const originalName = getQuickInsertOriginalName(item);
+  if (!packId || !originalName) return false;
+
+  const translatedName = getTranslatedTitleFromIndex(state, packId, originalName);
+  if (typeof translatedName !== "string" || !translatedName.length) return false;
+
+  const displayName = buildQuickInsertDisplayName(translatedName, originalName);
+  if (item.name === displayName && item.originalName === originalName) return false;
+
+  item.originalName = originalName;
+  item.name = displayName;
+  item.translated = true;
+  item.hasTranslation = true;
+  item.flags = foundry.utils.mergeObject(item.flags ?? {}, {
+    babele: {
+      translated: true,
+      hasTranslation: true,
+      originalName,
+    },
+  });
+  return true;
+}
+
+async function translateQuickInsertIndexTitles(quickInsert = globalThis.QuickInsert) {
+  const state = await ensureTitleIndexForExternalConsumers();
+  if (!state?.titleIndex || !quickInsert?.searchLib?.index) return 0;
+
+  const searchLib = quickInsert.searchLib;
+  const items = getQuickInsertIndexedItems(quickInsert);
+  const changed = [];
+
+  for (const item of items) {
+    try {
+      if (applyQuickInsertTitleToItem(state, item)) changed.push(item);
+    } catch {
+    }
+  }
+
+  for (const item of changed) {
+    try {
+      searchLib.replaceItem?.(item);
+    } catch {
+    }
+  }
+
+  if (changed.length) logPatch("translated Quick Insert index titles", { count: changed.length });
+  return changed.length;
 }
 
 function debugActorImport(message, data = null) {
