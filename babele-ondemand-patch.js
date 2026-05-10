@@ -1219,6 +1219,20 @@ function normalizeTranslationModuleDirs(module) {
   return rawDirs.filter((dir) => typeof dir === "string" && dir.trim()).map((dir) => dir.trim());
 }
 
+function languageMatches(registered, current) {
+  if (!registered) return true;
+  if (!current) return true;
+  if (registered === current) return true;
+
+  const normalize = (value) => String(value ?? "").replace(/_/g, "-").toLowerCase();
+  const a = normalize(registered);
+  const b = normalize(current);
+  if (a === b) return true;
+
+  const simplifiedChinese = new Set(["cn", "zh-cn", "zh-hans"]);
+  return simplifiedChinese.has(a) && simplifiedChinese.has(b);
+}
+
 function getRegisteredTranslationModules(babele, state) {
   const modules = [];
   const push = (module) => {
@@ -1331,7 +1345,7 @@ function getTranslationDirectories(babele, state = babele?.__ondemandPatch) {
     ? [`systems/${game.system.id}/${babele.systemTranslationsDir}/${lang}`]
     : [];
   const modules = getRegisteredTranslationModules(babele, state)
-    .filter((m) => !m.lang || m.lang === lang)
+    .filter((m) => languageMatches(m.lang, lang))
     .flatMap((m) => m.dirs.map((dir) => `modules/${m.module}/${dir}`));
   const configured = directory && directory.trim && directory.trim() ? [`${directory}/${lang}`] : [];
   return orderTranslationSources({ system, modules, configured });
@@ -1435,7 +1449,9 @@ function buildDirectPackTranslationUrls(babele, packId, state = babele?.__ondema
   });
 }
 
-async function importLegacyTranslatedCompendium() {
+async function importLegacyTranslatedCompendium(state = null) {
+  if (isModernBabele(state)) return null;
+
   try {
     const module = await import("/modules/babele/script/translated-compendium.js");
     return module.TranslatedCompendium ?? null;
@@ -1507,6 +1523,7 @@ async function createModernMappedPackCompat(babele, metadata, translation) {
   return new MappedCompendium(metadata, translation, {
     translationStrategies: babele.translationMatchStrategies?.() ?? [],
     documentMappings: babele.documentMappings,
+    language: game.settings.get("core", "language"),
   });
 }
 
@@ -1526,11 +1543,6 @@ function publishTranslatedPackCompat(babele, state, packId, translatedPack) {
 async function createTranslatedPackCompat(babele, state, metadata, translation) {
   if (!metadata || !translation) return null;
 
-  const LegacyTranslatedCompendium = await importLegacyTranslatedCompendium();
-  if (LegacyTranslatedCompendium) {
-    return new LegacyTranslatedCompendium(metadata, translation);
-  }
-
   if (isModernBabele(state)) {
     const mappedPack = await createModernMappedPackCompat(babele, metadata, translation);
     if (mappedPack) return mappedPack;
@@ -1538,8 +1550,15 @@ async function createTranslatedPackCompat(babele, state, metadata, translation) 
     const collection = getPackMetadataCollection(babele, metadata);
     if (!state.modernInjectionWarnings.has(collection)) {
       state.modernInjectionWarnings.add(collection);
-      console.warn(`[${PATCH_ID}] Unable to create a Babele 2.8 mapped compendium adapter for ${collection}.`);
+      console.warn(`[${PATCH_ID}] Unable to create a Babele 2.8+ mapped compendium adapter for ${collection}.`);
     }
+
+    return null;
+  }
+
+  const LegacyTranslatedCompendium = await importLegacyTranslatedCompendium(state);
+  if (LegacyTranslatedCompendium) {
+    return new LegacyTranslatedCompendium(metadata, translation);
   }
 
   return null;
