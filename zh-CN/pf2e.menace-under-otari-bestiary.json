@@ -515,6 +515,22 @@
                 "Goblin Scuttle": {
                     "name": "哥布林快跑 Goblin Scuttle",
                     "description": "<p>如果一个哥布林的盟友在哥布林指挥官旁边的格子结束一个移动动作，指挥官可以用反应动作来快步。</p>"
+                },
+                "equipment-Greatsword": {
+                    "name": "Greatsword",
+                    "description": "<p>This immense two-handed sword is nearly as tall as its wielder. Its lower blade is often somewhat dulled to allow it to be gripped for extra leverage in close-quarter fights.</p>"
+                },
+                "equipment-Shortbow": {
+                    "name": "Shortbow",
+                    "description": "<p>This smaller bow is made of a single piece of wood and favored by skirmishers and cavalry.</p>"
+                },
+                "equipment-Leather Armor": {
+                    "name": "Leather Armor",
+                    "description": "<p>A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.</p>"
+                },
+                "Arrows": {
+                    "name": "Arrows",
+                    "description": "<p>These projectiles are the ammunition for bows. The shaft of an arrow is made of wood. It is stabilized in flight by fletching at one end and bears a metal head on the other.</p>"
                 }
             },
             "prototypeToken": {
@@ -531,6 +547,10 @@
                 "Goblin Scuttle": {
                     "name": "哥布林快跑 Goblin Scuttle",
                     "description": "<p>如果一个哥布林的盟友在哥布林点火者旁边的格子结束一个移动动作，点火者可以用反应动作来快步。</p>"
+                },
+                "equipment-Torch": {
+                    "name": "Torch",
+                    "description": "<p>A torch sheds bright light in a 20-foot radius (and dim light to the next 20 feet) for 1 hour. It can be used as an improvised weapon that deals 1d4 bludgeoning damage plus 1 fire damage.</p>"
                 }
             },
             "prototypeToken": {
@@ -1404,6 +1424,18 @@
                 "Mauler": {
                     "name": "拳手 Mauler",
                     "description": "<p>熊地精徘徊者在对抗由于自身而陷入@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{受擒 Grabbed}的生物时，伤害检定会获得+3环境加值。</p>"
+                },
+                "equipment-Javelin": {
+                    "name": "Javelin",
+                    "description": "<p>This thin spear is well balanced for throwing but is not designed for melee use.</p>"
+                },
+                "equipment-Longsword": {
+                    "name": "Longsword",
+                    "description": "<p>Longswords, also known as arming swords, can be one-edged or two-edged swords. Their blades are heavy and they're between 3 and 4 feet in length.</p>"
+                },
+                "equipment-Leather Armor": {
+                    "name": "Leather Armor",
+                    "description": "<p>A mix of flexible and molded boiled leather, a suit of this type of armor provides some protection with maximum flexibility.</p>"
                 }
             }
         },
@@ -1598,6 +1630,10 @@
                 "Formation": {
                     "name": "Formation",
                     "description": "<p>When they're adjacent to at least two other allies, the hobgoblin soldier gains a +1 circumstance bonus to AC and saving throws.</p>"
+                },
+                "Raise a Shield": {
+                    "name": "Raise a Shield",
+                    "description": "<p>The hobgoblin soldier lifts up their shield to get a +2 circumstance bonus to AC until the start of their next turn</p>"
                 }
             }
         },
@@ -1769,6 +1805,515 @@
                 "Scamper": {
                     "name": "Scamper",
                     "description": "<p>If the kobold is adjacent to at least one enemy, the kobold Strides up to 30 feet and gains a +2 circumstance bonus to AC against reactions triggered by this movement. The kobold must end this movement in a space that's not adjacent to any enemy.</p>"
+                }
+            }
+        },
+        "Shulzara": {
+            "prototypeToken": {
+                "name": "Shulzara"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shulzara",
+            "publicNotes": "<p>Hags are malevolent predators who use magic and manipulation to lure children and young adults into their clutches. They seek out targets who are unhappy, innocent, or otherwise vulnerable, preying on their weaknesses before snatching them up. A sea hag has the upper half of a humanoid and the lower half of an octopus, with translucent skin and glowing lights visible beneath their flesh.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "blurb": "variant sea hag",
+            "items": {
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Slithering Steps": {
+                    "name": "Slithering Steps",
+                    "description": "<p>Shulzara is not affected by difficult terrain due to water.</p>"
+                }
+            }
+        },
+        "Falling Shelves": {
+            "prototypeToken": {
+                "name": "Falling Shelves"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Falling Shelves",
+            "disable": "<p>A hero must succeed at a @Check[athletics|dc:18] or @Check[thievery|dc:18] check to prevent the shelves from collapsing.</p>",
+            "items": {
+                "Topple Over": {
+                    "name": "Topple Over",
+                    "description": "<p>When a creature attempts to touch the shelves or take anything from them, they collapse, sending debris throughout the room. The trap makes one melee Strike against each creature in the room.</p>"
+                }
+            }
+        },
+        "Twigjack (BB)": {
+            "prototypeToken": {
+                "name": "Twigjack (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Twigjack (BB)",
+            "publicNotes": "<p>\"True\" twigjacks, as they consider themselves, are found in wild forests alongside the fey they idolize.</p>\n<hr />\n<p>Maladjusted forest denizens, twigjacks form from the cruel and prankish combination of fey and the very woods in which they reside. A twigjack's body is made up of prickly brambles woven with vines. Shaggy, mossy growth, not unlike hair, tops a twigjack's head. Its mouth is just a canyon of splintered and broken sticks bisecting its face. Leaves and sprigs of new growth randomly sprout from the creature's body. Many dense forests on Golarion have at least a handful of twigjacks living in the undergrowth.</p>\n<p>While truculent and violent, twigjacks care deeply for what they consider to be their forests. These creatures harass outsiders who delve deep into their wooded domains, forcing back even the most determined explorers, foresters, and travelers, especially when those intruders cut roads through the forest. However, they are not terribly territorial when it comes to other forest creatures. When sylvan creatures, especially fey, rally against an outside threat, twigjacks in the area eagerly arrive to fight, even if they were not invited.</p>",
+            "items": {
+                "Bramble Jump": {
+                    "name": "Bramble Jump",
+                    "description": "<p>When the twigjack is in undergrowth, it can instantly teleport to a square of undergrowth within 60 feet. This movement doesn't trigger reactions.</p>"
+                },
+                "Splinter Spray": {
+                    "name": "Splinter Spray",
+                    "description": "<p>The twigjack sprays a barrage of splinters and brambles from its body that deals @Damage[4d6[piercing]|options:area-damage] damage in a @Template[type:cone|distance:15]. Each creature in the area must attempt a @Check[reflex|dc:20|basic|options:area-effect] save. The twigjack can't use Splinter Spray again for [[/gmr 1d4 #Recharge Splinter Spray]]{1d4 rounds}.</p>"
+                }
+            }
+        },
+        "Severed Head (BB)": {
+            "prototypeToken": {
+                "name": "Severed Head (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Severed Head (BB)",
+            "publicNotes": "<p>Severed heads are the reanimated heads of decapitation victims. These mindless undead fly through the air or roll around to attack their prey. In addition to attacking the living like other undead, severed heads can sometimes be drawn to things important to them in life. Scholars argue that this is likely due to particularly powerful thoughts that can break through momentarily in what's left of a severed head's mind. Unfortunately, their mindless state prevents them from recognizing their goal, and they remain violent even after encountering what they seek.</p>",
+            "items": {
+                "Gnash": {
+                    "name": "Gnash",
+                    "description": "<p>When the severed head succeeds at its jaws Strike, it can use this action immediately after to make a second jaws Strike at the same target as it violently shakes itself, trying to rip away a mouthful of flesh. On a success, the target takes an additional 1d4 slashing damage and 1 persistent bleed damage.</p>"
+                }
+            }
+        },
+        "Shadow Priest": {
+            "prototypeToken": {
+                "name": "Shadow Priest"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Priest",
+            "publicNotes": "<p>Sometimes, followers of unholy deities will transform into shadows upon their death, a gift from their wicked patrons.</p>",
+            "items": {
+                "Incorporeal": {
+                    "name": "Incorporeal",
+                    "description": "<p>The shadow priest has no body and can pass through physical objects, though they can't end their turn inside one. Most checks that use Strength and require a body, such as @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} and @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove}, don't work against the shadow priest, and the shadow priest can't use them.</p>"
+                },
+                "Light Vulnerability": {
+                    "name": "Light Vulnerability",
+                    "description": "<p>Attacks against the shadow priest are treated as magical if the shadow priest or the weapon being used against them is in light.</p>"
+                },
+                "Shadow Veil": {
+                    "name": "Shadow Veil",
+                    "description": "<p>If the shadow priest is targeted by a melee attack, they can use their reaction to gain a +2 circumstance bonus to AC against the triggering attack.</p>"
+                }
+            }
+        },
+        "Bugbear Tormentor (BB)": {
+            "prototypeToken": {
+                "name": "Bugbear Tormentor (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Bugbear Tormentor (BB)",
+            "publicNotes": "<p>The bugbear tormentor seeks to bully their prey as much through psychological intimidation as through physical harm.</p>",
+            "items": {
+                "equipment-Dagger": {
+                    "name": "Dagger",
+                    "description": "<p>This small, bladed weapon is held in one hand and used to stab a creature in close combat. It can also be thrown.</p>"
+                },
+                "equipment-Sickle": {
+                    "name": "Sickle",
+                    "description": "<p>Originally a farming tool used for reaping grain, this one-handed weapon has a short wooden handle ending in a curved blade, sometimes sharpened on both sides.</p>"
+                },
+                "equipment-Chain Shirt": {
+                    "name": "Chain Shirt",
+                    "description": "<p>Sometimes called a hauberk, this is a long shirt constructed of the same metal rings as chain mail. However, it is much lighter than chain mail and protects only the torso, upper arms, and upper legs of its wearer.</p>"
+                },
+                "Sneak Attack": {
+                    "name": "Sneak Attack",
+                    "description": "<p>The bugbear tormentor's Strikes deal 1d6 extra precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
+                },
+                "Twin Feint": {
+                    "name": "Twin Feint",
+                    "description": "<p>The bugbear tormentor makes a dazzling series of attacks with two weapons, using the first attack to throw their foe @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against a second attack at a different angle. They make one Strike with each of their two melee weapons, both against the same target. The target is automatically off-guard against the second attack. The bugbear tormentor applies their multiple attack penalty to these Strikes normally.</p>"
+                }
+            }
+        },
+        "Shadow Walls": {
+            "prototypeToken": {
+                "name": "Shadow Walls"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Walls",
+            "hp": "Wall HP 15",
+            "disable": "<p>@Check[arcana|dc:20], @Check[nature|dc:20], @Check[occultism|dc:20], or @Check[religion|dc:20] on each of the shadow walls (disabling three of the four walls ends the hazard), or activating the orrery with the <em>unlit star</em> as noted in \"The Orrery of Light.\"</p>",
+            "routine": "<p>Each turn, the walls use 1 action. Roll a [[/gmr 1d10 #Routine Result]]{d10} and look up the result on the following list to determine which action the walls uses that round.</p><p><strong>1–4 Single Target</strong> The walls lash out at a random hero in the room. Roll a [[/gmr 1d4 #Random Hero]]{d4} and count to the number you rolled, starting with the player on your left, to determine which hero gets attacked. The shadow lash is a ranged Strike with +10 to hit. On a hit, it deals @Damage[2d6[void]] damage (doubled on a critical hit as normal).</p><p><strong>5–7 Wall Barrage</strong> The shadow arms lunge out from their respective wall, assaulting any one near an active wall. This hits any creature within 10 feet of an active wall (within 10 feet of a shadow hand on the map), dealing @Damage[2d6[void]|options:area-damage] damage. Each hero must attempt a @Check[reflex|dc:15|basic|options:area-effect] save, taking no damage on a critical success, half damage on a success, full damage on a failure, and double damage on a critical failure.</p><p><strong>8–9 Split Assault</strong> The shadows lash out against one half of the room. Roll [[/gmr 1d20 #Even Western Half, Odd Eastern Half]]{any die}. If the result is even, they assault the western half; otherwise, they assault the eastern half. This deals @Damage[2d6[void]|options:area-damage] damage to each creature in that half of the room, and each hero must attempt a @Check[reflex|dc:15|basic|options:area-effect] save.</p><p><strong>10 Overwhelming Assault</strong> Like the split assault attack, but it targets everyone in the room.</p>"
+        },
+        "Umbral Gnome Warrior (BB)": {
+            "prototypeToken": {
+                "name": "Umbral Gnome Warrior (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Umbral Gnome Warrior (BB)",
+            "publicNotes": "<p>Umbral gnome warriors are quick to charge into battle, but focus on defending their kin and their homes over more aggressive tactics when a choice is available. These warriors tend to work in groups and use their shields to intercept attacks.</p>",
+            "ac": "(20 with shield raised)",
+            "items": {
+                "equipment-Heavy Crossbow": {
+                    "name": "Heavy Crossbow",
+                    "description": "<p>This large crossbow is harder to load and more substantial than a regular crossbow, but it packs a greater punch.</p>"
+                },
+                "equipment-Spear": {
+                    "name": "Spear",
+                    "description": "<p>A long metal shaft ending with a metal spike, a spear can be used one-handed as a melee weapon and can be thrown.</p>"
+                },
+                "Steel Shield": {
+                    "name": "Steel Shield",
+                    "description": "<p>Like wooden shields, steel shields come in a variety of shapes and sizes. Though more expensive than wooden shields, they are much more durable.</p><table class=\"pf2e remaster\"><thead><tr><th>Hardness</th><th>HP</th><th>BT</th></tr></thead><tbody><tr><td>5</td><td>20</td><td>10</td></tr></tbody></table>"
+                },
+                "equipment-Studded Leather Armor": {
+                    "name": "Studded Leather Armor",
+                    "description": "<p>This leather armor is reinforced with metal studs and sometimes small metal plates, providing most of the flexibility of leather armor with more robust protection.</p>"
+                },
+                "Bolts": {
+                    "name": "Bolts",
+                    "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
+                },
+                "Raise a Shield": {
+                    "name": "Raise a Shield",
+                    "description": "<p>The umbral gnome warrior lifts up their shield to get a +2 circumstance bonus to AC until the start of their next turn.</p>"
+                }
+            }
+        },
+        "Ferrous Butterfly (BB)": {
+            "prototypeToken": {
+                "name": "Ferrous Butterfly (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Ferrous Butterfly (BB)",
+            "publicNotes": "<p>Beautiful but deadly, the ferrous butterfly is a turkey-sized insectile creature bristling with dozens of gleaming, razor-edged blades. Considered harmless by most denizens of the Plane of Metal, they nonetheless pose a significant threat to organic creatures, whose iron-rich blood they find irresistible. The wing blades of these butterflies tend to break off during feeding and regrow naturally. These scales are reminiscent of jagged scraps of metal and can serve as surprisingly effective makeshift weapon.</p>",
+            "items": {
+                "A Thousand Cuts": {
+                    "name": "A Thousand Cuts",
+                    "description": "<p>A ferrous butterfly's knifelike wings cause terrible lacerations that continue to bleed. Any creature with persistent bleed damage from a ferrous butterfly's wing attack has weakness 2 to slashing damage until the bleeding is stopped.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.Eecbbol29eIP3zvf]{Effect: A Thousand Cuts}</p>"
+                },
+                "Swoop": {
+                    "name": "Swoop",
+                    "description": "<p>The ferrous butterfly Flies up to its Speed and makes a wing Strike at any point during that movement.</p>"
+                }
+            }
+        },
+        "Umbral Gnome Rockwarden (BB)": {
+            "prototypeToken": {
+                "name": "Umbral Gnome Rockwarden (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Umbral Gnome Rockwarden (BB)",
+            "publicNotes": "<p>A notable subgroup of gnomes called umbral gnomes typically have gray or brown skin with a stony texture, and thin, pale hair or bald pates. Umbral gnomes are most numerous in the Darklands, where they go by the name drathnelar. While they are not as sinister or ruthless as other Darklands denizens, those who seek their aid should remember that they don't welcome strangers with open arms.</p>\n<p>Umbral gnome rockwardens follow druidic teachings and commune with the natural elemental influences and denizens of the Darklands.</p>",
+            "items": {
+                "equipment-Sling": {
+                    "name": "Sling",
+                    "description": "<p>Little more than a leather cup attached to a pair of straps, a sling can be used to fling smooth stones or sling bullets at a range.</p>"
+                },
+                "equipment-Scythe": {
+                    "name": "Scythe",
+                    "description": "<p>Derived from a farming tool used to mow down long grains and cereals, this weapon has a long wooden shaft with protruding handles, capped with a curved blade set at a right angle.</p>"
+                },
+                "equipment-Hide Armor": {
+                    "name": "Hide Armor",
+                    "description": "<p>A mix of furs, sturdy hide, and sometimes molded boiled leather, this armor provides protection due to its layers of leather, though its bulkiness slows the wearer down and decreases mobility.</p>"
+                },
+                "equipment-Primal Symbol": {
+                    "name": "Primal Symbol",
+                    "description": "<p>Primal spellcasters, especially druids, often wear adornments of natural materials to symbolize their connection to nature, such as rings of woven plants, tokens made from animal parts, or other symbols related to a druidic order or nature philosophy.</p>"
+                },
+                "Sling Bullets": {
+                    "name": "Sling Bullets",
+                    "description": "<p>These are small metal balls, typically either iron or lead, designed to be used as ammunition in slings.</p>"
+                }
+            }
+        },
+        "Shadow Twigjack": {
+            "prototypeToken": {
+                "name": "Shadow Twigjack"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Twigjack",
+            "publicNotes": "<p>\"True\" twigjacks, as they consider themselves, are found in wild forests alongside the fey they idolize.</p>\n<hr />\n<p>Maladjusted forest denizens, twigjacks form from the cruel and prankish combination of fey and the very woods in which they reside. A twigjack's body is made up of prickly brambles woven with vines. Shaggy, mossy growth, not unlike hair, tops a twigjack's head. Its mouth is just a canyon of splintered and broken sticks bisecting its face. Leaves and sprigs of new growth randomly sprout from the creature's body. Many dense forests on Golarion have at least a handful of twigjacks living in the undergrowth.</p>\n<p>While truculent and violent, twigjacks care deeply for what they consider to be their forests. These creatures harass outsiders who delve deep into their wooded domains, forcing back even the most determined explorers, foresters, and travelers, especially when those intruders cut roads through the forest. However, they are not terribly territorial when it comes to other forest creatures. When sylvan creatures, especially fey, rally against an outside threat, twigjacks in the area eagerly arrive to fight, even if they were not invited.</p>",
+            "items": {
+                "Bramble Jump": {
+                    "name": "Bramble Jump",
+                    "description": "<p>When the twigjack is in undergrowth, it can instantly teleport to a square of undergrowth within 60 feet. This movement doesn't trigger reactions.</p>"
+                },
+                "Splinter Spray": {
+                    "name": "Splinter Spray",
+                    "description": "<p>The twigjack sprays a barrage of splinters and brambles from its body that deals @Damage[3d6[piercing]|options:area-damage] damage in a @Template[type:cone|distance:15]. Each creature in the area must attempt a @Check[reflex|dc:18|basic|options:area-effect] save. The twigjack can't use Splinter Spray again for [[/gmr 1d4 #Recharge Splinter Spray]]{1d4 rounds}.</p>"
+                }
+            }
+        },
+        "Shadow Gargoyle": {
+            "prototypeToken": {
+                "name": "Shadow Gargoyle"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Gargoyle",
+            "items": {
+                "Clawed Feet": {
+                    "name": "Clawed Feet",
+                    "description": "<p>If the gargoyle is flying and a creature moves into an adjacent square below them, the gargoyle can use their reaction to make a claw Strike against that creature.</p>"
+                }
+            }
+        },
+        "Umbral Gnome Scout (BB)": {
+            "prototypeToken": {
+                "name": "Umbral Gnome Scout (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Umbral Gnome Scout (BB)",
+            "publicNotes": "<p>Umbral gnome scouts patrol the tunnels that lead into their settlements. They make use of the darkness of these tunnels to hide from any would-be trespassers. While umbral gnome scouts prefer to use their stealth for reconnaissance, they aren't afraid to strike from the shadows to deal with threats. They are adept at moving between areas of darkness for hit-and-run tactics.</p>",
+            "items": {
+                "equipment-Sling": {
+                    "name": "Sling",
+                    "description": "<p>Little more than a leather cup attached to a pair of straps, a sling can be used to fling smooth stones or sling bullets at a range.</p>"
+                },
+                "equipment-Sickle": {
+                    "name": "Sickle",
+                    "description": "<p>Originally a farming tool used for reaping grain, this one-handed weapon has a short wooden handle ending in a curved blade, sometimes sharpened on both sides.</p>"
+                },
+                "Sling Bullets": {
+                    "name": "Sling Bullets",
+                    "description": "<p>These are small metal balls, typically either iron or lead, designed to be used as ammunition in slings.</p>"
+                },
+                "Hidden Movement": {
+                    "name": "Hidden Movement",
+                    "description": "<p>If the umbral gnome scout starts their turn @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected} or @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} to a creature, that creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} against the umbral gnome scout's attacks until the end of the turn.</p>"
+                }
+            }
+        },
+        "Water Scamp (BB)": {
+            "prototypeToken": {
+                "name": "Water Scamp (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Water Scamp (BB)",
+            "publicNotes": "<p>Elemental scamps are bat-like critters marked by elemental powers. Water scamps are marked apart from other scamps by sleek fur that traps a layer of water next to their skin. Although they can fly like their kin and conjure enough water to never dry out, water scamps leave the water only when they must.</p>",
+            "hp": "fast healing 2 (while underwater)",
+            "items": {
+                "Fast Healing 2 (While Underwater)": {
+                    "name": "Fast Healing 2 (While Underwater)",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Acid Breath": {
+                    "name": "Acid Breath",
+                    "description": "<p>The water scamp breathes acid that deals @Damage[2d6[acid]|options:area-damage] damage in a @Template[type:cone|distance:15]. Each creature in the area must attempt a @Check[reflex|dc:17|basic|options:area-effect] save. The water scamp can't use Acid Breath again for [[/gmr 1d4 #Recharge Acid Breath]]{1d4 rounds}.</p>"
+                },
+                "Drench": {
+                    "name": "Drench",
+                    "description": "<p>The water scamp shakes out a seemingly endless supply of water from its fur to put out all non-magical fires within 5 feet.</p>"
+                }
+            }
+        },
+        "String Slime (BB)": {
+            "prototypeToken": {
+                "name": "String Slime (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "String Slime (BB)",
+            "items": {
+                "Motion Sense": {
+                    "name": "Motion Sense",
+                    "description": "<p>A string slime can feel nearby motion through vibration and air movement.</p>"
+                },
+                "Split": {
+                    "name": "Split",
+                    "description": "<p>Whenever a string slime would take slashing damage (if it weren't immune) and has at least 10 Hit Points, it splits into two identical slimes with half the original's Hit Points. One string slime is in the same space as the original, and the other appears in an adjacent unoccupied space. If no adjacent space is unoccupied, move smaller creatures and objects out of the way to make a space or the split is canceled at the GM's discretion.</p>"
+                },
+                "Tag Team": {
+                    "name": "Tag Team",
+                    "description": "<p>The slime arcs acidic protoplasm to another string slime within 30 feet along a straight line. Each creature in that line takes @Damage[3d6[acid]] damage with a @Check[reflex|dc:16|basic|options:area-effect,inflicts:prone] save. A creature that fails its save is also knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>"
+                }
+            }
+        },
+        "Hobgoblin Archer (BB)": {
+            "prototypeToken": {
+                "name": "Hobgoblin Archer (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Hobgoblin Archer (BB)",
+            "publicNotes": "<p>Bands of hobgoblin soldiers typically have at least one archer among their ranks. In smaller groups, the hobgoblin archer also serves as that band's captain. These archers generally command these groups from a distance or higher ground and they make use of their keen senses to watch for strategic openings.</p>",
+            "items": {
+                "equipment-Crossbow": {
+                    "name": "Crossbow",
+                    "description": "<p>This ranged weapon has a bow-like assembly mounted on a handled frame called a tiller. The tiller has a mechanism to lock the bowstring in place, attached to a trigger mechanism that releases the tension and launches a bolt.</p>"
+                },
+                "equipment-Shortsword": {
+                    "name": "Shortsword",
+                    "description": "<p>These blades come in a variety of shapes and styles, but they are typically 2 feet long.</p>"
+                },
+                "equipment-Scale Mail": {
+                    "name": "Scale Mail",
+                    "description": "<p>Scale mail consists of many metal scales sewn onto a reinforced leather backing, often in the form of a long shirt that protects the torso, arms, and legs.</p>"
+                },
+                "Bolts": {
+                    "name": "Bolts",
+                    "description": "<p>Shorter than traditional arrows but similar in construction, bolts are the ammunition used by crossbows.</p>"
+                },
+                "Formation": {
+                    "name": "Formation",
+                    "description": "<p>When they're adjacent to at least two other allies, the hobgoblin archer gains a +1 circumstance bonus to AC and saving throws.</p>"
+                },
+                "Crossbow Precision": {
+                    "name": "Crossbow Precision",
+                    "description": "<p>The first time the archer hits with a crossbow attack in a round, they deal 1d8 extra precision damage.</p>"
+                },
+                "Running Reload": {
+                    "name": "Running Reload",
+                    "description": "<p>The archer Strides, Steps, or @UUID[Compendium.pf2e.actionspf2e.Item.VMozDqMMuK5kpoX4]{Sneaks}, then Interacts to reload.</p>"
+                }
+            }
+        },
+        "Giant Fly (BB)": {
+            "prototypeToken": {
+                "name": "Giant Fly (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Giant Fly (BB)",
+            "publicNotes": "<p>This massive fly's twitching limbs seem to never stop moving as it constantly cleans itself and scoops anything edible into its mouth parts. While primarily carrion eaters, giant flies sometimes prey on livestock or other animals too slow to get away. Left to their own devices, these flies will lay dozens of eggs within the mostly-eaten carcasses. These eggs soon hatch into enormous maggots that begin the cycle of scavenging anew.</p>",
+            "items": {
+                "Avoid the Swat": {
+                    "name": "Avoid the Swat",
+                    "description": "<p><strong>Trigger</strong> The giant fly is targeted with a melee or ranged attack by an attacker it can see</p><hr /><p><strong>Effect</strong> The giant fly gains a +2 circumstance bonus to AC against the triggering attack. If the attack misses, the giant insect can Fly up to its fly Speed.</p>"
+                },
+                "Fly Pox": {
+                    "name": "Fly Pox",
+                    "description": "<p>A giant fly could carry any disease, but most transmit an infection called fly pox with their bite. A character who is critically hit by a giant fly's mandibles must succeed at a @Check[fortitude|dc:16|options:inflicts:enfeebled] saving throw or be @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} for 1 day.</p>"
+                }
+            }
+        },
+        "Crawling Hand (BB)": {
+            "prototypeToken": {
+                "name": "Crawling Hand (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Crawling Hand (BB)",
+            "publicNotes": "<p>Crawling hands form when severed appendages are endowed with a crude sentience by necromantic energies that turn them into tireless killers.</p>",
+            "items": {
+                "Lifesense": {
+                    "name": "Lifesense",
+                    "description": "<p>A crawling hand can sense the vital essence of living and undead creatures within 30 feet. This sense can distinguish between the vitality energy animating living creatures and the void energy animating undead creatures, much as sight distinguishes color. However, a crawling hand can't see, so effects that depend on vision or seeing don't work on it.</p>"
+                },
+                "Throat Grab": {
+                    "name": "Throat Grab",
+                    "description": "<p>When the crawling hand succeeds at its claw Strike against a Medium or smaller creature, it can use this action immediately after to attempt to [[/act grapple]] the target. This Grapple doesn't apply or count toward the crawling hand's multiple attack penalty. A creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} this way has difficulty speaking and must spend an extra action to perform any action that requires speaking, including casting spells.</p>"
+                }
+            }
+        },
+        "Shadow Bat": {
+            "prototypeToken": {
+                "name": "Shadow Bat"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Shadow Bat",
+            "publicNotes": "<p>The shadowy magical energies related to some wicked deities, evil forces, or the shadowy plane of existence called the Netherworld sometimes manifest in the form of corrupted living creatures. The shadow bat has the physique of a giant bat made of shadows with the magical ability to create powerful gusts of wind.</p>",
+            "items": {
+                "Echolocation": {
+                    "name": "Echolocation",
+                    "description": "<p>The bat can \"see\" using its hearing at the listed range, allowing it to function just as well in darkness.</p>"
+                },
+                "Screeching Gust": {
+                    "name": "Screeching Gust",
+                    "description": "<p>The shadow bat flaps its wings and lets out a mighty screech, creating a cone of tearing winds and piercing sound. All creatures in a @Template[type:cone|distance:15] take @Damage[3d6[sonic]|options:area-damage] damage, with a @Check[reflex|dc:16|basic|options:area-effect,forced-movement] saving throw. Creatures that fail are pushed backwards 10 feet by the wind.</p>\n<p>Using its wings in this way exhausts the shadow bat, causing it to fall harmlessly to the ground immediately after using this ability and preventing it from taking flight or using Screeching Gust again for [[/gmr 1d4 #Recharge Screeching Gust]]{1d4 rounds}.</p>"
+                }
+            }
+        },
+        "Sea Hag (BB)": {
+            "prototypeToken": {
+                "name": "Sea Hag (BB)"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Sea Hag (BB)",
+            "publicNotes": "<p>Hags are malevolent predators who use magic and manipulation to lure children and young adults into their clutches. They seek out targets who are unhappy, innocent, or otherwise vulnerable, preying on their weaknesses before snatching them up. A sea hag has the upper half of a humanoid and the lower half of an octopus, with translucent skin and glowing lights visible beneath their flesh.</p>",
+            "allSaves": "+1 status to all saves vs. magic",
+            "items": {
+                "+1 Status to All Saves vs. Magic": {
+                    "name": "+1 Status to All Saves vs. Magic"
+                },
+                "Dread Gaze": {
+                    "name": "Dread Gaze",
+                    "description": "<p>The hag gazes upon a creature, afflicting it with a gnawing sense of impending doom, with a result depending on its @Check[will|dc:20|options:inflicts:frightened,inflicts:slowed] save. The target doesn't need to be able to see the sea hag.</p><hr /><p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is frightened 1 and is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} and slowed 1 for 1 minute.</p>"
+                }
+            }
+        },
+        "Magnetic Skink": {
+            "prototypeToken": {
+                "name": "Magnetic Skink"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Magnetic Skink",
+            "publicNotes": "<p>The scales of these large lizards are magnetic, drawing scraps of metal to their bodies. In addition to eating insects and other small prey, magnetic skinks also feed on small amounts of metal, so they're known to reside near settlements with access to these materials.</p>",
+            "items": {
+                "Uncanny Climber": {
+                    "name": "Uncanny Climber",
+                    "description": "<p>A magnetic skink's feet allow it to climb virtually any surface, no matter how slick or sheer. If a skink attempts an Athletics check to [[/act climb]] and critically fails, it gets a failure instead.</p>"
+                },
+                "Launch Metal": {
+                    "name": "Launch Metal",
+                    "description": "<p>The skink repulses the metal attached to its body in all directions, dealing @Damage[2d6[bludgeoning]|options:area-damage] damage (@Check[reflex|dc:15|basic|options:area-effect] save) to all creatures adjacent to the skink. The skink can't use Launch Metal again for [[/gmr 1d4 #Recharge Launch Metal]]{1d4 rounds}.</p>"
+                },
+                "Unsteadying Magnetism": {
+                    "name": "Unsteadying Magnetism",
+                    "description": "<p>The skink amplifies its magnetic field and tries to pull the metal away from a creature within 20 feet. If that creature is wearing metal armor or holding a metal item, they must attempt a @Check[fortitude|dc:15] save. On a failure, that creature is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of the skink's next turn.</p>"
+                }
+            }
+        },
+        "Lukahn": {
+            "prototypeToken": {
+                "name": "Lukahn"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Lukahn",
+            "blurb": "variant shadow priest",
+            "items": {
+                "Incorporeal": {
+                    "name": "Incorporeal",
+                    "description": "<p>Lukahn has no body and can pass through physical objects, though he can't end his turn inside one. Most checks that use Strength and require a body, such as @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} and @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shove}, don't work against Lukahn, and he can't use them.</p>"
+                },
+                "Light Vulnerability": {
+                    "name": "Light Vulnerability",
+                    "description": "<p>Attacks against Lukahn are treated as magical if he or the weapon being used against him is in light.</p>"
+                },
+                "Shadow Veil": {
+                    "name": "Shadow Veil",
+                    "description": "<p><strong>Trigger</strong> Lukahn is targeted by a melee attack</p><hr /><p><strong>Effect</strong> Lukahn gains a +2 circumstance bonus to AC against the triggering attack.</p>"
                 }
             }
         }
