@@ -1042,7 +1042,7 @@
             "items": {
                 "Falling Scythes": {
                     "name": "摆镰 Falling Scythes",
-                    "description": "<p>当绊线被拉动或被切断，两片镰刃同时向下摆动，每片镰刃都用巨镰打击攻击天花板凹槽下的所有生物。这些攻击没有多重攻击减值。</p>"
+                    "description": "<p>当绊线被拉动或被切断，两片镰刃同时向下摆动，每片镰刃以+17攻击骰近战攻击天花板凹槽下的所有生物。这些攻击没有多重攻击减值。</p>"
                 },
                 "No MAP": {
                     "name": "No MAP",
@@ -1145,7 +1145,7 @@
             "items": {
                 "Slam Shut": {
                     "name": "突然落下 Slam Shut",
-                    "description": "<p>任何地砖受到压力时，走廊两边的门落下并关闭。石板会对其下方区域或相邻的任何生物造成@Damage[3d8[bludgeoning]]伤害，并将它们按随机方向推离其所在空间。成功通过@Check[reflex|dc:17|traits:damaging-effect]豁免的生物不受伤害，并沿随机方向滚出。如果该生物大成功，它可以选择翻滚的方向。</p>\n<p>抬起落下的石板需要进行成功的@Check[athletics|dc:25|traits:hazard]检定。命中压力板会触发陷阱，石板与陷阱的AC和豁免相同，但是它拥有硬度12，HP48（BT24）。</p>"
+                    "description": "<p>地砖受到压力时，走廊两边的门落下并关闭。石板会对其下方区域或相邻的任何生物造成@Damage[3d8[bludgeoning]]伤害，并将它们按随机方向推离其所在空间。成功通过@Check[reflex|dc:17|options:damaging-effect]豁免的生物不受伤害，并沿随机方向滚出。如果该生物大成功，它可以选择翻滚的方向。抬起落下的石板需要进行成功的@Check[athletics|dc:25]检定。命中压力板会触发陷阱，石板与陷阱的AC和豁免相同，但是它拥有硬度12，HP48（BT24）。</p>"
                 }
             },
             "prototypeToken": {
@@ -1340,7 +1340,7 @@
             "items": {
                 "Stench": {
                     "name": "恶臭 Stench",
-                    "description": "<p>进入地蜥人周围@Template[emanation|distance:30]的生物必须尝试一次@Check[fortitude|dc:19]豁免。一旦失败，生物所有检定结果和DC都将遭受-1状态减值，直到他们花费一个动作呕吐出来。成功通过豁免的生物会在1分钟内对地蜥人的恶臭临时免疫。<em>（用@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1})</em> </p>"
+                    "description": "<p>进入地蜥人周围30尺的生物必须尝试一次@Check[fortitude|dc:16|options:inflicts:sickened]豁免。一旦失败，生物所有检定结果和DC都将遭受-1状态减值，直到他们花费一个动作呕吐出来（@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}）。成功通过豁免的生物会在1分钟内对地蜥人的恶臭临时免疫。</p>"
                 }
             },
             "prototypeToken": {
@@ -1399,11 +1399,11 @@
             "items": {
                 "Stench": {
                     "name": "Stench",
-                    "description": "<p>A creature that comes within @Template[emanation|distance:30] of the xulgath and can smell the xulgath must attempt a @Check[fortitude|dc:19] save. On a failure, the creature takes a -1 status penalty to all checks and DCs until it uses an action to retch. A creature that succeeds at its save isn't affected by any xulgaths' stenches for 1 minute <em>(Use @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1})</em>.</p>"
+                    "description": "<p>A creature that comes @Template[emanation|distance:30]{within 30} feet of the xulgath and can smell the xulgath must attempt a @Check[fortitude|dc:19|options:inflicts:sickened] save. On a failure, the creature takes a –1 status penalty to all checks and DCs until it uses an action to retch (@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}). A creature that succeeds at its save isn't affected by any xulgaths' stenches for 1 minute.</p>"
                 },
                 "Swipe": {
                     "name": "Swipe",
-                    "description": "<p>The xulgath boss makes two Strikes with their greataxe against two adjacent foes, both of whom are within their reach, with a +1 circumstance bonus. The second attack uses the same multiple attack penalty as the first, but attacks the xulgath boss makes after this take a -10 multiple attack penalty (or a -8 multiple attack penalty for its claw).</p>"
+                    "description": "<p>The xulgath leader makes two Strikes with their greataxe against two adjacent foes, both of whom are within their reach, with a +1 circumstance bonus. The second attack uses the same multiple attack penalty as the first, but attacks the xulgath boss makes after this take a –10 multiple attack penalty (or a –8 multiple attack penalty for its claw).</p>"
                 }
             }
         },
@@ -1415,11 +1415,11 @@
                 "placeHolder": "placeHolder"
             },
             "name": "熊地精徘徊者 Bugbear Prowler (BB)",
-            "publicNotes": "<p>这些鬼祟且残忍的地精亚种生物以散布恐惧和折磨受害者为乐。熊地精是潜伏在壁橱里和床底下的怪物。他们在偏远的农场进行猎食，会在深夜通过敲打或制造木板的吱吖声来揭示自身的存在，并以此构筑有人潜伏于此的骇人气氛和让人心生疑窦的恐惧感。</p>",
+            "publicNotes": "<p>这些鬼祟且残忍的地精亚种生物以散布恐惧和折磨受害者为乐。熊地精是潜伏在壁橱里和床底下的怪物。他们在偏远的农场进行猎食，会在深夜通过敲打或制造木板的吱吖声来揭示自身的存在。</p>",
             "items": {
                 "Bushwhack": {
                     "name": "奇袭 Bushwhack",
-                    "description": "<p>熊地精徘徊者行走至多10尺距离，之后尝试对一个视熊地精为无踪状态的生物进行@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{擒拿 Grapple}。若成功，熊地精徘徊者还能对该生物造成拳头打击的伤害。</p>"
+                    "description": "<p>熊地精徘徊者行走至多10尺距离，之后尝试对一个视熊地精为无踪状态的生物进行[[/act grapple]]。若成功，熊地精徘徊者还能对该生物造成拳头打击的伤害。</p>"
                 },
                 "Mauler": {
                     "name": "拳手 Mauler",
