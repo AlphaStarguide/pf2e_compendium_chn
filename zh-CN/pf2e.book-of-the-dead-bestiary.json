@@ -1063,7 +1063,7 @@
             "disable": "<p>@Check[nature|dc:36]（大师）安抚四只野牛中的一只；@Check[religion|dc:40]（受训）超度它们</p>",
             "hazarddescription": "<p>四个巨大的野牛头骨升到空中，每个头骨后面都显现出一具幽灵般的身体。</p>",
             "reset": "<p>当所有活着的生物都离开作祟区域1分钟后，或所有四个野牛头骨都被摧毁之后，作祟会停止活动。在1小时后，如果有至少1只野牛头骨没被摧毁，则作祟会重置。</p>",
-            "routine": "<p>（4个动作）每当有一个野牛头骨被摧毁，作祟就少1个动作。在每个动作中，一只不同的野牛行走最多60尺，然后尝试对不同的生物进行一次角抵打击。被角抵打击重击的生物还会受到@Damage[2d6[bleed]]伤害，并被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>",
+            "routine": "<p>（4个动作）每当有一个野牛头骨被摧毁，作祟就少1个动作。在每个动作中，一只不同的野牛行走最多60尺，然后尝试对不同的生物进行一次角抵打击。被角抵打击重击的生物还会受到2d6持续流血伤害，并被击至@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>",
             "stealthdetails": "<p>（大师）</p>",
             "data": {
                 "placeHolder": "placeHolder"
@@ -1071,7 +1071,7 @@
             "items": {
                 "Defend Territory": {
                     "name": "护卫领土 Defend Territory",
-                    "description": "<p><strong>触发</strong> 一个生物接近至其中一只头骨10尺内；</p>\n<hr />\n<p><strong>效果</strong> 头骨升到空中，幽灵身体浮现，发出愤怒的牛叫。每个野牛头骨@Template[emanation|distance:60]{60尺}范围内的每个生物都必须尝试@Check[will|dc:36]豁免。然后作祟投掷先攻。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物受到@Damage[(1d12+6)[mental]]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物受到@Damage[(2d12+12)[mental]]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 4}。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物接近至其中一只头骨10尺内；</p>\n<hr />\n<p><strong>效果</strong> 头骨升到空中，幽灵身体浮现，发出愤怒的牛叫。每个野牛头骨@Template[emanation|distance:60]{60尺}范围内的每个生物都必须尝试@Check[will|dc:36|options:area-effect,damaging-effect,inflicts:frightened]豁免。然后作祟投掷先攻。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物受到@Damage[(1d12+6)[mental]|options:area-damage]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物受到@Damage[(2d12+12)[mental]|options:area-damage]伤害，陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 4}。</p>"
                 },
                 "strike-Horn": {
                     "name": "角抵 Horn",
