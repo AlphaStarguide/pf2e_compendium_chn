@@ -114,7 +114,7 @@
                 },
                 "Smoke Exhalation": {
                     "name": "呼出烟雾 Smoke Exhalation",
-                    "description": "<p>埃尔维斯呼出一团毒烟，他可以让这团毒烟围绕着他，或者粘附在他的武器上。</p>\n<p>在下一回合开始时云雾消散之前，埃尔维斯处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，他的攻击会造成额外1d8毒素伤害，而且他攻击的目标必须通过@Check[fortitude|dc:22]豁免，否则承受@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>"
+                    "description": "<p>埃尔维斯呼出一团毒烟，他可以让这团毒烟围绕着他，或者粘附在他的武器上。</p>\n<p>在下一回合开始时云雾消散之前，埃尔维斯处于@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，他的攻击会造成额外1d8毒素伤害，而且他攻击的目标必须通过@Check[fortitude|dc:22|options:inflicts:sickened]豁免，否则承受@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>"
                 },
                 "Sneak Attack": {
                     "name": "偷袭 Sneak Attack",
@@ -3873,7 +3873,7 @@
                 },
                 "Paralysis": {
                     "name": "麻痹 Paralysis",
-                    "description": "<p>任意活着的生物在受到斯迈勒的攻击时必须成功通过@Check[fortitude|dc:18]豁免，失败则会陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]。被麻痹的生物可以在自己的每个回合结束时尝试一次新的豁免，每次此豁免的DC都会递减1点。</p>"
+                    "description": "<p>任意活着的生物在受到斯迈勒的攻击时必须成功通过@Check[fortitude|dc:18|options:inflicts:paralyzed]豁免，失败则会陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]。被麻痹的生物可以在自己的每个回合结束时尝试一次新的豁免，每次此豁免的DC都会递减1点。</p>"
                 },
                 "Swift Leap": {
                     "name": "迅捷跳跃 Swift Leap",
@@ -4486,7 +4486,7 @@
                 },
                 "Deadly Aim": {
                     "name": "致死瞄准 Deadly Aim",
-                    "description": "<p>透肌魔人猎手进行一次有着-2减值的远程打击。这次打击将造成[[/r 4]]额外伤害。</p>"
+                    "description": "<p>透肌魔人猎手进行一次有着-2减值的远程打击。这次打击将造成4点额外伤害。</p>"
                 },
                 "Double Shot": {
                     "name": "二重射击 Double Shot",
@@ -5257,7 +5257,7 @@
                 },
                 "Consume Knowledge": {
                     "name": "吞食知识 Consume Knowledge",
-                    "description": "<p>摄智者侵入100尺内一个生物的心灵，试图吞食其高等思考的能力。该生物进行一次@Check[will|dc:36]豁免。</p>\n<p>使用吞食知识会立刻终止这个能力之前对另一个生物产生的效果。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 该生物缓慢1且只能进行基本动作，持续1分钟。</p>\n<p><strong>大失败</strong> 同失败，且摄智者会@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened 1}，持续1分钟。他可以使用额外的动作来行走，打击，如果目标拥有已准备的法术或是法术库，他还可以用额外的动作来施法。</p>"
+                    "description": "<p>摄智者侵入100尺内一个生物的心灵，试图吞食其高等思考的能力。该生物进行一次@Check[will|dc:36]豁免。</p>\n<p>使用吞食知识会立刻终止这个能力之前对另一个生物产生的效果。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 该生物缓慢1且只能进行基本动作，持续1分钟。</p>\n<p><strong>大失败</strong> 同失败，且摄智者会@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，持续1分钟。他可以使用额外的动作来行走，打击，如果目标拥有已准备的法术或是法术库，他还可以用额外的动作来施法。</p>"
                 },
                 "Thoughtsense (Imprecise) 60 feet": {
                     "name": "震颤感知（模糊感官）60尺 Thoughtsense (Imprecise) 60 feet",
@@ -5292,7 +5292,7 @@
                 },
                 "Vulnerability to Extinguishing": {
                     "name": "扑熄弱点 Vulnerability to Extinguishing",
-                    "description": "<p>一个被水或是其他方式浇灭烛指的烛指精将受到@Damage[3d6[persistent,mental]]伤害，并获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{迅捷 Quickened 1}，而且在烛指被重新点燃之前会痛苦的尖叫。（通常是先释放@UUID[Compendium.pf2e.spells-srd.Item.6DfLZBl8wKIV03Iq]然后用一个交互动作点亮手指）。</p>"
+                    "description": "<p>一个被水或是其他方式浇灭烛指的烛指精将受到@Damage[3d6[persistent,mental]]伤害，并获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，而且在烛指被重新点燃之前会痛苦的尖叫。（通常是先释放@UUID[Compendium.pf2e.spells-srd.Item.6DfLZBl8wKIV03Iq]然后用一个交互动作点亮手指）。</p>"
                 },
                 "Fling Wax": {
                     "name": "浇蜡 Fling Wax",
