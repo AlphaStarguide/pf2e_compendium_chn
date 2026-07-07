@@ -2376,10 +2376,10 @@
                 },
                 "Bone-Chilling Screech": {
                     "name": "刺骨尖啸 Bone-Chilling Screech",
-                    "description": "<p>食惧蝙蝠发出一阵骇人的嚎叫，深入距离内生物的骨髓。尖啸声可以在几英里内听到，但只有@Template[emanation|distance:20]范围内的每个生物必须在听到的同时进行@Check[will|dc:22]豁免。</p>\n<p>食惧蝙蝠在[[/gmr 1d4 #Recharge Bone-Chilling Screech]]{1d4轮}内无法再用此能力。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响，并临时免疫刺骨尖啸24小时。</p>\n<p><strong>成功</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}并因恐惧而@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>"
+                    "description": "<p>食惧蝙蝠发出一阵骇人的嚎叫，深入距离内生物的骨髓。尖啸声可以在几英里内听到，但只有@Template[emanation|distance:20]范围内的每个生物必须在听到的同时进行@Check[will|dc:22|options:area-effect,inflicts:frightened,inflicts:stunned]豁免。</p>\n<p>食惧蝙蝠在[[/gmr 1d4 #Recharge Bone-Chilling Screech]]{1d4轮}内无法再用此能力。</p><hr /><p><strong>大成功</strong> 生物不受影响，并临时免疫刺骨尖啸24小时。</p>\n<p><strong>成功</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 生物获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}。</p>\n<p><strong>大失败</strong> 生物获得惊惧2并因恐惧而@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>"
                 },
                 "Consume Flesh": {
-                    "description": "<p><strong>需求</strong> 食惧蝙蝠与刚死亡1小时内的生物尸体相邻</p><hr /><p><strong>效果</strong> 食惧蝙蝠吞食一大块尸体并恢复1d6+食惧蝙蝠每2级额外1d6点生命值。它只能从每具尸体上获取一次生命值恢复。</p>",
+                    "description": "<p><strong>需求</strong> 食惧蝙蝠与刚死亡1小时内的生物尸体相邻</p><hr /><p><strong>效果</strong> 食惧蝙蝠吞食一大块尸体并恢复1d6+食惧蝙蝠每2级额外1d6点生命值（@Damage[(1+(max(0,floor(@actor.level/2))))d6[healing]]）。它只能从每具尸体上获取一次生命值恢复。</p>",
                     "name": "啃食尸体 Consume Flesh"
                 },
                 "Ghoul Fever": {
@@ -2396,7 +2396,7 @@
                 },
                 "Feast on Fear": {
                     "name": "饱餐恐惧 Feast on Fear",
-                    "description": "<p><strong>触发</strong> 食惧蝙蝠用尖牙打击对一个处于惊惧状态的生物造成伤害</p><hr /><p><strong>效果</strong> 食惧蝙蝠从渗满该生物血肉的恐惧中汲取力量。该惊惧生物进行@Check[fortitude|dc:22]豁免。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物的速度承受-5尺状态减值，食惧蝙蝠的速度获得+5尺状态加值，持续到其下回合结束。</p>\n<p><strong>失败</strong> 该生物的速度承受-10尺状态减值，食惧蝙蝠的速度获得+10尺状态加值，持续到其下回合结束。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，食惧蝙蝠可以立即以一个自由动作飞行、快步或行走；这次移动不会触发反应动作。</p>"
+                    "description": "<p><strong>触发</strong> 食惧蝙蝠用尖牙打击对一个处于@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]状态的生物造成伤害</p><hr /><p><strong>效果</strong> 食惧蝙蝠从渗满该生物血肉的恐惧中汲取力量。该惊惧生物进行@Check[fortitude|dc:22|options:inflicts:slowed]豁免。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物的速度承受-5尺状态减值，食惧蝙蝠的速度获得+5尺状态加值，持续到其下回合结束。</p>\n<p><strong>失败</strong> 该生物的速度承受-10尺状态减值，食惧蝙蝠的速度获得+10尺状态加值，持续到其下回合结束。</p>\n<p><strong>大失败</strong> 该生物获得@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，食惧蝙蝠可以立即以一个自由动作飞行、快步或行走；这次移动不会触发反应动作。</p>"
                 }
             },
             "publicNotes": "<p>想要制造食惧蝙蝠，就必须进行骇人的死灵仪式。尽管有时被称为食尸鬼蝙蝠，它们其实是特制的不死生物，而非真正的食尸鬼。幽暗地域（Darklands）的嗜血的透肌魔人（Urdefhans）以毒菌与食尸鬼的血肉——尤其是它们的脑子——培育巨蝙蝠。这些巨蝙蝠成熟之后，就会被仪式性地用毒素宰杀。虽然这种毒素只会腐蚀掉大多数动物的肉，但经过上述特殊处理的蝙蝠会在毒发身亡后立即以食惧蝙蝠的形态复活。</p>\n<p>尽管它的翅膀破损、皮肤松弛，食惧蝙蝠仍有能力自如飞翔，哪怕背上载着一个生物。透肌魔人常常把食惧蝙蝠当做坐骑。它的智力比普通的巨蝙蝠更加出众，在战斗中它们能够独立做出战术决策，更像盟友而不仅是坐骑。</p>"
@@ -2633,7 +2633,7 @@
                 },
                 "Greater Constrict": {
                     "name": "高等紧勒 Greater Constrict",
-                    "description": "<p>@Damage[(2d12+12)[bludgeoning]]伤害，@Check[fortitude|dc:33|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
+                    "description": "<p>@Damage[(2d12+12)[bludgeoning]]伤害，@Check[fortitude|dc:33|basic|options:inflicts:unconscious]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
                 },
                 "Spray Water": {
                     "name": "喷吐激流 Spray Water",
@@ -3555,7 +3555,7 @@
                 },
                 "Consumptive Aura": {
                     "name": "靡耗灵光 Consumptive Aura",
-                    "description": "<p>20尺。饥馑邪魔散发出能造成强烈饥饿的灵光。每轮在回合开始时处于灵光内的生物必须进行@Check[fortitude|dc:27|traits:damaging-effect]检定。失败则该生物受到@Damage[1d6[void]]伤害（大失败则受到@Damage[2d6[void]]伤害）并变得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。该疲乏状态会在该生物进食任何食物后立即结束。</p>"
+                    "description": "<p>20尺。饥馑邪魔散发出能造成强烈饥饿的灵光。每轮在回合开始时处于灵光内的生物必须进行@Check[fortitude|dc:27|options:area-effect,damaging-effect,inflicts:fatigued]检定。失败则该生物受到@Damage[1d6[void]|options:area-damage]伤害（大失败则受到@Damage[2d6[void]|options:area-damage]伤害）并变得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。该疲乏状态会在该生物进食任何食物后立即结束。</p>"
                 },
                 "Daemonic Famine": {
                     "name": "邪魔饥荒 Daemonic Famine",
@@ -3563,7 +3563,7 @@
                 },
                 "Withering Touch": {
                     "name": "枯萎之触 Withering Touch",
-                    "description": "<p>当饥馑邪魔用爪击打击命中目标或一个生物在其回合开始时被饥馑邪魔擒获或束缚时，该生物必须进行一次@Check[fortitude|dc:30|traits:damaging-effect]豁免。检定失败，该生物受到@Damage[1d6[void]]伤害，并变得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。该疲乏状态会在该生物饮水时结束。</p>"
+                    "description": "<p>当饥馑邪魔用爪击打击命中目标或一个生物在其回合开始时被饥馑邪魔@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或束缚时，该生物必须进行一次@Check[fortitude|dc:30|options:damaging-effect,inflicts:fatigued]豁免。检定失败，该生物受到@Damage[1d6[void]]伤害，并变得@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。该疲乏状态会在该生物饮水时结束。</p>"
                 }
             },
             "prototypeToken": {
@@ -7306,7 +7306,7 @@
                 },
                 "Carnivorous Blob Acid": {
                     "name": "噬肉体酸 Carnivorous Blob Acid",
-                    "description": "<p>噬肉体的酸蚀伤害只能影响肉体——不能影响骨头，石头，木头或其他材料——但其破坏力依然惊人。生物受到此酸蚀伤害时，它必须成功通过一次@Check[fortitude|dc:33]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}（大失败时为流失2）。每次后续失败，流失状态值都会增加1（大失败时增加2），最高到流失4。</p>"
+                    "description": "<p>噬肉体的酸蚀伤害只能影响肉体——不能影响骨头，石头，木头或其他材料——但其破坏力依然惊人。生物受到此酸蚀伤害时，它必须成功通过一次@Check[fortitude|dc:33|options:inflicts:drained]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}）。每次后续失败，流失状态值都会增加1（大失败时增加2），最高到流失4。</p>"
                 },
                 "Constrict": {
                     "name": "紧勒 Constrict",
@@ -7314,7 +7314,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>DC33，@Damage[4d10[acid]]，[[/act escape dc=33]]，破裂值20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:33|options:damaging-effect,inflicts:grabbed,inflicts:slowed]，@Damage[4d10[acid]]，[[/act escape dc=33]]，破裂值20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 }
             }
         },
@@ -7810,7 +7810,7 @@
             "items": {
                 "Hurl Net": {
                     "name": "投网 Hurl Net",
-                    "description": "<p><strong>需求</strong> 树蛙人双手持握一张网子</p><hr /><p><strong>效果</strong> 树蛙人对20尺内某个体型不超过中型的生物进行一次远程打击（[[/r 1d20+9]]{+9}攻击调整值）。如果命中，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]并且速度受到-10尺环境减值。如果重击，目标@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]。[[/act escape dc=16]]网子的DC为16。目标相邻的生物可以用一个交互动作来解开网子。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]</p>"
+                    "description": "<p><strong>需求</strong> 树蛙人双手持握一张网子</p><hr /><p><strong>效果</strong> 树蛙人对20尺内某个体型不超过中型的生物进行一次远程打击（@Check[hurl-net|against:ac]{+9}攻击调整值）。如果命中，目标陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]并且速度受到-10尺环境减值。如果重击，目标@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]。[[/act escape dc=16]]网子的DC为16。目标相邻的生物可以用一个交互动作来解开网子。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]</p>"
                 },
                 "Jungle Passage": {
                     "name": "丛林穿行 Jungle Passage",
