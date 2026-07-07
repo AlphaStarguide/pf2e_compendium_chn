@@ -463,7 +463,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:28|traits:damaging-effect], @Damage[2d6[slashing]]伤害，[[/act escape dc=28]]，破裂25（仅钝击）。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:28|options:damaging-effect,inflicts:grabbed,inflicts:slowed]，@Damage[2d6[slashing]]伤害，[[/act escape dc=28]]，破裂25（仅钝击）。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Freeze": {
                     "name": "晶化 Freeze",
@@ -913,11 +913,11 @@
                 },
                 "Breath-Seared Sword": {
                     "name": "龙息巨剑 Breath-Seared Sword",
-                    "description": "<p>龙疤亡者的武器经过了龙的吐息魔法炙烤。当被生前就携带它的龙疤亡者使用时，这把剑会造成额外的@Damage[2d6[void]]伤害和@Damage[3d6[fire]]伤害。在其他任何生物手中，它只是一把破损巨剑。</p>"
+                    "description": "<p>龙疤亡者的武器经过了龙的吐息魔法炙烤。当被生前就携带它的龙疤亡者使用时，这把剑会造成额外的2d6虚能呵3d6火焰伤害。在其他任何生物手中，它只是一把破损巨剑。</p>"
                 },
                 "Glare of Rage": {
                     "name": "目光如炬 Glare of Rage",
-                    "description": "<p>龙疤亡者将其无尽的挫败感凝聚于它的双眼，然后将视线投向30尺内它能看到的一个生物。该生物必须进行@Check[will|dc:30]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 此生物不受影响。</p>\n<p><strong>成功</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]1轮。</p>\n<p><strong>大失败</strong> 此生物震慑[[/gmr 1d4 #rounds]]{1d4轮}，并陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。</p>"
+                    "description": "<p>龙疤亡者将其无尽的挫败感凝聚于它的双眼，然后将视线投向30尺内它能看到的一个生物。该生物必须进行@Check[will|dc:30|options:inflicts:stunned,inflicts:fatigued]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 此生物不受影响。</p>\n<p><strong>成功</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>失败</strong> 此生物获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]1轮。</p>\n<p><strong>大失败</strong> 此生物震慑[[/gmr 1d4 #rounds]]{1d4轮}，并陷入@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]。</p>"
                 },
                 "+1 Status to All Saves vs. Magic": {
                     "name": "对魔法的豁免获得+1状态加值 +1 Status to All Saves vs. Magic"
@@ -1558,7 +1558,7 @@
                 },
                 "Efficient Capture": {
                     "name": "高效抓捕 Efficient Capture",
-                    "description": "<p><strong>需求</strong> 伊斯拉手上持握镣铐，并且和一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 伊斯拉尝试用镣铐束缚该生物的手腕或脚踝。若伊斯拉成功通过[[/r 1d20+30 #attack]]{+30}调整值的攻击检定对抗目标的AC，则对其应用镣铐。</p>"
+                    "description": "<p><strong>需求</strong> 伊斯拉手上持握镣铐，并且和一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 伊斯拉尝试用镣铐束缚该生物的手腕或脚踝。若伊斯拉成功通过@Check[efficient-capture|against:ac]{+30}调整值的攻击检定对抗目标的AC，则对其应用镣铐。</p>"
                 },
                 "Hammer the Chained": {
                     "name": "链锤合击 Hammer the Chained",
@@ -1988,7 +1988,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:22|traits:damaging-effect]豁免，@Damage[2d6[acid]]伤害，[[/act escape dc=24]]，破裂10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:22|options:damaging-effect,inflicts:grabbed,inflicts:slowed]豁免，@Damage[2d6[acid]]伤害，[[/act escape dc=24]]，破裂10</p>\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Entangling Residue": {
                     "name": "缠裹残液 Entangling Residue",
@@ -2427,7 +2427,7 @@
                 },
                 "Efficient Capture": {
                     "name": "高效抓捕 Efficient Capture",
-                    "description": "<p><strong>需求</strong> 有镣铐在探子的手上且探子与一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 探子尝试用镣铐束缚该生物的手腕或脚踝。若探子成功通过[[/r 1d20+24]]{+24调整值}的攻击检定对抗目标的AC，则对其应用镣铐。</p>"
+                    "description": "<p><strong>需求</strong> 有镣铐在探子的手上且探子与一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 探子尝试用镣铐束缚该生物的手腕或脚踝。若探子成功通过@Check[efficient-capture|against:ac]{+24}调整值的攻击检定对抗目标的AC，则对其应用镣铐。</p>"
                 },
                 "Precise Debilitations": {
                     "name": "精准削弱 Precise Debilitations",
@@ -3412,7 +3412,7 @@
                 },
                 "Efficient Capture": {
                     "name": "高效抓捕 Efficient Capture",
-                    "description": "<p><strong>需求</strong> 巴鲁沙克的手中有镣铐而且与 1 名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 巴鲁沙克尝试用镣铐束缚该生物的手腕或脚踝。他必须成功通过一次调整值为[[/r 1d20+21 #Manacles]]{+21}的攻击检定对抗目标的AC。</p>"
+                    "description": "<p><strong>需求</strong> 巴鲁沙克的手中有镣铐而且与 1 名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 巴鲁沙克尝试用镣铐束缚该生物的手腕或脚踝。他必须成功通过一次调整值为@Check[efficient-capture|against:ac]{+21}的攻击检定对抗目标的AC。</p>"
                 },
                 "Fiend Summoner": {
                     "name": "魔族召唤师 Fiend Summoner",
@@ -4129,7 +4129,7 @@
                 },
                 "Efficient Capture": {
                     "name": "高效抓捕 Efficient Capture",
-                    "description": "<p><strong>需求</strong> 有镣铐在暴徒的手上且暴徒与一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 暴徒尝试用镣铐束缚该生物的手腕或脚踝。暴徒必须成功通过[[/r 1d20+18 #Manacles]]{+18}调整值的攻击检定对抗目标的 AC。</p>"
+                    "description": "<p><strong>需求</strong> 有镣铐在暴徒的手上且暴徒与一名生物相邻</p>\n<hr />\n<p><strong>效果</strong> 暴徒尝试用镣铐束缚该生物的手腕或脚踝。暴徒必须成功通过@Check[efficient-capture|against:ac]{+18}调整值的攻击检定对抗目标的AC。</p>"
                 },
                 "Pack Attack": {
                     "name": "围攻 Pack Attack",
