@@ -2811,7 +2811,7 @@
                 },
                 "Hurl Net": {
                     "name": "Hurl Net",
-                    "description": "<p><strong>Requirements</strong> The cecaelia is holding a net in two appendages.</p><hr /><p><strong>Effect</strong> The cecaelia hurls their net, attempting to hamper a foe. The cecaelia makes a ranged Strike (with a [[/r 1d20+15 #Hurl Net]]{+15} modifier) against a Medium or smaller creature within 20 feet.</p>\n<p>On a hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and takes a –10-foot circumstance penalty to its Speeds. On a critical hit, the creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}. The DC to [[/act escape dc=16]]{Escape} the net is 16. A creature adjacent to the target can Interact with the net to remove it from the target.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]{Effect: Hurl Net}</p>"
+                    "description": "<p><strong>Requirements</strong> The cecaelia is holding a net in two appendages.</p><hr /><p><strong>Effect</strong> The cecaelia hurls their net, attempting to hamper a foe. The cecaelia makes a ranged Strike (with a @Check[hurl-net|against:ac]{+15} modifier) against a Medium or smaller creature within 20 feet.</p>\n<p>On a hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and takes a –10-foot circumstance penalty to its Speeds. On a critical hit, the creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}. The DC to [[/act escape dc=16]] the net is 16. A creature adjacent to the target can Interact with the net to remove it from the target.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]{Effect: Hurl Net}</p>"
                 },
                 "Ink Cloud": {
                     "name": "Ink Cloud",
@@ -4303,7 +4303,7 @@
                 },
                 "Ectoplasmic Secretions": {
                     "name": "灵质分泌物 Ectoplasmic Secretions",
-                    "description": "<p>任何使用无武装打击命中衰变灵、试图@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{擒拿 Grapple}他们、或以其他方式接触它们的人，其身体将被灵质覆盖一部分。</p>\n<p>该生物受到@Damage[1d6[void]]伤害，且必须成功通过@Check[reflex|dc:27|traits:damaging-effect]豁免，否则获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}直到灵质被移除。</p>\n<p>该生物或邻接他的生物可以通过总计3次交互动作移除灵质。这些动作不需要连续或由同一生物做出。</p>"
+                    "description": "<p>任何使用无武装打击命中衰变灵、试图@UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]他们、或以其他方式接触它们的人，其身体将被灵质覆盖一部分。</p>\n<p>该生物受到@Damage[1d6[void]]伤害，且必须成功通过@Check[reflex|dc:27|options:damaging-effect,inflicts:enfeebled]豁免，否则获得@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}直到灵质被移除。</p>\n<p>该生物或邻接他的生物可以通过总计3次交互动作移除灵质。这些动作不需要连续或由同一生物做出。</p>"
                 },
                 "Ectoplasmic Shield": {
                     "name": "灵质护盾 Ectoplasmic Shield",
@@ -4999,7 +4999,7 @@
                 },
                 "Camouflage": {
                     "name": "伪装 Camouflage",
-                    "description": "<p>巨海马可以改变自己的体色以融入周围的环境。它在尝试@UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{躲藏 Hide}的隐秘检定时不需要掩蔽。</p>"
+                    "description": "<p>巨海马可以改变自己的体色以融入周围的环境。它在尝试[[/act hide]]的隐秘检定时不需要掩蔽。</p>"
                 },
                 "Anchor": {
                     "name": "锚定 Anchor",
@@ -5133,7 +5133,7 @@
                 },
                 "Radiant Mantle": {
                     "name": "Radiant Mantle",
-                    "description": "<p>30 feet. The gliminal emits bright light in the area, and dim light out to 60 feet. When a creature enters or starts its turn in the area of bright light, it must succeed at a @Check[fortitude|dc:25] save or become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the end of its turn.</p>\n<p>If the mantle is counteracted or suppressed, the gliminal loses their resistance and can't use Bond in Light until the mantle returns.</p>"
+                    "description": "<p>30 feet. The gliminal emits bright light in the area, and dim light out to 60 feet. When a creature enters or starts its turn in the area of bright light, it must succeed at a @Check[fortitude|dc:25|options:area-effect,inflicts:dazzled] save or become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the end of its turn.</p>\n<p>If the mantle is counteracted or suppressed, the gliminal loses their resistance and can't use Bond in Light until the mantle returns.</p>"
                 },
                 "Bond in Light": {
                     "name": "Bond in Light",
@@ -6010,7 +6010,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:18], @Damage[(1d8+2)[bludgeoning]]{1d8+2钝击伤害}, 逃脱DC 18, 破裂5</p>\n<p>一反木绵只能包卷一个生物。他可以包卷大一级体型的生物，只要生物的头部可以被一反木绵的身体切实覆盖。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:18|options:damaging-effect,inflicts:grabbed,inflicts:slowed]，@Damage[(1d8+2)[bludgeoning]]伤害，[[/act escape dc=18]]，破裂5</p>\n<p>一反木绵只能包卷一个生物。他可以包卷大一级体型的生物，只要生物的头部可以被一反木绵的身体切实覆盖。</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Tremorsense (Imprecise) 30 feet": {
                     "name": "震颤感知（模糊感官）30尺 Tremorsense (Imprecise) 30 feet",
@@ -9349,7 +9349,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:28], @Damage[2d8[force],4d4[fire]]伤害，[[/act escape dc=28]]，破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:28|options:damaging-effect,inflicts:grabbed,inflicts:slowed]，@Damage[2d8[force],4d4[fire]]伤害，[[/act escape dc=28]]，破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Unstable Magic": {
                     "name": "不稳定的魔法 Unstable Magic",
@@ -9566,7 +9566,7 @@
                 },
                 "Sea Spray": {
                     "name": "海水飞溅 Sea Spray",
-                    "description": "<p>海草莱西喷出的咸水会临时妨害目标的视觉。</p>\n<p>一旦命中，目标必须通过@Check[fortitude|dc:20]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}1分钟，直到它花费3个交互动作揉掉双眼中的盐分。如果海草莱西重击，强韧豁免失败的生物则会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1轮。</p>"
+                    "description": "<p>海草莱西喷出的咸水会临时妨害目标的视觉。</p>\n<p>一旦命中，目标必须通过@Check[fortitude|dc:20|options:inflicts:dazzled,inflicts:blinded]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1分钟，直到它花费3个交互动作揉掉双眼中的盐分。如果海草莱西重击，强韧豁免失败的生物则会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮。</p>"
                 }
             },
             "data": {
