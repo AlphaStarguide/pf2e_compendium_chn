@@ -381,7 +381,7 @@
             "items": {
                 "Camouflage": {
                     "name": "Camouflage",
-                    "description": "<p>Zauglagaul can @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} in exterior locations in Tanglebriar even if he doesn't have cover.</p>"
+                    "description": "<p>Zauglagaul can [[/act hide]] in exterior locations in Tanglebriar even if he doesn't have cover.</p>"
                 },
                 "Mist Vision": {
                     "name": "Mist Vision",
@@ -578,7 +578,7 @@
                 },
                 "Engulf": {
                     "name": "Engulf",
-                    "description": "<p>@Check[reflex|dc:40|traits:damaging-effect], @Damage[6d6[acid]] damage, [[/act escape dc=40]], Rupture 40</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:40|options:damaging-effect,inflicts:grabbed,inflicts:slowed], @Damage[6d6[acid]] damage, [[/act escape dc=40]], Rupture 40</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Toxic Sporecloud": {
                     "name": "Toxic Sporecloud",
@@ -1394,7 +1394,7 @@
             "items": {
                 "Demonic Attention": {
                     "name": "Demonic Attention",
-                    "description": "<p><strong>Trigger</strong> the mushroom takes damage, any of the seven rifts are touched, or any attempt to disable the network critically fails</p><hr /><p><strong>Effect</strong> The demonic energies within each of the seven rifts take note, and the cacophonous sound of howling fiends fills the room. All creatures in area <strong>D4</strong> must attempt a @Check[will|dc:41] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure). The hazard then rolls initiative.</p>"
+                    "description": "<p><strong>Trigger</strong> the mushroom takes damage, any of the seven rifts are touched, or any attempt to disable the network critically fails</p><hr /><p><strong>Effect</strong> The demonic energies within each of the seven rifts take note, and the cacophonous sound of howling fiends fills the room. All creatures in area <strong>D4</strong> must attempt a @Check[will|dc:41|options:area-effect,inflicts:frightened] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1} (@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} on a critical failure). The hazard then rolls initiative.</p>"
                 }
             }
         },
@@ -1565,7 +1565,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Void Bars",
-            "disable": "<p>@Check[thievery|dc:45] (master) three times to deface the well-@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden} focusing runes etched along the walls, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (10th rank; counteract DC 38) to counteract the void bars</p>",
+            "disable": "<p>@Check[thievery|dc:45] (master) three times to deface the well-hidden focusing runes etched along the walls, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{Dispel Magic} (10th rank; counteract DC 38) to counteract the void bars</p>",
             "hazarddescription": "<p>Bars made of pure Void energy block access to the far side of the cell.</p>",
             "routine": "<p>(1 action) Each set of void bars manifests a long arm made of darkness that reaches out and attempts to Strike a creature in the room, favoring targets that previously damaged the bars or attempted to disable them, but otherwise choosing a target randomly from those available. This void talon can extend to attack any creature in the room or within 20 feet of the cell door in the outer hall, but targets in the outer hall gain the benefit of cover against this attack.</p>",
             "reset": "<p>The trap deactivates at the end of a round in which no living creatures are in the cell, then immediately resets at the start of the next round.</p>",
@@ -1698,7 +1698,7 @@
                 },
                 "Whistling Decay": {
                     "name": "Whistling Decay",
-                    "description": "<p><strong>Trigger</strong> The fungal curtain takes damage or an attempt to disable it critically fails</p><hr /><p><strong>Effect</strong> Pod like protrusions along the fungal curtain clench and then expel a shrill whistling sound along with clouds of flesh-eating spores. The whistling sound alerts the occupants of area <strong>E6</strong>. Any non-fungus, non-demon creature within 30 feet of the fungal curtain is exposed to the flesh-eating spores and takes @Damage[8d6[poison],4d6[persistent,void]]{8d6 poison damage and 4d6 persistent void} damage (@Check[fortitude|dc:42|basic] save). The fungal curtain then rolls initiative.</p>"
+                    "description": "<p><strong>Trigger</strong> The fungal curtain takes damage or an attempt to disable it critically fails</p><hr /><p><strong>Effect</strong> Pod like protrusions along the fungal curtain clench and then expel a shrill whistling sound along with clouds of flesh-eating spores. The whistling sound alerts the occupants of area <strong>E6</strong>. Any non-fungus, non-demon creature within Template[emanation|distance:30]{30 feet} of the fungal curtain is exposed to the flesh-eating spores and takes @Damage[8d6[poison],4d6[persistent,void]|options:area-damage] damage (@Check[fortitude|dc:42|basic|options:area-effect] save). The fungal curtain then rolls initiative.</p>"
                 }
             }
         },
@@ -1998,7 +1998,7 @@
             "items": {
                 "Soulshriek": {
                     "name": "Soulshriek",
-                    "description": "<p><strong>Trigger</strong> a non-demon creature ends their turn in area <strong>D3</strong>, or a demon in area <strong>D3</strong> issues a command to the Witchbole's Heart to awaken</p><hr /><p><strong>Effect</strong> A distorted arboreal's face forms on the side of the Witchbole's Heart and issues a horrific shriek that sounds as if it were issued through an immense throat made of grinding wood. All non-demon creatures in area <strong>D3</strong> or within 30 feet of any entrance to area <strong>D3</strong> take @Damage[10d6[spirit]] damage (@Check[will|dc:41|basic] save) as their own souls twist and writhe in pain. The trap then rolls initiative.</p>"
+                    "description": "<p><strong>Trigger</strong> a non-demon creature ends their turn in area <strong>D3</strong>, or a demon in area <strong>D3</strong> issues a command to the Witchbole's Heart to awaken</p><hr /><p><strong>Effect</strong> A distorted arboreal's face forms on the side of the Witchbole's Heart and issues a horrific shriek that sounds as if it were issued through an immense throat made of grinding wood. All non-demon creatures in area <strong>D3</strong> or within 30 feet of any entrance to area <strong>D3</strong> take @Damage[10d6[spirit]|options:area-damage] damage (@Check[will|dc:41|basic|options:area-effect] save) as their own souls twist and writhe in pain. The trap then rolls initiative.</p>"
                 }
             }
         },
@@ -2180,7 +2180,7 @@
                 },
                 "Hungry Bones": {
                     "name": "Hungry Bones",
-                    "description": "<p>Each enemy in the klacktel's space takes @Damage[4d8[bludgeoning]] damage and @Damage[4d8[void]] damage with a @Check[reflex|dc:42|basic] save.</p>"
+                    "description": "<p>Each enemy in the klacktel's space takes @Damage[4d8[bludgeoning],4d8[void]|options:area-damage] damage with a @Check[reflex|dc:42|basic|options:area-effect] save.</p>"
                 },
                 "Void Beam": {
                     "name": "Void Beam",
@@ -2493,7 +2493,7 @@
                 },
                 "Engulf": {
                     "name": "Engulf",
-                    "description": "<p>@Check[reflex|dc:32], @Damage[3d10[acid]] damage plus digestion, [[/act escape dc=32]], Rupture 18</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:32|options:damaging-effect,inflicts:grabbed,inflicts:slowed], @Damage[3d10[acid]] damage plus digestion, [[/act escape dc=32]], Rupture 18</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Sinmold Infestation": {
                     "name": "Sinmold Infestation",

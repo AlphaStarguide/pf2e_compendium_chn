@@ -662,7 +662,7 @@
                 },
                 "Efficient Capture": {
                     "name": "Efficient Capture",
-                    "description": "<p><strong>Requirements</strong> The jailer has manacles in hand and is adjacent to a creature</p>\n<hr />\n<p><strong>Effect</strong> The jailer attempts to bind the creature's wrists or ankles with the manacles. If the jailer succeeds at an attack roll with a [[/r 1d20+9 #Manacles]]{+9 modifier} against the target's AC, they apply the manacles.</p>"
+                    "description": "<p><strong>Requirements</strong> The jailer has manacles in hand and is adjacent to a creature</p>\n<hr />\n<p><strong>Effect</strong> The jailer attempts to bind the creature's wrists or ankles with the manacles. If the jailer succeeds at an attack roll with a @Check[efficient-capture|against:ac]{+9} modifier against the target's AC, they apply the manacles.</p>"
                 },
                 "Intimidating Strike": {
                     "name": "Intimidating Strike",
@@ -1886,7 +1886,7 @@
                 },
                 "Starry Presence": {
                     "name": "Starry Presence",
-                    "description": "<p>30 feet. With a quick dance, the iruxi masked mummer surrounds themself with a starlight image resembling a figure from legend. The image lasts until the start of the mummer's next turn. An enemy that enters or starts its turn in the aura must succeed at a @Check[will|dc:25] save or become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the start of its next turn.</p>"
+                    "description": "<p>30 feet. With a quick dance, the iruxi masked mummer surrounds themself with a starlight image resembling a figure from legend. The image lasts until the start of the mummer's next turn. An enemy that enters or starts its turn in the aura must succeed at a @Check[will|dc:25|options:area-effect,inflicts:dazzled] save or become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} until the start of its next turn.</p>"
                 }
             }
         },
@@ -2027,7 +2027,7 @@
                 },
                 "Think Fast!": {
                     "name": "Think Fast!",
-                    "description": "<p><strong>Requirements</strong> The expedition leader has a hand free</p><hr /><p><strong>Effect</strong> The expedition leader scoops up a handful of rubble and throws it. Each creature in a @Template[type:cone|distance:15] must succeed at a @Check[reflex|dc:27] save or be @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of the expedition leader's next turn.</p>"
+                    "description": "<p><strong>Requirements</strong> The expedition leader has a hand free</p><hr /><p><strong>Effect</strong> The expedition leader scoops up a handful of rubble and throws it. Each creature in a @Template[type:cone|distance:15] must succeed at a @Check[reflex|dc:27|options:area-effect,inflicts:dazzled,inflicts:off-guard] save or be @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} and @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} until the start of the expedition leader's next turn.</p>"
                 }
             }
         },
@@ -2099,7 +2099,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Fiend Caller",
-            "publicNotes": "<p>Villains pursue selfish and cruel goals, trampling over anyone in their way.</p>",
+            "publicNotes": "<p>Fiend callers act as intermediaries to help mortals sell their souls or make other deals with fiends. You can adjust a fiend caller to be accompanied by a bound fiend. The fiend gains the minion trait, and you can replace the fiend caller's @UUID[Compendium.pf2e.spells-srd.Item.WPu3UE3kTXSLqO40]{Spiritual Armament} spell with @UUID[Compendium.pf2e.spells-srd.Item.x0rWq0wS06dns4G2]{Final Sacrifice}.</p><hr /><p>Villains pursue selfish and cruel goals, trampling over anyone in their way.</p>",
             "items": {
                 "equipment-Ritual Materials": {
                     "name": "Ritual Materials",
@@ -2800,7 +2800,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Cultist",
-            "publicNotes": "<p>Hidden secrets and occult powers have an irresistible lure for many. Since the majority of these NPCs are spellcasters, consider using alternative spell lists to adjust their themes.</p>",
+            "publicNotes": "<p>Cultists have passed an initiation ritual to a secret sect or organization; now, they devote themselves to achieving their most perfect spiritual form.</p><hr /><p>Hidden secrets and occult powers have an irresistible lure for many. Since the majority of these NPCs are spellcasters, consider using alternative spell lists to adjust their themes.</p>",
             "allSaves": "(Will +2 vs. higher-ranking members of the cult)",
             "items": {
                 "Will +2 vs. Higher Ranking Members of the Cult": {
@@ -3184,9 +3184,6 @@
             "name": "Gambling Companion",
             "publicNotes": "<p>A reputation for protecting against bad luck, combined with skill and knowledge, establish these tengu as ideal gambling companions. Their role includes providing local knowledge of establishments as well as the various games available. Refined skills of observation and an ability to read other players increases the value of their services. The example provided is for a companion who frequents the finer establishments. For some areas, a patron would look for a companion with greater fighting skills to also fill the role of bodyguard</p><hr /><p>Originally hailing from the continent of Tian Xia, tengu have spread across the globe. Though some staunchly uphold traditions, gazing at the sky from the tallest mountaintops, other tengu remain on the ground, adapting and blending into the societies in which they settle.</p>",
             "items": {
-                "equipment-Set of six ivory dice": {
-                    "name": "Set of six ivory dice"
-                },
                 "+2 to Sense Motive": {
                     "name": "+2 to Sense Motive"
                 },
@@ -3443,7 +3440,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Grandmaster",
-            "publicNotes": "<p>Martial artists strive to master the art of hand-to-hand fighting.</p>",
+            "publicNotes": "<p>Beyond the black belt, there is the grandmaster. If a battle breaks out, this incredible warrior possesses unparalleled qi adeptness and punches that can kill.</p><hr /><p>Martial artists strive to master the art of hand-to-hand fighting.</p>",
             "items": {
                 "Disrupt Qi": {
                     "name": "Disrupt Qi",
@@ -3644,7 +3641,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Mirror Seer",
-            "publicNotes": "<p>Seeking to be the most powerful and perfect creature in their domain, a mirror seer forges a deal with a nefarious entity for more power. Through a magic mirror called a malefic mirror, they communicate with this entity and spy on the events that unfold in their realm.</p><hr /><p>Hidden secrets and occult powers have an irresistible lure for many. Since the majority of these NPCs are spellcasters, consider using alternative spell lists to adjust their themes.</p>",
+            "publicNotes": "<p>Seeking to be the most powerful and perfect creature in their domain, a mirror seer forges a deal with a nefarious entity for more power. Through a magic mirror called a <em>malefic mirror</em>, they communicate with this entity and spy on the events that unfold in their realm.</p><hr /><p>Hidden secrets and occult powers have an irresistible lure for many. Since the majority of these NPCs are spellcasters, consider using alternative spell lists to adjust their themes.</p>",
             "items": {
                 "Looking Glass Magic": {
                     "name": "Looking Glass Magic",
@@ -4432,7 +4429,7 @@
                 },
                 "Combat Grab": {
                     "name": "Combat Grab",
-                    "description": "<p><strong>Trigger</strong> The ruffian has one hand free</p><hr /><p><strong>Effect</strong> The ruffian makes a melee Strike while keeping one hand free. If this Strike hits, the ruffian Grabs the target using their free hand. The creature remains @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} until the end of the ruffian's next turn or until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes}, whichever comes first.</p>"
+                    "description": "<p><strong>Requirements</strong> The ruffian has one hand free</p><hr /><p><strong>Effect</strong> The ruffian makes a melee Strike while keeping one hand free. If this Strike hits, the ruffian Grabs the target using their free hand. The creature remains @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} until the end of the ruffian's next turn or until it @UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{Escapes}, whichever comes first.</p>"
                 },
                 "Sneak Attack": {
                     "name": "Sneak Attack",
@@ -6737,7 +6734,7 @@
                 },
                 "Hurl Net": {
                     "name": "Hurl Net",
-                    "description": "<p><strong>Requirements</strong> The scout is wielding a net in two hands</p><hr /><p><strong>Effect</strong> The scout makes a ranged Strike (with a [[/r 1d20+9 #Hurl Net]]{+9} modifier) against a Medium or smaller creature within 20 feet. On a hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and takes a –10-foot circumstance penalty to its Speeds. On a critical hit, the creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} instead. The DC to [[/act escape dc=16]]{Escape} the net is 16. A creature adjacent to the target can Interact with the net to remove it.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]{Effect: Hurl Net}</p>"
+                    "description": "<p><strong>Requirements</strong> The scout is wielding a net in two hands</p><hr /><p><strong>Effect</strong> The scout makes a ranged Strike (with a @Check[hurl-net|against:ac]{+9} modifier) against a Medium or smaller creature within 20 feet. On a hit, the target is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} and takes a –10-foot circumstance penalty to its Speeds. On a critical hit, the creature is @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained} instead. The DC to [[/act escape dc=16]] the net is 16. A creature adjacent to the target can Interact with the net to remove it.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.q2D1QBalqBQfKzTc]{Effect: Hurl Net}</p>"
                 }
             }
         },
@@ -6879,7 +6876,7 @@
                 },
                 "Bombing Barrage": {
                     "name": "Bombing Barrage",
-                    "description": "<p>he dwarf battalion draws alchemical bombs, then hurls them at distant foes. This volley is a @Template[type:burst|distance:10] within 60 feet that deals @Damage[3d6[@item.flags.system.rulesSelections.bombingBarrage]|options:area-damage] damage with a @Check[reflex|dc:21|basic|options:area-effect] save. The damage is either acid, fire, or electricity damage, depending on which type of bombs the battalion used. When the dwarf battalion is reduced to 2 or fewer segments, this area decreases to a @Template[type:burst|distance:5].</p>"
+                    "description": "<p>The dwarf battalion draws alchemical bombs, then hurls them at distant foes. This volley is a @Template[type:burst|distance:10] within 60 feet that deals @Damage[3d6[@item.flags.system.rulesSelections.bombingBarrage]|options:area-damage] damage with a @Check[reflex|dc:21|basic|options:area-effect] save. The damage is either acid, fire, or electricity damage, depending on which type of bombs the battalion used. When the dwarf battalion is reduced to 2 or fewer segments, this area decreases to a @Template[type:burst|distance:5].</p>"
                 },
                 "Coordinated Pummel": {
                     "name": "Coordinated Pummel",
@@ -7108,7 +7105,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Black Belt",
-            "publicNotes": "<p>Martial artists strive to master the art of hand-to-hand fighting.</p>",
+            "publicNotes": "<p>Many martial arts schools use colored belts to differentiate skill levels. Above all is the black belt, an advanced practitioner who can counter any attack.</p><hr /><p>Martial artists strive to master the art of hand-to-hand fighting.</p>",
             "items": {
                 "Blocking Counterattack": {
                     "name": "Blocking Counterattack",

@@ -803,7 +803,7 @@
                 },
                 "Piercing Fangs": {
                     "name": "Piercing Fangs",
-                    "description": "<p><strong>Requirements</strong> The warcat has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p><hr /><p><strong>Effect</strong> The warcat clamps on to the creature's neck. The creature takes @Damage[(3d12+10)[piercing]] damage plus @Damage[1d4[bleed]] damage (@Check[fortitude|dc:33|basic] save).</p>"
+                    "description": "<p><strong>Requirements</strong> The warcat has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p><hr /><p><strong>Effect</strong> The warcat clamps on to the creature's neck. The creature takes @Damage[(3d12+10)[piercing],1d4[bleed]] damage (@Check[fortitude|dc:33|basic] save).</p>"
                 },
                 "Pounce": {
                     "name": "Pounce",
@@ -2044,13 +2044,13 @@
             "name": "Locus of Destruction",
             "disable": "<p>@Check[crafting|dc:27] (master) to reconfigure the locus, @Check[occultism|dc:30] or @Check[religion|dc:30] (expert) to counteract the locus's energies, @Check[thievery|dc:35] (master) to extricate the orb from the altar</p>",
             "hazarddescription": "<p>A magical orb drives intruders to commit acts of mindless destruction.</p>",
-            "routine": "<p>(1 action; mental) The destructive impulses grow stronger. Affected creatures must attempt a @Check[will|dc:32|traits:mental] save; creatures who fail or critically fail can't attempt to disable the haunt that turn.</p><hr><p><strong>Critical Success</strong> The creature is unaffected and temporarily immune for 1 minute.</p><p><strong>Success</strong> The creature is unaffected this round.</p><p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round, targeting both creatures and objects.</p><p><strong>Critical Failure</strong> As failure but the confusion lasts for 1 minute.</p>",
+            "routine": "<p>(1 action; mental) The destructive impulses grow stronger. Affected creatures must attempt a @Check[will|dc:32|options:inflicts:confused|traits:mental] save; creatures who fail or critically fail can't attempt to disable the haunt that turn.</p><hr><p><strong>Critical Success</strong> The creature is unaffected and temporarily immune for 1 minute.</p><p><strong>Success</strong> The creature is unaffected this round.</p><p><strong>Failure</strong> The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round, targeting both creatures and objects.</p><p><strong>Critical Failure</strong> As failure but the confusion lasts for 1 minute.</p>",
             "reset": "<p>The haunt deactivates 1 minute after all living creatures leave the area. After 1 hour, the haunt reactivates.</p>",
             "stealthdetails": "<p>(expert)</p>",
             "items": {
                 "Destruction's Fury": {
                     "name": "Destruction's Fury",
-                    "description": "<p><strong>Trigger</strong> A creature touches the orb or attempts to disable the haunt</p><hr /><p><strong>Effect</strong> A destructive fury fills the minds of all living creatures in the area, who must succeed at a @Check[will|dc:32] save or be @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} on a critical failure) for 1 minute. The haunt then rolls initiative.</p>"
+                    "description": "<p><strong>Trigger</strong> A creature touches the orb or attempts to disable the haunt</p><hr /><p><strong>Effect</strong> A destructive fury fills the minds of all living creatures in the area, who must succeed at a @Check[will|dc:32|options:inflicts:stupefied] save or be @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} on a critical failure) for 1 minute. The haunt then rolls initiative.</p>"
                 },
                 "Destruction Manifest": {
                     "name": "Destruction Manifest",
@@ -2058,7 +2058,7 @@
                 },
                 "Unholy Repair": {
                     "name": "Unholy Repair",
-                    "description": "<p>The locus is sustained by the power of Tar-Baphon. The orb regains 10 Hit Points at the beginning of every round and is repaired by void damage.</p>"
+                    "description": "<p>The locus is sustained by the power of Tar-Baphon. The orb regains @Damage[10[healing]] Hit Points at the beginning of every round and is repaired by void damage.</p>"
                 },
                 "Destructive Backlash": {
                     "name": "Destructive Backlash",

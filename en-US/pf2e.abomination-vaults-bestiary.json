@@ -808,7 +808,7 @@
                 },
                 "Show the Looming Moon": {
                     "name": "Show the Looming Moon",
-                    "description": "<p><strong>Requirements</strong> The Groetan candle is @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{Invisible}</p>\n<hr />\n<p><strong>Effect</strong> The Groetan candle ends its invisibility and flashes with cold brightness. Creatures within 20 feet of the Groetan candle who can see it must succeed at a @Check[fortitude|dc:24|traits:concentrate] save or become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round (1 minute on a critical failure).</p>"
+                    "description": "<p><strong>Requirements</strong> The Groetan candle is @UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{Invisible}</p>\n<hr />\n<p><strong>Effect</strong> The Groetan candle ends its invisibility and flashes with cold brightness. Creatures within @Template[emanation|distance:20]{20 feet} of the Groetan candle who can see it must succeed at a @Check[fortitude|dc:24|options:area-effect,inflicts:dazzled] save or become @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 round (1 minute on a critical failure).</p>"
                 }
             }
         },
@@ -1036,7 +1036,7 @@
                 },
                 "Mindfog Aura": {
                     "name": "Mindfog Aura",
-                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
+                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21|options:area-effect,inflicts:confused] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
                 },
                 "Envenom Weapon": {
                     "name": "Envenom Weapon",
@@ -1398,7 +1398,7 @@
                 },
                 "At-Will Spells": {
                     "name": "At-Will Spells",
-                    "description": "<p>Dulac can cast her at-will spells any number of times without using up spell slots.</p>"
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AtWillSpells]</p>"
                 },
                 "Death Shadows": {
                     "name": "Death Shadows",
@@ -1509,7 +1509,7 @@
                 },
                 "Intense Performer": {
                     "name": "Intense Performer",
-                    "description": "<p>When Nox has a musical instrument in hand, they can use Performance to [[/act feint statistic=performance]]{Feint} or [[/act demoralize statistic=performance]]{Demoralize}.</p>"
+                    "description": "<p>When Nox has a musical instrument in hand, they can use Performance to [[/act feint statistic=performance]] or [[/act demoralize statistic=performance]].</p>"
                 },
                 "Sneak Attack": {
                     "name": "Sneak Attack",
@@ -1577,7 +1577,7 @@
                 },
                 "Mindfog Aura": {
                     "name": "Mindfog Aura",
-                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:23] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute.</p>\n<p>Jafaki can suppress or activate this aura as a single action with the concentrate trait.</p>"
+                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:23|options:area-effect,inflicts:confused] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute.</p>\n<p>Jafaki can suppress or activate this aura as a single action with the concentrate trait.</p>"
                 },
                 "Envenom Weapon": {
                     "name": "Envenom Weapon",
@@ -2360,7 +2360,7 @@
                 },
                 "Mindfog Aura": {
                     "name": "Mindfog Aura",
-                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
+                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21|options:area-effect,inflicts:confused] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
                 },
                 "Envenom Weapon": {
                     "name": "Envenom Weapon",
@@ -2467,7 +2467,7 @@
                 },
                 "Sapping Squeeze": {
                     "name": "Sapping Squeeze",
-                    "description": "<p><strong>Requirements</strong> The shanrigol has a creature grabbed</p>\n<hr />\n<p><strong>Effect</strong> The shanrigol squeezes the life essence from its target, dealing @Damage[(1d6+5)[bludgeoning],1d4[bleed]]{1d6+5 bludgeoning and 1d4 persistent bleed damage} (@Check[fortitude|dc:18|basic] save).</p>\n<p>The shanrigol regains temporary Hit Points equal to half the amount of bludgeoning damage a single target takes; these temporary Hit Points last for 1 minute.</p>"
+                    "description": "<p><strong>Requirements</strong> The shanrigol has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> The shanrigol squeezes the life essence from its target, dealing @Damage[(1d6+5)[bludgeoning],1d4[bleed]]{1d6+5 bludgeoning and 1d4 persistent bleed damage} (@Check[fortitude|dc:18|basic] save).</p>\n<p>The shanrigol regains temporary Hit Points equal to half the amount of bludgeoning damage a single target takes; these temporary Hit Points last for 1 minute.</p>"
                 },
                 "Shred Flesh": {
                     "name": "Shred Flesh",
@@ -2752,7 +2752,7 @@
                 },
                 "Mindfog Aura": {
                     "name": "Mindfog Aura",
-                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
+                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21|options:area-effect,inflicts:confused] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
                 },
                 "Envenom Weapon": {
                     "name": "Envenom Weapon",
@@ -2876,7 +2876,7 @@
                 },
                 "Tentacle Transfer": {
                     "name": "Tentacle Transfer",
-                    "description": "<p><strong>Requirements</strong> The Voidbracken chuul has a creature grabbed</p>\n<hr />\n<p><strong>Effect</strong> The chuul transfers the grabbed creature from its claws to its tentacles, or vice versa. The creature is exposed to the chuul's draining venom when transferred into the tentacles and at the start of each of the chuul's turns if it remains grabbed by the tentacles.</p>"
+                    "description": "<p><strong>Requirements</strong> The Voidbracken chuul has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}</p>\n<hr />\n<p><strong>Effect</strong> The chuul transfers the grabbed creature from its claws to its tentacles, or vice versa. The creature is exposed to the chuul's draining venom when transferred into the tentacles and at the start of each of the chuul's turns if it remains grabbed by the tentacles.</p>"
                 }
             }
         },
@@ -3066,7 +3066,7 @@
                 },
                 "Mindfog Aura": {
                     "name": "Mindfog Aura",
-                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
+                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:21|options:area-effect,inflicts:confused] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
                 },
                 "Envenom Weapon": {
                     "name": "Envenom Weapon",
@@ -3172,7 +3172,7 @@
                 },
                 "Mindfog Aura": {
                     "name": "Mindfog Aura",
-                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:25] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
+                    "description": "<p>20 feet. A creature that starts its turn in the aura must succeed at a @Check[will|dc:25|options:area-effect,inflicts:confused] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round; on a success, that creature is temporarily immune for 1 minute. A seugathi can suppress or activate this aura as a single action with the concentrate trait.</p>"
                 },
                 "Envenom Weapon": {
                     "name": "Envenom Weapon",
@@ -3382,7 +3382,7 @@
                 },
                 "Flicker": {
                     "name": "Flicker",
-                    "description": "<p>The flickerwisp churns and flits in the air around an adjacent creature's head, and its length flashes and sparkles in a bewildering array of distracting pulsations.</p>\n<p>The creature must succeed at a @Check[will|dc:18] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round (2 rounds on a critical failure). On a critical success, the creature is temporarily immune to for 24 hours.</p>"
+                    "description": "<p>The flickerwisp churns and flits in the air around an adjacent creature's head, and its length flashes and sparkles in a bewildering array of distracting pulsations.</p>\n<p>The creature must succeed at a @Check[will|dc:18|options:inflicts:confused] save or become @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} for 1 round (2 rounds on a critical failure). On a critical success, the creature is temporarily immune to for 24 hours.</p>"
                 }
             }
         },
