@@ -2085,13 +2085,13 @@
             "name": "毁灭法器 Locus of Destruction",
             "disable": "<p>@Check[crafting|dc:27] (大师) 以重新配置法器，@Check[occultism|dc:30] 或 @Check[religion|dc:30] (专家) 反制法器的能量，@Check[thievery|dc:35] (大师) 以从祭坛上取出球体</p>",
             "hazarddescription": "<p>一个魔法球驱使着入侵者做出无意识的破坏行为。</p>",
-            "routine": "<p>(1动作；心灵) 破坏性的冲动愈发强烈。受影响的生物必须进行一次@Check[will|dc:32|traits:mental] 豁免； 失败或大失败的生物在该回合无法尝试解除作祟。</p><hr><p><strong>大成功</strong> 该生物不受影响，并在1分钟内暂时免疫该效果。</p><p><strong>成功</strong> 该生物本回合不受影响。</p><p><strong>失败</strong> 该生物在1轮内陷入 @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]，会攻击周遭的生物和物体。</p><p><strong>大失败</strong> 如同失败，但困惑状态持续1分钟。 </p>",
+            "routine": "<p>（1动作；心灵）破坏性的冲动愈发强烈。受影响的生物必须进行一次@Check[will|dc:32|options:inflicts:confused|traits:mental]豁免；失败或大失败的生物在该回合无法尝试解除作祟。</p><hr><p><strong>大成功</strong> 该生物不受影响，并在1分钟内暂时免疫该效果。</p><p><strong>成功</strong> 该生物本回合不受影响。</p><p><strong>失败</strong> 该生物在1轮内陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]，会攻击周遭的生物和物体。</p><p><strong>大失败</strong> 如同失败，但困惑状态持续1分钟。 </p>",
             "reset": "<p>当所有生物离开该区域1分钟后，作祟会停止。1小时后，作祟会再次激活。</p>",
             "stealthdetails": "<p>（专家）</p>",
             "items": {
                 "Destruction's Fury": {
                     "name": "毁灭之怒 Destruction's Fury",
-                    "description": "<p><strong>触发</strong> 一个生物触碰法球或试图解除作祟</p><hr /><p><strong>效果</strong> 毁灭的狂怒充斥着区域内所有生物的心灵，它们必须成功通过一次@Check[will|dc:32]豁免，否则将@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（大失败则@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}），持续1分钟。然后作祟投掷先攻。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物触碰法球或试图解除作祟</p><hr /><p><strong>效果</strong> 毁灭的狂怒充斥着区域内所有生物的心灵，它们必须成功通过一次@Check[will|dc:32|options:inflicts:stupefied]豁免，否则将@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（大失败则@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}），持续1分钟。然后作祟投掷先攻。</p>"
                 },
                 "Destruction Manifest": {
                     "name": "毁灭显化 Destruction Manifest",
@@ -2099,7 +2099,7 @@
                 },
                 "Unholy Repair": {
                     "name": "邪秽修复 Unholy Repair",
-                    "description": "<p>法器由塔-巴丰之力维持。每轮开始时，法球由虚能伤害修复，恢复10 点生命值。</p>"
+                    "description": "<p>法器由塔-巴丰之力维持。每轮开始时，法球由虚能伤害修复，恢复@Damage[10[healing]]生命值。</p>"
                 },
                 "Destructive Backlash": {
                     "name": "毁灭反击 Destructive Backlash",
