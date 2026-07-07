@@ -964,7 +964,7 @@
             "items": {
                 "Reflective Defense": {
                     "name": "反射防御 Reflective Defense",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>触发</strong> 金元素裔装置工匠被30尺内的一个生物瞄准，并且他可以看到攻击者</p>\n<p><strong>需求</strong> 金元素裔装置工匠处于昏暗或明亮光中</p>\n<hr />\n<p><strong>效果</strong> 金元素裔装置工匠利用金属皮肤的反光晃得敌人睁不开眼；敌人必须通过@Check[reflex|dc:14]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{目眩 Dazzled}直到金元素裔的下个回合结束。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>触发</strong> 金元素裔装置工匠被30尺内的一个生物瞄准，并且他可以看到攻击者</p>\n<p><strong>需求</strong> 金元素裔装置工匠处于昏暗或明亮光中</p>\n<hr />\n<p><strong>效果</strong> 金元素裔装置工匠利用金属皮肤的反光晃得敌人睁不开眼；敌人必须通过@Check[reflex|dc:14|options:inflicts:dazzled]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]直到金元素裔的下个回合结束。</p>"
                 }
             },
             "data": {
@@ -1200,7 +1200,7 @@
                 },
                 "Iron Grief": {
                     "name": "铁之哀伤 Iron Grief",
-                    "description": "<p>如果哀伤铁蛇在充满哀伤时施放磁力加速，它可以将法术升阶至5环级，或最多指定三个目标，而不是原本的一个，并分别对每个目标进行掷骰。施法后，哀伤铁蛇不再充满哀伤。</p>"
+                    "description": "<p>如果哀伤铁蛇在充满哀伤时施放@UUID[Compendium.pf2e.spells-srd.Item.Tx8OqkBFA2QlaldW]，它可以将法术升阶至5环级，或最多指定三个目标，而不是原本的一个，并分别对每个目标进行掷骰。施法后，哀伤铁蛇不再充满哀伤。</p>"
                 },
                 "Magnetic Traveler": {
                     "name": "磁场旅者 Magnetic Traveler",
@@ -1360,7 +1360,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:30]，@Damage[(8d10)[bludgeoning]]伤害，[[/act escape dc=27]]，破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:30|options:damaging-effect,inflicts:grabbed,inflicts:slowed]，@Damage[(8d10)[bludgeoning]]伤害，[[/act escape dc=27]]，破裂20</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Regeneration 15 (Deactivated by Fire)": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Regeneration]</p>",
@@ -1523,7 +1523,7 @@
                 },
                 "Engulf (Swarm Form)": {
                     "name": "包卷 Engulf （集群形态）",
-                    "description": "<p>@Check[reflex|dc:27]，@Damage[(2d8+6)[bludgeoning]]伤害，[[/act escape dc=27]]，破裂18</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:27|options:damaging-effect,inflicts:grabbed,inflicts:slowed]，@Damage[(2d8+6)[bludgeoning]]伤害，[[/act escape dc=27]]，破裂18</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Electromagnetic Dispersal": {
                     "description": "<p>当纳米碎片群受到电击伤害时，它会自动转换为集群形态。</p>",
@@ -1584,7 +1584,7 @@
                 },
                 "Overflow": {
                     "name": "溢流 Overflow",
-                    "description": "<p>露滴水母压平身体向前冲刺，沿直线向目标飞行或游泳两次，并尝试一次触手打击。如果打击成功，水母会附着在目标的脸上，用其胶状身体的悬浮水覆盖住目标的口部。如果目标不能在水中呼吸，它将开始溺水。@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}的DC为16。</p>"
+                    "description": "<p>露滴水母压平身体向前冲刺，沿直线向目标飞行或游泳两次，并尝试一次触手打击。如果打击成功，水母会附着在目标的脸上，用其胶状身体的悬浮水覆盖住目标的口部。如果目标不能在水中呼吸，它将开始溺水。[[/act escape dc=16]]的DC为16。</p>"
                 }
             },
             "data": {
@@ -2591,7 +2591,7 @@
                 },
                 "Sink into Stone": {
                     "name": "钉入岩石 Sink into Stone",
-                    "description": "<p>晶蝎发射的尾针深深地没入石头，将敌人钉在原地。站在石质表面或与石质表面相邻的敌人如果被尾针打击重击命中，将被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]。@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}DC 为 17。</p>"
+                    "description": "<p>晶蝎发射的尾针深深地没入石头，将敌人钉在原地。站在石质表面或与石质表面相邻的敌人如果被尾针打击重击命中，将被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]。[[/act escape dc=17]]DC为17。</p>"
                 }
             }
         }
