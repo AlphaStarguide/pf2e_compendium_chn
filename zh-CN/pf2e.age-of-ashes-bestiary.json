@@ -2485,7 +2485,7 @@
                 },
                 "Efficient Capture": {
                     "name": "高效抓捕 Efficient Capture",
-                    "description": "<p><strong>需求</strong> 执行者的手中有镣铐而且与一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 执行者尝试用镣铐束缚该生物的手腕或脚踝。若执行者成功通过一次[[/r 1d20+30 #Manacles]]{+30调整值}的攻击检定来对抗目标的AC，就可以将镣铐应用至该生物身上。</p>"
+                    "description": "<p><strong>需求</strong> 执行者的手中有镣铐而且与一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 执行者尝试用镣铐束缚该生物的手腕或脚踝。若执行者成功通过一次@Check[efficient-capture|against:ac]{+30}调整值的攻击检定来对抗目标的AC，就可以将镣铐应用至该生物身上。</p>"
                 }
             },
             "prototypeToken": {
@@ -2886,7 +2886,7 @@
                 },
                 "Punish Imperfection": {
                     "name": "惩罚弱者 Punish Imperfection",
-                    "description": "<p><strong>触发</strong> 乌里触及范围内的一个生物，在攻击骰、豁免骰或技能检定中失败；</p>\n<hr />\n<p><strong>效果</strong> 乌里对触发的生物进行一次无武装打击。如果打击命中，目标必须通过@Check[fortitude|dc:41]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}，直到它的下个回合结束（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 4}）。</p>"
+                    "description": "<p><strong>触发</strong> 乌里触及范围内的一个生物，在攻击骰、豁免骰或技能检定中失败；</p>\n<hr />\n<p><strong>效果</strong> 乌里对触发的生物进行一次无武装打击。如果打击命中，目标必须通过@Check[fortitude|dc:41|options:inflicts:enfeebled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}，直到它的下个回合结束（大失败@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 4}）。</p>"
                 },
                 "Reactionary": {
                     "name": "大反派 Reactionary",
@@ -2898,7 +2898,7 @@
                 },
                 "Swift Capture": {
                     "name": "快速俘获 Swift Capture",
-                    "description": "<p><strong>需求</strong> 乌里拥有@UUID[Compendium.pf2e.equipment-srd.Item.5zkoqnp6X5yPCXVy]{镣铐 Manacles}并且和一个生物相邻；</p>\n<hr />\n<p><strong>效果</strong> 乌里收起所持握的一把武器，然后尝试用@UUID[Compendium.pf2e.equipment-srd.Item.5zkoqnp6X5yPCXVy]{镣铐 Manacles}束缚目标的手腕或脚踝。乌里进行一次[[/r 1d20+36 #Manacles]]{+36调整值}的攻击，如果成功对抗目标AC，目标将被@UUID[Compendium.pf2e.equipment-srd.Item.5zkoqnp6X5yPCXVy]{镣铐 Manacles}铐住。</p>"
+                    "description": "<p><strong>需求</strong> 乌里拥有镣铐并且和一个生物相邻</p>\n<hr />\n<p><strong>效果</strong> 乌里收起所持握的一把武器，然后尝试用镣铐束缚目标的手腕或脚踝。乌里进行一次@Check[swift-capture|against:ac]{+36}调整值的攻击，如果成功对抗目标AC，目标将被镣铐铐住。</p>"
                 },
                 "Swift Slash": {
                     "name": "快速劈砍 Swift Slash",
@@ -3700,7 +3700,7 @@
                     "name": "钥匙串（用来打开蔽夏花岗岩采石场内的锁）"
                 },
                 "Efficient Capture": {
-                    "description": "<p><strong>需求</strong> 拉斯伦手里持握镣铐，并且和一个生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 拉斯伦试图用镣铐绑住该生物的手腕或腿部。她进行一次调整值[[/r 1d20+28 #Manacles]]{+28}攻击骰，对抗目标的AC，如果成功，她将用镣铐捆缚该生物的手腕或腿部。</p>",
+                    "description": "<p><strong>需求</strong> 拉斯伦手里持握镣铐，并且和一个生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 拉斯伦试图用镣铐绑住该生物的手腕或腿部。她进行一次调整值@Check[efficient-capture|against:ac]{+28}攻击骰，对抗目标的AC，如果成功，她将用镣铐捆缚该生物的手腕或腿部。</p>",
                     "name": "高效抓捕 Efficient Capture"
                 },
                 "Reactive Strike (Special)": {
@@ -3989,7 +3989,7 @@
             },
             "items": {
                 "Efficient Capture": {
-                    "description": "<p><strong>需求</strong> 红三一莽汉的手中有镣铐而且与1名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 红三一莽汉尝试用镣铐束缚该生物的手腕或脚踝。他必须成功通过一次调整值[[/r 1d20+23 #Manacles]]{+23}的攻击检定对抗目标的 AC。</p>",
+                    "description": "<p><strong>需求</strong> 红三一莽汉的手中有镣铐而且与1名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 红三一莽汉尝试用镣铐束缚该生物的手腕或脚踝。他必须成功通过一次@Check[efficient-capture|against:ac]{+23}的攻击检定对抗目标的 AC。</p>",
                     "name": "高效抓捕 Efficient Capture"
                 },
                 "Batter the Fallen": {
@@ -4070,7 +4070,7 @@
                 },
                 "Efficient Capture": {
                     "name": "高效抓捕 Efficient Capture",
-                    "description": "<p><strong>需求</strong> 有镣铐在探子的手上且探子与一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 探子尝试用镣铐束缚该生物的手腕或脚踝。若探子成功通过[[/r 1d20+16 #Manacles]]{+16}调整值的攻击检定对抗目标的AC，则对其应用镣铐。</p>"
+                    "description": "<p><strong>需求</strong> 有镣铐在探子的手上且探子与一名生物相邻。</p>\n<hr />\n<p><strong>效果</strong> 探子尝试用镣铐束缚该生物的手腕或脚踝。若探子成功通过@Check[efficient-capture|against:ac]{+16}调整值的攻击检定对抗目标的AC，则对其应用镣铐。</p>"
                 }
             },
             "prototypeToken": {
