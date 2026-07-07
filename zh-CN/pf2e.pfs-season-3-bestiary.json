@@ -280,7 +280,7 @@
             "items": {
                 "Caress Soul": {
                     "name": "Caress Soul",
-                    "description": "<p><strong>Trigger</strong> Arisept critically hits a target with his rapier</p>\n<hr />\n<p><strong>Effect</strong> The target must succeed at a @Check[will|dc:26] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} if it critically fails). If the target fails additional saves against this ability, the condition value increases by 1 if failed, or 2 if critically failed (to a maximum of enfeebled 4). This condition value decreases by 1 every 24 hours.</p>"
+                    "description": "<p><strong>Trigger</strong> Arisept critically hits a target with his rapier</p>\n<hr />\n<p><strong>Effect</strong> The target must succeed at a @Check[will|dc:26|options:inflicts:enfeebled] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} if it critically fails). If the target fails additional saves against this ability, the condition value increases by 1 if failed, or 2 if critically failed (to a maximum of enfeebled 4). This condition value decreases by 1 every 24 hours.</p>"
                 },
                 "Abyssal Strikes": {
                     "name": "Abyssal Strikes",
@@ -300,7 +300,7 @@
                 },
                 "Caress Soul": {
                     "name": "Caress Soul",
-                    "description": "<p><strong>Trigger</strong> Arisept critically hits a target with his rapier</p>\n<hr />\n<p><strong>Effect</strong> The target must succeed at a @Check[will|dc:29] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} if it critically fails). If the target fails additional saves against this ability, the condition value increases by 1 if failed, or 2 if critically failed (to a maximum of enfeebled 4). This condition value decreases by 1 every 24 hours.</p>"
+                    "description": "<p><strong>Trigger</strong> Arisept critically hits a target with his rapier</p>\n<hr />\n<p><strong>Effect</strong> The target must succeed at a @Check[will|dc:29|options:inflicts:enfeebled] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} if it critically fails). If the target fails additional saves against this ability, the condition value increases by 1 if failed, or 2 if critically failed (to a maximum of enfeebled 4). This condition value decreases by 1 every 24 hours.</p>"
                 }
             },
             "prototypeToken": {
@@ -2678,7 +2678,7 @@
             "items": {
                 "Camouflage": {
                     "name": "Camouflage",
-                    "description": "<p>A grimstalker can @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide} in natural environments, even if it doesn't have cover.</p>"
+                    "description": "<p>A grimstalker can [[/act hide]] in natural environments, even if it doesn't have cover.</p>"
                 },
                 "Grimstalker Sap": {
                     "name": "Grimstalker Sap",
@@ -2725,7 +2725,7 @@
             "items": {
                 "Efficient Capture": {
                     "name": "高效抓捕 Efficient Capture",
-                    "description": "<p><strong>需求</strong> 狱卒手持镣铐，并且和一个生物相邻；</p>\n<hr />\n<p><strong>效果</strong> 狱卒尝试用镣铐捆住该生物的双手或双脚。狱卒进行一次[[/r 1d20+9 #Manacles]]{+9}的攻击检定对抗目标的AC，如果成功，则目标被套上镣铐。</p>"
+                    "description": "<p><strong>需求</strong> 狱卒手持镣铐，并且和一个生物相邻；</p>\n<hr />\n<p><strong>效果</strong> 狱卒尝试用镣铐捆住该生物的双手或双脚。狱卒进行一次@Check[efficient-capture|against:ac]{+9}的攻击检定对抗目标的AC，如果成功，则目标被套上镣铐。</p>"
                 },
                 "Subdue Prisoners": {
                     "name": "管束囚犯 Subdue Prisoners",
@@ -5461,7 +5461,7 @@
                 },
                 "Temporal Shudder": {
                     "name": "Temporal Shudder",
-                    "description": "<p>The temporal echo screams, causing time to shudder and bend around it. All creatures in a @Template[emanation|distance:10] take @Damage[1d10[mental]|options:area-damage] damage (@Check[will|dc:13|basic|options:area-effect] save). The echo can't use Temporal Shudder again for [[/r {1d4} #Recharge Temporal Shudder]]{1d4 rounds}.</p>"
+                    "description": "<p>The temporal echo screams, causing time to shudder and bend around it. All creatures in a @Template[emanation|distance:10] take @Damage[1d10[mental]|options:area-damage] damage (@Check[will|dc:13|basic|options:area-effect] save). The echo can't use Temporal Shudder again for [[/gmr 1d4 #Recharge Temporal Shudder]]{1d4 rounds}.</p>"
                 }
             }
         },
@@ -5473,7 +5473,7 @@
             "items": {
                 "Temporal Shudder": {
                     "name": "Temporal Shudder",
-                    "description": "<p>The temporal echo screams, causing time to shudder and bend around it. All creatures in a @Template[emanation|distance:10] take @Damage[3d6[mental]|options:area-damage] damage (@Check[will|dc:15|basic|options:area-effect,inflicts:slowed] save). Creatures that critically fail the saving throw are @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round. The echo can't use Temporal Shudder again for [[/r {1d4} #Recharge Temporal Shudder]]{1d4 rounds}.</p>"
+                    "description": "<p>The temporal echo screams, causing time to shudder and bend around it. All creatures in a @Template[emanation|distance:10] take @Damage[3d6[mental]|options:area-damage] damage (@Check[will|dc:15|basic|options:area-effect,inflicts:slowed] save). Creatures that critically fail the saving throw are @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round. The echo can't use Temporal Shudder again for [[/gmr 1d4 #Recharge Temporal Shudder]]{1d4 rounds}.</p>"
                 },
                 "Void Healing": {
                     "name": "虚能治疗 Void Healing",
@@ -5533,7 +5533,7 @@
                 },
                 "Temporal Shudder": {
                     "name": "Temporal Shudder",
-                    "description": "<p>The temporal echo screams, causing time to shudder and bend around it. All creatures in a @Template[emanation|distance:10] take @Damage[7d6[mental]|options:area-damage] damage (@Check[will|dc:21|basic|options:area-effect,inflicts:slowed] save). Creatures that fail the saving throw are also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round. The echo can't use Temporal Shudder again for [[/r {1d4} #Recharge Temporal Shudder]]{1d4 rounds}.</p>"
+                    "description": "<p>The temporal echo screams, causing time to shudder and bend around it. All creatures in a @Template[emanation|distance:10] take @Damage[7d6[mental]|options:area-damage] damage (@Check[will|dc:21|basic|options:area-effect,inflicts:slowed] save). Creatures that fail the saving throw are also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round. The echo can't use Temporal Shudder again for [[/gmr 1d4 #Recharge Temporal Shudder]]{1d4 rounds}.</p>"
                 }
             }
         },
