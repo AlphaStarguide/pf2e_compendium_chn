@@ -2595,6 +2595,10 @@
                 "Spiteful Escape": {
                     "name": "Spiteful Escape",
                     "description": "<p><strong>Trigger</strong> Nizca is reduced to 0 Hit Points</p><hr /><p><strong>Effect</strong> Nizca uses Shadow Form, then flies into the shadow beacon even though they're at 0 Hit Points. While at 0 Hit Points in this form, Nizca is unaffected by further damage. Once they reach the shadow beacon, their spirit becomes permanently fused with it and is destroyed only when the shadow beacon is destroyed.</p>"
+                },
+                "Shadow Form": {
+                    "name": "Shadow Form",
+                    "description": "<p>The strigoi reverts to pure shadow and absorbs its body and its gear into the darkness, or it shifts back to its physical form. In shadow form, the strigoi gains a climb Speed equal to its land Speed and can move through any gap that isn't airtight. However, it can only move along solid surfaces that aren't highly reflective, not liquid or mirrored surfaces. If the surface it's on is destroyed, the strigoi returns to physical form and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. The strigoi loses fast healing while in shadow form but can remain in shadow form indefinitely.</p>\n<p>A strigoi that is exposed to sunlight while in shadow form becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and must attempt a @Check[flat|dc:16] at the end of each of its turns. If it fails this flat check, it is destroyed, the shadow vanishing with a blood-curdling wail.</p>"
                 }
             }
         },
@@ -3047,6 +3051,100 @@
                 "Swallow Whole": {
                     "name": "Swallow Whole",
                     "description": "<p>Medium, @Damage[(2d6+6)[bludgeoning]], Rupture 12</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.SwallowWhole]</p>"
+                }
+            }
+        },
+        "Strigoi Servant": {
+            "prototypeToken": {
+                "name": "Strigoi Servant"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Strigoi Servant",
+            "publicNotes": "<p>A strigoi servant typically serves at the command of a strigoi progenitor.</p><hr /><p>The oldest of all vampires are the strigoi. They predate ancient nosferatus and view moroi as infantile children, yet their own origins are so far lost to the ravages of time that few today have heard of them and fewer still know their true nature. Many of the oldest tales about vampires trace back to the strigoi, and nearly every other vampire carries traits that ultimately have their roots in these powerful, ancient creatures.</p>\n<p>Strigoi, in their true form, are bodiless entities native to the Netherworld, incapable of interacting with the physical world, existing only as pure forces of malevolence. When this malevolence is invited into a physical body through ancient rituals, a strigoi becomes much more dangerous. This requirement—that a living creature perform a rite of their own free will to draw the strigoi into their soul—may well be the source of a moro</p>",
+            "hp": "coffin restoration, fast healing 10, void healing",
+            "items": {
+                "Fast Healing 10": {
+                    "name": "Fast Healing 10",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Coffin Restoration": {
+                    "name": "Coffin Restoration",
+                    "description": "<p>Unlike other undead, a vampire isn't destroyed at 0 HP. Instead, it falls @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If its body rests in its coffin for 1 hour, the vampire gains 1 HP, after which its fast healing begins to function normally.</p>"
+                },
+                "Shadow Form": {
+                    "name": "Shadow Form",
+                    "description": "<p>The strigoi reverts to pure shadow and absorbs its body and its gear into the darkness, or it shifts back to its physical form. In shadow form, the strigoi gains a climb Speed equal to its land Speed and can move through any gap that isn't airtight. However, it can only move along solid surfaces that aren't highly reflective, not liquid or mirrored surfaces. If the surface it's on is destroyed, the strigoi returns to physical form and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. The strigoi loses fast healing while in shadow form but can remain in shadow form indefinitely.</p>\n<p>A strigoi that is exposed to sunlight while in shadow form becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and must attempt a @Check[flat|dc:16] at the end of each of its turns. If it fails this flat check, it is destroyed, the shadow vanishing with a blood-curdling wail.</p>"
+                },
+                "Strigoi Weaknesses": {
+                    "name": "Strigoi Weaknesses",
+                    "description": "<p>All strigoi possess the following weaknesses:</p><ul><li><p><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, they gain the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until they end an action beyond 10 feet. After 1 round of being exposed to the subject of their revulsion, a strigoi can attempt a @Check[will|dc:25] save as a single action, which has the concentrate trait. On a success, they overcome their revulsions for [[/gmr 1d6 #Overcome Revulsion Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to [[/act sense-motive]].</p></li><li><p><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. They appear to be dead: they don't breathe, their body temperature matches their surroundings, and they don't react to pain or other stimuli. A successful Perception check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by their \"dead\" body shifts and moves slightly, its edges twisting and active. Certain detection spells, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally and could reveal the truth without a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses their resistance to physical damage. If the strigoi takes enough damage that they would be reduced to 0 Hit Points, their body quickly decomposes, and the strigoi is destroyed.</p></li><li><p><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided they approach no closer than 10 feet to the liquid's surface. If forced into running water against their will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as they remain in the water. At the end of any turn in which the strigoi remains in running water, they must succeed at a @Check[flat|dc:5] or be destroyed.</p>\n</li></ul>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Drink Essence": {
+                    "name": "Drink Essence",
+                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the strigoi's reach</p><hr /><p><strong>Effect</strong> The strigoi sinks their fangs into the targeted creature to drink its blood and draw out its vital essence. This requires an @Check[athletics|against:fortitude] check against the creature's Fortitude DC if the creature is grabbed and is automatic for any of the other conditions. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1}, and the strigoi regains @Damage[13[healing]] hit points, gaining any excess HP as temporary Hit Points. Drinking Essence from a creature that's already drained or stupefied doesn't restore any HP but increases either the creature's drained condition value or its stupefied condition value by 1 (whichever value is lesser is increased; if both values are equal, then the strigoi chooses which condition to increase the value of).</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a successful @Check[medicine|dc:20] check and sufficient blood or a blood donor, reduces the drained value by 1 after 10 minutes.</p>\n<p>A victim's stupefied condition decreases by 1 per day after performing daily preparations. If the daily preparations are done in full sunlight, the stupefied condition is removed entirely.</p>"
+                },
+                "Sneak Attack": {
+                    "name": "Sneak Attack",
+                    "description": "<p>The strigoi servant deals 1d6 extra precision damage to @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} creatures.</p>"
+                }
+            }
+        },
+        "Strigoi Progenitor": {
+            "prototypeToken": {
+                "name": "Strigoi Progenitor"
+            },
+            "data": {
+                "placeHolder": "placeHolder"
+            },
+            "name": "Strigoi Progenitor",
+            "publicNotes": "<p>These strigoi are intentionally summoned into willing hosts via foul magic rituals.</p><hr /><p>The oldest of all vampires are the strigoi. They predate ancient nosferatus and view moroi as infantile children, yet their own origins are so far lost to the ravages of time that few today have heard of them and fewer still know their true nature. Many of the oldest tales about vampires trace back to the strigoi, and nearly every other vampire carries traits that ultimately have their roots in these powerful, ancient creatures.</p>\n<p>Strigoi, in their true form, are bodiless entities native to the Netherworld, incapable of interacting with the physical world, existing only as pure forces of malevolence. When this malevolence is invited into a physical body through ancient rituals, a strigoi becomes much more dangerous. This requirement—that a living creature perform a rite of their own free will to draw the strigoi into their soul—may well be the source of a moroi's compulsion not to enter a home without first being invited.</p>",
+            "hp": "coffin restoration, fast healing 10, void healing",
+            "items": {
+                "Fast Healing 10": {
+                    "name": "Fast Healing 10",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.FastHealing]</p>"
+                },
+                "Coffin Restoration": {
+                    "name": "Coffin Restoration",
+                    "description": "<p>Unlike other undead, a vampire isn't destroyed at 0 HP. Instead, it falls @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}. If its body rests in its coffin for 1 hour, the vampire gains 1 HP, after which its fast healing begins to function normally.</p>"
+                },
+                "Domain of Dusk": {
+                    "name": "Domain of Dusk",
+                    "description": "<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> With a wave of their hand, the strigoi calls forth vile ruination from the surrounding shadows, causing coils of darkness and shadowy bats, rats, and wolves to lash out at living targets in a @Template[type:emanation|distance:30]. Living creatures in this area take @Damage[floor(1 + @actor.level/2)d6[void]|options:area-damage] damage with a @Check[fortitude|dc:31|basic|options:area-effect,inflicts:dazzled,inflicts:blinded] save against the DC of the strigoi's level. A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} by the darkness for 1 round (or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round and then dazzled for 1 round on a critical failure).</p>"
+                },
+                "Shadow Escape": {
+                    "name": "Shadow Escape",
+                    "description": "<p><strong>Trigger</strong> The strigoi is reduced to 0 HP</p>\n<hr />\n<p><strong>Effect</strong> The strigoi uses Shadow Form. It can take move actions to move toward its coffin even though it's at 0 HP. While at 0 HP in this form, the strigoi is unaffected by further damage. Once the strigoi reaches its coffin, or if it hasn't done so within 2 hours, it automatically returns to its physical form, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}.</p>"
+                },
+                "Shadow Form": {
+                    "name": "Shadow Form",
+                    "description": "<p>The strigoi reverts to pure shadow and absorbs its body and its gear into the darkness, or it shifts back to its physical form. In shadow form, the strigoi gains a climb Speed equal to its land Speed and can move through any gap that isn't airtight. However, it can only move along solid surfaces that aren't highly reflective, not liquid or mirrored surfaces. If the surface it's on is destroyed, the strigoi returns to physical form and is @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1}. The strigoi loses fast healing while in shadow form but can remain in shadow form indefinitely.</p>\n<p>A strigoi that is exposed to sunlight while in shadow form becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and must attempt a @Check[flat|dc:16] at the end of each of its turns. If it fails this flat check, it is destroyed, the shadow vanishing with a blood-curdling wail.</p>"
+                },
+                "Strigoi Weaknesses": {
+                    "name": "Strigoi Weaknesses",
+                    "description": "<p>All strigoi possess the following weaknesses:</p><ul><li><p><strong>Revulsion</strong> Strigoi are uncomfortable near mirrors or sources of bright light. Only a strigoi's shadow reflects in a mirror, and this often compels them to cover or destroy mirrors in their presence rather than risk their true nature being displayed. A strigoi can't voluntarily come within 10 feet of a brandished mirror or source of bright light. To brandish a mirror or light source, a creature must Interact to do so for 1 round (similar to Raising a Shield). If the strigoi involuntarily comes within 10 feet of a brandished mirror or light source, they gain the @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} condition, running from the brandished object until they end an action beyond 10 feet. After 1 round of being exposed to the subject of their revulsion, a strigoi can attempt a @Check[will|dc:25] save as a single action, which has the concentrate trait. On a success, they overcome their revulsions for [[/gmr 1d6 #Overcome Revulsions Duration]]{1d6 rounds} (or 1 hour on a critical success). A strigoi can move normally around mirrors or bright light sources that are not brandished, although doing so causes them discomfort that can be noticed with a successful Perception check to [[/act sense-motive]].</p></li><li><p><strong>Sunlight</strong> When exposed to direct sunlight, a strigoi immediately becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} and falls to the ground. They appear to be dead: they don't breathe, their body temperature matches their surroundings, and they don't react to pain or other stimuli. A successful Perception check against the strigoi's Reflex DC is enough to note one anomaly: the shadow cast by their \"dead\" body shifts and moves slightly, its edges twisting and active. Certain detection spells, senses like lifesense, and the \"corpse\" taking damage from vitality energy still function normally and could reveal the truth without a successful Perception check. Viewing the \"corpse\" in a mirror's reflection can also reveal the truth, for only the body's shadow reflects. While in sunlight and unconscious, the strigoi loses their resistance to physical damage. If the strigoi takes enough damage that they would be reduced to 0 Hit Points, their body quickly decomposes, and the strigoi is destroyed.</p></li><li><p><strong>Water Revulsion</strong> A strigoi cannot cross a significant source of running water (such as a creek, river, or waves on a seashore). A strigoi capable of flight can cross running water provided they approach no closer than 10 feet to the liquid's surface. If forced into running water against their will, the strigoi becomes @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} and gains the fleeing condition as long as they remain in the water. At the end of any turn in which the strigoi remains in running water, they must succeed at a @Check[flat|dc:5] or be destroyed.</p>\n</li></ul>"
+                },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
+                "Create Servitor": {
+                    "name": "Create Servitor",
+                    "description": "<p>If a creature dies after being reduced to 0 HP by Domain of Dusk or Drink Essence, the strigoi can turn this victim into a vampire servitor by donating some of their own blood to the victim and burying the victim in earth for 3 nights.</p>\n<p>A victim that's 8th level or higher becomes a strigoi servant, while a lower-level victim instead becomes a moroi vampire.</p>\n<p>A vampiric servitor is compelled to obey its creator, but if a vampire controls too many vampiric servitors at once (as determined by the GM), or if the servitor is a higher level than the vampire that created it, strong-willed servitors can free themselves by succeeding at a @Check[will|defense:will] saving throw against the vampire's Will DC.</p>"
+                },
+                "Dominate": {
+                    "name": "Dominate",
+                    "description": "<p>The vampire can cast @UUID[Compendium.pf2e.spells-srd.Item.OsOhx3TGIZ7AhD0P]{Dominate} at will as a divine innate spell. Casting it requires staring into the target's eyes, giving the spell the visual trait (@Check[will|dc:33|traits:visual]). A creature that succeeds is temporarily immune to that vampire's Dominate for 24 hours.</p>\n<p>Fully destroying the vampire ends the domination, but merely reducing the vampire to 0 HP is insufficient to break the spell.</p>"
+                },
+                "Drink Essence": {
+                    "name": "Drink Essence",
+                    "description": "<p><strong>Requirements</strong> A @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}, @UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]{Restrained}, @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious}, or willing creature is within the strigoi's reach</p><hr /><p><strong>Effect</strong> The strigoi progenitor sinks their fangs into the targeted creature to drink its blood and draw out its vital essence. This requires an @Check[athletics|against:fortitude] check against the creature's Fortitude DC if the creature is grabbed and is automatic for any of the other conditions. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}, and the strigoi regains @Damage[18[healing]] HP, gaining any excess HP as temporary Hit Points. Drinking Essence from a creature that's already drained or stupefied doesn't restore any HP, but increases either the creature's drained condition value or its stupefied condition value by 1 (whichever value is lesser is increased; if both values are equal, then the strigoi chooses which condition to increase the value of).</p>\n<p>A victim's drained condition decreases by 1 per week. A blood transfusion, which requires a successful @Check[medicine|dc:20] check and sufficient blood or a blood donor, reduces the drained value by 1 after 10 minutes.</p>\n<p>A victim's stupefied condition decreases by 1 per day after performing daily preparations. If the daily preparations are done in full sunlight, the stupefied condition is removed entirely.</p>"
                 }
             }
         }
