@@ -393,7 +393,7 @@
             "items": {
                 "Camouflage": {
                     "name": "伪装 Camouflage",
-                    "description": "<p>扎格拉高尔可以在扭曲棘林的外部环境中@UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{躲藏 Hide} ，即使他没有掩蔽.</p>"
+                    "description": "<p>扎格拉高尔可以在扭曲棘林的外部环境中[[/act hide]] ，即使他没有掩蔽.</p>"
                 },
                 "Old Wound": {
                     "name": "旧伤 Old Wound",
@@ -591,7 +591,7 @@
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
-                    "description": "<p>@Check[reflex|dc:40|traits:damaging-effect]，@Damage[6d6[acid]]伤害，[[/act escape dc=40]]，破裂40</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
+                    "description": "<p>@Check[reflex|dc:40|options:damaging-effect,inflicts:grabbed,inflicts:slowed]，@Damage[6d6[acid]]伤害，[[/act escape dc=40]]，破裂40</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.Engulf]</p>"
                 },
                 "Toxic Sporecloud": {
                     "name": "毒性孢子云 Toxic Sporecloud",
@@ -1472,7 +1472,7 @@
             "data": {
                 "placeHolder": "placeHolder"
             },
-            "disable": "<p>进行三次@Check[thievery|dc:45] （大师） 检定，以破坏沿墙刻画的@UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{藏匿 Hidden}聚焦符文；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（10环级，反制DC 38）以反制虚能栏杆。</p>",
+            "disable": "<p>进行三次@Check[thievery|dc:45] （大师） 检定，以破坏沿墙隐蔽刻画的聚焦符文；或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（10环级，反制DC38）以反制虚能栏杆。</p>",
             "name": "虚能栏杆 Void Bars",
             "routine": "<p>（1动作）每组虚空栏杆都会显现一条由黑暗构成的长臂，伸向并试图打击囚室内的生物，优先攻击之前曾损坏栏杆或试图解除其的生物，否则会随机选择可攻击的目标。此虚能爪可延伸攻击囚室内或外厅囚室门20尺范围内的任何生物，但外厅生物在此攻击中可获得掩蔽加成。</p>",
             "items": {
@@ -1595,7 +1595,7 @@
             "items": {
                 "Whistling Decay": {
                     "name": "尖啸腐化 Whistling Decay",
-                    "description": "<p><strong>触发</strong> 真菌帷幕遭受伤害，或解除尝试大失败</p><hr /><p><strong>效果</strong> 真菌帷幕上的荚状突起物骤然收缩，随后发出刺耳的尖啸并喷出食肉孢子云。尖啸会惊动区域<strong>E6</strong>的居民。真菌帷幕30尺范围内所有非真菌、非恶魔生物将暴露于食肉孢子中，承受@Damage[8d6[poison],4d6[persistent,void]]{8d6点毒素伤害与4d6点持续虚能伤害}（@Check[fortitude|dc:42|basic]豁免）。随后真菌帷幕骰先攻。</p>"
+                    "description": "<p><strong>触发</strong> 真菌帷幕遭受伤害，或解除尝试大失败</p><hr /><p><strong>效果</strong> 真菌帷幕上的荚状突起物骤然收缩，随后发出刺耳的尖啸并喷出食肉孢子云。尖啸会惊动区域<strong>E6</strong>的居民。真菌帷幕@Template[emanation|distance:30]范围内所有非真菌、非恶魔生物将暴露于食肉孢子中，承受@Damage[8d6[poison],4d6[persistent,void]|options:area-damage]伤害（@Check[fortitude|dc:42|basic|options:area-effect]豁免）。随后真菌帷幕骰先攻。</p>"
                 },
                 "HP 134 (BT 67) Per Five-Foot Cube": {
                     "name": "每五尺见方生命值134（BT 67）"
@@ -2654,7 +2654,7 @@
             "items": {
                 "Demonic Attention": {
                     "name": "恶魔的注意 Demonic Attention",
-                    "description": "<p><strong>触发</strong> 蘑菇受到伤害、七个裂隙中的任何一个被触碰，或任何尝试解除网络的行动大失败</p><hr /><p><strong>效果</strong> 七道裂隙中涌动的恶魔能量有所察觉，随即，群魔嘶吼的嘈杂声响彻整个腔室。位于区域 <strong>D4</strong> 的所有生物都必须进行一次 @Check[will|dc:41] 豁免，若检定失败则会陷入 @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}（若出现大失败，则陷入 @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}）。随后，危害骰先攻。</p>"
+                    "description": "<p><strong>触发</strong> 蘑菇受到伤害、七个裂隙中的任何一个被触碰，或任何尝试解除网络的行动大失败</p><hr /><p><strong>效果</strong> 七道裂隙中涌动的恶魔能量有所察觉，随即，群魔嘶吼的嘈杂声响彻整个腔室。位于区域 <strong>D4</strong> 的所有生物都必须进行一次@Check[will|dc:41|options:area-effect,inflicts:frightened]豁免，若检定失败则会陷入 @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}（若出现大失败，则陷入 @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}）。随后，危害骰先攻。</p>"
                 }
             }
         },
