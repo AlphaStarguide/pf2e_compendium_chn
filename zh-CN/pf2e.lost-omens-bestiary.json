@@ -672,7 +672,7 @@
                 },
                 "Change Characters": {
                     "name": "变换角色 Change Characters",
-                    "description": "<p><strong>频率</strong> 每轮一次</p><hr />\n<p><strong>效果</strong> 魌头君摘下当前的面具并戴上一副新的。这种变换使魌头君焕发活力，恢复25点生命值。一旦魌头君摘下一副面具，它就不能再次通过变换角色戴上那副面具，直到它至少将其所有未破损的面具各戴过一次为止；之后该循环重新开始。魌头君不能戴上破损的面具。</p>\n<p>当魌头君使用变换角色时，它将获得面具对应的能力。任何与它前一副面具相关的物品（例如武器）会立即消失，并被新面具带来的全新物品所取代；但是，它已激活的任何面具能力效果仍将持续。摘下一副面具并在之后重新戴上，并不会恢复任何有使用次数限制的能力。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p><hr />\n<p><strong>效果</strong> 魌头君摘下当前的面具并戴上一副新的。这种变换使魌头君焕发活力，恢复@Damage[25[healing]] 生命值。一旦魌头君摘下一副面具，它就不能再次通过变换角色戴上那副面具，直到它至少将其所有未破损的面具各戴过一次为止；之后该循环重新开始。魌头君不能戴上破损的面具。</p>\n<p>当魌头君使用变换角色时，它将获得面具对应的能力。任何与它前一副面具相关的物品（例如武器）会立即消失，并被新面具带来的全新物品所取代；但是，它已激活的任何面具能力效果仍将持续。摘下一副面具并在之后重新戴上，并不会恢复任何有使用次数限制的能力。</p>"
                 },
                 "Prop Master": {
                     "name": "道具大师 Prop Master",
@@ -890,7 +890,7 @@
                 },
                 "Change Characters": {
                     "name": "变换角色 Change Characters",
-                    "description": "<p><strong>频率</strong> 每轮一次</p><hr />\n<p><strong>效果</strong> 魌头君摘下当前的面具并戴上一副新的。这种变换使魌头君焕发活力，恢复25点生命值。一旦魌头君摘下一副面具，它就不能再次通过变换角色戴上那副面具，直到它至少将其所有未破损的面具各戴过一次为止；之后该循环重新开始。魌头君不能戴上破损的面具。</p>\n<p>当魌头君使用变换角色时，它将获得面具对应的能力。任何与它前一副面具相关的物品（例如武器）会立即消失，并被新面具带来的全新物品所取代；但是，它已激活的任何面具能力效果仍将持续。摘下一副面具并在之后重新戴上，并不会恢复任何有使用次数限制的能力。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p><hr />\n<p><strong>效果</strong> 魌头君摘下当前的面具并戴上一副新的。这种变换使魌头君焕发活力，恢复@Damage[25[healing]]生命值。一旦魌头君摘下一副面具，它就不能再次通过变换角色戴上那副面具，直到它至少将其所有未破损的面具各戴过一次为止；之后该循环重新开始。魌头君不能戴上破损的面具。</p>\n<p>当魌头君使用变换角色时，它将获得面具对应的能力。任何与它前一副面具相关的物品（例如武器）会立即消失，并被新面具带来的全新物品所取代；但是，它已激活的任何面具能力效果仍将持续。摘下一副面具并在之后重新戴上，并不会恢复任何有使用次数限制的能力。</p>"
                 }
             },
             "prototypeToken": {
@@ -5779,7 +5779,7 @@
                 },
                 "Vortex": {
                     "name": "涡流 Vortex",
-                    "description": "<p>60尺。灵光范围内，与龙处于同一水体的水对于没有水特征的生物游泳时来说视作困难地形。</p>"
+                    "description": "<p>40尺。灵光范围内，与龙处于同一水体的水对于没有水特征的生物游泳时来说视作困难地形。</p>"
                 },
                 "Black Water Breath": {
                     "description": "<p>龙向60尺内射出一个对@Template[burst|distance:30]范围造成@Damage[18d6[bludgeoning]|options:area-damage]伤害的水球（@Check[reflex|dc:38|basic|options:area-effect]豁免）。半径内所有非魔法火焰会被熄灭。龙不能在[[/gmr 1d4 #Recharge Breath Weapon]]{1d4轮}内再次使用黑水吐息。</p>",
@@ -5795,15 +5795,15 @@
                 },
                 "Greater Constrict": {
                     "name": "高等紧勒 Greater Constrict",
-                    "description": "<p>@Damage[(3d10+8)[bludgeoning]]，@Check[fortitude|dc:38|basic]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
+                    "description": "<p>@Damage[(3d10+8)[bludgeoning]]，@Check[fortitude|dc:38|basic|options:inflicts:unconscious]</p>\n<hr />\n<p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
                 },
                 "Hyponatremia": {
                     "name": "低血钠症 Hyponatremia",
-                    "description": "<p>一个受到来自海龙颚咬打击伤害的活物必须成功通过一次@Check[fortitude|dc:38]豁免，否则会因为体内激增的水量而陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>"
+                    "description": "<p>一个受到来自海龙颚咬打击伤害的活物必须成功通过一次@Check[fortitude|dc:38|options:inflicts:sickened]豁免，否则会因为体内激增的水量而陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。</p>"
                 },
                 "Tidal Wave": {
                     "name": "潮涌 Tidal Wave",
-                    "description": "<p><strong>频率</strong> 每10分钟一次</p><hr /><p><strong>效果</strong> 龙拍打自己的身体，向外发出一道滔天巨浪。这道波浪对@Template[type:emanation|distance:90]范围造成@Damage[10d12[bludgeoning]|options:area-damage]伤害。区域内每个生物必须尝试一次@Check[reflex|dc:38]豁免。区域内的构造物和无主物体无需豁免承受全额伤害。</p><hr /><p><strong>大成功</strong> 该生物不受伤害但被推离龙30尺。</p>\n<p><strong>成功</strong> 该生物受到一半伤害并被推离龙60尺。</p>\n<p><strong>失败</strong> 该生物受到全额伤害并被推离龙120尺，并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>\n<p><strong>大失败</strong> 同失败但受到双倍伤害。</p>"
+                    "description": "<p><strong>频率</strong> 每10分钟一次</p><hr /><p><strong>效果</strong> 龙拍打自己的身体，向外发出一道滔天巨浪。这道波浪对@Template[emanation|distance:90]范围造成@Damage[10d12[bludgeoning]|options:area-damage]伤害。区域内每个生物必须尝试一次@Check[reflex|dc:38|options:area-effect,damaging-effect,forced-movement]豁免。区域内的构造物和无主物体无需豁免承受全额伤害。</p><hr /><p><strong>大成功</strong> 该生物不受伤害但被推离龙30尺。</p>\n<p><strong>成功</strong> 该生物受到一半伤害并被推离龙60尺。</p>\n<p><strong>失败</strong> 该生物受到全额伤害并被推离龙120尺，并@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。</p>\n<p><strong>大失败</strong> 同失败但受到双倍伤害。</p>"
                 }
             },
             "allSaves": "对魔法的全豁免+1状态加值",
@@ -5820,11 +5820,11 @@
             "items": {
                 "Gales of Laughter": {
                     "name": "狂笑之风 Gales of Laughter",
-                    "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 狂嘲龙以刺耳的笑声包围90尺内的一名生物，使其耳聋1轮并造成@Damage[10d4[persistent,mental]]伤害，除非该生物通过@Check[will|dc:42]豁免。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 狂嘲龙以刺耳的笑声包围90尺内的一名生物，使其@UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]1轮并造成@Damage[10d4[persistent,mental]]伤害，除非该生物通过@Check[will|dc:42|options:damaging-effect,inflicts:deafened,inflicts:persistent-damage]豁免。</p>"
                 },
                 "Graceless Domain": {
                     "name": "失态领域 Graceless Domain",
-                    "description": "<p>90尺。进入该区域或在该区域内开始其回合的生物必须尝试一次@Check[will|dc:42|options:area-effect]豁免。无论豁免结果如何，该生物在1分钟内暂时免疫失态领域。龙可以将任意生物排除在该灵光的影响之外。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 在1轮内，该生物第一次进行运动、特技或表演技能检定时，必须投掷两次并取较差结果。</p>\n<p><strong>失败</strong> 在1分钟内，该生物每轮第一次进行运动、特技或表演技能检定时，必须投掷两次并取较差结果。</p>\n<p><strong>大失败</strong> 在1分钟内，该生物每次进行运动、特技或表演技能检定时，必须投掷两次并取较差结果。</p>"
+                    "description": "<p>90尺。进入该区域或在该区域内开始其回合的生物必须尝试一次@Check[will|dc:42|options:area-effect]豁免。无论豁免结果如何，该生物在1分钟内暂时免疫失态领域。龙可以将任意生物排除在该灵光的影响之外。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 在1轮内，该生物第一次进行运动、特技或表演技能检定时，必须投掷两次并取较差结果。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.luJf1FTHfwkeuDsF]</p>\n<p><strong>失败</strong> 在1分钟内，该生物每轮第一次进行运动、特技或表演技能检定时，必须投掷两次并取较差结果。</p>\n<p><strong>大失败</strong> 在1分钟内，该生物每次进行运动、特技或表演技能检定时，必须投掷两次并取较差结果。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.7LWZ6BwPIxr1uQm5]</p>"
                 },
                 "+2 Status to All Saves vs. Occult": {
                     "name": "对抗异能的全豁免获得+2状态加值 +2 Status to All Saves vs. Occult"
@@ -5847,7 +5847,7 @@
                 },
                 "Insistent Heckling": {
                     "name": "持续起哄 Insistent Heckling",
-                    "description": "<p>诳嘲龙可以对90尺内的目标[[/act demoralize]]。每次尝试之后，该目标在1分钟内免疫诳嘲龙对其进行的挫败士气。</p>\n<p>被至古诳嘲龙挫败士气的生物在惊惧期间陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。</p>"
+                    "description": "<p>诳嘲龙可以对90尺内的目标[[/act demoralize]]。每次尝试之后，该目标在1分钟内免疫诳嘲龙对其进行的挫败士气。</p>\n<p>被至古诳嘲龙挫败士气的生物在@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]期间陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。</p>"
                 },
                 "Jeer at Failure": {
                     "name": "嘲弄失败 Jeer at Failure",
@@ -6134,7 +6134,7 @@
                     "description": "<p>君龙能够自动侦测出一个生物，效果或物品是否受祝，以及其为圣洁还是邪秽。</p>"
                 },
                 "Greater Constrict": {
-                    "description": "<p>@Damage[(4d8+10)[bludgeoning]]，@Check[fortitude|dc:42|basic]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>",
+                    "description": "<p>@Damage[(4d8+10)[bludgeoning]]，@Check[fortitude|dc:42|basic|options:inflicts:unconscious]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>",
                     "name": "高等紧勒 Greater Constrict"
                 },
                 "Sovereign's Rebuke": {
@@ -6162,7 +6162,7 @@
                 },
                 "Gleaming Armor": {
                     "name": "耀目宝甲 Gleaming Armor",
-                    "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 君龙的护甲散发出金光。君龙在AC上获得+2状态加值，并获得对酸蚀，寒冷，电击，火焰和音波伤害的20点抗力。@Template[type:emanation|distance:20]范围内每个敌人都必须成功通过一次@Check[fortitude|dc:42]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]。所有这些效果持续到龙的下个回合结束。</p>"
+                    "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 君龙的护甲散发出金光。君龙在AC上获得+2状态加值，并获得对酸蚀，寒冷，电击，火焰和音波伤害的20点抗力。@Template[emanation|distance:20]范围内每个敌人都必须成功通过一次@Check[fortitude|dc:42|options:area-effect,inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]。所有这些效果持续到龙的下个回合结束。</p>"
                 },
                 "Inspire Envoy": {
                     "name": "激励特使 Inspire Envoy",
@@ -6469,7 +6469,7 @@
                     "description": "<p>当施放@UUID[Compendium.pf2e.spells-srd.Item.dileJ0Yxqg76LMvu]时，森龙可以变成体型和年龄与他们自身相同的树木，使用其自己的AC。</p>"
                 },
                 "Greater Constrict": {
-                    "description": "<p>@Damage[(4d8+9)[bludgeoning]]，@Check[fortitude|dc:41|basic]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>",
+                    "description": "<p>@Damage[(4d8+9)[bludgeoning]], @Check[fortitude|dc:41|basic|options:inflicts:unconscious]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>",
                     "name": "高等紧勒 Greater Constrict"
                 },
                 "Lignifying Bite": {
@@ -7038,7 +7038,7 @@
                 },
                 "Gleaming Armor": {
                     "name": "耀目宝甲 Gleaming Armor",
-                    "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 君龙的护甲散发出金光。君龙在AC上获得+2状态加值，并获得对酸蚀，寒冷，电击，火焰和音波伤害的10点抗力。@Template[type:emanation|distance:20]范围内每个敌人都必须成功通过一次@Check[fortitude|dc:30]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]。所有这些效果持续到龙的下个回合结束。</p>"
+                    "description": "<p><strong>频率</strong> 每小时一次</p><hr /><p><strong>效果</strong> 君龙的护甲散发出金光。君龙在AC上获得+2状态加值，并获得对酸蚀，寒冷，电击，火焰和音波伤害的10点抗力。@Template[emanation|distance:20]范围内每个敌人都必须成功通过一次@Check[fortitude|dc:30|options:area-effect,inflicts:dazzled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]。所有这些效果持续到龙的下个回合结束。</p>"
                 },
                 "Sovereign's Rebuke": {
                     "name": "君王训诫 Sovereign's Rebuke",
@@ -7090,7 +7090,7 @@
                 },
                 "Greater Constrict": {
                     "name": "高等紧勒 Greater Constrict",
-                    "description": "<p>@Damage[(3d8+6)[bludgeoning]]，@Check[fortitude|dc:33|basic]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
+                    "description": "<p>@Damage[(3d8+6)[bludgeoning]]，@Check[fortitude|dc:33|basic|options:inflicts:unconscious]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
                 },
                 "Perfected Flight": {
                     "name": "完美飞行 Perfected Flight",
@@ -7188,7 +7188,7 @@
                 },
                 "Greater Constrict": {
                     "name": "高等紧勒 Greater Constrict",
-                    "description": "<p>@Damage[(4d8+9)[bludgeoning]]，@Check[fortitude|dc:41|basic]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
+                    "description": "<p>@Damage[(4d8+9)[bludgeoning]]，@Check[fortitude|dc:41|basic|options:inflicts:unconscious]</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.GreaterConstrict]</p>"
                 },
                 "Lignifying Bite": {
                     "name": "化木噬咬 Lignifying Bite",
