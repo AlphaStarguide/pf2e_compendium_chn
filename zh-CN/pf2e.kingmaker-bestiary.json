@@ -865,10 +865,10 @@
             "items": {
                 "Draining Inhalation": {
                     "name": "枯竭抽吸 Draining Inhalation",
-                    "description": "<p><strong>触发</strong> 非飞行活物进入区域C2墓室内比10尺更远的位置</p>\n<p><strong>效果</strong> 每张石面都会在吸气后呼气，区域C2中的所有活物都会被石面吐出的阴影触手附着在身体上，并感到自己的力量和活力被抽走了。每个生物必须成功通过@Check[fortitude|dc:22]豁免，失败则会陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}）。</p>"
+                    "description": "<p><strong>触发</strong> 非飞行活物进入区域C2墓室内比10尺更远的位置</p>\n<p><strong>效果</strong> 每张石面都会在吸气后呼气，区域C2中的所有活物都会被石面吐出的阴影触手附着在身体上，并感到自己的力量和活力被抽走了。每个生物必须成功通过@Check[fortitude|dc:22|options:area-effect,inflicts:enfeebled]豁免，失败则会陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}）。</p>"
                 }
             },
-            "routine": "<p>（4个动作）陷阱每失去1个石面，每回合都会失去1个动作。陷阱的每个动作，都是1张不同的石面向区域C2内的1个目标喷出一股蠕行的黑暗之息。每个生物在每轮内只会被施加一次绝望之息，若墓室内的生物数量低于4个，陷阱就无法充分利用它的全部4个动作。</p>",
+            "routine": "<p>（4个动作）陷阱每失去1个石面，每回合都会失去1个动作。陷阱的每个动作，都是1张不同的石面向区域<strong>C2</strong>内的1个目标喷出一股蠕行的黑暗之息。每个生物在每轮内只会被施加一次绝望之息，若墓室内的生物数量低于4个，陷阱就无法充分利用它的全部4个动作。</p>",
             "prototypeToken": {
                 "name": "绝望之息"
             }
@@ -1269,7 +1269,7 @@
                 },
                 "Nymph's Tragedy": {
                     "name": "宁芙的悲剧 Nymph's Tragedy",
-                    "description": "<p>30尺。在这一灵光中开始其回合的生物必须成功通过一次@Check[will|dc:33]豁免，否则他们的眼睛会被鲜血所蒙蔽，视野变得暗淡，从而陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]。只要该生物依旧在灵光中开始其回合，这一效果便会一直持续，甚至就算他们在之后的回合中看不见毁容的水泽仙后也是如此。</p>"
+                    "description": "<p>30尺。在这一灵光中开始其回合的生物必须成功通过一次@Check[will|dc:33|options:area-effect,inflicts:dazzled]豁免，否则他们的眼睛会被鲜血所蒙蔽，视野变得暗淡，从而陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]。只要该生物依旧在灵光中开始其回合，这一效果便会一直持续，甚至就算他们在之后的回合中看不见毁容的水泽仙后也是如此。</p>"
                 },
                 "Agonized Wail": {
                     "name": "痛苦恸哭 Agonized Wail",
@@ -1656,7 +1656,7 @@
             "items": {
                 "Lamashtu's Bloom": {
                     "name": "拉玛什图绽放 Lamashtu's Bloom",
-                    "description": "<p>虽然本章第一节和第二节会有一些NPC受到拉玛什图绽放诅咒的影响，但在第三节中，这种诅咒也可能会影响PC。虽然绽放本身是一种诅咒，但它的表现形式更像疾病，因此具有这两种苦难特征。只要诅咒持续存在，生物就无法从疾病中康复，而解除诅咒无法自动解除苦难中的疾病要素。必须单独处理这两个要素才能让拉玛什图绽放的受害者得以保全。在区域<strong>C10</strong>杀死拉玛什图之花之后，这种苦难就会自动解除，包括该诅咒的所有要素。</p>\n<hr />\n<p><strong>豁免骰</strong> @Check[fortitude|dc:23]</p>\n<p><strong>潜伏期</strong> 1周</p>\n<p><strong>阶段1</strong> 无不良反应（1 天）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（1天）</p>\n<p><strong>阶段3</strong> 力竭1并受到@Damage[2d6[poison]]伤害 (8小时）</p>\n<p><strong>阶段4</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]并受到@Damage[4d6[poison]]伤害 (10分钟）</p>\n<p><strong>阶段5</strong> 死亡；死于拉玛什图绽放的生物体内会爆出第一世界的植物，并且释放出一个怪物。这种生物通常是介于7到9级的低智力野兽或龙，具体取决于GM。</p>"
+                    "description": "<p>虽然本章第一节和第二节会有一些NPC受到拉玛什图绽放诅咒的影响，但在第三节中，这种诅咒也可能会影响PC。虽然绽放本身是一种诅咒，但它的表现形式更像疾病，因此具有这两种苦难特征。只要诅咒持续存在，生物就无法从疾病中康复，而解除诅咒无法自动解除苦难中的疾病要素。必须单独处理这两个要素才能让拉玛什图绽放的受害者得以保全。在区域<strong>C10</strong>杀死拉玛什图之花之后，这种苦难就会自动解除，包括该诅咒的所有要素。</p><hr /><p><strong>豁免骰</strong> @Check[fortitude|dc:23]</p>\n<p><strong>潜伏期</strong> 1周</p>\n<p><strong>阶段1</strong> 无不良反应（1天）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（1天）</p>\n<p><strong>阶段3</strong> 力竭1并受到@Damage[2d6[poison]]伤害（8小时）</p>\n<p><strong>阶段4</strong> @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]并受到@Damage[4d6[poison]]伤害（10分钟）</p>\n<p><strong>阶段5</strong> 死亡</p>\n<p><strong>特殊</strong> 死于拉玛什图绽放的生物体内会爆出第一世界的植物，并且释放出一个怪物。这种生物通常是介于7到9级的低智力野兽或龙，具体取决于GM。</p>"
                 },
                 "Burst": {
                     "name": "爆裂 Burst",
