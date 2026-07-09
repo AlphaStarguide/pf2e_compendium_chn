@@ -45,13 +45,17 @@
 			"name": "Long Stomp",
 			"description": "<p>Your giraffe Strides twice and then makes a hoof Strike. As long as it moved at least 20 feet, it deals an additional @Damage[1d6[bludgeoning]] damage. Increase this to @Damage[2d6[bludgeoning]|shortLabel] if your giraffe is specialized.</p>"
 		},
+		"Hellfire Gaze": {
+			"name": "Hellfire Gaze",
+			"description": "<p>The thruneosaurus's eyes project a line of fire in a @Template[type:line|distance:30], dealing @Damage[(floor(@actor.level/2))d6[fire]] damage for every 2 levels the thruneosaurus has to all creatures in the area (@Check[type:reflex|against:hellfire-gaze|basic:true]). A creature that critically fails its save also takes persistent fire damage equal to the number of damage dice. This uses a trained DC using the thruneosaurus's Constitution modifier or an expert DC if the beast is specialized.</p>"
+		},
 		"Pick at the Meat": {
 			"name": "Pick at the Meat",
 			"description": "<p><strong>Requirements</strong> The animal companion's last action was a successful jaws Strike.</p><hr /><p>Your bird picks at the wound it just created. The target of its jaws Strike takes @Damage[1d8[bleed]] damage, or @Damage[2d8[bleed]] damage if the bird is specialized.</p>"
 		},
 		"Bony Constriction": {
 			"name": "Bony Constriction",
-			"description": "<p><strong>Requirements</strong> The constrictor has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}.</p><hr /><p>The skeletal constrictor deals @Damage[12[piercing]] damage to the grabbed creature with its sharp ribs; the creature must attempt a @Check[fortitude|basic|against:bony-constriction] save. If the constrictor is a specialized companion, increase this damage to @Damage[20[piercing]|shortLabel]. This uses a trained DC using the constrictor's Constitution modifier, or an expert DC if the constrictor is specialized.</p>"
+			"description": "<p><strong>Requirements</strong> The constrictor has a creature @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}.</p><hr><p>The skeletal constrictor deals @Damage[12[piercing]] damage to the grabbed creature with its sharp ribs; the creature must attempt a @Check[fortitude|basic|against:bony-constriction] save. If the constrictor is a specialized companion, increase this damage to @Damage[20[piercing]|shortLabel]. This uses a trained DC using the constrictor's Constitution modifier, or an expert DC if the constrictor is specialized.</p>"
 		},
 		"Scurry": {
 			"name": "Scurry",
@@ -79,7 +83,7 @@
 		},
 		"Shred": {
 			"name": "Shred",
-			"description": "<p>The shark viciously rips into the wound. The target of the shark's Strike takes @Damage[1d8[slashing]] damage (@Damage[2d8[slashing]|shortLabel] for a mature shark or @Damage[3d8[slashing]|shortLabel] for a specialized companion).</p>"
+			"description": "<p>The shark viciously rips into the wound. The target of the shark's Strike takes 2d8 slashing damage (3d8 for a specialized companion).</p>"
 		},
 		"Lizard Leap": {
 			"name": "Lizard Leap",
@@ -181,6 +185,10 @@
 			"name": "Snatch and Zap",
 			"description": "<p>The Ulgrem-Lurann bites down hard and unleashes an electrical discharge. It makes a jaws Strike. If the Strike hits, the target creature automatically becomes @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the Ulgrem-Lurann and takes @Damage[1d4[electricity]] damage (@Damage[2d4[electricity]|shortLabel] for a mature Ulgrem-Lurann or @Damage[3d4[electricity]|shortLabel] for a specialized companion). The grabbed condition lasts until the end of your next turn, though the Ulgrem-Lurann can use @UUID[Compendium.pf2e.actionspf2e.Item.PMbdMWc2QroouFGD]{Grapple} to attempt to extend the duration as normal.</p>"
 		},
+		"Barbed Dash": {
+			"name": "Barbed Dash",
+			"description": "<p>The pufferfish inflates and swims past an enemy, piercing it with its spines. It attempts to [[/act tumble-through]] a foe. On a success, the pufferfish deals @Damage[1[piercing]] damage and an additional @Damage[1d6[persistent,poison]] damage to the foe as it passes through its space. If your pufferfish is nimble or savage, the persistent poison increases to @Damage[2d6[persistent,poison]|shortLabel].</p>"
+		},
 		"Bouncing Slam": {
 			"name": "Bouncing Slam",
 			"description": "<p>The gibtas Leaps toward a Medium or smaller creature, landing in the creature's space and @UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{Shoving} the creature. If the Shove fails, the gibtas bounces out of the target's square to an adjacent square of the target's choosing.</p>"
@@ -212,6 +220,10 @@
 		"Seedpod Spring": {
 			"name": "Seedpod Spring",
 			"description": "<p>A seedpod within the chair bursts and uncoils, releasing a light clump of cottony material. Your rootball chair Leaps up to 30 feet vertically or horizontally and drifts down, sinking 5 feet for every 5 feet traveled horizontally and causing you to take no falling damage. The cottony material disperses when you land.</p>"
+		},
+		"Crushing Embrace": {
+			"name": "Crushing Embrace",
+			"description": "<p>The cephalopod wraps its tentacles around a foe and crushes them. It makes an arm Strike. If the Strike hits, the target creature automatically becomes @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the cephalopod, then takes @Damage[1d6[bludgeoning]] damage. If your cephalopod is nimble or savage, the bludgeoning damage increases to @Damage[2d6[bludgeoning]|shortLabel].</p>"
 		},
 		"Gulp Blood": {
 			"name": "Gulp Blood",
@@ -285,6 +297,14 @@
 			"name": "Poisonous Sweep",
 			"description": "<p>The salamander secretes poison from the glands on its tail and bludgeons an enemy to apply it to them. It makes a tail Strike. If the Strike hits, the target takes an additional @Damage[1d6[persistent,poison]] damage. If your salamander is nimble or savage, increase this damage to @Damage[2d6[persistent,poison]] damage.</p>"
 		},
+		"Color Swirl": {
+			"name": "Color Swirl",
+			"description": "<p>Your salamander rapidly changes color in a dizzying pattern. A creature within 30 feet must attempt a Fortitude save against the higher of your class DC or spell DC. On a failure, the creature is @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}, or @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 2} on a critical failure.</p>"
+		},
+		"Ingest Magic": {
+			"name": "Ingest Magic",
+			"description": "<p>The silt frog makes a jaws Strike. If the Strike hits, it attempts to counteract a spell or magical effect on the target (its counteract modifier is equal to its attack modifier with its tongue Strike, unmodified by any bonuses or effects that apply to attack rolls, and its counteract rank is equal to half its level, rounded up).</p>"
+		},
 		"Careful Withdraw": {
 			"name": "Careful Withdraw",
 			"description": "<p>The legchair carefully extricates you from a dangerous situation. It Steps twice and then Strides.</p>"
@@ -331,7 +351,7 @@
 		},
 		"Throw Rock": {
 			"name": "Throw Rock",
-			"description": "<p>The arboreal sapling Interacts to pick up a rock within reach or retrieve a stowed rock, then throws it with a ranged rock Strike that deals a base of 1d6 bludgeoning damage with a range increment of 30 feet. The damage is 2d6 for a mature arboreal sapling and 3d6 for a specialized one.</p>"
+			"description": "<p>The arboreal sapling Interacts to pick up a rock within reach or retrieve a stowed rock, then throws it with a ranged rock Strike that deals 2d6 bludgeoning (3d6 for a specialized companion) damage with a range increment of 30 feet.</p>"
 		},
 		"Gallop": {
 			"name": "Gallop",
