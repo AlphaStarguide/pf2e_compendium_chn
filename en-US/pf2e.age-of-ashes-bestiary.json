@@ -106,8 +106,11 @@
             "name": "Duergar Slave Lord",
             "allSaves": "+2 status to all saves vs. magic",
             "items": {
-                "equipment-Key to the Temple of All Gods": {
-                    "name": "Key to the Temple of All Gods"
+                "equipment-Key": {
+                    "name": "Key"
+                },
+                "+2 Status to All Saves vs. Magic": {
+                    "name": "+2 Status to All Saves vs. Magic"
                 },
                 "Improved Evasion": {
                     "name": "Improved Evasion",
@@ -541,8 +544,8 @@
             },
             "name": "Laslunn",
             "items": {
-                "equipment-Key Ring (Opens Locks in Summershade Quarry)": {
-                    "name": "Key Ring (Opens Locks in Summershade Quarry)"
+                "equipment-Key Ring": {
+                    "name": "Key Ring"
                 },
                 "Attack of Opportunity (Special)": {
                     "name": "Attack of Opportunity (Special)",
@@ -903,7 +906,7 @@
                 },
                 "Eerie Flexibility": {
                     "name": "Eerie Flexibility",
-                    "description": "<p>Despite his size, Xevalorg's multiple joints allow him to fit through tight spaces as if he were a Medium creature. While Squeezing, he can move at his full Speed.</p>"
+                    "description": "<p>Despite his size, Xevalorg's multiple joints allow him to fit through tight spaces as if he were a Medium creature. While @UUID[Compendium.pf2e.actionspf2e.Item.kMcV8e5EZUxa6evt]{Squeezing}, he can move at his full Speed.</p>"
                 },
                 "Furious Claws": {
                     "name": "Furious Claws",
@@ -1264,6 +1267,10 @@
                     "name": "Rejuvenation",
                     "description": "<p>Talamira's ghost is bound to the way station by the presence of the wailing crystals; if this hazard is deactivated or destroyed, Talamira sighs in relief as her memories are restored-this burst of psychic energy suffuses all PCs in the area, granting them access to the ancient tradition of magic she once followed, that of the crystal keeper archetype. A moment later, Talamira fades away, her soul moving on to the afterlife.</p>\n<hr />\n<p>When a ghost is destroyed, it re-forms after [[/br 2d4 #days]]{2d4 days} within the location it's bound to, fully healed. A ghost can be permanently destroyed only if someone determines the reason for its existence and sets right whatever prevents the spirit from resting.</p>"
                 },
+                "Void Healing": {
+                    "name": "Void Healing",
+                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.NegativeHealing]</p>"
+                },
                 "Resonant Wail": {
                     "name": "Resonant Wail",
                     "description": "<p>Talamira releases an anguish-filled cry of despair. All creatures within 30 feet must attempt a @Check[will|dc:33] save to resist.</p>\n<p>Talamira can't use Resonant Wail for [[/gmr 1d4 #Recharge Resonant Wail]]{1d4 rounds}.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature is unaffected.</p>\n<p><strong>Success</strong> The creature wails with anguish for 3 rounds. The shrieks resonate within the room's wailing crystals, giving the crystals a +2 status bonus on attack rolls against that creature during this time.</p>\n<p><strong>Failure</strong> As success, but the creature is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 minute as it sobs uncontrollably. If the creature is already slowed 1 by crushing despair, it is @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 2} as long as it's under both effects simultaneously.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature is also @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 3} from its overwhelming sadness.</p>"
@@ -1455,7 +1462,7 @@
             "hazarddescription": "<p>An elven woman wearing a robe stands in the water. She beckons anyone who enters the room to join her in the pool.</p>",
             "routine": "<p>(3 actions) The haunt attempts to Strike with the dagger.</p>",
             "reset": "<p>Damurdiel's spirit subsides once she is destroyed or if she manages to reduce a creature to 0 Hit Points. She returns after 1 minute.</p>",
-            "stealthdetails": "<p>(legendary) or DC 47 to notice the dagger left in the pool start to move on its own.</p>",
+            "stealthdetails": "<p>(legendary) or @Check[perception|dc:47] to notice the dagger left in the pool start to move on its own.</p>",
             "items": {
                 "Surprise Strike": {
                     "name": "Surprise Strike",
@@ -1558,6 +1565,7 @@
                 "placeHolder": "placeHolder"
             },
             "name": "Xotanispawn",
+            "publicNotes": "<p>Xotanispawn are monstrous versions of scavenging beetle larvae that have been corrupted and mutated by feeding on the remains of Xotani the Firebleeder, a slain Spawn of Rovagug buried beneath Pale Mountain in Katapesh. These creatures look vaguely like the minute insects they once were, with a sclerotized head and chitinous body plates, six legs, and numerous dorsal spines lining the joints and edges of each segment. However, by feeding on the unholy remains of Xotani, the spawn have manifested many of the traits of the infamous Firebleeder, most notably a blisteringly hot internal temperature and powerful fire attacks—to say nothing of their monstrous size.</p>\n<p>Internal heat radiates from every surface of a Xotanispawn, even from its mouth. Any contact with a Xotanispawn results in burns and the risk of catching on fire. Thankfully, Xotanispawn have also inherited Xotani's weaknesses to cold and sunlight. They are rarely encountered on the surface during the day, opting to emerge from their subterranean lairs only at night.</p>",
             "items": {
                 "Tremorsense 60 feet": {
                     "name": "Tremorsense 60 feet",
@@ -1581,11 +1589,11 @@
                 },
                 "Breath Weapon": {
                     "name": "Breath Weapon",
-                    "description": "<p>The Xotanispawn sprays a @Template[cone|distance:60] of magma that deals @Damage[10d10[fire],2d6[persistent,fire]|options:area-damage]{10d10 fire damage and 2d6 persistent fire damage} to all creatures in the area (@Check[reflex|dc:39|basic|options:area-effect] save).</p>\n<p>The Xotanispawn can't use its Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
+                    "description": "<p>The Xotanispawn sprays a @Template[cone|distance:60] of magma that deals @Damage[10d10[fire],2d6[persistent,fire]|options:area-damage] damage to all creatures in the area (@Check[reflex|dc:39|basic|options:area-effect] save).</p>\n<p>The Xotanispawn can't use its Breath Weapon again for [[/gmr 1d4 #Recharge Breath Weapon]]{1d4 rounds}.</p>"
                 },
                 "Heat Surge": {
                     "name": "Heat Surge",
-                    "description": "<p>When the Xotanispawn critically hits, its body surges with heat, increasing the damage of its Internal Furnace to @Damage[10d8[persistent,fire]] damage until the start of its next turn.</p>"
+                    "description": "<p>When the Xotanispawn critically hits, its body surges with heat, increasing the damage of its Internal Furnace to 10d8 until the start of its next turn.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.eRxSdMi6Y2XTQWql]{Effect: Heat Surge}</p>"
                 }
             }
         },
@@ -1772,8 +1780,8 @@
             "name": "Dmiri Yoltosha",
             "blurb": "Female hobgoblin ranger 4",
             "items": {
-                "equipment-Key to Chest": {
-                    "name": "Key to Chest"
+                "equipment-Key": {
+                    "name": "Key"
                 },
                 "Flurry": {
                     "name": "Flurry",
@@ -1915,7 +1923,7 @@
             "items": {
                 "Radiant Explosion": {
                     "name": "Radiant Explosion",
-                    "description": "<p><strong>Trigger</strong> A creature touches the door</p>\n<hr />\n<p><strong>Effect</strong> All creatures within 20 feet of the door are scorched with brilliant light, taking @Damage[20d6[fire]] damage (@Check[reflex|dc:40|basic] save). A creature that fails this save is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 hour (or permanently on a critical failure).</p>"
+                    "description": "<p><strong>Trigger</strong> A creature touches the door</p>\n<hr />\n<p><strong>Effect</strong> All creatures within 20 feet of the door are scorched with brilliant light, taking @Damage[20d6[fire]|options:area-damage] damage (@Check[reflex|dc:40|basic|options:area-effect,inflicts:blinded] save). A creature that fails this save is @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 hour (or permanently on a critical failure).</p>"
                 }
             }
         },
@@ -2741,8 +2749,8 @@
             },
             "name": "Barushak Il-Varashma",
             "items": {
-                "equipment-Keys to Each Dormitory Door and Slave Manacles": {
-                    "name": "Keys to Each Dormitory Door and Slave Manacles"
+                "equipment-Keys": {
+                    "name": "Keys"
                 },
                 "Drain Bonded Item": {
                     "name": "Drain Bonded Item",
@@ -3197,8 +3205,8 @@
             },
             "name": "Corrupt Guard",
             "items": {
-                "equipment-Key to Chiselrock's Prison": {
-                    "name": "Key to Chiselrock's Prison"
+                "equipment-Key": {
+                    "name": "Key"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",

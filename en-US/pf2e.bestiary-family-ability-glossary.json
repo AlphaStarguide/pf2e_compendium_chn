@@ -838,7 +838,7 @@
             "name": "(Siabrae) Blight Mastery"
         },
         "(Divine Warden) Divine Destruction": {
-            "description": "<p>When the divine warden is reduced to 0 HP, it erupts with divine energy in a @Template[type:emanation|distance:30], dealing @Damage[1d6[spirit]|options:area-damage] damage per level. Each creature in the area must attempt a @Check[will|dc:0] save with the following outcomes.</p><hr /><p><strong>Critical Success</strong> The creature takes half damage.</p>\n<p><strong>Success</strong> The creature takes full damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes temporarily cursed by the patron deity. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 day; this is a curse effect that uses the Will save DC as the counteract DC.</p>\n<p><strong>Critical Failure</strong> As failure, except the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}.</p>",
+            "description": "<p>When the divine warden is reduced to 0 HP, it erupts with divine energy in a @Template[type:emanation|distance:30], dealing @Damage[1d6[spirit]|options:area-damage] damage per level. Each creature in the area must attempt a @Check[will|dc:0|options:area-effect,damaging-effect,inflicts:enfeebled,inflicts:stupefied] save with the following outcomes.</p><hr /><p><strong>Critical Success</strong> The creature takes half damage.</p>\n<p><strong>Success</strong> The creature takes full damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes temporarily cursed by the patron deity. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 day; this is a curse effect that uses the Will save DC as the counteract DC.</p>\n<p><strong>Critical Failure</strong> As failure, except the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}.</p>",
             "name": "(Divine Warden) Divine Destruction"
         },
         "(Kallas Devil) Blameless": {
@@ -1188,7 +1188,7 @@
             "name": "(Martial Artist) Blazing Gate"
         },
         "(Divine Warden) Faith Bound": {
-            "description": "<p>A divine warden can't attack a creature that openly wears or displays the religious symbol of the divine warden's patron deity unless that creature uses a hostile action against the divine warden first. If the divine warden is intelligent, it can also attack a creature it believes isn't faithful to its deity or who wears the religious symbol as a ruse (typically after succeeding at a Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}).</p>",
+            "description": "<p>A divine warden can't attack a creature that openly wears or displays the religious symbol of the divine warden's patron deity unless that creature uses a hostile action against the divine warden first. If the divine warden is intelligent, it can also attack a creature it believes isn't faithful to its deity or who wears the religious symbol as a ruse (typically after succeeding at a Perception check to [[/act sense-motive]]).</p>",
             "name": "(Divine Warden) Faith Bound"
         },
         "(Vampire, Nosferatu Thrall) Mortal Shield": {
@@ -1478,6 +1478,10 @@
         "(Stargut Hydra) Skymetal Metamorphosis (Siccatite)": {
             "description": "<p>Each stargut hydra has at least one metamorphosis resulting from consuming a specific skymetal and internalizing its properties.</p>\n<p><strong>Siccatite</strong> After the stargut hydra takes fire damage, it becomes superheated, gaining immunity to fire and weakness 10 to cold. While superheated, cold damage can be used to cauterize a stump. After the stargut hydra takes cold damage, it becomes chilled, gaining immunity to cold and weakness 10 to fire.</p>",
             "name": "(Stargut Hydra) Skymetal Metamorphosis (Siccatite)"
+        },
+        "(Naval Crew) Pistol Salvo": {
+            "description": "<p><strong>Frequency</strong> once per 10 minutes</p><hr /><p><strong>Effect</strong> The naval crew draws and fires their flintlock pistols in a @Template[type:burst|distance:10] within 40 feet, dealing @Damage[7d4[piercing]|options:area-damage] damage (@Check[reflex|dc:23|basic|options:area-effect] save). Each creature uses the weaker of its resistance or immunity to piercing or bludgeoning damage, and any that critically fails its save takes an additional @Damage[10[piercing]|options:area-damage] damage after doubling. When the naval crew is reduced to 2 or fewer segments, this area decreases to a @Template[type:burst|distance:5].</p>",
+            "name": "(Naval Crew) Pistol Salvo"
         },
         "(Special Forces) Punitive Attack": {
             "description": "<p><strong>Trigger</strong> An enemy within 5 feet of the special forces unit uses a manipulate action or a move action, makes a ranged attack, or leaves a square during a move action it's using</p><hr /><p><strong>Effect</strong> The special forces troops swing their weapons. The triggering enemy takes @Damage[(5d6+10)[slashing]] damage (@Check[reflex|dc:34|basic] save). If the creature critically fails its saving throw and the trigger was a manipulate action, the troop disrupts that action.</p>",

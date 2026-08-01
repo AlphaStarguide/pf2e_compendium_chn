@@ -757,6 +757,7 @@
             "disable": "<p>@Check[thievery|dc:38|name:Acidify Slime|traits:action:disable-a-device] (master) or @Check[crafting|dc:34|name:Acidify Slime] (expert) to acidify the slime inside the tank, destroying the eyeballs</p>",
             "hazarddescription": "<p>A vat of thick glass stands 10 feet high and is filled with green slime and fist-sized eyeballs.</p>",
             "routine": "<p>(3 actions) Each round, the vat uses all three of its actions to shoot random eye rays at any living creatures (except Ixusoth) in range.</p>",
+            "reset": "<p>The trap can be reset by adding 100 new eyeballs to the tank and allowing them to grow in the slime for 1 week.</p>",
             "stealthdetails": "<p>(master)</p>",
             "items": {
                 "Eye-Opener": {
@@ -765,7 +766,7 @@
                 },
                 "Spill Eyeballs": {
                     "name": "Spill Eyeballs",
-                    "description": "<p><strong>Trigger</strong> The tank reaches its Broken Threshold</p>\n<hr />\n<p><strong>Effect</strong> The glass shatters, spilling eyeballs onto the floor in a @Template[emanation|distance:15]{15-foot radius} and casting <em>grease</em> (DC 33) on the affected area. The eyeball tank is permanently destroyed and can't be reset.<strong>Reset</strong> The trap can be reset by adding 100 new eyeballs to the tank and allowing them to grow in the slime for 1 week.</p>"
+                    "description": "<p><strong>Trigger</strong> The tank reaches its Broken Threshold</p><hr /><p><strong>Effect</strong> The glass shatters, spilling eyeballs onto the floor in a @Template[emanation|distance:15]{15-foot radius} and casting @UUID[Compendium.pf2e.spells-srd.Item.Wu0xFpewMKRK3HG8]{Grease} (@Check[reflex|dc:33|options:item:magical|traits:concentrate,manipulate]) on the affected area. The eyeball tank is permanently destroyed and can't be reset.</p>"
                 }
             }
         },
@@ -4157,8 +4158,8 @@
             },
             "name": "Wrent Dicaspiron",
             "items": {
-                "equipment-Key to the Skinsaw Sanctum Vault": {
-                    "name": "Key to the Skinsaw Sanctum Vault"
+                "equipment-Key": {
+                    "name": "Key"
                 },
                 "Attack of Opportunity": {
                     "name": "Attack of Opportunity",
@@ -4774,7 +4775,7 @@
             "items": {
                 "Exorcism": {
                     "name": "Exorcism",
-                    "description": "<p>Mental damage ignores a siege shard's hardness.</p>\n<p>Additionally, proving the siege shard's generative conflict is over with the @UUID[Compendium.pf2e.actionspf2e.Item.Ma93dpT4K7JbP9gu]{Prove Peace} activity reverts the creature to ordinary stone.</p>"
+                    "description": "<p>Mental damage ignores a siege shard's hardness.</p>\n<p>Additionally, proving the siege shard's generative conflict is over with the @UUID[Compendium.pf2e.adventure-specific-actions.Item.QW2gYIKce3W31xXf]{Prove Peace} activity reverts the creature to ordinary stone.</p>"
                 },
                 "Hardness 5": {
                     "name": "Hardness 5"
@@ -4789,7 +4790,7 @@
                 },
                 "Rejuvenation": {
                     "name": "Rejuvenation",
-                    "description": "<p>When a siege shard is destroyed within 100 feet of a structure, it reforms after [[/br 2d4 #days]] days within the nearest structure, fully healed.</p>\n<p>A siege shard within a structure can permanently destroyed by the @UUID[Compendium.pf2e.adventure-specific-actions.Item.QW2gYIKce3W31xXf]{Prove Peace} activity.</p>"
+                    "description": "<p>When a siege shard is destroyed within 100 feet of a structure, it reforms after [[/gmr 2d4 #days]] days within the nearest structure, fully healed.</p>\n<p>A siege shard within a structure can permanently destroyed by the @UUID[Compendium.pf2e.adventure-specific-actions.Item.QW2gYIKce3W31xXf]{Prove Peace} activity.</p>"
                 }
             }
         },
@@ -5102,7 +5103,7 @@
                 },
                 "Dreadsong": {
                     "name": "Dreadsong",
-                    "description": "<p>The dreadsong dancer whirls their howling songblades and cloaks themself in illusion magic. Each non-fiend creature in a @Template[emanation|distance:30] from the dreadsong dancer must attempt a @Check[will|dc:29] save.</p>\n<hr />\n<p><strong>Critical Success</strong> No effect, and the creature is temporarily immune for 24 hours. The dreadsong dancer is affected by their performance anxiety.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}, and the dreadsong dancer is @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected} by the creature for 1 minute. The creature can't use Seek to find the dreadsong dancer.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature can't reduce its frightened condition below 2 for 1 minute. In addition, the dreadsong dancer is affected by its performance anxiety.</p>"
+                    "description": "<p>The dreadsong dancer whirls their howling songblades and cloaks themself in illusion magic. Each non-fiend creature in a @Template[emanation|distance:30] from the dreadsong dancer must attempt a @Check[will|dc:29|options:area-effect,inflicts:frightened] save.</p><hr /><p><strong>Critical Success</strong> No effect, and the creature is temporarily immune for 24 hours. The dreadsong dancer is affected by their performance anxiety.</p>\n<p><strong>Success</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}.</p>\n<p><strong>Failure</strong> The creature is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}, and the dreadsong dancer is @UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{Undetected} by the creature for 1 minute. The creature can't use Seek to find the dreadsong dancer.</p>\n<p><strong>Critical Failure</strong> As failure, but the creature can't reduce its frightened condition below 2 for 1 minute. In addition, the dreadsong dancer is affected by its performance anxiety.</p>"
                 },
                 "Rend": {
                     "name": "Rend",
@@ -5155,7 +5156,7 @@
                 },
                 "Supersonic Hearing": {
                     "name": "Supersonic Hearing",
-                    "description": "<p>Mobana has spent years in close proximity to the @UUID[Compendium.pf2e.equipment-srd.Item.k9BYXA4b7Z4Hy6lZ]{Deafening Music Box} in her possession and is immune to its effects. She also gains a +2 circumstance bonus against sonic effects and effects that impose the deafened condition</p>"
+                    "description": "<p>Mobana has spent years in close proximity to the @UUID[Compendium.pf2e.equipment-srd.Item.k9BYXA4b7Z4Hy6lZ]{Deafening Music Box} in her possession and is immune to its effects. She also gains a +2 circumstance bonus against sonic effects and effects that impose the @UUID[Compendium.pf2e.conditionitems.Item.9PR9y0bi4JPKnHPR]{Deafened} condition.</p>"
                 },
                 "Swift Sneak": {
                     "name": "Swift Sneak",

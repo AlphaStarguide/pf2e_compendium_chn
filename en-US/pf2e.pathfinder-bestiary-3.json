@@ -208,11 +208,11 @@
             "items": {
                 "Divine Destruction": {
                     "name": "Divine Destruction",
-                    "description": "<p>When the divine warden is reduced to 0 HP, it erupts with divine energy in a @Template[emanation|distance:30], dealing @Damage[5d6[void]|options:area-damage] damage. Each creature in the area must attempt a @Check[will|dc:19|options:area-effect,damaging-effect] save with the following outcomes.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes half damage.</p>\n<p><strong>Success</strong> The creature takes full damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes temporarily cursed by the patron deity. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 day; this is a curse effect that uses the Will save DC as the counteract DC.</p>\n<p><strong>Critical Failure</strong> As failure, except the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}.</p>"
+                    "description": "<p>When the divine warden is reduced to 0 HP, it erupts with divine energy in a @Template[emanation|distance:30], dealing @Damage[5d6[void]|options:area-damage] damage. Each creature in the area must attempt a @Check[will|dc:19|options:area-effect,damaging-effect,inflicts:enfeebled,inflicts:stupefied] save with the following outcomes.</p>\n<hr />\n<p><strong>Critical Success</strong> The creature takes half damage.</p>\n<p><strong>Success</strong> The creature takes full damage.</p>\n<p><strong>Failure</strong> The creature takes full damage and becomes temporarily cursed by the patron deity. The creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} for 1 day; this is a curse effect that uses the Will save DC as the counteract DC.</p>\n<p><strong>Critical Failure</strong> As failure, except the creature becomes @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} and @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2}.</p>"
                 },
                 "Faith Bound": {
                     "name": "Faith Bound",
-                    "description": "<p>A divine warden can't attack a creature that openly wears or displays the religious symbol of the divine warden's patron deity unless that creature uses a hostile action against the divine warden first. If the divine warden is intelligent, it can also attack a creature it believes isn't faithful to its deity or who wears the religious symbol as a ruse (typically after succeeding at a Perception check to @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}).</p>"
+                    "description": "<p>A divine warden can't attack a creature that openly wears or displays the religious symbol of the divine warden's patron deity unless that creature uses a hostile action against the divine warden first. If the divine warden is intelligent, it can also attack a creature it believes isn't faithful to its deity or who wears the religious symbol as a ruse (typically after succeeding at a Perception check to [[/act sense-motive]]).</p>"
                 },
                 "Faithful Weapon": {
                     "name": "Faithful Weapon",
@@ -3065,7 +3065,7 @@
                 },
                 "Bully the Departed": {
                     "name": "Bully the Departed",
-                    "description": "<p>The skelm draws upon the spirit of one of his deceased victims, tormenting their soul beyond the grave. Until the end of his next turn, the soul skelm gains regeneration 15 (deactivated by force or good), and he deals an extra @Damage[1d8[spirit]] damage on his Strikes.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.gHczZWA34WQx4px0]{Effect: Bully the Departed}</p>"
+                    "description": "<p>The skelm draws upon the spirit of one of his deceased victims, tormenting their soul beyond the grave. Until the end of his next turn, the soul skelm gains regeneration 15 (deactivated by force or holy), and he deals an extra 1d8 spirit damage on his Strikes.</p>"
                 },
                 "Change Shape": {
                     "name": "Change Shape",
@@ -4623,39 +4623,6 @@
                 "Transpose": {
                     "name": "Transpose",
                     "description": "<p>The amalgamite chooses up to two destabilized creatures they can see within 50 feet and swaps their positions, or moves a single such creature to an unoccupied space they can see within range. If the amalgamite chooses two creatures, they can choose their self as one of these creatures, but both targets must be the same size.</p>\n<p>An unwilling creature can attempt a @Check[will|dc:33] save. If either target succeeds at this saving throw, both are unaffected.</p>"
-                }
-            }
-        },
-        "Rhu-Chalik": {
-            "prototypeToken": {
-                "name": "Rhu-Chalik"
-            },
-            "data": {
-                "placeHolder": "placeHolder"
-            },
-            "name": "Rhu-Chalik",
-            "publicNotes": "<p>The alien entities known as rhu-chaliks serve as scouts for a conglomeration of deep-space conquerors called the Dominion of the Black. Their masters use them as spies, tasking them with harvesting the thoughts and memories of sentient creatures into a vast repository of knowledge designed to eventually unravel every secret of existence.</p>\n<p>Also called void wanderers, rhu-chaliks can survive the depths of space indefinitely. They are extremely long-lived and capable of traversing the vastness of space between worlds. Rhu-chaliks prefer to work alone in order to reduce potential overlap in their mind predations. The furtive beings are calculating and infinitely patient, seeking only the most exceptional minds to cast beyond the stars to their masters.</p>",
-            "ac": "all-around vision",
-            "items": {
-                "All-Around Vision": {
-                    "name": "All-Around Vision",
-                    "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.AllAroundVision]</p>"
-                },
-                "No Breath": {
-                    "name": "No Breath",
-                    "description": "<p>A rhu-chalik doesn't breathe and is immune to effects that require breathing (such as inhaled poisons).</p>"
-                },
-                "Excruciating Enzyme": {
-                    "name": "Excruciating Enzyme",
-                    "description": "<p>A rhu-chalik's tendrils secrete an enzyme that causes intense pain. A living creature hit by a tendril Strike must succeed at a @Check[fortitude|dc:24] save or become @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain.</p>"
-                },
-                "Project Terror": {
-                    "name": "Project Terror",
-                    "description": "<p><strong>Requirements</strong> The rhu-chalik has successfully affected the target with @UUID[Compendium.pf2e.spells-srd.Item.9BnhadUO8FMLmeZ3]{Mind Probe}, @UUID[Compendium.pf2e.spells-srd.Item.KHnhPHL4x1AQHfbC]{Mind Reading}, or Project Terror in the last minute</p>\n<hr />\n<p><strong>Effect</strong> The rhu-chalik creates nightmarish visions in the target's mind. The target must attempt a @Check[will|dc:24] save.</p>\n<hr />\n<p><strong>Critical Success</strong> The target creature is unaffected and temporarily immune to Project Terror for 1 minute.</p>\n<p><strong>Success</strong> The target is unaffected.</p>\n<p><strong>Failure</strong> The target becomes @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}. Failing additional saves against this effect increases the frightened condition value by 2; if this would increase the target's frightened value beyond frightened 4, the target is @UUID[Compendium.pf2e.conditionitems.Item.sDPxOjQ9kx2RZE8D]{Fleeing} for 1 round and @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 4}.</p>\n<p><strong>Critical Failure</strong> As failure, but the target becomes @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} for 30 minutes instead of fleeing.</p>"
-                },
-                "Void Transmission": {
-                    "name": "Void Transmission",
-                    "description": "<p><strong>Requirements</strong> The rhu-chalik is adjacent to an @UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]{Unconscious} creature</p>\n<hr />\n<p><strong>Effect</strong> The rhu-chalik spends 10 minutes copying the creature's entire consciousness and mentally sends this copied consciousness through the void of space to their waiting masters.</p>\n<p>The target creature is deeply disoriented by this procedure, becoming @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} for 1 day afterward. If the creature is revived or moved away from the rhu-chalik during the process, Void Transmission fails and the target is unaffected.</p>"
                 }
             }
         },
