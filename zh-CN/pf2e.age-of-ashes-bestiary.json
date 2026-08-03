@@ -708,7 +708,7 @@
             "hazarddescription": "<p>一名身着长袍的精灵女性站在水中。她会引诱任何进入房间的人和她一同在池中共浴。</p>",
             "reset": "<p>当妲茉迪尔被摧毁或者她设法将一个生物的生命值降低至0点时，她的魂魄会暂时平息下来。她将会在1分钟后再度归来</p>",
             "routine": "<p>（3动作）作祟尝试以匕首进行打击。</p>",
-            "stealthdetails": "<p>（传奇）或DC47来注意到池中的匕首开始自行活动起来。</p>",
+            "stealthdetails": "<p>（传奇）或@Check[perception|dc:47]来注意到池中的匕首开始自行活动起来。</p>",
             "data": {
                 "placeHolder": "placeHolder"
             },
@@ -2011,7 +2011,7 @@
             "items": {
                 "Radiant Explosion": {
                     "name": "辉煌爆破 Radiant Explosion",
-                    "description": "<p><strong>触发</strong> 有生物碰触石门；</p>\n<hr />\n<p><strong>效果</strong> 所有距离石门20尺范围内的生物会被辉煌之光所灼伤，承受@Damage[20d6[fire]]伤害（@Check[reflex|dc:40|basic]豁免）。在此豁免中失败的生物会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{目盲 Blinded}1小时（大失败时为永久目盲）。</p>"
+                    "description": "<p><strong>触发</strong> 有生物碰触石门</p>\n<hr />\n<p><strong>效果</strong> 所有距离石门20尺范围内的生物会被辉煌之光所灼伤，承受@Damage[20d6[fire]|options:area-damage]伤害（@Check[reflex|dc:40|basic|options:area-effect,inflicts:blinded]豁免）。在此豁免中失败的生物会@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1小时（大失败时为永久目盲）。</p>"
                 }
             },
             "prototypeToken": {
@@ -3176,7 +3176,7 @@
             "items": {
                 "Eerie Flexibility": {
                     "name": "怪异柔韧 Eerie Flexibility",
-                    "description": "<p>与其体型无关，塞瓦洛格的诸多关节允许它如同中型生物一般通过狭窄的空间。当挤入时，它能以全速移动。</p>"
+                    "description": "<p>与其体型无关，塞瓦洛格的诸多关节允许它如同中型生物一般通过狭窄的空间。当@UUID[Compendium.pf2e.actionspf2e.Item.kMcV8e5EZUxa6evt]时，它能以全速移动。</p>"
                 },
                 "Furious Claws": {
                     "name": "狂怒利爪 Furious Claws",
@@ -3307,7 +3307,7 @@
                 },
                 "Heat Surge": {
                     "name": "热能激增 Heat Surge",
-                    "description": "<p>当佐坦尼之嗣受到重击时，它的身躯陡然升温，其壳内炉膛能力造成的伤害增加至@Damage[10d8[persistent,fire]]，直至其下个回合开始。</p>"
+                    "description": "<p>当佐坦尼之嗣受到重击时，它的身躯陡然升温，其壳内炉膛能力造成的伤害增加至10d8，直至其下个回合开始。</p>"
                 },
                 "Tremorsense": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.Tremorsense]</p>",
