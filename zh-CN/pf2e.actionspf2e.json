@@ -703,7 +703,7 @@
         },
         "Primal Roar": {
             "name": "原始咆哮 Primal Roar",
-            "description": "<p>你的幻灵能够进行恐怖的怒吼，或任何符合其形态的其他可怖声响。你的幻灵对每个能听到怒吼的生物[[/act demoralize]]，进行一次威吓检定对抗每个目标的意志DC。即使双方不共享语言，这次检定也不会因不共享语言而承受减值。</p>"
+            "description": "<p>你的幻灵能够进行恐怖的怒吼或任何符合其形态的其他可怖声响。你的幻灵对每个能听到怒吼的生物[[/act demoralize]]，进行一次威吓检定对抗每个目标的意志DC。即使双方不共享语言，这次检定也不会因不共享语言而承受减值。</p>"
         },
         "Prophecy's Pawn": {
             "name": "预言之卒 Prophecy's Pawn",
@@ -2367,7 +2367,7 @@
         },
         "Acrid Barrage": {
             "name": "刺鼻弹幕 Acrid Barrage",
-            "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 你灵光内的每个敌人受到@Damage[ternary(gte(@actor.level, 18), 7, ternary(gte(@actor.level, 15), 6, 5))d6[acid]]伤害和@Damage[2d6[persistent,acid]]伤害，并进行@Check[reflex|against:class-spell|basic]豁免，对抗你的职业DC或法术DC中的较高者。初始伤害在15级时增加至6d6，在18级时增加至7d6。</p>"
+            "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 你灵光内的每个敌人受到@Damage[ternary(gte(@actor.level, 18), 7, ternary(gte(@actor.level, 15), 6, 5))d6[acid],2d6[persistent,acid]|options:area-damage]伤害，@Check[reflex|against:class-spell|basic|options:area-effect]豁免，对抗你的职业DC或法术DC中的较高者。初始伤害在15级时增加至6d6，在18级时增加至7d6。</p>"
         },
         "Bounce Away": {
             "name": "弹开 Bounce Away",
@@ -2474,11 +2474,11 @@
             "name": "吞噬奴仆 Consume Thrall"
         },
         "Overflowing Blade": {
-            "description": "<p><strong>需求</strong> 你正处于满溢状态</p><hr /><p><strong>效果</strong> 你引导内在枢纽中的魔力，使其覆盖在你的武器或无武装打击上，赋予它魔法能量来产生毁灭性的攻击。作出一次近战打击。若打击命中，你造成额外@Damage[1d4[force]]伤害。在10级时，额外伤害增加至@Damage[2d4[force]]伤害。在18级时，额外伤害增加至@Damage[3d4[force]]伤害。你不再处于满溢状态。</p>",
+            "description": "<p><strong>需求</strong> 你正处于满溢状态</p><hr /><p><strong>效果</strong> 你引导内在枢纽中的魔力，使其覆盖在你的武器或无武装打击上，赋予它魔法能量来产生毁灭性的攻击。作出一次近战打击。若打击命中，你造成额外1d4力场伤害。在10级时，额外伤害增加至2d4力场伤害。在18级时，额外伤害增加至3d4力场伤害。你不再处于满溢状态。</p>",
             "name": "满溢之刃 Overflowing Blade"
         },
         "Trace Rune": {
-            "description": "<p><span class=\"action-glyph\">1</span>或<span class=\"action-glyph\">2</span></p>\n<p><strong>需求</strong> 你持握或穿戴着@UUID[Compendium.pf2e.equipment-srd.Item.y34yjumCFakrbtdw]</p><hr /><p>你的手指舞动，闪耀着光芒留下符文的图像。你可将一个符文应用于与符文用法条目相符的一个相邻目标。你同时可以拥有任意数量描画的符文，但每个符文只会保留到你的下个回合结束。</p>\n<p>如果你花费2个动作来描画符文，你会在空中绘制符文，并使其出现在30尺内的一个目标身上。</p>",
+            "description": "<p><span class=\"action-glyph\">1</span>或<span class=\"action-glyph\">2</span></p><hr /><p>你的手指舞动，闪耀着光芒留下符文的图像。你可将一个符文应用于与符文用法条目相符的一个相邻目标。你同时可以拥有任意数量描画的符文，但每个符文只会保留到你的下个回合结束。</p>\n<p>如果你花费2个动作来描画符文，你会在空中绘制符文，并使其出现在30尺内的一个目标身上。</p>",
             "name": "描画符文 Trace Rune"
         },
         "Shift Spell": {
