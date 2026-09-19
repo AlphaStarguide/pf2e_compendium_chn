@@ -269,7 +269,8 @@ class NPCTranslator {
                 entry.type === "equipment" ||
                 entry.type === "consumable" ||
                 entry.type === "treasure" ||
-                entry.type === "backpack"
+                entry.type === "backpack" ||
+                entry.type === "ammo"
             ) {
                 arr[index] = this.dict.translateItem(
                     entry,
