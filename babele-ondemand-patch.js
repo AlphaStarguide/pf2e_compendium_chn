@@ -41,6 +41,7 @@ const ACTOR_IMPORT_INTERNAL_OPTION = "__babeleOnDemandActorImportTranslate";
 
 let capturedBabele = null;
 let patched = false;
+const documentIndexOperations = new WeakMap();
 
 const __patchDebugRoot = globalThis.BabeleOnDemandPatchDebug ?? (globalThis.BabeleOnDemandPatchDebug = {});
 if (typeof __patchDebugRoot.actorImport !== "boolean") __patchDebugRoot.actorImport = ACTOR_IMPORT_DEBUG_DEFAULT;
@@ -1648,6 +1649,55 @@ function scheduleDocumentIndexRebuild(state, reason = "manual") {
 	}, 50);
 }
 
+function queueDocumentIndexOperation(documentIndex, operation) {
+	const previous = documentIndexOperations.get(documentIndex) ?? Promise.resolve();
+	const pending = previous.catch(() => {}).then(async () => {
+		await documentIndex.ready;
+		return operation();
+	});
+	// Publish the barrier before any await, including the wait for the native index.
+	documentIndexOperations.set(documentIndex, pending);
+	const release = () => {
+		if (documentIndexOperations.get(documentIndex) === pending) documentIndexOperations.delete(documentIndex);
+	};
+	pending.then(release, release);
+	return pending;
+}
+
+function scheduleDocumentIndexEntryReplace(state, document) {
+	const documentIndex = game.documentIndex;
+	if (!document?.uuid || !document?.pack
+		|| typeof documentIndex?.replaceDocument !== "function"
+		|| typeof documentIndex?.removeDocument !== "function") {
+		scheduleDocumentIndexRebuild(state, "indexDocument-fallback");
+		return;
+	}
+	const entries = state.documentIndexEntries ??= new Map();
+	entries.set(document.uuid, document);
+	if (state.documentIndexEntryTimer != null) return;
+	state.documentIndexEntryTimer = globalThis.setTimeout(async () => {
+		try {
+			await queueDocumentIndexOperation(documentIndex, () => {
+				if (game.documentIndex !== documentIndex) throw new Error("Document index changed while waiting");
+				// Include updates received while waiting, then let reentrant updates form the next batch.
+				const batch = Array.from(entries.values());
+				entries.clear();
+				for (const doc of batch) {
+					const pack = game.packs?.get?.(doc.pack);
+					if (pack?.index?.get?.(doc.id)) documentIndex.replaceDocument(doc);
+					else documentIndex.removeDocument(doc);
+				}
+			});
+		} catch {
+			entries.clear();
+			scheduleDocumentIndexRebuild(state, "indexDocument-fallback");
+		} finally {
+			state.documentIndexEntryTimer = null;
+			if (entries.size) scheduleDocumentIndexEntryReplace(state, entries.values().next().value);
+		}
+	}, 50);
+}
+
 async function rebuildDocumentIndexCompat() {
 	const documentIndex = game.documentIndex;
 	if (!documentIndex || typeof documentIndex.index !== "function") {
@@ -1658,14 +1708,15 @@ async function rebuildDocumentIndexCompat() {
 		treeCount: Object.keys(documentIndex?.trees ?? {}).length,
 		uuidCount: Object.keys(documentIndex?.uuids ?? {}).length,
 	});
-	await documentIndex.ready;
-	for (const key of Object.keys(documentIndex?.trees ?? {})) {
-		delete documentIndex.trees[key];
-	}
-	for (const key of Object.keys(documentIndex?.uuids ?? {})) {
-		delete documentIndex.uuids[key];
-	}
-	await documentIndex.index();
+	await queueDocumentIndexOperation(documentIndex, async () => {
+		for (const key of Object.keys(documentIndex?.trees ?? {})) {
+			delete documentIndex.trees[key];
+		}
+		for (const key of Object.keys(documentIndex?.uuids ?? {})) {
+			delete documentIndex.uuids[key];
+		}
+		await documentIndex.index();
+	});
 	tracePatch("rebuildDocumentIndexCompat end", {
 		treeCount: Object.keys(documentIndex?.trees ?? {}).length,
 		uuidCount: Object.keys(documentIndex?.uuids ?? {}).length,
@@ -2705,7 +2756,7 @@ function registerWrappers() {
 				}
 
 				translateIndexTitles(state, [entry], packId);
-				scheduleDocumentIndexRebuild(state, "indexDocument");
+				scheduleDocumentIndexEntryReplace(state, document);
 				tracePatch("indexDocument applied", {
 					packId,
 					documentId: id,
