@@ -113,17 +113,16 @@ Hooks.once("babele.init", (babele) => {
 			return changedFields(data, npcTranslator().data(data, translations, dataObject, currentCompendium, translationObject, runtime, params));
 		},
 
-		"npc-item-translation": (
-			data,
-			translations,
-			dataObject,
-			translatedCompendium,
-			translationObject,
-			runtime = {},
-			params = {},
-		) => {
-			const currentCompendium = runtime.currentCompendium?.() ?? translatedCompendium;
-			return npcTranslator().item(data, translations, dataObject, currentCompendium, translationObject, runtime, params);
+		// Translation-only: keep embedded Item export disabled. Reliable source
+		// comparison would require loading original compendium documents.
+		"npc-item-translation": {
+			translate({ value, translation, source, contextCompendium, allTranslations, runtime = {}, params = {} }) {
+				const currentCompendium = runtime.currentCompendium?.() ?? contextCompendium;
+				return npcTranslator().item(value, translation, source, currentCompendium, allTranslations, runtime, params);
+			},
+			extract() {
+				return undefined;
+			},
 		},
 	});
 

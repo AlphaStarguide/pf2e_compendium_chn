@@ -34,6 +34,8 @@ const NPC_TRANSLATOR_DEP_PACKS = [
 	"pf2e.deities",
 	"pf2e.equipment-srd",
 ];
+const NPC_DEPENDENCY_CONCURRENCY = 4;
+const TRANSLATION_FAILURE_RETRY_MS = 5000;
 
 const ACTOR_IMPORT_DEBUG_DEFAULT = false;
 const PATCH_TRACE_DEFAULT = false;
@@ -228,10 +230,17 @@ function isTranslationPayload(value) {
 }
 
 function sortMappingFilesByDirectoryPreference(files = []) {
+	// Preserve source priority (system, registered modules, user directory).
+	// Only order the two recognized names inside the same directory.
+	const directories = new Map();
+	for (const file of files) {
+		const directory = getDirName(file);
+		if (!directories.has(directory)) directories.set(directory, directories.size);
+	}
 	return [...files].sort((a, b) => {
 		const dirA = getDirName(a);
 		const dirB = getDirName(b);
-		if (dirA !== dirB) return dirA.localeCompare(dirB);
+		if (dirA !== dirB) return directories.get(dirA) - directories.get(dirB);
 		const nameA = getBaseName(a).toLowerCase();
 		const nameB = getBaseName(b).toLowerCase();
 		if (nameA === nameB) return 0;
@@ -239,6 +248,27 @@ function sortMappingFilesByDirectoryPreference(files = []) {
 		if (nameB === "mappings.json") return 1;
 		return nameA.localeCompare(nameB);
 	});
+}
+
+function normalizeTranslationEntries(entries) {
+	if (!Array.isArray(entries)) return { ...(entries ?? {}) };
+	// Babele's array format identifies entries by `id`.
+	return Object.fromEntries(entries.filter((entry) => entry?.id).map((entry) => [entry.id, entry]));
+}
+
+function mergeTranslationRecords(base, override) {
+	const record = (value) => value !== null && typeof value === "object" && !Array.isArray(value);
+	const merged = { ...base };
+	for (const [key, value] of Object.entries(override)) {
+		const previous = Object.hasOwn(merged, key) ? merged[key] : undefined;
+		// Entry names (including embedded Item names) may contain literal dots.
+		// Foundry's path-expanding object merge must not reinterpret those keys.
+		Object.defineProperty(merged, key, {
+			value: record(previous) && record(value) ? mergeTranslationRecords(previous, value) : value,
+			writable: true, enumerable: true, configurable: true,
+		});
+	}
+	return merged;
 }
 
 function mergeTranslationPayloads(payloads) {
@@ -252,13 +282,9 @@ function mergeTranslationPayloads(payloads) {
 		translation.label = payload.label ?? translation.label;
 
 		if (payload.entries) {
-			if (Array.isArray(translation.entries) || Array.isArray(payload.entries)) {
-				const a = Array.isArray(translation.entries) ? translation.entries : [];
-				const b = Array.isArray(payload.entries) ? payload.entries : [];
-				translation.entries = a.concat(b);
-			} else {
-				translation.entries = { ...(translation.entries ?? {}), ...payload.entries };
-			}
+			translation.entries = mergeTranslationRecords(
+				normalizeTranslationEntries(translation.entries), normalizeTranslationEntries(payload.entries),
+			);
 		}
 
 		if (payload.mapping) translation.mapping = { ...(translation.mapping ?? {}), ...payload.mapping };
@@ -507,6 +533,74 @@ function languageMatches(registered, current) {
 	return CHINESE_LANGUAGE_ALIASES.has(registered) && CHINESE_LANGUAGE_ALIASES.has(current);
 }
 
+function invalidateMappingAggregate(state) {
+	state.mappingVersion = (state.mappingVersion ?? 0) + 1;
+	state.documentMappingsCache = null;
+}
+
+function installMappingAggregateCache(babele, state) {
+	if (!isModernBabele(state) || state.original.documentMappingsGetter) return;
+	let owner = babele;
+	let descriptor;
+	while (owner && !(descriptor = Object.getOwnPropertyDescriptor(owner, "documentMappings"))) {
+		owner = Object.getPrototypeOf(owner);
+	}
+	if (!descriptor || (!descriptor.get && !descriptor.value)) return;
+	const readOriginal = descriptor.get ? descriptor.get.bind(babele) : () => descriptor.value;
+	state.original.documentMappingsGetter = readOriginal;
+	Object.defineProperty(babele, "documentMappings", {
+		configurable: true,
+		get() {
+			if (!isOnDemandMode()) return readOriginal();
+			if (state.documentMappingsCache?.version === state.mappingVersion) {
+				return state.documentMappingsCache.value;
+			}
+			const base = readOriginal();
+			// In lightweight mode the patch owns discovered mapping files. Keep
+			// those layers out of API registrations so reload can replace/remove
+			// them without accumulating conditional variants.
+			const value = base?.builtInMappings && base?.identityExtractors && base?.converterRegistry
+				? new base.constructor(base.builtInMappings, {
+					registeredMappings: base.registeredMappings ?? [],
+					loadedMappings: state.loadedGlobalMappings ?? [],
+					identityExtractors: base.identityExtractors,
+					converterRegistry: base.converterRegistry,
+				}) : base;
+			state.documentMappingsCache = { version: state.mappingVersion, value };
+			return value;
+		},
+	});
+}
+
+function resetOnDemandState(babele, state) {
+	state.generation = (state.generation ?? 0) + 1;
+	state.packTranslationUrls = new Map();
+	state.packTranslationsLoading = new Map();
+	state.packTranslationReferences = new Map();
+	state.packTranslationFailures = new Map();
+	state.packNeedsNpcDependencies = new Map();
+	state.translationWaits = new Map();
+	state.packMissingConverters = new Map();
+	state.compatPacks = new foundry.utils.Collection();
+	state.loadedPacks = new Map();
+	state.lightMappedPacks = new Map();
+	state.globalMappingsLoaded = false;
+	state.loadedGlobalMappings = [];
+	state.translationFilesCache = null;
+	state.mappingFilesCache = null;
+	state.labels = null;
+	state.titleIndex = null;
+	state.actorNamePackLookup = null;
+	state.actorNamePackLookupSource = null;
+	state.npcDepsLoaded = false;
+	state.npcDepsLoading = null;
+	state.lightRuntimeApplied = false;
+	state.readyRuntimeRefreshDone = false;
+	state.initOnDemandPromise = null;
+	invalidateMappingAggregate(state);
+	babele.initialized = false;
+}
+
 function tryPatchBabele(babele) {
 	installFetchDiagnostics();
 	tracePatch("tryPatchBabele entered", snapshotPatchState(babele));
@@ -580,11 +674,16 @@ function tryPatchBabele(babele) {
 	}
 
 	state.apiLevel = detectBabeleApiLevel(babele);
+	state.generation = state.generation ?? 0;
+	state.mappingVersion = state.mappingVersion ?? 0;
 	logPatch("patching Babele facade", { apiLevel: state.apiLevel });
 	state.registeredModules = state.registeredModules ?? [];
 	state.packTranslationUrls = state.packTranslationUrls ?? new Map();
 	state.packTranslationsLoading = state.packTranslationsLoading ?? new Map();
 	state.packTranslationReferences = state.packTranslationReferences ?? new Map();
+	state.packTranslationFailures = state.packTranslationFailures ?? new Map();
+	state.packNeedsNpcDependencies = state.packNeedsNpcDependencies ?? new Map();
+	state.loadedGlobalMappings = state.loadedGlobalMappings ?? [];
 	state.globalMappingsLoaded = !!state.globalMappingsLoaded;
 	state.labels = state.labels ?? null;
 	state.titleIndex = state.titleIndex ?? null;
@@ -603,6 +702,7 @@ function tryPatchBabele(babele) {
 	state.lightRuntimeApplied = !!state.lightRuntimeApplied;
 	state.initOnDemandPromise = state.initOnDemandPromise ?? null;
 	state.readyRuntimeRefreshDone = !!state.readyRuntimeRefreshDone;
+	installMappingAggregateCache(babele, state);
 
 	tracePatch("patch state initialized", snapshotPatchState(babele, state));
 
@@ -616,22 +716,30 @@ function tryPatchBabele(babele) {
 	};
 
 	babele.loadLabels = async () => {
-		state.labels = await loadLabels(babele);
-		return state.labels;
+		const generation = state.generation;
+		const labels = await loadLabels(babele);
+		if (state.generation === generation) state.labels = labels;
+		return labels;
 	};
 	babele.loadTitleIndex = async () => {
-		state.titleIndex = await loadTitleIndex(babele);
-		return state.titleIndex;
+		const generation = state.generation;
+		const titleIndex = await loadTitleIndex(babele);
+		if (state.generation === generation) state.titleIndex = titleIndex;
+		return titleIndex;
 	};
 
 	babele.shareLabels = async () => {
 		if (!game.user?.isGM) return;
+		const generation = state.generation;
 		const labels = await babele.loadLabels();
+		if (state.generation !== generation) return;
 		await game.settings.set(BABEL_NAMESPACE, SETTING_LABELS, labels);
 	};
 	babele.shareTitleIndex = async () => {
 		if (!game.user?.isGM) return;
+		const generation = state.generation;
 		const ti = await babele.loadTitleIndex();
+		if (state.generation !== generation) return;
 		await game.settings.set(BABEL_NAMESPACE, SETTING_TITLE_INDEX, ti);
 	};
 
@@ -641,6 +749,14 @@ function tryPatchBabele(babele) {
 			return state.original.register(module);
 		};
 	}
+	if (typeof babele.setSystemTranslationsDir === "function") {
+		const setSystemTranslationsDir = babele.setSystemTranslationsDir.bind(babele);
+		babele.setSystemTranslationsDir = (directory) => {
+			const result = setSystemTranslationsDir(directory);
+			state.systemTranslationsDir = directory;
+			return result;
+		};
+	}
 
 	babele.registerConverters = (converters = {}) => {
 		tracePatch("babele.registerConverters called", {
@@ -648,6 +764,7 @@ function tryPatchBabele(babele) {
 			mode: getLoadingModeSetting(),
 		});
 		const result = state.original.registerConverters?.(converters);
+		invalidateMappingAggregate(state);
 		if (!isOnDemandMode()) return result;
 		if (isModernBabele(state) && babele.initialized) {
 			console.warn(
@@ -664,6 +781,7 @@ function tryPatchBabele(babele) {
 	babele.registerMapping = (mapping) => {
 		tracePatch("babele.registerMapping called", { types: Object.keys(mapping ?? {}), mode: getLoadingModeSetting() });
 		const result = state.original.registerMapping?.(mapping);
+		invalidateMappingAggregate(state);
 		if (!isOnDemandMode()) return result;
 		if (isModernBabele(state) && babele.initialized) {
 			console.warn(
@@ -677,7 +795,10 @@ function tryPatchBabele(babele) {
 		return result;
 	};
 
-	babele.ensurePackTranslationsLoaded = async (collection) => ensurePackTranslationsLoaded(babele, state, collection);
+	babele.ensurePackTranslationsLoaded = async (collection, options = {}) => {
+		if (!isOnDemandMode()) return state.original.ensurePackTranslationsLoaded?.(collection, options);
+		return ensurePackTranslationsLoaded(babele, state, collection, options);
+	};
 	babele.isTranslated = (pack) => {
 		if (!isOnDemandMode()) return state.original.isTranslated?.(pack) ?? false;
 		return !!getTranslatedPackCompat(babele, state, normalizePackId(pack));
@@ -714,6 +835,7 @@ function tryPatchBabele(babele) {
 	};
 
 	babele.translateActor = (actor) => {
+		if (!isOnDemandMode()) return state.original.translateActor?.(actor);
 		if (!actor) return state.original.translateActor?.(actor);
 		const dialog = new PatchedOnDemandTranslateDialog(actor);
 		dialog.render(true);
@@ -743,6 +865,9 @@ function tryPatchBabele(babele) {
 				: typeof callbackOrOptions?.afterInitialized === "function"
 					? callbackOrOptions.afterInitialized
 					: null;
+		const reload = callbackOrOptions?.reload === true;
+		if (reload) resetOnDemandState(babele, state);
+		const generation = state.generation;
 		if (babele.initialized) {
 			tracePatch("babele.init short-circuit: already initialized");
 			if (afterInitialized) await afterInitialized(babele);
@@ -752,20 +877,24 @@ function tryPatchBabele(babele) {
 		if (state.initOnDemandPromise) {
 			tracePatch("babele.init joining in-flight initOnDemand");
 			await state.initOnDemandPromise;
+			if (state.generation !== generation) return false;
 			if (afterInitialized) await afterInitialized(babele);
 			tracePatch("babele.init after joined callback", snapshotPatchState(babele, state));
 			return true;
 		}
 
 		tracePatch("babele.init starting initOnDemand");
-		state.initOnDemandPromise = initOnDemand(babele, state);
+		const initialization = initOnDemand(babele, state);
+		state.initOnDemandPromise = initialization;
 		try {
-			await state.initOnDemandPromise;
+			await initialization;
 		} finally {
-			state.initOnDemandPromise = null;
+			if (state.initOnDemandPromise === initialization) state.initOnDemandPromise = null;
 		}
+		if (state.generation !== generation) return false;
 		tracePatch("babele.init after initOnDemand", snapshotPatchState(babele, state));
 		if (afterInitialized) await afterInitialized(babele);
+		if (reload && state.generation === generation) Hooks.callAll("babele.reinitialized", babele);
 		tracePatch("babele.init after callback", snapshotPatchState(babele, state));
 		return true;
 	};
@@ -812,6 +941,7 @@ function tryPatchBabele(babele) {
 	};
 
 	Hooks.on("babele.ready", async () => {
+		const generation = state.generation;
 		tracePatch("babele.ready hook entered", snapshotPatchState(babele, state));
 		if (!isOnDemandMode()) return;
 		if (state.readyRuntimeRefreshDone) {
@@ -821,11 +951,14 @@ function tryPatchBabele(babele) {
 
 		try {
 			await babele.shareLabels?.();
+			if (state.generation !== generation) return;
 			await babele.shareTitleIndex?.();
 		} catch {}
+		if (state.generation !== generation) return;
 
 		try {
 			const labels = state.labels ?? (await babele.loadLabels?.());
+			if (state.generation !== generation) return;
 			babele.applyLabels?.(labels);
 		} catch {}
 
@@ -836,6 +969,7 @@ function tryPatchBabele(babele) {
 				tracePatch("babele.ready hook skipped runtime refresh: already applied during init");
 			}
 		} catch {}
+		if (state.generation !== generation) return;
 		state.readyRuntimeRefreshDone = true;
 		tracePatch("babele.ready hook completed", snapshotPatchState(babele, state));
 	});
@@ -845,7 +979,7 @@ function tryPatchBabele(babele) {
 			autoTranslateImportedActorInPreCreate(actor, data, userId);
 		});
 		Hooks.on("createActor", (actor, _options, userId) => {
-			void autoTranslateImportedActorAfterCreate(actor, userId);
+			void autoTranslateImportedActorAfterCreate(actor, userId).catch((error) => reportActorTranslationError("create", actor, error));
 		});
 		Hooks.on("preUpdateActor", (actor, change, options, userId) => {
 			if (options?.[ACTOR_IMPORT_INTERNAL_OPTION]) return;
@@ -853,12 +987,12 @@ function tryPatchBabele(babele) {
 		});
 		Hooks.on("updateActor", (actor, change, options, userId) => {
 			if (options?.[ACTOR_IMPORT_INTERNAL_OPTION]) return;
-			void autoTranslateImportedActorAfterUpdate(actor, userId, change);
+			void autoTranslateImportedActorAfterUpdate(actor, userId, change).catch((error) => reportActorTranslationError("update", actor, error));
 		});
 		const repairSheetNames = (sheet) => {
 			const actor = sheet.actor ?? sheet.document;
 			if (actor?.documentName !== "Actor" || !actor.isOwner || !actor.flags?.babele?.translated) return;
-			void repairActorNames(actor).catch((error) => debugActorImport("名称补修失败", { error: String(error) }));
+			void repairActorNames(actor).catch((error) => reportActorTranslationError("name-repair", actor, error));
 		};
 		Hooks.on("renderActorSheet", repairSheetNames);
 		Hooks.on("renderApplicationV2", repairSheetNames);
@@ -872,15 +1006,11 @@ function tryPatchBabele(babele) {
 }
 
 function getSourcePackId(itemData) {
-	const sourceId = itemData?.flags?.core?.sourceId || itemData?._stats?.compendiumSource;
-	const ref = sourceId ? foundry.utils.parseUuid(sourceId) : null;
-	return ref?.collection ?? null;
+	return getActorSourceRef(itemData)?.collection ?? null;
 }
 
 function getActorSourcePackId(actorOrData) {
-	const sourceId = actorOrData?.flags?.core?.sourceId || actorOrData?._stats?.compendiumSource;
-	const ref = sourceId ? foundry.utils.parseUuid(sourceId) : null;
-	return ref?.collection ?? null;
+	return getActorSourceRef(actorOrData)?.collection ?? null;
 }
 
 function shouldRunActorImportAutoTranslate(_babele) {
@@ -928,6 +1058,12 @@ function debugActorImport(message, data = null) {
 		if (data !== null) console.info(`[${PATCH_ID}] [ActorImport] ${message}`, data);
 		else console.info(`[${PATCH_ID}] [ActorImport] ${message}`);
 	} catch {}
+}
+
+function reportActorTranslationError(stage, actor, error) {
+	console.warn(`[${PATCH_ID}] Actor translation failed; unfinished fields remain retryable.`, {
+		stage, actorId: actor?.id ?? actor?._id ?? null, error,
+	});
 }
 
 function normalizeActorNameForLookup(name) {
@@ -1047,13 +1183,41 @@ function packHasActorTranslation(pack, source) {
 }
 
 function getActorSourceRef(actorData) {
-	const sourceId = actorData?.flags?.core?.sourceId || actorData?._stats?.compendiumSource;
-	if (!sourceId) return null;
+	// Foundry 14 stores the canonical origin in _stats. parseUuid.collection is
+	// a Collection instance; every translation registry is keyed by its string ID.
+	const sourceId = actorData?._stats?.compendiumSource || actorData?.flags?.core?.sourceId;
+	if (typeof sourceId !== "string" || !sourceId.startsWith("Compendium.")) return null;
 	try {
-		return foundry.utils.parseUuid(sourceId);
+		const ref = foundry.utils.parseUuid(sourceId);
+		const parts = sourceId.split(".");
+		if (parts.length < 4 || !parts[1] || !parts[2]) return null;
+		return {
+			collection: normalizePackId(ref?.collection) ?? parts.slice(1, 3).join("."),
+			documentId: ref?.primaryId ?? ref?.documentId ?? ref?.id ?? (parts.length === 4 ? parts[3] : parts[4]),
+		};
 	} catch {
 		return null;
 	}
+}
+
+// Name repair and provenance checks need only a handful of scalar fields. Do
+// not serialize every embedded Item/Effect whenever a sheet re-renders.
+function actorNameSnapshot(actor) {
+	const data = actor?._source ?? actor;
+	if (!data) return null;
+	return {
+		_id: data._id ?? actor?.id,
+		type: data.type,
+		name: data.name,
+		originalName: data.originalName ?? actor?.originalName,
+		translated: data.translated ?? actor?.translated,
+		prototypeToken: { name: data.prototypeToken?.name },
+		flags: {
+			core: { sourceId: data.flags?.core?.sourceId },
+			babele: { translated: data.flags?.babele?.translated, originalName: data.flags?.babele?.originalName },
+		},
+		_stats: { compendiumSource: data._stats?.compendiumSource },
+	};
 }
 
 function mergeActorSourceWithChange(actor, change) {
@@ -1113,7 +1277,7 @@ function actorTranslationDelta(source, translated, current = source, root = true
 }
 
 function actorImportSourceIsCurrent(actor, source, allowTranslated = false) {
-	const current = typeof actor?.toObject === "function" ? actor.toObject() : null;
+	const current = actorNameSnapshot(actor);
 	if (!current || (!allowTranslated && current.flags?.babele?.translated)) return false;
 	if (current._id !== source?._id) return false;
 	const originalRef = getActorSourceRef(source);
@@ -1256,8 +1420,7 @@ function actorNameTranslation(babele, state, packId, source) {
 	return { originalNames, name, tokenName };
 }
 
-function actorNameTranslationPatch(babele, state, packId, source, translated = source) {
-	const names = actorNameTranslation(babele, state, packId, source);
+function actorNameTranslationPatch(babele, state, packId, source, translated = source, names = actorNameTranslation(babele, state, packId, source)) {
 	const patch = {};
 	if (!names) return patch;
 	if (names.originalNames.has(source.name) && (!translated?.name || translated.name === source.name) && source.name !== names.name) {
@@ -1288,24 +1451,26 @@ async function repairActorNames(actor) {
 	if (pending.has(actor)) return false;
 	pending.add(actor);
 	try {
-		const source = actor.toObject();
+		const source = actorNameSnapshot(actor);
 		if (!["npc", "hazard"].includes(source.type)) return false;
 		if (!babele.initialized) await babele.init();
+		const generation = state.generation;
 		const sourcePackId = getActorSourcePackId(source);
 		const candidates = sourcePackId ? [sourcePackId] : resolveActorCandidatePackIds(babele, state, source);
 		// Without provenance, an ambiguous name is insufficient for an old Actor.
 		if (!sourcePackId && candidates.length !== 1) return false;
 		for (const packId of candidates) {
-			await babele.ensurePackTranslationsLoaded?.(packId);
+			await babele.ensurePackTranslationsLoaded?.(packId, { skipNpcDependencies: true });
+			if (state.generation !== generation) return false;
 			if (!actorImportSourceIsCurrent(actor, source, true)) return false;
-			const patch = actorNameTranslationPatch(babele, state, packId, source);
-			const payload = actorTranslationDelta(source, patch, actor.toObject());
 			const names = actorNameTranslation(babele, state, packId, source);
+			const patch = actorNameTranslationPatch(babele, state, packId, source, source, names);
+			const payload = actorTranslationDelta(source, patch, actorNameSnapshot(actor));
 			const token = actor.isToken ? actor.token : null;
 			const tokenName = token?.name;
 			const repairToken = names?.originalNames.has(tokenName) && tokenName !== names.tokenName;
 			if (Object.keys(payload).length) await actor.update(payload, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
-			if (repairToken && actorImportSourceIsCurrent(actor, source, true) && token.name === tokenName) {
+			if (repairToken && state.generation === generation && actorImportSourceIsCurrent(actor, source, true) && token.name === tokenName) {
 				await token.update({ name: names.tokenName });
 			}
 			return Object.keys(payload).length > 0 || !!repairToken;
@@ -1489,16 +1654,18 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
 		return;
 	}
 
+	const generation = state.generation;
 	const candidates = resolveActorCandidatePackIds(babele, state, source);
 	if (!candidates.length || typeof babele.translate !== "function") return;
 
 	for (const packId of candidates) {
 		try {
-			await babele.ensurePackTranslationsLoaded?.(packId);
+			await babele.ensurePackTranslationsLoaded?.(packId, { documents: [source] });
 		} catch {
 			debugActorImport("pack翻译加载失败", { packId, actorName: source?.name ?? null });
 			continue;
 		}
+		if (state.generation !== generation) return;
 		if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 
 		const translated = tryTranslateActorFromPack(babele, packId, source);
@@ -1553,15 +1720,17 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId, change) {
 		return;
 	}
 
+	const generation = state.generation;
 	const candidates = resolveActorCandidatePackIds(babele, state, source);
 	if (!candidates.length || typeof babele.translate !== "function") return;
 
 	for (const packId of candidates) {
 		try {
-			await babele.ensurePackTranslationsLoaded?.(packId);
+			await babele.ensurePackTranslationsLoaded?.(packId, { documents: [source] });
 		} catch {
 			continue;
 		}
+		if (state.generation !== generation) return;
 		if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 
 		const translated = tryTranslateActorFromPack(babele, packId, source);
@@ -1578,15 +1747,10 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId, change) {
 }
 
 async function applyTranslatedActorToWorldActor(actor, translated, source) {
-	if (!source || !translated || !actorImportSourceIsCurrent(actor, source, !!source.flags?.babele?.translated)) return;
-	const payload = actorTranslationDelta(source, translated, actor.toObject());
-	delete payload.items;
-	delete payload.effects;
-
-	if (Object.keys(payload).length) {
-		await actor.update(payload, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
-	}
-	if (!actorImportSourceIsCurrent(actor, source, true)) return;
+	const state = game.babele?.__ondemandPatch;
+	const generation = state?.generation;
+	const isCurrent = (allowTranslated = true) => state?.generation === generation && actorImportSourceIsCurrent(actor, source, allowTranslated);
+	if (!source || !translated || !isCurrent(!!source.flags?.babele?.translated)) return;
 
 	const embeddedUpdates = (key) => {
 		const originals = new Map((source[key] ?? []).map((entry) => [entry._id, entry]));
@@ -1603,11 +1767,22 @@ async function applyTranslatedActorToWorldActor(actor, translated, source) {
 	if (itemUpdates.length) {
 		await actor.updateEmbeddedDocuments("Item", itemUpdates, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
 	}
-	if (!actorImportSourceIsCurrent(actor, source, true)) return;
+	if (!isCurrent()) return;
 
 	const effectUpdates = embeddedUpdates("effects");
 	if (effectUpdates.length) {
 		await actor.updateEmbeddedDocuments("ActiveEffect", effectUpdates, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
+	}
+	if (!isCurrent()) return;
+
+	// Commit root text and completion flags only after embedded writes succeed.
+	// A rejected Item/Effect update leaves the original Actor name available for
+	// a later retry. Recompute the delta now to preserve edits made while waiting.
+	const payload = actorTranslationDelta(source, translated, actor.toObject());
+	delete payload.items;
+	delete payload.effects;
+	if (Object.keys(payload).length) {
+		await actor.update(payload, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
 	}
 
 	debugActorImport("已写回世界Actor翻译", {
@@ -1719,6 +1894,8 @@ class PatchedOnDemandTranslateDialog extends Dialog {
 }
 
 async function initOnDemand(babele, state) {
+	const generation = state.generation;
+	const current = () => state.generation === generation;
 	tracePatch("initOnDemand start", snapshotPatchState(babele, state));
 	if (!isModernBabele(state)) {
 		babele.packs = new foundry.utils.Collection();
@@ -1728,8 +1905,10 @@ async function initOnDemand(babele, state) {
 
 	tracePatch("initOnDemand loadGlobalMappingsOnce", snapshotPatchState(babele, state));
 	await loadGlobalMappingsOnce(babele, state);
+	if (!current()) return;
 
 	const files = await getTranslationFiles(babele, state);
+	if (!current()) return;
 	tracePatch("initOnDemand translation files discovered", {
 		count: files?.length ?? 0,
 		sample: (files ?? []).slice(0, 10),
@@ -1738,9 +1917,12 @@ async function initOnDemand(babele, state) {
 	tracePatch("initOnDemand packTranslationUrls indexed", { entries: state.packTranslationUrls.size });
 
 	await ensureSpecialFolderTranslationsLoaded(babele, state, files);
+	if (!current()) return;
 
 	try {
-		state.labels = await loadLabels(babele);
+		const labels = await loadLabels(babele);
+		if (!current()) return;
+		state.labels = labels;
 		tracePatch("initOnDemand labels loaded", { count: Object.keys(state.labels ?? {}).length });
 		babele.applyLabels?.(state.labels);
 	} catch {
@@ -1748,9 +1930,12 @@ async function initOnDemand(babele, state) {
 	}
 
 	try {
-		state.titleIndex = await loadTitleIndex(babele);
+		const titleIndex = await loadTitleIndex(babele);
+		if (!current()) return;
+		state.titleIndex = titleIndex;
 		tracePatch("initOnDemand titleIndex loaded", { collections: Object.keys(state.titleIndex ?? {}).length });
 	} catch {
+		if (!current()) return;
 		state.titleIndex = {};
 		tracePatch("initOnDemand titleIndex load failed; reset to empty");
 	}
@@ -1761,6 +1946,7 @@ async function initOnDemand(babele, state) {
 		notify: false,
 		rebuildDocumentIndexNow: true,
 	});
+	if (!current()) return;
 	tracePatch("initOnDemand applyLightRuntimeTranslations end", snapshotPatchState(babele, state));
 
 	babele.initialized = true;
@@ -1775,6 +1961,8 @@ async function applyLightRuntimeTranslations(
 	{ shareSources = false, notify = false, rebuildDocumentIndexNow = false, rebuildPackTrees = false } = {},
 ) {
 	if (!babele || !state) return;
+	const generation = state.generation;
+	const current = () => state.generation === generation;
 	tracePatch("applyLightRuntimeTranslations start", {
 		shareSources,
 		notify,
@@ -1785,22 +1973,38 @@ async function applyLightRuntimeTranslations(
 
 	if (shareSources && game.user?.isGM) {
 		try {
-			await game.settings.set(BABEL_NAMESPACE, SETTING_LABELS, state.labels ?? (await loadLabels(babele)));
+			const labels = state.labels ?? (await loadLabels(babele));
+			if (!current()) return;
+			await game.settings.set(BABEL_NAMESPACE, SETTING_LABELS, labels);
 		} catch {}
+		if (!current()) return;
 		try {
-			await game.settings.set(BABEL_NAMESPACE, SETTING_TITLE_INDEX, state.titleIndex ?? (await loadTitleIndex(babele)));
+			const titleIndex = state.titleIndex ?? (await loadTitleIndex(babele));
+			if (!current()) return;
+			await game.settings.set(BABEL_NAMESPACE, SETTING_TITLE_INDEX, titleIndex);
 		} catch {}
+		if (!current()) return;
 		try {
 			const files = await getTranslationFiles(babele, state);
+			if (!current()) return;
 			await game.settings.set(BABEL_NAMESPACE, "translationFiles", files);
 		} catch {}
+		if (!current()) return;
 		try {
 			const mappingFiles = await getMappingFiles(babele, state);
+			if (!current()) return;
 			await game.settings.set(BABEL_NAMESPACE, "mappingFiles", mappingFiles);
 		} catch {}
 	}
+	if (!current()) return;
 
 	const labels = state.labels ?? {};
+	for (const metadata of game.data?.packs ?? []) {
+		if (metadata.originalLabel) metadata.label = metadata.originalLabel;
+	}
+	game.packs?.forEach?.((pack) => {
+		if (pack.metadata?.originalLabel) pack.metadata.label = pack.metadata.originalLabel;
+	});
 	applyLabels(babele, labels);
 	tracePatch("applyLightRuntimeTranslations labels applied", { labelsCount: Object.keys(labels ?? {}).length });
 
@@ -1816,6 +2020,7 @@ async function applyLightRuntimeTranslations(
 			});
 			restorePackIndexCompat(pack);
 			restorePackFoldersCompat(pack);
+			pack.clear?.();
 			translateIndexTitles(state, pack.index, pack.collection);
 			babele.translatePackFolders?.(pack);
 			if (rebuildPackTrees) {
@@ -1845,6 +2050,7 @@ async function applyLightRuntimeTranslations(
 	if (rebuildDocumentIndexNow) {
 		tracePatch("applyLightRuntimeTranslations rebuildDocumentIndex immediately");
 		await rebuildDocumentIndexCompat();
+		if (!current()) return;
 	} else {
 		tracePatch("applyLightRuntimeTranslations schedule documentIndex rebuild");
 		scheduleDocumentIndexRebuild(state, "light-runtime");
@@ -2123,6 +2329,7 @@ function metadataSupportedByBabele(babele, metadata) {
 
 function getTranslatedPackCompat(babele, state, packId) {
 	if (!babele || !packId) return null;
+	if (!isOnDemandMode()) return state?.original?.translatedCompendiumFor?.(packId) ?? null;
 	if (isModernBabele(state)) {
 		return state?.loadedPacks?.get?.(packId) ?? state?.compatPacks?.get?.(packId) ?? null;
 	}
@@ -2135,6 +2342,7 @@ function findLegacyTranslatedPackForData(babele, data) {
 
 function isPackTranslationLoadedCompat(babele, state, packId) {
 	if (!babele || !packId) return false;
+	if (!isOnDemandMode()) return state?.original?.isTranslated?.(packId) ?? false;
 	if (isModernBabele(state)) {
 		return !!state?.loadedPacks?.get?.(packId) || !!state?.compatPacks?.get?.(packId)?.translated;
 	}
@@ -2143,6 +2351,7 @@ function isPackTranslationLoadedCompat(babele, state, packId) {
 
 function translateDataCompat(babele, state, packId, data, translationsOnly = false) {
 	if (!babele) return data;
+	if (!isOnDemandMode()) return state?.original?.translate?.(packId, data, translationsOnly) ?? data;
 	const translatedPack = getTranslatedPackCompat(babele, state, packId);
 	if (translatedPack?.translate) {
 		const translated = translatedPack.translate(data, translationsOnly);
@@ -2162,6 +2371,7 @@ function translateDataCompat(babele, state, packId, data, translationsOnly = fal
 
 function getMappedPackCompat(babele, state, packId) {
 	if (!babele || !packId) return null;
+	if (!isOnDemandMode()) return state?.original?.mappedCompendiumFor?.(packId) ?? null;
 	const loaded = getTranslatedPackCompat(babele, state, packId);
 	if (loaded) return loaded;
 	if (!isModernBabele(state)) return babele.packs?.get?.(packId) ?? null;
@@ -2204,30 +2414,53 @@ function createLightMappedPackCompat(babele, state, metadata, packId) {
 	};
 }
 
-function getTranslationDirectories(babele, state = babele?.__ondemandPatch) {
+function translationSourceDirectories(babele, state = babele?.__ondemandPatch, mappings = false) {
 	const lang = game.settings.get("core", "language");
 	const directory = game.settings.get(BABEL_NAMESPACE, "directory");
-	const system = babele.systemTranslationsDir
-		? [`systems/${game.system.id}/${babele.systemTranslationsDir}/${lang}`]
+	const systemDirectory = state?.systemTranslationsDir ?? babele.systemTranslationsDir;
+	const system = systemDirectory
+		? [{ source: "system", directory: `systems/${game.system.id}/${systemDirectory}${mappings ? "" : `/${lang}`}` }]
 		: [];
 	const modules = getRegisteredTranslationModules(babele, state)
 		.filter((m) => languageMatches(m.lang, lang))
-		.flatMap((m) => m.dirs.map((dir) => `modules/${m.module}/${dir}`));
-	const configured = directory && directory.trim && directory.trim() ? [`${directory}/${lang}`] : [];
-	return orderTranslationSources({ system, modules, configured });
+		.flatMap((m) => m.dirs.map((dir) => ({ source: `module:${m.module}:${m.lang ?? "*"}`, directory: `modules/${m.module}/${dir}` })));
+	const configured = directory?.trim?.()
+		? [{ source: "directory", directory: `${directory}${mappings ? "" : `/${lang}`}` }] : [];
+	return [...system, ...modules, ...configured];
+}
+
+function orderSourceRecords(babele, records, collection = null) {
+	const priority = babele.sourcePriority?.() ?? game.settings.get(BABEL_NAMESPACE, "sourcePriority") ?? {};
+	const order = Array.isArray(priority) ? priority : (priority.collections?.[collection] ?? priority.global ?? []);
+	const ranks = new Map(order.map((source, index) => [source, index]));
+	return records.map((record, index) => ({ ...record, index })).sort((a, b) => {
+		const rankA = ranks.get(a.source) ?? -1;
+		const rankB = ranks.get(b.source) ?? -1;
+		return rankA - rankB || a.index - b.index;
+	});
+}
+
+function orderTranslationSourceUrls(babele, urls, collection, state = babele?.__ondemandPatch) {
+	const directories = translationSourceDirectories(babele, state)
+		.sort((a, b) => b.directory.length - a.directory.length);
+	const records = uniqueTranslationUrls(urls).map((url) => ({ url,
+		source: directories.find(({ directory }) => url.startsWith(`${directory.replace(/\/$/, "")}/`))?.source,
+	}));
+	return orderSourceRecords(babele, records, collection).map(({ url }) => url);
+}
+
+function getTranslationDirectories(babele, state = babele?.__ondemandPatch) {
+	return uniqueTranslationUrls(orderSourceRecords(babele, translationSourceDirectories(babele, state))
+		.map(({ directory }) => directory));
 }
 
 function getMappingDirectories(babele, state = babele?.__ondemandPatch) {
-	const directory = game.settings.get(BABEL_NAMESPACE, "directory");
-	const system = babele.systemTranslationsDir ? [`systems/${game.system.id}/${babele.systemTranslationsDir}`] : [];
-	const modules = getRegisteredTranslationModules(babele, state).flatMap((m) =>
-		m.dirs.map((dir) => `modules/${m.module}/${dir}`),
-	);
-	const configured = directory && directory.trim && directory.trim() ? [directory] : [];
-	return orderTranslationSources({ system, modules, configured });
+	return uniqueTranslationUrls(orderSourceRecords(babele, translationSourceDirectories(babele, state, true))
+		.map(({ directory }) => directory));
 }
 
 async function getTranslationFiles(babele, state) {
+	const generation = state.generation;
 	if (state.translationFilesCache) {
 		tracePatch("getTranslationFiles cache hit", { count: state.translationFilesCache.length });
 		return state.translationFilesCache;
@@ -2254,12 +2487,15 @@ async function getTranslationFiles(babele, state) {
 			tracePatch("getTranslationFiles browse failed", { dir });
 		}
 	}
-	state.translationFilesCache = uniqueTranslationUrls(files);
+	const result = uniqueTranslationUrls(files);
+	if (state.generation !== generation) return result;
+	state.translationFilesCache = result;
 	tracePatch("getTranslationFiles completed", { count: files.length, sample: files.slice(0, 20) });
 	return state.translationFilesCache;
 }
 
 async function getMappingFiles(babele, state) {
+	const generation = state.generation;
 	if (state.mappingFilesCache) {
 		tracePatch("getMappingFiles cache hit", { count: state.mappingFilesCache.length });
 		return state.mappingFilesCache;
@@ -2285,7 +2521,9 @@ async function getMappingFiles(babele, state) {
 			tracePatch("getMappingFiles browse failed", { dir });
 		}
 	}
-	state.mappingFilesCache = sortMappingFilesByDirectoryPreference(uniqueTranslationUrls(files));
+	const result = sortMappingFilesByDirectoryPreference(uniqueTranslationUrls(files));
+	if (state.generation !== generation) return result;
+	state.mappingFilesCache = result;
 	tracePatch("getMappingFiles completed", {
 		count: state.mappingFilesCache.length,
 		files: state.mappingFilesCache.slice(0, 20),
@@ -2294,11 +2532,13 @@ async function getMappingFiles(babele, state) {
 }
 
 async function loadGlobalMappingsOnce(babele, state) {
+	const generation = state.generation;
 	if (state.globalMappingsLoaded) {
 		tracePatch("loadGlobalMappingsOnce skipped: already loaded");
 		return;
 	}
 	const mappingFiles = await getMappingFiles(babele, state);
+	if (state.generation !== generation) return;
 	tracePatch("loadGlobalMappingsOnce mapping files", { count: mappingFiles?.length ?? 0, files: mappingFiles ?? [] });
 	if (mappingFiles?.length) {
 		const mappings = await Promise.all(
@@ -2313,7 +2553,13 @@ async function loadGlobalMappingsOnce(babele, state) {
 				}
 			}),
 		);
-		mappings.filter(Boolean).forEach((m) => babele.registerMapping?.(m));
+		if (state.generation !== generation) return;
+		if (isModernBabele(state)) {
+			state.loadedGlobalMappings = mappings.filter(Boolean);
+			invalidateMappingAggregate(state);
+		} else {
+			mappings.filter(Boolean).forEach((m) => babele.registerMapping?.(m));
+		}
 		tracePatch("loadGlobalMappingsOnce mappings registered", { count: mappings.filter(Boolean).length });
 	}
 	state.globalMappingsLoaded = true;
@@ -2335,17 +2581,17 @@ function buildPackTranslationUrlIndex(babele, files) {
 			if (typeof baseName !== "string") return false;
 			return baseName.startsWith(`${encodedCollection}.`) && baseName.endsWith(".json");
 		});
-		if (urls.length) index.set(collection, urls);
+		if (urls.length) index.set(collection, orderTranslationSourceUrls(babele, urls, collection));
 	}
 	return index;
 }
 
 function buildDirectPackTranslationUrls(babele, packId, state = babele?.__ondemandPatch) {
 	const fileName = `${encodeURI(packId)}.json`;
-	return uniqueTranslationUrls(getTranslationDirectories(babele, state).map((dir) => {
+	return orderTranslationSourceUrls(babele, getTranslationDirectories(babele, state).map((dir) => {
 		const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
 		return `${base}/${fileName}`;
-	}));
+	}), packId, state);
 }
 
 async function importLegacyTranslatedCompendium() {
@@ -2366,15 +2612,18 @@ async function importModernMappedCompendium() {
 	}
 }
 
-async function createModernMappedPackCompat(babele, metadata, translation) {
+async function createModernMappedPackCompat(babele, metadata, translation, state = babele?.__ondemandPatch) {
 	if (!babele?.documentMappings || !metadataSupportedByBabele(babele, metadata)) return null;
 
 	const MappedCompendium = await importModernMappedCompendium();
 	if (!MappedCompendium) return null;
+	const { CompendiumRuntime } = await import("/modules/babele/script/compendium/compendium-runtime.js");
 
 	return new MappedCompendium(metadata, translation, {
 		translationStrategies: babele.translationMatchStrategies?.() ?? [],
 		documentMappings: babele.documentMappings,
+		language: game.settings.get("core", "language"),
+		runtimeFactory: () => new CompendiumRuntime({ globalPacks: state?.loadedPacks }),
 	});
 }
 
@@ -2395,7 +2644,7 @@ async function createTranslatedPackCompat(babele, state, metadata, translation) 
 	if (!metadata || !translation) return null;
 
 	if (isModernBabele(state)) {
-		const mappedPack = await createModernMappedPackCompat(babele, metadata, translation);
+		const mappedPack = await createModernMappedPackCompat(babele, metadata, translation, state);
 		if (mappedPack) return mappedPack;
 
 		const collection = getPackMetadataCollection(babele, metadata);
@@ -2418,6 +2667,7 @@ function getPackMetadataCollection(babele, metadata) {
 }
 
 async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
+	const generation = state.generation;
 	if (!babele.folders) return;
 	const suffix = babele.constructor?.PACK_FOLDER_TRANSLATION_NAME_SUFFIX ?? "_packs-folders";
 	const folderFiles = (files ?? []).filter((f) => typeof f === "string" && f.endsWith(`${suffix}.json`));
@@ -2430,10 +2680,12 @@ async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
 		if (isPackTranslationLoadedCompat(babele, state, collection)) continue;
 
 		const translation = await loadTranslationFromUrls([file]);
+		if (state.generation !== generation) return;
 		if (!translation) continue;
 
 		const metadata = { packageType: "system", type: "Folder", packageName, name };
 		const translatedPack = await createTranslatedPackCompat(babele, state, metadata, translation);
+		if (state.generation !== generation) return;
 		if (translatedPack) {
 			publishTranslatedPackCompat(babele, state, collection, translatedPack);
 		}
@@ -2442,10 +2694,11 @@ async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
 
 async function loadLabels(babele) {
 	const fromSettings = game.settings.get(BABEL_NAMESPACE, SETTING_LABELS) ?? {};
-	const result = { ...(typeof fromSettings === "object" && !Array.isArray(fromSettings) ? fromSettings : {}) };
+	const canBrowse = game.user?.hasPermission?.("FILES_BROWSE");
+	const result = canBrowse ? {} : { ...(typeof fromSettings === "object" && !Array.isArray(fromSettings) ? fromSettings : {}) };
 	tracePatch("loadLabels start", { fromSettingsCount: Object.keys(result).length });
 
-	const tryFetch = game.user?.hasPermission?.("FILES_BROWSE") || Object.keys(result).length === 0;
+	const tryFetch = canBrowse || Object.keys(result).length === 0;
 	if (!tryFetch) {
 		tracePatch("loadLabels skipped fetch; using settings cache", { count: Object.keys(result).length });
 		return result;
@@ -2471,15 +2724,16 @@ async function loadLabels(babele) {
 
 async function loadTitleIndex(babele) {
 	const fromSettings = game.settings.get(BABEL_NAMESPACE, SETTING_TITLE_INDEX) ?? {};
+	const canBrowse = game.user?.hasPermission?.("FILES_BROWSE");
 	const index =
-		typeof fromSettings === "object" && !Array.isArray(fromSettings)
+		!canBrowse && typeof fromSettings === "object" && !Array.isArray(fromSettings)
 			? foundry.utils?.deepClone
 				? foundry.utils.deepClone(fromSettings)
 				: JSON.parse(JSON.stringify(fromSettings))
 			: {};
 	tracePatch("loadTitleIndex start", { fromSettingsCollections: Object.keys(index).length });
 
-	const tryFetch = game.user?.hasPermission?.("FILES_BROWSE") || Object.keys(index).length === 0;
+	const tryFetch = canBrowse || Object.keys(index).length === 0;
 	if (!tryFetch) {
 		tracePatch("loadTitleIndex skipped fetch; using settings cache", { collections: Object.keys(index).length });
 		return index;
@@ -2632,38 +2886,91 @@ async function awaitTranslationTask(state, waiterId, taskId, task, canUsePublish
 	}
 }
 
-async function ensureNpcDependenciesLoaded(babele, state, currentPackId) {
-	if (!state || state.npcDepsLoaded) return;
+function npcDependencyPacksForDocuments(documents, documentType) {
+	if (!Array.isArray(documents)) return NPC_TRANSLATOR_DEP_PACKS;
+	const sources = documents.map((document) => document?.toObject?.() ?? document);
+	let actors;
+	if (documentType === "Actor") actors = sources;
+	else if (documentType === "Adventure") {
+		if (sources.some((source) => !Array.isArray(source?.actors))) return NPC_TRANSLATOR_DEP_PACKS;
+		actors = sources.flatMap((source) => source.actors);
+	} else return NPC_TRANSLATOR_DEP_PACKS;
+	if (actors.some((actor) => !Array.isArray(actor?.items))) return NPC_TRANSLATOR_DEP_PACKS;
+	const packs = new Set();
+	for (const actor of actors) for (const item of actor.items) {
+		const source = item?._stats?.compendiumSource ?? item?.flags?.core?.sourceId;
+		const sourcePack = typeof source === "string" ? source.match(/^Compendium\.([^.]+\.[^.]+)\./)?.[1] : null;
+		if (sourcePack) packs.add(sourcePack);
+		if (item.type === "spell") packs.add("pf2e.spells-srd");
+		else if (["armor", "weapon", "equipment", "consumable", "treasure", "backpack"].includes(item.type)) packs.add("pf2e.equipment-srd");
+		else if (["npc", "hazard"].includes(actor.type) && ["action", "melee", "effect"].includes(item.type)) packs.add("pf2e.bestiary-ability-glossary-srd");
+		else if (item.type === "condition") packs.add("pf2e.conditionitems");
+		else if (["character", "familiar"].includes(actor.type)) {
+			if (item.type === "feat") ["pf2e.feats-srd", "pf2e.classfeatures", "pf2e.ancestryfeatures"].forEach((id) => packs.add(id));
+			else {
+				const pack = { action: "pf2e.actionspf2e", ancestry: "pf2e.ancestries", heritage: "pf2e.heritages",
+					class: "pf2e.classes", background: "pf2e.backgrounds", deity: "pf2e.deities" }[item.type];
+				if (pack) packs.add(pack);
+			}
+		}
+	}
+	return [...packs];
+}
+
+async function ensureNpcDependenciesLoaded(babele, state, currentPackId, dependencyPacks = NPC_TRANSLATOR_DEP_PACKS) {
+	if (!state) return;
+	const generation = state.generation;
+	const dependencies = [...new Set(dependencyPacks)].filter((id) => id !== currentPackId);
+	if (dependencies.every((id) => isPackTranslationLoadedCompat(babele, state, id))) return;
 	const dependencyTaskId = "babele:npc-dependencies";
 	if (state.npcDepsLoading) {
-		await awaitTranslationTask(state, currentPackId, dependencyTaskId, state.npcDepsLoading);
-		return;
+		const pending = state.npcDepsLoading;
+		await awaitTranslationTask(state, currentPackId, dependencyTaskId, pending);
+		if (state.generation !== generation) return;
+		if (state.npcDepsLoading === pending) state.npcDepsLoading = null;
+		// Concurrent document reads can request different subsets of dependencies.
+		return ensureNpcDependenciesLoaded(babele, state, currentPackId, dependencyPacks);
 	}
 
 	const loader = (async () => {
-		for (const packId of NPC_TRANSLATOR_DEP_PACKS) {
-			if (packId === currentPackId) continue;
-			try {
-				await ensurePackTranslationsLoaded(babele, state, packId, {
-					referrer: dependencyTaskId,
-					skipNpcDependencies: true,
-				});
-			} catch {}
-		}
-		state.npcDepsLoaded = true;
+		let next = 0;
+		const worker = async () => {
+			while (next < dependencies.length && state.generation === generation) {
+				const packId = dependencies[next++];
+				try {
+					await ensurePackTranslationsLoaded(babele, state, packId, {
+						referrer: dependencyTaskId,
+						skipNpcDependencies: true,
+					});
+				} catch (error) {
+					tracePatch("NPC dependency unavailable", { packId, error: error?.message });
+				}
+			}
+		};
+		await Promise.all(Array.from({ length: Math.min(NPC_DEPENDENCY_CONCURRENCY, dependencies.length) }, worker));
+		if (state.generation !== generation) return;
+		state.npcDepsLoaded = NPC_TRANSLATOR_DEP_PACKS.every((id) => isPackTranslationLoadedCompat(babele, state, id));
 	})();
 
 	state.npcDepsLoading = loader;
 	try {
 		await awaitTranslationTask(state, currentPackId, dependencyTaskId, loader);
 	} finally {
-		state.npcDepsLoading = null;
+		if (state.npcDepsLoading === loader) state.npcDepsLoading = null;
 	}
 }
 
 async function ensurePackTranslationsLoaded(babele, state, collection, loadContext = {}) {
+	const generation = state.generation;
 	await loadPackTranslations(babele, state, collection, loadContext);
+	if (state.generation !== generation) return;
 	if (loadContext.referrer) return;
+	const rootPackId = normalizePackId(collection);
+	if (!loadContext.skipNpcDependencies && state.packNeedsNpcDependencies?.get(rootPackId)) {
+		await ensureNpcDependenciesLoaded(babele, state, rootPackId,
+			npcDependencyPacksForDocuments(loadContext.documents, getPackMetadata(babele, rootPackId)?.type));
+		if (state.generation !== generation) return;
+	}
 	// Internal traversal may break a reference cycle at a published adapter. A
 	// public caller still needs every reachable branch, including branches outside
 	// that cycle. Wait on raw loaders only, never another public completion promise.
@@ -2676,6 +2983,7 @@ async function ensurePackTranslationsLoaded(babele, state, collection, loadConte
 		// Also retry an unavailable reference on a later public request, even when
 		// the root adapter was already published by an earlier partial load.
 		if (packId !== normalizePackId(collection)) await loadPackTranslations(babele, state, packId);
+		if (state.generation !== generation) return;
 		for (const ref of state.packTranslationReferences?.get(packId) ?? []) pending.push(ref);
 	}
 }
@@ -2683,6 +2991,10 @@ async function ensurePackTranslationsLoaded(babele, state, collection, loadConte
 async function loadPackTranslations(babele, state, collection, loadContext = {}) {
 	const packId = normalizePackId(collection);
 	if (!packId) return;
+	const generation = state.generation;
+	const current = () => state.generation === generation;
+	const loading = state.packTranslationsLoading;
+	const failures = state.packTranslationFailures ??= new Map();
 	tracePatch(
 		"ensurePackTranslationsLoaded enter",
 		{
@@ -2703,10 +3015,13 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 		return;
 	}
 	if (isPackTranslationLoadedCompat(babele, state, packId)) return;
+	if ((failures.get(packId)?.retryAfter ?? 0) > Date.now()) return;
+	failures.delete(packId);
 
 	const loader = (async () => {
 		if (!state.packTranslationUrls?.size) {
 			const files = await getTranslationFiles(babele, state);
+			if (!current()) return;
 			state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
 			tracePatch("ensurePackTranslationsLoaded rebuilt URL index", { entries: state.packTranslationUrls.size });
 		}
@@ -2718,6 +3033,7 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 			indexedUrlCount: urls?.length ?? 0,
 		});
 		let translation = urls?.length ? await loadTranslationFromUrls(urls) : null;
+		if (!current()) return;
 		tracePatch("ensurePackTranslationsLoaded indexed URL load result", {
 			packId,
 			urlCount: urls?.length ?? 0,
@@ -2726,8 +3042,10 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 		});
 
 		if (!translation) {
-			const directUrls = buildDirectPackTranslationUrls(babele, packId, state);
+			const triedUrls = new Set(urls ?? []);
+			const directUrls = buildDirectPackTranslationUrls(babele, packId, state).filter((url) => !triedUrls.has(url));
 			const directTranslation = await loadTranslationFromUrls(directUrls);
+			if (!current()) return;
 			if (directTranslation) {
 				urls = directUrls;
 				translation = directTranslation;
@@ -2745,6 +3063,7 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 		}
 
 		if (!translation) {
+			failures.set(packId, { retryAfter: Date.now() + TRANSLATION_FAILURE_RETRY_MS });
 			debugActorImport("pack翻译加载失败（未找到可用json）", { packId });
 			tracePatch("ensurePackTranslationsLoaded abort: no translation found", { packId });
 			return;
@@ -2768,16 +3087,21 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 			getMergedMapping(babele, metadata, translation), NPC_TRANSLATOR_CONVERTERS, babele,
 			new Set([metadata.type]),
 		);
+		(state.packNeedsNpcDependencies ??= new Map()).set(packId, needsNpcDeps);
 		if (metadata.type === "Actor" || needsNpcDeps) await game.npcTrans?.dict?.ready;
+		if (!current()) return;
 
 		if (needsNpcDeps && !loadContext.skipNpcDependencies && !state.npcDepsLoaded) {
-			await ensureNpcDependenciesLoaded(babele, state, packId);
+			await ensureNpcDependenciesLoaded(babele, state, packId,
+				npcDependencyPacksForDocuments(loadContext.documents, metadata.type));
+			if (!current()) return;
 		}
 
 		trackMissingConverters(babele, state, packId, metadata, translation);
 
 		const storedTranslation = foundry.utils.mergeObject(translation, { collection: packId });
 		const translatedPack = await createTranslatedPackCompat(babele, state, metadata, translation);
+		if (!current()) return;
 		if (translatedPack) {
 			publishTranslatedPackCompat(babele, state, packId, translatedPack);
 			tracePatch("ensurePackTranslationsLoaded translated pack published", {
@@ -2813,6 +3137,7 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 					entries: adventure.items ?? {},
 				};
 				const embeddedPack = await createTranslatedPackCompat(babele, state, { type: "Item" }, embeddedTranslation);
+				if (!current()) return;
 				if (embeddedPack) {
 					publishTranslatedPackCompat(babele, state, `${packId}-items`, embeddedPack);
 				}
@@ -2823,6 +3148,7 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 			const refs = Array.isArray(translation.reference) ? translation.reference : [translation.reference];
 			tracePatch("ensurePackTranslationsLoaded loading references", { packId, refs });
 			for (const ref of refs) {
+				if (!current()) return;
 				await ensurePackTranslationsLoaded(babele, state, ref, {
 					referrer: packId,
 					skipNpcDependencies: loadContext.skipNpcDependencies,
@@ -2836,11 +3162,11 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 		});
 	})();
 
-	state.packTranslationsLoading.set(packId, loader);
+	loading.set(packId, loader);
 	try {
 		await awaitTranslationTask(state, loadContext.referrer, packId, loader);
 	} finally {
-		state.packTranslationsLoading.delete(packId);
+		if (loading.get(packId) === loader) loading.delete(packId);
 	}
 }
 
@@ -3046,7 +3372,7 @@ function registerWrappers() {
 
 			try {
 				tracePatch("_getDocuments ensurePackTranslationsLoaded begin", { packId });
-				await babele.ensurePackTranslationsLoaded?.(packId);
+				await babele.ensurePackTranslationsLoaded?.(packId, { documents: result });
 				tracePatch("_getDocuments ensurePackTranslationsLoaded end", {
 					packId,
 					translated: !!getTranslatedPackCompat(babele, state, packId),
