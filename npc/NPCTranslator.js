@@ -1,4 +1,50 @@
+// Modified 2026-09-29: compatible Actor text fields and independent token naming.
+// Based on AlphaStarguide/pf2e_compendium_chn; GPL-3.0, see LICENSE.
 import {DocumentMapping} from "../../babele/script/mapping/document-mapping.js";
+
+function isTranslationObject(value) {
+    return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+// Only fill existing text fields: never replace numbers or whole schema branches.
+function setTranslatedText(target, path, ...values) {
+    const value = values.find((candidate) => typeof candidate === "string");
+    if (value === undefined) return;
+    const keys = path.split(".");
+    const key = keys.pop();
+    let parent = target;
+    for (const part of keys) parent = parent?.[part];
+    if (parent && Object.hasOwn(parent, key) && typeof parent[key] === "string") parent[key] = value;
+}
+
+function applyFlatActorText(data, translations, original) {
+    const fields = [
+        ["details.publicNotes", "publicNotes"],
+        ["details.privateNotes", "privateNotes"],
+        ["details.blurb", "blurb"],
+        ["attributes.ac.details", "ac"],
+        ["attributes.hp.details", "hp"],
+        ["attributes.allSaves.value", "allSaves"],
+        ["attributes.speed.details", "speed"],
+        ["details.description", "hazarddescription"],
+        // Older packs can retain English in the new aliases while the old
+        // hazard-prefixed aliases contain the actual translation.
+        ["details.disable", "hazarddisable", "disable"],
+        ["details.routine", "hazardroutine", "routine"],
+        ["details.reset", "hazardreset", "reset"],
+        ["attributes.stealth.details", "stealthdetails"],
+    ];
+    for (const [path, ...keys] of fields) {
+        const originalValue = path.split(".").reduce((value, key) => value?.[key], original);
+        const currentValue = path.split(".").reduce((value, key) => value?.[key], data);
+        const values = keys.map((key) => translations[key]).filter((value) => typeof value === "string");
+        // An exported English placeholder must not undo an existing nested
+        // translation or a dictionary result. Explicit changed values win.
+        const value = values.find((candidate) => candidate !== originalValue)
+            ?? (currentValue === originalValue ? values[0] : undefined);
+        setTranslatedText(data, path, value);
+    }
+}
 
 // Babele 2.8.0 renamed CompendiumMapping → DocumentMapping and now requires
 // {identityExtractors, converterRegistry} from the running Babele facade.
@@ -7,6 +53,15 @@ function buildItemMapping(definition) {
         identityExtractors: game.babele.identityExtractorRegistry(),
         converterRegistry: game.babele.converterRegistry,
     });
+}
+
+function findItemTranslation(translations, item, name = item.name) {
+    if (Array.isArray(translations)) {
+        return translations.find((entry) => entry?.id === item._id)
+            ?? translations.find((entry) => entry?.id === name);
+    }
+    if (isTranslationObject(translations)) return translations[item._id] ?? translations[name];
+    return undefined;
 }
 
 // Register token setting
@@ -26,7 +81,7 @@ Hooks.once("ready", async () => {
     game.npcTrans = NPCTranslator.get();
 });
 
-class NPCTranslator {
+export class NPCTranslator {
     static get() {
         if (!NPCTranslator.instance) {
             NPCTranslator.instance = new NPCTranslator();
@@ -58,134 +113,146 @@ class NPCTranslator {
     // Create the correct file path for the npc portrait image
     portrait(data, translations, dataObject, translatedCompendium, translationObject) {
         if (
-            translationObject.name &&
-            dataObject.type === "npc" &&
-            this.mediaPath.get(translatedCompendium.metadata.label)
+            translationObject?.name &&
+            dataObject?.type === "npc" &&
+            this.mediaPath.get(translatedCompendium?.metadata?.label)
         ) {
             return this.mediaPath
                 .get(translatedCompendium.metadata.label)
-                .concat("portraits/p-", this.sluggify(dataObject.name), ".webp");
+                .concat("portraits/p-", this.sluggify(dataObject.originalName ?? dataObject.flags?.babele?.originalName ?? dataObject.name), ".webp");
         }
         return data;
     }
 
     // Create the correct file path for the npc token image and translate the token name
     token(data, translations, dataObject, translatedCompendium, translationObject) {
-        if (translationObject.name && this.mediaPath.get(translatedCompendium.metadata.label)) {
-            if (dataObject.type === "npc") {
-                if (game.settings.get("pf2e_compendium_chn", "token")) {
-                    data.img =
-                        this.mediaPath
-                            .get(translatedCompendium.metadata.label)
-                            .concat("portraits/p-", this.sluggify(dataObject.name), ".webp") ?? data.img;
-                } else {
-                    data.img =
-                        this.mediaPath
-                            .get(translatedCompendium.metadata.label)
-                            .concat("tokens/t-", this.sluggify(dataObject.name), ".webp") ?? data.img;
-                }
+        if (!isTranslationObject(data)) return data;
+        translationObject = isTranslationObject(translationObject) ? translationObject : {};
+        translations = isTranslationObject(translations) ? translations : {};
+        data = foundry.utils.deepClone(data);
+        const names = [
+            translationObject.prototypeToken?.name,
+            translationObject.data?.tokenName,
+            translations.name,
+            translationObject.tokenName,
+            translationObject.name,
+        ].filter((value) => typeof value === "string" && value.trim().length > 0);
+        const sourceNames = new Set([
+            dataObject?.originalName,
+            dataObject?.flags?.babele?.originalName,
+        ].filter((value) => typeof value === "string"));
+        if (sourceNames.size === 0 && typeof dataObject?.name === "string") sourceNames.add(dataObject.name);
+        // Exported prototypeToken.name can still be the original actor name.
+        // Prefer a translated candidate, while retaining distinct custom labels.
+        const name = names.find((value) => !sourceNames.has(value)) ?? names[0];
+        if (name !== undefined) data.name = name;
+
+        // Naming is independent of optional portrait/token artwork.
+        const mediaPath = this.mediaPath.get(translatedCompendium?.metadata?.label);
+        if (translationObject.name && mediaPath) {
+            if (dataObject?.type === "npc") {
+                const prefix = game.settings.get("pf2e_compendium_chn", "token") ? "portraits/p-" : "tokens/t-";
+                const image = mediaPath.concat(prefix, this.sluggify(dataObject.originalName ?? dataObject.flags?.babele?.originalName ?? dataObject.name), ".webp");
+                if (isTranslationObject(data.texture)) data.texture.src = image;
+                else data.img = image;
             }
-            data.name = translationObject.data.tokenName ?? translationObject.name ?? data.name;
         }
         return data;
     }
 
     // Translate the various elements within actor.system
     data(data, translations, dataObject, translatedCompendium, translationObject) {
-        if (translations) {
+        if (!isTranslationObject(data)) return data;
+        if (!["npc", "hazard", "character", "familiar"].includes(dataObject?.type)) return data;
+        translationObject = isTranslationObject(translationObject) ? translationObject : {};
+        const nested = isTranslationObject(translations) ? translations : {};
+        if (Object.keys(translationObject).length === 0 && Object.keys(nested).length === 0) return data;
+        const original = data;
+        data = foundry.utils.deepClone(data);
+        if (isTranslationObject(translations)) {
+            // Explicit translations work even while the optional dictionary is loading.
+            const fromDictionary = (method, value) =>
+                this.dict.translations ? this.dict[method](value) ?? value : value;
             // Translate various singular text fields
             if (data.attributes?.ac?.details) {
                 data.attributes.ac.details =
-                    this.dict.translateAcDetails(data.attributes.ac.details) ?? data.attributes.ac.details;
+                    fromDictionary("translateAcDetails", data.attributes.ac.details);
             }
 
             if (data.attributes?.allSaves?.value) {
                 data.attributes.allSaves.value =
-                    this.dict.translateSave(data.attributes.allSaves.value) ?? data.attributes.allSaves.value;
+                    fromDictionary("translateSave", data.attributes.allSaves.value);
             }
 
-            if (data.details?.blurb) {
-                data.details.blurb = translations.blurb ? translations.blurb : "";
-            }
+            setTranslatedText(data, "details.blurb", translations.blurb);
 
             if (data.details?.ethnicity?.value) {
                 data.details.ethnicity.value =
-                    this.dict.translateEthnicity(data.details.ethnicity.value) ?? data.details.ethnicity.value;
+                    fromDictionary("translateEthnicity", data.details.ethnicity.value);
             }
 
             if (data.details?.creature?.value) {
                 data.details.creature.value =
-                    this.dict.translateFamiliarType(data.details.creature.value) ?? data.details.creature.value;
+                    fromDictionary("translateFamiliarType", data.details.creature.value);
             }
 
             if (data.details?.gender?.value) {
                 data.details.gender.value =
-                    this.dict.translateGender(data.details.gender.value) ?? data.details.gender.value;
+                    fromDictionary("translateGender", data.details.gender.value);
             }
 
             if (data.attributes?.hp?.details) {
                 data.attributes.hp.details =
-                    this.dict.translateHpDetails(data.attributes.hp.details) ?? data.attributes.hp.details;
+                    fromDictionary("translateHpDetails", data.attributes.hp.details);
             }
 
             if (data.attributes?.speed?.details) {
                 data.attributes.speed.details =
-                    this.dict.translateSpeedDetails(data.attributes.speed.details) ?? data.attributes.speed.details;
+                    fromDictionary("translateSpeedDetails", data.attributes.speed.details);
             }
 
             if (dataObject.type === "npc" && data.details?.source?.value) {
                 data.details.source.value =
-                    this.dict.translateSource(data.details.source.value) ?? data.details.source.value;
+                    fromDictionary("translateSource", data.details.source.value);
             } else if (dataObject.type === "hazard" && data.source?.value) {
-                data.source.value = this.dict.translateSource(data.source.value) ?? data.source.value;
+                data.source.value = fromDictionary("translateSource", data.source.value);
             }
 
             if (data.traits?.di?.custom) {
-                data.traits.di.custom = this.dict.translateImmunity(data.traits.di.custom) ?? data.traits.di.custom;
+                data.traits.di.custom = fromDictionary("translateImmunity", data.traits.di.custom);
             }
 
             if (data.traits?.languages?.custom) {
                 data.traits.languages.custom =
-                    this.dict.translateLanguage(data.traits.languages.custom) ?? data.traits.languages.custom;
+                    fromDictionary("translateLanguage", data.traits.languages.custom);
             }
 
             if (data.traits?.senses?.value) {
                 data.traits.senses.value =
-                    this.dict.translateSense(data.traits.senses.value) ?? data.traits.senses.value;
+                    fromDictionary("translateSense", data.traits.senses.value);
             }
 
             if (data.traits?.traits?.custom) {
                 data.traits.traits.custom =
-                    this.dict.translateTrait(data.traits.traits.custom) ?? data.traits.traits.custom;
+                    fromDictionary("translateTrait", data.traits.traits.custom);
             }
 
-            if (data.details?.reset && translations.reset) {
-                data.details.reset = translations.reset;
-            }
-
-            if (data.details?.routine && translations.routine) {
-                data.details.routine = translations.routine;
-            }
-
-            if (data.details?.disable && translations.disable) {
-                data.details.disable = translations.disable;
-            }
-
-            if (data.attributes?.stealth?.details && translations.stealth) {
-                data.attributes.stealth.details = translations.stealth;
-            }
+            setTranslatedText(data, "details.reset", translations.reset);
+            setTranslatedText(data, "details.routine", translations.routine);
+            setTranslatedText(data, "details.disable", translations.disable);
+            setTranslatedText(data, "attributes.stealth.details", translations.stealth);
 
             // Translate exceptions to damage resistance
             if (data.traits?.dr) {
                 data.traits.dr.forEach((element, index, array) => {
                     if (array[index].hasOwnProperty("exceptions") && array[index].exceptions !== "") {
-                        array[index].exceptions = this.dict.translateResistanceException(element.exceptions);
+                        array[index].exceptions = fromDictionary("translateResistanceException", element.exceptions);
                     }
                 });
             }
 
             // Create a formatted npc description based on the data provided in the json and based on the actor type
-            if (translations.description) {
+            if (isTranslationObject(translations.description)) {
                 if (dataObject.type === "npc") {
                     let npcData = translations.description;
 
@@ -225,15 +292,16 @@ class NPCTranslator {
                         npcDesc = npcDesc.concat(`</tbody>\n</table>\n`);
                     }
 
-                    data.details.publicNotes = npcDesc;
+                    if (npcDesc.length) setTranslatedText(data, "details.publicNotes", npcDesc);
                 } else if (dataObject.type === "hazard") {
-                    data.details.description = translations.description.NPCDescription;
+                    setTranslatedText(data, "details.description", translations.description.NPCDescription);
                 } else if (dataObject.type === "character") {
-                    data.details.biography.appearance = translations.description.NPCDescription;
+                    setTranslatedText(data, "details.biography.appearance", translations.description.NPCDescription);
                 }
             }
         }
 
+        applyFlatActorText(data, translationObject, original);
         return data;
     }
 
@@ -244,7 +312,14 @@ class NPCTranslator {
     //  - Spellcasting entries are translated using an automated dictionary-based translation
 
     item(data, translations, dataObject, translatedCompendium, translationObject) {
+        // Babele converters are synchronous. Async loading paths await dict.ready;
+        // callers which arrive earlier retain their source items for now.
+        if (!Array.isArray(data) || !this.dict.translations) return data;
+        data = foundry.utils.deepClone(data);
+        let itemMapping;
+        const getItemMapping = () => itemMapping ??= buildItemMapping(this.dict.itemMapping);
         data.forEach((entry, index, arr) => {
+            if (!isTranslationObject(entry) || typeof entry.name !== "string" || !isTranslationObject(entry.system)) return;
             // Translate spells
             if (entry.type == "spell") {
                 let spellOffset;
@@ -275,7 +350,8 @@ class NPCTranslator {
                     entry,
                     this.sluggify(entry.name),
                     translations,
-                    this.dict.itemMapping
+                    this.dict.itemMapping,
+                    getItemMapping
                 );
             }
 
@@ -290,18 +366,11 @@ class NPCTranslator {
                 }
                 let translated = false;
                 if (translations) {
-                    let dynamicMapping = buildItemMapping(this.dict.itemMapping);
-
-                    let translation;
-                    if (Array.isArray(translations)) {
-                        translation = translations.find((t) => t.id === entry._id || t.id === entry.name);
-                    } else {
-                        translation = translations[entry._id] || translations[entry.name];
-                    }
+                    const translation = findItemTranslation(translations, entry);
                     if (translation) {
                         let slug = this.sluggify(entry.name.replace("strike-", ""));
                         translated = true;
-                        let translatedData = dynamicMapping.map(entry, translation);
+                        let translatedData = getItemMapping().map(entry, translation);
                         arr[index] = foundry.utils.mergeObject(entry, foundry.utils.mergeObject(translatedData, { translated: true }));
                         if (!entry.system.slug) entry.system.slug = slug;
                     }
@@ -337,17 +406,10 @@ class NPCTranslator {
                 // Use manual added translations from json
                 let translated = false;
                 if (translations) {
-                    let dynamicMapping = buildItemMapping(this.dict.itemMapping);
-
-                    let translation;
-                    if (Array.isArray(translations)) {
-                        translation = translations.find((t) => t.id === entry._id || t.id === entry.name);
-                    } else {
-                        translation = translations[entry._id] || translations[entry.name];
-                    }
+                    const translation = findItemTranslation(translations, entry);
                     if (translation) {
                         translated = true;
-                        let translatedData = dynamicMapping.map(entry, translation);
+                        let translatedData = getItemMapping().map(entry, translation);
                         arr[index] = foundry.utils.mergeObject(entry, foundry.utils.mergeObject(translatedData, { translated: true }));
                     }
                 }
@@ -402,11 +464,12 @@ class NPCTranslator {
                 let specialLore = this.dict.translateLore(entry.name);
                 if (!(specialLore === entry.name)) arr[index].name = specialLore;
 
-                if (entry.system.variants) {
+                if (isTranslationObject(entry.system.variants) || Array.isArray(entry.system.variants)) {
                     for (const value in entry.system.variants) {
-                        entry.system.variants[value].label = this.dict.translateSkillVariant(
-                            entry.system.variants[value].label
-                        );
+                        const variant = entry.system.variants[value];
+                        if (isTranslationObject(variant) && typeof variant.label === "string") {
+                            variant.label = this.dict.translateSkillVariant(variant.label);
+                        }
                     }
                 }
             }
@@ -423,16 +486,22 @@ class NPCTranslator {
 // Dictionary class that handles translations
 class Dictionary {
     async loadTranslations(url) {
-        const x = await Promise.all([
-            fetch(url)
-                .then((r) => r.json())
-                .catch((e) => {}),
-        ]);
-        this.translations = x[0];
+        try {
+            const response = await fetch(url);
+            if (response.ok === false) throw new Error(`Dictionary request failed: ${response.status}`);
+            const translations = await response.json();
+            if (!isTranslationObject(translations)) throw new Error("Invalid NPC dictionary");
+            this.translations = translations;
+            return translations;
+        } catch (error) {
+            this.translations = undefined;
+            console.warn("pf2e_compendium_chn: NPC dictionary unavailable; preserving untranslated item data", error);
+            return undefined;
+        }
     }
 
     constructor() {
-        this.loadTranslations("modules/pf2e_compendium_chn/npc/NPCDictionary.json");
+        this.ready = this.loadTranslations("modules/pf2e_compendium_chn/npc/NPCDictionary.json");
 
         this.itemMapping = {
             name: "name",
@@ -442,20 +511,20 @@ class Dictionary {
     }
 
     dictionaryTranslate(strings, translations) {
+        if (!isTranslationObject(translations)) return strings;
+        const translate = (entry) => {
+            if (typeof entry !== "string") return entry;
+            const key = entry.toLowerCase().trim();
+            return Object.hasOwn(translations, key) ? translations[key] : entry;
+        };
         if (Array.isArray(strings)) {
-            strings.forEach((entry, index, arr) => {
-                if ((typeof entry === "string") & Object.keys(translations).includes(entry.toLowerCase().trim()))
-                    arr[index] = translations[entry.toLowerCase().trim()];
-                else arr[index] = entry;
-            });
-            return strings;
-        } else if (typeof strings === "string") {
-            if (Object.keys(translations).includes(strings.toLowerCase())) return translations[strings.toLowerCase()];
-            else return strings;
-        } else return strings;
+            return strings.map(translate);
+        }
+        return translate(strings);
     }
 
     dictionaryReplace(str, translations) {
+        if (!isTranslationObject(translations)) return str;
         if (typeof str === "string") {
             let transl = str.toLowerCase();
             for (const [key] of Object.entries(translations)) {
@@ -465,10 +534,11 @@ class Dictionary {
             return transl;
         }
 
-        return "";
+        return str;
     }
 
     translateSimpleList(str, translations) {
+        if (typeof str !== "string") return str;
         // Try translation for the whole string in case it is a single entry containing commas
         let fullTranslation = this.dictionaryTranslate(str, translations);
         if (fullTranslation !== str) return fullTranslation;
@@ -478,6 +548,7 @@ class Dictionary {
     }
 
     translateComplexList(str, translations) {
+        if (typeof str !== "string" || !isTranslationObject(translations)) return str;
         const semicolonSeparation = str.split(";");
         semicolonSeparation.forEach((value, key, array) => {
             const commaSeparation = value.split(",");
@@ -503,6 +574,8 @@ class Dictionary {
     }
 
     compendiumTranslation(data, compendium) {
+        if (!isTranslationObject(data) || typeof data.name !== "string") return data;
+        data = foundry.utils.deepClone(data);
         // Special treatment for standard abilities with modified names (excluding spells)
         let translatedName = "";
 
@@ -552,18 +625,20 @@ class Dictionary {
                 // Senses
             } else if (data.name.search(RegExp(`(Lifesense|Scent|Thoughtsense|Tremorsense|Wavesense)`, "g")) > -1) {
                 translatedName = this.translateSense(data.name.toLowerCase());
-                data.name = data.name.substring(0, data.name.indexOf(" "));
+                data.name = data.name.split(" ", 1)[0];
 
                 // Telepathy
             } else if (data.name.search(RegExp(`(Telepathy)`, "g")) > -1) {
                 translatedName = this.translateLanguage(data.name);
-                data.name = data.name.substring(0, data.name.indexOf(" "));
+                data.name = data.name.split(" ", 1)[0];
             }
         }
 
         // Babele 2.8.0 dropped `babele.packs` in favor of the public translate(pack, data) facade.
-        let translation = game.babele.translate(compendium, data);
-        if (translation.name.search("/") != -1)
+        const lookupName = data.name;
+        let translation = game.babele.translate(compendium, data) ?? data;
+        if (typeof translation.name !== "string") translation = data;
+        if (translation.name !== lookupName && translation.name.search("/") != -1)
             translation.name = translation.name.substring(0, translation.name.search("/"));
 
         if (translatedName != "") {
@@ -603,43 +678,55 @@ class Dictionary {
         return this.translateSimpleList(str, this.translations.Immunity);
     }
 
-    translateItem(item, slug, translations, itemMapping) {
+    translateItem(item, slug, translations, itemMapping, getItemMapping = () => buildItemMapping(itemMapping)) {
+        if (!isTranslationObject(item) || typeof item.name !== "string" || !isTranslationObject(item.system)) return item;
         let translatedItem = item;
 
         // Use a translation provided in the localized actor data
-        if (typeof translations != "undefined" && Object.keys(translations).includes(`equipment-${item.name}`)) {
-            let dynamicMapping = buildItemMapping(itemMapping);
-
-            let translation;
-            if (Array.isArray(translations)) {
-                translation = translations.find((t) => t.id === item._id || t.id === `equipment-${item.name}`);
-            } else {
-                translation = translations[item._id] || translations[`equipment-${item.name}`];
-            }
-            if (translation) {
-                let translatedData = dynamicMapping.map(item, translation);
-                translatedItem = foundry.utils.mergeObject(item, foundry.utils.mergeObject(translatedData, { translated: true }));
-            }
+        const translation = findItemTranslation(translations, item, `equipment-${item.name}`);
+        if (translation) {
+            const translatedData = getItemMapping().map(item, translation);
+            translatedItem = foundry.utils.mergeObject(item, foundry.utils.mergeObject(translatedData, { translated: true }));
+        } else if (!this.translations) {
+            return item;
             // Translate non-compendium items and items with altered names
-        } else if (Object.keys(this.translations.Item).includes(item.name.toLowerCase())) {
+        } else if (Object.hasOwn(this.translations.Item ?? {}, item.name.toLowerCase())) {
             const translation = this.translations.Item[item.name.toLowerCase()];
             if (translation.baseItem) {
                 item.name = translation.baseItem;
                 translatedItem = this.compendiumTranslation(item, "pf2e.equipment-srd");
             }
             translatedItem.name = translation.name;
-            translatedItem.system.description.value = translation.description
-                ? translation.description
-                : translatedItem.system.description.value;
-            translatedItem.system.publication.title = this.translateSimpleList(
-                item.system.publication.title,
-                this.translations.Source
-            );
+            if (translation.description && isTranslationObject(translatedItem.system.description)) {
+                translatedItem.system.description.value = translation.description;
+            }
+            if (typeof translatedItem.system.publication?.title === "string") {
+                translatedItem.system.publication.title = this.translateSimpleList(
+                    translatedItem.system.publication.title, this.translations.Source
+                );
+            }
 
             // Translate magic weapons using a dictionary
         } else if (item.type === "weapon" && !item.system.specific) {
+            const weapons = this.translations.MagicWeapons;
+            const runes = item.system.runes;
+            const gender = weapons?.BaseItemGender?.[item.system.baseItem];
+            const materialData = weapons?.Materials?.[item.system.material?.type];
+            const propertyIds = runes?.property;
+            const properties = Array.isArray(propertyIds) ? propertyIds.map((id) => weapons?.PropertyRunes?.[id]) : [];
+            // Custom/new PF2e modifiers may not be in this optional dictionary.
+            // Preserve the supplied name instead of dropping a modifier or throwing.
+            const unsupported = !weapons || !runes || !Array.isArray(propertyIds)
+                || (runes.striking && typeof weapons.StrikingRunes?.[runes.striking] !== "string")
+                || (item.system.material?.type && typeof materialData?.[gender] !== "string")
+                || properties.some((property) => typeof property?.[gender] !== "string");
+            if (unsupported) {
+                translatedItem = this.compendiumTranslation(item, "pf2e.equipment-srd");
+                if (!translatedItem.system.slug) translatedItem.system.slug = slug;
+                return translatedItem;
+            }
             // Get base item gender
-            const baseItemGender = this.translations.MagicWeapons.BaseItemGender[item.system.baseItem];
+            const baseItemGender = gender;
 
             // Get property rune
             const propertyRune = item.system.runes.potency ? `+${item.system.runes.potency} ` : "";
@@ -650,22 +737,15 @@ class Dictionary {
                 : "";
 
             // Get material
-            const materialOrder = item.system.material.type
-                ? this.translations.MagicWeapons.Materials[item.system.material.type].order
+            const materialOrder = item.system.material?.type
+                ? materialData.order
                 : "";
-            const material = item.system.material.type
-                ? this.translations.MagicWeapons.Materials[item.system.material.type][baseItemGender]
+            const material = item.system.material?.type
+                ? materialData[baseItemGender]
                 : "";
 
             // Get property runes
-            const propertyRunes = [];
-            for (let i = 0; i < 4; i++) {
-                if (item.system.runes.property[i]) {
-                    propertyRunes.push(
-                        this.translations.MagicWeapons.PropertyRunes[item.system.runes.property[i]]
-                    );
-                }
-            }
+            const propertyRunes = properties;
 
             // Get sorted and gendered property runes split by suffix/prefix
             const prefixRunes = [];
@@ -679,7 +759,7 @@ class Dictionary {
             translatedItem = this.compendiumTranslation(item, "pf2e.equipment-srd");
 
             // Build item name
-            if (materialOrder != "prefix") {
+            if (materialOrder === "prefix") {
                 translatedItem.name = material.concat(" ").concat(translatedItem.name);
             } else if (materialOrder === "suffix") {
                 translatedItem.name = translatedItem.name.concat(" ").concat(material);
@@ -687,9 +767,9 @@ class Dictionary {
 
             translatedItem.name = propertyRune
                 .concat(striking)
-                .concat(prefixRunes.sort().join())
-                .concat(suffixRunes.sort().join())
-                .concat(translatedItem.name);
+                .concat(prefixRunes.sort().join(""))
+                .concat(translatedItem.name)
+                .concat(suffixRunes.sort().join(""));
 
             // Standard compendium translation
         } else {
@@ -700,6 +780,7 @@ class Dictionary {
     }
 
     translateLanguage(str) {
+        if (typeof str !== "string") return str;
         const rgx = new RegExp("^([^\\d]+)(\\d+ (?:feet|miles|mile))?([\\s\\S]+)?", "g");
         const commaSeparation = str.split(",");
         commaSeparation.forEach((value, key, array) => {
@@ -724,7 +805,8 @@ class Dictionary {
     }
 
     translateRange(str) {
-        if (Object.keys(this.translations.Range).includes(str))
+        if (typeof str !== "string") return str;
+        if (Object.hasOwn(this.translations.Range ?? {}, str))
             return this.dictionaryTranslate(str, this.translations.Range);
 
         let value = parseInt(str);
@@ -741,6 +823,7 @@ class Dictionary {
     }
 
     translateResistanceException(str) {
+        if (typeof str !== "string") return str;
         return this.dictionaryTranslate(str.replace(/except /g, ""), this.translations.ResistanceException);
     }
 
@@ -749,6 +832,7 @@ class Dictionary {
     }
 
     translateSense(str) {
+        if (typeof str !== "string") return str;
         const semicolonSeparation = str.split(";");
         semicolonSeparation.forEach((value, key, array) => {
             const commaSeparation = value.split(",");
@@ -819,6 +903,7 @@ class Dictionary {
     }
 
     translateSpellOffset(str) {
+        if (typeof str !== "string") return str;
         if (str.search(/\) \(/g) > -1)
             return `(${this.dictionaryTranslate(
                 str
