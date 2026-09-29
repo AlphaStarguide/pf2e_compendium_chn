@@ -7,11 +7,41 @@ const systemText = (paths, aliases = []) => ({
     path: "system", converter: "pf2e-actor-system-text", paths, aliases,
 });
 
+function matchesMappingCondition(condition, source) {
+    if (!condition) return false;
+    if (Array.isArray(condition.all)) return condition.all.every((entry) => matchesMappingCondition(entry, source));
+    if (Array.isArray(condition.any)) return condition.any.some((entry) => matchesMappingCondition(entry, source));
+    if (typeof condition.path !== "string" || condition.path.length === 0) return false;
+    const value = foundry.utils.getProperty(source, condition.path);
+    const checks = [];
+    if (Object.hasOwn(condition, "equals")) checks.push(value === condition.equals);
+    if (Array.isArray(condition.in)) checks.push(condition.in.includes(value));
+    if (Object.hasOwn(condition, "exists")) checks.push((value !== undefined) === Boolean(condition.exists));
+    return checks.length > 0 && checks.every(Boolean);
+}
+
+// Mirror Babele 2.9's source-aware field selection. Looking only at base keys
+// misses aliases redirected by a matching _variants/legacy subtype mapping.
+export function resolveActiveMapping(mapping = {}, source = {}) {
+    const { _variants, _identity, ...base } = mapping ?? {};
+    const fields = new Map(Object.entries(base));
+    for (const variant of Array.isArray(_variants) ? _variants : []) {
+        const { _when, ...entries } = variant ?? {};
+        if (!matchesMappingCondition(_when, source)) continue;
+        for (const [key, value] of Object.entries(entries)) {
+            fields.delete(key);
+            fields.set(key, value);
+        }
+    }
+    return Object.fromEntries(fields);
+}
+
 export function createDefaultMappings() {
     return {
         Actor: {
             name: "name",
-            // Keep the legacy whole-system converter before individual fields.
+            // Retain legacy nested translations; the converter checks field
+            // ownership instead of relying on merged mapping iteration order.
             // Do not use _variants here: a default variant would take priority
             // over a compendium's ordinary same-key override in Babele 2.9.
             data: { path: "system", converter: "npc-data-translation" },
@@ -69,13 +99,13 @@ export function createDefaultMappings() {
     };
 }
 
-function translatedText(original, translation, allTranslations, aliases = [], compendium) {
+function translatedText(original, translation, allTranslations, aliases = [], compendium, source) {
     if (typeof original !== "string") return undefined;
     // Legacy hazard-prefixed aliases can carry the actual Chinese translation
     // while a newer export leaves the unprefixed field in English.
     // If a file explicitly maps an alias, that mapping owns its destination.
     // An alias redirected elsewhere must not also write this default path.
-    const mapping = compendium?.mapping?.mapping ?? {};
+    const mapping = aliases.length ? resolveActiveMapping(compendium?.mapping?.mapping, source) : {};
     const candidates = [...aliases.filter((key) => !Object.hasOwn(mapping, key))
         .map((key) => allTranslations?.[key]), translation];
     return candidates.find((value) => typeof value === "string" && value !== original);
@@ -88,8 +118,8 @@ function systemTextPath(source, params) {
 export function createDefaultConverters() {
     return {
         "pf2e-actor-text": {
-            translate({ value, translation, allTranslations, params, contextCompendium }) {
-                return translatedText(value, translation, allTranslations, params.aliases, contextCompendium);
+            translate({ value, translation, allTranslations, source, params, contextCompendium }) {
+                return translatedText(value, translation, allTranslations, params.aliases, contextCompendium, source);
             },
             extract({ value }) {
                 return typeof value === "string" ? value : undefined;
@@ -99,7 +129,7 @@ export function createDefaultConverters() {
             translate({ value, translation, allTranslations, source, params, contextCompendium }) {
                 const path = systemTextPath(source, params);
                 if (!path) return undefined;
-                const translated = translatedText(foundry.utils.getProperty(value, path), translation, allTranslations, params.aliases, contextCompendium);
+                const translated = translatedText(foundry.utils.getProperty(value, path), translation, allTranslations, params.aliases, contextCompendium, source);
                 if (translated === undefined) return undefined;
                 const changes = {};
                 foundry.utils.setProperty(changes, path, translated);
