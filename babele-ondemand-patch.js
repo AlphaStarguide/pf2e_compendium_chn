@@ -1,3 +1,4 @@
+// Modified 2026-09-29: PR #52, index recovery, safe Actor imports and independent name repair.
 const PATCH_ID = detectHostPackageId() ?? "babele-ondemand-patch";
 
 const BABEL_NAMESPACE = "babele";
@@ -37,10 +38,13 @@ const NPC_TRANSLATOR_DEP_PACKS = [
 const ACTOR_IMPORT_DEBUG_DEFAULT = false;
 const PATCH_TRACE_DEFAULT = false;
 const PATCH_FETCH_TRACE_DEFAULT = false;
+const MAX_FETCH_DIAGNOSTIC_URLS = 1000;
 const ACTOR_IMPORT_INTERNAL_OPTION = "__babeleOnDemandActorImportTranslate";
 
 let capturedBabele = null;
 let patched = false;
+const documentIndexOperations = new WeakMap();
+const documentIndexRecoveries = new WeakMap();
 
 const __patchDebugRoot = globalThis.BabeleOnDemandPatchDebug ?? (globalThis.BabeleOnDemandPatchDebug = {});
 if (typeof __patchDebugRoot.actorImport !== "boolean") __patchDebugRoot.actorImport = ACTOR_IMPORT_DEBUG_DEFAULT;
@@ -123,54 +127,49 @@ function installFetchDiagnostics() {
 	root.__BabeleOnDemandPatchFetchCounts = root.__BabeleOnDemandPatchFetchCounts ?? new Map();
 
 	root.fetch = async (...args) => {
+		// Normal play should not retain a history of every asset and request URL.
+		if (!root?.BabeleOnDemandPatchDebug?.fetchTrace) return originalFetch(...args);
 		const url = args?.[0]?.url ?? args?.[0];
 		const kind = classifyJsonUrl(url);
-		const shouldTrace = !!kind && !!root?.BabeleOnDemandPatchDebug?.fetchTrace;
-		const key = `${kind ?? "other"}::${String(url)}`;
+		if (!kind) return originalFetch(...args);
+		const key = `${kind}::${String(url)}`;
+		if (!root.__BabeleOnDemandPatchFetchCounts.has(key)
+			&& root.__BabeleOnDemandPatchFetchCounts.size >= MAX_FETCH_DIAGNOSTIC_URLS) {
+			const oldest = root.__BabeleOnDemandPatchFetchCounts.keys().next().value;
+			root.__BabeleOnDemandPatchFetchCounts.delete(oldest);
+			root.__BabeleOnDemandPatchFetchSeen.delete(oldest);
+		}
 		const count = (root.__BabeleOnDemandPatchFetchCounts.get(key) ?? 0) + 1;
 		root.__BabeleOnDemandPatchFetchCounts.set(key, count);
 		const firstSeen = !root.__BabeleOnDemandPatchFetchSeen.has(key);
 		if (firstSeen) root.__BabeleOnDemandPatchFetchSeen.add(key);
-		if (shouldTrace) {
-			if (firstSeen || count === 10 || count === 100 || count % 500 === 0) {
-				tracePatch(
-					"fetch:start",
-					{
-						kind,
-						url: String(url),
-						count,
-					},
-					{ stack: firstSeen },
-				);
-			}
+		const shouldLog = firstSeen || count === 10 || count === 100 || count % 500 === 0;
+		if (shouldLog) {
+			tracePatch("fetch:start", { kind, url: String(url), count }, { stack: firstSeen });
 		}
 
 		const started = Date.now();
 		try {
 			const response = await originalFetch(...args);
-			if (shouldTrace) {
-				if (firstSeen || count === 10 || count === 100 || count % 500 === 0) {
-					tracePatch("fetch:done", {
-						kind,
-						url: String(url),
-						count,
-						ok: response?.ok ?? null,
-						status: response?.status ?? null,
-						elapsedMs: Date.now() - started,
-					});
-				}
-			}
-			return response;
-		} catch (error) {
-			if (shouldTrace) {
-				tracePatch("fetch:error", {
+			if (shouldLog) {
+				tracePatch("fetch:done", {
 					kind,
 					url: String(url),
 					count,
+					ok: response?.ok ?? null,
+					status: response?.status ?? null,
 					elapsedMs: Date.now() - started,
-					error: error?.message ?? String(error),
 				});
 			}
+			return response;
+		} catch (error) {
+			tracePatch("fetch:error", {
+				kind,
+				url: String(url),
+				count,
+				elapsedMs: Date.now() - started,
+				error: error?.message ?? String(error),
+			});
 			throw error;
 		}
 	};
@@ -196,7 +195,36 @@ function isMappingFileName(fileName) {
 }
 
 function orderTranslationSources({ system = [], modules = [], configured = [] } = {}) {
-	return [...system, ...modules, ...configured].filter((value) => typeof value === "string" && value.length);
+	return uniqueTranslationUrls([...system, ...modules, ...configured]);
+}
+
+function uniqueTranslationUrls(values = []) {
+	// A later occurrence has higher source precedence, including configured overrides.
+	const valid = values.filter((value) => typeof value === "string" && value.length);
+	const seen = new Set();
+	return valid.reverse().filter((value) => {
+		if (seen.has(value)) return false;
+		seen.add(value);
+		return true;
+	}).reverse();
+}
+
+function isTranslationPayload(value) {
+	if (!value || typeof value !== "object" || Array.isArray(value)) return false;
+	const record = (entry) => entry !== null && typeof entry === "object" && !Array.isArray(entry);
+	const names = (entry) => typeof entry === "string" || (Array.isArray(entry) && entry.every((name) => typeof name === "string"));
+	const checks = {
+		label: (entry) => typeof entry === "string",
+		entries: (entry) => record(entry) || Array.isArray(entry),
+		mapping: record,
+		folders: record,
+		reference: names,
+		extends: names,
+		types: (entry) => Array.isArray(entry) && entry.every((name) => typeof name === "string"),
+	};
+	// Optional null fields in older exports have the same meaning as omission.
+	const present = Object.keys(checks).filter((key) => Object.prototype.hasOwnProperty.call(value, key) && value[key] != null);
+	return present.length > 0 && present.every((key) => checks[key](value[key]));
 }
 
 function sortMappingFilesByDirectoryPreference(files = []) {
@@ -556,6 +584,7 @@ function tryPatchBabele(babele) {
 	state.registeredModules = state.registeredModules ?? [];
 	state.packTranslationUrls = state.packTranslationUrls ?? new Map();
 	state.packTranslationsLoading = state.packTranslationsLoading ?? new Map();
+	state.packTranslationReferences = state.packTranslationReferences ?? new Map();
 	state.globalMappingsLoaded = !!state.globalMappingsLoaded;
 	state.labels = state.labels ?? null;
 	state.titleIndex = state.titleIndex ?? null;
@@ -664,7 +693,8 @@ function tryPatchBabele(babele) {
 	babele.translate = (pack, data, translationsOnly = false) => {
 		if (!isOnDemandMode()) return state.original.translate?.(pack, data, translationsOnly) ?? data;
 		const translatedPack = getTranslatedPackCompat(babele, state, normalizePackId(pack));
-		return translatedPack?.translate?.(data, translationsOnly) ?? data;
+		const translated = translatedPack?.translate?.(data, translationsOnly) ?? data;
+		return completeActorTranslationNames(babele, state, normalizePackId(pack), data, translated);
 	};
 	babele.translateField = (field, pack, data) => {
 		if (!isOnDemandMode()) return state.original.translateField?.(field, pack, data) ?? null;
@@ -690,6 +720,9 @@ function tryPatchBabele(babele) {
 	};
 
 	babele.init = async (callbackOrOptions = {}) => {
+		// Converter registration starts loading the optional NPC dictionary. Finish
+		// that load before either initialization mode can translate Actor items.
+		await game.npcTrans?.dict?.ready;
 		tracePatch(
 			"babele.init entered",
 			{
@@ -818,10 +851,17 @@ function tryPatchBabele(babele) {
 			if (options?.[ACTOR_IMPORT_INTERNAL_OPTION]) return;
 			autoTranslateImportedActorInPreUpdate(actor, change, userId);
 		});
-		Hooks.on("updateActor", (actor, _change, options, userId) => {
+		Hooks.on("updateActor", (actor, change, options, userId) => {
 			if (options?.[ACTOR_IMPORT_INTERNAL_OPTION]) return;
-			void autoTranslateImportedActorAfterUpdate(actor, userId);
+			void autoTranslateImportedActorAfterUpdate(actor, userId, change);
 		});
+		const repairSheetNames = (sheet) => {
+			const actor = sheet.actor ?? sheet.document;
+			if (actor?.documentName !== "Actor" || !actor.isOwner || !actor.flags?.babele?.translated) return;
+			void repairActorNames(actor).catch((error) => debugActorImport("名称补修失败", { error: String(error) }));
+		};
+		Hooks.on("renderActorSheet", repairSheetNames);
+		Hooks.on("renderApplicationV2", repairSheetNames);
 		state.actorImportHookRegistered = true;
 		debugActorImport("已注册Actor导入翻译Hooks", {
 			hooks: ["preCreateActor", "createActor", "preUpdateActor", "updateActor"],
@@ -862,6 +902,7 @@ function registerDebugConsoleApi() {
 	}
 
 	game.babeleOnDemandPatch = game.babeleOnDemandPatch ?? {};
+	game.babeleOnDemandPatch.repairActorNames = repairActorNames;
 	game.babeleOnDemandPatch.getActorImportDebug = () => !!root.BabeleOnDemandPatchDebug.actorImport;
 	game.babeleOnDemandPatch.setActorImportDebug = (enabled) => {
 		root.BabeleOnDemandPatchDebug.actorImport = !!enabled;
@@ -1024,6 +1065,80 @@ function mergeActorSourceWithChange(actor, change) {
 	}
 }
 
+function isActorImportUpdate(change) {
+	if (!change || typeof change !== "object") return false;
+	return Object.prototype.hasOwnProperty.call(change, "flags.core.sourceId")
+		|| Object.prototype.hasOwnProperty.call(change, "_stats.compendiumSource")
+		|| Object.prototype.hasOwnProperty.call(change.flags ?? {}, "core.sourceId")
+		|| Object.prototype.hasOwnProperty.call(change.flags?.core ?? {}, "sourceId")
+		|| Object.prototype.hasOwnProperty.call(change._stats ?? {}, "compendiumSource");
+}
+
+function actorTranslationValuesEqual(left, right) {
+	if (Object.is(left, right)) return true;
+	if (!left || !right || typeof left !== "object" || typeof right !== "object") return false;
+	if (Array.isArray(left) !== Array.isArray(right)) return false;
+	const leftKeys = Object.keys(left);
+	const rightKeys = Object.keys(right);
+	return leftKeys.length === rightKeys.length
+		&& leftKeys.every((key) => Object.prototype.hasOwnProperty.call(right, key)
+			&& actorTranslationValuesEqual(left[key], right[key]));
+}
+
+function actorTranslationObject(value) {
+	return value !== null && typeof value === "object" && !Array.isArray(value);
+}
+
+// Only carry actual converter changes. Lookup probes may use a compendium's ID
+// and name, but those temporary lookup values are not changes to the world Actor.
+// When a current snapshot is supplied, preserve values edited during loading.
+function actorTranslationDelta(source, translated, current = source, root = true) {
+	const delta = {};
+	for (const [key, value] of Object.entries(translated ?? {})) {
+		if (root && ["_id", "_stats", "sort"].includes(key)) continue;
+		const before = source?.[key];
+		const latest = current?.[key];
+		if (actorTranslationValuesEqual(before, value)) continue;
+		if (actorTranslationObject(value)
+			&& (before === undefined || actorTranslationObject(before))
+			&& (latest === undefined || actorTranslationObject(latest))) {
+			if (before !== undefined && latest === undefined) continue;
+			const nested = actorTranslationDelta(before, value, latest, false);
+			if (Object.keys(nested).length) delta[key] = nested;
+		} else if (actorTranslationValuesEqual(before, latest)) {
+			delta[key] = foundry.utils.deepClone(value);
+		}
+	}
+	return delta;
+}
+
+function actorImportSourceIsCurrent(actor, source, allowTranslated = false) {
+	const current = typeof actor?.toObject === "function" ? actor.toObject() : null;
+	if (!current || (!allowTranslated && current.flags?.babele?.translated)) return false;
+	if (current._id !== source?._id) return false;
+	const originalRef = getActorSourceRef(source);
+	const currentRef = getActorSourceRef(current);
+	return (originalRef?.collection ?? null) === (currentRef?.collection ?? null)
+		&& (originalRef?.documentId ?? originalRef?.id ?? null) === (currentRef?.documentId ?? currentRef?.id ?? null);
+}
+
+function preserveSubmittedActorChanges(delta, submitted) {
+	let deferred = false;
+	const filtered = {};
+	for (const [key, value] of Object.entries(delta)) {
+		if (!Object.prototype.hasOwnProperty.call(submitted ?? {}, key)) {
+			filtered[key] = value;
+		} else if (actorTranslationObject(value) && actorTranslationObject(submitted[key])) {
+			const nested = preserveSubmittedActorChanges(value, submitted[key]);
+			if (Object.keys(nested.delta).length) filtered[key] = nested.delta;
+			deferred ||= nested.deferred;
+		} else {
+			deferred = true;
+		}
+	}
+	return { delta: filtered, deferred };
+}
+
 function getActorSourceDocumentId(actorData) {
 	const ref = getActorSourceRef(actorData);
 	return ref?.documentId ?? ref?.id ?? null;
@@ -1037,7 +1152,8 @@ function getActorSourceDocumentName(actorData) {
 
 	try {
 		const pack = game.packs?.get?.(packId);
-		const name = pack?.index?.get?.(docId)?.name;
+		const entry = pack?.index?.get?.(docId);
+		const name = entry?.originalName ?? entry?.flags?.babele?.originalName ?? entry?.name;
 		return typeof name === "string" && name.trim() ? name : null;
 	} catch {
 		return null;
@@ -1095,8 +1211,117 @@ function isMeaningfulActorTranslation(source, translated) {
 	}
 }
 
+// Completion flags describe the document as a whole; they do not prove that
+// its name was applied. Resolve names separately, using exact source keys only.
+function actorNameTranslation(babele, state, packId, source) {
+	if (!["npc", "hazard"].includes(source?.type)) return null;
+	const pack = getTranslatedPackCompat(babele, state, packId);
+	const titles = state?.titleIndex?.[packId]?.titles ?? {};
+	const sourceRef = getActorSourceRef(source);
+	const sourceId = sourceRef?.collection === packId ? (sourceRef.documentId ?? sourceRef.id) : null;
+	const keys = [...new Set([sourceId, source._id, source.originalName, source.flags?.babele?.originalName, source.name]
+		.filter((key) => typeof key === "string" && key.length))];
+	let entry = null;
+	let entryKey = null;
+	try {
+		if (typeof pack?.translationsFor === "function") {
+			entry = pack.translationsFor(source);
+			entryKey = pack.translationKeyFor?.(source) ?? null;
+		}
+		if (!entry?.name) {
+			const entries = pack?.translations ?? pack?.translation?.entries;
+			for (const key of keys) {
+				const candidate = Array.isArray(entries) ? entries.find((value) => value?.id === key) : entries?.[key];
+				if (typeof candidate?.name !== "string" || !candidate.name.trim()) continue;
+				entry = candidate;
+				entryKey = key;
+				break;
+			}
+		}
+	} catch {}
+	// A name-keyed entry or the generated title table provides positive evidence
+	// of the original name. An ID match alone must never rename a custom Actor.
+	const originalNames = new Set();
+	if (typeof entryKey === "string" && entryKey !== sourceId && entryKey !== source._id) originalNames.add(entryKey);
+	for (const key of keys) {
+		if (key === sourceId || key === source._id) continue;
+		if (typeof titles[key] === "string" && (!entry?.name || titles[key] === entry.name)) originalNames.add(key);
+	}
+	const originalName = originalNames.has(source.name) ? source.name : [...originalNames][0];
+	const name = typeof entry?.name === "string" && entry.name.trim() ? entry.name : titles[originalName];
+	if (!originalName || typeof name !== "string" || !name.trim()) return null;
+	const tokenNames = [entry?.prototypeToken?.name, entry?.token?.name, entry?.tokenName, entry?.data?.tokenName, name]
+		.filter((value) => typeof value === "string" && value.trim());
+	const tokenName = tokenNames.find((value) => !originalNames.has(value)) ?? tokenNames[0];
+	return { originalNames, name, tokenName };
+}
+
+function actorNameTranslationPatch(babele, state, packId, source, translated = source) {
+	const names = actorNameTranslation(babele, state, packId, source);
+	const patch = {};
+	if (!names) return patch;
+	if (names.originalNames.has(source.name) && (!translated?.name || translated.name === source.name) && source.name !== names.name) {
+		patch.name = names.name;
+	}
+	const tokenName = source.prototypeToken?.name;
+	if (names.originalNames.has(tokenName) && (!translated?.prototypeToken?.name || translated.prototypeToken.name === tokenName) && tokenName !== names.tokenName) {
+		patch.prototypeToken = { name: names.tokenName };
+	}
+	return patch;
+}
+
+function completeActorTranslationNames(babele, state, packId, source, translated) {
+	if (!translated || typeof translated !== "object") return translated;
+	const patch = actorNameTranslationPatch(babele, state, packId, source, translated);
+	return Object.keys(patch).length ? foundry.utils.mergeObject(translated, patch, { inplace: false }) : translated;
+}
+
+// Repair existing translated world/synthetic Actors when their sheet is opened.
+// This writes names only and checks again after loading, preserving concurrent
+// edits, custom Token names, statistics, and all previously translated prose.
+async function repairActorNames(actor) {
+	if (!isOnDemandMode() || !actor || actor.pack || actor.isOwner === false || game.system?.id !== "pf2e") return false;
+	const babele = game.babele;
+	const state = babele?.__ondemandPatch;
+	if (!state || typeof actor.toObject !== "function") return false;
+	const pending = state.actorNameRepairs ??= new WeakSet();
+	if (pending.has(actor)) return false;
+	pending.add(actor);
+	try {
+		const source = actor.toObject();
+		if (!["npc", "hazard"].includes(source.type)) return false;
+		if (!babele.initialized) await babele.init();
+		const sourcePackId = getActorSourcePackId(source);
+		const candidates = sourcePackId ? [sourcePackId] : resolveActorCandidatePackIds(babele, state, source);
+		// Without provenance, an ambiguous name is insufficient for an old Actor.
+		if (!sourcePackId && candidates.length !== 1) return false;
+		for (const packId of candidates) {
+			await babele.ensurePackTranslationsLoaded?.(packId);
+			if (!actorImportSourceIsCurrent(actor, source, true)) return false;
+			const patch = actorNameTranslationPatch(babele, state, packId, source);
+			const payload = actorTranslationDelta(source, patch, actor.toObject());
+			const names = actorNameTranslation(babele, state, packId, source);
+			const token = actor.isToken ? actor.token : null;
+			const tokenName = token?.name;
+			const repairToken = names?.originalNames.has(tokenName) && tokenName !== names.tokenName;
+			if (Object.keys(payload).length) await actor.update(payload, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
+			if (repairToken && actorImportSourceIsCurrent(actor, source, true) && token.name === tokenName) {
+				await token.update({ name: names.tokenName });
+			}
+			return Object.keys(payload).length > 0 || !!repairToken;
+		}
+		return false;
+	} finally {
+		pending.delete(actor);
+	}
+}
+
 function tryTranslateActorFromPack(babele, packId, source) {
 	const state = babele?.__ondemandPatch;
+	if (source?.flags?.babele?.translated || source?.translated) {
+		const patch = actorNameTranslationPatch(babele, state, packId, source);
+		return Object.keys(patch).length ? foundry.utils.mergeObject(source, patch, { inplace: false }) : null;
+	}
 	const pack = getTranslatedPackCompat(babele, state, packId);
 	const probes = buildActorTranslationProbes(source);
 	if (!probes.length) return null;
@@ -1110,14 +1335,17 @@ function tryTranslateActorFromPack(babele, packId, source) {
 	for (const probe of probes) {
 		if (pack && !packHasActorTranslation(pack, probe)) continue;
 		try {
-			const translated = translateDataCompat(babele, state, packId, probe);
-			if (!isMeaningfulActorTranslation(probe, translated)) continue;
+			// Some legacy converters mutate their input. Keep both the lookup probe
+			// and original Actor snapshot intact when calculating translation changes.
+			const originalProbe = foundry.utils.deepClone(probe);
+			const translated = translateDataCompat(babele, state, packId, foundry.utils.deepClone(probe));
+			if (!isMeaningfulActorTranslation(originalProbe, translated)) continue;
 			debugActorImport("pack翻译命中", {
 				packId,
 				probeId: probe?._id ?? null,
 				probeName: probe?.name ?? null,
 			});
-			return translated;
+			return foundry.utils.mergeObject(foundry.utils.deepClone(source), actorTranslationDelta(originalProbe, translated));
 		} catch {}
 	}
 
@@ -1144,7 +1372,7 @@ function autoTranslateImportedActorInPreCreate(actor, data, userId) {
 	if (!shouldRunActorImportAutoTranslate(babele)) return;
 
 	const source = typeof actor?.toObject === "function" ? actor.toObject() : data;
-	if (!source || source?.flags?.babele?.translated) return;
+	if (!source) return;
 
 	debugActorImport("preCreate触发", {
 		actorId: actor?.id ?? actor?._id ?? null,
@@ -1181,6 +1409,7 @@ function autoTranslateImportedActorInPreUpdate(actor, change, userId) {
 		mode: getLoadingModeSetting(),
 	});
 	if (!isOnDemandMode()) return;
+	if (!isActorImportUpdate(change)) return;
 	if (!actor || actor.pack) return;
 	if (typeof userId === "string" && userId !== game.userId) return;
 
@@ -1190,7 +1419,7 @@ function autoTranslateImportedActorInPreUpdate(actor, change, userId) {
 	if (!shouldRunActorImportAutoTranslate(babele)) return;
 
 	const source = mergeActorSourceWithChange(actor, change);
-	if (!source || source?.flags?.babele?.translated) return;
+	if (!source) return;
 	if (!getActorSourcePackId(source)) return;
 
 	debugActorImport("preUpdate触发", {
@@ -1206,7 +1435,19 @@ function autoTranslateImportedActorInPreUpdate(actor, change, userId) {
 		if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 		const translated = tryTranslateActorFromPack(babele, packId, source);
 		if (!translated) continue;
-		actor.updateSource(translated);
+		// preUpdate must modify the pending database change, not the local source.
+		// Explicit submitted fields win. If this defers any translation, leave it
+		// unmarked so the post-update fallback can translate the saved import.
+		const pending = preserveSubmittedActorChanges(actorTranslationDelta(source, translated), foundry.utils.expandObject(change));
+		if (pending.deferred) {
+			delete pending.delta.translated;
+			if (pending.delta.flags?.babele) {
+				delete pending.delta.flags.babele.translated;
+				if (!Object.keys(pending.delta.flags.babele).length) delete pending.delta.flags.babele;
+				if (!Object.keys(pending.delta.flags).length) delete pending.delta.flags;
+			}
+		}
+		foundry.utils.mergeObject(change, pending.delta);
 		debugActorImport("preUpdate应用翻译成功", {
 			actorId: actor?.id ?? actor?._id ?? null,
 			actorName: source?.name ?? null,
@@ -1232,7 +1473,7 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
 	if (!shouldRunActorImportAutoTranslate(babele)) return;
 
 	const source = typeof actor?.toObject === "function" ? actor.toObject() : null;
-	if (!source || source?.flags?.babele?.translated) return;
+	if (!source) return;
 
 	debugActorImport("create后兜底触发", {
 		actorId: actor?.id ?? actor?._id ?? null,
@@ -1262,7 +1503,8 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
 
 		const translated = tryTranslateActorFromPack(babele, packId, source);
 		if (!translated) continue;
-		await applyTranslatedActorToWorldActor(actor, translated);
+		if (!actorImportSourceIsCurrent(actor, source, !!source.flags?.babele?.translated)) return;
+		await applyTranslatedActorToWorldActor(actor, translated, source);
 		debugActorImport("create后兜底应用翻译成功", {
 			actorId: actor?.id ?? actor?._id ?? null,
 			actorName: source?.name ?? null,
@@ -1277,13 +1519,14 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
 	});
 }
 
-async function autoTranslateImportedActorAfterUpdate(actor, userId) {
+async function autoTranslateImportedActorAfterUpdate(actor, userId, change) {
 	debugActorImport("afterUpdate enter", {
 		actorName: actor?.name ?? null,
 		userId,
 		mode: getLoadingModeSetting(),
 	});
 	if (!isOnDemandMode()) return;
+	if (!isActorImportUpdate(change)) return;
 	if (!actor || actor.pack) return;
 	if (typeof userId === "string" && userId !== game.userId) return;
 
@@ -1293,7 +1536,7 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId) {
 	if (!shouldRunActorImportAutoTranslate(babele)) return;
 
 	const source = typeof actor?.toObject === "function" ? actor.toObject() : null;
-	if (!source || source?.flags?.babele?.translated) return;
+	if (!source) return;
 	if (!getActorSourcePackId(source)) return;
 
 	debugActorImport("update后兜底触发", {
@@ -1323,7 +1566,8 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId) {
 
 		const translated = tryTranslateActorFromPack(babele, packId, source);
 		if (!translated) continue;
-		await applyTranslatedActorToWorldActor(actor, translated);
+		if (!actorImportSourceIsCurrent(actor, source, !!source.flags?.babele?.translated)) return;
+		await applyTranslatedActorToWorldActor(actor, translated, source);
 		debugActorImport("update后兜底应用翻译成功", {
 			actorId: actor?.id ?? actor?._id ?? null,
 			actorName: source?.name ?? null,
@@ -1333,30 +1577,35 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId) {
 	}
 }
 
-async function applyTranslatedActorToWorldActor(actor, translated) {
-	const payload =
-		foundry.utils?.deepClone && typeof foundry.utils.deepClone === "function"
-			? foundry.utils.deepClone(translated)
-			: JSON.parse(JSON.stringify(translated));
-	if (!payload || typeof payload !== "object") return;
-
-	delete payload._id;
-
-	const items = Array.isArray(payload.items) ? payload.items : [];
-	const effects = Array.isArray(payload.effects) ? payload.effects : [];
+async function applyTranslatedActorToWorldActor(actor, translated, source) {
+	if (!source || !translated || !actorImportSourceIsCurrent(actor, source, !!source.flags?.babele?.translated)) return;
+	const payload = actorTranslationDelta(source, translated, actor.toObject());
 	delete payload.items;
 	delete payload.effects;
 
 	if (Object.keys(payload).length) {
-		await actor.update(payload, { diff: false, [ACTOR_IMPORT_INTERNAL_OPTION]: true });
+		await actor.update(payload, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
 	}
+	if (!actorImportSourceIsCurrent(actor, source, true)) return;
 
-	const itemUpdates = items.filter((item) => typeof item?._id === "string" && !!actor.items.get(item._id));
+	const embeddedUpdates = (key) => {
+		const originals = new Map((source[key] ?? []).map((entry) => [entry._id, entry]));
+		return (translated[key] ?? []).flatMap((entry) => {
+			const original = originals.get(entry?._id);
+			const document = actor[key]?.get?.(entry?._id);
+			if (!original || !document) return [];
+			const latest = typeof document.toObject === "function" ? document.toObject() : document;
+			const delta = actorTranslationDelta(original, entry, latest);
+			return Object.keys(delta).length ? [{ _id: entry._id, ...delta }] : [];
+		});
+	};
+	const itemUpdates = embeddedUpdates("items");
 	if (itemUpdates.length) {
 		await actor.updateEmbeddedDocuments("Item", itemUpdates, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
 	}
+	if (!actorImportSourceIsCurrent(actor, source, true)) return;
 
-	const effectUpdates = effects.filter((effect) => typeof effect?._id === "string" && !!actor.effects.get(effect._id));
+	const effectUpdates = embeddedUpdates("effects");
 	if (effectUpdates.length) {
 		await actor.updateEmbeddedDocuments("ActiveEffect", effectUpdates, { [ACTOR_IMPORT_INTERNAL_OPTION]: true });
 	}
@@ -1634,16 +1883,119 @@ function restorePackFoldersCompat(pack) {
 
 function scheduleDocumentIndexRebuild(state, reason = "manual") {
 	if (!state) return;
-	if (state.documentIndexRebuildTimer) return;
+	state.documentIndexRebuildRequested = true;
+	if (state.documentIndexRebuildTimer != null) return;
 	tracePatch("scheduleDocumentIndexRebuild queued", { reason });
 	state.documentIndexRebuildTimer = globalThis.setTimeout(async () => {
-		state.documentIndexRebuildTimer = null;
+		state.documentIndexRebuildRequested = false;
 		try {
 			tracePatch("scheduleDocumentIndexRebuild firing", { reason });
 			await rebuildDocumentIndexCompat();
 			logPatch("documentIndex rebuilt", { reason });
 		} catch {
 			tracePatch("scheduleDocumentIndexRebuild failed", { reason });
+		} finally {
+			state.documentIndexRebuildTimer = null;
+			// Keep at most one follow-up for changes received during this rebuild.
+			if (state.documentIndexRebuildRequested) scheduleDocumentIndexRebuild(state, "queued-changes");
+		}
+	}, 50);
+}
+
+function clearDocumentIndexData(documentIndex) {
+	for (const key of Object.keys(documentIndex.trees ?? {})) delete documentIndex.trees[key];
+	for (const key of Object.keys(documentIndex.uuids ?? {})) delete documentIndex.uuids[key];
+}
+
+function assertSharedDocumentIndexData(documentIndex, builder) {
+	if (builder.trees !== documentIndex.trees || builder.uuids !== documentIndex.uuids) {
+		throw new Error("Document index recovery builder replaced the shared search data");
+	}
+}
+
+async function prepareDocumentIndexOperation(documentIndex) {
+	const nativeReady = documentIndex.ready;
+	const recovery = documentIndexRecoveries.get(documentIndex);
+	// Only bypass the exact native promise which failed. A new native build must be awaited.
+	const builder = recovery && recovery.failedReady === nativeReady ? recovery.builder : documentIndex;
+	try {
+		await (builder === documentIndex ? nativeReady : builder.ready);
+	} catch (error) {
+		// The native index may have started a newer build while we were waiting.
+		if (documentIndex.ready !== nativeReady) return prepareDocumentIndexOperation(documentIndex);
+		tracePatch("documentIndex recovering rejected ready", { error: error?.message ?? String(error) });
+		// Game.documentIndex and DocumentIndex.ready are read-only. Keep the singleton
+		// and its public dictionaries, but use a fresh builder with an unpoisoned ready.
+		const fresh = new documentIndex.constructor();
+		if (fresh === documentIndex || typeof fresh.index !== "function"
+			|| !documentIndex.trees || !documentIndex.uuids) {
+			throw new Error("Document index does not support recovery with a fresh builder", { cause: error });
+		}
+		fresh.trees = documentIndex.trees;
+		fresh.uuids = documentIndex.uuids;
+		assertSharedDocumentIndexData(documentIndex, fresh);
+		// Shared dictionaries also receive normal core document updates while index()
+		// awaits packs. Copying a completed snapshot back would lose those updates.
+		clearDocumentIndexData(documentIndex);
+		await fresh.index();
+		assertSharedDocumentIndexData(documentIndex, fresh);
+		// Record only a successful recovery. A failed attempt is retried by a later
+		// queued operation, never an unbounded retry loop within this operation.
+		documentIndexRecoveries.set(documentIndex, { failedReady: nativeReady, builder: fresh });
+		if (documentIndex.ready !== nativeReady) return prepareDocumentIndexOperation(documentIndex);
+		return { builder: fresh, rebuilt: true };
+	}
+	if (documentIndex.ready !== nativeReady) return prepareDocumentIndexOperation(documentIndex);
+	assertSharedDocumentIndexData(documentIndex, builder);
+	if (builder === documentIndex) documentIndexRecoveries.delete(documentIndex);
+	return { builder, rebuilt: false };
+}
+
+function queueDocumentIndexOperation(documentIndex, operation) {
+	const previous = documentIndexOperations.get(documentIndex) ?? Promise.resolve();
+	const pending = previous.catch(() => {}).then(async () => {
+		const prepared = await prepareDocumentIndexOperation(documentIndex);
+		return operation(prepared);
+	});
+	// Publish the barrier before any await, including the wait for the native index.
+	documentIndexOperations.set(documentIndex, pending);
+	const release = () => {
+		if (documentIndexOperations.get(documentIndex) === pending) documentIndexOperations.delete(documentIndex);
+	};
+	pending.then(release, release);
+	return pending;
+}
+
+function scheduleDocumentIndexEntryReplace(state, document) {
+	const documentIndex = game.documentIndex;
+	if (!document?.uuid || !document?.pack
+		|| typeof documentIndex?.replaceDocument !== "function"
+		|| typeof documentIndex?.removeDocument !== "function") {
+		scheduleDocumentIndexRebuild(state, "indexDocument-fallback");
+		return;
+	}
+	const entries = state.documentIndexEntries ??= new Map();
+	entries.set(document.uuid, document);
+	if (state.documentIndexEntryTimer != null) return;
+	state.documentIndexEntryTimer = globalThis.setTimeout(async () => {
+		try {
+			await queueDocumentIndexOperation(documentIndex, () => {
+				if (game.documentIndex !== documentIndex) throw new Error("Document index changed while waiting");
+				// Include updates received while waiting, then let reentrant updates form the next batch.
+				const batch = Array.from(entries.values());
+				entries.clear();
+				for (const doc of batch) {
+					const pack = game.packs?.get?.(doc.pack);
+					if (pack?.index?.get?.(doc.id)) documentIndex.replaceDocument(doc);
+					else documentIndex.removeDocument(doc);
+				}
+			});
+		} catch {
+			entries.clear();
+			scheduleDocumentIndexRebuild(state, "indexDocument-fallback");
+		} finally {
+			state.documentIndexEntryTimer = null;
+			if (entries.size) scheduleDocumentIndexEntryReplace(state, entries.values().next().value);
 		}
 	}, 50);
 }
@@ -1658,14 +2010,13 @@ async function rebuildDocumentIndexCompat() {
 		treeCount: Object.keys(documentIndex?.trees ?? {}).length,
 		uuidCount: Object.keys(documentIndex?.uuids ?? {}).length,
 	});
-	await documentIndex.ready;
-	for (const key of Object.keys(documentIndex?.trees ?? {})) {
-		delete documentIndex.trees[key];
-	}
-	for (const key of Object.keys(documentIndex?.uuids ?? {})) {
-		delete documentIndex.uuids[key];
-	}
-	await documentIndex.index();
+	await queueDocumentIndexOperation(documentIndex, async ({ builder, rebuilt }) => {
+		// Preparing a new recovery builder already performs the requested full rebuild.
+		if (rebuilt) return;
+		clearDocumentIndexData(documentIndex);
+		await builder.index();
+		assertSharedDocumentIndexData(documentIndex, builder);
+	});
 	tracePatch("rebuildDocumentIndexCompat end", {
 		treeCount: Object.keys(documentIndex?.trees ?? {}).length,
 		uuidCount: Object.keys(documentIndex?.uuids ?? {}).length,
@@ -1796,7 +2147,7 @@ function translateDataCompat(babele, state, packId, data, translationsOnly = fal
 	if (translatedPack?.translate) {
 		const translated = translatedPack.translate(data, translationsOnly);
 		if (translated !== undefined) {
-			return translated;
+			return completeActorTranslationNames(babele, state, packId, data, translated);
 		}
 	}
 	if (!isModernBabele(state) && typeof babele.translate === "function") {
@@ -1804,7 +2155,7 @@ function translateDataCompat(babele, state, packId, data, translationsOnly = fal
 		if (state?.compatPacks?.get?.(packId)?.translated && !isMeaningfulActorTranslation(data, translated)) {
 			translated = state.compatPacks.get(packId).translate(data, translationsOnly);
 		}
-		return translated;
+		return completeActorTranslationNames(babele, state, packId, data, translated);
 	}
 	return data;
 }
@@ -1903,9 +2254,9 @@ async function getTranslationFiles(babele, state) {
 			tracePatch("getTranslationFiles browse failed", { dir });
 		}
 	}
-	state.translationFilesCache = files;
+	state.translationFilesCache = uniqueTranslationUrls(files);
 	tracePatch("getTranslationFiles completed", { count: files.length, sample: files.slice(0, 20) });
-	return files;
+	return state.translationFilesCache;
 }
 
 async function getMappingFiles(babele, state) {
@@ -1934,7 +2285,7 @@ async function getMappingFiles(babele, state) {
 			tracePatch("getMappingFiles browse failed", { dir });
 		}
 	}
-	state.mappingFilesCache = sortMappingFilesByDirectoryPreference(files);
+	state.mappingFilesCache = sortMappingFilesByDirectoryPreference(uniqueTranslationUrls(files));
 	tracePatch("getMappingFiles completed", {
 		count: state.mappingFilesCache.length,
 		files: state.mappingFilesCache.slice(0, 20),
@@ -1951,10 +2302,12 @@ async function loadGlobalMappingsOnce(babele, state) {
 	tracePatch("loadGlobalMappingsOnce mapping files", { count: mappingFiles?.length ?? 0, files: mappingFiles ?? [] });
 	if (mappingFiles?.length) {
 		const mappings = await Promise.all(
-			mappingFiles.map(async (file) => {
+			uniqueTranslationUrls(mappingFiles).map(async (file) => {
 				try {
 					const r = await fetch(file);
-					return await r.json();
+					if (!r.ok) return null;
+					const mapping = await r.json();
+					return mapping && typeof mapping === "object" && !Array.isArray(mapping) ? mapping : null;
 				} catch {
 					return null;
 				}
@@ -1969,13 +2322,14 @@ async function loadGlobalMappingsOnce(babele, state) {
 
 function buildPackTranslationUrlIndex(babele, files) {
 	const index = new Map();
+	const uniqueFiles = uniqueTranslationUrls(files ?? []);
 	for (const metadata of game.data?.packs ?? []) {
 		if (!metadataSupportedByBabele(babele, metadata)) continue;
 		const collection = collectionFromMetadata(babele, metadata);
 		if (!collection) continue;
 		const encodedCollection = encodeURI(collection);
 		const exactFileName = `${encodedCollection}.json`;
-		const urls = (files ?? []).filter((f) => {
+		const urls = uniqueFiles.filter((f) => {
 			const baseName = f?.split?.("/").pop?.().split?.("\\").pop?.();
 			if (baseName === exactFileName) return true;
 			if (typeof baseName !== "string") return false;
@@ -1988,10 +2342,10 @@ function buildPackTranslationUrlIndex(babele, files) {
 
 function buildDirectPackTranslationUrls(babele, packId, state = babele?.__ondemandPatch) {
 	const fileName = `${encodeURI(packId)}.json`;
-	return getTranslationDirectories(babele, state).map((dir) => {
+	return uniqueTranslationUrls(getTranslationDirectories(babele, state).map((dir) => {
 		const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
 		return `${base}/${fileName}`;
-	});
+	}));
 }
 
 async function importLegacyTranslatedCompendium() {
@@ -2234,10 +2588,45 @@ function mappingUsesConverters(mapping, targetConverters) {
 	return false;
 }
 
+function translationWaitReaches(graph, start, target, seen = new Set()) {
+	if (start === target) return true;
+	if (seen.has(start)) return false;
+	seen.add(start);
+	for (const next of graph.get(start)?.keys?.() ?? []) {
+		if (translationWaitReaches(graph, next, target, seen)) return true;
+	}
+	return false;
+}
+
+async function awaitTranslationTask(state, waiterId, taskId, task, canUsePublished = false) {
+	if (!waiterId) return task;
+	const graph = state.translationWaits ??= new Map();
+	if (translationWaitReaches(graph, taskId, waiterId)) {
+		// References may form a cycle, including two roots loading concurrently.
+		// Use an already published adapter only to close the cycle; normal references
+		// and external calls still await their owning loader. A cyclic reference does
+		// not wait for branches that the referenced loader has yet to visit.
+		if (canUsePublished) return;
+		throw new Error(`Translation dependency cycle before publication: ${waiterId} -> ${taskId}`);
+	}
+	const targets = graph.get(waiterId) ?? new Map();
+	graph.set(waiterId, targets);
+	targets.set(taskId, (targets.get(taskId) ?? 0) + 1);
+	try {
+		return await task;
+	} finally {
+		const count = targets.get(taskId) - 1;
+		if (count) targets.set(taskId, count);
+		else targets.delete(taskId);
+		if (!targets.size) graph.delete(waiterId);
+	}
+}
+
 async function ensureNpcDependenciesLoaded(babele, state, currentPackId) {
 	if (!state || state.npcDepsLoaded) return;
+	const dependencyTaskId = "babele:npc-dependencies";
 	if (state.npcDepsLoading) {
-		await state.npcDepsLoading;
+		await awaitTranslationTask(state, currentPackId, dependencyTaskId, state.npcDepsLoading);
 		return;
 	}
 
@@ -2245,7 +2634,10 @@ async function ensureNpcDependenciesLoaded(babele, state, currentPackId) {
 		for (const packId of NPC_TRANSLATOR_DEP_PACKS) {
 			if (packId === currentPackId) continue;
 			try {
-				await ensurePackTranslationsLoaded(babele, state, packId);
+				await ensurePackTranslationsLoaded(babele, state, packId, {
+					referrer: dependencyTaskId,
+					skipNpcDependencies: true,
+				});
 			} catch {}
 		}
 		state.npcDepsLoaded = true;
@@ -2253,13 +2645,32 @@ async function ensureNpcDependenciesLoaded(babele, state, currentPackId) {
 
 	state.npcDepsLoading = loader;
 	try {
-		await loader;
+		await awaitTranslationTask(state, currentPackId, dependencyTaskId, loader);
 	} finally {
 		state.npcDepsLoading = null;
 	}
 }
 
-async function ensurePackTranslationsLoaded(babele, state, collection) {
+async function ensurePackTranslationsLoaded(babele, state, collection, loadContext = {}) {
+	await loadPackTranslations(babele, state, collection, loadContext);
+	if (loadContext.referrer) return;
+	// Internal traversal may break a reference cycle at a published adapter. A
+	// public caller still needs every reachable branch, including branches outside
+	// that cycle. Wait on raw loaders only, never another public completion promise.
+	const pending = [normalizePackId(collection)];
+	const visited = new Set();
+	while (pending.length) {
+		const packId = pending.pop();
+		if (!packId || visited.has(packId)) continue;
+		visited.add(packId);
+		// Also retry an unavailable reference on a later public request, even when
+		// the root adapter was already published by an earlier partial load.
+		if (packId !== normalizePackId(collection)) await loadPackTranslations(babele, state, packId);
+		for (const ref of state.packTranslationReferences?.get(packId) ?? []) pending.push(ref);
+	}
+}
+
+async function loadPackTranslations(babele, state, collection, loadContext = {}) {
 	const packId = normalizePackId(collection);
 	if (!packId) return;
 	tracePatch(
@@ -2273,13 +2684,15 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
 		{ stack: true },
 	);
 
-	if (isPackTranslationLoadedCompat(babele, state, packId)) return;
-
 	const pending = state.packTranslationsLoading.get(packId);
 	if (pending) {
-		await pending;
+		await awaitTranslationTask(
+			state, loadContext.referrer, packId, pending,
+			isPackTranslationLoadedCompat(babele, state, packId),
+		);
 		return;
 	}
+	if (isPackTranslationLoadedCompat(babele, state, packId)) return;
 
 	const loader = (async () => {
 		if (!state.packTranslationUrls?.size) {
@@ -2326,6 +2739,8 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
 			tracePatch("ensurePackTranslationsLoaded abort: no translation found", { packId });
 			return;
 		}
+		const refs = Array.isArray(translation.reference) ? translation.reference : [translation.reference];
+		(state.packTranslationReferences ??= new Map()).set(packId, refs.map(normalizePackId).filter(Boolean));
 
 		const metadata = getPackMetadata(babele, packId);
 		if (!metadata) {
@@ -2339,7 +2754,9 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
 			name: metadata.name ?? null,
 		});
 
-		if (!state.npcDepsLoaded && !state.npcDepsLoading) {
+		if (metadata.type === "Actor") await game.npcTrans?.dict?.ready;
+
+		if (!loadContext.skipNpcDependencies && !state.npcDepsLoaded) {
 			const needsNpcDeps = mappingUsesConverters(translation.mapping, NPC_TRANSLATOR_CONVERTERS);
 			if (needsNpcDeps) {
 				await ensureNpcDependenciesLoaded(babele, state, packId);
@@ -2395,7 +2812,10 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
 			const refs = Array.isArray(translation.reference) ? translation.reference : [translation.reference];
 			tracePatch("ensurePackTranslationsLoaded loading references", { packId, refs });
 			for (const ref of refs) {
-				await ensurePackTranslationsLoaded(babele, state, ref);
+				await ensurePackTranslationsLoaded(babele, state, ref, {
+					referrer: packId,
+					skipNpcDependencies: loadContext.skipNpcDependencies,
+				});
 			}
 		}
 		tracePatch("ensurePackTranslationsLoaded exit success", {
@@ -2407,7 +2827,7 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
 
 	state.packTranslationsLoading.set(packId, loader);
 	try {
-		await loader;
+		await awaitTranslationTask(state, loadContext.referrer, packId, loader);
 	} finally {
 		state.packTranslationsLoading.delete(packId);
 	}
@@ -2416,10 +2836,12 @@ async function ensurePackTranslationsLoaded(babele, state, collection) {
 async function loadTranslationFromUrls(urls) {
 	tracePatch("loadTranslationFromUrls start", { urls });
 	const translations = await Promise.all(
-		(urls ?? []).map(async (url) => {
+		uniqueTranslationUrls(urls ?? []).map(async (url) => {
 			try {
 				const r = await fetch(url);
+				if (!r.ok) return null;
 				const json = await r.json();
+				if (!isTranslationPayload(json)) return null;
 				tracePatch("loadTranslationFromUrls fetched JSON", {
 					url,
 					ok: r?.ok ?? null,
@@ -2705,7 +3127,7 @@ function registerWrappers() {
 				}
 
 				translateIndexTitles(state, [entry], packId);
-				scheduleDocumentIndexRebuild(state, "indexDocument");
+				scheduleDocumentIndexEntryReplace(state, document);
 				tracePatch("indexDocument applied", {
 					packId,
 					documentId: id,
