@@ -1,6 +1,7 @@
 // Modified 2026-09-29: compatible Actor text fields and independent token naming.
 // Based on AlphaStarguide/pf2e_compendium_chn; GPL-3.0, see LICENSE.
 import {DocumentMapping} from "../../babele/script/mapping/document-mapping.js";
+import {EmbeddedCompendium} from "../../babele/script/compendium/embedded-compendium.js";
 
 function isTranslationObject(value) {
     return value !== null && typeof value === "object" && !Array.isArray(value);
@@ -17,7 +18,7 @@ function setTranslatedText(target, path, ...values) {
     if (parent && Object.hasOwn(parent, key) && typeof parent[key] === "string") parent[key] = value;
 }
 
-function applyFlatActorText(data, translations, original) {
+function applyFlatActorText(data, translations, original, mapping = {}) {
     const fields = [
         ["details.publicNotes", "publicNotes"],
         ["details.privateNotes", "privateNotes"],
@@ -35,6 +36,9 @@ function applyFlatActorText(data, translations, original) {
         ["attributes.stealth.details", "stealthdetails"],
     ];
     for (const [path, ...keys] of fields) {
+        // Independent fields own their paths, including compendium overrides.
+        // Do not also write the default path through this legacy fallback.
+        if (keys.some((key) => Object.hasOwn(mapping, key))) continue;
         const originalValue = path.split(".").reduce((value, key) => value?.[key], original);
         const currentValue = path.split(".").reduce((value, key) => value?.[key], data);
         const values = keys.map((key) => translations[key]).filter((value) => typeof value === "string");
@@ -48,20 +52,47 @@ function applyFlatActorText(data, translations, original) {
 
 // Babele 2.8.0 renamed CompendiumMapping → DocumentMapping and now requires
 // {identityExtractors, converterRegistry} from the running Babele facade.
-function buildItemMapping(definition) {
-    return new DocumentMapping("Item", definition, {
+function itemMappingOverrides(definition, localMapping = {}) {
+    const mappings = game.babele.documentMappings;
+    if (typeof mappings?.mappingFor === "function") {
+        const effective = mappings.mappingFor("Item");
+        const fallback = Object.fromEntries(Object.entries(definition ?? {})
+            .filter(([key]) => !Object.hasOwn(effective.mapping ?? {}, key)));
+        return foundry.utils.mergeObject(fallback, localMapping, { inplace: false });
+    }
+    return foundry.utils.mergeObject(definition, localMapping, { inplace: false });
+}
+
+function buildItemMapping(definition, localMapping = {}) {
+    const overrides = itemMappingOverrides(definition, localMapping);
+    if (typeof game.babele.documentMappings?.mappingFor === "function") {
+        return game.babele.documentMappings.mappingFor("Item", overrides);
+    }
+    return new DocumentMapping("Item", overrides, {
         identityExtractors: game.babele.identityExtractorRegistry(),
         converterRegistry: game.babele.converterRegistry,
     });
 }
 
 function findItemTranslation(translations, item, name = item.name) {
+    const names = Array.isArray(name) ? name : [name];
     if (Array.isArray(translations)) {
         return translations.find((entry) => entry?.id === item._id)
-            ?? translations.find((entry) => entry?.id === name);
+            ?? names.map((key) => translations.find((entry) => entry?.id === key)).find((entry) => entry !== undefined);
     }
-    if (isTranslationObject(translations)) return translations[item._id] ?? translations[name];
+    if (isTranslationObject(translations)) {
+        return translations[item._id] ?? names.map((key) => translations[key]).find((entry) => entry !== undefined);
+    }
     return undefined;
+}
+
+function localItemMapping(translatedCompendium, params) {
+    if (isTranslationObject(params?.mapping)) return params.mapping;
+    const local = translatedCompendium?.customMapping?.items;
+    if (isTranslationObject(local?.mapping)) return local.mapping;
+    // Older files put child Item fields directly under mapping.items.
+    if (isTranslationObject(local) && !Object.hasOwn(local, "path") && !Object.hasOwn(local, "converter")) return local;
+    return {};
 }
 
 // Register token setting
@@ -131,7 +162,8 @@ export class NPCTranslator {
         translations = isTranslationObject(translations) ? translations : {};
         data = foundry.utils.deepClone(data);
         const names = [
-            translationObject.prototypeToken?.name,
+            typeof translationObject.prototypeToken === "string"
+                ? translationObject.prototypeToken : translationObject.prototypeToken?.name,
             translationObject.data?.tokenName,
             translations.name,
             translationObject.tokenName,
@@ -301,7 +333,7 @@ export class NPCTranslator {
             }
         }
 
-        applyFlatActorText(data, translationObject, original);
+        applyFlatActorText(data, translationObject, original, translatedCompendium?.mapping?.mapping ?? {});
         return data;
     }
 
@@ -311,15 +343,50 @@ export class NPCTranslator {
     //  - The labels for skill variants can be translated using an automatic dictionary-based translation
     //  - Spellcasting entries are translated using an automated dictionary-based translation
 
-    item(data, translations, dataObject, translatedCompendium, translationObject) {
-        // Babele converters are synchronous. Async loading paths await dict.ready;
-        // callers which arrive earlier retain their source items for now.
-        if (!Array.isArray(data) || !this.dict.translations) return data;
+    item(data, translations, dataObject, translatedCompendium, translationObject, runtime = {}, params = {}) {
+        if (!Array.isArray(data)) return data;
         data = foundry.utils.deepClone(data);
         let itemMapping;
-        const getItemMapping = () => itemMapping ??= buildItemMapping(this.dict.itemMapping);
+        const getItemMapping = () => itemMapping ??= buildItemMapping(this.dict.itemMapping, localItemMapping(translatedCompendium, params));
+        const explicitEntries = {};
+        const hasExplicit = data.map((entry) => {
+            if (!isTranslationObject(entry) || typeof entry.name !== "string" || !isTranslationObject(entry.system)) return false;
+            const originalNames = [...new Set([
+                entry.originalName,
+                entry.flags?.babele?.originalName,
+                entry.name,
+            ].filter((name) => typeof name === "string"))];
+            const equipment = ["armor", "weapon", "equipment", "consumable", "treasure", "backpack"].includes(entry.type);
+            const prefix = entry.type === "melee" ? "strike-" : equipment ? "equipment-" : "";
+            const names = prefix ? [...originalNames.map((name) => `${prefix}${name}`), ...originalNames] : originalNames;
+            const explicit = findItemTranslation(translations, entry, names);
+            if (isTranslationObject(explicit) || typeof explicit === "string") {
+                explicitEntries[entry._id ?? entry.name] = typeof explicit === "string" ? { name: explicit } : explicit;
+                return true;
+            }
+            return false;
+        });
+        // Use the native Item scope so prepare hooks, embedded effects, and
+        // context-sensitive converters receive the same lifecycle as pack Items.
+        const explicitPack = hasExplicit.some(Boolean) ? new EmbeddedCompendium("Item", {
+            mapping: itemMappingOverrides(this.dict.itemMapping, localItemMapping(translatedCompendium, params)),
+            translations: explicitEntries,
+            documentMappings: game.babele.documentMappings,
+            runtime,
+        }) : null;
+        const explicitChanges = data.map((entry, index) => {
+            if (!hasExplicit[index]) return null;
+            const translatedData = explicitPack.translate(entry, true, runtime);
+            const translated = foundry.utils.mergeObject(entry, translatedData, { inplace: false });
+            return foundry.utils.diffObject(entry, translated);
+        });
+        // Raw exported English placeholders must not suppress dictionary or
+        // compendium fallback. Apply only genuinely changed local fields last.
+        translations = undefined;
         data.forEach((entry, index, arr) => {
             if (!isTranslationObject(entry) || typeof entry.name !== "string" || !isTranslationObject(entry.system)) return;
+            if (dataObject?.type === "vehicle" && !hasExplicit[index]) return;
+            if (!this.dict.translations) return;
             // Translate spells
             if (entry.type == "spell") {
                 let spellOffset;
@@ -479,6 +546,11 @@ export class NPCTranslator {
                 entry.name = this.dict.translateSpellcasting(entry.name);
             }
         });
+        for (const [index, changes] of explicitChanges.entries()) {
+            if (!changes || Object.keys(changes).length === 0) continue;
+            data[index] = foundry.utils.mergeObject(data[index], changes);
+            data[index].translated = true;
+        }
         return data;
     }
 }
