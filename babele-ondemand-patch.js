@@ -2577,13 +2577,23 @@ function reconstructDocumentCompat(documentClass, source, packId) {
 	return new documentClass(source, { pack: packId });
 }
 
-function mappingUsesConverters(mapping, targetConverters) {
+function mappingUsesConverters(mapping, targetConverters, babele, documentTypes = new Set(), seen = new WeakSet()) {
 	if (!mapping || typeof mapping !== "object") return false;
+	if (seen.has(mapping)) return false;
+	seen.add(mapping);
 	for (const value of Object.values(mapping)) {
 		if (!value || typeof value !== "object") continue;
 		const converter = value.converter;
 		if (typeof converter === "string" && targetConverters.has(converter)) return true;
-		if (mappingUsesConverters(value, targetConverters)) return true;
+		if (mappingUsesConverters(value, targetConverters, babele, documentTypes, seen)) return true;
+		// Embedded documents inherit their own effective mappings, even when the
+		// translation file has no local mapping (for example Adventure -> Actor).
+		const documentType = value.documentType;
+		if (converter === "document" && typeof documentType === "string" && !documentTypes.has(documentType)) {
+			const nestedTypes = new Set(documentTypes).add(documentType);
+			const nestedMapping = getMergedMapping(babele, { type: documentType }, { mapping: value.mapping });
+			if (mappingUsesConverters(nestedMapping, targetConverters, babele, nestedTypes, seen)) return true;
+		}
 	}
 	return false;
 }
@@ -2754,13 +2764,14 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 			name: metadata.name ?? null,
 		});
 
-		if (metadata.type === "Actor") await game.npcTrans?.dict?.ready;
+		const needsNpcDeps = mappingUsesConverters(
+			getMergedMapping(babele, metadata, translation), NPC_TRANSLATOR_CONVERTERS, babele,
+			new Set([metadata.type]),
+		);
+		if (metadata.type === "Actor" || needsNpcDeps) await game.npcTrans?.dict?.ready;
 
-		if (!loadContext.skipNpcDependencies && !state.npcDepsLoaded) {
-			const needsNpcDeps = mappingUsesConverters(translation.mapping, NPC_TRANSLATOR_CONVERTERS);
-			if (needsNpcDeps) {
-				await ensureNpcDependenciesLoaded(babele, state, packId);
-			}
+		if (needsNpcDeps && !loadContext.skipNpcDependencies && !state.npcDepsLoaded) {
+			await ensureNpcDependenciesLoaded(babele, state, packId);
 		}
 
 		trackMissingConverters(babele, state, packId, metadata, translation);
@@ -2869,13 +2880,18 @@ async function loadTranslationFromUrls(urls) {
 }
 
 function getMergedMapping(babele, metadata, translation) {
+	// Babele 2.9 resolves registered, loaded and compendium-local layers here,
+	// including its special handling of conditional mapping variants.
+	if (typeof babele?.documentMappings?.mappingFor === "function" && metadata?.type) {
+		return babele.documentMappings.mappingFor(metadata.type, translation?.mapping ?? null).mapping;
+	}
 	if (babele?.documentMappings && metadata?.type) {
 		const base =
 			babele.documentMappings.hierarchyFor?.(metadata.type)?.mappingFor?.({ type: metadata.type })?.definition ?? {};
 		const extra = translation?.mapping ?? {};
 		return foundry.utils.mergeObject(base, extra, { inplace: false });
 	}
-	const base = babele.constructor?.DEFAULT_MAPPINGS?.[metadata?.type] ?? {};
+	const base = babele?.constructor?.DEFAULT_MAPPINGS?.[metadata?.type] ?? {};
 	const extra = translation?.mapping ?? {};
 	return foundry.utils.mergeObject(base, extra, { inplace: false });
 }

@@ -1,6 +1,7 @@
 // Modified 2026-09-29: shared Actor mappings and converter initialization.
 // Based on AlphaStarguide/pf2e_compendium_chn; GPL-3.0, see LICENSE.
 import { NPCTranslator } from "./npc/NPCTranslator.js";
+import { createDefaultMappings, createDefaultConverters } from "./npc/default-mappings.js";
 
 const MODULE_ID = "pf2e_compendium_chn";
 const BABEL_NAMESPACE = "babele";
@@ -64,6 +65,7 @@ Hooks.once("babele.init", (babele) => {
 	registerTranslationSources(babele);
 
 	babele.registerConverters({
+		...createDefaultConverters(),
 		"npc-portrait-path": (
 			data,
 			translations,
@@ -126,14 +128,6 @@ Hooks.once("babele.init", (babele) => {
 	});
 
 	if (game.system.id === "pf2e" && LANGUAGE_ALIASES.includes(game.i18n.lang)) {
-		// A converter needs a mapping entry before Babele will call it. Keep the
-		// whole-system converter ahead of compendium-local scalar overrides.
-		babele.registerMapping({
-			Actor: {
-				name: "name",
-				data: { path: "system", converter: "npc-data-translation" },
-				token: { path: "prototypeToken", converter: "npc-token-translation" },
-			},
-		});
+		babele.registerMapping(createDefaultMappings());
 	}
 });
