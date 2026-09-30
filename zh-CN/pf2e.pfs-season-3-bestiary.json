@@ -941,7 +941,7 @@
                 },
                 "Sulfur Poisoning": {
                     "name": "Sulfur Poisoning",
-                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:17]</p>\n<p><strong>Maximum Duration</strong> 4 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d10[poison]]伤害</p>\n<p><strong>Stage 2</strong> @Damage[1d12[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d10[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened2} (1 round)</p>"
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:17]</p>\n<p><strong>Maximum Duration</strong> 4 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d10[poison]] damage</p>\n<p><strong>Stage 2</strong> @Damage[1d12[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d10[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened2} (1 round)</p>"
                 }
             },
             "prototypeToken": {
@@ -1515,7 +1515,7 @@
                     "description": "<p>Whenever the drakauthix takes at least 15 slashing damage, it releases a cloud of brown spores that has the effect of @UUID[Compendium.pf2e.spells-srd.Item.9XHmC2JgTUIQ1CCm]{Mist} for 1 minute, centered around the drakauthix. This cloud of spores does not move with the drakauthix, nor is it displaced by its movement.</p>"
                 },
                 "Spore Tendrils": {
-                    "description": "<p>The tendrils that cover the drakauthix's body reach out and infest adjacent creatures, dealing @Damage[4d6[poison]] damage and @Damage[1d6[persistent,poison]]. A creature can attempt a @Check[reflex|dc:27|basic] save to reduce this damage, but one @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the drakauthix takes a -4 circumstance penalty to this save.</p>",
+                    "description": "<p>The tendrils that cover the drakauthix's body reach out and infest adjacent creatures, dealing @Damage[4d6[poison],1d6[persistent,poison]|options:area-damage] damage. A creature can attempt a @Check[reflex|dc:27|basic|options:area-effect] save to reduce this damage, but one @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the drakauthix takes a -4 circumstance penalty to this save.</p>",
                     "name": "Spore Tendrils"
                 },
                 "Whirlwind of Hooks": {
@@ -2109,7 +2109,7 @@
                 },
                 "Shambling Onslaught": {
                     "name": "Shambling Onslaught",
-                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">2</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The shamblers lash out at any enemies in their squares or within 5 feet (@Check[reflex|dc:21|basic|options:area-effect] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d6+8)[bludgeoning]|options:area-damage]伤害</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+13)[bludgeoning]|options:area-damage]伤害</p>"
+                    "description": "<p><span class=\"action-glyph\">1</span> to <span class=\"action-glyph\">2</span></p>\n<p><strong>Frequency</strong> once per round</p>\n<hr />\n<p><strong>Effect</strong> The shamblers lash out at any enemies in their squares or within 5 feet (@Check[reflex|dc:21|basic|options:area-effect] save). The damage depends on the number of actions.</p>\n<p><span class=\"action-glyph\">1</span> @Damage[(2d6+8)[bludgeoning]|options:area-damage] damage</p>\n<p><span class=\"action-glyph\">2</span> @Damage[(2d6+13)[bludgeoning]|options:area-damage] damage</p>"
                 },
                 "Troop Movement": {
                     "name": "部队移动 Troop Movement",
@@ -2437,7 +2437,7 @@
             "items": {
                 "Slam Shut": {
                     "name": "Slam Shut",
-                    "description": "<p><strong>Trigger</strong> A creature steps onto a foot pincer</p>\n<hr />\n<p><strong>Effect</strong> The trap slams shut on the triggering creature's foot. The creature must succeed at a @Check[reflex|dc:18] save or take @Damage[(1d6+5)[slashing]] damage and @Damage[1d4[bleed]].</p>"
+                    "description": "<p><strong>Trigger</strong> A creature steps onto a foot pincer</p>\n<hr />\n<p><strong>Effect</strong> The trap slams shut on the triggering creature's foot. The creature must succeed at a @Check[reflex|dc:18|options:damaging-effect] save or take @Damage[(1d6+5)[slashing],1d4[bleed]] damage.</p>"
                 }
             },
             "prototypeToken": {
@@ -3558,7 +3558,7 @@
                     "description": "<p><strong>Trigger</strong> A creature other than a sulfuric slime comes within 10 feet of the mud pot</p>\n<hr />\n<p><strong>Effect</strong> The hazard rolls initiative as a gaseous cloud explodes out of the mud. The triggering creature takes @Damage[(1d6+3)[acid]] damage @Check[reflex|dc:17|basic]</p>"
                 },
                 "Sulfur Poisoning": {
-                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:16]</p>\n<p><strong>Maximum Duration</strong> 4 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d4[poison]]伤害</p>\n<p><strong>Stage 2</strong> @Damage[1d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened2} (1 round)</p>",
+                    "description": "<p><strong>Saving Throw</strong> @Check[fortitude|dc:16]</p>\n<p><strong>Maximum Duration</strong> 4 rounds</p>\n<p><strong>Stage 1</strong> @Damage[1d4[poison]] damage</p>\n<p><strong>Stage 2</strong> @Damage[1d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} (1 round)</p>\n<p><strong>Stage 3</strong> @Damage[2d6[poison]] damage and @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened2} (1 round)</p>",
                     "name": "Sulfur Poisoning"
                 }
             }
@@ -3980,7 +3980,7 @@
                 },
                 "Spore Tendrils": {
                     "name": "Spore Tendrils",
-                    "description": "<p>The tendrils that cover the drakauthix's body reach out and infest adjacent creatures, dealing @Damage[5d6[poison]] damage and @Damage[1d6[persistent,poison]] damage. A creature can attempt a @Check[reflex|dc:29|basic] save to reduce this damage, but one @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the drakauthix takes a -4 circumstance penalty to this save.</p>"
+                    "description": "<p>The tendrils that cover the drakauthix's body reach out and infest adjacent creatures, dealing @Damage[5d6[poison],1d6[persistent,poison]|options:area-damage] damage. A creature can attempt a @Check[reflex|dc:29|basic|options:area-effect] save to reduce this damage, but one @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} by the drakauthix takes a -4 circumstance penalty to this save.</p>"
                 },
                 "Whirlwind of Hooks": {
                     "name": "Whirlwind of Hooks",
@@ -5157,7 +5157,7 @@
                 },
                 "Clinging Suckers": {
                     "name": "Clinging Suckers",
-                    "description": "<p>When Smilglen Daet @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{Grabs} a creature larger than herself, she attaches to that creature. The @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} creature is not @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, but if it moves, Smilglen moves with it. If the creature is Medium or smaller, it takes a –5-foot status penalty to its Speeds while Smilglen is attached. Smilglen is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} while it is attached to a creature.</p>"
+                    "description": "<p>When Smilglen Daet @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]{Grabs} a creature larger than herself, she attaches to that creature. The @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed} creature is not @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, but if it moves, Smilglen moves with it. If the creature is Medium or smaller, it takes a –5-foot status penalty to its Speeds while Smilglen is attached. Smilglen is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} while it is attached to a creature.</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.FQX3YY3iFTtAtw1k]{Effect: Clinging Suckers}</p>"
                 },
                 "Jet": {
                     "name": "Jet",
@@ -6493,7 +6493,7 @@
             "items": {
                 "Cocytan Filth": {
                     "name": "冥河污秽症 Cocytan Filth",
-                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:18]</p>\n<p><strong>潜伏期</strong> [[/r 1d4 #days]]{1d4天}</p>\n<hr />\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（1天）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}（1天）</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}（1天）</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:18]</p>\n<p><strong>潜伏期</strong> [[/r 1d4 #days]]{1d4天}</p>\n<hr />\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（1日）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}（1日）</p>\n<p><strong>阶段3</strong> @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 3}（1日）</p>"
                 },
                 "Infernal Eye": {
                     "name": "炼狱之眼 IInfernal Eye",
