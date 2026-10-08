@@ -1,3 +1,4 @@
+// Performance update 2026-10-09: load only discovered translation files; share inventories with players.
 // Performance update 2026-10-08: bounded missing-file cache and shared light indexes.
 // Modified 2026-09-29: PR #52, index recovery, safe Actor imports and independent name repair.
 const PATCH_ID = detectHostPackageId() ?? "babele-ondemand-patch";
@@ -578,6 +579,8 @@ function installMappingAggregateCache(babele, state) {
 function resetOnDemandState(babele, state) {
 	state.generation = (state.generation ?? 0) + 1;
 	state.packTranslationUrls = new Map();
+	state.packTranslationFiles = null;
+	state.translationFilesSharing = null;
 	state.packTranslationsLoading = new Map();
 	state.packTranslationReferences = new Map();
 	state.packTranslationFailures = new Map();
@@ -1924,7 +1927,7 @@ async function initOnDemand(babele, state) {
 		count: files?.length ?? 0,
 		sample: (files ?? []).slice(0, 10),
 	});
-	state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
+	refreshPackTranslationUrlIndex(babele, state, files);
 	tracePatch("initOnDemand packTranslationUrls indexed", { entries: state.packTranslationUrls.size });
 
 	await ensureSpecialFolderTranslationsLoaded(babele, state, files);
@@ -2528,9 +2531,33 @@ async function getTranslationFiles(babele, state) {
 	}
 	const result = uniqueTranslationUrls(files);
 	if (state.generation !== generation) return result;
-	if (complete) state.translationFilesCache = result;
+	if (complete) {
+		state.translationFilesCache = result;
+		await shareTranslationFileInventory(state, result);
+	}
 	tracePatch("getTranslationFiles completed", { count: files.length, sample: files.slice(0, 20) });
 	return result;
+}
+
+async function shareTranslationFileInventory(state, files) {
+	// Only publish a complete, successfully browsed inventory. Players without
+	// FILES_BROWSE must not depend on guessed URLs or on a manual GM refresh.
+	if (!game.user?.isGM) return;
+	const signature = JSON.stringify(files);
+	if (state.translationFilesSharing?.signature === signature) return state.translationFilesSharing.promise;
+	const generation = state.generation;
+	const entry = { signature, promise: null };
+	entry.promise = Promise.resolve().then(async () => {
+		if (state.generation !== generation) return;
+		if (JSON.stringify(game.settings.get(BABEL_NAMESPACE, "translationFiles")) === signature) return;
+		await game.settings.set(BABEL_NAMESPACE, "translationFiles", files);
+	}).catch((error) => {
+		console.warn(`[${PATCH_ID}] Unable to share translation file inventory with players.`, error);
+	}).finally(() => {
+		if (state.translationFilesSharing === entry) state.translationFilesSharing = null;
+	});
+	state.translationFilesSharing = entry;
+	return entry.promise;
 }
 
 async function getMappingFiles(babele, state) {
@@ -2628,12 +2655,13 @@ function buildPackTranslationUrlIndex(babele, files) {
 	return index;
 }
 
-function buildDirectPackTranslationUrls(babele, packId, state = babele?.__ondemandPatch) {
-	const fileName = `${encodeURI(packId)}.json`;
-	return orderTranslationSourceUrls(babele, getTranslationDirectories(babele, state).map((dir) => {
-		const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
-		return `${base}/${fileName}`;
-	}), packId, state);
+function refreshPackTranslationUrlIndex(babele, state, files) {
+	// A cached complete listing has stable identity. Avoid rebuilding its whole
+	// pack index on every request for an untranslated pack; shared player settings
+	// and retried partial listings can still supply a newer inventory.
+	if (state.packTranslationFiles === files) return;
+	state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
+	state.packTranslationFiles = files;
 }
 
 async function importLegacyTranslatedCompendium() {
@@ -3094,20 +3122,23 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 	failures.delete(packId);
 
 	const loader = (async () => {
-		if (!state.packTranslationUrls?.size) {
+		if (!state.packTranslationUrls?.has(packId)) {
 			const files = await getTranslationFiles(babele, state);
 			if (!current()) return;
-			state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
+			refreshPackTranslationUrlIndex(babele, state, files);
 			tracePatch("ensurePackTranslationsLoaded rebuilt URL index", { entries: state.packTranslationUrls.size });
 		}
 
-		let urls = state.packTranslationUrls.get(packId);
+		const urls = state.packTranslationUrls.get(packId);
 		debugActorImport("尝试加载pack翻译", {
 			packId,
 			hasIndexedUrls: !!urls?.length,
 			indexedUrlCount: urls?.length ?? 0,
 		});
-		let translation = urls?.length ? await loadTranslationFromUrls(urls, state) : null;
+		// An absent pack is not a failed HTTP request. Only fetch filenames from
+		// directory discovery or the GM's shared inventory; preserve the original
+		// document when none exist. Failed discovery can retry after the cooldown.
+		const translation = urls?.length ? await loadTranslationFromUrls(urls, state) : null;
 		if (!current()) return;
 		tracePatch("ensurePackTranslationsLoaded indexed URL load result", {
 			packId,
@@ -3115,27 +3146,6 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 			loaded: !!translation,
 			hasReference: !!translation?.reference,
 		});
-
-		if (!translation) {
-			const triedUrls = new Set(urls ?? []);
-			const directUrls = buildDirectPackTranslationUrls(babele, packId, state).filter((url) => !triedUrls.has(url));
-			const directTranslation = await loadTranslationFromUrls(directUrls, state);
-			if (!current()) return;
-			if (directTranslation) {
-				urls = directUrls;
-				translation = directTranslation;
-				state.packTranslationUrls.set(packId, urls);
-				debugActorImport("pack翻译通过目录直探加载成功", {
-					packId,
-					urls,
-				});
-			}
-			tracePatch("ensurePackTranslationsLoaded direct URL load result", {
-				packId,
-				urlCount: directUrls.length,
-				loaded: !!directTranslation,
-			});
-		}
 
 		if (!translation) {
 			failures.set(packId, { retryAfter: Date.now() + TRANSLATION_FAILURE_RETRY_MS });
