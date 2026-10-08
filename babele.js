@@ -12,7 +12,8 @@ const LOADING_MODES = {
 	ONDEMAND: "ondemand",
 };
 
-const TRANSLATION_DIRS = ["zh-CN", "compendium"];
+// Source checkouts use zh-CN; prepare-release-layout.mjs switches this to compendium.
+const TRANSLATION_DIRS = ["compendium"];
 
 const LANGUAGE_ALIASES = ["cn", "zh-CN", "zh_Hans", "zh-Hans", "zh-cn", "zh_hans"];
 
