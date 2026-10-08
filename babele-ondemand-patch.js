@@ -583,6 +583,7 @@ function resetOnDemandState(babele, state) {
 	state.packTranslationFailures = new Map();
 	state.translationRequests = new Map();
 	state.lightIndexLoads = new Map();
+	state.directoryListings = new Map();
 	state.packNeedsNpcDependencies = new Map();
 	state.translationWaits = new Map();
 	state.packMissingConverters = new Map();
@@ -689,6 +690,7 @@ function tryPatchBabele(babele) {
 	state.packTranslationFailures = state.packTranslationFailures ?? new Map();
 	state.translationRequests = state.translationRequests ?? new Map();
 	state.lightIndexLoads = state.lightIndexLoads ?? new Map();
+	state.directoryListings = state.directoryListings ?? new Map();
 	state.packNeedsNpcDependencies = state.packNeedsNpcDependencies ?? new Map();
 	state.loadedGlobalMappings = state.loadedGlobalMappings ?? [];
 	state.globalMappingsLoaded = !!state.globalMappingsLoaded;
@@ -1891,12 +1893,14 @@ class PatchedOnDemandTranslateDialog extends Dialog {
 	}
 
 	submit(button) {
-		try {
-			button.callback();
-		} catch (err) {
-			ui.notifications.error(err);
-			throw new Error(err);
-		}
+		// Keep the log dialog open, but don't start overlapping writes on a
+		// double-click. Handle rejected async saves as well as synchronous errors.
+		if (this.translationTask) return this.translationTask;
+		this.translationTask = Promise.resolve().then(() => button.callback()).catch((error) => {
+			console.error(`[${PATCH_ID}] Manual Actor translation failed`, error);
+			ui.notifications.error(error?.message ?? String(error));
+		}).finally(() => { this.translationTask = null; });
+		return this.translationTask;
 	}
 }
 
@@ -2474,6 +2478,23 @@ function getMappingDirectories(babele, state = babele?.__ondemandPatch) {
 		.map(({ directory }) => directory));
 }
 
+function browseTranslationDirectory(state, directory) {
+	// Mapping discovery and pack discovery inspect the same directories. Share
+	// pending and successful listings until reload, but allow failed reads to retry.
+	const listings = state.directoryListings ??= new Map();
+	if (listings.has(directory)) return listings.get(directory);
+	const task = Promise.resolve().then(() => foundry.applications.apps.FilePicker.browse("data", directory))
+		.then((result) => {
+			if (!Array.isArray(result?.files)) throw new Error(`Invalid directory listing: ${directory}`);
+			return result.files;
+		}).catch((error) => {
+			if (listings.get(directory) === task) listings.delete(directory);
+			throw error;
+		});
+	listings.set(directory, task);
+	return task;
+}
+
 async function getTranslationFiles(babele, state) {
 	const generation = state.generation;
 	if (state.translationFilesCache) {
@@ -2493,20 +2514,23 @@ async function getTranslationFiles(babele, state) {
 	const dirs = getTranslationDirectories(babele, state);
 	tracePatch("getTranslationFiles browsing dirs", { dirs });
 	const files = [];
+	let complete = true;
 	for (const dir of dirs) {
+		if (state.generation !== generation) break;
 		try {
-			const result = await foundry.applications.apps.FilePicker.browse("data", dir);
-			tracePatch("getTranslationFiles browse result", { dir, count: result.files?.length ?? 0 });
-			for (const f of result.files ?? []) files.push(f);
+			const listing = await browseTranslationDirectory(state, dir);
+			tracePatch("getTranslationFiles browse result", { dir, count: listing.length });
+			for (const f of listing) files.push(f);
 		} catch {
+			complete = false;
 			tracePatch("getTranslationFiles browse failed", { dir });
 		}
 	}
 	const result = uniqueTranslationUrls(files);
 	if (state.generation !== generation) return result;
-	state.translationFilesCache = result;
+	if (complete) state.translationFilesCache = result;
 	tracePatch("getTranslationFiles completed", { count: files.length, sample: files.slice(0, 20) });
-	return state.translationFilesCache;
+	return result;
 }
 
 async function getMappingFiles(babele, state) {
@@ -2525,25 +2549,28 @@ async function getMappingFiles(babele, state) {
 	const dirs = getMappingDirectories(babele, state);
 	tracePatch("getMappingFiles browsing dirs", { dirs });
 	const files = [];
+	let complete = true;
 	for (const dir of dirs) {
+		if (state.generation !== generation) break;
 		try {
-			const result = await foundry.applications.apps.FilePicker.browse("data", dir);
-			tracePatch("getMappingFiles browse result", { dir, count: result.files?.length ?? 0 });
-			for (const f of result.files ?? []) {
+			const listing = await browseTranslationDirectory(state, dir);
+			tracePatch("getMappingFiles browse result", { dir, count: listing.length });
+			for (const f of listing) {
 				if (typeof f === "string" && isMappingFileName(f)) files.push(f);
 			}
 		} catch {
+			complete = false;
 			tracePatch("getMappingFiles browse failed", { dir });
 		}
 	}
 	const result = sortMappingFilesByDirectoryPreference(uniqueTranslationUrls(files));
 	if (state.generation !== generation) return result;
-	state.mappingFilesCache = result;
+	if (complete) state.mappingFilesCache = result;
 	tracePatch("getMappingFiles completed", {
-		count: state.mappingFilesCache.length,
-		files: state.mappingFilesCache.slice(0, 20),
+		count: result.length,
+		files: result.slice(0, 20),
 	});
-	return state.mappingFilesCache;
+	return result;
 }
 
 async function loadGlobalMappingsOnce(babele, state) {
@@ -2688,13 +2715,19 @@ async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
 	const folderFiles = (files ?? []).filter((f) => typeof f === "string" && f.endsWith(`${suffix}.json`));
 	if (!folderFiles.length) return;
 
+	const groups = new Map();
 	for (const file of folderFiles) {
 		const baseName = file.split("/").pop().split("\\").pop();
 		const [packageName, name] = baseName.split(".");
 		const collection = `${packageName}.${name}`;
+		if (!groups.has(collection)) groups.set(collection, { packageName, name, urls: [] });
+		groups.get(collection).urls.push(file);
+	}
+	for (const [collection, { packageName, name, urls }] of groups) {
 		if (isPackTranslationLoadedCompat(babele, state, collection)) continue;
 
-		const translation = await loadTranslationFromUrls([file], state);
+		const orderedUrls = orderTranslationSourceUrls(babele, urls, collection, state);
+		const translation = await loadTranslationFromUrls(orderedUrls, state);
 		if (state.generation !== generation) return;
 		if (!translation) continue;
 
