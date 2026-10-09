@@ -1,3 +1,5 @@
+// Performance update 2026-10-09: load only discovered translation files; share inventories with players.
+// Performance update 2026-10-08: bounded missing-file cache and shared light indexes.
 // Modified 2026-09-29: PR #52, index recovery, safe Actor imports and independent name repair.
 const PATCH_ID = detectHostPackageId() ?? "babele-ondemand-patch";
 
@@ -36,6 +38,8 @@ const NPC_TRANSLATOR_DEP_PACKS = [
 ];
 const NPC_DEPENDENCY_CONCURRENCY = 4;
 const TRANSLATION_FAILURE_RETRY_MS = 5000;
+const TRANSLATION_MISSING_RETRY_MS = 5 * 60 * 1000;
+const MAX_TRANSLATION_REQUEST_CACHE = 2048;
 
 const ACTOR_IMPORT_DEBUG_DEFAULT = false;
 const PATCH_TRACE_DEFAULT = false;
@@ -575,9 +579,14 @@ function installMappingAggregateCache(babele, state) {
 function resetOnDemandState(babele, state) {
 	state.generation = (state.generation ?? 0) + 1;
 	state.packTranslationUrls = new Map();
+	state.packTranslationFiles = null;
+	state.translationFilesSharing = null;
 	state.packTranslationsLoading = new Map();
 	state.packTranslationReferences = new Map();
 	state.packTranslationFailures = new Map();
+	state.translationRequests = new Map();
+	state.lightIndexLoads = new Map();
+	state.directoryListings = new Map();
 	state.packNeedsNpcDependencies = new Map();
 	state.translationWaits = new Map();
 	state.packMissingConverters = new Map();
@@ -682,6 +691,9 @@ function tryPatchBabele(babele) {
 	state.packTranslationsLoading = state.packTranslationsLoading ?? new Map();
 	state.packTranslationReferences = state.packTranslationReferences ?? new Map();
 	state.packTranslationFailures = state.packTranslationFailures ?? new Map();
+	state.translationRequests = state.translationRequests ?? new Map();
+	state.lightIndexLoads = state.lightIndexLoads ?? new Map();
+	state.directoryListings = state.directoryListings ?? new Map();
 	state.packNeedsNpcDependencies = state.packNeedsNpcDependencies ?? new Map();
 	state.loadedGlobalMappings = state.loadedGlobalMappings ?? [];
 	state.globalMappingsLoaded = !!state.globalMappingsLoaded;
@@ -1884,12 +1896,14 @@ class PatchedOnDemandTranslateDialog extends Dialog {
 	}
 
 	submit(button) {
-		try {
-			button.callback();
-		} catch (err) {
-			ui.notifications.error(err);
-			throw new Error(err);
-		}
+		// Keep the log dialog open, but don't start overlapping writes on a
+		// double-click. Handle rejected async saves as well as synchronous errors.
+		if (this.translationTask) return this.translationTask;
+		this.translationTask = Promise.resolve().then(() => button.callback()).catch((error) => {
+			console.error(`[${PATCH_ID}] Manual Actor translation failed`, error);
+			ui.notifications.error(error?.message ?? String(error));
+		}).finally(() => { this.translationTask = null; });
+		return this.translationTask;
 	}
 }
 
@@ -1913,7 +1927,7 @@ async function initOnDemand(babele, state) {
 		count: files?.length ?? 0,
 		sample: (files ?? []).slice(0, 10),
 	});
-	state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
+	refreshPackTranslationUrlIndex(babele, state, files);
 	tracePatch("initOnDemand packTranslationUrls indexed", { entries: state.packTranslationUrls.size });
 
 	await ensureSpecialFolderTranslationsLoaded(babele, state, files);
@@ -2424,8 +2438,16 @@ function translationSourceDirectories(babele, state = babele?.__ondemandPatch, m
 	const modules = getRegisteredTranslationModules(babele, state)
 		.filter((m) => languageMatches(m.lang, lang))
 		.flatMap((m) => m.dirs.map((dir) => ({ source: `module:${m.module}:${m.lang ?? "*"}`, directory: `modules/${m.module}/${dir}` })));
-	const configured = directory?.trim?.()
-		? [{ source: "directory", directory: `${directory}${mappings ? "" : `/${lang}`}` }] : [];
+	const configuredRoot = directory?.trim?.().replace(/\/+$/, "");
+	// This module's release already selects its language directory. A custom
+	// Babele directory pointing at the package root must not append /cn again.
+	// Keep other custom directories and root-level mapping discovery unchanged.
+	const ownDirectories = [...new Set(modules
+		.filter(({ directory: path }) => path === `modules/${PATCH_ID}/zh-CN` || path === `modules/${PATCH_ID}/compendium`)
+		.map(({ directory: path }) => path))];
+	const configuredPath = !mappings && configuredRoot === `modules/${PATCH_ID}` && ownDirectories.length === 1
+		? ownDirectories[0] : `${configuredRoot}${mappings ? "" : `/${lang}`}`;
+	const configured = configuredRoot ? [{ source: "directory", directory: configuredPath }] : [];
 	return [...system, ...modules, ...configured];
 }
 
@@ -2459,6 +2481,23 @@ function getMappingDirectories(babele, state = babele?.__ondemandPatch) {
 		.map(({ directory }) => directory));
 }
 
+function browseTranslationDirectory(state, directory) {
+	// Mapping discovery and pack discovery inspect the same directories. Share
+	// pending and successful listings until reload, but allow failed reads to retry.
+	const listings = state.directoryListings ??= new Map();
+	if (listings.has(directory)) return listings.get(directory);
+	const task = Promise.resolve().then(() => foundry.applications.apps.FilePicker.browse("data", directory))
+		.then((result) => {
+			if (!Array.isArray(result?.files)) throw new Error(`Invalid directory listing: ${directory}`);
+			return result.files;
+		}).catch((error) => {
+			if (listings.get(directory) === task) listings.delete(directory);
+			throw error;
+		});
+	listings.set(directory, task);
+	return task;
+}
+
 async function getTranslationFiles(babele, state) {
 	const generation = state.generation;
 	if (state.translationFilesCache) {
@@ -2478,20 +2517,47 @@ async function getTranslationFiles(babele, state) {
 	const dirs = getTranslationDirectories(babele, state);
 	tracePatch("getTranslationFiles browsing dirs", { dirs });
 	const files = [];
+	let complete = true;
 	for (const dir of dirs) {
+		if (state.generation !== generation) break;
 		try {
-			const result = await foundry.applications.apps.FilePicker.browse("data", dir);
-			tracePatch("getTranslationFiles browse result", { dir, count: result.files?.length ?? 0 });
-			for (const f of result.files ?? []) files.push(f);
+			const listing = await browseTranslationDirectory(state, dir);
+			tracePatch("getTranslationFiles browse result", { dir, count: listing.length });
+			for (const f of listing) files.push(f);
 		} catch {
+			complete = false;
 			tracePatch("getTranslationFiles browse failed", { dir });
 		}
 	}
 	const result = uniqueTranslationUrls(files);
 	if (state.generation !== generation) return result;
-	state.translationFilesCache = result;
+	if (complete) {
+		state.translationFilesCache = result;
+		await shareTranslationFileInventory(state, result);
+	}
 	tracePatch("getTranslationFiles completed", { count: files.length, sample: files.slice(0, 20) });
-	return state.translationFilesCache;
+	return result;
+}
+
+async function shareTranslationFileInventory(state, files) {
+	// Only publish a complete, successfully browsed inventory. Players without
+	// FILES_BROWSE must not depend on guessed URLs or on a manual GM refresh.
+	if (!game.user?.isGM) return;
+	const signature = JSON.stringify(files);
+	if (state.translationFilesSharing?.signature === signature) return state.translationFilesSharing.promise;
+	const generation = state.generation;
+	const entry = { signature, promise: null };
+	entry.promise = Promise.resolve().then(async () => {
+		if (state.generation !== generation) return;
+		if (JSON.stringify(game.settings.get(BABEL_NAMESPACE, "translationFiles")) === signature) return;
+		await game.settings.set(BABEL_NAMESPACE, "translationFiles", files);
+	}).catch((error) => {
+		console.warn(`[${PATCH_ID}] Unable to share translation file inventory with players.`, error);
+	}).finally(() => {
+		if (state.translationFilesSharing === entry) state.translationFilesSharing = null;
+	});
+	state.translationFilesSharing = entry;
+	return entry.promise;
 }
 
 async function getMappingFiles(babele, state) {
@@ -2510,25 +2576,28 @@ async function getMappingFiles(babele, state) {
 	const dirs = getMappingDirectories(babele, state);
 	tracePatch("getMappingFiles browsing dirs", { dirs });
 	const files = [];
+	let complete = true;
 	for (const dir of dirs) {
+		if (state.generation !== generation) break;
 		try {
-			const result = await foundry.applications.apps.FilePicker.browse("data", dir);
-			tracePatch("getMappingFiles browse result", { dir, count: result.files?.length ?? 0 });
-			for (const f of result.files ?? []) {
+			const listing = await browseTranslationDirectory(state, dir);
+			tracePatch("getMappingFiles browse result", { dir, count: listing.length });
+			for (const f of listing) {
 				if (typeof f === "string" && isMappingFileName(f)) files.push(f);
 			}
 		} catch {
+			complete = false;
 			tracePatch("getMappingFiles browse failed", { dir });
 		}
 	}
 	const result = sortMappingFilesByDirectoryPreference(uniqueTranslationUrls(files));
 	if (state.generation !== generation) return result;
-	state.mappingFilesCache = result;
+	if (complete) state.mappingFilesCache = result;
 	tracePatch("getMappingFiles completed", {
-		count: state.mappingFilesCache.length,
-		files: state.mappingFilesCache.slice(0, 20),
+		count: result.length,
+		files: result.slice(0, 20),
 	});
-	return state.mappingFilesCache;
+	return result;
 }
 
 async function loadGlobalMappingsOnce(babele, state) {
@@ -2586,12 +2655,13 @@ function buildPackTranslationUrlIndex(babele, files) {
 	return index;
 }
 
-function buildDirectPackTranslationUrls(babele, packId, state = babele?.__ondemandPatch) {
-	const fileName = `${encodeURI(packId)}.json`;
-	return orderTranslationSourceUrls(babele, getTranslationDirectories(babele, state).map((dir) => {
-		const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
-		return `${base}/${fileName}`;
-	}), packId, state);
+function refreshPackTranslationUrlIndex(babele, state, files) {
+	// A cached complete listing has stable identity. Avoid rebuilding its whole
+	// pack index on every request for an untranslated pack; shared player settings
+	// and retried partial listings can still supply a newer inventory.
+	if (state.packTranslationFiles === files) return;
+	state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
+	state.packTranslationFiles = files;
 }
 
 async function importLegacyTranslatedCompendium() {
@@ -2673,13 +2743,19 @@ async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
 	const folderFiles = (files ?? []).filter((f) => typeof f === "string" && f.endsWith(`${suffix}.json`));
 	if (!folderFiles.length) return;
 
+	const groups = new Map();
 	for (const file of folderFiles) {
 		const baseName = file.split("/").pop().split("\\").pop();
 		const [packageName, name] = baseName.split(".");
 		const collection = `${packageName}.${name}`;
+		if (!groups.has(collection)) groups.set(collection, { packageName, name, urls: [] });
+		groups.get(collection).urls.push(file);
+	}
+	for (const [collection, { packageName, name, urls }] of groups) {
 		if (isPackTranslationLoadedCompat(babele, state, collection)) continue;
 
-		const translation = await loadTranslationFromUrls([file]);
+		const orderedUrls = orderTranslationSourceUrls(babele, urls, collection, state);
+		const translation = await loadTranslationFromUrls(orderedUrls, state);
 		if (state.generation !== generation) return;
 		if (!translation) continue;
 
@@ -2692,75 +2768,102 @@ async function ensureSpecialFolderTranslationsLoaded(babele, state, files) {
 	}
 }
 
-async function loadLabels(babele) {
-	const fromSettings = game.settings.get(BABEL_NAMESPACE, SETTING_LABELS) ?? {};
-	const canBrowse = game.user?.hasPermission?.("FILES_BROWSE");
-	const result = canBrowse ? {} : { ...(typeof fromSettings === "object" && !Array.isArray(fromSettings) ? fromSettings : {}) };
-	tracePatch("loadLabels start", { fromSettingsCount: Object.keys(result).length });
-
-	const tryFetch = canBrowse || Object.keys(result).length === 0;
-	if (!tryFetch) {
-		tracePatch("loadLabels skipped fetch; using settings cache", { count: Object.keys(result).length });
-		return result;
+// Keep only pending requests and failures here. Successful pack payloads belong
+// to their translated adapters; retaining another copy would waste memory.
+function trimTranslationRequestCache(requests, limit = MAX_TRANSLATION_REQUEST_CACHE) {
+	if (requests.size <= limit) return;
+	for (const [key, entry] of requests) {
+		if (!entry.pending) requests.delete(key);
+		if (requests.size <= limit) break;
 	}
+}
 
-	const dirs = getTranslationDirectories(babele);
-	tracePatch("loadLabels fetch dirs", { dirs });
-	for (const dir of dirs) {
-		const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
-		const url = `${base}/labels.json`;
+async function fetchTranslationJson(url, state = {}) {
+	const requests = state.translationRequests ??= new Map();
+	const cached = requests.get(url);
+	if (cached && (cached.pending || cached.retryAfter > Date.now())) return cached.promise;
+	requests.delete(url);
+	trimTranslationRequestCache(requests, MAX_TRANSLATION_REQUEST_CACHE - 1);
+	const entry = { pending: true, retryAfter: Infinity, promise: null };
+	// Publish the entry before fetching, including when fetch throws synchronously.
+	entry.promise = Promise.resolve().then(async () => {
+		let value = null;
+		let retryAfter = Date.now() + TRANSLATION_FAILURE_RETRY_MS;
 		try {
-			const r = await fetch(url);
-			if (!r.ok) continue;
-			const json = await r.json();
-			if (json && typeof json === "object") Object.assign(result, json);
+			const response = await fetch(url);
+			if (response.ok) {
+				const json = await response.json();
+				if (json && typeof json === "object" && !Array.isArray(json)) {
+					value = json;
+					retryAfter = Infinity;
+				}
+			} else {
+				const delay = response.status === 404 || response.status === 410
+					? TRANSLATION_MISSING_RETRY_MS : TRANSLATION_FAILURE_RETRY_MS;
+				retryAfter = Date.now() + delay;
+			}
 		} catch {
-			tracePatch("loadLabels fetch failed", { url });
+			retryAfter = Date.now() + TRANSLATION_FAILURE_RETRY_MS;
+			tracePatch("translation JSON fetch failed", { url });
 		}
+		entry.pending = false;
+		entry.retryAfter = retryAfter;
+		if (value && requests.get(url) === entry) requests.delete(url);
+		trimTranslationRequestCache(requests);
+		return { value, retryAfter };
+	});
+	requests.set(url, entry);
+	return entry.promise;
+}
+
+// Cache the merged light index, not all of its source JSONs. A failed source
+// expires the aggregate at its retry time; directory priority stays deterministic.
+async function loadLightIndex(babele, filename, setting, merge) {
+	const fromSettings = game.settings.get(BABEL_NAMESPACE, setting);
+	const canBrowse = game.user?.hasPermission?.("FILES_BROWSE");
+	if (!canBrowse && fromSettings && typeof fromSettings === "object"
+		&& !Array.isArray(fromSettings) && Object.keys(fromSettings).length) {
+		return foundry.utils?.deepClone
+			? foundry.utils.deepClone(fromSettings) : JSON.parse(JSON.stringify(fromSettings));
 	}
-	tracePatch("loadLabels end", { count: Object.keys(result).length });
-	return result;
+	const state = babele.__ondemandPatch ?? {};
+	const loads = state.lightIndexLoads ??= new Map();
+	// A reload replaces the maps; an older asynchronous load must keep using its own.
+	const requestState = { translationRequests: state.translationRequests ??= new Map() };
+	const urls = getTranslationDirectories(babele).map((dir) => `${dir.replace(/\/$/, "")}/${filename}`);
+	const signature = JSON.stringify(urls);
+	const cached = loads.get(filename);
+	if (cached?.signature === signature && cached.retryAfter > Date.now()) return cached.promise;
+	const entry = { signature, retryAfter: Infinity, promise: null };
+	entry.promise = Promise.resolve().then(async () => {
+		const sources = await Promise.all(urls.map((url) => fetchTranslationJson(url, requestState)));
+		const result = {};
+		for (const source of sources) {
+			if (source.value) merge(result, source.value);
+			else entry.retryAfter = Math.min(entry.retryAfter, source.retryAfter);
+		}
+		return result;
+	}).catch((error) => {
+		if (loads.get(filename) === entry) loads.delete(filename);
+		throw error;
+	});
+	loads.set(filename, entry);
+	return entry.promise;
+}
+
+async function loadLabels(babele) {
+	return loadLightIndex(babele, "labels.json", SETTING_LABELS, (result, json) => Object.assign(result, json));
 }
 
 async function loadTitleIndex(babele) {
-	const fromSettings = game.settings.get(BABEL_NAMESPACE, SETTING_TITLE_INDEX) ?? {};
-	const canBrowse = game.user?.hasPermission?.("FILES_BROWSE");
-	const index =
-		!canBrowse && typeof fromSettings === "object" && !Array.isArray(fromSettings)
-			? foundry.utils?.deepClone
-				? foundry.utils.deepClone(fromSettings)
-				: JSON.parse(JSON.stringify(fromSettings))
-			: {};
-	tracePatch("loadTitleIndex start", { fromSettingsCollections: Object.keys(index).length });
-
-	const tryFetch = canBrowse || Object.keys(index).length === 0;
-	if (!tryFetch) {
-		tracePatch("loadTitleIndex skipped fetch; using settings cache", { collections: Object.keys(index).length });
-		return index;
-	}
-
-	const dirs = getTranslationDirectories(babele);
-	tracePatch("loadTitleIndex fetch dirs", { dirs });
-	for (const dir of dirs) {
-		const base = dir.endsWith("/") ? dir.slice(0, -1) : dir;
-		const url = `${base}/titles.json`;
-		try {
-			const r = await fetch(url);
-			if (!r.ok) continue;
-			const json = await r.json();
-			if (!json || typeof json !== "object" || Array.isArray(json)) continue;
-			for (const [collection, data] of Object.entries(json)) {
-				if (!data || typeof data !== "object") continue;
-				if (!index[collection]) index[collection] = { titles: {}, folders: {} };
-				if (data.titles && typeof data.titles === "object") Object.assign(index[collection].titles, data.titles);
-				if (data.folders && typeof data.folders === "object") Object.assign(index[collection].folders, data.folders);
-			}
-		} catch {
-			tracePatch("loadTitleIndex fetch failed", { url });
+	return loadLightIndex(babele, "titles.json", SETTING_TITLE_INDEX, (index, json) => {
+		for (const [collection, data] of Object.entries(json)) {
+			if (!data || typeof data !== "object" || Array.isArray(data)) continue;
+			if (!index[collection]) index[collection] = { titles: {}, folders: {} };
+			if (data.titles && typeof data.titles === "object") Object.assign(index[collection].titles, data.titles);
+			if (data.folders && typeof data.folders === "object") Object.assign(index[collection].folders, data.folders);
 		}
-	}
-	tracePatch("loadTitleIndex end", { collections: Object.keys(index).length });
-	return index;
+	});
 }
 
 function applyLabels(babele, labels) {
@@ -3019,20 +3122,23 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 	failures.delete(packId);
 
 	const loader = (async () => {
-		if (!state.packTranslationUrls?.size) {
+		if (!state.packTranslationUrls?.has(packId)) {
 			const files = await getTranslationFiles(babele, state);
 			if (!current()) return;
-			state.packTranslationUrls = buildPackTranslationUrlIndex(babele, files);
+			refreshPackTranslationUrlIndex(babele, state, files);
 			tracePatch("ensurePackTranslationsLoaded rebuilt URL index", { entries: state.packTranslationUrls.size });
 		}
 
-		let urls = state.packTranslationUrls.get(packId);
+		const urls = state.packTranslationUrls.get(packId);
 		debugActorImport("尝试加载pack翻译", {
 			packId,
 			hasIndexedUrls: !!urls?.length,
 			indexedUrlCount: urls?.length ?? 0,
 		});
-		let translation = urls?.length ? await loadTranslationFromUrls(urls) : null;
+		// An absent pack is not a failed HTTP request. Only fetch filenames from
+		// directory discovery or the GM's shared inventory; preserve the original
+		// document when none exist. Failed discovery can retry after the cooldown.
+		const translation = urls?.length ? await loadTranslationFromUrls(urls, state) : null;
 		if (!current()) return;
 		tracePatch("ensurePackTranslationsLoaded indexed URL load result", {
 			packId,
@@ -3040,27 +3146,6 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 			loaded: !!translation,
 			hasReference: !!translation?.reference,
 		});
-
-		if (!translation) {
-			const triedUrls = new Set(urls ?? []);
-			const directUrls = buildDirectPackTranslationUrls(babele, packId, state).filter((url) => !triedUrls.has(url));
-			const directTranslation = await loadTranslationFromUrls(directUrls);
-			if (!current()) return;
-			if (directTranslation) {
-				urls = directUrls;
-				translation = directTranslation;
-				state.packTranslationUrls.set(packId, urls);
-				debugActorImport("pack翻译通过目录直探加载成功", {
-					packId,
-					urls,
-				});
-			}
-			tracePatch("ensurePackTranslationsLoaded direct URL load result", {
-				packId,
-				urlCount: directUrls.length,
-				loaded: !!directTranslation,
-			});
-		}
 
 		if (!translation) {
 			failures.set(packId, { retryAfter: Date.now() + TRANSLATION_FAILURE_RETRY_MS });
@@ -3170,31 +3255,14 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 	}
 }
 
-async function loadTranslationFromUrls(urls) {
+async function loadTranslationFromUrls(urls, state = {}) {
 	tracePatch("loadTranslationFromUrls start", { urls });
 	const translations = await Promise.all(
 		uniqueTranslationUrls(urls ?? []).map(async (url) => {
-			try {
-				const r = await fetch(url);
-				if (!r.ok) return null;
-				const json = await r.json();
-				if (!isTranslationPayload(json)) return null;
-				tracePatch("loadTranslationFromUrls fetched JSON", {
-					url,
-					ok: r?.ok ?? null,
-					status: r?.status ?? null,
-					hasEntries: !!json?.entries,
-					hasMapping: !!json?.mapping,
-					hasReference: !!json?.reference,
-				});
-				return json;
-			} catch {
-				tracePatch("loadTranslationFromUrls fetch failed", { url });
-				return null;
-			}
+			const { value } = await fetchTranslationJson(url, state);
+			return isTranslationPayload(value) ? value : null;
 		}),
 	);
-
 	const merged = mergeTranslationPayloads(translations);
 	tracePatch("loadTranslationFromUrls end", {
 		urlCount: urls?.length ?? 0,
@@ -3404,7 +3472,7 @@ function registerWrappers() {
 
 	libWrapper.register(
 		PATCH_ID,
-		"CompendiumCollection.prototype.initializeTree",
+		"foundry.documents.collections.CompendiumCollection.prototype.initializeTree",
 		function (wrapped, ...args) {
 			tracePatch("initializeTree enter", {
 				packId: normalizePackId(this),
