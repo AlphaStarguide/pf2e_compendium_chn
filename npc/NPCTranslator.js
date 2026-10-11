@@ -426,7 +426,10 @@ export class NPCTranslator {
                 .map((entry) => [entry.id, entry]));
         }
         const explicitEntries = {};
-        const hasExplicit = data.map((entry) => {
+        // Most embedded Actors in an Adventure use only dictionary/compendium
+        // fallback. Avoid building per-Item aliases when no inline entries exist.
+        const hasInlineTranslations = isTranslationObject(translations) && Object.keys(translations).length > 0;
+        const hasExplicit = hasInlineTranslations ? data.map((entry) => {
             if (!isTranslationObject(entry) || typeof entry.name !== "string" || !isTranslationObject(entry.system)) return false;
             const originalNames = [...new Set([
                 entry.originalName, entry.flags?.babele?.originalName, entry.name,
@@ -438,7 +441,7 @@ export class NPCTranslator {
             if (!isTranslationObject(explicit) && typeof explicit !== "string") return false;
             explicitEntries[entry._id ?? entry.name] = typeof explicit === "string" ? { name: explicit } : explicit;
             return true;
-        });
+        }) : [];
         // Reuse the current pack's mapping aggregate: outside a native session
         // reading game.babele.documentMappings rebuilds all registered layers.
         const documentMappings = hasExplicit.some(Boolean)
@@ -447,13 +450,13 @@ export class NPCTranslator {
         const explicitPack = documentMappings ? new EmbeddedCompendium("Item", {
             mapping, translations: explicitEntries, documentMappings, runtime,
         }) : null;
-        const originalEntries = Object.fromEntries(data.filter((entry, index) => hasExplicit[index]
+        const originalEntries = explicitPack ? Object.fromEntries(data.filter((entry, index) => hasExplicit[index]
             && isTranslationObject(entry.flags?.babele?.originalPayload))
-            .map((entry) => [entry._id ?? entry.name, entry.flags.babele.originalPayload]));
+            .map((entry) => [entry._id ?? entry.name, entry.flags.babele.originalPayload])) : {};
         const originalPack = Object.keys(originalEntries).length ? new EmbeddedCompendium("Item", {
             mapping, translations: originalEntries, documentMappings, runtime,
         }) : null;
-        const explicitResults = data.map((entry, index) => {
+        const explicitResults = explicitPack ? data.map((entry, index) => {
             if (!hasExplicit[index]) return null;
             const hasOriginal = isTranslationObject(entry.flags?.babele?.originalPayload);
             let source = translationInput(entry, hasOriginal);
@@ -465,7 +468,7 @@ export class NPCTranslator {
             }
             const payload = explicitPack.translate(source, true, runtime);
             return { source, translated: foundry.utils.mergeObject(source, payload, { inplace: false }) };
-        });
+        }) : [];
         data.forEach((entry, index, arr) => {
             if (!isTranslationObject(entry) || typeof entry.name !== "string" || !isTranslationObject(entry.system)) return;
             if (!this.dict.translations || entry.translated === true) return;
