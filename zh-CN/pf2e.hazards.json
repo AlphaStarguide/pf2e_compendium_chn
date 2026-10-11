@@ -39,7 +39,7 @@
                     "description": "<p><strong>触发</strong> 由陷阱主人所设置的特殊条件；比如说当陷阱主人死亡时；</p>\n<hr />\n<p><strong>效果</strong> 周围半径100英里的土地降下火雨，对所有生物和物品造成@Damage[10d6[fire]]伤害。每个生物或物品都可以尝试进行@Check[reflex|dc:46|basic]豁免。任何生命值减少为0的生物立即死亡。此效果不足以完全烧毁整座深林、夷平整座山或城市，但通常能杀死该地区绝大部分生物。</p>"
                 }
             },
-            "disable": "<p>@Check[thievery|dc:48|name:Imbue Thieves' Tools|traits:action:disable-a-device] （传奇）在盗贼工具上注入代表阿斯莫蒂斯和塞恩蕾的形象，and use them to drain away the orb's power over 10 minutes;尝试此检定的角色每轮受到@Damage[5[fire]]伤害，直到法球能量耗尽为止。</p>",
+            "disable": "<p>@Check[thievery|dc:48|name:Imbue Thieves' Tools|traits:action:disable-a-device] （传奇）在盗贼工具上注入代表阿斯莫蒂斯和塞恩蕾的形象，并用它们持续吸取法球的能量，耗时10分钟；尝试此检定的角色每轮受到@Damage[5[fire]]伤害，直到法球能量耗尽为止。</p>",
             "prototypeToken": {
                 "name": "末日法球 Armageddon Orb"
             }
@@ -178,8 +178,8 @@
             },
             "hp": "当任何镜像存活时，镜子无法被伤害。",
             "disable": "<p>在角色被替换后的10分钟内，通过@Check[thievery|dc:34|name:Retrieve Creature from Other Dimension|traits:action:disable-a-device] （传奇）从另一个维度将他拉回（只有当他们的镜像死亡时才有可能），在所有的镜像副本死亡之后，通过@Check[thievery|dc:39|name:Permanently Disable Mirror|traits:action:disable-a-device] （大师）永久解除魔境，或通过@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（7环级；反制 DC32）反制魔境1分钟，阻止它产生额外的镜像副本。</p>",
-            "routine": "<p>（1个动作）镜子将另一个在镜中形成倒影的生物吸进去，并用一个镜像副本代替它。Mirror duplicates attack on their own initiative, using the same statistics as the original creature, but with an evil alignment (changing only abilities that shift with the alignment change).一个镜像副本可以使用三个动作与魔镜接触并返回它原来的维度并释放它复制的生物，但大多数镜像副本不倾向于这么做。 </p>",
-            "reset": "<p>魔镜时刻准备着把生物吸进其他维度。Ten minutes after a creature is sucked into the mirror, if an ally doesn't rescue the creature with Thievery, it reaches the other dimension, where it might be captured or killed.在镜像维度中，它会被当做是镜像的镜像，所以当被吸收的生物位于那个维度时，那个维度的人也无法摧毁他们那边的魔镜。这些维度属于不同的现实，并非位面，因此像<em>异界传送</em>这样的仪式也无法将它救出。</p>"
+            "routine": "<p>（1个动作）镜子将另一个在镜中形成倒影的生物吸进去，并用一个镜像副本代替它。镜像副本按各自的先攻顺序攻击，使用原生物的数据，但阵营为邪恶（仅改变会随阵营改变而变化的能力）。一个镜像副本可以使用三个动作与魔镜接触并返回它原来的维度并释放它复制的生物，但大多数镜像副本不倾向于这么做。 </p>",
+            "reset": "<p>魔镜时刻准备着把生物吸进其他维度。一个生物被吸入镜子10分钟后，如果没有盟友使用贼活将它救出，它就会抵达另一个维度，在那里可能被俘或被杀。在镜像维度中，它会被当做是镜像的镜像，所以当被吸收的生物位于那个维度时，那个维度的人也无法摧毁他们那边的魔镜。这些维度属于不同的现实，并非位面，因此像<em>异界传送</em>这样的仪式也无法将它救出。</p>"
         },
         "Drowning Pit": {
             "name": "溺水坑 Drowning Pit",
@@ -235,7 +235,7 @@
                 "name": "永恒烈焰 Eternal Flame"
             },
             "disable": "<p>@Check[diplomacy|dc:27|name:Calm the Spirit's Rage] （专家）以暂时平息三个灵魂之一的愤怒；@Check[religion|dc:30|name:Exorcise Spirit] （受训）以超度其中一个灵魂；总共需要3次成功才能解除作祟。</p>",
-            "routine": "<p>(1 action) Phantom flames rage across the haunted area, dealing @Damage[4d6[fire]] damage to each living creature within the area (@Check[will|dc:23|basic] save).Undead creatures in the area are infused with flames for the following round.他们获得“火”特征和火焰免疫，他们的所有攻击造成额外@Damage[1d6[fire]]伤害。该区域内的物品不受影响。</p>",
+            "routine": "<p>（1个动作）幻影火焰在作祟区域内肆虐，对区域内的每个活物造成@Damage[4d6[fire]]伤害（@Check[will|dc:23|basic]豁免）。区域内的不死生物在接下来1轮内被灌注火焰。他们获得“火”特征和火焰免疫，他们的所有攻击造成额外@Damage[1d6[fire]]伤害。该区域内的物品不受影响。</p>",
             "reset": "<p>所有活物都离开作祟区域1分钟后火焰停止，但1小时后，作祟的愤怒和痛苦会慢慢重燃，准备再次触发。</p>"
         },
         "Fireball Rune": {
@@ -325,21 +325,21 @@
             "reset": "<p>1天</p>"
         },
         "Gravehall Trap": {
-            "name": "Gravehall Trap",
-            "hazarddisable": "<p>@Check[thievery|dc:24|name:Disrupt Magical Trigger|traits:action:disable-a-device] （专家） to disrupt the magical trigger before the hazard rolls initiative, or @Check[religion|dc:18|name:Overwhelm the Area with Positive Energy] （受训） to overwhelm the area with positive energy and prevent the hazard from using its routine for 1 round; on the third successful Religion check, the necromantic energies are disrupted and the hazard is destroyed.</p>",
-            "hazarddescription": "<p>When a living creature crosses the midpoint of the trapped tunnel, necromantic magic partially animates the corpses buried in the walls and ceiling.</p>",
-            "hazardroutine": "<p><span class=\"action-glyph\">1</span> Undead fists assail all creatures in the hall, dealing [[/r (4d6)[bludgeoning]]]{4d6钝击伤害}. Creatures in the hall must attempt a @Check[reflex|dc:21].</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> The target takes half damage.</p>\n<p><strong>失败</strong> The target takes full damage, and its Speeds are reduced by 10 feet (to a minimum of 5 feet) for 1 round.</p>\n<p><strong>大失败</strong> The target takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized} for 1 round.</p>",
+            "name": "墓廊陷阱 Gravehall Trap",
+            "hazarddisable": "<p>@Check[thievery|dc:24|name:Disrupt Magical Trigger|traits:action:disable-a-device] （专家）在危害进行先攻检定前破坏其魔法触发机制，或@Check[religion|dc:18|name:Overwhelm the Area with Positive Energy] （受训）用正能量充斥该区域，使危害在1轮内无法执行流程；第3次宗教检定成功时，死灵能量遭到破坏，该危害被摧毁。</p>",
+            "hazarddescription": "<p>当一个活物越过设有陷阱的隧道中点时，死灵魔法会使埋在墙壁和天花板内的尸体部分活化。</p>",
+            "hazardroutine": "<p><span class=\"action-glyph\">1</span> 不死生物的拳头袭击走廊内的所有生物，造成[[/r (4d6)[bludgeoning]]]{4d6钝击伤害}。走廊内的生物必须尝试一次@Check[reflex|dc:21]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到一半伤害。</p>\n<p><strong>失败</strong> 目标受到全额伤害，且其所有速度降低10尺（最低降至5尺），持续1轮。</p>\n<p><strong>大失败</strong> 目标受到双倍伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，持续1轮。</p>",
             "items": {
                 "Lunging Dead": {
-                    "name": "Lunging Dead",
-                    "description": "<p><strong>Trigger</strong> A living creature crosses the midpoint of the tunnel</p>\n<hr />\n<p><strong>Effect</strong> The dead reach out from the walls and ceiling, moaning and spewing writhing maggots. Creatures in the room must attempt a @Check[will|dc:21] save. The trap then rolls initiative.</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened}</p>\n<p><strong>Failure</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧2 Frightened 2}. It can't reduce its frightened condition below 1 while in the trap's area.</p>\n<p><strong>Critical Failure</strong> As failure, and the target is @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed} for 1 round.</p>"
+                    "name": "死者扑袭 Lunging Dead",
+                    "description": "<p><strong>触发</strong> 一个活物越过隧道中点</p>\n<hr />\n<p><strong>效果</strong> 死者从墙壁和天花板中伸出肢体，一边呻吟，一边喷吐蠕动的蛆虫。房间内的生物必须尝试一次@Check[will|dc:21]豁免。随后陷阱进行先攻检定。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧2 Frightened 2}。只要目标仍在陷阱区域内，其惊惧状态值就无法降至1以下。</p>\n<p><strong>大失败</strong> 如同失败，且目标陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{麻痹 Paralyzed}，持续1轮。</p>"
                 }
             },
-            "routine": "<p>(1 action) Undead fists assail all creatures in the hall, dealing @Damage[4d6[bludgeoning]] damage. Creatures in the hall must attempt a @Check[reflex|dc:21].</p>\n<hr />\n<p><strong>Critical Success</strong> The target is unaffected.</p>\n<p><strong>Success</strong> The target takes half damage.</p>\n<p><strong>Failure</strong> The target takes full damage, and its Speeds are reduced by 10 feet (to a minimum of 5 feet) for 1 round.</p>\n<p><strong>Critical Failure</strong> The target takes double damage and is @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized} for 1 round.</p>",
+            "routine": "<p>（1个动作） 不死生物的拳头袭击走廊内的所有生物，造成@Damage[4d6[bludgeoning]]伤害。走廊内的生物必须尝试一次@Check[reflex|dc:21]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标受到一半伤害。</p>\n<p><strong>失败</strong> 目标受到全额伤害，且其所有速度降低10尺（最低降至5尺），持续1轮。</p>\n<p><strong>大失败</strong> 目标受到双倍伤害，并陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}，持续1轮。</p>",
             "prototypeToken": {
-                "name": "Gravehall Trap"
+                "name": "墓廊陷阱 Gravehall Trap"
             },
-            "disable": "<p>@Check[thievery|dc:24|name:Disrupt Magical Trigger|traits:action:disable-a-device] (expert) to disrupt the magical trigger before the hazard rolls initiative, or @Check[religion|dc:18|name:Overwhelm the Area with Vitality Energy] (trained) to overwhelm the area with vitality energy and prevent the hazard from using its routine for 1 round; on the third successful Religion check, the necromantic energies are disrupted and the hazard is destroyed.</p>"
+            "disable": "<p>@Check[thievery|dc:24|name:Disrupt Magical Trigger|traits:action:disable-a-device] （专家）在危害进行先攻检定前破坏其魔法触发机制，或@Check[religion|dc:18|name:Overwhelm the Area with Vitality Energy] （受训）用命能充斥该区域，使危害在1轮内无法执行流程；第3次宗教检定成功时，死灵能量遭到破坏，该危害被摧毁。</p>"
         },
         "Green Slime": {
             "name": "绿史莱姆 Green Slime",
@@ -396,7 +396,7 @@
                 "name": "禁止之锤 Hammer Of Forbiddance"
             },
             "disable": "<p>@Check[thievery|dc:28|name:Prevent Hammer from Swinging|traits:action:disable-a-device] （专家）一次解除锤子本身，再一次解除锤子的铰链来防止锤子摆动。</p>",
-            "reset": "<p>The trap resets over the course of the round, and is ready to swing again 1 round later.</p>"
+            "reset": "<p>陷阱在这一轮内重置，并在1轮后准备好再次挥击。</p>"
         },
         "Hampering Web": {
             "name": "捕虫网 Hampering Web",
@@ -448,7 +448,7 @@
                 "name": "严守隐私围栏 Insistent Privacy Fence"
             },
             "disable": "<p>@Check[thievery|dc:28|name:Disconnect the coil from the fence|traits:electricity,hazard,trap,mechanical] （专家）小心地切断线圈和围栏的电线；或@Check[crafting|dc:30|name:Jury-rig a grounding device|traits:electricity,hazard,trap,mechanical] （大师）安装临时的接地装置来引走电流</p>",
-            "reset": "<p>The trap deactivates and resets after 1 minute.</p>"
+            "reset": "<p>陷阱在1分钟后关闭并重置。</p>"
         },
         "Jealous Abjurer": {
             "name": "嫉妒的护法师 Jealous Abjurer",
@@ -486,7 +486,7 @@
                 "name": "岩浆管道 Lava Flume Tube"
             },
             "disable": "<p>@Check[thievery|dc:29|name:Block a Channel|traits:action:disable-a-device] （专家）堵塞通道，或@Check[thievery|dc:31|name:Release Floor Latch|traits:action:disable-a-device] （大师）解开活动地板的门闩来逃进下面的房间。</p>",
-            "routine": "<p>(4 actions) The trap loses 1 action per disabled channel each turn. On each action, a different channel spews lava, dealing @Damage[4d6[fire]] damage to each creature within 10 feet of the channel (@Check[reflex|dc:27|basic] save), and increasing the depth of the lava in the room by 1 foot (4 feet per round if all the channels are active).</p>\n<p>在岩浆里开始回合的生物受到@Damage[8d6[fire]]伤害并且@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}直到它从凝固的岩浆中@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC27）。生物如果被岩浆覆盖则会窒息。</p>\n<p>上一轮的岩浆在陷阱开始行动时会完全硬化，这会让房间的地板高度升高。一旦房间里充满岩浆，陷阱就会停止行动，但房间里的生物依然会被困住，直到地板打开，陷阱重置。</p>",
+            "routine": "<p>（4个动作）每有一个通道被解除，陷阱每回合就失去1个动作。每个动作都会由一个不同的通道喷出岩浆，对该通道10尺内的每个生物造成@Damage[4d6[fire]]伤害（@Check[reflex|dc:27|basic]豁免），并使房间内的岩浆深度增加1尺（若所有通道均已启动，则每轮增加4尺）。</p>\n<p>在岩浆里开始回合的生物受到@Damage[8d6[fire]]伤害并且@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}直到它从凝固的岩浆中@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escapes}（DC27）。生物如果被岩浆覆盖则会窒息。</p>\n<p>上一轮的岩浆在陷阱开始行动时会完全硬化，这会让房间的地板高度升高。一旦房间里充满岩浆，陷阱就会停止行动，但房间里的生物依然会被困住，直到地板打开，陷阱重置。</p>",
             "reset": "<p>陷阱在1小时后移开地板，通过将变硬的岩浆（连同里面的生物）倾倒进下面的房间的方式来关闭和重置。生物坠落40尺，并受到坠落伤害（通常是@Damage[17[bludgeoning]|options:fall-damage]伤害）。 </p>"
         },
         "Malevolent Mannequins": {
@@ -530,7 +530,7 @@
             "prototypeToken": {
                 "name": "危险的洪流 Perilous Flash Flood"
             },
-            "disable": "<p>3次@Check[athletics|dc:35|name:Move Barricade]、@Check[crafting|dc:35|name:Construct Barricade]或@Check[survival|dc:35|name:Construct Barricade]检定，以移动或建造足够坚固的障碍，在洪水中制造一处避难所。While this creates a safe place to stand, creatures outside of the barricaded area may still be in danger depending on the nature and the source of the flood.</p>",
+            "disable": "<p>3次@Check[athletics|dc:35|name:Move Barricade]、@Check[crafting|dc:35|name:Construct Barricade]或@Check[survival|dc:35|name:Construct Barricade]检定，以移动或建造足够坚固的障碍，在洪水中制造一处避难所。虽然这能提供安全的立足之地，但根据洪水的性质和来源，屏障保护区域之外的生物可能仍处于危险之中。</p>",
             "routine": "<p>（1动作）洪水向前推进60英尺，冲击其区域内的所有生物。每个生物都必须尝试一次@Check[fortitude|dc:30]豁免，否则会被洪水冲向下游。造成的伤害的数量和类型取决于洪水的性质，某些类型的洪水会产生额外的效果。湍急的水流意味着洪水区域内的生物必须尝试进行一次@Check[athletics|dc:20|name:Swim|traits:action:swim]检定才能通过游泳动作移动，而那些每轮都未能通过游泳检定的生物会溺水。</p>\n<hr>\n<p><strong>大成功</strong> 生物不受伤害。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害并被洪水冲走10尺远。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害并被洪水冲走20尺远。</p>\n<hr>\n<ul>\n<li><strong>酸液流 Acidic Runoff</strong> 这种腐蚀性的洪水在移动时能溶解肉体，造成@Damage[1d12[bludgeoning],(1d12+8)[acid]]{1d12钝击伤害和1d12+8酸蚀伤害}。此外，它会对强韧豁免大失败的生物造成@Damage[2d6[persistent,acid]]{2d6} 持续酸蚀伤害。</li>\n<li><strong>高压水波 Battering Waves</strong> 这股汹涌的洪水造成@Damage[(2d12+10)[bludgeoning]]{2d12+10钝击伤害}。</li>\n<li><strong>恶心的污水 Repulsive Refuse</strong> 这股洪流吸收了受污染或携带疾病的物体，例如下水道污水或腐烂的食物。它造成@Damage[(2d12+8)[bludgeoning]]{2d12+8钝击伤害}。每个暴露在洪水中的生物都必须尝试一次@Check[fortitude|dc:29]豁免，失败时陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}，大失败时陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 2}。此外，与洪水接触的生物还会暴露在污秽热（@Check[fortitude|dc:20]）的影响下。</li>\n<li><strong>尖锐的残骸 Sharp Debris</strong> 水里夹杂着各种各样的锋利残骸。洪水造成@Damage[1d12[bludgeoning]]{1d12钝击伤害}和@Damage[(1d12+12)[piercing]]{1d12+12穿刺伤害}。</li>\n<li><strong>粘液洪流 Sticky Goo</strong> 这种物质特别粘。它造成@Damage[(2d12+6)[bludgeoning]]{2d12+6钝击伤害}。此外，洪水中的每个生物必须每轮在它们的回合开始时尝试一次@Check[reflex|dc:29]豁免。如果豁免失败，它的所有速度将在1轮内受到–10尺的环境减值。如果大失败，则会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{禁足 Immobilized}1轮。</li>\n</ul>"
         },
         "Pharaoh's Ward": {
@@ -549,7 +549,7 @@
                 "name": "法老之护 Pharaoh's Ward"
             },
             "reset": "<p>当门被关闭之后此陷阱重置。</p>",
-            "disable": "<p>@Check[thievery|dc:27|name:Remove the Lintel] (master) to painstakingly remove the lintel without triggering the magic, or @UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环级；反制 DC25）反制符文</p>"
+            "disable": "<p>@Check[thievery|dc:27|name:Remove the Lintel] （大师）小心地拆除门楣而不触发魔法，或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环级；反制 DC25）反制符文</p>"
         },
         "Planar Rift": {
             "name": "位面裂隙 Planar Rift",
@@ -620,7 +620,7 @@
             },
             "disable": "<p>@Check[thievery|dc:21|name:Disable Trap (Control Panel)|traits:action:disable-a-device] （专家）操作控制面板关闭陷阱</p>",
             "routine": "<p>（1个动作）陷阱以一个动作向走廊里的所有生物发射毒镖。由于它持续不断地发射毒镖，陷阱可以在每个生物的回合使用“持续弹幕”自由动作（详见下文）对其发射毒镖。 </p>",
-            "reset": "<p>The trap deactivates and resets after 1 minute.</p>"
+            "reset": "<p>陷阱在1分钟后关闭并重置。</p>"
         },
         "Poisoned Lock": {
             "name": "毒锁 Poisoned Lock",
@@ -680,7 +680,7 @@
             },
             "disable": "<p>@Check[survival|dc:18|name:Safely Disturb the Surface] （受训）来扰乱流沙表面</p>",
             "reset": "<p>流沙依然能吞没任何进入其中的生物，但是表面不再隐蔽，除非它自然沉淀超过24小时。</p>",
-            "routine": "<p>（1个动作）On its initiative, the quicksand pulls down each creature within it.一个吞没到腰部的生物会吞没到脖子，一个被吞没到脖子的生物会被拉到流沙表面以下，必须屏住呼吸来避免窒息。 在流沙中的生物可以尝试@Check[athletics|dc:20|traits:action:swim]检定进行游泳动作，如果它被淹没到脖子或更糟，那么它检定成功可以将自己上浮一级，如果它只被淹没到腰部则检定成功可以移动5尺。如果检定大失败，则下沉一级。从流沙中游出来的生物能逃离危害范围，并在流沙的相邻方格中处于@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}状态。其他生物可以援助被困的生物，通常是使用绳子或类似的援助，或者救援者尝试进行@Check[athletics|dc:20|name:Aid Another Creature in Quicksand]检定将被困生物拉出，其造成的结果与被困生物自己尝试运动检定的结果相同。</p>"
+            "routine": "<p>（1个动作）轮到流沙行动时，它会将其中的每个生物向下拉。一个吞没到腰部的生物会吞没到脖子，一个被吞没到脖子的生物会被拉到流沙表面以下，必须屏住呼吸来避免窒息。 在流沙中的生物可以尝试@Check[athletics|dc:20|traits:action:swim]检定进行游泳动作，如果它被淹没到脖子或更糟，那么它检定成功可以将自己上浮一级，如果它只被淹没到腰部则检定成功可以移动5尺。如果检定大失败，则下沉一级。从流沙中游出来的生物能逃离危害范围，并在流沙的相邻方格中处于@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{倒地 Prone}状态。其他生物可以援助被困的生物，通常是使用绳子或类似的援助，或者救援者尝试进行@Check[athletics|dc:20|name:Aid Another Creature in Quicksand]检定将被困生物拉出，其造成的结果与被困生物自己尝试运动检定的结果相同。</p>"
         },
         "Scythe Blades": {
             "name": "摆镰 Scythe Blades",
@@ -771,7 +771,7 @@
             "prototypeToken": {
                 "name": "落雪 Snowfall"
             },
-            "disable": "<p>@Check[survival|dc:19|name:Safely Dislodge the Snow] （受训）安全地移开雪堆；or deal any amount of fire damage to destroy the hazard without triggering it</p>"
+            "disable": "<p>@Check[survival|dc:19|name:Safely Dislodge the Snow] （受训）安全地移开雪堆；或造成任意数值的火焰伤害，在不触发危害的情况下将其摧毁</p>"
         },
         "Spear Launcher": {
             "name": "矛墙 Spear Launcher",
@@ -842,9 +842,9 @@
             "prototypeToken": {
                 "name": "旋刃柱 Spinning Blade Pillar"
             },
-            "disable": "<p>通过两次@Check[thievery|dc:21|name:Disable Pillar|traits:action:disable-a-device] （受训）来解除柱子，或通过一次@Check[thievery|dc:19|name:Disable Trap (Control Panel)|traits:action:disable-a-device] （专家）来解除控制面板关闭整个陷阱。Breaking the control panel prevents anyone from disabling the trap using the control panel and prevents the trap from deactivating automatically.</p>",
+            "disable": "<p>通过两次@Check[thievery|dc:21|name:Disable Pillar|traits:action:disable-a-device] （受训）来解除柱子，或通过一次@Check[thievery|dc:19|name:Disable Trap (Control Panel)|traits:action:disable-a-device] （专家）来解除控制面板关闭整个陷阱。破坏控制面板会使任何人都无法通过控制面板解除陷阱，也会使陷阱无法自动关闭。</p>",
             "routine": "<p>（3个动作）旋刃柱首先用第一个动作对所有相邻生物进行一次打击，它的第二个动作是向随机一个方向直线移动（投[[/gmr 1d4 #Direction]]来决定方向），然后第三个动作是再次用旋刃对所有相邻生物进行一次打击。该陷阱没有多重攻击减值 </p>",
-            "reset": "<p>The trap deactivates and resets after 1 minute.</p>"
+            "reset": "<p>陷阱在1分钟后关闭并重置。</p>"
         },
         "Sportlebore": {
             "name": "拟餐虫 Sportlebore",
@@ -994,7 +994,7 @@
             "prototypeToken": {
                 "name": "斩首处决者 Vorpal Executioner"
             },
-            "reset": "<p>The trap resets over the course of the round and can be triggered again 1 round later.</p>",
+            "reset": "<p>陷阱在这一轮内重置，并可在1轮后再次触发。</p>",
             "disable": "<p>@Check[thievery|dc:41|name:Jam Saw Blade|traits:action:disable-a-device] （专家）堵塞四个不同的滑槽交叉点让锯片没有可行的移动路径，以此阻止它横扫整个房间。</p>"
         },
         "Web Lurker Deadfall": {
@@ -1049,8 +1049,8 @@
                 "name": "神秘之轮 Wheel Of Misery"
             },
             "disable": "<p>@Check[thievery|dc:26|name:Stop Wheel from Spinning|traits:action:disable-a-device] （专家）阻止轮子飞速转动，@Check[thievery|dc:22|name:Erase Rune|traits:action:disable-a-device] （大师）擦除上面的每个符文，或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]{解除魔法 Dispel Magic}（4环级；反制 DC22）反制每一个符文。</p>",
-            "reset": "<p>The trap deactivates and resets if 1 minute passes without any creature moving within range of its sensor.</p>",
-            "routine": "<p>（2个动作）陷阱行动时，首先用第一个动作来旋转，然后停止。投1d6来决定轮子停止时位于最顶端的是哪个部分。然后陷阱使用它的第二个动作施展该部分对应的法术（3环，DC 24，法术攻击调整值+14）。此法术的目标应为距离其最近的生物，以它为范围法术的中心点，或应覆盖到该目标。This increases the spell's range to 100 feet if necessary. 该陷阱施展的所有法术都是奥术。</p>\n<p><strong>1</strong> @UUID[Compendium.pf2e.spells-srd.Item.o4lRVTwSxnOOn5vl]{睡眠术 Sleep}</p>\n<p><strong>2</strong> @UUID[Compendium.pf2e.spells-srd.Item.DCQHaLrYXMI37dvW]{麻痹术 Paralyze}</p>\n<p><strong>3</strong> @UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{闪电束 Lightning Bolt} （100尺直线）</p>\n<p><strong>4</strong> @UUID[Compendium.pf2e.spells-srd.Item.VosLNn2M8S7JH67D]{目盲术 Blindness}</p>\n<p><strong>5</strong> @UUID[Compendium.pf2e.spells-srd.Item.thAHF1zxNplLCJPO]{酸液喷溅 Caustic Blast}</p>\n<p><strong>6</strong> @UUID[Compendium.pf2e.spells-srd.Item.J7Y7tl0bbdz7TcCc]{衰弱术 Enfeeble}</p>"
+            "reset": "<p>如果连续1分钟没有任何生物在传感器范围内移动，陷阱就会关闭并重置。</p>",
+            "routine": "<p>（2个动作）陷阱行动时，首先用第一个动作来旋转，然后停止。投1d6来决定轮子停止时位于最顶端的是哪个部分。然后陷阱使用它的第二个动作施展该部分对应的法术（3环，DC 24，法术攻击调整值+14）。此法术的目标应为距离其最近的生物，以它为范围法术的中心点，或应覆盖到该目标。若有必要，该法术的射程会为此增加至100尺。该陷阱施展的所有法术都是奥术。</p>\n<p><strong>1</strong> @UUID[Compendium.pf2e.spells-srd.Item.o4lRVTwSxnOOn5vl]{睡眠术 Sleep}</p>\n<p><strong>2</strong> @UUID[Compendium.pf2e.spells-srd.Item.DCQHaLrYXMI37dvW]{麻痹术 Paralyze}</p>\n<p><strong>3</strong> @UUID[Compendium.pf2e.spells-srd.Item.9AAkVUCwF6WVNNY2]{闪电束 Lightning Bolt} （100尺直线）</p>\n<p><strong>4</strong> @UUID[Compendium.pf2e.spells-srd.Item.VosLNn2M8S7JH67D]{目盲术 Blindness}</p>\n<p><strong>5</strong> @UUID[Compendium.pf2e.spells-srd.Item.thAHF1zxNplLCJPO]{酸液喷溅 Caustic Blast}</p>\n<p><strong>6</strong> @UUID[Compendium.pf2e.spells-srd.Item.J7Y7tl0bbdz7TcCc]{衰弱术 Enfeeble}</p>"
         },
         "Yellow Mold": {
             "name": "黄霉菌 Yellow Mold",
