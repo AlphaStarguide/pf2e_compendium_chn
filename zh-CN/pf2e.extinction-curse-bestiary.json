@@ -261,7 +261,7 @@
             "items": {
                 "Burrowing Agony": {
                     "name": "钻心之痛 Burrowing Agony",
-                    "description": "<p>甲虫群对它空间中的每个生物造成@Damage[4d6[piercing]]伤害以及@Damage[2d4[bleed]]（@Check[reflex|dc:29|basic]豁免）。每轮一个生物第一次受到暗域甲虫群的钻心之痛的影响时，它还会受到急速异化的影响。</p>"
+                    "description": "<p>甲虫群对它空间中的每个生物造成@Damage[4d6[piercing],2d4[bleed]|options:area-damage]伤害（@Check[reflex|dc:29|basic|options:area-effect]豁免）。每轮一个生物第一次受到暗域甲虫群的钻心之痛的影响时，它还会受到急速异化的影响。</p>"
                 },
                 "Expeditious Evolution": {
                     "name": "急速异化 Expeditious Evolution",
@@ -633,11 +633,11 @@
                 },
                 "Opportunistic Brawler": {
                     "name": "投机斗士 Opportunistic Brawler",
-                    "description": "<p><strong>触发</strong> 一个生物用近战打击命中了打手；</p>\n<hr />\n<p><strong>效果</strong> 打手试图@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}该生物。如果成功或大成功，目标也会因此@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。打手不能以这种方式成功推撞目标之后行走。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物用近战打击命中了打手</p><hr /><p><strong>效果</strong> 打手试图[[/act shove]]该生物。如果成功或大成功，目标也会因此@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]。打手不能以这种方式成功推撞目标之后行走。</p>"
                 },
                 "Terrifying Sneer": {
                     "name": "吓人冷笑 Terrifying Sneer",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 打手必须以上一回合自己@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shoved}过的生物为目标；</p>\n<hr />\n<p><strong>效果</strong> 打手试图对目标@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]{挫败士气 Demoralize}。 如果成功，结果改为大成功。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<p><strong>需求</strong> 打手必须以上一回合自己@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shoved}过的生物为目标；</p><hr /><p><strong>效果</strong> 打手试图对目标[[/act demoralize options=terrifying-sneer]]。 如果成功，结果改为大成功。</p>"
                 }
             },
             "prototypeToken": {
@@ -1200,7 +1200,7 @@
                 },
                 "Hallucinogenic Pollen": {
                     "name": "致幻花粉 Hallucinogenic Pollen",
-                    "description": "<p>被陷阱的花粉喷射击中的生物必须通过@Check[will|dc:20]豁免，否则它将被@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1轮，并在[[/gmr 1d4 #hours]]小时内对察觉检定和对心灵效果的豁免受到-2状态减值。在大失败的情况下，这个减值是-4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.GstmxSP75eKmHtCQ]{效果：致幻花粉（失败）}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.RAKgTTFKc2YEbvrc]{效果：致幻花粉（大失败）}</p>"
+                    "description": "<p>被陷阱的花粉喷射击中的生物必须通过@Check[will|dc:20|options:inflicts:confused]豁免，否则它将陷入@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}1轮，并在[[/gmr 1d4 #hours]]小时内对察觉检定和对心灵效果的豁免承受-2状态减值。在大失败的情况下，这个减值是-4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.GstmxSP75eKmHtCQ]</p>"
                 }
             },
             "prototypeToken": {
@@ -2329,11 +2329,11 @@
                 },
                 "Psychogenic Secretions": {
                     "name": "精神分泌 Psychogenic Secretions",
-                    "description": "<p>30尺。进入这个弥漫区域的生物必须进行一次@Check[will|dc:42]豁免。</p>\n<p>失败时，该生物会@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1分钟（大失败时则是@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，且还会@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]1轮）。</p>\n<p>豁免成功的生物会对精神分泌临时免疫1分钟。</p>"
+                    "description": "<p>30尺。进入这个弥漫区域的生物必须进行一次@Check[will|dc:42|options:inflicts:paralyzed,inflicts:stupefied]豁免。</p>\n<p>失败时，该生物会@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1分钟（大失败时则是@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，且还会@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]1轮）。</p>\n<p>豁免成功的生物会对精神分泌临时免疫1分钟。</p>"
                 },
                 "Consume Knowledge": {
                     "name": "吞食知识 Consume Knowledge",
-                    "description": "<p>基罗斯瑞柯侵入100尺内一个生物的心灵，试图吞食其高等思考的能力。该生物进行一次@Check[will|dc:42]豁免。</p>\n<p>使用吞食知识会立刻终止这个能力之前对另一个生物产生的效果。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 该生物缓慢1且只能进行基础动作，持续1分钟。</p>\n<p><strong>大失败</strong> 同失败，且基罗斯瑞柯会@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，持续1分钟。他可以使用额外的动作来行走，打击，如果目标拥有已准备的法术或是法术库，他还可以用额外的动作来施法。</p>"
+                    "description": "<p>基罗斯瑞柯侵入100尺内一个生物的心灵，试图吞食其高等思考的能力。该生物必须尝试一次@Check[will|dc:42|options:inflicts:slowed]豁免。</p>\n<p>使用吞食知识会立刻终止这个能力之前对另一个生物产生的效果。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 该生物缓慢1且只能进行基础动作，持续1分钟。</p>\n<p><strong>大失败</strong> 同失败，且基罗斯瑞柯会@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，持续1分钟。他可以使用额外的动作来行走，打击，如果目标拥有已准备的法术或是法术库，他还可以用额外的动作来施法。</p>"
                 },
                 "Constant Spells": {
                     "description": "<p>@Localize[PF2E.NPC.Abilities.Glossary.ConstantSpells]</p>",
@@ -2358,7 +2358,7 @@
             "items": {
                 "Summon Monster": {
                     "name": "召唤怪物 Summon Monster",
-                    "description": "<p><strong>触发</strong> 一个没有携带泽乌伽瓦灾布圣徽的非地蜥人、非恶魔生物从大厅的北部通往大厅南部；</p>\n<hr />\n<p><strong>效果</strong> 这个陷阱会召唤出一个@UUID[Compendium.pf2e.pathfinder-monster-core.Actor.f15mNNhOT3aq66VQ]。食鳄兽会主动出击，停留[[/br 2d6 #rounds]]{2d6轮}，之后法术结束，食鳄兽消失。如果有人在持续时间结束前解除了陷阱，食鳄兽也会消失。与大多数召唤生物不同，食鳄兽每轮可以使用3个动作，并且可以使用反应。</p>"
+                    "description": "<p><strong>触发</strong> 一个没有携带泽乌伽瓦灾布圣徽的非地蜥人、非恶魔生物从大厅的北部通往大厅南部；</p>\n<hr />\n<p><strong>效果</strong> 这个陷阱会召唤出一个@UUID[Compendium.pf2e.pathfinder-monster-core.Actor.f15mNNhOT3aq66VQ]。食鳄兽会主动出击，停留[[/gmr 2d6 #rounds]]{2d6轮}，之后法术结束，食鳄兽消失。如果有人在持续时间结束前解除了陷阱，食鳄兽也会消失。与大多数召唤生物不同，食鳄兽每轮可以使用3个动作，并且可以使用反应。</p>"
                 }
             },
             "prototypeToken": {
@@ -2921,7 +2921,7 @@
                 },
                 "Haymaker": {
                     "name": "重拳 Haymaker",
-                    "description": "<p>普鲁阿娜对她在本回合曾经攻击过的目标进行拳头打击。如果她命中，她会获得+3伤害环境加值，并且该生物必须尝试@Check[fortitude|dc:20]豁免来抵御这一打击的惊人力量。</p>\n<hr />\n<p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标承受@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>失败</strong> 目标承受@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p><strong>大失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]并且@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 5}。</p>"
+                    "description": "<p>普鲁阿娜对她在本回合曾经攻击过的目标进行拳头打击。如果她命中，她在伤害上获得+3环境加值，并且该生物必须尝试一次@Check[fortitude|dc:20|options:inflicts:prone,inflicts:stunned]豁免来抵御这一打击的惊人力量。</p><hr /><p><strong>大成功</strong> 目标不受影响。</p>\n<p><strong>成功</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}。</p>\n<p><strong>失败</strong> 目标陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>\n<p><strong>大失败</strong> 目标@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]并且陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 5}。</p>"
                 }
             },
             "prototypeToken": {
@@ -3094,7 +3094,7 @@
             "items": {
                 "Resin Crust": {
                     "name": "脂壳 Resin Crust",
-                    "description": "<p>一个被渗脂地蜥人的爪或是牙打击伤害的生物必须进行一次成功的@Check[reflex|dc:28|traits:damaging-effect]豁免，否则就会被有毒的脂液团所覆盖，受到@Damage[2d8[poison]]伤害，速度受到-15尺的减值，维持1分钟（大失败时，这个生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，维持1分钟）。当生物拥有速度减值时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}状态。一个生物可以花费一个@UUID[Compendium.pf2e.actionspf2e.Item.pvQ5rY2zrtPI614F]动作来刮掉这些脂壳，每个这样的行动可以减少5点速度减值。</p>"
+                    "description": "<p>一个被渗脂地蜥人的爪或是牙打击伤害的生物必须成功通过@Check[reflex|dc:28|options:damaging-effect,inflicts:clumsy,inflicts:sickened]豁免，否则就会被有毒的脂液团所覆盖，受到@Damage[2d8[poison]]伤害，速度受到-15尺减值，维持1分钟（大失败时，这个生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}，维持1分钟）。当生物拥有速度减值时还会陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}状态。一个生物可以花费一个@UUID[Compendium.pf2e.actionspf2e.Item.pvQ5rY2zrtPI614F]动作来刮掉这些脂壳，每个这样的行动可以减少5点速度减值。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.CZVQ5dYjzR7b9Ygn]</p>"
                 },
                 "Resin Spray": {
                     "name": "脂液喷射 Resin Spray",
@@ -4368,7 +4368,7 @@
                 },
                 "Punishing Tail": {
                     "name": "惩戒尾槌 Punishing Tail",
-                    "description": "<p>被军用战甲龙使用尾打击的生物需要进行一次@Check[fortitude|dc:32]豁免。失败时，它陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}；大失败时，它会陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>"
+                    "description": "<p>被军用战甲龙使用尾打击的生物需要进行一次@Check[fortitude|dc:32|options:inflicts:stunned]豁免。失败时，它陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}；大失败时，它会陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}。</p>"
                 },
                 "Trample": {
                     "name": "践踏 Trample",
