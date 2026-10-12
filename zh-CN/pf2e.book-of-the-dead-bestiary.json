@@ -283,7 +283,7 @@
                 },
                 "Blazing Howl": {
                     "name": "爆燃嚎叫 Blazing Howl",
-                    "description": "<p>焚身尸发出一声痛苦的尖啸，使得@Template[emanation|distance:15]范围内的生物身上猛地燃起火来，对此区域内的所有生物造成@Damage[4d6[fire]|options:area-damage]伤害（@Check[will|dc:17|basic|options:area-effect]豁免）。意志豁免大失败的生物会获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}；此惊惧状态是一个情绪、恐惧和心灵效果。</p>\n<p>焚身尸在[[/gmr 1d4 #Recharge Blazing Howl]]{1d4轮}内无法再次使用此能力。</p>"
+                    "description": "<p>焚身尸发出一声痛苦的尖啸，使得@Template[emanation|distance:15]范围内的生物身上猛地燃起火来，对此区域内的所有生物造成@Damage[4d6[fire]|options:area-damage]伤害（@Check[will|dc:17|basic|options:area-effect,inflicts:frightened]豁免）。意志豁免大失败的生物会获得@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 1}；此惊惧状态是一个情绪、恐惧和心灵效果。</p>\n<p>焚身尸在[[/gmr 1d4 #Recharge Blazing Howl]]{1d4轮}内无法再次使用此能力。</p>"
                 },
                 "Void Healing": {
                     "name": "虚能治疗 Void Healing",
@@ -1398,7 +1398,7 @@
                 },
                 "Stunning Flurry": {
                     "name": "震慑连击 Stunning Flurry",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 义洛理门徒木乃伊进行两次打击，如果两次都命中同一个生物，将两次伤害叠加再计算抗性和弱点，且目标必须成功通过@Check[fortitude|dc:29|traits:incapacitation]豁免否则获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（大失败时震慑3）；此豁免具有失能特征。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 义洛理门徒木乃伊进行两次打击，如果两次都命中同一个生物，将两次伤害叠加再计算抗性和弱点，且目标必须成功通过@Check[fortitude|dc:29|options:inflicts:stunned|traits:incapacitation]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（大失败时震慑3）；此豁免具有失能特征。</p>"
                 },
                 "Void Healing": {
                     "name": "虚能治疗 Void Healing",
@@ -2206,7 +2206,7 @@
             "disable": "<p>@Check[performance|dc:18]你演奏得如此出色，指挥家满意地解除了你手中的乐器，让它自动消失；@Check[occultism|dc:22]或 @Check[religion|dc:22]（受训）放逐其中一把乐器；@Check[thievery|dc:25]（受训）破坏其中一把乐器；每把乐器都必须消失、被放逐或被破坏，才能解除作祟。</p>",
             "hazarddescription": "<p>一名鬼灵指挥家冒了出来，给在场的所有人手中变出一把有着剃刀般琴弦的乐器。当指挥家做出准备演奏的手势后，所有生物都开始被迫跟着指挥弹奏起乐器。</p>",
             "reset": "<p>当所有被召唤出的乐器被摧毁或沉寂1分钟后，作祟将停止。它将在1小时后重置。</p>",
-            "routine": "<p>（1 个动作；惑控系，心灵，异能）指挥家敦促30尺内的每个生物弹奏手中的危险乐器。每个被迫演奏乐器的角色都必须如此做，而那些成功豁免的生物也可以开始演奏。无论是被迫演奏还是为了解除作祟自愿演奏，这都会对自身造成@Damage[(1d6+3)[slashing]]{1d6+3挥砍伤害}（@Check[reflex|dc:21|basic|traits:enchantment,mental,occult]豁免），并且生物必须尝试@Check[performance|dc:18|traits:enchantment,mental,occult,damaging-effect]检定。如果成功，指挥家接受表演者的演奏，解除生物手中的乐器。如果失败，不谐之音和指挥家的嘲笑会造成额外的@Damage[(1d6+3)[sonic]]{1d6+3音波伤害}。</p>",
+            "routine": "<p>（1动作；惑控系，心灵，异能）指挥家敦促30尺内的每个生物弹奏手中的危险乐器。每个被迫演奏乐器的角色都必须如此做，而那些成功豁免的生物也可以开始演奏。无论是被迫演奏还是为了解除作祟自愿演奏，这都会对自身造成@Damage[(1d6+3)[slashing]]{1d6+3挥砍伤害}（@Check[reflex|dc:21|basic|traits:enchantment,mental,occult]豁免），并且生物必须尝试@Check[performance|dc:18|traits:enchantment,mental,occult,damaging-effect]检定。如果成功，指挥家接受表演者的演奏，解除生物手中的乐器。如果失败，不谐之音和指挥家的嘲笑会造成额外的@Damage[(1d6+3)[sonic]]{1d6+3音波伤害}。</p>",
             "stealthdetails": "<p>（受训）</p>",
             "items": {
                 "Conjure Instruments": {
@@ -2431,7 +2431,7 @@
             "disable": "<p>@Check[occultism|dc:48]或@Check[religion|dc:48]（专家）削弱鬼魂；总共四次成功才能解除作祟</p>",
             "hazarddescription": "<p>一个无形体的鬼魂，从生者身上吸取生命，当受害者逐渐变得虚弱时，它则逐渐变得可见。</p>",
             "reset": "<p>在1分钟之后，鬼魂吃饱喝足，然后作祟停止活动，进入休眠状态。在1个小时过后，灵魂吸取的生命能量被消耗殆尽，作祟重置。</p>",
-            "routine": "<p>（1 个动作；死亡，神术，死灵系，虚能）鬼魂吸取活物的灵魂，并且身体变得越来越明显。@Template[burst|distnace:60]{60尺}内每个生物受到@Damage[(4d10+20)[void]]伤害，@Check[fortitude|dc:41|traits:death,divine,necromancy,negative,damaging-effect]豁免。如果区域内没有生物，作祟会移动至多120尺，前往生物最密集的地方，然后吸取生命精华。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，然后@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained}值增加1，最多增加到流失4。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，然后流失值增加2，最多增加到流失4。如果生物已经达到流失4，它会死亡。</p>",
+            "routine": "<p>（1动作；死亡，神术，死灵系，虚能）鬼魂吸取活物的灵魂，并且身体变得越来越明显。@Template[burst|distnace:60]{60尺}内每个生物受到@Damage[(4d10+20)[void]]伤害，@Check[fortitude|dc:41|traits:death,divine,necromancy,negative,damaging-effect]豁免。如果区域内没有生物，作祟会移动至多120尺，前往生物最密集的地方，然后吸取生命精华。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物受到一半伤害。</p>\n<p><strong>失败</strong> 生物受到全伤害，然后@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained}值增加1，最多增加到流失4。</p>\n<p><strong>大失败</strong> 生物受到双倍伤害，然后流失值增加2，最多增加到流失4。如果生物已经达到流失4，它会死亡。</p>",
             "stealthdetails": "<p>（受训）</p>",
             "items": {
                 "Sudden Siphon": {
