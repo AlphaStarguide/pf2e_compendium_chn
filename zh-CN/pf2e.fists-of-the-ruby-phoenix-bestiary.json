@@ -59,7 +59,7 @@
                     "name": "俗世果报 Release Worldly Passions"
                 },
                 "Stunning Flurry": {
-                    "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 慈永住持进行两次打击，可自选无武装打击和庙铃打击组合进行。若两次打击命中同一个生物，将伤害相加后再计算抗力和弱点。任一打击命中且造成伤害后，目标需通过@Check[fortitude|dc:39|traits:incapacitation]豁免检定，失败会获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（大失败则@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}）；该豁免拥有失能特征。</p>",
+                    "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 慈永住持进行两次打击，可自选无武装打击和庙铃打击组合进行。若两次打击命中同一个生物，将伤害相加后再计算抗力和弱点。任一打击命中且造成伤害后，目标需通过@Check[fortitude|dc:39|options:inflicts:stunned|traits:incapacitation]豁免，失败会获得@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（大失败则@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}）；该豁免拥有失能特征。</p>",
                     "name": "震慑连击 Stunning Flurry"
                 },
                 "Falling Sal Stance": {
@@ -1187,7 +1187,7 @@
             "stealthdetails": "<p>（大师）注意到剧场中突然发生的意外</p>",
             "disable": "<p>@Check[arcana|dc:38|name:Air Rift Arcana|traits:hazard,environmental,magical,air]（大师）用魔法将裂隙缝合；@Check[nature|dc:40|name:Air Rift Nature|traits:hazard,environmental,magical,air]或@Check[survival|dc:40|name:Air Rift Survival|traits:hazard,environmental,magical,air]（传奇）打开足够多的门窗，降低狂风的烈度；或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]（反制等级7环级；反制DC34）反制气流裂隙。</p>",
             "hazarddescription": "<p>舞台上撕开了一个通往气元素位面的入口，导致咆哮的风撕裂整个剧院。</p>",
-            "routine": "<p>（1 动作）风在该区域内以随机方向吹动，气流裂隙导致50尺内的生物和物品向上、下、北、南、东或西方向被吹走（投掷d6来决定具体方向）。该区域内的生物和物体必须尝试@Check[fortitude|dc:37|traits:damaging-effect,air,environmental,magical,hazard]豁免。如果一个生物撞上了另一个同样受此效果影响的物品或生物，则双方都会因为冲击而受到@Damage[(3d8+15)[bludgeoning]]伤害。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被推离10尺，但是仅受到一半的冲击伤害。</p>\n<p><strong>失败</strong> 生物被推离20尺，被击倒地，受到全额冲击伤害。</p>\n<p><strong>大失败</strong> 生物被推离40尺，被击倒，受到双倍冲击伤害。</p>",
+            "routine": "<p>（1动作）风在该区域内以随机方向吹动，气流裂隙导致50尺内的生物和物品向上、下、北、南、东或西方向被吹走（投掷d6来决定具体方向）。该区域内的生物和物体必须尝试@Check[fortitude|dc:37|traits:damaging-effect,air,environmental,magical,hazard]豁免。如果一个生物撞上了另一个同样受此效果影响的物品或生物，则双方都会因为冲击而受到@Damage[(3d8+15)[bludgeoning]]伤害。</p>\n<hr />\n<p><strong>大成功</strong> 生物不受影响。</p>\n<p><strong>成功</strong> 生物被推离10尺，但是仅受到一半的冲击伤害。</p>\n<p><strong>失败</strong> 生物被推离20尺，被击倒地，受到全额冲击伤害。</p>\n<p><strong>大失败</strong> 生物被推离40尺，被击倒，受到双倍冲击伤害。</p>",
             "items": {
                 "AC 40 vs. Reactions and Ranged Weapon Attacks": {
                     "name": "对抗反应动作和远程武器攻击为40"
@@ -1820,7 +1820,7 @@
             "stealthdetails": "<p>+23（专家）或@Check[perception|dc:38|traits:action:seek]（大师）骷髅的运行轨迹</p>",
             "disable": "<p>三次@Check[thievery|dc:40|name:Disable an Elemental Core|traits:action:disable-a-device,hazard,magical,trap,fire]（传奇）；或@UUID[Compendium.pf2e.spells-srd.9HpwDN4MYQJnW0LG]（7环级；反制DC40），每次成功都能抽出或解除一个隐藏在烈焰骷髅内的元素核心：分别位于左眼、右眼和嘴部。</p>",
             "hazarddescription": "<p>一个漂浮的烈焰骷髅在竞技场以环形轨道周围盘旋，向随机方向喷出烈焰。</p>",
-            "routine": "<p>（3 动作）每成功解除一次，陷阱就损失一个动作。浮动喷火器使用第一个动作喷出@Template[cone|distance:15]{15尺锥形}火焰，造成@Damage[(4d6+4)[fire]]伤害（@Check[reflex|dc:40|basic]豁免），它的第二个动作是进行一次U形随机方向的飞行，它的第三个动作是再次喷出烈焰。</p>",
+            "routine": "<p>（3动作）每成功解除一次，陷阱就损失一个动作。浮动喷火器使用第一个动作喷出@Template[cone|distance:15]{15尺锥形}火焰，造成@Damage[(4d6+4)[fire]]伤害（@Check[reflex|dc:40|basic]豁免），它的第二个动作是进行一次U形随机方向的飞行，它的第三个动作是再次喷出烈焰。</p>",
             "items": {
                 "Blaze": {
                     "name": "烈焰 Blaze",
