@@ -23,7 +23,7 @@
                 },
                 "Energy Drain": {
                     "name": "能量吸取 Energy Drain",
-                    "description": "<p>当收割者死神以巨镰命中目标并造成伤害，它恢复@Damage[20[healing]]生命值，并且目标必须通过@Check[fortitude|dc:43]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标已经陷入毁灭，则毁灭的状态值增加1（最大达到@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 3}）。</p>"
+                    "description": "<p>当收割者死神以巨镰命中目标并造成伤害，它恢复@Damage[20[healing]]生命值，并且目标必须通过@Check[fortitude|dc:43|options:inflicts:doomed]检定否则陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标已经陷入毁灭，则毁灭状态值增加1（最大达到毁灭 3）。</p>"
                 },
                 "Final Death": {
                     "name": "最终死亡 Final Death",
@@ -314,7 +314,7 @@
                     "name": "活化武器 Animated Weapons"
                 },
                 "Energy Drain": {
-                    "description": "<p>当战殁巨虫以尸潮打击或践踏伤害一个生物，目标必须成功通过@Check[fortitude|dc:35]检定，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}和@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标豁免大成功，则24小时内对能量吸取能力临时免疫。</p>",
+                    "description": "<p>当战殁巨虫以尸潮打击或践踏伤害一个生物，目标必须成功通过@Check[fortitude|dc:35|options:inflicts:drained,inflicts:doomed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}和@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。如果目标豁免大成功，则24小时内对能量吸取能力临时免疫。</p>",
                     "name": "能量吸取 Energy Drain"
                 },
                 "Plummet": {
@@ -394,7 +394,7 @@
             "items": {
                 "Coils of Knowledge": {
                     "name": "知识缠绞 Coils of Knowledge",
-                    "description": "<p>娜迦的缠握是精魂而非肉体上的。被毗阇罗牟尼的蛇尾打击命中的生物必须成功通过@Check[will|dc:29]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于蛇尾，直到他@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}，娜迦可用一个交互动作放开受擒者，娜迦死亡也会自动放开。</p>\n<p>受擒者在逃脱检定上受到-4状态减值，但在逃脱可以尝试神秘或宗教，而非通常的检定；这个神秘或宗教检定不会受到前述减值。</p>"
+                    "description": "<p>娜迦的缠握是精魂而非肉体上的。被毗阇罗牟尼的蛇尾打击命中的生物必须成功通过@Check[will|dc:29|options:inflicts:grabbed]豁免，否则@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于蛇尾，直到他[[/act escape]]，娜迦可用一个交互动作放开受擒者，娜迦死亡也会自动放开。</p>\n<p>受擒者在逃脱检定上承受-4状态减值。但在逃脱时可以选择尝试[[/act escape skill=occultism]]或[[/act escape skill=religion]]检定，以替代通常的检定选项，该次检定不会承受前述减值。</p>"
                 },
                 "Greater Constrict": {
                     "name": "高等紧勒 Greater Constrict",
@@ -1793,7 +1793,7 @@
             "publicNotes": "<p>巨蜈蚣（在城市里发现时被称为下水道蜈蚣）会组成小群，但狩猎的时候会单独行动。驯化巨型蜈蚣作为守护者或宠物的尝试通常都会以失败告终，但一些地精、狗头人和螨精部落已经有方法利用这些害虫来守卫家园。其他部落和一些人形生物会把蜈蚣烤来吃，佐以巨量的辣椒作为美味佳肴。不过在准备这一餐的时候必须小心，不能让蜈蚣的毒液污染它的肉。</p>\n<hr />\n<p>作为猎手和食腐动物，蜈蚣生活在粪便和碎石中，它们冒险家们经常面对的威胁。蜈蚣长而多节的身体上长着数十条腿，它们以惊人的速度四处乱窜，用有毒的虫颚攻击猎物，用恶毒的毒素折磨猎物，然后慢慢地用令人作呕的动作进食。</p>",
             "items": {
                 "Giant Centipede Venom": {
-                    "description": "<p><strong>豁免骰</strong> @Check[fortitude|dc:14]</p>\n<hr />\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d4[poison]]伤害（1轮）</p>\n<p><strong>阶段2</strong> @Damage[1d4[poison]]伤害并@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]（1轮）</p>\n<p><strong>阶段3</strong> @Damage[1d4[poison]]伤害，@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}并@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]（1轮）</p>",
+                    "description": "<p><strong>豁免骰</strong> @Check[fortitude|dc:14]</p><hr /><p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[1d4[poison]]伤害（1轮）</p>\n<p><strong>阶段2</strong> 1d4点毒素伤害并@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]（1轮）</p>\n<p><strong>阶段3</strong> 1d4点毒素伤害，@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 1}并@UUID[Compendium.pf2e.conditionitems.Item.HL2l2VRSaQHu9lUw]（1轮）</p>",
                     "name": "巨蜈蚣毒 Giant Centipede Venom"
                 }
             },
@@ -9138,7 +9138,7 @@
                     "name": "反应打击 Reactive Strike（特殊）"
                 },
                 "Clinging Suckers": {
-                    "description": "<p>当海地精擒获一个比自己体型更大的生物时，它会吸附在那个生物身上。@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]的生物不会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，但如果该生物移动了，海地精也会随其一起移动。</p>\n<p>如果该生物为中型或者更小，当海地精吸附时，其速度将承受-5尺状态减值。当海地精吸附在其他生物上时，海地精处于@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]状态。</p>",
+                    "description": "<p>当海地精@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.Tkd8sH4pwFIPzqTr]一个比自己体型更大的生物时，它会吸附在那个生物身上。@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]的生物不会被@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，但如果该生物移动了，海地精也会随其一起移动。</p>\n<p>如果该生物为中型或者更小，当海地精吸附时，其速度将承受-5尺状态减值。当海地精吸附在其他生物上时，海地精处于@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]状态。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.FQX3YY3iFTtAtw1k]</p>",
                     "name": "粘附吸盘 Clinging Suckers"
                 },
                 "Jet": {
@@ -10638,7 +10638,7 @@
             "items": {
                 "Lamia's Caress": {
                     "name": "拉米亚的爱抚 Lamia's Caress",
-                    "description": "<p>拉米亚触碰一个生物，目标必须通过@Check[will|dc:23]检定否则@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。如果目标对此能力的豁免再次失败，则呆滞值增加1（最大达到@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 4}）。此状态值每24小时减少1。</p>"
+                    "description": "<p>拉米亚触碰一个生物，目标必须通过@Check[will|dc:23|options:inflicts:stupefied]检定否则@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}。如果目标对此能力的豁免再次失败，则呆滞值增加1（最大达到呆滞4）。此状态值每24小时减少1。</p>"
                 }
             },
             "prototypeToken": {
@@ -10756,7 +10756,7 @@
                 },
                 "Pharyngeal Jaws": {
                     "name": "咽颌 Pharyngeal Jaws",
-                    "description": "<p><strong>需求</strong> 一个生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于巨海鳗的嘴中</p>\n<hr />\n<p><strong>效果</strong> 巨海鳗用它第二副牙齿把猎物拖向它的喉咙。巨海鳗对该生物造成@Damage[(1d6+4)[piercing]]伤害，并且之后的活吞（攻击检定）及目标生物的逃脱DC都有+2环境加值。如果该生物@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]{逃脱 Escape}，或者被活吞，则此效果结束。</p>"
+                    "description": "<p><strong>需求</strong> 一个生物@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]于巨海鳗的嘴中</p><hr /><p><strong>效果</strong> 巨海鳗用它第二副牙齿把猎物拖向它的喉咙。巨海鳗对该生物造成@Damage[(1d6+4)[piercing]]伤害，并且之后的活吞（攻击检定）及目标生物的逃脱DC都有+2环境加值。如果该生物[[/act escape]]，或者被活吞，则此效果结束。</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -10848,7 +10848,7 @@
                 },
                 "Goblin Song": {
                     "name": "地精之歌 Goblin Song",
-                    "description": "<p>地精战咏者唱着烦人的地精之歌，用愚蠢和重复的歌词分散敌人的注意力。战咏者尝试一次@Check[performance|traits:auditory,concentrate,linguistic]检定对抗@Template[emanation|distance:30]{30尺}内最多两个敌人的意志DC。这具有通常表演检定所带有的特征和限制。</p>\n<hr />\n<p><strong>大成功</strong> 目标在察觉检定和意志豁免上承受-1状态减值，持续1分钟。@UUID[Compendium.pf2e.feat-effects.Item.bIRIS6mnynr72RDw]{效果：地精之歌（大成功）}</p>\n<p><strong>成功</strong> 同大成功，但是目标只在1轮内受其影响。@UUID[Compendium.pf2e.feat-effects.Item.5veOBmMYQxywTudd]{效果：地精之歌（成功）}</p>\n<p><strong>大失败</strong> 目标临时免疫地精之歌1小时。</p>"
+                    "description": "<p>地精战咏者唱着烦人的地精之歌，用愚蠢和重复的歌词分散敌人的注意力。战咏者尝试一次@Check[performance|against:will|traits:auditory,concentrate,linguistic]检定对抗@Template[emanation|distance:30]{30尺}内最多两个敌人的意志DC。这具有通常表演检定所带有的特征和限制。</p><hr /><p><strong>大成功</strong> 目标在察觉检定和意志豁免上承受-1状态减值，持续1分钟。@UUID[Compendium.pf2e.feat-effects.Item.bIRIS6mnynr72RDw]{效果：地精之歌（大成功）}</p>\n<p><strong>成功</strong> 同大成功，但是目标只在1轮内受其影响。@UUID[Compendium.pf2e.feat-effects.Item.5veOBmMYQxywTudd]{效果：地精之歌（成功）}</p>\n<p><strong>大失败</strong> 目标临时免疫地精之歌1小时。</p>"
                 }
             },
             "prototypeToken": {
@@ -12446,7 +12446,7 @@
                 },
                 "Vitality Drain": {
                     "name": "命能吸取 Vitality Drain",
-                    "description": "<p>当猎骨者近战打击命中目标时，目标必须通过@Check[fortitude|dc:40]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}和@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。</p>"
+                    "description": "<p>当猎骨者近战打击命中目标时，目标必须通过@Check[fortitude|dc:40|options:inflicts:drained,inflicts:doomed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 2}和@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态。</p>"
                 }
             },
             "prototypeToken": {
