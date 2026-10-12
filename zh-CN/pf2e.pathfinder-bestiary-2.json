@@ -529,7 +529,7 @@
                 },
                 "Curse of the Crooked Cane": {
                     "name": "扭杖诅咒 Curse of the Crooked Cane",
-                    "description": "<p>当有生物杀死石冢蛇龙时，他必须成功通过@Check[will|dc:44]豁免，失败则会永久陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。此外，受害者的衰老速率加快，每日衰老1岁，若无法尽快处理诅咒，则会最终死于衰老。</p>"
+                    "description": "<p>当有生物杀死石冢蛇龙时，他必须成功通过@Check[will|dc:44|options:inflicts:enfeebled]豁免，失败则会永久陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}。此外，受害者的衰老速率加快，每日衰老1岁，若无法尽快处理诅咒，则会最终死于衰老。</p>"
                 },
                 "Breath Weapon": {
                     "name": "吐息 Breath Weapon",
@@ -3423,7 +3423,7 @@
                 },
                 "Rupturing Venom": {
                     "name": "破裂毒液 Rupturing Venom",
-                    "description": "<p>触手眼魔所注射的粘稠的橙色毒液是活性的，会在生物的身体内翻滚沸腾，在撕裂血肉的同时造成毒素伤害和钝击伤害。</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:32]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]]伤害 和 @Damage[2d6[bludgeoning]]伤害（1轮）</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]伤害, @Damage[2d6[bludgeoning]]伤害, 和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}（1轮）</p>"
+                    "description": "<p>触手眼魔所注射的粘稠的橙色毒液是活性的，会在生物的身体内翻滚沸腾，在撕裂血肉的同时造成毒素伤害和钝击伤害。</p>\n<p><strong>豁免检定</strong> @Check[fortitude|dc:32]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]，2d6[bludgeoning]]（1轮）</p>\n<p><strong>阶段2</strong> @Damage[2d6[poison]]，@Damage[2d6[bludgeoning]]和@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}（1轮）</p>"
                 },
                 "Scent": {
                     "name": "灵敏嗅觉 Scent",
@@ -5086,7 +5086,7 @@
                 },
                 "Giant Toad Poison": {
                     "name": "巨蟾蜍毒液 Giant Toad Poison",
-                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:19]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（1轮）</p>\n<p><strong>阶段2</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}和@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}（1轮）</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:19|options:inflicts:stupefied,inflicts:confused]</p><hr /><p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（1轮）</p>\n<p><strong>阶段2</strong> 呆滞1和@UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{困惑 Confused}（1轮）</p>"
                 },
                 "Swallow Whole": {
                     "name": "活吞 Swallow Whole",
@@ -9731,7 +9731,7 @@
                 },
                 "Curse of Endless Storms": {
                     "name": "无尽风暴诅咒 Curse of Endless Storms",
-                    "description": "<p>当有生物杀死寒林蛇龙时，他必须成功通过@Check[will|dc:46]豁免，失败则会永久获得电击弱点20。</p>"
+                    "description": "<p>当有生物杀死寒林蛇龙时，他必须成功通过@Check[will|dc:46]豁免，失败则会永久获得电击弱点20。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.heLDu5ip7c7Ngosq]</p>"
                 },
                 "Spines": {
                     "name": "尖刺 Spines",
@@ -9974,11 +9974,11 @@
             "items": {
                 "Impaling Critical": {
                     "name": "棘刺重击 Impaling Critical",
-                    "description": "<p>当泰坦蜈蚣以虫颚打击造成重击时，目标会被口器周围的刚毛和棘刺刺穿，受到@Damage[1d6[bleed]]伤害，并且只要流血状态持续，目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
+                    "description": "<p>当泰坦蜈蚣以虫颚打击造成重击时，目标会被口器周围的刚毛和棘刺刺穿，受到1d6点持续流血伤害，并且只要流血状态持续，目标还会陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]。</p>"
                 },
                 "Titan Centipede Venom": {
                     "name": "泰坦蜈蚣毒 Titan Centipede Venom",
-                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:28]</p>\n<p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}（1轮）</p>\n<p><strong>阶段2</strong> @Damage[2d8[poison]]伤害, @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}，和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（1轮）</p>\n<p><strong>阶段3</strong> @Damage[2d10[poison]]伤害, @UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}，和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}（1轮）</p>"
+                    "description": "<p><strong>豁免检定</strong> @Check[fortitude|dc:28]</p><hr /><p><strong>最大持续时间</strong> 6轮</p>\n<p><strong>阶段1</strong> @Damage[2d6[poison]]伤害和@UUID[Compendium.pf2e.conditionitems.Item.i3OJZU2nk64Df3xm]{笨拙 Clumsy 2}（1轮）</p>\n<p><strong>阶段2</strong> @Damage[2d8[poison]]伤害，笨拙2和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}（1轮）</p>\n<p><strong>阶段3</strong> @Damage[2d10[poison]]伤害，笨拙2和@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}（1轮）</p>"
                 },
                 "Trample": {
                     "name": "践踏 Trample",
@@ -10855,7 +10855,7 @@
                 },
                 "Witchflame": {
                     "name": "巫焰 Witchflame",
-                    "description": "<p>任何被巫火打击造成的虚能伤害伤到的生物必须进行@Check[will|dc:26]豁免。</p>\n<hr />\n<p><strong>大成功</strong> 这个生物不受影响，并临时免疫此能力1小时。</p>\n<p><strong>成功</strong> 这个生物身上看似冒起了病态的绿焰。这些火焰本身不会造成伤害，但只要火焰还在燃烧，此生物就不能@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]（@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}的生物则变得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，不再@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}），并在获得持续1轮的火焰弱点5。</p>\n<p><strong>失败</strong> 如同成功，但除非被移除否则效果永久持续。</p>\n<p><strong>大失败</strong> 如同失败，但生物获得火焰弱点10。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NHwmrSyF0e8HUE3m]{效果：巫焰（成功）}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.L7SiTshdimUPWfnB]{效果：巫焰（失败）}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.McawF8weCe7O81um]{效果：巫焰（大失败）}</p>"
+                    "description": "<p>任何被巫火打击造成的虚能伤害伤到的生物必须进行@Check[will|dc:26]豁免。</p><hr /><p><strong>大成功</strong> 这个生物不受影响，并临时免疫此能力1小时。</p>\n<p><strong>成功</strong> 这个生物身上看似冒起了病态的绿焰。这些火焰本身不会造成伤害，但只要火焰还在燃烧，此生物就不能@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]（@UUID[Compendium.pf2e.conditionitems.Item.zJxUflt9np0q4yML]{隐形 Invisible}的生物则变得@UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]，不再@UUID[Compendium.pf2e.conditionitems.Item.VRSef5y1LmL2Hkjf]{无踪 Undetected}），并在获得持续1轮的火焰弱点5。</p>\n<p><strong>失败</strong> 如同成功，但除非被移除否则效果永久持续。</p>\n<p><strong>大失败</strong> 如同失败，但生物获得火焰弱点10。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.NHwmrSyF0e8HUE3m]{效果：巫焰（成功）}</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.L7SiTshdimUPWfnB]{效果：巫焰（失败）}</p>"
                 },
                 "Witchflame Kindling": {
                     "name": "巫焰爆燃 Witchflame Kindling",
