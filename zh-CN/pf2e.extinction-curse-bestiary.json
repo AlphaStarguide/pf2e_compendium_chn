@@ -2617,7 +2617,7 @@
             "disable": "<p>@Check[thievery|dc:26|name:Stop the mirrors|traits:hazard,complex,magical,mechanical,trap]（专家）或@UUID[Compendium.pf2e.spells-srd.Item.9HpwDN4MYQJnW0LG]（5环级；反制DC28）来阻止镜子的重整；@Check[occultism|dc:28|name:Dispel the minotaur|traits:hazard,complex,magical,mechanical,trap]或@Check[religion|dc:28|name:Dispel the minotaur|traits:hazard,complex,magical,mechanical,trap]（专家）解除牛头人。</p>",
             "hazarddescription": "<p>迷宫中的隐形符文会迷惑其中的人并使其镜像的墙壁四处移动。</p>",
             "reset": "<p>如果1分钟后迷宫中没有任何生物，陷阱会停用并重置。</p>",
-            "routine": "<p>（3动作）陷阱用它的第一个动作来魔法般的重新排列镜子，使迷宫的标记或地图失效。迷宫中的生物如果没有通过@Check[will|dc:26|traits:hazard,complex,magical,mechanical,trap]豁免，就会承受 @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，直到他们离开迷宫。如果目标对该能力的额外豁免失败，状态值会增加1（最高为@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 4}）。</p>\n<p>在第二、三个动作中，陷阱的幽灵牛头人用它的幻影牛角攻击迷宫中的一个随机生物。</p>",
+            "routine": "<p>（3动作）陷阱用它的第一个动作来魔法般的重新排列镜子，使迷宫的标记或地图失效。迷宫中的生物如果在@Check[will|dc:26|traits:hazard,complex,magical,mechanical,trap|options:area-effect,inflicts:stupefied]豁免中失败，就会陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，直到他们离开迷宫。如果目标对该能力的额外豁免失败，状态值会增加1（最高为呆滞4）。</p><p>在第二、三个动作中，陷阱的幽灵牛头人用它的幻影牛角攻击迷宫中的一个随机生物。</p>",
             "stealthdetails": "<p>（受训）发现迷宫中的魔法符文；注意到迷宫本身的DC为0</p>",
             "items": {
                 "The Maze Awakens": {
@@ -3992,7 +3992,7 @@
                 },
                 "Existential Agony": {
                     "name": "存在之苦 Existential Agony",
-                    "description": "<p>30尺。进入灵光或在灵光中开始回合的生物，必须尝试@Check[will|dc:26]豁免，失败承受@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1分钟。若大失败，生物还陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}，持续1分钟。作为奥歇达尔情绪状态的反映，这个灵光在奥歇达尔激动或愤怒时是活跃的，在他平静时则被抑制。</p>"
+                    "description": "<p>30尺。进入灵光或在灵光中开始回合的生物，必须成功通过@Check[will|dc:26|options:area-effect,inflicts:stupefied,inflicts:stunned]豁免，失败陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1分钟。若大失败，生物还陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}，持续1分钟。作为奥歇达尔情绪状态的反映，这个灵光在奥歇达尔激动或愤怒时是激活的，在他平静时则被压制。</p>"
                 },
                 "Rejuvenation": {
                     "name": "复生 Rejuvenation",
@@ -4594,7 +4594,7 @@
                 },
                 "Aggressive Block": {
                     "name": "侵略性格挡 Aggressive Block",
-                    "description": "<p><strong>触发</strong> 坚鳞使用@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.m4HQ2o5aPxjXf2kY]{盾牌格挡 Shield Block}反应动作，且触发盾牌格挡的敌人与他相邻，体型比坚鳞的尺寸大一级或更小；</p>\n<hr />\n<p><strong>效果</strong> 坚鳞进行一次运动检定来@UUID[Compendium.pf2e.actionspf2e.Item.7blmbDrQFNfdT731]{推撞 Shove}敌人。这次推撞不会增加坚鳞的多重攻击减值。如果他的结果是大失败，则结果按失败结算。如果他的结果是成功，则结果按大成功结算。</p>"
+                    "description": "<p><strong>触发</strong> 坚鳞使用@UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.m4HQ2o5aPxjXf2kY]{盾牌格挡 Shield Block}反应动作，且触发盾牌格挡的敌人与他相邻，体型只比坚鳞的尺寸大一级或更小；</p>\n<hr />\n<p><strong>效果</strong> 坚鳞进行一次运动检定来[[/act shove options=aggressive-block]]敌人。这次推撞不会增加坚鳞的多重攻击减值。如果他的结果是大失败，则结果按失败结算。如果他的结果是成功，则结果按大成功结算。</p>"
                 },
                 "Hardscale Shield Stance": {
                     "name": "坚鳞盾姿 Hardscale Shield Stance",
@@ -4752,7 +4752,7 @@
                 },
                 "Earthen Torrent": {
                     "name": "岩土激流 Earthen Torrent",
-                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<p><strong>需求</strong> 石领主站在或是靠近至少10尺立方的土壤，岩石或是其他泥土物质附近；</p>\n<hr />\n<p><strong>效果</strong> 石领主创造一道由翻滚的泥土构成的强烈波浪。@Template[cone|distance:15]内的生物将受到@Damage[7d8[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect]豁免；大失败时，该生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。</p>"
+                    "description": "<p><strong>频率</strong> 每分钟一次</p>\n<p><strong>需求</strong> 石领主站在或是靠近至少10尺立方的土壤，岩石或是其他泥土物质附近；</p><hr /><p><strong>效果</strong> 石领主创造一道由翻滚的泥土构成的强烈波浪。@Template[cone|distance:15]内的生物将受到@Damage[7d8[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:26|basic|options:area-effect,inflicts:prone]豁免；大失败时，该生物还会被击@UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]）。</p>"
                 },
                 "Stone Throes": {
                     "name": "岩石囚笼 Stone Throes",
