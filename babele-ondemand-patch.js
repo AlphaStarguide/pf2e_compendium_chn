@@ -435,14 +435,15 @@ function getPatchLoadingModeSetting() {
 }
 
 function getLoadingModeSetting() {
-	const raw = safeReadLoadingModeSettings();
 	try {
 		const mode = game.settings?.get?.(BABEL_NAMESPACE, SETTING_LOADING_MODE);
 		if (isValidLoadingMode(mode)) return mode;
 	} catch {}
 
 	const fallback = getPatchLoadingModeSetting() ?? LOADING_MODES.ONDEMAND;
-	tracePatch("loading mode fallback used", { raw, resolved: fallback });
+	if (globalThis?.BabeleOnDemandPatchDebug?.trace) {
+		tracePatch("loading mode fallback used", { raw: safeReadLoadingModeSettings(), resolved: fallback });
+	}
 	return fallback;
 }
 
@@ -596,6 +597,7 @@ function resetOnDemandState(babele, state) {
 	state.globalMappingsLoaded = false;
 	state.loadedGlobalMappings = [];
 	state.translationFilesCache = null;
+	state.absentTranslationInventory = null;
 	state.mappingFilesCache = null;
 	state.labels = null;
 	state.titleIndex = null;
@@ -1044,6 +1046,7 @@ function registerDebugConsoleApi() {
 	}
 
 	game.babeleOnDemandPatch = game.babeleOnDemandPatch ?? {};
+	game.babeleOnDemandPatch.performanceRevision = "adventure-perf-4";
 	game.babeleOnDemandPatch.repairActorNames = repairActorNames;
 	game.babeleOnDemandPatch.getActorImportDebug = () => !!root.BabeleOnDemandPatchDebug.actorImport;
 	game.babeleOnDemandPatch.setActorImportDebug = (enabled) => {
@@ -1155,6 +1158,8 @@ function resolveActorCandidatePackIds(babele, state, actorData) {
 
 	const sourcePackId = getActorSourcePackId(actorData);
 	if (sourcePackId) {
+		if (isPackTranslationLoadedCompat(babele, state, sourcePackId)
+			&& actorNamesAlreadyResolved(babele, state, sourcePackId, actorData)) return [sourcePackId];
 		packScores.set(sourcePackId, 10_000);
 	}
 
@@ -1176,7 +1181,8 @@ function resolveActorCandidatePackIds(babele, state, actorData) {
 
 	const sorted = Array.from(packScores.entries())
 		.sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
-		.map(([packId]) => packId);
+		.map(([packId]) => packId)
+		.filter((packId) => !isPackTranslationKnownAbsent(state, packId));
 	debugActorImport("候选包解析完成", {
 		actorName: actorData?.name ?? null,
 		sourceId: actorData?.flags?.core?.sourceId || actorData?._stats?.compendiumSource || null,
@@ -1230,6 +1236,17 @@ function actorNameSnapshot(actor) {
 		},
 		_stats: { compendiumSource: data._stats?.compendiumSource },
 	};
+}
+
+function actorImportSnapshot(actor, fallback = null) {
+	const snapshot = actorNameSnapshot(actor);
+	// Completed imports only need independent name repair. Keep their Items,
+	// Effects and system data out of snapshots unless custom Babele matching
+	// strategies need those fields. Preserve the full original input in that case.
+	let customMatching = true;
+	try { customMatching = !!game.babele?.translationMatchStrategies?.()?.length; } catch {}
+	if (!customMatching && (snapshot?.translated || snapshot?.flags?.babele?.translated)) return snapshot;
+	return typeof actor?.toObject === "function" ? actor.toObject() : fallback;
 }
 
 function mergeActorSourceWithChange(actor, change) {
@@ -1352,20 +1369,14 @@ function buildActorTranslationProbes(source) {
 
 	const sourceDocId = getActorSourceDocumentId(source);
 	if (typeof sourceDocId === "string" && sourceDocId.length) {
-		const byId =
-			foundry.utils?.deepClone && typeof foundry.utils.deepClone === "function"
-				? foundry.utils.deepClone(source)
-				: JSON.parse(JSON.stringify(source));
-		byId._id = sourceDocId;
+		// Probes only change scalar lookup keys. The translation caller clones
+		// a selected probe before invoking potentially mutating converters.
+		const byId = { ...source, _id: sourceDocId };
 		pushProbe(byId);
 
 		const sourceDocName = getActorSourceDocumentName(source);
 		if (typeof sourceDocName === "string" && sourceDocName.length) {
-			const byIdAndName =
-				foundry.utils?.deepClone && typeof foundry.utils.deepClone === "function"
-					? foundry.utils.deepClone(byId)
-					: JSON.parse(JSON.stringify(byId));
-			byIdAndName.name = sourceDocName;
+			const byIdAndName = { ...byId, name: sourceDocName };
 			pushProbe(byIdAndName);
 		}
 	}
@@ -1405,9 +1416,13 @@ function actorNameTranslation(babele, state, packId, source) {
 			entryKey = pack.translationKeyFor?.(source) ?? null;
 		}
 		if (!entry?.name) {
-			const entries = pack?.translations ?? pack?.translation?.entries;
+			// Read Babele's normalized lookup without copying its entire snapshot.
+			// Raw array entries can differ: duplicate IDs use the LAST entry.
+			const lookup = pack?.translationEntries;
+			const entries = typeof lookup?.at === "function" ? null : pack?.translations ?? pack?.translation?.entries;
 			for (const key of keys) {
-				const candidate = Array.isArray(entries) ? entries.find((value) => value?.id === key) : entries?.[key];
+				const candidate = typeof lookup?.at === "function" ? lookup.at(key)
+					: Array.isArray(entries) ? entries.find((value) => value?.id === key) : entries?.[key];
 				if (typeof candidate?.name !== "string" || !candidate.name.trim()) continue;
 				entry = candidate;
 				entryKey = key;
@@ -1449,6 +1464,16 @@ function completeActorTranslationNames(babele, state, packId, source, translated
 	if (!translated || typeof translated !== "object") return translated;
 	const patch = actorNameTranslationPatch(babele, state, packId, source, translated);
 	return Object.keys(patch).length ? foundry.utils.mergeObject(translated, patch, { inplace: false }) : translated;
+}
+
+function actorNamesAlreadyResolved(babele, state, packId, source) {
+	if (!(source?.translated || source?.flags?.babele?.translated)) return false;
+	if (getActorSourcePackId(source) !== packId) return false;
+	const names = actorNameTranslation(babele, state, packId, source);
+	// A null translation result can mean "already correct", not "no match".
+	// Stop only with positive evidence from the exact source; missing source
+	// entries and records without provenance must retain candidate fallback.
+	return !!names && !Object.keys(actorNameTranslationPatch(babele, state, packId, source, source, names)).length;
 }
 
 // Repair existing translated world/synthetic Actors when their sheet is opened.
@@ -1548,7 +1573,7 @@ function autoTranslateImportedActorInPreCreate(actor, data, userId) {
 	if (!babele || !state || !babele.initialized) return;
 	if (!shouldRunActorImportAutoTranslate(babele)) return;
 
-	const source = typeof actor?.toObject === "function" ? actor.toObject() : data;
+	const source = actorImportSnapshot(actor, data);
 	if (!source) return;
 
 	debugActorImport("preCreate触发", {
@@ -1564,7 +1589,8 @@ function autoTranslateImportedActorInPreCreate(actor, data, userId) {
 		if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 		const translated = tryTranslateActorFromPack(babele, packId, source);
 		if (!translated) continue;
-		actor.updateSource(translated);
+		actor.updateSource(source.translated || source.flags?.babele?.translated
+			? actorTranslationDelta(source, translated) : translated);
 		debugActorImport("preCreate应用翻译成功", {
 			actorId: actor?.id ?? actor?._id ?? null,
 			actorName: source?.name ?? null,
@@ -1649,7 +1675,7 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
 	if (!babele || !state) return;
 	if (!shouldRunActorImportAutoTranslate(babele)) return;
 
-	const source = typeof actor?.toObject === "function" ? actor.toObject() : null;
+	const source = actorImportSnapshot(actor);
 	if (!source) return;
 
 	debugActorImport("create后兜底触发", {
@@ -1672,7 +1698,10 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
 
 	for (const packId of candidates) {
 		try {
-			await babele.ensurePackTranslationsLoaded?.(packId, { documents: [source] });
+			const namesOnly = !!(source.translated || source.flags?.babele?.translated);
+			if (!namesOnly || !isPackTranslationLoadedCompat(babele, state, packId)) {
+				await babele.ensurePackTranslationsLoaded?.(packId, { documents: [source], skipNpcDependencies: namesOnly });
+			}
 		} catch {
 			debugActorImport("pack翻译加载失败", { packId, actorName: source?.name ?? null });
 			continue;
@@ -1681,7 +1710,10 @@ async function autoTranslateImportedActorAfterCreate(actor, userId) {
 		if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 
 		const translated = tryTranslateActorFromPack(babele, packId, source);
-		if (!translated) continue;
+		if (!translated) {
+			if (actorNamesAlreadyResolved(babele, state, packId, source)) return;
+			continue;
+		}
 		if (!actorImportSourceIsCurrent(actor, source, !!source.flags?.babele?.translated)) return;
 		await applyTranslatedActorToWorldActor(actor, translated, source);
 		debugActorImport("create后兜底应用翻译成功", {
@@ -1714,7 +1746,7 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId, change) {
 	if (!babele || !state) return;
 	if (!shouldRunActorImportAutoTranslate(babele)) return;
 
-	const source = typeof actor?.toObject === "function" ? actor.toObject() : null;
+	const source = actorImportSnapshot(actor);
 	if (!source) return;
 	if (!getActorSourcePackId(source)) return;
 
@@ -1738,7 +1770,10 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId, change) {
 
 	for (const packId of candidates) {
 		try {
-			await babele.ensurePackTranslationsLoaded?.(packId, { documents: [source] });
+			const namesOnly = !!(source.translated || source.flags?.babele?.translated);
+			if (!namesOnly || !isPackTranslationLoadedCompat(babele, state, packId)) {
+				await babele.ensurePackTranslationsLoaded?.(packId, { documents: [source], skipNpcDependencies: namesOnly });
+			}
 		} catch {
 			continue;
 		}
@@ -1746,7 +1781,10 @@ async function autoTranslateImportedActorAfterUpdate(actor, userId, change) {
 		if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
 
 		const translated = tryTranslateActorFromPack(babele, packId, source);
-		if (!translated) continue;
+		if (!translated) {
+			if (actorNamesAlreadyResolved(babele, state, packId, source)) return;
+			continue;
+		}
 		if (!actorImportSourceIsCurrent(actor, source, !!source.flags?.babele?.translated)) return;
 		await applyTranslatedActorToWorldActor(actor, translated, source);
 		debugActorImport("update后兜底应用翻译成功", {
@@ -1790,7 +1828,8 @@ async function applyTranslatedActorToWorldActor(actor, translated, source) {
 	// Commit root text and completion flags only after embedded writes succeed.
 	// A rejected Item/Effect update leaves the original Actor name available for
 	// a later retry. Recompute the delta now to preserve edits made while waiting.
-	const payload = actorTranslationDelta(source, translated, actor.toObject());
+	const latest = source.translated || source.flags?.babele?.translated ? actorNameSnapshot(actor) : actor.toObject();
+	const payload = actorTranslationDelta(source, translated, latest);
 	delete payload.items;
 	delete payload.effects;
 	if (Object.keys(payload).length) {
@@ -2664,6 +2703,30 @@ function refreshPackTranslationUrlIndex(babele, state, files) {
 	state.packTranslationFiles = files;
 }
 
+function isPackTranslationKnownAbsent(state, packId, babele = game.babele) {
+	// Only a successfully completed local discovery proves absence. Partial
+	// listings and player-side inventories must remain eligible for retries.
+	const files = state?.translationFilesCache;
+	if (!Array.isArray(files) || !packId) return false;
+	if (state.packTranslationsLoading?.has(packId) || state.loadedPacks?.has(packId)
+		|| state.compatPacks?.get(packId)?.translated || state.packTranslationUrls?.get(packId)?.length) return false;
+	// Legacy modules may publish a pack directly without our compat registry.
+	if (!isModernBabele(state) && babele?.packs?.get?.(packId)?.translated) return false;
+	let cache = state.absentTranslationInventory;
+	if (cache?.files !== files) state.absentTranslationInventory = cache = { files, absent: new Set() };
+	if (cache.absent.has(packId)) return true;
+	const prefix = encodeURI(packId);
+	// Check the actual inventory, not only the URL index: metadata for a pack
+	// may have become available after that index was built.
+	const present = files.some((file) => {
+		const name = file?.split?.("/").pop?.().split?.("\\").pop?.();
+		return typeof name === "string" && (name === `${prefix}.json`
+			|| (name.startsWith(`${prefix}.`) && name.endsWith(".json")));
+	});
+	if (!present) cache.absent.add(packId);
+	return !present;
+}
+
 async function importLegacyTranslatedCompendium() {
 	try {
 		const module = await import("/modules/babele/script/translated-compendium.js");
@@ -2991,7 +3054,10 @@ async function awaitTranslationTask(state, waiterId, taskId, task, canUsePublish
 
 function npcDependencyPacksForDocuments(documents, documentType) {
 	if (!Array.isArray(documents)) return NPC_TRANSLATOR_DEP_PACKS;
-	const sources = documents.map((document) => document?.toObject?.() ?? document);
+	// Foundry _source already contains plain Actor/Adventure source arrays.
+	// This is a read-only scan: serializing an entire Adventure also copies
+	// every Scene and Journal just to inspect its embedded Item provenance.
+	const sources = documents.map((document) => document?._source ?? document?.toObject?.() ?? document);
 	let actors;
 	if (documentType === "Actor") actors = sources;
 	else if (documentType === "Adventure") {
@@ -3000,10 +3066,18 @@ function npcDependencyPacksForDocuments(documents, documentType) {
 	} else return NPC_TRANSLATOR_DEP_PACKS;
 	if (actors.some((actor) => !Array.isArray(actor?.items))) return NPC_TRANSLATOR_DEP_PACKS;
 	const packs = new Set();
-	for (const actor of actors) for (const item of actor.items) {
-		const source = item?._stats?.compendiumSource ?? item?.flags?.core?.sourceId;
+	const addSourcePack = (data) => {
+		const source = data?._stats?.compendiumSource || data?.flags?.core?.sourceId;
 		const sourcePack = typeof source === "string" ? source.match(/^Compendium\.([^.]+\.[^.]+)\./)?.[1] : null;
 		if (sourcePack) packs.add(sourcePack);
+	};
+	// Adventure translations often omit actors and rely on their original
+	// bestiary. Load that exact source before Babele translates the embedded
+	// Actor: item-only fallback can otherwise mark a partially translated Actor
+	// complete before its unique abilities and description have been loaded.
+	if (documentType === "Adventure") for (const actor of actors) addSourcePack(actor);
+	for (const actor of actors) for (const item of actor.items) {
+		addSourcePack(item);
 		if (item.type === "spell") packs.add("pf2e.spells-srd");
 		else if (["armor", "weapon", "equipment", "consumable", "treasure", "backpack"].includes(item.type)) packs.add("pf2e.equipment-srd");
 		else if (["npc", "hazard"].includes(actor.type) && ["action", "melee", "effect"].includes(item.type)) packs.add("pf2e.bestiary-ability-glossary-srd");
@@ -3023,8 +3097,15 @@ function npcDependencyPacksForDocuments(documents, documentType) {
 async function ensureNpcDependenciesLoaded(babele, state, currentPackId, dependencyPacks = NPC_TRANSLATOR_DEP_PACKS) {
 	if (!state) return;
 	const generation = state.generation;
-	const dependencies = [...new Set(dependencyPacks)].filter((id) => id !== currentPackId);
-	if (dependencies.every((id) => isPackTranslationLoadedCompat(babele, state, id))) return;
+	const now = Date.now();
+	const dependencies = [...new Set(dependencyPacks)].filter((id) => id !== currentPackId
+		&& !isPackTranslationKnownAbsent(state, id)
+		&& (state.packTranslationsLoading?.has(id) || !isPackTranslationLoadedCompat(babele, state, id))
+		&& (state.packTranslationFailures?.get(id)?.retryAfter ?? 0) <= now);
+	// A missing pack remains untranslated during its retry cooldown. Do not
+	// let every Actor waiting on the shared dependency task start another
+	// empty batch for that same unavailable pack.
+	if (!dependencies.length) return;
 	const dependencyTaskId = "babele:npc-dependencies";
 	if (state.npcDepsLoading) {
 		const pending = state.npcDepsLoading;
@@ -3065,13 +3146,19 @@ async function ensureNpcDependenciesLoaded(babele, state, currentPackId, depende
 
 async function ensurePackTranslationsLoaded(babele, state, collection, loadContext = {}) {
 	const generation = state.generation;
-	await loadPackTranslations(babele, state, collection, loadContext);
+	const rootPackId = normalizePackId(collection);
+	const context = { ...loadContext };
+	// Share this request's scan between initial adapter loading and completion.
+	// Do not cache by pack: another Adventure in it can need different Items.
+	let dependencies;
+	context.getNpcDependencyPacks = () => dependencies ??= npcDependencyPacksForDocuments(
+		context.documents, getPackMetadata(babele, rootPackId)?.type,
+	);
+	await loadPackTranslations(babele, state, collection, context);
 	if (state.generation !== generation) return;
 	if (loadContext.referrer) return;
-	const rootPackId = normalizePackId(collection);
 	if (!loadContext.skipNpcDependencies && state.packNeedsNpcDependencies?.get(rootPackId)) {
-		await ensureNpcDependenciesLoaded(babele, state, rootPackId,
-			npcDependencyPacksForDocuments(loadContext.documents, getPackMetadata(babele, rootPackId)?.type));
+		await ensureNpcDependenciesLoaded(babele, state, rootPackId, context.getNpcDependencyPacks());
 		if (state.generation !== generation) return;
 	}
 	// Internal traversal may break a reference cycle at a published adapter. A
@@ -3118,6 +3205,7 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 		return;
 	}
 	if (isPackTranslationLoadedCompat(babele, state, packId)) return;
+	if (isPackTranslationKnownAbsent(state, packId)) return;
 	if ((failures.get(packId)?.retryAfter ?? 0) > Date.now()) return;
 	failures.delete(packId);
 
@@ -3178,7 +3266,7 @@ async function loadPackTranslations(babele, state, collection, loadContext = {})
 
 		if (needsNpcDeps && !loadContext.skipNpcDependencies && !state.npcDepsLoaded) {
 			await ensureNpcDependenciesLoaded(babele, state, packId,
-				npcDependencyPacksForDocuments(loadContext.documents, metadata.type));
+				loadContext.getNpcDependencyPacks?.() ?? npcDependencyPacksForDocuments(loadContext.documents, metadata.type));
 			if (!current()) return;
 		}
 
@@ -3382,12 +3470,72 @@ async function refreshPacksForMapping(babele, state, mapping) {
 	}
 }
 
+async function translatePreparedAdventureActors(data) {
+	if (!isOnDemandMode() || game.system?.id !== "pf2e") return;
+	const babele = game.babele;
+	const state = babele?.__ondemandPatch;
+	if (!state || !data) return;
+	const groups = new Map();
+	for (const records of [data.toCreate?.Actor, data.toUpdate?.Actor]) {
+		if (!Array.isArray(records)) continue;
+		for (let index = 0; index < records.length; index++) {
+			const source = records[index];
+			// Only complete import records with exact provenance are handled here.
+			// Partial updates and ambiguous name matches retain the normal fallback.
+			if (!["npc", "hazard"].includes(source?.type) || !Array.isArray(source.items)) continue;
+			const packId = getActorSourcePackId(source);
+			if (!packId || isPackTranslationKnownAbsent(state, packId)) continue;
+			if (!groups.has(packId)) groups.set(packId, []);
+			groups.get(packId).push({ records, index, source });
+		}
+	}
+	if (!groups.size) return;
+	if (!babele.initialized) await babele.init();
+	const generation = state.generation;
+	const entries = [...groups];
+	let next = 0;
+	const worker = async () => {
+		while (next < entries.length && state.generation === generation) {
+			const [packId, targets] = entries[next++];
+			try {
+				const namesOnly = targets.every(({ source }) => source.translated || source.flags?.babele?.translated);
+				if (!namesOnly || !isPackTranslationLoadedCompat(babele, state, packId)) {
+					await babele.ensurePackTranslationsLoaded?.(packId, {
+						documents: targets.map(({ source }) => source), skipNpcDependencies: namesOnly,
+					});
+				}
+				if (state.generation !== generation) return;
+				if (!isPackTranslationLoadedCompat(babele, state, packId) && !babele.isTranslated?.(packId)) continue;
+				for (const { records, index, source } of targets) {
+					const translated = tryTranslateActorFromPack(babele, packId, source);
+					if (translated) records[index] = translated;
+				}
+			} catch (error) {
+				// Do not cancel a core import if an optional translation is unavailable.
+				tracePatch("Adventure Actor pretranslation failed", { packId, error: error?.message });
+			}
+		}
+	};
+	await Promise.all(Array.from({ length: Math.min(NPC_DEPENDENCY_CONCURRENCY, entries.length) }, worker));
+}
+
 function registerWrappers() {
 	if (!game.modules?.get?.("lib-wrapper")?.active) {
 		if (game.user?.isGM) {
 			ui.notifications?.error?.("babele-ondemand-patch: libWrapper is required.");
 		}
 		return;
+	}
+
+	// Work on prepared import data before the core's bulk database operation.
+	// Translating only in post-update hooks creates one extra world write per
+	// Actor, particularly when re-importing an existing Adventure.
+	if (typeof globalThis.CONFIG?.Adventure?.documentClass?.prototype?.importContent === "function") {
+		libWrapper.register(PATCH_ID, "CONFIG.Adventure.documentClass.prototype.importContent", async function (wrapped, data, ...args) {
+			try { await translatePreparedAdventureActors(data); }
+			catch (error) { tracePatch("Adventure Actor pretranslation unavailable", { error: error?.message }); }
+			return wrapped(data, ...args);
+		}, "WRAPPER");
 	}
 
 	libWrapper.register(
@@ -3426,7 +3574,7 @@ function registerWrappers() {
 			const isIndex = request.index ?? request.options?.index;
 			const state = babele.__ondemandPatch;
 			if (!state) return result;
-			tracePatch("_getDocuments state", snapshotPatchState(babele, state));
+			if (globalThis?.BabeleOnDemandPatchDebug?.trace) tracePatch("_getDocuments state", snapshotPatchState(babele, state));
 
 			if (isIndex) {
 				try {
@@ -3460,7 +3608,12 @@ function registerWrappers() {
 				tracePatch("_getDocuments translating documents", { packId, count: result.length });
 				return result.map((doc) => {
 					const source = typeof doc?.toObject === "function" ? doc.toObject() : doc;
-					return reconstructDocumentCompat(documentClass, translateDataCompat(babele, state, packId, source), packId);
+					const alreadyTranslated = isModernBabele(state) && source?.translated === true;
+					const translated = translateDataCompat(babele, state, packId, source);
+					// Modern Babele returns completed input unchanged. Limit this
+					// shortcut to that case: legacy converters may mutate in place.
+					return alreadyTranslated && translated === source && typeof doc?.toObject === "function"
+						? doc : reconstructDocumentCompat(documentClass, translated, packId);
 				});
 			} catch {
 				tracePatch("_getDocuments translation failed", { packId });
