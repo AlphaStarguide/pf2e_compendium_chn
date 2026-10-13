@@ -939,7 +939,7 @@
             "items": {
                 "Gate Collapse": {
                     "name": "大门崩塌 Gate Collapse",
-                    "description": "<p><strong>触发</strong> 石杆被移动或是任一扇门被触碰</p>\n<hr />\n<p><strong>效果</strong> 两扇倒下的门对门外15尺的所有生物造成@Damage[(6d12+35)[bludgeoning]]伤害（@Check[reflex|dc:37|basic]豁免）。失败时，生物还会被压在大门下且直到门被破拆（@Check[athletics|dc:34|traits:action:force-open]检定）或是摧毁前处于@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]状态，每扇门都有着与陷阱本身相同的AC，强韧豁免加值，硬度以及HP。大失败时，该生物会以无法尝试自我解除的方式被困住。移走或是摧毁一扇门并不会对被困在另一扇门下的任何人有所帮助。</p>"
+                    "description": "<p><strong>触发</strong> 石杆被移动或是任一扇门被触碰</p><hr /><p><strong>效果</strong> 两扇倒下的门对门外15尺的所有生物造成@Damage[(6d12+35)[bludgeoning]|options:area-damage]伤害（@Check[reflex|dc:37|basic|options:area-effect,inflicts:immobilized]豁免）。失败时，生物还会被压在大门下且陷入@UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]，直到门被破拆（@Check[athletics|dc:34|traits:action:force-open]检定）或被摧毁。每扇门都有着与陷阱本身相同的AC，强韧豁免加值，硬度以及HP。大失败时，该生物会以无法尝试自我解除的方式被困住。移走或是摧毁一扇门并不会对被困在另一扇门下的任何人有所帮助。</p>"
                 }
             },
             "prototypeToken": {
@@ -1920,7 +1920,7 @@
                 },
                 "Feed on Emotion": {
                     "name": "饱食情绪 Feed on Emotion",
-                    "description": "<p><strong>频率</strong> 每轮一次</p>\n<hr />\n<p><strong>效果</strong> 虚无噤者以30尺内一个正在受到情绪效果影响的生物的情绪波动为食。目标必须成功通过@Check[will|dc:41|traits:damaging-effect]豁免，否则将受到@Damage[5d10[mental]]伤害并@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]1轮。如果目标豁免失败，虚无噤者将获得同等数值的HP，而且饱食情绪将不会消耗虚无噤者一个动作，这让它在本轮可以再使用另外一个动作。</p>"
+                    "description": "<p><strong>频率</strong> 每轮一次</p><hr /><p><strong>效果</strong> 虚无噤者以30尺内一个正在受到情绪效果影响的生物的情绪波动为食。目标必须成功通过@Check[will|dc:41|traits:damaging-effect|options:inflicts:stunned]豁免，否则将受到@Damage[5d10[mental]]伤害并陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]1轮。如果目标豁免失败，虚无噤者将获得同等数值的生命值，而且饱食情绪将不会消耗虚无噤者一个动作，这让它在本轮可以再使用另外一个动作。</p>"
                 },
                 "Rapid Strikes": {
                     "name": "迅猛打击 Rapid Strikes",
@@ -2045,7 +2045,7 @@
                 },
                 "Eat Away": {
                     "name": "吃干抹净 Eat Away",
-                    "description": "<p>在无形恐怖体内开始回合的生物将受到@Damage[10d6[void]]伤害。无形恐怖会获得等同于造成伤害一半的临时HP，持续1分钟。</p>"
+                    "description": "<p>在无形恐怖体内开始回合的生物将受到@Damage[10d6[void]]伤害。无形恐怖会获得等同于造成伤害一半的临时生命值，持续1分钟。</p>"
                 },
                 "Engulf": {
                     "name": "包卷 Engulf",
@@ -2114,7 +2114,7 @@
                 },
                 "Color Splash": {
                     "name": "色彩飞溅 Color Splash",
-                    "description": "<p>当虹彩大象跺起脚时，一束亮得让人找不着北的光波在它的腿上脉动。当它进行象足打击时，不论命中与否，与其邻接的生物必须成功通过@Check[will|dc:24]豁免否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]，直至大象的下一回合开始。</p>"
+                    "description": "<p>当虹彩大象跺起脚时，一束亮得让人找不着北的光波在它的腿上脉动。当它进行象足打击时，不论命中与否，与其邻接的生物必须成功通过@Check[will|dc:24|options:area-effect,inflicts:off-guard]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]，直到大象的下个回合开始。</p>"
                 },
                 "Trample": {
                     "name": "践踏 Trample",
@@ -2122,7 +2122,7 @@
                 },
                 "Trunk Beam": {
                     "name": "象鼻射线 Trunk Beam",
-                    "description": "<p><strong>频率</strong> 每日一次</p>\n<hr />\n<p><strong>效果</strong> 虹彩大象从它的鼻子中射出一束长度为@Template[line|distance:30]的光波。该区域内的所有生物必须尝试@Check[fortitude|dc:22|options:area-effect]豁免。</p>\n<p><strong>大成功</strong> 此生物不受影响。</p>\n<p><strong>成功</strong> 此生物@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p><strong>失败</strong> 此生物@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1分钟。</p>\n<p><strong>大失败</strong> 此生物永久目盲。</p>"
+                    "description": "<p><strong>频率</strong> 每日一次</p><hr /><p><strong>效果</strong> 虹彩大象从它的鼻中射出一束@Template[line|distance:30]的光波。该区域内的所有生物必须尝试一次@Check[fortitude|dc:22|options:area-effect,inflicts:dazzled,inflicts:blinded]豁免。</p>\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮。</p>\n<p><strong>失败</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1分钟。</p>\n<p><strong>大失败</strong> 该生物陷入永久目盲。</p>"
                 },
                 "Grabbing Trunk": {
                     "name": "鼻卷 Grabbing Trunk",
@@ -2700,7 +2700,7 @@
                 },
                 "Grand Finale": {
                     "name": "华丽终章 Grand Finale",
-                    "description": "<p><strong>需求</strong> 缪斯魅影的戏剧灵光正在生效</p><hr /><p><strong>效果</strong> 缪斯魅影停止其戏剧灵光并对@Template[burst|distance:30]内的生物造成@Damage[4d8[mental]|options:area-damage]伤害，包括它占据的生物（@Check[will|dc:22|basic|options:area-effect,inflicts:fascinated]豁免）。意志豁免失败的生物将被缪斯魅影@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]1分钟。</p>\n<p data-pf2-show-dc=\"gm\">戏剧魅影在[[/gmr 1d4 #Recharge Grand Finale]]{1d4轮}内不能再次使用此能力。</p>"
+                    "description": "<p><strong>需求</strong> 缪斯魅影的戏剧灵光正在生效</p><hr /><p><strong>效果</strong> 缪斯魅影停止其戏剧灵光并对@Template[burst|distance:30]内的生物造成@Damage[4d8[mental]|options:area-damage]伤害，包括它占据的生物（@Check[will|dc:22|basic|options:area-effect,inflicts:fascinated]豁免）。意志豁免失败的生物将被缪斯魅影@UUID[Compendium.pf2e.conditionitems.Item.AdPVz7rbaVSRxHFg]1分钟。</p><p data-pf2-show-dc=\"gm\">戏剧魅影在[[/gmr 1d4 #Recharge Grand Finale]]{1d4轮}内不能再次使用此能力。</p>"
                 },
                 "Muse Possession": {
                     "name": "缪斯附体 Muse Possession",
@@ -3039,11 +3039,11 @@
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
-                    "description": "<p>当尸妖猛禽精卫对一名活物使用近战打击造成伤害，它获得13点临时HP，目标则必须成功通过一次@Check[fortitude|dc:32|options:inflicts:drained]豁免，否则将陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。由这名尸妖造成的更多伤害将在豁免失败时增加流失状态1点，最大为流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
+                    "description": "<p>当尸妖猛禽精卫对一名活物使用近战打击造成伤害，它获得13点临时生命值，目标则必须成功通过一次@Check[fortitude|dc:32|options:inflicts:drained]豁免，否则将陷入@UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{流失 Drained 1}。由这名尸妖造成的更多伤害将在豁免失败时增加流失状态1点，最大为流失4。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.LRIYUFQ7FE9H4RWD]</p>"
                 },
                 "Hungry Spear": {
                     "name": "饥渴矛击 Hungry Spear",
-                    "description": "<p>尸妖猛禽精卫的远程矛打击可以应用汲取生命的效果，不过它不会在攻击命中时获得任何临时HP。</p>"
+                    "description": "<p>尸妖猛禽精卫的远程矛打击可以应用汲取生命的效果，不过它不会在攻击命中时获得任何临时生命值。</p>"
                 },
                 "Terror Master": {
                     "name": "恐惧之主 Terror Master",
@@ -3253,7 +3253,7 @@
                 },
                 "Boneshaking Roar": {
                     "name": "震骨咆哮 Boneshaking Roar",
-                    "description": "<p>蜥龙人观世者愤怒咆哮，释放出原始世界的伟力。</p>\n<p>@Template[emanation|distance:30]{30尺}内的非恐龙生物会受到@Damage[10d6[sonic]|options:area-damage]伤害（@Check[fortitude|dc:38|basic|options:area-effect]豁免）。豁免失败时，该生物还会@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}，持续1轮（大失败时还会@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix][[/r 1d4 #Stunned Value]]{1d4轮}）。</p>\n<p>蜥龙人观世者在[[/gmr 1d4 #Recharge Boneshaking Roar]]{1d4轮}内无法再次使用震骨咆哮。</p>"
+                    "description": "<p>蜥龙人观世者愤怒咆哮，释放出原始世界的伟力。</p>\n<p>@Template[emanation|distance:30]{30尺}内的非恐龙生物会受到@Damage[10d6[sonic]|options:area-damage]伤害（@Check[fortitude|dc:38|basic|options:area-effect,inflicts:slowed,inflicts:stunned]豁免）。豁免失败时，该生物还会陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 2}，持续1轮（大失败时还会@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix][[/gmr 1d4 #Stunned Value]]{1d4轮}）。</p>\n<p>蜥龙人观世者在[[/gmr 1d4 #Recharge Boneshaking Roar]]{1d4轮}内无法再次使用震骨咆哮。</p>"
                 },
                 "5Stunning Blow": {
                     "name": "震慑打击 Stunning Blow",
@@ -3269,7 +3269,7 @@
                 },
                 "Stunning Blow": {
                     "name": "震慑打击 Stunning Blow",
-                    "description": "<p>当蜥龙人观世者使用拳或是薙刀打击命中目标时，该生物必须成功通过@Check[fortitude|dc:39]豁免，否则就会陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（重击时为@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}）。</p>"
+                    "description": "<p>当蜥龙人观世者使用拳或是薙刀打击命中目标时，该生物必须成功通过@Check[fortitude|dc:39|options:inflicts:stunned]豁免，否则就会陷入@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 1}（重击时为@UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{震慑 Stunned 3}）。</p>"
                 }
             },
             "prototypeToken": {
@@ -3496,7 +3496,7 @@
                     "name": "对魔法的豁免+2状态加值 +2 Status to All Saves vs. Magic"
                 },
                 "-2 to All Saves (If Heartstone is Lost)": {
-                    "name": "-2 to All Saves (If Heartstone is Lost)"
+                    "name": "全豁免-2减值 -2 to All Saves（失去心石时）"
                 }
             },
             "prototypeToken": {
@@ -3960,7 +3960,7 @@
             "items": {
                 "Explosion": {
                     "name": "爆炸 Explosion",
-                    "description": "<p><strong>触发</strong> 一个生物穿过符文圈</p>\n<hr />\n<p><strong>效果</strong> 符文施放了一团火焰在通道内熊熊燃烧。任何通道内位于出口处5尺的人都会受到@Damage[(8d10+44)[fire]]伤害（@Check[reflex|dc:42|basic]豁免）。</p>\n<p>在那之后，符文会立刻施放一个4环级的@UUID[Compendium.pf2e.spells-srd.Item.gIdDLrbswTV3OBJy]{沉默术 Silence}，维持1分钟，这样任何在通道内受伤的人都无法寻求帮助。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物穿过符文圈</p>\n<hr />\n<p><strong>效果</strong> 符文施放了一团火焰在通道内熊熊燃烧。任何通道内位于出口处5尺的人都会受到@Damage[(8d10+44)[fire]|options:area-damage]伤害（@Check[reflex|dc:42|basic|options:area-effect]豁免）。</p>\n<p>在那之后，符文会立刻施放一个4环@UUID[Compendium.pf2e.spells-srd.Item.gIdDLrbswTV3OBJy]{沉默术 Silence}，维持1分钟，这样任何在通道内受伤的人都无法寻求帮助。</p>"
                 }
             },
             "prototypeToken": {
@@ -4186,7 +4186,7 @@
                 },
                 "Soulfire Inhalation": {
                     "name": "魂火汲取 Soulfire Inhalation",
-                    "description": "<p><strong>需求</strong> 渎灵魔的上一个动作是魂火吐息</p>\n<hr />\n<p><strong>效果</strong> 每个被渎灵魔的魂火吐息伤害的生物可以使其恢复@Damage[10[healing]]HP。任何超过的治疗量将会转变为临时HP，持续1分钟。</p>"
+                    "description": "<p><strong>需求</strong> 渎灵魔的上一个动作是魂火吐息</p>\n<hr />\n<p><strong>效果</strong> 每个被渎灵魔的魂火吐息伤害的生物可以使其恢复@Damage[10[healing]]HP。任何超过的治疗量将会转变为临时生命值，持续1分钟。</p>"
                 },
                 "Stunning Tail": {
                     "name": "震慑尾扫 Stunning Tail",
@@ -4327,7 +4327,7 @@
                 },
                 "Blood Eruption": {
                     "name": "血如泉涌 Blood Eruption",
-                    "description": "<p><strong>触发</strong> 一个生物使用近战打击重击了可怖之心</p>\n<hr />\n<p><strong>效果</strong> 可怖之心对触发的生物喷射血液。该生物必须成功通过@Check[reflex|dc:39|options:inflicts:dazzled,inflicts:blinded]豁免，否则就会@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮（大失败时则时@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮）。</p>"
+                    "description": "<p><strong>触发</strong> 一个生物使用近战打击重击了可怖之心</p><hr /><p><strong>效果</strong> 可怖之心对触发的生物喷射血液。该生物必须成功通过@Check[reflex|dc:39|options:inflicts:dazzled,inflicts:blinded]豁免，否则就会陷入@UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]1轮（大失败时则为@UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]1轮）。</p>"
                 },
                 "Constrict": {
                     "name": "紧勒 Constrict",
@@ -4393,7 +4393,7 @@
             "items": {
                 "Dreadful Spite": {
                     "name": "极端怨恨 Dreadful Spite",
-                    "description": "<p><strong>触发</strong> 尸妖邪教徒HP被降为0；</p>\n<hr />\n<p><strong>效果</strong> 尸妖邪教徒在被消灭前进行一次打击。它不会从这次打击的汲取生命中获得任何临时HP。被这次打击命中的生物还会进入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态，维持1分钟。</p>"
+                    "description": "<p><strong>触发</strong> 尸妖邪教徒HP被降为0；</p>\n<hr />\n<p><strong>效果</strong> 尸妖邪教徒在被消灭前进行一次打击。它不会从这次打击的汲取生命中获得任何临时生命值。被这次打击命中的生物还会进入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}状态，维持1分钟。</p>"
                 },
                 "Drain Life": {
                     "name": "汲取生命 Drain Life",
@@ -4773,11 +4773,11 @@
             "items": {
                 "Psychogenic Secretions": {
                     "name": "精神分泌 Psychogenic Secretions",
-                    "description": "<p>30尺。进入这个弥漫区域的生物必须进行一次@Check[will|dc:36]豁免。</p>\n<p>失败时，该生物会@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1分钟（大失败时则是@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，且还会@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]1轮）。</p>\n<p>豁免成功的生物会对精神分泌临时免疫1分钟。</p>"
+                    "description": "<p>30尺。进入这个弥漫区域的生物必须尝试一次@Check[will|dc:36|options:area-effect,inflicts:paralyzed,inflicts:stupefied]豁免。</p>\n<p>失败时，该生物会陷入@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}，持续1分钟（大失败时则为@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 2}，且还会陷入@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]1轮）。</p>\n<p>豁免成功的生物会对精神分泌临时免疫1分钟。</p>"
                 },
                 "Consume Knowledge": {
                     "name": "吞食知识 Consume Knowledge",
-                    "description": "<p>摄智者侵入100尺内一个生物的心灵，试图吞食其高等思考的能力。该生物进行一次@Check[will|dc:36]豁免。</p>\n<p>使用吞食知识会立刻终止这个能力之前对另一个生物产生的效果。</p>\n<hr />\n<p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 该生物缓慢1且只能进行基础动作，持续1分钟。</p>\n<p><strong>大失败</strong> 同失败，且摄智者会@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，持续1分钟。他可以使用额外的动作来行走，打击，如果目标拥有已准备的法术或是法术库，他还可以用额外的动作来施法。</p>"
+                    "description": "<p>摄智者侵入100尺内一个生物的心灵，试图吞食其高等思考的能力。该生物进行一次@Check[will|dc:36|options:inflicts:slowed]豁免。</p>\n<p>使用吞食知识会立刻终止这个能力之前对另一个生物产生的效果。</p><hr /><p><strong>大成功</strong> 该生物不受影响。</p>\n<p><strong>成功</strong> 该生物陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。</p>\n<p><strong>失败</strong> 该生物陷入缓慢1且只能进行基础动作，持续1分钟。</p>\n<p><strong>大失败</strong> 同失败，且摄智者会获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，持续1分钟。他可以使用额外的动作来行走，打击，如果目标拥有已准备的法术或是法术库，他还可以使用额外动作来施法。</p>"
                 },
                 "Thoughtsense (Imprecise) 60 feet": {
                     "name": "震颤感知（模糊感官）60尺 Thoughtsense (Imprecise) 60 feet",
@@ -4856,7 +4856,7 @@
                 },
                 "Renewed Vigor": {
                     "name": "重现活力 Renewed Vigor",
-                    "description": "<p>札沙索获得12点临时HP。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.jlZjUtrfcfIWumSe]{效果：重现活力}</p>"
+                    "description": "<p>札沙索获得12点临时生命值。</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.jlZjUtrfcfIWumSe]{效果：重现活力}</p>"
                 },
                 "Sudden Charge": {
                     "name": "迅捷冲锋 Sudden Charge",
