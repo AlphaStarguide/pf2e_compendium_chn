@@ -310,7 +310,7 @@
                 },
                 "Drain Blood": {
                     "name": "Drain Blood",
-                    "description": "<p>When the anophilex uses a jaws strike against a creature that's taking persistent bleed damage, they drink the blood. The creature must succeed at a @Check[fortitude|dc:30] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} on a critical failure). The anophilex becomes @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} on the following round, and can use the extra action to Stride or Strike.</p>"
+                    "description": "<p>When the anophilex uses a jaws strike against a creature that's taking persistent bleed damage, they drink the blood. The creature must succeed at a @Check[fortitude|dc:30|options:inflicts:enfeebled] save or become @UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 1} (@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{Enfeebled 2} on a critical failure). The anophilex becomes @UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]{Quickened} on the following round, and can use the extra action to Stride or Strike.</p>"
                 },
                 "Skip Between": {
                     "name": "Skip Between",
@@ -817,7 +817,7 @@
             },
             "name": "Bastardhall Rat",
             "publicNotes": "<p>Giant rats are enormous versions of the common vermin. They are typically found in abundant numbers, but since they cannot fit in the nooks where mundane rats typically hide, they are much easier to locate and exterminate. They mostly live in sewers where they can scavenge from the streets above, but some families of giant rats live in more remote locations, such as dank caves, forests or hills. Rats are incredibly adept survivors and can be found nearly anywhere in the world, though they tend to favor temperate or warm climates as opposed to cold regions.</p>\n<p>Although its bite alone is not lethal except to the very young or very old, the giant rat carries the putrid plague common to rodents around the world—a pestilence more than capable of ravaging rural communities.</p>\n<hr />\n<p>Rats are a ubiquitous menace, scurrying through the sewers and on the streets of nearly every settlement in the world. Though a regular rat darting underfoot might startle or even frighten the average passerby, giant rats and rat swarms are far more dangerous.</p>",
-            "blurb": "Variant giant rat ",
+            "blurb": "Variant giant rat",
             "items": {
                 "Ratpox": {
                     "name": "Ratpox",
@@ -927,7 +927,7 @@
                 },
                 "Soulscar": {
                     "name": "Soulscar",
-                    "description": "<p>The soul glutton's claw Strikes affect incorporeal creatures with the effects of a ghost touch property rune and scar the soul. The first time in a round that a creature is damaged by a soul glutton's claw Strike, it must succeed at a @Check[will|dc:30|options:inflicts:frightened,inflicts:doomed] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (plus @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} on a critical failure).</p>"
+                    "description": "<p>The soul glutton's claw Strikes affect incorporeal creatures with the effects of a <em>ghost touch</em> property rune and scar the soul. The first time in a round that a creature is damaged by a soul glutton's claw Strike, it must succeed at a @Check[will|dc:30|options:inflicts:frightened,inflicts:doomed] save or become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2} (plus @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1} on a critical failure).</p>"
                 }
             }
         },
@@ -1165,7 +1165,7 @@
             "items": {
                 "Spewing Honey": {
                     "name": "Spewing Honey",
-                    "description": "<p>When Sovina takes slashing damage, her wound spews rancid honey mixed with bile on adjacent creatures, dealing @Damage[2d12[poison]] damage (@Check[reflex|dc:22|basic|options:inflicts:slowed] save). A creature that fails this saving throw is also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round by the thick, sticky honey. Sovina loses her spewing honey and penanggalan bile abilities until the end of her next turn.</p>"
+                    "description": "<p>When Sovina takes slashing damage, her wound spews rancid honey mixed with bile on adjacent creatures, dealing @Damage[2d10[poison]|options:area-damage] damage (@Check[reflex|dc:22|basic|options:area-effect,inflicts:slowed] save). A creature that fails this saving throw is also @UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{Slowed 1} for 1 round by the thick, sticky honey. Sovina loses her spewing honey and penanggalan bile abilities until the end of her next turn.</p>"
                 },
                 "Constrict": {
                     "name": "Constrict",
@@ -1441,7 +1441,7 @@
                 },
                 "Amondi's Cruel Shiv": {
                     "name": "Amondi's Cruel Shiv",
-                    "description": "<p>Amondi Flies once, moving through a target creature's space; this movement doesn't trigger reactions. As she moves through the target's space, she makes a ghostly weapon Strike against the target. If she hits, she deals an additional @Damage[3d6[persistent,bleed]] damage, and the creature struck becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain of the bloody wound.</p>"
+                    "description": "<p>Amondi Flies once, moving through a target creature's space; this movement doesn't trigger reactions. As she moves through the target's space, she makes a ghostly weapon Strike against the target. If she hits, she deals an additional 3d6 persistent bleed damage, and the creature struck becomes @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1} from the pain of the bloody wound.</p>"
                 },
                 "Malevolent Possession": {
                     "name": "Malevolent Possession",
@@ -1530,10 +1530,6 @@
             "items": {
                 "equipment-Red Cap": {
                     "name": "Red Cap"
-                },
-                "equipment-Soulheart": {
-                    "name": "Soulheart",
-                    "description": "<p>A soulheart is a crystallized sphere of red ectoplasm about the size of a human eye. When held by a living creature, a faint red light shimmers within the crystal, pulsating in a synchronized beat with the creature's heartbeat and providing illumination equivalent to that of a candle.</p><hr /><p><strong>Activate—Bolster Life</strong> <span class=\"action-glyph\">2</span> (concentrate, manipulate)</p>\n<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> When held to the chest and focused upon, the soul energy within the soulheart floods outward and bolsters your life force, granting you 6 temporary Hit Points (or 3 temporary Hit Points if it's nighttime). These temporary Hit Points last for 8 hours.</p><hr /><p><strong>Activate—Bolster Maiserene Phantom</strong> <span class=\"action-glyph\">2</span> (concentrate, manipulate)</p><hr /><p><strong>Effect</strong> When touched to a rank 0 Maiserene phantom, the soulheart flashes with bright red light and is destroyed. As it does so, it permanently increases the targeted phantom to rank 1, and increases each PC's maximum Hit Points by 1 for as long as they remain within Bastardhall while the castle remains cursed.</p><hr /><p><strong>Destruction</strong> A soulheart is destroyed when it is activated to Bolster Maiserene Phantom.</p>"
                 },
                 "equipment-Iron Boots": {
                     "name": "Iron Boots"

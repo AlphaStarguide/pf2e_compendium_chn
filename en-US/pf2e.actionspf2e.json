@@ -29,6 +29,10 @@
             "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> Thick slabs of stone rise around you before tilting over. You deal @Damage[(ceil(@actor.level/2)d6)[bludgeoning]] damage to all adjacent creatures (@Check[reflex|against:class-spell|basic] against your class DC or spell DC, whichever is higher). On a critical failure, the creature is also knocked @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}. At 3rd level, and every 2 levels thereafter, this damage increases by 1d6.</p>",
             "name": "Raise Slabs"
         },
+        "Unluck": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You impose some distinct bad luck on everyone around you. Each creature except for animals, gremlins, and kholos in a @Template[type:emanation|distance:10] must attempt a @Check[will|against:class-spell] saving throw against the higher of your class DC or spell DC. If the creature fails, it must roll twice and take the worse result on the next check it attempts within the next minute.</p>",
+            "name": "Unluck"
+        },
         "Dancing Dodge": {
             "description": "<p><strong>Trigger</strong> You're hit by a Strike during the first round of combat</p><hr /><p><strong>Effect</strong> You take advantage of the fact that your foe isn't ready to anticipate your dance-like moves in combat. Add a +3 circumstance bonus to your Armor Class against the triggering Strike to determine the Strike's actual result.</p>",
             "name": "Dancing Dodge"
@@ -38,7 +42,7 @@
             "name": "Consume Flesh"
         },
         "Treat Wounds": {
-            "description": "<p><strong>Requirements</strong> You're wearing or holding a @UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]{Healer's Toolkit}.</p>\n<hr />\n<p>You spend 10 minutes treating one injured living creature (targeting yourself, if you so choose). The target is then temporarily @UUID[Compendium.pf2e.feat-effects.Item.Lb4q2bBAgxamtix5]{immune} to Treat Wounds actions for 1 hour, but this interval overlaps with the time you spent treating (so a patient can be treated once per hour, not once per 70 minutes).</p>\n<p>The Medicine check DC is usually 15, though the GM might adjust it based on the circumstances, such as treating a patient outside in a storm, or treating magically cursed wounds. If you're an expert in Medicine, you can instead attempt a DC 20 check to increase the Hit Points regained by 10; if you're a master of Medicine, you can instead attempt a DC 30 check to increase the Hit Points regained by 30; and if you're legendary, you can instead attempt a DC 40 check to increase the Hit Points regained by 50. The damage dealt on a critical failure remains the same.</p>\n<p>If you succeed at your check, you can continue treating the target to grant additional healing. If you treat it for a total of 1 hour, double the Hit Points it regains from Treat Wounds.</p>\n<p>The result of your Medicine check determines how many Hit Points the target regains.</p>\n<p>@UUID[Compendium.pf2e.pf2e-macros.Macro.6duZj0Ygiqv712rq]{Treat Wounds}</p>\n<hr />\n<p><strong>Critical Success</strong> The target regains [[/r 4d8[healing] #Treat Wounds]] Hit Points and loses the @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded} condition.</p>\n<p><strong>Success</strong> The target regains [[/r 2d8[healing] #Treat Wounds]] Hit Points, and loses the wounded condition.</p>\n<p><strong>Critical Failure</strong> The target takes [[/r 1d8[damage] #Treat Wounds (Critical Failure)]] damage.</p>",
+            "description": "<p><strong>Requirements</strong> You're wearing or holding a @UUID[Compendium.pf2e.equipment-srd.Item.s1vB3HdXjMigYAnY]{Healer's Toolkit}.</p><hr /><p>You spend 10 minutes treating one injured living creature (targeting yourself, if you so choose). The target is then temporarily @UUID[Compendium.pf2e.feat-effects.Item.Lb4q2bBAgxamtix5]{immune} to Treat Wounds actions for 1 hour, but this interval overlaps with the time you spent treating (so a patient can be treated once per hour, not once per 70 minutes).</p>\n<p>The [[/act treat-wounds]]{Medicine} check DC is usually 15, though the GM might adjust it based on the circumstances, such as treating a patient outside in a storm, or treating magically cursed wounds. If you're an expert in Medicine, you can instead attempt a DC 20 check to increase the Hit Points regained by 10; if you're a master of Medicine, you can instead attempt a DC 30 check to increase the Hit Points regained by 30; and if you're legendary, you can instead attempt a DC 40 check to increase the Hit Points regained by 50. The damage dealt on a critical failure remains the same.</p>\n<p>If you succeed at your check, you can continue treating the target to grant additional healing. If you treat it for a total of 1 hour, double the Hit Points it regains from Treat Wounds.</p>\n<p>The result of your Medicine check determines how many Hit Points the target regains.</p><hr /><p><strong>Critical Success</strong> The target regains @Damage[4d8[healing]] Hit Points and loses the @UUID[Compendium.pf2e.conditionitems.Item.Yl48xTdMh3aeQYL2]{Wounded} condition.</p>\n<p><strong>Success</strong> The target regains @Damage[2d8[healing]] Hit Points, and loses the wounded condition.</p>\n<p><strong>Critical Failure</strong> The target takes @Damage[1d8[untyped]] damage.</p>",
             "name": "Treat Wounds"
         },
         "Deceptive Sidestep": {
@@ -345,6 +349,10 @@
             "description": "<p>You affix a fulu to an armor, weapon, shield, creature, or structure that's beside or in the same square as you. A creature can remove a fulu from itself or an unattended object in its reach with a single action.</p>",
             "name": "Affix a Fulu"
         },
+        "Widdershins Thrice": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You close your eyes and spin widdershins three times. When you open your eyes, you can sense the direction to the nearest gate to the First World within 1 mile.</p>",
+            "name": "Widdershins Thrice"
+        },
         "Automaton Aim": {
             "description": "<p>You steady your body and observe the events of the battlefield to maximize the range of your next shot. You reduce the penalty for firing into your weapon's second range increment from –2 to 0 for the next ranged attack you make this turn. You can use this action a second time in the same turn to reduce the penalty from firing into your weapon's third range increment from –4 to 0 for the next ranged attack you make this turn.</p>",
             "name": "Automaton Aim"
@@ -449,6 +457,10 @@
             "description": "<p>Your instructions make it easier for you and your allies to scale dangerous surfaces. Signal all squadmates; until the end of your next turn, you and each ally gain a climb Speed of 20 feet.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.IPznWmsoaoT2zhgU]{Effect: Mountaineering Training}</p><hr /><p><strong>Special</strong> If you have this tactic prepared, you can use [[/act climb skill=warfare-lore]]{Warfare Lore} in place of Athletics for checks you make to Climb.</p>",
             "name": "Mountaineering Training"
         },
+        "Gremlin Lice": {
+            "description": "<p><strong>Frequency</strong> once per hour</p>\n<p><strong>Trigger</strong> A creature touches you, such as by hitting you with an unarmed attack, successfully Grappling you, or using a touch-range spell against you</p><hr /><p><strong>Effect</strong> Some of the lice infesting you jump to your attacker. The triggering creature must succeed at a @Check[reflex|against:class-spell|options:inflicts:stupefied] save against the higher of your class DC or spell DC or become @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} as lice distract it (@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 2} on a critical failure). The creature can use an Interact action to scratch itself to suppress the stupefied condition from the lice for 1 round. The infestation ends after 24 hours or if the creature is fully submerged in water or exposed to a severe cold environment, whichever happens first.</p>",
+            "name": "Gremlin Lice"
+        },
         "Pistolero's Retort": {
             "description": "<p><strong>Requirements</strong> You're wielding a one-handed firearm or one-handed crossbow.</p>\n<p><strong>Trigger</strong> A foe within the first range increment of the one-handed firearm or one-handed crossbow you're wielding critically fails an attack roll against you.</p>\n<hr />\n<p>You punish your foe's failure with a shot. Make a Strike against the triggering foe with a one-handed firearm or one-handed crossbow.</p>",
             "name": "Pistolero's Retort"
@@ -464,6 +476,10 @@
         "Passage of Lines": {
             "description": "<p>You command your allies to regroup, allowing endangered units to fall back while rested units press the advantage. Signal all squadmates within the aura of your commander's banner; each can swap positions with another willing ally adjacent to them. An ally can't swap into a space it can't fit into, and if one of the allies occupies more squares than the other, the smaller ally can move into any part of the larger ally's space as long as the two remain adjacent after the swap.</p><hr /><p><em>PFS Note:</em> This tactic can be used by @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone} PCs, but not PCs who are @UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]{Grabbed}, @UUID[Compendium.pf2e.conditionitems.Item.eIcWbB5o3pP6OIMe]{Immobilized}, or otherwise unable to move of their own volition.</p>",
             "name": "Passage of Lines"
+        },
+        "Invoke Infernal Potency": {
+            "description": "<p><strong>Requirements</strong> You are doomed</p><hr /><p><strong>Effect</strong> If your next action is to cast either fear or spiritual armament as an innate spell, you can heighten the spell to a rank 1 lower than half your level rounded up. You then increase the value of your doomed condition by 1.</p>",
+            "name": "Invoke Infernal Potency"
         },
         "Board": {
             "description": "<p><strong>Requirements</strong> You are adjacent to a point of entry on the vehicle you are attempting to board.</p>\n<p>You board a vehicle through an open top, a door, a portal, or a hatch; if you're already on board, you can instead use this action to disembark into an empty space adjacent to the vehicle's point of entry. Using this action while the vehicle is in motion is challenging, requiring a successful Acrobatics or Athletics check with a DC equal to the vehicle's AC.</p>",
@@ -825,9 +841,21 @@
             "description": "<p><strong>Frequency</strong> once per day</p>\n<hr />\n<p><strong>Effect</strong> You make a Strike with a ranged weapon, rolling the attack and damage twice and using the better results for each. The attack ignores circumstance penalties to the attack roll and any flat check required due to the target being @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} or @UUID[Compendium.pf2e.conditionitems.Item.iU0fEDdBp3rXpTMC]{Hidden}.</p>",
             "name": "Accidental Shot"
         },
+        "Green Thumb": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You touch an adjacent plant, causing it to grow rapidly and flower. Petals and spores fill the air around you, causing you to become @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} until the start of your next turn. As the nature of this effect still leaves your location obvious, you can't use this concealment to Hide or Sneak.</p>",
+            "name": "Green Thumb"
+        },
+        "Stellar Dance Stance": {
+            "description": "<p><strong>Requirements</strong> You aren't encumbered or wearing medium or heavy armor</p><hr /><p><strong>Effect</strong> You dance as freely as the stars above. While in this stance, you can attempt a Performance check instead of an Acrobatics check to [[/act escape skill=performance]] or [[/act tumble-through skill=performance]]. When you succeed at such a check, your stance reaches its zenith. While your dance is at its zenith, your Strikes with agile or finesse weapons and unarmed attacks deal additional force damage equal to the number of weapon damage dice.</p>\n<p>Your stance stays at its zenith until the start of your next turn or until you leave the stance, whichever comes first, and you can't bring your stance to its zenith if it's already at its zenith. If you gain more ways to reach the zenith through other feats, these restrictions apply to those methods, too.</p>",
+            "name": "Stellar Dance Stance"
+        },
         "Channel Elements": {
             "description": "<p><strong>Requirements</strong> Your kinetic gate isn't active.</p>\n<hr />\n<p>You tap into your kinetic gate to make elements flow around you. Your kinetic aura activates, and as a part of this action, you can use a 1-action Elemental Blast or a 1-action stance impulse. Your kinetic aura is a 10-foot emanation where pieces of your kinetic element (or all your kinetic elements, if you can channel more than one) flow around you. The kinetic aura can't damage anything or affect the environment around you unless another ability allows it to. Channel Elements has the traits of all your kinetic elements.</p>\n<p>Your kinetic aura automatically deactivates if you're knocked out, you use an impulse with the overflow trait, or you Dismiss the aura. Though you can't use new impulses while your kinetic aura is deactivated, ones you already used remain, and you can still Sustain any that can be sustained. Stance impulses are linked to your kinetic aura and end when the aura deactivates.</p>",
             "name": "Channel Elements"
+        },
+        "Invoke Infernal Focus": {
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Requirements</strong> You are doomed</p><hr /><p><strong>Effect</strong> You regain 1 Focus Point and then increase the value of your doomed condition by 1.</p>",
+            "name": "Invoke Infernal Focus"
         },
         "Covered Reload": {
             "description": "<p>You duck into a safe position or minimize your profile while reloading to make your next attack. Either @UUID[Compendium.pf2e.actionspf2e.Item.ust1jJSCZQUhBZIz]{Take Cover} or attempt to @UUID[Compendium.pf2e.actionspf2e.Item.XMcnh4cSI32tljXa]{Hide}, then Interact to reload. As normal, you must meet the requirements to Take Cover or Hide; you must be @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, benefiting from cover, or near a feature that allows you to Take Cover, and you need to be benefiting from cover or @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed} to a creature to Hide from that creature.</p>",
@@ -840,6 +868,10 @@
         "Trip": {
             "description": "<p><strong>Requirements</strong> You have at least one hand free. Your target can't be more than one size larger than you.</p><hr /><p>You try to knock a creature to the ground. Attempt an [[/act trip]]{Athletics} check against the target's Reflex DC.</p><hr /><p><strong>Critical Success</strong> The target falls, lands @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}, and takes @Damage[1d6[bludgeoning]] damage.</p>\n<p><strong>Success</strong> The target falls and lands prone.</p>\n<p><strong>Critical Failure</strong> You lose your balance, fall, and land prone.</p>",
             "name": "Trip"
+        },
+        "Swing the Censer": {
+            "description": "<p><strong>Frequency</strong> once per 10 minutes</p>\n<p><strong>Requirements</strong> You are holding your censer implement.</p><hr /><p>You swing your censer in a wide arc, causing the smoke it issues to thicken. Until the start of your next turn, creatures within the smoke are @UUID[Compendium.pf2e.conditionitems.Item.DmAIPqOBomZ7H95W]{Concealed}, and all creatures outside the smoke are concealed to those within it.</p>",
+            "name": "Swing the Censer"
         },
         "Call to Hand": {
             "description": "<p>With a simple flourish of your hand, you cause your autonomous spear or polearm to teleport into your grip, provided you're on the same plane as your weapon. If you're level 20, you can call to hand your weapon regardless of where it's located. If your weapon is wielded by a mythic creature that's higher level than you, you must spend a Mythic Point to Call to Hand the weapon, otherwise this action fails—you know why it failed, but you don't learn who has control of your weapon.</p>",
@@ -1077,6 +1109,10 @@
             "description": "<p><strong>Frequency</strong> once per 10 minutes</p>\n<hr />\n<p>You observe and assess your surroundings with great speed. You @UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{Recall Knowledge}, @UUID[Compendium.pf2e.actionspf2e.Item.BlAOM2X92SI6HMtJ]{Seek}, or @UUID[Compendium.pf2e.actionspf2e.Item.1xRFPTFtWtGJ9ELw]{Sense Motive}.</p>",
             "name": "Expeditious Inspection"
         },
+        "Forged in Fire": {
+            "description": "<p><strong>Trigger</strong> You take fire damage</p>\n<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You gain fire resistance equal to half your level (minimum 1) against the triggering damage.</p>",
+            "name": "Forged in Fire"
+        },
         "Gluttonous Feast": {
             "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> Spend 1 Mythic Point. The spirits of four runelords of gluttony (Kaliphesta, Atharend, Aethusa, and Goparlis) briefly appear in spaces within 60 feet of you. Each living creature adjacent to at least one of the spirits takes @Damage[4d6[void]] damage per adjacent spirit, to a maximum of @Damage[16d6[void]] damage if they are adjacent to all four spirits. Each target receives a basic Fortitude save against the damage, against the higher of your class DC or spell DC, but Xanderghul, the Runelord of Pride, treats the result of his saving throw as one degree of success worse.</p>\n<p>You gain temporary Hit Points equal to half the damage a single creature takes from this effect; calculate these temporary Hit Points using the creature that took the most damage. These temporary Hit Points last 1 minute.</p>",
             "name": "Gluttonous Feast"
@@ -1096,6 +1132,10 @@
         "Designate Ally": {
             "description": "<p>Choose an ally you can see, who becomes your designated ally. For the next minute, whenever your designated ally is adjacent to you and you're conscious, they gain a +2 circumstance bonus to AC and Reflex saving throws. You can have only one designated ally at a time, and if you designate a new ally, the previous ally loses any benefits.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.uAWWAiuo5mSJSVY4]{Effect: Designate Ally}</p>",
             "name": "Designate Ally"
+        },
+        "Witticism": {
+            "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p><strong>Effect</strong> You make a cutting comment about a foe, making it difficult for them to concentrate. Attempt a @Check[performance|against:will] check against the Will DC of a creature within 30 feet. On a success, that creature is @UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{Stupefied 1} until the end of its next turn or until it damages you, whichever comes first.</p>",
+            "name": "Witticism"
         },
         "Slayer's Identification": {
             "description": "<p><strong>Trigger</strong> You roll initiative and can observe a creature you know is undead</p>\n<hr />\n<p>You attempt to Recall Knowledge to identify the undead creature with a +1 circumstance bonus. If you're a master in the skill you're using to Recall Knowledge, you gain a +2 circumstance bonus instead.</p>",
@@ -1128,6 +1168,10 @@
         "Long Jump": {
             "description": "<p>You Stride, then attempt a DC 15 [[/act long-jump]]{Athletics} check to make a long jump in the direction you were Striding. If you didn't Stride at least 10 feet, you automatically fail your check. The GM might increase or decrease this DC depending on the situation.</p><hr /><p><strong>Success</strong> You @UUID[Compendium.pf2e.actionspf2e.Item.d5I6018Mci2SWokk]{Leap} up to a distance equal to your check result rounded down to the nearest 5 feet. You can't jump farther than your land Speed.</p>\n<p><strong>Failure</strong> You make a normal horizontal Leap.</p>\n<p><strong>Critical Failure</strong> You make a normal horizontal Leap, then fall and land @UUID[Compendium.pf2e.conditionitems.Item.j91X7x0XSomq8d60]{Prone}.</p>",
             "name": "Long Jump"
+        },
+        "Invoke Infernal Bargain": {
+            "description": "<p><strong>Requirements</strong> You are not doomed</p><hr /><p><strong>Effect</strong> You call upon your infernal pact to surge with devilish power. You gain a +2 status bonus to the next attack roll, skill check, or saving throw you attempt before the end of your next turn. You then become @UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{Doomed 1}.</p>",
+            "name": "Invoke Infernal Bargain"
         },
         "Drain Realm": {
             "description": "<p><strong>Trigger</strong> Your previous action was to Sustain your manifested realm</p>\n<p><strong>Requirements</strong> Your manifested realm has a radius of at least 10 feet</p><hr /><p><strong>Effect</strong> You siphon power from your manifested realm to bolster your physical form. Decrease your manifested realm's radius by 10 feet. You regain a number of @Damage[(@actor.level)[healing]]{Hit Points equal to your level} and each of your Strikes made before the end of your turn deal an additional 1d8 damage of your realm's damage type.</p>",
@@ -1461,6 +1505,10 @@
             "description": "<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> Your eidolon gathers the power of the mightiest archdragons to make their magical breath even more spectacular. If your eidolon's next action is to use @UUID[Compendium.pf2e.actionspf2e.Item.Vr3w3t028ZKDg0mO]{Dragon Breath}, both the number of damage dice and area of Dragon Breath are doubled.</p>",
             "name": "Empower Breath"
         },
+        "Invoke Infernal Flames": {
+            "description": "<p><strong>Trigger</strong> You critically hit a creature with an unarmed attack granted by this feat</p>\n<p><strong>Requirements</strong> You are doomed</p><hr /><p><strong>Effect</strong> You deal an additional die of weapon damage and @Damage[1d4[persistent,fire]] damage. Then, increase the value of your doomed condition by 1.</p>",
+            "name": "Invoke Infernal Flames"
+        },
         "Resist Elf Magic": {
             "description": "<p><strong>Trigger</strong> You attempt a saving throw against a magical effect but haven't rolled yet</p>\n<hr />\n<p>Your ancestral resistance to magic protects you. You gain a +1 circumstance bonus to the triggering saving throw. If the triggering effect is arcane, you gain a +2 circumstance bonus instead.</p>",
             "name": "Resist Elf Magic"
@@ -1582,7 +1630,7 @@
             "name": "Take a Breather"
         },
         "Spellstrike": {
-            "description": "<p><strong>Frequency</strong> until recharged (see below)</p><hr /><p>You channel a spell into a punch or sword thrust to deliver a combined attack. You cast a spell that takes 1 or 2 actions to cast and requires either a spell attack roll or a saving throw. You imbue its effects into an attack instead of executing the spell normally. Make a melee Strike with a weapon or unarmed attack. This counts as two attacks for your multiple attack penalty, but you don't apply the penalty until after you've completed the Spellstrike. The infusion of spell energy grants your Strike the arcane trait, making it magical. If the spell required a spell attack roll, use your Strike's results to determine the effects of both the Strike and the spell. If the spell required a save, the target of the Strike rolls its saving throw normally regardless of your attack roll's result unless your Strike was a critical failure, in which case your spell is disrupted.</p>\n<p>After you use Spellstrike, you can't do so again until you recharge your Spellstrike as a single action, which has the concentrate trait. You also recharge your Spellstrike when you cast a conflux spell that takes at least 1 action to cast; casting a focus spell of another type doesn't recharge your Spellstrike.</p>",
+            "description": "<p><strong>Frequency</strong> until recharged (see below)</p><hr /><p>You channel a spell into a punch or sword thrust to deliver a combined attack. You cast a spell that takes 1 or 2 actions to cast and requires either a spell attack roll or a saving throw. You imbue its effects into an attack instead of executing the spell normally. Make a melee Strike with a weapon or unarmed attack. This counts as two attacks for your multiple attack penalty, but you don't apply the penalty until after you've completed the Spellstrike. The infusion of spell energy grants your Strike the arcane trait, making it magical. If the spell required a spell attack roll, use your Strike's results to determine the effects of both the Strike and the spell. If the spell required a save, the target of the Strike rolls its saving throw normally regardless of your attack roll's result unless your Strike was a critical failure, in which case your spell is disrupted. Combine the Strike and spell's damage for the purpose of resistances and weaknesses.</p>\n<p>After you use Spellstrike, you can't do so again until you recharge your Spellstrike as a single action, which has the concentrate trait. You also recharge your Spellstrike when you cast a conflux spell that takes at least 1 action to cast; casting a focus spell of another type doesn't recharge your Spellstrike.</p>",
             "name": "Spellstrike"
         },
         "Maneuver in Flight": {
@@ -1670,7 +1718,7 @@
             "name": "Master Strike"
         },
         "Craft": {
-            "description": "<p>You can make an item from raw materials. You need the @UUID[Compendium.pf2e.feats-srd.Item.is3Oz9wt11lNq62K]{Alchemical Crafting} skill feat to create alchemical items and the @UUID[Compendium.pf2e.feats-srd.Item.xWY5omyIcILNR7y1]{Magical Crafting} feat to create magic items.</p>\n<p>To craft an item, you must meet the following requirements:</p><ul><li>The item is your level or lower. An item that doesn't list a level is level 0. If the item is 9th level or higher, you must be a master in Crafting, and if it's 17th or higher, you must be legendary.</li><li>The item must be common, or you must otherwise have access to it.</li><li>You have an appropriate set of tools and, in many cases, a workshop. For example, you need access to a smithy to forge a metal shield, or an @UUID[Compendium.pf2e.equipment-srd.Item.k6xZkDUpF7E1Totd]{Alchemist's Lab} to produce alchemical items.</li><li>You must supply raw materials worth at least half the item's Price. You always expend at least that amount of raw materials when you Craft successfully. If you're in a settlement, you can usually spend currency to get the amount of raw materials you need, except in the case of rarer precious materials.</li></ul><p>You attempt a @Check[crafting] check after you spend 2 days of work setting up, or 1 day if you have the item's formula. The GM determines the DC to Craft the item based on its level, rarity, and other circumstances.</p>\n<p>If your attempt to create the item is successful, you expend the raw materials you supplied. You can pay the remaining portion of the item's Price in materials to complete the item immediately, or you can spend additional downtime days working on it. For each additional day you spend, reduce the value of the materials you need to expend to complete the item. This amount is determined using the Income Earned table, based on your proficiency rank in Crafting and using your own level instead of a task level.</p>\n<p>After any of these downtime days, you can complete the item by spending the remaining portion of its Price in materials. If the downtime days you spend are interrupted,you can return to finish the item later, continuing where you left off.</p><hr /><p><strong>Critical Success</strong> Your attempt is successful. Each additional day spent Crafting reduces the materials needed to complete the item by an amount based on your level + 1 and your proficiency rank in Crafting.</p>\n<p><strong>Success</strong> Your attempt is successful. Each additional day spent Crafting reduces the materials needed to complete the item by an amount based on your level and your proficiency rank.</p>\n<p><strong>Failure</strong> You fail to complete the item. You can salvage the raw materials you supplied for their full value. If you want to try again, you must start over.</p>\n<p><strong>Critical Failure</strong> You fail to complete the item. You ruin 10% of the raw materials you supplied, but you can salvage the rest. If you want to try again, you must start over.</p>",
+            "description": "<p>You can make an item from raw materials. You need the @UUID[Compendium.pf2e.feats-srd.Item.is3Oz9wt11lNq62K]{Alchemical Crafting} skill feat to create alchemical items and the @UUID[Compendium.pf2e.feats-srd.Item.xWY5omyIcILNR7y1]{Magical Crafting} feat to create magic items.</p>\n<p>To craft an item, you must meet the following requirements:</p><ul><li>The item is your level or lower. An item that doesn't list a level is level 0. If the item is 9th level or higher, you must be a master in Crafting, and if it's 17th or higher, you must be legendary.</li><li>The item must be common, or you must otherwise have access to it.</li><li>You have an appropriate set of tools and, in many cases, a workshop. For example, you need access to a smithy to forge a metal shield, or an @UUID[Compendium.pf2e.equipment-srd.Item.k6xZkDUpF7E1Totd]{Alchemist's Lab} to produce alchemical items.</li><li>You must supply raw materials worth at least half the item's Price. You always expend at least that amount of raw materials when you Craft successfully. If you're in a settlement, you can usually spend currency to get the amount of raw materials you need, except in the case of rarer precious materials.</li></ul><p>You attempt a @Check[crafting] check after you spend 2 days of work setting up, or 1 day if you have the item's formula. The GM determines the DC to Craft the item based on its level, rarity, and other circumstances.</p>\n<p>If your attempt to create the item is successful, you expend the raw materials you supplied. You can pay the remaining portion of the item's Price in materials to complete the item immediately, or you can spend additional downtime days working on it. For each additional day you spend, reduce the value of the materials you need to expend to complete the item. This amount is determined using the Income Earned table, based on your proficiency rank in Crafting and using your own level instead of a task level.</p>\n<p>After any of these downtime days, you can complete the item by spending the remaining portion of its Price in materials. If the downtime days you spend are interrupted, you can return to finish the item later, continuing where you left off.</p><hr /><p><strong>Critical Success</strong> Your attempt is successful. Each additional day spent Crafting reduces the materials needed to complete the item by an amount based on your level + 1 and your proficiency rank in Crafting.</p>\n<p><strong>Success</strong> Your attempt is successful. Each additional day spent Crafting reduces the materials needed to complete the item by an amount based on your level and your proficiency rank.</p>\n<p><strong>Failure</strong> You fail to complete the item. You can salvage the raw materials you supplied for their full value. If you want to try again, you must start over.</p>\n<p><strong>Critical Failure</strong> You fail to complete the item. You ruin 10% of the raw materials you supplied, but you can salvage the rest. If you want to try again, you must start over.</p>",
             "name": "Craft"
         },
         "Toxic Touch": {
@@ -1720,6 +1768,10 @@
         "Bless Ally": {
             "description": "<p><strong>Frequency</strong> once per 10 minutes</p>\n<p><strong>Requirements</strong> Your nimbus is active</p>\n<p><strong>Target</strong> a willing ally within the bright light of your nimbus</p><hr /><p><strong>Effect</strong> Your radiance grants an ally some of your celestial grace. That ally can roll twice and use the higher result for the next Will save they attempt before the beginning of your next turn.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.niYOLA6l44U2NMM3]{Effect: Bless Ally}</p>",
             "name": "Bless Ally"
+        },
+        "Inflict Punishment": {
+            "description": "<p><strong>Trigger</strong> You are hit with an unarmed Strike or a Strike with a non-reach melee weapon</p>\n<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You twist your body so that the attacker hits a hard edge of bone or armor, injuring themselves. You deal @Damage[(floor(@actor.level/2))d8[piercing]] damage to the triggering creature (basic Reflex save using your class DC or spell DC, whichever is higher). At 3rd level, and every 2 levels thereafter, this damage increases by 1d8.</p>",
+            "name": "Inflict Punishment"
         },
         "Plaintive Plea": {
             "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You make an emotional appeal to convince someone during a diplomatic encounter. If your next activity is to attempt a Diplomacy check to [[/act make-an-impression]] or Request, or to attempt to influence a creature during an influence encounter, you can roll twice and take the better result.</p>",
@@ -2053,6 +2105,14 @@
             "description": "<p><strong>Trigger</strong> You fail a save against a mental effect</p>\n<p><strong>Frequency</strong> once per hour</p>\n<hr />\n<p><strong>Effect</strong> You reroll the triggering save and must take the second result.</p>",
             "name": "I Defy You!"
         },
+        "Echoing Call": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> Your voice or music echoes farther than others. If your next action has the auditory trait, increase its range by 30 feet.</p>",
+            "name": "Echoing Call"
+        },
+        "Hilarious Insult": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You attempt to [[/act demoralize]] a creature. If you succeed, the target spends the first action on its next turn with the @UUID[Compendium.pf2e.conditionitems.Item.yblD8fOR1J8rDwEQ]{Confused} condition. If you critically succeed, the creature is instead confused until the end of its next turn.</p>",
+            "name": "Hilarious Insult"
+        },
         "Primal Howl": {
             "description": "<p><strong>Frequency</strong> once per hour</p><hr /><p><strong>Effect</strong> Your animal companion screeches and howls, empowered with natural magic. All creatures in a @Template[cone|distance:30] take @Damage[(floor(@actor.level/2))d6[sonic]|options:area-damage] damage for every 2 levels your companion has, with a @Check[fortitude|against:spell|basic|options:area-effect] save against your spell DC. Creatures that fail become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 1}, and creatures that critically fail become @UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{Frightened 2}. The fright is an emotion, fear, and mental effect.</p>",
             "name": "Primal Howl"
@@ -2144,6 +2204,10 @@
         "Break the Sun's Legs": {
             "description": "<p>You make a slashing motion over the brightest source of light, whether it's a torch or the sun in the sky. A gash appears over the light source, visible to all, and devours the light. The entire area within a @Template[type:burst|distance:120] around you is affected by a 9th-rank @UUID[Compendium.pf2e.spells-srd.Item.4GE2ZdODgIQtg51c]{Darkness} spell for 1 minute. The stolen light is channeled to your eyes, granting you greater darkvision for the duration of the effect.</p>",
             "name": "Break the Sun's Legs"
+        },
+        "Sibilant Whispers": {
+            "description": "<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> For the next 10 minutes, you can read and understand Sakvroth, and any creature who listens to you speak or communicates with you telepathically hears your words magically translated into Sakvroth, regardless of what language you're speaking. This effect prevents you from communicating in any language other than Sakvroth, but you can Dismiss the effect at any time. While the effect lasts, you gain a +2 status bonus to Deception, Diplomacy, and Intimidation checks to influence serpentfolk.</p>",
+            "name": "Sibilant Whispers"
         },
         "Detect Magic": {
             "description": "<p>You cast @UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]{Detect Magic} at regular intervals. You move at half your travel speed or slower. You have no chance of accidentally overlooking a magic aura at a travel speed up to 300 feet per minute, but must be traveling no more than 150 feet per minute to detect magic auras before the party moves into them.</p>",
@@ -2246,7 +2310,7 @@
             "name": "Burn out of Time"
         },
         "Flash of Memory": {
-            "description": "<p>Spend a Mythic Point and attempt an Incarnation Lore check at mythic proficiency to @UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]{Recall Knowledge} in place of making any other Lore check (other than Incarnation Lore).</p>",
+            "description": "<p>Spend a Mythic Point and attempt an Incarnation Lore check at mythic proficiency to [[/act recall-knowledge skill=incarnation-lore]] in place of making any other Lore check (other than Incarnation Lore).</p>",
             "name": "Flash of Memory"
         },
         "Sanguine Revitalization": {
@@ -2268,6 +2332,10 @@
         "Pincer Attack": {
             "description": "<p>You call for an aggressive formation designed for exploiting enemies' vulnerabilities. Signal all squadmates; each can Step as a reaction. If any of your allies ends this movement adjacent to an opponent, that opponent is @UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]{Off-Guard} to melee attacks from you and all other squadmates who responded to Pincer Attack until the start of your next turn.</p>",
             "name": "Pincer Attack"
+        },
+        "Hellish Impression": {
+            "description": "<p><strong>Trigger</strong> You fail a Diplomacy check to [[/act make-an-impression]]</p>\n<p><strong>Frequency</strong> once per day</p><hr /><p><strong>Effect</strong> You cast 1st-rank @UUID[Compendium.pf2e.spells-srd.Item.vLA0q0WOK2YPuJs6]{Charm} as a divine innate spell on the target of the triggering action.</p>",
+            "name": "Hellish Impression"
         },
         "Claw Stance": {
             "description": "<p><strong>Effect</strong> You extend the claws in your hands and focus your attention to take down single targets. The only Strikes you can make are frenzied claw unarmed attacks. These deal @Damage[1d6[slashing]] damage, are in the brawling group, and have the agile, finesse, grapple, unarmed, and versatile piercing traits.</p>",
@@ -2292,6 +2360,10 @@
         "Overwhelming Combination": {
             "description": "<p><strong>Requirements</strong> You're wielding a one-handed melee weapon or a melee weapon with the agile or finesse trait</p><hr /><p><strong>Effect</strong> Make two Strikes against a target within your reach, one with the required weapon and one with your fist unarmed attack. If both hit the same target, combine their damage for the purposes of its resistances and weaknesses. Apply your multiple attack penalty to each Strike normally.</p>",
             "name": "Overwhelming Combination"
+        },
+        "Invoke Blessing": {
+            "description": "<p><strong>Frequency</strong> once per day</p>\n<p><strong>Trigger</strong> You're about to attempt a saving throw</p><hr /><p><strong>Effect</strong> You silently request the blessing of your fairy godparent, and they use their magic to twist fate in your favor. Roll your check twice and take the better result.</p>",
+            "name": "Invoke Blessing"
         },
         "Inspired Stratagem": {
             "description": "<p><strong>Trigger</strong> An ally you reviewed stratagems with is about to attempt an attack roll or skill check</p>\n<hr />\n<p><strong>Effect</strong> The ally rolls the triggering check twice and takes the better of the two results. That ally then becomes temporarily immune to your Inspired Stratagem until your next daily preparations.</p>\n<p>@UUID[Compendium.pf2e.feat-effects.Item.K0Sv9AHgq245hSLC]{Effect: Inspired Stratagem}</p>",

@@ -210,7 +210,7 @@
             "name": "(Mythic) Brutish Athleticism"
         },
         "(Graveknight) Ruinous Weapons": {
-            "description": "<p>When created, a graveknight chooses one of the following energy types that was relevant to their life or death: acid, cold, electricity, or fire.</p>\n<p>Any weapon the graveknight wields or unarmed attack the graveknight uses gains the effects of the <em>caustic</em>, <em>frost</em>, <em>shock</em>, or <em>flaming</em> weapon rune, respectively, in addition to a +1 striking weapon rune.</p>\n<p>If the graveknight is 14th level or higher, their weapons instead gain the effects of the greater versions of both of these runes.</p>",
+            "description": "<p>When created, a graveknight chooses one of the following energy types that was relevant to their life or death: acid, cold, electricity, or fire.</p>\n<p>Any weapon the graveknight wields or unarmed attack the graveknight uses gains the effects of the <em>caustic</em>, <em>frost</em>, <em>shock</em>, or <em>flaming</em> weapon rune, respectively, in addition to a <em>+1 striking</em> weapon rune.</p>\n<p>If the graveknight is 14th level or higher, their weapons instead gain the effects of the greater versions of both of these runes.</p>",
             "name": "(Graveknight) Ruinous Weapons"
         },
         "(Cryptid, Primeval) Stench": {
@@ -317,6 +317,10 @@
             "description": "<p>The sporeborn continues to infect creatures with @UUID[Compendium.pf2e.bestiary-family-ability-glossary.Item.EosAqVmnYlxMEGdT]{Sporeborn Infestation}, creating more of its own kind.</p>",
             "name": "(Sporeborn) Contagious Spores"
         },
+        "(Shadowbound) Shadow Form": {
+            "description": "<p>A shadowbound creature can assume a shadowy form. In this state, the creature gains the incorporeal trait. It has resistance 10 to all damage (except force, ghost touch, spirit, or vitality; double resistance vs. non-magical), is immune to precision damage, and can't use any actions with the attack or manipulate trait. It has a fly Speed of 15 feet and can slip through tiny cracks. The shadowbound creature can Dismiss this effect to become solid again, but if it does so in an area of bright light, it's @UUID[Compendium.pf2e.conditionitems.Item.dfCMdR4wnpbYNTix]{Stunned 1} for 1 round.</p>",
+            "name": "(Shadowbound) Shadow Form"
+        },
         "(Omen Dragon) Link Fates": {
             "description": "<p>The omen dragon creates a bond between two creatures within 60 feet, entwining their destinies for 1 round. The first time during this duration that one of the creatures takes damage, the other takes an equal amount of mental damage, with a @Check[will|basic|dc:] save (DC equal to the dragon's Destiny Breath DC).</p>",
             "name": "(Omen Dragon) Link Fates"
@@ -368,6 +372,10 @@
         "(Ghost) Cold Spot": {
             "description": "<p>5 feet. The air within 5 feet of the ghost is supernaturally cold. Characters that enter or begin their turn in the ghost's aura take @Damage[1d6[cold]] damage per 3 levels the ghost has (@Check[fortitude|dc:|basic] save).</p>",
             "name": "(Ghost) Cold Spot"
+        },
+        "(Shadowbound) Light Vulnerability": {
+            "description": "<p>Attacks against the shadowbound creature are treated as magical if made by a creature that's in magical light or with an object that's in magical light (such as from the light spell).</p>",
+            "name": "(Shadowbound) Light Vulnerability"
         },
         "(Vampire, Strigoi Progenitor) Domain of Dusk": {
             "description": "<p><strong>Frequency</strong> once per minute</p><hr /><p><strong>Effect</strong> With a wave of their hand, the strigoi calls forth vile ruination from the surrounding shadows, causing coils of darkness and shadowy bats, rats, and wolves to lash out at living targets in a @Template[type:emanation|distance:30]. Living creatures in this area take @Damage[floor(1 + @actor.level/2)d6[void]|options:area-damage] damage + 1d6 void damage per 2 levels possessed by the strigoi with a @Check[fortitude|dc:|basic|options:area-effect,inflicts:dazzled,inflicts:blinded] save against the DC of the strigoi's level. A creature that fails this save is also @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} by the darkness for 1 round (or @UUID[Compendium.pf2e.conditionitems.Item.XgEqL1kFApUbl5Z2]{Blinded} for 1 round and then dazzled for 1 round on a critical failure).</p>",
@@ -428,6 +436,10 @@
         "(Skeleton) Frozen": {
             "description": "<p>The skeleton's bones are covered in a thin layer of ice. The skeleton gains immunity to cold and weakness 5 to fire and loses resistance to fire. The skeleton is surrounded by an aura of cold that deals @Damage[(max(1,floor(@actor.level/2)))[cold]]{cold damage equal to half the skeleton's level} to all adjacent creatures at the start of the skeleton's turn (@Check[reflex|dc:|basic] save with a standard DC for its level).</p>",
             "name": "(Skeleton) Frozen"
+        },
+        "(Shadowbound) Shadow Touch": {
+            "description": "<p>The creature's Strikes affect incorporeal creatures with the effects of a ghost touch property rune.</p>",
+            "name": "(Shadowbound) Shadow Touch"
         },
         "(Ghast) Paralysis": {
             "description": "<p>Any living creature hit by a ghast's attack must succeed at a @Check[fortitude|dc:|options:inflicts:paralyzed] save or become @UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]{Paralyzed}. It can attempt a new save at the end of each of its turns, and the DC cumulatively decreases by 1 on each such save.</p>",
@@ -770,7 +782,7 @@
             "name": "(Mana Wastes Mutant) Energy Blast"
         },
         "(Melfesh Monster) False Synapses": {
-            "description": "<p>The Melfesh Monster partially controls a creature within 60 feet that has inhaled its spores. This has the effects of a command spell (@Check[will|dc:24|name:False Synapses] save). This ability replaces sporesight and Spore Cloud.</p>",
+            "description": "<p>The Melfesh Monster partially controls a creature within 60 feet that has inhaled its spores. This has the effects of a @UUID[Compendium.pf2e.spells-srd.Item.aIHY2DArKFweIrpf]{Command} spell (@Check[will|dc:24|name:False Synapses] save). This ability replaces sporesight and Spore Cloud.</p>",
             "name": "(Melfesh Monster) False Synapses"
         },
         "(Ghost) Ghost Storm": {
@@ -1715,6 +1727,10 @@
             "description": "<p><strong>Prerequisites</strong> You have the Rage action.</p><hr /><p>Your troop learns the incredible rush of raging in battle. When you Rage, your troop gains half the number of temporary Hit Points you do. These temporary Hit Points last for 1 minute, and the troop can't gain temporary HP from this ability again for 1 minute.</p>",
             "name": "(Special Forces Bond) Rage and Rule"
         },
+        "(Shivver) Gibbering": {
+            "description": "<p>The shivver's extra mouths grant it a jaws Strike, an agile unarmed attack that deals 3d6+12 piercing damage. It can make @UUID[Compendium.pf2e.bestiary-ability-glossary-srd.Item.W7SbTykXrNwxDzJc]{Reactive Strikes} with that Strike.</p>",
+            "name": "(Shivver) Gibbering"
+        },
         "(Ravener) Vicious Criticals": {
             "description": "<p>The ravener treats an attack roll as a critical hit on a roll of 19 or 20, as long as the attack roll was a success. Additionally, whenever the ravener makes a critical hit with one of their Strikes, the target must succeed on a @Check[fortitude|dc:|name:Vicious Criticals] save or gain the @UUID[Compendium.pf2e.conditionitems.Item.4D2KBtexWXa6oUMR]{Drained 1} condition. If the target already has a drained value of greater than 0, their drained value instead increases by 1, to a maximum of drained 4.</p>\n<p>Whenever the ravener applies drain to a creature in this way, their soul ward gains 5 Hit Points.</p>",
             "name": "(Ravener) Vicious Criticals"
@@ -1740,7 +1756,7 @@
             "name": "(Cryptid, Rumored) Stalk"
         },
         "(Clockwork Creature) Wind-Up": {
-            "description": "<p>24 hours, [[/act disable-device dc=0]], standby</p><hr /><p>For a clockwork to act, it must be wound with a unique key by another creature. This takes 1 minute. Once wound, it remains operational for the listed amount of time, usually 24 hours, after which time it becomes unaware of its surroundings and can't act until it's wound again. Some clockworks' abilities require them to spend some of their remaining operational time. They can't spend more than they have and shut down immediately once they have 0 time remaining. If it's unclear when a clockwork was last wound, most clockwork keepers wind all their clockworks at a set time, typically 8 a.m.</p>\n<p>A clockwork that lists standby in its wind-up entry can enter standby mode as a 3-action activity. Its operational time doesn't decrease in standby, but it can sense its surroundings (with a -2 penalty to Perception). It can't act, with one exception: when it perceives a creature, it can exit standby as a reaction (rolling initiative if appropriate).</p>\n<p>A creature can attempt to Disable a Device to wind a clockwork down (with a DC listed in the wind-up entry). For each success, the clockwork loses 1 hour of operational time. This can be done even if the clockwork is in standby mode.</p>",
+            "description": "<p>24 hours, [[/act disable-device dc=0]], standby</p><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.WindUp]</p>",
             "name": "(Clockwork Creature) Wind-Up"
         },
         "(Clockwork Creature) Malfunction - Loose Screws": {
@@ -1883,6 +1899,10 @@
             "description": "<p>A mythic striker benefits from high mobility and is difficult to pin down. It always uses the extreme skill value for a creature of its level as its Acrobatics modifier.</p>",
             "name": "(Mythic) Mythic Mobility"
         },
+        "(Shivver) Horned": {
+            "description": "<p>Twisted horns spiral from the shivver's skull. The horns grant the shivver a horns Strike (an unarmed attack that deals 3d10+12 piercing damage), and they gain the Powerful Charge ability.</p><hr /><p><strong>Powerful Charge</strong> <span class=\"action-glyph\">2</span> The shivver Strides twice and makes a horn Strike. As long as the shivver moved at least 20 feet, the Strike's damage increases to 4d10+12.</p>",
+            "name": "(Shivver) Horned"
+        },
         "(Vampire, True) Change Shape": {
             "description": "<p>The vampire transforms into one of its animal forms or back into its normal form. Most vampires can turn into a bat, but some can turn into a different creature, such as a rat or a wolf.</p>\n<p>Use the options in the @UUID[Compendium.pf2e.spells-srd.Item.NzXpEzcZAjuDTZjK]{Aerial Form} and @UUID[Compendium.pf2e.spells-srd.Item.wp09USMB3GIW1qbp]{Animal Form} spells as guidelines.</p><ul><li><strong>Bat</strong> The vampire changes into a @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.2mg30nJR6P3HJDSd]{Bat Swarm} or @UUID[Compendium.pf2e.pathfinder-monster-core.Actor.xnpuGO8jEMba9wy5]{Giant Bat}. They gain echolocation 40 feet, a land Speed of 20 feet and a fly Speed of 30 feet, and a fangs Strike with the same attack bonus as their highest melee attack. These fangs deal the same amount of damage as the vampire's claws, but deal piercing damage rather than slashing damage.</li></ul><hr /><p>@Localize[PF2E.NPC.Abilities.Glossary.ChangeShape]</p>",
             "name": "(Vampire, True) Change Shape"
@@ -1900,7 +1920,7 @@
             "name": "(Spawn of Rovagug) Absolute Regeneration"
         },
         "(Swarm Strider) Clinging Remnants": {
-            "description": "<p>A swarm strider's melee Strikes and ranged Strikes made against targets within their weapon's first range increment deposit biting vermin on the target, dealing @Damage[1d4[persistent,piercing]] damage, increasing to 2d4 at 5th level, 3d4 at 10th level, 4d4 at 15th level, and 5d4 at 20th level.</p>",
+            "description": "<p>A swarm strider's melee Strikes and ranged Strikes made against targets within their weapon's first range increment deposit biting vermin on the target, dealing 1d4 persistent piercing damage, increasing to 2d4 at 5th level, 3d4 at 10th level, 4d4 at 15th level, and 5d4 at 20th level.</p>",
             "name": "(Swarm Strider) Clinging Remnants"
         },
         "(Harrowkin) Harrowkin Suit": {
