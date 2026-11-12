@@ -5548,7 +5548,7 @@
         },
         "Animal Speaker": {
             "name": "动物语者 Animal Speaker",
-            "description": "<p>你可以和所有的动物说话，而不仅仅是一个特定子类。你在给动物建立印象上获得+1的环境加值（通常使用交涉技能）。</p>",
+            "description": "<p>你可以向所有动物提问、听取回答，并对它们使用交涉技能，不再局限于某个特定类别。你对动物[[/act make-an-impression]]的交涉检定获得+1环境加值。</p>",
             "prerequisites": [
                 {
                     "value": "能够与某种动物对话的能力（如蝙蝠或节肢动物）"
@@ -5981,7 +5981,7 @@
         },
         "Loremaster Dedication": {
             "name": "博学者入门 Loremaster Dedication",
-            "description": "<p>你将近乎牵扯到世间所有内容的大量信息编纂成册。你的博学者学识（Loremaster Lore）熟练度为受训，这是一项仅能用于@UUID[Compendium.pf2e.actionspf2e.Item.1OagaWtBpVXExToo]的特殊学识技能，但它可以用于回忆任意主题的知识。</p>\n<p>若你在一个能够@UUID[Compendium.pf2e.actionspf2e.Item.d9gbpiQjChYDYA2L]的技能上的熟练度为传奇，你的博学者学识的熟练度等级会变为专家，你无法以任何其他方式增加博学者学识的熟练度等级。</p>\n<p>即便你无法满足@UUID[Compendium.pf2e.classfeatures.Item.4ripp6EfdVpS0d60]这个先决条件，你也可以选取博学者的补充专长。</p>\n<p>若你具有@UUID[Compendium.pf2e.feats-srd.Item.uVXEZblPRuCyPRua]吟游诗人专长，则会在逸闻知识的技能检定上获得+1环境加值。</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.ackdHdIAmSb0AiVL]</p>",
+            "description": "<p>你将近乎牵扯到世间所有内容的大量信息编纂成册。你的博学者学识（Loremaster Lore）熟练度为受训，这是一项仅能用于[[/act recall-knowledge skill=loremaster-lore]]的特殊学识技能，但它可以用于回忆任意主题的知识。</p>\n<p>若你在一个能够@UUID[Compendium.pf2e.actionspf2e.Item.d9gbpiQjChYDYA2L]的技能上的熟练度为传奇，你的博学者学识的熟练度等级会变为专家，你无法以任何其他方式增加博学者学识的熟练度等级。</p>\n<p>即便你无法满足@UUID[Compendium.pf2e.classfeatures.Item.4ripp6EfdVpS0d60]这个先决条件，你也可以选取博学者的补充专长。</p>\n<p>若你具有@UUID[Compendium.pf2e.feats-srd.Item.uVXEZblPRuCyPRua]吟游诗人专长，则会在逸闻知识的技能检定上获得+1环境加值。</p>\n<p>@UUID[Compendium.pf2e.journals.JournalEntry.vx5FGEG34AxI2dow.JournalEntryPage.ackdHdIAmSb0AiVL]{Loremaster}</p>",
             "prerequisites": [
                 {
                     "value": "至少一个可用于解译文书的技能熟练度为受训"
@@ -13069,7 +13069,7 @@
         },
         "Catchy Tune": {
             "name": "悦耳小调 Catchy Tune",
-            "description": "<p>你哼出的曲子如此动听，让敌人情不自禁地跟着跳起舞来。尝试@Check[performance]检定对抗@Template[emanation|distance:30]{30尺弥漫}范围内的所有敌人的意志DC。</p>\n<hr />\n<p><strong>大成功</strong> 目标的速度受到-10尺状态减值，并@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]，均持续1轮。</p>\n<p><strong>成功</strong> 目标的速度受到-5尺状态减值，持续1轮。</p>\n<p><strong>大失败</strong> 目标临时免疫，持续1小时。</p>"
+            "description": "<p>你编出一支如此抓耳的小调，让敌人不由自主地跟着起舞。进行一次@Check[performance|against:will]检定，并将结果与@Template[type:emanation|distance:30]范围内所有敌人的意志DC比较。</p><hr /><p><strong>大成功</strong> 该生物的所有速度承受−10尺状态减值，且陷入@UUID[Compendium.pf2e.conditionitems.Item.AJh5ex99aV6VTggg]；两者均持续至你的下个回合开始。</p>\n<p><strong>成功</strong> 该生物的所有速度承受−5尺状态减值，持续至你的下个回合开始。</p>\n<p><strong>失败</strong> 该生物不受影响。</p>\n<p><strong>大失败</strong> 该生物不受影响，并暂时免疫“悦耳小调”1小时。</p>"
         },
         "Dangle": {
             "name": "悬荡 Dangle",
@@ -15184,7 +15184,7 @@
         },
         "Cut the Bonds": {
             "name": "斩断束缚 Cut the Bonds",
-            "description": "<p>选择一个导致你相邻的“庄稼”成员陷入笨拙、擒抱、麻痹、被束缚或缓慢的魔法效果。尝试用一把你拥有专家熟练度的武器反制该效果，使用你的攻击调整值（计算多重攻击减值）作为反制调整值。你的反制等级相当于你等级的一半，向上取整。如果成功，你能将该“庄稼”成员从效果中解救出来；如果失败，你在24小时内无法再次对该“庄稼”成员使用斩断束缚效果。</p>",
+            "description": "<p><strong>需求</strong> 你正持用一把你具有专家熟练度的近战武器。</p><hr /><p>你对自由的信念甚至能斩断魔法。选择一个导致你相邻的庄稼成员陷入笨拙、@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]、@UUID[Compendium.pf2e.conditionitems.Item.6uEgoh53GbXuHpTF]、@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]或缓慢的魔法效果。你尝试反制该效果，以你持用需求武器的攻击调整值作为你的反制调整值。你的反制环级相当于你等级的一半，向上取整。如果失败，你在24小时内不能对那名庄稼成员身上的该效果尝试使用斩断束缚。</p>",
             "prerequisites": [
                 {
                     "value": "铃花阡陌客变体"
@@ -16358,7 +16358,7 @@
         },
         "Corgi Mount": {
             "name": "柯基坐骑 Corgi Mount",
-            "description": "<p>最小的精类们从远古开始就把柯基犬当作坐骑，导致柯基犬背上的花纹也被称为“妖精之鞍”。你已经与一只可以作为你坐骑的柯基犬建立了魔法联系。你的柯基犬魔宠是小型的，而不是超小型的。与其他魔宠不同，它适合作为你的坐骑。它有灵敏嗅觉能力，这和其他魔宠和主人能力一样计入你的魔宠能力上限。此外，它永远不能获得赋予它除陆地速度之外的任何速度的魔宠能力。如果你是皮克精，由于你的体型，你不能骑柯基犬，但你可以通过这个专长来获得一个柯基犬魔宠。</p>"
+            "description": "<p>自远古以来，最微小的精类就以柯基犬为坐骑，以至柯基背上的一种花纹被称为“妖精马鞍”。你与一只可以充当坐骑的柯基建立了魔法联系。你获得一只魔宠（《玩家核心》第212页），且必须是柯基。你的柯基魔宠为小型，而非超小型；与多数魔宠不同，它适合充当你的坐骑。它具有灵敏嗅觉能力；此能力如常计入你的魔宠能力和主人能力数量上限。此外，它永远不能获得任何给予陆地速度之外其他速度的魔宠能力。如果你是皮克精，受体型所限不能骑柯基，但仍可选择本专长获得柯基魔宠。</p>"
         },
         "Targeting Shot": {
             "name": "标定射击 Targeting Shot",
@@ -21209,7 +21209,7 @@
         },
         "Scarecrow": {
             "name": "稻草卫士 Scarecrow",
-            "description": "<p>你为了保护你的“庄稼”而激烈地战斗。当你以武器或无武装攻击命中一个和两个或更多“庄稼”成员相邻的生物时，你的伤害骰获得等同于你武器伤害骰数量的环境加值。当你击中一个正在擒抱你“庄稼”的生物时，该“庄稼”可以尝试使用反应动作逃脱。</p>",
+            "description": "<p>为保护你的庄稼，你奋力战斗。当你用武器或无武装攻击命中一个与两名或更多庄稼成员相邻的生物时，你在伤害掷骰上获得你武器伤害骰数量的环境加值。若该生物使你庄稼中的一名成员处于@UUID[Compendium.pf2e.conditionitems.Item.kWc1fhmv9LBiTuei]或@UUID[Compendium.pf2e.conditionitems.Item.VcDeM8A5oI6VqhbM]状态，该成员可以以反应动作尝试@UUID[Compendium.pf2e.actionspf2e.Item.SkZAQRkLLkmBQNB9]。</p>",
             "prerequisites": [
                 {
                     "value": "铃花阡陌客变体"
@@ -21479,7 +21479,7 @@
         },
         "Fetchling Lore": {
             "name": "窃影鬼学识 Fetchling Lore",
-            "description": "<p>你已经从你的窃影鬼同胞身上学到了一些艰深的知识。你的神秘和隐秘技能达到受训。如果其中某项技能已经受训（例如从你的背景或职业中得到），则你可以自选一项技能受训。同时，你也在阴影位面学识（Shadow Plane Lore）上达到受训。</p>"
+            "description": "<p>你已经从你的窃影鬼同胞身上学到了一些艰深的知识。你的神秘和隐秘技能达到受训。如果其中某项技能已经受训（例如从你的背景或职业中得到），则你可以自选一项技能受训。</p>\n<p>此外，你获得@UUID[Compendium.pf2e.feats-srd.Item.BocFD2KV0qgUC76x]（Additional Lore）专长，用于影界学识（Netherworld Lore）。</p>"
         },
         "Steal Spell": {
             "name": "窃法 Steal Spell",
@@ -21948,7 +21948,7 @@
         },
         "Fey Cantrips": {
             "name": "精类戏法 Fey Cantrips",
-            "description": "<p>你已经学会了精类们自远古就在使用的戏法。你获得了@UUID[Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4]和@UUID[Compendium.pf2e.spells-srd.Item.atlgGNI1E1Ox3O3a]作为原能先天法术。如果你有格利精传承，你还会获得@UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]，如果你有小龙精传承，你获得@UUID[Compendium.pf2e.spells-srd.Item.Qw3fnUlaUbnn7ipC]。</p>"
+            "description": "<p>你学会了小妖精自远古以来便在使用的戏法。你获得@UUID[Compendium.pf2e.spells-srd.Item.0zU8CPejjQFnhZFI]和@UUID[Compendium.pf2e.spells-srd.Item.WBmvzNDfpwka3qT4]作为原能内在戏法。如果你具有奇拉科尔传承，还会获得@UUID[Compendium.pf2e.spells-srd.Item.gpzpAAAJ1Lza2JVl]，并可以用虚构幻术创造声音或影像。如果你具有小龙精传承，还会获得@UUID[Compendium.pf2e.spells-srd.Item.Qw3fnUlaUbnn7ipC]。戏法会升环至等于你等级一半的环阶，向上取整。</p>"
         },
         "Fey Life": {
             "name": "精类生命 Fey Life",
@@ -27429,7 +27429,7 @@
         },
         "Tiller's Aid": {
             "name": "阡陌相助 Tiller's Aid",
-            "description": "<p>你能在未进准备的情况下使用反应动作@UUID[Compendium.pf2e.actionspf2e.Item.HCl3pzVefiv9ZKQW]你的“庄稼”成员。</p>",
+            "description": "<p>你随时都能即刻提供援助。你能在未在你的回合用一个动作准备的情况下使用反应动作协助你的庄稼成员。</p>",
             "prerequisites": [
                 {
                     "value": "铃花阡陌客变体"
@@ -41875,7 +41875,7 @@
         "Speak with Bats": {
             "prerequisites": [
                 {
-                    "value": "奈克精族裔传承"
+                    "value": "奈克精传承"
                 }
             ],
             "name": "蝙蝠交谈 Speak with Bats",
@@ -41939,7 +41939,7 @@
             "description": "<p>你极其精于艾鲁希占星术，而且你能从群星的排列中获取有用（且神秘）的提示。每夜一次，若你能清楚观察到群星，你能消耗1小时夜观天象来了解它们与将会在1星期内发生的一个特定目标、事件或活动的关系。GM骰秘密检定，@Check[astrology-lore|dc:28|traits:secret]秘密检定或@Check[occultism|dc:32|traits:secret]秘密检定。成功的话，你了解到将会在该事件上协助你的一个神秘线索或一点建议，而当大失败时，你则了解到误导的一个神秘线索或一点建议。</p>"
         },
         "Skirt the Light": {
-            "description": "<p>你可以穿过物质位面和影界之间的界限，甚至可以带上其他人。每日一次，你可以以异能内在法术的形式施放@UUID[Compendium.pf2e.spells-srd.Item.rxvS7EMJ7qmexAyA]。</p>",
+            "description": "<p>你可以穿过物质宇宙和影界之间的界限，甚至可以带上其他人。每日一次，你能将@UUID[Compendium.pf2e.spells-srd.Item.rxvS7EMJ7qmexAyA]作为异能内在法术施放。</p>",
             "name": "回避光明 Skirt the Light"
         },
         "Walk Through the Conflagration": {
@@ -52690,7 +52690,7 @@
             "description": "<p><strong>Frequency</strong> once per round</p>\n<p><strong>Requirements</strong> You're holding an item you can drink from (such as a potion or a waterskin).</p><hr /><p>You spit out something you drink as a comical, exaggerated bit. You Interact to drink from the item. If the item is a potion, elixir, or similar item, you can Activate it, provided it takes 1 action to do so. You then spit out a fine spray of the liquid into the face of an adjacent creature, attempting a @Check[performance|against:fortitude] check against that creature's Fortitude DC. Regardless of the result, that creature is temporarily immune to Spit-Take for 1 hour.</p><hr /><p><strong>Critical Success</strong> The target is @UUID[Compendium.pf2e.conditionitems.Item.TkIyaNPgTZFBCCuh]{Dazzled} for 1 minute.</p>\n<p><strong>Success</strong> The target is dazzled for 1 round.</p>\n<p><strong>Failure</strong> The target is unaffected.</p>\n<p><strong>Critical Failure</strong> You choke a little, becoming @UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{Sickened 1}.</p>",
             "prerequisites": [
                 {
-                    "value": "expert in Performance"
+                    "value": "表演熟练度为专家"
                 }
             ],
             "name": "Spit-Take"
