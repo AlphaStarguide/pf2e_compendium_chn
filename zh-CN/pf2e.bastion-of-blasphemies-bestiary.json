@@ -310,7 +310,7 @@
                 },
                 "Drain Blood": {
                     "name": "吸血 Drain Blood",
-                    "description": "<p>血疱魔对一个正在受到持续流血伤害的生物使用噬咬打击时，会饮下其鲜血。该生物必须成功通过@Check[fortitude|dc:30]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}）。血疱魔在下一轮获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，并能将额外动作用于行走或打击。</p>"
+                    "description": "<p>血疱魔对一个正在受到持续流血伤害的生物使用噬咬打击时，会饮下其鲜血。该生物必须成功通过@Check[fortitude|dc:30|options:inflicts:enfeebled]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 1}（大失败时为@UUID[Compendium.pf2e.conditionitems.Item.MIRkyAjyBeXivMa7]{力竭 Enfeebled 2}）。血疱魔在下一轮获得@UUID[Compendium.pf2e.conditionitems.Item.nlCjDvLMf2EkV2dl]，并能将额外动作用于行走或打击。</p>"
                 },
                 "Skip Between": {
                     "name": "两界邃穿 Skip Between",
@@ -817,7 +817,7 @@
             },
             "name": "孽裔厅堂老鼠 Bastardhall Rat",
             "publicNotes": "<p>巨鼠是常见害鼠的巨型版本。它们通常数量众多，但无法钻进普通老鼠经常躲藏的狭窄角落，因此更容易被发现和消灭。它们大多栖息在下水道中，以便捡食上方街道掉落的残渣，但有些巨鼠家族生活在更偏远的地方，例如潮湿洞穴、森林或丘陵。老鼠极善于生存，几乎遍布世界各地，但比起寒冷地区，它们更喜欢温带或温暖的气候。</p>\n<p>除了对极幼或极老的人外，巨鼠的啃咬本身通常不足以致命，但它携带着世界各地啮齿动物常见的腐败瘟疫，这种疫病足以肆虐乡村聚落。</p>\n<hr />\n<p>老鼠是无处不在的威胁，几乎世界上每个聚落的下水道与街道中都有它们疾窜的身影。普通老鼠从脚下窜过，或许就能让普通路人吃惊甚至恐惧，而巨鼠和鼠群则危险得多。</p>",
-            "blurb": "变体巨鼠 ",
+            "blurb": "变体巨鼠",
             "items": {
                 "Ratpox": {
                     "name": "鼠痘 Ratpox",
@@ -927,7 +927,7 @@
                 },
                 "Soulscar": {
                     "name": "魂痕 Soulscar",
-                    "description": "<p>噬魂饕客的爪打击以幽冥属性符文的效果影响虚体生物，并在灵魂上留下伤痕。生物在一轮内首次受到噬魂饕客爪打击的伤害时，必须成功通过@Check[will|dc:30|options:inflicts:frightened,inflicts:doomed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}（大失败时还陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}）。</p>"
+                    "description": "<p>噬魂饕客的爪打击以<em>幽冥</em>符文的效果影响虚体生物，并在灵魂上留下伤痕。生物在一轮内首次受到噬魂饕客爪打击的伤害时，必须成功通过@Check[will|dc:30|options:inflicts:frightened,inflicts:doomed]豁免，否则陷入@UUID[Compendium.pf2e.conditionitems.Item.TBSHQspnbcqxsmjL]{惊惧 Frightened 2}（大失败时还陷入@UUID[Compendium.pf2e.conditionitems.Item.3uh1r86TzbQvosxv]{毁灭 Doomed 1}）。</p>"
                 }
             }
         },
@@ -1165,7 +1165,7 @@
             "items": {
                 "Spewing Honey": {
                     "name": "喷涌蜂蜜 Spewing Honey",
-                    "description": "<p>索维娜受到挥砍伤害时，伤口会向邻接生物喷出混着胆汁的腐臭蜂蜜，造成@Damage[2d12[poison]]伤害（@Check[reflex|dc:22|basic|options:inflicts:slowed]豁免）。这次豁免失败的生物还会被浓稠黏腻的蜂蜜阻碍，陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。索维娜失去喷涌蜂蜜与庞南加兰胆汁能力，直到她的下回合结束。</p>"
+                    "description": "<p>索维娜受到挥砍伤害时，伤口会向邻接生物喷出混着胆汁的腐臭蜂蜜，造成@Damage[2d10[poison]|options:area-damage]伤害（@Check[reflex|dc:22|basic|options:area-effect,inflicts:slowed]豁免）。这次豁免失败的生物还会被浓稠黏腻的蜂蜜阻碍，陷入@UUID[Compendium.pf2e.conditionitems.Item.xYTAsEpcJE1Ccni3]{缓慢 Slowed 1}，持续1轮。索维娜失去喷涌蜂蜜与庞南加兰胆汁能力，直到她的下回合结束。</p>"
                 },
                 "Constrict": {
                     "name": "紧勒 Constrict",
@@ -1441,7 +1441,7 @@
                 },
                 "Amondi's Cruel Shiv": {
                     "name": "阿蒙迪的残酷短刃 Amondi's Cruel Shiv",
-                    "description": "<p>阿蒙迪飞行一次，穿过一个目标生物的空间；此次移动不会触发反应。穿过目标空间时，她对其进行一次幽灵武器打击。如果命中，她额外造成@Damage[3d6[persistent,bleed]]伤害，且被击中的生物因流血伤口的剧痛而陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>"
+                    "description": "<p>阿蒙迪飞行一次，穿过一个目标生物的空间；此次移动不会触发反应。穿过目标空间时，她对其进行一次幽灵武器打击。如果命中，她额外造成3d6持续流血伤害，且被击中的生物因流血伤口的剧痛而陷入@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 1}。</p>"
                 },
                 "Malevolent Possession": {
                     "name": "恶毒占据 Malevolent Possession",
