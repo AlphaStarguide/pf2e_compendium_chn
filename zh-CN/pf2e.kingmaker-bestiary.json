@@ -1450,7 +1450,7 @@
                 },
                 "Drowning Touch": {
                     "name": "溺水之触 Drowning Touch",
-                    "description": "<p>海妖精触摸一个生物，然后让自己体内的水流入该生物的肺中。如果该生物无法在水中呼吸，则必须尝试一次@Check[fortitude|dc:33]检定。</p>\n<p><strong>成功</strong> 该生物不受影响，并且临时免疫溺水之触24小时。</p>\n<p><strong>失败</strong> 该生物因为呛水而@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}。</p>\n<p><strong>大失败</strong> 该生物的肺被水灌满了。它失去意识，并且开始溺水。如果该生物在水上，当它在对抗窒息的豁免中成功时，就能从溺水中恢复。</p>"
+                    "description": "<p>海妖精触摸一个生物，然后让自己体内的水流入该生物的肺中。如果该生物无法在水中呼吸，则必须尝试一次@Check[fortitude|dc:33|options:inflicts:sickened,inflicts:unconscious]检定。</p>\n<p><strong>成功</strong> 该生物不受影响，并且临时免疫溺水之触24小时。</p>\n<p><strong>失败</strong> 该生物因为呛水而@UUID[Compendium.pf2e.conditionitems.Item.fesd1n5eVhpCSS18]{恶心 Sickened 3}。</p>\n<p><strong>大失败</strong> 该生物的肺被水灌满了。它@UUID[Compendium.pf2e.conditionitems.Item.fBnFDH2MTzgFijKf]，并且开始溺水。如果该生物在水上，当它在对抗窒息的豁免中成功时，就能从溺水中恢复。</p>"
                 },
                 "Manifest Shawl": {
                     "name": "显化纱巾 Manifest Shawl",
@@ -5142,11 +5142,11 @@
                 },
                 "Lurker Stance": {
                     "name": "潜伏者架势 Lurker Stance",
-                    "description": "<p>门徒使用位在门扉者的架势（译注：位在门扉者即犹格索托斯的别名，也是洛夫克拉夫特小说的标题），使自身变得危险。门徒可以进行潜伏者之爪无武装打击。打击造成1d12挥砍伤害；属于搏击武器组；并具有格挡、叠劲和无武装特征。在该架势下，如果门徒对目标使用@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]时成功或大成功，目标必须进行@Check[will|dc:34]豁免，失败会@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（大失败时@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}），持续1分钟。</p>"
+                    "description": "<p>门徒使用位在门扉者的架势（译注：位在门扉者即犹格索托斯的别名，也是洛夫克拉夫特小说的标题），使自身变得危险。门徒可以进行潜伏者之爪无武装打击。打击造成1d12挥砍伤害；属于搏击武器组；并具有格挡、叠劲和无武装特征。在该架势下，如果门徒对目标使用[[/act demoralize]]时成功或大成功，目标必须进行@Check[will|dc:34|options:inflicts:stupefied]豁免，失败会@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 1}（大失败时@UUID[Compendium.pf2e.conditionitems.Item.e1XGnhKNSQIm5IXg]{呆滞 Stupefied 3}），持续1分钟。</p>"
                 },
                 "Ominous Mien": {
                     "name": "不详外表 Ominous Mien",
-                    "description": "<p><strong>需求</strong> 门徒处于潜伏者架势</p>\n<hr />\n<p><strong>效果</strong> 门徒在威吓检定中获得+2环境加值，他尝试@UUID[Compendium.pf2e.actionspf2e.Item.2u915NdUyQan6uKF]不会因为语言不通而受到减值，也不会导致目标临时免疫。这些效果持续到门徒下一回合结束。</p>"
+                    "description": "<p><strong>需求</strong> 门徒处于潜伏者架势</p><hr /><p><strong>效果</strong> 门徒在威吓检定中获得+2环境加值，他尝试[[/act demoralize]]不会因为语言不通而受到减值，也不会导致目标临时免疫。这些效果持续到门徒下一回合结束。</p>"
                 },
                 "Temporal Strikes": {
                     "name": "时空打击 Temporal Strikes",
@@ -5215,7 +5215,7 @@
                 },
                 "Reminder of Doom": {
                     "name": "末日警钟 Reminder of Doom",
-                    "description": "<p>神秘主义者提醒他的盟友，那些使犹格索托斯失望的人将面临什么惩罚。神秘主义者及其60尺内的盟友在攻击检定和伤害检定上获得+2状态加值，持续到神秘主义者下回合结束。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.IrXb05caCTkP792e]{效果：末日警钟}</p>"
+                    "description": "<p>神秘主义者提醒他的盟友，那些使犹格索托斯失望的人将面临什么惩罚。神秘主义者及其@Template[emanation|distance:60]内的盟友在攻击检定和伤害检定上获得+2状态加值，持续到神秘主义者下回合结束。</p>\n<p>@UUID[Compendium.pf2e.bestiary-effects.Item.IrXb05caCTkP792e]</p>"
                 },
                 "Steady Spellcasting": {
                     "name": "稳定施法 Steady Spellcasting",
